@@ -33,7 +33,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ninja-build xvfb libasound2-dev libjack-jackd2-dev \
             libfreetype-dev libfontconfig1-dev libx11-dev libxcomposite-dev libxcursor-dev \
-            libxext-dev libxi-dev libxinerama-dev libxrandr-dev libxrender-dev libgl1-mesa-dev pkg-config
+            libxext-dev libxi-dev libxinerama-dev libxrandr-dev libxrender-dev libgl1-mesa-dev pkg-config \
+            libcurl4-openssl-dev
 
       - name: Configurar (Linux)
         if: runner.os == 'Linux'
@@ -67,7 +68,34 @@ jobs:
           cp -R "build/plugin/NexusModeler_artefacts/Release/AU/Nexus Modeler.component" ~/Library/Audio/Plug-Ins/Components/
           killall -9 AudioComponentRegistrar || true
           sleep 3
-          auval -v aufx Nxm1 Nxsm
+          auval -v aumf Nxm1 Nxsm
+
+      # pluginval (Tracktion, código aberto): o validador que o mercado usa para
+      # conferir se o plugin funciona nos programas de gravação. Nível 5 abre e
+      # fecha o plugin, troca taxa e bloco, automação aleatória, salva e
+      # restaura o estado e abre a tela.
+      - name: Validar o VST3 com o pluginval (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          curl -sfL -o pluginval.zip https://github.com/Tracktion/pluginval/releases/download/v1.0.4/pluginval_Linux.zip
+          unzip -qo pluginval.zip
+          xvfb-run -a ./pluginval --strictness-level 5 --validate-in-process --validate "build/plugin/NexusModeler_artefacts/Release/VST3/Nexus Modeler.vst3"
+
+      - name: Validar o VST3 e o AU com o pluginval (Mac)
+        if: runner.os == 'macOS'
+        run: |
+          curl -sfL -o pluginval.zip https://github.com/Tracktion/pluginval/releases/download/v1.0.4/pluginval_macOS.zip
+          unzip -qo pluginval.zip
+          ./pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate "build/plugin/NexusModeler_artefacts/Release/VST3/Nexus Modeler.vst3"
+          ./pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate "$HOME/Library/Audio/Plug-Ins/Components/Nexus Modeler.component"
+
+      - name: Validar o VST3 com o pluginval (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          curl -sfL -o pluginval.zip https://github.com/Tracktion/pluginval/releases/download/v1.0.4/pluginval_Windows.zip
+          unzip -qo pluginval.zip
+          ./pluginval.exe --strictness-level 5 --validate-in-process --validate "build/plugin/NexusModeler_artefacts/Release/VST3/Nexus Modeler.vst3"
 
       - name: Guardar os plugins compilados
         uses: actions/upload-artifact@v4

@@ -1,0 +1,243 @@
+{
+ "_sobre": "Tons da TONE3000 recomendados para cada equipamento do Nexus. Guardamos só o número, o nome e como ler a posição do botão no nome de cada captura; as capturas são baixadas pela conta de quem usa. 'posicao' é uma expressão com um grupo que pega o número; 'serie' são trechos que o nome precisa ter.",
+ "brit800": {
+  "busca": "JCM800",
+  "tons": [
+   {
+    "id": 1071,
+    "titulo": "Marshall JCM 800 2203",
+    "criador": "arthm",
+    "tipo": "amp",
+    "capturas": 10,
+    "downloads": 63164,
+    "serie": [
+     "MV6"
+    ],
+    "posicao": "\\bG(\\d+(?:\\.\\d+)?)",
+    "nota": "ganho 1 a 10, master 6"
+   },
+   {
+    "id": 1869,
+    "titulo": "JCM800 Zakk Wylde Signature",
+    "criador": "arlingtonaudio",
+    "tipo": "amp",
+    "capturas": 19,
+    "downloads": 18609,
+    "serie": [
+     "LOW SENSITIVITY"
+    ],
+    "posicao": "- G(\\d+(?:\\.\\d+)?)",
+    "nota": "ganho 1 a 10 de meio em meio, entrada Low"
+   },
+   {
+    "id": 1869,
+    "titulo": "JCM800 Zakk Wylde Signature",
+    "criador": "arlingtonaudio",
+    "tipo": "amp",
+    "capturas": 19,
+    "downloads": 18609,
+    "serie": [
+     "HIGH SENSITIVITY"
+    ],
+    "posicao": "- G(\\d+(?:\\.\\d+)?)",
+    "nota": "ganho 1 a 10 de meio em meio, entrada High"
+   },
+   {
+    "id": 1577,
+    "titulo": "JCM800 2203 1985",
+    "criador": "timr",
+    "tipo": "amp",
+    "capturas": 5,
+    "downloads": 5583,
+    "serie": [
+     " Lo "
+    ],
+    "posicao": "\\bG(\\d+)",
+    "nota": "ganho 2 a 10, entrada Lo"
+   },
+   {
+    "id": 37987,
+    "titulo": "JCM800 2203 AMP",
+    "criador": "maxalbe",
+    "tipo": "amp",
+    "capturas": 4,
+    "downloads": 3486,
+    "serie": [],
+    "posicao": "- G(\\d+)",
+    "nota": "ganho 3, 5, 7 e 10"
+   },
+   {
+    "id": 80035,
+    "titulo": "98 Marshall JCM800 Modded",
+    "criador": "tonetonerson",
+    "tipo": "amp",
+    "capturas": 7,
+    "downloads": 3275,
+    "serie": [],
+    "posicao": "Gain (\\d+)",
+    "nota": "ganho 3 a 9"
+   }
+  ]
+ },
+ "lemon_drive": {
+  "busca": "Tube Screamer",
+  "tons": [
+   {
+    "id": 86314,
+    "titulo": "Ibanez TS9 Tube Screamer",
+    "criador": "madhatteramplab",
+    "tipo": "pedal",
+    "capturas": 5,
+    "downloads": 2185,
+    "serie": [],
+    "posicao": "-D(\\d+)-",
+    "nota": "drive 0, 3, 5, 8 e 10"
+   },
+   {
+    "id": 101125,
+    "titulo": "1981 Ibanez TS-808 Tube Screamer",
+    "criador": "connordscott",
+    "tipo": "pedal",
+    "capturas": 5,
+    "downloads": 850,
+    "serie": [],
+    "posicao": "TS-808 (\\d+) ",
+    "nota": "drive 2 a 10"
+   }
+  ]
+ },
+ "orange_drive": {
+  "busca": "DS-1",
+  "tons": [
+   {
+    "id": 38560,
+    "titulo": "Boss DS-1 Distortion",
+    "criador": "reimenseimen",
+    "tipo": "pedal",
+    "capturas": 11,
+    "downloads": 4482,
+    "serie": [],
+    "posicao": "_G(\\d+)",
+    "nota": "distorção 0 a 10, todas as posições"
+   },
+   {
+    "id": 89559,
+    "titulo": "Boss DS-1",
+    "criador": "autoguitarrig",
+    "tipo": "pedal",
+    "capturas": 4,
+    "downloads": 1413,
+    "serie": [],
+    "posicao": "_D(\\d+)_",
+    "nota": "distorção 3, 5, 7 e 9"
+   },
+   {
+    "id": 104514,
+    "titulo": "BOSS DS-1 Distortion w/ Clipping Mods",
+    "criador": "dronek",
+    "tipo": "pedal",
+    "capturas": 4,
+    "downloads": 260,
+    "serie": [
+     "- Si-Si -",
+     "T4"
+    ],
+    "posicao": "- G(\\d+) -",
+    "nota": "distorção 0, 4, 7 e 10, diodos de silício"
+   }
+  ]
+ },
+ "gold_centaur": {
+  "busca": "Klon",
+  "tons": [
+   {
+    "id": 75949,
+    "titulo": "The Klone",
+    "criador": "tylawav",
+    "tipo": "pedal",
+    "capturas": 5,
+    "downloads": 3704,
+    "serie": [
+     "_T5_O5"
+    ],
+    "posicao": "_G(\\d+)_",
+    "nota": "ganho 0, 2, 5, 8 e 10"
+   },
+   {
+    "id": 31368,
+    "titulo": "Behringer Centaur Overdrive KLON",
+    "criador": "pwcprofiles",
+    "tipo": "pedal",
+    "capturas": 5,
+    "downloads": 7223,
+    "serie": [],
+    "posicao": "-G(\\d+)-",
+    "nota": "ganho 0, 2, 5, 7 e 10"
+   },
+   {
+    "id": 93761,
+    "titulo": "RYRA KLONE",
+    "criador": "jroobz",
+    "tipo": "pedal",
+    "capturas": 5,
+    "downloads": 396,
+    "serie": [],
+    "posicao": "GAIN (\\d+)",
+    "nota": "ganho 1 a 5"
+   }
+  ]
+ },
+ "banana_overdrive": {
+  "busca": "SD-1",
+  "tons": [
+   {
+    "id": 82811,
+    "titulo": "BOSS SD-1 Super Overdrive",
+    "criador": "jakkwiat",
+    "tipo": "pedal",
+    "capturas": 8,
+    "downloads": 2705,
+    "serie": [],
+    "posicao": "Gain (\\d+)",
+    "nota": "drive 1 a 8"
+   },
+   {
+    "id": 89701,
+    "titulo": "Boss SD-1",
+    "criador": "autoguitarrig",
+    "tipo": "pedal",
+    "capturas": 4,
+    "downloads": 5052,
+    "serie": [],
+    "posicao": "_D(\\d+)_",
+    "nota": "drive 1, 3, 6 e 9"
+   },
+   {
+    "id": 78518,
+    "titulo": "Boss SD-1",
+    "criador": "ebheron",
+    "tipo": "pedal",
+    "capturas": 3,
+    "downloads": 1883,
+    "serie": [
+     "T10 "
+    ],
+    "posicao": "D(\\d+)$",
+    "nota": "drive 0, 5 e 10, tom no máximo"
+   },
+   {
+    "id": 61848,
+    "titulo": "Boss SD-1",
+    "criador": "johnandrewcarter",
+    "tipo": "pedal",
+    "capturas": 3,
+    "downloads": 706,
+    "serie": [
+     "Tone 5"
+    ],
+    "posicao": "Drive (\\d+)",
+    "nota": "drive 0, 3 e 5"
+   }
+  ]
+ }
+}

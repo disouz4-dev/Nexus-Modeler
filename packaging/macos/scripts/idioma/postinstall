@@ -1,0 +1,52 @@
+#!/bin/bash
+# Roda no fim da instalação do Nexus Modeler no Mac (como administrador).
+#
+# Grava o idioma da tela do Nexus no arquivo de preferências do usuário que
+# está usando o Mac, com base no idioma do próprio macOS. Se o arquivo já
+# existir, nada muda: a escolha anterior da pessoa é mantida. Depois, o idioma
+# troca a qualquer momento pelo globo na tela do Nexus.
+#
+# Arquivo: ~/Library/Application Support/Nexus Modeler/preferencias.settings
+# (o mesmo que o Nexus lê; formato de ajustes do JUCE em XML).
+
+set -u
+
+usuario=$(stat -f%Su /dev/console 2>/dev/null || true)
+if [ -z "$usuario" ] || [ "$usuario" = "root" ] || [ "$usuario" = "loginwindow" ]; then
+  exit 0
+fi
+
+casa=$(dscl . -read "/Users/$usuario" NFSHomeDirectory 2>/dev/null | awk '{print $2}')
+[ -n "$casa" ] && [ -d "$casa" ] || exit 0
+
+pasta="$casa/Library/Application Support/Nexus Modeler"
+arquivo="$pasta/preferencias.settings"
+[ -e "$arquivo" ] && exit 0
+
+# Primeiro idioma da lista de preferências do macOS, por exemplo "pt-BR" ou "ja-JP".
+sistema=$(sudo -u "$usuario" defaults read -g AppleLanguages 2>/dev/null \
+  | sed -n '2p' | tr -d ' ",' | tr '[:upper:]' '[:lower:]')
+
+idioma="en"
+case "$sistema" in
+  pt*) idioma="pt-BR" ;;
+  *)
+    for codigo in en es fr it de ja zh ko hi ar bn ru id tr; do
+      case "$sistema" in
+        "$codigo"|"$codigo"-*|"$codigo"_*) idioma="$codigo"; break ;;
+      esac
+    done
+    ;;
+esac
+
+grupo=$(id -gn "$usuario" 2>/dev/null || echo staff)
+mkdir -p "$pasta"
+cat > "$arquivo" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PROPERTIES>
+  <VALUE name="idioma" val="$idioma"/>
+</PROPERTIES>
+EOF
+chown "$usuario:$grupo" "$pasta" "$arquivo"
+exit 0

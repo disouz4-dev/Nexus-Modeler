@@ -1,9 +1,18 @@
 # Nexus Modeler — proposta de arquitetura
 
-Estado: prova do motor pronta (versão 0.1.0, 26/10/2026); o resto é proposta.
+Estado (26/10/2026): prova do motor pronta; tela 3D com o Brit 800, a caixa
+4x12 (IR e trava do full rig) e três pedais (Lemon Drive, Laranja Dist e Ouro)
+tocando capturas. O resto é proposta.
 Repositório: https://github.com/disouz4-dev/Nexus-Modeler
 
 ## 1. O que o Nexus Modeler é
+
+**Premissa: a qualidade da captura com a facilidade da modelagem.** A
+modelagem de amplificador deixa timbrar girando botões, mas é simulação; a
+captura (NAM) traz o som real, mas congelado num ajuste. O Nexus une os dois
+mundos: traz para a captura a facilidade de timbragem da modelagem. Toda
+decisão de produto abaixo serve a essa união: o botão que troca de captura, o
+equalizador relativo à posição da captura, os canais e os pedais por pacote.
 
 Um plugin e aplicativo de guitarra, **gratuito**, para Windows, Mac e Linux,
 com três partes:
@@ -102,6 +111,21 @@ com três partes:
 | Modelos 3D | Blender (scripts em Python) | Renders viram imagens dentro do plugin. |
 | Site | GitHub Pages | Gratuito no repositório público. |
 
+**Por que C++ e não uma tecnologia de aplicativo comum (Electron, Flutter,
+página web):** o plugin roda dentro do programa de gravação (Reaper, Logic,
+Cubase, Ableton) como VST3, AU ou LV2, e esses formatos só aceitam código
+nativo com latência de poucos milissegundos. ToneX, AmpliTube, o plugin do NAM
+e o da TONE3000 são todos feitos assim; o da TONE3000 usa o mesmo JUCE 9. O
+JUCE é a base multiplataforma atual desse mercado: um código só gera Windows,
+Mac e Linux. O CMake é ferramenta interna do desenvolvedor; o usuário nunca vê.
+
+**Instaladores (etapa 6):** `.exe` no Windows, `.dmg` de arrastar e soltar no
+Mac, `.deb` no Linux, e instalação por um comando no terminal nos três
+sistemas (no Linux também por repositório `apt`, como no Praxis). Cada
+instalador traz o pacote de idiomas e uma tela de escolha de idioma, que grava
+a preferência (`Nexus Modeler/preferencias.settings`, chave `idioma`) usada
+pelo plugin e pelo programa independente.
+
 Descartados: iPlug2 (fraco no Linux), Rust (refazer NAM e login), interface
 como página de internet embutida (a TONE3000 começou assim e abandonou),
 cópia inteira do tone3000-plugin (produto de outro formato).
@@ -135,23 +159,38 @@ cópia inteira do tone3000-plugin (produto de outro formato).
 - Equipamento genérico (amplificador, pedal ou caixa sem marca) para qualquer
   captura que não tenha simulacro próprio.
 
-### 3.4 Botão "Importar NAM"
-Cada simulacro tem o botão **Importar NAM**. Ele abre:
+### 3.4 Abrir pacote: capturas da TONE3000 dentro do Nexus
+"Abrir pacote", em qualquer cabeçote ou pedal, abre a janela **Capturas para
+<equipamento>**, desenhada pelo Nexus, com **Fonte: TONE3000** sempre à vista
+e o nome do criador em cada tom. Abas:
 
-1. **Lista curada do Nexus** — nós mantemos, para cada simulacro, uma lista de
-   tons da TONE3000 daquele equipamento (ex.: todos os JCM800 em A2 que
-   encontrarmos). O usuário escolhe e o Nexus carrega pelo número do tom
-   (`load_tone`), permitido no plano gratuito. É assim que o "filtro Marshall"
-   funciona sem o plano comercial. A lista é atualizada pela internet, sem
-   precisar de versão nova do plugin.
-2. **Catálogo completo da TONE3000** — abre a tela de escolha deles, já
-   filtrada pelo tipo certo (`gears=amp_amp-cab` no amplificador,
-   `gears=pedal` no pedal, `gears=cab` na caixa) e A2. Dentro da tela deles o
-   usuário pode procurar "Marshall".
-3. **Arquivo do computador** — para quem já tem `.nam` ou `.wav` baixados.
+1. **Recomendadas** — lista nossa (`assets/tone3000/recomendadas.json`) com o
+   número de cada tom daquele equipamento e como ler a posição do botão no
+   nome de cada captura ("G7", "Drive 3", "D08") e qual série usar ("MV6",
+   "LOW SENSITIVITY"). É o "filtro automático" pelo amplificador: a busca por
+   marca e modelo de todo o catálogo é do plano comercial da TONE3000.
+2. **Seus favoritos** e **Seus downloads** — listas da conta, filtradas pelo
+   tipo (cabeçote ou pedal) e pela palavra do equipamento ("JCM800").
+3. **Em alta** — os 10 tons em alta daquele tipo.
 
-Se a TONE3000 liberar a busca (por pedido ou plano comercial), o item 1 passa a
-ser uma busca direta por marca dentro do plugin.
+Embaixo: **Catálogo completo da TONE3000** (a tela de escolha deles, já
+filtrada por tipo e A2, exigência deles), **Inserir manualmente** (pasta do
+computador) e a conta ("Entrar com a TONE3000" / "Conectado como @fulano").
+
+Carregar um tom: no plano gratuito ele passa pela tela "load_tone" da
+TONE3000, que confirma o acesso e volta sozinha. Depois o Nexus baixa só as
+capturas A2 da série certa, uma por posição do botão, para
+`Nexus Modeler/Capturas TONE3000/<número> <nome>/`, e escreve o `pack.json`
+(posição → arquivo, criador, endereço do tom, se inclui caixa). O login usa o
+navegador do sistema uma vez (OAuth com PKCE, retorno em 127.0.0.1); a conta
+fica salva em `Nexus Modeler/tone3000.settings`.
+
+A chave pública do Nexus na TONE3000 entra na compilação
+(`-DNEXUS_T3K_KEY=...`) ou pela variável `NEXUS_T3K_KEY`. Sem ela, a janela
+oferece só as recomendadas (para ver) e a pasta do computador.
+
+Pedido em aberto: liberar à TONE3000, para um projeto aberto e gratuito, a
+busca por marca e o download direto pelo número, sem passar pela tela deles.
 
 ### 3.5 Captura "full rig" (cabeçote + caixa)
 Quando o tom importado é do tipo `amp-cab`, a captura já inclui a caixa. O
@@ -224,11 +263,32 @@ Arquivo de descrição (rascunho):
   guitarra pela placa de vídeo, se a licença dos pesos permitir.
 
 ### 3.9 Interface e 3D
-- Modelos 3D detalhados no Blender, renderizados como imagens. Cada botão
-  giratório = sequência de ~128 imagens; chaves e luzes, poucas imagens.
+- Tela com identidade própria (o ToneX 2 e o AmpliTube 5 servem só de régua
+  de acabamento; a disposição não é copiada): barra de cima com a marca, o
+  seletor A2 FULL | A2 LITE e os ícones; o palco com o equipamento escolhido
+  sob um foco de luz; embaixo dele, o nome grande, o pacote e o trilho das
+  capturas; e no rodapé o caminho do sinal: controle deslizante de entrada
+  com medidor, pedal, amplificador, caixa e controle deslizante de saída.
+- Modelos 3D feitos pelo Nexus Gear Studio (`tools/gear_studio`) no Blender,
+  renderizados como imagens. Cada botão giratório = 101 imagens (posição 0,0 a
+  10,0 de 0,1 em 0,1); chaves e luzes, poucas imagens.
 - Renders em 2 tamanhos (normal e alta densidade).
 - Telas: cadeia, equipamento aberto, player de estudo, importação.
 - Elementos exigidos pela TONE3000 no mesmo acabamento.
+
+### 3.9.1 Áudio, MIDI e canais
+- **Plugin** (VST3, AU, LV2): o programa de gravação cuida da interface de
+  áudio e manda MIDI ao Nexus.
+- **Programa independente:** janela própria (`plugin/source/StandaloneApp.cpp`)
+  sobre o `StandalonePluginHolder` do JUCE, entrada sempre aberta (o JUCE
+  silencia por padrão), 48 kHz e 128 amostras na primeira abertura, painel de
+  áudio próprio (`ui/AudioPanel`), MIDI aberto sozinho.
+- **MIDI** (`MidiMap`): troca de patch 1–3 = canal; CC ligado a parâmetro por
+  "aprender"; aplicado no próprio bloco de áudio; guardado com o ajuste.
+- **Canais:** até 3 por cabeçote, definidos pela receita da família
+  (`"canais"`), como no amplificador original. Cada canal tem pacote e ganho
+  próprios; só o canal que toca gasta processador; a troca aquece o canal que
+  entra e cruza em 30 ms.
 
 ### 3.10 Organização de pastas (proposta)
 ```
@@ -260,7 +320,8 @@ Nexus-Modeler/
 5. **Primeiro simulacro 3D (Brit 800)**, iterado até o nível ToneX/AmpliTube.
 6. **Instaladores** para Windows, Mac e Linux e testes nos três sistemas.
 7. **Site no GitHub Pages**, no estilo da página do Praxis, com referências da
-   SpaceX e da Apple.
+   SpaceX e da Apple, abrindo com a premissa: a qualidade da captura com a
+   facilidade da modelagem.
 8. Mais simulacros e separação RoFormer.
 
 ## 5. Decisões pendentes

@@ -1,0 +1,10 @@
+/* Textos do instalador do Mac em português do Brasil. */
+"TITULO" = "Nexus Modeler";
+"VST3_TITULO" = "Plugin VST3";
+"VST3_DESCRICAO" = "Para Reaper, Cubase, Ableton Live, Studio One, Bitwig e outros programas de gravação. Vai para /Library/Audio/Plug-Ins/VST3.";
+"AU_TITULO" = "Plugin AU (Audio Unit)";
+"AU_DESCRICAO" = "Para Logic Pro, GarageBand e outros programas que usam Audio Unit. Vai para /Library/Audio/Plug-Ins/Components.";
+"APP_TITULO" = "Programa independente";
+"APP_DESCRICAO" = "Toca a guitarra direto pela interface de áudio, sem programa de gravação. Vai para /Aplicativos.";
+"IDIOMA_TITULO" = "Idioma da tela";
+"IDIOMA_DESCRICAO" = "Usa o idioma do seu Mac na primeira vez. Depois, troque pelo globo na tela do Nexus.";

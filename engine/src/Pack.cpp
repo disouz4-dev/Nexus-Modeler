@@ -4,6 +4,7 @@
 #include <cctype>
 #include <cmath>
 #include <fstream>
+#include <optional>
 #include <regex>
 #include <stdexcept>
 
@@ -115,6 +116,7 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
   pack->name = folder.filename().string();
 
   std::vector<Entry> entries;
+  std::optional<bool> cabFromManifest;
   const fs::path manifest = folder / "pack.json";
   if (fs::exists(manifest))
   {
@@ -123,6 +125,8 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
     pack->name = j.value("nome", pack->name);
     pack->knobName = j.value("botao", pack->knobName);
     pack->toneCircuit = j.value("circuito", pack->toneCircuit);
+    if (j.contains("inclui_caixa"))
+      cabFromManifest = j["inclui_caixa"].get<bool>();
     if (j.contains("equalizador_da_captura"))
     {
       const auto& eq = j["equalizador_da_captura"];
@@ -140,6 +144,7 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
     throw std::runtime_error("Nenhuma captura .nam encontrada em " + folder.string());
 
   std::sort(entries.begin(), entries.end(), [](const Entry& a, const Entry& b) { return a.position < b.position; });
+  pack->includesCab = cabFromManifest.value_or(captureIncludesCab(entries.front().file));
   for (size_t i = 1; i < entries.size(); ++i)
     if (entries[i].position == entries[i - 1].position)
       throw std::runtime_error("Duas capturas na mesma posição (" + std::to_string(entries[i].position) + "): "
@@ -182,6 +187,25 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
     c.levelGain = std::pow(10.0, (options.targetRmsDb - refDb) / 20.0);
   }
   return pack;
+}
+
+bool captureIncludesCab(const fs::path& namFile)
+{
+  try
+  {
+    std::ifstream f(namFile);
+    const auto j = nlohmann::json::parse(f);
+    if (!j.contains("metadata") || !j["metadata"].is_object())
+      return false;
+    const auto& meta = j["metadata"];
+    std::string gear = meta.value("gear_type", std::string());
+    std::transform(gear.begin(), gear.end(), gear.begin(), [](unsigned char ch) { return std::tolower(ch); });
+    return gear.find("cab") != std::string::npos || gear.find("full") != std::string::npos;
+  }
+  catch (const std::exception&)
+  {
+    return false;
+  }
 }
 
 } // namespace nexus

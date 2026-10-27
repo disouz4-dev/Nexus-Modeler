@@ -1,0 +1,106 @@
+{
+  "tipo": "cabecote",
+  "nome": "Brit 800",
+  "familia": "brit_800",
+  "medidas_m": {
+    "largura": 0.74,
+    "altura": 0.285,
+    "profundidade": 0.22
+  },
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 2.6
+  },
+  "fachada": {
+    "cor": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "grao_mm": 1.2,
+    "friso": [
+      0.8,
+      0.78,
+      0.72
+    ]
+  },
+  "logo": {
+    "texto": "Nexus",
+    "cor": [
+      0.86,
+      0.8,
+      0.66
+    ],
+    "altura_m": 0.085
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "cor": [
+      0.5,
+      0.34,
+      0.14
+    ],
+    "marca": "NEXUS MODELER",
+    "texto_cor": [
+      0.015,
+      0.012,
+      0.01
+    ],
+    "modelo": "BRIT 800"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.031,
+    "corpo": [
+      0.018,
+      0.018,
+      0.018
+    ],
+    "tampa": [
+      0.56,
+      0.39,
+      0.17
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ALTO",
+    "BAIXO"
+  ],
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ]
+}

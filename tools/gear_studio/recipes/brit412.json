@@ -1,0 +1,52 @@
+{
+  "tipo": "caixa",
+  "nome": "Brit 4x12",
+  "familia": "brit_412",
+  "medidas_m": {
+    "largura": 0.76,
+    "altura": 0.76,
+    "profundidade": 0.36
+  },
+  "aba_m": 0.032,
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 2.6
+  },
+  "tela": {
+    "cor_a": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "cor_b": [
+      0.09,
+      0.085,
+      0.075
+    ],
+    "trama_mm": 2.0
+  },
+  "friso": [
+    0.8,
+    0.78,
+    0.72
+  ],
+  "logo": {
+    "texto": "Nexus",
+    "cor": [
+      0.86,
+      0.8,
+      0.66
+    ],
+    "altura_m": 0.09,
+    "altura_rel": 0.36
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.0,
+    "elevacao": 8.0
+  }
+}

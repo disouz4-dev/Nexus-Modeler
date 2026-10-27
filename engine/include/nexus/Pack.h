@@ -50,6 +50,9 @@ struct Pack
   std::string toneCircuit = "marshall";
   ToneKnobs captureTone{};      // posição do equalizador quando foi capturado
   double capturePresence = 5.0;
+  // Captura "full rig" (cabeçote + caixa): a caixa já está no som, então o
+  // bloco da caixa fica trancado e não aceita IR.
+  bool includesCab = false;
   std::vector<Capture> captures; // ordenadas por position, sem repetição
 
   double minPosition() const { return captures.front().position; }
@@ -66,5 +69,9 @@ std::unique_ptr<Pack> loadPack(const std::filesystem::path& folder, const PackOp
 // "gain", "ganho", "drive", "g"; senão o último número do nome.
 // Retorna false se não houver número.
 bool positionFromFileName(const std::string& stem, double& position);
+
+// Diz se a captura inclui a caixa, pelo tipo de equipamento gravado no .nam
+// ("amp_cab", "amp_pedal_cab", "full_rig"...). Sem informação: false.
+bool captureIncludesCab(const std::filesystem::path& namFile);
 
 } // namespace nexus

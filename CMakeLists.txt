@@ -13,6 +13,9 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 
+# Os textos da tela estão em português (UTF-8); o Visual Studio precisa saber.
+add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/utf-8>)
+
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Tipo de compilação" FORCE)
 endif()
@@ -33,4 +36,11 @@ endif()
 
 if(NEXUS_BUILD_PLUGIN)
   add_subdirectory(plugin)
+endif()
+
+# Pacote .deb (Linux). Desligado por padrão: só o fluxo de pacotes liga.
+# O .exe (Windows) e o .dmg (Mac) são feitos pelos scripts em packaging/.
+option(NEXUS_PACOTES "Preparar o pacote .deb com o CPack (Linux)" OFF)
+if(NEXUS_PACOTES AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  include(packaging/linux/pacotes.cmake)
 endif()

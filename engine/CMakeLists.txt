@@ -26,6 +26,7 @@ endif()
 # Motor do Nexus: troca de capturas e equalizadores das famílias.
 add_library(nexus_engine STATIC
   src/AmpVoice.cpp
+  src/Effects.cpp
   src/MorphEngine.cpp
   src/Pack.cpp
   src/TestSignal.cpp
