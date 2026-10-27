@@ -1,14 +1,37 @@
 # Nexus Modeler
 
-Plugin de guitarra gratuito e de código aberto para Windows, Mac e Linux que
-toca capturas do [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
-(NAM A2 Full e A2 Lite) como se fossem equipamentos de verdade.
+**A qualidade da captura com a facilidade da modelagem.**
 
-Quem clona um amplificador costuma publicar um **pacote** com várias capturas:
-ganho 0, ganho 1, ganho 2… até 10. Hoje, para mudar o ganho, é preciso abrir a
-pasta e trocar o arquivo na mão. No Nexus Modeler, você gira o botão de ganho e
-o plugin troca de captura por dentro, sem clique no som. Entre duas posições
-(ganho 2,5, por exemplo) ele mistura as duas capturas vizinhas.
+Plugin de guitarra gratuito e de código aberto para Windows, Mac e Linux.
+
+Hoje o guitarrista escolhe entre dois mundos:
+
+- a **modelagem** de amplificador: você gira os botões e timbra à vontade, mas
+  o som é uma simulação;
+- a **captura**: o som real de um equipamento, mas congelado no ajuste em que
+  foi gravado. Para mudar o timbre, você troca de arquivo.
+
+O Nexus Modeler une os dois. Ele traz para o mundo da captura a facilidade de
+timbragem da modelagem, sem abrir mão da qualidade que a captura tem.
+
+Na prática:
+
+- **O botão troca a captura.** Quem clona um amplificador publica um pacote
+  com várias capturas (ganho 0, 1, 2… até 10). No Nexus, você gira o ganho do
+  cabeçote, ou o drive do pedal, e ele carrega a captura daquela posição por
+  dentro, sem clique no som e sem abrir pasta nenhuma.
+- **O equalizador do painel funciona como no amplificador real.** Ele é
+  modelado no circuito de tonalidade de cada família de amplificador e aplica
+  só a diferença para a posição em que a captura foi feita. Com os botões
+  nessa posição, o som é exatamente o da captura.
+- **Canais, pedais e caixa como num equipamento de verdade.** Um cabeçote de
+  até 3 canais, como o original, com uma captura por canal. Pedais com drive
+  em estágios, que também trocam de captura. A caixa respeita a captura full
+  rig.
+
+Tudo isso toca capturas do
+[Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
+(NAM A2 Full e A2 Lite).
 
 > **Estado atual (em desenvolvimento, ainda sem versão publicada).** Já
 > funcionam o motor de troca de capturas, o equalizador do painel, a tela com
@@ -30,7 +53,7 @@ IR não toca, para respeitar o som original.*
 
 ![Pedal Laranja Dist](docs/imagens/tela-pedal.png)
 
-*Pedal antes do amplificador: três visuais (Verde Drive, Laranja Dist e Ouro),
+*Pedal antes do amplificador: três visuais (Lemon Drive, Laranja Dist e Ouro),
 trocados pelas setas ao lado do nome; o pisante liga e desliga.*
 
 ## O que a prova do motor já faz
@@ -54,7 +77,7 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
   `"inclui_caixa": true`), a caixa se tranca em "Captura".
 - **Pedal:** um bloco antes do amplificador que toca captura NAM de pedal (e
   também pacote de ganho, com troca sem clique). Ganho, Tom e Nível; clique no
-  pisante liga e desliga em 20 ms, sem estalo. Três visuais: Verde Drive,
+  pisante liga e desliga em 20 ms, sem estalo. Três visuais: Lemon Drive,
   Laranja Dist e Ouro.
 - **Programa independente com interfaces de áudio de baixa latência:** ASIO,
   WASAPI e DirectSound no Windows, Core Audio no Mac, JACK e ALSA no Linux.

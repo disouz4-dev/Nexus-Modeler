@@ -1,11 +1,18 @@
 # Nexus Modeler — proposta de arquitetura
 
 Estado (26/10/2026): prova do motor pronta; tela 3D com o Brit 800, a caixa
-4x12 (IR e trava do full rig) e três pedais (Verde Drive, Laranja Dist e Ouro)
+4x12 (IR e trava do full rig) e três pedais (Lemon Drive, Laranja Dist e Ouro)
 tocando capturas. O resto é proposta.
 Repositório: https://github.com/disouz4-dev/Nexus-Modeler
 
 ## 1. O que o Nexus Modeler é
+
+**Premissa: a qualidade da captura com a facilidade da modelagem.** A
+modelagem de amplificador deixa timbrar girando botões, mas é simulação; a
+captura (NAM) traz o som real, mas congelado num ajuste. O Nexus une os dois
+mundos: traz para a captura a facilidade de timbragem da modelagem. Toda
+decisão de produto abaixo serve a essa união: o botão que troca de captura, o
+equalizador relativo à posição da captura, os canais e os pedais por pacote.
 
 Um plugin e aplicativo de guitarra, **gratuito**, para Windows, Mac e Linux,
 com três partes:
@@ -298,7 +305,8 @@ Nexus-Modeler/
 5. **Primeiro simulacro 3D (Brit 800)**, iterado até o nível ToneX/AmpliTube.
 6. **Instaladores** para Windows, Mac e Linux e testes nos três sistemas.
 7. **Site no GitHub Pages**, no estilo da página do Praxis, com referências da
-   SpaceX e da Apple.
+   SpaceX e da Apple, abrindo com a premissa: a qualidade da captura com a
+   facilidade da modelagem.
 8. Mais simulacros e separação RoFormer.
 
 ## 5. Decisões pendentes
