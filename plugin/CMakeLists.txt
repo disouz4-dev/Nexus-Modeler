@@ -46,6 +46,7 @@ set(NEXUS_UI_SOURCES
   source/ui/PresetBar.cpp
   source/ui/UpdateBadge.cpp
   source/ui/PackMapper.cpp
+  source/ui/TestBar.cpp
   source/update/Updater.cpp
   source/tone3000/Tone3000.cpp)
 
@@ -57,6 +58,7 @@ endif()
 set_source_files_properties(source/update/Updater.cpp PROPERTIES COMPILE_DEFINITIONS "NEXUS_VERSAO=\"${NEXUS_VERSAO}\"")
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
+  source/TestSource.cpp
   source/MidiMap.cpp)
 target_sources(NexusModeler PRIVATE
   ${NEXUS_PROCESSOR_SOURCES}
@@ -91,7 +93,8 @@ configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
 file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
      "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json"
-     "${PROJECT_SOURCE_DIR}/assets/marca/*.svg")
+     "${PROJECT_SOURCE_DIR}/assets/marca/*.svg"
+     "${PROJECT_SOURCE_DIR}/assets/teste/*.flac")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData

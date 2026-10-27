@@ -6,6 +6,9 @@
 // "Carregar" do programa, para Documentos/Nexus Modeler/<equipamento>) e usa o
 // mesmo processador do plugin.
 //
+// Usa as gravações do "Testar o som" (uma por estilo, cada uma com o ajuste
+// que combina com ela). O primeiro argumento fica para comparar a guitarra.
+//
 // Uso: nexus_render <guitarra.wav> <ir.wav> <pasta_de_saida> [ganho_de_entrada_dB]
 
 #include <cmath>
@@ -112,62 +115,62 @@ int main(int argc, char** argv)
   if (!banana.isDirectory() || !brit.isDirectory())
     return 1;
 
-  const Setting settings[] = {
-    {"1_guitarra_limpa_sem_nexus.wav", "a gravação original, sem passar pelo Nexus", false, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {"2_brit800_crunch.wav", "Brit 800 no ganho 5, sem pedal", false, 0, 5, 5, 5, 5, 6, 6, 5, 5},
-    {"3_banana_brit800_rock.wav", "Banana drive 3 empurrando o Brit 800 no ganho 7", true, 3, 5, 7, 7, 5, 6, 6, 6, 5},
-    {"4_banana_brit800_solo.wav", "Banana drive 6 e Brit 800 no ganho 10", true, 6, 6, 7, 10, 5, 7, 6, 6, 5},
-  };
-
-  for (const auto& s : settings)
+  // Cada estilo do "Testar o som" com o ajuste que combina com ele.
+  struct ByStyle
   {
-    std::vector<double> result;
-    if (!s.pedal && s.gain == 0)
-      result = dry;
-    else
-    {
-      NexusProcessor p;
-      p.setPlayConfigDetails(2, 2, rate, 128);
-      p.prepareToPlay(rate, 128);
-      ChainLayout layout;
-      if (s.pedal)
-        layout.pre = {0};
-      p.setLayout(layout);
-      setParam(p, "p1_visual", 2.0f); // Banana Overdrive
-      setParam(p, "p1_drive", s.drive);
-      setParam(p, "p1_tom", s.tone);
-      setParam(p, "p1_nivel", s.level);
-      setParam(p, "ganho", s.gain);
-      setParam(p, "grave", s.bass);
-      setParam(p, "medio", s.middle);
-      setParam(p, "agudo", s.treble);
-      setParam(p, "presenca", s.presence);
-      setParam(p, "volume", s.volume);
-      p.loadAmpPack(0, 0, brit);
-      if (s.pedal)
-        p.loadPedalPack(0, banana);
-      p.loadIrAsync(0, ir);
-      for (int t = 0; t < 2400 && !(p.channelLoaded(0, 0) && (!s.pedal || p.slotLoaded(0)) && p.irLoaded(0)); ++t)
-        settle(p, 4);
-      setParam(p, "caixa", 1.0f);
-      settle(p, 400); // botões e trocas assentam
+    nexus::TestSource::Style style;
+    Setting s;
+  };
+  const ByStyle styles[] = {
+    {nexus::TestSource::clean, {"1_limpo_brit800_ganho2.wav", "Limpo: Brit 800 no ganho 2, sem pedal", false, 0, 5, 5, 2, 5, 5, 6, 5, 5}},
+    {nexus::TestSource::blues, {"2_blues_banana2_brit800_ganho5.wav", "Blues: Banana drive 2 e Brit 800 no ganho 5", true, 2, 5, 6, 5, 5, 6, 6, 5, 5}},
+    {nexus::TestSource::rock, {"3_rock_banana4_brit800_ganho7.wav", "Rock: Banana drive 4 e Brit 800 no ganho 7", true, 4, 5, 7, 7, 5, 6, 6, 6, 5}},
+    {nexus::TestSource::heavy, {"4_pesado_banana6_brit800_ganho10.wav", "Pesado: Banana drive 6 empurrando o Brit 800 no ganho 10", true, 6, 6, 7, 10, 5, 7, 6, 6, 5}},
+  };
+  (void) dry;
 
-      juce::AudioBuffer<float> buffer(2, 128);
-      juce::MidiBuffer midi;
-      result.reserve(dry.size());
-      for (size_t start = 0; start < dry.size(); start += 128)
-      {
-        const int n = static_cast<int>(std::min<size_t>(128, dry.size() - start));
-        buffer.setSize(2, n, false, false, true);
-        for (int ch = 0; ch < 2; ++ch)
-          for (int i = 0; i < n; ++i)
-            buffer.setSample(ch, i, static_cast<float>(dry[start + static_cast<size_t>(i)]));
-        p.processBlock(buffer, midi);
-        for (int i = 0; i < n; ++i)
-          result.push_back(buffer.getSample(0, i));
-      }
+  for (const auto& [style, s] : styles)
+  {
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, rate, 128);
+    p.prepareToPlay(rate, 128);
+    ChainLayout layout;
+    if (s.pedal)
+      layout.pre = {0};
+    p.setLayout(layout);
+    setParam(p, "p1_visual", 2.0f); // Banana Overdrive
+    setParam(p, "p1_drive", s.drive);
+    setParam(p, "p1_tom", s.tone);
+    setParam(p, "p1_nivel", s.level);
+    setParam(p, "ganho", s.gain);
+    setParam(p, "grave", s.bass);
+    setParam(p, "medio", s.middle);
+    setParam(p, "agudo", s.treble);
+    setParam(p, "presenca", s.presence);
+    p.loadAmpPack(0, 0, brit);
+    if (s.pedal)
+      p.loadPedalPack(0, banana);
+    p.loadIrAsync(0, ir);
+    for (int t = 0; t < 2400 && !(p.channelLoaded(0, 0) && (!s.pedal || p.slotLoaded(0)) && p.irLoaded(0)); ++t)
+      settle(p, 4);
+    setParam(p, "caixa", 1.0f);
+    settle(p, 400);
+
+    // O mesmo "Testar o som" do programa: a gravação entra no lugar da guitarra.
+    auto& test = p.testSource();
+    test.setStyle(style);
+    test.setPlaying(true);
+    std::vector<double> result;
+    const int total = static_cast<int>(16.0 * rate);
+    juce::AudioBuffer<float> buffer(2, 128);
+    juce::MidiBuffer midi;
+    while (static_cast<int>(result.size()) < total)
+    {
+      buffer.clear();
+      p.processBlock(buffer, midi);
+      for (int i = 0; i < 128; ++i)
+        result.push_back(buffer.getSample(0, i));
     }
-    // Mesmo volume de pico em todos (-1 dBFS), para comparar sem susto.
     double m = 0.0;
     for (auto v : result)
       m = std::max(m, std::abs(v));

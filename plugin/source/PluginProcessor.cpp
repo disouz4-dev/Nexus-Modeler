@@ -147,6 +147,8 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   const int block = std::max(samplesPerBlock, 32);
   mMono.assign(static_cast<size_t>(block), 0.0);
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
+  mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
+  mTest.prepare(sampleRate);
   for (auto* v : {&mDry, &mChannelIn, &mChannelOut, &mRigIn})
     v->assign(static_cast<size_t>(kEngineBlock), 0.0);
   mCabFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
@@ -526,9 +528,12 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (int start = 0; start < total; start += capacity)
   {
     const int n = std::min(capacity, total - start);
-    if (inChannels > 0)
+    // Entrada: a guitarra ou, no "Testar o som", a gravação de teste.
+    const float* in = inChannels > 0 ? buffer.getReadPointer(0, start) : nullptr;
+    if (mTest.process(in, mTestBuffer.data(), n))
+      in = mTestBuffer.data();
+    if (in != nullptr)
     {
-      const float* in = buffer.getReadPointer(0, start);
       const float inStep = (targetIn - mInputGain) / static_cast<float>(n);
       float gi = mInputGain;
       for (int i = 0; i < n; ++i)

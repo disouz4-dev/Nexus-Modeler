@@ -14,6 +14,10 @@
 | [ASIO SDK](https://www.steinberg.net/developers/) (Steinberg) | Interfaces de áudio de baixa latência no Windows (baixado na compilação) | GPL v3 (licença dupla desde 10/2025) |
 | [tone3000-plugin](https://github.com/tone-3000/tone3000-plugin) (TONE3000) | Base do login na TONE3000 (código do PKCE e do servidor local de retorno), adaptada em `plugin/source/tone3000/` | MIT |
 | [TONE3000](https://www.tone3000.com) | Fonte das capturas: o Nexus guarda só o número dos tons recomendados; as capturas são baixadas pela conta de quem usa e continuam sendo dos criadores, com a licença de cada tom | Termos da TONE3000 |
+| ["Clean Strumming & Arpeggio"](https://freesound.org/s/453384/) (loudernoises, Freesound) | Gravação "Limpo" do Testar o som (`assets/teste/limpo.flac`, cortada e nivelada) | CC0 (domínio público) |
+| ["83 bpm Pseudo blue Sven"](https://freesound.org/s/683961/) (itinerantmonk108, Freesound) | Gravação "Blues" do Testar o som (`assets/teste/blues.flac`, 20 s do início) | CC0 (domínio público) |
+| ["Stoner Riff"](https://freesound.org/s/254891/) (spanak, Freesound) | Gravação "Rock" do Testar o som (`assets/teste/rock.flac`, repetida três vezes) | CC0 (domínio público) |
+| ["Guitar-Riff-Heavy01-DI"](https://freesound.org/s/531801/) (FrankyFire, Freesound) | Gravação "Pesado" do Testar o som (`assets/teste/pesado.flac`, 20 s do início) | CC BY-NC 4.0 (atribuição, uso não comercial) |
 | [Blender](https://www.blender.org) | Ferramenta usada para renderizar os equipamentos (não vai dentro do plugin) | GPL; as imagens geradas são nossas |
 
 O texto completo de cada licença acompanha o código de cada componente

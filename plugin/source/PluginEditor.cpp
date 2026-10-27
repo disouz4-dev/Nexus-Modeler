@@ -378,6 +378,8 @@ NexusEditor::ChainView::ChainView(NexusEditor& editor)
   mOutput = std::make_unique<LevelFader>(*editor.mProcessor.params.getParameter("volume"), juce::String::fromUTF8("Saída"));
   addAndMakeVisible(*mInput);
   addAndMakeVisible(*mOutput);
+  mTest = std::make_unique<nexus::ui::TestBar>(editor.mProcessor.testSource());
+  addAndMakeVisible(*mTest);
   addAndMakeVisible(mRigs);
   mRigs.setFontSize(11.0f);
   mRigs.onSelect = [this](int i) {
@@ -419,6 +421,9 @@ void NexusEditor::ChainView::resized()
   mInput->setBounds(juce::Rectangle<float>(r.getX(), cy - 21.0f, 170.0f, 42.0f).toNearestInt());
   mOutput->setBounds(juce::Rectangle<float>(r.getRight() - 170.0f, cy - 21.0f, 170.0f, 42.0f).toNearestInt());
   mRigs.setBounds(juce::Rectangle<float>(r.getRight() - 96.0f, 10.0f, 96.0f, 24.0f).toNearestInt());
+  // "Testar o som" em cima da entrada (a gravação entra no lugar da guitarra).
+  const int testW = std::min(mTest->idealWidth(), static_cast<int>(r.getWidth()) - 260);
+  mTest->setBounds(static_cast<int>(r.getX()), 10, testW, 24);
   rebuild();
 }
 
@@ -1564,6 +1569,7 @@ void NexusEditor::timerCallback()
   mOutPeak = std::max(mProcessor.outputPeak(), mOutPeak * 0.8f);
   mProcessor.resetPeaks();
   mChain->input().setLevel(mInPeak);
+  mChain->testBar().refresh();
   mChain->output().setLevel(mOutPeak);
   mRail->repaint();
   mChain->repaint();

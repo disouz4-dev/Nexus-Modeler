@@ -45,6 +45,12 @@
   capturas (ou duas caem na mesma posição), abre a tela "Mapear as capturas"
   e grava o resultado no `pack.json`.
 
+### Testar o som
+- Barra "Testar o som" em cima da entrada: toca uma gravação de guitarra
+  direta pela cadeia, sem tocar, em quatro estilos (Limpo, Blues, Rock,
+  Pesado), cada um para avaliar o tipo de equipamento que combina com ele.
+- "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
+
 ### Atualização automática
 - Ao abrir, o Nexus procura uma versão nova no GitHub (no máximo uma vez por
   dia). O aviso "Nova versão" aparece no topo; um clique baixa o instalador do

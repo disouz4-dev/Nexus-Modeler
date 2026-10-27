@@ -741,6 +741,53 @@ int main(int argc, char** argv)
     report(up::compareVersions(up::currentVersion(), "0.0.1") > 0, juce::String::fromUTF8("O programa sabe a própria versão").toRawUTF8(), up::currentVersion());
   }
 
+  // 12. Testar o som: a gravação entra no lugar da guitarra; gravar a própria guitarra.
+  {
+    std::printf("\nTestar o som\n");
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, 44100.0, 128);
+    p.prepareToPlay(44100.0, 128);
+    auto& test = p.testSource();
+    auto rms = [&](int blocks, float inputLevel) {
+      juce::AudioBuffer<float> b(2, 128);
+      juce::MidiBuffer m;
+      double sum = 0.0;
+      for (int k = 0; k < blocks; ++k)
+      {
+        for (int i = 0; i < 128; ++i)
+          for (int ch = 0; ch < 2; ++ch)
+            b.setSample(ch, i, inputLevel * std::sin(0.05f * static_cast<float>(k * 128 + i)));
+        p.processBlock(b, m);
+        for (int i = 0; i < 128; ++i)
+          sum += b.getSample(0, i) * b.getSample(0, i);
+      }
+      return 10.0 * std::log10(sum / (blocks * 128) + 1e-20);
+    };
+    const double silent = rms(200, 0.0f);
+    bool allStyles = true;
+    juce::String levels;
+    for (auto s : {nexus::TestSource::clean, nexus::TestSource::blues, nexus::TestSource::rock, nexus::TestSource::heavy})
+    {
+      test.setStyle(s);
+      test.setPlaying(true);
+      const double level = rms(700, 0.0f);
+      levels << juce::String(level, 1) << " ";
+      allStyles = allStyles && level > -45.0;
+    }
+    report(silent < -100.0 && allStyles, "Cada estilo toca pela cadeia, sem guitarra ligada (44,1 kHz)", "dB: " + levels);
+    test.setPlaying(false);
+    report(rms(100, 0.0f) < -100.0, "Parar o teste volta para a guitarra", juce::String::fromUTF8("silêncio"));
+
+    // Gravar: 15 s de "guitarra" (um seno) e ela passa a tocar sozinha.
+    test.startRecording();
+    rms(static_cast<int>(16.0 * 44100.0 / 128.0), 0.3f);
+    test.poll();
+    const bool mine = test.hasRecording() && test.style() == nexus::TestSource::mine && test.playing();
+    const double played = rms(300, 0.0f);
+    report(mine && played > -20.0, "Minha guitarra: grava 15 s e repete", juce::String(played, 1) + " dB tocando a gravação");
+    test.setPlaying(false);
+  }
+
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");
   return gFailures ? 1 : 0;
 }

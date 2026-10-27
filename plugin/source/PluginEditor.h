@@ -10,6 +10,7 @@
 #include "ui/GearBrowser.h"
 #include "ui/PackMapper.h"
 #include "ui/PresetBar.h"
+#include "ui/TestBar.h"
 #include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
@@ -131,6 +132,7 @@ private:
     void mouseExit(const juce::MouseEvent&) override { mHover = -1; repaint(); }
     void rebuild();
     nexus::ui::LevelFader& input() { return *mInput; }
+    nexus::ui::TestBar& testBar() { return *mTest; }
     // Equipamento arrastado da coluna da direita.
     bool isInterestedInDragSource(const SourceDetails&) override;
     void itemDragMove(const SourceDetails&) override;
@@ -170,6 +172,7 @@ private:
 
     NexusEditor& mEditor;
     std::unique_ptr<nexus::ui::LevelFader> mInput, mOutput;
+    std::unique_ptr<nexus::ui::TestBar> mTest;
     nexus::ui::Segmented mRigs{{"1", "2"}};
     std::vector<Card> mCards;
     std::vector<Drop> mDrops;
