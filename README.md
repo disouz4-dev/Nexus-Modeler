@@ -10,15 +10,28 @@ pasta e trocar o arquivo na mão. No Nexus Modeler, você gira o botão de ganho
 o plugin troca de captura por dentro, sem clique no som. Entre duas posições
 (ganho 2,5, por exemplo) ele mistura as duas capturas vizinhas.
 
-> **Estado atual: prova do motor (versão 0.1.0).** Já funcionam o motor de
-> troca de capturas, o equalizador do painel e o plugin com uma tela
-> provisória. A tela 3D, a importação direta da TONE3000, os pedais, as caixas
-> e o player de estudo estão no plano ([ARQUITETURA.md](ARQUITETURA.md) e
-> [docs/MODELOS-3D.md](docs/MODELOS-3D.md)).
+> **Estado atual (em desenvolvimento, ainda sem versão publicada).** Já
+> funcionam o motor de troca de capturas, o equalizador do painel, a tela com
+> o amplificador Brit 800, a caixa 4x12 e três pedais renderizados em 3D, a
+> caixa com IR próprio que se tranca sozinha em capturas full rig e o pedal
+> tocando capturas antes do amplificador. A importação direta da TONE3000 e o
+> player de estudo estão no plano
+> ([ARQUITETURA.md](ARQUITETURA.md) e [docs/MODELOS-3D.md](docs/MODELOS-3D.md)).
 
-![Tela provisória da prova do motor](docs/imagens/prova-do-motor.png)
+![Nexus Modeler com o amplificador Brit 800](docs/imagens/tela-amplificador.png)
 
-*Com o ganho em 3,5, as capturas 3 e 4 tocam juntas, metade cada uma.*
+*Com o ganho em 3,5, as capturas 3 e 4 tocam juntas, metade cada uma: os dois
+losangos acesos no trilho embaixo do nome.*
+
+![Caixa trancada numa captura full rig](docs/imagens/tela-caixa-full-rig.png)
+
+*Captura full rig (cabeçote + caixa): a caixa fica trancada em "Captura" e o
+IR não toca, para respeitar o som original.*
+
+![Pedal Laranja Dist](docs/imagens/tela-pedal.png)
+
+*Pedal antes do amplificador: três visuais (Verde Drive, Laranja Dist e Ouro),
+trocados pelas setas ao lado do nome; o pisante liga e desliga.*
 
 ## O que a prova do motor já faz
 
@@ -35,6 +48,17 @@ o plugin troca de captura por dentro, sem clique no som. Entre duas posições
   gravação estiver em 44,1 ou 96 kHz, o plugin converte na entrada e na saída.
 - **Formatos:** VST3 (Windows, Mac e Linux), AU (Mac), LV2 (Linux) e programa
   independente, sem precisar de programa de gravação.
+- **Caixa (IR):** abas Desligada / Captura / IR próprio. Escolha um `.wav` de
+  resposta de caixa; a troca entra e sai em 30 ms, sem estalo. Se a captura
+  inclui a caixa (o `.nam` diz `amp_cab`, ou o `pack.json` traz
+  `"inclui_caixa": true`), a caixa se tranca em "Captura".
+- **Pedal:** um bloco antes do amplificador que toca captura NAM de pedal (e
+  também pacote de ganho, com troca sem clique). Ganho, Tom e Nível; clique no
+  pisante liga e desliga em 20 ms, sem estalo. Três visuais: Verde Drive,
+  Laranja Dist e Ouro.
+- **Tela 3D:** amplificador, caixa e pedais modelados e renderizados pelo Nexus Gear
+  Studio (`tools/gear_studio`). Cada botão tem 101 imagens: arraste para cima
+  ou para baixo, Shift para ajuste fino, duplo clique volta ao padrão.
 
 ## Medidas
 
@@ -53,6 +77,11 @@ Core i9 (2019):
 | Uso do processador por captura A2 Full / A2 Lite | 9,3 % / 1,4 % de um núcleo |
 | Bloco de 128 amostras varrendo o ganho (3 capturas ativas) | 1,3 ms dos 2,7 ms disponíveis |
 | Plugin aberto a 44,1, 48 e 96 kHz | carrega, toca e mantém o volume (diferença até 0,31 dB) |
+| Captura full rig com IR ligado | o som não muda (diferença −300 dB): caixa trancada |
+| Captura de cabeçote com IR | o IR muda o som, como deve |
+| Pedal desligado | som idêntico ao de sem pedal (−300 dB) |
+| Desligar o pedal tocando | sem salto no som (transição de 20 ms) |
+| Tela: arrastar, Shift, duplo clique, trocar de peça, pisante | testado simulando o mouse |
 
 ## Como usar o pacote de capturas
 
@@ -75,7 +104,17 @@ Circuitos de equalizador disponíveis: `marshall`, `fender`, `alto_ganho`,
 `mesa_mark`. Os valores de alto ganho e do Mark ainda serão conferidos família
 por família.
 
-4. No plugin, clique em **Abrir pacote…** e escolha a pasta.
+4. No plugin, clique em **abrir pacote**, embaixo do nome do amplificador, e
+   escolha a pasta. Para o pedal, clique no pedal no caminho do sinal e depois
+   em **abrir pacote do pedal**: o pacote do pedal segue as mesmas regras (o
+   botão Ganho do pedal troca as capturas).
+
+## Como instalar
+
+Os instaladores chegam na primeira versão publicada: `.exe` no Windows, `.dmg`
+no Mac, `.deb` no Linux e instalação por um comando no terminal. Até lá, dá
+para compilar (abaixo) ou baixar o que a compilação automática gera na aba
+**Actions**.
 
 ## Como compilar
 
@@ -110,11 +149,16 @@ sistemas e guarda os arquivos compilados na aba **Actions**.
 
 ```
 engine/     motor: troca de capturas, equalizadores, leitura dos pacotes
-plugin/     plugin JUCE (tela provisória) e testes do plugin aberto
-tools/      medidor do motor e gerador dos pacotes de teste
+plugin/     plugin JUCE (tela e caixa) e testes do plugin aberto
+tools/      medidor do motor, pacotes de teste e o Nexus Gear Studio (3D)
+assets/     imagens 3D renderizadas e fontes, embutidas no plugin
 external/   motor oficial do NAM (submódulo)
 docs/       famílias de modelos 3D e ferramenta de criação
 ```
+
+## Novidades
+
+O que mudou em cada versão está em [NOTAS-DE-VERSAO.md](NOTAS-DE-VERSAO.md).
 
 ## Licença
 

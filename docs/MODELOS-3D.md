@@ -158,8 +158,31 @@ distorção (estilo RAT), grande de fuzz (estilo Big Muff), redondo de fuzz
 ## 5. A ferramenta: Nexus Gear Studio
 
 Fazer 30 amplificadores, 8 caixas e 8 pedais à mão seria lento e
-inconsistente. Proponho uma **ferramenta que gera os modelos a partir de uma
-receita**.
+inconsistente. A **ferramenta gera os modelos a partir de uma receita**.
+
+**Já funciona** (`tools/gear_studio`): famílias "cabeçote", "caixa" e
+"pedal", com o Brit 800, a caixa Brit 4x12 e três pedais prontos:
+
+| Pedal | Inspirado em | Formato |
+|---|---|---|
+| Verde Drive | overdrive verde clássico de três botões (estilo Tube Screamer) | `classico`: tampa grande de pisar |
+| Laranja Dist | distorção compacta laranja (estilo DS-1) | `compacto`: pedal basculante com borracha frisada |
+| Ouro | overdrive dourado de luxo (estilo Klon Centaur) | `padrao`: pisante de metal |
+
+Nomes próprios, sem logos de marca. Pedal novo é uma receita nova em
+`tools/gear_studio/recipes/`. Para gerar:
+
+```bash
+blender -b --factory-startup -P tools/gear_studio/build.py -- --receita tools/gear_studio/recipes/brit800.json --saida build/gear/brit800
+```
+
+- `--previa` faz meia resolução e 11 posições por botão, para ajustar rápido.
+- A saída (`frente.png`, `botao_<id>.png`, `mapa.json`) é copiada para
+  `assets/gear/` com o nome da família na frente (`brit800_frente.png`…) e
+  entra no plugin na compilação.
+- Sem placa de vídeo compatível, o Blender usa o processador: no Mac Intel de
+  8 núcleos, a frente leva cerca de 7 minutos e as 101 posições dos botões,
+  cerca de 40.
 
 ### 5.1 Como funciona
 ```
@@ -176,13 +199,15 @@ Estúdio de render (luz, câmera, sombras sempre iguais)
         │
         ▼
 pacote visual pronto para o plugin
-  frente.png, vista 3/4 para a cadeia, botões (128 imagens cada),
+  frente.png, botões (101 imagens cada, de 0,0 a 10,0),
   chaves (ligada/desligada), luzes (acesa/apagada) e um arquivo com a
   posição exata de cada controle na imagem
 ```
 
 ### 5.2 A receita
-Cada família é descrita por um arquivo de texto curto. Exemplo do Mark:
+Cada família é descrita por um arquivo de texto curto. A receita real do Brit
+800 está em `tools/gear_studio/recipes/brit800.json`. Exemplo (planejado) do
+Mark:
 ```json
 {
   "familia": "mark",
@@ -224,9 +249,9 @@ Todos os materiais são **procedurais** (gerados por fórmula no Blender), sem
 fotografias de terceiros, então não há problema de direitos.
 
 ### 5.4 Ajuste visual
-O Blender é a própria tela de edição: o Gear Studio aparece como um painel
-dentro dele, com os campos da receita, botão "Gerar" e botão "Renderizar
-pacote". Dá para girar, aproximar e conferir antes de renderizar.
+Cada geração salva também `cena.blend`: abrindo no Blender, dá para girar,
+aproximar e conferir antes do render final. (Um painel próprio dentro do
+Blender, com os campos da receita, fica para depois.)
 
 ### 5.5 Referência de qualidade
 O ToneX 2 e o AmpliTube 5 são a **régua de qualidade**: enquadramento,
@@ -235,9 +260,9 @@ imagens deles servem para comparar lado a lado durante o ajuste, mas **não
 são copiadas nem usadas** no Nexus (são da IK Multimedia).
 
 ### 5.6 Onde renderizar
-128 imagens por botão × ~10 botões × 30 famílias, em duas resoluções, é muito
-trabalho de render. Vai para a placa de vídeo do lab2 (Cycles com CUDA). A
-placa AMD do Mac serve para prévias rápidas.
+101 imagens por botão × ~10 botões × 30 famílias é muito trabalho de render.
+Vai para a placa de vídeo do lab2 (Cycles com CUDA). O Blender 4.5 não usa a
+placa AMD do Mac Intel, então no Mac o render é no processador.
 
 ## 6. Ordem sugerida
 1. Biblioteca de peças e estúdio de render.

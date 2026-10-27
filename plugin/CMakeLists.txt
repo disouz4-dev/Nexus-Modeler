@@ -34,9 +34,25 @@ juce_add_plugin(NexusModeler
   MICROPHONE_PERMISSION_ENABLED TRUE
   MICROPHONE_PERMISSION_TEXT "O Nexus Modeler usa a entrada de áudio para a sua guitarra.")
 
+set(NEXUS_UI_SOURCES
+  source/PluginEditor.cpp
+  source/ui/Controls.cpp
+  source/ui/Gear.cpp)
 target_sources(NexusModeler PRIVATE
   source/PluginProcessor.cpp
-  source/PluginEditor.cpp)
+  ${NEXUS_UI_SOURCES})
+
+# Imagens dos equipamentos (renderizadas pelo tools/gear_studio) e fontes,
+# embutidas no plugin. As fontes ganham nomes simples na cópia.
+set(NEXUS_ART_DIR "${CMAKE_CURRENT_BINARY_DIR}/art")
+configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "${NEXUS_ART_DIR}/inter.ttf" COPYONLY)
+configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
+file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json")
+juce_add_binary_data(NexusArt
+  HEADER_NAME BinaryData.h
+  NAMESPACE BinaryData
+  SOURCES "${NEXUS_ART_DIR}/inter.ttf" "${NEXUS_ART_DIR}/oswald.ttf" ${NEXUS_GEAR_FILES})
+set_target_properties(NexusArt PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 set(NEXUS_RESAMPLER_DIR
   "${PROJECT_SOURCE_DIR}/external/NeuralAmpModelerCore/Dependencies/AudioDSPTools/dsp/ResamplingContainer")
@@ -51,6 +67,7 @@ target_compile_definitions(NexusModeler PUBLIC
 target_link_libraries(NexusModeler
   PRIVATE
     nexus_engine
+    NexusArt
     juce::juce_audio_utils
     juce::juce_dsp
   PUBLIC
@@ -74,13 +91,29 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_recommended_config_flags)
   add_dependencies(nexus_host_test NexusModeler_VST3)
   juce_add_console_app(nexus_snapshot PRODUCT_NAME "nexus_snapshot")
-  target_sources(nexus_snapshot PRIVATE host_test/Snapshot.cpp source/PluginProcessor.cpp source/PluginEditor.cpp)
+  target_sources(nexus_snapshot PRIVATE host_test/Snapshot.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
   target_include_directories(nexus_snapshot SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
   target_compile_definitions(nexus_snapshot PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_snapshot PRIVATE
     nexus_engine
+    NexusArt
+    juce::juce_dsp
     juce::juce_audio_utils
     juce::juce_recommended_config_flags)
+
+  juce_add_console_app(nexus_cab_test PRODUCT_NAME "nexus_cab_test")
+  target_sources(nexus_cab_test PRIVATE host_test/CabTest.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_cab_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_cab_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
+  target_link_libraries(nexus_cab_test PRIVATE
+    nexus_engine
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_recommended_config_flags)
+  add_dependencies(nexus_cab_test test_packs)
+  add_test(NAME caixa_e_full_rig
+           COMMAND nexus_cab_test "${CMAKE_BINARY_DIR}/test_packs" "${CMAKE_BINARY_DIR}/medidas")
 
   add_test(NAME plugin_aberto_no_programa
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")

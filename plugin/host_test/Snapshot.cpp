@@ -1,7 +1,7 @@
 // Monta o plugin por dentro (sem programa de gravação), carrega um pacote,
 // toca alguns segundos girando o ganho e salva uma foto da tela.
 //
-// Uso: nexus_snapshot <pasta do pacote> <foto.png> [posição do ganho]
+// Uso: nexus_snapshot <pasta do pacote> <foto.png> [posição do ganho] [pedal:<visual> | caixa]
 
 #include <cstdio>
 
@@ -45,7 +45,21 @@ int main(int argc, char** argv)
     processor.processBlock(buffer, midi);
   }
 
+  // Quinto argumento opcional: "pedal:<visual>" ou "caixa" escolhe o palco.
+  const juce::String stage = argc > 4 ? juce::String(argv[4]) : juce::String();
+  if (stage.startsWith("pedal:"))
+  {
+    auto* look = processor.params.getParameter("pedal_modelo");
+    look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+  }
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
+  if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
+  {
+    if (stage.startsWith("pedal"))
+      e->showStage(NexusEditor::Stage::pedal);
+    else if (stage == "caixa")
+      e->showStage(NexusEditor::Stage::cab);
+  }
   // Deixa o relógio da tela atualizar textos e medidor.
   juce::MessageManager::getInstance()->runDispatchLoopUntil(300);
   const auto image = editor->createComponentSnapshot(editor->getLocalBounds(), true, 2.0f);

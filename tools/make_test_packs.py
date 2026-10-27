@@ -11,14 +11,41 @@ NAM (licença MIT):
   iguais/  3 cópias idênticas do A2 nas posições 0, 5 e 10. Como as capturas
            são iguais, a saída com o botão andando tem de ser igual à de uma
            captura parada: qualquer diferença é erro do motor de troca.
+  fullrig/ 3 capturas marcadas no próprio .nam como cabeçote + caixa
+           ("gear_type": "amp_cab"), sem pack.json: o Nexus tem de perceber
+           sozinho e trancar a caixa.
+  ir_teste.wav  resposta de caixa sintética (ruído com queda e filtro), para
+           testar o bloco da caixa.
 
 Uso: make_test_packs.py <A2.nam> <pasta_de_saida>
 """
 
 import json
+import math
+import random
 import shutil
+import struct
 import sys
+import wave
 from pathlib import Path
+
+
+def write_test_ir(path: Path, sample_rate: int) -> None:
+    """IR de 50 ms: ruído que cai depressa, passado por um filtro passa-baixas
+    simples. Soa como uma caixa abafada; serve só para o teste mudar o som."""
+    rng = random.Random(7)
+    n = int(0.05 * sample_rate)
+    smooth = 0.0
+    frames = bytearray()
+    for i in range(n):
+        x = rng.uniform(-1.0, 1.0) * math.exp(-i / (0.006 * sample_rate))
+        smooth += 0.25 * (x - smooth)
+        frames += struct.pack("<h", int(max(-1.0, min(1.0, smooth * 3.0)) * 32767))
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(sample_rate)
+        w.writeframes(bytes(frames))
 
 
 def main() -> int:
@@ -65,6 +92,14 @@ def main() -> int:
     for position in (0, 5, 10):
         shutil.copyfile(source, same_dir / f"Ganho {position}.nam")
 
+    rig_dir = out / "fullrig"
+    rig_dir.mkdir(parents=True, exist_ok=True)
+    for position in (0, 5, 10):
+        rig = dict(a2)
+        rig["metadata"] = dict(a2.get("metadata") or {}, gear_type="amp_cab", name=f"Rig {position}")
+        (rig_dir / f"Rig Gain {position}.nam").write_text(json.dumps(rig))
+
+    write_test_ir(out / "ir_teste.wav", int(sample_rate))
     print(f"Pacotes de teste em {out}")
     return 0
 
