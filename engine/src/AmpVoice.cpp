@@ -27,7 +27,10 @@ void AmpVoice::prepare(std::shared_ptr<Pack> pack, double sampleRate, int maxBlo
   mToneStack.setCaptureKnobs(pack->captureTone);
   mToneStack.prepare(sampleRate);
   mPresence.setCaptureKnob(pack->capturePresence);
-  mPresence.prepare(sampleRate, RelativeShelf::Kind::High, 4000.0, 8.0);
+  // Prateleira de agudos a partir de 1,2 kHz, ±12 dB: é o TOM dos pedais
+  // (como no TS9 e no SD-1, que mexem nos médios-agudos). Nos cabeçotes fica
+  // na posição da captura (o equalizador deles é o universal, depois da caixa).
+  mPresence.prepare(sampleRate, RelativeShelf::Kind::High, 1200.0, 24.0);
 
   mMorph.prepare(std::move(pack), sampleRate, maxBlockSize);
   jumpToControls();

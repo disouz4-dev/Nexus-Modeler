@@ -278,6 +278,38 @@ int main(int argc, char** argv)
       };
       return std::array<double, 4>{band(60, 200), band(400, 1200), band(2000, 4000), band(4000, 8000)};
     };
+    // NEXUS_PERFIL_TOM=<pasta do pedal>: o pedal antes do cabeçote; mede o TOM.
+    if (const auto pedal = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_TOM", {}); pedal.isNotEmpty())
+    {
+      ChainLayout l;
+      l.pre = {0};
+      q.setLayout(l);
+      setParam(q, "p1_visual", 2.0f);
+      setParam(q, "p1_drive", 5.0f);
+      q.loadPedalPack(0, juce::File(pedal));
+      // O relógio do processador recolhe a cadeia antiga; sem ele a nova não entra.
+      for (int t = 0; t < 3000 && !q.slotLoaded(0); ++t)
+      {
+        buf.clear();
+        q.processBlock(buf, m);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+      }
+      for (int t = 0; t < 50; ++t)
+      {
+        buf.clear();
+        q.processBlock(buf, m);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+      }
+      const auto base = bands();
+      std::printf("TOM do pedal, diferença para o 5 (dB): graves | médios | agudos | presença\n");
+      for (float v : {0.0f, 10.0f})
+      {
+        setParam(q, "p1_tom", v);
+        const auto b = bands();
+        std::printf("  tom %4.0f   %+6.1f  %+6.1f  %+6.1f  %+6.1f\n", v, b[0] - base[0], b[1] - base[1], b[2] - base[2], b[3] - base[3]);
+      }
+      return 0;
+    }
     const auto flat = bands();
     std::printf("Diferença para tudo em 5 (dB) nas faixas: graves | médios | agudos | presença\n");
     for (const char* knob : {"grave", "medio", "agudo", "presenca"})
