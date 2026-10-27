@@ -111,6 +111,40 @@ int main(int argc, char** argv)
     std::printf("Conecte a conta da TONE3000 no Nexus antes.\n");
     return 1;
   }
+  // NEXUS_BAIXAR=<id>,<id>,...: só baixa esses tons (cabeçotes) para
+  // Documentos/Nexus Modeler/Teste de capturas e termina (para comparar pacotes).
+  if (const auto ids = juce::SystemStats::getEnvironmentVariable("NEXUS_BAIXAR", {}); ids.isNotEmpty())
+  {
+    for (const auto& idText : juce::StringArray::fromTokens(ids, ",", {}))
+    {
+      nexus::t3k::Tone tone;
+      tone.id = idText.getIntValue();
+      bool finished = false;
+      juce::File folder;
+      juce::String error;
+      t3k.download(
+        tone, juce::SystemStats::getEnvironmentVariable("NEXUS_BAIXAR_FILTRO", "amp_amp-cab"), "Teste de capturas", [](juce::String) {},
+        [&](juce::File f, juce::String e) {
+          folder = f;
+          error = e;
+          finished = true;
+        });
+      waitFor([&] { return finished; }, 600);
+      std::printf("%d: %s %s\n", tone.id, folder.getFullPathName().toRawUTF8(), error.toRawUTF8());
+    }
+    return 0;
+  }
+  // NEXUS_BAIXAR_RECOMENDADA=<prefixo>:<id>:<pacote>:<equipamento>: baixa uma
+  // recomendada como o Nexus baixa (mapa e nome do pacote) e termina.
+  if (const auto spec = juce::SystemStats::getEnvironmentVariable("NEXUS_BAIXAR_RECOMENDADA", {}); spec.isNotEmpty())
+  {
+    const auto parts = juce::StringArray::fromTokens(spec, ":", {});
+    const auto folder = fetch(t3k, parts[0].toRawUTF8(), parts[1].getIntValue(), parts[3], "amp_amp-cab", parts[2]);
+    std::printf("pasta: %s\n", folder.getFullPathName().toRawUTF8());
+    for (const auto& f : folder.findChildFiles(juce::File::findFiles, false))
+      std::printf("  %s\n", f.getFileName().toRawUTF8());
+    return folder.isDirectory() ? 0 : 1;
+  }
   std::printf("\nBaixando da TONE3000\n");
   // IR "t3k": a caixa também vem da TONE3000 (o IR indicado do pacote Greenback).
   auto irFile = ir;

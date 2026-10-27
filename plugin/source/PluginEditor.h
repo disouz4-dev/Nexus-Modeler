@@ -3,6 +3,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 
 #include <array>
+#include <set>
 
 #include "PluginProcessor.h"
 #include "ui/AudioPanel.h"
@@ -201,6 +202,15 @@ private:
   void landPack(const juce::File& folder);
   void loadPackInto(Selection target, int channel, const juce::File& folder);
   void loadHeadChannels(int rig);
+  // Captura padrão: peça vazia (pedal, canal do cabeçote, caixa) recebe a
+  // padrão das recomendadas; se ainda não foi baixada e a conta da TONE3000
+  // está conectada, baixa sozinha. Quem quiser outra troca pelo pacote.
+  void ensureDefaults();
+  void ensurePedal(int pedal);
+  void ensureCab(int rig);
+  void fetchDefault(const nexus::t3k::Tone& tone, const char* filter, const juce::String& gearName, int slotKey,
+                    std::function<void(const juce::File&)> land);
+  static constexpr int kCabSlotKey = 1000;
   void chooseIr(int rig);
   void chooseIrFile(int rig);
   void openIrCatalog(int rig);
@@ -238,6 +248,9 @@ private:
   // Visual de cada cabeçote (Brit 800, Mark Five...), pelo parâmetro "cabecote".
   std::array<nexus::ui::GearArt, NexusProcessor::kAmpLooks> mAmpArts;
   std::array<nexus::ui::GearArt, NexusProcessor::kCabLooks> mCabArts;
+  juce::SharedResourcePointer<nexus::t3k::Connection> mT3k;
+  std::set<juce::String> mFetching; // tons baixando (número + pacote)
+  std::set<int> mFetchingSlots;     // espaços esperando a captura padrão
   const nexus::ui::GearArt& cabArt(int rig) const;
   const nexus::ui::GearArt& ampArt(int rig) const { return mAmpArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig)))]; }
   int mShownAmpLook = -1;

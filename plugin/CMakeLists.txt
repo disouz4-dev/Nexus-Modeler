@@ -260,3 +260,10 @@ if(NEXUS_BUILD_TOOLS)
   add_test(NAME plugin_aberto_no_programa
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")
 endif()
+
+# Testes que abrem a tela: captura padrão desligada (não baixam nada da TONE3000).
+foreach(teste caixa_e_full_rig plugin_aberto_no_programa)
+  if(TEST ${teste})
+    set_tests_properties(${teste} PROPERTIES ENVIRONMENT "NEXUS_SEM_PADRAO=1")
+  endif()
+endforeach()

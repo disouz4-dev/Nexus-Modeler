@@ -367,6 +367,7 @@ countries: jp
 "Frequência" = "周波数"
 "Largura" = "幅"
 "Ressonância" = "レゾナンス"
+"Baixando a captura padrão da TONE3000..." = "TONE3000 から標準キャプチャをダウンロード中..."
 "Padrão do sistema" = "システムの既定"
 "LIMPO" = "クリーン"
 "ENTRADA" = "入力"

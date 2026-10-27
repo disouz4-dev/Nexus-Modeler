@@ -367,6 +367,7 @@ countries: sa eg ae ma
 "Frequência" = "التردد"
 "Largura" = "العرض"
 "Ressonância" = "الرنين"
+"Baixando a captura padrão da TONE3000..." = "جارٍ تنزيل الالتقاط الافتراضي من TONE3000..."
 "Padrão do sistema" = "افتراضي النظام"
 "LIMPO" = "نظيف"
 "ENTRADA" = "الدخل"

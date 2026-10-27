@@ -1,5 +1,7 @@
 #pragma once
 
+#include <optional>
+
 #include <juce_data_structures/juce_data_structures.h>
 #include <juce_events/juce_events.h>
 
@@ -43,11 +45,18 @@ struct Tone
   std::vector<std::pair<juce::String, double>> fixedPositions;
   // Nome da pasta deste pacote, quando o mesmo tom rende vários (um por canal).
   juce::String packName;
+  bool isDefault = false; // "padrao" nas recomendadas
 };
 
 // Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),
 // e a palavra usada para filtrar as listas da conta ("JCM800").
 std::vector<Tone> recommended(const juce::String& gearPrefix);
+// Captura padrão de um equipamento (a que o Nexus baixa sozinho quando a peça
+// está vazia). channel >= 0: a do canal (pacote com "Canal N" no nome); um
+// cabeçote sem pacotes por canal usa a primeira no canal 1.
+std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel = -1);
+// Pasta já baixada desse tom (Documentos/Nexus Modeler/<equipamento>), ou vazia.
+juce::File downloadedFolder(const Tone& tone, const juce::String& gearName);
 juce::String filterWord(const juce::String& gearPrefix);
 
 // Uma captura do tom e a posição do botão que ela representa.

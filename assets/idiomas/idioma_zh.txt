@@ -367,6 +367,7 @@ countries: cn sg
 "Frequência" = "频率"
 "Largura" = "宽度"
 "Ressonância" = "共振"
+"Baixando a captura padrão da TONE3000..." = "正在从 TONE3000 下载默认捕获..."
 "Padrão do sistema" = "系统默认"
 "LIMPO" = "清音"
 "ENTRADA" = "输入"

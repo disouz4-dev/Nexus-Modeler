@@ -1,3 +1,4 @@
+#include <cstdlib>
 // Mede quanto o áudio do Nexus pesa com pacotes reais (Banana Overdrive no
 // pedal, Brit 800 no cabeçote e um IR), bloco a bloco, como a placa de som
 // pediria: 48 kHz, bloco de 128 (2,67 ms para cada bloco ficar pronto).
@@ -35,6 +36,12 @@ struct Result
 
 int main(int argc, char** argv)
 {
+  // Ferramenta: a tela não baixa nem troca peças sozinha (captura padrão desligada).
+#ifdef _WIN32
+  _putenv_s("NEXUS_SEM_PADRAO", "1");
+#else
+  setenv("NEXUS_SEM_PADRAO", "1", 1);
+#endif
   if (argc < 4)
   {
     std::printf("Uso: nexus_perfil <pasta do pedal> <pasta do cabeçote> <ir.wav> [guitarra.wav]\n");
@@ -52,6 +59,102 @@ int main(int argc, char** argv)
   }
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
+
+  // NEXUS_PERFIL_NAM=<pasta de saída>: prova do motor. A mesma gravação
+  // (argv[4]) passa pelo pedal (argv[1], drive 5) e pelo cabeçote (argv[2],
+  // canal 1, ganho na primeira captura) de dois jeitos: pelo Nexus (sem caixa
+  // nem equalizador) e direto pelo NAM, uma captura ligada na outra. Mostra a
+  // diferença entre os dois e grava os dois arquivos.
+  if (const auto outDir = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_NAM", {}); outDir.isNotEmpty())
+  {
+    nexus::PackOptions o;
+    o.sampleRate = rate;
+    o.maxBlockSize = block;
+    o.keepCaptureLevel = true;
+    auto pedal = nexus::loadPack(juce::String::fromUTF8(argv[1]).toStdString(), o);
+    nexus::PackOptions oa = o;
+    oa.keepCaptureLevel = false;
+    auto amp = nexus::loadPack(juce::String::fromUTF8(argv[2]).toStdString(), oa);
+    const nexus::Capture* pc = &pedal->captures.front();
+    for (const auto& c : pedal->captures)
+      if (std::abs(c.position - 5.0) < std::abs(pc->position - 5.0))
+        pc = &c;
+    const auto& ac = amp->captures.front();
+    std::printf("pedal: captura %.1f | cabeçote: captura %.1f (ganho de volume %+.1f dB)\n", pc->position, ac.position, 20 * std::log10(ac.levelGain));
+
+    // Direto pelo NAM.
+    std::vector<double> in(guitar.begin(), guitar.end()), mid(in.size()), direct(in.size());
+    pc->dsp->Reset(rate, block);
+    ac.dsp->Reset(rate, block);
+    for (size_t k = 0; k + block <= in.size(); k += block)
+    {
+      double* i = in.data() + k;
+      double* m = mid.data() + k;
+      double* d = direct.data() + k;
+      pc->dsp->process(&i, &m, block);
+      ac.dsp->process(&m, &d, block);
+    }
+    for (auto& v : direct)
+      v *= ac.levelGain;
+
+    // Pelo Nexus.
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, rate, block);
+    q.prepareToPlay(rate, block);
+    ChainLayout l;
+    l.pre = {0};
+    q.setLayout(l);
+    setParam(q, "p1_drive", static_cast<float>(pc->position));
+    setParam(q, "ganho", static_cast<float>(ac.position));
+    setParam(q, "caixa", 0.0f);
+    q.loadPedalPack(0, juce::File(juce::String::fromUTF8(argv[1])));
+    q.loadAmpPack(0, 0, juce::File(juce::String::fromUTF8(argv[2])));
+    juce::AudioBuffer<float> buf(2, block);
+    juce::MidiBuffer m;
+    for (int t = 0; t < 4000 && !(q.slotLoaded(0) && q.channelLoaded(0, 0)); ++t)
+    {
+      buf.clear();
+      q.processBlock(buf, m);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+    }
+    for (int t = 0; t < 400; ++t)
+    {
+      buf.clear();
+      q.processBlock(buf, m);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(1);
+    }
+    std::vector<double> nexusOut;
+    for (size_t k = 0; k + block <= in.size(); k += block)
+    {
+      for (int c = 0; c < 2; ++c)
+        for (int i = 0; i < block; ++i)
+          buf.setSample(c, i, static_cast<float>(in[k + static_cast<size_t>(i)]));
+      q.processBlock(buf, m);
+      for (int i = 0; i < block; ++i)
+        nexusOut.push_back(buf.getSample(0, i));
+    }
+    direct.resize(nexusOut.size());
+    // Diferença depois de igualar o volume (o Nexus pode ter outro volume final).
+    const size_t from = static_cast<size_t>(rate);
+    double xy = 0, yy = 0, xx = 0;
+    for (size_t i = from; i < nexusOut.size(); ++i)
+    {
+      xy += nexusOut[i] * direct[i];
+      yy += direct[i] * direct[i];
+      xx += nexusOut[i] * nexusOut[i];
+    }
+    const double g = xy / (yy + 1e-30);
+    double ee = 0;
+    for (size_t i = from; i < nexusOut.size(); ++i)
+      ee += (nexusOut[i] - g * direct[i]) * (nexusOut[i] - g * direct[i]);
+    std::printf("Nexus %.1f dB | NAM direto %.1f dB | volume do Nexus em relação ao NAM %+.1f dB\n", 10 * std::log10(xx / nexusOut.size() + 1e-30),
+                10 * std::log10(yy / nexusOut.size() + 1e-30), 20 * std::log10(std::abs(g) + 1e-30));
+    std::printf("diferença entre os dois (depois de igualar o volume): %.1f dB abaixo do som\n", 10 * std::log10(xx / (ee + 1e-30)));
+    wav::write(juce::File(outDir).getChildFile("nexus.wav").getFullPathName().toStdString(), nexusOut, rate);
+    wav::write(juce::File(outDir).getChildFile("nam_direto.wav").getFullPathName().toStdString(), direct, rate);
+    wav::write(juce::File(outDir).getChildFile("so_pedal.wav").getFullPathName().toStdString(), mid, rate);
+    return 0;
+  }
 
   // NEXUS_PERFIL_GANHO=1: ganho de volume que o Nexus aplica em cada captura
   // do pacote (argv[1]), com a regra de cabeçote e com a regra de pedal.
@@ -92,7 +195,16 @@ int main(int argc, char** argv)
       q.prepareToPlay(rate, block);
       ChainLayout l;
       l.pre = which == 0 ? std::vector<int>{0} : which == 1 ? std::vector<int>{1} : which == 2 ? std::vector<int>{0, 1} : std::vector<int>{};
+      // NEXUS_PERFIL_GATE=1: o pedal 3 vira o Pear Gate e entra no começo da cadeia.
+      const bool gate = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_GATE", {}).isNotEmpty();
+      if (gate)
+        l.pre.insert(l.pre.begin(), 2);
       q.setLayout(l);
+      if (gate)
+      {
+        setParam(q, "p3_visual", static_cast<float>(NexusProcessor::kPedalLooks - 1));
+        setParam(q, "p3_a", juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_GATE", "5").getFloatValue());
+      }
       setParam(q, "p1_visual", 0.0f);
       setParam(q, "p2_visual", 2.0f);
       setParam(q, "ganho", 6.0f);
@@ -118,7 +230,10 @@ int main(int argc, char** argv)
         juce::MessageManager::getInstance()->runDispatchLoopUntil(1);
       }
       auto& test = q.testSource();
-      test.setStyle(nexus::TestSource::rock);
+      // NEXUS_PERFIL_ESTILO=pesado|limpo|blues: estilo do "Testar o som" (padrão rock).
+      const auto style = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ESTILO", "rock");
+      test.setStyle(style == "pesado" ? nexus::TestSource::heavy : style == "limpo" ? nexus::TestSource::clean
+                    : style == "blues" ? nexus::TestSource::blues : nexus::TestSource::rock);
       test.setPlaying(true);
       std::vector<double> out;
       const double playSec = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_TOCA", "5").getDoubleValue();

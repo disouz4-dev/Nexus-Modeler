@@ -367,6 +367,7 @@ countries: bd in
 "Frequência" = "কম্পাঙ্ক"
 "Largura" = "প্রস্থ"
 "Ressonância" = "রেজোন্যান্স"
+"Baixando a captura padrão da TONE3000..." = "TONE3000 থেকে ডিফল্ট ক্যাপচার নামানো হচ্ছে..."
 "Padrão do sistema" = "সিস্টেম ডিফল্ট"
 "LIMPO" = "ক্লিন"
 "ENTRADA" = "ইনপুট"

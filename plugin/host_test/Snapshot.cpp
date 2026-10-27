@@ -1,3 +1,4 @@
+#include <cstdlib>
 // Monta o plugin por dentro (sem programa de gravação), carrega um pacote,
 // toca alguns segundos girando o ganho e salva uma foto da tela.
 //
@@ -34,6 +35,12 @@ static int writeIcon(const juce::File& out, int size)
 
 int main(int argc, char** argv)
 {
+  // Ferramenta: a tela não baixa nem troca peças sozinha (captura padrão desligada).
+#ifdef _WIN32
+  _putenv_s("NEXUS_SEM_PADRAO", "1");
+#else
+  setenv("NEXUS_SEM_PADRAO", "1", 1);
+#endif
   // NEXUS_ICONE=<arquivo.png>: só gera o ícone do programa.
   if (const char* icon = std::getenv("NEXUS_ICONE"))
   {

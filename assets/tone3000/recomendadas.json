@@ -1,5 +1,5 @@
 {
-  "_sobre": "Tons da TONE3000 recomendados para cada equipamento do Nexus. Guardamos só o número, o nome e como ler a posição do botão no nome de cada captura; as capturas são baixadas pela conta de quem usa. 'posicao' é uma expressão com um grupo que pega o número; 'serie' são trechos que o nome precisa ter.",
+  "_sobre": "Tons da TONE3000 recomendados para cada equipamento do Nexus. Guardamos só o número, o nome e como ler a posição do botão no nome de cada captura; as capturas são baixadas pela conta de quem usa. 'posicao' é uma expressão com um grupo que pega o número; 'serie' são trechos que o nome precisa ter. 'padrao': a captura que o Nexus baixa e carrega sozinho quando a peça (ou o canal) está vazio; sem 'padrao', vale a primeira da lista (do canal).",
   "brit800": {
     "busca": "JCM800",
     "tons": [
@@ -332,45 +332,40 @@
         }
       },
       {
-        "id": 57410,
-        "titulo": "Mesa Boogie - Mark V [18dBu]",
-        "criador": "kenazmusic",
+        "id": 2399,
+        "titulo": "MKV:25 MKIICp/MKIV",
+        "criador": "ricwaltz",
         "tipo": "amp",
-        "capturas": 2,
-        "downloads": 8789,
-        "pacote": "Canal 3 MK-IIC+",
-        "nota": "Canal 3 MK-IIC+ (o do Meshuggah e do Petrucci): no 7, e no 10 com TS9 na frente",
+        "capturas": 1,
+        "pacote": "Canal 3 IIC+ (Mikko)",
+        "nota": "Canal 3 no modo IIC+, ajuste do Mikko: o Lead mais limpo nas pausas entre as notas (testado com o Lemon na frente)",
         "mapa": {
-          "(Ch 3 MK-IIC+) HG bal": 7,
-          "(Ch 3 MK-IIC+ TS9) HG": 10
+          "MikkoIICP": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 2399,
+        "titulo": "MKV:25 MKIICp/MKIV",
+        "criador": "ricwaltz",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 3 MK-IV (Mikko)",
+        "nota": "Canal 3 no modo MK-IV, ajuste do Mikko",
+        "mapa": {
+          "MikkoMKIV": 8
         }
       },
       {
-        "id": 57410,
-        "titulo": "Mesa Boogie - Mark V [18dBu]",
-        "criador": "kenazmusic",
+        "id": 2365,
+        "titulo": "Mark V:25 crunch+lead",
+        "criador": "ricwaltz",
         "tipo": "amp",
-        "capturas": 2,
-        "downloads": 8789,
-        "pacote": "Canal 3 MK-IV",
-        "nota": "Canal 3 MK-IV: no 7, e no 10 com TS9 na frente",
+        "capturas": 1,
+        "pacote": "Canal 3 IIC+ (V25)",
+        "nota": "Canal 3 no modo IIC+ de um Mark V:25",
         "mapa": {
-          "(Ch 3 MK-IV) HG bal": 7,
-          "(Ch 3 MK-IV TS9) HG": 10
-        }
-      },
-      {
-        "id": 57410,
-        "titulo": "Mesa Boogie - Mark V [18dBu]",
-        "criador": "kenazmusic",
-        "tipo": "amp",
-        "capturas": 2,
-        "downloads": 8789,
-        "pacote": "Canal 3 Extreme",
-        "nota": "Canal 3 Extreme (metal moderno): no 7, e no 10 com TS9 na frente",
-        "mapa": {
-          "(Ch 3 Ext) HG bal": 7,
-          "(Ch 3 Ext TS9) HG": 10
+          "CH2IICP": 8
         }
       }
     ]

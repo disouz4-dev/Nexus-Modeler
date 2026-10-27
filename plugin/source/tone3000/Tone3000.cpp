@@ -113,12 +113,39 @@ std::vector<Tone> recommended(const juce::String& gearPrefix)
       t.note = v["nota"].toString();
       t.defaultIr = v["ir_padrao"].toString();
       t.packName = v["pacote"].toString();
+      t.isDefault = static_cast<bool>(v["padrao"]);
       if (auto* map = v["mapa"].getDynamicObject())
         for (const auto& p : map->getProperties())
           t.fixedPositions.push_back({p.name.toString(), static_cast<double>(p.value)});
       out.push_back(t);
     }
   return out;
+}
+
+std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel)
+{
+  const auto all = recommended(gearPrefix);
+  std::vector<Tone> pool;
+  for (const auto& t : all)
+    if (channel < 0 || t.packName.containsIgnoreCase("Canal " + juce::String(channel + 1)))
+      pool.push_back(t);
+  if (pool.empty() && channel <= 0)
+    pool = all;
+  for (const auto& t : pool)
+    if (t.isDefault)
+      return t;
+  if (!pool.empty())
+    return pool.front();
+  return std::nullopt;
+}
+
+juce::File downloadedFolder(const Tone& tone, const juce::String& gearName)
+{
+  for (const auto& f : Connection::packsFolder(gearName).findChildFiles(juce::File::findDirectories, false))
+    if (f.getFileName().startsWith(juce::String(tone.id) + " ")
+        && (tone.packName.isEmpty() || f.getFileName().containsIgnoreCase(safeName(tone.packName))))
+      return f;
+  return {};
 }
 
 juce::String filterWord(const juce::String& gearPrefix)

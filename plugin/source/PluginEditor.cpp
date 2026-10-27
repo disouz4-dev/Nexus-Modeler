@@ -1114,6 +1114,11 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   setSize(kWidth, kHeight);
   select({Kind::amp, 0});
   retranslate();
+  // Depois que o estado salvo terminou de abrir as peças: completa as vazias.
+  juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
+    if (safe != nullptr)
+      safe->ensureDefaults();
+  });
   startTimerHz(30);
 }
 
@@ -1160,6 +1165,7 @@ void NexusEditor::insertPedal(int look, int list, int position)
   mProcessor.setLayout(layout);
   mChain->rebuild();
   select({Kind::pedal, pedal});
+  ensurePedal(pedal);
 }
 
 namespace
@@ -1289,6 +1295,7 @@ void NexusEditor::pickGear(const GearItem& item)
       auto* visual = mProcessor.params.getParameter(NexusProcessor::pedalParam(mSel.index, "visual"));
       visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(item.look)));
       select(mSel);
+      ensurePedal(mSel.index);
     }
     else
       insertPedal(item.look, 0, static_cast<int>(mProcessor.layout().pre.size()));
@@ -1313,6 +1320,7 @@ void NexusEditor::pickGear(const GearItem& item)
     if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
       cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(item.look)));
     select({Kind::cab, rig});
+    ensureCab(rig);
     break;
   }
   }
@@ -1410,6 +1418,125 @@ void NexusEditor::loadPackInto(Selection target, int channel, const juce::File& 
   param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(channel)));
 }
 
+namespace
+{
+// Os testes e as ferramentas de foto desligam a captura padrão (NEXUS_SEM_PADRAO=1):
+// a tela deles não pode baixar nem trocar peças sozinha.
+bool defaultsEnabled()
+{
+  return juce::SystemStats::getEnvironmentVariable("NEXUS_SEM_PADRAO", {}).isEmpty();
+}
+} // namespace
+
+void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter, const juce::String& gearName, int slotKey,
+                               std::function<void(const juce::File&)> land)
+{
+  const auto key = juce::String(tone.id) + "|" + tone.packName;
+  if (!defaultsEnabled() || !mT3k->hasKey() || !mT3k->signedIn() || mFetching.count(key) > 0)
+    return;
+  mFetching.insert(key);
+  mFetchingSlots.insert(slotKey);
+  nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + tone.title + " " + tone.packName);
+  auto safe = juce::Component::SafePointer<NexusEditor>(this);
+  mT3k->download(tone, filter, gearName, [](juce::String) {},
+                 [safe, key, slotKey, land](juce::File folder, juce::String error) {
+                   if (safe == nullptr)
+                     return;
+                   safe->mFetching.erase(key);
+                   safe->mFetchingSlots.erase(slotKey);
+                   if (error.isNotEmpty() || !folder.isDirectory())
+                   {
+                     nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + error);
+                     return;
+                   }
+                   land(folder);
+                 });
+}
+
+void NexusEditor::ensurePedal(int pedal)
+{
+  const int look = pedalLook(pedal);
+  const auto* art = pedalArt(pedal);
+  if (!defaultsEnabled() || NexusProcessor::isNativeLook(look) || art == nullptr)
+    return;
+  // Já tem um pacote deste pedal (o visual pode ter mudado e o pacote não).
+  const auto root = nexus::t3k::Connection::packsFolder(art->name);
+  const auto current = mProcessor.slotFolder(NexusProcessor::pedalSlot(pedal));
+  if (current.isDirectory() && current.getParentDirectory() == root)
+    return;
+  const auto def = nexus::t3k::defaultTone(kPedalPrefixes[look]);
+  juce::File pick = def ? nexus::t3k::downloadedFolder(*def, art->name) : juce::File();
+  if (!pick.isDirectory())
+  {
+    auto folders = root.findChildFiles(juce::File::findDirectories, false);
+    folders.sort();
+    if (!folders.isEmpty())
+      pick = folders.getFirst();
+  }
+  if (pick.isDirectory())
+  {
+    mProcessor.loadPedalPack(pedal, pick);
+    return;
+  }
+  if (def)
+    fetchDefault(*def, "pedal", art->name, NexusProcessor::pedalSlot(pedal),
+                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); });
+}
+
+void NexusEditor::ensureCab(int rig)
+{
+  if (!defaultsEnabled() || mProcessor.packIncludesCab(rig) || mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())
+    return;
+  // Caixa sem lista própria de IRs usa a da Brit 4x12 (os IRs servem a qualquer cabeçote).
+  int look = juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig));
+  auto def = nexus::t3k::defaultTone(kCabPrefixes[look]);
+  if (!def)
+  {
+    look = 0;
+    def = nexus::t3k::defaultTone(kCabPrefixes[0]);
+  }
+  if (!def)
+    return;
+  const auto gearName = mCabArts[static_cast<size_t>(look)].name;
+  auto land = [this, rig](const juce::File& folder) {
+    const auto preferred = juce::JSON::parse(folder.getChildFile("pack.json"))["ir_padrao"].toString();
+    auto files = folder.findChildFiles(juce::File::findFiles, false, "*.wav;*.aif;*.aiff");
+    files.sort();
+    juce::File pick = files.isEmpty() ? juce::File() : files.getFirst();
+    for (const auto& f : files)
+      if (preferred.isNotEmpty() && f.getFileNameWithoutExtension() == preferred)
+        pick = f;
+    if (!pick.existsAsFile())
+      return;
+    mProcessor.loadIrAsync(rig, pick);
+    if (auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "caixa")))
+      param->setValueNotifyingHost(1.0f);
+  };
+  if (const auto folder = nexus::t3k::downloadedFolder(*def, gearName); folder.isDirectory())
+    return land(folder);
+  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land);
+}
+
+void NexusEditor::ensureDefaults()
+{
+  // Abertura do programa: tudo o que está na cadeia e vazio recebe a padrão.
+  if (!defaultsEnabled())
+    return;
+  const auto layout = mProcessor.layout();
+  for (const auto* list : {&layout.pre, &layout.loop[0], &layout.loop[1], &layout.post})
+    for (int pedal : *list)
+      ensurePedal(pedal);
+  for (int rig = 0; rig < (layout.dual ? 2 : 1); ++rig)
+  {
+    bool anyEmpty = false;
+    for (int c = 0; c < std::min(ampArt(rig).channels.size(), NexusProcessor::kChannels); ++c)
+      anyEmpty = anyEmpty || !mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c)).isDirectory();
+    if (anyEmpty)
+      loadHeadChannels(rig);
+    ensureCab(rig);
+  }
+}
+
 void NexusEditor::loadHeadChannels(int rig)
 {
   // Cabeçote novo: cada canal abre o pacote dele na pasta do cabeçote
@@ -1426,6 +1553,9 @@ void NexusEditor::loadHeadChannels(int rig)
     const auto current = mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c));
     const bool ours = current.isDirectory() && current.getParentDirectory() == root;
     juce::File pick = ours ? current : juce::File();
+    const auto def = nexus::t3k::defaultTone(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))], c);
+    if (pick == juce::File() && def)
+      pick = nexus::t3k::downloadedFolder(*def, art.name);
     if (pick == juce::File())
       for (const auto& f : folders)
         if (packChannel(f) == c || (count == 1 && packChannel(f) < 0))
@@ -1434,7 +1564,12 @@ void NexusEditor::loadHeadChannels(int rig)
           break;
         }
     if (pick == juce::File())
+    {
       mProcessor.clearAmpPack(rig, c);
+      if (def)
+        fetchDefault(*def, "amp_amp-cab", art.name, NexusProcessor::ampSlot(rig, c),
+                     [this, rig, c](const juce::File& folder) { mProcessor.loadAmpPack(rig, c, folder); });
+    }
     else
     {
       if (!ours)
@@ -1749,6 +1884,8 @@ juce::String NexusEditor::packSummary(int slot) const
   {
     // Carregando ou erro: o aviso do processador; senão, o convite.
     const auto status = mProcessor.statusText(slot);
+    if (mFetchingSlots.count(slot) > 0)
+      return TRANS(juce::String::fromUTF8("Baixando a captura padrão da TONE3000..."));
     if (status.startsWith("Carregando"))
       return TRANS("Carregando...");
     if (status.startsWith("Erro"))
@@ -1876,7 +2013,9 @@ void NexusEditor::timerCallback()
     }
     else
     {
-      subtitle = mProcessor.irLoaded(mSel.index) ? "IR: " + mProcessor.irName(mSel.index) : TRANS("Nenhum IR escolhido");
+      subtitle = mProcessor.irLoaded(mSel.index)                         ? "IR: " + mProcessor.irName(mSel.index)
+                 : mFetchingSlots.count(kCabSlotKey + mSel.index) > 0 ? TRANS(juce::String::fromUTF8("Baixando a captura padrão da TONE3000..."))
+                                                                      : TRANS("Nenhum IR escolhido");
       link = mProcessor.irLoaded(mSel.index) ? TRANS("trocar IR") : TRANS("escolher IR");
     }
     mCabStage->refresh();

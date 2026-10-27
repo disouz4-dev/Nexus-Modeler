@@ -367,6 +367,7 @@ countries: tr
 "Frequência" = "Frekans"
 "Largura" = "Genişlik"
 "Ressonância" = "Rezonans"
+"Baixando a captura padrão da TONE3000..." = "TONE3000'den varsayılan yakalama indiriliyor..."
 "Padrão do sistema" = "Sistem varsayılanı"
 "LIMPO" = "TEMİZ"
 "ENTRADA" = "GİRİŞ"

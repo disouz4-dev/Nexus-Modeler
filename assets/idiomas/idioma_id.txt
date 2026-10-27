@@ -367,6 +367,7 @@ countries: id
 "Frequência" = "Frekuensi"
 "Largura" = "Lebar"
 "Ressonância" = "Resonansi"
+"Baixando a captura padrão da TONE3000..." = "Mengunduh tangkapan bawaan dari TONE3000..."
 "Padrão do sistema" = "Bawaan sistem"
 "LIMPO" = "CLEAN"
 "ENTRADA" = "INPUT"

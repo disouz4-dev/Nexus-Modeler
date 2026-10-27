@@ -367,6 +367,7 @@ countries: us gb au ca
 "Frequência" = "Frequency"
 "Largura" = "Width"
 "Ressonância" = "Resonance"
+"Baixando a captura padrão da TONE3000..." = "Downloading the default capture from TONE3000..."
 "Padrão do sistema" = "System default"
 "LIMPO" = "CLEAN"
 "ENTRADA" = "INPUT"

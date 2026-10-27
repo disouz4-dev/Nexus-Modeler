@@ -367,6 +367,7 @@ countries: it ch
 "Frequência" = "Frequenza"
 "Largura" = "Larghezza"
 "Ressonância" = "Risonanza"
+"Baixando a captura padrão da TONE3000..." = "Download della cattura predefinita da TONE3000..."
 "Padrão do sistema" = "Predefinito di sistema"
 "LIMPO" = "PULITO"
 "ENTRADA" = "INGRESSO"

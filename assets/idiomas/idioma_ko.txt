@@ -367,6 +367,7 @@ countries: kr
 "Frequência" = "주파수"
 "Largura" = "폭"
 "Ressonância" = "레조넌스"
+"Baixando a captura padrão da TONE3000..." = "TONE3000에서 기본 캡처 다운로드 중..."
 "Padrão do sistema" = "시스템 기본값"
 "LIMPO" = "클린"
 "ENTRADA" = "입력"

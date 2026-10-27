@@ -367,6 +367,7 @@ countries: de at ch
 "Frequência" = "Frequenz"
 "Largura" = "Breite"
 "Ressonância" = "Resonanz"
+"Baixando a captura padrão da TONE3000..." = "Standard-Capture wird von TONE3000 geladen..."
 "Padrão do sistema" = "Systemstandard"
 "LIMPO" = "CLEAN"
 "ENTRADA" = "EINGANG"
