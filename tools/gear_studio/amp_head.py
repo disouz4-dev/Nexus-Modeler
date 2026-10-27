@@ -105,6 +105,10 @@ def build(rec, fonts):
         "tolex": st.mat_leather("couro", rec["couro"]["cor"], rec["couro"]["grao_mm"]),
         "fascia": (st.mat_grille_cloth("fachada", rec["fachada"]["cor_a"], rec["fachada"]["cor_b"], rec["fachada"]["trama_mm"])
                    if fascia_cloth else
+                   st.mat_diamond_plate("fachada", rec["fachada"]["cor"], rec["fachada"].get("passo_mm", 11.0))
+                   if rec["fachada"].get("tipo") == "xadrez" else
+                   st.mat_perforated("fachada", rec["fachada"]["cor"], rec["fachada"].get("furo_mm", 3.2), rec["fachada"].get("passo_mm", 4.8))
+                   if rec["fachada"].get("tipo") == "grade" else
                    st.mat_leather("fachada", rec["fachada"]["cor"], rec["fachada"]["grao_mm"], rough=0.42, strength=0.35)),
         "piping": st.mat_plastic("friso", rec["fachada"].get("friso", (0.8, 0.78, 0.72)), rough=0.32, coat=0.4),
         "logo": (st.mat_metal("logo", rec["logo"]["cor"], rough=0.12) if rec["logo"].get("metal")
@@ -113,7 +117,9 @@ def build(rec, fonts):
         "panel": (st.mat_plastic("painel", rec["painel"]["cor"], rough=0.48, coat=0.15) if rec["painel"].get("pintado")
                   else st.mat_brushed("painel", rec["painel"]["cor"], rough=0.40, streak_axis="X")),
         "ink": st.mat_paint("tinta", rec["painel"]["texto_cor"], rough=0.6),
-        "knob": st.mat_plastic("botao", style["corpo"], rough=0.28, coat=0.3),
+        # "corpo_metal": botão de metal recartilhado (os cromados do Rectifier).
+        "knob": (st.mat_metal("botao", style["corpo"], rough=0.12) if style.get("corpo_metal")
+                 else st.mat_plastic("botao", style["corpo"], rough=0.28, coat=0.3)),
         "cap": (st.mat_plastic("tampa", style["tampa"], rough=0.18, coat=0.5) if style.get("tampa_plastico")
                 else st.mat_brushed("tampa", style["tampa"], rough=0.14, radial_axis="Y")),
         "pointer": st.mat_paint("traco", style.get("traco", (0.01, 0.01, 0.01)), rough=0.4),
@@ -143,7 +149,7 @@ def build(rec, fonts):
     st.box("fundo_frente", (inner_w, 0.004, H - 2 * t), (0, front + 0.03, H / 2), material=mats["fascia"])
     st.box("fachada", (inner_w, 0.006, fascia_h), (0, fascia_front + 0.003, fascia_z0 + fascia_h / 2),
            bevel=0.002, material=mats["fascia"])
-    if rec["fachada"].get("friso") is not None or not fascia_cloth:
+    if rec["fachada"].get("friso") is not None or rec["fachada"].get("tipo") is None:
         st.rounded_rect_curve("friso", inner_w - 0.006, fascia_h - 0.006, 0.006, 0.0027,
                               (0, fascia_front - 0.0006, fascia_z0 + fascia_h / 2), mats["piping"])
 

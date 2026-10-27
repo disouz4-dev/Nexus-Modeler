@@ -16,31 +16,26 @@
     "grao_mm": 2.4
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.012,
-      0.012,
-      0.012
+    "tipo": "xadrez",
+    "cor": [
+      0.82,
+      0.83,
+      0.85
     ],
-    "cor_b": [
-      0.07,
-      0.07,
-      0.07
-    ],
-    "trama_mm": 3.4
+    "passo_mm": 12.0
   },
   "logo": {
-    "texto": "NEXUS",
-    "fonte": "label",
-    "metal": true,
-    "contorno": false,
+    "texto": "Nexus",
+    "fonte": "mesa",
+    "metal": false,
+    "contorno": true,
     "cor": [
-      0.86,
-      0.87,
-      0.89
+      0.02,
+      0.02,
+      0.02
     ],
-    "altura_m": 0.065,
-    "altura_rel": 0.52
+    "altura_m": 0.075,
+    "altura_rel": 0.5
   },
   "painel": {
     "altura_m": 0.088,
@@ -51,9 +46,9 @@
       0.011
     ],
     "texto_cor": [
-      0.85,
-      0.85,
-      0.86
+      0.88,
+      0.88,
+      0.88
     ],
     "modelo": "RECTO DUAL",
     "marca": "NEXUS MODELER"
@@ -85,22 +80,22 @@
     }
   ],
   "botao_estilo": {
-    "diametro_m": 0.026,
+    "diametro_m": 0.022,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.86,
+      0.86,
+      0.88
     ],
+    "corpo_metal": true,
     "tampa": [
-      0.014,
-      0.014,
-      0.015
+      0.9,
+      0.9,
+      0.92
     ],
-    "tampa_plastico": true,
     "traco": [
-      0.9,
-      0.9,
-      0.9
+      0.02,
+      0.02,
+      0.02
     ]
   },
   "chave_liga": {
