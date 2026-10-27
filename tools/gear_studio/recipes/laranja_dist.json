@@ -25,7 +25,7 @@
     0.01
   ],
   "modelo": "LARANJA DIST",
-  "tipo_texto": "DISTORÇÃO",
+  "tipo_texto": "",
   "rotulo_m": 0.0046,
   "botao_estilo": {
     "diametro_m": 0.0135,

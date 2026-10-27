@@ -122,6 +122,9 @@ private:
   void chooseIr();
   void showAbout();
   void showAudioPanel(bool show);
+  void showLanguageMenu();
+  void retranslate();
+  juce::String packSummary(NexusProcessor::Block b) const;
   void paintOverChildren(juce::Graphics&) override;
   // Menu de MIDI de um controle: aprender, trocar ou esquecer o CC.
   void showMidiMenu(const juce::String& paramId, juce::Component& target);
@@ -144,6 +147,7 @@ private:
   int mShownChannel = -1;
   nexus::ui::IconButton mStepsButton{nexus::ui::Icon::steps, juce::String::fromUTF8("Botões em degraus: param só nas posições capturadas")};
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
+  nexus::ui::IconButton mLanguageButton{nexus::ui::Icon::globe, "Idioma"};
   nexus::ui::IconButton mAudioButton{nexus::ui::Icon::audio, juce::String::fromUTF8("Interface de áudio")};
   std::unique_ptr<nexus::ui::AudioPanel> mAudioPanel; // só no programa independente
   std::unique_ptr<GearStage> mPedalStage, mAmpStage;

@@ -129,6 +129,7 @@ enum class Icon
   left,
   right,
   audio,
+  globe,
 };
 juce::Path iconPath(Icon icon, juce::Rectangle<float> r);
 

@@ -33,6 +33,36 @@
       "angulo_max": 150
     }
   ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "GANHO",
+      "x": 421.5,
+      "y": 443.0,
+      "altura": 34.9,
+      "achatamento": 0.81,
+      "cor": "#12100d",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 600.0,
+      "y": 443.0,
+      "altura": 34.9,
+      "achatamento": 0.81,
+      "cor": "#12100d",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 778.5,
+      "y": 443.0,
+      "altura": 34.9,
+      "achatamento": 0.81,
+      "cor": "#12100d",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
     "x": 600,
     "y": 726,

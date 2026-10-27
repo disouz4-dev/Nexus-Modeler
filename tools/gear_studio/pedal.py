@@ -185,8 +185,7 @@ def build(rec, fonts):
         ly = y + r * (1.28 if style.get("saia") else 1.0) + 0.0055
         if rec.get("rotulo_embaixo"):
             ly = y - r * (1.28 if style.get("saia") else 1.0) - 0.0055
-        _flat_text(f"rot_{c['id']}", c["rotulo"], fonts["label"], rec.get("rotulo_m", 0.0052), (x, ly, top + 0.0001),
-                   mats["ink"], spacing=1.15, offset=0.00008)
+        st.label(c["rotulo"], (x, ly, top + 0.0001), rec.get("rotulo_m", 0.0052), up="Y", color=rec["texto_cor"], spacing=1.15)
 
     if "led" in rec:
         lx, lyr = rec["led"]

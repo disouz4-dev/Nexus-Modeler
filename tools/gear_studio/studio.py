@@ -343,6 +343,19 @@ def cylinder(name, radius, depth, location, vertices=96, material=None, axis="Y"
     return obj
 
 
+# Rótulos (GANHO, GRAVE, LIGA...): não entram no modelo 3D. A ferramenta só
+# anota onde ficam; a tela do plugin escreve por cima, no idioma escolhido.
+LABELS = []
+
+
+def label(text, location, size, up="Z", color=(0.0, 0.0, 0.0), spacing=1.0):
+    """Anota um rótulo: centro do texto, altura da letra em metros, para onde
+    é "para cima" no texto (Z na frente do amplificador, Y no topo do pedal)
+    e a cor da tinta (linear, como no Blender)."""
+    LABELS.append({"texto": text, "local": tuple(location), "tamanho": size, "cima": up,
+                   "cor": tuple(color), "espaco": spacing})
+
+
 _fonts = {}
 
 

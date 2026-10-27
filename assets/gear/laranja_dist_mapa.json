@@ -33,6 +33,36 @@
       "angulo_max": 150
     }
   ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 432.0,
+      "y": 498.7,
+      "altura": 35.28,
+      "achatamento": 0.81,
+      "cor": "#211d19",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 600.0,
+      "y": 498.7,
+      "altura": 35.28,
+      "achatamento": 0.809,
+      "cor": "#211d19",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DISTORÇÃO",
+      "x": 768.0,
+      "y": 498.7,
+      "altura": 35.28,
+      "achatamento": 0.81,
+      "cor": "#211d19",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
     "x": 600,
     "y": 800,

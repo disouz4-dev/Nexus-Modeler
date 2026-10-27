@@ -8,6 +8,7 @@
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
 #include "nexus/TestSignal.h"
+#include "../source/ui/Language.h"
 
 int main(int argc, char** argv)
 {
@@ -51,6 +52,12 @@ int main(int argc, char** argv)
   {
     auto* look = processor.params.getParameter("pedal_modelo");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+  }
+  // NEXUS_IDIOMA=ja (por exemplo) tira a foto naquele idioma, sem mudar a preferência salva.
+  if (const char* lang = std::getenv("NEXUS_IDIOMA"))
+  {
+    nexus::ui::language::applyStartup();
+    nexus::ui::language::apply(juce::String(lang), false);
   }
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))

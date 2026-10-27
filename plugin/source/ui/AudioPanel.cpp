@@ -17,7 +17,7 @@ juce::String rateText(double sr)
 {
   juce::String s = juce::String(sr / 1000.0, sr == std::floor(sr / 1000.0) * 1000.0 ? 0 : 1).replaceCharacter('.', ',') + " kHz";
   if (std::abs(sr - 48000.0) < 1.0)
-    s << juce::String::fromUTF8("  (recomendada: sem conversão)");
+    s << "  " << TRANS(juce::String::fromUTF8("(recomendada: sem conversão)"));
   return s;
 }
 } // namespace
@@ -29,13 +29,7 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
 , mPluginLatency(std::move(pluginLatency))
 , mInputPeak(std::move(inputPeak))
 {
-  mType.label = juce::String::fromUTF8("Sistema de áudio");
-  mInputDevice.label = "Interface de entrada";
-  mOutputDevice.label = juce::String::fromUTF8("Interface de saída");
-  mGuitar.label = "Entrada da guitarra";
-  mOutputs.label = juce::String::fromUTF8("Saídas");
-  mRate.label = "Taxa";
-  mBuffer.label = "Buffer";
+  retranslate();
   for (auto* row : {&mType, &mInputDevice, &mOutputDevice, &mGuitar, &mOutputs, &mRate, &mBuffer})
     addAndMakeVisible(row->box);
 
@@ -108,6 +102,20 @@ AudioPanel::~AudioPanel()
   mDevices.removeChangeListener(this);
 }
 
+void AudioPanel::retranslate()
+{
+  mType.label = TRANS(juce::String::fromUTF8("Sistema de áudio"));
+  mOutputDevice.label = TRANS(juce::String::fromUTF8("Interface de saída"));
+  mGuitar.label = TRANS("Entrada da guitarra");
+  mOutputs.label = TRANS(juce::String::fromUTF8("Saídas"));
+  mRate.label = TRANS("Taxa");
+  mBuffer.label = TRANS("Buffer");
+  mDriverPanel.setButtonText(TRANS("Painel do driver"));
+  mBluetooth.setButtonText(TRANS("Parear MIDI Bluetooth"));
+  mClose.setButtonText(TRANS("Fechar"));
+  refresh();
+}
+
 void AudioPanel::visibilityChanged()
 {
   if (isVisible())
@@ -156,7 +164,7 @@ void AudioPanel::refresh()
   };
   fillDevices(mInputDevice, true, setup.inputDeviceName);
   fillDevices(mOutputDevice, false, setup.outputDeviceName);
-  mInputDevice.label = separate ? juce::String("Interface de entrada") : juce::String("Interface");
+  mInputDevice.label = separate ? TRANS("Interface de entrada") : TRANS("Interface");
   mOutputDevice.box.setVisible(separate);
 
   mGuitar.box.clear(juce::dontSendNotification);
@@ -187,7 +195,7 @@ void AudioPanel::refresh()
 
     const double sr = device->getCurrentSampleRate();
     for (auto size : device->getAvailableBufferSizes())
-      mBuffer.box.addItem(juce::String(size) + " amostras  (" + ms(1000.0 * size / sr) + ")", size);
+      mBuffer.box.addItem(TRANS("%1 amostras").replace("%1", juce::String(size)) + "  (" + ms(1000.0 * size / sr) + ")", size);
     mBuffer.box.setSelectedId(device->getCurrentBufferSizeSamples(), juce::dontSendNotification);
     mDriverPanel.setVisible(device->hasControlPanel());
   }
@@ -217,7 +225,7 @@ void AudioPanel::timerCallback()
   juce::StringArray names;
   for (const auto& d : juce::MidiInput::getAvailableDevices())
     names.add(d.name);
-  const auto midi = names.isEmpty() ? juce::String::fromUTF8("nenhum dispositivo conectado") : names.joinIntoString(", ");
+  const auto midi = names.isEmpty() ? TRANS("nenhum dispositivo conectado") : names.joinIntoString(", ");
   if (midi != mMidiDevices)
   {
     mMidiDevices = midi;
@@ -264,8 +272,8 @@ void AudioPanel::paint(juce::Graphics& g)
   auto r = c.reduced(32.0f, 0.0f);
   auto head = r.removeFromTop(76.0f);
   g.setColour(colour::text);
-  g.setFont(Fonts::get().display(20.0f).withExtraKerningFactor(0.14f));
-  g.drawText(juce::String::fromUTF8("INTERFACE DE ÁUDIO"), head.withTrimmedTop(10.0f), juce::Justification::centredLeft);
+  g.setFont(Fonts::get().display(20.0f).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.14f : 0.0f));
+  g.drawText(upper(TRANS(juce::String::fromUTF8("Interface de áudio"))), head.withTrimmedTop(10.0f), juce::Justification::centredLeft);
   g.setColour(colour::accent);
   g.fillRect(head.getX(), head.getBottom() - 16.0f, 28.0f, 2.0f);
 
@@ -286,12 +294,12 @@ void AudioPanel::paint(juce::Graphics& g)
   auto left = s.removeFromLeft(s.getWidth() * 0.5f);
   const double rt = roundTripMs();
   const juce::Colour quality = rt <= 0.0 ? colour::dim : rt <= 12.0 ? juce::Colour(0xff3ddc84) : rt <= 25.0 ? juce::Colour(0xffe6b94a) : colour::danger;
-  drawCaps(g, juce::String::fromUTF8("Latência ida e volta"), left.removeFromTop(16.0f), 10.0f, juce::Justification::centredLeft, colour::dim);
+  drawCaps(g, TRANS(juce::String::fromUTF8("Latência ida e volta")), left.removeFromTop(16.0f), 10.0f, juce::Justification::centredLeft, colour::dim);
   g.setColour(quality);
   g.setFont(Fonts::get().display(24.0f));
-  g.drawText(rt > 0.0 ? ms(rt) : juce::String::fromUTF8("sem interface"), left, juce::Justification::centredLeft);
+  g.drawText(rt > 0.0 ? ms(rt) : TRANS("sem interface"), left, juce::Justification::centredLeft);
 
-  drawCaps(g, "Sinal da guitarra", s.removeFromTop(16.0f), 10.0f, juce::Justification::centredLeft, colour::dim);
+  drawCaps(g, TRANS("Sinal da guitarra"), s.removeFromTop(16.0f), 10.0f, juce::Justification::centredLeft, colour::dim);
   auto meter = s.removeFromTop(14.0f).withTrimmedTop(5.0f).withHeight(4.0f);
   g.setColour(colour::line);
   g.fillRoundedRectangle(meter, 2.0f);
@@ -300,7 +308,7 @@ void AudioPanel::paint(juce::Graphics& g)
   g.fillRoundedRectangle(meter.withWidth(meter.getWidth() * juce::jlimit(0.0f, 1.0f, (db + 60.0f) / 60.0f)), 2.0f);
   g.setColour(colour::dim);
   g.setFont(Fonts::get().ui(11.5f));
-  g.drawText("Processador: " + juce::String(juce::roundToInt(mCpu * 100.0)) + "%", s, juce::Justification::centredLeft);
+  g.drawText(TRANS("Processador: %1%").replace("%1", juce::String(juce::roundToInt(mCpu * 100.0))), s, juce::Justification::centredLeft);
 
   // Dispositivos MIDI (USB e Bluetooth): abertos sozinhos.
   r.removeFromTop(10.0f);

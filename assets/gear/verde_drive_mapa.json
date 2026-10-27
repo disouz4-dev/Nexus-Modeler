@@ -33,6 +33,36 @@
       "angulo_max": 150
     }
   ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "GANHO",
+      "x": 455.0,
+      "y": 462.0,
+      "altura": 40.77,
+      "achatamento": 0.803,
+      "cor": "#1d3021",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 600.0,
+      "y": 533.2,
+      "altura": 41.33,
+      "achatamento": 0.814,
+      "cor": "#1d3021",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 745.0,
+      "y": 462.0,
+      "altura": 40.77,
+      "achatamento": 0.803,
+      "cor": "#1d3021",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
     "x": 600,
     "y": 824,

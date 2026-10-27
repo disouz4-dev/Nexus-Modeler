@@ -2,6 +2,7 @@
 
 #include "StandaloneLink.h"
 #include "ui/Brand.h"
+#include "ui/Language.h"
 #include "ui/Theme.h"
 
 using namespace nexus::ui;
@@ -30,6 +31,38 @@ void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> 
   g.setOpacity(alpha);
   g.drawImage(img, r, juce::RectanglePlacement::stretchToFit);
   g.setOpacity(1.0f);
+}
+
+// Rótulos do painel: caixas de texto transparentes por cima da imagem 3D,
+// traduzidas, na posição, tamanho e perspectiva anotados pelo gerador.
+void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float> image, float alpha = 1.0f)
+{
+  if (!art.valid())
+    return;
+  const float scale = image.getWidth() / static_cast<float>(art.front.getWidth());
+  for (const auto& l : art.labels)
+  {
+    // O tamanho do Blender e o "em" do JUCE não medem igual: 0,74 deixa a
+    // letra do tamanho que estava gravada no painel.
+    const float em = l.height * scale * 0.74f;
+    if (em < 2.0f)
+      continue;
+    const float kerning = language::allowsLetterSpacing() ? std::max(0.0f, l.spacing - 1.0f) + 0.02f : 0.0f;
+    const auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
+    const auto text = upper(TRANS(l.text));
+    const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale);
+    // Texto desenhado direto (a fonte reserva do sistema cobre japonês, chinês,
+    // árabe...), achatado pela perspectiva e um pouco engrossado, como tinta
+    // de serigrafia.
+    juce::Graphics::ScopedSaveState save(g);
+    g.addTransform(juce::AffineTransform::scale(1.0f, l.squash, at.x, at.y));
+    g.setFont(font);
+    g.setColour(l.colour.withAlpha(0.9f * alpha));
+    const auto box = juce::Rectangle<float>(at.x - 400.0f, at.y - em, 800.0f, em * 2.0f);
+    const float d = std::max(0.25f, em * 0.018f);
+    for (const auto offset : {juce::Point<float>(-d, 0.0f), juce::Point<float>(d, 0.0f), juce::Point<float>(0.0f, 0.0f)})
+      g.drawText(text, box.translated(offset.x, offset.y), juce::Justification::centred, false);
+  }
 }
 
 juce::String knobLabel(const juce::String& id)
@@ -123,13 +156,14 @@ void NexusEditor::GearStage::paint(juce::Graphics& g)
 {
   if (mArt == nullptr || !mArt->valid())
   {
-    drawCaps(g, juce::String::fromUTF8("visual ainda não renderizado"), getLocalBounds().toFloat(), 12.0f,
+    drawCaps(g, TRANS(juce::String::fromUTF8("visual ainda não renderizado")), getLocalBounds().toFloat(), 12.0f,
              juce::Justification::centred, colour::faint);
     return;
   }
   // Pedal desligado: o próprio pedal (e os botões) ficam um pouco na sombra.
   const bool on = pedalOn();
   drawGear(g, mArt->front, mImage, on ? 1.0f : 0.62f);
+  drawGearLabels(g, *mArt, mImage, on ? 1.0f : 0.62f);
   for (auto& k : mKnobs)
     if (k->getAlpha() != (on ? 1.0f : 0.62f))
       k->setAlpha(on ? 1.0f : 0.62f);
@@ -219,6 +253,7 @@ void NexusEditor::CabStage::refresh()
 {
   const bool fullRig = mProcessor.packIncludesCab();
   const bool ir = mProcessor.params.getRawParameterValue("caixa")->load() > 0.5f;
+  mModes.setItems({TRANS("Desligada"), TRANS("Captura"), TRANS(juce::String::fromUTF8("IR próprio"))});
   mModes.setItemEnabled(0, !fullRig);
   mModes.setItemEnabled(1, fullRig);
   mModes.setItemEnabled(2, !fullRig);
@@ -334,7 +369,7 @@ void NexusEditor::SignalPath::paint(juce::Graphics& g)
   const bool cabOn = fullRig || (proc.params.getRawParameterValue("caixa")->load() > 0.5f && proc.irLoaded());
   const auto* pedal = mEditor.pedalArt();
   const juce::Image images[3] = {pedal ? pedal->front : juce::Image(), mEditor.mAmpArt.front, mEditor.mCabArt.front};
-  const juce::String names[3] = {"Pedal", "Amplificador", "Caixa"};
+  const juce::String names[3] = {TRANS("Pedal"), TRANS("Amplificador"), TRANS("Caixa")};
   const bool active[3] = {pedalOn && proc.packLoaded(NexusProcessor::pedal), true, cabOn};
   const Stage stages[3] = {Stage::pedal, Stage::amp, Stage::cab};
 
@@ -354,9 +389,9 @@ void NexusEditor::SignalPath::paint(juce::Graphics& g)
     auto label = juce::Rectangle<float>(card.getCentreX() - 80.0f, card.getBottom() + 10.0f, 160.0f, 14.0f);
     juce::String text = names[i];
     if (i == 0 && !proc.packLoaded(NexusProcessor::pedal))
-      text << juce::String::fromUTF8(" · vazio");
+      text << juce::String::fromUTF8(" · ") << TRANS("vazio");
     else if (!active[i])
-      text << " · desligado";
+      text << juce::String::fromUTF8(" · ") << TRANS("desligado");
     drawCaps(g, text, label, 10.0f, juce::Justification::centred, selected ? colour::selected : colour::dim);
     if (selected)
     {
@@ -399,6 +434,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 : AudioProcessorEditor(&p)
 , mProcessor(p)
 {
+  language::applyStartup();
   mLook.setColour(juce::PopupMenu::backgroundColourId, juce::Colour(0xff1b1b1b));
   mLook.setColour(juce::PopupMenu::textColourId, colour::text);
   mLook.setColour(juce::TooltipWindow::backgroundColourId, juce::Colour(0xff1b1b1d));
@@ -435,6 +471,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
     param->setValueNotifyingHost(param->getValue() > 0.5f ? 0.0f : 1.0f);
   };
   mInfoButton.onClick = [this] { showAbout(); };
+  addAndMakeVisible(mLanguageButton);
+  mLanguageButton.onClick = [this] { showLanguageMenu(); };
 
   // Programa independente: o Nexus cuida da interface de áudio.
   if (auto& link = nexus::standaloneLink(); link.devices != nullptr)
@@ -495,7 +533,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mChannels.onRightClick = [this] { showMidiMenu("canal", mChannels); };
 
   setSize(kWidth, kHeight);
-  timerCallback();
+  retranslate();
   startTimerHz(30);
 }
 
@@ -542,8 +580,8 @@ void NexusEditor::showStage(Stage s)
 
 void NexusEditor::choosePack(Block b, int channel)
 {
-  mChooser = std::make_unique<juce::FileChooser>(b == NexusProcessor::pedal ? "Escolha a pasta do pacote do pedal"
-                                                                            : "Escolha a pasta do pacote do amplificador",
+  mChooser = std::make_unique<juce::FileChooser>(b == NexusProcessor::pedal ? TRANS("Escolha a pasta do pacote do pedal")
+                                                                            : TRANS("Escolha a pasta do pacote do amplificador"),
                                                  juce::File(), "");
   mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectDirectories,
                         [this, b, channel](const juce::FileChooser& fc) {
@@ -563,7 +601,7 @@ void NexusEditor::chooseIr()
 {
   if (mProcessor.packIncludesCab())
     return;
-  mChooser = std::make_unique<juce::FileChooser>("Escolha o IR da caixa", juce::File(), "*.wav;*.aif;*.aiff");
+  mChooser = std::make_unique<juce::FileChooser>(TRANS("Escolha o IR da caixa"), juce::File(), "*.wav;*.aif;*.aiff");
   mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles,
                         [this](const juce::FileChooser& fc) {
                           const auto file = fc.getResult();
@@ -577,6 +615,59 @@ void NexusEditor::chooseIr()
                         });
 }
 
+juce::String NexusEditor::packSummary(Block b) const
+{
+  if (!mProcessor.packLoaded(b))
+  {
+    // Carregando ou erro: o aviso do processador; senão, o convite.
+    const auto status = mProcessor.statusText(b);
+    if (status.startsWith("Carregando"))
+      return TRANS("Carregando...");
+    if (status.startsWith("Erro"))
+      return status;
+    return b == NexusProcessor::pedal ? TRANS("Nenhuma captura no pedal. O pisante liga e desliga.")
+                                      : TRANS("Nenhum pacote de capturas carregado");
+  }
+  const int count = mProcessor.captureCount(b);
+  const auto number = [](float v) { return juce::String(v, 1).replaceCharacter('.', ','); };
+  const bool lite = mProcessor.params.getParameter("lite")->getValue() > 0.5f;
+  return TRANS("%1: %2 capturas, ganho de %3 a %4 (%5)")
+    .replace("%1", mProcessor.packName(b))
+    .replace("%2", juce::String(count))
+    .replace("%3", number(mProcessor.capturePosition(0, b)))
+    .replace("%4", number(mProcessor.capturePosition(count - 1, b)))
+    .replace("%5", lite ? "A2 Lite" : "A2 Full");
+}
+
+void NexusEditor::retranslate()
+{
+  mStepsButton.setTooltip(TRANS(juce::String::fromUTF8("Botões em degraus: param só nas posições capturadas")));
+  mInfoButton.setTooltip(TRANS("Sobre o Nexus Modeler"));
+  mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
+  mLanguageButton.setTooltip(TRANS("Idioma"));
+  mPrevLook.setTooltip(TRANS("Visual anterior do pedal"));
+  mNextLook.setTooltip(TRANS(juce::String::fromUTF8("Próximo visual do pedal")));
+  if (mAudioPanel)
+    mAudioPanel->retranslate();
+  mTitle.clear();
+  timerCallback();
+  repaint();
+}
+
+void NexusEditor::showLanguageMenu()
+{
+  juce::PopupMenu menu;
+  const auto& list = language::all();
+  for (size_t i = 0; i < list.size(); ++i)
+    menu.addItem(static_cast<int>(i) + 1, juce::String::fromUTF8(list[i].native), true, language::current() == list[i].code);
+  menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&mLanguageButton), [this](int r) {
+    if (r <= 0)
+      return;
+    language::apply(language::all()[static_cast<size_t>(r - 1)].code);
+    retranslate();
+  });
+}
+
 void NexusEditor::refreshChannels()
 {
   // Os canais são os do amplificador original: um amplificador de um canal
@@ -585,7 +676,7 @@ void NexusEditor::refreshChannels()
   const int count = std::min(mAmpArt.channels.size(), NexusProcessor::kChannels);
   juce::StringArray items;
   for (int c = 0; c < count; ++c)
-    items.add(mAmpArt.channels[c] + (mProcessor.channelLoaded(c) ? juce::String() : juce::String::fromUTF8(" · vazio")));
+    items.add(TRANS(mAmpArt.channels[c]) + (mProcessor.channelLoaded(c) ? juce::String() : juce::String::fromUTF8(" · ") + TRANS("vazio")));
   mChannels.setItems(items);
   mChannels.setSelected(juce::jlimit(0, std::max(0, count - 1), mProcessor.selectedChannel()));
   mChannels.setVisible(mStage == Stage::amp && count > 1);
@@ -608,19 +699,19 @@ void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& tar
   const int cc = midi.ccFor(paramId);
   juce::PopupMenu menu;
   menu.addSectionHeader("MIDI: " + param->getName(48));
-  menu.addItem(1, cc < 0 ? juce::String("Aprender MIDI") : juce::String::fromUTF8("Trocar controle MIDI (agora CC ") + juce::String(cc) + ")");
+  menu.addItem(1, cc < 0 ? TRANS("Aprender MIDI") : TRANS("Trocar controle MIDI (agora CC %1)").replace("%1", juce::String(cc)));
   if (cc >= 0)
-    menu.addItem(2, "Esquecer MIDI (CC " + juce::String(cc) + ")");
+    menu.addItem(2, TRANS("Esquecer MIDI (CC %1)").replace("%1", juce::String(cc)));
   if (midi.learning())
-    menu.addItem(4, "Cancelar aprender MIDI");
+    menu.addItem(4, TRANS("Cancelar aprender MIDI"));
   if (paramId == "canal")
-    menu.addItem(3, juce::String::fromUTF8("Troca de patch 1, 2, 3 já escolhe o canal"), false);
+    menu.addItem(3, TRANS(juce::String::fromUTF8("Troca de patch 1, 2, 3 já escolhe o canal")), false);
   menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&target),
                      [this, paramId, name = param->getName(48)](int r) {
                        if (r == 1)
                        {
                          mProcessor.midi().learn(paramId);
-                         mMidiNotice = juce::String::fromUTF8("Mexa no controle da pedaleira para ligar a ") + name;
+                         mMidiNotice = TRANS("Mexa no controle da pedaleira para ligar a %1").replace("%1", name);
                          mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 30000;
                        }
                        else if (r == 4)
@@ -631,7 +722,7 @@ void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& tar
                        else if (r == 2)
                        {
                          mProcessor.midi().forget(paramId);
-                         mMidiNotice = name + juce::String::fromUTF8(" não responde mais ao MIDI");
+                         mMidiNotice = TRANS(juce::String::fromUTF8("%1 não responde mais ao MIDI")).replace("%1", name);
                          mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
                        }
                        repaint();
@@ -669,9 +760,9 @@ void NexusEditor::showAbout()
 {
   juce::AlertWindow::showMessageBoxAsync(
     juce::MessageBoxIconType::NoIcon, "Nexus Modeler",
-    juce::String::fromUTF8("Plugin de guitarra gratuito e de código aberto (GPL v3).\n"
-                           "Toca capturas NAM A2 e troca de captura conforme o botão gira.\n\n"
-                           "github.com/disouz4-dev/Nexus-Modeler"));
+    TRANS(juce::String::fromUTF8("Plugin de guitarra gratuito e de código aberto (GPL v3).")) + "\n"
+      + TRANS(juce::String::fromUTF8("Toca capturas NAM A2 e troca de captura conforme o botão gira.")) + "\n\n"
+      + "github.com/disouz4-dev/Nexus-Modeler");
 }
 
 void NexusEditor::timerCallback()
@@ -686,7 +777,7 @@ void NexusEditor::timerCallback()
   auto& midi = mProcessor.midi();
   if (const int cc = midi.takeLearned(); cc >= 0)
   {
-    mMidiNotice = "CC " + juce::String(cc) + juce::String::fromUTF8(" ligado. Pronto para tocar.");
+    mMidiNotice = TRANS("CC %1 ligado. Pronto para tocar.").replace("%1", juce::String(cc));
     mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
     repaint();
   }
@@ -710,30 +801,29 @@ void NexusEditor::timerCallback()
   if (mStage == Stage::amp)
   {
     title = mAmpArt.name;
-    subtitle = mProcessor.packLoaded() ? mProcessor.statusText() : juce::String::fromUTF8("Nenhum pacote de capturas carregado");
-    link = mProcessor.packLoaded() ? "trocar pacote" : "abrir pacote";
+    subtitle = packSummary(NexusProcessor::amp);
+    link = mProcessor.packLoaded() ? TRANS("trocar pacote") : TRANS("abrir pacote");
   }
   else if (mStage == Stage::pedal)
   {
     const auto* art = pedalArt();
     title = art ? art->name : juce::String("Pedal");
     const bool loaded = mProcessor.packLoaded(NexusProcessor::pedal);
-    subtitle = loaded ? mProcessor.statusText(NexusProcessor::pedal)
-                      : juce::String::fromUTF8("Nenhuma captura no pedal. O pisante liga e desliga.");
-    link = loaded ? "trocar pacote" : "abrir pacote do pedal";
+    subtitle = packSummary(NexusProcessor::pedal);
+    link = loaded ? TRANS("trocar pacote") : TRANS("abrir pacote do pedal");
   }
   else
   {
     title = mCabArt.name;
     if (mProcessor.packIncludesCab())
     {
-      subtitle = juce::String::fromUTF8("Caixa incluída na captura (full rig): o IR fica desligado para respeitar o som original");
+      subtitle = TRANS(juce::String::fromUTF8("Caixa incluída na captura (full rig): o IR fica desligado para respeitar o som original"));
       link = {};
     }
     else
     {
-      subtitle = mProcessor.irLoaded() ? "IR: " + mProcessor.irName() : juce::String::fromUTF8("Nenhum IR escolhido");
-      link = mProcessor.irLoaded() ? "trocar IR" : "escolher IR";
+      subtitle = mProcessor.irLoaded() ? "IR: " + mProcessor.irName() : TRANS("Nenhum IR escolhido");
+      link = mProcessor.irLoaded() ? TRANS("trocar IR") : TRANS("escolher IR");
     }
     mCabStage->refresh();
   }
@@ -818,8 +908,9 @@ void NexusEditor::resized()
 {
   auto r = getLocalBounds();
   auto top = r.removeFromTop(kTopBar);
-  auto right = top.removeFromRight(380).reduced(0, 16);
+  auto right = top.removeFromRight(420).reduced(0, 16);
   mInfoButton.setBounds(right.removeFromRight(56).withSizeKeepingCentre(36, 36));
+  mLanguageButton.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
   mStepsButton.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
   if (mAudioPanel)
   {

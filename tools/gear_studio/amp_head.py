@@ -127,7 +127,7 @@ def build(rec, fonts):
     st.box("chave_caixa", (0.024, 0.006, 0.032), (sw_x, panel_front - 0.003, sw_z), bevel=0.0015, material=mats["rocker_house"])
     rocker = st.box("chave", (0.019, 0.008, 0.026), (sw_x, panel_front - 0.0062, sw_z), bevel=0.002, material=mats["rocker"])
     rocker.rotation_euler = (math.radians(-9), 0, 0)
-    st.text("rot_liga", rec["chave_liga"]["rotulo"], fonts["label"], 0.0112, (sw_x, ink_y, panel_z0 + ph - 0.0155), mats["ink"], offset=0.00022)
+    st.label(rec["chave_liga"]["rotulo"], (sw_x, ink_y, panel_z0 + ph - 0.0155), 0.0112, color=rec["painel"]["texto_cor"])
 
     # Nome do modelo em letras grandes e inclinadas.
     model = st.text("modelo", rec["painel"]["modelo"], fonts["label"], 0.030, (L + 0.118, ink_y, panel_z0 + 0.036), mats["ink"], offset=0.0002)
@@ -141,7 +141,7 @@ def build(rec, fonts):
         cx = first + i * spacing
         pivot, outer_r = _knob(rec, i, ctl, (cx, knob_z), panel_front, mats)
         _scale(f"escala_{i}", (cx, knob_z), ink_y, mats, fonts["label"], 0.0182)
-        st.text(f"rot_{ctl['id']}", ctl["rotulo"], fonts["label"], 0.0112, (cx, ink_y, panel_z0 + ph - 0.0155), mats["ink"], offset=0.00022)
+        st.label(ctl["rotulo"], (cx, ink_y, panel_z0 + ph - 0.0155), 0.0112, color=rec["painel"]["texto_cor"])
         controls.append({"id": ctl["id"], "pivot": pivot, "center": (cx, panel_front - 0.009, knob_z),
                          "outer_r": outer_r, "depth": 0.018})
     # Linha impressa ligando o fim de uma escala ao começo da outra.
@@ -159,7 +159,7 @@ def build(rec, fonts):
         st.cylinder(f"porca_{j}", 0.0082, 0.0035, (jx, panel_front - 0.0017, jz), vertices=6, material=mats["chrome"], bevel=0.0006)
         st.cylinder(f"bucha_{j}", 0.0058, 0.006, (jx, panel_front - 0.004, jz), material=mats["chrome"], bevel=0.0005)
         st.cylinder(f"furo_{j}", 0.0034, 0.0005, (jx, panel_front - 0.0071, jz), material=mats["hole"])
-        st.text(f"rot_ent_{j}", lbl, fonts["label"], 0.0085, (jx, ink_y, jz - 0.0195), mats["ink"], offset=0.00015)
+        st.label(lbl, (jx, ink_y, jz - 0.0195), 0.0085, color=rec["painel"]["texto_cor"])
 
     # Parafusos do painel.
     for sx in (L + 0.007, right - 0.007):

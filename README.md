@@ -71,6 +71,12 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
   pacote de capturas e o próprio ganho; a troca é sem estalo e o canal parado
   não gasta processador. Amplificador de um canal (o Brit 800) não mostra
   seletor.
+- **15 idiomas:** português (Brasil), inglês, espanhol, francês, italiano,
+  alemão, japonês, chinês, coreano, hindi, árabe, bengali, russo, indonésio e
+  turco. O globo na barra de cima troca o idioma; na primeira vez vale o do
+  sistema. Os nomes dos botões (GANHO, GRAVE…) são caixas de texto por cima da
+  imagem 3D, traduzidas sem precisar renderizar de novo. O pacote de idiomas
+  fica em `assets/idiomas/` e é gerado por `tools/idiomas/traducoes.py`.
 - **Tela 3D:** amplificador, caixa e pedais modelados e renderizados pelo Nexus Gear
   Studio (`tools/gear_studio`). Cada botão tem 101 imagens: arraste para cima
   ou para baixo, Shift para ajuste fino, duplo clique volta ao padrão.

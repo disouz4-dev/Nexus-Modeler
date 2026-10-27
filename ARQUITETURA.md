@@ -114,7 +114,10 @@ Mac e Linux. O CMake é ferramenta interna do desenvolvedor; o usuário nunca v�
 
 **Instaladores (etapa 6):** `.exe` no Windows, `.dmg` de arrastar e soltar no
 Mac, `.deb` no Linux, e instalação por um comando no terminal nos três
-sistemas (no Linux também por repositório `apt`, como no Praxis).
+sistemas (no Linux também por repositório `apt`, como no Praxis). Cada
+instalador traz o pacote de idiomas e uma tela de escolha de idioma, que grava
+a preferência (`Nexus Modeler/preferencias.settings`, chave `idioma`) usada
+pelo plugin e pelo programa independente.
 
 Descartados: iPlug2 (fraco no Linux), Rust (refazer NAM e login), interface
 como página de internet embutida (a TONE3000 começou assim e abandonou),

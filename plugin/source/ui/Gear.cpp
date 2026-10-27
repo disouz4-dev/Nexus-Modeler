@@ -44,6 +44,18 @@ GearArt GearArt::load(const juce::String& prefix)
       if (knob.strip.isValid())
         art.knobs.push_back(std::move(knob));
     }
+  if (const auto* labels = map["rotulos"].getArray())
+    for (const auto& l : *labels)
+    {
+      GearLabel label;
+      label.text = l["texto"].toString();
+      label.centre = {static_cast<float>(l["x"]), static_cast<float>(l["y"])};
+      label.height = static_cast<float>(l["altura"]);
+      label.squash = static_cast<float>(l["achatamento"]);
+      label.spacing = static_cast<float>(l.getProperty("espaco", 1.0));
+      label.colour = juce::Colour::fromString("ff" + l["cor"].toString().fromFirstOccurrenceOf("#", false, false));
+      art.labels.push_back(label);
+    }
   if (const auto* channels = map["canais"].getArray())
     for (const auto& c : *channels)
       art.channels.add(c.toString());

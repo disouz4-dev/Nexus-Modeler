@@ -26,6 +26,7 @@ public:
   void mouseUp(const juce::MouseEvent&) override;
   void visibilityChanged() override;
   std::function<void()> onClose;
+  void retranslate();
 
   // Latência de ida e volta em milissegundos (entrada + buffer + saída + Nexus).
   double roundTripMs() const;

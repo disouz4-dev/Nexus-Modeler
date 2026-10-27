@@ -36,6 +36,15 @@
 - O plugin recebe MIDI do programa de gravação (o AU passa a ser "efeito com
   MIDI").
 
+### Idiomas
+- Tela em 15 idiomas, com seletor (globo) e o idioma do sistema na primeira
+  vez; árabe da direita para a esquerda; fontes do sistema para japonês,
+  chinês, coreano, hindi, bengali e árabe.
+- Rótulos dos painéis viraram caixas de texto traduzidas por cima do 3D (sem
+  render por idioma).
+- O instalador vai trazer o pacote de idiomas e um seletor (etapa dos
+  instaladores).
+
 ### Ferramentas
 - Nexus Gear Studio (`tools/gear_studio`): gera amplificadores, caixas e
   pedais no Blender a partir de receitas e renderiza as imagens do plugin.

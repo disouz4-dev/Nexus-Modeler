@@ -37,6 +37,7 @@ juce_add_plugin(NexusModeler
 set(NEXUS_UI_SOURCES
   source/PluginEditor.cpp
   source/ui/AudioPanel.cpp
+  source/ui/Language.cpp
   source/ui/Controls.cpp
   source/ui/Gear.cpp)
 set(NEXUS_PROCESSOR_SOURCES
@@ -70,7 +71,8 @@ endif()
 set(NEXUS_ART_DIR "${CMAKE_CURRENT_BINARY_DIR}/art")
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "${NEXUS_ART_DIR}/inter.ttf" COPYONLY)
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
-file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json")
+file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
+     "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData

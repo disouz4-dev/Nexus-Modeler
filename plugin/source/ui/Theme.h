@@ -3,6 +3,7 @@
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include "BinaryData.h"
+#include "Language.h"
 
 // Cores e fontes da tela. Fundo quase preto e neutro, como um estúdio
 // escuro, para os equipamentos renderizados aparecerem.
@@ -34,6 +35,8 @@ public:
   }
   juce::Font ui(float size) const { return juce::Font(juce::FontOptions(mInter).withHeight(size)); }
   juce::Font display(float size) const { return juce::Font(juce::FontOptions(mOswald).withHeight(size)); }
+  // Mesma medida de letra do Blender (tamanho do "em"), para os rótulos do painel.
+  juce::Font displayEm(float em) const { return juce::Font(juce::FontOptions(mOswald).withPointHeight(em)); }
 
 private:
   Fonts()
@@ -70,7 +73,7 @@ inline void drawCaps(juce::Graphics& g, const juce::String& s, juce::Rectangle<f
                      juce::Justification j, juce::Colour c)
 {
   g.setColour(c);
-  g.setFont(Fonts::get().ui(size).withExtraKerningFactor(0.08f));
+  g.setFont(Fonts::get().ui(size).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.08f : 0.0f));
   g.drawText(upper(s), r, j, false);
 }
 } // namespace nexus::ui

@@ -99,7 +99,7 @@ bool FilmKnob::hitTest(int x, int y)
 juce::String FilmKnob::bubbleText() const
 {
   const float v = mDrag.value01() * 10.0f;
-  return mLabel + "  " + juce::String(v, 1).replaceCharacter('.', ',');
+  return TRANS(mLabel) + "  " + juce::String(v, 1).replaceCharacter('.', ',');
 }
 
 // ---------------------------------------------------------------- LevelFader
@@ -127,7 +127,7 @@ void LevelFader::paint(juce::Graphics& g)
   auto r = getLocalBounds().toFloat();
   auto head = r.removeFromTop(18.0f);
   const float db = mDrag.parameter().convertFrom0to1(mDrag.value01());
-  drawCaps(g, mLabel, head, 10.5f, juce::Justification::centredLeft, colour::dim);
+  drawCaps(g, TRANS(mLabel), head, 10.5f, juce::Justification::centredLeft, colour::dim);
   g.setColour(colour::text);
   g.setFont(Fonts::get().ui(12.0f));
   g.drawText((db > 0.05f ? "+" : "") + juce::String(db, 1).replaceCharacter('.', ',') + " dB", head, juce::Justification::centredRight);
@@ -171,7 +171,7 @@ void Segmented::paint(juce::Graphics& g)
   g.fillRoundedRectangle(r, radius);
   g.setColour(colour::boxBorder);
   g.drawRoundedRectangle(r, radius, 1.0f);
-  const auto font = Fonts::get().ui(mFontSize).withExtraKerningFactor(0.06f);
+  const auto font = Fonts::get().ui(mFontSize).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.06f : 0.0f);
   for (int i = 0; i < mItems.size(); ++i)
   {
     auto b = itemBounds(i).reduced(3.0f);
@@ -253,6 +253,20 @@ juce::Path iconPath(Icon icon, juce::Rectangle<float> r)
     s.lineTo(x + w * (left ? 0.35f : 0.65f), y + h * 0.5f);
     s.lineTo(x + w * (left ? 0.65f : 0.35f), y + h * 0.8f);
     return stroke(s, 1.8f);
+  }
+  case Icon::globe:
+  {
+    // Globo: círculo, meridiano e paralelos.
+    juce::Path s;
+    s.addEllipse(r.reduced(1.0f));
+    s.addEllipse(x + w * 0.3f, y + 1.0f, w * 0.4f, h - 2.0f);
+    s.startNewSubPath(x + 1.0f, y + h * 0.5f);
+    s.lineTo(x + w - 1.0f, y + h * 0.5f);
+    s.startNewSubPath(x + w * 0.14f, y + h * 0.28f);
+    s.lineTo(x + w * 0.86f, y + h * 0.28f);
+    s.startNewSubPath(x + w * 0.14f, y + h * 0.72f);
+    s.lineTo(x + w * 0.86f, y + h * 0.72f);
+    return stroke(s, 1.3f);
   }
   case Icon::audio:
   {

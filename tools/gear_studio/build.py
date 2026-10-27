@@ -162,6 +162,25 @@ def main():
         boxes.append(b)
         layout["botoes"].append({"id": c["id"], "x": b["x"], "y": b["y"], "tamanho": b["size"],
                                  "arquivo": f"botao_{c['id']}.png", "angulo_min": -150, "angulo_max": 150})
+    # Rótulos para a tela escrever: centro, altura da letra em pixels,
+    # achatamento da perspectiva e cor da tinta (sRGB).
+    def srgb(c):
+        c = max(0.0, min(1.0, c))
+        return c * 12.92 if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+    layout["rotulos"] = []
+    for lab in st.LABELS:
+        p = Vector(lab["local"])
+        up = Vector((0, 0, 1)) if lab["cima"] == "Z" else Vector((0, 1, 0))
+        s = lab["tamanho"]
+        cx, cy = to_pixels(scene, cam, p)
+        rx, ry = to_pixels(scene, cam, p + Vector((s, 0, 0)))
+        ux, uy = to_pixels(scene, cam, p + up * s)
+        horizontal = math.hypot(rx - cx, ry - cy)
+        vertical = math.hypot(ux - cx, uy - cy)
+        color = "#" + "".join(f"{round(srgb(v) * 255):02x}" for v in lab["cor"])
+        layout["rotulos"].append({"texto": lab["texto"], "x": round(cx, 1), "y": round(cy, 1),
+                                  "altura": round(horizontal, 2), "achatamento": round(vertical / max(horizontal, 1e-6), 3),
+                                  "cor": color, "espaco": lab["espaco"]})
     if "footswitch" in built:
         (fx, fy, fz), fr = built["footswitch"]
         px, py = to_pixels(scene, cam, (fx, fy, fz))

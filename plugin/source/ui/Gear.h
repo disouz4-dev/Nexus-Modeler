@@ -24,6 +24,19 @@ struct GearKnobArt
   }
 };
 
+// Rótulo do painel (GANHO, GRAVE, LIGA...): caixa de texto transparente
+// por cima da imagem, traduzida para o idioma escolhido. A posição, o tamanho
+// da letra e a perspectiva vêm do gerador 3D.
+struct GearLabel
+{
+  juce::String text;           // em português; é a chave da tradução
+  juce::Point<float> centre;   // em pixels da imagem da frente
+  float height = 10.0f;        // altura da letra (em) em pixels da imagem
+  float squash = 1.0f;         // achatamento vertical (texto deitado no pedal)
+  float spacing = 1.0f;
+  juce::Colour colour;
+};
+
 struct GearArt
 {
   juce::String name;
@@ -31,6 +44,7 @@ struct GearArt
   std::vector<GearKnobArt> knobs;
   // Canais do amplificador original, na ordem do painel (vazio = um canal).
   juce::StringArray channels;
+  std::vector<GearLabel> labels;
   // Pedais: onde pisar e onde fica o LED, em pixels da frente (raio 0 = não tem).
   juce::Point<float> footswitch;
   float footswitchRadius = 0.0f;
