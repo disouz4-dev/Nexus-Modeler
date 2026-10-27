@@ -1,6 +1,7 @@
 #include "AudioPanel.h"
 
 #include "Theme.h"
+#include "../report/Report.h"
 
 #include <juce_audio_utils/juce_audio_utils.h>
 
@@ -134,6 +135,8 @@ void AudioPanel::apply(const std::function<void(juce::AudioDeviceManager::AudioD
   auto setup = mDevices.getAudioDeviceSetup();
   change(setup);
   mError = mDevices.setAudioDeviceSetup(setup, true);
+  if (mError.isNotEmpty())
+    nexus::report::log("audio", setup.outputDeviceName + " / " + setup.inputDeviceName + ": " + mError);
   if (mSave)
     mSave();
   refresh();

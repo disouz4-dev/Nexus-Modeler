@@ -2,6 +2,7 @@
 
 #include "PluginEditor.h"
 #include "nexus/Pack.h"
+#include "report/Report.h"
 
 namespace
 {
@@ -651,6 +652,7 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
     {
       const juce::ScopedLock sl(mStatusLock);
       s.status = juce::String("Erro: ") + juce::String::fromUTF8(e.what());
+      nexus::report::log("captura", folder.getFullPathName() + ": " + juce::String::fromUTF8(e.what()));
     }
   });
 }
@@ -670,7 +672,11 @@ juce::String NexusProcessor::packName(int slot) const
 void NexusProcessor::loadIrAsync(int rig, const juce::File& file)
 {
   if (!file.existsAsFile())
+  {
+    if (file != juce::File())
+      nexus::report::log("ir", "arquivo não encontrado: " + file.getFullPathName());
     return;
+  }
   auto& cab = mCabs[static_cast<size_t>(rig)];
   cab.file = file;
   // O próprio JUCE lê, ajusta a taxa e troca o IR fora do áudio.

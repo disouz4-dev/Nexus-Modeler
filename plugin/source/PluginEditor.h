@@ -194,6 +194,9 @@ private:
   void loadPackInto(Selection target, int channel, const juce::File& folder);
   void chooseIr(int rig);
   void showAbout();
+  void reportProblem();
+  // O Nexus fechou sozinho da última vez: oferece mandar o relatório.
+  void offerCrashReport();
   void showAudioPanel(bool show);
   void showLanguageMenu();
   void retranslate();

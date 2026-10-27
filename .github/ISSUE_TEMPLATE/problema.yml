@@ -1,0 +1,32 @@
+name: Problema ou travamento
+description: Algo deu errado no Nexus Modeler. O botão "Reportar um problema" (menu "i") já preenche quase tudo.
+labels: ["problema"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por testar o Nexus Modeler! Confira o texto abaixo (não precisa mudar nada se veio do programa) e clique em **Create** / **Submit new issue**.
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu
+      description: O que você estava fazendo, o que esperava e o que aconteceu. Se der para repetir, conte os passos.
+    validations:
+      required: true
+  - type: textarea
+    id: sistema
+    attributes:
+      label: Versão e sistema
+      description: Preenchido pelo programa (versão do Nexus, sistema, processador, programa de gravação).
+      render: text
+  - type: textarea
+    id: registro
+    attributes:
+      label: Registro de erros
+      description: Últimos erros registrados pelo Nexus e, se ele fechou sozinho, onde parou. Não contém senhas nem dados pessoais.
+      render: text
+  - type: textarea
+    id: anexos
+    attributes:
+      label: Imagens ou áudio (opcional)
+      description: Arraste aqui uma captura de tela ou um trecho de áudio, se ajudar.

@@ -1,5 +1,7 @@
 #include "Updater.h"
 
+#include "../report/Report.h"
+
 #ifndef NEXUS_VERSAO
 #define NEXUS_VERSAO "0.0.0"
 #endif
@@ -305,6 +307,8 @@ void Updater::check()
     mRelease = r;
     mError = error;
   }
+  if (error.isNotEmpty())
+    nexus::report::log("atualizacao", "procurar: " + error);
   if (mManual.exchange(false))
     mManualResult = true;
   setState(result);
@@ -387,6 +391,8 @@ void Updater::download()
     mError = error;
     mFile = error.isEmpty() ? target : juce::File();
   }
+  if (error.isNotEmpty())
+    nexus::report::log("atualizacao", "baixar: " + error);
   if (error.isNotEmpty())
   {
     // O aviso continua, agora com "tentar de novo".

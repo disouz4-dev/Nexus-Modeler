@@ -15,6 +15,7 @@
 #include <juce_audio_plugin_client/Standalone/juce_StandaloneFilterWindow.h>
 
 #include "StandaloneLink.h"
+#include "report/Report.h"
 
 namespace
 {
@@ -72,6 +73,8 @@ public:
 
   void initialise(const juce::String&) override
   {
+    nexus::report::installCrashHandler();
+    nexus::report::log("inicio", nexus::report::systemInfo().replace("\n", " | "));
     const auto setup = firstRunSetup();
     // Último argumento: abre sozinho todo dispositivo MIDI que aparecer (USB ou
     // Bluetooth já pareado), conferindo a cada meio segundo.

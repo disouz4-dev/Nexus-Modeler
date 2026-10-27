@@ -604,9 +604,9 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
       // Sem a posição do botão nos nomes: baixa todas (até 40) e o usuário mapeia.
       const bool needsMapping = chosen.empty();
       if (needsMapping)
-        for (const auto& [name, url] : list)
+        for (const auto& entry : list) // (sem "[nome, url]": o Visual Studio não aceita dentro desta função)
           if (chosen.size() < 40)
-            chosen.push_back({-1.0, name, url});
+            chosen.push_back({-1.0, entry.first, entry.second});
       if (chosen.empty())
         return fail(TRANS(juce::String::fromUTF8("este tom não tem capturas A2")));
 

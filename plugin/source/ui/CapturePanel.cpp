@@ -2,6 +2,7 @@
 
 #include "Language.h"
 #include "Theme.h"
+#include "../report/Report.h"
 
 namespace nexus::ui
 {
@@ -50,6 +51,8 @@ CapturePanel::CapturePanel()
   mSignIn.onClick = [this] {
     setStatus(TRANS(juce::String::fromUTF8("Abrindo a TONE3000 no navegador...")));
     mConnection->signIn([self = juce::Component::SafePointer<CapturePanel>(this)](juce::String error) {
+      if (error.isNotEmpty())
+        nexus::report::log("tone3000", "conectar: " + error);
       if (self == nullptr)
         return;
       self->setStatus(error.isEmpty() ? TRANS("Conta da TONE3000 conectada.") : error, error.isNotEmpty());
@@ -149,7 +152,10 @@ void CapturePanel::showTab(int tab)
         return;
       self->mTones = std::move(tones);
       if (error.isNotEmpty())
+      {
+        nexus::report::log("tone3000", "lista: " + error);
         self->mEmpty = error;
+      }
       else if (self->mTones.empty())
         self->mEmpty = tab == 3 ? TRANS(juce::String::fromUTF8("Nada em alta para este tipo agora."))
                                 : TRANS(juce::String::fromUTF8("Nenhum tom de %1 aqui. Marque favoritos no catálogo da TONE3000.")).replace("%1", word);
@@ -188,6 +194,7 @@ void CapturePanel::load(const t3k::Tone& tone)
       self->refreshAccount();
       if (error.isNotEmpty())
       {
+        nexus::report::log("tone3000", "baixar: " + error);
         self->setStatus(error, true);
         return;
       }

@@ -1,6 +1,7 @@
 #include "PluginEditor.h"
 
 #include "StandaloneLink.h"
+#include "report/Report.h"
 #include "ui/Brand.h"
 #include "ui/Language.h"
 #include "ui/Theme.h"
@@ -983,6 +984,11 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mPresets);
   addChildComponent(mUpdate);
   mUpdate.onLayoutChange = [this] { resized(); };
+  // Depois da janela aparecer: pergunta se manda o relatório de travamento.
+  juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
+    if (safe != nullptr && safe->isShowing())
+      safe->offerCrashReport();
+  });
   mBrowser = std::make_unique<GearBrowser>();
   mBrowser->onPick = [this](const GearItem& item) { pickGear(item); };
   addAndMakeVisible(*mBrowser);
@@ -1277,7 +1283,10 @@ void NexusEditor::chooseFolder()
                           if (!folder.isDirectory())
                           {
                             if (error.isNotEmpty())
+                            {
+                              nexus::report::log("pacote", error);
                               juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::WarningIcon, TRANS("Inserir manualmente"), error);
+                            }
                             return;
                           }
                           mCapturePanel->setVisible(false);
@@ -1330,7 +1339,54 @@ void NexusEditor::showAbout()
   });
   menu.addSeparator();
   mUpdate.addMenuItems(menu);
+  menu.addSeparator();
+  menu.addItem(TRANS(juce::String::fromUTF8("Reportar um problema...")), [this] { reportProblem(); });
+  menu.addItem(TRANS(juce::String::fromUTF8("Abrir a pasta do registro de erros")),
+               [] { nexus::report::logFile().existsAsFile() ? nexus::report::logFile().revealToUser() : nexus::report::folder().revealToUser(); });
   menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&mInfoButton));
+}
+
+void NexusEditor::reportProblem()
+{
+  auto* w = new juce::AlertWindow(TRANS(juce::String::fromUTF8("Reportar um problema")),
+                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus abre o GitHub com o relatório "
+                                                               "preenchido (versão, sistema e os últimos erros registrados); é só conferir e enviar. "
+                                                               "Precisa de uma conta no GitHub.")),
+                                  juce::MessageBoxIconType::NoIcon, this);
+  w->addTextEditor("texto", {}, {});
+  if (auto* editor = w->getTextEditor("texto"))
+  {
+    editor->setMultiLine(true, true);
+    editor->setReturnKeyStartsNewLine(true);
+    editor->setSize(460, 120);
+  }
+  w->addButton(TRANS(juce::String::fromUTF8("Abrir no GitHub")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
+  w->addButton(TRANS("Cancelar"), 0, juce::KeyPress(juce::KeyPress::escapeKey));
+  w->enterModalState(true, juce::ModalCallbackFunction::create([w](int result) {
+    if (result == 1)
+    {
+      const auto text = w->getTextEditorContents("texto").trim();
+      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60));
+    }
+  }), true);
+}
+
+void NexusEditor::offerCrashReport()
+{
+  const auto crash = nexus::report::takeCrash();
+  if (crash.isEmpty())
+    return;
+  juce::AlertWindow::showOkCancelBox(
+    juce::MessageBoxIconType::WarningIcon, TRANS(juce::String::fromUTF8("O Nexus fechou sozinho da última vez")),
+    TRANS(juce::String::fromUTF8("Quer enviar o relatório para o GitHub? Ele leva a versão, o sistema e onde o programa parou, "
+                                 "sem nenhum dado pessoal. Isso ajuda a corrigir o problema.")),
+    TRANS(juce::String::fromUTF8("Enviar relatório")), TRANS(juce::String::fromUTF8("Agora não")), this,
+    juce::ModalCallbackFunction::create([crash](int ok) {
+      if (ok != 0)
+        nexus::report::send(nexus::report::Kind::crash,
+                            juce::String::fromUTF8("O Nexus fechou sozinho. (Se lembrar, conte aqui o que estava fazendo.)"),
+                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30));
+    }));
 }
 
 void NexusEditor::showAudioPanel(bool show)

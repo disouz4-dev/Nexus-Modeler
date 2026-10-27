@@ -7,11 +7,13 @@
 // Uso: nexus_cab_test <pasta_dos_pacotes_de_teste> [pasta_das_fotos]
 
 #include <cmath>
+#include <csignal>
 #include <cstdio>
 
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
 #include "../source/ui/PackMapper.h"
+#include "../source/report/Report.h"
 #include "../source/update/Updater.h"
 #include "nexus/Pack.h"
 #include "nexus/TestSignal.h"
@@ -202,6 +204,14 @@ void testScreen(NexusProcessor& p)
 
 int main(int argc, char** argv)
 {
+  // Só à mão: NEXUS_TESTE_TRAVAR=1 instala o tratador e trava de propósito,
+  // para conferir o travamento.txt (o ctest não usa).
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_TESTE_TRAVAR", {}) == "1")
+  {
+    nexus::report::installCrashHandler();
+    std::raise(SIGSEGV);
+  }
+
   if (argc < 2)
   {
     std::printf("Uso: nexus_cab_test <pasta_dos_pacotes_de_teste> [pasta_das_fotos]\n");
@@ -786,6 +796,36 @@ int main(int argc, char** argv)
     const double played = rms(300, 0.0f);
     report(mine && played > -20.0, "Minha guitarra: grava 15 s e repete", juce::String(played, 1) + " dB tocando a gravação");
     test.setPlaying(false);
+  }
+
+  // 13. Relatório de problemas: registro sem dados pessoais e issue preenchida.
+  {
+    std::printf("\n13. Relatório de problemas\n");
+    namespace rp = nexus::report;
+    const auto home = juce::File::getSpecialLocation(juce::File::userHomeDirectory).getFullPathName();
+    const auto mark = "teste-" + juce::String(juce::Random::getSystemRandom().nextInt(1000000));
+    rp::log("teste", mark + " " + home + "/Documents/Nexus Modeler/pacote");
+    const auto recent = rp::recentLog(5);
+    report(recent.contains(mark) && !recent.contains(home) && recent.contains("~/Documents"),
+           "Registro guarda o erro e troca a pasta do usuário por ~", recent.fromLastOccurrenceOf("\n", false, false));
+
+    // Registro enorme: o endereço da issue continua dentro do limite.
+    juce::String big;
+    for (int i = 0; i < 400; ++i)
+      big << "linha " << i << juce::String::fromUTF8(": erro de teste com acentuação e um caminho ~/Documents/Nexus Modeler\n");
+    const auto url = rp::issueUrl(rp::Kind::problem, juce::String::fromUTF8("O som some quando troco de pedal"), big).toString(true);
+    report(url.length() <= 7000 && url.contains("template=problema.yml") && url.contains("labels=problema")
+             && url.contains("linha%20399"),
+           "Issue preenchida cabe no endereço (o registro é cortado das linhas mais velhas)",
+           juce::String(url.length()) + " caracteres");
+
+    // Travamento salvo: é oferecido uma vez só.
+    const auto crash = rp::folder().getChildFile("travamento.txt");
+    crash.replaceWithText("Nexus Modeler teste\nPilha de chamadas:\n0 nexus");
+    const auto first = rp::takeCrash();
+    const auto second = rp::takeCrash();
+    report(first.contains("Pilha de chamadas") && second.isEmpty(), "Travamento da última vez é oferecido uma vez", juce::String(first.length()) + " caracteres");
+    rp::folder().getChildFile("travamento-visto.txt").deleteFile();
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

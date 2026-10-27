@@ -53,6 +53,18 @@
   efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
+### Relatório de problemas
+- Menu "i" → "Reportar um problema...": a pessoa conta o que aconteceu e o
+  Nexus abre uma issue nova no GitHub, no modelo "Problema ou travamento", já
+  com a versão, o sistema e os últimos erros registrados. O texto completo
+  também vai para a área de transferência.
+- Registro de erros (`registro.txt`, na pasta de ajustes): pacote que não
+  abre, IR não encontrado, falhas da TONE3000, da placa de som e da
+  atualização. A pasta do usuário vira "~"; senhas e chaves nunca entram.
+- Travamento: se o programa independente fechar sozinho, o relatório (versão,
+  sistema e onde parou) fica guardado e é oferecido na abertura seguinte.
+- Windows: corrigido o erro de compilação no download da TONE3000.
+
 ### Atualização automática
 - Ao abrir, o Nexus procura uma versão nova no GitHub (no máximo uma vez por
   dia). O aviso "Nova versão" aparece no topo; um clique baixa o instalador do

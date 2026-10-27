@@ -133,6 +133,12 @@ A/B sem estalo.*
 - **Tela 3D:** amplificador, caixa e pedais modelados e renderizados pelo Nexus Gear
   Studio (`tools/gear_studio`). Cada botão tem 101 imagens: arraste para cima
   ou para baixo, Shift para ajuste fino, duplo clique volta ao padrão.
+- **Reportar um problema:** no menu "i", o Nexus abre uma issue nova no
+  GitHub já preenchida (versão, sistema e os últimos erros do registro); é só
+  conferir e enviar. Se o programa independente fechar sozinho, na abertura
+  seguinte ele oferece mandar o relatório do travamento. Nada de senha, chave
+  ou nome de usuário vai junto. O registro fica em `registro.txt`, na pasta de
+  ajustes do Nexus.
 
 ## Medidas
 
