@@ -316,14 +316,11 @@ Connection::~Connection()
   mPool.removeAllJobs(true, 10000);
 }
 
-juce::File Connection::packsFolder()
+juce::File Connection::packsFolder(const juce::String& gearName)
 {
-  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
-#if JUCE_MAC
-    .getChildFile("Application Support")
-#endif
-    .getChildFile("Nexus Modeler")
-    .getChildFile("Capturas TONE3000");
+  // Documentos do usuário em cada sistema (Windows "Documentos", Mac e Linux ~/Documents).
+  auto root = juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile("Nexus Modeler");
+  return gearName.isEmpty() ? root : root.getChildFile(safeName(gearName));
 }
 
 void Connection::post(std::function<void()> fn)
@@ -571,33 +568,11 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
 
 // ---------------------------------------------------------------- Download
 
-void Connection::download(const Tone& wanted, const juce::String& gearFilter, std::function<void(juce::String)> progress,
-                          std::function<void(juce::File, juce::String)> done)
+void Connection::download(const Tone& wanted, const juce::String& gearFilter, const juce::String& gearName,
+                          std::function<void(juce::String)> progress, std::function<void(juce::File, juce::String)> done)
 {
-  // Plano gratuito: o tom passa pela tela da TONE3000 ("load_tone" com o
-  // número, ou "select_tone" para escolher no catálogo). Já conectado, ela
-  // confirma e volta sozinha.
-  juce::StringPairArray extra;
-  if (wanted.id > 0)
-  {
-    extra.set("prompt", "load_tone");
-    extra.set("tone_id", juce::String(wanted.id));
-  }
-  else
-  {
-    extra.set("prompt", "select_tone");
-    extra.set("gears", gearFilter);
-    extra.set("format", "nam");
-    extra.set("architecture", "2");
-  }
-  progress(TRANS(juce::String::fromUTF8("Confirmando na TONE3000...")));
-  runFlow(extra, [this, wanted, progress, done](int toneId, juce::String error) {
-    if (error.isNotEmpty())
-      return done({}, error);
-    const int id = toneId > 0 ? toneId : wanted.id;
-    if (id <= 0)
-      return done({}, explain("canceled"));
-    mPool.addJob([this, wanted, id, progress, done] {
+  auto fetch = [this, wanted, gearName, progress, done](int id) {
+    mPool.addJob([this, wanted, gearName, id, progress, done] {
       auto say = [this, progress](juce::String s) { post([progress, s] { progress(s); }); };
       auto fail = [this, done](juce::String e) { post([done, e] { done({}, explain(e)); }); };
       juce::String error;
@@ -625,11 +600,17 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, st
       if (const auto* data = models["data"].getArray())
         for (const auto& m : *data)
           list.emplace_back(m["name"].toString(), m["model_url"].toString());
-      const auto chosen = chooseCaptures(list, tone);
+      auto chosen = chooseCaptures(list, tone);
+      // Sem a posição do botão nos nomes: baixa todas (até 40) e o usuário mapeia.
+      const bool needsMapping = chosen.empty();
+      if (needsMapping)
+        for (const auto& entry : list) // (sem "[nome, url]": o Visual Studio não aceita dentro desta função)
+          if (chosen.size() < 40)
+            chosen.push_back({-1.0, entry.first, entry.second});
       if (chosen.empty())
-        return fail(TRANS(juce::String::fromUTF8("este tom não tem capturas A2 com a posição do botão no nome")));
+        return fail(TRANS(juce::String::fromUTF8("este tom não tem capturas A2")));
 
-      const auto folder = packsFolder().getChildFile(juce::String(id) + " " + safeName(tone.title));
+      const auto folder = packsFolder(gearName).getChildFile(juce::String(id) + " " + safeName(tone.title));
       folder.createDirectory();
       auto* manifest = new juce::DynamicObject();
       auto* captures = new juce::DynamicObject();
@@ -656,6 +637,8 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, st
           }
           temp.overwriteTargetFileWithTemporary();
         }
+        if (needsMapping)
+          continue;
         const bool whole = std::abs(c.position - std::round(c.position)) < 1e-6;
         captures->setProperty(whole ? juce::String(juce::roundToInt(c.position)) : juce::String(c.position, 2), file.getFileName());
       }
@@ -666,10 +649,45 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, st
       manifest->setProperty("endereco", kOrigin + "/tones/" + juce::String(id));
       manifest->setProperty("inclui_caixa", tone.gear == "amp-cab" || tone.gear == "full-rig");
       manifest->setProperty("botao", tone.gear == "pedal" ? "Drive" : "Ganho");
-      manifest->setProperty("capturas", juce::var(captures));
+      if (needsMapping)
+        manifest->setProperty("mapear", true);
+      else
+        manifest->setProperty("capturas", juce::var(captures));
       folder.getChildFile("pack.json").replaceWithText(juce::JSON::toString(juce::var(manifest)));
       post([done, folder] { done(folder, {}); });
     });
+  };
+
+  // Tom conhecido e conta conectada: baixa direto, sem abrir o site.
+  if (wanted.id > 0 && signedIn())
+  {
+    fetch(wanted.id);
+    return;
+  }
+  // Tom conhecido sem conta: entra uma vez (o navegador abre) e baixa.
+  if (wanted.id > 0)
+  {
+    progress(TRANS(juce::String::fromUTF8("Entre na sua conta da TONE3000 no navegador que abriu...")));
+    runFlow({}, [fetch, wanted, done](int, juce::String error) {
+      if (error.isNotEmpty())
+        return done({}, error);
+      fetch(wanted.id);
+    });
+    return;
+  }
+  // Catálogo completo: a escolha é na tela da TONE3000.
+  juce::StringPairArray extra;
+  extra.set("prompt", "select_tone");
+  extra.set("gears", gearFilter);
+  extra.set("format", "nam");
+  extra.set("architecture", "2");
+  progress(TRANS(juce::String::fromUTF8("Escolha o tom na TONE3000, no navegador que abriu...")));
+  runFlow(extra, [fetch, done](int toneId, juce::String error) {
+    if (error.isNotEmpty())
+      return done({}, error);
+    if (toneId <= 0)
+      return done({}, explain("canceled"));
+    fetch(toneId);
   });
 }
 } // namespace nexus::t3k

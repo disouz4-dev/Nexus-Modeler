@@ -144,4 +144,49 @@
   }
 
   aplicarIdioma(idiomaInicial());
+
+  // Botões de copiar o comando do terminal.
+  document.querySelectorAll("[data-copiar]").forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      var texto = botao.getAttribute("data-copiar");
+      var feito = function () {
+        botao.classList.add("copiado");
+        var antes = botao.innerHTML;
+        botao.innerHTML = '<span class="pt">Copiado</span><span class="en" lang="en">Copied</span>';
+        setTimeout(function () { botao.classList.remove("copiado"); botao.innerHTML = antes; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(feito, function () {});
+      } else {
+        var campo = document.createElement("textarea");
+        campo.value = texto;
+        document.body.appendChild(campo);
+        campo.select();
+        try { document.execCommand("copy"); feito(); } catch (e) {}
+        document.body.removeChild(campo);
+      }
+    });
+  });
+
+  // Botões de baixar: apontam direto para o instalador do último lançamento.
+  // Sem lançamento (ou sem rede), ficam na página de lançamentos do GitHub.
+  var instaladores = {
+    "windows": function (n) { return /-windows-instalador\.exe$/i.test(n); },
+    "mac": function (n) { return /\.dmg$/i.test(n); },
+    "linux-deb": function (n) { return /linux.*\.deb$/i.test(n); },
+    "linux": function (n) { return /linux.*\.tar\.gz$/i.test(n); }
+  };
+  if (window.fetch) {
+    fetch("https://api.github.com/repos/disouz4-dev/Nexus-Modeler/releases/latest")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (lancamento) {
+        if (!lancamento || !lancamento.assets) return;
+        document.querySelectorAll("[data-instalador]").forEach(function (link) {
+          var teste = instaladores[link.getAttribute("data-instalador")];
+          var arquivo = lancamento.assets.filter(function (a) { return teste && teste(a.name); })[0];
+          if (arquivo) link.setAttribute("href", arquivo.browser_download_url);
+        });
+      })
+      .catch(function () {});
+  }
 })();

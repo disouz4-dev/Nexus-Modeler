@@ -7,10 +7,15 @@
 // Uso: nexus_cab_test <pasta_dos_pacotes_de_teste> [pasta_das_fotos]
 
 #include <cmath>
+#include <csignal>
 #include <cstdio>
 
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
+#include "../source/ui/PackMapper.h"
+#include "../source/report/Report.h"
+#include "../source/update/Updater.h"
+#include "nexus/Pack.h"
 #include "nexus/TestSignal.h"
 
 namespace
@@ -199,6 +204,14 @@ void testScreen(NexusProcessor& p)
 
 int main(int argc, char** argv)
 {
+  // Só à mão: NEXUS_TESTE_TRAVAR=1 instala o tratador e trava de propósito,
+  // para conferir o travamento.txt (o ctest não usa).
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_TESTE_TRAVAR", {}) == "1")
+  {
+    nexus::report::installCrashHandler();
+    std::raise(SIGSEGV);
+  }
+
   if (argc < 2)
   {
     std::printf("Uso: nexus_cab_test <pasta_dos_pacotes_de_teste> [pasta_das_fotos]\n");
@@ -642,6 +655,177 @@ int main(int argc, char** argv)
     for (const auto* g : {"brit800", "lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
+  }
+
+  // 10. Pacotes inseridos à mão: .zip, capturas soltas e o mapeamento.
+  {
+    std::printf("\nPacotes inseridos e mapeamento\n");
+    namespace pk = nexus::ui::packs;
+    const juce::String gear = juce::String::fromUTF8("Teste do Nexus (pode apagar)");
+    const auto root = nexus::t3k::Connection::packsFolder(gear);
+    root.deleteRecursively();
+    juce::TemporaryFile tempDir;
+    const auto work = tempDir.getFile();
+    work.createDirectory();
+
+    // Capturas com número no nome: mapeia sozinho.
+    const auto source = packs.getChildFile("ganho");
+    bool needs = true;
+    auto found = pk::analyze(source, needs);
+    report(!needs && found.size() == 11, "Nomes com número: o Nexus mapeia sozinho", juce::String(static_cast<int>(found.size())) + " capturas");
+
+    // .zip com uma pasta por dentro e nomes sem número.
+    const auto loose = work.getChildFile("Meu Amp");
+    loose.createDirectory();
+    const char* names[] = {"limpo", "crunch", "saturado"};
+    const char* from[] = {"Ganho 0.nam", "Ganho 5.nam", "Ganho 10.nam"};
+    for (int i = 0; i < 3; ++i)
+      source.getChildFile(from[i]).copyFileTo(loose.getChildFile(juce::String(names[i]) + ".nam"));
+    const auto zipFile = work.getChildFile("Meu Amp.zip");
+    {
+      juce::ZipFile::Builder builder;
+      for (const auto& f : loose.findChildFiles(juce::File::findFiles, false, "*.nam"))
+        builder.addFile(f, 6, "Meu Amp/" + f.getFileName());
+      juce::FileOutputStream out(zipFile);
+      builder.writeToStream(out, nullptr);
+    }
+    juce::String error;
+    const auto unzipped = pk::importInto({zipFile}, gear, error);
+    report(unzipped.isAChildOf(root) && unzipped.findChildFiles(juce::File::findFiles, false, "*.nam").size() == 3,
+           ".zip descompactado na pasta do equipamento", error.isEmpty() ? unzipped.getFullPathName() : error);
+    report(unzipped.getParentDirectory() == root, "Sem pasta repetida dentro do pacote", unzipped.getFileName());
+    found = pk::analyze(unzipped, needs);
+    report(needs, "Nomes sem número: pede o mapeamento ao usuário", juce::String::fromUTF8(needs ? "pede" : "não pediu"));
+
+    // O usuário mapeia: limpo 0, crunch 5, saturado 10.
+    for (auto& c : found)
+      c.position = c.file.getFileNameWithoutExtension() == "limpo" ? 0.0 : c.file.getFileNameWithoutExtension() == "crunch" ? 5.0 : 10.0;
+    const bool saved = pk::saveMapping(unzipped, found, "Ganho");
+    found = pk::analyze(unzipped, needs);
+    report(saved && !needs, "Mapeamento gravado no pack.json", unzipped.getChildFile("pack.json").loadFileAsString().substring(0, 120));
+    nexus::PackOptions options;
+    try
+    {
+      const auto pack = nexus::loadPack(unzipped.getFullPathName().toStdString(), options);
+      report(pack->captures.size() == 3 && pack->captures[1].name.find("crunch") != std::string::npos,
+             "O motor abre o pacote mapeado na ordem certa", juce::String(pack->captures[1].name));
+    }
+    catch (const std::exception& e)
+    {
+      report(false, "O motor abre o pacote mapeado na ordem certa", e.what());
+    }
+
+    // Capturas soltas: vão juntas para uma pasta nova.
+    const auto copied = pk::importInto({loose.getChildFile("limpo.nam"), loose.getChildFile("crunch.nam")}, gear, error);
+    report(copied.isAChildOf(root) && copied.findChildFiles(juce::File::findFiles, false, "*.nam").size() == 2,
+           "Capturas soltas copiadas para a pasta do equipamento", copied.getFullPathName());
+    // Duas capturas na mesma posição pedem conferência.
+    juce::Array<juce::File> twins{source.getChildFile("Ganho 5.nam")};
+    const auto twinFolder = pk::importInto(twins, gear, error);
+    source.getChildFile("Ganho 5.nam").copyFileTo(twinFolder.getChildFile("Drive 5 outro.nam"));
+    twinFolder.getChildFile("pack.json").deleteFile(); // só os nomes decidem
+    pk::analyze(twinFolder, needs);
+    report(needs, "Duas capturas na mesma posição: pede o mapeamento", juce::String::fromUTF8(needs ? "pede" : "não pediu"));
+    root.deleteRecursively();
+  }
+
+  // 11. Atualização: comparar versões e achar o instalador de cada sistema.
+  {
+    std::printf("\nAtualização\n");
+    namespace up = nexus::update;
+    report(up::compareVersions("0.2.0", "0.1.9") > 0 && up::compareVersions("v1.0", "1.0.0") == 0
+             && up::compareVersions("0.10.0", "0.9.5") > 0 && up::compareVersions("0.2.0-beta", "0.2.0") == 0,
+           "Comparação de versões", "0.2.0 > 0.1.9, v1.0 = 1.0.0, 0.10.0 > 0.9.5");
+    const juce::String json = R"({"tag_name":"v0.3.0","html_url":"https://github.com/disouz4-dev/Nexus-Modeler/releases/tag/v0.3.0","body":"Novidades",
+      "assets":[{"name":"NexusModeler-0.3.0-Windows-instalador.exe","browser_download_url":"https://x/w.exe","size":10},
+                {"name":"NexusModeler-0.3.0-Windows.zip","browser_download_url":"https://x/w.zip","size":9},
+                {"name":"NexusModeler-0.3.0-Mac.dmg","browser_download_url":"https://x/m.dmg","size":11},
+                {"name":"NexusModeler-0.3.0-Mac.zip","browser_download_url":"https://x/m.zip","size":8},
+                {"name":"NexusModeler-0.3.0-Linux-amd64.deb","browser_download_url":"https://x/l.deb","size":12},
+                {"name":"NexusModeler-0.3.0-Linux-x86_64.tar.gz","browser_download_url":"https://x/l.tgz","size":13}]})";
+    const auto w = up::parseRelease(json, "windows"), m = up::parseRelease(json, "mac");
+    const auto d = up::parseRelease(json, "linux-deb"), t = up::parseRelease(json, "linux");
+    report(w.version == "0.3.0" && w.assetName.endsWith("instalador.exe") && m.assetName.endsWith(".dmg")
+             && d.assetName.endsWith(".deb") && t.assetName.endsWith(".tar.gz") && w.assetSize == 10,
+           "Instalador certo para cada sistema", w.assetName + ", " + m.assetName + ", " + d.assetName + ", " + t.assetName);
+    report(up::compareVersions(up::currentVersion(), "0.0.1") > 0, juce::String::fromUTF8("O programa sabe a própria versão").toRawUTF8(), up::currentVersion());
+  }
+
+  // 12. Testar o som: a gravação entra no lugar da guitarra; gravar a própria guitarra.
+  {
+    std::printf("\nTestar o som\n");
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, 44100.0, 128);
+    p.prepareToPlay(44100.0, 128);
+    auto& test = p.testSource();
+    auto rms = [&](int blocks, float inputLevel) {
+      juce::AudioBuffer<float> b(2, 128);
+      juce::MidiBuffer m;
+      double sum = 0.0;
+      for (int k = 0; k < blocks; ++k)
+      {
+        for (int i = 0; i < 128; ++i)
+          for (int ch = 0; ch < 2; ++ch)
+            b.setSample(ch, i, inputLevel * std::sin(0.05f * static_cast<float>(k * 128 + i)));
+        p.processBlock(b, m);
+        for (int i = 0; i < 128; ++i)
+          sum += b.getSample(0, i) * b.getSample(0, i);
+      }
+      return 10.0 * std::log10(sum / (blocks * 128) + 1e-20);
+    };
+    const double silent = rms(200, 0.0f);
+    bool allStyles = true;
+    juce::String levels;
+    for (auto s : {nexus::TestSource::clean, nexus::TestSource::blues, nexus::TestSource::rock, nexus::TestSource::heavy})
+    {
+      test.setStyle(s);
+      test.setPlaying(true);
+      const double level = rms(700, 0.0f);
+      levels << juce::String(level, 1) << " ";
+      allStyles = allStyles && level > -45.0;
+    }
+    report(silent < -100.0 && allStyles, "Cada estilo toca pela cadeia, sem guitarra ligada (44,1 kHz)", "dB: " + levels);
+    test.setPlaying(false);
+    report(rms(100, 0.0f) < -100.0, "Parar o teste volta para a guitarra", juce::String::fromUTF8("silêncio"));
+
+    // Gravar: 15 s de "guitarra" (um seno) e ela passa a tocar sozinha.
+    test.startRecording();
+    rms(static_cast<int>(16.0 * 44100.0 / 128.0), 0.3f);
+    test.poll();
+    const bool mine = test.hasRecording() && test.style() == nexus::TestSource::mine && test.playing();
+    const double played = rms(300, 0.0f);
+    report(mine && played > -20.0, "Minha guitarra: grava 15 s e repete", juce::String(played, 1) + " dB tocando a gravação");
+    test.setPlaying(false);
+  }
+
+  // 13. Relatório de problemas: registro sem dados pessoais e issue preenchida.
+  {
+    std::printf("\n13. Relatório de problemas\n");
+    namespace rp = nexus::report;
+    const auto home = juce::File::getSpecialLocation(juce::File::userHomeDirectory).getFullPathName();
+    const auto mark = "teste-" + juce::String(juce::Random::getSystemRandom().nextInt(1000000));
+    rp::log("teste", mark + " " + home + "/Documents/Nexus Modeler/pacote");
+    const auto recent = rp::recentLog(5);
+    report(recent.contains(mark) && !recent.contains(home) && recent.contains("~/Documents"),
+           "Registro guarda o erro e troca a pasta do usuário por ~", recent.fromLastOccurrenceOf("\n", false, false));
+
+    // Registro enorme: o endereço da issue continua dentro do limite.
+    juce::String big;
+    for (int i = 0; i < 400; ++i)
+      big << "linha " << i << juce::String::fromUTF8(": erro de teste com acentuação e um caminho ~/Documents/Nexus Modeler\n");
+    const auto url = rp::issueUrl(rp::Kind::problem, juce::String::fromUTF8("O som some quando troco de pedal"), big).toString(true);
+    report(url.length() <= 7000 && url.contains("template=problema.yml") && url.contains("labels=problema")
+             && url.contains("linha%20399"),
+           "Issue preenchida cabe no endereço (o registro é cortado das linhas mais velhas)",
+           juce::String(url.length()) + " caracteres");
+
+    // Travamento salvo: é oferecido uma vez só.
+    const auto crash = rp::folder().getChildFile("travamento.txt");
+    crash.replaceWithText("Nexus Modeler teste\nPilha de chamadas:\n0 nexus");
+    const auto first = rp::takeCrash();
+    const auto second = rp::takeCrash();
+    report(first.contains("Pilha de chamadas") && second.isEmpty(), "Travamento da última vez é oferecido uma vez", juce::String(first.length()) + " caracteres");
+    rp::folder().getChildFile("travamento-visto.txt").deleteFile();
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

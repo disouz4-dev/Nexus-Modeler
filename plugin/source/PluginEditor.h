@@ -8,7 +8,10 @@
 #include "ui/AudioPanel.h"
 #include "ui/CapturePanel.h"
 #include "ui/GearBrowser.h"
+#include "ui/PackMapper.h"
 #include "ui/PresetBar.h"
+#include "ui/TestBar.h"
+#include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
 
@@ -129,6 +132,7 @@ private:
     void mouseExit(const juce::MouseEvent&) override { mHover = -1; repaint(); }
     void rebuild();
     nexus::ui::LevelFader& input() { return *mInput; }
+    nexus::ui::TestBar& testBar() { return *mTest; }
     // Equipamento arrastado da coluna da direita.
     bool isInterestedInDragSource(const SourceDetails&) override;
     void itemDragMove(const SourceDetails&) override;
@@ -168,6 +172,7 @@ private:
 
     NexusEditor& mEditor;
     std::unique_ptr<nexus::ui::LevelFader> mInput, mOutput;
+    std::unique_ptr<nexus::ui::TestBar> mTest;
     nexus::ui::Segmented mRigs{{"1", "2"}};
     std::vector<Card> mCards;
     std::vector<Drop> mDrops;
@@ -184,9 +189,14 @@ private:
   void choosePack();
   // "Inserir manualmente": pasta de pacote do computador.
   void chooseFolder();
+  // Pacote já na pasta do equipamento: mapeia se precisar e carrega.
+  void landPack(const juce::File& folder);
   void loadPackInto(Selection target, int channel, const juce::File& folder);
   void chooseIr(int rig);
   void showAbout();
+  void reportProblem();
+  // O Nexus fechou sozinho da última vez: oferece mandar o relatório.
+  void offerCrashReport();
   void showAudioPanel(bool show);
   void showLanguageMenu();
   void retranslate();
@@ -225,6 +235,8 @@ private:
   nexus::ui::IconButton mAudioButton{nexus::ui::Icon::audio, juce::String::fromUTF8("Interface de áudio")};
   std::unique_ptr<nexus::ui::AudioPanel> mAudioPanel; // só no programa independente
   std::unique_ptr<nexus::ui::CapturePanel> mCapturePanel;
+  std::unique_ptr<nexus::ui::PackMapper> mMapper;
+  juce::String mPackGearName;
   Selection mPackTarget;
   int mPackChannel = 0;
   std::unique_ptr<GearStage> mPedalStage, mAmpStage;
@@ -235,6 +247,7 @@ private:
   nexus::ui::TextLink mChangeLink{"trocar pacote"};
   std::unique_ptr<nexus::ui::GearBrowser> mBrowser;
   std::unique_ptr<nexus::ui::PresetBar> mPresets;
+  nexus::ui::UpdateBadge mUpdate;
   std::unique_ptr<juce::FileChooser> mChooser;
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;

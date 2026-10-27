@@ -1,6 +1,7 @@
 #include "PluginEditor.h"
 
 #include "StandaloneLink.h"
+#include "report/Report.h"
 #include "ui/Brand.h"
 #include "ui/Language.h"
 #include "ui/Theme.h"
@@ -378,6 +379,8 @@ NexusEditor::ChainView::ChainView(NexusEditor& editor)
   mOutput = std::make_unique<LevelFader>(*editor.mProcessor.params.getParameter("volume"), juce::String::fromUTF8("Saída"));
   addAndMakeVisible(*mInput);
   addAndMakeVisible(*mOutput);
+  mTest = std::make_unique<nexus::ui::TestBar>(editor.mProcessor.testSource());
+  addAndMakeVisible(*mTest);
   addAndMakeVisible(mRigs);
   mRigs.setFontSize(11.0f);
   mRigs.onSelect = [this](int i) {
@@ -419,6 +422,9 @@ void NexusEditor::ChainView::resized()
   mInput->setBounds(juce::Rectangle<float>(r.getX(), cy - 21.0f, 170.0f, 42.0f).toNearestInt());
   mOutput->setBounds(juce::Rectangle<float>(r.getRight() - 170.0f, cy - 21.0f, 170.0f, 42.0f).toNearestInt());
   mRigs.setBounds(juce::Rectangle<float>(r.getRight() - 96.0f, 10.0f, 96.0f, 24.0f).toNearestInt());
+  // "Testar o som" em cima da entrada (a gravação entra no lugar da guitarra).
+  const int testW = std::min(mTest->idealWidth(), static_cast<int>(r.getWidth()) - 260);
+  mTest->setBounds(static_cast<int>(r.getX()), 10, testW, 24);
   rebuild();
 }
 
@@ -976,6 +982,13 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       select({Kind::amp, 0});
     });
   addAndMakeVisible(*mPresets);
+  addChildComponent(mUpdate);
+  mUpdate.onLayoutChange = [this] { resized(); };
+  // Depois da janela aparecer: pergunta se manda o relatório de travamento.
+  juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
+    if (safe != nullptr && safe->isShowing())
+      safe->offerCrashReport();
+  });
   mBrowser = std::make_unique<GearBrowser>();
   mBrowser->onPick = [this](const GearItem& item) { pickGear(item); };
   addAndMakeVisible(*mBrowser);
@@ -1009,9 +1022,16 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mCapturePanel->onManual = [this] { chooseFolder(); };
   mCapturePanel->onLoaded = [this](const juce::File& folder) {
     mCapturePanel->setVisible(false);
-    loadPackInto(mPackTarget, mPackChannel, folder);
+    landPack(folder);
   };
   addChildComponent(*mCapturePanel);
+  mMapper = std::make_unique<PackMapper>();
+  mMapper->onClose = [this] { mMapper->setVisible(false); };
+  mMapper->onSaved = [this](const juce::File& folder) {
+    mMapper->setVisible(false);
+    loadPackInto(mPackTarget, mPackChannel, folder);
+  };
+  addChildComponent(*mMapper);
 
   setSize(kWidth, kHeight);
   select({Kind::amp, 0});
@@ -1232,6 +1252,7 @@ void NexusEditor::choosePack()
   const bool pedal = mSel.kind == Kind::pedal;
   const juce::String prefix = pedal ? juce::String(kPedalPrefixes[pedalLook(mSel.index)]) : juce::String("brit800");
   const juce::String name = pedal ? (pedalArt(mSel.index) ? pedalArt(mSel.index)->name : TRANS("Pedal")) : mAmpArt.name;
+  mPackGearName = name;
   mCapturePanel->open(prefix, name, pedal);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
@@ -1247,19 +1268,44 @@ void NexusEditor::loadPackInto(Selection target, int channel, const juce::File& 
 
 void NexusEditor::chooseFolder()
 {
-  const Selection sel = mPackTarget;
-  const int channel = mPackChannel;
-  mChooser = std::make_unique<juce::FileChooser>(sel.kind == Kind::pedal ? TRANS("Escolha a pasta do pacote do pedal")
-                                                                         : TRANS("Escolha a pasta do pacote do amplificador"),
-                                                 juce::File(), "");
-  mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectDirectories,
-                        [this, sel, channel](const juce::FileChooser& fc) {
-                          const auto folder = fc.getResult();
-                          if (!folder.isDirectory())
+  const auto gear = mPackGearName;
+  // Pasta, .zip ou capturas .nam soltas; tudo vai para Documentos/Nexus Modeler/<equipamento>.
+  mChooser = std::make_unique<juce::FileChooser>(TRANS(juce::String::fromUTF8("Escolha a pasta, o .zip ou as capturas .nam do pacote")),
+                                                 nexus::t3k::Connection::packsFolder(gear), "*.zip;*.nam");
+  mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles
+                          | juce::FileBrowserComponent::canSelectDirectories | juce::FileBrowserComponent::canSelectMultipleItems,
+                        [this, gear](const juce::FileChooser& fc) {
+                          const auto chosen = fc.getResults();
+                          if (chosen.isEmpty())
                             return;
+                          juce::String error;
+                          const auto folder = nexus::ui::packs::importInto(chosen, gear, error);
+                          if (!folder.isDirectory())
+                          {
+                            if (error.isNotEmpty())
+                            {
+                              nexus::report::log("pacote", error);
+                              juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::WarningIcon, TRANS("Inserir manualmente"), error);
+                            }
+                            return;
+                          }
                           mCapturePanel->setVisible(false);
-                          loadPackInto(sel, channel, folder);
+                          landPack(folder);
                         });
+}
+
+void NexusEditor::landPack(const juce::File& folder)
+{
+  bool needsMapping = false;
+  nexus::ui::packs::analyze(folder, needsMapping);
+  if (!needsMapping)
+  {
+    loadPackInto(mPackTarget, mPackChannel, folder);
+    return;
+  }
+  mMapper->open(folder, mPackGearName, mPackTarget.kind == Kind::pedal ? juce::String("Drive") : TRANS("Ganho"));
+  mMapper->setVisible(true);
+  mMapper->toFront(true);
 }
 
 void NexusEditor::chooseIr(int rig)
@@ -1282,11 +1328,65 @@ void NexusEditor::chooseIr(int rig)
 
 void NexusEditor::showAbout()
 {
-  juce::AlertWindow::showMessageBoxAsync(
-    juce::MessageBoxIconType::NoIcon, "Nexus Modeler",
-    TRANS(juce::String::fromUTF8("Plugin de guitarra gratuito e de código aberto (GPL v3).")) + "\n"
-      + TRANS(juce::String::fromUTF8("Toca capturas NAM A2 e troca de captura conforme o botão gira.")) + "\n\n"
-      + "github.com/disouz4-dev/Nexus-Modeler");
+  juce::PopupMenu menu;
+  menu.addSectionHeader("Nexus Modeler " + nexus::update::currentVersion());
+  menu.addItem(TRANS("Sobre o Nexus Modeler"), [] {
+    juce::AlertWindow::showMessageBoxAsync(
+      juce::MessageBoxIconType::NoIcon, "Nexus Modeler " + nexus::update::currentVersion(),
+      TRANS(juce::String::fromUTF8("Plugin de guitarra gratuito e de código aberto (GPL v3).")) + "\n"
+        + TRANS(juce::String::fromUTF8("Toca capturas NAM A2 e troca de captura conforme o botão gira.")) + "\n\n"
+        + "github.com/disouz4-dev/Nexus-Modeler");
+  });
+  menu.addSeparator();
+  mUpdate.addMenuItems(menu);
+  menu.addSeparator();
+  menu.addItem(TRANS(juce::String::fromUTF8("Reportar um problema...")), [this] { reportProblem(); });
+  menu.addItem(TRANS(juce::String::fromUTF8("Abrir a pasta do registro de erros")),
+               [] { nexus::report::logFile().existsAsFile() ? nexus::report::logFile().revealToUser() : nexus::report::folder().revealToUser(); });
+  menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&mInfoButton));
+}
+
+void NexusEditor::reportProblem()
+{
+  auto* w = new juce::AlertWindow(TRANS(juce::String::fromUTF8("Reportar um problema")),
+                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus abre o GitHub com o relatório "
+                                                               "preenchido (versão, sistema e os últimos erros registrados); é só conferir e enviar. "
+                                                               "Precisa de uma conta no GitHub.")),
+                                  juce::MessageBoxIconType::NoIcon, this);
+  w->addTextEditor("texto", {}, {});
+  if (auto* editor = w->getTextEditor("texto"))
+  {
+    editor->setMultiLine(true, true);
+    editor->setReturnKeyStartsNewLine(true);
+    editor->setSize(460, 120);
+  }
+  w->addButton(TRANS(juce::String::fromUTF8("Abrir no GitHub")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
+  w->addButton(TRANS("Cancelar"), 0, juce::KeyPress(juce::KeyPress::escapeKey));
+  w->enterModalState(true, juce::ModalCallbackFunction::create([w](int result) {
+    if (result == 1)
+    {
+      const auto text = w->getTextEditorContents("texto").trim();
+      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60));
+    }
+  }), true);
+}
+
+void NexusEditor::offerCrashReport()
+{
+  const auto crash = nexus::report::takeCrash();
+  if (crash.isEmpty())
+    return;
+  juce::AlertWindow::showOkCancelBox(
+    juce::MessageBoxIconType::WarningIcon, TRANS(juce::String::fromUTF8("O Nexus fechou sozinho da última vez")),
+    TRANS(juce::String::fromUTF8("Quer enviar o relatório para o GitHub? Ele leva a versão, o sistema e onde o programa parou, "
+                                 "sem nenhum dado pessoal. Isso ajuda a corrigir o problema.")),
+    TRANS(juce::String::fromUTF8("Enviar relatório")), TRANS(juce::String::fromUTF8("Agora não")), this,
+    juce::ModalCallbackFunction::create([crash](int ok) {
+      if (ok != 0)
+        nexus::report::send(nexus::report::Kind::crash,
+                            juce::String::fromUTF8("O Nexus fechou sozinho. (Se lembrar, conte aqui o que estava fazendo.)"),
+                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30));
+    }));
 }
 
 void NexusEditor::showAudioPanel(bool show)
@@ -1318,12 +1418,15 @@ void NexusEditor::retranslate()
   mInfoButton.setTooltip(TRANS("Sobre o Nexus Modeler"));
   mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
   mLanguageButton.setTooltip(TRANS("Idioma"));
+  mUpdate.retranslate();
   mBrowser->retranslate();
   refreshBrowser();
   if (mAudioPanel)
     mAudioPanel->retranslate();
   if (mCapturePanel)
     mCapturePanel->retranslate();
+  if (mMapper)
+    mMapper->retranslate();
   mTitle.clear();
   timerCallback();
   repaint();
@@ -1522,6 +1625,7 @@ void NexusEditor::timerCallback()
   mOutPeak = std::max(mProcessor.outputPeak(), mOutPeak * 0.8f);
   mProcessor.resetPeaks();
   mChain->input().setLevel(mInPeak);
+  mChain->testBar().refresh();
   mChain->output().setLevel(mOutPeak);
   mRail->repaint();
   mChain->repaint();
@@ -1595,7 +1699,13 @@ void NexusEditor::resized()
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());
+  mMapper->setBounds(getLocalBounds());
   mPresets->setBounds(getLocalBounds().removeFromTop(kTopBar).withSizeKeepingCentre(380, 40));
+  // Aviso de versão nova: à esquerda dos presets.
+  {
+    const int w = mUpdate.idealWidth();
+    mUpdate.setBounds(mPresets->getX() - 16 - w, mPresets->getY(), w, mPresets->getHeight());
+  }
 
   mBrowser->setBounds(r.removeFromRight(kBrowserWidth));
   mChain->setBounds(r.removeFromBottom(kPathHeight));

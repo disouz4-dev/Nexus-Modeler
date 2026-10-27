@@ -15,79 +15,15 @@ const juce::Colour blueDeep{0xff0f5fd6};
 const juce::Colour steelLight{0xff8fa3b8};
 const juce::Colour steelDark{0xff3a4856};
 
-// Triângulo impossível. Pontos em coordenadas baricêntricas (a, b, c), com
-// a + b + c = n; cada viga tem duas faces de largura 1: a de fora (azul) e a
-// de dentro (aço). Em cada canto uma viga passa na frente da outra, em ciclo,
-// e é isso que cria a ilusão.
+// Triângulo impossível: o desenho vem de assets/marca/nexus_marca.svg, gerado
+// por tools/marca/logo.py (o mesmo arquivo do ícone e do site). Vetor: nítido
+// em qualquer tamanho.
 inline void drawPenrose(juce::Graphics& g, juce::Rectangle<float> area)
 {
-  const float side = std::min(area.getWidth(), area.getHeight() / 0.8660254f);
-  const float h = side * 0.8660254f;
-  const juce::Point<float> A(area.getCentreX(), area.getCentreY() - h * 0.5f);
-  const juce::Point<float> B(area.getCentreX() - side * 0.5f, area.getCentreY() + h * 0.5f);
-  const juce::Point<float> C(area.getCentreX() + side * 0.5f, area.getCentreY() + h * 0.5f);
-  constexpr float n = 9.0f;
-  auto P = [&](float a, float b, float c) {
-    return juce::Point<float>((a * A.x + b * B.x + c * C.x) / n, (a * A.y + b * B.y + c * C.y) / n);
-  };
-  auto poly = [](std::initializer_list<juce::Point<float>> pts) {
-    juce::Path p;
-    bool first = true;
-    for (auto pt : pts)
-    {
-      if (first)
-        p.startNewSubPath(pt);
-      else
-        p.lineTo(pt);
-      first = false;
-    }
-    p.closeSubPath();
-    return p;
-  };
-
-  // Faces de cada viga: [0] fora, [1] dentro.
-  // Viga de baixo: a de 0 a 2. Esquerda: c de 0 a 2. Direita: b de 0 a 2.
-  const juce::Path bottom[2] = {poly({P(0, n, 0), P(0, 0, n), P(1, 0, n - 1), P(1, n - 1, 0)}),
-                                poly({P(1, n - 1, 0), P(1, 0, n - 1), P(2, 0, n - 2), P(2, n - 2, 0)})};
-  const juce::Path left[2] = {poly({P(0, n, 0), P(n, 0, 0), P(n - 1, 0, 1), P(0, n - 1, 1)}),
-                              poly({P(0, n - 1, 1), P(n - 1, 0, 1), P(n - 2, 0, 2), P(0, n - 2, 2)})};
-  const juce::Path right[2] = {poly({P(n, 0, 0), P(0, 0, n), P(0, 1, n - 1), P(n - 1, 1, 0)}),
-                               poly({P(n - 1, 1, 0), P(0, 1, n - 1), P(0, 2, n - 2), P(n - 2, 2, 0)})};
-
-  auto paintBeam = [&](const juce::Path* beam, juce::Point<float> from, juce::Point<float> to) {
-    g.setGradientFill(juce::ColourGradient(blueLight, from.x, from.y, blueDeep, to.x, to.y, false));
-    g.fillPath(beam[0]);
-    g.setGradientFill(juce::ColourGradient(steelLight, from.x, from.y, steelDark, to.x, to.y, false));
-    g.fillPath(beam[1]);
-  };
-  paintBeam(bottom, C, B);
-  paintBeam(left, B, A);
-  paintBeam(right, A, C);
-
-  // Cantos: quem passa na frente (baixo sobre esquerda em B, esquerda sobre
-  // direita em A, direita sobre baixo em C).
-  struct Corner
-  {
-    juce::Path region;
-    const juce::Path* beam;
-    juce::Point<float> from, to;
-  };
-  const Corner corners[3] = {
-    {poly({P(0, n, 0), P(2, n - 2, 0), P(2, n - 4, 2), P(0, n - 2, 2)}), bottom, C, B},
-    {poly({P(n, 0, 0), P(n - 2, 0, 2), P(n - 4, 2, 2), P(n - 2, 2, 0)}), left, B, A},
-    {poly({P(0, 0, n), P(0, 2, n - 2), P(2, 2, n - 4), P(2, 0, n - 2)}), right, A, C},
-  };
-  for (const auto& c : corners)
-  {
-    juce::Graphics::ScopedSaveState save(g);
-    g.reduceClipRegion(c.region);
-    paintBeam(c.beam, c.from, c.to);
-  }
-
-  // Brilho fino na borda de fora.
-  juce::Path outline = poly({A, B, C});
-  g.setColour(cyan.withAlpha(0.55f));
-  g.strokePath(outline, juce::PathStrokeType(std::max(0.8f, side * 0.012f)));
+  static const std::unique_ptr<juce::Drawable> mark =
+    juce::Drawable::createFromImageData(BinaryData::nexus_marca_svg, static_cast<size_t>(BinaryData::nexus_marca_svgSize));
+  if (mark != nullptr)
+    mark->drawWithin(g, area, juce::RectanglePlacement::centred, 1.0f);
 }
 
 // "NEXUS" desenhado letra por letra. Devolve a largura usada.

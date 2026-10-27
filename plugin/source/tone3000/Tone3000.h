@@ -83,14 +83,18 @@ public:
   void list(List which, const juce::String& gear, const juce::String& word,
             std::function<void(std::vector<Tone>, juce::String error)> done);
 
-  // Baixa um tom para uma pasta de pacote pronta para o motor. Sem "tone.id",
-  // abre a tela de escolha da TONE3000 filtrada por "gearFilter"
-  // ("amp_amp-cab", "pedal"). progress(texto) informa cada etapa.
-  void download(const Tone& tone, const juce::String& gearFilter, std::function<void(juce::String)> progress,
-                std::function<void(juce::File folder, juce::String error)> done);
+  // Baixa um tom para Documentos/Nexus Modeler/<gearName>/<número e nome>,
+  // pronto para o motor. Com a conta conectada, baixa direto, sem abrir o
+  // site; sem conta, abre o login uma vez. Sem "tone.id", abre a tela de
+  // escolha da TONE3000 filtrada por "gearFilter" ("amp_amp-cab", "pedal").
+  // Se o Nexus não achar a posição do botão no nome das capturas, baixa todas
+  // e marca o pacote para o usuário mapear ("mapear": true no pack.json).
+  // progress(texto) informa cada etapa.
+  void download(const Tone& tone, const juce::String& gearFilter, const juce::String& gearName,
+                std::function<void(juce::String)> progress, std::function<void(juce::File folder, juce::String error)> done);
 
-  // Onde ficam os pacotes baixados.
-  static juce::File packsFolder();
+  // Pasta raiz dos pacotes (Documentos/Nexus Modeler) ou a de um equipamento.
+  static juce::File packsFolder(const juce::String& gearName = {});
 
 private:
   class Loopback;

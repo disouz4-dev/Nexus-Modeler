@@ -89,7 +89,7 @@ int main(int argc, char** argv)
   juce::File folder;
   juce::String error;
   t3k.download(
-    tone, "amp_amp-cab", [](juce::String s) { std::printf("  ... %s\n", s.toRawUTF8()); },
+    tone, "amp_amp-cab", "Teste Nexus", [](juce::String s) { std::printf("  ... %s\n", s.toRawUTF8()); },
     [&](juce::File f, juce::String e) {
       folder = f;
       error = e;

@@ -9,6 +9,7 @@
 
 #include "ChainLayout.h"
 #include "MidiMap.h"
+#include "TestSource.h"
 #include "nexus/AmpVoice.h"
 #include "nexus/Effects.h"
 
@@ -120,6 +121,8 @@ public:
 
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
+  // "Testar o som": gravação de guitarra no lugar da entrada.
+  nexus::TestSource& testSource() { return mTest; }
   float outputPeak() const { return mOutPeak.load(); }
   void resetPeaks() { mInPeak.store(0.0f); mOutPeak.store(0.0f); }
 
@@ -248,6 +251,8 @@ private:
   float mInputGain = 1.0f;
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
+  nexus::TestSource mTest;
+  std::vector<float> mTestBuffer;
   std::unique_ptr<MidiMap> mMidi;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NexusProcessor)

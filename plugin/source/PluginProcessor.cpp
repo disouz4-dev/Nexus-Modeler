@@ -2,6 +2,7 @@
 
 #include "PluginEditor.h"
 #include "nexus/Pack.h"
+#include "report/Report.h"
 
 namespace
 {
@@ -147,6 +148,8 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   const int block = std::max(samplesPerBlock, 32);
   mMono.assign(static_cast<size_t>(block), 0.0);
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
+  mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
+  mTest.prepare(sampleRate);
   for (auto* v : {&mDry, &mChannelIn, &mChannelOut, &mRigIn})
     v->assign(static_cast<size_t>(kEngineBlock), 0.0);
   mCabFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
@@ -526,9 +529,12 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (int start = 0; start < total; start += capacity)
   {
     const int n = std::min(capacity, total - start);
-    if (inChannels > 0)
+    // Entrada: a guitarra ou, no "Testar o som", a gravação de teste.
+    const float* in = inChannels > 0 ? buffer.getReadPointer(0, start) : nullptr;
+    if (mTest.process(in, mTestBuffer.data(), n))
+      in = mTestBuffer.data();
+    if (in != nullptr)
     {
-      const float* in = buffer.getReadPointer(0, start);
       const float inStep = (targetIn - mInputGain) / static_cast<float>(n);
       float gi = mInputGain;
       for (int i = 0; i < n; ++i)
@@ -646,6 +652,7 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
     {
       const juce::ScopedLock sl(mStatusLock);
       s.status = juce::String("Erro: ") + juce::String::fromUTF8(e.what());
+      nexus::report::log("captura", folder.getFullPathName() + ": " + juce::String::fromUTF8(e.what()));
     }
   });
 }
@@ -665,7 +672,11 @@ juce::String NexusProcessor::packName(int slot) const
 void NexusProcessor::loadIrAsync(int rig, const juce::File& file)
 {
   if (!file.existsAsFile())
+  {
+    if (file != juce::File())
+      nexus::report::log("ir", "arquivo não encontrado: " + file.getFullPathName());
     return;
+  }
   auto& cab = mCabs[static_cast<size_t>(rig)];
   cab.file = file;
   // O próprio JUCE lê, ajusta a taxa e troca o IR fora do áudio.
