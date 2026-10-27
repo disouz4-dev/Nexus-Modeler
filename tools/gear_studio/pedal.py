@@ -164,8 +164,11 @@ def build(rec, fonts):
                     material=mats["chrome"], axis="Y", bevel=0.0012)
         top = base_h
         # Nome: tamanho e deslocamento ajustáveis (nomes longos não podem encostar no LED).
-        _flat_text("modelo", rec["modelo"], fonts["label"], rec.get("modelo_m", 0.0085),
-                   (rec.get("modelo_x", 0.0) * W / 2, ty + tl * 0.38, H + 0.0004), mats["ink"], spacing=1.1, offset=0.0002)
+        # O engrossamento da letra quebra o contorno do B e do R em letra pequena.
+        size = rec.get("modelo_m", 0.0085)
+        _flat_text("modelo", rec["modelo"], fonts["label"], size,
+                   (rec.get("modelo_x", 0.0) * W / 2, ty + tl * 0.38, H + 0.0004), mats["ink"], spacing=1.1,
+                   offset=0.0002 if size >= 0.0085 else 0.0)
         _flat_text("tipo", rec["tipo_texto"], fonts["label"], 0.0062, (0, ty - tl * 0.40, H + 0.0004), mats["ink"], spacing=1.4)
     else:
         st.box("caixa", (W, L, H), (0, 0, H / 2), bevel=rec.get("chanfro_m", 0.0045), segments=6, material=mats["paint"])

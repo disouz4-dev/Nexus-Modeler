@@ -134,6 +134,7 @@ private:
     std::atomic<NexusEngine*> pending{nullptr};
     std::atomic<NexusEngine*> retired{nullptr};
     NexusEngine* active = nullptr;
+    std::atomic<bool> clear{false}; // pedido da tela: tirar o pacote
     juce::File folder;
     bool loadedLite = false;
     juce::String status, name;
@@ -193,6 +194,8 @@ private:
   static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
   void timerCallback() override;
   void loadSlot(int slot, const juce::File& folder);
+  // Tira o pacote da posição (preset sem pacote ali).
+  void clearSlot(int slot);
   void runEngines(double* buffer, int numFrames);
   void runPedal(int pedal, double* buffer, int n);
   void runRigs(double* buffer, int n);

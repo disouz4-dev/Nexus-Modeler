@@ -43,6 +43,7 @@ set(NEXUS_UI_SOURCES
   source/ui/Gear.cpp
   source/ui/CapturePanel.cpp
   source/ui/GearBrowser.cpp
+  source/ui/PresetBar.cpp
   source/tone3000/Tone3000.cpp)
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp

@@ -579,6 +579,38 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
   }
 
+  // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
+  {
+    std::printf("\nPresets\n");
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
+    waitPack(p);
+    ChainLayout l;
+    l.pre = {0, 1};
+    l.post = {2};
+    p.setLayout(l);
+    setParam(p, "p2_visual", 5.0f);
+    juce::MemoryBlock withPack;
+    p.getStateInformation(withPack);
+
+    NexusProcessor empty;
+    juce::MemoryBlock withoutPack;
+    empty.getStateInformation(withoutPack);
+    p.setStateInformation(withoutPack.getData(), static_cast<int>(withoutPack.getSize()));
+    settle(p, 200);
+    report(!p.channelLoaded(0, 0), "Preset sem pacote tira o pacote do cabeçote",
+           p.channelLoaded(0, 0) ? juce::String("continuou carregado") : juce::String("vazio"));
+    p.setStateInformation(withPack.getData(), static_cast<int>(withPack.getSize()));
+    waitPack(p);
+    const auto back = p.layout();
+    report(p.channelLoaded(0, 0) && back.pre == std::vector<int>{0, 1} && back.post == std::vector<int>{2} && p.pedalLook(1) == 5,
+           "Voltar ao preset traz pacote, cadeia e pedais",
+           juce::String::fromUTF8(p.channelLoaded(0, 0) ? "pacote de volta" : "sem pacote") + ", " + juce::String(static_cast<int>(back.count()))
+             + " pedais, pedal 2 = visual " + juce::String(p.pedalLook(1)));
+  }
+
   // 7. TONE3000: escolha das capturas pelos nomes reais dos pacotes.
   {
     std::printf("\nTONE3000: escolha das capturas\n");

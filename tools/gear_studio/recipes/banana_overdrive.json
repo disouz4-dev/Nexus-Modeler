@@ -12,9 +12,9 @@
   "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.93,
-      0.66,
-      0.015
+      0.8,
+      0.55,
+      0.0
     ],
     "metalico": 0.0,
     "aspereza": 0.22
@@ -82,5 +82,6 @@
   "led_no_basculante": true,
   "medidas_fonte": "BOSS SD-1: 73 x 129 x 59 mm",
   "modelo_m": 0.0058,
-  "modelo_x": 0.12
+  "modelo_x": 0.12,
+  "transformacao": "Standard"
 }

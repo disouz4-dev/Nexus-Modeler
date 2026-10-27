@@ -40,7 +40,8 @@ GearArt GearArt::load(const juce::String& prefix)
       knob.size = static_cast<int>(k["tamanho"]);
       knob.box = {static_cast<int>(k["x"]), static_cast<int>(k["y"]), knob.size, knob.size};
       knob.strip = imageResource(prefix + "_botao_" + knob.id + ".png");
-      knob.frames = frames;
+      // Botão em degraus (drive) pode ter menos quadros que os outros.
+      knob.frames = k.hasProperty("posicoes") ? static_cast<int>(k["posicoes"]) : frames;
       if (knob.strip.isValid())
         art.knobs.push_back(std::move(knob));
     }

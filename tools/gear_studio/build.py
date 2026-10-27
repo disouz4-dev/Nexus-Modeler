@@ -135,6 +135,13 @@ def main():
     width = int(a.largura * scale)
     height = int(width * frame["proporcao"])
     st.render_settings(scene, width, height, samples)
+    # Cores muito saturadas (amarelo) desbotam no contraste padrão: a receita
+    # pode pedir outro "look" do AgX só para ela.
+    if rec.get("transformacao"):
+        scene.view_settings.view_transform = rec["transformacao"]
+        scene.view_settings.look = "None"
+    if rec.get("aparencia"):
+        scene.view_settings.look = rec["aparencia"]
     # Enquadra pela largura com folga para a sombra e a alça.
     lens = 85
     view_w = W * frame["largura_rel"]

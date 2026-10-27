@@ -8,6 +8,7 @@
 #include "ui/AudioPanel.h"
 #include "ui/CapturePanel.h"
 #include "ui/GearBrowser.h"
+#include "ui/PresetBar.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
 
@@ -233,6 +234,7 @@ private:
   nexus::ui::Segmented mChannels{{}};
   nexus::ui::TextLink mChangeLink{"trocar pacote"};
   std::unique_ptr<nexus::ui::GearBrowser> mBrowser;
+  std::unique_ptr<nexus::ui::PresetBar> mPresets;
   std::unique_ptr<juce::FileChooser> mChooser;
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;

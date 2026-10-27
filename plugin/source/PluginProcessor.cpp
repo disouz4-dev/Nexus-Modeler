@@ -228,8 +228,21 @@ nexus::AmpVoice::Controls NexusProcessor::pedalControls(int pedal) const
   return c;
 }
 
+namespace
+{
+// Soma o tempo de processador gasto num bloco (pedal ou cabeçote) enquanto existe.
+struct LoadTimer
+{
+  explicit LoadTimer(double& total) : mTotal(total), mStart(juce::Time::getHighResolutionTicks()) {}
+  ~LoadTimer() { mTotal += juce::Time::highResolutionTicksToSeconds(juce::Time::getHighResolutionTicks() - mStart); }
+  double& mTotal;
+  juce::int64 mStart;
+};
+} // namespace
+
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
+  const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
   // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
@@ -276,6 +289,7 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 
 void NexusProcessor::runAmp(int rig, double* buffer, int n)
 {
+  const LoadTimer timer(mLoadSeconds[static_cast<size_t>(audibleSlot(rig))]);
   auto& r = mRigs[static_cast<size_t>(rig)];
   // Canal pedido; se ele não tem pacote, fica no que está tocando.
   const int first = ampSlot(rig, 0);
@@ -342,6 +356,7 @@ void NexusProcessor::runAmp(int rig, double* buffer, int n)
 
 void NexusProcessor::runCab(int rig, double* buffer, int n)
 {
+  const LoadTimer timer(mLoadSeconds[static_cast<size_t>(audibleSlot(rig))]); // a caixa conta no cabeçote
   auto& cab = mCabs[static_cast<size_t>(rig)];
   // A caixa só toca com IR, modo "IR próprio" e captura sem caixa.
   const bool on = cab.loaded.load() && cab.mode->load() > 0.5f && !mIncludesCab[static_cast<size_t>(audibleSlot(rig))].load();
@@ -423,6 +438,17 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
     for (int p : layout.post)
       runPedal(p, b, n);
   }
+  // A cada meio segundo de som, publica a parte de um núcleo que cada bloco usou.
+  mLoadWindow += numFrames / kEngineRate;
+  if (mLoadWindow >= 0.5)
+  {
+    for (size_t i = 0; i < mLoadSeconds.size(); ++i)
+    {
+      mUiLoad[i].store(static_cast<float>(mLoadSeconds[i] / mLoadWindow));
+      mLoadSeconds[i] = 0.0;
+    }
+    mLoadWindow = 0.0;
+  }
 }
 
 void NexusProcessor::publish(int slot)
@@ -455,11 +481,18 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   // Pacotes novos e cadeia nova: só troca se o anterior já foi recolhido.
   for (auto& s : mSlots)
     if (s.retired.load() == nullptr)
+    {
       if (auto* next = s.pending.exchange(nullptr))
       {
         s.retired.store(s.active);
         s.active = next;
       }
+      else if (s.clear.exchange(false))
+      {
+        s.retired.store(s.active);
+        s.active = nullptr;
+      }
+    }
   if (mLayoutRetired.load() == nullptr)
     if (auto* next = mLayoutPending.exchange(nullptr))
     {
@@ -551,6 +584,23 @@ void NexusProcessor::setLayout(const ChainLayout& layout)
 {
   mLayoutUi = layout;
   delete mLayoutPending.exchange(new ChainLayout(layout));
+}
+
+void NexusProcessor::clearSlot(int slotIndex)
+{
+  auto& slot = mSlots[static_cast<size_t>(slotIndex)];
+  if (slot.folder == juce::File() && !mSlotLoaded[static_cast<size_t>(slotIndex)].load())
+    return;
+  slot.folder = juce::File();
+  mSlotLoaded[static_cast<size_t>(slotIndex)].store(false);
+  mIncludesCab[static_cast<size_t>(slotIndex)].store(false);
+  mUi[static_cast<size_t>(slotIndex)].count.store(0);
+  {
+    const juce::ScopedLock sl(mStatusLock);
+    slot.status.clear();
+    slot.name.clear();
+  }
+  slot.clear.store(true);
 }
 
 void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
@@ -671,8 +721,15 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     for (int i = 0; i < kSlots; ++i)
     {
       const juce::File folder(state.getProperty("pacote_" + juce::String(i)).toString());
+      auto& slot = mSlots[static_cast<size_t>(i)];
       if (folder.isDirectory())
-        loadSlot(i, folder);
+      {
+        // Mesmo pacote já aberto (troca de preset): não carrega de novo.
+        if (folder != slot.folder || !mSlotLoaded[static_cast<size_t>(i)].load())
+          loadSlot(i, folder);
+      }
+      else if (state.hasProperty("pacote_" + juce::String(i)))
+        clearSlot(i);
     }
     // Projetos salvos antes da cadeia: um cabeçote de três canais e um pedal.
     const std::pair<const char*, int> old[] = {
@@ -688,8 +745,17 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     for (int r = 0; r < kRigs; ++r)
     {
       const juce::File ir(state.getProperty("ir_" + juce::String(r)).toString());
+      auto& cab = mCabs[static_cast<size_t>(r)];
       if (ir.existsAsFile())
-        loadIrAsync(r, ir);
+      {
+        if (ir != cab.file || !cab.loaded.load())
+          loadIrAsync(r, ir);
+      }
+      else if (state.hasProperty("ir_" + juce::String(r)))
+      {
+        cab.loaded.store(false);
+        cab.file = juce::File();
+      }
     }
   }
 }

@@ -80,7 +80,16 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
 - **Pedais:** até 12, cada um tocando captura NAM de pedal (pacote de drive
   com troca sem clique). Drive em degraus de 0 a 10, Tom e Nível livres; clique
   no pisante liga e desliga em 20 ms, sem estalo, com o LED vermelho aceso
-  quando ligado. Três visuais: Lemon Drive, Laranja Dist e Ouro.
+  quando ligado. Pedais de captura: Lemon Drive (inspirado no TS9), Orange
+  Drive (DS-1), Banana Overdrive (SD-1) e Gold Centaur (Klon). Efeitos do
+  próprio Nexus: Blueberry Chorus, Coconut Delay e Grape Reverb, com rastro
+  ao desligar.
+- **Coluna de equipamentos** à direita: clique troca a peça escolhida,
+  arrastar para a cadeia acrescenta. Lista completa, com os planejados, em
+  [docs/CATALOGO.md](docs/CATALOGO.md).
+- **Presets:** o som inteiro num arquivo, com anterior e próximo na barra de
+  cima.
+- **Uso do processador** de cada pedal e cabeçote, embaixo de cada peça.
 - **Cadeia de sinal por clique e arrasta:** pedais antes do cabeçote, entre o
   cabeçote e a caixa (modulação, por exemplo) ou depois da caixa. Dois
   cabeçotes com pedal A/B: cada lado com cabeçote, pedais e caixa próprios, e

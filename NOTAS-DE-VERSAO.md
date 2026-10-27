@@ -11,6 +11,15 @@
   Cada botão tem 101 imagens: arrastar, Shift para ajuste fino, duplo clique
   volta ao padrão, roda do mouse.
 - Controles deslizantes de entrada e saída com medidor de pico.
+- Coluna de equipamentos à direita (Pedais, Cabeçotes, Caixas): cada peça com
+  a imagem 3D, o clássico que inspirou e de onde vem o som. Clique troca a
+  peça escolhida; arrastar para a cadeia acrescenta onde soltar. Os
+  equipamentos planejados aparecem em "Em breve" (lista em docs/CATALOGO.md).
+- Presets na barra de cima: o som inteiro (cadeia, pedais, cabeçotes,
+  botões, capturas, IRs e MIDI) num arquivo; setas para o anterior e o
+  próximo, salvar, salvar como, renomear e apagar (vai para a lixeira).
+- Uso do processador de cada pedal e cabeçote embaixo de cada peça da cadeia.
+- Ícone do programa com o triângulo do logo.
 
 ### Cadeia de sinal
 - Até 12 pedais, montados por clique e arrasta: antes do cabeçote, entre o
@@ -33,9 +42,16 @@
 - Bloco de pedal antes do amplificador, tocando captura NAM ou pacote de
   ganho (mesmo motor de troca sem clique do amplificador).
 - Botões Ganho, Tom e Nível; o pisante liga e desliga em 20 ms, sem estalo.
-- Pedais vistos de frente, retos (câmera bem em cima), como na pedaleira.
-- Três visuais inspirados em pedais reais, com nomes próprios: Lemon Drive,
-  Laranja Dist e Ouro.
+- Pedais vistos de frente, retos (câmera bem em cima), como na pedaleira,
+  com as medidas dos pedais reais e luz de frente.
+- Ligado ou desligado, o pedal tem a mesma luz: só o LED vermelho acende.
+- Drive em degraus de 0 a 10 (cada degrau é uma captura); tom e nível livres.
+- Pedais de captura inspirados em clássicos: Lemon Drive (TS9), Orange Drive
+  (DS-1), Banana Overdrive (SD-1) e Gold Centaur (Klon).
+- Efeitos feitos pelo próprio Nexus, sem captura: Blueberry Chorus (CE-2),
+  Coconut Delay (DD-3) e Grape Reverb (RV-6). Desligados, o delay e o reverb
+  terminam de soar (rastro) em vez de cortar.
+- Motor A2 Lite por pedal (botão direito no pedal da cadeia).
 
 ### Caixa
 - Abas Desligada / Captura / IR próprio. IR em `.wav` ou `.aiff`, com

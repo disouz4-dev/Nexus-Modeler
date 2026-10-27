@@ -620,6 +620,18 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
       g.setColour(colour::accent);
       g.fillRoundedRectangle(c.r.getCentreX() - 12.0f, c.r.getBottom() + 7.0f, 24.0f, 2.0f, 1.0f);
     }
+    // Processador que o bloco usa agora (parte de um núcleo).
+    if (c.type == CardType::pedal || c.type == CardType::amp)
+    {
+      const int slot = c.type == CardType::pedal ? NexusProcessor::pedalSlot(c.index) : proc.audibleSlot(c.index);
+      if (const float load = proc.slotLoad(slot); load >= 0.001f)
+      {
+        g.setColour(load > 0.5f ? colour::danger : colour::faint);
+        g.setFont(Fonts::get().ui(9.5f));
+        g.drawText(juce::String(load * 100.0f, 1).replaceCharacter('.', ',') + "%",
+                   c.r.withY(c.r.getBottom() + 10.0f).withHeight(12.0f).expanded(10.0f, 0.0f), juce::Justification::centred);
+      }
+    }
   }
 
   // Nome do que está sob o mouse, embaixo da cadeia.
@@ -841,6 +853,9 @@ void NexusEditor::ChainView::showCardMenu(int card)
     menu.addItem(3, TRANS(juce::String::fromUTF8("Mover para entre cabeçote e caixa")) + " (B)");
   menu.addItem(4, TRANS("Mover para depois da caixa"));
   menu.addSeparator();
+  const bool pedalLite = proc.params.getRawParameterValue(NexusProcessor::pedalParam(c.index, "lite"))->load() > 0.5f;
+  menu.addItem(7, TRANS(juce::String::fromUTF8("Motor A2 Lite neste pedal (usa menos processador)")),
+               !NexusProcessor::isNativeLook(proc.pedalLook(c.index)), pedalLite);
   menu.addItem(5, TRANS("Aprender MIDI (liga e desliga)"));
   menu.addItem(6, TRANS("Remover pedal"));
   menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(this), [this, pedal = c.index](int r) {
@@ -853,6 +868,11 @@ void NexusEditor::ChainView::showCardMenu(int card)
     }
     else if (r == 5)
       mEditor.showMidiMenu(NexusProcessor::pedalParam(pedal, "ligado"), *this);
+    else if (r == 7)
+    {
+      auto* lite = mEditor.mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, "lite"));
+      lite->setValueNotifyingHost(lite->getValue() > 0.5f ? 0.0f : 1.0f);
+    }
     else if (r == 6)
     {
       auto l = mEditor.mProcessor.layout();
@@ -943,6 +963,19 @@ NexusEditor::NexusEditor(NexusProcessor& p)
     else
       choosePack();
   };
+  mPresets = std::make_unique<PresetBar>(
+    [this] {
+      juce::MemoryBlock data;
+      mProcessor.getStateInformation(data);
+      return data;
+    },
+    [this](const juce::MemoryBlock& data) {
+      mProcessor.setStateInformation(data.getData(), static_cast<int>(data.getSize()));
+      // Tela acompanha o preset: cadeia, peça escolhida e coluna.
+      mChain->rebuild();
+      select({Kind::amp, 0});
+    });
+  addAndMakeVisible(*mPresets);
   mBrowser = std::make_unique<GearBrowser>();
   mBrowser->onPick = [this](const GearItem& item) { pickGear(item); };
   addAndMakeVisible(*mBrowser);
@@ -1562,6 +1595,7 @@ void NexusEditor::resized()
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());
+  mPresets->setBounds(getLocalBounds().removeFromTop(kTopBar).withSizeKeepingCentre(380, 40));
 
   mBrowser->setBounds(r.removeFromRight(kBrowserWidth));
   mChain->setBounds(r.removeFromBottom(kPathHeight));
