@@ -29,13 +29,16 @@
     ]
   },
   "logo": {
-    "texto": "Nexus",
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
     "cor": [
       0.86,
       0.8,
       0.66
-    ],
-    "altura_m": 0.085
+    ]
   },
   "painel": {
     "altura_m": 0.088,

@@ -30,17 +30,16 @@
     "trama_mm": 2.0
   },
   "logo": {
+    "tipo": "marca",
     "texto": "NEXUS",
-    "fonte": "label",
-    "metal": true,
-    "contorno": false,
+    "altura_m": 0.03,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
     "cor": [
       0.88,
       0.89,
       0.9
-    ],
-    "altura_m": 0.07,
-    "altura_rel": 0.5
+    ]
   },
   "painel": {
     "altura_m": 0.088,

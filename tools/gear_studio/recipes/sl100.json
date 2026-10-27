@@ -26,17 +26,16 @@
     "passo_mm": 4.4
   },
   "logo": {
-    "texto": "Nexus",
-    "fonte": "script",
-    "metal": true,
-    "contorno": false,
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
     "cor": [
       0.9,
       0.9,
       0.92
-    ],
-    "altura_m": 0.082,
-    "altura_rel": 0.5
+    ]
   },
   "painel": {
     "altura_m": 0.088,

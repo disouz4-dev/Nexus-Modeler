@@ -6,6 +6,7 @@ import math
 import bpy
 
 import knobs
+import brand_plate
 import studio as st
 
 
@@ -159,11 +160,16 @@ def build(rec, fonts):
     logo_x = inner_w * lg.get("lado_rel", 0.0)
     lsize = lg["altura_m"]
     lfont = fonts[lg.get("fonte", "script")]
-    if lg.get("contorno", True):
+    if lg.get("tipo") == "marca":
+        # A marca do programa (triângulo + NEXUS + MODELER), em relevo.
+        brand_plate.build((logo_x, logo_z), lg["altura_m"], fascia_front - 0.0045, fonts, lg.get("modeler", True))
+        lg = dict(lg, sublinhado=None)
+    elif lg.get("contorno", True):
         st.text("logo_contorno", lg["texto"], lfont, lsize, (logo_x, fascia_front - 0.002, logo_z),
                 mats["logo_edge"], extrude=0.0018, offset=0.0016, bevel=0.0004, valign="CENTER")
-    st.text("logo", lg["texto"], lfont, lsize, (logo_x, fascia_front - 0.0045, logo_z),
-            mats["logo"], extrude=0.0016, bevel=0.0007, valign="CENTER")
+    if lg.get("tipo") != "marca":
+      st.text("logo", lg["texto"], lfont, lsize, (logo_x, fascia_front - 0.0045, logo_z),
+              mats["logo"], extrude=0.0016, bevel=0.0007, valign="CENTER")
     # Sublinhado em traço, como a assinatura das placas em script.
     if lg.get("sublinhado"):
         sub = lg["sublinhado"]

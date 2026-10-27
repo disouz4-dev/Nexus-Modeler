@@ -30,25 +30,16 @@
     "trama_mm": 2.2
   },
   "logo": {
-    "texto": "Nexus",
-    "fonte": "mesa",
-    "metal": true,
-    "contorno": false,
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.55,
+    "lado_rel": 0.0,
     "cor": [
       0.86,
       0.87,
       0.89
-    ],
-    "altura_m": 0.082,
-    "altura_rel": 0.55,
-    "lado_rel": 0.0,
-    "sublinhado": {
-      "largura_m": 0.15,
-      "espessura_m": 0.0042,
-      "abaixo": 0.48,
-      "desvio_m": 0.012,
-      "inclinacao": -3.0
-    }
+    ]
   },
   "painel": {
     "altura_m": 0.088,

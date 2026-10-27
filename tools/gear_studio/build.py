@@ -33,6 +33,7 @@ FONTS = {
     "script": os.path.join(ROOT, "assets", "fonts", "yellowtail-Yellowtail-Regular.ttf"),
     # Script grosso e inclinado, para os cabeçotes de inspiração Mesa/Boogie.
     "mesa": os.path.join(ROOT, "assets", "fonts", "lobster-Lobster-Regular.ttf"),
+    "ui": os.path.join(ROOT, "assets", "fonts", "inter-Inter[opsz,wght].ttf"),
 }
 
 
