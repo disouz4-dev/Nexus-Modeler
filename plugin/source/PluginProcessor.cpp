@@ -68,14 +68,31 @@ NexusProcessor::NexusProcessor()
   startTimerHz(30);
 }
 
-void NexusProcessor::parameterGestureChanged(int, bool starting)
+void NexusProcessor::parameterGestureChanged(int index, bool starting)
 {
-  const int left = mGestures.fetch_add(starting ? 1 : -1) + (starting ? 1 : -1);
-  if (left <= 0)
+  const auto* param = dynamic_cast<juce::AudioProcessorParameterWithID*>(getParameters()[index]);
+  if (param == nullptr)
+    return;
+  const auto& id = param->paramID;
+  // Quais equipamentos esse botão troca de captura.
+  juce::Array<int> slots;
+  for (int i = 0; i < kPedals; ++i)
+    if (id == pedalParam(i, "drive"))
+      slots.add(pedalSlot(i));
+  for (int r = 0; r < kRigs; ++r)
+    for (int c = 0; c < kChannels; ++c)
+      if (id == ampParam(r, c == 0 ? "ganho" : c == 1 ? "ganho_2" : "ganho_3"))
+        slots.add(ampSlot(r, c));
+  for (int s : slots)
   {
-    mGestures = 0;
-    // Depois de soltar, as vizinhas seguem aquecidas mais 1,5 s (ajuste fino).
-    mAnticipateUntil = juce::Time::getMillisecondCounter() + 1500;
+    auto& a = mAnticipation[static_cast<size_t>(s)];
+    const int left = a.gestures.fetch_add(starting ? 1 : -1) + (starting ? 1 : -1);
+    if (left <= 0)
+    {
+      a.gestures = 0;
+      // Depois de soltar, as vizinhas seguem aquecidas mais 1,5 s (ajuste fino).
+      a.until = juce::Time::getMillisecondCounter() + 1500;
+    }
   }
 }
 
@@ -170,6 +187,15 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
   mTest.prepare(sampleRate);
   mStudio.prepare(sampleRate, block);
+  // Capturas no tamanho do bloco que vai chegar (na taxa das capturas).
+  {
+    const int want = juce::jlimit(32, kEngineBlock,
+                                  juce::nextPowerOfTwo(static_cast<int>(std::ceil(block * kEngineRate / sampleRate))));
+    if (want != mEngineBlock.exchange(want))
+      for (int i = 0; i < kSlots; ++i)
+        if (mSlots[static_cast<size_t>(i)].folder.isDirectory())
+          loadSlot(i, mSlots[static_cast<size_t>(i)].folder);
+  }
   for (auto* v : {&mDry, &mChannelIn, &mChannelOut, &mRigIn})
     v->assign(static_cast<size_t>(kEngineBlock), 0.0);
   mCabFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
@@ -203,7 +229,7 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   // As caixas rodam dentro da cadeia, na taxa das capturas.
   for (auto& c : mCabs)
   {
-    c.conv.prepare({kEngineRate, static_cast<juce::uint32>(kEngineBlock), 1});
+    c.conv.prepare({kEngineRate, static_cast<juce::uint32>(mEngineBlock.load()), 1});
     c.mix.reset(kEngineRate, 0.03);
     c.mix.setCurrentAndTargetValue(0.0f);
   }
@@ -449,11 +475,16 @@ void NexusProcessor::runRigs(double* buffer, int n)
 
 void NexusProcessor::runEngines(double* buffer, int numFrames)
 {
-  // As capturas foram preparadas para pedaços de até kEngineBlock.
+  // Pedaços do tamanho para o qual as capturas foram preparadas (a menor
+  // entre as ativas: durante uma recarga podem conviver duas medidas).
+  int chunk = mEngineBlock.load();
+  for (const auto& s : mSlots)
+    if (s.active != nullptr && s.active->block > 0)
+      chunk = std::min(chunk, s.active->block);
   const auto& layout = *mLayoutActive;
-  for (int start = 0; start < numFrames; start += kEngineBlock)
+  for (int start = 0; start < numFrames; start += chunk)
   {
-    const int n = std::min(kEngineBlock, numFrames - start);
+    const int n = std::min(chunk, numFrames - start);
     double* b = buffer + start;
     for (int p : layout.pre)
       runPedal(p, b, n);
@@ -530,10 +561,13 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (const auto* list : {&mLayoutActive->pre, &mLayoutActive->loop[0], &mLayoutActive->loop[1], &mLayoutActive->post})
     for (int pedal : *list)
       anyEngine = anyEngine || isNativeLook(pedalLook(pedal));
-  const bool anticipate = mGestures.load() > 0 || juce::Time::getMillisecondCounter() < mAnticipateUntil.load();
-  for (auto& s : mSlots)
-    if (s.active != nullptr)
-      s.active->voice.setAnticipate(anticipate);
+  const auto now = juce::Time::getMillisecondCounter();
+  for (int i = 0; i < kSlots; ++i)
+    if (auto* e = mSlots[static_cast<size_t>(i)].active)
+    {
+      const auto& a = mAnticipation[static_cast<size_t>(i)];
+      e->voice.setAnticipate(a.gestures.load() > 0 || now < a.until.load());
+    }
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
       e->voice.setControls(pedalControls(i));
@@ -661,12 +695,14 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
     {
       nexus::PackOptions options;
       options.sampleRate = kEngineRate;
-      options.maxBlockSize = kEngineBlock;
+      const int block = mEngineBlock.load();
+      options.maxBlockSize = block;
       options.slimmableSize = lite ? 0.0 : 1.0;
       auto engine = std::make_unique<NexusEngine>();
+      engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
       engine->voice.setControls(controls);
-      engine->voice.prepare(engine->pack, kEngineRate, kEngineBlock);
+      engine->voice.prepare(engine->pack, kEngineRate, block);
       const auto& pack = *engine->pack;
       const juce::String text = juce::String::fromUTF8(pack.name.c_str()) + ": "
                                 + juce::String(static_cast<int>(pack.captures.size())) + " capturas, de "

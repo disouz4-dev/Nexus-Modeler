@@ -54,8 +54,16 @@
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
 ### Som e uso ao vivo
-- Mão no botão, capturas prontas: ao pegar qualquer botão (antes de girar),
-  as capturas vizinhas, até duas de cada lado, começam a aquecer. O giro entra
+- Bem mais leve: as capturas eram preparadas para pedaços de 2048 amostras e
+  a placa manda 128; isso deixava cada captura A2 duas vezes mais lenta.
+  Agora são preparadas no tamanho do bloco da placa (e recarregadas sozinhas
+  se ele mudar). Medido com Banana Overdrive + Brit 800 + caixa em A2 Full,
+  48 kHz, bloco 128, num Mac Intel i9: parado, de 70% do tempo do bloco e
+  211 engasgos em 1500 blocos para 21% e nenhum; girando o drive com a mão
+  no botão, de 452% para 51%, sem engasgo. Ferramenta: `nexus_perfil`.
+- Mão no botão, capturas prontas: ao pegar o drive de um pedal ou o ganho de
+  um cabeçote (antes de girar), a captura vizinha de cada lado daquele
+  equipamento começa a aquecer. O giro entra
   na captura nova sem esperar os 132 ms de aquecimento de uma A2 e sem
   engasgo. Ao soltar, depois de 1,5 s, elas voltam a descansar para poupar o
   processador.

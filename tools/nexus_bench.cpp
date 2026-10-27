@@ -642,21 +642,21 @@ void testAnticipate(const fs::path& packsDir, const std::vector<double>& in)
   m.setAnticipate(true);
   run(0.2);
   const int during = m.runningCount();
-  // Giro de 5 para 7 depois de aquecer: a 7 já está pronta, então o peso dela
+  // Giro de 5 para 6 depois de aquecer: a 6 já está pronta, então o peso dela
   // sobe já no primeiro bloco (sem segurar a mistura antiga).
-  m.setTargetPosition(7.0);
+  m.setTargetPosition(6.0);
   run(0.3);
   int seven = 0;
   for (int i = 0; i < static_cast<int>(pack->captures.size()); ++i)
-    if (std::abs(pack->captures[static_cast<size_t>(i)].position - 7.0) < std::abs(pack->captures[static_cast<size_t>(seven)].position - 7.0))
+    if (std::abs(pack->captures[static_cast<size_t>(i)].position - 6.0) < std::abs(pack->captures[static_cast<size_t>(seven)].position - 6.0))
       seven = i;
   const double w7 = m.weightOf(seven);
   m.setAnticipate(false);
   run(1.0);
   const int after = m.runningCount();
-  report(before <= 2 && during >= 5 && after <= 2, "Com a mão no botão as vizinhas ficam aquecidas; ao soltar, voltam a descansar",
+  report(before <= 2 && during >= 3 && during <= 4 && after <= 2, "Com a mão no botão as vizinhas ficam aquecidas; ao soltar, voltam a descansar",
          "rodando: " + std::to_string(before) + " parado, " + std::to_string(during) + " com a mão, " + std::to_string(after) + " depois");
-  report(w7 > 0.9, "Girando com as vizinhas aquecidas, a captura nova entra sem esperar", "peso da captura 7 em 300 ms: " + std::to_string(w7));
+  report(w7 > 0.9, "Girando com as vizinhas aquecidas, a captura nova entra sem esperar", "peso da captura 6 em 300 ms: " + std::to_string(w7));
 }
 
 void testFileNames()

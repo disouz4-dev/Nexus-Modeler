@@ -32,6 +32,7 @@ struct NexusEngine
 {
   std::shared_ptr<nexus::Pack> pack;
   nexus::AmpVoice voice;
+  int block = 0; // maior pedaço para o qual as capturas foram preparadas
 };
 
 class NexusProcessor : public juce::AudioProcessor, private juce::Timer, private juce::AudioProcessorParameter::Listener
@@ -40,6 +41,9 @@ public:
   // Taxa em que as capturas A2 são treinadas e rodam.
   static constexpr double kEngineRate = 48000.0;
   // Maior pedaço entregue às capturas de uma vez.
+  // Maior pedaço de áudio que as capturas aceitam. Elas são preparadas no
+  // tamanho do bloco da placa (mEngineBlock): preparar para 2048 e tocar
+  // blocos de 128 deixa uma captura A2 duas vezes mais lenta (medido).
   static constexpr int kEngineBlock = 2048;
   static constexpr int kMaxCaptures = 64;
   static constexpr int kPedals = ChainLayout::kPedals;
@@ -261,12 +265,18 @@ private:
   nexus::TestSource mTest;
   nexus::studio::Player mStudio;
   nexus::studio::Separation mSeparation;
-  // Mão em algum botão (gesto começou): aquece as capturas vizinhas até
-  // um pouco depois de soltar.
+  std::atomic<int> mEngineBlock{256};
+  // Mão no botão que troca captura (drive de um pedal, ganho de um
+  // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
+  // depois de soltar.
   void parameterValueChanged(int, float) override {}
   void parameterGestureChanged(int index, bool starting) override;
-  std::atomic<int> mGestures{0};
-  std::atomic<juce::uint32> mAnticipateUntil{0};
+  struct Anticipation
+  {
+    std::atomic<int> gestures{0};
+    std::atomic<juce::uint32> until{0};
+  };
+  std::array<Anticipation, kSlots> mAnticipation;
   std::vector<float> mTestBuffer;
   std::unique_ptr<MidiMap> mMidi;
 

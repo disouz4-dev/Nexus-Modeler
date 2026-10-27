@@ -24,10 +24,11 @@ public:
     double crossfadeMs = 30.0;         // duração da transição entre capturas
     double coolDownMs = 300.0;         // captura parada há tanto tempo deixa de rodar
     int maxRunning = 4;                // limite de capturas rodando juntas
-    // Mão no botão: as vizinhas (até duas de cada lado) já ficam aquecidas,
-    // para o giro não esperar o aquecimento (132 ms numa A2).
-    int anticipateEachSide = 2;
-    int maxRunningAnticipating = 6;
+    // Mão no botão: a vizinha de cada lado já fica aquecida, para o giro
+    // não esperar o aquecimento (132 ms numa A2). Mais que isso pesa demais
+    // em A2 Full (cada captura real custa 10 a 20% de um núcleo).
+    int anticipateEachSide = 1;
+    int maxRunningAnticipating = 4;
   };
 
   // Fora do áudio. O pacote já deve estar preparado na mesma taxa e bloco.

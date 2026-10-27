@@ -77,8 +77,9 @@ guitarra passa pela cadeia e se mistura com a música.*
 
 - **Troca de captura sem clique.** A captura que vai entrar primeiro "aquece"
   ouvindo o som recente da guitarra e só depois entra numa transição de 30 ms.
-- **Mão no botão, capturas prontas.** Quando você pega um botão (antes de
-  girar), as capturas vizinhas, até duas de cada lado, começam a aquecer; o
+- **Mão no botão, capturas prontas.** Quando você pega o drive de um pedal ou
+  o ganho de um cabeçote (antes de girar), a captura vizinha de cada lado
+  daquele equipamento começa a aquecer; o
   giro entra na captura nova sem esperar os 132 ms de aquecimento de uma A2.
   Ao soltar, elas voltam a descansar para poupar o processador.
 - **Testar o som:** em cima da entrada, toca uma gravação de guitarra limpa

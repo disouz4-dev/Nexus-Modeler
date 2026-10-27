@@ -240,6 +240,22 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
+  # Peso do áudio com pacotes reais (manual): nexus_perfil <pedal> <cabeçote> <ir.wav>
+  juce_add_console_app(nexus_perfil PRODUCT_NAME "nexus_perfil")
+  target_sources(nexus_perfil PRIVATE host_test/Perfil.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_perfil SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_perfil PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_perfil PRIVATE
+    nexus_engine
+    nexus_studio
+    signalsmith-stretch
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags
+    juce::juce_recommended_lto_flags)
+
   add_test(NAME plugin_aberto_no_programa
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")
 endif()
