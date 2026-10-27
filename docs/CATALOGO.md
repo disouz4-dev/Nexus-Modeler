@@ -34,7 +34,7 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 | Orange Drive | Boss DS-1 | laranja | pronto |
 | Banana Overdrive | Boss SD-1 | amarelo | pronto |
 | Gold Centaur | Klon Centaur | dourado | pronto |
-| (nome a decidir: Blueberry já é o chorus) | Boss BD-2 Blues Driver | azul | planejado |
+| Blue Cherry Drive | Boss BD-2 Blues Driver | azul | planejado |
 | Plum Rat | ProCo RAT | preto | planejado |
 | Fig Fuzz | Electro-Harmonix Big Muff | prata e vermelho | planejado |
 | Cherry Fuzz | Dallas Fuzz Face | vermelho, redondo | planejado |
