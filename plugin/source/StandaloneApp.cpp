@@ -53,6 +53,31 @@ juce::AudioDeviceManager::AudioDeviceSetup firstRunSetup()
   return setup;
 }
 
+// Tela do Nexus dentro da janela. Numa tela menor que a do Nexus (notebook
+// 1366x768, máquina virtual 1280x800), reduz tudo na mesma proporção para a
+// janela caber com a barra de título; a tela em si não muda de tamanho.
+// (o JUCE define "Component" como juce::Component neste arquivo)
+class ScaledEditor : public Component
+{
+public:
+  explicit ScaledEditor(juce::AudioProcessorEditor* editor) : mEditor(editor)
+  {
+    addAndMakeVisible(*mEditor);
+    float scale = 1.0f;
+    if (const auto* display = juce::Desktop::getInstance().getDisplays().getPrimaryDisplay())
+    {
+      const auto area = display->userArea;
+      scale = std::min({1.0f, (area.getWidth() - 16.0f) / static_cast<float>(mEditor->getWidth()),
+                        (area.getHeight() - 48.0f) / static_cast<float>(mEditor->getHeight())});
+    }
+    mEditor->setTransform(juce::AffineTransform::scale(scale));
+    setSize(juce::roundToInt(mEditor->getWidth() * scale), juce::roundToInt(mEditor->getHeight() * scale));
+  }
+
+private:
+  std::unique_ptr<juce::AudioProcessorEditor> mEditor;
+};
+
 class MainWindow : public juce::DocumentWindow
 {
 public:
@@ -63,7 +88,7 @@ public:
     setUsingNativeTitleBar(true);
     setResizable(false, false);
     if (auto* editor = holder.processor->createEditorIfNeeded())
-      setContentOwned(editor, true);
+      setContentOwned(new ScaledEditor(editor), true);
     centreWithSize(getWidth(), getHeight());
     setVisible(true);
   }
