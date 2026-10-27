@@ -88,9 +88,10 @@ set(NEXUS_RESAMPLER_DIR
   "${PROJECT_SOURCE_DIR}/external/NeuralAmpModelerCore/Dependencies/AudioDSPTools/dsp/ResamplingContainer")
 target_include_directories(NexusModeler SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
 
-# Chave pública do Nexus na TONE3000 (feita na conta do projeto em
-# tone3000.com/settings). Sem ela, a janela de capturas só oferece a pasta.
-set(NEXUS_T3K_KEY "" CACHE STRING "Chave pública da TONE3000")
+# Chave pública do Nexus na TONE3000 (conta do projeto, tone3000.com/settings).
+# É pública por natureza: vai dentro do programa. A chave secreta nunca entra
+# no projeto.
+set(NEXUS_T3K_KEY "t3k_pub_cdG-fr_wYGEPeHbUW8LnKQ5Yl5qoSQL-" CACHE STRING "Chave pública da TONE3000")
 target_compile_definitions(NexusModeler PUBLIC
   JUCE_WEB_BROWSER=0
   NEXUS_T3K_KEY="${NEXUS_T3K_KEY}"
@@ -161,6 +162,18 @@ if(NEXUS_BUILD_TOOLS)
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+
+  # Teste da TONE3000 na conta de verdade (manual: internet e login no navegador).
+  juce_add_console_app(nexus_t3k_test PRODUCT_NAME "nexus_t3k_test")
+  target_sources(nexus_t3k_test PRIVATE host_test/Tone3000Test.cpp source/tone3000/Tone3000.cpp)
+  target_compile_definitions(nexus_t3k_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_t3k_test PRIVATE
+    nexus_engine
+    NexusArt
+    juce::juce_events
+    juce::juce_data_structures
     juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
