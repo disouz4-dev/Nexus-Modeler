@@ -10,6 +10,7 @@
 #include "ui/GearBrowser.h"
 #include "ui/PackMapper.h"
 #include "ui/PresetBar.h"
+#include "ui/StudioView.h"
 #include "ui/TestBar.h"
 #include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
@@ -53,6 +54,8 @@ public:
   nexus::ui::AudioPanel* audioPanel() { return mAudioPanel.get(); }
   // Abre a janela das capturas da peça escolhida (o mesmo que "abrir pacote").
   void showCaptures() { choosePack(); }
+  // 0 = equipamento, 1 = estúdio.
+  void setMode(int mode);
 
 private:
   // Pedal ou cabeçote: imagem, botões renderizados e, no pedal, pisante e LED.
@@ -193,6 +196,9 @@ private:
   void landPack(const juce::File& folder);
   void loadPackInto(Selection target, int channel, const juce::File& folder);
   void chooseIr(int rig);
+  void chooseIrFile(int rig);
+  void openIrCatalog(int rig);
+  void applyIr(int rig, const juce::File& file);
   void showAbout();
   void reportProblem();
   // O Nexus fechou sozinho da última vez: oferece mandar o relatório.
@@ -230,6 +236,8 @@ private:
   int mShownChannel = -1;
 
   nexus::ui::Segmented mEngine{{"A2 Full", "A2 Lite"}};
+  nexus::ui::Segmented mMode{{"Equipamento", juce::String::fromUTF8("Estúdio")}};
+  std::unique_ptr<nexus::ui::StudioView> mStudio;
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
   nexus::ui::IconButton mLanguageButton{nexus::ui::Icon::globe, "Idioma"};
   nexus::ui::IconButton mAudioButton{nexus::ui::Icon::audio, juce::String::fromUTF8("Interface de áudio")};

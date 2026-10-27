@@ -81,11 +81,11 @@ CapturePanel::~CapturePanel()
   mList.setModel(nullptr);
 }
 
-void CapturePanel::open(const juce::String& gearPrefix, const juce::String& name, bool pedal)
+void CapturePanel::open(const juce::String& gearPrefix, const juce::String& name, Gear gear)
 {
   mPrefix = gearPrefix;
   mName = name;
-  mPedal = pedal;
+  mGear = gear;
   mBusy = false;
   setStatus({});
   retranslate();
@@ -182,7 +182,7 @@ void CapturePanel::load(const t3k::Tone& tone)
   refreshAccount();
   auto self = juce::Component::SafePointer<CapturePanel>(this);
   mConnection->download(
-    tone, mPedal ? "pedal" : "amp_amp-cab", mName,
+    tone, mGear == Gear::pedal ? "pedal" : mGear == Gear::cab ? "cab" : "amp_amp-cab", mName,
     [self](juce::String text) {
       if (self != nullptr)
         self->setStatus(text);
@@ -228,7 +228,7 @@ void CapturePanel::paintListBoxItem(int row, juce::Graphics& g, int width, int h
   if (t.creator.isNotEmpty())
     details.add("@" + t.creator);
   if (t.models > 0)
-    details.add(TRANS("%1 capturas A2").replace("%1", juce::String(t.models)));
+    details.add((mGear == Gear::cab ? TRANS("%1 IRs") : TRANS("%1 capturas A2")).replace("%1", juce::String(t.models)));
   if (t.note.isNotEmpty())
     details.add(TRANS(t.note));
   if (t.downloads > 0)
@@ -286,7 +286,7 @@ void CapturePanel::paint(juce::Graphics& g)
   drawSource(g, head.withTrimmedTop(14.0f).removeFromTop(30.0f));
   g.setColour(colour::text);
   g.setFont(Fonts::get().display(20.0f).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.14f : 0.0f));
-  g.drawText(upper(TRANS("Capturas para %1").replace("%1", mName)), head.withTrimmedTop(14.0f).removeFromTop(30.0f).withTrimmedRight(200.0f),
+  g.drawText(upper((mGear == Gear::cab ? TRANS("IRs para %1") : TRANS("Capturas para %1")).replace("%1", mName)), head.withTrimmedTop(14.0f).removeFromTop(30.0f).withTrimmedRight(200.0f),
              juce::Justification::centredLeft);
   g.setColour(colour::accent);
   g.fillRect(head.getX(), head.getBottom() - 22.0f, 28.0f, 2.0f);
@@ -310,7 +310,9 @@ void CapturePanel::paint(juce::Graphics& g)
   {
     g.setColour(colour::faint);
     g.setFont(Fonts::get().ui(11.5f));
-    g.drawFittedText(TRANS(juce::String::fromUTF8("Escolhidas pelo Nexus: uma captura para cada posição do botão. As capturas são dos criadores e baixadas da TONE3000.")),
+    g.drawFittedText(mGear == Gear::cab
+                       ? TRANS(juce::String::fromUTF8("Escolhidas pelo Nexus: cada pacote traz vários microfones; troque na própria caixa. Os IRs são dos criadores e baixados da TONE3000."))
+                       : TRANS(juce::String::fromUTF8("Escolhidas pelo Nexus: uma captura para cada posição do botão. As capturas são dos criadores e baixadas da TONE3000.")),
                      status.toNearestInt(), juce::Justification::centredLeft, 1);
   }
 

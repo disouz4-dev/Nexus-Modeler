@@ -31,6 +31,7 @@
 #include "nexus/Pack.h"
 #include "nexus/TestSignal.h"
 #include "nexus/ToneStack.h"
+#include "nexus/UniversalEq.h"
 
 // ---------------------------------------------------------------------------
 // Contador de reservas de memória (só conta enquanto gCounting está ligado).
@@ -619,6 +620,88 @@ void testPerformance(const fs::path& packsDir, const std::vector<double>& in)
   }
 }
 
+// Mão no botão: as vizinhas aquecem antes do giro, e o giro não espera.
+void testAnticipate(const fs::path& packsDir, const std::vector<double>& in)
+{
+  std::printf("\n7. Aquecimento antecipado (mão no botão)\n");
+  PackOptions opt;
+  opt.sampleRate = kFs;
+  opt.maxBlockSize = 128;
+  auto pack = std::shared_ptr<Pack>(loadPack(packsDir / "ganho", opt));
+  resetPack(*pack, 128);
+  MorphEngine m;
+  m.setTargetPosition(5.0);
+  m.prepare(pack, kFs, 128);
+  std::vector<double> out(128);
+  size_t at = 0;
+  auto run = [&](double seconds) {
+    for (int b = 0; b < static_cast<int>(seconds * kFs / 128); ++b, at = (at + 128) % (in.size() - 128))
+      m.process(in.data() + at, out.data(), 128);
+  };
+  run(0.5);
+  const int before = m.runningCount();
+  m.setAnticipate(true);
+  run(0.2);
+  const int during = m.runningCount();
+  // Giro de 5 para 6 depois de aquecer: a 6 já está pronta, então o peso dela
+  // sobe já no primeiro bloco (sem segurar a mistura antiga).
+  m.setTargetPosition(6.0);
+  run(0.3);
+  int seven = 0;
+  for (int i = 0; i < static_cast<int>(pack->captures.size()); ++i)
+    if (std::abs(pack->captures[static_cast<size_t>(i)].position - 6.0) < std::abs(pack->captures[static_cast<size_t>(seven)].position - 6.0))
+      seven = i;
+  const double w7 = m.weightOf(seven);
+  m.setAnticipate(false);
+  run(1.0);
+  const int after = m.runningCount();
+  report(before <= 2 && during >= 3 && during <= 4 && after <= 2, "Com a mão no botão as vizinhas ficam aquecidas; ao soltar, voltam a descansar",
+         "rodando: " + std::to_string(before) + " parado, " + std::to_string(during) + " com a mão, " + std::to_string(after) + " depois");
+  report(w7 > 0.9, "Girando com as vizinhas aquecidas, a captura nova entra sem esperar", "peso da captura 6 em 300 ms: " + std::to_string(w7));
+}
+
+// Equalizador universal (depois da caixa): em 5 não mexe; em 0 e 10 corta e
+// reforça cada faixa no lugar certo.
+void testUniversalEq()
+{
+  std::printf("\n8. Equalizador universal\n");
+  UniversalEq eq;
+  eq.prepare(kFs);
+  std::vector<double> x(4096), y;
+  for (size_t i = 0; i < x.size(); ++i)
+    x[i] = std::sin(0.013 * static_cast<double>(i)) + 0.3 * std::sin(0.31 * static_cast<double>(i));
+  y = x;
+  eq.process(y.data(), static_cast<int>(y.size()));
+  double diff = 0.0;
+  for (size_t i = 0; i < x.size(); ++i)
+    diff = std::max(diff, std::abs(y[i] - x[i]));
+  report(diff == 0.0, "Tudo em 5: o som da captura passa intacto", "maior diferença: " + std::to_string(diff));
+  struct Case
+  {
+    const char* name;
+    double UniversalEq::Knobs::*knob;
+    double inside, outside;
+  };
+  const Case cases[] = {{"grave", &UniversalEq::Knobs::bass, 80.0, 3000.0},
+                        {"médio", &UniversalEq::Knobs::mid, 750.0, 80.0},
+                        {"agudo", &UniversalEq::Knobs::treble, 8000.0, 200.0},
+                        {"presença", &UniversalEq::Knobs::presence, 5500.0, 300.0}};
+  for (const auto& c : cases)
+  {
+    UniversalEq::Knobs k;
+    k.*(c.knob) = 10.0;
+    eq.setKnobs(k);
+    eq.prepare(kFs);
+    const double up = eq.responseDb(c.inside), side = eq.responseDb(c.outside);
+    k.*(c.knob) = 0.0;
+    eq.setKnobs(k);
+    eq.prepare(kFs);
+    const double down = eq.responseDb(c.inside);
+    report(up > 8.0 && down < -8.0 && std::abs(side) < 3.0, std::string("Botão de ") + c.name + " mexe na faixa dele",
+           "+" + std::to_string(up).substr(0, 4) + " dB / " + std::to_string(down).substr(0, 5) + " dB; fora da faixa " + std::to_string(side).substr(0, 4) + " dB");
+  }
+}
+
 void testFileNames()
 {
   std::printf("\n5. Posição pelo nome do arquivo\n");
@@ -695,6 +778,8 @@ int main(int argc, char** argv)
     testPerformance(packsDir, in);
     testFileNames();
     testFullRig(packsDir);
+    testAnticipate(packsDir, in);
+    testUniversalEq();
   }
   catch (const std::exception& e)
   {

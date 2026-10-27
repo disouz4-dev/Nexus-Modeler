@@ -53,6 +53,64 @@
   efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
+### Som e uso ao vivo
+- Equalizador universal: grave, médio, agudo e presença agora ficam depois
+  da captura e da caixa, iguais em todo cabeçote, e mexem de verdade no som
+  (até ±12 dB; medido com o Brit 800 e a caixa Greenback: grave ±9 dB,
+  médio ±8, agudo e presença ±9 a 10 nas suas faixas). Antes era o
+  equalizador do circuito aplicado só como diferença antes da caixa, sutil
+  demais. Com tudo em 5 o som é o da captura, sem mudar nada.
+- Drive dos pedais medido captura por captura (`NEXUS_PERFIL_DRIVE=1
+  nexus_perfil`): o Nexus toca cada captura igual ao NAM oficial. O pacote
+  do SD-1 varia pouco depois do drive 3 (é o próprio pacote).
+- Bem mais leve: as capturas eram preparadas para pedaços de 2048 amostras e
+  a placa manda 128; isso deixava cada captura A2 duas vezes mais lenta.
+  Agora são preparadas no tamanho do bloco da placa (e recarregadas sozinhas
+  se ele mudar). Medido com Banana Overdrive + Brit 800 + caixa em A2 Full,
+  48 kHz, bloco 128, num Mac Intel i9: parado, de 70% do tempo do bloco e
+  211 engasgos em 1500 blocos para 21% e nenhum; girando o drive com a mão
+  no botão, de 452% para 51%, sem engasgo. Ferramenta: `nexus_perfil`.
+- Mão no botão, capturas prontas: ao pegar o drive de um pedal ou o ganho de
+  um cabeçote (antes de girar), a captura vizinha de cada lado daquele
+  equipamento começa a aquecer. O giro entra
+  na captura nova sem esperar os 132 ms de aquecimento de uma A2 e sem
+  engasgo. Ao soltar, depois de 1,5 s, elas voltam a descansar para poupar o
+  processador.
+- Entrada no mudo: botão "Mudo" ao lado da entrada. O controle todo para
+  baixo (-24 dB) também corta de vez, porque com ganho alto o -24 dB ainda
+  apitava com o microfone do notebook. O "Testar o som" toca mesmo com a
+  entrada no mudo.
+- Caixa: "escolher IR" abre os IRs da TONE3000 (recomendadas para a 4x12:
+  Greenback 1960TV, JCM900 1960, G12M e JCM800 1960; favoritos, downloads,
+  catálogo). O pacote inteiro vai para Documentos/Nexus Modeler/Brit 4x12 e
+  "trocar IR" lista os microfones e posições do pacote, além de "IRs da
+  TONE3000..." e "Arquivo do computador...".
+- Mac: o ícone do programa tem agora todos os tamanhos (16 a 1024); antes o
+  Dock e o Finder mostravam o ícone em branco.
+
+### Estúdio (primeira versão)
+- Chave "Equipamento | Estúdio" no alto. A guitarra continua passando pela
+  cadeia e se mistura com a música.
+- Importar música (MP3, WAV, FLAC, M4A, AAC, OGG, AIFF; ou arrastar o
+  arquivo): separa em voz, guitarra, baixo, bateria, piano e resto com o
+  Demucs de 6 faixas (demucs.cpp), em segundo plano, com andamento e
+  "Cancelar". O modelo (55 MB) é baixado na primeira separação. A mesma
+  música não é separada duas vezes. A barra mostra o trabalho inteiro (ler,
+  separar e gravar), com a porcentagem e quanto falta.
+- A separação roda em prioridade baixa, em no máximo 6 linhas e sem as
+  linhas extras do Accelerate: o áudio e a tela seguem leves enquanto separa
+  (medido: o áudio cabe no tempo do bloco com uma separação rodando).
+- Player: tocar/pausar (barra de espaço), voltar ao começo, forma da música
+  (clique pula; arrastar marca o trecho A–B), "Repetir A–B", volume, mudo e
+  solo por faixa com medidor, velocidade 50–100% sem mudar o tom, tom −6 a +6
+  semitons, volume da música. A mistura de cada música fica guardada.
+- Músicas e playlists na coluna da esquerda: criar, renomear, apagar, pôr e
+  tirar músicas, subir e descer; "Tocar a playlist" segue sozinha.
+- Faixas em FLAC em `Documentos/Nexus Modeler/Estúdio/<música>/`.
+- Ainda falta: separação pela placa de vídeo (hoje só processador, cerca de
+  3 vezes a duração da música num Mac Intel de 8 núcleos) e contagem antes
+  de começar.
+
 ### Relatório de problemas
 - Menu "i" → "Reportar um problema...": a pessoa conta o que aconteceu e o
   Nexus abre uma issue nova no GitHub, no modelo "Problema ou travamento", já

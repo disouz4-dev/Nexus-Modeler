@@ -38,6 +38,7 @@ struct Tone
   juce::String pattern;
   juce::StringArray series;
   juce::String note;
+  juce::String defaultIr; // caixas: o IR do pacote que entra primeiro
 };
 
 // Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),

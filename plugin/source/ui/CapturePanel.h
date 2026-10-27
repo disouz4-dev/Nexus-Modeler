@@ -21,9 +21,14 @@ public:
   CapturePanel();
   ~CapturePanel() override;
 
-  // gearPrefix: visual do equipamento ("brit800"); name: nome na tela;
-  // pedal: true para pedal, false para cabeçote.
-  void open(const juce::String& gearPrefix, const juce::String& name, bool pedal);
+  enum class Gear
+  {
+    amp,
+    pedal,
+    cab, // IRs de caixa
+  };
+  // gearPrefix: visual do equipamento ("brit800"); name: nome na tela.
+  void open(const juce::String& gearPrefix, const juce::String& name, Gear gear);
   void retranslate();
 
   void paint(juce::Graphics&) override;
@@ -45,11 +50,11 @@ private:
   void load(const t3k::Tone& tone);
   void refreshAccount();
   void setStatus(const juce::String& text, bool error = false);
-  juce::String gearType() const { return mPedal ? "pedal" : "amp"; }
+  juce::String gearType() const { return mGear == Gear::pedal ? "pedal" : mGear == Gear::cab ? "cab" : "amp"; }
 
   juce::SharedResourcePointer<t3k::Connection> mConnection;
   juce::String mPrefix, mName;
-  bool mPedal = false;
+  Gear mGear = Gear::amp;
   int mTab = 0;
   bool mBusy = false;
   std::vector<t3k::Tone> mTones;

@@ -376,6 +376,7 @@ NexusEditor::ChainView::ChainView(NexusEditor& editor)
 : mEditor(editor)
 {
   mInput = std::make_unique<LevelFader>(*editor.mProcessor.params.getParameter("entrada"), "Entrada");
+  mInput->setMuteParameter(*editor.mProcessor.params.getParameter("entrada_mudo"));
   mOutput = std::make_unique<LevelFader>(*editor.mProcessor.params.getParameter("volume"), juce::String::fromUTF8("Saída"));
   addAndMakeVisible(*mInput);
   addAndMakeVisible(*mOutput);
@@ -997,6 +998,13 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mChain = std::make_unique<ChainView>(*this);
   addAndMakeVisible(*mChain);
 
+  // Estúdio: no lugar dos equipamentos, com o caminho do sinal embaixo.
+  mStudio = std::make_unique<nexus::ui::StudioView>(mProcessor.studio(), mProcessor.separation());
+  addChildComponent(*mStudio);
+  addAndMakeVisible(mMode);
+  mMode.setFontSize(11.0f);
+  mMode.onSelect = [this](int i) { setMode(i); };
+
   // MIDI: clique com o botão direito em qualquer controle.
   auto midiMenu = [this](const juce::String& id, juce::Component& c) { showMidiMenu(id, c); };
   mPedalStage->onMidiMenu = midiMenu;
@@ -1019,10 +1027,27 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 
   mCapturePanel = std::make_unique<CapturePanel>();
   mCapturePanel->onClose = [this] { mCapturePanel->setVisible(false); };
-  mCapturePanel->onManual = [this] { chooseFolder(); };
+  mCapturePanel->onManual = [this] {
+    if (mPackTarget.kind == Kind::cab)
+      chooseIrFile(mPackTarget.index);
+    else
+      chooseFolder();
+  };
   mCapturePanel->onLoaded = [this](const juce::File& folder) {
     mCapturePanel->setVisible(false);
-    landPack(folder);
+    if (mPackTarget.kind != Kind::cab)
+      return landPack(folder);
+    // Pacote de IRs: entra o indicado pelo Nexus, ou o primeiro.
+    const auto info = juce::JSON::parse(folder.getChildFile("pack.json"));
+    const auto preferred = info["ir_padrao"].toString();
+    auto files = folder.findChildFiles(juce::File::findFiles, false, "*.wav;*.aif;*.aiff");
+    files.sort();
+    juce::File pick = files.isEmpty() ? juce::File() : files.getFirst();
+    for (const auto& f : files)
+      if (preferred.isNotEmpty() && f.getFileNameWithoutExtension() == preferred)
+        pick = f;
+    if (pick.existsAsFile())
+      applyIr(mPackTarget.index, pick);
   };
   addChildComponent(*mCapturePanel);
   mMapper = std::make_unique<PackMapper>();
@@ -1253,7 +1278,7 @@ void NexusEditor::choosePack()
   const juce::String prefix = pedal ? juce::String(kPedalPrefixes[pedalLook(mSel.index)]) : juce::String("brit800");
   const juce::String name = pedal ? (pedalArt(mSel.index) ? pedalArt(mSel.index)->name : TRANS("Pedal")) : mAmpArt.name;
   mPackGearName = name;
-  mCapturePanel->open(prefix, name, pedal);
+  mCapturePanel->open(prefix, name, pedal ? nexus::ui::CapturePanel::Gear::pedal : nexus::ui::CapturePanel::Gear::amp);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
 }
@@ -1308,21 +1333,62 @@ void NexusEditor::landPack(const juce::File& folder)
   mMapper->toFront(true);
 }
 
+void NexusEditor::applyIr(int rig, const juce::File& file)
+{
+  mProcessor.loadIrAsync(rig, file);
+  if (auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "caixa")))
+    param->setValueNotifyingHost(1.0f);
+  select({Kind::cab, rig});
+}
+
+void NexusEditor::openIrCatalog(int rig)
+{
+  mPackTarget = {Kind::cab, rig};
+  mPackChannel = 0;
+  mPackGearName = mCabArt.name;
+  mCapturePanel->open("brit412", mCabArt.name, nexus::ui::CapturePanel::Gear::cab);
+  mCapturePanel->setVisible(true);
+  mCapturePanel->toFront(true);
+}
+
 void NexusEditor::chooseIr(int rig)
 {
   if (mProcessor.packIncludesCab(rig))
     return;
+  if (!mProcessor.irLoaded(rig))
+    return openIrCatalog(rig);
+  // Já tem IR: os outros microfones do mesmo pacote, mais IRs da TONE3000 ou
+  // um arquivo do computador.
+  const auto current = mProcessor.irFile(rig);
+  auto files = current.getParentDirectory().findChildFiles(juce::File::findFiles, false, "*.wav;*.aif;*.aiff");
+  files.sort();
+  juce::PopupMenu menu;
+  if (files.size() > 1)
+  {
+    menu.addSectionHeader(TRANS("Microfones deste pacote"));
+    juce::PopupMenu more;
+    for (int i = 0; i < files.size(); ++i)
+    {
+      const auto f = files[i];
+      (i < 24 ? menu : more).addItem(f.getFileNameWithoutExtension(), true, f == current, [this, rig, f] { applyIr(rig, f); });
+    }
+    if (more.getNumItems() > 0)
+      menu.addSubMenu(TRANS("Mais microfones"), more);
+    menu.addSeparator();
+  }
+  menu.addItem(TRANS("IRs da TONE3000..."), [this, rig] { openIrCatalog(rig); });
+  menu.addItem(TRANS("Arquivo do computador..."), [this, rig] { chooseIrFile(rig); });
+  menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&mChangeLink));
+}
+
+void NexusEditor::chooseIrFile(int rig)
+{
+  mCapturePanel->setVisible(false);
   mChooser = std::make_unique<juce::FileChooser>(TRANS("Escolha o IR da caixa"), juce::File(), "*.wav;*.aif;*.aiff");
   mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles,
                         [this, rig](const juce::FileChooser& fc) {
-                          const auto file = fc.getResult();
-                          if (file.existsAsFile())
-                          {
-                            mProcessor.loadIrAsync(rig, file);
-                            if (auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "caixa")))
-                              param->setValueNotifyingHost(1.0f);
-                            select({Kind::cab, rig});
-                          }
+                          if (fc.getResult().existsAsFile())
+                            applyIr(rig, fc.getResult());
                         });
 }
 
@@ -1413,8 +1479,29 @@ void NexusEditor::showLanguageMenu()
   });
 }
 
+void NexusEditor::setMode(int mode)
+{
+  mMode.setSelected(mode);
+  mStudio->setVisible(mode == 1);
+  mBrowser->setVisible(mode == 0);
+  if (mode == 1)
+  {
+    mStudio->toFront(false);
+    mStudio->grabKeyboardFocus();
+  }
+  // Janelas por cima (capturas, mapeamento, áudio) continuam por cima.
+  for (juce::Component* c : {static_cast<juce::Component*>(mCapturePanel.get()), static_cast<juce::Component*>(mMapper.get()),
+                             static_cast<juce::Component*>(mAudioPanel.get())})
+    if (c != nullptr && c->isVisible())
+      c->toFront(false);
+  repaint();
+}
+
 void NexusEditor::retranslate()
 {
+  mMode.setItems({TRANS("Equipamento"), TRANS(juce::String::fromUTF8("Estúdio"))});
+  if (mStudio)
+    mStudio->retranslate();
   mInfoButton.setTooltip(TRANS("Sobre o Nexus Modeler"));
   mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
   mLanguageButton.setTooltip(TRANS("Idioma"));
@@ -1700,12 +1787,22 @@ void NexusEditor::resized()
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());
   mMapper->setBounds(getLocalBounds());
-  mPresets->setBounds(getLocalBounds().removeFromTop(kTopBar).withSizeKeepingCentre(380, 40));
-  // Aviso de versão nova: à esquerda dos presets.
+  // Equipamento | Estúdio ao lado do logo; depois o aviso de versão nova (se
+  // houver) e os presets no meio do espaço que sobra.
+  mMode.setBounds(232, (kTopBar - 36) / 2, 236, 36);
   {
-    const int w = mUpdate.idealWidth();
-    mUpdate.setBounds(mPresets->getX() - 16 - w, mPresets->getY(), w, mPresets->getHeight());
+    int left = mMode.getRight() + 20;
+    if (mUpdate.isVisible())
+    {
+      const int w = mUpdate.idealWidth();
+      mUpdate.setBounds(left, (kTopBar - 40) / 2, w, 40);
+      left += w + 16;
+    }
+    const int rightEdge = mEngine.getX() - 20;
+    const int w = juce::jmin(380, rightEdge - left);
+    mPresets->setBounds(left + (rightEdge - left - w) / 2, (kTopBar - 40) / 2, w, 40);
   }
+  mStudio->setBounds(getLocalBounds().withTrimmedTop(kTopBar).withTrimmedBottom(kPathHeight));
 
   mBrowser->setBounds(r.removeFromRight(kBrowserWidth));
   mChain->setBounds(r.removeFromBottom(kPathHeight));

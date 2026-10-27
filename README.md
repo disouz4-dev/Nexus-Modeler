@@ -39,9 +39,10 @@ Tudo isso toca capturas do
 > funcionam o motor de troca de capturas, a tela 3D com o cabeçote Brit 800,
 > a caixa 4x12 e sete pedais, a cadeia completa com dois cabeçotes, as
 > capturas da TONE3000 dentro do programa, presets, MIDI, 15 idiomas, os
-> instaladores e a atualização automática. Em construção: o teste de som com
-> gravações de guitarra por estilo e o estúdio (separar as faixas de uma
-> música e tocar junto). Lista completa de equipamentos em
+> instaladores, a atualização automática, o "Testar o som" com gravações de
+> guitarra por estilo, o relatório de problemas para o GitHub e a primeira
+> versão do estúdio (separar as faixas de uma música e tocar junto). Lista
+> completa de equipamentos em
 > [docs/CATALOGO.md](docs/CATALOGO.md).
 
 ![Nexus Modeler com o cabeçote Brit 800](docs/imagens/tela-amplificador.webp)
@@ -65,23 +66,44 @@ conta conectada, "Carregar" baixa direto para Documentos/Nexus Modeler.*
 *Dois cabeçotes, cada um com pedais e caixa próprios, trocados por um pedal
 A/B sem estalo.*
 
+![Estúdio do Nexus com uma música separada em seis faixas](docs/imagens/tela-estudio.webp)
+
+*O estúdio: a música separada em voz, guitarra, baixo, bateria, piano e o
+resto. Aqui a guitarra está no mudo (para tocar no lugar dela), a música está
+a 75% e o trecho A–B se repete. O caminho do sinal continua embaixo: a sua
+guitarra passa pela cadeia e se mistura com a música.*
+
 ## O que já funciona
 
 - **Troca de captura sem clique.** A captura que vai entrar primeiro "aquece"
   ouvindo o som recente da guitarra e só depois entra numa transição de 30 ms.
+- **Mão no botão, capturas prontas.** Quando você pega o drive de um pedal ou
+  o ganho de um cabeçote (antes de girar), a captura vizinha de cada lado
+  daquele equipamento começa a aquecer; o
+  giro entra na captura nova sem esperar os 132 ms de aquecimento de uma A2.
+  Ao soltar, elas voltam a descansar para poupar o processador.
+- **Testar o som:** em cima da entrada, toca uma gravação de guitarra limpa
+  (direto na interface, sem amplificador) pela cadeia inteira, sem precisar
+  tocar: Limpo, Blues, Rock e Pesado, ou "Gravar 15 s" da sua guitarra.
+- **Entrada no mudo:** botão "Mudo" ao lado da entrada, e o controle todo para
+  baixo também corta de vez (para o microfone do notebook não apitar com os
+  alto-falantes). O "Testar o som" continua tocando com a entrada no mudo.
 - **Botão contínuo ou em degraus.** Contínuo mistura as vizinhas; em degraus,
   o botão só para nas posições que têm captura.
-- **Equalizador do painel** (grave, médio, agudo e presença) modelado no
-  circuito de tonalidade do amplificador real. Ele aplica só a diferença entre
-  a posição em que a captura foi feita e a posição escolhida. Com os botões na
-  posição da captura, o som é exatamente o da captura.
+- **Equalizador universal** (grave, médio, agudo e presença) depois da
+  captura e da caixa, o mesmo em todo cabeçote: grave em 220 Hz, médio em
+  750 Hz, agudo a partir de 2,8 kHz e presença em 5,5 kHz, até ±12 dB (a
+  presença, ±10 dB). Com tudo em 5 o som é exatamente o da captura.
 - **A2 Full e A2 Lite** com um botão (o mesmo arquivo serve para os dois).
 - **Qualquer taxa de amostragem.** As capturas rodam a 48 kHz; se o programa de
   gravação estiver em 44,1 ou 96 kHz, o plugin converte na entrada e na saída.
 - **Formatos:** VST3 (Windows, Mac e Linux), AU (Mac), LV2 (Linux) e programa
   independente, sem precisar de programa de gravação.
-- **Caixa (IR):** abas Desligada / Captura / IR próprio. Escolha um `.wav` de
-  resposta de caixa; a troca entra e sai em 30 ms, sem estalo. Se a captura
+- **Caixa (IR):** abas Desligada / Captura / IR próprio. "Escolher IR" abre os
+  IRs da TONE3000 (recomendadas para a 4x12, favoritos, downloads e o catálogo
+  completo); o pacote vem inteiro para Documentos/Nexus Modeler/Brit 4x12 e
+  "trocar IR" lista os microfones e posições do pacote. Também aceita um `.wav`
+  do computador. A troca entra e sai em 30 ms, sem estalo. Se a captura
   inclui a caixa (o `.nam` diz `amp_cab`, ou o `pack.json` traz
   `"inclui_caixa": true`), a caixa se tranca em "Captura".
 - **Pedais:** até 12, cada um tocando captura NAM de pedal (pacote de drive
@@ -133,6 +155,18 @@ A/B sem estalo.*
 - **Tela 3D:** amplificador, caixa e pedais modelados e renderizados pelo Nexus Gear
   Studio (`tools/gear_studio`). Cada botão tem 101 imagens: arraste para cima
   ou para baixo, Shift para ajuste fino, duplo clique volta ao padrão.
+- **Estúdio:** a chave "Equipamento | Estúdio" no alto troca a tela. Importe
+  uma música (MP3, WAV, FLAC, M4A, ou arraste o arquivo) e o Nexus separa voz,
+  guitarra, baixo, bateria, piano e o resto (Demucs de 6 faixas, no próprio
+  computador; o modelo de 55 MB é baixado na primeira vez). Cada faixa tem
+  volume, mudo e solo; a música toca com velocidade de 50 a 100% sem mudar o
+  tom, tom de −6 a +6 semitons sem mudar a velocidade e repetição de um
+  trecho (arraste na forma da música para marcar A–B). Playlists tocam uma
+  música atrás da outra. O caminho do sinal continua embaixo: a sua guitarra
+  passa pela cadeia e se mistura com a música. Tudo fica em
+  `Documentos/Nexus Modeler/Estúdio`; a mesma música não é separada duas
+  vezes. Hoje a separação usa só o processador (num Mac Intel de 8 núcleos,
+  cerca de 3 vezes a duração da música).
 - **Reportar um problema:** no menu "i", o Nexus abre uma issue nova no
   GitHub já preenchida (versão, sistema e os últimos erros do registro); é só
   conferir e enviar. Se o programa independente fechar sozinho, na abertura

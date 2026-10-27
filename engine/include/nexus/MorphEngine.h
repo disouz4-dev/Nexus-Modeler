@@ -24,6 +24,11 @@ public:
     double crossfadeMs = 30.0;         // duração da transição entre capturas
     double coolDownMs = 300.0;         // captura parada há tanto tempo deixa de rodar
     int maxRunning = 4;                // limite de capturas rodando juntas
+    // Mão no botão: a vizinha de cada lado já fica aquecida, para o giro
+    // não esperar o aquecimento (132 ms numa A2). Mais que isso pesa demais
+    // em A2 Full (cada captura real custa 10 a 20% de um núcleo).
+    int anticipateEachSide = 1;
+    int maxRunningAnticipating = 4;
   };
 
   // Fora do áudio. O pacote já deve estar preparado na mesma taxa e bloco.
@@ -36,6 +41,8 @@ public:
   // Do áudio.
   void setTargetPosition(double position) { mTarget = position; }
   void setStepped(bool stepped) { mStepped = stepped; }
+  // Alguém pegou o botão (ou automação começou): aquece as vizinhas antes.
+  void setAnticipate(bool on) { mAnticipate = on; }
   // Vai direto para a posição alvo, sem transição (usar só antes de tocar).
   void jumpToTarget();
   void process(const double* input, double* output, int numFrames);
@@ -63,6 +70,7 @@ private:
     double weight = 0.0; // peso atual, anda em rampa
     double target = 0.0; // peso desejado já considerando quem está pronto
     double desired = 0.0; // peso pela posição do botão
+    bool near = false;    // vizinha que fica aquecida com a mão no botão
     std::vector<double> buffer;
   };
 
@@ -80,6 +88,7 @@ private:
   double mTarget = 0.0;
   double mPosition = 0.0;
   bool mStepped = false;
+  bool mAnticipate = false;
   double mWeightStep = 0.0;
 };
 

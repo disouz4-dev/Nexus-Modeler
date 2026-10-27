@@ -51,6 +51,7 @@ NexusProcessor::NexusProcessor()
   mLite = params.getRawParameterValue("lite");
   mOutput = params.getRawParameterValue("volume");
   mInput = params.getRawParameterValue("entrada");
+  mInputMute = params.getRawParameterValue("entrada_mudo");
 
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
@@ -62,11 +63,43 @@ NexusProcessor::NexusProcessor()
     std::copy(in[0], in[0] + n, out[0]);
     runEngines(out[0], n);
   };
+  for (auto* p : getParameters())
+    p->addListener(this);
   startTimerHz(30);
+}
+
+void NexusProcessor::parameterGestureChanged(int index, bool starting)
+{
+  const auto* param = dynamic_cast<juce::AudioProcessorParameterWithID*>(getParameters()[index]);
+  if (param == nullptr)
+    return;
+  const auto& id = param->paramID;
+  // Quais equipamentos esse botão troca de captura.
+  juce::Array<int> slots;
+  for (int i = 0; i < kPedals; ++i)
+    if (id == pedalParam(i, "drive"))
+      slots.add(pedalSlot(i));
+  for (int r = 0; r < kRigs; ++r)
+    for (int c = 0; c < kChannels; ++c)
+      if (id == ampParam(r, c == 0 ? "ganho" : c == 1 ? "ganho_2" : "ganho_3"))
+        slots.add(ampSlot(r, c));
+  for (int s : slots)
+  {
+    auto& a = mAnticipation[static_cast<size_t>(s)];
+    const int left = a.gestures.fetch_add(starting ? 1 : -1) + (starting ? 1 : -1);
+    if (left <= 0)
+    {
+      a.gestures = 0;
+      // Depois de soltar, as vizinhas seguem aquecidas mais 1,5 s (ajuste fino).
+      a.until = juce::Time::getMillisecondCounter() + 1500;
+    }
+  }
 }
 
 NexusProcessor::~NexusProcessor()
 {
+  for (auto* p : getParameters())
+    p->removeListener(this);
   stopTimer();
   mLoader.removeAllJobs(true, 30000);
   for (auto& s : mSlots)
@@ -131,6 +164,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                  juce::NormalisableRange<float>(-24.0f, 12.0f, 0.1f), 0.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"entrada", 1}, "Entrada",
                                  juce::NormalisableRange<float>(-24.0f, 24.0f, 0.1f), 0.0f));
+  // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
+  // O "Testar o som" continua tocando com a entrada no mudo.
+  layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
   return layout;
 }
 
@@ -150,6 +186,16 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
   mTest.prepare(sampleRate);
+  mStudio.prepare(sampleRate, block);
+  // Capturas no tamanho do bloco que vai chegar (na taxa das capturas).
+  {
+    const int want = juce::jlimit(32, kEngineBlock,
+                                  juce::nextPowerOfTwo(static_cast<int>(std::ceil(block * kEngineRate / sampleRate))));
+    if (want != mEngineBlock.exchange(want))
+      for (int i = 0; i < kSlots; ++i)
+        if (mSlots[static_cast<size_t>(i)].folder.isDirectory())
+          loadSlot(i, mSlots[static_cast<size_t>(i)].folder);
+  }
   for (auto* v : {&mDry, &mChannelIn, &mChannelOut, &mRigIn})
     v->assign(static_cast<size_t>(kEngineBlock), 0.0);
   mCabFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
@@ -180,10 +226,12 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
     const float m = r.master->load() / 5.0f;
     r.masterGain = m * m;
   }
+  for (auto& e : mEq)
+    e.prepare(kEngineRate);
   // As caixas rodam dentro da cadeia, na taxa das capturas.
   for (auto& c : mCabs)
   {
-    c.conv.prepare({kEngineRate, static_cast<juce::uint32>(kEngineBlock), 1});
+    c.conv.prepare({kEngineRate, static_cast<juce::uint32>(mEngineBlock.load()), 1});
     c.mix.reset(kEngineRate, 0.03);
     c.mix.setCurrentAndTargetValue(0.0f);
   }
@@ -387,6 +435,10 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
   for (int p : mLayoutActive->loop[static_cast<size_t>(rig)])
     runPedal(p, buffer, n);
   runCab(rig, buffer, n);
+  // Equalizador universal: depois da captura e da caixa, igual em todo cabeçote.
+  const auto& r = mRigs[static_cast<size_t>(rig)];
+  mEq[static_cast<size_t>(rig)].setKnobs({r.bass->load(), r.mid->load(), r.treble->load(), r.presence->load()});
+  mEq[static_cast<size_t>(rig)].process(buffer, n);
 }
 
 void NexusProcessor::runRigs(double* buffer, int n)
@@ -429,11 +481,16 @@ void NexusProcessor::runRigs(double* buffer, int n)
 
 void NexusProcessor::runEngines(double* buffer, int numFrames)
 {
-  // As capturas foram preparadas para pedaços de até kEngineBlock.
+  // Pedaços do tamanho para o qual as capturas foram preparadas (a menor
+  // entre as ativas: durante uma recarga podem conviver duas medidas).
+  int chunk = mEngineBlock.load();
+  for (const auto& s : mSlots)
+    if (s.active != nullptr && s.active->block > 0)
+      chunk = std::min(chunk, s.active->block);
   const auto& layout = *mLayoutActive;
-  for (int start = 0; start < numFrames; start += kEngineBlock)
+  for (int start = 0; start < numFrames; start += chunk)
   {
-    const int n = std::min(kEngineBlock, numFrames - start);
+    const int n = std::min(chunk, numFrames - start);
     double* b = buffer + start;
     for (int p : layout.pre)
       runPedal(p, b, n);
@@ -510,20 +567,37 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (const auto* list : {&mLayoutActive->pre, &mLayoutActive->loop[0], &mLayoutActive->loop[1], &mLayoutActive->post})
     for (int pedal : *list)
       anyEngine = anyEngine || isNativeLook(pedalLook(pedal));
+  const auto now = juce::Time::getMillisecondCounter();
+  for (int i = 0; i < kSlots; ++i)
+    if (auto* e = mSlots[static_cast<size_t>(i)].active)
+    {
+      const auto& a = mAnticipation[static_cast<size_t>(i)];
+      e->voice.setAnticipate(a.gestures.load() > 0 || now < a.until.load());
+    }
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
       e->voice.setControls(pedalControls(i));
   for (int r = 0; r < kRigs; ++r)
     for (int c = 0; c < kChannels; ++c)
       if (auto* e = mSlots[static_cast<size_t>(ampSlot(r, c))].active)
-        e->voice.setControls(ampControls(r, c));
+      {
+        // O equalizador do cabeçote agora é o universal (depois da caixa):
+        // o da família fica na posição da captura, sem mexer no som.
+        auto controls = ampControls(r, c);
+        controls.tone = e->pack->captureTone;
+        controls.presence = e->pack->capturePresence;
+        e->voice.setControls(controls);
+      }
 
   const int total = buffer.getNumSamples();
   const int inChannels = getTotalNumInputChannels();
   const int outChannels = getTotalNumOutputChannels();
   const int capacity = static_cast<int>(mMono.size());
   const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
-  const float targetIn = juce::Decibels::decibelsToGain(mInput->load());
+  // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
+  // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
+  const bool inputOff = mInputMute->load() > 0.5f || mInput->load() <= -23.95f;
+  const float targetIn = inputOff ? 0.0f : juce::Decibels::decibelsToGain(mInput->load());
   float inPeak = 0.0f, outPeak = 0.0f;
 
   for (int start = 0; start < total; start += capacity)
@@ -531,11 +605,14 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     const int n = std::min(capacity, total - start);
     // Entrada: a guitarra ou, no "Testar o som", a gravação de teste.
     const float* in = inChannels > 0 ? buffer.getReadPointer(0, start) : nullptr;
-    if (mTest.process(in, mTestBuffer.data(), n))
+    const bool testing = mTest.process(in, mTestBuffer.data(), n);
+    if (testing)
       in = mTestBuffer.data();
     if (in != nullptr)
     {
-      const float inStep = (targetIn - mInputGain) / static_cast<float>(n);
+      // O teste toca mesmo com a entrada no mudo.
+      const float wantIn = testing ? juce::Decibels::decibelsToGain(mInput->load()) : targetIn;
+      const float inStep = (wantIn - mInputGain) / static_cast<float>(n);
       float gi = mInputGain;
       for (int i = 0; i < n; ++i)
       {
@@ -544,7 +621,7 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
         inPeak = std::max(inPeak, std::abs(v));
         mMono[static_cast<size_t>(i)] = v;
       }
-      mInputGain = targetIn;
+      mInputGain = wantIn;
     }
     else
       std::fill(mMono.begin(), mMono.begin() + n, 0.0);
@@ -576,6 +653,9 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       }
     }
     mOutputGain = targetGain;
+    // Estúdio: a música entra depois da guitarra (não passa pela cadeia).
+    if (outChannels > 0)
+      mStudio.process(buffer.getWritePointer(0, start), outChannels > 1 ? buffer.getWritePointer(1, start) : nullptr, n);
   }
 
   // Espelho para a tela.
@@ -628,12 +708,21 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
     {
       nexus::PackOptions options;
       options.sampleRate = kEngineRate;
-      options.maxBlockSize = kEngineBlock;
+      const int block = mEngineBlock.load();
+      options.maxBlockSize = block;
       options.slimmableSize = lite ? 0.0 : 1.0;
       auto engine = std::make_unique<NexusEngine>();
+      engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
-      engine->voice.setControls(controls);
-      engine->voice.prepare(engine->pack, kEngineRate, kEngineBlock);
+      auto start = controls;
+      if (slotIndex >= kPedals)
+      {
+        // Cabeçote: o equalizador é o universal (depois da caixa).
+        start.tone = engine->pack->captureTone;
+        start.presence = engine->pack->capturePresence;
+      }
+      engine->voice.setControls(start);
+      engine->voice.prepare(engine->pack, kEngineRate, block);
       const auto& pack = *engine->pack;
       const juce::String text = juce::String::fromUTF8(pack.name.c_str()) + ": "
                                 + juce::String(static_cast<int>(pack.captures.size())) + " capturas, de "

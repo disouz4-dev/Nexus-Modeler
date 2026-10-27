@@ -30,7 +30,8 @@ add_library(nexus_engine STATIC
   src/MorphEngine.cpp
   src/Pack.cpp
   src/TestSignal.cpp
-  src/ToneStack.cpp)
+  src/ToneStack.cpp
+  src/UniversalEq.cpp)
 target_include_directories(nexus_engine PUBLIC include)
 # O NAM registra cada tipo de captura num objeto estático; sem "carga
 # inteira" o ligador descarta esses registros e nenhuma captura abre.
@@ -39,4 +40,44 @@ if(MSVC)
   target_compile_options(nexus_engine PRIVATE /W4 /utf-8 "$<$<CONFIG:Release>:/O2>")
 else()
   target_compile_options(nexus_engine PRIVATE -Wall -Wextra "$<$<CONFIG:Release>:-O3>")
+endif()
+
+# Estúdio: separação de faixas pelo demucs.cpp (licença MIT), baixado pelo
+# CMake numa versão fixa. Só o código do modelo (src/); o Eigen é o mesmo do
+# motor do NAM.
+include(FetchContent)
+FetchContent_Declare(demucs_cpp
+  GIT_REPOSITORY https://github.com/sevagh/demucs.cpp.git
+  GIT_TAG f1206e9adeea103aef4a636b9e62297cf1f8e34e
+  GIT_SUBMODULES "")
+FetchContent_GetProperties(demucs_cpp)
+if(NOT demucs_cpp_POPULATED)
+  FetchContent_Populate(demucs_cpp)
+endif()
+file(GLOB DEMUCS_SOURCES "${demucs_cpp_SOURCE_DIR}/src/*.cpp")
+add_library(demucs_core STATIC ${DEMUCS_SOURCES})
+target_include_directories(demucs_core SYSTEM PUBLIC
+  "${demucs_cpp_SOURCE_DIR}/src"
+  "${NAM_DIR}/Dependencies/eigen")
+target_compile_features(demucs_core PUBLIC cxx_std_17)
+target_compile_definitions(demucs_core PUBLIC $<$<CONFIG:Release>:NDEBUG>)
+if(MSVC)
+  target_compile_definitions(demucs_core PUBLIC NOMINMAX _USE_MATH_DEFINES)
+  target_compile_options(demucs_core PRIVATE /bigobj /W0 "$<$<CONFIG:Release>:/O2>")
+else()
+  target_compile_options(demucs_core PRIVATE -w "$<$<CONFIG:Release>:-O3>")
+endif()
+option(NEXUS_DEMUCS_BLAS "Contas grandes do separador pelo Accelerate (Mac)" ON)
+if(APPLE AND NEXUS_DEMUCS_BLAS)
+  target_compile_definitions(demucs_core PUBLIC EIGEN_USE_BLAS)
+  target_link_libraries(demucs_core PUBLIC "-framework Accelerate")
+endif()
+
+add_library(nexus_studio STATIC src/Separator.cpp)
+target_include_directories(nexus_studio PUBLIC include)
+target_link_libraries(nexus_studio PUBLIC demucs_core)
+if(MSVC)
+  target_compile_options(nexus_studio PRIVATE /W4 /utf-8 "$<$<CONFIG:Release>:/O2>")
+else()
+  target_compile_options(nexus_studio PRIVATE -Wall -Wextra "$<$<CONFIG:Release>:-O3>")
 endif()

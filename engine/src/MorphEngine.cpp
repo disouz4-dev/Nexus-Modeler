@@ -43,7 +43,10 @@ void MorphEngine::computeDesired(double position)
   const auto& caps = mPack->captures;
   const int count = static_cast<int>(caps.size());
   for (auto& s : mSlots)
+  {
     s.desired = 0.0;
+    s.near = false;
+  }
   if (count == 1)
   {
     mSlots[0].desired = 1.0;
@@ -53,6 +56,9 @@ void MorphEngine::computeDesired(double position)
   while (hi < count - 1 && caps[hi].position < position)
     ++hi;
   const int lo = hi - 1;
+  if (mAnticipate)
+    for (int i = std::max(0, lo - mSettings.anticipateEachSide); i <= std::min(count - 1, hi + mSettings.anticipateEachSide); ++i)
+      mSlots[i].near = true;
   const double span = caps[hi].position - caps[lo].position;
   const double t = std::clamp((position - caps[lo].position) / span, 0.0, 1.0);
   if (mStepped)
@@ -101,7 +107,7 @@ void MorphEngine::startWarming()
   for (int i = 0; i < static_cast<int>(mSlots.size()); ++i)
   {
     const bool onPath = caps[i].position >= lo && caps[i].position <= hi;
-    if (mSlots[i].state == State::Cold && (mSlots[i].desired > 0.0 || onPath))
+    if (mSlots[i].state == State::Cold && (mSlots[i].desired > 0.0 || onPath || mSlots[i].near))
       mOrder.push_back(i);
   }
   std::sort(mOrder.begin(), mOrder.end(), [&](int a, int b) {
@@ -111,9 +117,10 @@ void MorphEngine::startWarming()
   });
 
   int running = runningCount();
+  const int limit = mAnticipate ? std::max(mSettings.maxRunning, mSettings.maxRunningAnticipating) : mSettings.maxRunning;
   for (int i : mOrder)
   {
-    if (running >= mSettings.maxRunning)
+    if (running >= limit)
     {
       if (mSlots[i].desired <= 0.0)
         break;
@@ -123,7 +130,7 @@ void MorphEngine::startWarming()
       for (int j = 0; j < static_cast<int>(mSlots.size()); ++j)
       {
         const auto& s = mSlots[j];
-        if (s.state != State::Cold && s.weight == 0.0 && s.target == 0.0 && s.desired == 0.0)
+        if (s.state != State::Cold && s.weight == 0.0 && s.target == 0.0 && s.desired == 0.0 && !s.near)
         {
           const double d = std::abs(caps[j].position - mPosition);
           if (d > farthest)
@@ -236,7 +243,7 @@ void MorphEngine::process(const double* input, double* output, int numFrames)
   {
     if (s.state != State::Hot)
       continue;
-    if (s.weight == 0.0 && s.target == 0.0 && s.desired == 0.0)
+    if (s.weight == 0.0 && s.target == 0.0 && s.desired == 0.0 && !s.near)
     {
       s.idleSamples += numFrames;
       if (s.idleSamples > coolSamples)

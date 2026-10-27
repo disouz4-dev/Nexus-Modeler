@@ -121,8 +121,39 @@ LevelFader::LevelFader(juce::RangedAudioParameter& p, juce::String label)
   setMouseCursor(juce::MouseCursor::LeftRightResizeCursor);
 }
 
+void LevelFader::setMuteParameter(juce::RangedAudioParameter& p)
+{
+  mMuteParam = &p;
+  mMute = std::make_unique<juce::ParameterAttachment>(p, [this](float v) {
+    mMuted = v > 0.5f;
+    repaint();
+  });
+  mMute->sendInitialUpdate();
+}
+
+juce::Rectangle<float> LevelFader::muteArea() const
+{
+  if (mMuteParam == nullptr)
+    return {};
+  const auto font = Fonts::get().ui(10.5f).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.08f : 0.0f);
+  const float x = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(font, upper(TRANS(mLabel)))) + 12.0f;
+  return {x, -1.0f, 52.0f, 18.0f};
+}
+
+bool LevelFader::muted() const
+{
+  return mMuted || mDrag.parameter().convertFrom0to1(mDrag.value01()) <= mDrag.parameter().getNormalisableRange().start + 0.05f;
+}
+
 void LevelFader::mouseDown(const juce::MouseEvent& e)
 {
+  if (!e.mods.isPopupMenu() && muteArea().contains(e.position))
+  {
+    mMute->setValueAsCompleteGesture(mMuted ? 0.0f : 1.0f);
+    mSkipDrag = true;
+    return;
+  }
+  mSkipDrag = false;
   if (e.mods.isPopupMenu())
   {
     if (onMidiMenu)
@@ -138,9 +169,20 @@ void LevelFader::paint(juce::Graphics& g)
   auto head = r.removeFromTop(18.0f);
   const float db = mDrag.parameter().convertFrom0to1(mDrag.value01());
   drawCaps(g, TRANS(mLabel), head, 10.5f, juce::Justification::centredLeft, colour::dim);
-  g.setColour(colour::text);
+  if (mMuteParam != nullptr)
+  {
+    const auto m = muteArea().reduced(0.5f);
+    g.setColour(mMuted ? colour::danger.withAlpha(0.18f) : juce::Colour(0xff15161a));
+    g.fillRoundedRectangle(m, m.getHeight() * 0.5f);
+    g.setColour(mMuted ? colour::danger : colour::boxBorder);
+    g.drawRoundedRectangle(m, m.getHeight() * 0.5f, 1.0f);
+    drawCaps(g, TRANS("Mudo"), m, 9.0f, juce::Justification::centred, mMuted ? colour::danger : colour::dim);
+  }
+  const bool off = muted();
+  g.setColour(off ? colour::danger : colour::text);
   g.setFont(Fonts::get().ui(12.0f));
-  g.drawText((db > 0.05f ? "+" : "") + juce::String(db, 1).replaceCharacter('.', ',') + " dB", head, juce::Justification::centredRight);
+  g.drawText(off ? TRANS("no mudo") : (db > 0.05f ? "+" : "") + juce::String(db, 1).replaceCharacter('.', ',') + " dB", head,
+             juce::Justification::centredRight);
 
   // Trilho do ajuste com a alça.
   auto track = r.removeFromTop(16.0f).withSizeKeepingCentre(r.getWidth(), 3.0f);

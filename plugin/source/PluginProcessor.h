@@ -10,6 +10,8 @@
 #include "ChainLayout.h"
 #include "MidiMap.h"
 #include "TestSource.h"
+#include "studio/Player.h"
+#include "nexus/UniversalEq.h"
 #include "nexus/AmpVoice.h"
 #include "nexus/Effects.h"
 
@@ -31,14 +33,18 @@ struct NexusEngine
 {
   std::shared_ptr<nexus::Pack> pack;
   nexus::AmpVoice voice;
+  int block = 0; // maior pedaço para o qual as capturas foram preparadas
 };
 
-class NexusProcessor : public juce::AudioProcessor, private juce::Timer
+class NexusProcessor : public juce::AudioProcessor, private juce::Timer, private juce::AudioProcessorParameter::Listener
 {
 public:
   // Taxa em que as capturas A2 são treinadas e rodam.
   static constexpr double kEngineRate = 48000.0;
   // Maior pedaço entregue às capturas de uma vez.
+  // Maior pedaço de áudio que as capturas aceitam. Elas são preparadas no
+  // tamanho do bloco da placa (mEngineBlock): preparar para 2048 e tocar
+  // blocos de 128 deixa uma captura A2 duas vezes mais lenta (medido).
   static constexpr int kEngineBlock = 2048;
   static constexpr int kMaxCaptures = 64;
   static constexpr int kPedals = ChainLayout::kPedals;
@@ -117,12 +123,17 @@ public:
   // ----- Tela: caixas (IR). Captura full rig tranca a caixa daquele lado.
   void loadIrAsync(int rig, const juce::File& file);
   juce::String irName(int rig) const;
+  juce::File irFile(int rig) const { return mCabs[static_cast<size_t>(rig)].file; }
   bool irLoaded(int rig) const { return mCabs[static_cast<size_t>(rig)].loaded.load(); }
 
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
   // "Testar o som": gravação de guitarra no lugar da entrada.
   nexus::TestSource& testSource() { return mTest; }
+  // Estúdio: a música separada toca junto com a guitarra.
+  nexus::studio::Player& studio() { return mStudio; }
+  // Separação em segundo plano: continua mesmo com a tela fechada.
+  nexus::studio::Separation& separation() { return mSeparation; }
   float outputPeak() const { return mOutPeak.load(); }
   void resetPeaks() { mInPeak.store(0.0f); mOutPeak.store(0.0f); }
 
@@ -247,11 +258,28 @@ private:
   std::atomic<float>* mLite;
   std::atomic<float>* mOutput;
   std::atomic<float>* mInput;
+  std::atomic<float>* mInputMute;
   float mOutputGain = 1.0f;
   float mInputGain = 1.0f;
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
   nexus::TestSource mTest;
+  nexus::studio::Player mStudio;
+  nexus::studio::Separation mSeparation;
+  std::atomic<int> mEngineBlock{256};
+  // Grave, médio, agudo e presença: equalizador universal depois da caixa.
+  std::array<nexus::UniversalEq, kRigs> mEq;
+  // Mão no botão que troca captura (drive de um pedal, ganho de um
+  // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
+  // depois de soltar.
+  void parameterValueChanged(int, float) override {}
+  void parameterGestureChanged(int index, bool starting) override;
+  struct Anticipation
+  {
+    std::atomic<int> gestures{0};
+    std::atomic<juce::uint32> until{0};
+  };
+  std::array<Anticipation, kSlots> mAnticipation;
   std::vector<float> mTestBuffer;
   std::unique_ptr<MidiMap> mMidi;
 
