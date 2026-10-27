@@ -26,6 +26,16 @@
   não toca. Reconhecida pelo tipo gravado no `.nam` (`amp_cab`) ou por
   `"inclui_caixa": true` no `pack.json`.
 
+### Áudio e MIDI
+- Programa independente com janela própria e painel de áudio: ASIO (kit da
+  Steinberg, GPL v3), WASAPI, DirectSound, Core Audio, JACK e ALSA; latência
+  de ida e volta, uso do processador e medidor da guitarra.
+- MIDI por USB e Bluetooth (WinRT MIDI no Windows, pareamento no Mac):
+  troca de patch escolhe o canal, "Aprender MIDI" em qualquer controle.
+- Cabeçote com até 3 canais, conforme o amplificador original.
+- O plugin recebe MIDI do programa de gravação (o AU passa a ser "efeito com
+  MIDI").
+
 ### Ferramentas
 - Nexus Gear Studio (`tools/gear_studio`): gera amplificadores, caixas e
   pedais no Blender a partir de receitas e renderiza as imagens do plugin.

@@ -153,7 +153,9 @@ def main():
         print(f"[gear] frente em {time.time() - t0:.0f} s")
 
     layout = {"nome": rec["nome"], "familia": rec["familia"], "largura": width, "altura": height,
-              "posicoes": frames, "botoes": []}
+              "posicoes": frames, "botoes": [],
+              # Canais do amplificador original (nome de cada um), se houver.
+              "canais": [c["nome"] for c in rec.get("canais", [])]}
     boxes = []
     for c in controls:
         b = knob_box(scene, cam, c)

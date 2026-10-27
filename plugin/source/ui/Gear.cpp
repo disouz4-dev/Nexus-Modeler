@@ -44,6 +44,9 @@ GearArt GearArt::load(const juce::String& prefix)
       if (knob.strip.isValid())
         art.knobs.push_back(std::move(knob));
     }
+  if (const auto* channels = map["canais"].getArray())
+    for (const auto& c : *channels)
+      art.channels.add(c.toString());
   if (const auto foot = map["pisante"]; foot.isObject())
   {
     art.footswitch = {static_cast<float>(foot["x"]), static_cast<float>(foot["y"])};

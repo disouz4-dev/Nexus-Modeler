@@ -29,6 +29,13 @@ void DragValue::mouseDown(const juce::MouseEvent&)
   mAttachment.beginGesture();
 }
 
+juce::String DragValue::paramId() const
+{
+  if (auto* p = dynamic_cast<const juce::AudioProcessorParameterWithID*>(&mParam))
+    return p->paramID;
+  return {};
+}
+
 void DragValue::mouseDrag(const juce::MouseEvent& e, bool horizontal)
 {
   // 250 pontos de tela percorrem o botão inteiro; Shift deixa 5x mais fino.
@@ -66,6 +73,17 @@ FilmKnob::FilmKnob(juce::RangedAudioParameter& p, const GearKnobArt& art, juce::
   setMouseCursor(juce::MouseCursor::UpDownResizeCursor);
 }
 
+void FilmKnob::mouseDown(const juce::MouseEvent& e)
+{
+  if (e.mods.isPopupMenu())
+  {
+    if (onMidiMenu)
+      onMidiMenu(mDrag.paramId(), *this);
+    return;
+  }
+  mDrag.mouseDown(e);
+}
+
 void FilmKnob::paint(juce::Graphics& g)
 {
   g.setImageResamplingQuality(juce::Graphics::highResamplingQuality);
@@ -91,6 +109,17 @@ LevelFader::LevelFader(juce::RangedAudioParameter& p, juce::String label)
 , mLabel(std::move(label))
 {
   setMouseCursor(juce::MouseCursor::LeftRightResizeCursor);
+}
+
+void LevelFader::mouseDown(const juce::MouseEvent& e)
+{
+  if (e.mods.isPopupMenu())
+  {
+    if (onMidiMenu)
+      onMidiMenu(mDrag.paramId(), *this);
+    return;
+  }
+  mDrag.mouseDown(e);
 }
 
 void LevelFader::paint(juce::Graphics& g)
@@ -168,6 +197,12 @@ void Segmented::paint(juce::Graphics& g)
 
 void Segmented::mouseUp(const juce::MouseEvent& e)
 {
+  if (e.mods.isPopupMenu())
+  {
+    if (onRightClick)
+      onRightClick();
+    return;
+  }
   for (int i = 0; i < mItems.size(); ++i)
     if (itemBounds(i).contains(e.position) && mEnabled[i] && onSelect)
       onSelect(i);

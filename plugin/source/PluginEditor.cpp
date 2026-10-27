@@ -79,6 +79,7 @@ void NexusEditor::GearStage::setArt(const GearArt* art)
       {
         auto knob = std::make_unique<FilmKnob>(*param, k, knobLabel(k.id));
         knob->onChange = [this] { repaint(); };
+        knob->onMidiMenu = [this](const juce::String& id, juce::Component& c) { if (onMidiMenu) onMidiMenu(id, c); };
         addAndMakeVisible(*knob);
         mKnobs.push_back(std::move(knob));
       }
@@ -173,6 +174,12 @@ void NexusEditor::GearStage::mouseMove(const juce::MouseEvent& e)
 
 void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
 {
+  if (e.mods.isPopupMenu())
+  {
+    if (mBlock == NexusProcessor::pedal && overFootswitch(e.position) && onMidiMenu)
+      onMidiMenu("pedal_ligado", *this);
+    return;
+  }
   if (mBlock == NexusProcessor::pedal && overFootswitch(e.position))
   {
     auto* on = mProcessor.params.getParameter("pedal_ligado");
@@ -451,17 +458,10 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 
   addChildComponent(mChannels);
   mChannels.setFontSize(11.5f);
-  mChannels.onSelect = [this](int item) {
-    const int ch = mChannelOfItem[static_cast<size_t>(item)];
-    if (ch < 0)
+  mChannels.onSelect = [this](int ch) {
+    if (!mProcessor.channelLoaded(ch))
     {
-      // "+ canal": o primeiro canal livre recebe um pacote.
-      for (int c = 0; c < NexusProcessor::kChannels; ++c)
-        if (!mProcessor.channelLoaded(c))
-        {
-          choosePack(NexusProcessor::amp, c);
-          break;
-        }
+      choosePack(NexusProcessor::amp, ch);
       return;
     }
     auto* param = mProcessor.params.getParameter("canal");
@@ -485,6 +485,14 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 
   mPath = std::make_unique<SignalPath>(*this);
   addAndMakeVisible(*mPath);
+
+  // MIDI: clique com o botão direito em qualquer controle.
+  auto midiMenu = [this](const juce::String& id, juce::Component& c) { showMidiMenu(id, c); };
+  mPedalStage->onMidiMenu = midiMenu;
+  mAmpStage->onMidiMenu = midiMenu;
+  mPath->input().onMidiMenu = midiMenu;
+  mPath->output().onMidiMenu = midiMenu;
+  mChannels.onRightClick = [this] { showMidiMenu("canal", mChannels); };
 
   setSize(kWidth, kHeight);
   timerCallback();
@@ -571,29 +579,17 @@ void NexusEditor::chooseIr()
 
 void NexusEditor::refreshChannels()
 {
-  // Só os canais com pacote aparecem; "+ canal" enquanto houver vaga.
+  // Os canais são os do amplificador original: um amplificador de um canal
+  // não mostra seletor. Canal sem pacote aparece apagado e, ao clicar,
+  // pede o pacote dele.
+  const int count = std::min(mAmpArt.channels.size(), NexusProcessor::kChannels);
   juce::StringArray items;
-  std::vector<int> map;
-  int selectedItem = -1;
-  for (int c = 0; c < NexusProcessor::kChannels; ++c)
-    if (mProcessor.channelLoaded(c))
-    {
-      if (c == mProcessor.selectedChannel())
-        selectedItem = items.size();
-      items.add(mProcessor.channelName(c));
-      map.push_back(c);
-    }
-  if (!items.isEmpty() && items.size() < NexusProcessor::kChannels)
-  {
-    items.add("+ canal");
-    map.push_back(-1);
-  }
-  mChannelOfItem = map;
+  for (int c = 0; c < count; ++c)
+    items.add(mAmpArt.channels[c] + (mProcessor.channelLoaded(c) ? juce::String() : juce::String::fromUTF8(" · vazio")));
   mChannels.setItems(items);
-  mChannels.setSelected(selectedItem);
-  mChannels.setVisible(mStage == Stage::amp && !items.isEmpty());
-  const int width = 150 * items.size();
-  mChannels.setBounds(getLocalBounds().withTrimmedTop(kTopBar).removeFromTop(52).withSizeKeepingCentre(width, 34).translated(0, 6));
+  mChannels.setSelected(juce::jlimit(0, std::max(0, count - 1), mProcessor.selectedChannel()));
+  mChannels.setVisible(mStage == Stage::amp && count > 1);
+  mChannels.setBounds(getLocalBounds().withTrimmedTop(kTopBar).removeFromTop(52).withSizeKeepingCentre(170 * std::max(1, count), 34).translated(0, 6));
 
   // O botão de ganho do painel segue o canal escolhido.
   if (mProcessor.selectedChannel() != mShownChannel)
@@ -601,6 +597,62 @@ void NexusEditor::refreshChannels()
     mShownChannel = mProcessor.selectedChannel();
     mAmpStage->setArt(&mAmpArt);
   }
+}
+
+void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& target)
+{
+  auto& midi = mProcessor.midi();
+  auto* param = mProcessor.params.getParameter(paramId);
+  if (param == nullptr)
+    return;
+  const int cc = midi.ccFor(paramId);
+  juce::PopupMenu menu;
+  menu.addSectionHeader("MIDI: " + param->getName(48));
+  menu.addItem(1, cc < 0 ? juce::String("Aprender MIDI") : juce::String::fromUTF8("Trocar controle MIDI (agora CC ") + juce::String(cc) + ")");
+  if (cc >= 0)
+    menu.addItem(2, "Esquecer MIDI (CC " + juce::String(cc) + ")");
+  if (midi.learning())
+    menu.addItem(4, "Cancelar aprender MIDI");
+  if (paramId == "canal")
+    menu.addItem(3, juce::String::fromUTF8("Troca de patch 1, 2, 3 já escolhe o canal"), false);
+  menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(&target),
+                     [this, paramId, name = param->getName(48)](int r) {
+                       if (r == 1)
+                       {
+                         mProcessor.midi().learn(paramId);
+                         mMidiNotice = juce::String::fromUTF8("Mexa no controle da pedaleira para ligar a ") + name;
+                         mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 30000;
+                       }
+                       else if (r == 4)
+                       {
+                         mProcessor.midi().cancelLearn();
+                         mMidiNotice.clear();
+                       }
+                       else if (r == 2)
+                       {
+                         mProcessor.midi().forget(paramId);
+                         mMidiNotice = name + juce::String::fromUTF8(" não responde mais ao MIDI");
+                         mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
+                       }
+                       repaint();
+                     });
+}
+
+void NexusEditor::paintOverChildren(juce::Graphics& g)
+{
+  if (mMidiNotice.isEmpty() || juce::Time::getMillisecondCounter() > mMidiNoticeUntil)
+    return;
+  const auto font = Fonts::get().ui(13.0f);
+  const float w = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(font, mMidiNotice)) + 48.0f;
+  juce::Rectangle<float> pill(getWidth() * 0.5f - w * 0.5f, static_cast<float>(kTopBar) + 14.0f, w, 34.0f);
+  g.setColour(juce::Colour(0xf0101418));
+  g.fillRoundedRectangle(pill, 17.0f);
+  g.setColour(colour::accent);
+  g.drawRoundedRectangle(pill.reduced(0.5f), 17.0f, 1.0f);
+  g.fillEllipse(pill.getX() + 16.0f, pill.getCentreY() - 3.5f, 7.0f, 7.0f);
+  g.setColour(colour::text);
+  g.setFont(font);
+  g.drawText(mMidiNotice, pill.withTrimmedLeft(20.0f), juce::Justification::centred);
 }
 
 void NexusEditor::showAudioPanel(bool show)
@@ -629,6 +681,21 @@ void NexusEditor::timerCallback()
   mStepsButton.setOn(mProcessor.params.getParameter("degraus")->getValue() > 0.5f);
 
   refreshChannels();
+
+  // MIDI aprendido: confirma; tempo esgotado: cancela.
+  auto& midi = mProcessor.midi();
+  if (const int cc = midi.takeLearned(); cc >= 0)
+  {
+    mMidiNotice = "CC " + juce::String(cc) + juce::String::fromUTF8(" ligado. Pronto para tocar.");
+    mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
+    repaint();
+  }
+  if (mMidiNotice.isNotEmpty() && juce::Time::getMillisecondCounter() > mMidiNoticeUntil)
+  {
+    midi.cancelLearn();
+    mMidiNotice.clear();
+    repaint();
+  }
 
   // O visual do pedal pode mudar pelo programa de gravação (automação).
   if (pedalLook() != mShownPedalLook)
@@ -765,7 +832,7 @@ void NexusEditor::resized()
   mPath->setBounds(r.removeFromBottom(kPathHeight));
   mTitleArea = r.removeFromBottom(kTitleHeight);
   mPedalStage->setBounds(r);
-  mAmpStage->setBounds(r.withTrimmedTop(46));
+  mAmpStage->setBounds(mAmpArt.channels.size() > 1 ? r.withTrimmedTop(46) : r);
   mCabStage->setBounds(r);
   layoutTitle();
 }

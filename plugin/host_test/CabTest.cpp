@@ -367,12 +367,12 @@ int main(int argc, char** argv)
     juce::MessageManager::getInstance()->runDispatchLoopUntil(100);
     std::vector<nexus::ui::Segmented*> segs;
     collect(*editor, segs);
-    int channelItems = -1;
+    int visibleChannelSelectors = 0;
     for (auto* sgm : segs)
-      if (sgm->isVisible() && sgm->numItems() == 3)
-        channelItems = sgm->numItems();
-    report(channelItems == 3, "A tela mostra os 2 canais e o \"+ canal\"",
-           juce::String(channelItems) + " itens no seletor de canais");
+      if (visibleIn(*sgm, *editor) && sgm->numItems() == 1)
+        ++visibleChannelSelectors;
+    report(visibleChannelSelectors == 0, "Brit 800 tem um canal, como o original: a tela não mostra seletor de canais",
+           juce::String(visibleChannelSelectors) + " seletor(es) de canal visíveis");
     if (photos != juce::File())
     {
       const auto image = editor->createComponentSnapshot(editor->getLocalBounds(), true, 2.0f);
@@ -381,6 +381,52 @@ int main(int argc, char** argv)
       juce::FileOutputStream stream(out);
       juce::PNGImageFormat().writeImageToStream(image, stream);
     }
+  }
+
+  // 5. MIDI.
+  {
+    std::printf("\nMIDI\n");
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    juce::AudioBuffer<float> buffer(2, 128);
+    auto send = [&](const juce::MidiMessage& m) {
+      juce::MidiBuffer midi;
+      midi.addEvent(m, 0);
+      buffer.clear();
+      p.processBlock(buffer, midi);
+    };
+    auto value = [&](const char* id) { auto* q = p.params.getParameter(id); return q->convertFrom0to1(q->getValue()); };
+
+    send(juce::MidiMessage::programChange(1, 2));
+    report(juce::roundToInt(value("canal")) == 2, "Troca de patch 3 escolhe o canal 3", "canal " + juce::String(juce::roundToInt(value("canal")) + 1));
+
+    p.midi().learn("pedal_ligado");
+    send(juce::MidiMessage::controllerEvent(1, 80, 127));
+    const bool learnedOn = p.midi().ccFor("pedal_ligado") == 80 && value("pedal_ligado") > 0.5f;
+    send(juce::MidiMessage::controllerEvent(1, 80, 0));
+    report(learnedOn && value("pedal_ligado") < 0.5f, "Aprender: CC 80 liga (127) e desliga (0) o pedal",
+           "CC " + juce::String(p.midi().ccFor("pedal_ligado")));
+
+    p.midi().learn("ganho");
+    send(juce::MidiMessage::controllerEvent(1, 21, 127));
+    const float top = value("ganho");
+    send(juce::MidiMessage::controllerEvent(1, 21, 0));
+    report(std::abs(top - 10.0f) < 0.01f && value("ganho") < 0.01f, "CC 21 percorre o ganho de 0 a 10",
+           "127 -> " + juce::String(top, 2) + ", 0 -> " + juce::String(value("ganho"), 2));
+
+    p.midi().learn("ganho");
+    send(juce::MidiMessage::controllerEvent(1, 22, 64));
+    send(juce::MidiMessage::controllerEvent(1, 21, 127)); // o CC antigo não manda mais
+    report(p.midi().ccFor("ganho") == 22 && value("ganho") < 6.0f, "Reaprender troca o controle (o antigo para de agir)",
+           "agora CC " + juce::String(p.midi().ccFor("ganho")) + ", ganho " + juce::String(value("ganho"), 2));
+
+    juce::MemoryBlock state;
+    p.getStateInformation(state);
+    NexusProcessor q;
+    q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
+    report(q.midi().ccFor("pedal_ligado") == 80 && q.midi().ccFor("ganho") == 22, "O mapa MIDI volta ao abrir o projeto",
+           "pedal CC " + juce::String(q.midi().ccFor("pedal_ligado")) + ", ganho CC " + juce::String(q.midi().ccFor("ganho")));
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

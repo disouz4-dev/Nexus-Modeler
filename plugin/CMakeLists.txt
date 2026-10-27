@@ -23,14 +23,14 @@ juce_add_plugin(NexusModeler
   PLUGIN_CODE Nxm1
   FORMATS ${NEXUS_FORMATS}
   IS_SYNTH FALSE
-  NEEDS_MIDI_INPUT FALSE
+  NEEDS_MIDI_INPUT TRUE
   NEEDS_MIDI_OUTPUT FALSE
   IS_MIDI_EFFECT FALSE
   EDITOR_WANTS_KEYBOARD_FOCUS FALSE
   COPY_PLUGIN_AFTER_BUILD FALSE
   LV2URI "https://github.com/disouz4-dev/Nexus-Modeler"
   VST3_CATEGORIES Fx Distortion
-  AU_MAIN_TYPE kAudioUnitType_Effect
+  AU_MAIN_TYPE kAudioUnitType_MusicEffect
   MICROPHONE_PERMISSION_ENABLED TRUE
   MICROPHONE_PERMISSION_TEXT "O Nexus Modeler usa a entrada de áudio para a sua guitarra.")
 
@@ -39,8 +39,11 @@ set(NEXUS_UI_SOURCES
   source/ui/AudioPanel.cpp
   source/ui/Controls.cpp
   source/ui/Gear.cpp)
-target_sources(NexusModeler PRIVATE
+set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
+  source/MidiMap.cpp)
+target_sources(NexusModeler PRIVATE
+  ${NEXUS_PROCESSOR_SOURCES}
   ${NEXUS_UI_SOURCES})
 
 # Programa independente: janela e painel de áudio próprios do Nexus.
@@ -56,7 +59,8 @@ if(WIN32)
     URL_HASH SHA256=d5ebf0c20dd2c5f43771fd0c1418f4b361bf52434ee670097cfa6b3a335e2eca)
   FetchContent_MakeAvailable(asiosdk)
   target_include_directories(NexusModeler SYSTEM PRIVATE "${asiosdk_SOURCE_DIR}/common")
-  target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1)
+  # WinRT MIDI: pedaleiras por Bluetooth (BLE MIDI) no Windows 10 1809 ou mais novo.
+  target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1 JUCE_USE_WINRT_MIDI=1)
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1)
 endif()
@@ -110,7 +114,7 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_recommended_config_flags)
   add_dependencies(nexus_host_test NexusModeler_VST3)
   juce_add_console_app(nexus_snapshot PRODUCT_NAME "nexus_snapshot")
-  target_sources(nexus_snapshot PRIVATE host_test/Snapshot.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
+  target_sources(nexus_snapshot PRIVATE host_test/Snapshot.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
   target_include_directories(nexus_snapshot SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
   target_compile_definitions(nexus_snapshot PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_snapshot PRIVATE
@@ -121,7 +125,7 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_recommended_config_flags)
 
   juce_add_console_app(nexus_cab_test PRODUCT_NAME "nexus_cab_test")
-  target_sources(nexus_cab_test PRIVATE host_test/CabTest.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
+  target_sources(nexus_cab_test PRIVATE host_test/CabTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
   target_include_directories(nexus_cab_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
   target_compile_definitions(nexus_cab_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_cab_test PRIVATE
@@ -136,7 +140,7 @@ if(NEXUS_BUILD_TOOLS)
 
   # Teste com interface de áudio real (manual: a compilação automática não tem placa de som).
   juce_add_console_app(nexus_device_test PRODUCT_NAME "nexus_device_test")
-  target_sources(nexus_device_test PRIVATE host_test/DeviceTest.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
+  target_sources(nexus_device_test PRIVATE host_test/DeviceTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
   target_include_directories(nexus_device_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
   target_compile_definitions(nexus_device_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_device_test PRIVATE

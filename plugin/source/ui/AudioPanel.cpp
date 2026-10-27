@@ -2,6 +2,8 @@
 
 #include "Theme.h"
 
+#include <juce_audio_utils/juce_audio_utils.h>
+
 namespace nexus::ui
 {
 namespace
@@ -83,6 +85,14 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
         mDevices.restartLastAudioDevice();
     refresh();
   };
+  // Pareamento de MIDI por Bluetooth: janela do próprio sistema no Mac. No
+  // Windows e no Linux o pareamento é nos ajustes de Bluetooth do sistema; o
+  // dispositivo aparece aqui depois, como qualquer MIDI.
+  if (juce::BluetoothMidiDevicePairingDialogue::isAvailable())
+  {
+    addAndMakeVisible(mBluetooth);
+    mBluetooth.onClick = [] { juce::BluetoothMidiDevicePairingDialogue::open(); };
+  }
   addAndMakeVisible(mClose);
   mClose.onClick = [this] {
     if (onClose)
@@ -204,14 +214,23 @@ double AudioPanel::roundTripMs() const
 
 void AudioPanel::timerCallback()
 {
+  juce::StringArray names;
+  for (const auto& d : juce::MidiInput::getAvailableDevices())
+    names.add(d.name);
+  const auto midi = names.isEmpty() ? juce::String::fromUTF8("nenhum dispositivo conectado") : names.joinIntoString(", ");
+  if (midi != mMidiDevices)
+  {
+    mMidiDevices = midi;
+    repaint();
+  }
   mMeter = std::max(mInputPeak ? mInputPeak() : 0.0f, mMeter * 0.85f);
   mCpu = mDevices.getCpuUsage();
-  repaint(card().removeFromBottom(150));
+  repaint(card().removeFromBottom(200));
 }
 
 juce::Rectangle<int> AudioPanel::card() const
 {
-  return getLocalBounds().withSizeKeepingCentre(620, mError.isEmpty() ? 540 : 580);
+  return getLocalBounds().withSizeKeepingCentre(620, mError.isEmpty() ? 590 : 630);
 }
 
 void AudioPanel::resized()
@@ -229,6 +248,8 @@ void AudioPanel::resized()
   mClose.setBounds(buttons.removeFromRight(110));
   buttons.removeFromRight(10);
   mDriverPanel.setBounds(buttons.removeFromRight(150));
+  buttons.removeFromRight(10);
+  mBluetooth.setBounds(buttons.removeFromLeft(190));
 }
 
 void AudioPanel::paint(juce::Graphics& g)
@@ -280,6 +301,14 @@ void AudioPanel::paint(juce::Graphics& g)
   g.setColour(colour::dim);
   g.setFont(Fonts::get().ui(11.5f));
   g.drawText("Processador: " + juce::String(juce::roundToInt(mCpu * 100.0)) + "%", s, juce::Justification::centredLeft);
+
+  // Dispositivos MIDI (USB e Bluetooth): abertos sozinhos.
+  r.removeFromTop(10.0f);
+  auto midiRow = r.removeFromTop(30.0f);
+  drawCaps(g, "MIDI", midiRow.removeFromLeft(r.getWidth() - 370.0f), 10.5f, juce::Justification::centredLeft, colour::dim);
+  g.setColour(colour::text);
+  g.setFont(Fonts::get().ui(13.0f));
+  g.drawFittedText(mMidiDevices, midiRow.toNearestInt(), juce::Justification::centredLeft, 1);
 
   if (mError.isNotEmpty())
   {

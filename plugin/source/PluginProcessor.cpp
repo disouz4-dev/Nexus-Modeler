@@ -40,6 +40,7 @@ NexusProcessor::NexusProcessor()
   for (int c = 0; c < kChannels; ++c)
     mSlots[static_cast<size_t>(1 + c)].status = juce::String::fromUTF8("Nenhum pacote neste canal.");
   mSlots[pedal].status = juce::String::fromUTF8("Nenhum pacote no pedal.");
+  mMidi = std::make_unique<MidiMap>(*this);
   mResampledFunc = [this](double** in, double** out, int n) {
     std::copy(in[0], in[0] + n, out[0]);
     runEngines(out[0], n);
@@ -69,7 +70,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   layout.add(std::make_unique<P>(juce::ParameterID{"ganho_2", 1}, "Ganho (canal 2)", knob, 5.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"ganho_3", 1}, "Ganho (canal 3)", knob, 5.0f));
   layout.add(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID{"canal", 1}, "Canal do amplificador",
-                                                          juce::StringArray{"Limpo", "Crunch", "Alto ganho"}, 0));
+                                                          juce::StringArray{"Canal 1", "Canal 2", "Canal 3"}, 0));
   layout.add(std::make_unique<P>(juce::ParameterID{"grave", 1}, "Grave", knob, 5.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"medio", 1}, juce::String::fromUTF8("Médio"), knob, 5.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"agudo", 1}, "Agudo", knob, 5.0f));
@@ -282,9 +283,12 @@ void NexusProcessor::publish(Block b)
   ui.position.store(static_cast<float>(morph.currentPosition()));
 }
 
-void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer&)
+void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
   juce::ScopedNoDenormals noDenormals;
+  // MIDI primeiro: troca de canal, pedal e botões valem já neste bloco.
+  mMidi->process(midiMessages);
+  midiMessages.clear();
 
   // Equipamento novo esperando? Só troca se o anterior já foi recolhido.
   for (auto& s : mSlots)
@@ -426,7 +430,6 @@ void NexusProcessor::loadPackAsync(const juce::File& folder, Block b, int channe
         const juce::ScopedLock sl(mStatusLock);
         s.status = text;
         s.name = juce::String::fromUTF8(pack.name.c_str());
-        s.channelName = juce::String::fromUTF8(pack.channelName.c_str());
         if (b == amp)
           mKnobName = juce::String::fromUTF8(pack.knobName.c_str());
       }
@@ -455,14 +458,6 @@ juce::String NexusProcessor::packName(Block b) const
 {
   const juce::ScopedLock sl(mStatusLock);
   return mSlots[static_cast<size_t>(slotIndex(b, -1))].name;
-}
-
-juce::String NexusProcessor::channelName(int channel) const
-{
-  static const char* const defaults[kChannels] = {"Limpo", "Crunch", "Alto ganho"};
-  const juce::ScopedLock sl(mStatusLock);
-  const auto& custom = mSlots[static_cast<size_t>(slotIndex(amp, channel))].channelName;
-  return custom.isNotEmpty() ? custom : juce::String(defaults[juce::jlimit(0, kChannels - 1, channel)]);
 }
 
 juce::String NexusProcessor::channelPackName(int channel) const
@@ -514,6 +509,8 @@ void NexusProcessor::getStateInformation(juce::MemoryBlock& destData)
   state.setProperty("pasta_canal3", mSlots[3].folder.getFullPathName(), nullptr);
   state.setProperty("pasta_pedal", mSlots[pedal].folder.getFullPathName(), nullptr);
   state.setProperty("ir", mIrFile.getFullPathName(), nullptr);
+  state.removeChild(state.getChildWithName("midi"), nullptr);
+  state.appendChild(mMidi->toValueTree(), nullptr);
   if (auto xml = state.createXml())
     copyXmlToBinary(*xml, destData);
 }
@@ -526,6 +523,7 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     if (state.hasType(params.state.getType()))
     {
       params.replaceState(state);
+      mMidi->fromValueTree(state.getChildWithName("midi"));
       const char* channelKeys[kChannels] = {"pasta", "pasta_canal2", "pasta_canal3"};
       for (int c = 0; c < kChannels; ++c)
       {

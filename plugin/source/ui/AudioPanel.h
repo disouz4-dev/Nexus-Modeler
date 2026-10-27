@@ -49,6 +49,8 @@ private:
   std::function<float()> mInputPeak;
   Row mType, mInputDevice, mOutputDevice, mGuitar, mOutputs, mRate, mBuffer;
   juce::TextButton mDriverPanel{"Painel do driver"};
+  juce::TextButton mBluetooth{"Parear MIDI Bluetooth"};
+  juce::String mMidiDevices;
   juce::TextButton mClose{"Fechar"};
   juce::String mError;
   float mMeter = 0.0f;

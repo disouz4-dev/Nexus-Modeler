@@ -24,6 +24,7 @@ public:
   void mouseDoubleClick();
   void mouseWheel(const juce::MouseWheelDetails&);
   bool dragging() const { return mDragging; }
+  juce::String paramId() const;
 
 private:
   void set(float v01);
@@ -41,12 +42,14 @@ public:
   FilmKnob(juce::RangedAudioParameter& p, const GearKnobArt& art, juce::String label);
   void paint(juce::Graphics&) override;
   bool hitTest(int x, int y) override;
-  void mouseDown(const juce::MouseEvent& e) override { mDrag.mouseDown(e); }
-  void mouseDrag(const juce::MouseEvent& e) override { mDrag.mouseDrag(e); }
-  void mouseUp(const juce::MouseEvent& e) override { mDrag.mouseUp(e); }
+  void mouseDown(const juce::MouseEvent& e) override;
+  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) mDrag.mouseDrag(e); }
+  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) mDrag.mouseUp(e); }
   void mouseDoubleClick(const juce::MouseEvent&) override { mDrag.mouseDoubleClick(); }
   void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { mDrag.mouseWheel(w); }
   void mouseEnter(const juce::MouseEvent&) override { mHover = true; changed(); }
+  // Clique com o botão direito: menu de MIDI (aprender / esquecer).
+  std::function<void(const juce::String& paramId, juce::Component&)> onMidiMenu;
   void mouseExit(const juce::MouseEvent&) override { mHover = false; changed(); }
 
   bool showsBubble() const { return mHover || mDrag.dragging(); }
@@ -69,9 +72,10 @@ class LevelFader : public juce::Component
 public:
   LevelFader(juce::RangedAudioParameter& p, juce::String label);
   void paint(juce::Graphics&) override;
-  void mouseDown(const juce::MouseEvent& e) override { mDrag.mouseDown(e); }
-  void mouseDrag(const juce::MouseEvent& e) override { mDrag.mouseDrag(e, true); repaint(); }
-  void mouseUp(const juce::MouseEvent& e) override { mDrag.mouseUp(e); repaint(); }
+  void mouseDown(const juce::MouseEvent& e) override;
+  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) { mDrag.mouseDrag(e, true); repaint(); } }
+  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) { mDrag.mouseUp(e); repaint(); } }
+  std::function<void(const juce::String& paramId, juce::Component&)> onMidiMenu;
   void mouseDoubleClick(const juce::MouseEvent&) override { mDrag.mouseDoubleClick(); }
   void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { mDrag.mouseWheel(w); }
   void setLevel(float peak) { if (peak != mLevel) { mLevel = peak; repaint(); } }
@@ -106,6 +110,7 @@ public:
   void paint(juce::Graphics&) override;
   void mouseUp(const juce::MouseEvent&) override;
   std::function<void(int)> onSelect;
+  std::function<void()> onRightClick;
 
 private:
   juce::Rectangle<float> itemBounds(int i) const;

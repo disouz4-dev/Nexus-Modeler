@@ -73,7 +73,10 @@ public:
   void initialise(const juce::String&) override
   {
     const auto setup = firstRunSetup();
-    mHolder = std::make_unique<juce::StandalonePluginHolder>(mProperties.getUserSettings(), false, juce::String(), &setup);
+    // Último argumento: abre sozinho todo dispositivo MIDI que aparecer (USB ou
+    // Bluetooth já pareado), conferindo a cada meio segundo.
+    mHolder = std::make_unique<juce::StandalonePluginHolder>(mProperties.getUserSettings(), false, juce::String(), &setup,
+                                                             juce::Array<juce::StandalonePluginHolder::PluginInOuts>(), true);
     // O JUCE silencia a entrada por padrão (medo de microfonia com microfone).
     // Num simulador de guitarra a entrada é a guitarra: fica sempre aberta.
     mHolder->getMuteInputValue().setValue(false);

@@ -124,7 +124,6 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
     nlohmann::json j = nlohmann::json::parse(f);
     pack->name = j.value("nome", pack->name);
     pack->knobName = j.value("botao", pack->knobName);
-    pack->channelName = j.value("canal", pack->channelName);
     pack->toneCircuit = j.value("circuito", pack->toneCircuit);
     if (j.contains("inclui_caixa"))
       cabFromManifest = j["inclui_caixa"].get<bool>();

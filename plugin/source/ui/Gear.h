@@ -29,6 +29,8 @@ struct GearArt
   juce::String name;
   juce::Image front;
   std::vector<GearKnobArt> knobs;
+  // Canais do amplificador original, na ordem do painel (vazio = um canal).
+  juce::StringArray channels;
   // Pedais: onde pisar e onde fica o LED, em pixels da frente (raio 0 = não tem).
   juce::Point<float> footswitch;
   float footswitchRadius = 0.0f;

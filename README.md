@@ -56,6 +56,21 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
   também pacote de ganho, com troca sem clique). Ganho, Tom e Nível; clique no
   pisante liga e desliga em 20 ms, sem estalo. Três visuais: Verde Drive,
   Laranja Dist e Ouro.
+- **Programa independente com interfaces de áudio de baixa latência:** ASIO,
+  WASAPI e DirectSound no Windows, Core Audio no Mac, JACK e ALSA no Linux.
+  O painel de áudio (ícone da interface na barra de cima) escolhe interface,
+  entrada da guitarra, saídas, taxa e buffer, e mostra a latência de ida e
+  volta, o uso do processador e o sinal da guitarra.
+- **MIDI por USB e Bluetooth:** troca de patch 1, 2, 3 escolhe o canal do
+  cabeçote; qualquer controle da pedaleira (CC) pode ser ligado a qualquer
+  botão, ao pisante do pedal ou ao canal: clique com o botão direito e
+  "Aprender MIDI". No programa independente os dispositivos MIDI abrem
+  sozinhos; no Mac há um botão para parear MIDI por Bluetooth; no Windows e no
+  Linux, pareie nos ajustes de Bluetooth do sistema.
+- **Cabeçote de até 3 canais, como o original:** cada canal tem o próprio
+  pacote de capturas e o próprio ganho; a troca é sem estalo e o canal parado
+  não gasta processador. Amplificador de um canal (o Brit 800) não mostra
+  seletor.
 - **Tela 3D:** amplificador, caixa e pedais modelados e renderizados pelo Nexus Gear
   Studio (`tools/gear_studio`). Cada botão tem 101 imagens: arraste para cima
   ou para baixo, Shift para ajuste fino, duplo clique volta ao padrão.
@@ -82,6 +97,10 @@ Core i9 (2019):
 | Pedal desligado | som idêntico ao de sem pedal (−300 dB) |
 | Desligar o pedal tocando | sem salto no som (transição de 20 ms) |
 | Tela: arrastar, Shift, duplo clique, trocar de peça, pisante | testado simulando o mouse |
+| Interface de áudio real (Realtek USB, Mac) a 48 kHz | zero falhas de áudio; ida e volta 6,5 ms (32 amostras), 7,8 ms (64), 10,5 ms (128) |
+| Trocar de canal tocando | sem salto; canal vazio é ignorado |
+| MIDI: troca de patch, aprender CC, liga/desliga, salvar | tudo confere |
+| Validador de plugins (pluginval, nível 5) | roda na compilação automática nos três sistemas |
 
 ## Como usar o pacote de capturas
 

@@ -59,5 +59,8 @@
       "angulo_min": -150,
       "angulo_max": 150
     }
+  ],
+  "canais": [
+    "Normal"
   ]
 }

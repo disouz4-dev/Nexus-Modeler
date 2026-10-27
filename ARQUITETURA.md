@@ -251,6 +251,20 @@ Arquivo de descrição (rascunho):
 - Telas: cadeia, equipamento aberto, player de estudo, importação.
 - Elementos exigidos pela TONE3000 no mesmo acabamento.
 
+### 3.9.1 Áudio, MIDI e canais
+- **Plugin** (VST3, AU, LV2): o programa de gravação cuida da interface de
+  áudio e manda MIDI ao Nexus.
+- **Programa independente:** janela própria (`plugin/source/StandaloneApp.cpp`)
+  sobre o `StandalonePluginHolder` do JUCE, entrada sempre aberta (o JUCE
+  silencia por padrão), 48 kHz e 128 amostras na primeira abertura, painel de
+  áudio próprio (`ui/AudioPanel`), MIDI aberto sozinho.
+- **MIDI** (`MidiMap`): troca de patch 1–3 = canal; CC ligado a parâmetro por
+  "aprender"; aplicado no próprio bloco de áudio; guardado com o ajuste.
+- **Canais:** até 3 por cabeçote, definidos pela receita da família
+  (`"canais"`), como no amplificador original. Cada canal tem pacote e ganho
+  próprios; só o canal que toca gasta processador; a troca aquece o canal que
+  entra e cruza em 30 ms.
+
 ### 3.10 Organização de pastas (proposta)
 ```
 Nexus-Modeler/

@@ -97,5 +97,10 @@
   "entradas": [
     "ALTO",
     "BAIXO"
+  ],
+  "canais": [
+    {
+      "nome": "Normal"
+    }
   ]
 }

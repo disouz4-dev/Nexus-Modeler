@@ -48,6 +48,7 @@ private:
     void resized() override;
     void mouseUp(const juce::MouseEvent&) override;
     void mouseMove(const juce::MouseEvent&) override;
+    std::function<void(const juce::String&, juce::Component&)> onMidiMenu;
 
   private:
     juce::String paramFor(const juce::String& knobId) const;
@@ -121,6 +122,9 @@ private:
   void chooseIr();
   void showAbout();
   void showAudioPanel(bool show);
+  void paintOverChildren(juce::Graphics&) override;
+  // Menu de MIDI de um controle: aprender, trocar ou esquecer o CC.
+  void showMidiMenu(const juce::String& paramId, juce::Component& target);
   void cyclePedalLook(int delta);
   int pedalLook() const;
   const nexus::ui::GearArt* pedalArt() const;
@@ -135,9 +139,8 @@ private:
   int mShownPedalLook = -1;
 
   nexus::ui::Segmented mEngine{{"A2 Full", "A2 Lite"}};
-  // Canais do cabeçote (até 3): só os que têm pacote, mais "+ canal".
+  // Canais do cabeçote, como no amplificador original (até 3).
   nexus::ui::Segmented mChannels{{}};
-  std::vector<int> mChannelOfItem; // item do seletor -> canal (-1 = "+ canal")
   int mShownChannel = -1;
   nexus::ui::IconButton mStepsButton{nexus::ui::Icon::steps, juce::String::fromUTF8("Botões em degraus: param só nas posições capturadas")};
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
@@ -154,6 +157,8 @@ private:
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;
   float mInPeak = 0.0f, mOutPeak = 0.0f;
+  juce::String mMidiNotice;      // faixa de aviso do MIDI
+  juce::uint32 mMidiNoticeUntil = 0;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NexusEditor)
 };

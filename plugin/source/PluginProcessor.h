@@ -7,6 +7,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_dsp/juce_dsp.h>
 
+#include "MidiMap.h"
 #include "nexus/AmpVoice.h"
 
 // O conversor de taxa veio do iPlug2 e espera estas duas definições.
@@ -61,7 +62,7 @@ public:
   bool hasEditor() const override { return true; }
 
   const juce::String getName() const override { return "Nexus Modeler"; }
-  bool acceptsMidi() const override { return false; }
+  bool acceptsMidi() const override { return true; }
   bool producesMidi() const override { return false; }
   bool isMidiEffect() const override { return false; }
   double getTailLengthSeconds() const override { return 0.0; }
@@ -81,8 +82,6 @@ public:
   int selectedChannel() const;
   bool channelLoaded(int channel) const { return mChannelLoaded[static_cast<size_t>(channel)].load(); }
   juce::String channelPackName(int channel) const;
-  // Nome do canal: o do pack.json ("canal") ou o padrão (Limpo, Crunch, Alto ganho).
-  juce::String channelName(int channel) const;
   juce::String statusText(Block b = amp) const;
   juce::String knobName() const;
   juce::String packName(Block b = amp) const;
@@ -104,6 +103,7 @@ public:
   void resetPeaks() { mInPeak.store(0.0f); mOutPeak.store(0.0f); }
 
   juce::AudioProcessorValueTreeState params;
+  MidiMap& midi() { return *mMidi; }
 
 private:
   // Troca de equipamento sem trava: a tela deposita em pending, o áudio pega
@@ -115,7 +115,7 @@ private:
     NexusEngine* active = nullptr;
     juce::File folder;
     bool loadedLite = false;
-    juce::String status, name, channelName;
+    juce::String status, name;
   };
 
   // Espelho para a tela, escrito pelo áudio.
@@ -192,6 +192,7 @@ private:
   std::atomic<bool> mIrLoaded{false};
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
+  std::unique_ptr<MidiMap> mMidi;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NexusProcessor)
 };
