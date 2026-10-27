@@ -53,6 +53,26 @@ int main(int argc, char** argv)
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
 
+  // NEXUS_PERFIL_GANHO=1: ganho de volume que o Nexus aplica em cada captura
+  // do pacote (argv[1]), com a regra de cabeçote e com a regra de pedal.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_GANHO", {}).isNotEmpty())
+  {
+    const auto s = nexus::makeGuitarLikeSignal(rate, 2.0, 7);
+    std::printf("sinal de medida: %.1f dB\n", nexus::rmsDb(s.data() + static_cast<int>(rate / 2), static_cast<int>(s.size() - rate / 2)));
+    for (int pedal = 0; pedal < 2; ++pedal)
+    {
+      nexus::PackOptions o;
+      o.sampleRate = rate;
+      o.maxBlockSize = block;
+      o.keepCaptureLevel = pedal == 1;
+      auto p = nexus::loadPack(juce::String::fromUTF8(argv[1]).toStdString(), o);
+      for (const auto& c : p->captures)
+        std::printf("  regra de %s, captura %4.1f: saída medida %6.1f dB, ganho aplicado %+5.1f dB\n", pedal ? "pedal   " : "cabeçote", c.position,
+                    c.measuredRmsDb, 20 * std::log10(c.levelGain));
+    }
+    return 0;
+  }
+
   // NEXUS_PERFIL_PEDAIS=<pasta de saída>: Lemon (pedal 1) e Banana (pedal 2)
   // antes do cabeçote; toca a gravação "Rock" e depois silêncio na entrada.
   // Grava os casos (só Lemon, só Banana, os dois) e mede o que sobra no silêncio.

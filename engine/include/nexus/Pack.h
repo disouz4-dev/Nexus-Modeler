@@ -39,6 +39,13 @@ struct PackOptions
   double slimmableSize = 1.0; // 1 = A2 Full, 0 = A2 Lite
   LevelMode levelMode = LevelMode::KeepRelative;
   double targetRmsDb = -18.0;
+  // Pedal: sem correção de volume, cada captura sai no nível em que foi
+  // gravada (como no NAM), porque esse nível decide o quanto o pedal empurra o
+  // cabeçote. Com a correção para -18 dB, o TS9 da TONE3000 (gravado 15 dB
+  // abaixo da guitarra) entrava no cabeçote 15 dB mais forte que o pedal real:
+  // muito mais distorção e chiado com duas capturas. O nível do pedal fica no
+  // botão "nível".
+  bool keepCaptureLevel = false;
 };
 
 // Equipamento pronto para tocar: capturas ordenadas pela posição do botão,

@@ -818,6 +818,8 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       const int block = mEngineBlock.load();
       options.maxBlockSize = block;
       options.slimmableSize = lite ? 0.0 : 1.0;
+      // Pedal sai no nível da própria captura; cabeçote, no volume de referência.
+      options.keepCaptureLevel = slotIndex < kPedals;
       auto engine = std::make_unique<NexusEngine>();
       engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
