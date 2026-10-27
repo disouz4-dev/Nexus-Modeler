@@ -1,0 +1,94 @@
+{
+  "tipo": "pedal",
+  "nome": "Ouro",
+  "familia": "ouro",
+  "inspiracao": "overdrive dourado de luxo de três botões (estilo Klon Centaur)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.095,
+    "comprimento": 0.12,
+    "altura": 0.048
+  },
+  "chanfro_m": 0.004,
+  "pintura": {
+    "cor": [
+      0.86,
+      0.62,
+      0.24
+    ],
+    "metalico": 1.0,
+    "aspereza": 0.22
+  },
+  "texto_cor": [
+    0.006,
+    0.005,
+    0.004
+  ],
+  "texto_cor2": [
+    0.006,
+    0.005,
+    0.004
+  ],
+  "modelo": "Ouro",
+  "logo_script": true,
+  "logo_m": 0.03,
+  "logo_y": -0.12,
+  "tipo_texto": "",
+  "pisante_y": -0.58,
+  "botao_estilo": {
+    "diametro_m": 0.017,
+    "altura_m": 0.013,
+    "com_tampa": true,
+    "corpo": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "tampa": [
+      0.82,
+      0.82,
+      0.84
+    ],
+    "traco": [
+      0.02,
+      0.02,
+      0.02
+    ]
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        -0.56,
+        0.58
+      ]
+    },
+    {
+      "id": "tom",
+      "rotulo": "AGUDO",
+      "pos": [
+        0.0,
+        0.58
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "SAÍDA",
+      "pos": [
+        0.56,
+        0.58
+      ]
+    }
+  ],
+  "led": [
+    0.0,
+    0.14
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.05,
+    "elevacao": 58.0
+  },
+  "rotulo_embaixo": true
+}

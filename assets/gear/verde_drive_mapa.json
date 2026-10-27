@@ -1,0 +1,46 @@
+{
+  "nome": "Verde Drive",
+  "familia": "verde_drive",
+  "largura": 1200,
+  "altura": 1440,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 352,
+      "y": 235,
+      "tamanho": 205,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 519,
+      "y": 348,
+      "tamanho": 162,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 643,
+      "y": 235,
+      "tamanho": 205,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "pisante": {
+    "x": 600,
+    "y": 824,
+    "raio": 256
+  },
+  "led": {
+    "x": 600.0,
+    "y": 307.6,
+    "raio": 22.9
+  }
+}

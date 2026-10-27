@@ -5,6 +5,7 @@
 #include <memory>
 
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <juce_dsp/juce_dsp.h>
 
 #include "nexus/AmpVoice.h"
 
@@ -20,8 +21,8 @@ constexpr double PI = 3.14159265358979323846;
 
 using Resampler = dsp::ResamplingContainer<double, 1, 12>;
 
-// Equipamento pronto para tocar: pacote carregado e amplificador preparado.
-// Montado inteiro fora do áudio e entregue ao áudio por troca de ponteiro.
+// Equipamento pronto para tocar: pacote carregado e voz preparada. Montado
+// inteiro fora do áudio e entregue ao áudio por troca de ponteiro.
 struct NexusEngine
 {
   std::shared_ptr<nexus::Pack> pack;
@@ -36,6 +37,14 @@ public:
   // Maior pedaço entregue às capturas de uma vez.
   static constexpr int kEngineBlock = 2048;
   static constexpr int kMaxCaptures = 64;
+
+  // Blocos que tocam capturas, na ordem do sinal.
+  enum Block
+  {
+    pedal = 0,
+    amp = 1,
+    kBlocks = 2
+  };
 
   NexusProcessor();
   ~NexusProcessor() override;
@@ -63,48 +72,72 @@ public:
   void getStateInformation(juce::MemoryBlock& destData) override;
   void setStateInformation(const void* data, int sizeInBytes) override;
 
-  // Tela.
-  void loadPackAsync(const juce::File& folder);
-  juce::String statusText() const;
+  // Tela. "b" é o bloco (pedal ou amplificador).
+  void loadPackAsync(const juce::File& folder, Block b = amp);
+  juce::String statusText(Block b = amp) const;
   juce::String knobName() const;
-  int captureCount() const { return mUiCaptureCount.load(); }
-  float captureWeight(int i) const { return mUiWeights[static_cast<size_t>(i)].load(); }
-  float capturePosition(int i) const { return mUiPositions[static_cast<size_t>(i)].load(); }
-  float currentPosition() const { return mUiPosition.load(); }
+  juce::String packName(Block b = amp) const;
+  int captureCount(Block b = amp) const { return mUi[b].count.load(); }
+  float captureWeight(int i, Block b = amp) const { return mUi[b].weights[static_cast<size_t>(i)].load(); }
+  float capturePosition(int i, Block b = amp) const { return mUi[b].positions[static_cast<size_t>(i)].load(); }
+  float currentPosition(Block b = amp) const { return mUi[b].position.load(); }
+  bool packLoaded(Block b = amp) const { return mUi[b].count.load() > 0; }
+  bool packIncludesCab() const { return mPackIncludesCab.load(); }
+
+  // Caixa (IR). Com captura full rig a caixa fica trancada e o IR não toca.
+  void loadIrAsync(const juce::File& file);
+  juce::String irName() const;
+  bool irLoaded() const { return mIrLoaded.load(); }
+
+  // Medidores de pico (0 a 1) da entrada e da saída.
+  float inputPeak() const { return mInPeak.load(); }
+  float outputPeak() const { return mOutPeak.load(); }
+  void resetPeaks() { mInPeak.store(0.0f); mOutPeak.store(0.0f); }
 
   juce::AudioProcessorValueTreeState params;
 
 private:
+  // Troca de equipamento sem trava: a tela deposita em pending, o áudio pega
+  // no começo do bloco e devolve o antigo em retired, que a tela apaga.
+  struct Slot
+  {
+    std::atomic<NexusEngine*> pending{nullptr};
+    std::atomic<NexusEngine*> retired{nullptr};
+    NexusEngine* active = nullptr;
+    juce::File folder;
+    bool loadedLite = false;
+    juce::String status, name;
+  };
+
+  // Espelho para a tela, escrito pelo áudio.
+  struct UiMirror
+  {
+    std::atomic<int> count{0};
+    std::array<std::atomic<float>, kMaxCaptures> weights{};
+    std::array<std::atomic<float>, kMaxCaptures> positions{};
+    std::atomic<float> position{0.0f};
+  };
+
   static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
   void timerCallback() override;
-  void installEngine(std::unique_ptr<NexusEngine> engine);
-  void runEngine(double* buffer, int numFrames);
-  nexus::AmpVoice::Controls readControls() const;
+  void runEngines(double* buffer, int numFrames);
+  void runPedal(double* buffer, int n);
+  nexus::AmpVoice::Controls ampControls() const;
+  nexus::AmpVoice::Controls pedalControls() const;
+  void publish(Block b);
 
-  // Troca de equipamento sem trava: a tela deposita em mPending, o áudio pega
-  // no começo do bloco e devolve o antigo em mRetired, que a tela apaga.
-  std::atomic<NexusEngine*> mPending{nullptr};
-  std::atomic<NexusEngine*> mRetired{nullptr};
-  NexusEngine* mActive = nullptr;
+  std::array<Slot, kBlocks> mSlots;
+  std::array<UiMirror, kBlocks> mUi;
 
   std::unique_ptr<Resampler> mResampler;
   Resampler::BlockProcessFunc mResampledFunc;
   bool mNeedsResampling = false;
-  std::vector<double> mMono, mMonoOut;
+  std::vector<double> mMono, mMonoOut, mDry;
 
   // Carregamento em segundo plano.
   juce::ThreadPool mLoader{1};
-  juce::File mPackFolder;
-  bool mLoadedLite = false;
   mutable juce::CriticalSection mStatusLock;
-  juce::String mStatus = "Nenhum pacote carregado. Clique em \"Abrir pacote\".";
   juce::String mKnobName = "Ganho";
-
-  // Espelho para a tela, escrito pelo áudio.
-  std::atomic<int> mUiCaptureCount{0};
-  std::array<std::atomic<float>, kMaxCaptures> mUiWeights{};
-  std::array<std::atomic<float>, kMaxCaptures> mUiPositions{};
-  std::atomic<float> mUiPosition{0.0f};
 
   std::atomic<float>* mMain;
   std::atomic<float>* mBass;
@@ -114,7 +147,28 @@ private:
   std::atomic<float>* mStepped;
   std::atomic<float>* mLite;
   std::atomic<float>* mOutput;
+  std::atomic<float>* mInput;
+  std::atomic<float>* mMaster;
+  std::atomic<float>* mCabMode;
+  std::atomic<float>* mPedalGain;
+  std::atomic<float>* mPedalTone;
+  std::atomic<float>* mPedalLevel;
+  std::atomic<float>* mPedalOn;
   float mOutputGain = 1.0f;
+  float mInputGain = 1.0f;
+
+  // Pedal: liga e desliga com transição curta; o nível é o volume dele.
+  float mPedalMix = 0.0f;
+  float mPedalLevelGain = 1.0f;
+
+  juce::dsp::Convolution mCab{juce::dsp::Convolution::NonUniform{256}};
+  juce::AudioBuffer<float> mCabBuffer;
+  juce::LinearSmoothedValue<float> mCabMix;
+  juce::File mIrFile;
+  std::atomic<bool> mIrLoaded{false};
+  std::atomic<bool> mPackIncludesCab{false};
+
+  std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NexusProcessor)
 };

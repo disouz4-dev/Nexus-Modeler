@@ -1,0 +1,46 @@
+{
+  "nome": "Laranja Dist",
+  "familia": "laranja_dist",
+  "largura": 1200,
+  "altura": 1440,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 335,
+      "y": 284,
+      "tamanho": 193,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 503,
+      "y": 284,
+      "tamanho": 193,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 672,
+      "y": 284,
+      "tamanho": 193,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "pisante": {
+    "x": 600,
+    "y": 800,
+    "raio": 262
+  },
+  "led": {
+    "x": 382.8,
+    "y": 581.6,
+    "raio": 24.8
+  }
+}

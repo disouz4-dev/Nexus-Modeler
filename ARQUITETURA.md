@@ -1,6 +1,8 @@
 # Nexus Modeler — proposta de arquitetura
 
-Estado: prova do motor pronta (versão 0.1.0, 26/10/2026); o resto é proposta.
+Estado (26/10/2026): prova do motor pronta; tela 3D com o Brit 800, a caixa
+4x12 (IR e trava do full rig) e três pedais (Verde Drive, Laranja Dist e Ouro)
+tocando capturas. O resto é proposta.
 Repositório: https://github.com/disouz4-dev/Nexus-Modeler
 
 ## 1. O que o Nexus Modeler é
@@ -101,6 +103,18 @@ com três partes:
 | Compilação | CMake | Padrão do JUCE e do NAM. |
 | Modelos 3D | Blender (scripts em Python) | Renders viram imagens dentro do plugin. |
 | Site | GitHub Pages | Gratuito no repositório público. |
+
+**Por que C++ e não uma tecnologia de aplicativo comum (Electron, Flutter,
+página web):** o plugin roda dentro do programa de gravação (Reaper, Logic,
+Cubase, Ableton) como VST3, AU ou LV2, e esses formatos só aceitam código
+nativo com latência de poucos milissegundos. ToneX, AmpliTube, o plugin do NAM
+e o da TONE3000 são todos feitos assim; o da TONE3000 usa o mesmo JUCE 9. O
+JUCE é a base multiplataforma atual desse mercado: um código só gera Windows,
+Mac e Linux. O CMake é ferramenta interna do desenvolvedor; o usuário nunca vê.
+
+**Instaladores (etapa 6):** `.exe` no Windows, `.dmg` de arrastar e soltar no
+Mac, `.deb` no Linux, e instalação por um comando no terminal nos três
+sistemas (no Linux também por repositório `apt`, como no Praxis).
 
 Descartados: iPlug2 (fraco no Linux), Rust (refazer NAM e login), interface
 como página de internet embutida (a TONE3000 começou assim e abandonou),
@@ -224,8 +238,15 @@ Arquivo de descrição (rascunho):
   guitarra pela placa de vídeo, se a licença dos pesos permitir.
 
 ### 3.9 Interface e 3D
-- Modelos 3D detalhados no Blender, renderizados como imagens. Cada botão
-  giratório = sequência de ~128 imagens; chaves e luzes, poucas imagens.
+- Tela com identidade própria (o ToneX 2 e o AmpliTube 5 servem só de régua
+  de acabamento; a disposição não é copiada): barra de cima com a marca, o
+  seletor A2 FULL | A2 LITE e os ícones; o palco com o equipamento escolhido
+  sob um foco de luz; embaixo dele, o nome grande, o pacote e o trilho das
+  capturas; e no rodapé o caminho do sinal: controle deslizante de entrada
+  com medidor, pedal, amplificador, caixa e controle deslizante de saída.
+- Modelos 3D feitos pelo Nexus Gear Studio (`tools/gear_studio`) no Blender,
+  renderizados como imagens. Cada botão giratório = 101 imagens (posição 0,0 a
+  10,0 de 0,1 em 0,1); chaves e luzes, poucas imagens.
 - Renders em 2 tamanhos (normal e alta densidade).
 - Telas: cadeia, equipamento aberto, player de estudo, importação.
 - Elementos exigidos pela TONE3000 no mesmo acabamento.

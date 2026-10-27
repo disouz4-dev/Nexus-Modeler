@@ -646,6 +646,21 @@ void testFileNames()
          fmt("%.0f de 7 nomes errados", double(wrong)));
 }
 
+void testFullRig(const fs::path& packsDir)
+{
+  std::printf("\n6. Captura com caixa (full rig)\n");
+  report(captureIncludesCab(packsDir / "fullrig" / "Rig Gain 5.nam"), "Captura marcada \"amp_cab\" no .nam é reconhecida como full rig",
+         "tipo lido do próprio arquivo");
+  report(!captureIncludesCab(packsDir / "ganho" / "Ganho 5.nam"), "Captura sem tipo de equipamento não tranca a caixa",
+         "sem informação, a caixa fica livre");
+  PackOptions opt;
+  auto rig = loadPack(packsDir / "fullrig", opt);
+  auto amp = loadPack(packsDir / "ganho", opt);
+  report(rig->includesCab && !amp->includesCab, "Pacote full rig tranca a caixa; pacote de cabeçote não",
+         std::string("full rig: ") + (rig->includesCab ? "trancada" : "livre") + "; cabeçote: "
+           + (amp->includesCab ? "trancada" : "livre"));
+}
+
 } // namespace
 
 int main(int argc, char** argv)
@@ -679,6 +694,7 @@ int main(int argc, char** argv)
     testClicks(packsDir, in, outDir, listen);
     testPerformance(packsDir, in);
     testFileNames();
+    testFullRig(packsDir);
   }
   catch (const std::exception& e)
   {

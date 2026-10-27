@@ -9,7 +9,7 @@ endif()
 # Pacotes de teste gerados a partir do A2 de exemplo do motor do NAM.
 set(NEXUS_TEST_PACKS "${CMAKE_BINARY_DIR}/test_packs")
 add_custom_command(
-  OUTPUT "${NEXUS_TEST_PACKS}/ganho/pack.json"
+  OUTPUT "${NEXUS_TEST_PACKS}/ganho/pack.json" "${NEXUS_TEST_PACKS}/ir_teste.wav"
   COMMAND Python3::Interpreter "${CMAKE_CURRENT_SOURCE_DIR}/make_test_packs.py"
           "${PROJECT_SOURCE_DIR}/external/NeuralAmpModelerCore/example_models/A2.nam" "${NEXUS_TEST_PACKS}"
   DEPENDS make_test_packs.py
