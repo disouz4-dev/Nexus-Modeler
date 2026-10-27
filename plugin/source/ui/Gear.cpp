@@ -56,6 +56,9 @@ GearArt GearArt::load(const juce::String& prefix)
       label.colour = juce::Colour::fromString("ff" + l["cor"].toString().fromFirstOccurrenceOf("#", false, false));
       art.labels.push_back(label);
     }
+  if (const auto* leds = map["leds_canais"].getArray())
+    for (const auto& l : *leds)
+      art.channelLeds.push_back({{static_cast<float>(l["x"]), static_cast<float>(l["y"])}, static_cast<float>(l["raio"])});
   if (const auto* channels = map["canais"].getArray())
     for (const auto& c : *channels)
       art.channels.add(c.toString());

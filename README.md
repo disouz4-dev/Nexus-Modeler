@@ -75,10 +75,20 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
   resposta de caixa; a troca entra e sai em 30 ms, sem estalo. Se a captura
   inclui a caixa (o `.nam` diz `amp_cab`, ou o `pack.json` traz
   `"inclui_caixa": true`), a caixa se tranca em "Captura".
-- **Pedal:** um bloco antes do amplificador que toca captura NAM de pedal (e
-  também pacote de ganho, com troca sem clique). Ganho, Tom e Nível; clique no
-  pisante liga e desliga em 20 ms, sem estalo. Três visuais: Lemon Drive,
-  Laranja Dist e Ouro.
+- **Pedais:** até 12, cada um tocando captura NAM de pedal (pacote de drive
+  com troca sem clique). Drive em degraus de 0 a 10, Tom e Nível livres; clique
+  no pisante liga e desliga em 20 ms, sem estalo, com o LED vermelho aceso
+  quando ligado. Três visuais: Lemon Drive, Laranja Dist e Ouro.
+- **Cadeia de sinal por clique e arrasta:** pedais antes do cabeçote, entre o
+  cabeçote e a caixa (modulação, por exemplo) ou depois da caixa. Dois
+  cabeçotes com pedal A/B: cada lado com cabeçote, pedais e caixa próprios, e
+  troca de lado sem estalo.
+- **Capturas da TONE3000 dentro do Nexus:** "abrir pacote" mostra as capturas
+  recomendadas para aquele equipamento, os favoritos e downloads da sua conta
+  filtrados por ele, as em alta e o catálogo completo, sempre com a TONE3000
+  como fonte e o nome de cada criador. O Nexus baixa só as capturas certas,
+  uma por posição do botão, e monta o pacote. "Inserir manualmente" abre uma
+  pasta do computador.
 - **Programa independente com interfaces de áudio de baixa latência:** ASIO,
   WASAPI e DirectSound no Windows, Core Audio no Mac, JACK e ALSA no Linux.
   O painel de áudio (ícone da interface na barra de cima) escolhe interface,
@@ -189,6 +199,11 @@ ctest --test-dir Nexus-Modeler/build -C Release --output-on-failure
 Os plugins ficam em `build/plugin/NexusModeler_artefacts/Release/`. No Linux,
 instale antes as bibliotecas de desenvolvimento listadas em
 `.github/workflows/compilacao.yml`.
+
+Para a janela de capturas falar com a TONE3000, a compilação precisa da chave
+pública do projeto na TONE3000: acrescente `-DNEXUS_T3K_KEY=<chave>` na
+configuração (ou defina a variável de ambiente `NEXUS_T3K_KEY` antes de abrir
+o programa). Sem a chave, o Nexus funciona igual, com pacotes do computador.
 
 A cada envio ao GitHub, a compilação automática gera e testa o plugin nos três
 sistemas e guarda os arquivos compilados na aba **Actions**.

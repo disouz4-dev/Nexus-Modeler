@@ -1,33 +1,33 @@
 {
-  "nome": "Verde Drive",
-  "familia": "verde_drive",
+  "nome": "Lemon Drive",
+  "familia": "lemon_drive",
   "largura": 1200,
-  "altura": 1440,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 352,
-      "y": 235,
-      "tamanho": 205,
+      "x": 268,
+      "y": 171,
+      "tamanho": 251,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 519,
-      "y": 348,
-      "tamanho": 162,
+      "x": 510,
+      "y": 359,
+      "tamanho": 180,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 643,
-      "y": 235,
-      "tamanho": 205,
+      "x": 681,
+      "y": 171,
+      "tamanho": 251,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,41 +36,41 @@
   "canais": [],
   "rotulos": [
     {
-      "texto": "GANHO",
-      "x": 455.0,
-      "y": 462.0,
-      "altura": 40.77,
-      "achatamento": 0.803,
+      "texto": "DRIVE",
+      "x": 400.3,
+      "y": 470.2,
+      "altura": 56.12,
+      "achatamento": 1.0,
       "cor": "#1d3021",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
       "x": 600.0,
-      "y": 533.2,
-      "altura": 41.33,
-      "achatamento": 0.814,
+      "y": 588.8,
+      "altura": 56.12,
+      "achatamento": 1.0,
       "cor": "#1d3021",
       "espaco": 1.15
     },
     {
       "texto": "NÍVEL",
-      "x": 745.0,
-      "y": 462.0,
-      "altura": 40.77,
-      "achatamento": 0.803,
+      "x": 799.7,
+      "y": 470.2,
+      "altura": 56.12,
+      "achatamento": 1.0,
       "cor": "#1d3021",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 600,
-    "y": 824,
-    "raio": 256
+    "y": 1121,
+    "raio": 330
   },
   "led": {
     "x": 600.0,
-    "y": 307.6,
-    "raio": 22.9
+    "y": 211.9,
+    "raio": 33.6
   }
 }

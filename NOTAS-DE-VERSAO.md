@@ -12,11 +12,29 @@
   volta ao padrão, roda do mouse.
 - Controles deslizantes de entrada e saída com medidor de pico.
 
+### Cadeia de sinal
+- Até 12 pedais, montados por clique e arrasta: antes do cabeçote, entre o
+  cabeçote e a caixa, ou depois da caixa. "+" adiciona; botão direito move,
+  remove e liga ao MIDI.
+- Dois cabeçotes com pedal A/B no fim dos pedais: cada lado tem cabeçote,
+  pedais próprios e caixa. A troca de lado aquece o outro e cruza em 30 ms,
+  sem estalo.
+- A ordem da cadeia é salva no projeto.
+
+### Capturas da TONE3000
+- "Abrir pacote" abre a janela das capturas daquele equipamento, dentro do
+  Nexus e com a TONE3000 como fonte: recomendadas (Brit 800, Lemon Drive,
+  DS-1 laranja e Klon dourado), favoritos e downloads da conta filtrados pelo
+  equipamento, em alta, catálogo completo e "inserir manualmente".
+- O Nexus baixa só as capturas A2 da série certa, uma por posição do botão,
+  e monta o pacote sozinho.
+
 ### Pedais
 - Bloco de pedal antes do amplificador, tocando captura NAM ou pacote de
   ganho (mesmo motor de troca sem clique do amplificador).
 - Botões Ganho, Tom e Nível; o pisante liga e desliga em 20 ms, sem estalo.
-- Três visuais inspirados em pedais reais, com nomes próprios: Verde Drive,
+- Pedais vistos de frente, retos (câmera bem em cima), como na pedaleira.
+- Três visuais inspirados em pedais reais, com nomes próprios: Lemon Drive,
   Laranja Dist e Ouro.
 
 ### Caixa

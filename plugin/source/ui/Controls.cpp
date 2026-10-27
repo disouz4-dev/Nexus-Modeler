@@ -11,6 +11,8 @@ DragValue::DragValue(juce::RangedAudioParameter& p, juce::Component& owner)
 , mAttachment(p, [this, &owner](float v) {
   mValue = mParam.convertTo0to1(v);
   owner.repaint();
+  if (onValueChanged)
+    onValueChanged();
 })
 {
   mAttachment.sendInitialUpdate();
@@ -18,8 +20,11 @@ DragValue::DragValue(juce::RangedAudioParameter& p, juce::Component& owner)
 
 void DragValue::set(float v01)
 {
-  mValue = juce::jlimit(0.0f, 1.0f, v01);
-  mAttachment.setValueAsPartOfGesture(mParam.convertFrom0to1(mValue));
+  mAttachment.setValueAsPartOfGesture(mParam.convertFrom0to1(juce::jlimit(0.0f, 1.0f, v01)));
+  // Mostra o valor que o parâmetro aceitou: nos botões de estágios, o clique.
+  mValue = mParam.getValue();
+  if (onValueChanged)
+    onValueChanged();
 }
 
 void DragValue::mouseDown(const juce::MouseEvent&)
@@ -71,6 +76,8 @@ FilmKnob::FilmKnob(juce::RangedAudioParameter& p, const GearKnobArt& art, juce::
 , mLabel(std::move(label))
 {
   setMouseCursor(juce::MouseCursor::UpDownResizeCursor);
+  // O balão com o valor é desenhado pelo palco: avisa a cada clique.
+  mDrag.onValueChanged = [this] { changed(); };
 }
 
 void FilmKnob::mouseDown(const juce::MouseEvent& e)
@@ -98,8 +105,11 @@ bool FilmKnob::hitTest(int x, int y)
 
 juce::String FilmKnob::bubbleText() const
 {
-  const float v = mDrag.value01() * 10.0f;
-  return TRANS(mLabel) + "  " + juce::String(v, 1).replaceCharacter('.', ',');
+  // Botão de estágios (0 a 10 em cliques) mostra o número inteiro.
+  auto& p = mDrag.parameter();
+  const float v = p.convertFrom0to1(mDrag.value01());
+  const bool stepped = p.getNormalisableRange().interval >= 1.0f;
+  return TRANS(mLabel) + "  " + (stepped ? juce::String(juce::roundToInt(v)) : juce::String(v, 1).replaceCharacter('.', ','));
 }
 
 // ---------------------------------------------------------------- LevelFader

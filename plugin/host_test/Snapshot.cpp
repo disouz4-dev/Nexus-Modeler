@@ -25,13 +25,13 @@ int main(int argc, char** argv)
   NexusProcessor processor;
   processor.setPlayConfigDetails(2, 2, 48000.0, 128);
   processor.prepareToPlay(48000.0, 128);
-  processor.loadPackAsync(folder);
+  processor.loadAmpPack(0, 0, folder);
 
   const auto signal = nexus::makeGuitarLikeSignal(48000.0, 4.0, 2);
   juce::AudioBuffer<float> buffer(2, 128);
   juce::MidiBuffer midi;
   auto* param = processor.params.getParameter("ganho");
-  for (int round = 0; round < 3000 && processor.captureCount() == 0; ++round)
+  for (int round = 0; round < 3000 && processor.captureCount(NexusProcessor::ampSlot(0, 0)) == 0; ++round)
   {
     buffer.clear();
     processor.processBlock(buffer, midi);
@@ -50,7 +50,15 @@ int main(int argc, char** argv)
   const juce::String stage = argc > 4 ? juce::String(argv[4]) : juce::String();
   if (stage.startsWith("pedal:"))
   {
-    auto* look = processor.params.getParameter("pedal_modelo");
+    // O pedal 1 recebe o pacote no lugar do cabeçote.
+    processor.loadPedalPack(0, folder);
+    for (int t = 0; t < 3000 && !processor.slotLoaded(0); ++t)
+    {
+      buffer.clear();
+      processor.processBlock(buffer, midi);
+      juce::Thread::sleep(2);
+    }
+    auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
   }
   // NEXUS_IDIOMA=ja (por exemplo) tira a foto naquele idioma, sem mudar a preferência salva.
@@ -59,13 +67,26 @@ int main(int argc, char** argv)
     nexus::ui::language::applyStartup();
     nexus::ui::language::apply(juce::String(lang), false);
   }
+  // NEXUS_CADEIA=dupla: dois cabeçotes, um pedal antes e dois entre cabeçote e caixa.
+  if (const char* chain = std::getenv("NEXUS_CADEIA"); chain != nullptr && juce::String(chain) == "dupla")
+  {
+    ChainLayout l;
+    l.dual = true;
+    l.pre = {0};
+    l.loop[0] = {1};
+    l.loop[1] = {2};
+    l.post = {3};
+    processor.setLayout(l);
+  }
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
   {
     if (stage.startsWith("pedal"))
-      e->showStage(NexusEditor::Stage::pedal);
+      e->select({NexusEditor::Kind::pedal, 0});
     else if (stage == "caixa")
-      e->showStage(NexusEditor::Stage::cab);
+      e->select({NexusEditor::Kind::cab, 0});
+    else if (stage == "capturas")
+      e->showCaptures();
   }
   // Deixa o relógio da tela atualizar textos e medidor.
   juce::MessageManager::getInstance()->runDispatchLoopUntil(300);
@@ -73,7 +94,7 @@ int main(int argc, char** argv)
   out.deleteFile();
   juce::FileOutputStream stream(out);
   juce::PNGImageFormat().writeImageToStream(image, stream);
-  std::printf("Foto da tela em %s (%d capturas)\n", out.getFullPathName().toRawUTF8(), processor.captureCount());
+  std::printf("Foto da tela em %s (%d capturas)\n", out.getFullPathName().toRawUTF8(), processor.captureCount(NexusProcessor::ampSlot(0, 0)));
   editor.reset();
-  return processor.captureCount() > 0 ? 0 : 1;
+  return processor.captureCount(NexusProcessor::ampSlot(0, 0)) > 0 ? 0 : 1;
 }

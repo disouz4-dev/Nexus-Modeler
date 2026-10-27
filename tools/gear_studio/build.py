@@ -186,6 +186,12 @@ def main():
         px, py = to_pixels(scene, cam, (fx, fy, fz))
         ex, _ = to_pixels(scene, cam, (fx + fr, fy, fz))
         layout["pisante"] = {"x": round(px), "y": round(py), "raio": round(abs(ex - px))}
+    if built.get("channel_leds"):
+        layout["leds_canais"] = []
+        for (lx, ly, lz), lr in built["channel_leds"]:
+            px, py = to_pixels(scene, cam, (lx, ly, lz))
+            ex, _ = to_pixels(scene, cam, (lx + lr, ly, lz))
+            layout["leds_canais"].append({"x": round(px, 1), "y": round(py, 1), "raio": round(abs(ex - px), 1)})
     if built.get("led"):
         (lx, ly, lz), lr = built["led"]
         px, py = to_pixels(scene, cam, (lx, ly, lz))

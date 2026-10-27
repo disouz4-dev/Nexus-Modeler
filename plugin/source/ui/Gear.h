@@ -50,6 +50,8 @@ struct GearArt
   float footswitchRadius = 0.0f;
   juce::Point<float> led;
   float ledRadius = 0.0f;
+  // Amplificadores de vários canais: um LED por canal, na ordem dos canais.
+  std::vector<std::pair<juce::Point<float>, float>> channelLeds;
 
   bool valid() const { return front.isValid(); }
   const GearKnobArt* knob(const juce::String& id) const

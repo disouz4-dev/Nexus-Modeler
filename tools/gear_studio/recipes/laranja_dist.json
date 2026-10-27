@@ -73,11 +73,12 @@
     0.06
   ],
   "quadro": {
-    "largura_rel": 2.5,
-    "proporcao": 1.2,
-    "elevacao": 58.0
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
   },
   "base_rel": 0.68,
   "rotulo_embaixo": true,
-  "led_no_basculante": true
+  "led_no_basculante": true,
+  "medidas_fonte": "BOSS DS-1: 73 x 129 x 59 mm"
 }

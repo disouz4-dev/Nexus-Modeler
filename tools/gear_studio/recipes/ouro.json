@@ -5,9 +5,9 @@
   "inspiracao": "overdrive dourado de luxo de três botões (estilo Klon Centaur)",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.095,
-    "comprimento": 0.12,
-    "altura": 0.048
+    "largura": 0.094,
+    "comprimento": 0.119,
+    "altura": 0.051
   },
   "chanfro_m": 0.004,
   "pintura": {
@@ -86,9 +86,10 @@
     0.14
   ],
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 1.6,
     "proporcao": 1.05,
-    "elevacao": 58.0
+    "elevacao": 90.0
   },
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "medidas_fonte": "formato Klon: 94 x 119 x 51 mm (4,7 x 3,7 pol.)"
 }

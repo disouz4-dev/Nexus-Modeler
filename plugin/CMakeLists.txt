@@ -39,7 +39,9 @@ set(NEXUS_UI_SOURCES
   source/ui/AudioPanel.cpp
   source/ui/Language.cpp
   source/ui/Controls.cpp
-  source/ui/Gear.cpp)
+  source/ui/Gear.cpp
+  source/ui/CapturePanel.cpp
+  source/tone3000/Tone3000.cpp)
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
   source/MidiMap.cpp)
@@ -63,7 +65,10 @@ if(WIN32)
   # WinRT MIDI: pedaleiras por Bluetooth (BLE MIDI) no Windows 10 1809 ou mais novo.
   target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1 JUCE_USE_WINRT_MIDI=1)
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1)
+  # Internet (TONE3000) no Linux pelo curl, carregado só quando usado.
+  target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1 JUCE_USE_CURL=1 JUCE_LOAD_CURL_SYMBOLS_LAZILY=1)
+else()
+  target_compile_definitions(NexusModeler PUBLIC JUCE_USE_CURL=0)
 endif()
 
 # Imagens dos equipamentos (renderizadas pelo tools/gear_studio) e fontes,
@@ -72,7 +77,7 @@ set(NEXUS_ART_DIR "${CMAKE_CURRENT_BINARY_DIR}/art")
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "${NEXUS_ART_DIR}/inter.ttf" COPYONLY)
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
 file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
-     "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt")
+     "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData
@@ -83,9 +88,12 @@ set(NEXUS_RESAMPLER_DIR
   "${PROJECT_SOURCE_DIR}/external/NeuralAmpModelerCore/Dependencies/AudioDSPTools/dsp/ResamplingContainer")
 target_include_directories(NexusModeler SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
 
+# Chave pública do Nexus na TONE3000 (feita na conta do projeto em
+# tone3000.com/settings). Sem ela, a janela de capturas só oferece a pasta.
+set(NEXUS_T3K_KEY "" CACHE STRING "Chave pública da TONE3000")
 target_compile_definitions(NexusModeler PUBLIC
   JUCE_WEB_BROWSER=0
-  JUCE_USE_CURL=0
+  NEXUS_T3K_KEY="${NEXUS_T3K_KEY}"
   JUCE_VST3_CAN_REPLACE_VST2=0
   JUCE_DISPLAY_SPLASH_SCREEN=0)
 
@@ -95,6 +103,7 @@ target_link_libraries(NexusModeler
     NexusArt
     juce::juce_audio_utils
     juce::juce_dsp
+    juce::juce_cryptography
   PUBLIC
     juce::juce_recommended_config_flags
     juce::juce_recommended_lto_flags
@@ -124,6 +133,7 @@ if(NEXUS_BUILD_TOOLS)
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
+    juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
   juce_add_console_app(nexus_cab_test PRODUCT_NAME "nexus_cab_test")
@@ -135,6 +145,7 @@ if(NEXUS_BUILD_TOOLS)
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
+    juce::juce_cryptography
     juce::juce_recommended_config_flags)
   add_dependencies(nexus_cab_test test_packs)
   add_test(NAME caixa_e_full_rig
@@ -150,6 +161,7 @@ if(NEXUS_BUILD_TOOLS)
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
+    juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
   add_test(NAME plugin_aberto_no_programa

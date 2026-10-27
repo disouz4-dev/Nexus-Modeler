@@ -63,10 +63,10 @@ void settle(NexusProcessor& p, int ms)
 // Espera o pacote terminar de carregar (até 2 minutos em máquina lenta).
 bool waitPack(NexusProcessor& p)
 {
-  for (int t = 0; t < 120000 && !p.packLoaded(); t += 50)
+  for (int t = 0; t < 120000 && !p.channelLoaded(0, 0); t += 50)
     settle(p, 50);
   settle(p, 300);
-  return p.packLoaded();
+  return p.channelLoaded(0, 0);
 }
 
 double diffDb(const std::vector<float>& a, const std::vector<float>& b)
@@ -84,7 +84,7 @@ void snapshot(NexusProcessor& p, const juce::File& out)
 {
   std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
-    e->showStage(NexusEditor::Stage::cab);
+    e->select({NexusEditor::Kind::cab, 0});
   juce::MessageManager::getInstance()->runDispatchLoopUntil(200);
   const auto image = editor->createComponentSnapshot(editor->getLocalBounds(), true, 2.0f);
   out.deleteFile();
@@ -146,29 +146,50 @@ void testScreen(NexusProcessor& p)
   report(std::abs(afterDrag - 9.0f) < 0.05f, "Arrastar o ganho 100 pontos para cima leva de 5 a 9",
          juce::String::fromUTF8("ganho depois de arrastar: ") + juce::String(afterDrag, 2));
 
+  // Ganho tem estágios: arrastar um pouco não sai do inteiro.
   k.mouseDown(mouseAt(k, c, c, 1, false));
-  k.mouseDrag(mouseAt(k, c.translated(0.0f, 100.0f), c, 1, true, juce::ModifierKeys::shiftModifier));
-  k.mouseUp(mouseAt(k, c.translated(0.0f, 100.0f), c, 1, true));
-  const float afterFine = gain->convertFrom0to1(gain->getValue());
-  report(std::abs(afterFine - 8.2f) < 0.05f, "Com Shift o ajuste é 5 vezes mais fino",
-         juce::String::fromUTF8("100 pontos para baixo com Shift: ") + juce::String(afterFine, 2));
+  k.mouseDrag(mouseAt(k, c.translated(0.0f, 30.0f), c, 1, true));
+  k.mouseUp(mouseAt(k, c.translated(0.0f, 30.0f), c, 1, true));
+  const float afterStep = gain->convertFrom0to1(gain->getValue());
+  report(std::abs(afterStep - 8.0f) < 0.001f, "Ganho anda em estágios de clique (0 a 10)",
+         juce::String::fromUTF8("30 pontos para baixo a partir de 9: ") + juce::String(afterStep, 2));
+
+  // Agudo gira livre; com Shift o ajuste é 5 vezes mais fino.
+  auto* treble = p.params.getParameter("agudo");
+  nexus::ui::FilmKnob* trebleKnob = nullptr;
+  for (auto* kn : knobs)
+    if (kn->art().id == "agudo")
+      trebleKnob = kn;
+  treble->setValueNotifyingHost(treble->convertTo0to1(5.0f));
+  juce::MessageManager::getInstance()->runDispatchLoopUntil(50);
+  if (trebleKnob != nullptr)
+  {
+    auto& t = *trebleKnob;
+    const auto tc = t.getLocalBounds().toFloat().getCentre();
+    t.mouseDown(mouseAt(t, tc, tc, 1, false));
+    t.mouseDrag(mouseAt(t, tc.translated(0.0f, -100.0f), tc, 1, true, juce::ModifierKeys::shiftModifier));
+    t.mouseUp(mouseAt(t, tc.translated(0.0f, -100.0f), tc, 1, true));
+  }
+  const float afterFine = treble->convertFrom0to1(treble->getValue());
+  report(std::abs(afterFine - 5.8f) < 0.05f, "Agudo gira livre; com Shift o ajuste é 5 vezes mais fino",
+         juce::String::fromUTF8("100 pontos para cima com Shift: ") + juce::String(afterFine, 2));
 
   k.mouseDoubleClick(mouseAt(k, c, c, 2, false));
   const float afterReset = gain->convertFrom0to1(gain->getValue());
   report(std::abs(afterReset - 5.0f) < 0.01f, "Duplo clique volta o botão ao padrão",
          juce::String::fromUTF8("ganho depois do duplo clique: ") + juce::String(afterReset, 2));
 
-  e->showStage(NexusEditor::Stage::cab);
+  e->select({NexusEditor::Kind::cab, 0});
   std::vector<nexus::ui::Segmented*> tabs, segs;
   collect(*editor, segs);
   for (auto* t : segs)
-    if (visibleIn(*t, *editor) && t->getParentComponent() != editor.get())
+    if (visibleIn(*t, *editor) && t->getParentComponent() != editor.get() && t->numItems() == 3)
       tabs.push_back(t);
   const bool tabsVisible = tabs.size() == 1 && visibleIn(*tabs.front(), *editor);
   const bool knobsHidden = !visibleIn(*knobs.front(), *editor);
   report(tabsVisible && knobsHidden, "Trocar para a caixa mostra as abas da caixa e esconde o amplificador",
          juce::String::fromUTF8(tabsVisible ? "abas visíveis" : "abas escondidas"));
-  e->showStage(NexusEditor::Stage::amp);
+  e->select({NexusEditor::Kind::amp, 0});
   const bool back = visibleIn(*knobs.front(), *editor) && (tabs.empty() || !visibleIn(*tabs.front(), *editor));
   report(back, "Voltar ao amplificador mostra os botões de novo",
          juce::String::fromUTF8(back ? "botões visíveis, abas escondidas" : "estado errado"));
@@ -196,18 +217,18 @@ int main(int argc, char** argv)
     NexusProcessor p;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
-    p.loadPackAsync(packs.getChildFile("ganho"));
+    p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
     if (!waitPack(p))
       report(false, "Pacote de teste carrega", "não carregou em 2 minutos");
     setParam(p, "caixa", 0.0f);
     settle(p, 100);
     const auto dry = play(p, signal);
-    p.loadIrAsync(ir);
+    p.loadIrAsync(0, ir);
     setParam(p, "caixa", 1.0f);
     settle(p, 1500);
     const auto wet = play(p, signal);
     const double d = diffDb(dry, wet);
-    report(!p.packIncludesCab() && p.irLoaded() && d > -20.0, "Captura de cabeçote: o IR muda o som",
+    report(!p.packIncludesCab(0) && p.irLoaded(0) && d > -20.0, "Captura de cabeçote: o IR muda o som",
            juce::String::fromUTF8("diferença entre sem e com caixa: ") + juce::String(d, 1) + " dB");
     if (photos != juce::File())
       snapshot(p, photos.getChildFile("caixa_com_ir.png"));
@@ -220,8 +241,8 @@ int main(int argc, char** argv)
     NexusProcessor p;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
-    p.loadIrAsync(ir);
-    p.loadPackAsync(packs.getChildFile("fullrig"));
+    p.loadIrAsync(0, ir);
+    p.loadAmpPack(0, 0, packs.getChildFile("fullrig"));
     if (!waitPack(p))
       report(false, "Pacote full rig carrega", "não carregou em 2 minutos");
     setParam(p, "caixa", 0.0f);
@@ -231,7 +252,7 @@ int main(int argc, char** argv)
     settle(p, 300);
     const auto on = play(p, signal);
     const double d = diffDb(off, on);
-    report(p.packIncludesCab() && d < -100.0, "Captura full rig: ligar o IR não muda nada (caixa trancada)",
+    report(p.packIncludesCab(0) && d < -100.0, "Captura full rig: ligar o IR não muda nada (caixa trancada)",
            juce::String::fromUTF8("diferença: ") + juce::String(d, 1) + " dB (limite -100 dB)");
     if (photos != juce::File())
       snapshot(p, photos.getChildFile("caixa_full_rig.png"));
@@ -244,13 +265,13 @@ int main(int argc, char** argv)
       auto p = std::make_unique<NexusProcessor>();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
       p->prepareToPlay(48000.0, 128);
-      setParam(*p, "pedal_ligado", pedalOn ? 1.0f : 0.0f);
+      setParam(*p, "p1_ligado", pedalOn ? 1.0f : 0.0f);
       setParam(*p, "caixa", 0.0f);
       p->prepareToPlay(48000.0, 128);
-      p->loadPackAsync(packs.getChildFile("ganho"), NexusProcessor::amp);
+      p->loadAmpPack(0, 0, packs.getChildFile("ganho"));
       if (withPedal)
-        p->loadPackAsync(packs.getChildFile("ganho"), NexusProcessor::pedal);
-      for (int t = 0; t < 120000 && !(p->packLoaded() && (!withPedal || p->packLoaded(NexusProcessor::pedal))); t += 50)
+        p->loadPedalPack(0, packs.getChildFile("ganho"));
+      for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && (!withPedal || p->slotLoaded(0))); t += 50)
         settle(*p, 50);
       settle(*p, 300);
       return p;
@@ -269,7 +290,7 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(dOff, 1) + " dB (limite -100 dB)");
 
     // Liga e desliga no meio do som: sem salto (a transição é de 20 ms).
-    setParam(*on, "pedal_ligado", 0.0f);
+    setParam(*on, "p1_ligado", 0.0f);
     const auto toggled = play(*on, signal);
     float worstJump = 0.0f;
     for (size_t i = 1; i < std::min<size_t>(toggled.size(), 4800); ++i)
@@ -284,9 +305,9 @@ int main(int argc, char** argv)
     // O pisante da imagem liga e desliga.
     std::unique_ptr<juce::AudioProcessorEditor> editor(on->createEditor());
     auto* e = dynamic_cast<NexusEditor*>(editor.get());
-    e->showStage(NexusEditor::Stage::pedal);
+    e->select({NexusEditor::Kind::pedal, 0});
     juce::MessageManager::getInstance()->runDispatchLoopUntil(50);
-    auto* param = on->params.getParameter("pedal_ligado");
+    auto* param = on->params.getParameter("p1_ligado");
     param->setValueNotifyingHost(1.0f);
     juce::Component* stage = nullptr;
     for (auto* c : editor->getChildren())
@@ -326,12 +347,12 @@ int main(int argc, char** argv)
     p.prepareToPlay(48000.0, 128);
     setParam(p, "caixa", 0.0f);
     setParam(p, "ganho", 0.0f); // canal 1 limpo; o canal 3 é o A2 cheio
-    p.loadPackAsync(packs.getChildFile("ganho"), NexusProcessor::amp, 0);
-    p.loadPackAsync(packs.getChildFile("fullrig"), NexusProcessor::amp, 2);
-    for (int t = 0; t < 120000 && !(p.channelLoaded(0) && p.channelLoaded(2)); t += 50)
+    p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
+    p.loadAmpPack(0, 2, packs.getChildFile("fullrig"));
+    for (int t = 0; t < 120000 && !(p.channelLoaded(0, 0) && p.channelLoaded(0, 2)); t += 50)
       settle(p, 50);
     settle(p, 300);
-    report(p.channelLoaded(0) && !p.channelLoaded(1) && p.channelLoaded(2), "Cabeçote com 2 canais: o canal do meio fica vazio",
+    report(p.channelLoaded(0, 0) && !p.channelLoaded(0, 1) && p.channelLoaded(0, 2), "Cabeçote com 2 canais: o canal do meio fica vazio",
            "canais com pacote: 1 e 3");
     const auto ch1 = play(p, signal);
 
@@ -342,7 +363,7 @@ int main(int argc, char** argv)
     setParam(p, "canal", 0.0f);
     settle(p, 300);
     const auto ch1b = play(p, signal);
-    report(diffDb(ch1b, stay) < -100.0 && !p.packIncludesCab(), "Escolher um canal vazio mantém o canal que está tocando",
+    report(diffDb(ch1b, stay) < -100.0 && !p.packIncludesCab(0), "Escolher um canal vazio mantém o canal que está tocando",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(ch1b, stay), 1) + " dB");
 
     setParam(p, "canal", 2.0f);
@@ -360,8 +381,8 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("maior passo na troca: ") + juce::String(worst, 4) + "; tocando: " + juce::String(std::max(typical, typical3), 4));
     report(diffDb(ch1, ch3) > -20.0, "O canal 3 soa diferente do canal 1",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(ch1, ch3), 1) + " dB");
-    report(p.packIncludesCab(), "A trava da caixa segue o canal (canal 3 é full rig)",
-           p.packIncludesCab() ? juce::String("caixa trancada") : juce::String("caixa livre"));
+    report(p.packIncludesCab(0), "A trava da caixa segue o canal (canal 3 é full rig)",
+           p.packIncludesCab(0) ? juce::String("caixa trancada") : juce::String("caixa livre"));
 
     std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
     juce::MessageManager::getInstance()->runDispatchLoopUntil(100);
@@ -401,12 +422,12 @@ int main(int argc, char** argv)
     send(juce::MidiMessage::programChange(1, 2));
     report(juce::roundToInt(value("canal")) == 2, "Troca de patch 3 escolhe o canal 3", "canal " + juce::String(juce::roundToInt(value("canal")) + 1));
 
-    p.midi().learn("pedal_ligado");
+    p.midi().learn("p1_ligado");
     send(juce::MidiMessage::controllerEvent(1, 80, 127));
-    const bool learnedOn = p.midi().ccFor("pedal_ligado") == 80 && value("pedal_ligado") > 0.5f;
+    const bool learnedOn = p.midi().ccFor("p1_ligado") == 80 && value("p1_ligado") > 0.5f;
     send(juce::MidiMessage::controllerEvent(1, 80, 0));
-    report(learnedOn && value("pedal_ligado") < 0.5f, "Aprender: CC 80 liga (127) e desliga (0) o pedal",
-           "CC " + juce::String(p.midi().ccFor("pedal_ligado")));
+    report(learnedOn && value("p1_ligado") < 0.5f, "Aprender: CC 80 liga (127) e desliga (0) o pedal",
+           "CC " + juce::String(p.midi().ccFor("p1_ligado")));
 
     p.midi().learn("ganho");
     send(juce::MidiMessage::controllerEvent(1, 21, 127));
@@ -425,8 +446,115 @@ int main(int argc, char** argv)
     p.getStateInformation(state);
     NexusProcessor q;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
-    report(q.midi().ccFor("pedal_ligado") == 80 && q.midi().ccFor("ganho") == 22, "O mapa MIDI volta ao abrir o projeto",
-           "pedal CC " + juce::String(q.midi().ccFor("pedal_ligado")) + ", ganho CC " + juce::String(q.midi().ccFor("ganho")));
+    report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22, "O mapa MIDI volta ao abrir o projeto",
+           "pedal CC " + juce::String(q.midi().ccFor("p1_ligado")) + ", ganho CC " + juce::String(q.midi().ccFor("ganho")));
+  }
+
+  // 6. Cadeia: lugar do pedal, dois cabeçotes com pedal A/B.
+  {
+    std::printf("\nCadeia de sinal\n");
+    auto make = [&](const ChainLayout& layout) {
+      auto p = std::make_unique<NexusProcessor>();
+      p->setPlayConfigDetails(2, 2, 48000.0, 128);
+      p->prepareToPlay(48000.0, 128);
+      setParam(*p, "caixa", 0.0f);
+      setParam(*p, "caixa_b", 0.0f);
+      // Pedal e cabeçote usam a mesma captura de teste: em ganhos diferentes,
+      // a ordem muda o som (f(g(x)) é diferente de g(f(x))).
+      setParam(*p, "p1_drive", 0.0f);
+      setParam(*p, "ganho", 10.0f);
+      setParam(*p, "ganho_b", 0.0f);
+      p->setLayout(layout);
+      p->loadAmpPack(0, 0, packs.getChildFile("ganho"));
+      p->loadAmpPack(1, 0, packs.getChildFile("fullrig"));
+      p->loadPedalPack(0, packs.getChildFile("ganho"));
+      for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && p->channelLoaded(1, 0) && p->slotLoaded(0)); t += 50)
+        settle(*p, 50);
+      settle(*p, 300);
+      return p;
+    };
+    ChainLayout before;
+    before.pre = {0};
+    ChainLayout after;
+    after.post = {0};
+    ChainLayout between;
+    between.loop[0] = {0};
+    auto pBefore = make(before);
+    auto pAfter = make(after);
+    auto pBetween = make(between);
+    const auto oBefore = play(*pBefore, signal);
+    const auto oAfter = play(*pAfter, signal);
+    const auto oBetween = play(*pBetween, signal);
+    report(diffDb(oBefore, oAfter) > -20.0, "Pedal antes ou depois do cabeçote soa diferente",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oAfter), 1) + " dB");
+    report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
+
+    // A cadeia volta igual ao reabrir o projeto.
+    juce::MemoryBlock state;
+    pBetween->getStateInformation(state);
+    NexusProcessor q;
+    q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
+    report(q.layout().loop[0] == std::vector<int>{0} && q.layout().pre.empty(), "A ordem da cadeia volta ao abrir o projeto",
+           juce::String::fromUTF8(q.layout().loop[0].size() == 1 ? "pedal entre cabeçote e caixa" : "ordem perdida"));
+
+    // Dois cabeçotes: o pedal A/B troca o lado sem salto.
+    ChainLayout dual;
+    dual.dual = true;
+    auto pA = make(dual);
+    auto pB = make(dual);
+    setParam(*pB, "ab", 1.0f);
+    const auto onlyA = play(*pA, signal);
+    const auto onlyB = play(*pB, signal);
+    report(diffDb(onlyA, onlyB) > -20.0, "Lado A e lado B soam diferentes",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(onlyA, onlyB), 1) + " dB");
+    setParam(*pA, "ab", 1.0f);
+    const auto switched = play(*pA, signal);
+    float worst = 0.0f, typical = 0.0f;
+    for (size_t i = 1; i < std::min<size_t>(switched.size(), 4800); ++i)
+      worst = std::max(worst, std::abs(switched[i] - switched[i - 1]));
+    for (size_t i = 1; i < onlyB.size(); ++i)
+      typical = std::max(typical, std::max(std::abs(onlyB[i] - onlyB[i - 1]), std::abs(onlyA[i] - onlyA[i - 1])));
+    report(worst <= typical * 1.5f, "Pisar no A/B tocando não dá salto no som",
+           juce::String::fromUTF8("maior passo na troca: ") + juce::String(worst, 4) + juce::String::fromUTF8("; tocando: ") + juce::String(typical, 4));
+    // Referência: o lado B já assentado (o ganho dele desliza ao mudar).
+    const auto onlyBSettled = play(*pB, signal);
+    const auto settled = play(*pA, signal);
+    report(diffDb(onlyBSettled, settled) < -60.0, "Depois da troca toca só o lado B",
+           juce::String::fromUTF8("diferença para só B: ") + juce::String(diffDb(onlyBSettled, settled), 1) + " dB");
+  }
+
+  // 7. TONE3000: escolha das capturas pelos nomes reais dos pacotes.
+  {
+    std::printf("\nTONE3000: escolha das capturas\n");
+    auto models = [](std::initializer_list<const char*> names) {
+      std::vector<std::pair<juce::String, juce::String>> v;
+      for (auto* n : names)
+        v.emplace_back(juce::String(n), juce::String("https://exemplo/") + n);
+      return v;
+    };
+    auto positions = [](const std::vector<nexus::t3k::Capture>& c) {
+      juce::StringArray s;
+      for (const auto& x : c)
+        s.add(juce::String(x.position, 1));
+      return s.joinIntoString(" ");
+    };
+    // Recomendada com série: só o master 6, uma captura por ganho.
+    const auto rec = nexus::t3k::recommended("brit800");
+    const auto jcm = models({"JCM800 2203 - P5 B5 M5 T5 MV6 G5 - AZG - 700", "JCM800 2203 - P5 B5 M5 T5 MV5 G9 - AZG - 700",
+                             "JCM800 2203 - P5 B5 M5 T5 MV6 G1 - AZG - 700", "JCM800 2203 - P5 B5 M5 T5 MV6 G10 - AZG - 700",
+                             "JCM800 2203 - P5 B5 M5 T5 MV7 G5 - AZG - 700"});
+    const auto a = nexus::t3k::chooseCaptures(jcm, rec.empty() ? nexus::t3k::Tone{} : rec.front());
+    report(!rec.empty() && positions(a) == "1.0 5.0 10.0", "Recomendada do Brit 800: série master 6, ganho 1, 5 e 10", positions(a));
+    // Sem receita (favorito qualquer): acha "D3", "Drive 7" e fica com a maior série.
+    const auto ts = nexus::t3k::chooseCaptures(models({"Ibanez-TS9-D3-T5-L5", "Ibanez-TS9-D0-T6-L10", "Ibanez-TS9-D10-T7-L5"}), {});
+    report(positions(ts) == "0.0 3.0 10.0", "Favorito sem receita: lê D0, D3 e D10", positions(ts));
+    const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
+    report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
+    int all = 0;
+    for (const auto* g : {"brit800", "lemon_drive", "laranja_dist", "ouro"})
+      all += static_cast<int>(nexus::t3k::recommended(g).size());
+    report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

@@ -60,7 +60,7 @@ int main(int argc, char** argv)
   NexusProcessor processor;
   CountingPlayer counter;
   counter.player.setProcessor(&processor);
-  processor.loadPackAsync(cwd.getChildFile(juce::String::fromUTF8(argv[1])));
+  processor.loadAmpPack(0, 0, cwd.getChildFile(juce::String::fromUTF8(argv[1])));
   // Nada de som alto por acidente: saída do plugin no mínimo.
   processor.params.getParameter("volume")->setValueNotifyingHost(0.0f);
 
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
     }
     devices.addAudioCallback(&counter);
     // Espera o pacote carregar antes da primeira medida.
-    for (int t = 0; t < 60000 && !processor.packLoaded(); t += 50)
+    for (int t = 0; t < 60000 && !processor.channelLoaded(0, 0); t += 50)
       juce::MessageManager::getInstance()->runDispatchLoopUntil(50);
     counter.calls = 0;
     const int xrunsBefore = device->getXRunCount();

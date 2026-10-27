@@ -7,6 +7,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_dsp/juce_dsp.h>
 
+#include "ChainLayout.h"
 #include "MidiMap.h"
 #include "nexus/AmpVoice.h"
 
@@ -38,17 +39,22 @@ public:
   // Maior pedaço entregue às capturas de uma vez.
   static constexpr int kEngineBlock = 2048;
   static constexpr int kMaxCaptures = 64;
-
-  // Blocos que tocam capturas, na ordem do sinal.
-  enum Block
-  {
-    pedal = 0,
-    amp = 1,
-    kBlocks = 2
-  };
-  // O cabeçote tem até 3 canais (limpo, crunch, alto ganho), cada um com o
-  // próprio pacote de capturas e o próprio ganho.
+  static constexpr int kPedals = ChainLayout::kPedals;
+  static constexpr int kRigs = ChainLayout::kRigs;
+  // Cada cabeçote tem até 3 canais, cada um com pacote e ganho próprios.
   static constexpr int kChannels = 3;
+  static constexpr int kPedalLooks = 3;
+
+  // Posições dos pacotes: 0 a 11 são os pedais; depois, os canais dos dois
+  // cabeçotes (lado A: 12 a 14, lado B: 15 a 17).
+  static constexpr int kSlots = kPedals + kRigs * kChannels;
+  static constexpr int pedalSlot(int pedal) { return pedal; }
+  static constexpr int ampSlot(int rig, int channel) { return kPedals + rig * kChannels + channel; }
+
+  // Nomes dos parâmetros: pedal n -> "p<n>_drive"...; cabeçote A usa o nome
+  // simples ("ganho"), o B ganha "_b" ("ganho_b").
+  static juce::String pedalParam(int pedal, const char* name) { return "p" + juce::String(pedal + 1) + "_" + name; }
+  static juce::String ampParam(int rig, const char* name) { return rig == 0 ? juce::String(name) : juce::String(name) + "_b"; }
 
   NexusProcessor();
   ~NexusProcessor() override;
@@ -76,26 +82,35 @@ public:
   void getStateInformation(juce::MemoryBlock& destData) override;
   void setStateInformation(const void* data, int sizeInBytes) override;
 
-  // Tela. "b" é o bloco (pedal ou amplificador); no amplificador, "channel"
-  // é o canal (0 a 2); -1 é o canal escolhido agora.
-  void loadPackAsync(const juce::File& folder, Block b = amp, int channel = -1);
-  int selectedChannel() const;
-  bool channelLoaded(int channel) const { return mChannelLoaded[static_cast<size_t>(channel)].load(); }
-  juce::String channelPackName(int channel) const;
-  juce::String statusText(Block b = amp) const;
-  juce::String knobName() const;
-  juce::String packName(Block b = amp) const;
-  int captureCount(Block b = amp) const { return mUi[b].count.load(); }
-  float captureWeight(int i, Block b = amp) const { return mUi[b].weights[static_cast<size_t>(i)].load(); }
-  float capturePosition(int i, Block b = amp) const { return mUi[b].positions[static_cast<size_t>(i)].load(); }
-  float currentPosition(Block b = amp) const { return mUi[b].position.load(); }
-  bool packLoaded(Block b = amp) const { return mUi[b].count.load() > 0; }
-  bool packIncludesCab() const { return mChannelIncludesCab[static_cast<size_t>(juce::jlimit(0, kChannels - 1, mAudibleChannel.load()))].load(); }
+  // ----- Tela: cadeia
+  ChainLayout layout() const { return mLayoutUi; }
+  void setLayout(const ChainLayout& layout);
+  // Lado que está tocando agora (0 = A, 1 = B).
+  int activeRig() const { return mUiActiveRig.load(); }
 
-  // Caixa (IR). Com captura full rig a caixa fica trancada e o IR não toca.
-  void loadIrAsync(const juce::File& file);
-  juce::String irName() const;
-  bool irLoaded() const { return mIrLoaded.load(); }
+  // ----- Tela: pacotes
+  void loadPedalPack(int pedal, const juce::File& folder) { loadSlot(pedalSlot(pedal), folder); }
+  void loadAmpPack(int rig, int channel, const juce::File& folder) { loadSlot(ampSlot(rig, channel), folder); }
+  int selectedChannel(int rig) const;
+  bool channelLoaded(int rig, int channel) const { return slotLoaded(ampSlot(rig, channel)); }
+  // Canal que toca agora no cabeçote (ou o escolhido, se nenhum tocou ainda).
+  int audibleSlot(int rig) const;
+  bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
+  juce::String statusText(int slot) const;
+  juce::String packName(int slot) const;
+  int captureCount(int slot) const { return mUi[static_cast<size_t>(slot)].count.load(); }
+  float captureWeight(int i, int slot) const { return mUi[static_cast<size_t>(slot)].weights[static_cast<size_t>(i)].load(); }
+  float capturePosition(int i, int slot) const { return mUi[static_cast<size_t>(slot)].positions[static_cast<size_t>(i)].load(); }
+  float currentPosition(int slot) const { return mUi[static_cast<size_t>(slot)].position.load(); }
+  bool packIncludesCab(int rig) const { return mIncludesCab[static_cast<size_t>(audibleSlot(rig))].load(); }
+  // Processador: parte de um núcleo usada por bloco (pedal ou cabeçote) no
+  // último segundo, de 0 a 1.
+  float slotLoad(int slot) const { return mUiLoad[static_cast<size_t>(slot)].load(); }
+
+  // ----- Tela: caixas (IR). Captura full rig tranca a caixa daquele lado.
+  void loadIrAsync(int rig, const juce::File& file);
+  juce::String irName(int rig) const;
+  bool irLoaded(int rig) const { return mCabs[static_cast<size_t>(rig)].loaded.load(); }
 
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
@@ -106,8 +121,8 @@ public:
   MidiMap& midi() { return *mMidi; }
 
 private:
-  // Troca de equipamento sem trava: a tela deposita em pending, o áudio pega
-  // no começo do bloco e devolve o antigo em retired, que a tela apaga.
+  // Troca de pacote sem trava: a tela deposita em pending, o áudio pega no
+  // começo do bloco e devolve o antigo em retired, que a tela apaga.
   struct Slot
   {
     std::atomic<NexusEngine*> pending{nullptr};
@@ -127,69 +142,98 @@ private:
     std::atomic<float> position{0.0f};
   };
 
+  // Estado de áudio de cada pedal (liga e desliga sem estalo).
+  struct PedalState
+  {
+    float mix = 0.0f;
+    float level = 1.0f;
+    int warmLeft = 0;
+    bool warming = false;
+    std::atomic<float>* drive = nullptr;
+    std::atomic<float>* tone = nullptr;
+    std::atomic<float>* levelParam = nullptr;
+    std::atomic<float>* on = nullptr;
+    std::atomic<float>* lite = nullptr;
+  };
+
+  // Estado de áudio de cada cabeçote: troca de canal com aquecimento.
+  struct RigState
+  {
+    int current = -1, next = -1; // posições de pacote
+    int warmLeft = 0;
+    float fade = 0.0f;
+    std::array<std::atomic<float>*, kChannels> gain{};
+    std::atomic<float>* channel = nullptr;
+    std::atomic<float>* bass = nullptr;
+    std::atomic<float>* mid = nullptr;
+    std::atomic<float>* treble = nullptr;
+    std::atomic<float>* presence = nullptr;
+    std::atomic<float>* master = nullptr;
+    float masterGain = 1.0f;
+  };
+
+  struct Cab
+  {
+    juce::dsp::Convolution conv{juce::dsp::Convolution::NonUniform{256}};
+    juce::LinearSmoothedValue<float> mix;
+    juce::File file;
+    std::atomic<bool> loaded{false};
+    std::atomic<float>* mode = nullptr;
+  };
+
   static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
   void timerCallback() override;
+  void loadSlot(int slot, const juce::File& folder);
   void runEngines(double* buffer, int numFrames);
-  void runPedal(double* buffer, int n);
-  void runAmp(double* buffer, int n);
-  int slotIndex(Block b, int channel) const;
-  nexus::AmpVoice::Controls ampControls(int channel) const;
-  nexus::AmpVoice::Controls pedalControls() const;
-  void publish(Block b);
+  void runPedal(int pedal, double* buffer, int n);
+  void runRigs(double* buffer, int n);
+  void runRig(int rig, double* buffer, int n);
+  void runAmp(int rig, double* buffer, int n);
+  void runCab(int rig, double* buffer, int n);
+  nexus::AmpVoice::Controls ampControls(int rig, int channel) const;
+  nexus::AmpVoice::Controls pedalControls(int pedal) const;
+  void publish(int slot);
+  static int warmupOf(const NexusEngine& e);
 
-  // Posição 0: pedal; 1 a 3: canais do cabeçote.
-  static constexpr int kSlots = 1 + kChannels;
   std::array<Slot, kSlots> mSlots;
-  // Troca de canal: o canal que entra aquece ouvindo a guitarra e depois
-  // entra numa transição curta; os outros canais ficam parados.
-  int mAmpCurrent = -1, mAmpNext = -1;
-  int mAmpWarmLeft = 0;
-  float mAmpFade = 0.0f;
-  std::vector<double> mChannelIn, mChannelOut;
-  std::array<std::atomic<bool>, kChannels> mChannelLoaded{};
-  std::array<std::atomic<bool>, kChannels> mChannelIncludesCab{};
-  std::atomic<int> mAudibleChannel{0};
-  std::array<UiMirror, kBlocks> mUi;
+  std::array<UiMirror, kSlots> mUi;
+  std::array<std::atomic<bool>, kSlots> mSlotLoaded{};
+  std::array<std::atomic<bool>, kSlots> mIncludesCab{};
+  std::array<std::atomic<float>, kSlots> mUiLoad{};
+  std::array<double, kSlots> mLoadSeconds{};
+  double mLoadWindow = 0.0;
+
+  std::array<PedalState, kPedals> mPedals;
+  std::array<RigState, kRigs> mRigs;
+  std::array<Cab, kRigs> mCabs;
+
+  // Cadeia: cópia da tela e cópia do áudio, trocadas por ponteiro.
+  ChainLayout mLayoutUi;
+  std::atomic<ChainLayout*> mLayoutPending{nullptr};
+  std::atomic<ChainLayout*> mLayoutRetired{nullptr};
+  ChainLayout* mLayoutActive = nullptr;
+
+  // Troca A/B: o lado que entra aquece e cruza em 30 ms.
+  int mRigCurrent = 0, mRigNext = -1, mRigWarmLeft = 0;
+  float mRigFade = 0.0f;
+  std::atomic<int> mUiActiveRig{0};
+  std::atomic<float>* mAb = nullptr;
 
   std::unique_ptr<Resampler> mResampler;
   Resampler::BlockProcessFunc mResampledFunc;
   bool mNeedsResampling = false;
-  std::vector<double> mMono, mMonoOut, mDry;
+  std::vector<double> mMono, mMonoOut, mDry, mChannelIn, mChannelOut, mRigIn;
+  std::vector<float> mCabFloat;
 
   // Carregamento em segundo plano.
   juce::ThreadPool mLoader{1};
   mutable juce::CriticalSection mStatusLock;
-  juce::String mKnobName = "Ganho";
 
-  std::atomic<float>* mMain;
-  std::array<std::atomic<float>*, kChannels> mChannelGain{};
-  std::atomic<float>* mChannel;
-  std::atomic<float>* mBass;
-  std::atomic<float>* mMid;
-  std::atomic<float>* mTreble;
-  std::atomic<float>* mPresence;
-  std::atomic<float>* mStepped;
   std::atomic<float>* mLite;
   std::atomic<float>* mOutput;
   std::atomic<float>* mInput;
-  std::atomic<float>* mMaster;
-  std::atomic<float>* mCabMode;
-  std::atomic<float>* mPedalGain;
-  std::atomic<float>* mPedalTone;
-  std::atomic<float>* mPedalLevel;
-  std::atomic<float>* mPedalOn;
   float mOutputGain = 1.0f;
   float mInputGain = 1.0f;
-
-  // Pedal: liga e desliga com transição curta; o nível é o volume dele.
-  float mPedalMix = 0.0f;
-  float mPedalLevelGain = 1.0f;
-
-  juce::dsp::Convolution mCab{juce::dsp::Convolution::NonUniform{256}};
-  juce::AudioBuffer<float> mCabBuffer;
-  juce::LinearSmoothedValue<float> mCabMix;
-  juce::File mIrFile;
-  std::atomic<bool> mIrLoaded{false};
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
   std::unique_ptr<MidiMap> mMidi;

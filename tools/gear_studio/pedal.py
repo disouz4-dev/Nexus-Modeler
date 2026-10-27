@@ -95,7 +95,7 @@ def _frame_on_top(name, width, length, radius, thickness, location, mat):
 def _led(name, location, mats):
     x, y, z = location
     st.cylinder(name + "_aro", 0.0042, 0.0016, (x, y, z + 0.0008), material=mats["chrome"], axis="Z", bevel=0.0004)
-    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.0028, location=(x, y, z + 0.0016), segments=32, ring_count=16)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.0031, location=(x, y, z + 0.0016), segments=32, ring_count=16)
     dome = bpy.context.active_object
     dome.name = name
     dome.scale = (1, 1, 0.8)
@@ -136,7 +136,9 @@ def build(rec, fonts):
         "chrome": st.mat_metal("cromo", (0.92, 0.92, 0.93), rough=0.08),
         "chrome_dark": st.mat_metal("cromo_escuro", (0.55, 0.55, 0.56), rough=0.2),
         "hole": st.mat_paint("furo", (0.0, 0.0, 0.0), rough=0.9),
-        "led": st.mat_glow("led", (1.0, 0.05, 0.02), 6.0, base_rough=0.05),
+        # LED apagado (vidro vermelho escuro). Aceso, a tela desenha o brilho
+        # por cima, e assim liga e desliga sem precisar de dois renders.
+        "led": st.mat_plastic("led_vidro", (0.30, 0.012, 0.008), rough=0.06, coat=1.0),
         "rubber": mat_rubber("borracha"),
         "rubber_ridges": mat_rubber("borracha_frisos", ridges=True),
         "plastic": st.mat_plastic("plastico", (0.015, 0.015, 0.015), rough=0.42),
@@ -230,6 +232,6 @@ def build(rec, fonts):
     led = None
     if "led" in rec:
         lx, lyr = rec["led"]
-        led = ((lx * W / 2, lyr * L / 2, (H if rec.get("led_no_basculante") else top) + 0.0018), 0.0030)
+        led = ((lx * W / 2, lyr * L / 2, (H if rec.get("led_no_basculante") else top) + 0.0018), 0.0031)
     return {"controls": controls, "size": (W, L, H), "front": -L / 2, "target": (0.0, 0.0, H * 0.6), "footswitch": foot,
             "led": led}

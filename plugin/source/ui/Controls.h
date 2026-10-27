@@ -18,6 +18,7 @@ public:
   DragValue(juce::RangedAudioParameter& p, juce::Component& owner);
   float value01() const { return mValue; }
   juce::RangedAudioParameter& parameter() { return mParam; }
+  const juce::RangedAudioParameter& parameter() const { return mParam; }
   void mouseDown(const juce::MouseEvent&);
   void mouseDrag(const juce::MouseEvent&, bool horizontal = false);
   void mouseUp(const juce::MouseEvent&);
@@ -25,6 +26,8 @@ public:
   void mouseWheel(const juce::MouseWheelDetails&);
   bool dragging() const { return mDragging; }
   juce::String paramId() const;
+  // Chamado a cada mudança de valor (arraste, roda, automação, MIDI).
+  std::function<void()> onValueChanged;
 
 private:
   void set(float v01);

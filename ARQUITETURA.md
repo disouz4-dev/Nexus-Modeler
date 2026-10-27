@@ -159,23 +159,38 @@ cópia inteira do tone3000-plugin (produto de outro formato).
 - Equipamento genérico (amplificador, pedal ou caixa sem marca) para qualquer
   captura que não tenha simulacro próprio.
 
-### 3.4 Botão "Importar NAM"
-Cada simulacro tem o botão **Importar NAM**. Ele abre:
+### 3.4 Abrir pacote: capturas da TONE3000 dentro do Nexus
+"Abrir pacote", em qualquer cabeçote ou pedal, abre a janela **Capturas para
+<equipamento>**, desenhada pelo Nexus, com **Fonte: TONE3000** sempre à vista
+e o nome do criador em cada tom. Abas:
 
-1. **Lista curada do Nexus** — nós mantemos, para cada simulacro, uma lista de
-   tons da TONE3000 daquele equipamento (ex.: todos os JCM800 em A2 que
-   encontrarmos). O usuário escolhe e o Nexus carrega pelo número do tom
-   (`load_tone`), permitido no plano gratuito. É assim que o "filtro Marshall"
-   funciona sem o plano comercial. A lista é atualizada pela internet, sem
-   precisar de versão nova do plugin.
-2. **Catálogo completo da TONE3000** — abre a tela de escolha deles, já
-   filtrada pelo tipo certo (`gears=amp_amp-cab` no amplificador,
-   `gears=pedal` no pedal, `gears=cab` na caixa) e A2. Dentro da tela deles o
-   usuário pode procurar "Marshall".
-3. **Arquivo do computador** — para quem já tem `.nam` ou `.wav` baixados.
+1. **Recomendadas** — lista nossa (`assets/tone3000/recomendadas.json`) com o
+   número de cada tom daquele equipamento e como ler a posição do botão no
+   nome de cada captura ("G7", "Drive 3", "D08") e qual série usar ("MV6",
+   "LOW SENSITIVITY"). É o "filtro automático" pelo amplificador: a busca por
+   marca e modelo de todo o catálogo é do plano comercial da TONE3000.
+2. **Seus favoritos** e **Seus downloads** — listas da conta, filtradas pelo
+   tipo (cabeçote ou pedal) e pela palavra do equipamento ("JCM800").
+3. **Em alta** — os 10 tons em alta daquele tipo.
 
-Se a TONE3000 liberar a busca (por pedido ou plano comercial), o item 1 passa a
-ser uma busca direta por marca dentro do plugin.
+Embaixo: **Catálogo completo da TONE3000** (a tela de escolha deles, já
+filtrada por tipo e A2, exigência deles), **Inserir manualmente** (pasta do
+computador) e a conta ("Entrar com a TONE3000" / "Conectado como @fulano").
+
+Carregar um tom: no plano gratuito ele passa pela tela "load_tone" da
+TONE3000, que confirma o acesso e volta sozinha. Depois o Nexus baixa só as
+capturas A2 da série certa, uma por posição do botão, para
+`Nexus Modeler/Capturas TONE3000/<número> <nome>/`, e escreve o `pack.json`
+(posição → arquivo, criador, endereço do tom, se inclui caixa). O login usa o
+navegador do sistema uma vez (OAuth com PKCE, retorno em 127.0.0.1); a conta
+fica salva em `Nexus Modeler/tone3000.settings`.
+
+A chave pública do Nexus na TONE3000 entra na compilação
+(`-DNEXUS_T3K_KEY=...`) ou pela variável `NEXUS_T3K_KEY`. Sem ela, a janela
+oferece só as recomendadas (para ver) e a pasta do computador.
+
+Pedido em aberto: liberar à TONE3000, para um projeto aberto e gratuito, a
+busca por marca e o download direto pelo número, sem passar pela tela deles.
 
 ### 3.5 Captura "full rig" (cabeçote + caixa)
 Quando o tom importado é do tipo `amp-cab`, a captura já inclui a caixa. O

@@ -474,7 +474,13 @@ def studio(scene, center, width, kind="cabecote"):
         # Pedal visto de cima: caixa de luz grande quase em cima, um pouco à
         # frente; preenchimentos fracos dos lados e recortes atrás. Sem a
         # faixa baixa, que lavaria a frente da caixa de branco.
-        area_light("principal", (cx, cy - 0.6 * w, cz + 2.4 * w), center, 2.2 * w, 330 * w * w * LUZ, (1.0, 0.97, 0.92), 1.4 * w)
+        # Com a câmera bem em cima, a luz principal fica à frente e mais baixa:
+        # assim o reflexo do verniz não volta direto para a câmera.
+        area_light("principal", (cx, cy - 2.4 * w, cz + 1.7 * w), center, 2.2 * w, 360 * w * w * LUZ, (1.0, 0.97, 0.92), 1.0 * w)
+        # Luz frontal: caixa de luz grande na direção de quem olha (acima, um
+        # pouco à frente), que tira a sombra dos botões e clareia o pedal por
+        # igual, como numa foto de produto.
+        area_light("frontal", (cx, cy - 0.5 * w, cz + 3.2 * w), center, 4.0 * w, 300 * w * w * LUZ, (1.0, 0.98, 0.95), 4.0 * w)
         area_light("preenche_esq", (cx - 2.0 * w, cy - 0.4 * w, cz + 1.2 * w), center, 1.0 * w, 28 * w * w * LUZ, (0.92, 0.95, 1.0))
         area_light("preenche_dir", (cx + 2.0 * w, cy - 0.2 * w, cz + 1.0 * w), center, 1.0 * w, 16 * w * w * LUZ, (1.0, 0.95, 0.9))
         area_light("recorte_esq", (cx - 1.2 * w, cy + 1.6 * w, cz + 1.2 * w), center, 0.6 * w, 90 * w * w * LUZ, (0.9, 0.95, 1.0))
@@ -498,8 +504,13 @@ def camera(scene, target, distance, elevation_deg, lens=85):
     e = math.radians(elevation_deg)
     tx, ty, tz = target
     obj.location = (tx, ty - distance * math.cos(e), tz + distance * math.sin(e))
-    direction = Vector(target) - obj.location
-    obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+    if elevation_deg >= 89.9:
+        # Vista de cima, reta: a câmera olha para baixo e o topo da imagem é
+        # o fundo do pedal (+Y). (A conta de apontar fica indefinida a 90°.)
+        obj.rotation_euler = (0.0, 0.0, 0.0)
+    else:
+        direction = Vector(target) - obj.location
+        obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
     scene.camera = obj
     return obj
 

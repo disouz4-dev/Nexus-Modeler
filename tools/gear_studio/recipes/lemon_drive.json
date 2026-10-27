@@ -1,13 +1,13 @@
 {
   "tipo": "pedal",
-  "nome": "Verde Drive",
-  "familia": "verde_drive",
+  "nome": "Lemon Drive",
+  "familia": "lemon_drive",
   "inspiracao": "overdrive verde clássico de três botões (estilo Tube Screamer)",
   "formato": "classico",
   "medidas_m": {
     "largura": 0.074,
-    "comprimento": 0.125,
-    "altura": 0.05
+    "comprimento": 0.124,
+    "altura": 0.053
   },
   "chanfro_m": 0.0065,
   "pintura": {
@@ -29,7 +29,7 @@
     0.82,
     0.78
   ],
-  "modelo": "VERDE DRIVE",
+  "modelo": "LEMON DRIVE",
   "tipo_texto": "OVERDRIVE",
   "etiqueta_y": 0.06,
   "botao_estilo": {
@@ -49,7 +49,7 @@
   "botoes": [
     {
       "id": "ganho",
-      "rotulo": "GANHO",
+      "rotulo": "DRIVE",
       "pos": [
         -0.5,
         0.66
@@ -78,9 +78,10 @@
     0.8
   ],
   "quadro": {
-    "largura_rel": 2.5,
-    "proporcao": 1.2,
-    "elevacao": 58.0
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
   },
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "medidas_fonte": "Ibanez TS9: 74 x 124 x 53 mm"
 }

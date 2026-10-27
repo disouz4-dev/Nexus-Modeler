@@ -186,4 +186,21 @@ def build(rec, fonts):
     for hx in (-0.14, 0.14):
         st.box("ponta_alca", (0.045, 0.04, 0.008), (hx, 0, H + 0.004), bevel=0.003, material=mats["black_metal"])
 
-    return {"controls": controls, "size": (W, D, H), "front": front}
+    # Amplificador de vários canais: um LED por canal, apagado no modelo (a
+    # tela acende o do canal ativo), com o nome do canal acima de cada um.
+    channel_leds = []
+    channels = rec.get("canais", [])
+    if len(channels) > 1:
+        led_mat = st.mat_plastic("led_canal", (0.30, 0.012, 0.008), rough=0.06, coat=1.0)
+        for i, ch in enumerate(channels):
+            lx = L + rec.get("leds_canais_x", 0.075) + i * 0.024
+            lz = panel_z0 + 0.024
+            st.cylinder(f"led_canal_aro_{i}", 0.0042, 0.0016, (lx, panel_front - 0.0008, lz), material=mats["chrome"], bevel=0.0004)
+            bpy.ops.mesh.primitive_uv_sphere_add(radius=0.0030, location=(lx, panel_front - 0.0016, lz), segments=32, ring_count=16)
+            dome = bpy.context.active_object
+            dome.scale = (1, 0.7, 1)
+            dome.data.materials.append(led_mat)
+            st.smooth(dome, 80)
+            st.label(ch["nome"].upper(), (lx, ink_y, lz + 0.0105), 0.0068, color=rec["painel"]["texto_cor"])
+            channel_leds.append(((lx, panel_front - 0.0035, lz), 0.0030))
+    return {"controls": controls, "size": (W, D, H), "front": front, "channel_leds": channel_leds}
