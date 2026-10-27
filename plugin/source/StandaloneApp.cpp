@@ -101,6 +101,18 @@ public:
     nexus::report::log("inicio", nexus::report::systemInfo().replace("\n", " | "));
    #if JUCE_LINUX || JUCE_BSD
     const bool pipeWireJack = preferPipeWireJack();
+    // Bloco pedido ao PipeWire: o buffer guardado (128 na primeira abertura).
+    // Sem o pedido, o JACK do PipeWire abre com 1024 amostras (33 ms).
+    if (getenv("PIPEWIRE_LATENCY") == nullptr)
+    {
+      int block = 128, rate = 48000;
+      if (auto xml = mProperties.getUserSettings()->getXmlValue("audioSetup"))
+      {
+        block = xml->getIntAttribute("audioDeviceBufferSize", block);
+        rate = juce::roundToInt(xml->getDoubleAttribute("audioDeviceRate", rate));
+      }
+      setenv("PIPEWIRE_LATENCY", (juce::String(block > 0 ? block : 128) + "/" + juce::String(rate > 0 ? rate : 48000)).toRawUTF8(), 1);
+    }
    #endif
     const bool firstRun = mProperties.getUserSettings()->getXmlValue("audioSetup") == nullptr;
     const auto setup = firstRunSetup();

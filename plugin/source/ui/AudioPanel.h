@@ -44,6 +44,9 @@ private:
   void timerCallback() override;
   void refresh();
   void apply(const std::function<void(juce::AudioDeviceManager::AudioDeviceSetup&)>& change);
+  bool isPipeWireJack() const;
+  // Bloco pedido ao PipeWire (vale na próxima abertura da conexão JACK).
+  static void setPipeWireLatency(int blockSize, double sampleRate);
   juce::Rectangle<int> card() const;
 
   juce::AudioDeviceManager& mDevices;

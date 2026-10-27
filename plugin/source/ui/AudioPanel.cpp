@@ -70,6 +70,23 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
   };
   mBuffer.box.onChange = [this] {
     const int size = mBuffer.box.getSelectedId();
+    if (isPipeWireJack())
+    {
+      // No JACK do PipeWire o bloco é pedido na abertura da conexão: guarda o
+      // pedido e reabre a conexão (o JACK não troca o bloco com ela aberta).
+      if (mRefreshing)
+        return;
+      const double sr = mDevices.getCurrentAudioDevice() != nullptr ? mDevices.getCurrentAudioDevice()->getCurrentSampleRate() : 48000.0;
+      setPipeWireLatency(size, sr);
+      auto setup = mDevices.getAudioDeviceSetup();
+      setup.bufferSize = size;
+      mDevices.setCurrentAudioDeviceType("JACK", true);
+      mDevices.setAudioDeviceSetup(setup, true);
+      if (mSave)
+        mSave();
+      refresh();
+      return;
+    }
     apply([size](auto& s) { s.bufferSize = size; });
   };
 
@@ -126,6 +143,26 @@ void AudioPanel::visibilityChanged()
   }
   else
     stopTimer();
+}
+
+bool AudioPanel::isPipeWireJack() const
+{
+ #if JUCE_LINUX || JUCE_BSD
+  // O pedido de bloco só vale quando quem atende o JACK é o PipeWire.
+  return mDevices.getCurrentAudioDeviceType() == "JACK" && juce::File("/run/user").isDirectory()
+         && juce::File("/usr/lib/x86_64-linux-gnu/pipewire-0.3/jack/libjack.so.0").existsAsFile();
+ #else
+  return false;
+ #endif
+}
+
+void AudioPanel::setPipeWireLatency(int blockSize, double sampleRate)
+{
+ #if JUCE_LINUX || JUCE_BSD
+  setenv("PIPEWIRE_LATENCY", (juce::String(blockSize) + "/" + juce::String(juce::roundToInt(sampleRate))).toRawUTF8(), 1);
+ #else
+  juce::ignoreUnused(blockSize, sampleRate);
+ #endif
 }
 
 void AudioPanel::apply(const std::function<void(juce::AudioDeviceManager::AudioDeviceSetup&)>& change)
@@ -208,7 +245,15 @@ void AudioPanel::refresh()
     mRate.box.setSelectedId(juce::roundToInt(device->getCurrentSampleRate()), juce::dontSendNotification);
 
     const double sr = device->getCurrentSampleRate();
-    for (auto size : device->getAvailableBufferSizes())
+    // O JACK só informa o bloco atual; com o PipeWire dá para pedir outro.
+    auto sizes = device->getAvailableBufferSizes();
+    if (isPipeWireJack())
+    {
+      sizes = {64, 128, 256, 512, 1024};
+      sizes.addIfNotAlreadyThere(device->getCurrentBufferSizeSamples());
+      sizes.sort();
+    }
+    for (auto size : sizes)
       mBuffer.box.addItem(TRANS("%1 amostras").replace("%1", juce::String(size)) + "  (" + ms(1000.0 * size / sr) + ")", size);
     mBuffer.box.setSelectedId(device->getCurrentBufferSizeSamples(), juce::dontSendNotification);
     mDriverPanel.setVisible(device->hasControlPanel());
