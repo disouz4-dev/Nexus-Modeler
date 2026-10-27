@@ -46,12 +46,31 @@ private:
   juce::Typeface::Ptr mInter, mOswald;
 };
 
+// Maiúsculas que respeitam os acentos do português (á -> Á, ç -> Ç). A
+// função do JUCE depende do idioma do sistema e deixa os acentuados em
+// minúscula.
+inline juce::String upper(const juce::String& s)
+{
+  juce::String out;
+  out.preallocateBytes(s.getNumBytesAsUTF8());
+  for (auto p = s.getCharPointer(); !p.isEmpty();)
+  {
+    auto c = p.getAndAdvance();
+    if (c >= 0xE0 && c <= 0xFE && c != 0xF7)
+      c -= 0x20;
+    else
+      c = juce::CharacterFunctions::toUpperCase(c);
+    out += juce::String::charToString(c);
+  }
+  return out;
+}
+
 // Texto em maiúsculas com espaço entre letras, como os rótulos de estúdio.
 inline void drawCaps(juce::Graphics& g, const juce::String& s, juce::Rectangle<float> r, float size,
                      juce::Justification j, juce::Colour c)
 {
   g.setColour(c);
   g.setFont(Fonts::get().ui(size).withExtraKerningFactor(0.08f));
-  g.drawText(s.toUpperCase(), r, j, false);
+  g.drawText(upper(s), r, j, false);
 }
 } // namespace nexus::ui

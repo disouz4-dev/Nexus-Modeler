@@ -1,5 +1,6 @@
 #include "PluginEditor.h"
 
+#include "StandaloneLink.h"
 #include "ui/Brand.h"
 #include "ui/Theme.h"
 
@@ -57,8 +58,15 @@ juce::String NexusEditor::GearStage::paramFor(const juce::String& knobId) const
   if (mBlock == NexusProcessor::pedal)
     return "pedal_" + knobId;
   // O "volume" do painel é o volume geral do amplificador; a saída do plugin
-  // fica no caminho do sinal.
-  return knobId == "volume" ? juce::String("master") : knobId;
+  // fica no caminho do sinal. O ganho é de cada canal.
+  if (knobId == "volume")
+    return "master";
+  if (knobId == "ganho")
+  {
+    const int ch = mProcessor.selectedChannel();
+    return ch == 0 ? juce::String("ganho") : "ganho_" + juce::String(ch + 1);
+  }
+  return knobId;
 }
 
 void NexusEditor::GearStage::setArt(const GearArt* art)
@@ -392,6 +400,16 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mLook.setColour(juce::AlertWindow::backgroundColourId, juce::Colour(0xff17171a));
   mLook.setColour(juce::AlertWindow::textColourId, colour::text);
   mLook.setColour(juce::AlertWindow::outlineColourId, colour::boxBorder);
+  mLook.setColour(juce::ComboBox::backgroundColourId, juce::Colour(0xff111113));
+  mLook.setColour(juce::ComboBox::outlineColourId, colour::boxBorder);
+  mLook.setColour(juce::ComboBox::textColourId, colour::text);
+  mLook.setColour(juce::ComboBox::arrowColourId, colour::dim);
+  mLook.setColour(juce::ComboBox::focusedOutlineColourId, colour::accent);
+  mLook.setColour(juce::PopupMenu::highlightedBackgroundColourId, juce::Colour(0xff23384a));
+  mLook.setColour(juce::PopupMenu::highlightedTextColourId, colour::selected);
+  mLook.setColour(juce::TextButton::buttonColourId, juce::Colour(0xff1d1f23));
+  mLook.setColour(juce::TextButton::textColourOffId, colour::text);
+  mLook.setColour(juce::ComboBox::buttonColourId, juce::Colour(0xff1d1f23));
   mLook.setDefaultSansSerifTypeface(juce::Typeface::createSystemTypefaceFor(BinaryData::inter_ttf, BinaryData::inter_ttfSize));
   setLookAndFeel(&mLook);
 
@@ -411,6 +429,18 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   };
   mInfoButton.onClick = [this] { showAbout(); };
 
+  // Programa independente: o Nexus cuida da interface de áudio.
+  if (auto& link = nexus::standaloneLink(); link.devices != nullptr)
+  {
+    addAndMakeVisible(mAudioButton);
+    mAudioButton.onClick = [this] { showAudioPanel(true); };
+    mAudioPanel = std::make_unique<AudioPanel>(
+      *link.devices, [] { if (auto& l = nexus::standaloneLink(); l.saveDeviceState) l.saveDeviceState(); },
+      [this] { return mProcessor.getLatencySamples(); }, [this] { return mInPeak; });
+    mAudioPanel->onClose = [this] { showAudioPanel(false); };
+    addChildComponent(*mAudioPanel);
+  }
+
   mPedalStage = std::make_unique<GearStage>(p, NexusProcessor::pedal);
   mAmpStage = std::make_unique<GearStage>(p, NexusProcessor::amp);
   mCabStage = std::make_unique<CabStage>(p, mCabArt);
@@ -418,6 +448,26 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addChildComponent(*mPedalStage);
   addAndMakeVisible(*mAmpStage);
   addChildComponent(*mCabStage);
+
+  addChildComponent(mChannels);
+  mChannels.setFontSize(11.5f);
+  mChannels.onSelect = [this](int item) {
+    const int ch = mChannelOfItem[static_cast<size_t>(item)];
+    if (ch < 0)
+    {
+      // "+ canal": o primeiro canal livre recebe um pacote.
+      for (int c = 0; c < NexusProcessor::kChannels; ++c)
+        if (!mProcessor.channelLoaded(c))
+        {
+          choosePack(NexusProcessor::amp, c);
+          break;
+        }
+      return;
+    }
+    auto* param = mProcessor.params.getParameter("canal");
+    param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(ch)));
+    timerCallback();
+  };
 
   mRail = std::make_unique<CaptureRail>(p);
   addAndMakeVisible(*mRail);
@@ -482,16 +532,22 @@ void NexusEditor::showStage(Stage s)
   repaint();
 }
 
-void NexusEditor::choosePack(Block b)
+void NexusEditor::choosePack(Block b, int channel)
 {
   mChooser = std::make_unique<juce::FileChooser>(b == NexusProcessor::pedal ? "Escolha a pasta do pacote do pedal"
                                                                             : "Escolha a pasta do pacote do amplificador",
                                                  juce::File(), "");
   mChooser->launchAsync(juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectDirectories,
-                        [this, b](const juce::FileChooser& fc) {
+                        [this, b, channel](const juce::FileChooser& fc) {
                           const auto folder = fc.getResult();
-                          if (folder.isDirectory())
-                            mProcessor.loadPackAsync(folder, b);
+                          if (!folder.isDirectory())
+                            return;
+                          mProcessor.loadPackAsync(folder, b, channel);
+                          if (b == NexusProcessor::amp && channel >= 0)
+                          {
+                            auto* param = mProcessor.params.getParameter("canal");
+                            param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(channel)));
+                          }
                         });
 }
 
@@ -513,6 +569,50 @@ void NexusEditor::chooseIr()
                         });
 }
 
+void NexusEditor::refreshChannels()
+{
+  // Só os canais com pacote aparecem; "+ canal" enquanto houver vaga.
+  juce::StringArray items;
+  std::vector<int> map;
+  int selectedItem = -1;
+  for (int c = 0; c < NexusProcessor::kChannels; ++c)
+    if (mProcessor.channelLoaded(c))
+    {
+      if (c == mProcessor.selectedChannel())
+        selectedItem = items.size();
+      items.add(mProcessor.channelName(c));
+      map.push_back(c);
+    }
+  if (!items.isEmpty() && items.size() < NexusProcessor::kChannels)
+  {
+    items.add("+ canal");
+    map.push_back(-1);
+  }
+  mChannelOfItem = map;
+  mChannels.setItems(items);
+  mChannels.setSelected(selectedItem);
+  mChannels.setVisible(mStage == Stage::amp && !items.isEmpty());
+  const int width = 150 * items.size();
+  mChannels.setBounds(getLocalBounds().withTrimmedTop(kTopBar).removeFromTop(52).withSizeKeepingCentre(width, 34).translated(0, 6));
+
+  // O botão de ganho do painel segue o canal escolhido.
+  if (mProcessor.selectedChannel() != mShownChannel)
+  {
+    mShownChannel = mProcessor.selectedChannel();
+    mAmpStage->setArt(&mAmpArt);
+  }
+}
+
+void NexusEditor::showAudioPanel(bool show)
+{
+  if (!mAudioPanel)
+    return;
+  mAudioPanel->setVisible(show);
+  if (show)
+    mAudioPanel->toFront(true);
+  mAudioButton.setOn(show);
+}
+
 void NexusEditor::showAbout()
 {
   juce::AlertWindow::showMessageBoxAsync(
@@ -527,6 +627,8 @@ void NexusEditor::timerCallback()
   const bool lite = mProcessor.params.getParameter("lite")->getValue() > 0.5f;
   mEngine.setSelected(lite ? 1 : 0);
   mStepsButton.setOn(mProcessor.params.getParameter("degraus")->getValue() > 0.5f);
+
+  refreshChannels();
 
   // O visual do pedal pode mudar pelo programa de gravação (automação).
   if (pedalLook() != mShownPedalLook)
@@ -603,7 +705,7 @@ void NexusEditor::layoutTitle()
   const int x = subRow.getCentreX() - total / 2;
   mChangeLink.setBounds(x + subW + 14, subRow.getY(), linkW, subRow.getHeight());
   const auto titleFont = Fonts::get().display(30.0f).withExtraKerningFactor(0.16f);
-  const int titleW = juce::GlyphArrangement::getStringWidthInt(titleFont, mTitle.toUpperCase());
+  const int titleW = juce::GlyphArrangement::getStringWidthInt(titleFont, upper(mTitle));
   mPrevLook.setBounds(titleRow.getCentreX() - titleW / 2 - 44, titleRow.getCentreY() - 15, 30, 30);
   mNextLook.setBounds(titleRow.getCentreX() + titleW / 2 + 14, titleRow.getCentreY() - 15, 30, 30);
   mRail->setBounds(t.withSizeKeepingCentre(420, 22).translated(0, 4));
@@ -634,7 +736,7 @@ void NexusEditor::paint(juce::Graphics& g)
   t.removeFromTop(8.0f);
   g.setColour(colour::text);
   g.setFont(Fonts::get().display(30.0f).withExtraKerningFactor(0.16f));
-  g.drawText(mTitle.toUpperCase(), t.removeFromTop(40.0f), juce::Justification::centred);
+  g.drawText(upper(mTitle), t.removeFromTop(40.0f), juce::Justification::centred);
   auto sub = t.removeFromTop(22.0f);
   const auto subFont = Fonts::get().ui(12.5f);
   const float subW = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(subFont, mSubtitle));
@@ -649,16 +751,21 @@ void NexusEditor::resized()
 {
   auto r = getLocalBounds();
   auto top = r.removeFromTop(kTopBar);
-  auto right = top.removeFromRight(330).reduced(0, 16);
+  auto right = top.removeFromRight(380).reduced(0, 16);
   mInfoButton.setBounds(right.removeFromRight(56).withSizeKeepingCentre(36, 36));
   mStepsButton.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
+  if (mAudioPanel)
+  {
+    mAudioButton.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
+    mAudioPanel->setBounds(getLocalBounds());
+  }
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
 
   mPath->setBounds(r.removeFromBottom(kPathHeight));
   mTitleArea = r.removeFromBottom(kTitleHeight);
   mPedalStage->setBounds(r);
-  mAmpStage->setBounds(r);
+  mAmpStage->setBounds(r.withTrimmedTop(46));
   mCabStage->setBounds(r);
   layoutTitle();
 }

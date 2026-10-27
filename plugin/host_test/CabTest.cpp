@@ -318,6 +318,71 @@ int main(int argc, char** argv)
     }
   }
 
+  // 4. Cabeçote de canais: só os canais 1 e 3 têm pacote.
+  {
+    std::printf("\nCanais do cabeçote\n");
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    setParam(p, "caixa", 0.0f);
+    setParam(p, "ganho", 0.0f); // canal 1 limpo; o canal 3 é o A2 cheio
+    p.loadPackAsync(packs.getChildFile("ganho"), NexusProcessor::amp, 0);
+    p.loadPackAsync(packs.getChildFile("fullrig"), NexusProcessor::amp, 2);
+    for (int t = 0; t < 120000 && !(p.channelLoaded(0) && p.channelLoaded(2)); t += 50)
+      settle(p, 50);
+    settle(p, 300);
+    report(p.channelLoaded(0) && !p.channelLoaded(1) && p.channelLoaded(2), "Cabeçote com 2 canais: o canal do meio fica vazio",
+           "canais com pacote: 1 e 3");
+    const auto ch1 = play(p, signal);
+
+    setParam(p, "canal", 1.0f); // canal vazio: o som não pode mudar
+    settle(p, 300);
+    const auto stay = play(p, signal);
+    // Mesmo sinal, mesmo canal: compara com uma segunda passada no canal 1.
+    setParam(p, "canal", 0.0f);
+    settle(p, 300);
+    const auto ch1b = play(p, signal);
+    report(diffDb(ch1b, stay) < -100.0 && !p.packIncludesCab(), "Escolher um canal vazio mantém o canal que está tocando",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(ch1b, stay), 1) + " dB");
+
+    setParam(p, "canal", 2.0f);
+    const auto switching = play(p, signal);
+    float worst = 0.0f, typical = 0.0f;
+    for (size_t i = 1; i < switching.size(); ++i)
+      worst = std::max(worst, std::abs(switching[i] - switching[i - 1]));
+    for (size_t i = 1; i < ch1.size(); ++i)
+      typical = std::max(typical, std::abs(ch1[i] - ch1[i - 1]));
+    const auto ch3 = play(p, signal);
+    float typical3 = 0.0f;
+    for (size_t i = 1; i < ch3.size(); ++i)
+      typical3 = std::max(typical3, std::abs(ch3[i] - ch3[i - 1]));
+    report(worst <= std::max(typical, typical3) * 1.5f, "Trocar de canal tocando não dá salto",
+           juce::String::fromUTF8("maior passo na troca: ") + juce::String(worst, 4) + "; tocando: " + juce::String(std::max(typical, typical3), 4));
+    report(diffDb(ch1, ch3) > -20.0, "O canal 3 soa diferente do canal 1",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(ch1, ch3), 1) + " dB");
+    report(p.packIncludesCab(), "A trava da caixa segue o canal (canal 3 é full rig)",
+           p.packIncludesCab() ? juce::String("caixa trancada") : juce::String("caixa livre"));
+
+    std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+    juce::MessageManager::getInstance()->runDispatchLoopUntil(100);
+    std::vector<nexus::ui::Segmented*> segs;
+    collect(*editor, segs);
+    int channelItems = -1;
+    for (auto* sgm : segs)
+      if (sgm->isVisible() && sgm->numItems() == 3)
+        channelItems = sgm->numItems();
+    report(channelItems == 3, "A tela mostra os 2 canais e o \"+ canal\"",
+           juce::String(channelItems) + " itens no seletor de canais");
+    if (photos != juce::File())
+    {
+      const auto image = editor->createComponentSnapshot(editor->getLocalBounds(), true, 2.0f);
+      juce::File out = photos.getChildFile("canais.png");
+      out.deleteFile();
+      juce::FileOutputStream stream(out);
+      juce::PNGImageFormat().writeImageToStream(image, stream);
+    }
+  }
+
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");
   return gFailures ? 1 : 0;
 }

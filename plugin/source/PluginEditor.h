@@ -5,6 +5,7 @@
 #include <array>
 
 #include "PluginProcessor.h"
+#include "ui/AudioPanel.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
 
@@ -33,6 +34,7 @@ public:
   void resized() override;
   void showStage(Stage s);
   Stage stage() const { return mStage; }
+  nexus::ui::AudioPanel* audioPanel() { return mAudioPanel.get(); }
 
 private:
   // Pedal ou amplificador: imagem, botões renderizados e, no pedal, o pisante.
@@ -114,9 +116,11 @@ private:
   };
 
   void timerCallback() override;
-  void choosePack(NexusProcessor::Block b);
+  void choosePack(NexusProcessor::Block b, int channel = -1);
+  void refreshChannels();
   void chooseIr();
   void showAbout();
+  void showAudioPanel(bool show);
   void cyclePedalLook(int delta);
   int pedalLook() const;
   const nexus::ui::GearArt* pedalArt() const;
@@ -131,8 +135,14 @@ private:
   int mShownPedalLook = -1;
 
   nexus::ui::Segmented mEngine{{"A2 Full", "A2 Lite"}};
+  // Canais do cabeçote (até 3): só os que têm pacote, mais "+ canal".
+  nexus::ui::Segmented mChannels{{}};
+  std::vector<int> mChannelOfItem; // item do seletor -> canal (-1 = "+ canal")
+  int mShownChannel = -1;
   nexus::ui::IconButton mStepsButton{nexus::ui::Icon::steps, juce::String::fromUTF8("Botões em degraus: param só nas posições capturadas")};
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
+  nexus::ui::IconButton mAudioButton{nexus::ui::Icon::audio, juce::String::fromUTF8("Interface de áudio")};
+  std::unique_ptr<nexus::ui::AudioPanel> mAudioPanel; // só no programa independente
   std::unique_ptr<GearStage> mPedalStage, mAmpStage;
   std::unique_ptr<CabStage> mCabStage;
   std::unique_ptr<CaptureRail> mRail;

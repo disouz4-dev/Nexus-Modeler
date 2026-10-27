@@ -90,6 +90,16 @@ public:
   explicit Segmented(juce::StringArray items) : mItems(std::move(items)) { mEnabled.insertMultiple(0, true, mItems.size()); }
   void setSelected(int i) { if (i != mSelected) { mSelected = i; repaint(); } }
   int selected() const { return mSelected; }
+  void setItems(const juce::StringArray& items)
+  {
+    if (items == mItems)
+      return;
+    mItems = items;
+    mEnabled.clearQuick();
+    mEnabled.insertMultiple(0, true, mItems.size());
+    repaint();
+  }
+  int numItems() const { return mItems.size(); }
   void setItemEnabled(int i, bool e) { if (mEnabled[i] != e) { mEnabled.set(i, e); repaint(); } }
   void setLockedItem(int i) { if (i != mLocked) { mLocked = i; repaint(); } }
   void setFontSize(float s) { mFontSize = s; repaint(); }
@@ -113,6 +123,7 @@ enum class Icon
   lock,
   left,
   right,
+  audio,
 };
 juce::Path iconPath(Icon icon, juce::Rectangle<float> r);
 

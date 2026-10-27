@@ -36,11 +36,30 @@ juce_add_plugin(NexusModeler
 
 set(NEXUS_UI_SOURCES
   source/PluginEditor.cpp
+  source/ui/AudioPanel.cpp
   source/ui/Controls.cpp
   source/ui/Gear.cpp)
 target_sources(NexusModeler PRIVATE
   source/PluginProcessor.cpp
   ${NEXUS_UI_SOURCES})
+
+# Programa independente: janela e painel de áudio próprios do Nexus.
+target_sources(NexusModeler_Standalone PRIVATE source/StandaloneApp.cpp)
+target_compile_definitions(NexusModeler_Standalone PRIVATE JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP=1)
+
+# Interfaces de áudio de baixa latência no programa independente.
+#   Windows: ASIO (kit da Steinberg, licença GPL v3 desde 10/2025), WASAPI e DirectSound.
+#   Mac: Core Audio.   Linux: JACK e ALSA.
+if(WIN32)
+  FetchContent_Declare(asiosdk
+    URL https://download.steinberg.net/sdk_downloads/ASIO-SDK_2.3.4_2025-10-15.zip
+    URL_HASH SHA256=d5ebf0c20dd2c5f43771fd0c1418f4b361bf52434ee670097cfa6b3a335e2eca)
+  FetchContent_MakeAvailable(asiosdk)
+  target_include_directories(NexusModeler SYSTEM PRIVATE "${asiosdk_SOURCE_DIR}/common")
+  target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1)
+endif()
 
 # Imagens dos equipamentos (renderizadas pelo tools/gear_studio) e fontes,
 # embutidas no plugin. As fontes ganham nomes simples na cópia.
@@ -114,6 +133,18 @@ if(NEXUS_BUILD_TOOLS)
   add_dependencies(nexus_cab_test test_packs)
   add_test(NAME caixa_e_full_rig
            COMMAND nexus_cab_test "${CMAKE_BINARY_DIR}/test_packs" "${CMAKE_BINARY_DIR}/medidas")
+
+  # Teste com interface de áudio real (manual: a compilação automática não tem placa de som).
+  juce_add_console_app(nexus_device_test PRODUCT_NAME "nexus_device_test")
+  target_sources(nexus_device_test PRIVATE host_test/DeviceTest.cpp source/PluginProcessor.cpp ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_device_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_device_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
+  target_link_libraries(nexus_device_test PRIVATE
+    nexus_engine
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_recommended_config_flags)
 
   add_test(NAME plugin_aberto_no_programa
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")

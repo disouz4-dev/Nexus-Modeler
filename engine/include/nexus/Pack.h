@@ -47,6 +47,7 @@ struct Pack
 {
   std::string name;
   std::string knobName = "Ganho";
+  std::string channelName;       // nome do canal no cabeçote ("Limpo", "Lead"...); vazio = padrão
   std::string toneCircuit = "marshall";
   ToneKnobs captureTone{};      // posição do equalizador quando foi capturado
   double capturePresence = 5.0;

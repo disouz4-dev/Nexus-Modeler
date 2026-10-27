@@ -35,7 +35,10 @@ NexusProcessor::NexusProcessor()
   mPedalTone = params.getRawParameterValue("pedal_tom");
   mPedalLevel = params.getRawParameterValue("pedal_nivel");
   mPedalOn = params.getRawParameterValue("pedal_ligado");
-  mSlots[amp].status = juce::String::fromUTF8("Nenhum pacote carregado.");
+  mChannelGain = {mMain, params.getRawParameterValue("ganho_2"), params.getRawParameterValue("ganho_3")};
+  mChannel = params.getRawParameterValue("canal");
+  for (int c = 0; c < kChannels; ++c)
+    mSlots[static_cast<size_t>(1 + c)].status = juce::String::fromUTF8("Nenhum pacote neste canal.");
   mSlots[pedal].status = juce::String::fromUTF8("Nenhum pacote no pedal.");
   mResampledFunc = [this](double** in, double** out, int n) {
     std::copy(in[0], in[0] + n, out[0]);
@@ -62,7 +65,11 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   using B = juce::AudioParameterBool;
   const juce::NormalisableRange<float> knob(0.0f, 10.0f, 0.01f);
   juce::AudioProcessorValueTreeState::ParameterLayout layout;
-  layout.add(std::make_unique<P>(juce::ParameterID{"ganho", 1}, "Ganho", knob, 5.0f));
+  layout.add(std::make_unique<P>(juce::ParameterID{"ganho", 1}, "Ganho (canal 1)", knob, 5.0f));
+  layout.add(std::make_unique<P>(juce::ParameterID{"ganho_2", 1}, "Ganho (canal 2)", knob, 5.0f));
+  layout.add(std::make_unique<P>(juce::ParameterID{"ganho_3", 1}, "Ganho (canal 3)", knob, 5.0f));
+  layout.add(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID{"canal", 1}, "Canal do amplificador",
+                                                          juce::StringArray{"Limpo", "Crunch", "Alto ganho"}, 0));
   layout.add(std::make_unique<P>(juce::ParameterID{"grave", 1}, "Grave", knob, 5.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"medio", 1}, juce::String::fromUTF8("Médio"), knob, 5.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"agudo", 1}, "Agudo", knob, 5.0f));
@@ -100,6 +107,8 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mMono.assign(static_cast<size_t>(block), 0.0);
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mDry.assign(static_cast<size_t>(kEngineBlock), 0.0);
+  mChannelIn.assign(static_cast<size_t>(kEngineBlock), 0.0);
+  mChannelOut.assign(static_cast<size_t>(kEngineBlock), 0.0);
   mNeedsResampling = std::abs(sampleRate - kEngineRate) > 0.5;
   if (mNeedsResampling)
   {
@@ -124,10 +133,22 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mCabMix.setCurrentAndTargetValue(0.0f);
 }
 
-nexus::AmpVoice::Controls NexusProcessor::ampControls() const
+int NexusProcessor::slotIndex(Block b, int channel) const
+{
+  if (b == pedal)
+    return 0;
+  return 1 + juce::jlimit(0, kChannels - 1, channel < 0 ? selectedChannel() : channel);
+}
+
+int NexusProcessor::selectedChannel() const
+{
+  return juce::jlimit(0, kChannels - 1, juce::roundToInt(mChannel->load()));
+}
+
+nexus::AmpVoice::Controls NexusProcessor::ampControls(int channel) const
 {
   nexus::AmpVoice::Controls c;
-  c.main = mMain->load();
+  c.main = mChannelGain[static_cast<size_t>(channel)]->load();
   c.tone.bass = mBass->load();
   c.tone.mid = mMid->load();
   c.tone.treble = mTreble->load();
@@ -168,6 +189,64 @@ void NexusProcessor::runPedal(double* buffer, int n)
   }
 }
 
+void NexusProcessor::runAmp(double* buffer, int n)
+{
+  // Canal pedido; se ele não tem pacote, fica no que está tocando.
+  const int wanted = 1 + selectedChannel();
+  if (mAmpCurrent < 0 || mSlots[static_cast<size_t>(mAmpCurrent)].active == nullptr)
+  {
+    mAmpCurrent = -1;
+    for (int c = 0; c < kChannels && mAmpCurrent < 0; ++c)
+    {
+      const int slot = c == 0 ? wanted : 1 + (wanted - 1 + c) % kChannels;
+      if (mSlots[static_cast<size_t>(slot)].active)
+        mAmpCurrent = slot;
+    }
+    mAmpNext = -1;
+  }
+  if (mAmpCurrent < 0)
+    return;
+  if (wanted != mAmpCurrent && wanted != mAmpNext && mSlots[static_cast<size_t>(wanted)].active)
+  {
+    mAmpNext = wanted;
+    int warm = 1024;
+    for (const auto& c : mSlots[static_cast<size_t>(wanted)].active->pack->captures)
+      warm = std::max(warm, c.warmupSamples);
+    mAmpWarmLeft = warm;
+    mAmpFade = 0.0f;
+  }
+  if (mAmpNext >= 0 && mSlots[static_cast<size_t>(mAmpNext)].active == nullptr)
+    mAmpNext = -1;
+
+  auto* current = mSlots[static_cast<size_t>(mAmpCurrent)].active;
+  if (mAmpNext < 0)
+  {
+    current->voice.process(buffer, buffer, n);
+    return;
+  }
+  auto* next = mSlots[static_cast<size_t>(mAmpNext)].active;
+  std::copy(buffer, buffer + n, mChannelIn.begin());
+  current->voice.process(buffer, buffer, n);
+  next->voice.process(mChannelIn.data(), mChannelOut.data(), n);
+  if (mAmpWarmLeft > 0)
+  {
+    // O canal que entra ainda está ouvindo a guitarra para valer.
+    mAmpWarmLeft -= n;
+    return;
+  }
+  const float step = static_cast<float>(1.0 / (0.03 * kEngineRate));
+  for (int i = 0; i < n; ++i)
+  {
+    mAmpFade = std::min(1.0f, mAmpFade + step);
+    buffer[i] = buffer[i] * (1.0 - mAmpFade) + mChannelOut[static_cast<size_t>(i)] * mAmpFade;
+  }
+  if (mAmpFade >= 1.0f)
+  {
+    mAmpCurrent = mAmpNext;
+    mAmpNext = -1;
+  }
+}
+
 void NexusProcessor::runEngines(double* buffer, int numFrames)
 {
   // As capturas foram preparadas para pedaços de até kEngineBlock.
@@ -176,17 +255,22 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
     const int n = std::min(kEngineBlock, numFrames - start);
     if (mSlots[pedal].active)
       runPedal(buffer + start, n);
-    if (mSlots[amp].active)
-      mSlots[amp].active->voice.process(buffer + start, buffer + start, n);
+    runAmp(buffer + start, n);
   }
 }
 
 void NexusProcessor::publish(Block b)
 {
-  auto* engine = mSlots[b].active;
+  const int slot = b == pedal ? 0 : (mAmpCurrent >= 0 ? mAmpCurrent : slotIndex(amp, -1));
+  auto* engine = mSlots[static_cast<size_t>(slot)].active;
   auto& ui = mUi[b];
   if (!engine)
+  {
+    ui.count.store(0);
     return;
+  }
+  if (b == amp)
+    mAudibleChannel.store(slot - 1);
   const auto& morph = engine->voice.morph();
   const int count = std::min(kMaxCaptures, static_cast<int>(engine->pack->captures.size()));
   for (int i = 0; i < count; ++i)
@@ -211,8 +295,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
         s.active = next;
       }
 
-  auto* ampEngine = mSlots[amp].active;
-  const bool anyEngine = ampEngine != nullptr || mSlots[pedal].active != nullptr;
+  bool anyEngine = false;
+  for (auto& s : mSlots)
+    anyEngine = anyEngine || s.active != nullptr;
+  auto* ampEngine = mAmpCurrent >= 0 ? mSlots[static_cast<size_t>(mAmpCurrent)].active : nullptr;
   const int total = buffer.getNumSamples();
   const int inChannels = getTotalNumInputChannels();
   const int outChannels = getTotalNumOutputChannels();
@@ -226,8 +312,9 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   mCabMix.setTargetValue(cabOn ? 1.0f : 0.0f);
   float inPeak = 0.0f, outPeak = 0.0f;
 
-  if (ampEngine)
-    ampEngine->voice.setControls(ampControls());
+  for (int c = 0; c < kChannels; ++c)
+    if (auto* e = mSlots[static_cast<size_t>(1 + c)].active)
+      e->voice.setControls(ampControls(c));
   if (auto* p = mSlots[pedal].active)
     p->voice.setControls(pedalControls());
 
@@ -306,9 +393,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   publish(pedal);
 }
 
-void NexusProcessor::loadPackAsync(const juce::File& folder, Block b)
+void NexusProcessor::loadPackAsync(const juce::File& folder, Block b, int channel)
 {
-  auto& slot = mSlots[b];
+  const int index = slotIndex(b, channel);
+  auto& slot = mSlots[static_cast<size_t>(index)];
   slot.folder = folder;
   const bool lite = mLite->load() > 0.5f;
   slot.loadedLite = lite;
@@ -316,9 +404,9 @@ void NexusProcessor::loadPackAsync(const juce::File& folder, Block b)
     const juce::ScopedLock sl(mStatusLock);
     slot.status = "Carregando " + folder.getFileName() + "...";
   }
-  const auto controls = b == amp ? ampControls() : pedalControls();
-  mLoader.addJob([this, folder, lite, controls, b] {
-    auto& s = mSlots[b];
+  const auto controls = b == amp ? ampControls(index - 1) : pedalControls();
+  mLoader.addJob([this, folder, lite, controls, b, index] {
+    auto& s = mSlots[static_cast<size_t>(index)];
     try
     {
       nexus::PackOptions options;
@@ -338,11 +426,15 @@ void NexusProcessor::loadPackAsync(const juce::File& folder, Block b)
         const juce::ScopedLock sl(mStatusLock);
         s.status = text;
         s.name = juce::String::fromUTF8(pack.name.c_str());
+        s.channelName = juce::String::fromUTF8(pack.channelName.c_str());
         if (b == amp)
           mKnobName = juce::String::fromUTF8(pack.knobName.c_str());
       }
       if (b == amp)
-        mPackIncludesCab.store(pack.includesCab);
+      {
+        mChannelIncludesCab[static_cast<size_t>(index - 1)].store(pack.includesCab);
+        mChannelLoaded[static_cast<size_t>(index - 1)].store(true);
+      }
       delete s.pending.exchange(engine.release());
     }
     catch (const std::exception& e)
@@ -356,13 +448,27 @@ void NexusProcessor::loadPackAsync(const juce::File& folder, Block b)
 juce::String NexusProcessor::statusText(Block b) const
 {
   const juce::ScopedLock sl(mStatusLock);
-  return mSlots[b].status;
+  return mSlots[static_cast<size_t>(slotIndex(b, -1))].status;
 }
 
 juce::String NexusProcessor::packName(Block b) const
 {
   const juce::ScopedLock sl(mStatusLock);
-  return mSlots[b].name;
+  return mSlots[static_cast<size_t>(slotIndex(b, -1))].name;
+}
+
+juce::String NexusProcessor::channelName(int channel) const
+{
+  static const char* const defaults[kChannels] = {"Limpo", "Crunch", "Alto ganho"};
+  const juce::ScopedLock sl(mStatusLock);
+  const auto& custom = mSlots[static_cast<size_t>(slotIndex(amp, channel))].channelName;
+  return custom.isNotEmpty() ? custom : juce::String(defaults[juce::jlimit(0, kChannels - 1, channel)]);
+}
+
+juce::String NexusProcessor::channelPackName(int channel) const
+{
+  const juce::ScopedLock sl(mStatusLock);
+  return mSlots[static_cast<size_t>(slotIndex(amp, channel))].name;
 }
 
 juce::String NexusProcessor::knobName() const
@@ -391,19 +497,21 @@ void NexusProcessor::timerCallback()
 {
   // A2 Lite/Full muda o tamanho das capturas: recarrega fora do áudio.
   const bool lite = mLite->load() > 0.5f;
-  for (int b = 0; b < kBlocks; ++b)
+  for (int i = 0; i < kSlots; ++i)
   {
-    auto& s = mSlots[static_cast<size_t>(b)];
+    auto& s = mSlots[static_cast<size_t>(i)];
     delete s.retired.exchange(nullptr);
     if (lite != s.loadedLite && s.folder.isDirectory())
-      loadPackAsync(s.folder, static_cast<Block>(b));
+      loadPackAsync(s.folder, i == 0 ? pedal : amp, i - 1);
   }
 }
 
 void NexusProcessor::getStateInformation(juce::MemoryBlock& destData)
 {
   auto state = params.copyState();
-  state.setProperty("pasta", mSlots[amp].folder.getFullPathName(), nullptr);
+  state.setProperty("pasta", mSlots[1].folder.getFullPathName(), nullptr);
+  state.setProperty("pasta_canal2", mSlots[2].folder.getFullPathName(), nullptr);
+  state.setProperty("pasta_canal3", mSlots[3].folder.getFullPathName(), nullptr);
   state.setProperty("pasta_pedal", mSlots[pedal].folder.getFullPathName(), nullptr);
   state.setProperty("ir", mIrFile.getFullPathName(), nullptr);
   if (auto xml = state.createXml())
@@ -418,9 +526,13 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     if (state.hasType(params.state.getType()))
     {
       params.replaceState(state);
-      const juce::File folder(state.getProperty("pasta").toString());
-      if (folder.isDirectory())
-        loadPackAsync(folder, amp);
+      const char* channelKeys[kChannels] = {"pasta", "pasta_canal2", "pasta_canal3"};
+      for (int c = 0; c < kChannels; ++c)
+      {
+        const juce::File folder(state.getProperty(channelKeys[c]).toString());
+        if (folder.isDirectory())
+          loadPackAsync(folder, amp, c);
+      }
       const juce::File pedalFolder(state.getProperty("pasta_pedal").toString());
       if (pedalFolder.isDirectory())
         loadPackAsync(pedalFolder, pedal);

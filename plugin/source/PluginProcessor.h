@@ -45,6 +45,9 @@ public:
     amp = 1,
     kBlocks = 2
   };
+  // O cabeçote tem até 3 canais (limpo, crunch, alto ganho), cada um com o
+  // próprio pacote de capturas e o próprio ganho.
+  static constexpr int kChannels = 3;
 
   NexusProcessor();
   ~NexusProcessor() override;
@@ -72,8 +75,14 @@ public:
   void getStateInformation(juce::MemoryBlock& destData) override;
   void setStateInformation(const void* data, int sizeInBytes) override;
 
-  // Tela. "b" é o bloco (pedal ou amplificador).
-  void loadPackAsync(const juce::File& folder, Block b = amp);
+  // Tela. "b" é o bloco (pedal ou amplificador); no amplificador, "channel"
+  // é o canal (0 a 2); -1 é o canal escolhido agora.
+  void loadPackAsync(const juce::File& folder, Block b = amp, int channel = -1);
+  int selectedChannel() const;
+  bool channelLoaded(int channel) const { return mChannelLoaded[static_cast<size_t>(channel)].load(); }
+  juce::String channelPackName(int channel) const;
+  // Nome do canal: o do pack.json ("canal") ou o padrão (Limpo, Crunch, Alto ganho).
+  juce::String channelName(int channel) const;
   juce::String statusText(Block b = amp) const;
   juce::String knobName() const;
   juce::String packName(Block b = amp) const;
@@ -82,7 +91,7 @@ public:
   float capturePosition(int i, Block b = amp) const { return mUi[b].positions[static_cast<size_t>(i)].load(); }
   float currentPosition(Block b = amp) const { return mUi[b].position.load(); }
   bool packLoaded(Block b = amp) const { return mUi[b].count.load() > 0; }
-  bool packIncludesCab() const { return mPackIncludesCab.load(); }
+  bool packIncludesCab() const { return mChannelIncludesCab[static_cast<size_t>(juce::jlimit(0, kChannels - 1, mAudibleChannel.load()))].load(); }
 
   // Caixa (IR). Com captura full rig a caixa fica trancada e o IR não toca.
   void loadIrAsync(const juce::File& file);
@@ -106,7 +115,7 @@ private:
     NexusEngine* active = nullptr;
     juce::File folder;
     bool loadedLite = false;
-    juce::String status, name;
+    juce::String status, name, channelName;
   };
 
   // Espelho para a tela, escrito pelo áudio.
@@ -122,11 +131,24 @@ private:
   void timerCallback() override;
   void runEngines(double* buffer, int numFrames);
   void runPedal(double* buffer, int n);
-  nexus::AmpVoice::Controls ampControls() const;
+  void runAmp(double* buffer, int n);
+  int slotIndex(Block b, int channel) const;
+  nexus::AmpVoice::Controls ampControls(int channel) const;
   nexus::AmpVoice::Controls pedalControls() const;
   void publish(Block b);
 
-  std::array<Slot, kBlocks> mSlots;
+  // Posição 0: pedal; 1 a 3: canais do cabeçote.
+  static constexpr int kSlots = 1 + kChannels;
+  std::array<Slot, kSlots> mSlots;
+  // Troca de canal: o canal que entra aquece ouvindo a guitarra e depois
+  // entra numa transição curta; os outros canais ficam parados.
+  int mAmpCurrent = -1, mAmpNext = -1;
+  int mAmpWarmLeft = 0;
+  float mAmpFade = 0.0f;
+  std::vector<double> mChannelIn, mChannelOut;
+  std::array<std::atomic<bool>, kChannels> mChannelLoaded{};
+  std::array<std::atomic<bool>, kChannels> mChannelIncludesCab{};
+  std::atomic<int> mAudibleChannel{0};
   std::array<UiMirror, kBlocks> mUi;
 
   std::unique_ptr<Resampler> mResampler;
@@ -140,6 +162,8 @@ private:
   juce::String mKnobName = "Ganho";
 
   std::atomic<float>* mMain;
+  std::array<std::atomic<float>*, kChannels> mChannelGain{};
+  std::atomic<float>* mChannel;
   std::atomic<float>* mBass;
   std::atomic<float>* mMid;
   std::atomic<float>* mTreble;
@@ -166,7 +190,6 @@ private:
   juce::LinearSmoothedValue<float> mCabMix;
   juce::File mIrFile;
   std::atomic<bool> mIrLoaded{false};
-  std::atomic<bool> mPackIncludesCab{false};
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
 

@@ -158,11 +158,11 @@ void Segmented::paint(juce::Graphics& g)
     g.setColour(sel ? colour::selected : (mEnabled[i] ? colour::dim : colour::faint.withAlpha(0.6f)));
     if (i == mLocked)
     {
-      const float tw = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(font, mItems[i].toUpperCase()));
+      const float tw = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(font, upper(mItems[i])));
       g.fillPath(iconPath(Icon::lock, {b.getCentreX() - tw * 0.5f - 16.0f, b.getCentreY() - 6.5f, 10.0f, 12.0f}));
       b = b.withTrimmedLeft(14.0f);
     }
-    g.drawText(mItems[i].toUpperCase(), b, juce::Justification::centred);
+    g.drawText(upper(mItems[i]), b, juce::Justification::centred);
   }
 }
 
@@ -218,6 +218,19 @@ juce::Path iconPath(Icon icon, juce::Rectangle<float> r)
     s.lineTo(x + w * (left ? 0.35f : 0.65f), y + h * 0.5f);
     s.lineTo(x + w * (left ? 0.65f : 0.35f), y + h * 0.8f);
     return stroke(s, 1.8f);
+  }
+  case Icon::audio:
+  {
+    // Interface de áudio vista de frente: caixa com duas entradas e um botão.
+    juce::Path s;
+    s.addRoundedRectangle(x, y + h * 0.25f, w, h * 0.5f, 2.0f);
+    auto out = stroke(s, 1.5f);
+    out.addEllipse(x + w * 0.16f, y + h * 0.40f, w * 0.2f, h * 0.2f);
+    out.addEllipse(x + w * 0.42f, y + h * 0.40f, w * 0.2f, h * 0.2f);
+    juce::Path k;
+    k.addEllipse(x + w * 0.70f, y + h * 0.37f, w * 0.17f, h * 0.26f);
+    out.addPath(stroke(k, 1.4f));
+    return out;
   }
   case Icon::lock:
   {
