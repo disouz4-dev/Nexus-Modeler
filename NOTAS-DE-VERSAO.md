@@ -49,6 +49,8 @@
 - Barra "Testar o som" em cima da entrada: toca uma gravação de guitarra
   direta pela cadeia, sem tocar, em quatro estilos (Limpo, Blues, Rock,
   Pesado), cada um para avaliar o tipo de equipamento que combina com ele.
+  São gravações de guitarra limpa, direto na interface (sem amplificador nem
+  efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
 ### Atualização automática

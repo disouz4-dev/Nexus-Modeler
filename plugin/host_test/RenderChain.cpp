@@ -1,6 +1,7 @@
 // Passa uma gravação de guitarra pela cadeia do Nexus, com material da
 // TONE3000, e grava o resultado para ouvir:
 //   Banana Overdrive (captura do SD-1) -> Brit 800 (captura do JCM800) -> IR.
+// Com "-" no lugar do IR, grava só o Brit 800 (para comparar com o oficial).
 //
 // Baixa as capturas pela conta conectada (o mesmo caminho do botão
 // "Carregar" do programa, para Documentos/Nexus Modeler/<equipamento>) e usa o
@@ -114,6 +115,37 @@ int main(int argc, char** argv)
   const auto brit = fetch(t3k, "brit800", 1071, "Brit 800", "amp_amp-cab");
   if (!banana.isDirectory() || !brit.isDirectory())
     return 1;
+
+  // IR "-": só o Brit 800 no ganho 5, botões na posição da captura, com a
+  // guitarra do primeiro argumento. Serve para comparar com o "render" do
+  // NeuralAmpModelerCore (a mesma captura tocada pelo código oficial).
+  if (std::string(argv[2]) == "-")
+  {
+    NexusProcessor p;
+    p.setPlayConfigDetails(2, 2, rate, 128);
+    p.prepareToPlay(rate, 128);
+    p.setLayout(ChainLayout{});
+    setParam(p, "ganho", 5.0f);
+    p.loadAmpPack(0, 0, brit);
+    for (int t = 0; t < 2400 && !p.channelLoaded(0, 0); ++t)
+      settle(p, 4);
+    settle(p, 400);
+    std::vector<double> result;
+    juce::AudioBuffer<float> buffer(2, 128);
+    juce::MidiBuffer midi;
+    for (size_t start = 0; start + 128 <= dry.size(); start += 128)
+    {
+      for (int i = 0; i < 128; ++i)
+        buffer.setSample(0, i, static_cast<float>(dry[start + static_cast<size_t>(i)]));
+      buffer.clear(1, 0, 128);
+      p.processBlock(buffer, midi);
+      for (int i = 0; i < 128; ++i)
+        result.push_back(buffer.getSample(0, i));
+    }
+    wav::write(out.getChildFile("so_amp_g5.wav").getFullPathName().toStdString(), result, rate);
+    std::printf("Gravado: so_amp_g5.wav\n");
+    return 0;
+  }
 
   // Cada estilo do "Testar o som" com o ajuste que combina com ele.
   struct ByStyle
