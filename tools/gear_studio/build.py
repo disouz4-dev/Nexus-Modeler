@@ -31,6 +31,8 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 FONTS = {
     "label": os.path.join(ROOT, "assets", "fonts", "oswald-Oswald[wght].ttf"),
     "script": os.path.join(ROOT, "assets", "fonts", "yellowtail-Yellowtail-Regular.ttf"),
+    # Script grosso e inclinado, para os cabeçotes de inspiração Mesa/Boogie.
+    "mesa": os.path.join(ROOT, "assets", "fonts", "lobster-Lobster-Regular.ttf"),
 }
 
 
@@ -53,7 +55,25 @@ def to_pixels(scene, cam, point):
     return co.x * scene.render.resolution_x, (1.0 - co.y) * scene.render.resolution_y
 
 
+def slider_box(scene, cam, ctl):
+    """Retângulo em pixels que cobre o rasgo inteiro do deslizante (o cursor
+    em qualquer posição) e a profundidade do cursor."""
+    cx, cy, cz = ctl["center"]
+    pts = []
+    for dx in (-ctl["w"] / 2, ctl["w"] / 2):
+        for dz in (-ctl["h"] / 2, ctl["h"] / 2):
+            for dy in (-ctl["depth"] / 2, ctl["depth"] / 2):
+                pts.append(to_pixels(scene, cam, (cx + dx, cy + dy, cz + dz)))
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    x0, y0 = int(math.floor(min(xs))) - 2, int(math.floor(min(ys))) - 2
+    w, h = int(math.ceil(max(xs))) + 2 - x0, int(math.ceil(max(ys))) + 2 - y0
+    return {"x": x0, "y": y0, "size": max(w, h), "w": w, "h": h, "rect": True}
+
+
 def knob_box(scene, cam, ctl):
+    if ctl.get("tipo") == "deslizante":
+        return slider_box(scene, cam, ctl)
     """Quadrado em pixels que cobre o botão inteiro (frente, lateral e
     saia) com folga, e o raio do círculo de recorte. O eixo do botão é Y no
     amplificador (olha para a frente) e Z no pedal (olha para cima)."""
@@ -112,7 +132,11 @@ def clean_shadow(path):
 
 def set_knobs(controls, value):
     for c in controls:
-        c["pivot"].rotation_euler = (0, math.radians(-150 + 300 * value), 0)
+        if c.get("tipo") == "deslizante":
+            x, y, _ = c["pivot"].location
+            c["pivot"].location = (x, y, c["z0"] + (value - 0.5) * c["curso"])
+        else:
+            c["pivot"].rotation_euler = (0, math.radians(-150 + 300 * value), 0)
 
 
 def main():
@@ -167,8 +191,12 @@ def main():
     for c in controls:
         b = knob_box(scene, cam, c)
         boxes.append(b)
-        layout["botoes"].append({"id": c["id"], "x": b["x"], "y": b["y"], "tamanho": b["size"],
-                                 "arquivo": f"botao_{c['id']}.png", "angulo_min": -150, "angulo_max": 150})
+        entry = {"id": c["id"], "x": b["x"], "y": b["y"], "tamanho": b["size"],
+                 "arquivo": f"botao_{c['id']}.png", "angulo_min": -150, "angulo_max": 150}
+        if b.get("rect"):
+            # Deslizante: quadro retangular (largura x altura), arrasta na vertical.
+            entry.update({"tipo": "deslizante", "largura": b["w"], "altura": b["h"]})
+        layout["botoes"].append(entry)
     # Rótulos para a tela escrever: centro, altura da letra em pixels,
     # achatamento da perspectiva e cor da tinta (sRGB).
     def srgb(c):
@@ -212,16 +240,16 @@ def main():
     # Uma faixa de render cobre todos os botões; cada posição gira todos
     # juntos e recorta cada botão dessa faixa.
     x0 = min(b["x"] for b in boxes)
-    x1 = max(b["x"] + b["size"] for b in boxes)
+    x1 = max(b["x"] + b.get("w", b["size"]) for b in boxes)
     y0 = min(b["y"] for b in boxes)
-    y1 = max(b["y"] + b["size"] for b in boxes)
+    y1 = max(b["y"] + b.get("h", b["size"]) for b in boxes)
     r = scene.render
     r.use_border = True
     r.use_crop_to_border = True
     r.border_min_x, r.border_max_x = x0 / width, x1 / width
     r.border_min_y, r.border_max_y = 1 - y1 / height, 1 - y0 / height
 
-    strips = [np.zeros((b["size"] * frames, b["size"], 4), dtype=np.float32) for b in boxes]
+    strips = [np.zeros((b.get("h", b["size"]) * frames, b.get("w", b["size"]), 4), dtype=np.float32) for b in boxes]
     tmp = os.path.join(os.path.abspath(a.saida), "_faixa.png")
     t0 = time.time()
     for f in range(frames):
@@ -233,17 +261,18 @@ def main():
         # Blender); alinhamos pelo canto de cima à esquerda.
         for b, strip in zip(boxes, strips):
             ox, oy = b["x"] - x0, b["y"] - y0
-            size = b["size"]
+            bw, bh = b.get("w", b["size"]), b.get("h", b["size"])
             # A faixa pode sair um pixel menor que o pedido; o que faltar
             # fica transparente (cai fora do círculo do botão).
-            crop = np.zeros((size, size, 4), dtype=np.float32)
-            part = band[oy:oy + size, ox:ox + size]
+            crop = np.zeros((bh, bw, 4), dtype=np.float32)
+            part = band[oy:oy + bh, ox:ox + bw]
             crop[:part.shape[0], :part.shape[1]] = part
-            yy, xx = np.mgrid[0:size, 0:size]
-            d = np.sqrt((xx + 0.5 - b["cx"]) ** 2 + (yy + 0.5 - b["cy"]) ** 2)
-            mask = np.clip((b["radius"] - d) / 2.0, 0.0, 1.0)
-            crop[..., 3] *= mask
-            strip[f * size:(f + 1) * size] = crop
+            if not b.get("rect"):
+                yy, xx = np.mgrid[0:bh, 0:bw]
+                d = np.sqrt((xx + 0.5 - b["cx"]) ** 2 + (yy + 0.5 - b["cy"]) ** 2)
+                mask = np.clip((b["radius"] - d) / 2.0, 0.0, 1.0)
+                crop[..., 3] *= mask
+            strip[f * bh:(f + 1) * bh] = crop
         print(f"[gear] posição {f + 1}/{frames} ({time.time() - t0:.0f} s)")
     os.remove(tmp)
     for c, strip in zip(controls, strips):

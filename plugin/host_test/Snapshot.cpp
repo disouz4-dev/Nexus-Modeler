@@ -140,17 +140,71 @@ int main(int argc, char** argv)
       }
     }
   }
+  // Quarto argumento "mark5:<pasta do pacote>": cabeçote Mark Five no canal 3
+  // com esse pacote e a curva em "V" no equalizador gráfico.
+  if (stage.startsWith("mark5:"))
+  {
+    auto set = [&](const char* id, float v) { processor.params.getParameter(id)->setValueNotifyingHost(processor.params.getParameter(id)->convertTo0to1(v)); };
+    set("cabecote", 1.0f);
+    set("canal", 2.0f);
+    set("ganho_3", 7.0f);
+    const float curve[5] = {3.0f, 1.0f, -5.0f, 1.5f, 3.0f};
+    const char* ids[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
+    for (int k = 0; k < 5; ++k)
+      set(ids[k], curve[k]);
+    processor.loadAmpPack(0, 2, juce::File(stage.fromFirstOccurrenceOf(":", false, false)));
+    for (int t = 0; t < 3000 && !processor.channelLoaded(0, 2); ++t)
+    {
+      buffer.clear();
+      processor.processBlock(buffer, midi);
+      juce::Thread::sleep(2);
+    }
+    for (int t = 0; t < 200; ++t)
+    {
+      buffer.clear();
+      processor.processBlock(buffer, midi);
+    }
+  }
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
   {
-    if (stage.startsWith("pedal"))
+    if (stage == "gate")
+    {
+      // Pedal 1 com o visual do Pear Gate (o último da lista de visuais).
+      auto* look = processor.params.getParameter(NexusProcessor::pedalParam(0, "visual"));
+      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusEditor::kPedalLooks - 1)));
+      e->select({NexusEditor::Kind::pedal, 0});
+    }
+    else if (stage.startsWith("pedal"))
       e->select({NexusEditor::Kind::pedal, 0});
     else if (stage == "caixa")
       e->select({NexusEditor::Kind::cab, 0});
+    else if (stage == "caixa_mark")
+    {
+      auto* cab = processor.params.getParameter(NexusProcessor::ampParam(0, "gabinete"));
+      cab->setValueNotifyingHost(cab->convertTo0to1(1.0f));
+      e->select({NexusEditor::Kind::cab, 0});
+    }
     else if (stage == "capturas")
       e->showCaptures();
     else if (stage.startsWith("estudio"))
       e->setMode(1);
+    else if (stage == "eq")
+    {
+      // Equalizador do fim com algumas faixas de exemplo.
+      auto set = [&](const juce::String& id, float v) { processor.params.getParameter(id)->setValueNotifyingHost(processor.params.getParameter(id)->convertTo0to1(v)); };
+      const struct { int type; float f, g, q; } bands[] = {{3, 80.0f, 0.0f, 1.0f}, {0, 220.0f, 3.0f, 1.2f}, {0, 650.0f, -5.0f, 2.0f},
+                                                           {5, 1800.0f, 0.0f, 8.0f}, {0, 3200.0f, 4.0f, 1.0f}, {4, 9000.0f, 0.0f, 1.0f}};
+      for (int i = 0; i < 6; ++i)
+      {
+        set(NexusProcessor::eqParam(i, "ligado"), 1.0f);
+        set(NexusProcessor::eqParam(i, "tipo"), static_cast<float>(bands[i].type));
+        set(NexusProcessor::eqParam(i, "freq"), bands[i].f);
+        set(NexusProcessor::eqParam(i, "ganho"), bands[i].g);
+        set(NexusProcessor::eqParam(i, "q"), bands[i].q);
+      }
+      e->select({NexusEditor::Kind::eq, 0});
+    }
   }
   // Deixa o relógio da tela atualizar textos e medidor.
   juce::MessageManager::getInstance()->runDispatchLoopUntil(300);

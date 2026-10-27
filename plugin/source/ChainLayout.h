@@ -62,6 +62,7 @@ struct ChainLayout
     t.setProperty("entre_b", join(loop[1]), nullptr);
     t.setProperty("depois", join(post), nullptr);
     t.setProperty("dois_cabecotes", dual, nullptr);
+
     return t;
   }
 
@@ -85,6 +86,7 @@ struct ChainLayout
     c.loop[1] = split(t["entre_b"]);
     c.post = split(t["depois"]);
     c.dual = static_cast<bool>(t["dois_cabecotes"]);
+
     return c;
   }
 };

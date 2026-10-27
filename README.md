@@ -94,6 +94,13 @@ guitarra passa pela cadeia e se mistura com a música.*
   captura e da caixa, o mesmo em todo cabeçote: grave em 220 Hz, médio em
   750 Hz, agudo a partir de 2,8 kHz e presença em 5,5 kHz, até ±12 dB (a
   presença, ±10 dB). Com tudo em 5 o som é exatamente o da captura.
+- **Equalizador do fim da cadeia** no estilo do FabFilter Pro-Q: fixo depois
+  da caixa, até 24 faixas (sino, prateleiras, cortes de 12 a 48 dB por oitava
+  e notch). Duplo clique na curva cria a faixa; arrastar, roda do mouse e
+  botão direito ajustam.
+- **Pear Gate:** redutor de ruído com sensibilidade, ataque e release.
+- **Cabeçotes de vários canais** (Mark Five: Limpo, Crunch e Lead), cada canal
+  com a sua captura, e uma caixa para cada cabeçote.
 - **A2 Full e A2 Lite** com um botão (o mesmo arquivo serve para os dois).
 - **Qualquer taxa de amostragem.** As capturas rodam a 48 kHz; se o programa de
   gravação estiver em 44,1 ou 96 kHz, o plugin converte na entrada e na saída.

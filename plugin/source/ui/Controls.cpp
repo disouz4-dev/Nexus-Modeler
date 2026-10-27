@@ -99,6 +99,8 @@ void FilmKnob::paint(juce::Graphics& g)
 
 bool FilmKnob::hitTest(int x, int y)
 {
+  if (mArt.slider)
+    return getLocalBounds().contains(x, y);
   const auto c = getLocalBounds().toFloat().getCentre();
   return c.getDistanceFrom({static_cast<float>(x), static_cast<float>(y)}) <= getWidth() * 0.5f;
 }
@@ -109,6 +111,8 @@ juce::String FilmKnob::bubbleText() const
   auto& p = mDrag.parameter();
   const float v = p.convertFrom0to1(mDrag.value01());
   const bool stepped = p.getNormalisableRange().interval >= 1.0f;
+  if (mArt.slider)
+    return TRANS(mLabel) + "  " + (v > 0.05f ? "+" : "") + juce::String(v, 1).replaceCharacter('.', ',') + " dB";
   return TRANS(mLabel) + "  " + (stepped ? juce::String(juce::roundToInt(v)) : juce::String(v, 1).replaceCharacter('.', ','));
 }
 

@@ -39,6 +39,13 @@ GearArt GearArt::load(const juce::String& prefix)
       knob.id = k["id"].toString();
       knob.size = static_cast<int>(k["tamanho"]);
       knob.box = {static_cast<int>(k["x"]), static_cast<int>(k["y"]), knob.size, knob.size};
+      if (k["tipo"].toString() == "deslizante")
+      {
+        knob.slider = true;
+        knob.width = static_cast<int>(k["largura"]);
+        knob.height = static_cast<int>(k["altura"]);
+        knob.box.setSize(knob.width, knob.height);
+      }
       knob.strip = imageResource(prefix + "_botao_" + knob.id + ".png");
       // Botão em degraus (drive) pode ter menos quadros que os outros.
       knob.frames = k.hasProperty("posicoes") ? static_cast<int>(k["posicoes"]) : frames;

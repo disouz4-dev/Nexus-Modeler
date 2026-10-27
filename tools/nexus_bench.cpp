@@ -28,6 +28,7 @@
 #include "NAM/slimmable.h"
 #include "Wav.h"
 #include "nexus/AmpVoice.h"
+#include "nexus/Effects.h"
 #include "nexus/Pack.h"
 #include "nexus/TestSignal.h"
 #include "nexus/ToneStack.h"
@@ -702,6 +703,68 @@ void testUniversalEq()
   }
 }
 
+// Equalizador gráfico de 5 faixas (Mark Five): tudo em 0 não mexe; cada
+// faixa mexe na sua frequência.
+void testGraphicEq()
+{
+  std::printf("\n9. Equalizador gráfico (Mark Five)\n");
+  GraphicEq5 eq;
+  eq.prepare(kFs);
+  std::vector<double> x(4096);
+  for (size_t i = 0; i < x.size(); ++i)
+    x[i] = std::sin(0.02 * static_cast<double>(i));
+  auto y = x;
+  eq.process(y.data(), static_cast<int>(y.size()));
+  report(y == x, "Tudo em 0 dB: o som passa intacto", {});
+  bool ok = true;
+  std::string detail;
+  for (int b = 0; b < GraphicEq5::kBands; ++b)
+  {
+    std::array<double, GraphicEq5::kBands> db{};
+    db[static_cast<size_t>(b)] = 12.0;
+    eq.setBands(db);
+    eq.prepare(kFs);
+    const double at = eq.responseDb(GraphicEq5::kFrequency[b]);
+    ok = ok && std::abs(at - 12.0) < 0.5;
+    detail += std::to_string(static_cast<int>(GraphicEq5::kFrequency[b])) + " Hz: +" + std::to_string(at).substr(0, 4) + " dB  ";
+  }
+  report(ok, "Cada deslizante reforça 12 dB na sua frequência", detail);
+}
+
+// Noise gate: corta o chiado entre as notas sem cortar a nota.
+void testGate()
+{
+  std::printf("\n9. Pear Gate (noise gate)\n");
+  NoiseGate gate;
+  gate.prepare(kFs);
+  // 1 s de nota (-12 dB) caindo devagar, depois só chiado (-70 dB).
+  std::vector<double> x(static_cast<size_t>(3.0 * kFs));
+  unsigned seed = 1;
+  auto noise = [&] {
+    seed = seed * 1664525u + 1013904223u;
+    return (static_cast<double>(seed >> 8) / 16777216.0 - 0.5) * 2.0;
+  };
+  for (size_t i = 0; i < x.size(); ++i)
+  {
+    const double t = static_cast<double>(i) / kFs;
+    const double note = t < 1.0 ? 0.25 * std::exp(-t * 1.5) * std::sin(2.0 * 3.14159265 * 196.0 * t) : 0.0;
+    x[i] = note + 0.000316 * noise();
+  }
+  auto y = x;
+  gate.process(y.data(), static_cast<int>(y.size()), 0.5, 0.2, 0.4); // limiar -60 dB
+  auto rms = [](const std::vector<double>& v, double t0, double t1) {
+    double e = 0;
+    for (size_t i = static_cast<size_t>(t0 * kFs); i < static_cast<size_t>(t1 * kFs); ++i)
+      e += v[i] * v[i];
+    return 10.0 * std::log10(e / ((t1 - t0) * kFs) + 1e-30);
+  };
+  const double noteIn = rms(x, 0.1, 0.9), noteOut = rms(y, 0.1, 0.9);
+  const double hissIn = rms(x, 2.0, 3.0), hissOut = rms(y, 2.0, 3.0);
+  report(std::abs(noteOut - noteIn) < 0.2, "A nota passa inteira", std::to_string(noteIn).substr(0, 6) + " dB -> " + std::to_string(noteOut).substr(0, 6) + " dB");
+  report(hissOut < hissIn - 40.0, "O chiado entre as notas some (mais de 40 dB a menos)",
+         std::to_string(hissIn).substr(0, 6) + " dB -> " + std::to_string(hissOut).substr(0, 6) + " dB");
+}
+
 void testFileNames()
 {
   std::printf("\n5. Posição pelo nome do arquivo\n");
@@ -780,6 +843,8 @@ int main(int argc, char** argv)
     testFullRig(packsDir);
     testAnticipate(packsDir, in);
     testUniversalEq();
+    testGate();
+    testGraphicEq();
   }
   catch (const std::exception& e)
   {

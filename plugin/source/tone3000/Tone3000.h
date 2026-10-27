@@ -39,6 +39,10 @@ struct Tone
   juce::StringArray series;
   juce::String note;
   juce::String defaultIr; // caixas: o IR do pacote que entra primeiro
+  // Recomendadas sem número no nome: trecho do nome -> posição do botão.
+  std::vector<std::pair<juce::String, double>> fixedPositions;
+  // Nome da pasta deste pacote, quando o mesmo tom rende vários (um por canal).
+  juce::String packName;
 };
 
 // Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),

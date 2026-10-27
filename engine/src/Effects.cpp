@@ -192,6 +192,7 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mChorus.prepare(sampleRate);
   mDelay.prepare(sampleRate);
   mReverb.prepare(sampleRate);
+  mGate.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
@@ -202,9 +203,63 @@ void NativePedal::reset()
   mChorus.reset();
   mDelay.reset();
   mReverb.reset();
+  mGate.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
+}
+
+void NoiseGate::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void NoiseGate::reset()
+{
+  mEnv = 0.0;
+  mGain = 1.0;
+  mHold = 0;
+  mOpen = true;
+}
+
+double NoiseGate::gainDb() const
+{
+  return 20.0 * std::log10(mGain + 1e-9);
+}
+
+void NoiseGate::process(double* buffer, int n, double sensitivity, double attack, double release)
+{
+  const double open = std::pow(10.0, thresholdDb(sensitivity) / 20.0);
+  const double close = open * 0.5; // 6 dB abaixo
+  const double attackMs = 0.1 * std::pow(300.0, std::clamp(attack, 0.0, 1.0));
+  const double releaseMs = 10.0 * std::pow(150.0, std::clamp(release, 0.0, 1.0));
+  // Detector: sobe na hora, desce em 10 ms.
+  const double envFall = std::exp(-1.0 / (0.010 * mRate));
+  const double up = 1.0 - std::exp(-1.0 / (attackMs * 0.001 * mRate));
+  const double down = 1.0 - std::exp(-1.0 / (releaseMs * 0.001 * mRate));
+  const int hold = static_cast<int>(0.025 * mRate);
+  constexpr double floorGain = 1e-5; // -100 dB: fechado de verdade
+  for (int i = 0; i < n; ++i)
+  {
+    const double a = std::abs(buffer[i]);
+    mEnv = a > mEnv ? a : mEnv * envFall;
+    if (mEnv >= open)
+    {
+      mOpen = true;
+      mHold = hold;
+    }
+    else if (mEnv < close)
+    {
+      if (mHold > 0)
+        --mHold;
+      else
+        mOpen = false;
+    }
+    const double target = mOpen ? 1.0 : floorGain;
+    mGain += (target - mGain) * (target > mGain ? up : down);
+    buffer[i] *= mGain;
+  }
 }
 
 void NativePedal::process(Type type, bool on, double* buffer, int n, double a, double b, double c)
@@ -215,6 +270,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mChorus.reset();
     mDelay.reset();
     mReverb.reset();
+    mGate.reset();
     mLast = type;
   }
   if (on)
@@ -225,6 +281,20 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     return; // desligado e em silêncio
 
   const double step = 1.0 / (0.02 * mRate);
+  if (type == Type::gate)
+  {
+    // Gate: liga e desliga com transição de 20 ms; desligado, o som passa.
+    std::copy(buffer, buffer + n, mIn.begin());
+    mGate.process(mIn.data(), n, a, b, c);
+    for (int i = 0; i < n; ++i)
+    {
+      mGain = on ? std::min(1.0, mGain + step) : std::max(0.0, mGain - step);
+      buffer[i] = buffer[i] * (1.0 - mGain) + mIn[static_cast<size_t>(i)] * mGain;
+    }
+    if (!on && mGain <= 0.0)
+      mTail = 0;
+    return;
+  }
   if (type == Type::chorus)
   {
     // Modulação não tem rastro: liga e desliga com transição de 20 ms.

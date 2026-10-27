@@ -16,11 +16,15 @@ struct GearKnobArt
   juce::Image strip;        // posições empilhadas de cima para baixo
   int frames = 1;
   int size = 0;
+  // Deslizante (equalizador gráfico): quadro retangular, arrasta na vertical.
+  bool slider = false;
+  int width = 0, height = 0;
 
   juce::Image frame(float value01) const
   {
     const int f = juce::jlimit(0, frames - 1, juce::roundToInt(value01 * static_cast<float>(frames - 1)));
-    return strip.getClippedImage({0, f * size, size, size});
+    const int w = width > 0 ? width : size, h = height > 0 ? height : size;
+    return strip.getClippedImage({0, f * h, w, h});
   }
 };
 

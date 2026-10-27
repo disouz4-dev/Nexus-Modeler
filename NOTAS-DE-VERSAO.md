@@ -53,6 +53,25 @@
   efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
+### Equalizador do fim da cadeia
+- Um equalizador fixo depois do cabeçote e da caixa: todo o som passa por ele
+  (sem faixas, passa intacto). Estilo FabFilter Pro-Q: até 24 faixas; duplo
+  clique na curva cria uma faixa, arrastar muda frequência e ganho, a roda do
+  mouse muda a largura e o botão direito troca o tipo (sino, prateleiras,
+  cortes de 12 a 48 dB por oitava, notch) ou apaga.
+- Na cadeia, o ícone mostra cinco deslizantes que acompanham a curva.
+
+### Equipamentos novos
+- Mark Five (inspirado no Mark V): três canais, cada um com a sua captura.
+  Ao escolher o cabeçote, os pacotes "Canal 1", "Canal 2" e "Canal 3" da
+  pasta dele entram sozinhos no canal certo.
+- Mark 4x12: caixa que acompanha o Mark Five (cada cabeçote abre com a sua
+  caixa; dá para trocar na lista de caixas).
+- Pear Gate: redutor de ruído de caixinha branca, com um botão grande de
+  sensibilidade e dois pequenos de ataque e release.
+- Os equipamentos 3D passam a ser gerados na placa de vídeo (lab2, RTX 3050):
+  um pedal completo em 26 minutos, antes 2 a 3 horas no processador do Mac.
+
 ### Som e uso ao vivo
 - TOM dos pedais refeito: agora é uma prateleira de agudos a partir de
   1,2 kHz, ±12 dB, como no TS9 e no SD-1. Antes ficava acima de 4 kHz e,

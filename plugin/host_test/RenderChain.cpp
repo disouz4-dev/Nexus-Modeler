@@ -47,11 +47,12 @@ void settle(NexusProcessor& p, int blocks)
 }
 
 // Baixa um tom recomendado e devolve a pasta do pacote.
-juce::File fetch(nexus::t3k::Connection& t3k, const char* prefix, int id, const juce::String& gearName, const char* filter)
+juce::File fetch(nexus::t3k::Connection& t3k, const char* prefix, int id, const juce::String& gearName, const char* filter,
+                 const juce::String& packName = {})
 {
   nexus::t3k::Tone tone;
   for (const auto& r : nexus::t3k::recommended(prefix))
-    if (r.id == id)
+    if (r.id == id && (packName.isEmpty() || r.packName == packName))
       tone = r;
   bool finished = false;
   juce::File folder;
@@ -126,6 +127,58 @@ int main(int argc, char** argv)
   const auto brit = fetch(t3k, "brit800", 1071, "Brit 800", "amp_amp-cab");
   if (!banana.isDirectory() || !brit.isDirectory())
     return 1;
+
+  // NEXUS_MARK5=1: Mark Five no canal 3 (MK-IIC+), equalizador gráfico em "V".
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_MARK5", {}) == "1")
+  {
+    const auto mark = fetch(t3k, "mark5", 57410, "Mark Five", "amp_amp-cab", "Canal 3 MK-IIC+");
+    if (!mark.isDirectory())
+      return 1;
+    std::printf("  pacote: %s\n", mark.getFileName().toRawUTF8());
+    for (int v = 0; v < 2; ++v)
+    {
+      NexusProcessor p;
+      p.setPlayConfigDetails(2, 2, rate, 128);
+      p.prepareToPlay(rate, 128);
+      p.setLayout(ChainLayout{});
+      setParam(p, "cabecote", 1.0f);
+      setParam(p, "canal", 2.0f);
+      setParam(p, "ganho_3", 7.0f);
+      // A curva em "V" do Mark: graves e agudos para cima, 750 Hz para baixo.
+      const float curve[5] = {3.0f, 1.0f, -5.0f, 1.5f, 3.0f};
+      const char* ids[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
+      for (int k = 0; k < 5; ++k)
+        setParam(p, ids[k], v == 1 ? curve[k] : 0.0f);
+      p.loadAmpPack(0, 2, mark);
+      p.loadIrAsync(0, irFile);
+      for (int t = 0; t < 2400 && !(p.channelLoaded(0, 2) && p.irLoaded(0)); ++t)
+        settle(p, 4);
+      setParam(p, "caixa", 1.0f);
+      settle(p, 400);
+      auto& test = p.testSource();
+      test.setStyle(nexus::TestSource::heavy);
+      test.setPlaying(true);
+      std::vector<double> result;
+      juce::AudioBuffer<float> buffer(2, 128);
+      juce::MidiBuffer midi;
+      while (result.size() < static_cast<size_t>(16.0 * rate))
+      {
+        buffer.clear();
+        p.processBlock(buffer, midi);
+        for (int i = 0; i < 128; ++i)
+          result.push_back(buffer.getSample(0, i));
+      }
+      double m = 0.0;
+      for (auto x : result)
+        m = std::max(m, std::abs(x));
+      for (auto& x : result)
+        x *= m > 0.0 ? std::pow(10.0, -1.0 / 20.0) / m : 1.0;
+      const auto file = out.getChildFile(v == 1 ? "mark5_canal3_iic_eq_em_v.wav" : "mark5_canal3_iic_eq_plano.wav");
+      wav::write(file.getFullPathName().toStdString(), result, rate);
+      std::printf("Gravado: %s\n", file.getFileName().toRawUTF8());
+    }
+    return 0;
+  }
 
   // IR "-": só o Brit 800 no ganho 5, botões na posição da captura, com a
   // guitarra do primeiro argumento. Serve para comparar com o "render" do

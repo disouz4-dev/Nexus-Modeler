@@ -282,5 +282,97 @@
         "nota": "G12T-75, a caixa do JCM800"
       }
     ]
+  },
+  "mark5": {
+    "busca": "Mark V",
+    "tons": [
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Canal 1: limpo no 2, Tweed no limite da saturação no 6 e com pouco ganho no 9",
+        "mapa": {
+          "(Ch 1 Clean) CLN": 2,
+          "(Ch 1 Tweed) EOB [": 6,
+          "(Ch 1 Tweed) LG": 9
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 2 Crunch",
+        "nota": "Canal 2: Crunch no limite no 3, pouco ganho no 6 e médio no 9",
+        "mapa": {
+          "(Ch 2 Cru) EOB": 3,
+          "(Ch 2 Cru) LG": 6,
+          "(Ch 2 Cru) MG": 9
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 2 MK-I",
+        "nota": "Canal 2 no modo MK-I: pouco ganho no 3, médio no 6 e alto no 9",
+        "mapa": {
+          "(Ch 2 MK-I) LG": 3,
+          "(Ch 2 MK-I) MG": 6,
+          "(Ch 2 MK-I) HG": 9
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 8789,
+        "pacote": "Canal 3 MK-IIC+",
+        "nota": "Canal 3 MK-IIC+ (o do Meshuggah e do Petrucci): no 7, e no 10 com TS9 na frente",
+        "mapa": {
+          "(Ch 3 MK-IIC+) HG bal": 7,
+          "(Ch 3 MK-IIC+ TS9) HG": 10
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 8789,
+        "pacote": "Canal 3 MK-IV",
+        "nota": "Canal 3 MK-IV: no 7, e no 10 com TS9 na frente",
+        "mapa": {
+          "(Ch 3 MK-IV) HG bal": 7,
+          "(Ch 3 MK-IV TS9) HG": 10
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 8789,
+        "pacote": "Canal 3 Extreme",
+        "nota": "Canal 3 Extreme (metal moderno): no 7, e no 10 com TS9 na frente",
+        "mapa": {
+          "(Ch 3 Ext) HG bal": 7,
+          "(Ch 3 Ext TS9) HG": 10
+        }
+      }
+    ]
   }
 }

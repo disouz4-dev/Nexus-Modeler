@@ -112,6 +112,10 @@ std::vector<Tone> recommended(const juce::String& gearPrefix)
           t.series.add(part.toString());
       t.note = v["nota"].toString();
       t.defaultIr = v["ir_padrao"].toString();
+      t.packName = v["pacote"].toString();
+      if (auto* map = v["mapa"].getDynamicObject())
+        for (const auto& p : map->getProperties())
+          t.fixedPositions.push_back({p.name.toString(), static_cast<double>(p.value)});
       out.push_back(t);
     }
   return out;
@@ -126,6 +130,29 @@ juce::String filterWord(const juce::String& gearPrefix)
 
 std::vector<Capture> chooseCaptures(const std::vector<std::pair<juce::String, juce::String>>& models, const Tone& tone)
 {
+  // Mapa da recomendada: cada trecho de nome vai para a sua posição (o trecho
+  // mais longo que cabe no nome ganha: "MK-IIC+ TS9" antes de "MK-IIC+").
+  if (!tone.fixedPositions.empty())
+  {
+    std::vector<Capture> out;
+    for (const auto& [name, url] : models)
+    {
+      int best = -1;
+      for (size_t k = 0; k < tone.fixedPositions.size(); ++k)
+        if (name.containsIgnoreCase(tone.fixedPositions[k].first)
+            && (best < 0 || tone.fixedPositions[k].first.length() > tone.fixedPositions[static_cast<size_t>(best)].first.length()))
+          best = static_cast<int>(k);
+      bool inSeries = true;
+      for (const auto& part : tone.series)
+        inSeries = inSeries && name.containsIgnoreCase(part);
+      if (best >= 0 && inSeries)
+        out.push_back({tone.fixedPositions[static_cast<size_t>(best)].second, name, url});
+    }
+    std::sort(out.begin(), out.end(), [](const Capture& a, const Capture& b) { return a.position < b.position; });
+    // Uma captura por posição.
+    out.erase(std::unique(out.begin(), out.end(), [](const Capture& a, const Capture& b) { return a.position == b.position; }), out.end());
+    return out;
+  }
   // Posição pelo padrão da recomendada; senão pelas palavras comuns
   // ("Gain 7", "G7", "Drive 3", "D08"), e por fim pela regra do motor.
   static const std::regex generic(R"((?:^|[^a-z])(?:gain|ganho|drive|dist|gn|g|d)[\s_\-=:]*([0-9]+(?:[.,][0-9]+)?))", std::regex::icase);
@@ -595,6 +622,8 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         tone.pattern = wanted.pattern;
         tone.series = wanted.series;
         tone.defaultIr = wanted.defaultIr;
+        tone.fixedPositions = wanted.fixedPositions;
+        tone.packName = wanted.packName;
       }
       if (irs)
       {
@@ -668,7 +697,7 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
       if (chosen.empty())
         return fail(TRANS(juce::String::fromUTF8("este tom não tem capturas A2")));
 
-      const auto folder = packsFolder(gearName).getChildFile(juce::String(id) + " " + safeName(tone.title));
+      const auto folder = packsFolder(gearName).getChildFile(juce::String(id) + " " + safeName(tone.title) + (tone.packName.isNotEmpty() ? " - " + safeName(tone.packName) : juce::String()));
       folder.createDirectory();
       auto* manifest = new juce::DynamicObject();
       auto* captures = new juce::DynamicObject();
@@ -700,7 +729,7 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         const bool whole = std::abs(c.position - std::round(c.position)) < 1e-6;
         captures->setProperty(whole ? juce::String(juce::roundToInt(c.position)) : juce::String(c.position, 2), file.getFileName());
       }
-      manifest->setProperty("nome", tone.title);
+      manifest->setProperty("nome", tone.packName.isNotEmpty() ? tone.title + " - " + tone.packName : tone.title);
       manifest->setProperty("fonte", "TONE3000");
       manifest->setProperty("tone3000_tone_id", id);
       manifest->setProperty("criador", tone.creator);

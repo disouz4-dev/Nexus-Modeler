@@ -1,6 +1,7 @@
 # Nexus Gear Studio: estúdio de render (luz, câmera, materiais) comum a
 # todos os equipamentos. Roda dentro do Blender 4.5.
 import math
+import os
 
 import bpy
 from mathutils import Vector
@@ -523,9 +524,31 @@ def shadow_floor(z):
     return floor
 
 
+def use_gpu():
+    """Liga a placa de vídeo (Metal no Mac, depois OptiX/CUDA/HIP) para o
+    Cycles. Sem placa compatível (ou com NEXUS_GEAR_CPU=1), fica no processador."""
+    if os.environ.get("NEXUS_GEAR_CPU"):
+        return False
+    prefs = bpy.context.preferences.addons["cycles"].preferences
+    for kind in ("METAL", "OPTIX", "CUDA", "HIP", "ONEAPI"):
+        try:
+            prefs.compute_device_type = kind
+        except TypeError:
+            continue
+        prefs.get_devices()
+        gpus = [d for d in prefs.devices if d.type == kind]
+        if gpus:
+            for d in prefs.devices:
+                # Só a placa dedicada: a integrada da Intel deixa tudo mais lento.
+                d.use = d.type == kind and "Intel" not in d.name
+            print("[gear] placa de vídeo:", kind, [d.name for d in gpus if d.use])
+            return any(d.use for d in gpus)
+    return False
+
+
 def render_settings(scene, width, height, samples):
     scene.render.engine = "CYCLES"
-    scene.cycles.device = "CPU"
+    scene.cycles.device = "GPU" if use_gpu() else "CPU"
     scene.cycles.samples = samples
     scene.cycles.use_adaptive_sampling = True
     scene.cycles.adaptive_threshold = 0.01

@@ -1,6 +1,7 @@
 #include "StudioView.h"
 
 #include "Theme.h"
+#include "../report/Report.h"
 
 namespace nexus::ui
 {
@@ -763,6 +764,11 @@ void StudioView::mouseUp(const juce::MouseEvent& e)
     }
     case Hit::play:
       mPlayer.setPlaying(!mPlayer.playing());
+      nexus::report::log("estudio", juce::String(mPlayer.playing() ? "tocar " : "pausar ") + mPlayer.songId() + " (aberta: "
+                                        + (mPlayer.isOpen() ? "sim" : juce::String::fromUTF8("não")) + ", posição "
+                                        + juce::String(mPlayer.position(), 1) + " s de " + juce::String(mPlayer.length(), 1) + " s)");
+      mPlayStartPos = mPlayer.position();
+      mPlayStartMs = juce::Time::getMillisecondCounter();
       break;
     case Hit::rewind:
       if (song != nullptr)
@@ -1016,6 +1022,16 @@ void StudioView::timerCallback()
     const float next = std::max(peak, l * 0.85f);
     changed = changed || std::abs(next - l) > 0.002f;
     l = next;
+  }
+  // Diagnóstico: tocando há 2 s e a posição não andou (o áudio não está chamando o player?).
+  if (mPlayer.playing() && mPlayStartMs != 0 && juce::Time::getMillisecondCounter() - mPlayStartMs > 2000)
+  {
+    if (std::abs(mPlayer.position() - mPlayStartPos) < 0.05)
+      nexus::report::log("estudio", juce::String::fromUTF8("tocando, mas a posição não andou em 2 s (o áudio do programa não está rodando o player)"));
+    else
+      nexus::report::log("estudio", juce::String::fromUTF8("tocando: a posição andou de ") + juce::String(mPlayStartPos, 1) + " para "
+                                        + juce::String(mPlayer.position(), 1) + " s");
+    mPlayStartMs = 0;
   }
   if (mPlayer.takeFinished())
   {

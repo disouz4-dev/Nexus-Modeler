@@ -11,6 +11,7 @@
 #include "ui/PackMapper.h"
 #include "ui/PresetBar.h"
 #include "ui/StudioView.h"
+#include "ui/EqStage.h"
 #include "ui/TestBar.h"
 #include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
@@ -34,7 +35,8 @@ public:
   {
     pedal,
     amp,
-    cab
+    cab,
+    eq // equalizador do fim da cadeia (fixo)
   };
   struct Selection
   {
@@ -56,6 +58,7 @@ public:
   void showCaptures() { choosePack(); }
   // 0 = equipamento, 1 = estúdio.
   void setMode(int mode);
+
 
 private:
   // Pedal ou cabeçote: imagem, botões renderizados e, no pedal, pisante e LED.
@@ -93,7 +96,7 @@ private:
   class CabStage : public juce::Component
   {
   public:
-    CabStage(NexusProcessor& p, const nexus::ui::GearArt& art);
+    CabStage(NexusProcessor& p, const nexus::ui::GearArt* arts);
     void setRig(int rig) { mRig = rig; refresh(); }
     void paint(juce::Graphics&) override;
     void resized() override;
@@ -101,7 +104,8 @@ private:
 
   private:
     NexusProcessor& mProcessor;
-    const nexus::ui::GearArt& mArt;
+    const nexus::ui::GearArt* mArts; // uma por visual de caixa (NexusProcessor::kCabLooks)
+    const nexus::ui::GearArt& art() const;
     nexus::ui::Segmented mModes{{"Desligada", "Captura", "IR"}};
     juce::Rectangle<float> mImage;
     int mRig = 0;
@@ -152,7 +156,8 @@ private:
       amp,
       cab,
       ab,
-      add
+      add,
+      eq
     };
     struct Card
     {
@@ -195,6 +200,7 @@ private:
   // Pacote já na pasta do equipamento: mapeia se precisar e carrega.
   void landPack(const juce::File& folder);
   void loadPackInto(Selection target, int channel, const juce::File& folder);
+  void loadHeadChannels(int rig);
   void chooseIr(int rig);
   void chooseIrFile(int rig);
   void openIrCatalog(int rig);
@@ -229,7 +235,12 @@ private:
   NexusProcessor& mProcessor;
   Look mLook;
   juce::TooltipWindow mTooltips{this, 600};
-  nexus::ui::GearArt mAmpArt, mCabArt;
+  // Visual de cada cabeçote (Brit 800, Mark Five...), pelo parâmetro "cabecote".
+  std::array<nexus::ui::GearArt, NexusProcessor::kAmpLooks> mAmpArts;
+  std::array<nexus::ui::GearArt, NexusProcessor::kCabLooks> mCabArts;
+  const nexus::ui::GearArt& cabArt(int rig) const;
+  const nexus::ui::GearArt& ampArt(int rig) const { return mAmpArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig)))]; }
+  int mShownAmpLook = -1;
   std::array<nexus::ui::GearArt, kPedalLooks> mPedalArts;
   Selection mSel;
   int mShownPedalLook = -1;
@@ -238,6 +249,8 @@ private:
   nexus::ui::Segmented mEngine{{"A2 Full", "A2 Lite"}};
   nexus::ui::Segmented mMode{{"Equipamento", juce::String::fromUTF8("Estúdio")}};
   std::unique_ptr<nexus::ui::StudioView> mStudio;
+  std::unique_ptr<nexus::ui::EqStage> mEqStage;
+
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
   nexus::ui::IconButton mLanguageButton{nexus::ui::Icon::globe, "Idioma"};
   nexus::ui::IconButton mAudioButton{nexus::ui::Icon::audio, juce::String::fromUTF8("Interface de áudio")};
