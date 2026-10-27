@@ -250,7 +250,7 @@ Pelo terminal (PowerShell, sem administrador; o VST3 vai para a pasta VST3 do
 usuário):
 
 ```powershell
-irm https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.ps1 | iex
+irm https://disouz4-dev.github.io/Nexus-Modeler/instalar.ps1 | iex
 ```
 
 ### Mac
@@ -264,7 +264,7 @@ Pelo terminal (sem administrador; plugins em `~/Library/Audio/Plug-Ins` e o
 programa em `~/Applications`):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash
+curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash
 ```
 
 ### Linux
@@ -278,7 +278,7 @@ Pelo terminal, em qualquer distribuição (sem administrador; `~/.vst3`,
 `~/.lv2` e `~/.local/bin`):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash
+curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash
 ```
 
 Os comandos do terminal perguntam o idioma (ou use `--idioma pt-BR`, por

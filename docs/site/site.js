@@ -178,8 +178,24 @@
   };
   if (window.fetch) {
     fetch("https://api.github.com/repos/disouz4-dev/Nexus-Modeler/releases/latest")
-      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (r) {
+        // 404: ainda não há versão publicada.
+        if (r.status === 404) return { semVersao: true };
+        return r.ok ? r.json() : null;
+      })
       .then(function (lancamento) {
+        if (lancamento && lancamento.semVersao) {
+          document.querySelectorAll("[data-instalador]").forEach(function (link) {
+            link.classList.add("em-breve");
+            link.removeAttribute("href");
+            link.setAttribute("aria-disabled", "true");
+            if (link.classList.contains("baixar-botao"))
+              link.innerHTML = '<span class="pt">Primeira versão em breve</span><span class="en" lang="en">First release coming soon</span>';
+            else
+              link.style.display = "none";
+          });
+          return;
+        }
         if (!lancamento || !lancamento.assets) return;
         document.querySelectorAll("[data-instalador]").forEach(function (link) {
           var teste = instaladores[link.getAttribute("data-instalador")];

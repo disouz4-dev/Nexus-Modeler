@@ -282,3 +282,13 @@ input[type="range"] { width: 100%; accent-color: var(--ciano); height: 32px; cur
   .ficha li { flex-direction: column; gap: 2px; }
   .ficha li span:last-child { text-align: left; }
 }
+
+/* Baixar: três cartões como no Praxis (botão direto, terminal e copiar). */
+.cabeca-secao.centro { margin-left: auto; margin-right: auto; text-align: center; }
+.cabeca-secao.centro .chapeu { justify-content: center; }
+.sistema h3 { margin-bottom: 6px; }
+.sistema-sub { margin: 0 0 18px; color: var(--texto-3); font-size: 14px; }
+.sistema .baixar { margin-top: 0; }
+.sistema-detalhes { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--borda); color: var(--texto-3); font-size: 12.5px; line-height: 1.6; }
+#baixar { scroll-margin-top: 80px; }
+.baixar-botao.em-breve { opacity: 0.55; cursor: default; box-shadow: none; pointer-events: none; }

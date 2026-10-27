@@ -610,8 +610,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       in = mTestBuffer.data();
     if (in != nullptr)
     {
-      // O teste toca mesmo com a entrada no mudo.
-      const float wantIn = testing ? juce::Decibels::decibelsToGain(mInput->load()) : targetIn;
+      // O teste já vem no nível de uma guitarra: não passa pelo controle de
+      // entrada nem pelo mudo (quem baixou a entrada por causa do microfone
+      // do notebook ouviria o teste quase mudo).
+      const float wantIn = testing ? 1.0f : targetIn;
       const float inStep = (wantIn - mInputGain) / static_cast<float>(n);
       float gi = mInputGain;
       for (int i = 0; i < n; ++i)

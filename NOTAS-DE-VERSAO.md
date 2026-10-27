@@ -54,6 +54,13 @@
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
 ### Som e uso ao vivo
+- TOM dos pedais refeito: agora é uma prateleira de agudos a partir de
+  1,2 kHz, ±12 dB, como no TS9 e no SD-1. Antes ficava acima de 4 kHz e,
+  depois do cabeçote e da caixa, mexia só 0,1 dB no som (medido). Agora,
+  com o Brit 800 e a caixa: TOM em 10 reforça os agudos em 6 a 8 dB; em 0,
+  escurece 1,5 a 3 dB (o cabeçote distorcido recria parte dos agudos).
+- "Testar o som" não passa mais pelo controle de entrada (com a entrada no
+  mínimo ele saía 24 dB mais baixo, quase mudo).
 - Equalizador universal: grave, médio, agudo e presença agora ficam depois
   da captura e da caixa, iguais em todo cabeçote, e mexem de verdade no som
   (até ±12 dB; medido com o Brit 800 e a caixa Greenback: grave ±9 dB,
