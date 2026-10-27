@@ -23,6 +23,14 @@ jobs:
     env:
       NEXUS_CI: "1"
     steps:
+      # O Eigen (dentro do motor do NAM) vem do GitLab, que às vezes recusa
+      # downloads por sobrecarga; a cópia no GitHub tem as mesmas versões.
+      - name: Eigen pela cópia do GitHub
+        shell: bash
+        run: |
+          git config --global url."https://github.com/eigen-mirror/eigen.git".insteadOf "https://gitlab.com/libeigen/eigen.git"
+          git config --global --add url."https://github.com/eigen-mirror/eigen".insteadOf "https://gitlab.com/libeigen/eigen"
+
       - uses: actions/checkout@v4
         with:
           submodules: recursive
