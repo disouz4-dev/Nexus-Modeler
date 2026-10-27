@@ -36,6 +36,8 @@ private:
   {
     juce::String label;
     juce::ComboBox box;
+    juce::StringArray names; // nome de verdade de cada item (a lista mostra um nome mais claro)
+    juce::String chosen() const { return names[box.getSelectedId() - 1]; }
   };
 
   void changeListenerCallback(juce::ChangeBroadcaster*) override { refresh(); }

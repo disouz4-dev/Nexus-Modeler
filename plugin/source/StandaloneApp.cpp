@@ -17,8 +17,32 @@
 #include "StandaloneLink.h"
 #include "report/Report.h"
 
+#if JUCE_LINUX || JUCE_BSD
+ #include <dlfcn.h>
+#endif
+
 namespace
 {
+#if JUCE_LINUX || JUCE_BSD
+// No Linux de hoje (PipeWire), a placa de som pertence ao PipeWire: pelo ALSA
+// o Nexus só vê o "padrão do sistema" e passa por uma fila a mais (latência
+// alta e estalos quando o bloco do PipeWire e o do Nexus não batem). O JACK
+// do PipeWire dá cada placa pelo nome, no mesmo bloco que ela roda. O JUCE
+// abre "libjack.so.0"; carregando antes a do PipeWire, é ela que ele usa, sem
+// precisar abrir o Nexus pelo "pw-jack".
+bool preferPipeWireJack()
+{
+  for (const char* path : {"/usr/lib/x86_64-linux-gnu/pipewire-0.3/jack/libjack.so.0", "/usr/lib/aarch64-linux-gnu/pipewire-0.3/jack/libjack.so.0",
+                           "/usr/lib64/pipewire-0.3/jack/libjack.so.0", "/usr/lib/pipewire-0.3/jack/libjack.so.0"})
+    if (dlopen(path, RTLD_NOW | RTLD_GLOBAL) != nullptr)
+    {
+      nexus::report::log("audio", juce::String("JACK do PipeWire: ") + path);
+      return true;
+    }
+  return false;
+}
+#endif
+
 // Primeira abertura: 48 kHz (a taxa das capturas, sem conversão) e buffer de
 // 128 amostras. Depois vale o que o usuário escolher, guardado nos ajustes.
 juce::AudioDeviceManager::AudioDeviceSetup firstRunSetup()
@@ -75,6 +99,10 @@ public:
   {
     nexus::report::installCrashHandler();
     nexus::report::log("inicio", nexus::report::systemInfo().replace("\n", " | "));
+   #if JUCE_LINUX || JUCE_BSD
+    const bool pipeWireJack = preferPipeWireJack();
+   #endif
+    const bool firstRun = mProperties.getUserSettings()->getXmlValue("audioSetup") == nullptr;
     const auto setup = firstRunSetup();
     // Último argumento: abre sozinho todo dispositivo MIDI que aparecer (USB ou
     // Bluetooth já pareado), conferindo a cada meio segundo.
@@ -83,6 +111,19 @@ public:
     // O JUCE silencia a entrada por padrão (medo de microfonia com microfone).
     // Num simulador de guitarra a entrada é a guitarra: fica sempre aberta.
     mHolder->getMuteInputValue().setValue(false);
+   #if JUCE_LINUX || JUCE_BSD
+    // Primeira abertura com o JACK do PipeWire: começa por ele (cada placa pelo
+    // nome, sem fila a mais). Depois vale o que o usuário escolher.
+    if (firstRun && pipeWireJack)
+    {
+      auto& devices = mHolder->deviceManager;
+      devices.setCurrentAudioDeviceType("JACK", true);
+      if (devices.getCurrentAudioDevice() == nullptr)
+        devices.setCurrentAudioDeviceType("ALSA", true);
+    }
+   #else
+    juce::ignoreUnused(firstRun);
+   #endif
 
     auto& link = nexus::standaloneLink();
     link.devices = &mHolder->deviceManager;

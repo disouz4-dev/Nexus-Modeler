@@ -43,10 +43,10 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
     refresh();
   };
   mInputDevice.box.onChange = [this] {
-    apply([this](auto& s) { s.inputDeviceName = mInputDevice.box.getText(); s.useDefaultInputChannels = true; });
+    apply([this](auto& s) { s.inputDeviceName = mInputDevice.chosen(); s.useDefaultInputChannels = true; });
   };
   mOutputDevice.box.onChange = [this] {
-    apply([this](auto& s) { s.outputDeviceName = mOutputDevice.box.getText(); s.useDefaultOutputChannels = true; });
+    apply([this](auto& s) { s.outputDeviceName = mOutputDevice.chosen(); s.useDefaultOutputChannels = true; });
   };
   mGuitar.box.onChange = [this] {
     const int ch = mGuitar.box.getSelectedId() - 1;
@@ -158,12 +158,23 @@ void AudioPanel::refresh()
   const bool separate = type != nullptr && type->hasSeparateInputsAndOutputs();
   auto fillDevices = [&](Row& row, bool input, const juce::String& current) {
     row.box.clear(juce::dontSendNotification);
+    row.names.clear();
     if (type == nullptr)
       return;
-    int i = 1;
-    for (const auto& name : type->getDeviceNames(input))
-      row.box.addItem(name, i++);
-    row.box.setText(current, juce::dontSendNotification);
+    // No Linux, o dispositivo padrão do ALSA se chama "Default ALSA Output"
+    // também na lista de entradas; mostramos "Padrão do sistema".
+    auto shown = [](const juce::String& name) {
+      return name.startsWith("Default ALSA") ? TRANS(juce::String::fromUTF8("Padrão do sistema")) + name.fromFirstOccurrenceOf(" (", true, false)
+                                             : name;
+    };
+    row.names = type->getDeviceNames(input);
+    for (int i = 0; i < row.names.size(); ++i)
+      row.box.addItem(shown(row.names[i]), i + 1);
+    const int at = row.names.indexOf(current);
+    if (at >= 0)
+      row.box.setSelectedId(at + 1, juce::dontSendNotification);
+    else
+      row.box.setText(shown(current), juce::dontSendNotification);
   };
   fillDevices(mInputDevice, true, setup.inputDeviceName);
   fillDevices(mOutputDevice, false, setup.outputDeviceName);

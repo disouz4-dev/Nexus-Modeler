@@ -96,8 +96,10 @@ set(CPACK_DEBIAN_FILE_NAME "NexusModeler-${NEXUS_VERSAO}-Linux-${CPACK_DEBIAN_PA
 # "|" atendem tanto o Ubuntu 24.04 (nomes com t64) quanto versões anteriores.
 set(CPACK_DEBIAN_PACKAGE_DEPENDS
   "libasound2t64 | libasound2, libfreetype6, libfontconfig1, libcurl4t64 | libcurl4 | libcurl3-gnutls, libgl1, libx11-6, libxext6, libxrandr2, libxinerama1, libxcursor1")
-# JACK é opcional: o programa independente também toca pelo ALSA.
-set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "libjack-jackd2-0 | libjack0")
+# JACK é opcional: o programa independente também toca pelo ALSA. Com o
+# PipeWire (Ubuntu, Mint, Fedora), o pipewire-jack dá cada placa pelo nome e a
+# latência baixa; o Nexus usa ele sozinho quando está instalado.
+set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "pipewire-jack, libjack-jackd2-0 | libjack0")
 # Varredura automática das bibliotecas usadas pelos binários (precisa do
 # dpkg-shlibdeps; desligue com -DNEXUS_DEB_SHLIBDEPS=OFF fora do Debian).
 option(NEXUS_DEB_SHLIBDEPS "Calcular dependências com o dpkg-shlibdeps" ON)

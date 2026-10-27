@@ -1672,6 +1672,8 @@ void NexusEditor::retranslate()
   mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
   mLanguageButton.setTooltip(TRANS("Idioma"));
   mUpdate.retranslate();
+  if (mChain)
+    mChain->testBar().retranslate();
   mBrowser->retranslate();
   refreshBrowser();
   if (mAudioPanel)

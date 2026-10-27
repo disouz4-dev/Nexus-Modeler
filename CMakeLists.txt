@@ -16,6 +16,11 @@ set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 # Os textos da tela estão em português (UTF-8); o Visual Studio precisa saber.
 add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/utf-8>)
 
+# Windows: as bibliotecas do Visual Studio vão dentro do programa e do plugin.
+# Sem isso, um Windows sem o "Visual C++ Redistributable" instalado não abre
+# o Nexus ("MSVCP140.dll não foi encontrado", visto no teste de 27/10/2026).
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Tipo de compilação" FORCE)
 endif()
