@@ -621,7 +621,7 @@ def mat_diamond_plate(name, color, pitch_mm=11.0, rough=0.16):
     return mat
 
 
-def mat_perforated(name, color, hole_mm=3.2, pitch_mm=4.8, rough=0.38):
+def mat_perforated(name, color, hole_mm=3.2, pitch_mm=4.8, rough=0.38, shape="redondo"):
     """Grade de metal perfurado pintado: furos redondos em fileiras
     desencontradas, com o fundo escuro aparecendo (grade do Soldano)."""
     mat, nodes, links, bsdf = _principled(name)
@@ -637,8 +637,13 @@ def mat_perforated(name, color, hole_mm=3.2, pitch_mm=4.8, rough=0.38):
     x = _math(nodes, links, "ADD", _math(nodes, links, "MULTIPLY", sep.outputs["X"], s), shift)
     fx = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", x), 0.5)
     fz = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", z), 0.5)
-    d = _math(nodes, links, "SQRT", _math(nodes, links, "ADD", _math(nodes, links, "MULTIPLY", fx, fx), _math(nodes, links, "MULTIPLY", fz, fz)))
-    r = 0.5 * hole_mm / pitch_mm
+    if shape == "losango":
+        # Metal expandido: furos em losango deitado (largo e baixo), como a grade do Soldano.
+        d = _math(nodes, links, "ADD", _math(nodes, links, "ABSOLUTE", fx), _math(nodes, links, "MULTIPLY", _math(nodes, links, "ABSOLUTE", fz), 1.8))
+        r = 0.5 * hole_mm / pitch_mm
+    else:
+        d = _math(nodes, links, "SQRT", _math(nodes, links, "ADD", _math(nodes, links, "MULTIPLY", fx, fx), _math(nodes, links, "MULTIPLY", fz, fz)))
+        r = 0.5 * hole_mm / pitch_mm
     solid = _math(nodes, links, "MINIMUM", _math(nodes, links, "MAXIMUM", _math(nodes, links, "DIVIDE", _math(nodes, links, "SUBTRACT", d, r), 0.06), 0.0), 1.0)
     mix = nodes.new("ShaderNodeMix")
     mix.data_type = "RGBA"

@@ -108,7 +108,8 @@ def build(rec, fonts):
                    if fascia_cloth else
                    st.mat_diamond_plate("fachada", rec["fachada"]["cor"], rec["fachada"].get("passo_mm", 11.0))
                    if rec["fachada"].get("tipo") == "xadrez" else
-                   st.mat_perforated("fachada", rec["fachada"]["cor"], rec["fachada"].get("furo_mm", 3.2), rec["fachada"].get("passo_mm", 4.8))
+                   st.mat_perforated("fachada", rec["fachada"]["cor"], rec["fachada"].get("furo_mm", 3.2), rec["fachada"].get("passo_mm", 4.8),
+                                     shape=rec["fachada"].get("furo", "redondo"))
                    if rec["fachada"].get("tipo") == "grade" else
                    st.mat_leather("fachada", rec["fachada"]["cor"], rec["fachada"]["grao_mm"], rough=0.42, strength=0.35)),
         "piping": st.mat_plastic("friso", rec["fachada"].get("friso", (0.8, 0.78, 0.72)), rough=0.32, coat=0.4),
@@ -170,7 +171,13 @@ def build(rec, fonts):
     if lg.get("tipo") != "marca":
       st.text("logo", lg["texto"], lfont, lsize, (logo_x, fascia_front - 0.0045, logo_z),
               mats["logo"], extrude=0.0016, bevel=0.0007, valign="CENTER")
-    # Sublinhado em traço, como a assinatura das placas em script.
+    # Número grande na grade, no canto de baixo à direita (como o 5150).
+    if rec.get("selo_grade"):
+        sg = rec["selo_grade"]
+        st.text("selo_grade", sg["texto"], fonts["label"], sg.get("altura_m", 0.034),
+                (inner_w / 2 - sg.get("margem_m", 0.05), fascia_front - 0.0035, fascia_z0 + sg.get("altura_m", 0.034) * 0.75),
+                st.mat_brushed("selo", (0.86, 0.87, 0.9), rough=0.2), extrude=0.0015, bevel=0.0004, align="RIGHT")
+        # Sublinhado em traço, como a assinatura das placas em script.
     if lg.get("sublinhado"):
         sub = lg["sublinhado"]
         bar = st.box("logo_sublinhado", (sub["largura_m"], 0.003, sub["espessura_m"]),
@@ -244,7 +251,7 @@ def build(rec, fonts):
         for cz in (0.0, H):
             for cy in (front, -front):
                 c = st.box("cantoneira", (0.042, 0.042, 0.042), (cx - math.copysign(0.0155, cx), cy - math.copysign(0.0155, cy), cz - math.copysign(0.0155, cz - H / 2)),
-                           bevel=0.012, segments=5, material=mats["black_metal"])
+                           bevel=0.012, segments=5, material=mats["chrome"] if rec.get("cantos") == "cromo" else mats["black_metal"])
                 c.scale = (1.0, 1.0, 1.0)
                 if cy == front:
                     st.cylinder("parafuso_canto", 0.0028, 0.0016, (cx - math.copysign(0.011, cx), front - 0.0068, cz - math.copysign(0.011, cz - H / 2)),

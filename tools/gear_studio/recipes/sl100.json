@@ -17,13 +17,14 @@
   },
   "fachada": {
     "tipo": "grade",
+    "furo": "losango",
     "cor": [
-      0.03,
-      0.03,
-      0.032
+      0.02,
+      0.02,
+      0.022
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.4
+    "furo_mm": 13.0,
+    "passo_mm": 15.0
   },
   "logo": {
     "tipo": "marca",
@@ -39,16 +40,16 @@
   },
   "painel": {
     "altura_m": 0.088,
-    "pintado": false,
+    "pintado": true,
     "cor": [
       0.86,
-      0.87,
-      0.9
+      0.85,
+      0.8
     ],
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
+      0.03,
+      0.03,
+      0.03
     ],
     "modelo": "SL 100",
     "marca": "NEXUS MODELER"
@@ -80,22 +81,22 @@
     }
   ],
   "botao_estilo": {
-    "diametro_m": 0.026,
+    "diametro_m": 0.025,
     "corpo": [
-      0.01,
-      0.01,
-      0.01
+      0.72,
+      0.62,
+      0.45
     ],
     "tampa": [
-      0.012,
-      0.012,
-      0.012
+      0.78,
+      0.68,
+      0.5
     ],
     "tampa_plastico": true,
     "traco": [
-      0.95,
-      0.95,
-      0.95
+      0.03,
+      0.03,
+      0.03
     ]
   },
   "chave_liga": {
@@ -120,5 +121,6 @@
     "modelo_z": 0.06,
     "modelo_tamanho": 0.019,
     "modelo_inclinacao": 0.0
-  }
+  },
+  "cantos": "cromo"
 }

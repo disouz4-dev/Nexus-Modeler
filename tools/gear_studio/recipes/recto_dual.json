@@ -122,5 +122,6 @@
     "modelo_z": 0.06,
     "modelo_tamanho": 0.019,
     "modelo_inclinacao": 0.0
-  }
+  },
+  "cantos": "cromo"
 }
