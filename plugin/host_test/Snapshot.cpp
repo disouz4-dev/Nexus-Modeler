@@ -9,9 +9,37 @@
 #include "../source/PluginProcessor.h"
 #include "nexus/TestSignal.h"
 #include "../source/ui/Language.h"
+#include "../source/ui/Brand.h"
+
+// Ícone do programa: o triângulo impossível do logo num quadrado escuro.
+static int writeIcon(const juce::File& out, int size)
+{
+  juce::Image img(juce::Image::ARGB, size, size, true);
+  {
+    juce::Graphics g(img);
+    const float s = static_cast<float>(size);
+    const auto box = juce::Rectangle<float>(s, s).reduced(s * 0.09f); // margem do padrão de ícones do Mac
+    juce::ColourGradient bg(juce::Colour(0xff1b1e24), box.getX(), box.getY(), juce::Colour(0xff0a0b0d), box.getX(), box.getBottom(), false);
+    g.setGradientFill(bg);
+    g.fillRoundedRectangle(box, box.getWidth() * 0.225f);
+    g.setColour(juce::Colour(0x3329b6ff));
+    g.drawRoundedRectangle(box.reduced(s * 0.004f), box.getWidth() * 0.225f, s * 0.006f);
+    const auto tri = box.reduced(box.getWidth() * 0.12f).translated(0.0f, box.getHeight() * 0.015f);
+    nexus::ui::brand::drawPenrose(g, tri);
+  }
+  out.deleteFile();
+  juce::FileOutputStream stream(out);
+  return juce::PNGImageFormat().writeImageToStream(img, stream) ? 0 : 1;
+}
 
 int main(int argc, char** argv)
 {
+  // NEXUS_ICONE=<arquivo.png>: só gera o ícone do programa.
+  if (const char* icon = std::getenv("NEXUS_ICONE"))
+  {
+    juce::ScopedJuceInitialiser_GUI init;
+    return writeIcon(juce::File::getCurrentWorkingDirectory().getChildFile(icon), 1024);
+  }
   if (argc < 3)
   {
     std::printf("Uso: nexus_snapshot <pasta_do_pacote> <foto.png> [ganho]\n");

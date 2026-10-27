@@ -1,0 +1,6 @@
+#!/bin/bash
+# Depois de instalar o AU (Audio Unit): reinicia o serviço do macOS que guarda
+# a lista de Audio Units, para o Logic e o GarageBand enxergarem o Nexus sem
+# precisar reiniciar o Mac.
+killall -9 AudioComponentRegistrar >/dev/null 2>&1 || true
+exit 0

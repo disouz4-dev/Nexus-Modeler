@@ -1,33 +1,33 @@
 {
-  "nome": "Laranja Dist",
-  "familia": "laranja_dist",
+  "nome": "Orange Drive",
+  "familia": "orange_drive",
   "largura": 1200,
-  "altura": 1440,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 335,
-      "y": 284,
-      "tamanho": 193,
+      "x": 252,
+      "y": 155,
+      "tamanho": 226,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 503,
-      "y": 284,
-      "tamanho": 193,
+      "x": 487,
+      "y": 155,
+      "tamanho": 226,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 672,
-      "y": 284,
-      "tamanho": 193,
+      "x": 722,
+      "y": 155,
+      "tamanho": 226,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -37,40 +37,40 @@
   "rotulos": [
     {
       "texto": "NÍVEL",
-      "x": 432.0,
-      "y": 498.7,
-      "altura": 35.28,
-      "achatamento": 0.81,
+      "x": 371.8,
+      "y": 426.9,
+      "altura": 47.93,
+      "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
       "x": 600.0,
-      "y": 498.7,
-      "altura": 35.28,
-      "achatamento": 0.809,
+      "y": 426.9,
+      "altura": 47.93,
+      "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.15
     },
     {
       "texto": "DISTORÇÃO",
-      "x": 768.0,
-      "y": 498.7,
-      "altura": 35.28,
-      "achatamento": 0.81,
+      "x": 828.2,
+      "y": 426.9,
+      "altura": 47.93,
+      "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 600,
-    "y": 800,
-    "raio": 262
+    "y": 1035,
+    "raio": 338
   },
   "led": {
-    "x": 382.8,
-    "y": 581.6,
-    "raio": 24.8
+    "x": 308.5,
+    "y": 707.1,
+    "raio": 34.4
   }
 }

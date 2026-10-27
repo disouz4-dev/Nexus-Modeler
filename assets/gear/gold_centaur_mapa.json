@@ -1,0 +1,76 @@
+{
+ "nome": "Gold Centaur",
+ "familia": "ouro",
+ "largura": 1200,
+ "altura": 1260,
+ "posicoes": 101,
+ "botoes": [
+  {
+   "id": "ganho",
+   "x": 341,
+   "y": 263,
+   "tamanho": 162,
+   "arquivo": "botao_ganho.png",
+   "angulo_min": -150,
+   "angulo_max": 150
+  },
+  {
+   "id": "tom",
+   "x": 519,
+   "y": 263,
+   "tamanho": 162,
+   "arquivo": "botao_tom.png",
+   "angulo_min": -150,
+   "angulo_max": 150
+  },
+  {
+   "id": "nivel",
+   "x": 697,
+   "y": 263,
+   "tamanho": 162,
+   "arquivo": "botao_nivel.png",
+   "angulo_min": -150,
+   "angulo_max": 150
+  }
+ ],
+ "canais": [],
+ "rotulos": [
+  {
+   "texto": "GANHO",
+   "x": 421.5,
+   "y": 443.0,
+   "altura": 34.9,
+   "achatamento": 0.81,
+   "cor": "#12100d",
+   "espaco": 1.15
+  },
+  {
+   "texto": "AGUDO",
+   "x": 600.0,
+   "y": 443.0,
+   "altura": 34.9,
+   "achatamento": 0.81,
+   "cor": "#12100d",
+   "espaco": 1.15
+  },
+  {
+   "texto": "SAÍDA",
+   "x": 778.5,
+   "y": 443.0,
+   "altura": 34.9,
+   "achatamento": 0.81,
+   "cor": "#12100d",
+   "espaco": 1.15
+  }
+ ],
+ "pisante": {
+  "x": 600,
+  "y": 726,
+  "raio": 88
+ },
+ "led": {
+  "x": 600.0,
+  "y": 505.2,
+  "raio": 20.5
+ }
+}

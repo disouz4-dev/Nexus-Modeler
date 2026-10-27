@@ -1,0 +1,144 @@
+name: Pacotes de instalação
+
+# Gera os instaladores nos três sistemas:
+#   Windows  instalador .exe (Inno Setup) e .zip para a instalação pelo terminal
+#   Mac      .dmg com o instalador .pkg e .zip para a instalação pelo terminal
+#   Linux    .deb (CPack) e .tar.gz para a instalação pelo terminal
+# Os arquivos ficam guardados na execução (aba Actions). Numa etiqueta v*
+# (por exemplo v0.2.0), também são anexados ao lançamento do GitHub.
+# A compilação e os testes de sempre continuam em compilacao.yml.
+
+on:
+  push:
+    tags: ["v*"]
+  pull_request:
+    paths:
+      - "packaging/**"
+      - ".github/workflows/pacotes.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pacotes:
+    name: Pacotes (${{ matrix.nome }})
+    runs-on: ${{ matrix.maquina }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - nome: Linux
+            maquina: ubuntu-24.04
+          - nome: Windows
+            maquina: windows-2022
+          - nome: Mac
+            maquina: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      # Versão dos pacotes: a da etiqueta (v0.2.0 vira 0.2.0) ou, fora de
+      # etiqueta, a do project() no CMakeLists.txt.
+      - name: Versão
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            versao="${GITHUB_REF_NAME#v}"
+          else
+            versao=$(sed -n 's/^project(NexusModeler VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)
+          fi
+          echo "Versão: $versao"
+          echo "NEXUS_VERSAO=$versao" >> "$GITHUB_ENV"
+
+      - name: Dependências do Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build dpkg-dev libasound2-dev libjack-jackd2-dev \
+            libfreetype-dev libfontconfig1-dev libx11-dev libxcomposite-dev libxcursor-dev \
+            libxext-dev libxi-dev libxinerama-dev libxrandr-dev libxrender-dev libgl1-mesa-dev pkg-config \
+            libcurl4-openssl-dev
+
+      # Sem as ferramentas de medida e os testes (já rodam em compilacao.yml).
+      - name: Configurar (Linux, com o pacote .deb)
+        if: runner.os == 'Linux'
+        run: >
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DNEXUS_BUILD_TOOLS=OFF
+          -DNEXUS_PACOTES=ON -DNEXUS_VERSAO="$NEXUS_VERSAO"
+
+      - name: Configurar (Mac, binário universal)
+        if: runner.os == 'macOS'
+        run: |
+          brew install ninja
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DNEXUS_BUILD_TOOLS=OFF -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"
+
+      - name: Configurar (Windows)
+        if: runner.os == 'Windows'
+        run: cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DNEXUS_BUILD_TOOLS=OFF
+
+      - name: Compilar
+        run: cmake --build build --config Release --parallel 4
+
+      - name: Pacotes do Linux (.deb e .tar.gz)
+        if: runner.os == 'Linux'
+        run: |
+          cpack --config build/CPackConfig.cmake -G DEB -B build/pacotes
+          packaging/linux/criar_tar.sh
+          dpkg-deb --info build/pacotes/NexusModeler-*.deb
+          dpkg-deb --contents build/pacotes/NexusModeler-*.deb
+
+      - name: Pacotes do Mac (.dmg e .zip)
+        if: runner.os == 'macOS'
+        # Para assinar e autenticar na Apple, defina NEXUS_ASSINATURA_APP,
+        # NEXUS_ASSINATURA_INSTALADOR e NEXUS_NOTARIZACAO_PERFIL (veja o script).
+        run: packaging/macos/criar_dmg.sh
+
+      - name: Pacotes do Windows (instalador .exe e .zip)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          # Inno Setup 6.3 ou mais novo (instala ou atualiza o que vem na máquina).
+          choco upgrade innosetup -y --no-progress
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersao=$env:NEXUS_VERSAO" packaging\windows\nexus.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+          $artefatos = "build\plugin\NexusModeler_artefacts\Release"
+          $pasta = "build\zip\Nexus Modeler"
+          New-Item -ItemType Directory -Force -Path $pasta | Out-Null
+          Copy-Item -Recurse "$artefatos\VST3\Nexus Modeler.vst3" $pasta
+          Copy-Item "$artefatos\Standalone\Nexus Modeler.exe" $pasta
+          Copy-Item LICENSE "$pasta\LICENSE.txt"
+          Compress-Archive -Path $pasta -DestinationPath "build\pacotes\NexusModeler-$env:NEXUS_VERSAO-Windows.zip" -Force
+          Get-ChildItem build\pacotes
+
+      - name: Guardar os pacotes
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexus-modeler-pacotes-${{ runner.os }}
+          path: build/pacotes/NexusModeler-*
+          if-no-files-found: error
+
+  publicar:
+    name: Anexar ao lançamento
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: pacotes
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: nexus-modeler-pacotes-*
+          path: pacotes
+          merge-multiple: true
+
+      - name: Conferir os arquivos
+        run: ls -la pacotes
+
+      # Cria o lançamento da etiqueta se ainda não existir e anexa os pacotes.
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: pacotes/*
+          fail_on_unmatched_files: true

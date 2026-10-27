@@ -183,7 +183,8 @@ void testScreen(NexusProcessor& p)
   std::vector<nexus::ui::Segmented*> tabs, segs;
   collect(*editor, segs);
   for (auto* t : segs)
-    if (visibleIn(*t, *editor) && t->getParentComponent() != editor.get() && t->numItems() == 3)
+    if (visibleIn(*t, *editor) && t->getParentComponent() != editor.get() && t->numItems() == 3
+        && t->findParentComponentOfClass<nexus::ui::GearBrowser>() == nullptr)
       tabs.push_back(t);
   const bool tabsVisible = tabs.size() == 1 && visibleIn(*tabs.front(), *editor);
   const bool knobsHidden = !visibleIn(*knobs.front(), *editor);
@@ -311,7 +312,7 @@ int main(int argc, char** argv)
     param->setValueNotifyingHost(1.0f);
     juce::Component* stage = nullptr;
     for (auto* c : editor->getChildren())
-      if (c->isVisible() && c->getBounds().getHeight() > 300)
+      if (c->isVisible() && c->getBounds().getHeight() > 300 && dynamic_cast<nexus::ui::GearBrowser*>(c) == nullptr)
         stage = c;
     bool toggledByClick = false;
     if (stage != nullptr)
@@ -524,6 +525,60 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença para só B: ") + juce::String(diffDb(onlyBSettled, settled), 1) + " dB");
   }
 
+  // 8. Pedais nativos: chorus, delay e reverb.
+  {
+    std::printf("\nEfeitos do Nexus (chorus, delay, reverb)\n");
+    auto make = [&](int look, bool on) {
+      auto p = std::make_unique<NexusProcessor>();
+      p->setPlayConfigDetails(2, 2, 48000.0, 128);
+      p->prepareToPlay(48000.0, 128);
+      setParam(*p, "p1_visual", static_cast<float>(look));
+      setParam(*p, "p1_ligado", on ? 1.0f : 0.0f);
+      ChainLayout l;
+      l.pre = {0};
+      p->setLayout(l);
+      settle(*p, 100);
+      return p;
+    };
+    // Sem cabeçote carregado o sinal passa direto pelo plugin: dá para ouvir só o efeito.
+    auto dry = make(4, false);
+    const auto outDry = play(*dry, signal);
+    for (int look : {4, 5, 6})
+    {
+      auto on = make(look, true);
+      const auto out = play(*on, signal);
+      const char* names[] = {"Chorus", "Delay", "Reverb"};
+      report(diffDb(outDry, out) > -25.0, (juce::String(names[look - 4]) + " ligado muda o som").toRawUTF8(),
+             juce::String::fromUTF8("diferença para o som seco: ") + juce::String(diffDb(outDry, out), 1) + " dB");
+    }
+    // Delay: depois de desligar, as repetições continuam por um tempo (rastro).
+    auto delay = make(5, true);
+    play(*delay, signal);
+    setParam(*delay, "p1_ligado", 0.0f);
+    std::vector<float> silence(48000, 0.0f);
+    juce::AudioBuffer<float> buffer(2, 128);
+    juce::MidiBuffer midi;
+    double tailEnergy = 0.0;
+    for (int b = 0; b < 48000 / 128; ++b)
+    {
+      buffer.clear();
+      delay->processBlock(buffer, midi);
+      for (int i = 0; i < 128; ++i)
+        tailEnergy += buffer.getSample(0, i) * buffer.getSample(0, i);
+    }
+    report(tailEnergy > 1e-4, "Delay desligado deixa as repetições terminarem (rastro)",
+           juce::String::fromUTF8("energia no segundo seguinte: ") + juce::String(tailEnergy, 4));
+    // Rastro acabou: o som volta a ser exatamente o seco.
+    for (int b = 0; b < 8 * 48000 / 128; ++b)
+    {
+      buffer.clear();
+      delay->processBlock(buffer, midi);
+    }
+    const auto after = play(*delay, signal);
+    report(diffDb(outDry, after) < -100.0, "Efeito desligado, sem rastro, deixa o som intacto",
+           juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
+  }
+
   // 7. TONE3000: escolha das capturas pelos nomes reais dos pacotes.
   {
     std::printf("\nTONE3000: escolha das capturas\n");
@@ -552,7 +607,7 @@ int main(int argc, char** argv)
     const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
     report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
     int all = 0;
-    for (const auto* g : {"brit800", "lemon_drive", "laranja_dist", "ouro"})
+    for (const auto* g : {"brit800", "lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }

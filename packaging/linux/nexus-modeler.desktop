@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Nexus Modeler
+GenericName=Guitar amp modeler
+GenericName[pt_BR]=Simulador de amplificador de guitarra
+Comment=Guitar plugin: capture quality with the ease of modeling
+Comment[pt_BR]=Plugin de guitarra: a qualidade da captura com a facilidade da modelagem
+Exec=nexus-modeler
+Icon=nexus-modeler
+Terminal=false
+Categories=AudioVideo;Audio;Music;
+Keywords=guitar;amp;NAM;capture;guitarra;amplificador;captura;
+StartupWMClass=Nexus Modeler

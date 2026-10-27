@@ -10,6 +10,7 @@
 #include "ChainLayout.h"
 #include "MidiMap.h"
 #include "nexus/AmpVoice.h"
+#include "nexus/Effects.h"
 
 // O conversor de taxa veio do iPlug2 e espera estas duas definições.
 #ifndef DEFAULT_BLOCK_SIZE
@@ -43,7 +44,11 @@ public:
   static constexpr int kRigs = ChainLayout::kRigs;
   // Cada cabeçote tem até 3 canais, cada um com pacote e ganho próprios.
   static constexpr int kChannels = 3;
-  static constexpr int kPedalLooks = 3;
+  // Visuais de pedal: 0 a 3 tocam captura (drive); 4 em diante são efeitos
+  // do próprio Nexus (chorus, delay, reverb), com os botões "a", "b" e "c".
+  static constexpr int kPedalLooks = 7;
+  static constexpr int kFirstNativeLook = 4;
+  static bool isNativeLook(int look) { return look >= kFirstNativeLook; }
 
   // Posições dos pacotes: 0 a 11 são os pedais; depois, os canais dos dois
   // cabeçotes (lado A: 12 a 14, lado B: 15 a 17).
@@ -95,6 +100,7 @@ public:
   bool channelLoaded(int rig, int channel) const { return slotLoaded(ampSlot(rig, channel)); }
   // Canal que toca agora no cabeçote (ou o escolhido, se nenhum tocou ainda).
   int audibleSlot(int rig) const;
+  int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;
   juce::String packName(int slot) const;
@@ -154,6 +160,9 @@ private:
     std::atomic<float>* levelParam = nullptr;
     std::atomic<float>* on = nullptr;
     std::atomic<float>* lite = nullptr;
+    std::atomic<float>* visual = nullptr;
+    std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
+    nexus::NativePedal native;
   };
 
   // Estado de áudio de cada cabeçote: troca de canal com aquecimento.

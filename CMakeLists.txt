@@ -37,3 +37,10 @@ endif()
 if(NEXUS_BUILD_PLUGIN)
   add_subdirectory(plugin)
 endif()
+
+# Pacote .deb (Linux). Desligado por padrão: só o fluxo de pacotes liga.
+# O .exe (Windows) e o .dmg (Mac) são feitos pelos scripts em packaging/.
+option(NEXUS_PACOTES "Preparar o pacote .deb com o CPack (Linux)" OFF)
+if(NEXUS_PACOTES AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  include(packaging/linux/pacotes.cmake)
+endif()

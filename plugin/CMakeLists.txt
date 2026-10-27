@@ -18,6 +18,7 @@ endif()
 juce_add_plugin(NexusModeler
   PRODUCT_NAME "Nexus Modeler"
   COMPANY_NAME "Nexus Modeler"
+  ICON_BIG "${PROJECT_SOURCE_DIR}/assets/icone/nexus_1024.png"
   BUNDLE_ID "dev.disouz4.nexusmodeler"
   PLUGIN_MANUFACTURER_CODE Nxsm
   PLUGIN_CODE Nxm1
@@ -41,6 +42,7 @@ set(NEXUS_UI_SOURCES
   source/ui/Controls.cpp
   source/ui/Gear.cpp
   source/ui/CapturePanel.cpp
+  source/ui/GearBrowser.cpp
   source/tone3000/Tone3000.cpp)
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp

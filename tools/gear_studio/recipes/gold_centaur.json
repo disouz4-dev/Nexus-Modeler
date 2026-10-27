@@ -1,7 +1,7 @@
 {
   "tipo": "pedal",
-  "nome": "Ouro",
-  "familia": "ouro",
+  "nome": "Gold Centaur",
+  "familia": "gold_centaur",
   "inspiracao": "overdrive dourado de luxo de três botões (estilo Klon Centaur)",
   "formato": "padrao",
   "medidas_m": {
@@ -29,9 +29,9 @@
     0.005,
     0.004
   ],
-  "modelo": "Ouro",
+  "modelo": "Gold Centaur",
   "logo_script": true,
-  "logo_m": 0.03,
+  "logo_m": 0.026,
   "logo_y": -0.12,
   "tipo_texto": "",
   "pisante_y": -0.58,

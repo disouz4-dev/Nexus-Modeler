@@ -7,6 +7,7 @@
 #include "PluginProcessor.h"
 #include "ui/AudioPanel.h"
 #include "ui/CapturePanel.h"
+#include "ui/GearBrowser.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
 
@@ -15,10 +16,11 @@
 // da peça, o pacote e o trilho das capturas; e a cadeia de sinal, montada por
 // clique e arrasta: pedais antes, pedal A/B, cabeçote, pedais entre cabeçote
 // e caixa, caixa, pedais depois.
-class NexusEditor : public juce::AudioProcessorEditor, private juce::Timer
+class NexusEditor : public juce::AudioProcessorEditor, public juce::DragAndDropContainer, private juce::Timer
 {
 public:
-  static constexpr int kWidth = 1200;
+  static constexpr int kWidth = 1400;
+  static constexpr int kBrowserWidth = 280;
   static constexpr int kHeight = 800;
   static constexpr int kPedalLooks = NexusProcessor::kPedalLooks;
 
@@ -113,7 +115,7 @@ private:
   };
 
   // Cadeia de sinal com clique e arrasta.
-  class ChainView : public juce::Component
+  class ChainView : public juce::Component, public juce::DragAndDropTarget
   {
   public:
     explicit ChainView(NexusEditor& editor);
@@ -126,6 +128,13 @@ private:
     void mouseExit(const juce::MouseEvent&) override { mHover = -1; repaint(); }
     void rebuild();
     nexus::ui::LevelFader& input() { return *mInput; }
+    // Equipamento arrastado da coluna da direita.
+    bool isInterestedInDragSource(const SourceDetails&) override;
+    void itemDragMove(const SourceDetails&) override;
+    void itemDragExit(const SourceDetails&) override;
+    void itemDropped(const SourceDetails&) override;
+    // Lista da cadeia: 0 = antes, 1 = entre (A), 2 = entre (B), 3 = depois.
+    static std::vector<int>& list(ChainLayout& l, int which);
     nexus::ui::LevelFader& output() { return *mOutput; }
 
   private:
@@ -155,7 +164,6 @@ private:
     const Drop* nearestDrop(juce::Point<float> p) const;
     void showCardMenu(int card);
     void dropPedal(int pedal, const Drop& d);
-    static std::vector<int>& list(ChainLayout& l, int which);
 
     NexusEditor& mEditor;
     std::unique_ptr<nexus::ui::LevelFader> mInput, mOutput;
@@ -167,6 +175,7 @@ private:
     int mPressed = -1;
     bool mDragging = false;
     juce::Point<float> mDragAt;
+    bool mExternal = false; // pedal vindo da coluna, ainda no ar
   };
 
   void timerCallback() override;
@@ -181,7 +190,11 @@ private:
   void showLanguageMenu();
   void retranslate();
   void showMidiMenu(const juce::String& paramId, juce::Component& target);
-  void cyclePedalLook(int delta);
+  // Coluna de equipamentos: lista, aba e peça marcada.
+  void refreshBrowser();
+  void pickGear(const nexus::ui::GearItem& item);
+  // Põe um pedal novo, com esse visual, na lista e posição dadas.
+  void insertPedal(int look, int list, int position);
   int pedalLook(int pedal) const;
   const nexus::ui::GearArt* pedalArt(int pedal) const;
   juce::String packSummary(int slot) const;
@@ -219,8 +232,7 @@ private:
   std::unique_ptr<ChainView> mChain;
   nexus::ui::Segmented mChannels{{}};
   nexus::ui::TextLink mChangeLink{"trocar pacote"};
-  nexus::ui::IconButton mPrevLook{nexus::ui::Icon::left, "Visual anterior do pedal"};
-  nexus::ui::IconButton mNextLook{nexus::ui::Icon::right, juce::String::fromUTF8("Próximo visual do pedal")};
+  std::unique_ptr<nexus::ui::GearBrowser> mBrowser;
   std::unique_ptr<juce::FileChooser> mChooser;
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;

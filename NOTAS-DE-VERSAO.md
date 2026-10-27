@@ -60,8 +60,23 @@
   chinês, coreano, hindi, bengali e árabe.
 - Rótulos dos painéis viraram caixas de texto traduzidas por cima do 3D (sem
   render por idioma).
-- O instalador vai trazer o pacote de idiomas e um seletor (etapa dos
-  instaladores).
+- Os instaladores trazem o seletor de idioma (veja "Instaladores").
+
+### Instaladores
+- Windows: instalador `.exe` (Inno Setup) com VST3, programa independente e
+  atalho; escolha do idioma do instalador e página "Idioma do Nexus" com os
+  15 idiomas, já marcando o do instalador. Instala para todos os usuários
+  (administrador) ou só para quem instala.
+- Mac: `.dmg` com instalador `.pkg` de componentes escolhíveis (VST3, AU e
+  programa independente). A tela do Nexus começa no idioma do Mac. Ainda sem
+  assinatura da Apple.
+- Linux: pacote `.deb` com VST3, LV2, programa `nexus-modeler`, atalho no
+  menu e ícone.
+- Instalação pelo terminal, sem administrador: `packaging/instalar.sh`
+  (Linux e Mac) e `packaging/instalar.ps1` (Windows), com a pergunta do
+  idioma ou `--idioma`.
+- Fluxo `pacotes.yml`: gera os pacotes nos três sistemas e, numa etiqueta
+  `v*`, anexa ao lançamento do GitHub.
 
 ### Ferramentas
 - Nexus Gear Studio (`tools/gear_studio`): gera amplificadores, caixas e

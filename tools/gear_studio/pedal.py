@@ -163,7 +163,9 @@ def build(rec, fonts):
         st.cylinder("parafuso_bateria", 0.0055, 0.006, (0, -L / 2 - 0.001, base_h * 0.55), vertices=48,
                     material=mats["chrome"], axis="Y", bevel=0.0012)
         top = base_h
-        _flat_text("modelo", rec["modelo"], fonts["label"], 0.0085, (0, ty + tl * 0.38, H + 0.0004), mats["ink"], spacing=1.1, offset=0.0002)
+        # Nome: tamanho e deslocamento ajustáveis (nomes longos não podem encostar no LED).
+        _flat_text("modelo", rec["modelo"], fonts["label"], rec.get("modelo_m", 0.0085),
+                   (rec.get("modelo_x", 0.0) * W / 2, ty + tl * 0.38, H + 0.0004), mats["ink"], spacing=1.1, offset=0.0002)
         _flat_text("tipo", rec["tipo_texto"], fonts["label"], 0.0062, (0, ty - tl * 0.40, H + 0.0004), mats["ink"], spacing=1.4)
     else:
         st.box("caixa", (W, L, H), (0, 0, H / 2), bevel=rec.get("chanfro_m", 0.0045), segments=6, material=mats["paint"])

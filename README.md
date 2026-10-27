@@ -4,6 +4,8 @@
 
 Plugin de guitarra gratuito e de código aberto para Windows, Mac e Linux.
 
+Site do projeto: https://disouz4-dev.github.io/Nexus-Modeler/
+
 Hoje o guitarrista escolhe entre dois mundos:
 
 - a **modelagem** de amplificador: você gira os botões e timbra à vontade, mas
@@ -169,10 +171,40 @@ por família.
 
 ## Como instalar
 
-Os instaladores chegam na primeira versão publicada: `.exe` no Windows, `.dmg`
-no Mac, `.deb` no Linux e instalação por um comando no terminal. Até lá, dá
-para compilar (abaixo) ou baixar o que a compilação automática gera na aba
-**Actions**.
+Baixe o instalador do seu sistema na página de
+[lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest):
+
+- **Windows** (`NexusModeler-<versão>-Windows-instalador.exe`): instala o
+  plugin VST3 e o programa independente, com atalho no menu Iniciar. Tem a
+  tela de escolha do idioma do instalador e a página **Idioma do Nexus**, com
+  os 15 idiomas da tela do Nexus.
+- **Mac** (`NexusModeler-<versão>-Mac.dmg`): abra o `.dmg` e depois
+  **Instalar Nexus Modeler.pkg**. Em **Tipo de instalação**, escolha VST3, AU
+  e/ou o programa independente. A tela do Nexus abre no idioma do Mac.
+  Enquanto o instalador não for assinado pela Apple, abra com o botão direito
+  e **Abrir** na primeira vez.
+- **Linux** (`NexusModeler-<versão>-Linux-amd64.deb`, Debian e Ubuntu):
+  `sudo apt install ./NexusModeler-<versão>-Linux-amd64.deb`. Instala o VST3
+  em `/usr/lib/vst3`, o LV2 em `/usr/lib/lv2` e o programa `nexus-modeler`,
+  com atalho no menu.
+
+Pelo terminal, sem administrador (plugins na pasta do usuário: `~/.vst3`,
+`~/.lv2` e `~/.local/bin` no Linux; `~/Library/Audio/Plug-Ins` e
+`~/Applications` no Mac). O script pergunta o idioma, ou use `--idioma`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash -s -- --idioma pt-BR
+```
+
+No Windows (PowerShell; o VST3 vai para a pasta VST3 do usuário):
+
+```powershell
+irm https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.ps1 | iex
+```
+
+O idioma escolhido na instalação vale para a primeira vez; depois, o globo na
+tela do Nexus troca quando quiser. Os pacotes são gerados pelo fluxo
+`.github/workflows/pacotes.yml` (scripts em `packaging/`).
 
 ## Como compilar
 

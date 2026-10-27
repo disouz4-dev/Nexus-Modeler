@@ -29,6 +29,9 @@ NexusProcessor::NexusProcessor()
     p.levelParam = params.getRawParameterValue(pedalParam(i, "nivel"));
     p.on = params.getRawParameterValue(pedalParam(i, "ligado"));
     p.lite = params.getRawParameterValue(pedalParam(i, "lite"));
+    p.visual = params.getRawParameterValue(pedalParam(i, "visual"));
+    for (int k = 0; k < 3; ++k)
+      p.fx[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, k == 0 ? "a" : k == 1 ? "b" : "c"));
   }
   for (int r = 0; r < kRigs; ++r)
   {
@@ -112,9 +115,15 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "tom"), 1}, name + "tom", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "nivel"), 1}, name + juce::String::fromUTF8("nível"), knob, 5.0f));
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "ligado"), 1}, name + "ligado", true));
+    // Botões dos efeitos nativos (chorus: velocidade, profundidade, mistura;
+    // delay: tempo, repetições, mistura; reverb: tamanho, tom, mistura).
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "a"), 1}, name + "efeito A", knob, 5.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "b"), 1}, name + "efeito B", knob, 5.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "c"), 1}, name + "efeito C", knob, 4.0f));
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
-                                   juce::StringArray{"Lemon Drive", "Laranja Dist", "Ouro"}, 0));
+                                   juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
+                                                     "Coconut Delay", "Grape Reverb"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -157,6 +166,7 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mInputGain = juce::Decibels::decibelsToGain(mInput->load());
   for (auto& p : mPedals)
   {
+    p.native.prepare(kEngineRate, kEngineBlock);
     p.mix = p.on->load() > 0.5f ? 1.0f : 0.0f;
     const float l = p.levelParam->load() / 5.0f;
     p.level = l * l;
@@ -220,6 +230,16 @@ nexus::AmpVoice::Controls NexusProcessor::pedalControls(int pedal) const
 
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
+  // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
+  if (const int look = pedalLook(pedal); isNativeLook(look))
+  {
+    auto& p = mPedals[static_cast<size_t>(pedal)];
+    static constexpr nexus::NativePedal::Type types[] = {nexus::NativePedal::Type::chorus, nexus::NativePedal::Type::delay,
+                                                         nexus::NativePedal::Type::reverb};
+    const auto type = types[std::min(2, look - kFirstNativeLook)];
+    p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
+    return;
+  }
   auto* engine = mSlots[static_cast<size_t>(pedalSlot(pedal))].active;
   if (engine == nullptr)
     return; // pedal sem captura: o sinal passa direto
@@ -450,6 +470,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   bool anyEngine = false;
   for (auto& s : mSlots)
     anyEngine = anyEngine || s.active != nullptr;
+  // Efeito do Nexus na cadeia também processa, mesmo sem nenhuma captura.
+  for (const auto* list : {&mLayoutActive->pre, &mLayoutActive->loop[0], &mLayoutActive->loop[1], &mLayoutActive->post})
+    for (int pedal : *list)
+      anyEngine = anyEngine || isNativeLook(pedalLook(pedal));
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
       e->voice.setControls(pedalControls(i));

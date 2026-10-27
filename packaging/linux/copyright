@@ -1,0 +1,14 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Nexus Modeler
+Source: https://github.com/disouz4-dev/Nexus-Modeler
+
+Files: *
+Copyright: 2026 Nexus Modeler e colaboradores
+License: GPL-3+
+ Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo
+ sob os termos da Licença Pública Geral GNU, versão 3 ou posterior, publicada
+ pela Free Software Foundation.
+ .
+ No Debian e no Ubuntu, o texto completo da licença está em
+ /usr/share/common-licenses/GPL-3. Os componentes de terceiros e as licenças
+ deles estão listados em TERCEIROS.md, no repositório.
