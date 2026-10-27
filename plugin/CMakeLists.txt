@@ -44,7 +44,17 @@ set(NEXUS_UI_SOURCES
   source/ui/CapturePanel.cpp
   source/ui/GearBrowser.cpp
   source/ui/PresetBar.cpp
+  source/ui/UpdateBadge.cpp
+  source/ui/PackMapper.cpp
+  source/update/Updater.cpp
   source/tone3000/Tone3000.cpp)
+
+# Versão que o programa conhece (o atualizador compara com o último lançamento).
+# O fluxo de pacotes passa -DNEXUS_VERSAO com a versão da etiqueta.
+if(NOT NEXUS_VERSAO)
+  set(NEXUS_VERSAO "${PROJECT_VERSION}")
+endif()
+set_source_files_properties(source/update/Updater.cpp PROPERTIES COMPILE_DEFINITIONS "NEXUS_VERSAO=\"${NEXUS_VERSAO}\"")
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
   source/MidiMap.cpp)
@@ -80,7 +90,8 @@ set(NEXUS_ART_DIR "${CMAKE_CURRENT_BINARY_DIR}/art")
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "${NEXUS_ART_DIR}/inter.ttf" COPYONLY)
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
 file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
-     "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json")
+     "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json"
+     "${PROJECT_SOURCE_DIR}/assets/marca/*.svg")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData
@@ -131,7 +142,7 @@ if(NEXUS_BUILD_TOOLS)
   juce_add_console_app(nexus_snapshot PRODUCT_NAME "nexus_snapshot")
   target_sources(nexus_snapshot PRIVATE host_test/Snapshot.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
   target_include_directories(nexus_snapshot SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
-  target_compile_definitions(nexus_snapshot PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
+  target_compile_definitions(nexus_snapshot PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
   target_link_libraries(nexus_snapshot PRIVATE
     nexus_engine
     NexusArt
@@ -177,6 +188,19 @@ if(NEXUS_BUILD_TOOLS)
     NexusArt
     juce::juce_events
     juce::juce_data_structures
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+
+  # Ferramenta manual: passa uma gravação de guitarra pela cadeia com material da TONE3000.
+  juce_add_console_app(nexus_render PRODUCT_NAME "nexus_render")
+  target_sources(nexus_render PRIVATE host_test/RenderChain.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_render SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_render PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_render PRIVATE
+    nexus_engine
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
     juce::juce_cryptography
     juce::juce_recommended_config_flags)
 

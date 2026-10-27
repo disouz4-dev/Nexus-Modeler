@@ -35,30 +35,37 @@ Tudo isso toca capturas do
 [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
 (NAM A2 Full e A2 Lite).
 
-> **Estado atual (em desenvolvimento, ainda sem versão publicada).** Já
-> funcionam o motor de troca de capturas, o equalizador do painel, a tela com
-> o amplificador Brit 800, a caixa 4x12 e três pedais renderizados em 3D, a
-> caixa com IR próprio que se tranca sozinha em capturas full rig e o pedal
-> tocando capturas antes do amplificador. A importação direta da TONE3000 e o
-> player de estudo estão no plano
-> ([ARQUITETURA.md](ARQUITETURA.md) e [docs/MODELOS-3D.md](docs/MODELOS-3D.md)).
+> **Estado atual: em desenvolvimento, ainda sem versão publicada.** Já
+> funcionam o motor de troca de capturas, a tela 3D com o cabeçote Brit 800,
+> a caixa 4x12 e sete pedais, a cadeia completa com dois cabeçotes, as
+> capturas da TONE3000 dentro do programa, presets, MIDI, 15 idiomas, os
+> instaladores e a atualização automática. Em construção: o teste de som com
+> gravações de guitarra por estilo e o estúdio (separar as faixas de uma
+> música e tocar junto). Lista completa de equipamentos em
+> [docs/CATALOGO.md](docs/CATALOGO.md).
 
-![Nexus Modeler com o amplificador Brit 800](docs/imagens/tela-amplificador.png)
+![Nexus Modeler com o cabeçote Brit 800](docs/imagens/tela-amplificador.webp)
 
-*Com o ganho em 3,5, as capturas 3 e 4 tocam juntas, metade cada uma: os dois
-losangos acesos no trilho embaixo do nome.*
+*O cabeçote Brit 800: com o ganho entre duas posições, as duas capturas
+vizinhas tocam juntas (os losangos acesos no trilho embaixo do nome). À
+direita, a coluna dos equipamentos; embaixo, o caminho do sinal.*
 
-![Caixa trancada numa captura full rig](docs/imagens/tela-caixa-full-rig.png)
+![Pedal Banana Overdrive](docs/imagens/tela-pedal.webp)
 
-*Captura full rig (cabeçote + caixa): a caixa fica trancada em "Captura" e o
-IR não toca, para respeitar o som original.*
+*Pedal Banana Overdrive: o drive troca de captura como o ganho do cabeçote; o
+pisante liga e desliga e só o LED acende.*
 
-![Pedal Laranja Dist](docs/imagens/tela-pedal.png)
+![Capturas da TONE3000 dentro do Nexus](docs/imagens/tela-capturas.webp)
 
-*Pedal antes do amplificador: três visuais (Lemon Drive, Laranja Dist e Ouro),
-trocados pelas setas ao lado do nome; o pisante liga e desliga.*
+*Capturas da TONE3000 para o equipamento escolhido, sem sair do Nexus. Com a
+conta conectada, "Carregar" baixa direto para Documentos/Nexus Modeler.*
 
-## O que a prova do motor já faz
+![Dois cabeçotes com pedal A/B](docs/imagens/tela-dois-cabecotes.webp)
+
+*Dois cabeçotes, cada um com pedais e caixa próprios, trocados por um pedal
+A/B sem estalo.*
+
+## O que já funciona
 
 - **Troca de captura sem clique.** A captura que vai entrar primeiro "aquece"
   ouvindo o som recente da guitarra e só depois entra numa transição de 30 ms.
@@ -97,9 +104,11 @@ trocados pelas setas ao lado do nome; o pisante liga e desliga.*
 - **Capturas da TONE3000 dentro do Nexus:** "abrir pacote" mostra as capturas
   recomendadas para aquele equipamento, os favoritos e downloads da sua conta
   filtrados por ele, as em alta e o catálogo completo, sempre com a TONE3000
-  como fonte e o nome de cada criador. O Nexus baixa só as capturas certas,
-  uma por posição do botão, e monta o pacote. "Inserir manualmente" abre uma
-  pasta do computador.
+  como fonte e o nome de cada criador. O Nexus baixa direto só as capturas
+  certas, uma por posição do botão, e monta o pacote em Documentos. "Inserir
+  manualmente" aceita pasta, `.zip` ou capturas soltas, com mapeamento.
+- **Atualização automática:** o aviso de versão nova aparece no topo; um
+  clique baixa e abre o instalador do seu sistema.
 - **Programa independente com interfaces de áudio de baixa latência:** ASIO,
   WASAPI e DirectSound no Windows, Core Audio no Mac, JACK e ALSA no Linux.
   O painel de áudio (ícone da interface na barra de cima) escolhe interface,
@@ -152,12 +161,22 @@ Core i9 (2019):
 | MIDI: troca de patch, aprender CC, liga/desliga, salvar | tudo confere |
 | Validador de plugins (pluginval, nível 5) | roda na compilação automática nos três sistemas |
 
-## Como usar o pacote de capturas
+## Como carregar capturas
 
-1. Coloque as capturas `.nam` de um mesmo equipamento numa pasta.
-2. Dê nomes com o número da posição: `Ganho 0.nam`, `JCM800 Gain 7.nam`,
-   `G07.nam`, `drive_7.5.nam`… O Nexus encontra o número sozinho.
-3. Ou crie um `pack.json` na pasta, que tem prioridade sobre os nomes:
+1. Escolha o equipamento (cabeçote ou pedal) e clique em **abrir pacote**,
+   embaixo do nome.
+2. A janela mostra as capturas da TONE3000 para aquele equipamento:
+   recomendadas, seus favoritos, seus downloads e as em alta. Entre com a sua
+   conta da TONE3000 uma vez; depois, **Carregar** baixa direto.
+3. Tudo fica em `Documentos/Nexus Modeler/<equipamento>/<pacote>`.
+4. **Inserir manualmente** aceita uma pasta, um `.zip` ou capturas `.nam`
+   soltas; o Nexus copia ou descompacta para a pasta do equipamento.
+
+O Nexus descobre sozinho a posição do botão de cada captura pelo nome
+(`Ganho 7.nam`, `JCM800 G7.nam`, `drive_7.5.nam`…). Quando não consegue (nome
+sem número ou duas capturas na mesma posição), abre a tela **Mapear as
+capturas** para você dizer a posição de cada uma. O resultado fica num
+`pack.json` na pasta, que também pode ser escrito à mão:
 
 ```json
 {
@@ -170,50 +189,61 @@ Core i9 (2019):
 ```
 
 Circuitos de equalizador disponíveis: `marshall`, `fender`, `alto_ganho`,
-`mesa_mark`. Os valores de alto ganho e do Mark ainda serão conferidos família
-por família.
-
-4. No plugin, clique em **abrir pacote**, embaixo do nome do amplificador, e
-   escolha a pasta. Para o pedal, clique no pedal no caminho do sinal e depois
-   em **abrir pacote do pedal**: o pacote do pedal segue as mesmas regras (o
-   botão Ganho do pedal troca as capturas).
+`mesa_mark`.
 
 ## Como instalar
 
-Baixe o instalador do seu sistema na página de
-[lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest):
+Pelo site, cada sistema tem o botão do instalador e o comando do terminal:
+https://disouz4-dev.github.io/Nexus-Modeler/#sistemas
 
-- **Windows** (`NexusModeler-<versão>-Windows-instalador.exe`): instala o
-  plugin VST3 e o programa independente, com atalho no menu Iniciar. Tem a
-  tela de escolha do idioma do instalador e a página **Idioma do Nexus**, com
-  os 15 idiomas da tela do Nexus.
-- **Mac** (`NexusModeler-<versão>-Mac.dmg`): abra o `.dmg` e depois
-  **Instalar Nexus Modeler.pkg**. Em **Tipo de instalação**, escolha VST3, AU
-  e/ou o programa independente. A tela do Nexus abre no idioma do Mac.
-  Enquanto o instalador não for assinado pela Apple, abra com o botão direito
-  e **Abrir** na primeira vez.
-- **Linux** (`NexusModeler-<versão>-Linux-amd64.deb`, Debian e Ubuntu):
-  `sudo apt install ./NexusModeler-<versão>-Linux-amd64.deb`. Instala o VST3
-  em `/usr/lib/vst3`, o LV2 em `/usr/lib/lv2` e o programa `nexus-modeler`,
-  com atalho no menu.
+Os instaladores ficam na página de
+[lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest)
+(a primeira versão ainda não foi publicada). Depois de instalado, o Nexus
+avisa sozinho quando sai uma versão nova e instala com um clique.
 
-Pelo terminal, sem administrador (plugins na pasta do usuário: `~/.vst3`,
-`~/.lv2` e `~/.local/bin` no Linux; `~/Library/Audio/Plug-Ins` e
-`~/Applications` no Mac). O script pergunta o idioma, ou use `--idioma`:
+### Windows
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash -s -- --idioma pt-BR
-```
+Instalador: `NexusModeler-<versão>-Windows-instalador.exe`. Instala o VST3 e
+o programa independente, com atalho no menu Iniciar, e pergunta o idioma.
 
-No Windows (PowerShell; o VST3 vai para a pasta VST3 do usuário):
+Pelo terminal (PowerShell, sem administrador; o VST3 vai para a pasta VST3 do
+usuário):
 
 ```powershell
 irm https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.ps1 | iex
 ```
 
-O idioma escolhido na instalação vale para a primeira vez; depois, o globo na
-tela do Nexus troca quando quiser. Os pacotes são gerados pelo fluxo
-`.github/workflows/pacotes.yml` (scripts em `packaging/`).
+### Mac
+
+Instalador: `NexusModeler-<versão>-Mac.dmg`. Abra o `.dmg` e depois
+**Instalar Nexus Modeler.pkg**; em **Tipo de instalação**, escolha VST3, AU
+e/ou o programa independente. Enquanto o instalador não for assinado pela
+Apple, abra com o botão direito e **Abrir** na primeira vez.
+
+Pelo terminal (sem administrador; plugins em `~/Library/Audio/Plug-Ins` e o
+programa em `~/Applications`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash
+```
+
+### Linux
+
+Instalador para Debian, Ubuntu e derivados: `NexusModeler-<versão>-Linux-amd64.deb`
+(`sudo apt install ./NexusModeler-<versão>-Linux-amd64.deb`). Instala o VST3
+em `/usr/lib/vst3`, o LV2 em `/usr/lib/lv2` e o programa `nexus-modeler`, com
+atalho no menu.
+
+Pelo terminal, em qualquer distribuição (sem administrador; `~/.vst3`,
+`~/.lv2` e `~/.local/bin`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/packaging/instalar.sh | bash
+```
+
+Os comandos do terminal perguntam o idioma (ou use `--idioma pt-BR`, por
+exemplo). Os pacotes são gerados pelo fluxo `.github/workflows/pacotes.yml`
+(scripts em `packaging/`).
 
 ## Como compilar
 
@@ -254,10 +284,10 @@ sistemas e guarda os arquivos compilados na aba **Actions**.
 ```
 engine/     motor: troca de capturas, equalizadores, leitura dos pacotes
 plugin/     plugin JUCE (tela e caixa) e testes do plugin aberto
-tools/      medidor do motor, pacotes de teste e o Nexus Gear Studio (3D)
-assets/     imagens 3D renderizadas e fontes, embutidas no plugin
+tools/      medidor do motor, pacotes de teste, Nexus Gear Studio (3D) e a marca
+assets/     imagens 3D renderizadas, marca, fontes e idiomas, embutidos no plugin
 external/   motor oficial do NAM (submódulo)
-docs/       famílias de modelos 3D e ferramenta de criação
+docs/       site, catálogo, imagens e o plano dos modelos 3D
 ```
 
 ## Novidades

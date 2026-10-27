@@ -37,6 +37,24 @@
   equipamento, em alta, catálogo completo e "inserir manualmente".
 - O Nexus baixa só as capturas A2 da série certa, uma por posição do botão,
   e monta o pacote sozinho.
+- Com a conta conectada, "Carregar" baixa direto, sem abrir o site. Os
+  pacotes ficam em Documentos/Nexus Modeler/<equipamento>/<pacote>.
+- "Inserir manualmente" aceita pasta, `.zip` ou capturas `.nam` soltas: copia
+  ou descompacta para a pasta do equipamento.
+- Mapeamento: quando o Nexus não acha a posição do botão no nome das
+  capturas (ou duas caem na mesma posição), abre a tela "Mapear as capturas"
+  e grava o resultado no `pack.json`.
+
+### Atualização automática
+- Ao abrir, o Nexus procura uma versão nova no GitHub (no máximo uma vez por
+  dia). O aviso "Nova versão" aparece no topo; um clique baixa o instalador do
+  sistema para a pasta Downloads e o abre. No menu "i": procurar agora e
+  ligar ou desligar a procura automática.
+
+### Marca
+- Logo nova: triângulo de Penrose clássico (três fitas em L) nas cores do
+  Nexus, com trilhas de circuito. Um só arquivo (`assets/marca/nexus_marca.svg`,
+  gerado por `tools/marca/logo.py`) para a tela, o ícone e o site.
 
 ### Pedais
 - Bloco de pedal antes do amplificador, tocando captura NAM ou pacote de

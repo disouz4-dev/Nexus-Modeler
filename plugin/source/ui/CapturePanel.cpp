@@ -176,7 +176,7 @@ void CapturePanel::load(const t3k::Tone& tone)
   refreshAccount();
   auto self = juce::Component::SafePointer<CapturePanel>(this);
   mConnection->download(
-    tone, mPedal ? "pedal" : "amp_amp-cab",
+    tone, mPedal ? "pedal" : "amp_amp-cab", mName,
     [self](juce::String text) {
       if (self != nullptr)
         self->setStatus(text);
