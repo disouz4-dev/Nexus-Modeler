@@ -1533,7 +1533,7 @@ void NexusEditor::layoutTitle()
 {
   auto t = mTitleArea;
   t.removeFromTop(8);
-  auto titleRow = t.removeFromTop(40);
+  t.removeFromTop(40); // linha do título
   auto subRow = t.removeFromTop(22);
   const auto subFont = Fonts::get().ui(12.5f);
   const int subW = juce::GlyphArrangement::getStringWidthInt(subFont, mSubtitle);

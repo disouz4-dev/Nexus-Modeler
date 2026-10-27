@@ -31,10 +31,10 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 | Nome no Nexus | Inspirado em | Cor | Situação |
 |---|---|---|---|
 | Lemon Drive | Ibanez TS9 Tube Screamer | verde | pronto |
-| Orange Drive | Boss DS-1 | laranja | renderizando |
-| Banana Overdrive | Boss SD-1 | amarelo | renderizando |
-| Gold Centaur | Klon Centaur | dourado | renderizando |
-| Blueberry Blues | Boss BD-2 Blues Driver | azul | planejado |
+| Orange Drive | Boss DS-1 | laranja | pronto |
+| Banana Overdrive | Boss SD-1 | amarelo | pronto |
+| Gold Centaur | Klon Centaur | dourado | pronto |
+| (nome a decidir: Blueberry já é o chorus) | Boss BD-2 Blues Driver | azul | planejado |
 | Plum Rat | ProCo RAT | preto | planejado |
 | Fig Fuzz | Electro-Harmonix Big Muff | prata e vermelho | planejado |
 | Cherry Fuzz | Dallas Fuzz Face | vermelho, redondo | planejado |
@@ -47,9 +47,9 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 
 | Nome no Nexus | Inspirado em | Tipo | Situação |
 |---|---|---|---|
-| Blueberry Chorus | Boss CE-2 | chorus | planejado |
-| Coconut Delay | Boss DD-3 | delay | planejado |
-| Grape Reverb | Boss RV-6 | reverb | planejado |
+| Blueberry Chorus | Boss CE-2 | chorus | pronto |
+| Coconut Delay | Boss DD-3 | delay | pronto |
+| Grape Reverb | Boss RV-6 | reverb | pronto |
 | Peach Phaser | MXR Phase 90 | phaser | planejado |
 | Lime Flanger | MXR Flanger | flanger | planejado |
 | Melon Tremolo | Boss TR-2 | tremolo | planejado |
