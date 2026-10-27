@@ -31,6 +31,8 @@ public:
 
   // Do áudio: valores vindos da tela ou da automação.
   void setControls(const Controls& c) { mTargetControls = c; }
+  // Mão no botão: aquece as capturas vizinhas antes do giro.
+  void setAnticipate(bool on) { mMorph.setAnticipate(on); }
   void jumpToControls();
   void process(const double* input, double* output, int numFrames);
 

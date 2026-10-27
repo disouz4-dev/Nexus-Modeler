@@ -111,6 +111,17 @@ int main(int argc, char** argv)
     return 1;
   }
   std::printf("\nBaixando da TONE3000\n");
+  // IR "t3k": a caixa também vem da TONE3000 (o IR indicado do pacote Greenback).
+  auto irFile = ir;
+  if (std::string(argv[2]) == "t3k")
+  {
+    const auto cab = fetch(t3k, "brit412", 75087, "Brit 4x12", "cab");
+    const auto preferred = juce::JSON::parse(cab.getChildFile("pack.json"))["ir_padrao"].toString();
+    irFile = cab.getChildFile(preferred + ".wav");
+    std::printf("  caixa: %d IRs, usando %s\n", cab.getNumberOfChildFiles(juce::File::findFiles, "*.wav"), irFile.getFileName().toRawUTF8());
+    if (!irFile.existsAsFile())
+      return 1;
+  }
   const auto banana = fetch(t3k, "banana_overdrive", 82811, "Banana Overdrive", "pedal");
   const auto brit = fetch(t3k, "brit800", 1071, "Brit 800", "amp_amp-cab");
   if (!banana.isDirectory() || !brit.isDirectory())
@@ -182,7 +193,7 @@ int main(int argc, char** argv)
     p.loadAmpPack(0, 0, brit);
     if (s.pedal)
       p.loadPedalPack(0, banana);
-    p.loadIrAsync(0, ir);
+    p.loadIrAsync(0, irFile);
     for (int t = 0; t < 2400 && !(p.channelLoaded(0, 0) && (!s.pedal || p.slotLoaded(0)) && p.irLoaded(0)); ++t)
       settle(p, 4);
     setParam(p, "caixa", 1.0f);

@@ -206,6 +206,76 @@ int main(int argc, char** argv)
 {
   // Só à mão: NEXUS_TESTE_TRAVAR=1 instala o tratador e trava de propósito,
   // para conferir o travamento.txt (o ctest não usa).
+  // Só à mão: NEXUS_TESTE_SEPARAR=<música> separa pelo caminho do programa
+  // (baixa o modelo se faltar) e grava 20 s sem a guitarra a 75% em
+  // NEXUS_TESTE_SAIDA (wav).
+  if (const auto music = juce::SystemStats::getEnvironmentVariable("NEXUS_TESTE_SEPARAR", {}); music.isNotEmpty())
+  {
+    juce::ScopedJuceInitialiser_GUI gui;
+    namespace st = nexus::studio;
+    st::Separation job;
+    juce::String songId, error;
+    bool finished = false;
+    const auto t0 = juce::Time::getMillisecondCounterHiRes();
+    job.start(juce::File(music), [&](const juce::String& id, const juce::String& e) {
+      songId = id;
+      error = e;
+      finished = true;
+    });
+    int lastStage = -1, lastPc = -10;
+    while (!finished)
+    {
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(200);
+      const int stage = static_cast<int>(job.stage()), pc = static_cast<int>(job.progress() * 100.0f);
+      if (stage != lastStage || pc >= lastPc + 10)
+      {
+        std::printf("  etapa %d  %d%%  (%.0f s)\n", stage, pc, (juce::Time::getMillisecondCounterHiRes() - t0) / 1000.0);
+        lastStage = stage;
+        lastPc = pc;
+      }
+    }
+    std::printf("Terminou em %.0f s: %s %s\n", (juce::Time::getMillisecondCounterHiRes() - t0) / 1000.0, songId.toRawUTF8(), error.toRawUTF8());
+    st::Library lib;
+    lib.rescan();
+    const auto* song = lib.find(songId);
+    if (song == nullptr)
+      return 1;
+    std::printf("Na biblioteca: %s, %.1f s, forma com %d pontos\n", song->title.toRawUTF8(), song->seconds, static_cast<int>(song->shape.size()));
+    const auto outPath = juce::SystemStats::getEnvironmentVariable("NEXUS_TESTE_SAIDA", {});
+    if (outPath.isNotEmpty())
+    {
+      st::Player player;
+      player.prepare(48000.0, 512);
+      player.open(*song);
+      auto mix = song->mix;
+      mix.mute[st::guitar] = true;
+      mix.speed = 0.75;
+      player.setMix(mix);
+      std::vector<float> l(512), r(512);
+      for (int k = 0; k < 40; ++k)
+      {
+        player.process(l.data(), r.data(), 512);
+        juce::Thread::sleep(5);
+      }
+      player.seek(std::min(30.0, song->seconds * 0.3));
+      player.setPlaying(true);
+      juce::AudioBuffer<float> out(2, 20 * 48000);
+      out.clear();
+      for (int k = 0; k + 512 <= out.getNumSamples(); k += 512)
+      {
+        player.process(out.getWritePointer(0, k), out.getWritePointer(1, k), 512);
+        juce::Thread::sleep(2);
+      }
+      juce::WavAudioFormat wav;
+      juce::File(outPath).deleteFile();
+      auto stream = std::make_unique<juce::FileOutputStream>(juce::File(outPath));
+      std::unique_ptr<juce::AudioFormatWriter> w(wav.createWriterFor(stream.get(), 48000.0, 2, 24, {}, 0));
+      stream.release();
+      w->writeFromAudioSampleBuffer(out, 0, out.getNumSamples());
+      std::printf("Gravado: %s\n", outPath.toRawUTF8());
+    }
+    return 0;
+  }
   if (juce::SystemStats::getEnvironmentVariable("NEXUS_TESTE_TRAVAR", {}) == "1")
   {
     nexus::report::installCrashHandler();
@@ -826,6 +896,133 @@ int main(int argc, char** argv)
     const auto second = rp::takeCrash();
     report(first.contains("Pilha de chamadas") && second.isEmpty(), "Travamento da última vez é oferecido uma vez", juce::String(first.length()) + " caracteres");
     rp::folder().getChildFile("travamento-visto.txt").deleteFile();
+  }
+
+  // 14. Estúdio: biblioteca e player (faixas de teste: um tom diferente em cada).
+  {
+    std::printf("\n14. Estúdio\n");
+    namespace st = nexus::studio;
+    const auto folder = st::Library::root().getChildFile("Teste do Nexus (pode apagar)");
+    folder.deleteRecursively();
+    folder.createDirectory();
+    const double sr = st::kSeparationRate;
+    const int frames = static_cast<int>(3.0 * sr);
+    juce::FlacAudioFormat flac;
+    for (int s = 0; s < st::kStems; ++s)
+    {
+      juce::AudioBuffer<float> b(2, frames);
+      for (int i = 0; i < frames; ++i)
+      {
+        const float v = 0.2f * static_cast<float>(std::sin(2.0 * juce::MathConstants<double>::pi * 110.0 * (s + 1) * i / sr));
+        b.setSample(0, i, v);
+        b.setSample(1, i, v);
+      }
+      auto out = std::make_unique<juce::FileOutputStream>(folder.getChildFile(st::stemFile(s)));
+      std::unique_ptr<juce::AudioFormatWriter> w(flac.createWriterFor(out.get(), sr, 2, 16, {}, 0));
+      out.release();
+      w->writeFromAudioSampleBuffer(b, 0, frames);
+    }
+    folder.getChildFile("musica.json").replaceWithText(R"({"titulo":"Teste","segundos":3.0})");
+    st::Library lib;
+    lib.rescan();
+    const auto* song = lib.find(folder.getFileName());
+    report(song != nullptr && std::abs(song->seconds - 3.0) < 0.01, "Biblioteca acha a música separada", folder.getFileName());
+
+    st::Player player;
+    player.prepare(48000.0, 256);
+    const bool opened = song != nullptr && player.open(*song);
+    // Toca "seconds" segundos e devolve o lado esquerdo.
+    auto run = [&](double seconds) {
+      std::vector<float> l(256), r(256), all;
+      for (int k = 0; k < static_cast<int>(seconds * 48000.0 / 256); ++k)
+      {
+        std::fill(l.begin(), l.end(), 0.0f);
+        std::fill(r.begin(), r.end(), 0.0f);
+        player.process(l.data(), r.data(), 256);
+        all.insert(all.end(), l.begin(), l.end());
+        juce::Thread::sleep(1); // dá tempo da leitura em segundo plano
+      }
+      return all;
+    };
+    // Frequência principal pelo número de cruzamentos por zero.
+    auto pitch = [](const std::vector<float>& x, size_t from) {
+      int crossings = 0;
+      for (size_t i = from + 1; i < x.size(); ++i)
+        crossings += (x[i - 1] < 0.0f) != (x[i] < 0.0f);
+      return crossings * 0.5 * 48000.0 / static_cast<double>(x.size() - from);
+    };
+    auto rmsDb = [](const std::vector<float>& x, size_t from) {
+      double e = 0.0;
+      for (size_t i = from; i < x.size(); ++i)
+        e += x[i] * x[i];
+      return 10.0 * std::log10(e / static_cast<double>(x.size() - from) + 1e-20);
+    };
+
+    st::Mix mix;
+    mix.solo[st::guitar] = true; // guitarra: 550 Hz
+    player.setMix(mix);
+    run(0.3); // a leitura em segundo plano começa
+    player.seek(0.0);
+    player.setPlaying(true);
+    auto a = run(1.0);
+    const double f1 = pitch(a, 12000);
+    report(opened && rmsDb(a, 12000) > -30.0 && std::abs(f1 - 550.0) < 25.0, "Solo da guitarra toca só ela, no tom certo (placa a 48 kHz)",
+           juce::String(f1, 0) + " Hz, " + juce::String(rmsDb(a, 12000), 1) + " dB");
+
+    mix.speed = 0.5;
+    player.setMix(mix);
+    player.seek(0.5);
+    auto b = run(1.0);
+    const double moved = player.position() - 0.5, f2 = pitch(b, 12000);
+    report(std::abs(moved - 0.5) < 0.08 && std::abs(f2 - 550.0) < 25.0, "Velocidade 50%: anda na metade do tempo sem mudar o tom",
+           juce::String(moved, 2) + " s em 1 s, " + juce::String(f2, 0) + " Hz");
+
+    mix.speed = 1.0;
+    mix.semitones = 6;
+    player.setMix(mix);
+    auto c = run(0.8);
+    const double f3 = pitch(c, 12000);
+    report(std::abs(f3 - 550.0 * std::pow(2.0, 0.5)) < 40.0, "Tom +6: a nota sobe meia oitava sem mudar a velocidade", juce::String(f3, 0) + " Hz");
+
+    mix.semitones = 0;
+    mix.solo = {};
+    for (auto& m : mix.mute)
+      m = true;
+    player.setMix(mix);
+    auto d = run(0.5);
+    report(rmsDb(d, 12000) < -80.0, "Tudo no mudo: silêncio", juce::String(rmsDb(d, 12000), 1) + " dB");
+
+    mix.mute = {};
+    mix.loop = true;
+    mix.loopStart = 1.0;
+    mix.loopEnd = 1.6;
+    player.setMix(mix);
+    player.seek(1.0);
+    double lowest = 10.0, highest = 0.0;
+    for (int k = 0; k < 10; ++k)
+    {
+      run(0.2);
+      lowest = std::min(lowest, player.position());
+      highest = std::max(highest, player.position());
+    }
+    report(lowest >= 0.99 && highest <= 1.62 && player.playing(), "Repetir A–B fica dentro do trecho",
+           juce::String(lowest, 2) + " a " + juce::String(highest, 2) + " s");
+
+    mix.loop = false;
+    player.setMix(mix);
+    player.seek(2.8);
+    run(0.6);
+    report(!player.playing() && player.takeFinished(), "No fim da música para e avisa (para a playlist seguir)", {});
+
+    const int pl = lib.addPlaylist("Teste");
+    lib.addToPlaylist(pl, folder.getFileName());
+    st::Library again;
+    again.rescan();
+    const bool saved = static_cast<int>(again.playlists().size()) > pl && again.playlists()[static_cast<size_t>(pl)].songs.contains(folder.getFileName());
+    again.removePlaylist(pl);
+    report(saved, "Playlist fica gravada", {});
+    player.close();
+    folder.deleteRecursively();
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

@@ -19,3 +19,7 @@ add_custom_target(test_packs ALL DEPENDS "${NEXUS_TEST_PACKS}/ganho/pack.json")
 add_test(NAME motor_de_troca
          COMMAND nexus_bench "${NEXUS_TEST_PACKS}" "${CMAKE_BINARY_DIR}/medidas"
                  "${PROJECT_SOURCE_DIR}/external/NeuralAmpModelerCore/example_audio/input.wav")
+
+# Separação de faixas do estúdio: mede o tempo numa música.
+add_executable(nexus_separar nexus_separar.cpp)
+target_link_libraries(nexus_separar PRIVATE nexus_studio)

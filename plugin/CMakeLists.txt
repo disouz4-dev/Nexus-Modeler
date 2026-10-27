@@ -47,6 +47,7 @@ set(NEXUS_UI_SOURCES
   source/ui/UpdateBadge.cpp
   source/ui/PackMapper.cpp
   source/ui/TestBar.cpp
+  source/ui/StudioView.cpp
   source/update/Updater.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
@@ -59,11 +60,24 @@ endif()
 set_source_files_properties(source/update/Updater.cpp PROPERTIES COMPILE_DEFINITIONS "NEXUS_VERSAO=\"${NEXUS_VERSAO}\"")
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
+  source/studio/Library.cpp
+  source/studio/Player.cpp
   source/TestSource.cpp
   source/MidiMap.cpp)
 target_sources(NexusModeler PRIVATE
   ${NEXUS_PROCESSOR_SOURCES}
   ${NEXUS_UI_SOURCES})
+
+# Mac: o JUCE gera o ícone só com os tamanhos grandes (512 e 1024) e o Dock e
+# o Finder, que usam os pequenos, mostram o ícone em branco. Troca pelo
+# assets/icone/nexus.icns completo (16 a 1024).
+if(APPLE)
+  add_custom_command(TARGET NexusModeler_Standalone POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy "${PROJECT_SOURCE_DIR}/assets/icone/nexus.icns"
+            "$<TARGET_BUNDLE_CONTENT_DIR:NexusModeler_Standalone>/Resources/AppIcon.icns"
+    COMMAND touch "$<TARGET_BUNDLE_DIR:NexusModeler_Standalone>"
+    VERBATIM)
+endif()
 
 # Programa independente: janela e painel de áudio próprios do Nexus.
 target_sources(NexusModeler_Standalone PRIVATE source/StandaloneApp.cpp)
@@ -112,13 +126,23 @@ target_include_directories(NexusModeler SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
 set(NEXUS_T3K_KEY "t3k_pub_cdG-fr_wYGEPeHbUW8LnKQ5Yl5qoSQL-" CACHE STRING "Chave pública da TONE3000")
 target_compile_definitions(NexusModeler PUBLIC
   JUCE_WEB_BROWSER=0
+  JUCE_USE_MP3AUDIOFORMAT=1
+  JUCE_USE_WINDOWS_MEDIA_FORMAT=1
   NEXUS_T3K_KEY="${NEXUS_T3K_KEY}"
   JUCE_VST3_CAN_REPLACE_VST2=0
   JUCE_DISPLAY_SPLASH_SCREEN=0)
 
+# Estúdio: mudar velocidade e tom das faixas (Signalsmith Stretch, licença MIT).
+FetchContent_Declare(signalsmith_stretch
+  GIT_REPOSITORY https://github.com/Signalsmith-Audio/signalsmith-stretch.git
+  GIT_TAG 88061fd4eda56a2353c5d65c74aa3f4ccf76f9da)
+FetchContent_MakeAvailable(signalsmith_stretch)
+
 target_link_libraries(NexusModeler
   PRIVATE
     nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
     juce::juce_audio_utils
     juce::juce_dsp
@@ -149,6 +173,8 @@ if(NEXUS_BUILD_TOOLS)
   target_compile_definitions(nexus_snapshot PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
   target_link_libraries(nexus_snapshot PRIVATE
     nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
@@ -161,6 +187,8 @@ if(NEXUS_BUILD_TOOLS)
   target_compile_definitions(nexus_cab_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_cab_test PRIVATE
     nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
@@ -177,6 +205,8 @@ if(NEXUS_BUILD_TOOLS)
   target_compile_definitions(nexus_device_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1)
   target_link_libraries(nexus_device_test PRIVATE
     nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils
@@ -202,6 +232,8 @@ if(NEXUS_BUILD_TOOLS)
   target_compile_definitions(nexus_render PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
   target_link_libraries(nexus_render PRIVATE
     nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
     juce::juce_dsp
     juce::juce_audio_utils

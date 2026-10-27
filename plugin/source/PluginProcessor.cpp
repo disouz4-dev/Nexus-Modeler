@@ -51,6 +51,7 @@ NexusProcessor::NexusProcessor()
   mLite = params.getRawParameterValue("lite");
   mOutput = params.getRawParameterValue("volume");
   mInput = params.getRawParameterValue("entrada");
+  mInputMute = params.getRawParameterValue("entrada_mudo");
 
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
@@ -62,11 +63,26 @@ NexusProcessor::NexusProcessor()
     std::copy(in[0], in[0] + n, out[0]);
     runEngines(out[0], n);
   };
+  for (auto* p : getParameters())
+    p->addListener(this);
   startTimerHz(30);
+}
+
+void NexusProcessor::parameterGestureChanged(int, bool starting)
+{
+  const int left = mGestures.fetch_add(starting ? 1 : -1) + (starting ? 1 : -1);
+  if (left <= 0)
+  {
+    mGestures = 0;
+    // Depois de soltar, as vizinhas seguem aquecidas mais 1,5 s (ajuste fino).
+    mAnticipateUntil = juce::Time::getMillisecondCounter() + 1500;
+  }
 }
 
 NexusProcessor::~NexusProcessor()
 {
+  for (auto* p : getParameters())
+    p->removeListener(this);
   stopTimer();
   mLoader.removeAllJobs(true, 30000);
   for (auto& s : mSlots)
@@ -131,6 +147,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                  juce::NormalisableRange<float>(-24.0f, 12.0f, 0.1f), 0.0f));
   layout.add(std::make_unique<P>(juce::ParameterID{"entrada", 1}, "Entrada",
                                  juce::NormalisableRange<float>(-24.0f, 24.0f, 0.1f), 0.0f));
+  // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
+  // O "Testar o som" continua tocando com a entrada no mudo.
+  layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
   return layout;
 }
 
@@ -150,6 +169,7 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
   mTest.prepare(sampleRate);
+  mStudio.prepare(sampleRate, block);
   for (auto* v : {&mDry, &mChannelIn, &mChannelOut, &mRigIn})
     v->assign(static_cast<size_t>(kEngineBlock), 0.0);
   mCabFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
@@ -510,6 +530,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (const auto* list : {&mLayoutActive->pre, &mLayoutActive->loop[0], &mLayoutActive->loop[1], &mLayoutActive->post})
     for (int pedal : *list)
       anyEngine = anyEngine || isNativeLook(pedalLook(pedal));
+  const bool anticipate = mGestures.load() > 0 || juce::Time::getMillisecondCounter() < mAnticipateUntil.load();
+  for (auto& s : mSlots)
+    if (s.active != nullptr)
+      s.active->voice.setAnticipate(anticipate);
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
       e->voice.setControls(pedalControls(i));
@@ -523,7 +547,10 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   const int outChannels = getTotalNumOutputChannels();
   const int capacity = static_cast<int>(mMono.size());
   const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
-  const float targetIn = juce::Decibels::decibelsToGain(mInput->load());
+  // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
+  // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
+  const bool inputOff = mInputMute->load() > 0.5f || mInput->load() <= -23.95f;
+  const float targetIn = inputOff ? 0.0f : juce::Decibels::decibelsToGain(mInput->load());
   float inPeak = 0.0f, outPeak = 0.0f;
 
   for (int start = 0; start < total; start += capacity)
@@ -531,11 +558,14 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     const int n = std::min(capacity, total - start);
     // Entrada: a guitarra ou, no "Testar o som", a gravação de teste.
     const float* in = inChannels > 0 ? buffer.getReadPointer(0, start) : nullptr;
-    if (mTest.process(in, mTestBuffer.data(), n))
+    const bool testing = mTest.process(in, mTestBuffer.data(), n);
+    if (testing)
       in = mTestBuffer.data();
     if (in != nullptr)
     {
-      const float inStep = (targetIn - mInputGain) / static_cast<float>(n);
+      // O teste toca mesmo com a entrada no mudo.
+      const float wantIn = testing ? juce::Decibels::decibelsToGain(mInput->load()) : targetIn;
+      const float inStep = (wantIn - mInputGain) / static_cast<float>(n);
       float gi = mInputGain;
       for (int i = 0; i < n; ++i)
       {
@@ -544,7 +574,7 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
         inPeak = std::max(inPeak, std::abs(v));
         mMono[static_cast<size_t>(i)] = v;
       }
-      mInputGain = targetIn;
+      mInputGain = wantIn;
     }
     else
       std::fill(mMono.begin(), mMono.begin() + n, 0.0);
@@ -576,6 +606,9 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       }
     }
     mOutputGain = targetGain;
+    // Estúdio: a música entra depois da guitarra (não passa pela cadeia).
+    if (outChannels > 0)
+      mStudio.process(buffer.getWritePointer(0, start), outChannels > 1 ? buffer.getWritePointer(1, start) : nullptr, n);
   }
 
   // Espelho para a tela.

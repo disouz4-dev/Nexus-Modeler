@@ -86,6 +86,12 @@ int main(int argc, char** argv)
       processor.processBlock(buffer, midi);
       juce::Thread::sleep(2);
     }
+    // Mais alguns blocos: o áudio troca para o pacote novo e publica as capturas.
+    for (int t = 0; t < 100; ++t)
+    {
+      buffer.clear();
+      processor.processBlock(buffer, midi);
+    }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
   }
@@ -106,6 +112,34 @@ int main(int argc, char** argv)
     l.post = {3};
     processor.setLayout(l);
   }
+  // Quarto argumento "estudio:<pasta da música>": abre o estúdio tocando essa
+  // música (sem a guitarra, como para tocar junto), um minuto adentro.
+  if (stage.startsWith("estudio:"))
+  {
+    nexus::studio::Library lib;
+    lib.rescan();
+    if (const auto* song = lib.find(stage.fromFirstOccurrenceOf(":", false, false)))
+    {
+      auto& player = processor.studio();
+      player.open(*song);
+      auto mix = song->mix;
+      mix.mute[nexus::studio::guitar] = true;
+      mix.loopStart = 52.0;
+      mix.loopEnd = 71.0;
+      mix.loop = true;
+      mix.speed = 0.75;
+      player.setMix(mix);
+      lib.saveMix(song->id(), mix); // a tela mostra a mistura guardada (volta no fim)
+      player.seek(60.0);
+      player.setPlaying(true);
+      for (int i = 0; i < 48000 / 128; ++i)
+      {
+        buffer.clear();
+        processor.processBlock(buffer, midi);
+        juce::Thread::sleep(1);
+      }
+    }
+  }
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
   {
@@ -115,6 +149,8 @@ int main(int argc, char** argv)
       e->select({NexusEditor::Kind::cab, 0});
     else if (stage == "capturas")
       e->showCaptures();
+    else if (stage.startsWith("estudio"))
+      e->setMode(1);
   }
   // Deixa o relógio da tela atualizar textos e medidor.
   juce::MessageManager::getInstance()->runDispatchLoopUntil(300);

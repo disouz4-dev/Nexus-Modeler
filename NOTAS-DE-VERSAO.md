@@ -53,6 +53,47 @@
   efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
+### Som e uso ao vivo
+- Mão no botão, capturas prontas: ao pegar qualquer botão (antes de girar),
+  as capturas vizinhas, até duas de cada lado, começam a aquecer. O giro entra
+  na captura nova sem esperar os 132 ms de aquecimento de uma A2 e sem
+  engasgo. Ao soltar, depois de 1,5 s, elas voltam a descansar para poupar o
+  processador.
+- Entrada no mudo: botão "Mudo" ao lado da entrada. O controle todo para
+  baixo (-24 dB) também corta de vez, porque com ganho alto o -24 dB ainda
+  apitava com o microfone do notebook. O "Testar o som" toca mesmo com a
+  entrada no mudo.
+- Caixa: "escolher IR" abre os IRs da TONE3000 (recomendadas para a 4x12:
+  Greenback 1960TV, JCM900 1960, G12M e JCM800 1960; favoritos, downloads,
+  catálogo). O pacote inteiro vai para Documentos/Nexus Modeler/Brit 4x12 e
+  "trocar IR" lista os microfones e posições do pacote, além de "IRs da
+  TONE3000..." e "Arquivo do computador...".
+- Mac: o ícone do programa tem agora todos os tamanhos (16 a 1024); antes o
+  Dock e o Finder mostravam o ícone em branco.
+
+### Estúdio (primeira versão)
+- Chave "Equipamento | Estúdio" no alto. A guitarra continua passando pela
+  cadeia e se mistura com a música.
+- Importar música (MP3, WAV, FLAC, M4A, AAC, OGG, AIFF; ou arrastar o
+  arquivo): separa em voz, guitarra, baixo, bateria, piano e resto com o
+  Demucs de 6 faixas (demucs.cpp), em segundo plano, com andamento e
+  "Cancelar". O modelo (55 MB) é baixado na primeira separação. A mesma
+  música não é separada duas vezes. A barra mostra o trabalho inteiro (ler,
+  separar e gravar), com a porcentagem e quanto falta.
+- A separação roda em prioridade baixa, em no máximo 6 linhas e sem as
+  linhas extras do Accelerate: o áudio e a tela seguem leves enquanto separa
+  (medido: o áudio cabe no tempo do bloco com uma separação rodando).
+- Player: tocar/pausar (barra de espaço), voltar ao começo, forma da música
+  (clique pula; arrastar marca o trecho A–B), "Repetir A–B", volume, mudo e
+  solo por faixa com medidor, velocidade 50–100% sem mudar o tom, tom −6 a +6
+  semitons, volume da música. A mistura de cada música fica guardada.
+- Músicas e playlists na coluna da esquerda: criar, renomear, apagar, pôr e
+  tirar músicas, subir e descer; "Tocar a playlist" segue sozinha.
+- Faixas em FLAC em `Documentos/Nexus Modeler/Estúdio/<música>/`.
+- Ainda falta: separação pela placa de vídeo (hoje só processador, cerca de
+  3 vezes a duração da música num Mac Intel de 8 núcleos) e contagem antes
+  de começar.
+
 ### Relatório de problemas
 - Menu "i" → "Reportar um problema...": a pessoa conta o que aconteceu e o
   Nexus abre uma issue nova no GitHub, no modelo "Problema ou travamento", já

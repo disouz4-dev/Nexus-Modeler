@@ -10,6 +10,7 @@
 #include "ChainLayout.h"
 #include "MidiMap.h"
 #include "TestSource.h"
+#include "studio/Player.h"
 #include "nexus/AmpVoice.h"
 #include "nexus/Effects.h"
 
@@ -33,7 +34,7 @@ struct NexusEngine
   nexus::AmpVoice voice;
 };
 
-class NexusProcessor : public juce::AudioProcessor, private juce::Timer
+class NexusProcessor : public juce::AudioProcessor, private juce::Timer, private juce::AudioProcessorParameter::Listener
 {
 public:
   // Taxa em que as capturas A2 são treinadas e rodam.
@@ -117,12 +118,17 @@ public:
   // ----- Tela: caixas (IR). Captura full rig tranca a caixa daquele lado.
   void loadIrAsync(int rig, const juce::File& file);
   juce::String irName(int rig) const;
+  juce::File irFile(int rig) const { return mCabs[static_cast<size_t>(rig)].file; }
   bool irLoaded(int rig) const { return mCabs[static_cast<size_t>(rig)].loaded.load(); }
 
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
   // "Testar o som": gravação de guitarra no lugar da entrada.
   nexus::TestSource& testSource() { return mTest; }
+  // Estúdio: a música separada toca junto com a guitarra.
+  nexus::studio::Player& studio() { return mStudio; }
+  // Separação em segundo plano: continua mesmo com a tela fechada.
+  nexus::studio::Separation& separation() { return mSeparation; }
   float outputPeak() const { return mOutPeak.load(); }
   void resetPeaks() { mInPeak.store(0.0f); mOutPeak.store(0.0f); }
 
@@ -247,11 +253,20 @@ private:
   std::atomic<float>* mLite;
   std::atomic<float>* mOutput;
   std::atomic<float>* mInput;
+  std::atomic<float>* mInputMute;
   float mOutputGain = 1.0f;
   float mInputGain = 1.0f;
 
   std::atomic<float> mInPeak{0.0f}, mOutPeak{0.0f};
   nexus::TestSource mTest;
+  nexus::studio::Player mStudio;
+  nexus::studio::Separation mSeparation;
+  // Mão em algum botão (gesto começou): aquece as capturas vizinhas até
+  // um pouco depois de soltar.
+  void parameterValueChanged(int, float) override {}
+  void parameterGestureChanged(int index, bool starting) override;
+  std::atomic<int> mGestures{0};
+  std::atomic<juce::uint32> mAnticipateUntil{0};
   std::vector<float> mTestBuffer;
   std::unique_ptr<MidiMap> mMidi;
 

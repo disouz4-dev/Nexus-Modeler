@@ -111,6 +111,7 @@ std::vector<Tone> recommended(const juce::String& gearPrefix)
         for (const auto& part : *s)
           t.series.add(part.toString());
       t.note = v["nota"].toString();
+      t.defaultIr = v["ir_padrao"].toString();
       out.push_back(t);
     }
   return out;
@@ -571,8 +572,10 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
 void Connection::download(const Tone& wanted, const juce::String& gearFilter, const juce::String& gearName,
                           std::function<void(juce::String)> progress, std::function<void(juce::File, juce::String)> done)
 {
-  auto fetch = [this, wanted, gearName, progress, done](int id) {
-    mPool.addJob([this, wanted, gearName, id, progress, done] {
+  // Caixa: o pacote é um conjunto de IRs (.wav), um por microfone e posição.
+  const bool irs = gearFilter == "cab";
+  auto fetch = [this, wanted, gearName, irs, progress, done](int id) {
+    mPool.addJob([this, wanted, gearName, irs, id, progress, done] {
       auto say = [this, progress](juce::String s) { post([progress, s] { progress(s); }); };
       auto fail = [this, done](juce::String e) { post([done, e] { done({}, explain(e)); }); };
       juce::String error;
@@ -591,6 +594,61 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
       {
         tone.pattern = wanted.pattern;
         tone.series = wanted.series;
+        tone.defaultIr = wanted.defaultIr;
+      }
+      if (irs)
+      {
+        say(TRANS("Lendo os IRs de %1...").replace("%1", tone.title));
+        const auto models = getJson("/api/v1/models?tone_id=" + juce::String(id) + "&page=1&page_size=300", error, token);
+        if (error.isNotEmpty())
+          return fail(error);
+        std::vector<std::pair<juce::String, juce::String>> list;
+        if (const auto* data = models["data"].getArray())
+          for (const auto& m : *data)
+            if (list.size() < 120)
+              list.emplace_back(m["name"].toString(), m["model_url"].toString());
+        if (list.empty())
+          return fail(TRANS(juce::String::fromUTF8("este tom não tem IRs")));
+        const auto folder = packsFolder(gearName).getChildFile(juce::String(id) + " " + safeName(tone.title));
+        folder.createDirectory();
+        int n = 0;
+        for (const auto& entry : list)
+        {
+          ++n;
+          say(TRANS("Baixando IR %1 de %2...").replace("%1", juce::String(n)).replace("%2", juce::String(static_cast<int>(list.size()))));
+          auto ext = juce::URL(entry.second).getFileName().fromLastOccurrenceOf(".", true, false).toLowerCase();
+          if (ext != ".wav" && ext != ".aif" && ext != ".aiff")
+            ext = ".wav";
+          const auto file = folder.getChildFile(safeName(entry.first) + ext);
+          if (file.existsAsFile() && file.getSize() > 0)
+            continue;
+          int status = 0;
+          auto stream = juce::URL(entry.second).createInputStream(juce::URL::InputStreamOptions(juce::URL::ParameterHandling::inAddress)
+                                                                    .withExtraHeaders("Authorization: Bearer " + token)
+                                                                    .withConnectionTimeoutMs(30000)
+                                                                    .withStatusCode(&status));
+          if (stream == nullptr || status / 100 != 2)
+            return fail(stream == nullptr ? juce::String("rede") : "HTTP " + juce::String(status));
+          juce::TemporaryFile temp(file);
+          {
+            juce::FileOutputStream out(temp.getFile());
+            if (!out.openedOk() || out.writeFromInputStream(*stream, -1) <= 0)
+              return fail(TRANS(juce::String::fromUTF8("não consegui gravar o IR no disco")));
+          }
+          temp.overwriteTargetFileWithTemporary();
+        }
+        auto* manifest = new juce::DynamicObject();
+        manifest->setProperty("nome", tone.title);
+        manifest->setProperty("fonte", "TONE3000");
+        manifest->setProperty("tipo", "ir");
+        manifest->setProperty("tone3000_tone_id", id);
+        manifest->setProperty("criador", tone.creator);
+        manifest->setProperty("endereco", kOrigin + "/tones/" + juce::String(id));
+        if (tone.defaultIr.isNotEmpty())
+          manifest->setProperty("ir_padrao", safeName(tone.defaultIr));
+        folder.getChildFile("pack.json").replaceWithText(juce::JSON::toString(juce::var(manifest)));
+        post([done, folder] { done(folder, {}); });
+        return;
       }
       say(TRANS("Lendo as capturas de %1...").replace("%1", tone.title));
       const auto models = getJson("/api/v1/models?tone_id=" + juce::String(id) + "&page=1&page_size=300&architecture=2", error, token);
@@ -679,8 +737,11 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
   juce::StringPairArray extra;
   extra.set("prompt", "select_tone");
   extra.set("gears", gearFilter);
-  extra.set("format", "nam");
-  extra.set("architecture", "2");
+  if (!irs)
+  {
+    extra.set("format", "nam");
+    extra.set("architecture", "2");
+  }
   progress(TRANS(juce::String::fromUTF8("Escolha o tom na TONE3000, no navegador que abriu...")));
   runFlow(extra, [fetch, done](int toneId, juce::String error) {
     if (error.isNotEmpty())

@@ -76,17 +76,25 @@ public:
   LevelFader(juce::RangedAudioParameter& p, juce::String label);
   void paint(juce::Graphics&) override;
   void mouseDown(const juce::MouseEvent& e) override;
-  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) { mDrag.mouseDrag(e, true); repaint(); } }
-  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) { mDrag.mouseUp(e); repaint(); } }
+  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu() && !mSkipDrag) { mDrag.mouseDrag(e, true); repaint(); } }
+  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu() && !mSkipDrag) { mDrag.mouseUp(e); repaint(); } }
   std::function<void(const juce::String& paramId, juce::Component&)> onMidiMenu;
-  void mouseDoubleClick(const juce::MouseEvent&) override { mDrag.mouseDoubleClick(); }
+  void mouseDoubleClick(const juce::MouseEvent& e) override { if (!muteArea().contains(e.position)) mDrag.mouseDoubleClick(); }
   void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { mDrag.mouseWheel(w); }
   void setLevel(float peak) { if (peak != mLevel) { mLevel = peak; repaint(); } }
+  // Botão "MUDO" ao lado do nome (liga e desliga esse parâmetro).
+  void setMuteParameter(juce::RangedAudioParameter& p);
 
 private:
+  juce::Rectangle<float> muteArea() const;
+  bool muted() const;
   DragValue mDrag;
   juce::String mLabel;
   float mLevel = 0.0f;
+  juce::RangedAudioParameter* mMuteParam = nullptr;
+  std::unique_ptr<juce::ParameterAttachment> mMute;
+  bool mMuted = false;
+  bool mSkipDrag = false;
 };
 
 // Seletor segmentado: uma peça só, dividida em partes; a escolhida acende.
