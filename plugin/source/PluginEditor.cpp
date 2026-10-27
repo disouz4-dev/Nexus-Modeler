@@ -1898,6 +1898,11 @@ juce::String NexusEditor::packSummary(int slot) const
   const bool lite = slot < NexusProcessor::kPedals
                       ? mProcessor.params.getParameter(NexusProcessor::pedalParam(slot, "lite"))->getValue() > 0.5f
                       : mProcessor.params.getParameter("lite")->getValue() > 0.5f;
+  if (count == 1)
+    return TRANS("%1: 1 captura, ganho %2 (%3)")
+      .replace("%1", mProcessor.packName(slot))
+      .replace("%2", number(mProcessor.capturePosition(0, slot)))
+      .replace("%3", lite ? "A2 Lite" : "A2 Full");
   return TRANS("%1: %2 capturas, ganho de %3 a %4 (%5)")
     .replace("%1", mProcessor.packName(slot))
     .replace("%2", juce::String(count))

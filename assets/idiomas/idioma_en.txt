@@ -60,6 +60,7 @@ countries: us gb au ca
 "Carregando..." = "Loading..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "No capture on the pedal. The footswitch turns it on and off."
 "Nenhum pacote de capturas carregado" = "No capture pack loaded"
+"%1: 1 captura, ganho %2 (%3)" = "%1: 1 capture, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 captures, gain %3 to %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Stepped knobs: stop only at captured positions"
 "Sobre o Nexus Modeler" = "About Nexus Modeler"

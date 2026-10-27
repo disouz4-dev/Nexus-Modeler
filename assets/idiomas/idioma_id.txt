@@ -60,6 +60,7 @@ countries: id
 "Carregando..." = "Memuat..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "Belum ada tangkapan di pedal. Footswitch menyalakan dan mematikan."
 "Nenhum pacote de capturas carregado" = "Belum ada paket tangkapan"
+"%1: 1 captura, ganho %2 (%3)" = "%1: 1 tangkapan, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 tangkapan, gain %3 sampai %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Kenop bertahap: hanya berhenti di posisi tangkapan"
 "Sobre o Nexus Modeler" = "Tentang Nexus Modeler"

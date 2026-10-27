@@ -60,6 +60,7 @@ countries: jp
 "Carregando..." = "読み込み中..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "ペダルにキャプチャーがありません。フットスイッチでオン/オフ。"
 "Nenhum pacote de capturas carregado" = "キャプチャーパックが読み込まれていません"
+"%1: 1 captura, ganho %2 (%3)" = "%1：キャプチャー 1 個、ゲイン %2（%3）"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1：キャプチャー %2 個、ゲイン %3〜%4（%5）"
 "Botões em degraus: param só nas posições capturadas" = "ステップ式ノブ：キャプチャー位置でのみ止まる"
 "Sobre o Nexus Modeler" = "Nexus Modeler について"

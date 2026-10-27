@@ -60,6 +60,7 @@ countries: in
 "Carregando..." = "लोड हो रहा है..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "पेडल में कोई कैप्चर नहीं। फ़ुटस्विच से चालू/बंद करें।"
 "Nenhum pacote de capturas carregado" = "कोई कैप्चर पैक लोड नहीं है"
+"%1: 1 captura, ganho %2 (%3)" = "%1: 1 कैप्चर, गेन %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 कैप्चर, गेन %3 से %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "स्टेप वाले नॉब: केवल कैप्चर की गई जगहों पर रुकते हैं"
 "Sobre o Nexus Modeler" = "Nexus Modeler के बारे में"

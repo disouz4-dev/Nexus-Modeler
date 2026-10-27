@@ -60,6 +60,7 @@ countries: sa eg ae ma
 "Carregando..." = "جارٍ التحميل..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "لا يوجد التقاط في الدوّاسة. مفتاح القدم يشغّلها ويوقفها."
 "Nenhum pacote de capturas carregado" = "لم تُحمّل أي حزمة التقاطات"
+"%1: 1 captura, ganho %2 (%3)" = "%1: التقاط واحد، الكسب %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 التقاطات، الكسب من %3 إلى %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "مقابض متدرجة: تتوقف عند المواضع الملتقطة فقط"
 "Sobre o Nexus Modeler" = "حول Nexus Modeler"

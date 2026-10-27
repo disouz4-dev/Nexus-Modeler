@@ -80,8 +80,12 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
       setPipeWireLatency(size, sr);
       auto setup = mDevices.getAudioDeviceSetup();
       setup.bufferSize = size;
-      mDevices.setCurrentAudioDeviceType("JACK", true);
-      mDevices.setAudioDeviceSetup(setup, true);
+      // Fecha a conexão de vez: só uma conexão nova lê o bloco pedido (reabrir
+      // a mesma mantinha o bloco antigo e a lista voltava ao valor anterior).
+      mDevices.closeAudioDevice();
+      mError = mDevices.setAudioDeviceSetup(setup, true);
+      if (mError.isNotEmpty())
+        nexus::report::log("audio", "JACK " + juce::String(size) + ": " + mError);
       if (mSave)
         mSave();
       refresh();

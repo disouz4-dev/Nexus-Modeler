@@ -1,0 +1,123 @@
+{
+  "tipo": "cabecote",
+  "nome": "BE 100",
+  "familia": "be_100",
+  "medidas_m": {
+    "largura": 0.74,
+    "altura": 0.285,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "cor_b": [
+      0.32,
+      0.31,
+      0.29
+    ],
+    "trama_mm": 1.6
+  },
+  "logo": {
+    "texto": "Nexus",
+    "fonte": "script",
+    "metal": false,
+    "contorno": true,
+    "cor": [
+      0.9,
+      0.88,
+      0.82
+    ],
+    "altura_m": 0.085,
+    "altura_rel": 0.5
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "pintado": true,
+    "cor": [
+      0.015,
+      0.015,
+      0.016
+    ],
+    "texto_cor": [
+      0.86,
+      0.8,
+      0.62
+    ],
+    "modelo": "BE 100",
+    "marca": "NEXUS MODELER"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.028,
+    "corpo": [
+      0.018,
+      0.018,
+      0.018
+    ],
+    "tampa": [
+      0.62,
+      0.5,
+      0.24
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "BE"
+    }
+  ],
+  "leds_canais_x": 0.078,
+  "leds_canais_passo": 0.03,
+  "leds_canais_z": 0.026,
+  "disposicao": {
+    "modelo_x": 0.108,
+    "modelo_z": 0.06,
+    "modelo_tamanho": 0.019,
+    "modelo_inclinacao": 0.0
+  }
+}

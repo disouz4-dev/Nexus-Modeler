@@ -1,0 +1,132 @@
+{
+  "tipo": "cabecote",
+  "nome": "Recto Dual",
+  "familia": "recto_dual",
+  "medidas_m": {
+    "largura": 0.74,
+    "altura": 0.285,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "cor_b": [
+      0.07,
+      0.07,
+      0.07
+    ],
+    "trama_mm": 3.4
+  },
+  "logo": {
+    "texto": "NEXUS",
+    "fonte": "label",
+    "metal": true,
+    "contorno": false,
+    "cor": [
+      0.86,
+      0.87,
+      0.89
+    ],
+    "altura_m": 0.065,
+    "altura_rel": 0.52
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "pintado": true,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.86
+    ],
+    "modelo": "RECTO DUAL",
+    "marca": "NEXUS MODELER"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.026,
+    "corpo": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "tampa": [
+      0.014,
+      0.014,
+      0.015
+    ],
+    "tampa_plastico": true,
+    "traco": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "Crunch"
+    },
+    {
+      "nome": "Moderno"
+    }
+  ],
+  "leds_canais_x": 0.078,
+  "leds_canais_passo": 0.03,
+  "leds_canais_z": 0.026,
+  "disposicao": {
+    "modelo_x": 0.108,
+    "modelo_z": 0.06,
+    "modelo_tamanho": 0.019,
+    "modelo_inclinacao": 0.0
+  }
+}

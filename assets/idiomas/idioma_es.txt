@@ -60,6 +60,7 @@ countries: es mx ar co cl
 "Carregando..." = "Cargando..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "Ninguna captura en el pedal. El pulsador lo enciende y apaga."
 "Nenhum pacote de capturas carregado" = "Ningún paquete de capturas cargado"
+"%1: 1 captura, ganho %2 (%3)" = "%1: 1 captura, ganancia %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 capturas, ganancia de %3 a %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Perillas por pasos: solo en las posiciones capturadas"
 "Sobre o Nexus Modeler" = "Acerca de Nexus Modeler"

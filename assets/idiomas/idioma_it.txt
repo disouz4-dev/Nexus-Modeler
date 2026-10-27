@@ -60,6 +60,7 @@ countries: it ch
 "Carregando..." = "Caricamento..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "Nessuna cattura nel pedale. Il footswitch lo accende e spegne."
 "Nenhum pacote de capturas carregado" = "Nessun pacchetto di catture caricato"
+"%1: 1 captura, ganho %2 (%3)" = "%1: 1 cattura, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 catture, gain da %3 a %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Manopole a scatti: solo nelle posizioni catturate"
 "Sobre o Nexus Modeler" = "Informazioni su Nexus Modeler"

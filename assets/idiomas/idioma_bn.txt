@@ -60,6 +60,7 @@ countries: bd in
 "Carregando..." = "লোড হচ্ছে..."
 "Nenhuma captura no pedal. O pisante liga e desliga." = "প্যাডেলে কোনো ক্যাপচার নেই। ফুটসুইচে চালু/বন্ধ।"
 "Nenhum pacote de capturas carregado" = "কোনো ক্যাপচার প্যাক লোড হয়নি"
+"%1: 1 captura, ganho %2 (%3)" = "%1: ১টি ক্যাপচার, গেইন %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2টি ক্যাপচার, গেইন %3 থেকে %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "ধাপে ধাপে নব: শুধু ক্যাপচার করা জায়গায় থামে"
 "Sobre o Nexus Modeler" = "Nexus Modeler সম্পর্কে"
