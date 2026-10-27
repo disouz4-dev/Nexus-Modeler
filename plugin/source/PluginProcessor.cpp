@@ -226,6 +226,8 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
     const float m = r.master->load() / 5.0f;
     r.masterGain = m * m;
   }
+  for (auto& e : mEq)
+    e.prepare(kEngineRate);
   // As caixas rodam dentro da cadeia, na taxa das capturas.
   for (auto& c : mCabs)
   {
@@ -433,6 +435,10 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
   for (int p : mLayoutActive->loop[static_cast<size_t>(rig)])
     runPedal(p, buffer, n);
   runCab(rig, buffer, n);
+  // Equalizador universal: depois da captura e da caixa, igual em todo cabeçote.
+  const auto& r = mRigs[static_cast<size_t>(rig)];
+  mEq[static_cast<size_t>(rig)].setKnobs({r.bass->load(), r.mid->load(), r.treble->load(), r.presence->load()});
+  mEq[static_cast<size_t>(rig)].process(buffer, n);
 }
 
 void NexusProcessor::runRigs(double* buffer, int n)
@@ -574,7 +580,14 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (int r = 0; r < kRigs; ++r)
     for (int c = 0; c < kChannels; ++c)
       if (auto* e = mSlots[static_cast<size_t>(ampSlot(r, c))].active)
-        e->voice.setControls(ampControls(r, c));
+      {
+        // O equalizador do cabeçote agora é o universal (depois da caixa):
+        // o da família fica na posição da captura, sem mexer no som.
+        auto controls = ampControls(r, c);
+        controls.tone = e->pack->captureTone;
+        controls.presence = e->pack->capturePresence;
+        e->voice.setControls(controls);
+      }
 
   const int total = buffer.getNumSamples();
   const int inChannels = getTotalNumInputChannels();
@@ -701,7 +714,14 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       auto engine = std::make_unique<NexusEngine>();
       engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
-      engine->voice.setControls(controls);
+      auto start = controls;
+      if (slotIndex >= kPedals)
+      {
+        // Cabeçote: o equalizador é o universal (depois da caixa).
+        start.tone = engine->pack->captureTone;
+        start.presence = engine->pack->capturePresence;
+      }
+      engine->voice.setControls(start);
       engine->voice.prepare(engine->pack, kEngineRate, block);
       const auto& pack = *engine->pack;
       const juce::String text = juce::String::fromUTF8(pack.name.c_str()) + ": "

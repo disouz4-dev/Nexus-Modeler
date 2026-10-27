@@ -30,7 +30,8 @@ add_library(nexus_engine STATIC
   src/MorphEngine.cpp
   src/Pack.cpp
   src/TestSignal.cpp
-  src/ToneStack.cpp)
+  src/ToneStack.cpp
+  src/UniversalEq.cpp)
 target_include_directories(nexus_engine PUBLIC include)
 # O NAM registra cada tipo de captura num objeto estático; sem "carga
 # inteira" o ligador descarta esses registros e nenhuma captura abre.

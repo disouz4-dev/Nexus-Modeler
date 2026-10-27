@@ -11,6 +11,7 @@
 #include "MidiMap.h"
 #include "TestSource.h"
 #include "studio/Player.h"
+#include "nexus/UniversalEq.h"
 #include "nexus/AmpVoice.h"
 #include "nexus/Effects.h"
 
@@ -266,6 +267,8 @@ private:
   nexus::studio::Player mStudio;
   nexus::studio::Separation mSeparation;
   std::atomic<int> mEngineBlock{256};
+  // Grave, médio, agudo e presença: equalizador universal depois da caixa.
+  std::array<nexus::UniversalEq, kRigs> mEq;
   // Mão no botão que troca captura (drive de um pedal, ganho de um
   // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
   // depois de soltar.

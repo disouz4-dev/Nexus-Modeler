@@ -90,10 +90,10 @@ guitarra passa pela cadeia e se mistura com a música.*
   alto-falantes). O "Testar o som" continua tocando com a entrada no mudo.
 - **Botão contínuo ou em degraus.** Contínuo mistura as vizinhas; em degraus,
   o botão só para nas posições que têm captura.
-- **Equalizador do painel** (grave, médio, agudo e presença) modelado no
-  circuito de tonalidade do amplificador real. Ele aplica só a diferença entre
-  a posição em que a captura foi feita e a posição escolhida. Com os botões na
-  posição da captura, o som é exatamente o da captura.
+- **Equalizador universal** (grave, médio, agudo e presença) depois da
+  captura e da caixa, o mesmo em todo cabeçote: grave em 220 Hz, médio em
+  750 Hz, agudo a partir de 2,8 kHz e presença em 5,5 kHz, até ±12 dB (a
+  presença, ±10 dB). Com tudo em 5 o som é exatamente o da captura.
 - **A2 Full e A2 Lite** com um botão (o mesmo arquivo serve para os dois).
 - **Qualquer taxa de amostragem.** As capturas rodam a 48 kHz; se o programa de
   gravação estiver em 44,1 ou 96 kHz, o plugin converte na entrada e na saída.

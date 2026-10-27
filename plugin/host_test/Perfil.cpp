@@ -15,6 +15,8 @@
 #include "../../tools/Wav.h"
 #include "../source/PluginProcessor.h"
 #include "nexus/TestSignal.h"
+#include "nexus/Pack.h"
+#include "NAM/dsp.h"
 
 namespace
 {
@@ -50,6 +52,173 @@ int main(int argc, char** argv)
   }
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
+
+  // NEXUS_PERFIL_DRIVE=1: só o pedal, drive de posição em posição; mede o
+  // volume e o quanto distorce, e compara com cada captura tocada direto.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_DRIVE", {}) == "1")
+  {
+    struct Measure
+    {
+      double rmsDb, crestDb, brightDb;
+    };
+    auto measure = [&](const std::vector<double>& x) {
+      const size_t w = 2400;
+      double e = 0, hi = 0, prev = 0;
+      std::vector<double> crests;
+      for (size_t k = 0; k + w <= x.size(); k += w)
+      {
+        double pk = 0, ee = 0;
+        for (size_t i = k; i < k + w; ++i)
+        {
+          pk = std::max(pk, std::abs(x[i]));
+          ee += x[i] * x[i];
+        }
+        if (ee / w > 1e-8)
+          crests.push_back(20 * std::log10(pk / std::sqrt(ee / w)));
+      }
+      for (auto v : x)
+      {
+        e += v * v;
+        const double d = v - prev; // diferença: pesa os agudos (harmônicos da distorção)
+        hi += d * d;
+        prev = v;
+      }
+      std::sort(crests.begin(), crests.end());
+      return Measure{10 * std::log10(e / x.size() + 1e-20), crests.empty() ? 0.0 : crests[crests.size() / 2], 10 * std::log10(hi / (e + 1e-20))};
+    };
+    const juce::File folder(juce::String::fromUTF8(argv[1]));
+    std::printf("Direto pelo NAM (cada captura, sem o Nexus), mesma guitarra:\n");
+    nexus::PackOptions opt;
+    opt.sampleRate = rate;
+    opt.maxBlockSize = block;
+    auto pack = nexus::loadPack(folder.getFullPathName().toStdString(), opt);
+    for (auto& c : pack->captures)
+    {
+      c.dsp->Reset(rate, block);
+      std::vector<double> out(guitar.size());
+      std::vector<double> in(guitar.begin(), guitar.end());
+      for (size_t k = 0; k + block <= in.size(); k += block)
+      {
+        double* i = in.data() + k;
+        double* o = out.data() + k;
+        c.dsp->process(&i, &o, block);
+      }
+      out.erase(out.begin(), out.begin() + 12000);
+      const auto m = measure(out);
+      std::printf("  captura %4.1f  volume %6.1f dB  (com a correção de volume %6.1f dB)  achatamento %4.1f dB  agudos %6.1f dB\n", c.position, m.rmsDb,
+                  m.rmsDb + 20 * std::log10(c.levelGain), m.crestDb, m.brightDb);
+    }
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, rate, block);
+    q.prepareToPlay(rate, block);
+    ChainLayout l;
+    l.pre = {0};
+    q.setLayout(l);
+    setParam(q, "p1_visual", 2.0f);
+    setParam(q, "p1_ligado", 1.0f);
+    q.loadPedalPack(0, folder);
+    juce::AudioBuffer<float> buf(2, block);
+    juce::MidiBuffer m;
+    for (int t = 0; t < 3000 && !q.slotLoaded(0); ++t)
+    {
+      buf.clear();
+      q.processBlock(buf, m);
+      juce::Thread::sleep(2);
+    }
+    std::printf("Pelo Nexus (só o pedal, sem cabeçote):\n");
+    for (int d = 1; d <= 8; ++d)
+    {
+      setParam(q, "p1_drive", static_cast<float>(d));
+      std::vector<double> out;
+      for (size_t k = 0; k + block <= guitar.size(); k += block)
+      {
+        for (int i = 0; i < block; ++i)
+        {
+          buf.setSample(0, i, static_cast<float>(guitar[k + i]));
+          buf.setSample(1, i, static_cast<float>(guitar[k + i]));
+        }
+        q.processBlock(buf, m);
+        for (int i = 0; i < block; ++i)
+          out.push_back(buf.getSample(0, i));
+      }
+      out.erase(out.begin(), out.begin() + 12000);
+      const auto r = measure(out);
+      std::printf("  drive %d  volume %6.1f dB  achatamento %4.1f dB  agudos %6.1f dB\n", d, r.rmsDb, r.crestDb, r.brightDb);
+    }
+    return 0;
+  }
+
+  // NEXUS_PERFIL_EQ=1: cabeçote + caixa; cada botão do equalizador em 0, 5 e
+  // 10; mede o nível em faixas de frequência da saída.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_EQ", {}) == "1")
+  {
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, rate, block);
+    q.prepareToPlay(rate, block);
+    q.setLayout(ChainLayout{});
+    setParam(q, "ganho", 6.0f);
+    q.loadAmpPack(0, 0, juce::File(juce::String::fromUTF8(argv[2])));
+    q.loadIrAsync(0, juce::File(juce::String::fromUTF8(argv[3])));
+    juce::AudioBuffer<float> buf(2, block);
+    juce::MidiBuffer m;
+    for (int t = 0; t < 3000 && !(q.channelLoaded(0, 0) && q.irLoaded(0)); ++t)
+    {
+      buf.clear();
+      q.processBlock(buf, m);
+      juce::Thread::sleep(2);
+    }
+    setParam(q, "caixa", 1.0f);
+    // Nível (dB) por faixa: graves 60-200, médios 400-1200, agudos 2-4 k, presença 4-8 k.
+    auto bands = [&]() {
+      std::vector<double> out;
+      for (int pass = 0; pass < 2; ++pass)
+      {
+        out.clear();
+        for (size_t k = 0; k + block <= guitar.size(); k += block)
+        {
+          for (int i = 0; i < block; ++i)
+          {
+            buf.setSample(0, i, static_cast<float>(guitar[k + i]));
+            buf.setSample(1, i, static_cast<float>(guitar[k + i]));
+          }
+          q.processBlock(buf, m);
+          for (int i = 0; i < block; ++i)
+            out.push_back(buf.getSample(0, i));
+        }
+      }
+      const int N = 1 << 15;
+      juce::dsp::FFT fft(15);
+      std::vector<float> acc(N / 2, 0.0f), w(2 * N);
+      int frames = 0;
+      for (size_t k = 0; k + N <= out.size(); k += N / 2, ++frames)
+      {
+        std::fill(w.begin(), w.end(), 0.0f);
+        for (int i = 0; i < N; ++i)
+          w[static_cast<size_t>(i)] = static_cast<float>(out[k + i] * (0.5 - 0.5 * std::cos(2 * 3.14159265 * i / N)));
+        fft.performFrequencyOnlyForwardTransform(w.data());
+        for (int i = 0; i < N / 2; ++i)
+          acc[static_cast<size_t>(i)] += w[static_cast<size_t>(i)] * w[static_cast<size_t>(i)];
+      }
+      auto band = [&](double lo, double hi) {
+        double e = 0;
+        for (int i = static_cast<int>(lo * N / rate); i < static_cast<int>(hi * N / rate); ++i)
+          e += acc[static_cast<size_t>(i)];
+        return 10 * std::log10(e + 1e-20);
+      };
+      return std::array<double, 4>{band(60, 200), band(400, 1200), band(2000, 4000), band(4000, 8000)};
+    };
+    const auto flat = bands();
+    std::printf("Diferença para tudo em 5 (dB) nas faixas: graves | médios | agudos | presença\n");
+    for (const char* knob : {"grave", "medio", "agudo", "presenca"})
+      for (float v : {0.0f, 10.0f})
+      {
+        setParam(q, knob, v);
+        const auto b = bands();
+        std::printf("  %-9s %4.0f   %+6.1f  %+6.1f  %+6.1f  %+6.1f\n", knob, v, b[0] - flat[0], b[1] - flat[1], b[2] - flat[2], b[3] - flat[3]);
+        setParam(q, knob, 5.0f);
+      }
+    return 0;
+  }
 
   NexusProcessor p;
   p.setPlayConfigDetails(2, 2, rate, block);

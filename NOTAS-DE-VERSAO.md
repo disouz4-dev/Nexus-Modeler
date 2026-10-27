@@ -54,6 +54,15 @@
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
 ### Som e uso ao vivo
+- Equalizador universal: grave, médio, agudo e presença agora ficam depois
+  da captura e da caixa, iguais em todo cabeçote, e mexem de verdade no som
+  (até ±12 dB; medido com o Brit 800 e a caixa Greenback: grave ±9 dB,
+  médio ±8, agudo e presença ±9 a 10 nas suas faixas). Antes era o
+  equalizador do circuito aplicado só como diferença antes da caixa, sutil
+  demais. Com tudo em 5 o som é o da captura, sem mudar nada.
+- Drive dos pedais medido captura por captura (`NEXUS_PERFIL_DRIVE=1
+  nexus_perfil`): o Nexus toca cada captura igual ao NAM oficial. O pacote
+  do SD-1 varia pouco depois do drive 3 (é o próprio pacote).
 - Bem mais leve: as capturas eram preparadas para pedaços de 2048 amostras e
   a placa manda 128; isso deixava cada captura A2 duas vezes mais lenta.
   Agora são preparadas no tamanho do bloco da placa (e recarregadas sozinhas
