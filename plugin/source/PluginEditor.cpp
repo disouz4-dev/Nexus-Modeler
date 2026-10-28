@@ -2,6 +2,8 @@
 
 #include <thread>
 
+#include <juce_audio_utils/juce_audio_utils.h>
+
 #include "StandaloneLink.h"
 #include "report/Report.h"
 #include "ui/Brand.h"
