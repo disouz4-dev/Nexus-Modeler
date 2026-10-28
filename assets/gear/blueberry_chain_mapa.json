@@ -1,0 +1,184 @@
+{
+  "nome": "Blueberry Chain",
+  "familia": "blueberry_chain",
+  "largura": 600,
+  "altura": 510,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 136,
+      "y": 128,
+      "tamanho": 38,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 136,
+      "y": 186,
+      "tamanho": 38,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 136,
+      "y": 246,
+      "tamanho": 38,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "d",
+      "x": 281,
+      "y": 128,
+      "tamanho": 38,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "e",
+      "x": 282,
+      "y": 188,
+      "tamanho": 36,
+      "arquivo": "botao_e.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "f",
+      "x": 282,
+      "y": 247,
+      "tamanho": 36,
+      "arquivo": "botao_f.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "g",
+      "x": 426,
+      "y": 128,
+      "tamanho": 38,
+      "arquivo": "botao_g.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "h",
+      "x": 426,
+      "y": 186,
+      "tamanho": 38,
+      "arquivo": "botao_h.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "i",
+      "x": 426,
+      "y": 246,
+      "tamanho": 38,
+      "arquivo": "botao_i.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "TEMPO",
+      "x": 156.8,
+      "y": 174.2,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REPETIÇÕES",
+      "x": 156.8,
+      "y": 232.8,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 156.8,
+      "y": 291.4,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TEMPO",
+      "x": 300.0,
+      "y": 174.2,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REPETIÇÕES",
+      "x": 300.0,
+      "y": 232.8,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 300.0,
+      "y": 291.4,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TEMPO",
+      "x": 443.1,
+      "y": 174.2,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REPETIÇÕES",
+      "x": 443.1,
+      "y": 232.8,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 443.1,
+      "y": 291.4,
+      "altura": 6.5,
+      "achatamento": 1.0,
+      "cor": "#f9faf3",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 361.0,
+    "raio": 26.5
+  },
+  "led": {
+    "x": 300.0,
+    "y": 310.4,
+    "raio": 6.8
+  }
+}
