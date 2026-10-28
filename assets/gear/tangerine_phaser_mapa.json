@@ -1,0 +1,76 @@
+{
+  "nome": "Tangerine Phaser",
+  "familia": "tangerine_phaser",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 228,
+      "y": 154,
+      "tamanho": 143,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 132,
+      "y": 52,
+      "tamanho": 86,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 382,
+      "y": 52,
+      "tamanho": 86,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "VELOCIDADE",
+      "x": 300.0,
+      "y": 324.4,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#272727",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 178.2,
+      "y": 166.1,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#272727",
+      "espaco": 1.15
+    },
+    {
+      "texto": "INTENSIDADE",
+      "x": 421.8,
+      "y": 166.1,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#272727",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 590.0,
+    "raio": 77.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 347.4,
+    "raio": 19.1
+  }
+}

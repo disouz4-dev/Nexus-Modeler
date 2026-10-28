@@ -1,0 +1,76 @@
+{
+  "nome": "Blackberry Vibe",
+  "familia": "blackberry_vibe",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 148,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 262,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 378,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "VELOCIDADE",
+      "x": 186.9,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#ededef",
+      "espaco": 1.15
+    },
+    {
+      "texto": "INTENSIDADE",
+      "x": 300.0,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#ededef",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 413.1,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#ededef",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 528.5,
+    "raio": 51.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 355.0,
+    "raio": 12.9
+  }
+}

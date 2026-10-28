@@ -1,0 +1,59 @@
+{
+  "nome": "Snow Pear Treble",
+  "familia": "snowpear_treble",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 228,
+      "y": 154,
+      "tamanho": 143,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 368,
+      "y": 59,
+      "tamanho": 85,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "REFORÇO",
+      "x": 300.0,
+      "y": 324.4,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#303030",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 408.0,
+      "y": 173.0,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#303030",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 590.0,
+    "raio": 77.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 347.4,
+    "raio": 19.1
+  }
+}
