@@ -715,6 +715,13 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         for (const auto& m : *data)
           list.emplace_back(m["name"].toString(), m["model_url"].toString());
       auto chosen = chooseCaptures(list, tone);
+      if (juce::SystemStats::getEnvironmentVariable("NEXUS_DEPURAR", {}).isNotEmpty())
+      {
+        std::printf("depurar: tom %d (pedido %d), %d posições fixas, %d capturas A2, %d escolhidas\n", id, wanted.id,
+                    static_cast<int>(tone.fixedPositions.size()), static_cast<int>(list.size()), static_cast<int>(chosen.size()));
+        for (const auto& [n, u] : list)
+          std::printf("  [%s]\n", n.toRawUTF8());
+      }
       // Sem a posição do botão nos nomes: baixa todas (até 40) e o usuário mapeia.
       const bool needsMapping = chosen.empty();
       if (needsMapping)

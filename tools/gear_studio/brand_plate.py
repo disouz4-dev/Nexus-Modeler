@@ -121,11 +121,13 @@ def _solid(name, pts2d, scale, origin, depth, material):
     return obj
 
 
-def build(center, height, front_y, fonts, with_modeler=True, depth=0.003):
+def build(center, height, front_y, fonts, with_modeler=True, depth=0.003, satin=False):
     """Monta a marca centrada em center (x, z), com o NEXUS da altura dada.
     Devolve a largura total."""
     mats = {
-        "letters": st.mat_metal("marca_letras", (0.93, 0.95, 0.97), rough=0.14),
+        # satin: prateado acetinado (claro mesmo sem nada para refletir, como na caixa).
+        "letters": (st.mat_plastic("marca_letras", (0.78, 0.8, 0.83), rough=0.3, coat=0.6) if satin
+                    else st.mat_metal("marca_letras", (0.93, 0.95, 0.97), rough=0.14)),
         "x": st.mat_metal("marca_x", (0.10, 0.52, 0.95), rough=0.22),
         "nxx": st.mat_metal("marca_azul_claro", (0.18, 0.62, 0.98), rough=0.25),
         "nxy": st.mat_metal("marca_azul_fundo", (0.03, 0.26, 0.78), rough=0.25),
