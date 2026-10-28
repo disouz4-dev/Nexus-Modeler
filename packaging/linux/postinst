@@ -1,0 +1,16 @@
+#!/bin/sh
+# Depois de instalar o .deb: quem já tinha o Nexus pela pasta do usuário (o
+# comando do site) ficaria com duas cópias, e o atalho antigo abriria a velha.
+# A cópia do usuário passa a apontar para a do sistema, e os plugins
+# repetidos saem (o programa de música acharia dois Nexus).
+set -e
+for home in /home/* /root; do
+  bin="$home/.local/bin/nexus-modeler"
+  [ -f "$bin" ] && [ ! -L "$bin" ] || continue
+  dono=$(stat -c %U "$bin")
+  rm -f "$bin"
+  ln -s /usr/bin/nexus-modeler "$bin"
+  chown -h "$dono": "$bin" || true
+  rm -rf "$home/.vst3/Nexus Modeler.vst3" "$home/.lv2/Nexus Modeler.lv2"
+done
+exit 0

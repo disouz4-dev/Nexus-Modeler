@@ -25,7 +25,9 @@ bool installedByUser()
 {
   const auto exe = juce::File::getSpecialLocation(juce::File::currentExecutableFile);
   // O programa independente roda de ~/.local/bin; no plugin, vale o que está lá.
-  return exe.isAChildOf(home()) || home().getChildFile(".local/bin/nexus-modeler").existsAsFile();
+  // Atalho (link) para /usr/bin: o .deb já juntou as duas, vale a do sistema.
+  const auto bin = home().getChildFile(".local/bin/nexus-modeler");
+  return exe.isAChildOf(home()) || (bin.existsAsFile() && !bin.isSymbolicLink());
 }
 
 // Coloca "from" no lugar de "to" sem deixar o programa sem arquivo no meio:
