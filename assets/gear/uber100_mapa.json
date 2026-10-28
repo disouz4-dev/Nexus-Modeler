@@ -1,0 +1,140 @@
+{
+  "nome": "Uber 100",
+  "familia": "uber_100",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 837,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1027,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1217,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1406,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1596,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1785,
+      "y": 726,
+      "tamanho": 115,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 292.6,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 895.5,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1084.6,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1273.8,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 1463.0,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1652.2,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1841.4,
+      "y": 667.7,
+      "altura": 34.45,
+      "achatamento": 0.982,
+      "cor": "#efefef",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 1943.6,
+      "y": 835.7,
+      "altura": 26.01,
+      "achatamento": 0.976,
+      "cor": "#efefef",
+      "espaco": 1.0
+    }
+  ]
+}
