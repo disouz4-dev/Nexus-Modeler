@@ -207,6 +207,9 @@ Name: "{autodesktop}\Nexus Modeler"; Filename: "{app}\Nexus Modeler.exe"; Compon
 
 [Run]
 Filename: "{app}\Nexus Modeler.exe"; Description: "{cm:LaunchProgram,Nexus Modeler}"; Components: programa; Flags: nowait postinstall skipifsilent
+; Atualização pelo próprio Nexus (instalação silenciosa com /REABRIR): abre o
+; Nexus de novo no fim, como a pessoa usava.
+Filename: "{app}\Nexus Modeler.exe"; Components: programa; Flags: nowait runasoriginaluser; Check: Reabrir
 
 [UninstallDelete]
 ; A pasta do plugin some inteira na desinstalação. As preferências do usuário
@@ -219,6 +222,12 @@ const
 
 var
   PaginaIdioma: TInputOptionWizardPage;
+
+{ O Nexus pediu para ser aberto de novo depois da atualização silenciosa. }
+function Reabrir: Boolean;
+begin
+  Result := WizardSilent and (Pos('/REABRIR', Uppercase(GetCmdTail)) > 0);
+end;
 
 { Código de cada idioma, na mesma ordem e com os mesmos códigos de
   plugin/source/ui/Language.cpp. }

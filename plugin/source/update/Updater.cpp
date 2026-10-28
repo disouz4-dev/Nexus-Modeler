@@ -537,8 +537,12 @@ void Updater::download()
   // Abre o instalador no fio da tela (o sistema prefere assim).
   juce::MessageManager::callAsync([target] {
 #if JUCE_WINDOWS
-    // Sem perguntas: o instalador fecha o Nexus, atualiza e abre de novo.
-    if (target.hasFileExtension("exe") && target.startAsProcess("/SILENT /SUPPRESSMSGBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART"))
+    // Programa independente: sem perguntas, o instalador fecha o Nexus,
+    // atualiza e abre de novo (/REABRIR, ver packaging/windows/nexus.iss).
+    // Dentro do programa de gravação o instalador abre normal, para não
+    // fechar o programa de gravação sem a pessoa salvar o projeto.
+    if (target.hasFileExtension("exe") && juce::JUCEApplicationBase::isStandaloneApp()
+        && target.startAsProcess("/SILENT /SUPPRESSMSGBOXES /CLOSEAPPLICATIONS /NORESTART /REABRIR"))
       return;
 #endif
     if (!target.startAsProcess())
