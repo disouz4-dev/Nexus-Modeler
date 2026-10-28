@@ -17,6 +17,7 @@
 #include "../source/PluginProcessor.h"
 #include "nexus/TestSignal.h"
 #include "nexus/Pack.h"
+#include "../source/report/Report.h"
 #include "NAM/dsp.h"
 
 namespace
@@ -59,6 +60,21 @@ int main(int argc, char** argv)
   }
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
+
+  // NEXUS_PERFIL_RELATORIO=1: envia um relatório de teste pelo mesmo caminho
+  // do botão "Reportar um problema" e mostra o issue criado.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_RELATORIO", {}).isNotEmpty())
+  {
+    bool finished = false;
+    nexus::report::send(nexus::report::Kind::problem, juce::String::fromUTF8("Teste do botão de relatório (pode fechar)."), "registro de teste",
+                        [&](nexus::report::Sent sent) {
+                          std::printf("issue %d %s %s\n", sent.number, sent.address.toRawUTF8(), sent.error.toRawUTF8());
+                          finished = true;
+                        });
+    for (int t = 0; t < 600 && !finished; ++t)
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(50);
+    return finished ? 0 : 1;
+  }
 
   // NEXUS_PERFIL_NAM=<pasta de saída>: prova do motor. A mesma gravação
   // (argv[4]) passa pelo pedal (argv[1], drive 5) e pelo cabeçote (argv[2],

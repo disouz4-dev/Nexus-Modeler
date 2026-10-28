@@ -15,7 +15,7 @@ constexpr juce::int64 kMaxLogBytes = 512 * 1024;
 constexpr int kMaxUrlLength = 7000;
 // Ponte dos relatórios (tools/relatorio, na Cloudflare): cria o issue sem a
 // pessoa precisar de conta no GitHub. Vazio: abre o GitHub preenchido.
-const juce::String kRelay = "";
+const juce::String kRelay = "https://nexus-relatorio.nexusmodeler.workers.dev/relatorio";
 
 juce::CriticalSection& logLock()
 {

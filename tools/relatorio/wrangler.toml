@@ -3,6 +3,8 @@
 name = "nexus-relatorio"
 main = "src/index.js"
 compatibility_date = "2025-09-01"
+workers_dev = true
+preview_urls = false
 
 [vars]
 REPOSITORIO = "disouz4-dev/Nexus-Modeler"
