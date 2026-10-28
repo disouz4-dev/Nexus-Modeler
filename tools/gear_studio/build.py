@@ -233,6 +233,11 @@ def main():
         px, py = to_pixels(scene, cam, (lx, ly, lz))
         ex, _ = to_pixels(scene, cam, (lx + lr, ly, lz))
         layout["led"] = {"x": round(px, 1), "y": round(py, 1), "raio": round(abs(ex - px), 1)}
+    if built.get("display"):
+        vx, vy, vz, vw, vl = built["display"]
+        corners = [to_pixels(scene, cam, (vx + sx * vw / 2, vy + sy * vl / 2, vz)) for sx in (-1, 1) for sy in (-1, 1)]
+        xs, ys = [c[0] for c in corners], [c[1] for c in corners]
+        layout["visor"] = {"x": round(min(xs), 1), "y": round(min(ys), 1), "w": round(max(xs) - min(xs), 1), "h": round(max(ys) - min(ys), 1)}
     with open(os.path.join(a.saida, "mapa.json"), "w", encoding="utf-8") as f:
         json.dump(layout, f, ensure_ascii=False, indent=2)
     if a.so_frente or a.so_mapa or not controls:

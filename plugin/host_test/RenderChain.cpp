@@ -134,6 +134,51 @@ int main(int argc, char** argv)
     }
     return 0;
   }
+  // NEXUS_CONFERIR=<pasta>: baixa cada recomendada (todas as peças) para
+  // <pasta>/<prefixo> e confere se as capturas entram com a posição (sem
+  // "mapear"). Mostra uma linha por recomendada e o total de problemas.
+  if (const auto dir = juce::SystemStats::getEnvironmentVariable("NEXUS_CONFERIR", {}); dir.isNotEmpty())
+  {
+    // Lista das peças pelo arquivo do projeto (as recomendadas em si vêm do programa).
+    const auto all = juce::JSON::parse(juce::File::getCurrentWorkingDirectory().getChildFile("assets/tone3000/recomendadas.json"));
+    int problems = 0, total = 0;
+    if (auto* obj = all.getDynamicObject())
+      for (const auto& prop : obj->getProperties())
+      {
+        const auto prefix = prop.name.toString();
+        // NEXUS_CONFERIR_SO=prefixo,prefixo: só essas peças.
+        const auto only = juce::StringArray::fromTokens(juce::SystemStats::getEnvironmentVariable("NEXUS_CONFERIR_SO", {}), ",", "");
+        if (prefix.startsWith("_") || (!only.isEmpty() && !only.contains(prefix)))
+          continue;
+        for (const auto& tone : nexus::t3k::recommended(prefix))
+        {
+          ++total;
+          const juce::String filter = tone.gear == "cab" ? "cab" : tone.gear == "pedal" ? "pedal" : "amp_amp-cab";
+          bool finished = false;
+          juce::File folder;
+          juce::String error;
+          t3k.download(tone, filter, "Conferir " + prefix, [](juce::String) {}, [&](juce::File f, juce::String e) {
+            folder = f;
+            error = e;
+            finished = true;
+          });
+          waitFor([&] { return finished; }, 600);
+          const auto pack = juce::JSON::parse(folder.getChildFile("pack.json"));
+          const int count = pack["capturas"].getDynamicObject() != nullptr ? pack["capturas"].getDynamicObject()->getProperties().size() : 0;
+          const int irs = folder.getNumberOfChildFiles(juce::File::findFiles, "*.wav");
+          const bool ok = error.isEmpty() && !static_cast<bool>(pack["mapear"]) && (count > 0 || irs > 0);
+          problems += ok ? 0 : 1;
+          std::printf("%s %-14s %6d %-28s %s %s\n", ok ? "ok   " : "FALHA", prefix.toRawUTF8(), tone.id, tone.packName.substring(0, 28).toRawUTF8(),
+                      filter == "cab" ? (juce::String(irs) + " IRs").toRawUTF8() : (juce::String(count) + " capturas").toRawUTF8(), error.toRawUTF8());
+          if (!ok) // nomes das capturas, para escrever a regra da posição
+            for (const auto& f : folder.findChildFiles(juce::File::findFiles, true, "*.nam"))
+              std::printf("        %s\n", f.getFileName().toRawUTF8());
+          folder.deleteRecursively();
+        }
+      }
+    std::printf("%d recomendadas, %d com problema\n", total, problems);
+    return problems == 0 ? 0 : 1;
+  }
   // NEXUS_BUSCAR=<palavra>:<tipo>: a busca "mais curtidas" (o que a escolha
   // automática usa) e termina.
   if (const auto spec = juce::SystemStats::getEnvironmentVariable("NEXUS_BUSCAR", {}); spec.isNotEmpty())

@@ -17,17 +17,22 @@ constexpr int kTitleHeight = 112;
 
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
                                                                "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
-                                                               "cherry_drop"};
+                                                               "cherry_drop", "peach_phaser", "lime_flanger", "melon_tremolo",
+                                                               "tamarind_vibe", "plum_rat", "fig_buzzsaw", "grapefruit_fuzz",
+                                                               "mango_metal", "guava_mud", "apricot_treble"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
-const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100"};
+const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
+                                                             "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
-const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4};
+const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
+                                                             "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212"};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12};
 struct CabInfo
 {
   const char* inspiration;
 };
-const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"}};
+const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"},
+                                                    {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -94,16 +99,67 @@ void drawLed(juce::Graphics& g, juce::Point<float> c, float r)
   g.fillEllipse(c.x - r * 0.35f, c.y - r * 0.55f, r * 0.5f, r * 0.35f); // reflexo da cúpula
 }
 
+// Visor do Cherry Drop: cristal azul aceso com o drop escolhido (apagado, só o
+// vidro escuro do render aparece).
+void drawDropDisplay(juce::Graphics& g, juce::Rectangle<float> r, float knobA)
+{
+  const int sel = juce::jlimit(0, 8, juce::roundToInt(knobA / 10.0f * 8.0f));
+  const juce::String big = juce::String::fromUTF8("\u2212") + juce::String(sel < 7 ? sel + 1 : 12);
+  const juce::String small = sel < 7 ? TRANS("semitons") : sel == 7 ? TRANS("oitava") : TRANS("oitava + limpo");
+  const float corner = r.getHeight() * 0.10f;
+  juce::ColourGradient glass(juce::Colour(0xff2f7bff), r.getCentreX(), r.getY(), juce::Colour(0xff0b2f8f), r.getCentreX(), r.getBottom(), false);
+  g.setGradientFill(glass);
+  g.fillRoundedRectangle(r, corner);
+  // Linhas finas da matriz do cristal.
+  g.setColour(juce::Colours::black.withAlpha(0.10f));
+  for (float y = r.getY() + 2.0f; y < r.getBottom(); y += 3.0f)
+    g.drawHorizontalLine(juce::roundToInt(y), r.getX() + 1.0f, r.getRight() - 1.0f);
+  auto text = r.reduced(r.getWidth() * 0.06f, r.getHeight() * 0.08f);
+  auto bottom = text.removeFromBottom(text.getHeight() * 0.28f);
+  const juce::Colour ink(0xffeaf6ff);
+  g.setFont(juce::Font(juce::FontOptions(text.getHeight() * 0.92f, juce::Font::bold)).withExtraKerningFactor(0.04f));
+  g.setColour(ink.withAlpha(0.25f)); // brilho em volta do número
+  for (const auto d : {-1.2f, 1.2f})
+    g.drawText(big, text.translated(d, 0.0f), juce::Justification::centred, false);
+  g.setColour(ink);
+  g.drawText(big, text, juce::Justification::centred, false);
+  g.setFont(juce::Font(juce::FontOptions(bottom.getHeight() * 0.80f, juce::Font::bold)).withExtraKerningFactor(0.12f));
+  g.setColour(ink.withAlpha(0.85f));
+  g.drawText(small.toUpperCase(), bottom, juce::Justification::centred, false);
+  // Reflexo do vidro por cima.
+  juce::ColourGradient shine(juce::Colours::white.withAlpha(0.16f), r.getX(), r.getY(), juce::Colours::white.withAlpha(0.0f), r.getX(),
+                             r.getCentreY(), false);
+  g.setGradientFill(shine);
+  g.fillRoundedRectangle(r.withHeight(r.getHeight() * 0.5f), corner);
+}
+
 juce::String nativeKnobLabel(int look, const juce::String& id)
 {
-  static const char* const names[5][3] = {{"Velocidade", "Profundidade", "Mistura"},
-                                         {"Tempo", "Repetições", "Mistura"},
-                                         {"Tamanho", "Tom", "Mistura"},
-                                         {"Sensibilidade", "Ataque", "Release"},
-                                         {"Drop", "Mistura", ""}};
-  const int type = juce::jlimit(0, 4, look - NexusProcessor::kFirstNativeLook);
+  using K = NexusProcessor::PedalKind;
+  const char* const* names = nullptr;
+  static const char* const chorus[3] = {"Velocidade", "Profundidade", "Mistura"};
+  static const char* const delay[3] = {"Tempo", "Repetições", "Mistura"};
+  static const char* const reverb[3] = {"Tamanho", "Tom", "Mistura"};
+  static const char* const gate[3] = {"Sensibilidade", "Ataque", "Release"};
+  static const char* const drop[3] = {"Drop", "Mistura", ""};
+  static const char* const phaser[3] = {"Velocidade", "Profundidade", "Intensidade"};
+  static const char* const flanger[3] = {"Velocidade", "Profundidade", "Realimentação"};
+  static const char* const tremolo[3] = {"Velocidade", "Profundidade", "Forma"};
+  static const char* const vibe[3] = {"Velocidade", "Intensidade", "Mistura"};
+  switch (NexusProcessor::pedalKind(look))
+  {
+    case K::delay: names = delay; break;
+    case K::reverb: names = reverb; break;
+    case K::gate: names = gate; break;
+    case K::drop: names = drop; break;
+    case K::phaser: names = phaser; break;
+    case K::flanger: names = flanger; break;
+    case K::tremolo: names = tremolo; break;
+    case K::vibe: names = vibe; break;
+    default: names = chorus; break;
+  }
   const int knob = id == "a" ? 0 : id == "b" ? 1 : 2;
-  return juce::String::fromUTF8(names[type][knob]);
+  return juce::String::fromUTF8(names[knob]);
 }
 
 juce::String knobLabel(const juce::String& id)
@@ -257,6 +313,12 @@ void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
   // LED: o modelo 3D traz o LED apagado; ligado, a tela acende por cima.
   if (mKind == Kind::pedal && pedalOn() && mArt != nullptr && mArt->ledRadius > 0.0f)
     drawLed(g, toScreen(mArt->led), mArt->ledRadius * mScale);
+  if (mKind == Kind::pedal && pedalOn() && mArt != nullptr && !mArt->display.isEmpty())
+  {
+    const auto tl = toScreen(mArt->display.getTopLeft());
+    drawDropDisplay(g, {tl.x, tl.y, mArt->display.getWidth() * mScale, mArt->display.getHeight() * mScale},
+                    mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "a"))->load());
+  }
   // Cabeçote de vários canais: acende o LED do canal que está tocando.
   if (mKind == Kind::amp && mArt != nullptr)
   {
@@ -1190,6 +1252,16 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
   {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
   {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
+  {"Peach Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
+  {"Lime Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
+  {"Melon Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
+  {"Tamarind Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
+  {"Plum Rat", "ProCo RAT", "Drive e distorção", "Captura da TONE3000"},
+  {"Fig Buzzsaw", "HM-2", "Drive e distorção", "Captura da TONE3000"},
+  {"Grapefruit Fuzz", "Big Muff", "Drive e distorção", "Captura da TONE3000"},
+  {"Mango Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
+  {"Guava Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
+  {"Apricot Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.
@@ -1205,6 +1277,19 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Dual Rectifier", "Americanos de alto ganho"},
   {"SLO-100", "Americanos de alto ganho"},
   {"BE-100", "Americanos de alto ganho"},
+  {"AC30", "Britânicos"},
+  {"DC-30", "Americanos boutique"},
+  {"Tiny Terror", "Britânicos"},
+  {"Rockerverb 50", "Britânicos"},
+  {"Triple Rectifier", "Americanos de alto ganho"},
+  {"Powerball", "Alemães de alto ganho"},
+  {"Uberschall", "Alemães de alto ganho"},
+  {"Super-Sonic", "Americanos clássicos"},
+  {"Twin Reverb", "Americanos clássicos"},
+  {"Bassman 5F6-A", "Americanos clássicos"},
+  {"Super Lead 1959", "Britânicos"},
+  {"Silver Jubilee 2555", "Britânicos"},
+  {"JC-120", "Limpos de transistor"},
 };
 
 // Planejados (docs/CATALOGO.md): aparecem em "Em breve".
@@ -1226,13 +1311,6 @@ const Planned kPlanned[] = {
   {GearItem::Kind::pedal, "Melon Tremolo", "TR-2"},
   {GearItem::Kind::pedal, "Apple Comp", "Dyna Comp"},
   {GearItem::Kind::pedal, "Mango Wah", "Cry Baby"},
-  {GearItem::Kind::amp, "Brit Plexi", "Super Lead 1959"},
-  {GearItem::Kind::amp, "Silver Twin", "Twin Reverb"},
-  {GearItem::Kind::amp, "Tweed 59", "Bassman 5F6-A"},
-  {GearItem::Kind::amp, "Top Boost 30", "AC30"},
-  {GearItem::Kind::amp, "Jazz 120", "JC-120"},
-  {GearItem::Kind::cab, "Blue 2x12", "AC30 2x12"},
-  {GearItem::Kind::cab, "Twin 2x12", "Twin Reverb 2x12"},
 };
 } // namespace
 

@@ -155,10 +155,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "caixa"), 1}, "Caixa" + side,
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
-                                   juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100"}, 0));
+                                   juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100",
+                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
-                                   juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12"}, 0));
+                                   juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12",
+                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12"}, 0));
     for (const char* id : kGraphicIds)
       layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
                                      "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));
@@ -201,7 +203,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
-                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop"}, 0));
+                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Peach Phaser",
+                                                     "Lime Flanger", "Melon Tremolo", "Tamarind Vibe", "Plum Rat", "Fig Buzzsaw",
+                                                     "Grapefruit Fuzz", "Mango Metal", "Guava Mud", "Apricot Treble"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -408,13 +412,23 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
   const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
   if (pedalLook(pedal) == kDropLook)
     return runDrop(pedal, buffer, n);
-  // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
+  // Efeito do próprio Nexus (modulação, delay, reverb, gate): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
     auto& p = mPedals[static_cast<size_t>(pedal)];
-    static constexpr nexus::NativePedal::Type types[] = {nexus::NativePedal::Type::chorus, nexus::NativePedal::Type::delay,
-                                                         nexus::NativePedal::Type::reverb, nexus::NativePedal::Type::gate};
-    const auto type = types[std::min(3, look - kFirstNativeLook)];
+    using T = nexus::NativePedal::Type;
+    T type = T::chorus;
+    switch (pedalKind(look))
+    {
+      case PedalKind::delay: type = T::delay; break;
+      case PedalKind::reverb: type = T::reverb; break;
+      case PedalKind::gate: type = T::gate; break;
+      case PedalKind::phaser: type = T::phaser; break;
+      case PedalKind::flanger: type = T::flanger; break;
+      case PedalKind::tremolo: type = T::tremolo; break;
+      case PedalKind::vibe: type = T::vibe; break;
+      default: break;
+    }
     p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
     return;
   }

@@ -57,6 +57,9 @@ def main():
         if chave in mapa:
             m = mapa[chave]
             m["x"], m["y"], m["raio"] = s(m["x"]), s(m["y"]), s(m["raio"])
+    if "visor" in mapa:
+        v = mapa["visor"]
+        v["x"], v["y"], v["w"], v["h"] = s(v["x"]), s(v["y"]), s(v["w"]), s(v["h"])
     for led in mapa.get("leds_canais", []):
         led["x"], led["y"], led["raio"] = s(led["x"]), s(led["y"]), s(led["raio"])
 

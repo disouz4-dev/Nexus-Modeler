@@ -565,5 +565,412 @@
         "nota": "Caixa Friedman (poucos IRs dela na TONE3000)"
       }
     ]
+  },
+  "topboost30": {
+    "busca": "AC30",
+    "tons": [
+      {
+        "id": 31267,
+        "titulo": "VOX AC30 CH [Hyper Accuracy+]",
+        "tipo": "amp",
+        "capturas": 96,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "match30": {
+    "busca": "Matchless",
+    "tons": [
+      {
+        "id": 4638,
+        "titulo": "Matchless DC30 clone",
+        "tipo": "amp",
+        "capturas": 50,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "tiny15": {
+    "busca": "Tiny Terror",
+    "tons": [
+      {
+        "id": 28963,
+        "titulo": "Orange Tiny Terror",
+        "tipo": "amp",
+        "capturas": 26,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "rocker50": {
+    "busca": "Rockerverb",
+    "tons": [
+      {
+        "id": 1844,
+        "titulo": "Orange Rockerverb MK3 v2 (Canov+Arnold)",
+        "tipo": "amp",
+        "capturas": 7,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "recto_triple": {
+    "busca": "Triple Rectifier",
+    "tons": [
+      {
+        "id": 52642,
+        "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+        "tipo": "amp",
+        "capturas": 40,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "power100": {
+    "busca": "Powerball",
+    "tons": [
+      {
+        "id": 6213,
+        "titulo": "ENGL Powerball II",
+        "tipo": "amp",
+        "capturas": 10,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "uber100": {
+    "busca": "Uberschall",
+    "tons": [
+      {
+        "id": 1628,
+        "titulo": "Bogner Uberschall UberNAM Pack!",
+        "tipo": "amp",
+        "capturas": 17,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "sonic60": {
+    "busca": "Super-Sonic",
+    "tons": [
+      {
+        "id": 31196,
+        "titulo": "Fender Super-Sonic 60 Head",
+        "tipo": "amp",
+        "capturas": 33,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "silvertwin": {
+    "busca": "Twin Reverb",
+    "tons": [
+      {
+        "id": 1733,
+        "titulo": "Fender Twin Reverb - Breakup",
+        "tipo": "amp",
+        "capturas": 7,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "tweed59": {
+    "busca": "Bassman",
+    "tons": [
+      {
+        "id": 1882,
+        "titulo": "Fender Bassman 50 (0.5.2)",
+        "tipo": "amp",
+        "capturas": 144,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "britplexi": {
+    "busca": "Plexi",
+    "tons": [
+      {
+        "id": 40971,
+        "titulo": "Marshall Plexi Super Lead 1959 EL34",
+        "tipo": "amp",
+        "capturas": 3,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "britjubilee": {
+    "busca": "Jubilee",
+    "tons": [
+      {
+        "id": 34255,
+        "titulo": "Marshall Silver Jubilee 2555",
+        "tipo": "amp",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "a mais curtida da TONE3000 (198 favoritos); a 27435 não traz capturas compatíveis"
+      }
+    ]
+  },
+  "jazz120": {
+    "busca": "JC-120",
+    "tons": [
+      {
+        "id": 10912,
+        "titulo": "Roland JC 120B Jazz Chorus",
+        "tipo": "amp",
+        "capturas": 6,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "citrus_412": {
+    "busca": "Orange 4x12",
+    "tons": [
+      {
+        "id": 90730,
+        "titulo": "Orange V30 4x12 - XR IR PACK",
+        "tipo": "cab",
+        "capturas": 4,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "blue_212": {
+    "busca": "AC30",
+    "tons": [
+      {
+        "id": 27468,
+        "titulo": "Vox AC30 Mix Ready",
+        "tipo": "cab",
+        "capturas": 2,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "twin_212": {
+    "busca": "Twin Reverb",
+    "tons": [
+      {
+        "id": 33532,
+        "titulo": "Fender Twin Reverb",
+        "tipo": "cab",
+        "capturas": 3,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "tweed_410": {
+    "busca": "Super Reverb",
+    "tons": [
+      {
+        "id": 61705,
+        "titulo": "Fender '65 Super Reverb 4x10 Jensen P10R",
+        "tipo": "cab",
+        "capturas": 68,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "match_212": {
+    "busca": "Matchless",
+    "tons": [
+      {
+        "id": 1873,
+        "titulo": "Matchless 2x12 Celestion G12H30",
+        "tipo": "cab",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "power_412": {
+    "busca": "ENGL",
+    "tons": [
+      {
+        "id": 39748,
+        "titulo": "Eminence Karnivore 8 Ohm, Engl E412 Pro 4 x 12 (96Khz)",
+        "tipo": "cab",
+        "capturas": 9,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "uber_412": {
+    "busca": "Bogner",
+    "tons": [
+      {
+        "id": 27979,
+        "titulo": "Bogner Shiva 2x12",
+        "tipo": "cab",
+        "capturas": 4,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "jazz_212": {
+    "busca": "Jazz Chorus",
+    "tons": [
+      {
+        "id": 74560,
+        "titulo": "1993 Roland Jazz Chorus-77 Cab IR",
+        "tipo": "cab",
+        "capturas": 24,
+        "padrao": true,
+        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+      }
+    ]
+  },
+  "plum_rat": {
+    "busca": "Rat",
+    "tons": [
+      {
+        "id": 26704,
+        "titulo": "ProCo Rat",
+        "tipo": "pedal",
+        "capturas": 1,
+        "nota": "735 favoritos na TONE3000",
+        "padrao": true
+      },
+      {
+        "id": 45294,
+        "titulo": "Pro Co RAT 2",
+        "tipo": "pedal",
+        "capturas": 4,
+        "nota": "353 favoritos na TONE3000"
+      },
+      {
+        "id": 36551,
+        "titulo": "ProCo Rat",
+        "tipo": "pedal",
+        "capturas": 49,
+        "nota": "169 favoritos na TONE3000"
+      }
+    ]
+  },
+  "fig_buzzsaw": {
+    "busca": "HM-2",
+    "tons": [
+      {
+        "id": 6778,
+        "titulo": "BOSS HM-2 1986",
+        "tipo": "pedal",
+        "capturas": 11,
+        "nota": "258 favoritos na TONE3000",
+        "padrao": true
+      },
+      {
+        "id": 1104,
+        "titulo": "BOSS HM-2 Heavy Metal (MiJ) v2.0",
+        "tipo": "pedal",
+        "capturas": 6,
+        "nota": "130 favoritos na TONE3000"
+      },
+      {
+        "id": 58569,
+        "titulo": "Boss HM-2 1985 MIJ TTSV10",
+        "tipo": "pedal",
+        "capturas": 48,
+        "nota": "116 favoritos na TONE3000"
+      }
+    ]
+  },
+  "grapefruit_fuzz": {
+    "busca": "Big Muff",
+    "tons": [
+      {
+        "id": 37818,
+        "titulo": "Electro-Harmonix Op-Amp Big Muff",
+        "tipo": "pedal",
+        "capturas": 35,
+        "nota": "526 favoritos na TONE3000",
+        "padrao": true
+      },
+      {
+        "id": 61106,
+        "titulo": "EHX Big Muff Pi",
+        "tipo": "pedal",
+        "capturas": 25,
+        "nota": "380 favoritos na TONE3000"
+      },
+      {
+        "id": 68162,
+        "titulo": "Sovtek Big Muff Pi (Tall Font)",
+        "tipo": "pedal",
+        "capturas": 1,
+        "nota": "366 favoritos na TONE3000"
+      }
+    ]
+  },
+  "mango_metal": {
+    "busca": "Metal Zone",
+    "tons": [
+      {
+        "id": 45204,
+        "titulo": "BOSS MT-2 Metal Zone",
+        "tipo": "pedal",
+        "capturas": 15,
+        "nota": "108 favoritos na TONE3000",
+        "padrao": true
+      },
+      {
+        "id": 64957,
+        "titulo": "BOSS Metal Zone MT-2 1992",
+        "tipo": "pedal",
+        "capturas": 19,
+        "nota": "81 favoritos na TONE3000"
+      }
+    ]
+  },
+  "guava_mud": {
+    "busca": "Mudhoney",
+    "tons": [
+      {
+        "id": 66479,
+        "titulo": "T Rex Mudhoney",
+        "tipo": "pedal",
+        "capturas": 32,
+        "nota": "31 favoritos na TONE3000",
+        "padrao": true
+      }
+    ]
+  },
+  "apricot_treble": {
+    "busca": "Rangemaster",
+    "tons": [
+      {
+        "id": 31234,
+        "titulo": "Dallas Rangemaster Treble Booster",
+        "tipo": "pedal",
+        "capturas": 18,
+        "nota": "143 favoritos na TONE3000",
+        "padrao": true
+      },
+      {
+        "id": 45843,
+        "titulo": "Rangemaster treble booster",
+        "tipo": "pedal",
+        "capturas": 6,
+        "nota": "47 favoritos na TONE3000"
+      }
+    ]
   }
 }

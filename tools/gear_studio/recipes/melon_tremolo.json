@@ -1,0 +1,86 @@
+{
+  "tipo": "pedal",
+  "nome": "Melon Tremolo",
+  "familia": "melon_tremolo",
+  "inspiracao": "tremolo compacto com pedal basculante (estilo TR-2), verde-melão",
+  "formato": "compacto",
+  "medidas_m": {
+    "largura": 0.073,
+    "comprimento": 0.129,
+    "altura": 0.059
+  },
+  "basculante_rel": 0.6,
+  "pintura": {
+    "cor": [
+      0.55,
+      0.8,
+      0.42
+    ],
+    "metalico": 0.0,
+    "aspereza": 0.22
+  },
+  "texto_cor": [
+    0.03,
+    0.08,
+    0.03
+  ],
+  "modelo": "MELON TREMOLO",
+  "tipo_texto": "",
+  "rotulo_m": 0.0036,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "saia": true,
+    "corpo": [
+      0.014,
+      0.014,
+      0.014
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "a",
+      "rotulo": "VELOCIDADE",
+      "pos": [
+        -0.6,
+        0.7
+      ]
+    },
+    {
+      "id": "b",
+      "rotulo": "PROFUNDIDADE",
+      "pos": [
+        0.0,
+        0.7
+      ]
+    },
+    {
+      "id": "c",
+      "rotulo": "FORMA",
+      "pos": [
+        0.6,
+        0.7
+      ]
+    }
+  ],
+  "led": [
+    -0.72,
+    0.06
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "base_rel": 0.68,
+  "rotulo_embaixo": true,
+  "led_no_basculante": true,
+  "medidas_fonte": "BOSS CE-2: 73 x 129 x 59 mm",
+  "modelo_m": 0.0058,
+  "modelo_x": 0.12
+}

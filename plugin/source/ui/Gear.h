@@ -54,6 +54,9 @@ struct GearArt
   float footswitchRadius = 0.0f;
   juce::Point<float> led;
   float ledRadius = 0.0f;
+  // Visor digital (Cherry Drop): retângulo em pixels da frente onde a tela
+  // escreve o valor; vazio = não tem.
+  juce::Rectangle<float> display;
   // Amplificadores de vários canais: um LED por canal, na ordem dos canais.
   std::vector<std::pair<juce::Point<float>, float>> channelLeds;
 

@@ -184,19 +184,21 @@ int main(int argc, char** argv)
     }
     else if (stage == "gate")
     {
-      // Pedal 1 com o visual do Pear Gate (o último da lista de visuais).
+      // Pedal 1 com o visual do Pear Gate.
       auto* look = processor.params.getParameter(NexusProcessor::pedalParam(0, "visual"));
-      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusEditor::kPedalLooks - 1)));
+      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusProcessor::kGateLook)));
       e->select({NexusEditor::Kind::pedal, 0});
     }
     else if (stage.startsWith("pedal"))
       e->select({NexusEditor::Kind::pedal, 0});
     else if (stage == "caixa")
       e->select({NexusEditor::Kind::cab, 0});
-    else if (stage == "caixa_mark")
+    else if (stage == "caixa_mark" || stage.startsWith("caixa:"))
     {
+      // Caixa pelo número do visual (caixa_mark é a 1).
       auto* cab = processor.params.getParameter(NexusProcessor::ampParam(0, "gabinete"));
-      cab->setValueNotifyingHost(cab->convertTo0to1(1.0f));
+      const float n = stage == "caixa_mark" ? 1.0f : stage.fromFirstOccurrenceOf(":", false, false).getFloatValue();
+      cab->setValueNotifyingHost(cab->convertTo0to1(n));
       e->select({NexusEditor::Kind::cab, 0});
     }
     else if (stage == "capturas")

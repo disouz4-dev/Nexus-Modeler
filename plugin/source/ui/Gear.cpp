@@ -80,6 +80,9 @@ GearArt GearArt::load(const juce::String& prefix)
     art.led = {static_cast<float>(led["x"]), static_cast<float>(led["y"])};
     art.ledRadius = static_cast<float>(led["raio"]);
   }
+  if (const auto screen = map["visor"]; screen.isObject())
+    art.display = {static_cast<float>(screen["x"]), static_cast<float>(screen["y"]), static_cast<float>(screen["w"]),
+                   static_cast<float>(screen["h"])};
   return art;
 }
 } // namespace nexus::ui

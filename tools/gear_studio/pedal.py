@@ -16,14 +16,44 @@ import knobs
 import studio as st
 
 
-def mat_pedal_paint(name, color, metallic, rough=0.28):
+def mat_pedal_paint(name, color, metallic, rough=0.28, print_rings=None):
     """Pintura de pedal: base colorida, pó metálico opcional e verniz
-    brilhante por cima, com a leve "casca de laranja" da pintura a pó."""
+    brilhante por cima, com a leve "casca de laranja" da pintura a pó.
+    print_rings: estampa de ondas (anéis finos em volta de um ponto, como a
+    gota caindo na água) só no tampo: {"centro": [x, y] em metros, "passo_mm",
+    "linha", "cor"}."""
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     nodes, links = mat.node_tree.nodes, mat.node_tree.links
     bsdf = nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = (*color, 1)
+    if print_rings:
+        m = st._math
+        tc0 = nodes.new("ShaderNodeTexCoord")
+        sep = nodes.new("ShaderNodeSeparateXYZ")
+        links.new(tc0.outputs["Object"], sep.inputs[0])
+        cx, cy = print_rings["centro"]
+        dx = m(nodes, links, "SUBTRACT", sep.outputs["X"], cx)
+        dy = m(nodes, links, "SUBTRACT", sep.outputs["Y"], cy)
+        dist = m(nodes, links, "SQRT", m(nodes, links, "ADD", m(nodes, links, "MULTIPLY", dx, dx), m(nodes, links, "MULTIPLY", dy, dy)))
+        pitch = print_rings.get("passo_mm", 2.6) / 1000.0
+        # Passo que abre aos poucos para fora, como onda que se espalha.
+        warped = m(nodes, links, "POWER", m(nodes, links, "DIVIDE", dist, pitch), 0.82)
+        frac = m(nodes, links, "FRACT", warped)
+        band = m(nodes, links, "ABSOLUTE", m(nodes, links, "SUBTRACT", frac, 0.5))
+        line = m(nodes, links, "LESS_THAN", band, print_rings.get("linha", 0.12))
+        # Só no tampo (normal para cima).
+        geo = nodes.new("ShaderNodeNewGeometry")
+        sn = nodes.new("ShaderNodeSeparateXYZ")
+        links.new(geo.outputs["Normal"], sn.inputs[0])
+        top = m(nodes, links, "GREATER_THAN", sn.outputs["Z"], 0.95)
+        mask = m(nodes, links, "MULTIPLY", line, top)
+        mix = nodes.new("ShaderNodeMix")
+        mix.data_type = "RGBA"
+        mix.inputs[6].default_value = (*color, 1)
+        mix.inputs[7].default_value = (*print_rings["cor"], 1)
+        links.new(mask, mix.inputs[0])
+        links.new(mix.outputs[2], bsdf.inputs["Base Color"])
     bsdf.inputs["Metallic"].default_value = metallic
     bsdf.inputs["Roughness"].default_value = rough
     bsdf.inputs["Coat Weight"].default_value = 1.0
@@ -130,7 +160,8 @@ def build(rec, fonts):
     shape = rec["formato"]
     paint = rec["pintura"]
     mats = {
-        "paint": mat_pedal_paint("pintura", paint["cor"], paint.get("metalico", 0.0), paint.get("aspereza", 0.28)),
+        "paint": mat_pedal_paint("pintura", paint["cor"], paint.get("metalico", 0.0), paint.get("aspereza", 0.28),
+                                 rec.get("estampa_ondas")),
         "ink": st.mat_paint("tinta", rec["texto_cor"], rough=0.45),
         "ink2": st.mat_paint("tinta2", rec.get("texto_cor2", rec["texto_cor"]), rough=0.45),
         "chrome": st.mat_metal("cromo", (0.92, 0.92, 0.93), rough=0.08),
@@ -172,6 +203,14 @@ def build(rec, fonts):
         _flat_text("tipo", rec["tipo_texto"], fonts["label"], 0.0062, (0, ty - tl * 0.40, H + 0.0004), mats["ink"], spacing=1.4)
     else:
         st.box("caixa", (W, L, H), (0, 0, H / 2), bevel=rec.get("chanfro_m", 0.0045), segments=6, material=mats["paint"])
+        if rec.get("aro_cromo"):
+            # Aro cromado em volta do tampo (filete de metal na borda).
+            t = 0.0016
+            for nm, size, loc in (("aro_esq", (t, L - 0.002, t), (-W / 2 + t / 2 + 0.0004, 0, H + t / 2 - 0.0003)),
+                                  ("aro_dir", (t, L - 0.002, t), (W / 2 - t / 2 - 0.0004, 0, H + t / 2 - 0.0003)),
+                                  ("aro_tras", (W - 0.002, t, t), (0, L / 2 - t / 2 - 0.0004, H + t / 2 - 0.0003)),
+                                  ("aro_frente", (W - 0.002, t, t), (0, -L / 2 + t / 2 + 0.0004, H + t / 2 - 0.0003))):
+                st.box(nm, size, loc, bevel=t * 0.45, segments=3, material=mats["chrome"])
 
     st.box("fundo_borracha", (W - 0.004, L - 0.004, 0.003), (0, 0, 0.0015), bevel=0.001, material=mats["rubber"])
 
@@ -193,6 +232,18 @@ def build(rec, fonts):
         if rec.get("rotulo_embaixo"):
             ly = y - r * (1.28 if style.get("saia") else 1.0) - 0.0055
         st.label(c["rotulo"], (x, ly, top + 0.0001), rec.get("rotulo_m", 0.0052), up="Y", color=rec["texto_cor"], spacing=1.15)
+
+    display = None
+    if "visor" in rec:
+        # Visor digital: moldura preta e vidro escuro (a tela acende o cristal
+        # por cima e escreve o valor).
+        v = rec["visor"]
+        vx, vy = v["pos"][0] * W / 2, v["pos"][1] * L / 2
+        vw, vl = v["largura_rel"] * W, v["altura_rel"] * L
+        st.box("visor_moldura", (vw + 0.005, vl + 0.005, 0.0012), (vx, vy, top + 0.0005), bevel=0.0006, material=mats["plastic"])
+        glass = st.mat_plastic("visor_vidro", (0.004, 0.012, 0.035), rough=0.04, coat=1.0)
+        st.box("visor_vidro", (vw, vl, 0.0006), (vx, vy, top + 0.0011), bevel=0.0002, material=glass)
+        display = (vx, vy, top + 0.0014, vw, vl)
 
     if "led" in rec:
         lx, lyr = rec["led"]
@@ -239,4 +290,4 @@ def build(rec, fonts):
         lx, lyr = rec["led"]
         led = ((lx * W / 2, lyr * L / 2, (H if rec.get("led_no_basculante") else top) + 0.0018), 0.0031)
     return {"controls": controls, "size": (W, L, H), "front": -L / 2, "target": (0.0, 0.0, H * 0.6), "footswitch": foot,
-            "led": led}
+            "led": led, "display": display}

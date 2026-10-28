@@ -354,7 +354,7 @@ int main(int argc, char** argv)
       q.setLayout(l);
       if (gate)
       {
-        setParam(q, "p3_visual", static_cast<float>(NexusProcessor::kPedalLooks - 1));
+        setParam(q, "p3_visual", static_cast<float>(NexusProcessor::kGateLook));
         setParam(q, "p3_a", juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_GATE", "5").getFloatValue());
       }
       setParam(q, "p1_visual", 0.0f);

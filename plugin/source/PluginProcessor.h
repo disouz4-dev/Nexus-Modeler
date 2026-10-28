@@ -56,19 +56,41 @@ public:
   static constexpr int kRigs = ChainLayout::kRigs;
   // Cada cabeçote tem até 3 canais, cada um com pacote e ganho próprios.
   static constexpr int kChannels = 3;
-  // Visuais de pedal: 0 a 3 tocam captura (drive); 4 em diante são efeitos
-  // do próprio Nexus (chorus, delay, reverb), com os botões "a", "b" e "c".
-  static constexpr int kPedalLooks = 9;
+  // Visuais de pedal, na ordem do parâmetro "visual" (os presets guardam o
+  // número: os novos entram sempre no fim). Cada um toca captura (drive) ou
+  // um efeito do próprio Nexus, com os botões "a", "b" e "c".
+  enum class PedalKind
+  {
+    capture,
+    chorus,
+    delay,
+    reverb,
+    gate,
+    drop,
+    phaser,
+    flanger,
+    tremolo,
+    vibe
+  };
+  static constexpr int kPedalLooks = 19;
+  static constexpr PedalKind kPedalKinds[kPedalLooks] = {
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
+    PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
+    PedalKind::drop,                                                                 // Cherry Drop
+    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Peach, Lime, Melon, Tamarind
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Plum, Fig, Grapefruit, Mango
+    PedalKind::capture, PedalKind::capture};                                         // Guava, Apricot
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
+  static constexpr int kGateLook = 7;
+  static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
-  static constexpr int kAmpLooks = 6;
+  static constexpr int kAmpLooks = 19;
   static constexpr int kMarkFive = 1;
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
   static juce::String eqParam(int band, const char* name) { return "eq" + juce::String(band + 1) + "_" + name; }
-  static constexpr int kFirstNativeLook = 4;
-  static bool isNativeLook(int look) { return look >= kFirstNativeLook; }
+  static bool isNativeLook(int look) { return pedalKind(look) != PedalKind::capture; }
 
   // Posições dos pacotes: 0 a 11 são os pedais; depois, os canais dos dois
   // cabeçotes (lado A: 12 a 14, lado B: 15 a 17).
@@ -125,7 +147,7 @@ public:
   int audibleSlot(int rig) const;
   int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
   int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
-  static constexpr int kCabLooks = 5;
+  static constexpr int kCabLooks = 13;
   int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;

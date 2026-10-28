@@ -1,0 +1,49 @@
+{
+  "tipo": "caixa",
+  "aba_m": 0.03,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.04,
+    "altura_rel": 0.36,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.7778947368421053,
+    "elevacao": 8.0
+  },
+  "nome": "Jazz 2x12",
+  "familia": "jazz_212",
+  "medidas_m": {
+    "largura": 0.76,
+    "altura": 0.5,
+    "profundidade": 0.26
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "tela": {
+    "cor_a": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "cor_b": [
+      0.22,
+      0.22,
+      0.23
+    ],
+    "trama_mm": 1.6
+  },
+  "friso": null
+}

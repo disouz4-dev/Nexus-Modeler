@@ -184,6 +184,177 @@ void Reverb::process(const double* input, double* wet, int n, double size, doubl
   }
 }
 
+// ---------------------------------------------------------------- Phaser
+
+namespace
+{
+// Passa-tudo de primeira ordem com o coeficiente a (estado em "z").
+inline double allPass(double x, double a, double& z)
+{
+  const double y = a * x + z;
+  z = x - a * y;
+  return y;
+}
+
+// Coeficiente do passa-tudo para a frequência de quebra hz.
+inline double allPassCoef(double hz, double sampleRate)
+{
+  const double t = std::tan(kPi * std::min(hz, sampleRate * 0.45) / sampleRate);
+  return (t - 1.0) / (t + 1.0);
+}
+} // namespace
+
+void Phaser::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Phaser::reset()
+{
+  mState.fill(0.0);
+  mLast = 0.0;
+  mPhase = 0.0;
+}
+
+void Phaser::process(double* buffer, int n, double rate, double depth, double feedback)
+{
+  // 0,05 a 8 Hz; varredura de 200 Hz até 200 Hz x (2 a 16), em escala de oitavas.
+  const double hz = 0.05 + 7.95 * rate * rate;
+  const double step = hz / mRate;
+  for (int i = 0; i < n; ++i)
+  {
+    mDepth = smooth(mDepth, depth, mRate);
+    mFeedback = smooth(mFeedback, feedback, mRate);
+    const double lfo = 0.5 - 0.5 * std::cos(2.0 * kPi * mPhase);
+    const double f = 200.0 * std::pow(2.0, lfo * (1.0 + 3.0 * mDepth));
+    const double a = allPassCoef(f, mRate);
+    double y = buffer[i] + mLast * 0.75 * mFeedback;
+    for (auto& z : mState)
+      y = allPass(y, a, z);
+    mLast = y;
+    buffer[i] = 0.5 * (buffer[i] + y) * 1.15;
+    mPhase += step;
+    if (mPhase >= 1.0)
+      mPhase -= 1.0;
+  }
+}
+
+// ---------------------------------------------------------------- Flanger
+
+void Flanger::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  mLine.prepare(static_cast<int>(0.012 * sampleRate));
+  reset();
+}
+
+void Flanger::reset()
+{
+  mLine.clear();
+  mLast = 0.0;
+  mPhase = 0.0;
+}
+
+void Flanger::process(double* buffer, int n, double rate, double depth, double feedback)
+{
+  // 0,03 a 4 Hz (flanger gosta de lento); atraso de 0,4 ms até 0,4 + 6,6 ms.
+  const double hz = 0.03 + 3.97 * rate * rate;
+  const double step = hz / mRate;
+  for (int i = 0; i < n; ++i)
+  {
+    mDepth = smooth(mDepth, depth, mRate);
+    mFeedback = smooth(mFeedback, feedback, mRate);
+    const double lfo = 0.5 - 0.5 * std::cos(2.0 * kPi * mPhase);
+    const double ms = 0.4 + 6.6 * mDepth * lfo;
+    mLine.push(buffer[i] + mLast * 0.85 * mFeedback);
+    const double wet = mLine.read(ms * 0.001 * mRate);
+    mLast = wet;
+    buffer[i] = 0.5 * (buffer[i] + wet) * 1.1;
+    mPhase += step;
+    if (mPhase >= 1.0)
+      mPhase -= 1.0;
+  }
+}
+
+// ---------------------------------------------------------------- Tremolo
+
+void Tremolo::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Tremolo::reset()
+{
+  mPhase = 0.0;
+}
+
+void Tremolo::process(double* buffer, int n, double rate, double depth, double shape)
+{
+  // 1 a 12 Hz.
+  const double hz = 1.0 + 11.0 * rate;
+  const double step = hz / mRate;
+  for (int i = 0; i < n; ++i)
+  {
+    mDepth = smooth(mDepth, depth, mRate);
+    mShape = smooth(mShape, shape, mRate);
+    const double s = std::sin(2.0 * kPi * mPhase);
+    // Forma: seno puro até quase quadrada (seno "espremido"), sem estalo.
+    const double k = 1.0 + 14.0 * mShape;
+    const double wave = std::tanh(k * s) / std::tanh(k);
+    const double gain = 1.0 - mDepth * (0.5 - 0.5 * wave);
+    buffer[i] *= gain;
+    mPhase += step;
+    if (mPhase >= 1.0)
+      mPhase -= 1.0;
+  }
+}
+
+// ---------------------------------------------------------------- Vibe
+
+void Vibe::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Vibe::reset()
+{
+  mState.fill(0.0);
+  mPhase = 0.0;
+  mLamp = 0.0;
+}
+
+void Vibe::process(double* buffer, int n, double rate, double intensity, double mix)
+{
+  // 0,5 a 10 Hz. Cada estágio tem a sua frequência (como as células de luz
+  // do original, que nunca são iguais).
+  static constexpr double kBase[4] = {90.0, 260.0, 720.0, 1900.0};
+  const double hz = 0.5 + 9.5 * rate * rate;
+  const double step = hz / mRate;
+  const double rise = 1.0 - std::exp(-1.0 / (0.004 * mRate));
+  const double fall = 1.0 - std::exp(-1.0 / (0.030 * mRate));
+  for (int i = 0; i < n; ++i)
+  {
+    mIntensity = smooth(mIntensity, intensity, mRate);
+    mMix = smooth(mMix, mix, mRate);
+    const double lfo = 0.5 - 0.5 * std::cos(2.0 * kPi * mPhase);
+    const double lamp = lfo * lfo; // a lâmpada acende mais devagar no começo
+    mLamp += (lamp - mLamp) * (lamp > mLamp ? rise : fall);
+    double y = buffer[i];
+    for (size_t s = 0; s < mState.size(); ++s)
+      y = allPass(y, allPassCoef(kBase[s] * std::pow(2.0, 2.2 * mIntensity * mLamp), mRate), mState[s]);
+    // Mistura 0: só o sinal deslocado (vibrato); 1: metade e metade (chorus).
+    // Seco e deslocado se cancelam em parte: compensa o volume que some.
+    const double wet = 0.5 * mMix;
+    buffer[i] = (buffer[i] * wet + y * (1.0 - wet)) * (1.0 + 0.9 * mMix);
+    mPhase += step;
+    if (mPhase >= 1.0)
+      mPhase -= 1.0;
+  }
+}
+
 // ---------------------------------------------------------------- NativePedal
 
 void NativePedal::prepare(double sampleRate, int maxBlock)
@@ -193,6 +364,10 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mDelay.prepare(sampleRate);
   mReverb.prepare(sampleRate);
   mGate.prepare(sampleRate);
+  mPhaser.prepare(sampleRate);
+  mFlanger.prepare(sampleRate);
+  mTremolo.prepare(sampleRate);
+  mVibe.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
@@ -204,6 +379,10 @@ void NativePedal::reset()
   mDelay.reset();
   mReverb.reset();
   mGate.reset();
+  mPhaser.reset();
+  mFlanger.reset();
+  mTremolo.reset();
+  mVibe.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -271,6 +450,10 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mDelay.reset();
     mReverb.reset();
     mGate.reset();
+    mPhaser.reset();
+    mFlanger.reset();
+    mTremolo.reset();
+    mVibe.reset();
     mLast = type;
   }
   if (on)
@@ -295,11 +478,18 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  if (type == Type::chorus)
+  if (type == Type::chorus || type == Type::phaser || type == Type::flanger || type == Type::tremolo || type == Type::vibe)
   {
     // Modulação não tem rastro: liga e desliga com transição de 20 ms.
     std::copy(buffer, buffer + n, mIn.begin());
-    mChorus.process(mIn.data(), n, a, b, c);
+    switch (type)
+    {
+      case Type::phaser: mPhaser.process(mIn.data(), n, a, b, c); break;
+      case Type::flanger: mFlanger.process(mIn.data(), n, a, b, c); break;
+      case Type::tremolo: mTremolo.process(mIn.data(), n, a, b, c); break;
+      case Type::vibe: mVibe.process(mIn.data(), n, a, b, c); break;
+      default: mChorus.process(mIn.data(), n, a, b, c); break;
+    }
     for (int i = 0; i < n; ++i)
     {
       mGain = on ? std::min(1.0, mGain + step) : std::max(0.0, mGain - step);

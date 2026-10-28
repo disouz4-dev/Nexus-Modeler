@@ -87,6 +87,74 @@ private:
   int mPreIndex = 0;
 };
 
+// Phaser de quatro estágios (estilo Phase 90): filtros passa-tudo varridos
+// por um oscilador lento, com realimentação. Botões: velocidade,
+// profundidade, intensidade (realimentação).
+class Phaser
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double rate, double depth, double feedback);
+
+private:
+  double mRate = 48000.0;
+  double mPhase = 0.0;
+  std::array<double, 4> mState{};
+  double mLast = 0.0;
+  double mDepth = 0.5, mFeedback = 0.3;
+};
+
+// Flanger (estilo Electric Mistress): atraso de 0,4 a 7 ms varrido devagar,
+// com realimentação. Botões: velocidade, profundidade, realimentação.
+class Flanger
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double rate, double depth, double feedback);
+
+private:
+  DelayLine mLine;
+  double mRate = 48000.0;
+  double mPhase = 0.0;
+  double mLast = 0.0;
+  double mDepth = 0.5, mFeedback = 0.4;
+};
+
+// Tremolo (estilo TR-2): o volume sobe e desce. Botões: velocidade,
+// profundidade, forma (de onda redonda a quadrada).
+class Tremolo
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double rate, double depth, double shape);
+
+private:
+  double mRate = 48000.0;
+  double mPhase = 0.0;
+  double mDepth = 0.5, mShape = 0.0;
+};
+
+// Vibe (estilo Uni-Vibe): quatro passa-tudo de frequências diferentes,
+// movidos por um oscilador "de lâmpada" (sobe rápido, desce devagar).
+// Botões: velocidade, intensidade, mistura (0 = vibrato, 1 = chorus).
+class Vibe
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double rate, double intensity, double mix);
+
+private:
+  double mRate = 48000.0;
+  double mPhase = 0.0;
+  double mLamp = 0.0;
+  std::array<double, 4> mState{};
+  double mIntensity = 0.5, mMix = 0.5;
+};
+
 // Pedal nativo completo: o efeito, a mistura com o som seco e o "rastro"
 // (desligado, o delay e o reverb terminam de soar em vez de cortar).
 // Noise gate (estilo ISP Decimator): fecha o som abaixo do limiar, sem
@@ -121,7 +189,11 @@ public:
     chorus,
     delay,
     reverb,
-    gate
+    gate,
+    phaser,
+    flanger,
+    tremolo,
+    vibe
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
@@ -135,6 +207,10 @@ private:
   Delay mDelay;
   Reverb mReverb;
   NoiseGate mGate;
+  Phaser mPhaser;
+  Flanger mFlanger;
+  Tremolo mTremolo;
+  Vibe mVibe;
   std::vector<double> mIn, mWet;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)

@@ -1,0 +1,50 @@
+{
+  "tipo": "caixa",
+  "aba_m": 0.03,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.045,
+    "altura_rel": 0.36,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.0,
+    "elevacao": 8.0
+  },
+  "nome": "Uber 4x12",
+  "familia": "uber_412",
+  "medidas_m": {
+    "largura": 0.76,
+    "altura": 0.76,
+    "profundidade": 0.36
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "tela": {
+    "cor_a": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "cor_b": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "trama_mm": 2.6
+  },
+  "friso": null,
+  "cantos": "cromo"
+}
