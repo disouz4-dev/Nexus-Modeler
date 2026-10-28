@@ -207,9 +207,6 @@ Name: "{autodesktop}\Nexus Modeler"; Filename: "{app}\Nexus Modeler.exe"; Compon
 
 [Run]
 Filename: "{app}\Nexus Modeler.exe"; Description: "{cm:LaunchProgram,Nexus Modeler}"; Components: programa; Flags: nowait postinstall skipifsilent
-; Atualização pelo próprio Nexus (instalação silenciosa com /REABRIR): abre o
-; Nexus de novo no fim, como a pessoa usava.
-Filename: "{app}\Nexus Modeler.exe"; Components: programa; Flags: nowait runasoriginaluser; Check: Reabrir
 
 [UninstallDelete]
 ; A pasta do plugin some inteira na desinstalação. As preferências do usuário
@@ -391,7 +388,13 @@ begin
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
+var
+  Codigo: Integer;
 begin
   if CurStep = ssPostInstall then
     GravarIdioma;
+  { Atualização pelo próprio Nexus: abre o Nexus de novo no fim. Aqui e não
+    no [Run], que o instalador pula quando teve de fechar o Nexus aberto. }
+  if (CurStep = ssDone) and Reabrir then
+    ExecAsOriginalUser(ExpandConstant('{app}\Nexus Modeler.exe'), '', '', SW_SHOWNORMAL, ewNoWait, Codigo);
 end;
