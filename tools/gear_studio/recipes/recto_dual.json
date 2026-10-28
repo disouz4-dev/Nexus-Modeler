@@ -105,18 +105,9 @@
   ],
   "canais": [
     {
-      "nome": "Limpo"
-    },
-    {
-      "nome": "Crunch"
-    },
-    {
       "nome": "Moderno"
     }
   ],
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
   "disposicao": {
     "modelo_x": 0.108,
     "modelo_z": 0.06,

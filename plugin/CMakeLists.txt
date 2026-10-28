@@ -7,6 +7,21 @@ FetchContent_Declare(JUCE
   GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(JUCE)
 
+# Correção no JUCE: o JACK do PipeWire pode informar bloco 0 quando a placa
+# está parada no instante em que o áudio religa. O JUCE divide o som em
+# pedaços desse tamanho e, com 0, o laço não avança: o áudio fica preso a 100%
+# e a tela congela (visto no Linux em 27/10/2026). Com 0, não divide.
+set(_nexus_juce_adm "${juce_SOURCE_DIR}/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.cpp")
+file(READ "${_nexus_juce_adm}" _nexus_text)
+string(REPLACE "const auto blockLength = jmin (maximumSize, numSamples - position);"
+               "const auto blockLength = maximumSize > 0 ? jmin (maximumSize, numSamples - position) : numSamples - position;"
+               _nexus_fixed "${_nexus_text}")
+if(NOT _nexus_fixed STREQUAL _nexus_text)
+  file(WRITE "${_nexus_juce_adm}" "${_nexus_fixed}")
+elseif(NOT _nexus_text MATCHES "maximumSize > 0 \\?")
+  message(FATAL_ERROR "A correção do bloco 0 no JUCE não se aplicou (o JUCE mudou?)")
+endif()
+
 set(NEXUS_FORMATS VST3 Standalone)
 if(APPLE)
   list(APPEND NEXUS_FORMATS AU)

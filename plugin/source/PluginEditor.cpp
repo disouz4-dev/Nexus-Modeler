@@ -18,10 +18,10 @@ constexpr int kTitleHeight = 112;
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
                                                                "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
-const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5"};
+const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 0, 1, 0, 0};
 struct CabInfo
 {
   const char* inspiration;
@@ -1198,6 +1198,10 @@ struct AmpInfo
 const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"JCM800 2203", "Britânicos"},
   {"Mark V", "Americanos de alto ganho"},
+  {"5150", "Americanos de alto ganho"},
+  {"Dual Rectifier", "Americanos de alto ganho"},
+  {"SLO-100", "Americanos de alto ganho"},
+  {"BE-100", "Americanos de alto ganho"},
 };
 
 // Planejados (docs/CATALOGO.md): aparecem em "Em breve".
@@ -1223,10 +1227,6 @@ const Planned kPlanned[] = {
   {GearItem::Kind::amp, "Silver Twin", "Twin Reverb"},
   {GearItem::Kind::amp, "Tweed 59", "Bassman 5F6-A"},
   {GearItem::Kind::amp, "Top Boost 30", "AC30"},
-  {GearItem::Kind::amp, "Block 5150", "5150"},
-  {GearItem::Kind::amp, "Recto Dual", "Dual Rectifier"},
-  {GearItem::Kind::amp, "SL 100", "SLO-100"},
-  {GearItem::Kind::amp, "BE 100", "BE-100"},
   {GearItem::Kind::amp, "Jazz 120", "JC-120"},
   {GearItem::Kind::cab, "Recto 4x12", "Rectifier 4x12"},
   {GearItem::Kind::cab, "Blue 2x12", "AC30 2x12"},

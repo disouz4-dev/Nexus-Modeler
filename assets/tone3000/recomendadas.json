@@ -369,5 +369,124 @@
         }
       }
     ]
+  },
+  "block5150": {
+    "busca": "5150",
+    "tons": [
+      {
+        "id": 44664,
+        "titulo": "5150 BLOCK LETTER",
+        "tipo": "amp",
+        "capturas": 3,
+        "pacote": "Canal 1 Ritmo",
+        "padrao": true,
+        "nota": "5150 Block Letter, canal vermelho em três ganhos (só o pré; use a caixa)",
+        "mapa": {
+          "GAIN 1": 3,
+          "GAIN 2": 6,
+          "GAIN 3": 9
+        }
+      },
+      {
+        "id": 29609,
+        "titulo": "Peavey 5150 Blockletter Lead Channel",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Solo",
+        "padrao": true,
+        "nota": "Canal de solo do 5150 Block Letter",
+        "mapa": {
+          "Lead Channel": 8
+        }
+      }
+    ]
+  },
+  "recto_dual": {
+    "busca": "Dual Rectifier",
+    "tons": [
+      {
+        "id": 70207,
+        "titulo": "MESA DUAL RECTIFIER (REV G 1998) - FULL GAIN PACK",
+        "tipo": "amp",
+        "capturas": 9,
+        "padrao": true,
+        "nota": "Rev G 1998, canal laranja no modo Modern, ganho de 1 a 9",
+        "mapa": {
+          "GAIN 1": 1,
+          "GAIN 2": 2,
+          "GAIN 3": 3,
+          "GAIN 4": 4,
+          "GAIN 5": 5,
+          "GAIN 6": 6,
+          "GAIN 7": 7,
+          "GAIN 8": 8,
+          "GAIN 9": 9
+        }
+      }
+    ]
+  },
+  "sl100": {
+    "busca": "SLO 100",
+    "tons": [
+      {
+        "id": 64436,
+        "titulo": "Soldano SLO 100",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 1 Normal",
+        "padrao": true,
+        "nota": "Canal normal com crunch",
+        "mapa": {
+          "NRM-CRN": 6
+        }
+      },
+      {
+        "id": 64436,
+        "titulo": "Soldano SLO 100",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Overdrive",
+        "padrao": true,
+        "nota": "Canal overdrive (The King)",
+        "mapa": {
+          "OVD The King": 8
+        }
+      },
+      {
+        "id": 84137,
+        "titulo": "SLO100 Sweet Lead",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Sweet Lead",
+        "nota": "Solo do canal overdrive",
+        "mapa": {
+          "SweetLead": 8
+        }
+      }
+    ]
+  },
+  "be100": {
+    "busca": "BE 100",
+    "tons": [
+      {
+        "id": 72085,
+        "titulo": "FRIEDMAN BE-100 (GAIN STAGES)",
+        "tipo": "amp",
+        "capturas": 9,
+        "padrao": true,
+        "nota": "Canal BE com ganho de 1 a 9",
+        "mapa": {
+          "BE - GAIN 1": 1,
+          "BE - GAIN 2": 2,
+          "BE - GAIN 3": 3,
+          "BE - GAIN 4": 4,
+          "BE - GAIN 5": 5,
+          "BE - GAIN 6": 6,
+          "BE - GAIN 7": 7,
+          "BE - GAIN 8": 8,
+          "BE - GAIN 9": 9
+        }
+      }
+    ]
   }
 }

@@ -175,7 +175,14 @@ int main(int argc, char** argv)
   std::unique_ptr<juce::AudioProcessorEditor> editor(processor.createEditor());
   if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
   {
-    if (stage == "gate")
+    if (stage.startsWith("look:"))
+    {
+      // Cabeçote pelo número do visual (foto de cada um).
+      auto* look = processor.params.getParameter(NexusProcessor::ampParam(0, "cabecote"));
+      look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+      e->select({NexusEditor::Kind::amp, 0});
+    }
+    else if (stage == "gate")
     {
       // Pedal 1 com o visual do Pear Gate (o último da lista de visuais).
       auto* look = processor.params.getParameter(NexusProcessor::pedalParam(0, "visual"));
