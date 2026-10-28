@@ -85,7 +85,10 @@ int main(int argc, char** argv)
   const juce::String stage = argc > 4 ? juce::String(argv[4]) : juce::String();
   if (stage.startsWith("pedal:"))
   {
-    // O pedal 1 recebe o pacote no lugar do cabeçote.
+    // O pedal 1 recebe o pacote no lugar do cabeçote (a cadeia abre sem pedais).
+    ChainLayout l;
+    l.pre = {0};
+    processor.setLayout(l);
     processor.loadPedalPack(0, folder);
     for (int t = 0; t < 3000 && !processor.slotLoaded(0); ++t)
     {

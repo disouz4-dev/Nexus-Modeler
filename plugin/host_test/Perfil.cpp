@@ -19,6 +19,7 @@
 #include "nexus/Pack.h"
 #include "../source/report/Report.h"
 #include "../source/fx/PitchDrop.h"
+#include "../source/update/Updater.h"
 #include "NAM/dsp.h"
 
 namespace
@@ -92,11 +93,22 @@ int main(int argc, char** argv)
     return 0;
   }
 
+#if JUCE_MAC
+  // NEXUS_PERFIL_ATUALIZAR_MAC=<arquivo.zip>: a troca no lugar da atualização
+  // do Mac (junto com NEXUS_ATUALIZACAO_RAIZ, para não mexer no Mac de verdade).
+  if (const auto zip = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ATUALIZAR_MAC", {}); zip.isNotEmpty())
+  {
+    const auto error = nexus::update::installMacZip(juce::File(zip), "teste");
+    std::printf("%s\n", error.isEmpty() ? "trocado" : error.toRawUTF8());
+    return error.isEmpty() ? 0 : 1;
+  }
+#endif
+
   // NEXUS_PERFIL_CHERRY=<arquivo.wav>: o Cherry Drop dentro do Nexus (pedal 1,
-  // drop de NEXUS_PERFIL_SEMITONS, padrão 5, mistura 10), só ele na cadeia.
+  // NEXUS_PERFIL_SEMITONS de -12 a +12, padrão -5, brilho no meio), só ele na cadeia.
   if (const auto outFile = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_CHERRY", {}); outFile.isNotEmpty())
   {
-    const int semis = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_SEMITONS", "5").getIntValue();
+    const int semis = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_SEMITONS", "-5").getIntValue();
     NexusProcessor q;
     q.setPlayConfigDetails(2, 2, rate, block);
     q.prepareToPlay(rate, block);
@@ -105,8 +117,8 @@ int main(int argc, char** argv)
     q.setLayout(l);
     setParam(q, "p1_visual", static_cast<float>(NexusProcessor::kDropLook));
     setParam(q, "p1_ligado", 1.0f);
-    setParam(q, "p1_a", (semis >= 12 ? 7.0f : static_cast<float>(semis - 1)) * 10.0f / 8.0f);
-    setParam(q, "p1_b", 10.0f);
+    setParam(q, "p1_a", 5.0f + static_cast<float>(semis) * 5.0f / 12.0f);
+    setParam(q, "p1_b", 5.0f);
     juce::AudioBuffer<float> buf(2, block);
     juce::MidiBuffer m;
     for (int t = 0; t < 100; ++t)

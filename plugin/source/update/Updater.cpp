@@ -16,7 +16,6 @@ namespace
 {
 const char* kLatest = "https://api.github.com/repos/disouz4-dev/Nexus-Modeler/releases/latest";
 const char* kReleases = "https://github.com/disouz4-dev/Nexus-Modeler/releases";
-constexpr juce::int64 kDay = 24 * 60 * 60 * 1000;
 
 #if JUCE_LINUX
 // Lugares da instalação pelo terminal (os mesmos do packaging/instalar.sh).
@@ -85,7 +84,12 @@ juce::String installTarball(const juce::File& tarball)
 #endif
 
 #if JUCE_MAC
-// Monta o .dmg e abre direto o instalador .pkg que está dentro.
+juce::String shellQuoted(const juce::String& s)
+{
+  return "'" + s.replace("'", "'\\''") + "'";
+}
+
+// Lançamento sem o .zip: monta o .dmg e abre direto o instalador .pkg.
 bool openMacInstaller(const juce::File& dmg)
 {
   juce::ChildProcess attach;
@@ -101,6 +105,89 @@ bool openMacInstaller(const juce::File& dmg)
     }
   return false;
 }
+
+// Abre o .zip e troca o programa, o VST3 e o AU no lugar onde já estavam
+// (pastas do sistema, pelo instalador, ou do usuário, pelo terminal), sem abrir
+// instalador. Nas pastas do sistema o Mac pede a senha uma vez, na janela dele.
+} // namespace
+
+juce::String installMacZip(const juce::File& zip, const juce::String& version)
+{
+  const auto temp = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile("nexus-atualizacao");
+  temp.deleteRecursively();
+  temp.createDirectory();
+  juce::ChildProcess unzip;
+  if (!unzip.start(juce::StringArray{"ditto", "-x", "-k", zip.getFullPathName(), temp.getFullPathName()})
+      || !unzip.waitForProcessToFinish(180000) || unzip.getExitCode() != 0)
+    return juce::String::fromUTF8("Não foi possível abrir o arquivo baixado.");
+  const auto root = temp.getChildFile("Nexus Modeler");
+  if (!root.isDirectory())
+    return juce::String::fromUTF8("O arquivo baixado não tem o Nexus Modeler dentro.");
+
+  // Para testar sem mexer no Mac de verdade: todas as pastas dentro desta.
+  const auto base = juce::SystemStats::getEnvironmentVariable("NEXUS_ATUALIZACAO_RAIZ", {});
+  const auto home = base + juce::File::getSpecialLocation(juce::File::userHomeDirectory).getFullPathName();
+  juce::StringArray apps{base + "/Applications", home + "/Applications"};
+  // O programa aberto agora, onde quer que esteja.
+  if (juce::JUCEApplicationBase::isStandaloneApp())
+    apps.addIfNotAlreadyThere(juce::File::getSpecialLocation(juce::File::currentApplicationFile).getParentDirectory().getFullPathName());
+  const std::vector<std::pair<juce::String, juce::StringArray>> parts{
+    {"Nexus Modeler.app", apps},
+    {"Nexus Modeler.vst3", {base + "/Library/Audio/Plug-Ins/VST3", home + "/Library/Audio/Plug-Ins/VST3"}},
+    {"Nexus Modeler.component", {base + "/Library/Audio/Plug-Ins/Components", home + "/Library/Audio/Plug-Ins/Components"}},
+  };
+
+  // Um roteiro só, para pedir a senha (quando precisa) uma vez. Cada item é
+  // copiado ao lado e trocado pelo nome, para nunca ficar sem programa no meio.
+  juce::String script = "set -e\n";
+  bool admin = false, au = false;
+  int found = 0;
+  for (const auto& [name, folders] : parts)
+  {
+    const auto fresh = root.getChildFile(name);
+    if (!fresh.isDirectory())
+      continue;
+    for (const auto& folder : folders)
+    {
+      const auto installed = juce::File(folder).getChildFile(name);
+      if (!installed.isDirectory())
+        continue;
+      ++found;
+      au = au || name.endsWith(".component");
+      if (!installed.hasWriteAccess() || !installed.getChildFile("Contents").hasWriteAccess()
+          || !installed.getParentDirectory().hasWriteAccess())
+        admin = true;
+      const auto to = shellQuoted(installed.getFullPathName()), next = shellQuoted(installed.getFullPathName() + ".novo");
+      script << "rm -rf " << next << "\nditto " << shellQuoted(fresh.getFullPathName()) << " " << next << "\nrm -rf " << to << "\nmv "
+             << next << " " << to << "\n";
+    }
+  }
+  if (found == 0)
+    return juce::String::fromUTF8("Não achei o Nexus instalado para trocar.");
+  // A lista de Audio Units do Mac: para o Logic e o GarageBand verem o AU novo.
+  if (au)
+    script << "killall -9 AudioComponentRegistrar >/dev/null 2>&1 || true\n";
+  const auto file = temp.getChildFile("trocar.sh");
+  file.replaceWithText(script, false, false, "\n"); // quebra de linha do Mac, não a do Windows
+
+  juce::StringArray command{"/bin/sh", file.getFullPathName()};
+  if (admin)
+    command = {"osascript", "-e",
+               "do shell script \"/bin/sh \" & quoted form of \"" + file.getFullPathName() + "\" with administrator privileges with prompt \""
+                 + juce::String::fromUTF8("O Nexus Modeler vai instalar a versão ") + version + ".\""};
+  juce::ChildProcess run;
+  const bool ok = run.start(command) && run.waitForProcessToFinish(600000) && run.getExitCode() == 0;
+  const auto output = run.readAllProcessOutput();
+  temp.deleteRecursively();
+  if (ok)
+    return {};
+  if (output.contains("-128"))
+    return juce::String::fromUTF8("A atualização foi cancelada na senha.");
+  return juce::String::fromUTF8("Não foi possível trocar os arquivos do Nexus. ") + output.trim().fromLastOccurrenceOf("\n", false, false);
+}
+
+namespace
+{
 #endif
 
 juce::String headers()
@@ -115,6 +202,8 @@ bool matches(const juce::String& name, const juce::String& system)
   if (system == "windows")
     return n.endsWith("-windows-instalador.exe");
   if (system == "mac")
+    return n.endsWith("-mac.zip");
+  if (system == "mac-dmg")
     return n.endsWith(".dmg");
   if (system == "linux-deb")
     return n.endsWith(".deb") && n.contains("linux");
@@ -182,10 +271,14 @@ Release parseRelease(const juce::String& json, const juce::String& system)
   r.page = v["html_url"].toString();
   if (auto* assets = v["assets"].getArray())
   {
-    // O .deb é o preferido no Linux com dpkg; sem ele, o .tar.gz.
+    // O .deb é o preferido no Linux com dpkg; sem ele, o .tar.gz. No Mac, o
+    // .zip, que o próprio Nexus coloca no lugar; sem ele, o .dmg.
     juce::StringArray order{system};
     if (system == "linux-deb")
       order.add("linux");
+    if (system == "mac")
+      order.add("mac-dmg"); // lançamento sem o .zip: o instalador
+
     for (const auto& s : order)
     {
       for (const auto& a : *assets)
@@ -246,21 +339,6 @@ void Updater::checkIfDue()
 {
   if (!automatic() || mState.load() != State::idle)
     return;
-  const auto last = mPrefs->getValue("ultima_verificacao").getLargeIntValue();
-  const auto now = juce::Time::currentTimeMillis();
-  // Uma versão já encontrada volta a aparecer sem perguntar de novo à rede.
-  const auto known = mPrefs->getValue("versao_encontrada");
-  if (now - last < kDay && juce::SystemStats::getEnvironmentVariable("NEXUS_ATUALIZACAO_URL", {}).isEmpty())
-  {
-    if (known.isNotEmpty() && compareVersions(known, currentVersion()) > 0)
-    {
-      juce::ScopedLock l(mLock);
-      mRelease = parseRelease(mPrefs->getValue("lancamento"), thisSystem());
-      if (mRelease.version.isNotEmpty())
-        setState(State::available);
-    }
-    return;
-  }
   start(Job::check);
 }
 
@@ -366,8 +444,14 @@ void Updater::restartProgram()
   auto path = exe.getFullPathName();
   if (path.endsWith(" (deleted)"))
     path = path.dropLastCharacters(10);
+#if JUCE_MAC
+  // No Mac abre o pacote do programa (.app), como o Finder faz.
+  const auto quoted = shellQuoted(juce::File::getSpecialLocation(juce::File::currentApplicationFile).getFullPathName());
+  const auto script = "while kill -0 " + juce::String((int) getpid()) + " 2>/dev/null; do sleep 0.2; done; exec /usr/bin/open " + quoted;
+#else
   const auto quoted = "'" + path.replace("'", "'\\''") + "'";
   const auto script = "while kill -0 " + juce::String((int) getpid()) + " 2>/dev/null; do sleep 0.2; done; exec " + quoted;
+#endif
   const auto command = script.toStdString(); // pronto antes de dividir o processo
   const auto pid = fork();
   if (pid == 0)
@@ -429,6 +513,16 @@ void Updater::check()
         mPrefs->setValue("lancamento", text);
         mPrefs->saveIfNeeded();
       }
+    }
+  }
+  // Sem conexão: uma versão nova encontrada antes continua valendo.
+  if (result == State::failed)
+  {
+    const auto known = parseRelease(mPrefs->getValue("lancamento"), thisSystem());
+    if (known.version.isNotEmpty() && compareVersions(known.version, currentVersion()) > 0)
+    {
+      r = known;
+      result = State::available;
     }
   }
   {
@@ -528,11 +622,21 @@ void Updater::download()
     setState(State::failed);
     return;
   }
+#if JUCE_LINUX || JUCE_MAC
+  // Linux instalado pelo terminal, ou Mac: o próprio Nexus coloca a versão
+  // nova no lugar, sem instalador.
 #if JUCE_LINUX
-  // Instalado pelo terminal: o próprio Nexus coloca a versão nova no lugar.
-  if (target.getFileName().endsWithIgnoreCase(".tar.gz"))
+  const bool inPlace = target.getFileName().endsWithIgnoreCase(".tar.gz");
+#else
+  const bool inPlace = target.hasFileExtension("zip");
+#endif
+  if (inPlace)
   {
+#if JUCE_LINUX
     const auto installError = installTarball(target);
+#else
+    const auto installError = installMacZip(target, release().version);
+#endif
     if (installError.isNotEmpty())
     {
       nexus::report::log("atualizacao", "instalar: " + installError);
@@ -544,6 +648,7 @@ void Updater::download()
       return;
     }
     nexus::report::log("atualizacao", "instalada a " + release().version);
+    target.deleteFile(); // já está no lugar; não deixa o arquivo na pasta Downloads
     mInPlace = true;
     mProgress = 1.0f;
     setState(State::ready);

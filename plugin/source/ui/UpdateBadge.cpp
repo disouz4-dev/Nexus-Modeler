@@ -1,5 +1,6 @@
 #include "UpdateBadge.h"
 
+#include "Controls.h"
 #include "Language.h"
 #include "Theme.h"
 
@@ -41,25 +42,22 @@ juce::String UpdateBadge::text() const
   return tr("Nova versão %1").replace("%1", version);
 }
 
-int UpdateBadge::idealWidth() const
-{
-  return juce::GlyphArrangement::getStringWidthInt(Fonts::get().ui(12.5f), text()) + 44;
-}
-
 void UpdateBadge::refresh()
 {
   const bool show = mUpdater->showBadge();
   if (show != isVisible())
     setVisible(show);
   const auto s = mUpdater->state();
+  juce::String hint;
   if (s == State::ready && mUpdater->installedInPlace())
-    setTooltip(tr("Clique para reabrir o Nexus já na versão nova"));
+    hint = tr("Clique para reabrir o Nexus já na versão nova");
   else if (s == State::ready)
-    setTooltip(tr("O instalador foi aberto. Feche o Nexus e o programa de música onde ele está aberto para terminar."));
+    hint = tr("O instalador foi aberto. Feche o Nexus e o programa de música onde ele está aberto para terminar.");
   else if (s == State::failed)
-    setTooltip(mUpdater->error());
-  else
-    setTooltip(tr("Clique para baixar e instalar a versão nova"));
+    hint = mUpdater->error();
+  else if (s != State::downloading)
+    hint = tr("Clique para atualizar");
+  setTooltip(hint.isEmpty() ? text() : text() + "\n" + hint);
   if (onLayoutChange)
     onLayoutChange();
   repaint();
@@ -101,6 +99,37 @@ void UpdateBadge::changeListenerCallback(juce::ChangeBroadcaster*)
   }
   if (mUpdater->takeManualResult())
     showResult();
+  // Ao abrir o Nexus: versão nova encontrada, pergunta uma vez.
+  else if (s == State::available && isVisible() && mUpdater->takeFirstAsk())
+    ask();
+}
+
+// "Quer atualizar?" com duas respostas. Agora não: o ícone continua no topo.
+void UpdateBadge::ask()
+{
+  const auto s = mUpdater->state();
+  if (s != State::available && s != State::failed)
+  {
+    showMenu();
+    return;
+  }
+  mUpdater->takeFirstAsk(); // já perguntou nesta abertura
+  const auto version = mUpdater->release().version;
+  const bool installer = mUpdater->release().assetUrl.isNotEmpty();
+  auto message = tr("Você está na versão %1. Quer atualizar agora?").replace("%1", nexus::update::currentVersion());
+  if (s == State::failed)
+    message = tr("Não foi possível baixar a versão %1.").replace("%1", version) + "\n" + mUpdater->error() + "\n\n"
+              + tr("Quer tentar de novo?");
+  juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, tr("Nova versão %1 disponível").replace("%1", version), message,
+                                     installer ? tr("Atualizar agora") : tr("Abrir a página"), tr("Agora não"), this,
+                                     juce::ModalCallbackFunction::create([this, installer](int ok) {
+                                       if (ok != 1)
+                                         return;
+                                       if (installer)
+                                         mUpdater->downloadAndOpen();
+                                       else
+                                         mUpdater->openPage();
+                                     }));
 }
 
 // Resultado de "Procurar atualizações agora".
@@ -109,7 +138,7 @@ void UpdateBadge::showResult()
   const auto s = mUpdater->state();
   if (s == State::available)
   {
-    showMenu();
+    ask();
     return;
   }
   const auto message = s == State::upToDate
@@ -171,36 +200,45 @@ void UpdateBadge::addMenuItems(juce::PopupMenu& menu)
 
 void UpdateBadge::paint(juce::Graphics& g)
 {
-  auto r = getLocalBounds().toFloat().reduced(1.0f, 6.0f);
-  const bool failed = mUpdater->state() == State::failed;
-  const auto tint = failed ? colour::danger : colour::accent;
-  g.setColour(tint.withAlpha(isMouseOver(true) ? 0.22f : 0.14f));
-  g.fillRoundedRectangle(r, r.getHeight() * 0.5f);
-  g.setColour(tint.withAlpha(0.6f));
-  g.drawRoundedRectangle(r.reduced(0.5f), r.getHeight() * 0.5f, 1.0f);
+  auto r = getLocalBounds().toFloat();
+  const auto s = mUpdater->state();
+  const auto tint = s == State::failed ? colour::danger : colour::accent;
+  g.setColour(tint.withAlpha(isMouseOver(true) ? 0.24f : 0.14f));
+  g.fillEllipse(r.reduced(4.0f));
 
-  // Barra de progresso dentro da pílula durante o download.
-  if (mUpdater->state() == State::downloading)
+  // Anel do download em volta do ícone.
+  if (s == State::downloading)
   {
-    auto bar = r.reduced(r.getHeight() * 0.5f, 0.0f).removeFromBottom(2.0f).translated(0.0f, -4.0f);
-    g.setColour(colour::accent.withAlpha(0.25f));
-    g.fillRect(bar);
-    g.setColour(colour::accent);
-    g.fillRect(bar.withWidth(bar.getWidth() * juce::jlimit(0.0f, 1.0f, mUpdater->progress())));
+    const auto ring = r.reduced(3.0f);
+    juce::Path arc;
+    arc.addCentredArc(ring.getCentreX(), ring.getCentreY(), ring.getWidth() * 0.5f, ring.getHeight() * 0.5f, 0.0f, 0.0f,
+                      juce::MathConstants<float>::twoPi * juce::jlimit(0.0f, 1.0f, mUpdater->progress()), true);
+    g.setColour(tint.withAlpha(0.25f));
+    g.drawEllipse(ring, 2.0f);
+    g.setColour(tint);
+    g.strokePath(arc, juce::PathStrokeType(2.0f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
   }
 
-  // Ponto aceso à esquerda, como o LED de um equipamento.
-  const float d = 7.0f;
   g.setColour(tint);
-  g.fillEllipse(r.getX() + 13.0f, r.getCentreY() - d * 0.5f, d, d);
-  g.setColour(colour::text);
-  g.setFont(Fonts::get().ui(12.5f));
-  g.drawText(text(), r.withTrimmedLeft(28.0f).withTrimmedRight(12.0f), juce::Justification::centredLeft, true);
+  g.fillPath(iconPath(Icon::download, r.withSizeKeepingCentre(20.0f, 20.0f)));
+
+  // Ponto aceso no canto: tem algo para fazer.
+  if (s == State::available || s == State::failed || s == State::ready)
+  {
+    const float d = 8.0f;
+    const auto dot = juce::Rectangle<float>(d, d).withPosition(r.getRight() - d - 4.0f, r.getY() + 4.0f);
+    g.setColour(colour::danger);
+    g.fillEllipse(dot);
+  }
 }
 
 void UpdateBadge::mouseUp(const juce::MouseEvent& e)
 {
-  if (contains(e.getPosition()))
+  if (!contains(e.getPosition()))
+    return;
+  if (e.mods.isPopupMenu())
     showMenu();
+  else
+    ask();
 }
 } // namespace nexus::ui

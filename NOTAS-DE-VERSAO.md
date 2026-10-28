@@ -47,6 +47,12 @@
   primeira aba) para escolher outra.
 
 ### Atualização
+- Ícone próprio no topo (nuvem com seta para baixo) quando há versão nova.
+  Toda vez que o Nexus abre, ele procura e pergunta se a pessoa quer
+  atualizar; "Agora não" deixa o ícone lá para depois.
+- No Mac, a atualização troca o programa e os plugins no lugar onde já estão,
+  sem abrir instalador. Se estiverem nas pastas do sistema, o Mac pede a
+  senha uma vez, na janela dele.
 - No Windows, a atualização instala sem perguntas e abre o Nexus de novo
   sozinha. Dentro do programa de gravação, o instalador abre normal, para a
   pessoa salvar o projeto antes.
@@ -60,9 +66,28 @@
   frequência, fileira de luzes (verde no meio = afinada), lá de referência de
   430 a 450 Hz e "mudo ao afinar".
 
+### Phaser
+- Tangerine Phaser refeito no molde do circuito do MXR Phase 90: quatro
+  estágios varridos por um oscilador triangular, som limpo e defasado meio a
+  meio. Velocidade de 0,1 a 10 Hz (o botão mostra em Hz), profundidade é a
+  largura da varredura, intensidade é a realimentação do Phase 90 de logotipo
+  em bloco (zerada, é o "script").
+
+### Pedaleira (MIDI)
+- Aprender uma pisada: a pedaleira que manda o banco junto com a troca de
+  patch ligava qualquer pisada ao pedal. Agora fica só a pisada aprendida, e
+  o registro anota o que foi aprendido.
+
+### Primeira abertura
+- A cadeia de sinal começa só com o Brit 800 e a caixa dele, sem pedais. Nas
+  vezes seguintes, abre como a pessoa deixou.
+
 ### Cherry Drop
-- Visual novo: visor azul aceso mostrando o drop escolhido (−1 a −7, −12,
-  oitava + limpo), estampa de ondas e aro cromado.
+- Visual novo: visor azul sempre aceso mostrando os semitons, estampa de
+  ondas e aro cromado. O LED mostra se o pedal está ligado.
+- Botão do drop com o meio-dia sem mudar o tom: para a esquerda desce até
+  −12 semitons, para a direita sobe até +12. O segundo botão é o brilho, para
+  o som não ficar opaco quando desce.
 
 ### Menor
 - Imagens dos botões em 256 cores: a arte dos equipamentos caiu de 284 MB

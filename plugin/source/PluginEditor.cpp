@@ -114,13 +114,13 @@ void drawLed(juce::Graphics& g, juce::Point<float> c, float r)
   g.fillEllipse(c.x - r * 0.35f, c.y - r * 0.55f, r * 0.5f, r * 0.35f); // reflexo da cúpula
 }
 
-// Visor do Cherry Drop: cristal azul aceso com o drop escolhido (apagado, só o
-// vidro escuro do render aparece).
+// Visor do Cherry Drop: cristal azul sempre aceso com os semitons escolhidos
+// (o LED é que mostra se o pedal está ligado).
 void drawDropDisplay(juce::Graphics& g, juce::Rectangle<float> r, float knobA)
 {
-  const int sel = juce::jlimit(0, 8, juce::roundToInt(knobA / 10.0f * 8.0f));
-  const juce::String big = juce::String::fromUTF8("\u2212") + juce::String(sel < 7 ? sel + 1 : 12);
-  const juce::String small = sel < 7 ? TRANS("semitons") : sel == 7 ? TRANS("oitava") : TRANS("oitava + limpo");
+  const int semis = NexusProcessor::dropSemitones(knobA);
+  const juce::String big = semis < 0 ? juce::String::fromUTF8("\u2212") + juce::String(-semis) : semis > 0 ? "+" + juce::String(semis) : juce::String("0");
+  const juce::String small = std::abs(semis) == 12 ? TRANS("oitava") : TRANS("semitons");
   const float corner = r.getHeight() * 0.10f;
   juce::ColourGradient glass(juce::Colour(0xff2f7bff), r.getCentreX(), r.getY(), juce::Colour(0xff0b2f8f), r.getCentreX(), r.getBottom(), false);
   g.setGradientFill(glass);
@@ -192,7 +192,7 @@ juce::String nativeKnobLabel(int look, const juce::String& id)
   static const char* const delay[3] = {"Tempo", "Repetições", "Mistura"};
   static const char* const reverb[3] = {"Tamanho", "Tom", "Mistura"};
   static const char* const gate[3] = {"Sensibilidade", "Ataque", "Release"};
-  static const char* const drop[3] = {"Drop", "Mistura", ""};
+  static const char* const drop[3] = {"Drop", "Brilho", ""};
   static const char* const phaser[3] = {"Velocidade", "Profundidade", "Intensidade"};
   static const char* const flanger[3] = {"Velocidade", "Profundidade", "Realimentação"};
   static const char* const tremolo[3] = {"Velocidade", "Profundidade", "Forma"};
@@ -348,9 +348,18 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
         // Sincronizado ao andamento: a velocidade (ou o tempo do delay) vira divisão.
         if (mKind == Kind::pedal && k.id == "a" && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index)))
           knob->valueText = [this](float v) {
-            return mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f
-                     ? juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(v)))
-                     : juce::String();
+            if (mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f)
+              return juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(v)));
+            // Phaser: a velocidade em Hz, para ajustar com precisão.
+            if (NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) == NexusProcessor::PedalKind::phaser)
+              return juce::String(nexus::Phaser::rateHz(v / 10.0), 2).replaceCharacter('.', ',') + " Hz";
+            return juce::String();
+          };
+        // Cherry Drop: o botão do drop mostra os semitons (meio-dia = 0).
+        if (mKind == Kind::pedal && k.id == "a" && mProcessor.pedalLook(index) == NexusProcessor::kDropLook)
+          knob->valueText = [](float v) {
+            const int semis = NexusProcessor::dropSemitones(v);
+            return (semis > 0 ? "+" : "") + juce::String(semis) + " " + TRANS("semitons");
           };
         knob->onMidiMenu = [this](const juce::String& id, juce::Component& c) { if (onMidiMenu) onMidiMenu(id, c); };
         addAndMakeVisible(*knob);
@@ -435,7 +444,7 @@ void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
   // LED: o modelo 3D traz o LED apagado; ligado, a tela acende por cima.
   if (mKind == Kind::pedal && pedalOn() && mArt != nullptr && mArt->ledRadius > 0.0f)
     drawLed(g, toScreen(mArt->led), mArt->ledRadius * mScale);
-  if (mKind == Kind::pedal && pedalOn() && mArt != nullptr && !mArt->display.isEmpty())
+  if (mKind == Kind::pedal && mArt != nullptr && !mArt->display.isEmpty())
   {
     const auto tl = toScreen(mArt->display.getTopLeft());
     const juce::Rectangle<float> r{tl.x, tl.y, mArt->display.getWidth() * mScale, mArt->display.getHeight() * mScale};
@@ -2183,6 +2192,7 @@ void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& tar
                        if (r == 1)
                        {
                          mProcessor.midi().learn(paramId);
+                         nexus::report::log("midi", "aprendendo " + paramId);
                          mMidiNotice = TRANS("Mexa no controle da pedaleira para ligar a %1").replace("%1", name);
                          mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 30000;
                          // Programa independente sem nenhum aparelho MIDI: a pedaleira
@@ -2316,6 +2326,7 @@ void NexusEditor::timerCallback()
   auto& midi = mProcessor.midi();
   if (const int cc = midi.takeLearned(); cc >= 0)
   {
+    nexus::report::log("midi", "aprendeu " + MidiMap::describe(cc));
     mMidiNotice = TRANS("%1 ligado. Pronto para tocar.").replace("%1", MidiMap::describe(cc));
     mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
     repaint();
@@ -2481,21 +2492,17 @@ void NexusEditor::resized()
     mAudioButton.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
     mAudioPanel->setBounds(getLocalBounds());
   }
+  // Ícone de atualização (só quando há versão nova), junto dos outros ícones.
+  if (mUpdate.isVisible())
+    mUpdate.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());
   mMapper->setBounds(getLocalBounds());
-  // Equipamento | Estúdio ao lado do logo; depois o aviso de versão nova (se
-  // houver) e os presets no meio do espaço que sobra.
+  // Equipamento | Estúdio ao lado do logo; os presets no meio do espaço que sobra.
   mMode.setBounds(232, (kTopBar - 36) / 2, 236, 36);
   {
-    int left = mMode.getRight() + 20;
-    if (mUpdate.isVisible())
-    {
-      const int w = mUpdate.idealWidth();
-      mUpdate.setBounds(left, (kTopBar - 40) / 2, w, 40);
-      left += w + 16;
-    }
+    const int left = mMode.getRight() + 20;
     const int rightEdge = mEngine.getX() - 20;
     const int w = juce::jmin(380, rightEdge - left);
     mPresets->setBounds(left + (rightEdge - left - w) / 2, (kTopBar - 40) / 2, w, 40);

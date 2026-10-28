@@ -217,24 +217,36 @@ void Phaser::reset()
   mPhase = 0.0;
 }
 
+double Phaser::rateHz(double knob01)
+{
+  return 0.1 * std::pow(100.0, std::clamp(knob01, 0.0, 1.0));
+}
+
 void Phaser::process(double* buffer, int n, double rate, double depth, double feedback)
 {
-  // 0,05 a 8 Hz; varredura de 200 Hz até 200 Hz x (2 a 16), em escala de oitavas.
-  const double hz = syncHz > 0.0 ? syncHz : 0.05 + 7.95 * rate * rate;
-  const double step = hz / mRate;
+  // Faixa da frequência dos estágios (no pedal, o JFET entre poucos kΩ e
+  // centenas de kΩ com os 47 nF): de 140 Hz a 2,5 kHz, centrada em ~590 Hz.
+  constexpr double kLow = 140.0, kHigh = 2500.0;
+  const double center = std::log(std::sqrt(kLow * kHigh));
+  const double span = std::log(kHigh / kLow);
+  const double hzTarget = syncHz > 0.0 ? syncHz : rateHz(rate);
   for (int i = 0; i < n; ++i)
   {
+    mHz = smooth(mHz, hzTarget, mRate);
     mDepth = smooth(mDepth, depth, mRate);
     mFeedback = smooth(mFeedback, feedback, mRate);
-    const double lfo = 0.5 - 0.5 * std::cos(2.0 * kPi * mPhase);
-    const double f = 200.0 * std::pow(2.0, lfo * (1.0 + 3.0 * mDepth));
+    // Oscilador triangular, como o do pedal.
+    const double tri = mPhase < 0.5 ? 4.0 * mPhase - 1.0 : 3.0 - 4.0 * mPhase;
+    const double f = std::exp(center + 0.5 * span * mDepth * tri);
     const double a = allPassCoef(f, mRate);
-    double y = buffer[i] + mLast * 0.75 * mFeedback;
+    // Realimentação limitada com suavidade, para nunca disparar.
+    double y = buffer[i] + std::tanh(mLast * 0.7 * mFeedback);
     for (auto& z : mState)
       y = allPass(y, a, z);
     mLast = y;
-    buffer[i] = 0.5 * (buffer[i] + y) * 1.15;
-    mPhase += step;
+    // Limpo e defasado meio a meio: é a soma que cria os vales.
+    buffer[i] = 0.5 * (buffer[i] + y) * 1.1;
+    mPhase += mHz / mRate;
     if (mPhase >= 1.0)
       mPhase -= 1.0;
   }

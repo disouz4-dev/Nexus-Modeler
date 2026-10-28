@@ -71,7 +71,7 @@ struct ChainLayout
     ChainLayout c;
     if (!t.isValid())
     {
-      c.pre = {0}; // padrão: um pedal antes do cabeçote
+      // Primeira abertura: só o cabeçote (Brit 800) e a caixa dele, sem pedais.
       return c;
     }
     auto split = [](const juce::var& v) {

@@ -403,31 +403,41 @@ struct LoadTimer
 
 void NexusProcessor::runDrop(int pedal, double* buffer, int n)
 {
-  // Cherry Drop: botão A escolhe o drop (1 a 7 semitons, oitava, oitava com o
-  // som limpo); botão B é a mistura (10 = só o som com o tom baixado).
+  // Cherry Drop: botão A escolhe os semitons (meio-dia = sem mudar, para a
+  // esquerda desce até -12, para a direita sobe até +12); botão B é o brilho,
+  // para compensar o som que fica mais opaco quando desce.
   auto& p = mPedals[static_cast<size_t>(pedal)];
   const float target = p.on->load() > 0.5f ? 1.0f : 0.0f;
   if (target == 0.0f && p.dropMix == 0.0f)
     return;
-  if (target == 1.0f && p.dropMix == 0.0f)
-    p.drop->reset(); // liga limpo, sem resto da última vez
-  const int sel = juce::jlimit(0, 8, juce::roundToInt(p.fx[0]->load() / 10.0f * 8.0f));
-  const float semis = sel < 7 ? -static_cast<float>(sel + 1) : -12.0f;
-  if (semis != p.dropSemitones)
+  const int semis = dropSemitones(p.fx[0]->load());
+  const float shiftTarget = semis != 0 ? 1.0f : 0.0f;
+  if (semis != 0 && static_cast<float>(semis) != p.dropSemitones)
   {
-    p.dropSemitones = semis;
-    p.drop->setSemitones(semis);
+    p.dropSemitones = static_cast<float>(semis);
+    p.drop->setSemitones(p.dropSemitones);
   }
-  const float wet = juce::jlimit(0.0f, 1.0f, p.fx[1]->load() / 10.0f);
-  const float dryKeep = sel == 8 ? 1.0f : 1.0f - wet; // oitava com o limpo: o limpo fica inteiro
+  // O motor só trabalha com drop escolhido; no meio-dia passa o som direto.
+  const bool shifting = shiftTarget > 0.0f || p.dropShift > 0.0f;
+  if (shifting && (p.dropShift == 0.0f || p.dropMix == 0.0f))
+    p.drop->reset(); // começa limpo, sem resto da última vez
   for (int i = 0; i < n; ++i)
     mDropFloat[static_cast<size_t>(i)] = static_cast<float>(buffer[i]);
-  p.drop->process(mDropFloat.data(), n);
+  if (shifting)
+    p.drop->process(mDropFloat.data(), n);
+  // Brilho: meio-dia é o som como sai; para a direita realça os agudos, para a
+  // esquerda escurece (filtro de prateleira simples em volta de 1,5 kHz).
+  const float b = (p.fx[1]->load() - 5.0f) / 5.0f;
+  const double bright = b >= 0.0f ? 1.5 * b : 0.75 * b;
+  const double lowCoef = 1.0 - std::exp(-juce::MathConstants<double>::twoPi * 1500.0 / kEngineRate);
   const float mixStep = static_cast<float>(1.0 / (kPedalFadeSeconds * kEngineRate));
   for (int i = 0; i < n; ++i)
   {
     p.dropMix = target > p.dropMix ? std::min(target, p.dropMix + mixStep) : std::max(target, p.dropMix - mixStep);
-    const double effect = buffer[i] * dryKeep + mDropFloat[static_cast<size_t>(i)] * wet;
+    p.dropShift = shiftTarget > p.dropShift ? std::min(shiftTarget, p.dropShift + mixStep) : std::max(shiftTarget, p.dropShift - mixStep);
+    double effect = buffer[i] * (1.0 - p.dropShift) + mDropFloat[static_cast<size_t>(i)] * p.dropShift;
+    p.dropLow += lowCoef * (effect - p.dropLow);
+    effect += bright * (effect - p.dropLow);
     buffer[i] = buffer[i] * (1.0 - p.dropMix) + effect * p.dropMix;
   }
 }

@@ -85,6 +85,8 @@ public:
     PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
     PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod};                    // Juniper Sky, Lime Echo, Plum Mod
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
+  // Semitons do Cherry Drop pelo botão A (0 a 10): 5 (meio-dia) = 0, 0 = -12, 10 = +12.
+  static int dropSemitones(float knobA) { return juce::jlimit(-12, 12, juce::roundToInt((knobA - 5.0f) / 5.0f * 12.0f)); }
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
@@ -260,7 +262,9 @@ private:
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;
+    float dropShift = 0.0f; // 0 no meio-dia (som direto), 1 com drop escolhido
     float dropSemitones = 0.0f;
+    double dropLow = 0.0;   // filtro do brilho
   };
 
   // Estado de áudio de cada cabeçote: troca de canal com aquecimento.

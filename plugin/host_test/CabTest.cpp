@@ -361,7 +361,12 @@ int main(int argc, char** argv)
       p->prepareToPlay(48000.0, 128);
       p->loadAmpPack(0, 0, packs.getChildFile("ganho"));
       if (withPedal)
+      {
+        ChainLayout l; // a cadeia nova abre sem pedais
+        l.pre = {0};
+        p->setLayout(l);
         p->loadPedalPack(0, packs.getChildFile("ganho"));
+      }
       for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && (!withPedal || p->slotLoaded(0))); t += 50)
         settle(*p, 50);
       // Aquecimento da captura (132 ms de som) + passagem suave (30 ms): cada
@@ -550,6 +555,26 @@ int main(int argc, char** argv)
     report(p.midi().ccFor("p3_ligado") == 256 + 60 && std::abs(afterFirst - value("p3_ligado")) > 0.5f,
            "Aprender: nota 60 alterna o pedal 3 a cada pisada", MidiMap::describe(p.midi().ccFor("p3_ligado")));
 
+    // Pedaleira que manda o banco (CC 0) junto com a troca de patch: aprende a
+    // pisada (o PC), e outra pisada não mexe no pedal.
+    {
+      auto sendPair = [&](int program) {
+        juce::MidiBuffer midi;
+        midi.addEvent(juce::MidiMessage::controllerEvent(1, 0, 0), 0);
+        midi.addEvent(juce::MidiMessage::programChange(1, program), 1);
+        buffer.clear();
+        p.processBlock(buffer, midi);
+      };
+      p.midi().learn("p4_ligado");
+      sendPair(10);
+      const float first = value("p4_ligado");
+      sendPair(11); // outra pisada
+      const bool untouched = std::abs(first - value("p4_ligado")) < 0.01f;
+      sendPair(10);
+      report(p.midi().ccFor("p4_ligado") == 128 + 10 && untouched && std::abs(first - value("p4_ligado")) > 0.5f,
+             "Aprender: com banco + troca de patch, só a pisada aprendida liga o pedal 4", MidiMap::describe(p.midi().ccFor("p4_ligado")));
+    }
+
     // Tap tempo: quatro toques a cada 0,5 s = 120 BPM; um toque pisado pela pedaleira também conta.
     for (int t = 0; t < 4; ++t)
     {
@@ -615,6 +640,19 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oAfter), 1) + " dB");
     report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
+
+    // Primeira abertura: só o Brit 800 com a caixa dele, sem pedais.
+    {
+      NexusProcessor fresh;
+      const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
+      const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
+      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: Brit 800 e a caixa dele, sem pedais",
+             juce::String(fresh.layout().count()) + " pedais, cabeçote " + juce::String(head) + ", caixa " + juce::String(cab));
+    }
+    // Cherry Drop: meio-dia não muda o tom; as pontas são -12 e +12.
+    report(NexusProcessor::dropSemitones(5.0f) == 0 && NexusProcessor::dropSemitones(0.0f) == -12 && NexusProcessor::dropSemitones(10.0f) == 12
+             && NexusProcessor::dropSemitones(5.0f + 5.0f / 12.0f) == 1,
+           "Cherry Drop: meio-dia em 0, de -12 a +12 semitons", juce::String(NexusProcessor::dropSemitones(5.0f)));
 
     // A cadeia volta igual ao reabrir o projeto.
     juce::MemoryBlock state;
@@ -983,7 +1021,7 @@ int main(int argc, char** argv)
                 {"name":"NexusModeler-0.3.0-Linux-x86_64.tar.gz","browser_download_url":"https://x/l.tgz","size":13}]})";
     const auto w = up::parseRelease(json, "windows"), m = up::parseRelease(json, "mac");
     const auto d = up::parseRelease(json, "linux-deb"), t = up::parseRelease(json, "linux");
-    report(w.version == "0.3.0" && w.assetName.endsWith("instalador.exe") && m.assetName.endsWith(".dmg")
+    report(w.version == "0.3.0" && w.assetName.endsWith("instalador.exe") && m.assetName.endsWith("Mac.zip") && up::parseRelease(json.replace("Mac.zip", "Mac.txt"), "mac").assetName.endsWith(".dmg")
              && d.assetName.endsWith(".deb") && t.assetName.endsWith(".tar.gz") && w.assetSize == 10,
            "Instalador certo para cada sistema", w.assetName + ", " + m.assetName + ", " + d.assetName + ", " + t.assetName);
     report(up::compareVersions(up::currentVersion(), "0.0.1") > 0, juce::String::fromUTF8("O programa sabe a própria versão").toRawUTF8(), up::currentVersion());

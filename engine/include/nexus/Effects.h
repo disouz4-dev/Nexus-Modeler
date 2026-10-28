@@ -75,14 +75,22 @@ private:
   int mPreIndex = 0;
 };
 
-// Phaser de quatro estágios (estilo Phase 90): filtros passa-tudo varridos
-// por um oscilador lento, com realimentação. Botões: velocidade,
-// profundidade, intensidade (realimentação).
+// Phaser no molde do MXR Phase 90: quatro estágios passa-tudo de primeira
+// ordem (no pedal, um JFET como resistor variável com um capacitor de 47 nF
+// em cada estágio), varridos por um oscilador triangular, e o som limpo somado
+// meio a meio com o defasado, o que abre dois vales fundos no espectro (em
+// 0,41 e 2,41 vezes a frequência dos estágios). Botões:
+//   velocidade   0,1 a 10 Hz, em escala de oitavas (5 = 1 Hz)
+//   profundidade largura da varredura (10 = de 140 Hz a 2,5 kHz nos estágios)
+//   intensidade  realimentação do quarto estágio para o primeiro, como no
+//                Phase 90 de logotipo em bloco (0 = o "script", sem nenhuma)
 class Phaser
 {
 public:
   // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
   double syncHz = 0.0;
+  // Velocidade do botão (0 a 1) em Hz.
+  static double rateHz(double knob01);
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double feedback);
@@ -92,7 +100,7 @@ private:
   double mPhase = 0.0;
   std::array<double, 4> mState{};
   double mLast = 0.0;
-  double mDepth = 0.5, mFeedback = 0.3;
+  double mHz = 1.0, mDepth = 0.5, mFeedback = 0.0;
 };
 
 // Flanger (estilo Electric Mistress): atraso de 0,4 a 7 ms varrido devagar,

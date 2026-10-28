@@ -49,16 +49,57 @@ void MidiMap::press(int target)
   apply(target, now >= 0.5f ? 0.0f : 1.0f);
 }
 
+namespace
+{
+// Escolha de banco (CC 0 e CC 32): muitas pedaleiras mandam antes de cada troca
+// de patch, igual em todas as pisadas. Não serve para distinguir uma pisada.
+bool isBankSelect(const juce::MidiMessage& msg)
+{
+  return msg.isController() && (msg.getControllerNumber() == 0 || msg.getControllerNumber() == 32);
+}
+
+int controlOf(const juce::MidiMessage& msg)
+{
+  if (msg.isProgramChange())
+    return 128 + msg.getProgramChangeNumber();
+  if (msg.isNoteOn())
+    return 256 + msg.getNoteNumber();
+  if (msg.isController() && !isBankSelect(msg))
+    return msg.getControllerNumber();
+  return -1;
+}
+} // namespace
+
 void MidiMap::process(const juce::MidiBuffer& midi)
 {
+  // Aprender: a pisada costuma chegar com mais de uma mensagem no mesmo
+  // instante. A troca de patch ou a nota identificam a pisada; o CC só vale
+  // quando vem sozinho.
+  if (mLearn.load() >= 0)
+  {
+    int pick = -1;
+    for (const auto meta : midi)
+    {
+      const auto msg = meta.getMessage();
+      const int control = controlOf(msg);
+      if (control >= 128)
+      {
+        pick = control;
+        break;
+      }
+      if (control >= 0 && pick < 0)
+        pick = control;
+    }
+    if (pick >= 0)
+      if (const int learn = mLearn.exchange(-1); learn >= 0)
+        bind(pick, learn);
+  }
   for (const auto meta : midi)
   {
     const auto msg = meta.getMessage();
     if (msg.isProgramChange() || msg.isNoteOn())
     {
-      const int control = msg.isProgramChange() ? 128 + msg.getProgramChangeNumber() : 256 + msg.getNoteNumber();
-      if (const int learn = mLearn.exchange(-1); learn >= 0)
-        bind(control, learn);
+      const int control = controlOf(msg);
       if (const int target = mCcTarget[static_cast<size_t>(control)].load(); target >= 0)
       {
         press(target);
@@ -74,12 +115,10 @@ void MidiMap::process(const juce::MidiBuffer& midi)
       }
       continue;
     }
-    if (!msg.isController())
+    if (!msg.isController() || isBankSelect(msg))
       continue;
     const int cc = msg.getControllerNumber();
     const int value = msg.getControllerValue();
-    if (const int learn = mLearn.exchange(-1); learn >= 0)
-      bind(cc, learn);
     const int target = mCcTarget[static_cast<size_t>(cc)].load();
     if (target < 0)
       continue;
