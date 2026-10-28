@@ -22,6 +22,10 @@
 #ifndef Versao
   #define Versao "0.1.0"
 #endif
+; Versão só com números para os dados do arquivo ("0.1.0-beta.1" vira 0.1.0).
+#ifndef VersaoNum
+  #define VersaoNum Versao
+#endif
 #ifndef Artefatos
   #define Artefatos SourcePath + "..\..\build\plugin\NexusModeler_artefacts\Release"
 #endif
@@ -59,7 +63,7 @@ ShowLanguageDialog=yes
 LanguageDetectionMethod=uilanguage
 UninstallDisplayIcon={app}\Nexus Modeler.exe
 UninstallDisplayName=Nexus Modeler
-VersionInfoVersion={#Versao}
+VersionInfoVersion={#VersaoNum}
 VersionInfoDescription=Instalador do Nexus Modeler
 ; O arquivo de idioma fica no perfil de quem instala, de propósito.
 UsedUserAreasWarning=no

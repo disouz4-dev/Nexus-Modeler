@@ -121,7 +121,8 @@ jobs:
 
           # Inno Setup 6.3 ou mais novo (instala ou atualiza o que vem na máquina).
           choco upgrade innosetup -y --no-progress
-          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersao=$env:NEXUS_VERSAO" packaging\windows\nexus.iss
+          $num = ($env:NEXUS_VERSAO -split "-")[0]
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersao=$env:NEXUS_VERSAO" "/DVersaoNum=$num" packaging\windows\nexus.iss
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
           $artefatos = "build\plugin\NexusModeler_artefacts\Release"
