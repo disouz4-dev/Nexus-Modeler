@@ -170,7 +170,14 @@ void drawModeDisplay(juce::Graphics& g, juce::Rectangle<float> r, int look, floa
   g.drawText(juce::String(juce::roundToInt(modeKnob) + 1).paddedLeft('0', 2), number, juce::Justification::centred, false);
   g.setColour(ink);
   g.setFont(juce::Font(juce::FontOptions(text.getHeight() * 0.62f, juce::Font::bold)).withExtraKerningFactor(0.06f));
-  g.drawFittedText(NexusProcessor::modeName(look, modeKnob).toUpperCase(), text.toNearestInt(), juce::Justification::centred, 2, 0.6f);
+  // Maiúsculas com acento (o toUpperCase deixa "ç" e "ô" minúsculos).
+  auto name = NexusProcessor::modeName(look, modeKnob).toUpperCase();
+  for (const auto* pair : {"çÇ", "áÁ", "âÂ", "ãÃ", "àÀ", "éÉ", "êÊ", "íÍ", "óÓ", "ôÔ", "õÕ", "úÚ"})
+  {
+    const auto chars = juce::String::fromUTF8(pair);
+    name = name.replaceCharacter(chars[0], chars[1]);
+  }
+  g.drawFittedText(name, text.toNearestInt(), juce::Justification::centred, 2, 0.6f);
   juce::ColourGradient shine(juce::Colours::white.withAlpha(0.16f), r.getX(), r.getY(), juce::Colours::white.withAlpha(0.0f), r.getX(),
                              r.getCentreY(), false);
   g.setGradientFill(shine);
