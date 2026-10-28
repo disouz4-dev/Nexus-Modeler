@@ -2,6 +2,10 @@
 
 #include "../report/Report.h"
 
+#if JUCE_LINUX || JUCE_MAC
+#include <unistd.h>
+#endif
+
 #ifndef NEXUS_VERSAO
 #define NEXUS_VERSAO "0.0.0"
 #endif
@@ -355,8 +359,29 @@ void Updater::restartProgram()
   const auto exe = juce::File::getSpecialLocation(juce::File::currentExecutableFile);
   if (!juce::JUCEApplicationBase::isStandaloneApp())
     return;
+#if JUCE_LINUX || JUCE_MAC
+  // Abrir já a cópia nova não dá: ela vê esta ainda aberta e desiste. Um
+  // ajudante espera esta fechar e abre o programa no lugar instalado (no
+  // Linux, depois da troca, o caminho deste vem com " (deleted)" no fim).
+  auto path = exe.getFullPathName();
+  if (path.endsWith(" (deleted)"))
+    path = path.dropLastCharacters(10);
+  const auto quoted = "'" + path.replace("'", "'\\''") + "'";
+  const auto script = "while kill -0 " + juce::String((int) getpid()) + " 2>/dev/null; do sleep 0.2; done; exec " + quoted;
+  const auto command = script.toStdString(); // pronto antes de dividir o processo
+  const auto pid = fork();
+  if (pid == 0)
+  {
+    setsid(); // solto deste: segue vivo depois que este fecha
+    execl("/bin/sh", "sh", "-c", command.c_str(), (char*) nullptr);
+    _exit(127);
+  }
+  if (pid > 0)
+    juce::JUCEApplicationBase::quit();
+#else
   if (exe.startAsProcess())
     juce::JUCEApplicationBase::quit();
+#endif
 }
 
 void Updater::run()
