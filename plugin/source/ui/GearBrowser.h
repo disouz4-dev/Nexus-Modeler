@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include <functional>
@@ -61,6 +63,7 @@ private:
   juce::Viewport mViewport;
   std::vector<GearItem> mItems;
   GearItem::Kind mTab = GearItem::Kind::pedal;
+  std::array<int, 3> mScroll{}; // onde cada aba estava (pedais, cabeçotes, caixas)
   GearItem::Kind mCurrentKind = GearItem::Kind::amp;
   int mCurrentLook = -1;
 };

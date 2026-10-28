@@ -951,6 +951,7 @@ void NexusEditor::ChainView::itemDropped(const SourceDetails& d)
     auto* visual = mEditor.mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, "visual"));
     visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(look)));
     mEditor.select({Kind::pedal, pedal});
+    mEditor.ensurePedal(pedal); // a captura do pedal novo entra sozinha
   }
   else if (const auto* drop = nearestDrop(at))
     mEditor.insertPedal(look, drop->list, drop->position);
@@ -1765,7 +1766,7 @@ void NexusEditor::loadHeadChannels(int rig)
       pick = nexus::t3k::downloadedFolder(*def, art.name);
     if (pick == juce::File())
       for (const auto& f : folders)
-        if (packChannel(f) == c || (count == 1 && packChannel(f) < 0))
+        if ((packChannel(f) == c || (count == 1 && packChannel(f) < 0)) && nexus::t3k::usableFolder(f))
         {
           pick = f;
           break;
@@ -2054,9 +2055,9 @@ void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& tar
   const int cc = midi.ccFor(paramId);
   juce::PopupMenu menu;
   menu.addSectionHeader("MIDI: " + param->getName(48));
-  menu.addItem(1, cc < 0 ? TRANS("Aprender MIDI") : TRANS("Trocar controle MIDI (agora CC %1)").replace("%1", juce::String(cc)));
+  menu.addItem(1, cc < 0 ? TRANS("Aprender MIDI") : TRANS("Trocar controle MIDI (agora %1)").replace("%1", MidiMap::describe(cc)));
   if (cc >= 0)
-    menu.addItem(2, TRANS("Esquecer MIDI (CC %1)").replace("%1", juce::String(cc)));
+    menu.addItem(2, TRANS("Esquecer MIDI (%1)").replace("%1", MidiMap::describe(cc)));
   if (midi.learning())
     menu.addItem(4, TRANS("Cancelar aprender MIDI"));
   if (paramId == "canal")
@@ -2068,6 +2069,24 @@ void NexusEditor::showMidiMenu(const juce::String& paramId, juce::Component& tar
                          mProcessor.midi().learn(paramId);
                          mMidiNotice = TRANS("Mexa no controle da pedaleira para ligar a %1").replace("%1", name);
                          mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 30000;
+                         // Programa independente sem nenhum aparelho MIDI: a pedaleira
+                         // Bluetooth (M-VAVE Chocolate e parecidas) precisa ser conectada
+                         // antes; sem isso o aprender espera para sempre.
+                         if (juce::JUCEApplicationBase::isStandaloneApp() && juce::MidiInput::getAvailableDevices().isEmpty())
+                         {
+                           const bool bluetooth = juce::BluetoothMidiDevicePairingDialogue::isAvailable();
+                           const auto message = TRANS(juce::String::fromUTF8(
+                             "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)."));
+                           if (bluetooth)
+                             juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::InfoIcon, TRANS("Nenhuma pedaleira MIDI conectada"), message,
+                                                                TRANS("Conectar por Bluetooth"), TRANS("Fechar"), nullptr,
+                                                                juce::ModalCallbackFunction::create([](int ok) {
+                                                                  if (ok == 1)
+                                                                    juce::BluetoothMidiDevicePairingDialogue::open();
+                                                                }));
+                           else
+                             juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::InfoIcon, TRANS("Nenhuma pedaleira MIDI conectada"), message);
+                         }
                        }
                        else if (r == 4)
                        {
@@ -2181,7 +2200,7 @@ void NexusEditor::timerCallback()
   auto& midi = mProcessor.midi();
   if (const int cc = midi.takeLearned(); cc >= 0)
   {
-    mMidiNotice = TRANS("CC %1 ligado. Pronto para tocar.").replace("%1", juce::String(cc));
+    mMidiNotice = TRANS("%1 ligado. Pronto para tocar.").replace("%1", MidiMap::describe(cc));
     mMidiNoticeUntil = juce::Time::getMillisecondCounter() + 2500;
     repaint();
   }

@@ -535,11 +535,28 @@ int main(int argc, char** argv)
     report(p.midi().ccFor("ganho") == 22 && value("ganho") < 6.0f, "Reaprender troca o controle (o antigo para de agir)",
            "agora CC " + juce::String(p.midi().ccFor("ganho")) + ", ganho " + juce::String(value("ganho"), 2));
 
+    // Pedaleira (M-VAVE Chocolate e parecidas): cada pisada manda PC ou nota.
+    p.midi().learn("p2_ligado");
+    send(juce::MidiMessage::programChange(1, 4)); // PC 5
+    const bool pcOn = p.midi().ccFor("p2_ligado") == 128 + 4 && value("p2_ligado") < 0.5f;
+    send(juce::MidiMessage::programChange(1, 4));
+    report(pcOn && value("p2_ligado") > 0.5f && juce::roundToInt(value("canal")) == 2,
+           "Aprender: PC 5 da pedaleira liga e desliga o pedal 2 (e não troca o canal)", MidiMap::describe(p.midi().ccFor("p2_ligado")));
+    p.midi().learn("p3_ligado");
+    send(juce::MidiMessage::noteOn(1, 60, 1.0f));
+    const float afterFirst = value("p3_ligado");
+    send(juce::MidiMessage::noteOff(1, 60));
+    send(juce::MidiMessage::noteOn(1, 60, 1.0f));
+    report(p.midi().ccFor("p3_ligado") == 256 + 60 && std::abs(afterFirst - value("p3_ligado")) > 0.5f,
+           "Aprender: nota 60 alterna o pedal 3 a cada pisada", MidiMap::describe(p.midi().ccFor("p3_ligado")));
+
     juce::MemoryBlock state;
     p.getStateInformation(state);
     NexusProcessor q;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
-    report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22, "O mapa MIDI volta ao abrir o projeto",
+    report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22 && q.midi().ccFor("p2_ligado") == 132
+             && q.midi().ccFor("p3_ligado") == 316,
+           "O mapa MIDI volta ao abrir o projeto (CC, PC e nota)",
            "pedal CC " + juce::String(q.midi().ccFor("p1_ligado")) + ", ganho CC " + juce::String(q.midi().ccFor("ganho")));
   }
 

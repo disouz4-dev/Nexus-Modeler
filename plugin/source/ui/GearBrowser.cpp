@@ -209,10 +209,15 @@ void GearBrowser::setItems(std::vector<GearItem> items)
 
 void GearBrowser::setTab(GearItem::Kind kind)
 {
+  // A mesma aba (escolher ou soltar uma peça): a lista fica onde está. Outra
+  // aba: volta ao ponto em que ela estava da última vez.
+  if (kind == mTab)
+    return;
+  mScroll[static_cast<size_t>(mTab)] = mViewport.getViewPositionY();
   mTab = kind;
   mTabs.setSelected(static_cast<int>(kind));
-  mViewport.setViewPosition(0, 0);
   resized();
+  mViewport.setViewPosition(0, mScroll[static_cast<size_t>(kind)]);
 }
 
 void GearBrowser::setCurrent(GearItem::Kind kind, int look)

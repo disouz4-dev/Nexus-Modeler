@@ -814,15 +814,15 @@
     ]
   },
   "uber_412": {
-    "busca": "Bogner",
+    "busca": "Uberschall",
     "tons": [
       {
-        "id": 27979,
-        "titulo": "Bogner Shiva 2x12",
+        "id": 64801,
+        "titulo": "Bogner Uberschall UberNAM Pack! — IRs",
         "tipo": "cab",
-        "capturas": 4,
+        "capturas": 2,
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "IRs do mesmo pacote da captura do Uber 100 (a rig original)"
       }
     ]
   },
