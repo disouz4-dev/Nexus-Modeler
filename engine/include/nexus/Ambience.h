@@ -184,4 +184,37 @@ private:
   double mDepth = 0.5, mMix = 0.5, mTone = 0.5, mTweak = 0.5; // suavizados
   int mMode = -1;
 };
+
+// Três delays digitais em série (Blueberry Chain): o primeiro alimenta o
+// segundo, que alimenta o terceiro, e as repetições se multiplicam em cascata.
+class TripleDelay
+{
+public:
+  static constexpr int kStages = 3;
+  struct Stage
+  {
+    bool on = true;
+    double time = 0.5;        // botão de 0 a 1 (20 ms a 2 s)
+    double repeats = 0.5;     // botão de 0 a 1
+    double level = 0.4;       // botão de 0 a 1
+    double syncSeconds = 0.0; // tempo preso ao andamento (0 = segue o botão)
+  };
+  void prepare(double sampleRate);
+  void reset();
+  // Tempo de cada delay em segundos para a posição do botão (sem andamento).
+  static double secondsFor(double time);
+  // in: o que entra (já com o liga/desliga); wet: só o que os delays somam.
+  void process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages);
+
+private:
+  struct Line
+  {
+    DelayLine line;
+    double delay = 0.0; // em amostras (escorrega até o tempo novo)
+    double low = 0.0, high = 0.0;
+    double repeats = 0.5, level = 0.0; // suavizados
+  };
+  double mRate = 48000.0;
+  std::array<Line, kStages> mLines;
+};
 } // namespace nexus

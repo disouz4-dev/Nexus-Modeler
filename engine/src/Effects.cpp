@@ -378,6 +378,7 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mSky.prepare(sampleRate);
   mEcho.prepare(sampleRate);
   mMulti.prepare(sampleRate);
+  mTriple.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
   mDry.assign(static_cast<size_t>(maxBlock), 1.0);
@@ -398,6 +399,7 @@ void NativePedal::reset()
   mSky.reset();
   mEcho.reset();
   mMulti.reset();
+  mTriple.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -472,11 +474,12 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mSky.reset();
     mEcho.reset();
     mMulti.reset();
+    mTriple.reset();
     mLast = type;
   }
   // Rastro de até 6 s depois de desligar (o reverb de vários modos tem
   // caudas de até 25 s; o delay, repetições longas).
-  const double tailSeconds = type == Type::sky ? 25.0 : type == Type::echo ? 12.0 : 6.0;
+  const double tailSeconds = type == Type::sky ? 25.0 : type == Type::echo || type == Type::triple ? 12.0 : 6.0;
   if (on)
     mTail = static_cast<int>(tailSeconds * mRate);
   else if (mTail > 0)
@@ -554,9 +557,12 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
   }
   if (type == Type::delay)
     mDelay.process(mIn.data(), mWet.data(), n, a, b);
+  else if (type == Type::triple)
+    mTriple.process(mIn.data(), mWet.data(), n, mStages);
   else
     mReverb.process(mIn.data(), mWet.data(), n, a, b);
-  const double target = type == Type::reverb ? c * 1.2 : c;
+  // No Blueberry Chain o nível de cada delay já está nas repetições.
+  const double target = type == Type::triple ? 1.0 : type == Type::reverb ? c * 1.2 : c;
   for (int i = 0; i < n; ++i)
   {
     mMix = smooth(mMix, target, mRate);

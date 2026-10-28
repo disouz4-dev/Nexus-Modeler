@@ -73,9 +73,10 @@ public:
     vibe,
     sky,     // reverb de vários modos, com shimmer
     echo,    // delay de vários modos
-    multiMod // modulação de vários modos
+    multiMod, // modulação de vários modos
+    triple    // três delays em série
   };
-  static constexpr int kPedalLooks = 22;
+  static constexpr int kPedalLooks = 23;
   static constexpr PedalKind kPedalKinds[kPedalLooks] = {
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
     PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
@@ -83,7 +84,8 @@ public:
     PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
     PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
-    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod};                    // Juniper Sky, Lime Echo, Plum Mod
+    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod,                     // Juniper Sky, Lime Echo, Plum Mod
+    PedalKind::triple};                                                              // Blueberry Chain
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
@@ -108,8 +110,12 @@ public:
   {
     const auto k = pedalKind(look);
     return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
-           || k == PedalKind::vibe || k == PedalKind::echo || k == PedalKind::multiMod;
+           || k == PedalKind::vibe || k == PedalKind::echo || k == PedalKind::multiMod || k == PedalKind::triple;
   }
+  // Blueberry Chain: os botões de cada delay (tempo, repetições, nível) e a
+  // chave que liga cada um.
+  static constexpr const char* kTripleKnobs[3][3] = {{"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}};
+  static constexpr const char* kTripleSwitches[3] = {"on1", "on2", "on3"};
   // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
   // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
   static constexpr int kDivisions = 9;
@@ -257,6 +263,8 @@ private:
     std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
     std::atomic<float>* mode = nullptr;     // modo dos pedais de vários modos
     std::atomic<float>* fourth = nullptr;   // quarto botão dos pedais de vários modos
+    std::array<std::atomic<float>*, 5> more{};   // Blueberry Chain: botões "e" a "i"
+    std::array<std::atomic<float>*, 3> stageOn{}; // Blueberry Chain: chave de cada delay
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;

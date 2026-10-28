@@ -35,6 +35,9 @@
     de envelope, wah automático, modulador em anel, chorus triplo, tremolo
     picotado, phaser de 12 estágios, flanger por zero e detune. Segue o tap
     tempo.
+- Blueberry Chain: três delays digitais em série (o primeiro alimenta o
+  segundo, que alimenta o terceiro). Cada delay tem tempo, repetições, nível
+  e uma chave própria; no tap tempo, cada um escolhe a sua divisão.
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
   Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).

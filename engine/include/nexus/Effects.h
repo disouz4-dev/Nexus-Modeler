@@ -192,7 +192,8 @@ public:
     vibe,
     sky,     // Juniper Sky: reverb de vários modos
     echo,    // Lime Echo: delay de vários modos
-    multiMod // Plum Mod: modulação de vários modos
+    multiMod, // Plum Mod: modulação de vários modos
+    triple    // Blueberry Chain: três delays em série
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
@@ -208,6 +209,8 @@ public:
     mFourth = fourth;
     mFifth = fifth;
   }
+  // Blueberry Chain: os botões e as chaves dos três delays.
+  void setTriple(const std::array<TripleDelay::Stage, TripleDelay::kStages>& stages) { mStages = stages; }
   // on: pedal ligado; a, b, c: os três botões (0 a 1). Mexe no buffer no lugar.
   void process(Type type, bool on, double* buffer, int n, double a, double b, double c);
   // Ainda soando (ligado ou com rastro)? Quando não, não gasta processador.
@@ -225,6 +228,8 @@ private:
   SkyReverb mSky;
   EchoDelay mEcho;
   MultiMod mMulti;
+  TripleDelay mTriple;
+  std::array<TripleDelay::Stage, TripleDelay::kStages> mStages{};
   std::vector<double> mIn, mWet, mDry, mGains;
   int mMode = 0;
   double mTone = 0.5, mFourth = 0.5, mFifth = 0.5;
