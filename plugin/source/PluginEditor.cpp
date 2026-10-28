@@ -2362,7 +2362,7 @@ juce::String NexusEditor::packSummary(int slot) const
       return TRANS("Carregando...");
     if (status.startsWith("Erro"))
       return status;
-    return slot < NexusProcessor::kPedals ? TRANS("Nenhuma captura no pedal. O pisante liga e desliga.")
+    return slot < NexusProcessor::kPedals ? TRANS("Nenhuma captura no pedal.")
                                           : TRANS("Nenhum pacote de capturas carregado");
   }
   const int count = mProcessor.captureCount(slot);
@@ -2465,7 +2465,7 @@ void NexusEditor::timerCallback()
     title = art ? art->name : juce::String::fromUTF8(kPedalInfo[pedalLook(mSel.index)].name);
     if (NexusProcessor::isNativeLook(pedalLook(mSel.index)))
     {
-      subtitle = TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura. O pisante liga e desliga."));
+      subtitle = TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura."));
       if (const int look = pedalLook(mSel.index); NexusProcessor::hasModes(look))
         subtitle = TRANS("Modo") + ": "
                    + NexusProcessor::modeName(look, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mSel.index, "modo"))->load())
