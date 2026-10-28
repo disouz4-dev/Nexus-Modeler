@@ -6,6 +6,8 @@ Plugin de guitarra gratuito e de código aberto para Windows, Mac e Linux.
 
 Site do projeto: https://disouz4-dev.github.io/Nexus-Modeler/
 
+Criado por **Diego de Souza**, desenvolvedor ([@disouz4-dev](https://github.com/disouz4-dev)).
+
 Hoje o guitarrista escolhe entre dois mundos:
 
 - a **modelagem** de amplificador: você gira os botões e timbra à vontade, mas
@@ -35,14 +37,16 @@ Tudo isso toca capturas do
 [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
 (NAM A2 Full e A2 Lite).
 
-> **Estado atual: em desenvolvimento, ainda sem versão publicada.** Já
-> funcionam o motor de troca de capturas, a tela 3D com o cabeçote Brit 800,
-> a caixa 4x12 e sete pedais, a cadeia completa com dois cabeçotes, as
-> capturas da TONE3000 dentro do programa, presets, MIDI, 15 idiomas, os
-> instaladores, a atualização automática, o "Testar o som" com gravações de
-> guitarra por estilo, o relatório de problemas para o GitHub e a primeira
-> versão do estúdio (separar as faixas de uma música e tocar junto). Lista
-> completa de equipamentos em
+> **Estado atual: versão de teste publicada (0.1.0-beta.1); a 0.1.0-beta.2
+> está em preparação.** Dá para baixar e testar nos três sistemas. Funcionam
+> o motor de troca de capturas, a tela 3D com 37 cabeçotes (18 de baixo), 15
+> caixas e 19 pedais, o afinador de rack no começo da cadeia, a cadeia com
+> dois cabeçotes e pedal A/B, as capturas da TONE3000 dentro do programa (a
+> mais curtida pela comunidade entra sozinha), o equalizador do fim da cadeia
+> no estilo Pro-Q, presets, MIDI, 15 idiomas, os instaladores, a atualização
+> automática, o "Testar o som", o relatório de problemas sem precisar de
+> conta e a primeira versão do estúdio (separar as faixas de uma música e
+> tocar junto). Lista completa de equipamentos em
 > [docs/CATALOGO.md](docs/CATALOGO.md).
 
 ![Nexus Modeler com o cabeçote Brit 800](docs/imagens/tela-amplificador.webp)
@@ -246,6 +250,24 @@ capturas** para você dizer a posição de cada uma. O resultado fica num
 Circuitos de equalizador disponíveis: `marshall`, `fender`, `alto_ganho`,
 `mesa_mark`.
 
+## Requisitos
+
+- **Windows** 10 ou 11, 64 bits. Não precisa instalar nada além do Nexus.
+- **Mac** com processador Intel ou Apple (M1 em diante), macOS 11 ou mais novo.
+- **Linux** de 64 bits (x86_64). Com PipeWire, instale o `pipewire-jack` para
+  a menor latência; o Nexus usa o JACK do PipeWire sozinho.
+- Uma interface de áudio é recomendada; o "Testar o som" funciona sem ela.
+- Para baixar capturas dentro do programa, uma conta gratuita na
+  [TONE3000](https://www.tone3000.com).
+
+## Encontrou um problema?
+
+No Nexus, clique no **i** no canto de cima e em **Reportar um problema**.
+O relatório chega aqui nos [Issues](https://github.com/disouz4-dev/Nexus-Modeler/issues)
+sem você precisar de conta no GitHub: vai a versão, o sistema e o que você
+escreveu, sem nenhum dado pessoal. Se o Nexus fechar sozinho, na próxima vez
+ele oferece mandar o relatório do travamento.
+
 ## Como instalar
 
 Pelo site, cada sistema tem o botão do instalador e o comando do terminal:
@@ -253,7 +275,7 @@ https://disouz4-dev.github.io/Nexus-Modeler/#sistemas
 
 Os instaladores ficam na página de
 [lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest)
-(a primeira versão ainda não foi publicada). Depois de instalado, o Nexus
+(hoje, a versão de teste 0.1.0-beta.1). Depois de instalado, o Nexus
 avisa sozinho quando sai uma versão nova e instala com um clique.
 
 ### Windows
