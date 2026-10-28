@@ -112,7 +112,7 @@ if(WIN32)
   target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1 JUCE_USE_WINRT_MIDI=1)
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   # Internet (TONE3000) no Linux pelo curl, carregado só quando usado.
-  target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1 JUCE_USE_CURL=1 JUCE_LOAD_CURL_SYMBOLS_LAZILY=1)
+target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1 JUCE_USE_CURL=1 JUCE_LOAD_CURL_SYMBOLS_LAZILY=1)
 else()
   target_compile_definitions(NexusModeler PUBLIC JUCE_USE_CURL=0)
 endif()

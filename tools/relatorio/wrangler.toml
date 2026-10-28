@@ -1,0 +1,16 @@
+# Ponte dos relatórios do Nexus Modeler para os issues do GitHub.
+# Publicar: npx wrangler deploy  (veja LEIA-ME.md)
+name = "nexus-relatorio"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+REPOSITORIO = "disouz4-dev/Nexus-Modeler"
+
+# Limite por computador (endereço de rede): 3 relatórios por minuto.
+[[ratelimits]]
+name = "LIMITE"
+namespace_id = "2701"
+  [ratelimits.simple]
+  limit = 3
+  period = 60

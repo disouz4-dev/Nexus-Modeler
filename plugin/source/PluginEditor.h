@@ -6,6 +6,7 @@
 #include <set>
 
 #include "PluginProcessor.h"
+#include "report/Report.h"
 #include "ui/AudioPanel.h"
 #include "ui/CapturePanel.h"
 #include "ui/GearBrowser.h"
@@ -202,6 +203,7 @@ private:
   void landPack(const juce::File& folder);
   void loadPackInto(Selection target, int channel, const juce::File& folder);
   void loadHeadChannels(int rig);
+  void showReportResult(const nexus::report::Sent& sent);
   // Captura padrão: peça vazia (pedal, canal do cabeçote, caixa) recebe a
   // padrão das recomendadas; se ainda não foi baixada e a conta da TONE3000
   // está conectada, baixa sozinha. Quem quiser outra troca pelo pacote.

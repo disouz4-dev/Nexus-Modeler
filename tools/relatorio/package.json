@@ -1,0 +1,6 @@
+{
+  "name": "nexus-relatorio",
+  "private": true,
+  "description": "Ponte dos relatórios do Nexus Modeler para os issues do GitHub",
+  "devDependencies": { "wrangler": "4.40.0" }
+}

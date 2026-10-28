@@ -1716,9 +1716,8 @@ void NexusEditor::showAbout()
 void NexusEditor::reportProblem()
 {
   auto* w = new juce::AlertWindow(TRANS(juce::String::fromUTF8("Reportar um problema")),
-                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus abre o GitHub com o relatório "
-                                                               "preenchido (versão, sistema e os últimos erros registrados); é só conferir e enviar. "
-                                                               "Precisa de uma conta no GitHub.")),
+                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema "
+                                                               "e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta.")),
                                   juce::MessageBoxIconType::NoIcon, this);
   w->addTextEditor("texto", {}, {});
   if (auto* editor = w->getTextEditor("texto"))
@@ -1727,13 +1726,15 @@ void NexusEditor::reportProblem()
     editor->setReturnKeyStartsNewLine(true);
     editor->setSize(460, 120);
   }
-  w->addButton(TRANS(juce::String::fromUTF8("Abrir no GitHub")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
+  w->addButton(TRANS(juce::String::fromUTF8("Enviar relatório")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
   w->addButton(TRANS("Cancelar"), 0, juce::KeyPress(juce::KeyPress::escapeKey));
-  w->enterModalState(true, juce::ModalCallbackFunction::create([w](int result) {
+  auto safe = juce::Component::SafePointer<NexusEditor>(this);
+  w->enterModalState(true, juce::ModalCallbackFunction::create([w, safe](int result) {
     if (result == 1)
     {
       const auto text = w->getTextEditorContents("texto").trim();
-      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60));
+      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60),
+                          [safe](nexus::report::Sent sent) { if (safe != nullptr) safe->showReportResult(sent); });
     }
   }), true);
 }
@@ -1748,12 +1749,22 @@ void NexusEditor::offerCrashReport()
     TRANS(juce::String::fromUTF8("Quer enviar o relatório para o GitHub? Ele leva a versão, o sistema e onde o programa parou, "
                                  "sem nenhum dado pessoal. Isso ajuda a corrigir o problema.")),
     TRANS(juce::String::fromUTF8("Enviar relatório")), TRANS(juce::String::fromUTF8("Agora não")), this,
-    juce::ModalCallbackFunction::create([crash](int ok) {
+    juce::ModalCallbackFunction::create([crash, safe = juce::Component::SafePointer<NexusEditor>(this)](int ok) {
       if (ok != 0)
-        nexus::report::send(nexus::report::Kind::crash,
-                            juce::String::fromUTF8("O Nexus fechou sozinho. (Se lembrar, conte aqui o que estava fazendo.)"),
-                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30));
+        nexus::report::send(nexus::report::Kind::crash, juce::String::fromUTF8("O Nexus fechou sozinho."),
+                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30),
+                            [safe](nexus::report::Sent sent) { if (safe != nullptr) safe->showReportResult(sent); });
     }));
+}
+
+void NexusEditor::showReportResult(const nexus::report::Sent& sent)
+{
+  if (sent.openedBrowser)
+    return; // o GitHub abriu no navegador: a pessoa termina lá
+  juce::AlertWindow::showMessageBoxAsync(
+    juce::MessageBoxIconType::InfoIcon, TRANS(juce::String::fromUTF8("Relatório enviado")),
+    TRANS(juce::String::fromUTF8("Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá.")).replace("%1", "#" + juce::String(sent.number)),
+    "OK", this);
 }
 
 void NexusEditor::showAudioPanel(bool show)
