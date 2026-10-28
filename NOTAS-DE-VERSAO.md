@@ -148,6 +148,12 @@
 - A separação roda em prioridade baixa, em no máximo 6 linhas e sem as
   linhas extras do Accelerate: o áudio e a tela seguem leves enquanto separa
   (medido: o áudio cabe no tempo do bloco com uma separação rodando).
+- Linux: tocar a música e a guitarra enquanto outra música é separada não
+  engasga mais. A separação usa no máximo 3 linhas no Linux (lá o áudio quase
+  nunca tem prioridade de tempo real) e o ajuste de velocidade e tom espalha
+  a conta pelos blocos em vez de pesar num bloco só. Medido com a Focusrite a
+  128 amostras: de cerca de 170 estouros em 29 s para nenhum; a separação
+  ficou só 15% mais lenta.
 - Player: tocar/pausar (barra de espaço), voltar ao começo, forma da música
   (clique pula; arrastar marca o trecho A–B), "Repetir A–B", volume, mudo e
   solo por faixa com medidor, velocidade 50–100% sem mudar o tom, tom −6 a +6

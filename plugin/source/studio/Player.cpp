@@ -51,7 +51,11 @@ void Player::prepare(double hostRate, int maxBlock)
   for (auto* v : {&mOutL, &mOutR})
     v->assign(static_cast<size_t>(mMaxBlock), 0.0f);
   mStretch = std::make_unique<Stretch>();
-  mStretch->presetDefault(2, static_cast<float>(kSeparationRate));
+  // Trabalho dividido: a conta de cada passo (a cada 30 ms) se espalha pelos
+  // blocos seguintes em vez de cair inteira num bloco só. Sem isso, com bloco
+  // de 64 ou 128, um bloco a cada 30 ms pesava até 0,7 ms a mais e a guitarra
+  // engasgava. Custa 30 ms a mais de atraso na música, que não se nota.
+  mStretch->presetDefault(2, static_cast<float>(kSeparationRate), true);
   mAppliedSemitones = 0x7fff;
   mFraction = 0.0;
 }
