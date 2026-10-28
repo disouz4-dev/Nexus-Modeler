@@ -8,6 +8,7 @@
 #include <juce_dsp/juce_dsp.h>
 
 #include "ChainLayout.h"
+#include "fx/PitchDrop.h"
 #include "MidiMap.h"
 #include "TestSource.h"
 #include "studio/Player.h"
@@ -57,7 +58,8 @@ public:
   static constexpr int kChannels = 3;
   // Visuais de pedal: 0 a 3 tocam captura (drive); 4 em diante são efeitos
   // do próprio Nexus (chorus, delay, reverb), com os botões "a", "b" e "c".
-  static constexpr int kPedalLooks = 8;
+  static constexpr int kPedalLooks = 9;
+  static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
   static constexpr int kAmpLooks = 6;
   static constexpr int kMarkFive = 1;
@@ -195,6 +197,9 @@ private:
     std::atomic<float>* visual = nullptr;
     std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
     nexus::NativePedal native;
+    std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
+    float dropMix = 0.0f;
+    float dropSemitones = 0.0f;
   };
 
   // Estado de áudio de cada cabeçote: troca de canal com aquecimento.
@@ -231,6 +236,7 @@ private:
   void clearSlot(int slot);
   void runEngines(double* buffer, int numFrames);
   void runPedal(int pedal, double* buffer, int n);
+  void runDrop(int pedal, double* buffer, int n);
   void runRigs(double* buffer, int n);
   void runRig(int rig, double* buffer, int n);
   void runAmp(int rig, double* buffer, int n);
@@ -271,6 +277,7 @@ private:
   bool mNeedsResampling = false;
   std::vector<double> mMono, mMonoOut, mDry, mChannelIn, mChannelOut, mRigIn;
   std::vector<float> mCabFloat;
+  std::vector<float> mDropFloat; // pedal de drop (o motor trabalha em float)
 
   // Carregamento em segundo plano.
   juce::ThreadPool mLoader{1};

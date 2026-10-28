@@ -373,6 +373,8 @@ countries: bd in
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "ধন্যবাদ! রিপোর্টটি GitHub-এ issue %1 হয়েছে, আমরা সেখানে দেখব।"
 "Enviar relatório" = "রিপোর্ট পাঠান"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "কী হয়েছে আর আপনি কী করছিলেন লিখুন। Nexus সংস্করণ, সিস্টেম ও সাম্প্রতিক ত্রুটি পাঠায়, কোনো ব্যক্তিগত তথ্য ছাড়াই। অ্যাকাউন্ট লাগবে না।"
+"Afinação" = "পিচ"
+"DROP" = "ড্রপ"
 "Ritmo" = "রিদম"
 "RITMO" = "রিদম"
 "Solo" = "লিড"

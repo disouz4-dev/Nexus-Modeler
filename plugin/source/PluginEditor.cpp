@@ -16,7 +16,8 @@ constexpr int kPathHeight = 176;
 constexpr int kTitleHeight = 112;
 
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
-                                                               "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate"};
+                                                               "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
+                                                               "cherry_drop"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
@@ -95,11 +96,12 @@ void drawLed(juce::Graphics& g, juce::Point<float> c, float r)
 
 juce::String nativeKnobLabel(int look, const juce::String& id)
 {
-  static const char* const names[4][3] = {{"Velocidade", "Profundidade", "Mistura"},
+  static const char* const names[5][3] = {{"Velocidade", "Profundidade", "Mistura"},
                                          {"Tempo", "Repetições", "Mistura"},
                                          {"Tamanho", "Tom", "Mistura"},
-                                         {"Sensibilidade", "Ataque", "Release"}};
-  const int type = juce::jlimit(0, 3, look - NexusProcessor::kFirstNativeLook);
+                                         {"Sensibilidade", "Ataque", "Release"},
+                                         {"Drop", "Mistura", ""}};
+  const int type = juce::jlimit(0, 4, look - NexusProcessor::kFirstNativeLook);
   const int knob = id == "a" ? 0 : id == "b" ? 1 : 2;
   return juce::String::fromUTF8(names[type][knob]);
 }
@@ -1187,6 +1189,7 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Coconut Delay", "DD-3", "Delay", "Efeito do Nexus"},
   {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
   {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
+  {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.
@@ -1255,7 +1258,8 @@ void NexusEditor::refreshBrowser()
     amp.kind = GearItem::Kind::amp;
     amp.look = i;
     amp.art = &mAmpArts[static_cast<size_t>(i)];
-    amp.name = mAmpArts[static_cast<size_t>(i)].name;
+    amp.name = mAmpArts[static_cast<size_t>(i)].name.isNotEmpty() ? mAmpArts[static_cast<size_t>(i)].name
+                                                                  : juce::String(kAmpPrefixes[i]);
     amp.inspiration = kAmpInfo[i].inspiration;
     amp.category = TRANS(juce::String::fromUTF8(kAmpInfo[i].category));
     amp.source = "Captura da TONE3000";

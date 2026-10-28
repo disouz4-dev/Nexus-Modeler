@@ -373,6 +373,8 @@ countries: cn sg
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "谢谢！报告已成为 GitHub 上的 issue %1，我们会在那里处理。"
 "Enviar relatório" = "发送报告"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "请说明发生了什么以及你当时在做什么。Nexus 会一并发送版本、系统和最近的错误记录，不含个人数据。无需账号。"
+"Afinação" = "音高"
+"DROP" = "降调"
 "Ritmo" = "节奏"
 "RITMO" = "节奏"
 "Solo" = "独奏"

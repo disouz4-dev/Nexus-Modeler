@@ -201,7 +201,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
-                                                     "Coconut Delay", "Grape Reverb", "Pear Gate"}, 0));
+                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -263,9 +263,16 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   }
   mOutputGain = juce::Decibels::decibelsToGain(mOutput->load());
   mInputGain = juce::Decibels::decibelsToGain(mInput->load());
+  mDropFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
   for (auto& p : mPedals)
   {
     p.native.prepare(kEngineRate, kEngineBlock);
+    // Drop: janela de 384 amostras (8 ms de atraso), a escolhida de ouvido
+    // entre 256, 384, 512 e 1024 com o riff Pesado descendo 5 semitons.
+    if (!p.drop)
+      p.drop = std::make_unique<nexus::fx::PitchDrop>();
+    p.drop->prepare(kEngineRate, kEngineBlock, 384);
+    p.dropMix = 0.0f;
     p.mix = p.on->load() > 0.5f ? 1.0f : 0.0f;
     const float l = p.levelParam->load() / 5.0f;
     p.level = l * l;
@@ -365,9 +372,42 @@ struct LoadTimer
 };
 } // namespace
 
+void NexusProcessor::runDrop(int pedal, double* buffer, int n)
+{
+  // Cherry Drop: botão A escolhe o drop (1 a 7 semitons, oitava, oitava com o
+  // som limpo); botão B é a mistura (10 = só o som com o tom baixado).
+  auto& p = mPedals[static_cast<size_t>(pedal)];
+  const float target = p.on->load() > 0.5f ? 1.0f : 0.0f;
+  if (target == 0.0f && p.dropMix == 0.0f)
+    return;
+  if (target == 1.0f && p.dropMix == 0.0f)
+    p.drop->reset(); // liga limpo, sem resto da última vez
+  const int sel = juce::jlimit(0, 8, juce::roundToInt(p.fx[0]->load() / 10.0f * 8.0f));
+  const float semis = sel < 7 ? -static_cast<float>(sel + 1) : -12.0f;
+  if (semis != p.dropSemitones)
+  {
+    p.dropSemitones = semis;
+    p.drop->setSemitones(semis);
+  }
+  const float wet = juce::jlimit(0.0f, 1.0f, p.fx[1]->load() / 10.0f);
+  const float dryKeep = sel == 8 ? 1.0f : 1.0f - wet; // oitava com o limpo: o limpo fica inteiro
+  for (int i = 0; i < n; ++i)
+    mDropFloat[static_cast<size_t>(i)] = static_cast<float>(buffer[i]);
+  p.drop->process(mDropFloat.data(), n);
+  const float mixStep = static_cast<float>(1.0 / (kPedalFadeSeconds * kEngineRate));
+  for (int i = 0; i < n; ++i)
+  {
+    p.dropMix = target > p.dropMix ? std::min(target, p.dropMix + mixStep) : std::max(target, p.dropMix - mixStep);
+    const double effect = buffer[i] * dryKeep + mDropFloat[static_cast<size_t>(i)] * wet;
+    buffer[i] = buffer[i] * (1.0 - p.dropMix) + effect * p.dropMix;
+  }
+}
+
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
   const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
+  if (pedalLook(pedal) == kDropLook)
+    return runDrop(pedal, buffer, n);
   // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {

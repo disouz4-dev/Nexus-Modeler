@@ -373,6 +373,8 @@ countries: id
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "Terima kasih! Laporan menjadi issue %1 di GitHub, dan kami akan menanganinya di sana."
 "Enviar relatório" = "Kirim laporan"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "Ceritakan apa yang terjadi dan apa yang sedang kamu lakukan. Nexus mengirim versi, sistem, dan error terakhir, tanpa data pribadi. Tidak perlu akun."
+"Afinação" = "Nada"
+"DROP" = "DROP"
 "Ritmo" = "Ritme"
 "RITMO" = "RITME"
 "Solo" = "Lead"

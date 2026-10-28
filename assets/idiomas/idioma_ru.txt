@@ -373,6 +373,8 @@ countries: ru
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "Спасибо! Отчёт стал задачей %1 на GitHub, там мы им и займёмся."
 "Enviar relatório" = "Отправить отчёт"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "Расскажите, что случилось и что вы делали. Nexus отправит версию, систему и последние ошибки, без личных данных. Аккаунт не нужен."
+"Afinação" = "Строй"
+"DROP" = "ДРОП"
 "Ritmo" = "Ритм"
 "RITMO" = "РИТМ"
 "Solo" = "Соло"

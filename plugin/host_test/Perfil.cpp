@@ -18,6 +18,7 @@
 #include "nexus/TestSignal.h"
 #include "nexus/Pack.h"
 #include "../source/report/Report.h"
+#include "../source/fx/PitchDrop.h"
 #include "NAM/dsp.h"
 
 namespace
@@ -60,6 +61,74 @@ int main(int argc, char** argv)
   }
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
+
+  // NEXUS_PERFIL_DROP=<pasta>: mudança de tom para baixo (drop) da gravação
+  // argv[4] com o Signalsmith Stretch em janelas de tamanhos diferentes. Mostra
+  // o atraso de cada uma e grava drop_<janela>_<semitons>.wav para ouvir.
+  if (const auto outDir = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_DROP", {}); outDir.isNotEmpty())
+  {
+    std::vector<float> in(guitar.begin(), guitar.end());
+    for (int window : {256, 384, 512, 768, 1024, 2048})
+      for (int semis : {-2, -5, -12})
+      {
+        nexus::fx::PitchDrop drop;
+        drop.prepare(rate, block, window);
+        drop.setSemitones(static_cast<float>(semis));
+        std::vector<double> out;
+        std::vector<float> a(static_cast<size_t>(block));
+        const double t0 = juce::Time::getMillisecondCounterHiRes();
+        for (size_t k = 0; k + static_cast<size_t>(block) <= in.size(); k += static_cast<size_t>(block))
+        {
+          std::copy(in.begin() + static_cast<long>(k), in.begin() + static_cast<long>(k) + block, a.begin());
+          drop.process(a.data(), block);
+          for (float v : a)
+            out.push_back(v);
+        }
+        const double ms = juce::Time::getMillisecondCounterHiRes() - t0;
+        std::printf("janela %4d, %+3d semitons: atraso %5.1f ms | processador %4.1f%% de um núcleo\n", window, semis,
+                    1000.0 * drop.latencySamples() / rate, 100.0 * ms / (1000.0 * static_cast<double>(in.size()) / rate));
+        wav::write(juce::File(outDir).getChildFile("drop_" + juce::String(window) + "_" + juce::String(-semis) + ".wav").getFullPathName().toStdString(), out, rate);
+      }
+    return 0;
+  }
+
+  // NEXUS_PERFIL_CHERRY=<arquivo.wav>: o Cherry Drop dentro do Nexus (pedal 1,
+  // drop de NEXUS_PERFIL_SEMITONS, padrão 5, mistura 10), só ele na cadeia.
+  if (const auto outFile = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_CHERRY", {}); outFile.isNotEmpty())
+  {
+    const int semis = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_SEMITONS", "5").getIntValue();
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, rate, block);
+    q.prepareToPlay(rate, block);
+    ChainLayout l;
+    l.pre = {0};
+    q.setLayout(l);
+    setParam(q, "p1_visual", static_cast<float>(NexusProcessor::kDropLook));
+    setParam(q, "p1_ligado", 1.0f);
+    setParam(q, "p1_a", (semis >= 12 ? 7.0f : static_cast<float>(semis - 1)) * 10.0f / 8.0f);
+    setParam(q, "p1_b", 10.0f);
+    juce::AudioBuffer<float> buf(2, block);
+    juce::MidiBuffer m;
+    for (int t = 0; t < 100; ++t)
+    {
+      buf.clear();
+      q.processBlock(buf, m);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(1);
+    }
+    std::vector<double> out;
+    for (size_t k = 0; k + static_cast<size_t>(block) <= guitar.size(); k += static_cast<size_t>(block))
+    {
+      for (int c = 0; c < 2; ++c)
+        for (int i = 0; i < block; ++i)
+          buf.setSample(c, i, static_cast<float>(guitar[k + static_cast<size_t>(i)]));
+      q.processBlock(buf, m);
+      for (int i = 0; i < block; ++i)
+        out.push_back(buf.getSample(0, i));
+    }
+    wav::write(outFile.toStdString(), out, rate);
+    std::printf("gravado %s (%d semitons)\n", outFile.toRawUTF8(), semis);
+    return 0;
+  }
 
   // NEXUS_PERFIL_ZERO=1: o JACK do PipeWire avisa taxa e bloco 0 ao religar;
   // o processamento não pode prender. Mede quanto tempo cada bloco leva.

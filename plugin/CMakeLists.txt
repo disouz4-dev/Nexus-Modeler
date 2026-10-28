@@ -78,6 +78,7 @@ set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
   source/studio/Library.cpp
   source/studio/Player.cpp
+  source/fx/PitchDrop.cpp
   source/TestSource.cpp
   source/MidiMap.cpp)
 target_sources(NexusModeler PRIVATE
