@@ -37,8 +37,8 @@
     tempo.
 - Blueberry Chain: delays digitais em cadeia (um alimenta o outro). Botões
   de tempo, feedback e repetição; chave 2 | 3 escolhe dois ou três delays e
-  chave x | / faz cada delay dobrar ou cair pela metade do anterior (25, 50 e
-  100 ms ou 100, 50 e 25 ms). Segue o tap tempo.
+  chave x | / faz cada delay repetir o dobro ou a metade de vezes do anterior
+  (4, 8 e 16 repetições ou 4, 2 e 1). Todos no mesmo tempo; segue o tap tempo.
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
   Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).

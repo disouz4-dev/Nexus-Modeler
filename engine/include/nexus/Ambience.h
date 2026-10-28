@@ -195,13 +195,15 @@ public:
   {
     bool on = true;        // desligado, o som passa direto por este delay
     double seconds = 0.25; // tempo da repetição (até 3 s)
-    double repeats = 0.5;  // feedback, de 0 a 1
+    double repeats = 4.0;  // quantas repetições até sumir (cair 40 dB)
     double level = 0.4;    // volume da repetição, de 0 a 1
   };
   void prepare(double sampleRate);
   void reset();
   // Tempo do primeiro delay para a posição do botão (de 0 a 1): 20 ms a 1 s.
   static double secondsFor(double time);
+  // Feedback que faz o som repetir "count" vezes até cair 40 dB.
+  static double feedbackFor(double count);
   // in: o que entra (já com o liga/desliga); wet: só o que os delays somam.
   void process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages);
 
@@ -211,7 +213,7 @@ private:
     DelayLine line;
     double delay = 0.0; // em amostras (escorrega até o tempo novo)
     double low = 0.0, high = 0.0;
-    double repeats = 0.5, level = 0.0; // suavizados
+    double feedback = 0.0, level = 0.0; // suavizados
   };
   double mRate = 48000.0;
   std::array<Line, kStages> mLines;

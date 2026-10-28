@@ -878,20 +878,20 @@ int main(int argc, char** argv)
              juce::String::fromUTF8("diferença: ") + juce::String(gap, 1) + " dB");
     }
     {
-      // 120 BPM, sem feedback. Chave x com o tempo em 1/16: delays em 125,
-      // 250 e 500 ms; chave / com o tempo em 1/4: 500, 250 e 125 ms. Em série,
-      // o som passa pelos três: aparece uma repetição em 125 + 250 + 500 = 875 ms.
-      auto chain = [&](bool multiply, bool three) {
+      // 120 BPM, tempo em 1/4 (500 ms): os três delays no mesmo tempo, então
+      // toda repetição cai em múltiplos de 500 ms. A chave x | / muda quantas
+      // vezes cada um repete: no x o rastro dura muito mais que no /.
+      auto chain = [&](bool multiply, bool three, float feedback) {
         auto p = make(22, 0, true);
         setParam(*p, "andamento", 120.0f);
         setParam(*p, "p1_sinc", 1.0f);
-        setParam(*p, "p1_a", multiply ? 8.75f : 2.5f);
-        setParam(*p, "p1_b", 0.0f);
+        setParam(*p, "p1_a", 2.5f);
+        setParam(*p, "p1_b", feedback);
         setParam(*p, "p1_c", 10.0f);
         setParam(*p, "p1_multiplica", multiply ? 1.0f : 0.0f);
         setParam(*p, "p1_tres", three ? 1.0f : 0.0f);
         play(*p, std::vector<double>(48000, 0.0));
-        std::vector<double> click(72000, 0.0);
+        std::vector<double> click(192000, 0.0);
         for (int i = 0; i < 48; ++i)
           click[static_cast<size_t>(1000 + i)] = 0.3 * std::sin(i / 48.0 * 3.14159);
         return play(*p, click);
@@ -903,23 +903,24 @@ int main(int argc, char** argv)
           best = std::max(best, std::abs(out[i]));
         return best;
       };
-      auto present = [&](const std::vector<float>& out, std::initializer_list<double> on, std::initializer_list<double> off) {
-        float low = 1.0f, high = 0.0f;
-        for (double ms : on)
-          low = std::min(low, peakAt(out, ms));
-        for (double ms : off)
-          high = std::max(high, peakAt(out, ms));
-        return std::pair<float, float>{low, high};
+      auto tailDb = [](const std::vector<float>& out) {
+        double sum = 0.0;
+        for (size_t i = 96000; i < 144000; ++i)
+          sum += static_cast<double>(out[i]) * out[i];
+        return 10.0 * std::log10(sum / 48000.0 + 1e-20);
       };
-      const auto [timesLow, timesHigh] = present(chain(true, true), {125.0, 250.0, 500.0, 875.0}, {1100.0});
-      report(timesLow > 0.01f && timesHigh < timesLow * 0.1f, "Chave x: 125, 250 e 500 ms, e a cascata dos três em 875 ms",
-             juce::String::fromUTF8("menor pico esperado: ") + juce::String(timesLow, 3) + ", fora: " + juce::String(timesHigh, 4));
-      const auto [divLow, divHigh] = present(chain(false, true), {500.0, 250.0, 125.0, 875.0}, {1100.0});
-      report(divLow > 0.01f && divHigh < divLow * 0.1f, "Chave /: 500, 250 e 125 ms, e a cascata em 875 ms",
-             juce::String::fromUTF8("menor pico esperado: ") + juce::String(divLow, 3) + ", fora: " + juce::String(divHigh, 4));
-      const auto [twoLow, twoHigh] = present(chain(true, false), {125.0, 250.0, 375.0}, {500.0, 875.0});
-      report(twoLow > 0.01f && twoHigh < twoLow * 0.1f, "Chave em 2: só dois delays (125 e 250 ms), sem o de 500 ms",
-             juce::String::fromUTF8("menor pico esperado: ") + juce::String(twoLow, 3) + ", terceiro: " + juce::String(twoHigh, 4));
+      const auto grid = chain(true, true, 0.0f);
+      const float onGrid = std::min({peakAt(grid, 500.0), peakAt(grid, 1000.0), peakAt(grid, 1500.0)});
+      const float offGrid = std::max(peakAt(grid, 250.0), peakAt(grid, 750.0));
+      report(onGrid > 0.01f && offGrid < onGrid * 0.1f, "Os três delays no mesmo tempo: repetições em 500, 1000 e 1500 ms",
+             juce::String::fromUTF8("menor pico: ") + juce::String(onGrid, 3) + ", fora do tempo: " + juce::String(offGrid, 4));
+      const double times = tailDb(chain(true, true, 3.0f));
+      const double divide = tailDb(chain(false, true, 3.0f));
+      report(times - divide > 10.0, "Chave x repete muito mais que a chave / (rastro de 2 a 3 s)",
+             juce::String::fromUTF8("x: ") + juce::String(times, 1) + " dB, /: " + juce::String(divide, 1) + " dB");
+      const double two = tailDb(chain(true, false, 3.0f));
+      report(times - two > 3.0, "Chave em 2: sem o terceiro delay o rastro acaba antes",
+             juce::String::fromUTF8("3: ") + juce::String(times, 1) + " dB, 2: " + juce::String(two, 1) + " dB");
     }
     {
       auto p = make(22, 0, true);

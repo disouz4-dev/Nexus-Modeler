@@ -774,7 +774,7 @@ void TripleDelay::reset()
     l.line.clear();
     l.delay = 0.0;
     l.low = l.high = 0.0;
-    l.level = 0.0;
+    l.feedback = l.level = 0.0;
   }
 }
 
@@ -783,17 +783,25 @@ double TripleDelay::secondsFor(double time)
   return 0.02 * std::pow(50.0, std::clamp(time, 0.0, 1.0)); // 20 ms a 1 s
 }
 
+double TripleDelay::feedbackFor(double count)
+{
+  if (count < 0.5)
+    return 0.0;
+  return std::min(0.95, std::pow(0.01, 1.0 / count));
+}
+
 void TripleDelay::process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages)
 {
   // Digital: repetições limpas, só um corte suave de agudo e de grave para
   // a cascata não embolar.
   const double lowCoef = onePole(7500.0, mRate);
   const double highCoef = onePole(50.0, mRate);
-  std::array<double, kStages> targets{};
+  std::array<double, kStages> targets{}, feedbacks{};
   for (int k = 0; k < kStages; ++k)
   {
     const auto& s = stages[static_cast<size_t>(k)];
     targets[static_cast<size_t>(k)] = std::clamp(s.seconds, 0.001, 3.0) * mRate;
+    feedbacks[static_cast<size_t>(k)] = feedbackFor(s.repeats);
     auto& l = mLines[static_cast<size_t>(k)];
     if (l.delay <= 0.0)
       l.delay = targets[static_cast<size_t>(k)];
@@ -806,17 +814,16 @@ void TripleDelay::process(const double* in, double* wet, int n, const std::array
     {
       const auto& s = stages[static_cast<size_t>(k)];
       auto& l = mLines[static_cast<size_t>(k)];
-      l.repeats = smooth(l.repeats, s.repeats, mRate);
-      // Repetição: 10 = na altura do som que entra. Desligado, o delay para de
+      l.feedback = smooth(l.feedback, feedbacks[static_cast<size_t>(k)], mRate);
+      // Repetição: volume do eco (os três somados ficam perto do som seco). Desligado, o delay para de
       // receber, mas o que já está nele continua soando até acabar.
-      l.level = smooth(l.level, 0.8 * s.level, mRate);
+      l.level = smooth(l.level, 0.55 * s.level, mRate);
       l.delay += (targets[static_cast<size_t>(k)] - l.delay) * 0.0006;
       const double echo = l.line.read(std::max(1.0, l.delay));
       l.low += (echo - l.low) * lowCoef;
       l.high += (l.low - l.high) * highCoef;
       const double shaped = l.low - l.high;
-      const double fb = 0.92 * l.repeats;
-      l.line.push(std::tanh((s.on ? x : 0.0) + shaped * fb));
+      l.line.push(std::tanh((s.on ? x : 0.0) + shaped * l.feedback));
       x += shaped * l.level;
     }
     wet[i] = x - in[i];

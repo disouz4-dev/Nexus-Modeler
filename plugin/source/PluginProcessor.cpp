@@ -463,19 +463,21 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
     auto& p = mPedals[static_cast<size_t>(pedal)];
     if (pedalKind(look) == PedalKind::triple)
     {
-      // Delays em série: o primeiro no tempo do botão (ou na divisão do
-      // andamento); cada um seguinte no dobro (x) ou na metade (/) do anterior.
+      // Delays em série, todos no tempo do botão (ou na divisão do andamento).
+      // O feedback dá quantas vezes o primeiro repete (de 1 a 8); cada um
+      // seguinte repete o dobro (x) ou a metade (/) de vezes do anterior.
       const float knob = p.fx[0]->load();
-      const double first = p.sync->load() > 0.5f ? divisionBeats(divisionFor(knob)) * 60.0 / tempoBpm()
-                                                 : nexus::TripleDelay::secondsFor(knob / 10.0);
+      const double seconds = p.sync->load() > 0.5f ? divisionBeats(divisionFor(knob)) * 60.0 / tempoBpm()
+                                                   : nexus::TripleDelay::secondsFor(knob / 10.0);
+      const double first = 1.0 + 7.0 * p.fx[1]->load() / 10.0;
       const double ratio = p.multiply->load() > 0.5f ? 2.0 : 0.5;
       std::array<nexus::TripleDelay::Stage, 3> stages{};
       for (size_t s = 0; s < 3; ++s)
       {
         auto& st = stages[s];
         st.on = s < 2 || p.three->load() > 0.5f;
-        st.seconds = first * std::pow(ratio, static_cast<double>(s));
-        st.repeats = p.fx[1]->load() / 10.0;
+        st.seconds = seconds;
+        st.repeats = first * std::pow(ratio, static_cast<double>(s));
         st.level = p.fx[2]->load() / 10.0;
       }
       p.native.setTriple(stages);
