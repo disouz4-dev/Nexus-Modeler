@@ -58,7 +58,7 @@ void Chorus::reset()
 void Chorus::process(double* buffer, int n, double rate, double depth, double mix)
 {
   // Velocidade de 0,1 a 6 Hz (curva para dar mais resolução no lento).
-  const double hz = 0.1 + 5.9 * rate * rate;
+  const double hz = syncHz > 0.0 ? syncHz : 0.1 + 5.9 * rate * rate;
   const double step = hz / mRate;
   for (int i = 0; i < n; ++i)
   {
@@ -86,7 +86,7 @@ void Chorus::process(double* buffer, int n, double rate, double depth, double mi
 void Delay::prepare(double sampleRate)
 {
   mRate = sampleRate;
-  mLine.prepare(static_cast<int>(1.3 * sampleRate));
+  mLine.prepare(static_cast<int>(3.1 * sampleRate)); // até 3 s com o andamento
   reset();
 }
 
@@ -100,7 +100,7 @@ void Delay::reset()
 void Delay::process(const double* input, double* wet, int n, double time, double feedback)
 {
   // Tempo de 40 ms a 1,2 s em curva (o meio do botão fica perto de 300 ms).
-  const double seconds = 0.04 * std::pow(30.0, time);
+  const double seconds = syncSeconds > 0.0 ? std::min(3.0, syncSeconds) : 0.04 * std::pow(30.0, time);
   const double target = seconds * mRate;
   if (mDelay <= 0.0)
     mDelay = target;
@@ -220,7 +220,7 @@ void Phaser::reset()
 void Phaser::process(double* buffer, int n, double rate, double depth, double feedback)
 {
   // 0,05 a 8 Hz; varredura de 200 Hz até 200 Hz x (2 a 16), em escala de oitavas.
-  const double hz = 0.05 + 7.95 * rate * rate;
+  const double hz = syncHz > 0.0 ? syncHz : 0.05 + 7.95 * rate * rate;
   const double step = hz / mRate;
   for (int i = 0; i < n; ++i)
   {
@@ -259,7 +259,7 @@ void Flanger::reset()
 void Flanger::process(double* buffer, int n, double rate, double depth, double feedback)
 {
   // 0,03 a 4 Hz (flanger gosta de lento); atraso de 0,4 ms até 0,4 + 6,6 ms.
-  const double hz = 0.03 + 3.97 * rate * rate;
+  const double hz = syncHz > 0.0 ? syncHz : 0.03 + 3.97 * rate * rate;
   const double step = hz / mRate;
   for (int i = 0; i < n; ++i)
   {
@@ -293,7 +293,7 @@ void Tremolo::reset()
 void Tremolo::process(double* buffer, int n, double rate, double depth, double shape)
 {
   // 1 a 12 Hz.
-  const double hz = 1.0 + 11.0 * rate;
+  const double hz = syncHz > 0.0 ? syncHz : 1.0 + 11.0 * rate;
   const double step = hz / mRate;
   for (int i = 0; i < n; ++i)
   {
@@ -331,7 +331,7 @@ void Vibe::process(double* buffer, int n, double rate, double intensity, double 
   // 0,5 a 10 Hz. Cada estágio tem a sua frequência (como as células de luz
   // do original, que nunca são iguais).
   static constexpr double kBase[4] = {90.0, 260.0, 720.0, 1900.0};
-  const double hz = 0.5 + 9.5 * rate * rate;
+  const double hz = syncHz > 0.0 ? syncHz : 0.5 + 9.5 * rate * rate;
   const double step = hz / mRate;
   const double rise = 1.0 - std::exp(-1.0 / (0.004 * mRate));
   const double fall = 1.0 - std::exp(-1.0 / (0.030 * mRate));
@@ -356,6 +356,12 @@ void Vibe::process(double* buffer, int n, double rate, double intensity, double 
 }
 
 // ---------------------------------------------------------------- NativePedal
+
+void NativePedal::setSync(double hz, double seconds)
+{
+  mChorus.syncHz = mPhaser.syncHz = mFlanger.syncHz = mTremolo.syncHz = mVibe.syncHz = hz;
+  mDelay.syncSeconds = seconds;
+}
 
 void NativePedal::prepare(double sampleRate, int maxBlock)
 {

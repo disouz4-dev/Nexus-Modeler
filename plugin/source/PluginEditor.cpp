@@ -230,6 +230,27 @@ NexusEditor::GearStage::GearStage(NexusProcessor& p, Kind kind)
 : mProcessor(p)
 , mKind(kind)
 {
+  // Andamento (só nos pedais de modulação e no delay; refreshTempo mostra).
+  addChildComponent(mSync);
+  mSync.setButtonText(TRANS("Sincronizar"));
+  mSync.setTooltip(TRANS(juce::String::fromUTF8("A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)")));
+  mSync.setColour(juce::TextButton::buttonOnColourId, colour::accent.withAlpha(0.35f));
+  mSync.onClick = [this] {
+    if (auto* param = mProcessor.params.getParameter(NexusProcessor::pedalParam(mIndex, "sinc")))
+      param->setValueNotifyingHost(param->getValue() > 0.5f ? 0.0f : 1.0f);
+    refreshTempo();
+    repaint();
+  };
+  addChildComponent(mTap);
+  mTap.setTooltip(TRANS(juce::String::fromUTF8("Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira.")));
+  mTap.onClick = [this] {
+    if (auto* param = mProcessor.params.getParameter("tap"))
+      param->setValueNotifyingHost(param->getValue() > 0.5f ? 0.0f : 1.0f);
+  };
+  mTap.onRightClick = [this] {
+    if (onMidiMenu)
+      onMidiMenu("tap", mTap);
+  };
 }
 
 juce::String NexusEditor::GearStage::paramFor(const juce::String& knobId) const
@@ -269,12 +290,37 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
           label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
         auto knob = std::make_unique<FilmKnob>(*param, k, label);
         knob->onChange = [this] { repaint(); };
+        // Sincronizado ao andamento: a velocidade (ou o tempo do delay) vira divisão.
+        if (mKind == Kind::pedal && k.id == "a" && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index)))
+          knob->valueText = [this](float v) {
+            return mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f
+                     ? juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(v)))
+                     : juce::String();
+          };
         knob->onMidiMenu = [this](const juce::String& id, juce::Component& c) { if (onMidiMenu) onMidiMenu(id, c); };
         addAndMakeVisible(*knob);
         mKnobs.push_back(std::move(knob));
       }
+  refreshTempo();
   resized();
   repaint();
+}
+
+void NexusEditor::GearStage::refreshTempo()
+{
+  const bool show = mKind == Kind::pedal && mArt != nullptr && NexusProcessor::syncsToTempo(mProcessor.pedalLook(mIndex));
+  mSync.setVisible(show);
+  mTap.setVisible(show);
+  if (!show)
+    return;
+  const bool on = mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f;
+  mSync.setToggleState(on, juce::dontSendNotification);
+  const auto bpm = juce::String(mProcessor.tempoBpm(), 1).replaceCharacter('.', ',') + " BPM";
+  // Dentro do programa de música, o andamento é o da música (o tap não vale).
+  const auto text = mProcessor.tempoFromHost() ? bpm + TRANS(juce::String::fromUTF8(" (música)")) : "TAP  " + bpm;
+  if (mTap.getButtonText() != text)
+    mTap.setButtonText(text);
+  mTap.setEnabled(!mProcessor.tempoFromHost());
 }
 
 bool NexusEditor::GearStage::pedalOn() const
@@ -307,6 +353,13 @@ void NexusEditor::GearStage::resized()
                                            box.getWidth() * mScale, box.getHeight() * mScale)
                       .toNearestInt());
   }
+  // Andamento: ao lado direito da peça, na altura do meio.
+  const auto body = juce::Rectangle<float>(mImage.getX() + mArt->body.getX() * mScale, mImage.getY() + mArt->body.getY() * mScale,
+                                           mArt->body.getWidth() * mScale, mArt->body.getHeight() * mScale);
+  const int x = juce::roundToInt(body.getRight()) + 40;
+  const int y = juce::roundToInt(body.getCentreY()) - 40;
+  mSync.setBounds(x, y, 170, 34);
+  mTap.setBounds(x, y + 46, 170, 34);
 }
 
 void NexusEditor::GearStage::paint(juce::Graphics& g)
@@ -2294,7 +2347,10 @@ void NexusEditor::timerCallback()
   mRail->repaint();
   mChain->repaint();
   if (mSel.kind == Kind::pedal)
+  {
+    mPedalStage->tick();
     mPedalStage->repaint();
+  }
 }
 
 void NexusEditor::layoutTitle()

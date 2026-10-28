@@ -423,3 +423,7 @@ countries: jp
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus は MIDI 機器を受信していません。フットスイッチを USB で接続するか、Bluetooth の場合は先に接続してください（通常の Bluetooth ペアリングだけでは MIDI は使えません）。"
 "Nenhuma pedaleira MIDI conectada" = "MIDI フットスイッチが接続されていません"
 "Conectar por Bluetooth" = "Bluetooth で接続"
+"Sincronizar" = "同期"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "速度がテンポに追従：ノブで音符の長さを選びます（1/4、1/8、1/16…）"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "曲に合わせて 3〜4 回タップ。右クリック：フットスイッチに割り当て。"
+" (música)" = "（曲）"

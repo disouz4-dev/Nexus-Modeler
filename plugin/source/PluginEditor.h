@@ -82,6 +82,8 @@ private:
     void mouseUp(const juce::MouseEvent&) override;
     void mouseMove(const juce::MouseEvent&) override;
     std::function<void(const juce::String&, juce::Component&)> onMidiMenu;
+    // Relógio da tela: atualiza o BPM mostrado no TAP.
+    void tick() { refreshTempo(); }
 
   private:
     juce::String paramFor(const juce::String& knobId) const;
@@ -96,6 +98,22 @@ private:
     std::vector<std::unique_ptr<nexus::ui::FilmKnob>> mKnobs;
     juce::Rectangle<float> mImage;
     float mScale = 1.0f;
+    // Andamento (modulações e delay): sincronizar e tap tempo. Botão direito
+    // no TAP liga uma pisada da pedaleira (aprender MIDI).
+    struct TapButton : juce::TextButton
+    {
+      std::function<void()> onRightClick;
+      void mouseDown(const juce::MouseEvent& e) override
+      {
+        if (e.mods.isPopupMenu() && onRightClick)
+          onRightClick();
+        else
+          juce::TextButton::mouseDown(e);
+      }
+    };
+    juce::TextButton mSync;
+    TapButton mTap;
+    void refreshTempo();
   };
 
   // Caixa grande, com o seletor Desligada / Captura / IR próprio.

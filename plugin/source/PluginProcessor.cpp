@@ -31,6 +31,7 @@ NexusProcessor::NexusProcessor()
     p.on = params.getRawParameterValue(pedalParam(i, "ligado"));
     p.lite = params.getRawParameterValue(pedalParam(i, "lite"));
     p.visual = params.getRawParameterValue(pedalParam(i, "visual"));
+    p.sync = params.getRawParameterValue(pedalParam(i, "sinc"));
     for (int k = 0; k < 3; ++k)
       p.fx[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, k == 0 ? "a" : k == 1 ? "b" : "c"));
   }
@@ -69,6 +70,10 @@ NexusProcessor::NexusProcessor()
   };
   for (auto* p : getParameters())
     p->addListener(this);
+  mTempo = params.getRawParameterValue("andamento");
+  for (int i = 0; i < getParameters().size(); ++i)
+    if (auto* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(getParameters()[i]); p != nullptr && p->paramID == "tap")
+      mTapIndex = i;
   mEqOn = params.getRawParameterValue("eq_ligado");
   for (int i = 0; i < nexus::FreeEq::kMaxBands; ++i)
   {
@@ -172,6 +177,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // 24 faixas. A tela usa as faixas na ordem em que são criadas.
   layout.add(std::make_unique<B>(juce::ParameterID{"eq_ligado", 1}, "EQ ligado", true));
   layout.add(std::make_unique<B>(juce::ParameterID{"afinador_mudo", 1}, "Afinador: mudo ao afinar", true));
+  layout.add(std::make_unique<P>(juce::ParameterID{"andamento", 1}, "Andamento (BPM)", juce::NormalisableRange<float>(40.0f, 240.0f, 0.1f), 120.0f));
+  // Cada mudança é um toque (o valor em si não importa): dá para aprender por MIDI.
+  layout.add(std::make_unique<B>(juce::ParameterID{"tap", 1}, "Tap tempo", false));
   layout.add(std::make_unique<P>(juce::ParameterID{"afinador_la", 1}, juce::String::fromUTF8("Afinador: lá de referência"),
                                  juce::NormalisableRange<float>(430.0f, 450.0f, 1.0f), 440.0f));
   {
@@ -205,6 +213,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "b"), 1}, name + "efeito B", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "c"), 1}, name + "efeito C", knob, 4.0f));
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "sinc"), 1}, name + "sincronizar com o andamento", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
                                                      "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Tangerine Phaser",
@@ -421,6 +430,17 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
     auto& p = mPedals[static_cast<size_t>(pedal)];
+    // Andamento: a velocidade (botão A) escolhe a divisão; no delay, o tempo.
+    if (p.sync->load() > 0.5f && syncsToTempo(look))
+    {
+      const double seconds = divisionBeats(divisionFor(p.fx[0]->load())) * 60.0 / tempoBpm();
+      if (pedalKind(look) == PedalKind::delay)
+        p.native.setSync(0.0, seconds);
+      else
+        p.native.setSync(1.0 / seconds, 0.0);
+    }
+    else
+      p.native.setSync(0.0, 0.0);
     using T = nexus::NativePedal::Type;
     T type = T::chorus;
     switch (pedalKind(look))
@@ -703,6 +723,13 @@ void NexusProcessor::publish(int slot)
 void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
   juce::ScopedNoDenormals noDenormals;
+  // Andamento do programa de música (quando ele manda): vale no lugar do tap.
+  double hostBpm = 0.0;
+  if (auto* head = getPlayHead())
+    if (const auto pos = head->getPosition())
+      if (const auto bpm = pos->getBpm())
+        hostBpm = *bpm;
+  mHostBpm.store(juce::JUCEApplicationBase::isStandaloneApp() ? 0.0 : hostBpm);
   // MIDI primeiro: canal, pedais, A/B e botões valem já neste bloco.
   mMidi->process(midiMessages);
   midiMessages.clear();
@@ -853,6 +880,52 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (int s = 0; s < kSlots; ++s)
     publish(s);
   mUiActiveRig.store(mRigNext >= 0 ? mRigNext : mRigCurrent);
+}
+
+const char* NexusProcessor::divisionName(int i)
+{
+  static const char* const names[kDivisions] = {"1/1", "1/2", "1/4", "1/8.", "1/6", "1/8", "1/12", "1/16", "1/32"};
+  return names[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+double NexusProcessor::divisionBeats(int i)
+{
+  static constexpr double beats[kDivisions] = {4.0, 2.0, 1.0, 0.75, 2.0 / 3.0, 0.5, 1.0 / 3.0, 0.25, 0.125};
+  return beats[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+double NexusProcessor::tempoBpm() const
+{
+  const double host = mHostBpm.load();
+  return host > 0.0 ? host : static_cast<double>(mTempo->load());
+}
+
+void NexusProcessor::parameterValueChanged(int index, float)
+{
+  if (index == mTapIndex)
+    tap();
+}
+
+void NexusProcessor::tap()
+{
+  // Toques com mais de 2 s de distância começam a contagem de novo.
+  const double now = juce::Time::getMillisecondCounterHiRes();
+  const double interval = now - mLastTap;
+  mLastTap = now;
+  if (interval > 2000.0 || interval < 150.0)
+  {
+    mTapCount = 0;
+    return;
+  }
+  mTapIntervals[static_cast<size_t>(mTapCount % static_cast<int>(mTapIntervals.size()))] = interval;
+  ++mTapCount;
+  const int n = std::min(mTapCount, static_cast<int>(mTapIntervals.size()));
+  double sum = 0.0;
+  for (int i = 0; i < n; ++i)
+    sum += mTapIntervals[static_cast<size_t>(i)];
+  const double bpm = juce::jlimit(40.0, 240.0, 60000.0 / (sum / n));
+  if (auto* tempo = params.getParameter("andamento"))
+    tempo->setValueNotifyingHost(tempo->convertTo0to1(static_cast<float>(bpm)));
 }
 
 double NexusProcessor::tunerSnapshot(float* dest, int count) const

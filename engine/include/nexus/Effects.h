@@ -32,6 +32,8 @@ private:
 class Chorus
 {
 public:
+  // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
+  double syncHz = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double mix);
@@ -49,6 +51,8 @@ private:
 class Delay
 {
 public:
+  // Andamento: tempo em segundos preso à divisão escolhida (0 = segue o botão).
+  double syncSeconds = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(const double* input, double* wet, int n, double time, double feedback);
@@ -93,6 +97,8 @@ private:
 class Phaser
 {
 public:
+  // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
+  double syncHz = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double feedback);
@@ -110,6 +116,8 @@ private:
 class Flanger
 {
 public:
+  // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
+  double syncHz = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double feedback);
@@ -127,6 +135,8 @@ private:
 class Tremolo
 {
 public:
+  // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
+  double syncHz = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double shape);
@@ -143,6 +153,8 @@ private:
 class Vibe
 {
 public:
+  // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
+  double syncHz = 0.0;
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double intensity, double mix);
@@ -197,6 +209,9 @@ public:
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
+  // Andamento (tap tempo ou o da música): velocidade da modulação em Hz e
+  // tempo do delay em segundos; 0 nos dois = os botões mandam.
+  void setSync(double hz, double seconds);
   // on: pedal ligado; a, b, c: os três botões (0 a 1). Mexe no buffer no lugar.
   void process(Type type, bool on, double* buffer, int n, double a, double b, double c);
   // Ainda soando (ligado ou com rastro)? Quando não, não gasta processador.

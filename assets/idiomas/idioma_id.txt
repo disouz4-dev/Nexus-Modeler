@@ -423,3 +423,7 @@ countries: id
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus tidak menerima perangkat MIDI apa pun. Sambungkan pedal lewat USB atau, jika Bluetooth, sambungkan dulu (pemasangan Bluetooth biasa tidak cukup untuk MIDI)."
 "Nenhuma pedaleira MIDI conectada" = "Tidak ada pedal MIDI tersambung"
 "Conectar por Bluetooth" = "Sambungkan lewat Bluetooth"
+"Sincronizar" = "Sinkron"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "Kecepatan mengikuti tempo: kenop memilih pembagian (1/4, 1/8, 1/16...)"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "Ketuk mengikuti irama lagu (3 atau 4 kali). Klik kanan: tautkan ke injakan pedal."
+" (música)" = " (lagu)"

@@ -423,3 +423,7 @@ countries: fr ca be ch
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus ne reçoit aucun appareil MIDI. Branchez le pédalier en USB ou, s'il est Bluetooth, connectez-le d'abord (le Bluetooth normal du système ne suffit pas pour le MIDI)."
 "Nenhuma pedaleira MIDI conectada" = "Aucun pédalier MIDI connecté"
 "Conectar por Bluetooth" = "Connecter en Bluetooth"
+"Sincronizar" = "Synchro"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "La vitesse suit le tempo : le bouton choisit la division (1/4, 1/8, 1/16...)"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "Tapez au rythme de la musique (3 ou 4 fois). Clic droit : relier à un appui du pédalier."
+" (música)" = " (morceau)"

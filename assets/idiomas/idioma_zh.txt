@@ -423,3 +423,7 @@ countries: cn sg
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus 没有收到任何 MIDI 设备。请用 USB 连接踏板，若是蓝牙踏板请先连接（系统普通蓝牙配对不足以使用 MIDI）。"
 "Nenhuma pedaleira MIDI conectada" = "未连接 MIDI 踏板"
 "Conectar por Bluetooth" = "通过蓝牙连接"
+"Sincronizar" = "同步"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "速度跟随速度：旋钮选择音符时值（1/4、1/8、1/16…）"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "跟着音乐节奏点击（3 或 4 次）。右键：关联到踏板开关。"
+" (música)" = "（歌曲）"

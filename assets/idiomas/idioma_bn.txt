@@ -423,3 +423,7 @@ countries: bd in
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus কোনো MIDI ডিভাইস পাচ্ছে না। ফুটসুইচ USB দিয়ে যুক্ত করুন বা ব্লুটুথ হলে আগে যুক্ত করুন (সাধারণ ব্লুটুথ পেয়ারিং MIDI-র জন্য যথেষ্ট নয়)।"
 "Nenhuma pedaleira MIDI conectada" = "কোনো MIDI ফুটসুইচ যুক্ত নেই"
 "Conectar por Bluetooth" = "ব্লুটুথে যুক্ত করুন"
+"Sincronizar" = "সিঙ্ক"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "গতি টেম্পো মেনে চলে: নব ভাগ বেছে নেয় (1/4, 1/8, 1/16...)"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "গানের তালে ৩ বা ৪ বার ট্যাপ করুন। রাইট-ক্লিক: ফুটসুইচের সাথে যুক্ত করুন।"
+" (música)" = " (গান)"

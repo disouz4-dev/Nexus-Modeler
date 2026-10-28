@@ -423,3 +423,7 @@ countries: in
 "O Nexus não está recebendo nenhum aparelho MIDI. Conecte a pedaleira pelo cabo USB ou, se ela for Bluetooth, conecte-a primeiro (o Bluetooth comum do sistema não basta para MIDI)." = "Nexus को कोई MIDI डिवाइस नहीं मिल रहा। फ़ुटस्विच को USB से जोड़ें या ब्लूटूथ हो तो पहले कनेक्ट करें (सिस्टम की सामान्य ब्लूटूथ पेयरिंग MIDI के लिए काफ़ी नहीं है)।"
 "Nenhuma pedaleira MIDI conectada" = "कोई MIDI फ़ुटस्विच कनेक्ट नहीं"
 "Conectar por Bluetooth" = "ब्लूटूथ से कनेक्ट करें"
+"Sincronizar" = "सिंक"
+"A velocidade segue o andamento: o botão escolhe a divisão (1/4, 1/8, 1/16...)" = "गति टेम्पो के साथ चलती है: नॉब विभाजन चुनता है (1/4, 1/8, 1/16...)"
+"Toque no ritmo da música (3 ou 4 vezes). Botão direito: ligar a uma pisada da pedaleira." = "संगीत की लय पर 3 या 4 बार टैप करें। राइट-क्लिक: फ़ुटस्विच से जोड़ें।"
+" (música)" = " (गाना)"

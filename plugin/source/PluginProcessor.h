@@ -91,6 +91,23 @@ public:
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
   static juce::String eqParam(int band, const char* name) { return "eq" + juce::String(band + 1) + "_" + name; }
   static bool isNativeLook(int look) { return pedalKind(look) != PedalKind::capture; }
+  // Efeitos que podem andar no andamento (tap tempo ou o da música).
+  static bool syncsToTempo(int look)
+  {
+    const auto k = pedalKind(look);
+    return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
+           || k == PedalKind::vibe;
+  }
+  // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
+  // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
+  static constexpr int kDivisions = 9;
+  static const char* divisionName(int i);
+  static double divisionBeats(int i);
+  // Botão de velocidade (0 a 10) com o pedal sincronizado: qual divisão.
+  static int divisionFor(float knob) { return juce::jlimit(0, kDivisions - 1, juce::roundToInt(knob / 10.0f * (kDivisions - 1))); }
+  // Andamento em uso: o do programa de música (se ele mandar) ou o do tap.
+  double tempoBpm() const;
+  bool tempoFromHost() const { return mHostBpm.load() > 0.0; }
 
   // Posições dos pacotes: 0 a 11 são os pedais; depois, os canais dos dois
   // cabeçotes (lado A: 12 a 14, lado B: 15 a 17).
@@ -225,6 +242,7 @@ private:
     std::atomic<float>* lite = nullptr;
     std::atomic<float>* visual = nullptr;
     std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
+    std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;
@@ -344,7 +362,16 @@ private:
   // Mão no botão que troca captura (drive de um pedal, ganho de um
   // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
   // depois de soltar.
-  void parameterValueChanged(int, float) override {}
+  void parameterValueChanged(int index, float) override;
+  // Tap tempo: cada toque (botão da tela ou pisada aprendida por MIDI) mede o
+  // tempo desde o anterior; a média dos últimos vira o andamento.
+  void tap();
+  int mTapIndex = -1;
+  std::array<double, 4> mTapIntervals{};
+  int mTapCount = 0;
+  double mLastTap = 0.0;
+  std::atomic<float>* mTempo = nullptr;
+  std::atomic<double> mHostBpm{0.0};
   void parameterGestureChanged(int index, bool starting) override;
   struct Anticipation
   {

@@ -550,6 +550,20 @@ int main(int argc, char** argv)
     report(p.midi().ccFor("p3_ligado") == 256 + 60 && std::abs(afterFirst - value("p3_ligado")) > 0.5f,
            "Aprender: nota 60 alterna o pedal 3 a cada pisada", MidiMap::describe(p.midi().ccFor("p3_ligado")));
 
+    // Tap tempo: quatro toques a cada 0,5 s = 120 BPM; um toque pisado pela pedaleira também conta.
+    for (int t = 0; t < 4; ++t)
+    {
+      auto* tapParam = p.params.getParameter("tap");
+      tapParam->setValueNotifyingHost(tapParam->getValue() > 0.5f ? 0.0f : 1.0f);
+      juce::Thread::sleep(500);
+    }
+    report(std::abs(p.tempoBpm() - 120.0) < 3.0, "Tap tempo: quatro toques a cada meio segundo dão 120 BPM",
+           juce::String(p.tempoBpm(), 1) + " BPM");
+    report(std::abs(NexusProcessor::divisionBeats(NexusProcessor::divisionFor(5.0f)) * 60.0 / 120.0 - 1.0 / 3.0) < 1e-6
+             && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(0.0f))) == "1/1"
+             && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(10.0f))) == "1/32",
+           "Divisões do andamento (meio do botão = 1/6 a 120 BPM = 333 ms)", "1/1 a 1/32");
+
     juce::MemoryBlock state;
     p.getStateInformation(state);
     NexusProcessor q;

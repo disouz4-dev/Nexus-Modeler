@@ -59,6 +59,9 @@ public:
   juce::String bubbleText() const;
   const GearKnobArt& art() const { return mArt; }
   std::function<void()> onChange;
+  // Texto do valor no balão (vazio = o número de sempre). Ex.: "1/8" com o
+  // pedal sincronizado ao andamento.
+  std::function<juce::String(float value)> valueText;
 
 private:
   void changed() { if (onChange) onChange(); }
