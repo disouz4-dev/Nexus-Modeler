@@ -140,11 +140,22 @@ std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel)
   return std::nullopt;
 }
 
+// Pasta baixada que dá para tocar: capturas com posição no pack.json (sem
+// "mapear") ou, numa caixa, algum IR. Download de uma versão antiga que deu
+// errado não conta, e a padrão é baixada de novo.
+bool usableFolder(const juce::File& folder)
+{
+  const auto pack = juce::JSON::parse(folder.getChildFile("pack.json"));
+  if (auto* caps = pack["capturas"].getDynamicObject(); caps != nullptr && caps->getProperties().size() > 0)
+    return !static_cast<bool>(pack["mapear"]);
+  return folder.getNumberOfChildFiles(juce::File::findFiles, "*.wav") > 0;
+}
+
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName)
 {
   for (const auto& f : Connection::packsFolder(gearName).findChildFiles(juce::File::findDirectories, false))
     if (f.getFileName().startsWith(juce::String(tone.id) + " ")
-        && (tone.packName.isEmpty() || f.getFileName().containsIgnoreCase(safeName(tone.packName))))
+        && (tone.packName.isEmpty() || f.getFileName().containsIgnoreCase(safeName(tone.packName))) && usableFolder(f))
       return f;
   return {};
 }
@@ -741,6 +752,10 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         for (const auto& m : *data)
           list.emplace_back(m["name"].toString(), m["model_url"].toString());
       auto chosen = chooseCaptures(list, tone);
+      // O botão vai de 0 a 10: número fora disso no nome é modelo ou ano
+      // ("VX 304 NR Crunch", "2203"), não a posição do ganho.
+      chosen.erase(std::remove_if(chosen.begin(), chosen.end(), [](const auto& c) { return c.position < 0.0 || c.position > 10.0; }),
+                   chosen.end());
       // Uma captura só, sem número de ganho no nome: vai para o meio do botão.
       if (chosen.empty() && list.size() == 1)
         chosen.push_back({5.0, list.front().first, list.front().second});

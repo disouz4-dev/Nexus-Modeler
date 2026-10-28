@@ -179,6 +179,64 @@ int main(int argc, char** argv)
     std::printf("%d recomendadas, %d com problema\n", total, problems);
     return problems == 0 ? 0 : 1;
   }
+  // NEXUS_CONFERIR_PADRAO=1: o caminho da escolha automática de cada peça
+  // (as três mais curtidas da busca, a primeira que serve) e o arquivo que foi
+  // para cada posição do botão. NEXUS_CONFERIR_SO filtra as peças.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_CONFERIR_PADRAO", {}).isNotEmpty())
+  {
+    const auto all = juce::JSON::parse(juce::File::getCurrentWorkingDirectory().getChildFile("assets/tone3000/recomendadas.json"));
+    const auto only = juce::StringArray::fromTokens(juce::SystemStats::getEnvironmentVariable("NEXUS_CONFERIR_SO", {}), ",", "");
+    if (auto* obj = all.getDynamicObject())
+      for (const auto& prop : obj->getProperties())
+      {
+        const auto prefix = prop.name.toString();
+        const auto word = prop.value["busca"].toString();
+        if (prefix.startsWith("_") || word.isEmpty() || (!only.isEmpty() && !only.contains(prefix)))
+          continue;
+        const auto recs = nexus::t3k::recommended(prefix);
+        if (recs.empty())
+          continue;
+        const juce::String filter = recs.front().gear == "cab" ? "cab" : recs.front().gear == "pedal" ? "pedal" : "amp_amp-cab";
+        bool finished = false;
+        std::vector<nexus::t3k::Tone> found;
+        t3k.list(nexus::t3k::Connection::List::mostLiked, filter, word, [&](std::vector<nexus::t3k::Tone> tones, juce::String) {
+          found = std::move(tones);
+          finished = true;
+        });
+        waitFor([&] { return finished; }, 120);
+        std::vector<nexus::t3k::Tone> tries(found.begin(), found.begin() + static_cast<long>(std::min<size_t>(3, found.size())));
+        tries.push_back(recs.front());
+        bool done = false;
+        for (size_t i = 0; i < tries.size() && !done; ++i)
+        {
+          finished = false;
+          juce::File folder;
+          juce::String error;
+          t3k.download(tries[i], filter, "Conferir " + prefix, [](juce::String) {}, [&](juce::File f, juce::String e) {
+            folder = f;
+            error = e;
+            finished = true;
+          });
+          waitFor([&] { return finished; }, 600);
+          const bool ok = error.isEmpty() && nexus::t3k::usableFolder(folder);
+          std::printf("%s %-16s %6d %4d fav  %s%s\n", ok ? "usa  " : "pula ", prefix.toRawUTF8(), tries[i].id, tries[i].favorites,
+                      tries[i].title.substring(0, 50).toRawUTF8(), i + 1 == tries.size() ? " (recomendada)" : "");
+          if (ok)
+          {
+            done = true;
+            const auto pack = juce::JSON::parse(folder.getChildFile("pack.json"));
+            if (auto* caps = pack["capturas"].getDynamicObject())
+              for (const auto& c : caps->getProperties())
+                std::printf("        %5s -> %s\n", c.name.toString().toRawUTF8(), c.value.toString().substring(0, 60).toRawUTF8());
+          }
+          folder.deleteRecursively();
+        }
+        if (!done)
+          std::printf("FALHA %-16s nenhuma serviu\n", prefix.toRawUTF8());
+        std::fflush(stdout);
+      }
+    return 0;
+  }
   // NEXUS_BUSCAR=<palavra>:<tipo>: a busca "mais curtidas" (o que a escolha
   // automática usa) e termina.
   if (const auto spec = juce::SystemStats::getEnvironmentVariable("NEXUS_BUSCAR", {}); spec.isNotEmpty())

@@ -201,8 +201,22 @@ int main(int argc, char** argv)
       cab->setValueNotifyingHost(cab->convertTo0to1(n));
       e->select({NexusEditor::Kind::cab, 0});
     }
-    else if (stage == "afinador")
+    else if (stage.startsWith("afinador"))
+    {
       e->select({NexusEditor::Kind::tuner, 0});
+      // "afinador:blues": toca o teste de som e lê o afinador (como na tela).
+      if (stage.contains(":"))
+      {
+        processor.testSource().setStyle(nexus::TestSource::blues);
+        processor.testSource().setPlaying(true);
+        for (int t = 0; t < 400; ++t)
+        {
+          processor.processBlock(buffer, midi);
+          if (t % 10 == 0)
+            e->updateTuner();
+        }
+      }
+    }
     else if (stage == "capturas")
       e->showCaptures();
     else if (stage.startsWith("estudio"))

@@ -50,6 +50,8 @@ public:
   };
 
   explicit NexusEditor(NexusProcessor&);
+  // Testes: uma leitura do afinador fora do relógio.
+  void updateTuner() { mTunerStage->update(); }
   ~NexusEditor() override;
 
   void paint(juce::Graphics&) override;
@@ -248,6 +250,9 @@ private:
   struct Look : juce::LookAndFeel_V4
   {
     juce::Font getTextButtonFont(juce::TextButton&, int height) override;
+    // Avisos: fundo escuro e uma faixa de cor na lateral (vermelha para
+    // alerta, ciano para informação), sem o ícone grande por trás do texto.
+    void drawAlertBox(juce::Graphics&, juce::AlertWindow&, const juce::Rectangle<int>& textArea, juce::TextLayout&) override;
   };
 
   NexusProcessor& mProcessor;

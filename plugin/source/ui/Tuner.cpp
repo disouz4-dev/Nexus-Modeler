@@ -205,6 +205,7 @@ double PitchDetector::detect(const float* samples, int count, double rate)
 TunerStage::TunerStage(NexusProcessor& processor) : mProcessor(processor)
 {
   mSamples.assign(NexusProcessor::kTunerRing, 0.0f);
+  startTimerHz(30);
 }
 
 TunerStage::~TunerStage()
@@ -225,15 +226,25 @@ bool TunerStage::muted() const
 
 void TunerStage::visibilityChanged()
 {
-  const bool shown = isShowing();
-  mProcessor.setTunerOpen(shown);
-  if (shown)
-    startTimerHz(30);
-  else
-    stopTimer();
+  // O relógio confere a cada volta se a tela aparece; aqui só adianta o mudo.
+  timerCallback();
 }
 
 void TunerStage::timerCallback()
+{
+  // Relógio sempre ligado (o aviso de "ficou visível" não chega em todo
+  // caminho de troca de tela): só lê a guitarra com o afinador aparecendo.
+  const bool shown = isShowing();
+  if (shown != mOpen)
+  {
+    mOpen = shown;
+    mProcessor.setTunerOpen(shown);
+  }
+  if (shown)
+    update();
+}
+
+void TunerStage::update()
 {
   const double rate = mProcessor.tunerSnapshot(mSamples.data(), NexusProcessor::kTunerRing);
   // O mesmo tempo de som em qualquer taxa (as últimas amostras da cópia).

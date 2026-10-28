@@ -57,6 +57,8 @@ struct GearArt
   // Visor digital (Cherry Drop): retângulo em pixels da frente onde a tela
   // escreve o valor; vazio = não tem.
   juce::Rectangle<float> display;
+  // Onde a peça de fato está na imagem (sem a folga transparente em volta).
+  juce::Rectangle<float> body;
   // Amplificadores de vários canais: um LED por canal, na ordem dos canais.
   std::vector<std::pair<juce::Point<float>, float>> channelLeds;
 

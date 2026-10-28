@@ -69,9 +69,16 @@ void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float
     if (em < 2.0f)
       continue;
     const float kerning = language::allowsLetterSpacing() ? std::max(0.0f, l.spacing - 1.0f) + 0.02f : 0.0f;
-    const auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
+    auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
     const auto text = upper(TRANS(l.text));
     const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale);
+    // Palavra longa (ou tradução maior) perto da borda: diminui a letra até
+    // caber dentro da peça, com uma folguinha da borda.
+    const float left = image.getX() + art.body.getX() * scale, right = image.getX() + art.body.getRight() * scale;
+    const float margin = art.body.getWidth() * scale * 0.05f;
+    const float room = 2.0f * std::min(at.x - left - margin, right - margin - at.x);
+    if (const float width = juce::GlyphArrangement::getStringWidth(font, text); room > 0.0f && width > room)
+      font = Fonts::get().displayEm(em * room / width).withExtraKerningFactor(kerning);
     // Texto desenhado direto (a fonte reserva do sistema cobre japonês, chinês,
     // árabe...), achatado pela perspectiva e um pouco engrossado, como tinta
     // de serigrafia.
@@ -1034,6 +1041,24 @@ juce::Font NexusEditor::Look::getTextButtonFont(juce::TextButton&, int height)
   return Fonts::get().ui(std::min(13.5f, static_cast<float>(height) * 0.42f));
 }
 
+void NexusEditor::Look::drawAlertBox(juce::Graphics& g, juce::AlertWindow& alert, const juce::Rectangle<int>& textArea,
+                                     juce::TextLayout& textLayout)
+{
+  const auto bounds = alert.getLocalBounds().toFloat();
+  g.setColour(alert.findColour(juce::AlertWindow::backgroundColourId));
+  g.fillRoundedRectangle(bounds, 8.0f);
+  g.setColour(alert.findColour(juce::AlertWindow::outlineColourId));
+  g.drawRoundedRectangle(bounds.reduced(0.5f), 8.0f, 1.0f);
+  if (alert.getAlertType() != juce::MessageBoxIconType::NoIcon)
+  {
+    const auto tone = alert.getAlertType() == juce::MessageBoxIconType::WarningIcon ? colour::danger : colour::accent;
+    g.setColour(tone);
+    g.fillRoundedRectangle(bounds.withWidth(4.0f).reduced(0.0f, 10.0f).translated(8.0f, 0.0f), 2.0f);
+  }
+  g.setColour(alert.findColour(juce::AlertWindow::textColourId));
+  textLayout.draw(g, textArea.toFloat());
+}
+
 NexusEditor::NexusEditor(NexusProcessor& p)
 : AudioProcessorEditor(&p)
 , mProcessor(p)
@@ -1579,17 +1604,15 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
       safe->mFetchingSlots.erase(slotKey);
       land(folder);
     };
-    if (const auto have = nexus::t3k::downloadedFolder(candidate, gearName);
-        have.isDirectory() && !static_cast<bool>(juce::JSON::parse(have.getChildFile("pack.json"))["mapear"]))
-      return accept(have);
+    if (const auto have = nexus::t3k::downloadedFolder(candidate, gearName); have.isDirectory())
+      return accept(have); // downloadedFolder só devolve pasta que dá para tocar
     nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + candidate.title + " " + candidate.packName + " ("
                                      + juce::String(candidate.favorites) + " favoritos)");
     safe->mT3k->download(candidate, gearFilter, gearName, [](juce::String) {},
                          [safe, list, i, accept, tryList](juce::File folder, juce::String error) {
                            if (safe == nullptr)
                              return;
-                           const bool usable = error.isEmpty() && folder.isDirectory()
-                                               && !static_cast<bool>(juce::JSON::parse(folder.getChildFile("pack.json"))["mapear"]);
+                           const bool usable = error.isEmpty() && folder.isDirectory() && nexus::t3k::usableFolder(folder);
                            if (usable)
                              return accept(folder);
                            nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: não serviu ") + list[i].title + " " + error);
@@ -1617,7 +1640,7 @@ void NexusEditor::ensurePedal(int pedal)
   // Já tem um pacote deste pedal (o visual pode ter mudado e o pacote não).
   const auto root = nexus::t3k::Connection::packsFolder(art->name);
   const auto current = mProcessor.slotFolder(NexusProcessor::pedalSlot(pedal));
-  if (current.isDirectory() && current.getParentDirectory() == root)
+  if (current.isDirectory() && current.getParentDirectory() == root && mProcessor.slotLoaded(NexusProcessor::pedalSlot(pedal)))
     return;
   const auto def = nexus::t3k::defaultTone(kPedalPrefixes[look]);
   juce::File pick = def ? nexus::t3k::downloadedFolder(*def, art->name) : juce::File();
@@ -1625,8 +1648,12 @@ void NexusEditor::ensurePedal(int pedal)
   {
     auto folders = root.findChildFiles(juce::File::findDirectories, false);
     folders.sort();
-    if (!folders.isEmpty())
-      pick = folders.getFirst();
+    for (const auto& f : folders)
+      if (nexus::t3k::usableFolder(f))
+      {
+        pick = f;
+        break;
+      }
   }
   if (pick.isDirectory())
   {
@@ -1688,7 +1715,7 @@ void NexusEditor::ensureDefaults()
   {
     bool anyEmpty = false;
     for (int c = 0; c < std::min(ampArt(rig).channels.size(), NexusProcessor::kChannels); ++c)
-      anyEmpty = anyEmpty || !mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c)).isDirectory();
+      anyEmpty = anyEmpty || !mProcessor.slotLoaded(NexusProcessor::ampSlot(rig, c));
     if (anyEmpty)
       loadHeadChannels(rig);
     ensureCab(rig);
@@ -1709,7 +1736,9 @@ void NexusEditor::loadHeadChannels(int rig)
   for (int c = 0; c < count; ++c)
   {
     const auto current = mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c));
-    const bool ours = current.isDirectory() && current.getParentDirectory() == root;
+    // Pasta que não carregou (pack.json com defeito) não segura o canal.
+    const bool ours = current.isDirectory() && current.getParentDirectory() == root
+                      && mProcessor.slotLoaded(NexusProcessor::ampSlot(rig, c));
     juce::File pick = ours ? current : juce::File();
     const auto def = nexus::t3k::defaultTone(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))], c);
     if (pick == juce::File() && def)

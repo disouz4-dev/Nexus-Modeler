@@ -54,7 +54,7 @@
       "rotulo": "VELOCIDADE",
       "pos": [
         0.0,
-        0.42
+        0.5
       ],
       "escala": 1.45
     },
@@ -63,7 +63,7 @@
       "rotulo": "PROFUNDIDADE",
       "pos": [
         -0.62,
-        0.8
+        0.84
       ],
       "escala": 0.78
     },
@@ -72,7 +72,7 @@
       "rotulo": "INTENSIDADE",
       "pos": [
         0.62,
-        0.8
+        0.84
       ],
       "escala": 0.78
     }

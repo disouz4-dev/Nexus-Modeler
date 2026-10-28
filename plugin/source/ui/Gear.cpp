@@ -29,6 +29,23 @@ GearArt GearArt::load(const juce::String& prefix)
 {
   GearArt art;
   art.front = imageResource(prefix + "_frente.png");
+  if (art.front.isValid())
+  {
+    // Contorno da peça: colunas e linhas com algum ponto opaco (de 2 em 2).
+    const juce::Image::BitmapData px(art.front, juce::Image::BitmapData::readOnly);
+    int x0 = art.front.getWidth(), x1 = 0, y0 = art.front.getHeight(), y1 = 0;
+    for (int y = 0; y < art.front.getHeight(); y += 2)
+      for (int x = 0; x < art.front.getWidth(); x += 2)
+        if (px.getPixelColour(x, y).getAlpha() > 160)
+        {
+          x0 = std::min(x0, x);
+          x1 = std::max(x1, x);
+          y0 = std::min(y0, y);
+          y1 = std::max(y1, y);
+        }
+    art.body = x1 > x0 ? juce::Rectangle<float>(static_cast<float>(x0), static_cast<float>(y0), static_cast<float>(x1 - x0), static_cast<float>(y1 - y0))
+                       : art.front.getBounds().toFloat();
+  }
   const auto map = jsonResource(prefix + "_mapa.json");
   art.name = map["nome"].toString();
   const int frames = static_cast<int>(map["posicoes"]);

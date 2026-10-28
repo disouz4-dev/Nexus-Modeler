@@ -57,6 +57,8 @@ std::vector<Tone> recommended(const juce::String& gearPrefix);
 // cabeçote sem pacotes por canal usa a primeira no canal 1.
 std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel = -1);
 // Pasta já baixada desse tom (Documentos/Nexus Modeler/<equipamento>), ou vazia.
+// Pasta de pacote que dá para tocar (capturas com posição ou algum IR).
+bool usableFolder(const juce::File& folder);
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName);
 juce::String filterWord(const juce::String& gearPrefix);
 

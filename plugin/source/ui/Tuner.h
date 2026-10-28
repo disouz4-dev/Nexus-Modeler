@@ -33,6 +33,9 @@ public:
   void mouseDown(const juce::MouseEvent&) override;
   void visibilityChanged() override;
 
+  // Lê as últimas amostras e acha a nota (o relógio chama 30 vezes por segundo).
+  void update();
+
   // Miniatura na cadeia: a unidade de rack com a fileira de luzes.
   static void paintThumb(juce::Graphics& g, juce::Rectangle<float> r, float alpha);
 
@@ -48,6 +51,7 @@ private:
   double mHz = 0.0;            // frequência mostrada (0 = sem nota)
   double mCents = 0.0;         // desvio suavizado
   int mHold = 0;               // leituras sem nota antes de apagar
+  bool mOpen = false;          // a tela do afinador está aparecendo
   juce::Rectangle<float> mPanel, mRefDown, mRefUp, mMute;
 };
 } // namespace nexus::ui
