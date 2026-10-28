@@ -1,6 +1,46 @@
 # Notas de versão
 
-## Próxima versão (em desenvolvimento, ainda não publicada)
+## 0.1.0-beta.2 (em preparação)
+
+### Equipamentos novos (nomes ainda provisórios, aguardando aprovação)
+- 16 cabeçotes novos, cada um com a sua caixa: Top Boost 30 (AC30), Match 30
+  (Matchless DC-30), Tiny 15 (Tiny Terror), Rocker 50 (Rockerverb), Recto
+  Triple, Power 100 (ENGL Powerball), Uber 100 (Uberschall), Sonic 60
+  (Super-Sonic), Silver Twin (Twin Reverb), Tweed 59 (Bassman), Brit Plexi
+  (Super Lead 1959), Brit Jubilee (Silver Jubilee), Jazz 120 (JC-120) e os de
+  baixo Vault 300 (Ampeg SVT), Citrus Bass 200 (Orange AD200) e Granite 800
+  (Gallien-Krueger 800RB).
+- 10 caixas novas: Citrus 4x12, Blue 2x12, Twin 2x12, Tweed 4x10, Match 2x12,
+  Power 4x12, Uber 4x12, Jazz 2x12, Vault 8x10 e Granite 4x10. A lista das
+  caixas agora é agrupada pelo tamanho (4x12, 2x12, 4x10, 8x10).
+- Pedais de modulação feitos pelo próprio Nexus: Peach Phaser (Phase 90),
+  Lime Flanger (Electric Mistress), Melon Tremolo (TR-2) e Tamarind Vibe
+  (Uni-Vibe).
+- Pedais com captura da TONE3000: Plum Rat (RAT), Fig Buzzsaw (HM-2),
+  Grapefruit Fuzz (Big Muff), Mango Metal (MT-2), Guava Mud (Mudhoney) e
+  Apricot Treble (Rangemaster).
+- Cores e detalhes de cada peça seguem o equipamento original.
+
+### Captura padrão
+- Ao escolher uma peça, o Nexus baixa sozinho a captura mais curtida pela
+  comunidade da TONE3000. "Trocar pacote" abre a lista ("Mais curtidas" é a
+  primeira aba) para escolher outra.
+
+### Afinador
+- Afinador de rack fixo no começo da cadeia: nota, oitava, cents e
+  frequência, fileira de luzes (verde no meio = afinada), lá de referência de
+  430 a 450 Hz e "mudo ao afinar".
+
+### Cherry Drop
+- Visual novo: visor azul aceso mostrando o drop escolhido (−1 a −7, −12,
+  oitava + limpo), estampa de ondas e aro cromado.
+
+### Menor
+- Imagens dos botões em 256 cores: a arte dos equipamentos caiu de 284 MB
+  para cerca de 100 MB, mesmo com o dobro de peças.
+
+## 0.1.0-beta.1
+
 
 ### Tela
 - Tela nova com identidade própria: marca do Nexus (triângulo impossível
