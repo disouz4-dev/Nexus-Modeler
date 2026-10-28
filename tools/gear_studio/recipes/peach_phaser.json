@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Peach Phaser",
   "familia": "peach_phaser",
-  "inspiracao": "phaser de caixinha (estilo Phase 90), em cor de pêssego",
+  "inspiracao": "phaser de caixinha laranja (estilo MXR Phase 90)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.064,
@@ -12,11 +12,11 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.96,
-      0.52,
-      0.38
+      0.95,
+      0.3,
+      0.02
     ],
-    "metalico": 0.15,
+    "metalico": 0.1,
     "aspereza": 0.26
   },
   "texto_cor": [

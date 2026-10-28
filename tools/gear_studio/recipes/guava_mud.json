@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Guava Mud",
   "familia": "guava_mud",
-  "inspiracao": "overdrive de caixa média (estilo T-Rex Mudhoney), rosa goiaba",
+  "inspiracao": "overdrive de caixa média vinho com brilho metálico (estilo T-Rex Mudhoney)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.07,
@@ -12,22 +12,22 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.82,
-      0.3,
-      0.4
+      0.38,
+      0.03,
+      0.05
     ],
-    "metalico": 0.3,
+    "metalico": 0.55,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.22,
-    0.02,
-    0.06
+    0.92,
+    0.9,
+    0.86
   ],
   "texto_cor2": [
-    0.22,
-    0.02,
-    0.06
+    0.92,
+    0.9,
+    0.86
   ],
   "modelo": "GUAVA MUD",
   "logo_y": -0.12,

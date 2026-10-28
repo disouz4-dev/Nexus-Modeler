@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Lime Flanger",
   "familia": "lime_flanger",
-  "inspiracao": "flanger de caixa larga (estilo Electric Mistress), verde-limão",
+  "inspiracao": "flanger de caixa larga de alumínio com letras vermelhas (estilo Electric Mistress)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.094,
@@ -12,22 +12,22 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.42,
-      0.72,
-      0.06
+      0.7,
+      0.71,
+      0.73
     ],
-    "metalico": 0.25,
+    "metalico": 0.85,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.02,
-    0.02,
-    0.02
+    0.7,
+    0.04,
+    0.03
   ],
   "texto_cor2": [
-    0.02,
-    0.02,
-    0.02
+    0.7,
+    0.04,
+    0.03
   ],
   "modelo": "LIME FLANGER",
   "logo_y": -0.12,

@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Fig Buzzsaw",
   "familia": "fig_buzzsaw",
-  "inspiracao": "distorção sueca compacta (estilo HM-2), grafite com letras cor de figo",
+  "inspiracao": "distorção sueca compacta preta com letras laranja (estilo BOSS HM-2)",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -12,17 +12,17 @@
   "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.07,
-      0.07,
-      0.075
+      0.06,
+      0.06,
+      0.065
     ],
     "metalico": 0.0,
     "aspereza": 0.22
   },
   "texto_cor": [
-    0.85,
-    0.35,
-    0.45
+    0.95,
+    0.45,
+    0.08
   ],
   "modelo": "FIG BUZZSAW",
   "tipo_texto": "",

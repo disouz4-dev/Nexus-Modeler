@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Apricot Treble",
   "familia": "apricot_treble",
-  "inspiracao": "reforçador de agudos (estilo Rangemaster de pedal), alumínio com letras damasco",
+  "inspiracao": "reforçador de agudos de caixa de alumínio martelado (estilo Rangemaster)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.064,
@@ -12,21 +12,21 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.72,
-      0.7,
-      0.67
+      0.66,
+      0.66,
+      0.66
     ],
-    "metalico": 0.85,
+    "metalico": 0.9,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.55,
-    0.2,
+    0.03,
+    0.03,
     0.03
   ],
   "texto_cor2": [
-    0.55,
-    0.2,
+    0.03,
+    0.03,
     0.03
   ],
   "modelo": "APRICOT TREBLE",

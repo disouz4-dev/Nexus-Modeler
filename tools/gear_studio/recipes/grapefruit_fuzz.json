@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Grapefruit Fuzz",
   "familia": "grapefruit_fuzz",
-  "inspiracao": "fuzz de caixa larga (estilo Big Muff), rosa toranja com letras escuras",
+  "inspiracao": "fuzz de caixa larga de alumínio com letras vermelhas (estilo Big Muff Pi)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.094,
@@ -12,22 +12,22 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.93,
-      0.28,
-      0.2
+      0.74,
+      0.75,
+      0.77
     ],
-    "metalico": 0.0,
+    "metalico": 0.85,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.18,
-    0.02,
-    0.02
+    0.72,
+    0.05,
+    0.04
   ],
   "texto_cor2": [
-    0.18,
-    0.02,
-    0.02
+    0.72,
+    0.05,
+    0.04
   ],
   "modelo": "GRAPEFRUIT FUZZ",
   "logo_y": -0.12,

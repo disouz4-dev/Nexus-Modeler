@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Plum Rat",
   "familia": "plum_rat",
-  "inspiracao": "distorção de caixa preta com três botões em linha (estilo ProCo RAT), roxo ameixa",
+  "inspiracao": "distorção de caixa preta com letras brancas (estilo ProCo RAT)",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.07,
@@ -12,22 +12,22 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.17,
-      0.04,
-      0.16
+      0.012,
+      0.012,
+      0.013
     ],
-    "metalico": 0.2,
+    "metalico": 0.15,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.95,
-    0.95,
-    0.93
+    0.93,
+    0.93,
+    0.91
   ],
   "texto_cor2": [
-    0.95,
-    0.95,
-    0.93
+    0.93,
+    0.93,
+    0.91
   ],
   "modelo": "PLUM RAT",
   "logo_y": -0.12,
