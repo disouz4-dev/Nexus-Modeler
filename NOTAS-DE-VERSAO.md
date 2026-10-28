@@ -33,6 +33,15 @@
   comunidade da TONE3000. "Trocar pacote" abre a lista ("Mais curtidas" é a
   primeira aba) para escolher outra.
 
+### Atualização
+- No Windows, a atualização instala sem perguntas e abre o Nexus de novo
+  sozinha. Dentro do programa de gravação, o instalador abre normal, para a
+  pessoa salvar o projeto antes.
+- No Linux (instalação pelo terminal), "Reabrir agora" fecha e abre o Nexus
+  já na versão nova.
+- Os instaladores do Mac e do Windows trazem o número completo da versão
+  (com -beta.N), para as versões seguintes aparecerem.
+
 ### Afinador
 - Afinador de rack fixo no começo da cadeia: nota, oitava, cents e
   frequência, fileira de luzes (verde no meio = afinada), lá de referência de
