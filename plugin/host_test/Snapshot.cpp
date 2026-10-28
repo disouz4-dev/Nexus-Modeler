@@ -201,6 +201,8 @@ int main(int argc, char** argv)
       cab->setValueNotifyingHost(cab->convertTo0to1(n));
       e->select({NexusEditor::Kind::cab, 0});
     }
+    else if (stage == "afinador")
+      e->select({NexusEditor::Kind::tuner, 0});
     else if (stage == "capturas")
       e->showCaptures();
     else if (stage.startsWith("estudio"))

@@ -55,6 +55,7 @@ NexusProcessor::NexusProcessor()
   mOutput = params.getRawParameterValue("volume");
   mInput = params.getRawParameterValue("entrada");
   mInputMute = params.getRawParameterValue("entrada_mudo");
+  mTunerMute = params.getRawParameterValue("afinador_mudo");
 
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
@@ -170,6 +171,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Equalizador do fim da cadeia (estilo Pro-Q): ligado/desligado geral e
   // 24 faixas. A tela usa as faixas na ordem em que são criadas.
   layout.add(std::make_unique<B>(juce::ParameterID{"eq_ligado", 1}, "EQ ligado", true));
+  layout.add(std::make_unique<B>(juce::ParameterID{"afinador_mudo", 1}, "Afinador: mudo ao afinar", true));
+  layout.add(std::make_unique<P>(juce::ParameterID{"afinador_la", 1}, juce::String::fromUTF8("Afinador: lá de referência"),
+                                 juce::NormalisableRange<float>(430.0f, 450.0f, 1.0f), 440.0f));
   {
     juce::NormalisableRange<float> freq(10.0f, 22000.0f, 0.1f);
     freq.setSkewForCentre(std::sqrt(10.0f * 22000.0f));
@@ -240,6 +244,7 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
   mTest.prepare(sampleRate);
+  mTunerRate.store(sampleRate);
   mStudio.prepare(sampleRate, block);
   // Capturas no tamanho do bloco que vai chegar (na taxa das capturas).
   {
@@ -765,7 +770,9 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     buffer.clear();
     return;
   }
-  const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
+  // Afinando com o mudo: a saída desce a zero (com a rampa de sempre, sem estalo).
+  const bool tunerMute = mTunerOpen.load() && mTunerMute->load() > 0.5f;
+  const float targetGain = tunerMute ? 0.0f : juce::Decibels::decibelsToGain(mOutput->load());
   // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
   // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
   const bool inputOff = mInputMute->load() > 0.5f || mInput->load() <= -23.95f;
@@ -782,6 +789,14 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       in = mTestBuffer.data();
     if (in != nullptr)
     {
+      // Afinador: guarda a guitarra crua (o mudo da entrada não cala o afinador).
+      int w = mTunerWrite.load(std::memory_order_relaxed);
+      for (int i = 0; i < n; ++i)
+      {
+        mTunerRing[static_cast<size_t>(w)] = in[i];
+        w = (w + 1) & (kTunerRing - 1);
+      }
+      mTunerWrite.store(w, std::memory_order_release);
       // O teste já vem no nível de uma guitarra: não passa pelo controle de
       // entrada nem pelo mudo (quem baixou a entrada por causa do microfone
       // do notebook ouviria o teste quase mudo).
@@ -838,6 +853,17 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   for (int s = 0; s < kSlots; ++s)
     publish(s);
   mUiActiveRig.store(mRigNext >= 0 ? mRigNext : mRigCurrent);
+}
+
+double NexusProcessor::tunerSnapshot(float* dest, int count) const
+{
+  // Cópia sem trava: um pedaço pode ser sobrescrito no meio, o que só atrapalha
+  // uma leitura entre trinta por segundo.
+  count = std::min(count, kTunerRing);
+  const int end = mTunerWrite.load(std::memory_order_acquire);
+  for (int i = 0; i < count; ++i)
+    dest[i] = mTunerRing[static_cast<size_t>((end - count + i + kTunerRing) & (kTunerRing - 1))];
+  return mTunerRate.load();
 }
 
 void NexusProcessor::setLayout(const ChainLayout& layout)

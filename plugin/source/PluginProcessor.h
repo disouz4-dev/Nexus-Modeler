@@ -167,6 +167,13 @@ public:
   juce::File irFile(int rig) const { return mCabs[static_cast<size_t>(rig)].file; }
   bool irLoaded(int rig) const { return mCabs[static_cast<size_t>(rig)].loaded.load(); }
 
+  // Afinador (fixo no começo da cadeia): a tela copia as últimas amostras da
+  // guitarra, antes do controle e do mudo da entrada. Devolve a taxa delas.
+  static constexpr int kTunerRing = 8192;
+  double tunerSnapshot(float* dest, int count) const;
+  // Tela do afinador aberta: com "mudo ao afinar", a saída fica em silêncio.
+  void setTunerOpen(bool open) { mTunerOpen.store(open); }
+
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
   // "Testar o som": gravação de guitarra no lugar da entrada.
@@ -309,6 +316,11 @@ private:
   std::atomic<float>* mOutput;
   std::atomic<float>* mInput;
   std::atomic<float>* mInputMute;
+  std::atomic<float>* mTunerMute;
+  std::array<float, kTunerRing> mTunerRing{};
+  std::atomic<int> mTunerWrite{0};
+  std::atomic<double> mTunerRate{48000.0};
+  std::atomic<bool> mTunerOpen{false};
   float mOutputGain = 1.0f;
   float mInputGain = 1.0f;
 

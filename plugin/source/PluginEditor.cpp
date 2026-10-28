@@ -540,6 +540,7 @@ void NexusEditor::ChainView::rebuild()
     w += aw + gap + static_cast<float>(loops) * (pw + gap) + cw + gap;                // cabeçote, entre, caixa
     w += static_cast<float>(layout.post.size()) * (pw + gap);                         // pedais depois
     w += aw * 0.62f + gap;                                                            // equalizador do fim
+    w += cw * 0.86f + gap;                                                            // afinador do começo
     return w;
   };
   const float scale = std::min(1.0f, (x1 - x0) / std::max(1.0f, widthOf()));
@@ -556,6 +557,8 @@ void NexusEditor::ChainView::rebuild()
   };
   auto addDrop = [&](int listId, int pos, float atX, float y) { mDrops.push_back({listId, pos, {atX, y}}); };
 
+  // Afinador: fixo no começo, antes de qualquer pedal.
+  addCard(CardType::tuner, 0, cw * 0.86f, cw * 0.86f, cy);
   // Pedais antes do cabeçote.
   const float startX = x;
   for (size_t i = 0; i < layout.pre.size(); ++i)
@@ -692,6 +695,9 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
     case CardType::ab:
       drawAbPedal(g, c.r, activeRig, 1.0f);
       break;
+    case CardType::tuner:
+      nexus::ui::TunerStage::paintThumb(g, c.r, 1.0f);
+      break;
     case CardType::eq:
     {
       const bool on = proc.params.getRawParameterValue("eq_ligado")->load() > 0.5f;
@@ -754,6 +760,7 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
     case CardType::ab: name = TRANS("Pedal A/B: clique para trocar o lado"); break;
     case CardType::add: name = TRANS("Adicionar pedal"); break;
     case CardType::eq: name = TRANS("Equalizador"); break;
+    case CardType::tuner: name = TRANS("Afinador"); break;
     }
     drawCaps(g, name, {0.0f, r.getBottom() - 22.0f, r.getWidth(), 16.0f}, 10.0f, juce::Justification::centred, colour::dim);
   }
@@ -870,6 +877,7 @@ void NexusEditor::ChainView::mouseUp(const juce::MouseEvent& e)
   case CardType::amp: mEditor.select({Kind::amp, c.index}); break;
   case CardType::cab: mEditor.select({Kind::cab, c.index}); break;
   case CardType::eq: mEditor.select({Kind::eq, c.index}); break;
+  case CardType::tuner: mEditor.select({Kind::tuner, 0}); break;
   case CardType::add: mEditor.addPedal(); break;
   case CardType::ab:
   {
@@ -946,6 +954,16 @@ void NexusEditor::ChainView::showCardMenu(int card)
   if (c.type == CardType::amp)
   {
     mEditor.showMidiMenu(NexusProcessor::ampParam(c.index, "canal"), *this);
+    return;
+  }
+  if (c.type == CardType::tuner)
+  {
+    const bool isMuted = proc.params.getRawParameterValue("afinador_mudo")->load() > 0.5f;
+    juce::PopupMenu menu;
+    menu.addItem(TRANS("Mudo ao afinar"), true, isMuted, [this, isMuted] {
+      mEditor.mProcessor.params.getParameter("afinador_mudo")->setValueNotifyingHost(isMuted ? 0.0f : 1.0f);
+    });
+    menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(this));
     return;
   }
   if (c.type == CardType::eq)
@@ -1116,6 +1134,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   // Estúdio: no lugar dos equipamentos, com o caminho do sinal embaixo.
   mEqStage = std::make_unique<nexus::ui::EqStage>(mProcessor.params);
   addChildComponent(*mEqStage);
+  mTunerStage = std::make_unique<nexus::ui::TunerStage>(mProcessor);
+  addChildComponent(*mTunerStage);
   mStudio = std::make_unique<nexus::ui::StudioView>(mProcessor.studio(), mProcessor.separation());
   addChildComponent(*mStudio);
   addAndMakeVisible(mMode);
@@ -1423,6 +1443,7 @@ void NexusEditor::select(Selection s)
   mAmpStage->setVisible(s.kind == Kind::amp);
   mCabStage->setVisible(s.kind == Kind::cab);
   mEqStage->setVisible(s.kind == Kind::eq);
+  mTunerStage->setVisible(s.kind == Kind::tuner);
 
   if (s.kind == Kind::pedal)
   {
@@ -2135,6 +2156,11 @@ void NexusEditor::timerCallback()
       link = loaded ? TRANS("trocar pacote") : TRANS("abrir pacote do pedal");
     }
   }
+  else if (mSel.kind == Kind::tuner)
+  {
+    title = TRANS("Afinador");
+    subtitle = TRANS(juce::String::fromUTF8("Toque uma corda solta. Verde no meio: afinada."));
+  }
   else if (mSel.kind == Kind::eq)
   {
     title = TRANS("Equalizador");
@@ -2272,5 +2298,6 @@ void NexusEditor::resized()
   mAmpStage->setBounds(ampArt(mSel.kind == Kind::amp ? mSel.index : 0).channels.size() > 1 ? r.withTrimmedTop(46) : r);
   mCabStage->setBounds(r);
   mEqStage->setBounds(r);
+  mTunerStage->setBounds(r);
   layoutTitle();
 }

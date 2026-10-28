@@ -14,6 +14,7 @@
 #include "ui/PresetBar.h"
 #include "ui/StudioView.h"
 #include "ui/EqStage.h"
+#include "ui/Tuner.h"
 #include "ui/TestBar.h"
 #include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
@@ -38,7 +39,8 @@ public:
     pedal,
     amp,
     cab,
-    eq // equalizador do fim da cadeia (fixo)
+    eq,   // equalizador do fim da cadeia (fixo)
+    tuner // afinador do começo da cadeia (fixo)
   };
   struct Selection
   {
@@ -159,7 +161,8 @@ private:
       cab,
       ab,
       add,
-      eq
+      eq,
+      tuner
     };
     struct Card
     {
@@ -267,6 +270,7 @@ private:
   nexus::ui::Segmented mMode{{"Equipamento", juce::String::fromUTF8("Estúdio")}};
   std::unique_ptr<nexus::ui::StudioView> mStudio;
   std::unique_ptr<nexus::ui::EqStage> mEqStage;
+  std::unique_ptr<nexus::ui::TunerStage> mTunerStage;
 
   nexus::ui::IconButton mInfoButton{nexus::ui::Icon::info, "Sobre o Nexus Modeler"};
   nexus::ui::IconButton mLanguageButton{nexus::ui::Icon::globe, "Idioma"};
