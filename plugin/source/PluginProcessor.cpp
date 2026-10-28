@@ -157,11 +157,11 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
                                    juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100",
-                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120"}, 0));
+                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
                                    juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12",
-                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12"}, 0));
+                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12", "Vault 8x10", "Granite 4x10"}, 0));
     for (const char* id : kGraphicIds)
       layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
                                      "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));

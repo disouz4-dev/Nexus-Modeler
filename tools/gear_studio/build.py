@@ -172,6 +172,10 @@ def main():
     view_w = W * frame["largura_rel"]
     dist = (view_w / 2) / math.tan(math.atan(18 / lens))
     cam = st.camera(scene, built.get("target", (0, built["front"], H * 0.52)), dist, frame["elevacao"], lens)
+    if rec["tipo"] == "caixa" and frame["proporcao"] > 1.0:
+        # Caixa alta (8x10): a imagem fica em pé e o Blender passaria a medir
+        # o sensor pela altura; a conta acima é pela largura.
+        cam.data.sensor_fit = "HORIZONTAL"
 
     controls = built["controls"]
     bpy.context.view_layer.update()  # câmera e peças no lugar antes de medir

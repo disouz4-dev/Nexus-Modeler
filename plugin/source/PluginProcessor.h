@@ -84,7 +84,7 @@ public:
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
-  static constexpr int kAmpLooks = 19;
+  static constexpr int kAmpLooks = 22;
   static constexpr int kMarkFive = 1;
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
@@ -147,7 +147,7 @@ public:
   int audibleSlot(int rig) const;
   int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
   int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
-  static constexpr int kCabLooks = 13;
+  static constexpr int kCabLooks = 15;
   int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;

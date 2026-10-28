@@ -972,5 +972,70 @@
         "nota": "47 favoritos na TONE3000"
       }
     ]
+  },
+  "vault300": {
+    "busca": "SVT",
+    "tons": [
+      {
+        "id": 28202,
+        "titulo": "Ampeg SVT Classic with 6x10",
+        "tipo": "amp",
+        "capturas": 8,
+        "padrao": true,
+        "nota": "a mais curtida da busca (1931 favoritos)"
+      }
+    ]
+  },
+  "citrusbass200": {
+    "busca": "AD200",
+    "tons": [
+      {
+        "id": 1537,
+        "titulo": "Orange AD200b",
+        "tipo": "amp",
+        "capturas": 6,
+        "padrao": true,
+        "nota": "a mais curtida da busca (148 favoritos)"
+      }
+    ]
+  },
+  "granite800": {
+    "busca": "RB800",
+    "tons": [
+      {
+        "id": 2694,
+        "titulo": "Gallien Krueger - RB800 (0.7.0)",
+        "tipo": "amp",
+        "capturas": 19,
+        "padrao": true,
+        "nota": "a mais curtida da busca (316 favoritos)"
+      }
+    ]
+  },
+  "vault_810": {
+    "busca": "8x10",
+    "tons": [
+      {
+        "id": 1708,
+        "titulo": "Bass Ampeg SVT  8x10",
+        "tipo": "cab",
+        "capturas": 8,
+        "padrao": true,
+        "nota": "a mais curtida da busca (999 favoritos)"
+      }
+    ]
+  },
+  "granite_410": {
+    "busca": "4x10",
+    "tons": [
+      {
+        "id": 45241,
+        "titulo": "Ampeg SVT - DI - 4x10 - 8x10 - the definitive speaker capture collection",
+        "tipo": "cab",
+        "capturas": 15,
+        "padrao": true,
+        "nota": "a mais curtida da busca (390 favoritos)"
+      }
+    ]
   }
 }

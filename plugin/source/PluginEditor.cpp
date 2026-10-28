@@ -22,17 +22,20 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
                                                                "mango_metal", "guava_mud", "apricot_treble"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
-                                                             "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120"};
+                                                             "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
+                                                             "citrusbass200", "granite800"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
-                                                             "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12};
+                                                             "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
+                                                             "granite_410"};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14};
 struct CabInfo
 {
   const char* inspiration;
 };
 const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"},
-                                                    {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"}};
+                                                    {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"},
+                                                    {"Ampeg 8x10"}, {"Gallien-Krueger 4x10"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -1310,6 +1313,9 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Super Lead 1959", "Britânicos"},
   {"Silver Jubilee 2555", "Britânicos"},
   {"JC-120", "Limpos de transistor"},
+  {"Ampeg SVT", "Baixo"},
+  {"Orange AD200", "Baixo"},
+  {"Gallien-Krueger 800RB", "Baixo"},
 };
 
 // Planejados (docs/CATALOGO.md): aparecem em "Em breve".
@@ -1370,7 +1376,8 @@ void NexusEditor::refreshBrowser()
     cab.art = &mCabArts[static_cast<size_t>(i)];
     cab.name = cab.art->name;
     cab.inspiration = kCabInfo[i].inspiration;
-    cab.category = "4x12";
+    // Grupo pelo tamanho no fim do nome ("4x12", "2x12", "8x10"...).
+    cab.category = juce::String(kCabInfo[i].inspiration).fromLastOccurrenceOf(" ", false, false);
     cab.source = "IR ou captura full rig";
     items.push_back(cab);
   }
