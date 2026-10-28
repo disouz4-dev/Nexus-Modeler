@@ -409,3 +409,4 @@ countries: sa eg ae ma
 "LÁ DE REFERÊNCIA" = "نغمة A المرجعية"
 "Toque uma corda solta. Verde no meio: afinada." = "اعزف وترًا مفتوحًا. الأخضر في المنتصف: مضبوط."
 "O afinador fica no começo da cadeia e escuta a guitarra antes de tudo. Com MUDO aceso, o som sai em silêncio enquanto esta tela estiver aberta." = "المُدوزِن في بداية السلسلة ويسمع الغيتار قبل أي شيء. عند إضاءة كتم، يبقى الخرج صامتًا ما دامت هذه الشاشة مفتوحة."
+"Criado por Diego de Souza, desenvolvedor." = "من إنشاء Diego de Souza، المطوّر."

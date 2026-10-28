@@ -349,6 +349,10 @@ docs/       site, catálogo, imagens e o plano dos modelos 3D
 
 O que mudou em cada versão está em [NOTAS-DE-VERSAO.md](NOTAS-DE-VERSAO.md).
 
+## Autor
+
+Criado por **Diego de Souza**, desenvolvedor ([@disouz4-dev](https://github.com/disouz4-dev)).
+
 ## Licença
 
 Nexus Modeler é software livre sob a licença **GPL versão 3** (veja

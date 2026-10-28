@@ -247,6 +247,8 @@ input[type="range"] { width: 100%; accent-color: var(--ciano); height: 32px; cur
 .rodape li { padding: 3px 0; }
 .rodape a { color: var(--texto-2); text-decoration: none; }
 .rodape a:hover { color: var(--ciano); }
+.rodape .autor { margin-top: 14px; color: var(--texto-2); }
+.rodape .autor a { color: var(--texto); font-weight: 600; }
 .rodape .aviso { border-top: 1px solid var(--borda); padding-top: 24px; font-size: 13px; line-height: 1.6; }
 
 /* Telas médias */

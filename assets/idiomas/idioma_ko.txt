@@ -409,3 +409,4 @@ countries: kr
 "LÁ DE REFERÊNCIA" = "기준음 A"
 "Toque uma corda solta. Verde no meio: afinada." = "개방현을 튕기세요. 가운데 초록색: 맞음."
 "O afinador fica no começo da cadeia e escuta a guitarra antes de tudo. Com MUDO aceso, o som sai em silêncio enquanto esta tela estiver aberta." = "튜너는 체인의 맨 앞에서 무엇보다 먼저 기타를 듣습니다. 음소거가 켜져 있으면 이 화면이 열려 있는 동안 출력이 무음이 됩니다."
+"Criado por Diego de Souza, desenvolvedor." = "제작: Diego de Souza (개발자)"

@@ -409,3 +409,4 @@ countries: us gb au ca
 "LÁ DE REFERÊNCIA" = "REFERENCE A"
 "Toque uma corda solta. Verde no meio: afinada." = "Play an open string. Green in the middle: in tune."
 "O afinador fica no começo da cadeia e escuta a guitarra antes de tudo. Com MUDO aceso, o som sai em silêncio enquanto esta tela estiver aberta." = "The tuner sits at the start of the chain and hears the guitar before anything else. With MUTE lit, the output is silent while this screen is open."
+"Criado por Diego de Souza, desenvolvedor." = "Created by Diego de Souza, developer."

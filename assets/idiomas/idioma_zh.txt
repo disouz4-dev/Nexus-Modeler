@@ -409,3 +409,4 @@ countries: cn sg
 "LÁ DE REFERÊNCIA" = "标准音 A"
 "Toque uma corda solta. Verde no meio: afinada." = "弹一根空弦。中间亮绿灯：已调准。"
 "O afinador fica no começo da cadeia e escuta a guitarra antes de tudo. Com MUDO aceso, o som sai em silêncio enquanto esta tela estiver aberta." = "调音器位于链路最前端，先于一切听到吉他。静音亮起时，此界面打开期间输出保持静音。"
+"Criado por Diego de Souza, desenvolvedor." = "由 Diego de Souza（开发者）创建。"

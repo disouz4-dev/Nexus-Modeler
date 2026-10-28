@@ -1894,6 +1894,7 @@ void NexusEditor::showAbout()
       juce::MessageBoxIconType::NoIcon, "Nexus Modeler " + nexus::update::currentVersion(),
       TRANS(juce::String::fromUTF8("Plugin de guitarra gratuito e de código aberto (GPL v3).")) + "\n"
         + TRANS(juce::String::fromUTF8("Toca capturas NAM A2 e troca de captura conforme o botão gira.")) + "\n\n"
+        + TRANS("Criado por Diego de Souza, desenvolvedor.") + "\n"
         + "github.com/disouz4-dev/Nexus-Modeler");
   });
   menu.addSeparator();
