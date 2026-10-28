@@ -32,6 +32,8 @@ NexusProcessor::NexusProcessor()
     p.lite = params.getRawParameterValue(pedalParam(i, "lite"));
     p.visual = params.getRawParameterValue(pedalParam(i, "visual"));
     p.sync = params.getRawParameterValue(pedalParam(i, "sinc"));
+    p.mode = params.getRawParameterValue(pedalParam(i, "modo"));
+    p.fourth = params.getRawParameterValue(pedalParam(i, "d"));
     for (int k = 0; k < 3; ++k)
       p.fx[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, k == 0 ? "a" : k == 1 ? "b" : "c"));
   }
@@ -218,7 +220,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
                                                      "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Tangerine Phaser",
                                                      "Dragonfruit Flanger", "Kiwi Tremolo", "Blackberry Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
-                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble"}, 0));
+                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble", "Juniper Sky",
+                                                     "Lime Echo", "Plum Mod"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -228,6 +231,14 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
   // O "Testar o som" continua tocando com a entrada no mudo.
   layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
+  // Pedais de vários modos (Juniper Sky, Lime Echo, Plum Mod): o seletor de
+  // modo e o quarto botão. No fim da lista, para não mexer na ordem dos outros.
+  for (int i = 0; i < kPedals; ++i)
+  {
+    const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "modo"), 1}, name + "modo", stepped, 0.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "d"), 1}, name + "efeito D", knob, 4.0f));
+  }
   return layout;
 }
 
@@ -434,7 +445,7 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
     if (p.sync->load() > 0.5f && syncsToTempo(look))
     {
       const double seconds = divisionBeats(divisionFor(p.fx[0]->load())) * 60.0 / tempoBpm();
-      if (pedalKind(look) == PedalKind::delay)
+      if (pedalKind(look) == PedalKind::delay || pedalKind(look) == PedalKind::echo)
         p.native.setSync(0.0, seconds);
       else
         p.native.setSync(1.0 / seconds, 0.0);
@@ -452,8 +463,14 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
       case PedalKind::flanger: type = T::flanger; break;
       case PedalKind::tremolo: type = T::tremolo; break;
       case PedalKind::vibe: type = T::vibe; break;
+      case PedalKind::sky: type = T::sky; break;
+      case PedalKind::echo: type = T::echo; break;
+      case PedalKind::multiMod: type = T::multiMod; break;
       default: break;
     }
+    // Vários modos: o modo, o tom, o quarto botão e (no reverb) o shimmer, que usa o "nível".
+    if (hasModes(look))
+      p.native.setExtras(juce::roundToInt(p.mode->load()), p.tone->load() / 10.0, p.fourth->load() / 10.0, p.levelParam->load() / 10.0);
     p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
     return;
   }
@@ -886,6 +903,18 @@ const char* NexusProcessor::divisionName(int i)
 {
   static const char* const names[kDivisions] = {"1/1", "1/2", "1/4", "1/8.", "1/6", "1/8", "1/12", "1/16", "1/32"};
   return names[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+juce::String NexusProcessor::modeName(int look, float modeKnob)
+{
+  const int mode = juce::roundToInt(modeKnob);
+  switch (pedalKind(look))
+  {
+    case PedalKind::sky: return TRANS(juce::String::fromUTF8(nexus::SkyReverb::modeName(mode)));
+    case PedalKind::echo: return TRANS(juce::String::fromUTF8(nexus::EchoDelay::modeName(mode)));
+    case PedalKind::multiMod: return TRANS(juce::String::fromUTF8(nexus::MultiMod::modeName(mode)));
+    default: return {};
+  }
 }
 
 double NexusProcessor::divisionBeats(int i)

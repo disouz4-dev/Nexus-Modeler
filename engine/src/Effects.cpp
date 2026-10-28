@@ -360,7 +360,8 @@ void Vibe::process(double* buffer, int n, double rate, double intensity, double 
 void NativePedal::setSync(double hz, double seconds)
 {
   mChorus.syncHz = mPhaser.syncHz = mFlanger.syncHz = mTremolo.syncHz = mVibe.syncHz = hz;
-  mDelay.syncSeconds = seconds;
+  mDelay.syncSeconds = mEcho.syncSeconds = seconds;
+  mMulti.syncHz = hz;
 }
 
 void NativePedal::prepare(double sampleRate, int maxBlock)
@@ -374,8 +375,13 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mFlanger.prepare(sampleRate);
   mTremolo.prepare(sampleRate);
   mVibe.prepare(sampleRate);
+  mSky.prepare(sampleRate);
+  mEcho.prepare(sampleRate);
+  mMulti.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
+  mDry.assign(static_cast<size_t>(maxBlock), 1.0);
+  mGains.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
 }
 
@@ -389,6 +395,9 @@ void NativePedal::reset()
   mFlanger.reset();
   mTremolo.reset();
   mVibe.reset();
+  mSky.reset();
+  mEcho.reset();
+  mMulti.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -460,10 +469,16 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mFlanger.reset();
     mTremolo.reset();
     mVibe.reset();
+    mSky.reset();
+    mEcho.reset();
+    mMulti.reset();
     mLast = type;
   }
+  // Rastro de até 6 s depois de desligar (o reverb de vários modos tem
+  // caudas de até 25 s; o delay, repetições longas).
+  const double tailSeconds = type == Type::sky ? 25.0 : type == Type::echo ? 12.0 : 6.0;
   if (on)
-    mTail = static_cast<int>(6.0 * mRate); // rastro de até 6 s depois de desligar
+    mTail = static_cast<int>(tailSeconds * mRate);
   else if (mTail > 0)
     mTail -= n;
   if (!on && mGain <= 0.0 && mTail <= 0)
@@ -484,7 +499,8 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  if (type == Type::chorus || type == Type::phaser || type == Type::flanger || type == Type::tremolo || type == Type::vibe)
+  if (type == Type::chorus || type == Type::phaser || type == Type::flanger || type == Type::tremolo || type == Type::vibe
+      || type == Type::multiMod)
   {
     // Modulação não tem rastro: liga e desliga com transição de 20 ms.
     std::copy(buffer, buffer + n, mIn.begin());
@@ -494,6 +510,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       case Type::flanger: mFlanger.process(mIn.data(), n, a, b, c); break;
       case Type::tremolo: mTremolo.process(mIn.data(), n, a, b, c); break;
       case Type::vibe: mVibe.process(mIn.data(), n, a, b, c); break;
+      case Type::multiMod: mMulti.process(mIn.data(), n, mMode, a, b, c, mTone, mFourth); break;
       default: mChorus.process(mIn.data(), n, a, b, c); break;
     }
     for (int i = 0; i < n; ++i)
@@ -503,6 +520,29 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     }
     if (!on && mGain <= 0.0)
       mTail = 0;
+    return;
+  }
+  // Reverb e delay de vários modos: como os de baixo, mas o modo swell
+  // também mexe no seco (a nota entra devagar) enquanto o pedal está ligado.
+  if (type == Type::sky || type == Type::echo)
+  {
+    for (int i = 0; i < n; ++i)
+    {
+      mGain = on ? std::min(1.0, mGain + step) : std::max(0.0, mGain - step);
+      mGains[static_cast<size_t>(i)] = mGain;
+      mIn[static_cast<size_t>(i)] = buffer[i] * mGain;
+    }
+    if (type == Type::sky)
+      mSky.process(mIn.data(), mWet.data(), mDry.data(), n, mMode, a, b, mTone, mFourth, mFifth);
+    else
+      mEcho.process(mIn.data(), mWet.data(), mDry.data(), n, mMode, a, b, mTone, mFourth);
+    for (int i = 0; i < n; ++i)
+    {
+      const auto s = static_cast<size_t>(i);
+      mMix = smooth(mMix, c, mRate);
+      const double dry = 1.0 - mGains[s] * (1.0 - mDry[s]);
+      buffer[i] = buffer[i] * dry + mWet[s] * mMix;
+    }
     return;
   }
   // Delay e reverb: a entrada do efeito liga e desliga; a saída continua

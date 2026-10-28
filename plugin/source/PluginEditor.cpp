@@ -23,7 +23,8 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
                                                                "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
                                                                "cherry_drop", "tangerine_phaser", "dragonfruit_flanger", "kiwi_tremolo",
                                                                "blackberry_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
-                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble"};
+                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble",
+                                                               "juniper_sky", "lime_echo", "plum_mod"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
@@ -147,6 +148,35 @@ void drawDropDisplay(juce::Graphics& g, juce::Rectangle<float> r, float knobA)
   g.fillRoundedRectangle(r.withHeight(r.getHeight() * 0.5f), corner);
 }
 
+// Visor dos pedais de vários modos: o número e o nome do modo, em cristal
+// aceso da cor do pedal (azul-gelo no reverb, verde no delay, lilás na modulação).
+void drawModeDisplay(juce::Graphics& g, juce::Rectangle<float> r, int look, float modeKnob)
+{
+  using K = NexusProcessor::PedalKind;
+  const auto kind = NexusProcessor::pedalKind(look);
+  const juce::Colour top = kind == K::sky ? juce::Colour(0xff3d6f9e) : kind == K::echo ? juce::Colour(0xff2f8a3a) : juce::Colour(0xff6a3f9a);
+  const juce::Colour bottom = top.darker(1.4f);
+  const float corner = r.getHeight() * 0.10f;
+  g.setGradientFill(juce::ColourGradient(top, r.getCentreX(), r.getY(), bottom, r.getCentreX(), r.getBottom(), false));
+  g.fillRoundedRectangle(r, corner);
+  g.setColour(juce::Colours::black.withAlpha(0.10f));
+  for (float y = r.getY() + 2.0f; y < r.getBottom(); y += 3.0f)
+    g.drawHorizontalLine(juce::roundToInt(y), r.getX() + 1.0f, r.getRight() - 1.0f);
+  auto text = r.reduced(r.getWidth() * 0.05f, r.getHeight() * 0.10f);
+  auto number = text.removeFromTop(text.getHeight() * 0.42f);
+  const juce::Colour ink(0xffeefaff);
+  g.setColour(ink.withAlpha(0.8f));
+  g.setFont(juce::Font(juce::FontOptions(number.getHeight() * 0.9f, juce::Font::bold)).withExtraKerningFactor(0.08f));
+  g.drawText(juce::String(juce::roundToInt(modeKnob) + 1).paddedLeft('0', 2), number, juce::Justification::centred, false);
+  g.setColour(ink);
+  g.setFont(juce::Font(juce::FontOptions(text.getHeight() * 0.62f, juce::Font::bold)).withExtraKerningFactor(0.06f));
+  g.drawFittedText(NexusProcessor::modeName(look, modeKnob).toUpperCase(), text.toNearestInt(), juce::Justification::centred, 2, 0.6f);
+  juce::ColourGradient shine(juce::Colours::white.withAlpha(0.16f), r.getX(), r.getY(), juce::Colours::white.withAlpha(0.0f), r.getX(),
+                             r.getCentreY(), false);
+  g.setGradientFill(shine);
+  g.fillRoundedRectangle(r.withHeight(r.getHeight() * 0.5f), corner);
+}
+
 juce::String nativeKnobLabel(int look, const juce::String& id)
 {
   using K = NexusProcessor::PedalKind;
@@ -160,6 +190,19 @@ juce::String nativeKnobLabel(int look, const juce::String& id)
   static const char* const flanger[3] = {"Velocidade", "Profundidade", "Realimentação"};
   static const char* const tremolo[3] = {"Velocidade", "Profundidade", "Forma"};
   static const char* const vibe[3] = {"Velocidade", "Intensidade", "Mistura"};
+  // Vários modos: a, b, c, d, tom, nível (o shimmer, no reverb) e modo.
+  static const char* const sky[6] = {"Decaimento", "Pré-atraso", "Mistura", "Modulação", "Tom", "Shimmer"};
+  static const char* const echo[6] = {"Tempo", "Repetições", "Mistura", "Modulação", "Tom", "Nível"};
+  static const char* const multi[6] = {"Velocidade", "Profundidade", "Mistura", "Ajuste", "Tom", "Nível"};
+  if (NexusProcessor::hasModes(look))
+  {
+    if (id == "modo")
+      return "Modo";
+    const auto k = NexusProcessor::pedalKind(look);
+    const char* const* six = k == K::sky ? sky : k == K::echo ? echo : multi;
+    const int i = id == "a" ? 0 : id == "b" ? 1 : id == "c" ? 2 : id == "d" ? 3 : id == "tom" ? 4 : 5;
+    return juce::String::fromUTF8(six[i]);
+  }
   switch (NexusProcessor::pedalKind(look))
   {
     case K::delay: names = delay; break;
@@ -288,8 +331,13 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
         auto label = mKind == Kind::pedal && k.id == "ganho" ? juce::String("Drive") : knobLabel(k.id);
         if (mKind == Kind::pedal && (k.id == "a" || k.id == "b" || k.id == "c"))
           label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
+        if (mKind == Kind::pedal && NexusProcessor::hasModes(mProcessor.pedalLook(index)))
+          label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
         auto knob = std::make_unique<FilmKnob>(*param, k, label);
         knob->onChange = [this] { repaint(); };
+        // Seletor de modo: o balão mostra o nome do modo.
+        if (mKind == Kind::pedal && k.id == "modo")
+          knob->valueText = [this](float v) { return NexusProcessor::modeName(mProcessor.pedalLook(mIndex), v); };
         // Sincronizado ao andamento: a velocidade (ou o tempo do delay) vira divisão.
         if (mKind == Kind::pedal && k.id == "a" && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index)))
           knob->valueText = [this](float v) {
@@ -383,8 +431,11 @@ void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
   if (mKind == Kind::pedal && pedalOn() && mArt != nullptr && !mArt->display.isEmpty())
   {
     const auto tl = toScreen(mArt->display.getTopLeft());
-    drawDropDisplay(g, {tl.x, tl.y, mArt->display.getWidth() * mScale, mArt->display.getHeight() * mScale},
-                    mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "a"))->load());
+    const juce::Rectangle<float> r{tl.x, tl.y, mArt->display.getWidth() * mScale, mArt->display.getHeight() * mScale};
+    if (const int look = mProcessor.pedalLook(mIndex); NexusProcessor::hasModes(look))
+      drawModeDisplay(g, r, look, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "modo"))->load());
+    else
+      drawDropDisplay(g, r, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "a"))->load());
   }
   // Cabeçote de vários canais: acende o LED do canal que está tocando.
   if (mKind == Kind::amp && mArt != nullptr)
@@ -1388,6 +1439,9 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Avocado Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
   {"Pomegranate Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
   {"Snow Pear Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
+  {"Juniper Sky", "Strymon BigSky", "Reverb", "Efeito do Nexus"},
+  {"Lime Echo", "Line 6 DL4", "Delay", "Efeito do Nexus"},
+  {"Plum Mod", "Line 6 MM4", "Modulação", "Efeito do Nexus"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.
@@ -2290,6 +2344,10 @@ void NexusEditor::timerCallback()
     if (NexusProcessor::isNativeLook(pedalLook(mSel.index)))
     {
       subtitle = TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura. O pisante liga e desliga."));
+      if (const int look = pedalLook(mSel.index); NexusProcessor::hasModes(look))
+        subtitle = TRANS("Modo") + ": "
+                   + NexusProcessor::modeName(look, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mSel.index, "modo"))->load())
+                   + ". " + TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura."));
       link = {};
     }
     else

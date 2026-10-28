@@ -70,16 +70,20 @@ public:
     phaser,
     flanger,
     tremolo,
-    vibe
+    vibe,
+    sky,     // reverb de vários modos, com shimmer
+    echo,    // delay de vários modos
+    multiMod // modulação de vários modos
   };
-  static constexpr int kPedalLooks = 19;
+  static constexpr int kPedalLooks = 22;
   static constexpr PedalKind kPedalKinds[kPedalLooks] = {
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
     PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
     PedalKind::drop,                                                                 // Cherry Drop
     PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
-    PedalKind::capture, PedalKind::capture};                                         // Pomegranate, Snow Pear
+    PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
+    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod};                    // Juniper Sky, Lime Echo, Plum Mod
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
@@ -91,12 +95,20 @@ public:
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
   static juce::String eqParam(int band, const char* name) { return "eq" + juce::String(band + 1) + "_" + name; }
   static bool isNativeLook(int look) { return pedalKind(look) != PedalKind::capture; }
+  // Pedais com seletor de modo (botão "modo", de 0 a 10) e botões a mais.
+  static bool hasModes(int look)
+  {
+    const auto k = pedalKind(look);
+    return k == PedalKind::sky || k == PedalKind::echo || k == PedalKind::multiMod;
+  }
+  // Nome do modo escolhido (vazio se o pedal não tem modos).
+  static juce::String modeName(int look, float modeKnob);
   // Efeitos que podem andar no andamento (tap tempo ou o da música).
   static bool syncsToTempo(int look)
   {
     const auto k = pedalKind(look);
     return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
-           || k == PedalKind::vibe;
+           || k == PedalKind::vibe || k == PedalKind::echo || k == PedalKind::multiMod;
   }
   // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
   // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
@@ -243,6 +255,8 @@ private:
     std::atomic<float>* visual = nullptr;
     std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
     std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
+    std::atomic<float>* mode = nullptr;     // modo dos pedais de vários modos
+    std::atomic<float>* fourth = nullptr;   // quarto botão dos pedais de vários modos
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;

@@ -704,6 +704,130 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
   }
 
+  // 8b. Pedais de vários modos: Juniper Sky (reverb), Lime Echo (delay) e Plum Mod (modulação).
+  {
+    std::printf("\nPedais de vários modos (Juniper Sky, Lime Echo, Plum Mod)\n");
+    auto make = [&](int look, int mode, bool on) {
+      auto p = std::make_unique<NexusProcessor>();
+      p->setPlayConfigDetails(2, 2, 48000.0, 128);
+      p->prepareToPlay(48000.0, 128);
+      setParam(*p, "p1_visual", static_cast<float>(look));
+      setParam(*p, "p1_modo", static_cast<float>(mode));
+      setParam(*p, "p1_ligado", on ? 1.0f : 0.0f);
+      ChainLayout l;
+      l.pre = {0};
+      p->setLayout(l);
+      settle(*p, 20);
+      return p;
+    };
+    auto rmsDb = [](const std::vector<float>& v) {
+      double s = 1e-30;
+      for (float x : v)
+        s += static_cast<double>(x) * x;
+      return 10.0 * std::log10(s / static_cast<double>(std::max<size_t>(1, v.size())));
+    };
+    const auto outDry = play(*make(19, 0, false), signal);
+    const char* const kinds[3] = {"Juniper Sky", "Lime Echo", "Plum Mod"};
+    for (int k = 0; k < 3; ++k)
+    {
+      int finite = 0, changed = 0, level = 0;
+      double worstLevel = 0.0;
+      juce::String odd;
+      for (int mode = 0; mode < 11; ++mode)
+      {
+        auto p = make(19 + k, mode, true);
+        const auto out = play(*p, signal);
+        const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+        const double gap = rmsDb(out) - rmsDb(outDry);
+        finite += ok ? 1 : 0;
+        changed += diffDb(outDry, out) > -30.0 ? 1 : 0;
+        level += std::abs(gap) < 3.0 ? 1 : 0;
+        if (std::abs(gap) > std::abs(worstLevel))
+          worstLevel = gap;
+        if (!ok || std::abs(gap) >= 3.0 || diffDb(outDry, out) <= -30.0)
+          odd += NexusProcessor::modeName(19 + k, static_cast<float>(mode)) + " ";
+      }
+      report(finite == 11, (juce::String(kinds[k]) + ": os 11 modos sem valores infinitos nem estouro").toRawUTF8(),
+             juce::String(finite) + " de 11" + (odd.isEmpty() ? juce::String() : ", fora: " + odd));
+      report(changed == 11, (juce::String(kinds[k]) + ": cada modo ligado muda o som").toRawUTF8(), juce::String(changed) + " de 11");
+      report(level == 11, (juce::String(kinds[k]) + ": volume ligado parecido com desligado (até 3 dB)").toRawUTF8(),
+             juce::String::fromUTF8("maior diferença: ") + juce::String(worstLevel, 1) + " dB");
+    }
+
+    // Tudo no máximo por 20 s (shimmer realimentado, repetições no fim): continua finito.
+    {
+      int bounded = 0;
+      const auto longSignal = nexus::makeGuitarLikeSignal(48000.0, 20.0, 9);
+      for (int k = 0; k < 3; ++k)
+        for (int mode : {0, 4, 6, 10})
+        {
+          auto p = make(19 + k, mode, true);
+          for (const char* id : {"p1_a", "p1_b", "p1_c", "p1_d", "p1_tom", "p1_nivel"})
+            setParam(*p, id, 10.0f);
+          const auto out = play(*p, longSignal);
+          const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+          bounded += ok ? 1 : 0;
+        }
+      report(bounded == 12, juce::String::fromUTF8("Botões no máximo por 20 s: nenhum modo dispara").toRawUTF8(),
+             juce::String(bounded) + " de 12");
+    }
+
+    // Lime Echo no andamento: 1/4 a 120 BPM repete meio segundo depois.
+    {
+      auto firstEcho = [](const std::vector<float>& out) {
+        size_t best = 4000;
+        for (size_t i = 4000; i < out.size(); ++i)
+          if (std::abs(out[i]) > std::abs(out[best]))
+            best = i;
+        return (static_cast<double>(best) - 1024.0) / 48.0;
+      };
+      auto p = make(20, 0, true);
+      setParam(*p, "andamento", 120.0f);
+      setParam(*p, "p1_sinc", 1.0f);
+      setParam(*p, "p1_a", 2.5f); // terceira divisão: 1/4
+      setParam(*p, "p1_b", 0.0f);
+      setParam(*p, "p1_c", 10.0f);
+      std::vector<double> click(48000, 0.0);
+      for (int i = 0; i < 48; ++i)
+        click[static_cast<size_t>(1000 + i)] = 0.5 * std::sin(i / 48.0 * 3.14159);
+      const double ms = firstEcho(play(*p, click));
+      report(std::abs(ms - 500.0) < 5.0, "Lime Echo sincronizado: 1/4 a 120 BPM repete em 500 ms",
+             juce::String(ms, 1) + " ms (" + NexusProcessor::divisionName(NexusProcessor::divisionFor(2.5f)) + ")");
+      setParam(*p, "andamento", 90.0f);
+      play(*p, std::vector<double>(96000, 0.0)); // o tempo desliza até o novo
+      const double ms90 = firstEcho(play(*p, click));
+      report(std::abs(ms90 - 666.7) < 8.0, "Mudou o andamento (90 BPM): a repetição acompanha", juce::String(ms90, 1) + " ms");
+    }
+
+    // Shimmer oitava acima: uma nota de 220 Hz ganha energia em 440 Hz na cauda.
+    {
+      auto energyAt = [](const std::vector<float>& v, size_t from, double hz) {
+        double re = 0.0, im = 0.0;
+        for (size_t i = from; i < v.size(); ++i)
+        {
+          re += v[i] * std::cos(2.0 * 3.14159265358979 * hz * static_cast<double>(i) / 48000.0);
+          im += v[i] * std::sin(2.0 * 3.14159265358979 * hz * static_cast<double>(i) / 48000.0);
+        }
+        return std::sqrt(re * re + im * im);
+      };
+      std::vector<double> note(48000 * 4, 0.0);
+      for (size_t i = 0; i < 48000; ++i)
+        note[i] = 0.3 * std::sin(2.0 * 3.14159265358979 * 220.0 * static_cast<double>(i) / 48000.0);
+      double ratio[2] = {};
+      for (int s = 0; s < 2; ++s)
+      {
+        auto p = make(19, s == 0 ? 0 : 6, true); // hall e shimmer oitava acima
+        setParam(*p, "p1_a", 7.0f);
+        setParam(*p, "p1_c", 10.0f);
+        setParam(*p, "p1_nivel", 8.0f);
+        const auto out = play(*p, note);
+        ratio[s] = energyAt(out, 48000 * 2, 440.0) / (energyAt(out, 48000 * 2, 220.0) + 1e-9);
+      }
+      report(ratio[1] > ratio[0] * 3.0, "Shimmer: a cauda sobe uma oitava (440 Hz) e o hall não",
+             "440/220 no shimmer: " + juce::String(ratio[1], 2) + ", no hall: " + juce::String(ratio[0], 2));
+    }
+  }
+
   // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
   {
     std::printf("\nPresets\n");
