@@ -1,0 +1,90 @@
+{
+  "tipo": "pedal",
+  "nome": "Clementine Turbo",
+  "familia": "clementine_turbo",
+  "inspiracao": "laranja com letras pretas, caixa compacta com pedal basculante (estilo Boss DS-2 Turbo Distortion)",
+  "formato": "compacto",
+  "medidas_m": {
+    "largura": 0.073,
+    "comprimento": 0.129,
+    "altura": 0.059
+  },
+  "basculante_rel": 0.6,
+  "pintura": {
+    "cor": [
+      0.85,
+      0.35,
+      0.04
+    ],
+    "metalico": 0.1,
+    "aspereza": 0.22
+  },
+  "texto_cor": [
+    0.015,
+    0.015,
+    0.015
+  ],
+  "modelo": "CLEMENTINE TURBO",
+  "tipo_texto": "TURBO",
+  "rotulo_m": 0.0046,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "saia": true,
+    "corpo": [
+      0.014,
+      0.014,
+      0.014
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "DISTORÇÃO",
+      "pos": [
+        -0.6,
+        0.7
+      ]
+    },
+    {
+      "id": "tom",
+      "rotulo": "TOM",
+      "pos": [
+        0.0,
+        0.7
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
+        0.6,
+        0.7
+      ]
+    }
+  ],
+  "led": [
+    -0.72,
+    0.06
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "base_rel": 0.68,
+  "rotulo_embaixo": true,
+  "led_no_basculante": true,
+  "texto_cor2": [
+    0.015,
+    0.015,
+    0.015
+  ],
+  "modelo_m": 0.0064,
+  "modelo_x": 0.12
+}

@@ -81,3 +81,12 @@ if(MSVC)
 else()
   target_compile_options(nexus_studio PRIVATE -Wall -Wextra "$<$<CONFIG:Release>:-O3>")
 endif()
+
+# Teste dos efeitos nativos novos (wah, rotativa, delay analógico, oitavador e
+# compressor): silêncio, valores finitos, desligar sem estalo e a resposta de cada um.
+if(NEXUS_BUILD_TOOLS)
+  enable_testing()
+  add_executable(nexus_fx_test test/NativeFxTest.cpp src/Effects.cpp)
+  target_include_directories(nexus_fx_test PRIVATE include)
+  add_test(NAME efeitos_nativos COMMAND nexus_fx_test)
+endif()

@@ -355,12 +355,335 @@ void Vibe::process(double* buffer, int n, double rate, double intensity, double 
   }
 }
 
+// ---------------------------------------------------------------- Filtro de variáveis de estado
+
+namespace
+{
+// Filtro de variáveis de estado (forma "TPT"): estável mesmo com a
+// frequência mudando a cada amostra. Devolve o passa-banda (ganho 1 no pico,
+// já multiplicado por 1/Q) e o passa-baixa.
+struct SvfOut
+{
+  double band, low;
+};
+inline SvfOut svf(double x, double hz, double q, double sampleRate, double& ic1, double& ic2)
+{
+  const double g = std::tan(kPi * std::min(hz, sampleRate * 0.45) / sampleRate);
+  const double k = 1.0 / q;
+  const double a1 = 1.0 / (1.0 + g * (g + k));
+  const double a2 = g * a1;
+  const double a3 = g * a2;
+  const double v3 = x - ic2;
+  const double v1 = a1 * ic1 + a2 * v3;
+  const double v2 = ic2 + a2 * ic1 + a3 * v3;
+  ic1 = 2.0 * v1 - ic1;
+  ic2 = 2.0 * v2 - ic2;
+  return {v1 * k, v2};
+}
+
+// Coeficiente de um polo simples para a constante de tempo em segundos.
+inline double onePole(double seconds, double sampleRate)
+{
+  return 1.0 - std::exp(-1.0 / (seconds * sampleRate));
+}
+
+inline double dbToGain(double db)
+{
+  return std::pow(10.0, db / 20.0);
+}
+} // namespace
+
+// ---------------------------------------------------------------- Wah
+
+void Wah::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Wah::reset()
+{
+  mIc1 = mIc2 = 0.0;
+  mPos = -1.0;
+}
+
+double Wah::centerHz(double position, double range)
+{
+  // Varredura em escala de oitavas (o ouvido ouve o pedal andar por igual);
+  // a faixa larga desce e sobe um pouco além do Cry Baby.
+  const double low = 350.0 / (1.0 + 0.35 * range);
+  const double high = 2200.0 * (1.0 + 0.25 * range);
+  return low * std::pow(high / low, std::clamp(position, 0.0, 1.0));
+}
+
+void Wah::process(double* buffer, int n, double position, double range, double level)
+{
+  if (mPos < 0.0)
+    mPos = position;
+  // O pé é mais lento que o botão: 30 ms de suavização (sem "degraus").
+  const double footCoef = onePole(0.03, mRate);
+  for (int i = 0; i < n; ++i)
+  {
+    mPos += (position - mPos) * footCoef;
+    mRange = smooth(mRange, range, mRate);
+    mLevel = smooth(mLevel, level, mRate);
+    // Estreito: Q 10 (cantado); largo: Q 2. Na ponta o Q cai um pouco, como
+    // no indutor do original.
+    const double q = 10.0 * std::pow(0.2, mRange) * (1.0 - 0.25 * mPos);
+    const auto f = svf(buffer[i], centerHz(mPos, mRange), q, mRate, mIc1, mIc2);
+    // O pico sobe com o Q (o estreito é mais alto, como no pedal); um fio do
+    // som limpo e do grave fica por baixo.
+    const double wet = f.band * 0.9 * std::sqrt(q) + 0.08 * buffer[i] + 0.05 * f.low;
+    buffer[i] = wet * dbToGain((mLevel - 0.5) * 24.0);
+  }
+}
+
+// ---------------------------------------------------------------- Rotary
+
+void Rotary::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  mHornLine.prepare(static_cast<int>(0.006 * sampleRate));
+  mDrumLine.prepare(static_cast<int>(0.006 * sampleRate));
+  reset();
+}
+
+void Rotary::reset()
+{
+  mHornLine.clear();
+  mDrumLine.clear();
+  mHornPhase = 0.0;
+  mDrumPhase = 0.25;
+  mHornHz = mDrumHz = -1.0;
+  mIc1 = mIc2 = 0.0;
+}
+
+void Rotary::process(double* buffer, int n, double speed, double drive, double balance)
+{
+  // Velocidade: corneta de 0,8 a 6,7 Hz, tambor de 0,67 a 5,9 Hz.
+  const double s = std::clamp(speed, 0.0, 1.0);
+  const double hornTarget = 0.8 + 5.9 * s;
+  const double drumTarget = 0.67 + 5.23 * s;
+  if (mHornHz < 0.0)
+  {
+    mHornHz = hornTarget;
+    mDrumHz = drumTarget;
+  }
+  // Inércia: acelerar é mais rápido que frear; o tambor é pesado.
+  const double hornCoef = onePole(hornTarget > mHornHz ? 0.6 : 0.9, mRate);
+  const double drumCoef = onePole(drumTarget > mDrumHz ? 3.0 : 4.0, mRate);
+  constexpr double kHornAm = 0.45, kDrumAm = 0.3;
+  for (int i = 0; i < n; ++i)
+  {
+    mHornHz += (hornTarget - mHornHz) * hornCoef;
+    mDrumHz += (drumTarget - mDrumHz) * drumCoef;
+    mDrive = smooth(mDrive, drive, mRate);
+    mBalance = smooth(mBalance, balance, mRate);
+    // Pré de válvula: ganho 1 nos sinais baixos, arredonda os picos.
+    const double g = 1.0 + 7.0 * mDrive * mDrive;
+    const double x = std::tanh(buffer[i] * g) / std::sqrt(g);
+    // Divisor em 800 Hz: grave pelo passa-baixa, agudo pelo resto (somam
+    // de volta exatamente o sinal).
+    const double low = svf(x, 800.0, 0.7071, mRate, mIc1, mIc2).low;
+    const double high = x - low;
+    const double hc = std::cos(2.0 * kPi * mHornPhase);
+    const double dc = std::cos(2.0 * kPi * mDrumPhase);
+    // Corneta: mais perto do microfone = atraso menor e volume maior.
+    mHornLine.push(high);
+    const double horn = mHornLine.read((2.0 - 0.45 * hc) * 0.001 * mRate) * (1.0 - kHornAm * (0.5 - 0.5 * hc));
+    mDrumLine.push(low);
+    const double drum = mDrumLine.read((2.0 - 0.15 * dc) * 0.001 * mRate) * (1.0 - kDrumAm * (0.5 - 0.5 * dc));
+    // Equilíbrio de potência igual (meio = os dois cheios); compensa o
+    // volume médio que a modulação tira.
+    const double hornGain = std::sqrt(2.0 * mBalance) / (1.0 - 0.5 * kHornAm);
+    const double drumGain = std::sqrt(2.0 * (1.0 - mBalance)) / (1.0 - 0.5 * kDrumAm);
+    buffer[i] = (horn * hornGain + drum * drumGain) * 0.85;
+    mHornPhase += mHornHz / mRate;
+    if (mHornPhase >= 1.0)
+      mHornPhase -= 1.0;
+    mDrumPhase += mDrumHz / mRate;
+    if (mDrumPhase >= 1.0)
+      mDrumPhase -= 1.0;
+  }
+}
+
+// ---------------------------------------------------------------- AnalogDelay
+
+void AnalogDelay::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  mLine.prepare(static_cast<int>(1.6 * sampleRate)); // até 1,5 s com o andamento
+  reset();
+}
+
+void AnalogDelay::reset()
+{
+  mLine.clear();
+  mDelay = 0.0;
+  mPhase = 0.0;
+  mPhase2 = 0.0;
+  mLow1 = mLow2 = mHigh = 0.0;
+}
+
+void AnalogDelay::process(const double* input, double* wet, int n, double time, double feedback)
+{
+  const double secs = syncSeconds > 0.0 ? std::min(1.5, syncSeconds) : seconds(time);
+  const double target = secs * mRate;
+  if (mDelay <= 0.0)
+    mDelay = target;
+  // Relógio do BBD: tempo longo = relógio lento = repetição mais escura
+  // (de 4,5 kHz em 30 ms a 2 kHz em 550 ms e além).
+  const double cutoff = std::clamp(4500.0 * std::pow(secs / 0.03, -0.28), 1200.0, 4500.0);
+  const double lowCoef = 1.0 - std::exp(-2.0 * kPi * cutoff / mRate);
+  const double highCoef = 1.0 - std::exp(-2.0 * kPi * 70.0 / mRate);
+  for (int i = 0; i < n; ++i)
+  {
+    // Repetições: no máximo 0,98 na volta; com os filtros e a saturação,
+    // fica na beira da auto-oscilação sem disparar.
+    mFeedback = smooth(mFeedback, std::clamp(feedback, 0.0, 1.0) * 0.98, mRate);
+    mDelay += (target - mDelay) * 0.0005;
+    // Balanço leve do tempo (o relógio do chip nunca é firme): dois
+    // osciladores lentos, ±0,25% do tempo mais 0,1 ms.
+    const double wobble = 0.7 * std::sin(2.0 * kPi * mPhase) + 0.3 * std::sin(2.0 * kPi * mPhase2);
+    const double echo = mLine.read(mDelay * (1.0 + 0.0025 * wobble) + 0.0001 * mRate * wobble);
+    mPhase += 0.43 / mRate;
+    if (mPhase >= 1.0)
+      mPhase -= 1.0;
+    mPhase2 += 1.7 / mRate;
+    if (mPhase2 >= 1.0)
+      mPhase2 -= 1.0;
+    // Dois polos de passa-baixa e um passa-alta leve: cada volta escurece.
+    mLow1 += (echo - mLow1) * lowCoef;
+    mLow2 += (mLow1 - mLow2) * lowCoef;
+    mHigh += (mLow2 - mHigh) * highCoef;
+    const double shaped = mLow2 - mHigh;
+    // Saturação suave na volta (o chip satura antes de 1,2).
+    mLine.push(1.2 * std::tanh((input[i] + shaped * mFeedback) / 1.2));
+    wet[i] = shaped;
+  }
+}
+
+// ---------------------------------------------------------------- Octave
+
+void Octave::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Octave::reset()
+{
+  mPreIc1 = mPreIc2 = mPre2 = 0.0;
+  mEnv = mEnvLow = 0.0;
+  mHigh = mFlip1 = mFlip2 = false;
+  mSub1Ic1 = mSub1Ic2 = mSub2Ic1 = mSub2Ic2 = 0.0;
+}
+
+void Octave::process(double* buffer, int n, double direct, double sub1, double sub2)
+{
+  const double envUp = onePole(0.001, mRate);
+  const double envDown = onePole(0.06, mRate);
+  const double pre2Coef = onePole(1.0 / (2.0 * kPi * 400.0), mRate);
+  constexpr double kGate = 1e-4; // -80 dB: abaixo disso o contador não anda
+  for (int i = 0; i < n; ++i)
+  {
+    mDirect = smooth(mDirect, direct, mRate);
+    mSub1 = smooth(mSub1, sub1, mRate);
+    mSub2 = smooth(mSub2, sub2, mRate);
+    const double x = buffer[i];
+    // Seguidor de envoltória: o volume da nota que a onda quadrada vai ter.
+    const double a = std::abs(x);
+    mEnv += (a - mEnv) * (a > mEnv ? envUp : envDown);
+    // Detector: passa-baixa forte (sobra a fundamental) e a envoltória dele.
+    const double pre = svf(x, 250.0, 0.6, mRate, mPreIc1, mPreIc2).low;
+    mPre2 += (pre - mPre2) * pre2Coef;
+    const double lp = std::abs(mPre2);
+    mEnvLow += (lp - mEnvLow) * (lp > mEnvLow ? envUp : envDown);
+    // Comparador com histerese (20% da envoltória): sem tremedeira no fim
+    // da nota. Cada subida vira o primeiro flip-flop; cada subida dele vira
+    // o segundo.
+    const double th = 0.2 * mEnvLow + 1e-6;
+    if (mEnv > kGate)
+    {
+      if (!mHigh && mPre2 > th)
+      {
+        mHigh = true;
+        mFlip1 = !mFlip1;
+        if (mFlip1)
+          mFlip2 = !mFlip2;
+      }
+      else if (mHigh && mPre2 < -th)
+        mHigh = false;
+    }
+    const double square1 = (mFlip1 ? 1.0 : -1.0) * mEnv;
+    const double square2 = (mFlip2 ? 1.0 : -1.0) * mEnv;
+    // A quadrada vira um grave redondo (passa-baixa em 600 e 350 Hz).
+    const double low1 = svf(square1, 600.0, 0.7071, mRate, mSub1Ic1, mSub1Ic2).low;
+    const double low2 = svf(square2, 350.0, 0.7071, mRate, mSub2Ic1, mSub2Ic2).low;
+    buffer[i] = 1.2 * (x * mDirect + 0.8 * (low1 * mSub1 + low2 * mSub2));
+  }
+}
+
+// ---------------------------------------------------------------- Compressor
+
+void Compressor::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  reset();
+}
+
+void Compressor::reset()
+{
+  mEnv = 0.0;
+}
+
+double Compressor::curveDb(double levelDb, double sensitivity)
+{
+  const double thr = -20.0 - 30.0 * sensitivity;
+  const double ratio = 3.0 + 9.0 * sensitivity;
+  constexpr double knee = 10.0;
+  const double over = levelDb - thr;
+  const double slope = 1.0 / ratio - 1.0;
+  if (over <= -0.5 * knee)
+    return 0.0;
+  if (over < 0.5 * knee)
+    return slope * (over + 0.5 * knee) * (over + 0.5 * knee) / (2.0 * knee);
+  return slope * over;
+}
+
+void Compressor::process(double* buffer, int n, double level, double sensitivity, double attack)
+{
+  // Release lento e fixo, como o do Dyna Comp.
+  const double release = onePole(0.3, mRate);
+  // Volta do volume: devolve o que a curva tira no nível de referência
+  // (-14 dB no detector: é onde fica, na média, uma guitarra com picos perto
+  // de -9 dB, já que a nota passa a maior parte do tempo morrendo); assim,
+  // no meio do volume, ligado soa como desligado.
+  constexpr double kReferenceDb = -14.0;
+  for (int i = 0; i < n; ++i)
+  {
+    mLevel = smooth(mLevel, level, mRate);
+    mSensitivity = smooth(mSensitivity, sensitivity, mRate);
+    mAttack = smooth(mAttack, attack, mRate);
+    // Ataque de 0 (pega o pico na hora, sem deixar a palhetada escapar) a 20 ms.
+    const double up = onePole(std::max(1e-6, 0.02 * mAttack * mAttack), mRate);
+    const double a = std::abs(buffer[i]);
+    mEnv += (a - mEnv) * (a > mEnv ? up : release);
+    const double db = 20.0 * std::log10(mEnv + 1e-12);
+    const double makeup = -curveDb(kReferenceDb, mSensitivity);
+    const double gain = dbToGain(curveDb(db, mSensitivity) + makeup + (mLevel - 0.5) * 24.0);
+    // Ataque alto: um pouco do limpo junto (compressão "paralela", natural).
+    const double dry = 0.4 * mAttack;
+    buffer[i] = buffer[i] * gain * (1.0 - dry) + buffer[i] * dbToGain((mLevel - 0.5) * 24.0) * dry;
+  }
+}
+
 // ---------------------------------------------------------------- NativePedal
 
 void NativePedal::setSync(double hz, double seconds)
 {
   mChorus.syncHz = mPhaser.syncHz = mFlanger.syncHz = mTremolo.syncHz = mVibe.syncHz = hz;
-  mDelay.syncSeconds = seconds;
+  mDelay.syncSeconds = mAnalogDelay.syncSeconds = seconds;
 }
 
 void NativePedal::prepare(double sampleRate, int maxBlock)
@@ -374,6 +697,11 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mFlanger.prepare(sampleRate);
   mTremolo.prepare(sampleRate);
   mVibe.prepare(sampleRate);
+  mWah.prepare(sampleRate);
+  mRotary.prepare(sampleRate);
+  mAnalogDelay.prepare(sampleRate);
+  mOctave.prepare(sampleRate);
+  mComp.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
@@ -389,6 +717,11 @@ void NativePedal::reset()
   mFlanger.reset();
   mTremolo.reset();
   mVibe.reset();
+  mWah.reset();
+  mRotary.reset();
+  mAnalogDelay.reset();
+  mOctave.reset();
+  mComp.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -460,6 +793,11 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mFlanger.reset();
     mTremolo.reset();
     mVibe.reset();
+    mWah.reset();
+    mRotary.reset();
+    mAnalogDelay.reset();
+    mOctave.reset();
+    mComp.reset();
     mLast = type;
   }
   if (on)
@@ -484,9 +822,10 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  if (type == Type::chorus || type == Type::phaser || type == Type::flanger || type == Type::tremolo || type == Type::vibe)
+  if (type != Type::delay && type != Type::reverb && type != Type::analogdelay)
   {
-    // Modulação não tem rastro: liga e desliga com transição de 20 ms.
+    // Modulação, wah, oitavador e compressor não têm rastro: liga e
+    // desliga com transição de 20 ms.
     std::copy(buffer, buffer + n, mIn.begin());
     switch (type)
     {
@@ -494,6 +833,10 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       case Type::flanger: mFlanger.process(mIn.data(), n, a, b, c); break;
       case Type::tremolo: mTremolo.process(mIn.data(), n, a, b, c); break;
       case Type::vibe: mVibe.process(mIn.data(), n, a, b, c); break;
+      case Type::wah: mWah.process(mIn.data(), n, a, b, c); break;
+      case Type::rotary: mRotary.process(mIn.data(), n, a, b, c); break;
+      case Type::octave: mOctave.process(mIn.data(), n, a, b, c); break;
+      case Type::comp: mComp.process(mIn.data(), n, a, b, c); break;
       default: mChorus.process(mIn.data(), n, a, b, c); break;
     }
     for (int i = 0; i < n; ++i)
@@ -505,7 +848,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  // Delay e reverb: a entrada do efeito liga e desliga; a saída continua
+  // Delays e reverb: a entrada do efeito liga e desliga; a saída continua
   // soando até o rastro acabar (o som seco nunca é tocado).
   for (int i = 0; i < n; ++i)
   {
@@ -514,6 +857,8 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
   }
   if (type == Type::delay)
     mDelay.process(mIn.data(), mWet.data(), n, a, b);
+  else if (type == Type::analogdelay)
+    mAnalogDelay.process(mIn.data(), mWet.data(), n, a, b);
   else
     mReverb.process(mIn.data(), mWet.data(), n, a, b);
   const double target = type == Type::reverb ? c * 1.2 : c;

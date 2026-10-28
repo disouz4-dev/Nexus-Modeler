@@ -23,23 +23,26 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
                                                                "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
                                                                "cherry_drop", "tangerine_phaser", "dragonfruit_flanger", "kiwi_tremolo",
                                                                "blackberry_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
-                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble"};
+                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble",
+                                                               "olive_drive", "pistachio_drive", "blueberry_blues", "apricot_overdrive", "clementine_turbo", "cherry_fuzz", "fig_bender", "kiwi_drive", "quince_plus", "starfruit_rock", "tamarind_amp", "blackcurrant_bass", "mulberry_omega", "guava_precision", "peach_glory", "raspberry_drive", "honeydew_drive", "pineapple_king", "cashew_boost", "papaya_grind", "persimmon_33", "strawberry_5150", "gooseberry_g3", "nectarine_od", "cranberry_wylde", "kumquat_klone", "elderberry_war", "mangosteen_fuzz", "grapefruit_drive", "jackfruit_monkey", "pitanga_250", "lychee_bassfuzz", "cupuacu_hammer", "graviola_bassdi", "acerola_eq", "mango_wah", "watermelon_rotary", "maracuja_echo", "rambutan_octave", "apple_comp"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
-                                                             "citrusbass200", "granite800", "fliptop15", "vaultv4", "hart1000", "garden800", "glass500", "solart", "bassline100", "eagle751", "littletube", "workhorse350", "underground800", "acoustica360", "tinybass", "tracer7", "britbass"};
+                                                             "citrusbass200", "granite800", "fliptop15", "vaultv4", "hart1000", "garden800", "glass500", "solart", "bassline100", "eagle751", "littletube", "workhorse350", "underground800", "acoustica360", "tinybass", "tracer7", "britbass",
+                                                             "britplexi50", "brit45", "brit900", "brit410", "brit2000", "britds20", "britrack1", "silverdeluxe", "silversuper", "silverprince", "tweed57", "hotrod40", "champion5", "mark2plus", "mark3", "mark4", "markjp", "badland100", "lonestar100", "block5150iii", "topboost15", "citrus50", "citrus30", "blackcountry100", "iron120", "fire100", "feral120", "steel20", "vier100", "herb180", "bliss100", "goddess80", "dirty40", "special100", "doublestone50", "blackcat30", "hi103", "darkstar20", "tri100", "gen120", "nova100", "emperor20", "rg100", "arch100", "kraken50", "magick25", "deliver120", "ash500"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
                                                              "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
-                                                             "granite_410"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
+                                                             "granite_410", "silver_112", "mark_112", "star_412", "country_412", "vier_412", "hi_412", "rg_412", "hart_410", "glass_410", "solar_412", "fliptop_115"};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 25, 13, 22, 14, 23, 24, 14, 14, 14, 14, 14, 14, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 15, 8, 15, 15, 15, 15, 16, 16, 1, 1, 1, 16, 2, 6, 5, 5, 18, 18, 10, 10, 10, 19, 19, 11, 11, 4, 7, 7, 9, 20, 17, 10, 1, 1, 15, 21, 1, 1, 15, 1, 22};
 struct CabInfo
 {
   const char* inspiration;
 };
 const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"},
                                                     {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"},
-                                                    {"Ampeg 8x10"}, {"Gallien-Krueger 4x10"}};
+                                                    {"Ampeg 8x10"}, {"Gallien-Krueger 4x10"},
+                                                    {"Fender Deluxe Reverb 1x12"}, {"Mesa Boogie Mark 1x12"}, {"Blackstar 4x12"}, {"Laney 4x12"}, {"Diezel 4x12"}, {"Hiwatt 4x12"}, {"Randall 4x12"}, {"Hartke 4x10"}, {"Darkglass 4x10"}, {"Sunn 4x12"}, {"Ampeg B-15 1x15"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -1388,6 +1391,46 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Avocado Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
   {"Pomegranate Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
   {"Snow Pear Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
+  {"Olive Drive", "Ibanez TS808 Tube Screamer", "Drive e distorção", "Captura da TONE3000"},
+  {"Pistachio Drive", "Maxon OD808", "Drive e distorção", "Captura da TONE3000"},
+  {"Blueberry Blues", "Boss BD-2 Blues Driver", "Drive e distorção", "Captura da TONE3000"},
+  {"Apricot Overdrive", "Boss OD-3", "Drive e distorção", "Captura da TONE3000"},
+  {"Clementine Turbo", "Boss DS-2 Turbo Distortion", "Drive e distorção", "Captura da TONE3000"},
+  {"Cherry Fuzz", "Dunlop Fuzz Face", "Drive e distorção", "Captura da TONE3000"},
+  {"Fig Bender", "Tone Bender", "Drive e distorção", "Captura da TONE3000"},
+  {"Kiwi Drive", "Fulltone OCD", "Drive e distorção", "Captura da TONE3000"},
+  {"Quince Plus", "MXR Distortion+", "Drive e distorção", "Captura da TONE3000"},
+  {"Starfruit Rock", "Rockman X100", "Drive e distorção", "Captura da TONE3000"},
+  {"Tamarind Amp", "Tech 21 SansAmp", "Drive e distorção", "Captura da TONE3000"},
+  {"Blackcurrant Bass", "Darkglass B7K", "Drive e distorção", "Captura da TONE3000"},
+  {"Mulberry Omega", "Darkglass Alpha Omega", "Drive e distorção", "Captura da TONE3000"},
+  {"Guava Precision", "Horizon Devices Precision Drive", "Drive e distorção", "Captura da TONE3000"},
+  {"Peach Glory", "JHS Morning Glory", "Drive e distorção", "Captura da TONE3000"},
+  {"Raspberry Drive", "JHS Andy Timmons", "Drive e distorção", "Captura da TONE3000"},
+  {"Honeydew Drive", "Paul Cochrane Timmy", "Drive e distorção", "Captura da TONE3000"},
+  {"Pineapple King", "Analogman King of Tone", "Drive e distorção", "Captura da TONE3000"},
+  {"Cashew Boost", "Xotic EP Booster", "Drive e distorção", "Captura da TONE3000"},
+  {"Papaya Grind", "Fortin Grind", "Drive e distorção", "Captura da TONE3000"},
+  {"Persimmon 33", "Fortin 33", "Drive e distorção", "Captura da TONE3000"},
+  {"Strawberry 5150", "EVH 5150 Overdrive", "Drive e distorção", "Captura da TONE3000"},
+  {"Gooseberry G3", "Revv G3", "Drive e distorção", "Captura da TONE3000"},
+  {"Nectarine OD", "Friedman BE-OD", "Drive e distorção", "Captura da TONE3000"},
+  {"Cranberry Wylde", "MXR Wylde Overdrive", "Drive e distorção", "Captura da TONE3000"},
+  {"Kumquat Klone", "Wampler Tumnus", "Drive e distorção", "Captura da TONE3000"},
+  {"Elderberry War", "Death By Audio Fuzz War", "Drive e distorção", "Captura da TONE3000"},
+  {"Mangosteen Fuzz", "EarthQuaker Hizumitas", "Drive e distorção", "Captura da TONE3000"},
+  {"Grapefruit Drive", "EarthQuaker Plumes", "Drive e distorção", "Captura da TONE3000"},
+  {"Jackfruit Monkey", "DigiTech Bad Monkey", "Drive e distorção", "Captura da TONE3000"},
+  {"Pitanga 250", "DOD Overdrive Preamp 250", "Drive e distorção", "Captura da TONE3000"},
+  {"Lychee Bass Fuzz", "Electro-Harmonix Bass Big Muff", "Drive e distorção", "Captura da TONE3000"},
+  {"Cupuaçu Hammer", "Aguilar Tone Hammer", "Drive e distorção", "Captura da TONE3000"},
+  {"Graviola Bass DI", "MXR M80 Bass DI", "Drive e distorção", "Captura da TONE3000"},
+  {"Acerola EQ", "Boss GE-7 Equalizer", "Utilidades", "Captura da TONE3000"},
+  {"Mango Wah", "Dunlop Cry Baby", "Modulação", "Efeito do Nexus"},
+  {"Watermelon Rotary", "Leslie (caixa rotativa)", "Modulação", "Efeito do Nexus"},
+  {"Maracujá Echo", "Electro-Harmonix Memory Man", "Delay", "Efeito do Nexus"},
+  {"Rambutan Octave", "Boss OC-2", "Afinação", "Efeito do Nexus"},
+  {"Apple Comp", "MXR Dyna Comp", "Utilidades", "Efeito do Nexus"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.
@@ -1434,21 +1477,54 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Orange Terror Bass", "Baixo"},
   {"Trace Elliot GP7", "Baixo"},
   {"Marshall Super Bass", "Baixo"},
-};
-
-// Planejados (docs/CATALOGO.md): aparecem em "Em breve".
-struct Planned
-{
-  GearItem::Kind kind;
-  const char* name;
-  const char* inspiration;
-};
-const Planned kPlanned[] = {
-  {GearItem::Kind::pedal, "Blueberry Blues", "BD-2"},
-  {GearItem::Kind::pedal, "Cherry Fuzz", "Fuzz Face"},
-  {GearItem::Kind::pedal, "Kiwi Drive", "OCD"},
-  {GearItem::Kind::pedal, "Apple Comp", "Dyna Comp"},
-  {GearItem::Kind::pedal, "Mango Wah", "Cry Baby"},
+  {"Marshall 1987 Lead 50 W", "Britânicos"},
+  {"Marshall JTM45", "Britânicos"},
+  {"Marshall JCM900", "Britânicos"},
+  {"Marshall JVM410", "Britânicos"},
+  {"Marshall JCM2000 (DSL e TSL)", "Britânicos"},
+  {"Marshall DSL (série nova)", "Britânicos"},
+  {"Marshall JMP-1", "Britânicos"},
+  {"Fender Deluxe Reverb", "Americanos clássicos"},
+  {"Fender Super Reverb", "Americanos clássicos"},
+  {"Fender Princeton Reverb", "Americanos clássicos"},
+  {"Fender Tweed Deluxe 5E3", "Americanos clássicos"},
+  {"Fender Hot Rod Deluxe", "Americanos clássicos"},
+  {"Fender Champ", "Americanos clássicos"},
+  {"Mesa Boogie Mark IIC+", "Americanos de alto ganho"},
+  {"Mesa Boogie Mark III", "Americanos de alto ganho"},
+  {"Mesa Boogie Mark IV", "Americanos de alto ganho"},
+  {"Mesa Boogie JP-2C", "Americanos de alto ganho"},
+  {"Mesa Boogie Badlander", "Americanos de alto ganho"},
+  {"Mesa Boogie Lonestar", "Americanos clássicos"},
+  {"EVH 5150 III", "Americanos de alto ganho"},
+  {"Vox AC15", "Britânicos"},
+  {"Orange OR50", "Britânicos"},
+  {"Orange AD30", "Britânicos"},
+  {"Laney Supergroup", "Britânicos"},
+  {"Laney Ironheart", "Britânicos"},
+  {"ENGL Fireball", "Alemães de alto ganho"},
+  {"ENGL Savage", "Alemães de alto ganho"},
+  {"ENGL Ironball", "Alemães de alto ganho"},
+  {"Diezel VH4", "Alemães de alto ganho"},
+  {"Diezel Herbert", "Alemães de alto ganho"},
+  {"Bogner Ecstasy", "Alemães de alto ganho"},
+  {"Bogner Shiva", "Alemães de alto ganho"},
+  {"Friedman Dirty Shirley", "Americanos de alto ganho"},
+  {"Dumble Overdrive Special", "Americanos boutique"},
+  {"Two-Rock Classic Reverb", "Americanos boutique"},
+  {"Bad Cat Hot Cat", "Americanos boutique"},
+  {"Hiwatt DR103", "Britânicos"},
+  {"Blackstar HT e Series One", "Britânicos"},
+  {"Hughes & Kettner TriAmp", "Alemães de alto ganho"},
+  {"Revv Generator 120", "Americanos de alto ganho"},
+  {"Fortin Natas", "Americanos de alto ganho"},
+  {"Tone King Imperial", "Americanos clássicos"},
+  {"Randall RG100ES", "Americanos de alto ganho"},
+  {"PRS Archon", "Americanos de alto ganho"},
+  {"Victory Kraken", "Britânicos"},
+  {"Supro Black Magick", "Americanos clássicos"},
+  {"Fryette Deliverance", "Americanos de alto ganho"},
+  {"Ashdown ABM", "Baixo"},
 };
 } // namespace
 
@@ -1492,14 +1568,6 @@ void NexusEditor::refreshBrowser()
     cab.category = juce::String(kCabInfo[i].inspiration).fromLastOccurrenceOf(" ", false, false);
     cab.source = "IR ou captura full rig";
     items.push_back(cab);
-  }
-  for (const auto& p : kPlanned)
-  {
-    GearItem it;
-    it.kind = p.kind;
-    it.name = juce::String::fromUTF8(p.name);
-    it.inspiration = p.inspiration;
-    items.push_back(it);
   }
   mBrowser->setItems(std::move(items));
 }

@@ -1,0 +1,81 @@
+{
+  "tipo": "pedal",
+  "nome": "Persimmon 33",
+  "familia": "persimmon_33",
+  "inspiracao": "preto com o número 33 em vermelho, caixa pequena (estilo Fortin 33)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.094,
+    "comprimento": 0.12,
+    "altura": 0.042
+  },
+  "chanfro_m": 0.0035,
+  "pintura": {
+    "cor": [
+      0.015,
+      0.015,
+      0.015
+    ],
+    "metalico": 0.2,
+    "aspereza": 0.26
+  },
+  "texto_cor": [
+    0.85,
+    0.08,
+    0.08
+  ],
+  "texto_cor2": [
+    0.85,
+    0.08,
+    0.08
+  ],
+  "modelo": "PERSIMMON 33",
+  "logo_y": -0.12,
+  "tipo_texto": "BOOST",
+  "pisante_y": -0.6,
+  "rotulo_m": 0.0034,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "corpo": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "nivel",
+      "rotulo": "VOLUME",
+      "pos": [
+        -0.45,
+        0.55
+      ],
+      "escala": 1.1
+    },
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        0.45,
+        0.55
+      ],
+      "escala": 1.1
+    }
+  ],
+  "led": [
+    0.0,
+    0.08
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true
+}

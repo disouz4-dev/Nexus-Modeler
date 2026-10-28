@@ -70,22 +70,33 @@ public:
     phaser,
     flanger,
     tremolo,
-    vibe
+    vibe,
+    wah,
+    rotary,
+    analogdelay,
+    octave,
+    comp
   };
-  static constexpr int kPedalLooks = 19;
+  static constexpr int kPedalLooks = 59;
   static constexpr PedalKind kPedalKinds[kPedalLooks] = {
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
     PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
     PedalKind::drop,                                                                 // Cherry Drop
     PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
-    PedalKind::capture, PedalKind::capture};                                         // Pomegranate, Snow Pear
+    PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
+    // Os 35 drives da seleção (Olive Drive ... Acerola EQ), todos de captura.
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture,
+    PedalKind::wah, PedalKind::rotary, PedalKind::analogdelay, PedalKind::octave, PedalKind::comp}; // Mango, Watermelon, Maracujá, Rambutan, Apple
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
-  static constexpr int kAmpLooks = 37;
+  static constexpr int kAmpLooks = 85;
   static constexpr int kMarkFive = 1;
+  // Cabeçotes com o equalizador gráfico de 5 faixas: Mark Five, Mark Two Plus,
+  // Mark Three, Mark Four e Mark JP.
+  static bool hasGraphicEq(int look) { return look == kMarkFive || look == 50 || look == 51 || look == 52 || look == 53; }
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
@@ -96,7 +107,7 @@ public:
   {
     const auto k = pedalKind(look);
     return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
-           || k == PedalKind::vibe;
+           || k == PedalKind::vibe || k == PedalKind::analogdelay;
   }
   // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
   // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
@@ -164,7 +175,7 @@ public:
   int audibleSlot(int rig) const;
   int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
   int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
-  static constexpr int kCabLooks = 15;
+  static constexpr int kCabLooks = 26;
   int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;

@@ -162,11 +162,13 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
                                    juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100",
-                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800", "Fliptop 15", "Vault V4", "Hart 1000", "Garden 800", "Glass 500", "Solar T", "Bassline 100", "Eagle 751", "Little Tube", "Workhorse 350", "Underground 800", "Acoustica 360", "Tiny Bass", "Tracer 7", "Brit Bass"}, 0));
+                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800", "Fliptop 15", "Vault V4", "Hart 1000", "Garden 800", "Glass 500", "Solar T", "Bassline 100", "Eagle 751", "Little Tube", "Workhorse 350", "Underground 800", "Acoustica 360", "Tiny Bass", "Tracer 7", "Brit Bass",
+                                                     "Brit Plexi 50", "Brit 45", "Brit 900", "Brit 410", "Brit 2000", "Brit DS 20", "Brit Rack 1", "Silver Deluxe", "Silver Super", "Silver Prince", "Tweed 57", "Hot Rod 40", "Champion 5", "Mark Two Plus", "Mark Three", "Mark Four", "Mark JP", "Badland 100", "Lone Star 100", "Block 5150 III", "Top Boost 15", "Citrus 50", "Citrus 30", "Black Country 100", "Iron 120", "Fire 100", "Feral 120", "Steel 20", "Vier 100", "Herb 180", "Bliss 100", "Goddess 80", "Dirty 40", "Special 100", "Double Stone 50", "Black Cat 30", "Hi 103", "Dark Star 20", "Tri 100", "Gen 120", "Nova 100", "Emperor 20", "RG 100", "Arch 100", "Kraken 50", "Magick 25", "Deliver 120", "Ash 500"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
                                    juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12",
-                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12", "Vault 8x10", "Granite 4x10"}, 0));
+                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12", "Vault 8x10", "Granite 4x10",
+                                                     "Silver 1x12", "Mark 1x12", "Star 4x12", "Country 4x12", "Vier 4x12", "Hi 4x12", "RG 4x12", "Hart 4x10", "Glass 4x10", "Solar 4x12", "Fliptop 1x15"}, 0));
     for (const char* id : kGraphicIds)
       layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
                                      "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));
@@ -218,7 +220,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
                                                      "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Tangerine Phaser",
                                                      "Dragonfruit Flanger", "Kiwi Tremolo", "Blackberry Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
-                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble"}, 0));
+                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble",
+                                                     "Olive Drive", "Pistachio Drive", "Blueberry Blues", "Apricot Overdrive", "Clementine Turbo", "Cherry Fuzz", "Fig Bender", "Kiwi Drive", "Quince Plus", "Starfruit Rock", "Tamarind Amp", "Blackcurrant Bass", "Mulberry Omega", "Guava Precision", "Peach Glory", "Raspberry Drive", "Honeydew Drive", "Pineapple King", "Cashew Boost", "Papaya Grind", "Persimmon 33", "Strawberry 5150", "Gooseberry G3", "Nectarine OD", "Cranberry Wylde", "Kumquat Klone", "Elderberry War", "Mangosteen Fuzz", "Grapefruit Drive", "Jackfruit Monkey", "Pitanga 250", "Lychee Bass Fuzz", juce::String::fromUTF8("Cupuaçu Hammer"), "Graviola Bass DI", "Acerola EQ", "Mango Wah", "Watermelon Rotary", juce::String::fromUTF8("Maracujá Echo"), "Rambutan Octave", "Apple Comp"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -434,7 +437,7 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
     if (p.sync->load() > 0.5f && syncsToTempo(look))
     {
       const double seconds = divisionBeats(divisionFor(p.fx[0]->load())) * 60.0 / tempoBpm();
-      if (pedalKind(look) == PedalKind::delay)
+      if (pedalKind(look) == PedalKind::delay || pedalKind(look) == PedalKind::analogdelay)
         p.native.setSync(0.0, seconds);
       else
         p.native.setSync(1.0 / seconds, 0.0);
@@ -452,6 +455,11 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
       case PedalKind::flanger: type = T::flanger; break;
       case PedalKind::tremolo: type = T::tremolo; break;
       case PedalKind::vibe: type = T::vibe; break;
+      case PedalKind::wah: type = T::wah; break;
+      case PedalKind::rotary: type = T::rotary; break;
+      case PedalKind::analogdelay: type = T::analogdelay; break;
+      case PedalKind::octave: type = T::octave; break;
+      case PedalKind::comp: type = T::comp; break;
       default: break;
     }
     p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
@@ -596,8 +604,8 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
   const auto& r = mRigs[static_cast<size_t>(rig)];
   mEq[static_cast<size_t>(rig)].setKnobs({r.bass->load(), r.mid->load(), r.treble->load(), r.presence->load()});
   mEq[static_cast<size_t>(rig)].process(buffer, n);
-  // Cabeçote com equalizador gráfico (Mark Five): as 5 faixas, também depois da caixa.
-  if (ampLook(rig) == kMarkFive)
+  // Cabeçote com equalizador gráfico (os Mark): as 5 faixas, também depois da caixa.
+  if (hasGraphicEq(ampLook(rig)))
   {
     std::array<double, nexus::GraphicEq5::kBands> db{};
     for (size_t k = 0; k < db.size(); ++k)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <cmath>
 #include <vector>
 
 // Efeitos feitos pelo próprio Nexus (modulação, tempo e ambiente não se
@@ -167,6 +168,117 @@ private:
   double mIntensity = 0.5, mMix = 0.5;
 };
 
+// Wah (estilo Cry Baby): passa-banda ressonante varrido de ~350 Hz (calcanhar)
+// a ~2,2 kHz (ponta), com um pouco do som limpo por baixo como no circuito.
+// Botões: posição do pedal, faixa (0 = estreito e cantado, 1 = largo e
+// suave, varrendo um pouco além), volume (-12 a +12 dB; meio = sem ganho).
+class Wah
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double position, double range, double level);
+  // Frequência central para a posição e a faixa (para testes e para a arte).
+  static double centerHz(double position, double range);
+
+private:
+  double mRate = 48000.0;
+  double mPos = -1.0; // suavizado; negativo = ainda não começou (pula direto)
+  double mRange = 0.5, mLevel = 0.5;
+  double mIc1 = 0.0, mIc2 = 0.0; // estado do filtro de variáveis de estado
+};
+
+// Caixa Leslie: o agudo sai de uma corneta e o grave de um tambor, girando
+// separados (corte em 800 Hz). A corneta gira mais rápido: efeito Doppler
+// (atraso balançado) e volume que vai e volta; o tambor só o volume, mais
+// lento. As duas aceleram e freiam com inércia (a corneta pega embalo em
+// menos de 1 s, o tambor demora uns 3 s). Botões: velocidade (coral ~0,8 Hz
+// a tremolo ~6,5 Hz), drive (pré de válvula), equilíbrio (0 = só tambor,
+// meio = os dois, 1 = só corneta).
+class Rotary
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double speed, double drive, double balance);
+  double hornHz() const { return mHornHz; }
+  double drumHz() const { return mDrumHz; }
+
+private:
+  DelayLine mHornLine, mDrumLine;
+  double mRate = 48000.0;
+  double mHornPhase = 0.0, mDrumPhase = 0.25;
+  double mHornHz = -1.0, mDrumHz = -1.0; // negativo = ainda não começou
+  double mIc1 = 0.0, mIc2 = 0.0;         // divisor de frequências
+  double mDrive = 0.5, mBalance = 0.5;
+};
+
+// Delay de "balde" (estilo Memory Man, BBD): 30 a 550 ms, repetições que
+// escurecem a cada volta (quanto mais longo, mais escuro, como o relógio
+// lento do chip), saturação na volta e um balanço leve no tempo. Botões:
+// tempo, repetições (até a beira da auto-oscilação, sem disparar), mistura.
+class AnalogDelay
+{
+public:
+  // Andamento: tempo em segundos preso à divisão escolhida (0 = segue o botão).
+  double syncSeconds = 0.0;
+  void prepare(double sampleRate);
+  void reset();
+  void process(const double* input, double* wet, int n, double time, double feedback);
+  static double seconds(double time) { return 0.03 * std::pow(550.0 / 30.0, time); }
+
+private:
+  DelayLine mLine;
+  double mRate = 48000.0;
+  double mDelay = 0.0; // em amostras, suavizado
+  double mPhase = 0.0, mPhase2 = 0.0;
+  double mLow1 = 0.0, mLow2 = 0.0, mHigh = 0.0;
+  double mFeedback = 0.5;
+};
+
+// Oitavador (estilo OC-2): o som passa por um passa-baixa, um comparador
+// com histerese conta as passagens por zero e dois flip-flops dividem a
+// frequência por 2 e por 4. A onda quadrada ganha o volume da nota (seguidor
+// de envoltória) e passa por um passa-baixa. Monofônico, como o original.
+// Botões: direto, uma oitava abaixo, duas oitavas abaixo.
+class Octave
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double direct, double sub1, double sub2);
+
+private:
+  double mRate = 48000.0;
+  double mPreIc1 = 0.0, mPreIc2 = 0.0, mPre2 = 0.0; // passa-baixa do detector
+  double mEnv = 0.0, mEnvLow = 0.0;
+  bool mHigh = false, mFlip1 = false, mFlip2 = false;
+  double mSub1Ic1 = 0.0, mSub1Ic2 = 0.0, mSub2Ic1 = 0.0, mSub2Ic2 = 0.0;
+  double mDirect = 0.5, mSub1 = 0.5, mSub2 = 0.5;
+};
+
+// Compressor (estilo Dyna Comp): detector de pico na entrada (feed-forward),
+// ataque rápido, release lento (300 ms), joelho suave e o "aperto" típico.
+// Botões: volume (-12 a +12 dB; meio = mesmo volume do bypass num sinal de
+// guitarra), sensibilidade (limiar de -20 a -50 dB, razão de 3:1 a 12:1),
+// ataque (0 = clássico espremido, pega o pico na hora e só comprimido;
+// 1 = natural, ataque de 20 ms deixando passar a palhetada e 40% do som
+// limpo misturado).
+class Compressor
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  void process(double* buffer, int n, double level, double sensitivity, double attack);
+  // Ganho (em dB) que o compressor aplica a um nível de entrada (dB de pico).
+  static double curveDb(double levelDb, double sensitivity);
+
+private:
+  double mRate = 48000.0;
+  double mEnv = 0.0;
+  double mLevel = 0.5, mSensitivity = 0.5, mAttack = 0.5;
+};
+
 // Pedal nativo completo: o efeito, a mistura com o som seco e o "rastro"
 // (desligado, o delay e o reverb terminam de soar em vez de cortar).
 // Noise gate (estilo ISP Decimator): fecha o som abaixo do limiar, sem
@@ -205,7 +317,12 @@ public:
     phaser,
     flanger,
     tremolo,
-    vibe
+    vibe,
+    wah,
+    rotary,
+    analogdelay,
+    octave,
+    comp
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
@@ -226,6 +343,11 @@ private:
   Flanger mFlanger;
   Tremolo mTremolo;
   Vibe mVibe;
+  Wah mWah;
+  Rotary mRotary;
+  AnalogDelay mAnalogDelay;
+  Octave mOctave;
+  Compressor mComp;
   std::vector<double> mIn, mWet;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)

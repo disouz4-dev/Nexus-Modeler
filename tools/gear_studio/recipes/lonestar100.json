@@ -1,0 +1,126 @@
+{
+  "tipo": "cabecote",
+  "nome": "Lone Star 100",
+  "familia": "lonestar100",
+  "medidas_m": {
+    "largura": 0.7,
+    "altura": 0.27,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor": [
+      0.1,
+      0.1,
+      0.11
+    ],
+    "passo_mm": 12.0,
+    "cor_a": [
+      0.22,
+      0.16,
+      0.1
+    ],
+    "cor_b": [
+      0.5,
+      0.4,
+      0.28
+    ],
+    "trama_mm": 2.0
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "marca": "NEXUS MODELER",
+    "modelo": "LONE STAR 100",
+    "pintado": false,
+    "cor": [
+      0.78,
+      0.79,
+      0.82
+    ],
+    "texto_cor": [
+      0.02,
+      0.02,
+      0.02
+    ]
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.024,
+    "corpo": [
+      0.86,
+      0.86,
+      0.88
+    ],
+    "corpo_metal": true,
+    "tampa": [
+      0.9,
+      0.9,
+      0.92
+    ],
+    "traco": [
+      0.02,
+      0.02,
+      0.02
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "Drive"
+    }
+  ],
+  "cantos": "cromo"
+}
