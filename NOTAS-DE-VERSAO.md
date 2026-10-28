@@ -1,6 +1,6 @@
 # Notas de versão
 
-## 0.1.0-beta.2 (em preparação)
+## 0.2.0-beta.1 (em preparação)
 
 ### Equipamentos novos (nomes ainda provisórios, aguardando aprovação)
 - 31 cabeçotes novos, cada um com a sua caixa. Guitarra: Top Boost 30 (AC30),

@@ -35,7 +35,7 @@ juce::String UpdateBadge::text() const
   if (s == State::downloading)
     return tr("Baixando a versão %1").replace("%1", version) + "  " + juce::String(juce::roundToInt(mUpdater->progress() * 100.0f)) + "%";
   if (s == State::ready)
-    return tr("Instalador aberto");
+    return mUpdater->installedInPlace() ? tr("Versão %1 instalada: reiniciar").replace("%1", version) : tr("Instalador aberto");
   if (s == State::failed)
     return tr("Falha ao baixar a versão %1").replace("%1", version);
   return tr("Nova versão %1").replace("%1", version);
@@ -52,7 +52,9 @@ void UpdateBadge::refresh()
   if (show != isVisible())
     setVisible(show);
   const auto s = mUpdater->state();
-  if (s == State::ready)
+  if (s == State::ready && mUpdater->installedInPlace())
+    setTooltip(tr("Clique para reabrir o Nexus já na versão nova"));
+  else if (s == State::ready)
     setTooltip(tr("O instalador foi aberto. Feche o Nexus e o programa de música onde ele está aberto para terminar."));
   else if (s == State::failed)
     setTooltip(mUpdater->error());
@@ -71,10 +73,31 @@ void UpdateBadge::changeListenerCallback(juce::ChangeBroadcaster*)
   refresh();
   if (finished)
   {
-    juce::AlertWindow::showMessageBoxAsync(
-      juce::MessageBoxIconType::NoIcon, tr("Versão %1 baixada").replace("%1", mUpdater->release().version),
-      tr("O instalador foi aberto (o arquivo está na pasta Downloads). Para terminar, feche o Nexus e o programa de música onde ele está aberto e siga o instalador.")
-        + "\n\n" + mUpdater->downloadedFile().getFullPathName());
+    const auto version = mUpdater->release().version;
+    if (mUpdater->installedInPlace())
+    {
+      // Linux pela pasta do usuário: já trocou os arquivos; só falta reabrir.
+      if (juce::JUCEApplicationBase::isStandaloneApp())
+        juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, tr("Versão %1 instalada").replace("%1", version),
+                                           tr("Reabra o Nexus para usar a versão nova."), tr("Reabrir agora"), tr("Depois"), nullptr,
+                                           juce::ModalCallbackFunction::create([](int ok) {
+                                             if (ok == 1)
+                                               nexus::update::Updater::restartProgram();
+                                           }));
+      else
+        juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::NoIcon, tr("Versão %1 instalada").replace("%1", version),
+                                               tr("Feche e abra de novo o programa de música para usar a versão nova."));
+    }
+    else
+    {
+#if JUCE_WINDOWS
+      const auto message = tr("O instalador está atualizando. O Nexus fecha e abre sozinho na versão nova; no programa de música, feche e abra de novo.");
+#else
+      const auto message = tr("O instalador foi aberto (o arquivo está na pasta Downloads). Para terminar, feche o Nexus e o programa de música onde ele está aberto e siga o instalador.");
+#endif
+      juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::NoIcon, tr("Versão %1 baixada").replace("%1", version),
+                                             message + "\n\n" + mUpdater->downloadedFile().getFullPathName());
+    }
   }
   if (mUpdater->takeManualResult())
     showResult();
@@ -103,7 +126,9 @@ void UpdateBadge::showMenu()
   juce::PopupMenu menu;
   const auto version = mUpdater->release().version;
   menu.addSectionHeader(tr("Versão %1 (você tem a %2)").replace("%1", version).replace("%2", nexus::update::currentVersion()));
-  if (s == State::ready)
+  if (s == State::ready && mUpdater->installedInPlace())
+    menu.addItem(7, tr("Reabrir o Nexus agora"), juce::JUCEApplicationBase::isStandaloneApp());
+  else if (s == State::ready)
   {
     menu.addItem(1, tr("Abrir o instalador de novo"));
     menu.addItem(2, tr("Mostrar na pasta"));
@@ -132,6 +157,8 @@ void UpdateBadge::showMenu()
       mUpdater->dismiss();
     else if (r == 6)
       mUpdater->skipThisVersion();
+    else if (r == 7)
+      nexus::update::Updater::restartProgram();
   });
 }
 

@@ -37,7 +37,7 @@ Tudo isso toca capturas do
 [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
 (NAM A2 Full e A2 Lite).
 
-> **Estado atual: versão de teste publicada (0.1.0-beta.1); a 0.1.0-beta.2
+> **Estado atual: versão de teste publicada (0.1.0-beta.1); a 0.2.0-beta.1
 > está em preparação.** Dá para baixar e testar nos três sistemas. Funcionam
 > o motor de troca de capturas, a tela 3D com 37 cabeçotes (18 de baixo), 15
 > caixas e 19 pedais, o afinador de rack no começo da cadeia, a cadeia com

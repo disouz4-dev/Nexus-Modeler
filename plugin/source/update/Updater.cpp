@@ -14,6 +14,89 @@ const char* kLatest = "https://api.github.com/repos/disouz4-dev/Nexus-Modeler/re
 const char* kReleases = "https://github.com/disouz4-dev/Nexus-Modeler/releases";
 constexpr juce::int64 kDay = 24 * 60 * 60 * 1000;
 
+#if JUCE_LINUX
+// Lugares da instalação pelo terminal (os mesmos do packaging/instalar.sh).
+juce::File home()
+{
+  return juce::File::getSpecialLocation(juce::File::userHomeDirectory);
+}
+
+bool installedByUser()
+{
+  const auto exe = juce::File::getSpecialLocation(juce::File::currentExecutableFile);
+  // O programa independente roda de ~/.local/bin; no plugin, vale o que está lá.
+  return exe.isAChildOf(home()) || home().getChildFile(".local/bin/nexus-modeler").existsAsFile();
+}
+
+// Coloca "from" no lugar de "to" sem deixar o programa sem arquivo no meio:
+// copia ao lado e troca pelo nome (o Linux deixa trocar até o programa que
+// está rodando).
+juce::String replace(const juce::File& from, const juce::File& to)
+{
+  if (!from.exists())
+    return {};
+  const auto fresh = to.getSiblingFile(to.getFileName() + ".novo");
+  fresh.deleteRecursively();
+  const bool copied = from.isDirectory() ? from.copyDirectoryTo(fresh) : from.copyFileTo(fresh);
+  if (!copied)
+    return juce::String::fromUTF8("Não foi possível copiar para ") + to.getParentDirectory().getFullPathName();
+  if (!from.isDirectory())
+    fresh.setExecutePermission(true);
+  if (to.isDirectory())
+    to.deleteRecursively();
+  if (!fresh.moveFileTo(to))
+    return juce::String::fromUTF8("Não foi possível trocar ") + to.getFullPathName();
+  return {};
+}
+
+// Abre o .tar.gz e troca o programa, o VST3 e o LV2 que já estavam
+// instalados na pasta do usuário.
+juce::String installTarball(const juce::File& tarball)
+{
+  const auto temp = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile("nexus-atualizacao");
+  temp.deleteRecursively();
+  temp.createDirectory();
+  juce::ChildProcess tar;
+  if (!tar.start(juce::StringArray{"tar", "-xzf", tarball.getFullPathName(), "-C", temp.getFullPathName()})
+      || !tar.waitForProcessToFinish(180000) || tar.getExitCode() != 0)
+    return juce::String::fromUTF8("Não foi possível abrir o arquivo baixado.");
+  auto root = temp.getChildFile("Nexus Modeler");
+  if (!root.isDirectory())
+    return juce::String::fromUTF8("O arquivo baixado não tem o Nexus Modeler dentro.");
+  juce::String error;
+  const auto bin = home().getChildFile(".local/bin/nexus-modeler");
+  if (bin.existsAsFile())
+    error = replace(root.getChildFile("nexus-modeler"), bin);
+  for (const auto& [name, folder] : {std::pair<const char*, const char*>{"Nexus Modeler.vst3", ".vst3"}, {"Nexus Modeler.lv2", ".lv2"}})
+  {
+    const auto installed = home().getChildFile(folder).getChildFile(name);
+    if (error.isEmpty() && installed.isDirectory())
+      error = replace(root.getChildFile(name), installed);
+  }
+  temp.deleteRecursively();
+  return error;
+}
+#endif
+
+#if JUCE_MAC
+// Monta o .dmg e abre direto o instalador .pkg que está dentro.
+bool openMacInstaller(const juce::File& dmg)
+{
+  juce::ChildProcess attach;
+  if (!attach.start(juce::StringArray{"hdiutil", "attach", "-nobrowse", "-noverify", dmg.getFullPathName()}))
+    return false;
+  const auto out = attach.readAllProcessOutput();
+  for (const auto& line : juce::StringArray::fromLines(out))
+    if (line.contains("/Volumes/"))
+    {
+      const juce::File volume(line.fromFirstOccurrenceOf("/Volumes/", true, false).trim());
+      for (const auto& pkg : volume.findChildFiles(juce::File::findFiles, false, "*.pkg"))
+        return pkg.startAsProcess();
+    }
+  return false;
+}
+#endif
+
 juce::String headers()
 {
   return "Accept: application/vnd.github+json\r\nUser-Agent: Nexus-Modeler/" + currentVersion();
@@ -44,20 +127,26 @@ juce::String currentVersion()
 
 int compareVersions(const juce::String& a, const juce::String& b)
 {
-  auto parts = [](juce::String v) {
-    v = v.trim().trimCharactersAtStart("vV");
-    // "0.2.0-beta" conta como 0.2.0.
-    return juce::StringArray::fromTokens(v.upToFirstOccurrenceOf("-", false, false), ".", "");
-  };
-  const auto x = parts(a), y = parts(b);
-  for (int i = 0; i < juce::jmax(x.size(), y.size()); ++i)
+  // "0.2.0" > "0.2.0-beta.2" > "0.2.0-beta.1" > "0.1.0" (versão de teste vem
+  // antes da final de mesmo número; entre testes, conta o número no fim).
+  auto clean = [](juce::String v) { return v.trim().trimCharactersAtStart("vV"); };
+  const auto x = clean(a), y = clean(b);
+  const auto px = juce::StringArray::fromTokens(x.upToFirstOccurrenceOf("-", false, false), ".", "");
+  const auto py = juce::StringArray::fromTokens(y.upToFirstOccurrenceOf("-", false, false), ".", "");
+  for (int i = 0; i < juce::jmax(px.size(), py.size()); ++i)
   {
-    const int p = i < x.size() ? x[i].getIntValue() : 0;
-    const int q = i < y.size() ? y[i].getIntValue() : 0;
+    const int p = i < px.size() ? px[i].getIntValue() : 0;
+    const int q = i < py.size() ? py[i].getIntValue() : 0;
     if (p != q)
       return p < q ? -1 : 1;
   }
-  return 0;
+  const auto sx = x.fromFirstOccurrenceOf("-", false, false), sy = y.fromFirstOccurrenceOf("-", false, false);
+  if (sx.isEmpty() || sy.isEmpty())
+    return sx.isEmpty() == sy.isEmpty() ? 0 : (sx.isEmpty() ? 1 : -1);
+  const int nx = sx.retainCharacters("0123456789").getIntValue(), ny = sy.retainCharacters("0123456789").getIntValue();
+  if (nx != ny)
+    return nx < ny ? -1 : 1;
+  return sx.compareNatural(sy) < 0 ? -1 : (sx == sy ? 0 : 1);
 }
 
 juce::String thisSystem()
@@ -67,7 +156,11 @@ juce::String thisSystem()
 #elif JUCE_MAC
   return "mac";
 #else
-  // Com o dpkg (Debian, Ubuntu, Mint...) o pacote .deb instala pela loja do sistema.
+  // Instalado pelo terminal (na pasta do usuário): o .tar.gz, que o próprio
+  // Nexus coloca no lugar. Instalado pelo .deb (em /usr): o .deb de novo, pela
+  // loja do sistema.
+  if (installedByUser())
+    return "linux";
   return juce::File("/usr/bin/dpkg").existsAsFile() ? "linux-deb" : "linux";
 #endif
 }
@@ -255,6 +348,15 @@ void Updater::start(Job job)
   startThread(juce::Thread::Priority::low);
 }
 
+void Updater::restartProgram()
+{
+  const auto exe = juce::File::getSpecialLocation(juce::File::currentExecutableFile);
+  if (!juce::JUCEApplicationBase::isStandaloneApp())
+    return;
+  if (exe.startAsProcess())
+    juce::JUCEApplicationBase::quit();
+}
+
 void Updater::run()
 {
   const auto job = mJob.exchange(Job::none);
@@ -399,15 +501,45 @@ void Updater::download()
     setState(State::failed);
     return;
   }
+#if JUCE_LINUX
+  // Instalado pelo terminal: o próprio Nexus coloca a versão nova no lugar.
+  if (target.getFileName().endsWithIgnoreCase(".tar.gz"))
+  {
+    const auto installError = installTarball(target);
+    if (installError.isNotEmpty())
+    {
+      nexus::report::log("atualizacao", "instalar: " + installError);
+      {
+        juce::ScopedLock l(mLock);
+        mError = installError;
+      }
+      setState(State::failed);
+      return;
+    }
+    nexus::report::log("atualizacao", "instalada a " + release().version);
+    mInPlace = true;
+    mProgress = 1.0f;
+    setState(State::ready);
+    return;
+  }
+#endif
   mProgress = 1.0f;
   setState(State::ready);
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_ATUALIZACAO_NAO_ABRIR", {}).isNotEmpty())
+    return;
+#if JUCE_MAC
+  // Direto no instalador (sem a pessoa ter que achar o .pkg no .dmg).
+  if (target.hasFileExtension("dmg") && openMacInstaller(target))
+    return;
+#endif
   // Abre o instalador no fio da tela (o sistema prefere assim).
   juce::MessageManager::callAsync([target] {
-    if (juce::SystemStats::getEnvironmentVariable("NEXUS_ATUALIZACAO_NAO_ABRIR", {}).isNotEmpty())
+#if JUCE_WINDOWS
+    // Sem perguntas: o instalador fecha o Nexus, atualiza e abre de novo.
+    if (target.hasFileExtension("exe") && target.startAsProcess("/SILENT /SUPPRESSMSGBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART"))
       return;
-    if (target.hasFileExtension("gz"))
-      target.revealToUser();
-    else if (!target.startAsProcess())
+#endif
+    if (!target.startAsProcess())
       target.revealToUser();
   });
 }

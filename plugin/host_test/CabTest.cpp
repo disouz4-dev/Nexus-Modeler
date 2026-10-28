@@ -815,8 +815,10 @@ int main(int argc, char** argv)
     std::printf("\nAtualização\n");
     namespace up = nexus::update;
     report(up::compareVersions("0.2.0", "0.1.9") > 0 && up::compareVersions("v1.0", "1.0.0") == 0
-             && up::compareVersions("0.10.0", "0.9.5") > 0 && up::compareVersions("0.2.0-beta", "0.2.0") == 0,
-           "Comparação de versões", "0.2.0 > 0.1.9, v1.0 = 1.0.0, 0.10.0 > 0.9.5");
+             && up::compareVersions("0.10.0", "0.9.5") > 0 && up::compareVersions("0.2.0-beta", "0.2.0") < 0
+             && up::compareVersions("0.2.0-beta.2", "0.2.0-beta.1") > 0 && up::compareVersions("0.2.0-beta.10", "0.2.0-beta.9") > 0
+             && up::compareVersions("0.2.0-beta.1", "0.1.0-beta.1") > 0 && up::compareVersions("v0.2.0-beta.1", "0.2.0-beta.1") == 0,
+           "Comparação de versões", "0.2.0 > 0.1.9, v1.0 = 1.0.0, 0.10.0 > 0.9.5, final > beta, beta.2 > beta.1, beta.10 > beta.9");
     const juce::String json = R"({"tag_name":"v0.3.0","html_url":"https://github.com/disouz4-dev/Nexus-Modeler/releases/tag/v0.3.0","body":"Novidades",
       "assets":[{"name":"NexusModeler-0.3.0-Windows-instalador.exe","browser_download_url":"https://x/w.exe","size":10},
                 {"name":"NexusModeler-0.3.0-Windows.zip","browser_download_url":"https://x/w.zip","size":9},

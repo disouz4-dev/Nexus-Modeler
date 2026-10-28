@@ -80,6 +80,11 @@ public:
   float progress() const { return mProgress.load(); }
   juce::String error() const;
   juce::File downloadedFile() const;
+  // Linux instalado pela pasta do usuário: a versão nova já foi colocada no
+  // lugar e só falta reabrir o Nexus.
+  bool installedInPlace() const { return mInPlace.load(); }
+  // Abre o programa de novo (já na versão nova) e fecha este.
+  static void restartProgram();
   // Verdadeiro uma vez depois de uma verificação pedida pelo menu (para a
   // tela mostrar o resultado mesmo quando não há versão nova).
   bool takeManualResult() { return mManualResult.exchange(false); }
@@ -106,6 +111,7 @@ private:
   std::atomic<bool> mManualResult{false};
   std::atomic<bool> mDismissed{false};
   std::atomic<bool> mShowSkipped{false};
+  std::atomic<bool> mInPlace{false};
   juce::CriticalSection mLock;
   Release mRelease;
   juce::String mError;
