@@ -134,6 +134,22 @@ int main(int argc, char** argv)
     }
     return 0;
   }
+  // NEXUS_BUSCAR=<palavra>:<tipo>: a busca "mais curtidas" (o que a escolha
+  // automática usa) e termina.
+  if (const auto spec = juce::SystemStats::getEnvironmentVariable("NEXUS_BUSCAR", {}); spec.isNotEmpty())
+  {
+    bool finished = false;
+    t3k.list(nexus::t3k::Connection::List::mostLiked, spec.fromLastOccurrenceOf(":", false, false), spec.upToLastOccurrenceOf(":", false, false),
+             [&](std::vector<nexus::t3k::Tone> tones, juce::String error) {
+               std::printf("%s: %d tons %s\n", spec.toRawUTF8(), static_cast<int>(tones.size()), error.toRawUTF8());
+               for (size_t i = 0; i < std::min<size_t>(6, tones.size()); ++i)
+                 std::printf("  %6d favoritos %7d downloads %3d capturas  %d %s\n", tones[i].favorites, tones[i].downloads, tones[i].models,
+                             tones[i].id, tones[i].title.toRawUTF8());
+               finished = true;
+             });
+    waitFor([&] { return finished; }, 60);
+    return 0;
+  }
   // NEXUS_BAIXAR_RECOMENDADA=<prefixo>:<id>:<pacote>:<equipamento>: baixa uma
   // recomendada como o Nexus baixa (mapa e nome do pacote) e termina.
   if (const auto spec = juce::SystemStats::getEnvironmentVariable("NEXUS_BAIXAR_RECOMENDADA", {}); spec.isNotEmpty())

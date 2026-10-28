@@ -90,13 +90,15 @@ void CapturePanel::open(const juce::String& gearPrefix, const juce::String& name
   setStatus({});
   retranslate();
   refreshAccount();
-  mTabs.setSelected(0);
-  showTab(0);
+  // Conectado: abre nas mais curtidas; sem conta, nas recomendadas.
+  const int first = mConnection->hasKey() && mConnection->signedIn() ? 0 : 1;
+  mTabs.setSelected(first);
+  showTab(first);
 }
 
 void CapturePanel::retranslate()
 {
-  mTabs.setItems({TRANS("Recomendadas"), TRANS("Seus favoritos"), TRANS("Seus downloads"), TRANS("Em alta")});
+  mTabs.setItems({TRANS("Mais curtidas"), TRANS("Recomendadas"), TRANS("Seus favoritos"), TRANS("Seus downloads"), TRANS("Em alta")});
   mSignIn.setButtonText(TRANS("Entrar com a TONE3000"));
   mSignOut.setText(TRANS("sair"));
   mCatalog.setButtonText(TRANS(juce::String::fromUTF8("Catálogo completo da TONE3000")));
@@ -112,9 +114,10 @@ void CapturePanel::refreshAccount()
   mSignIn.setVisible(key && !in);
   mSignOut.setVisible(in);
   mCatalog.setEnabled(key && !mBusy);
-  mTabs.setItemEnabled(1, key);
+  mTabs.setItemEnabled(0, key);
   mTabs.setItemEnabled(2, key);
   mTabs.setItemEnabled(3, key);
+  mTabs.setItemEnabled(4, key);
   resized();
   repaint();
 }
@@ -133,7 +136,9 @@ void CapturePanel::showTab(int tab)
   mEmpty.clear();
   const int request = ++mRequest;
   const auto word = t3k::filterWord(mPrefix);
-  if (tab == 0)
+  // Abas: 0 mais curtidas (busca ordenada por favoritos), 1 recomendadas,
+  // 2 seus favoritos, 3 seus downloads, 4 em alta.
+  if (tab == 1)
   {
     mTones = t3k::recommended(mPrefix);
     if (mTones.empty())
@@ -141,12 +146,15 @@ void CapturePanel::showTab(int tab)
   }
   else if (!mConnection->hasKey())
     mEmpty = TRANS(juce::String::fromUTF8("Esta versão do Nexus foi compilada sem a chave da TONE3000."));
-  else if (tab != 3 && !mConnection->signedIn())
+  else if (tab != 4 && !mConnection->signedIn())
     mEmpty = TRANS("Entre com a sua conta da TONE3000 para ver seus favoritos e downloads.");
   else
   {
     mEmpty = TRANS("Carregando...");
-    const auto which = tab == 1 ? t3k::Connection::List::favorites : tab == 2 ? t3k::Connection::List::downloaded : t3k::Connection::List::trending;
+    const auto which = tab == 0   ? t3k::Connection::List::mostLiked
+                       : tab == 2 ? t3k::Connection::List::favorites
+                       : tab == 3 ? t3k::Connection::List::downloaded
+                                  : t3k::Connection::List::trending;
     auto show = [self = juce::Component::SafePointer<CapturePanel>(this), request, tab, word](std::vector<t3k::Tone> tones, juce::String error) {
       if (self == nullptr || self->mRequest != request)
         return;
@@ -157,12 +165,15 @@ void CapturePanel::showTab(int tab)
         self->mEmpty = error;
       }
       else if (self->mTones.empty())
-        self->mEmpty = tab == 3 ? TRANS(juce::String::fromUTF8("Nada em alta para este tipo agora."))
-                                : TRANS(juce::String::fromUTF8("Nenhum tom de %1 aqui. Marque favoritos no catálogo da TONE3000.")).replace("%1", word);
+        self->mEmpty = tab == 4   ? TRANS(juce::String::fromUTF8("Nada em alta para este tipo agora."))
+                       : tab == 0 ? TRANS(juce::String::fromUTF8("Nenhum tom de %1 com captura A2 na busca. Veja as recomendadas.")).replace("%1", word)
+                                  : TRANS(juce::String::fromUTF8("Nenhum tom de %1 aqui. Marque favoritos no catálogo da TONE3000.")).replace("%1", word);
       self->mList.updateContent();
       self->repaint();
     };
-    mConnection->list(which, gearType(), tab == 3 ? juce::String() : word, show);
+    // A busca separa os tipos com "_": cabeçote é amp ou amp com caixa.
+    const auto gear = tab == 0 && gearType() == "amp" ? juce::String("amp_amp-cab") : gearType();
+    mConnection->list(which, gear, tab == 4 ? juce::String() : word, show);
   }
   mList.updateContent();
   mList.scrollToEnsureRowIsOnscreen(0);
@@ -232,6 +243,8 @@ void CapturePanel::paintListBoxItem(int row, juce::Graphics& g, int width, int h
     details.add((mGear == Gear::cab ? TRANS("%1 IRs") : TRANS("%1 capturas A2")).replace("%1", juce::String(t.models)));
   if (t.note.isNotEmpty())
     details.add(TRANS(t.note));
+  if (t.favorites > 0)
+    details.add(TRANS("%1 favoritos").replace("%1", thousands(t.favorites)));
   if (t.downloads > 0)
     details.add(TRANS("%1 downloads").replace("%1", thousands(t.downloads)));
   g.setColour(colour::dim);

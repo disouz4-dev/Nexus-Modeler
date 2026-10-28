@@ -241,7 +241,7 @@
     ]
   },
   "brit412": {
-    "busca": "4x12",
+    "busca": "1960",
     "tons": [
       {
         "id": 75087,
@@ -504,6 +504,65 @@
         "serie": [
           "BE100 - BE - "
         ]
+      }
+    ]
+  },
+  "mark5_412": {
+    "busca": "Mesa",
+    "tons": [
+      {
+        "id": 1612,
+        "titulo": "Mesa OS 4x12 IR",
+        "tipo": "cab",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "Mesa Oversized 4x12 (o IR de caixa mais curtido da TONE3000)"
+      },
+      {
+        "id": 45023,
+        "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+        "tipo": "cab",
+        "capturas": 168,
+        "nota": "Mesa 4x12 com V30, 168 posições de microfone"
+      }
+    ]
+  },
+  "block_412": {
+    "busca": "5150",
+    "tons": [
+      {
+        "id": 40738,
+        "titulo": "Celestion G12-EVH - EVH 5150III 4x12",
+        "tipo": "cab",
+        "capturas": 80,
+        "padrao": true,
+        "nota": "Caixa 5150 III 4x12 com alto-falantes G12-EVH"
+      }
+    ]
+  },
+  "sl_412": {
+    "busca": "Soldano",
+    "tons": [
+      {
+        "id": 64794,
+        "titulo": "Emil Rohbe - Soldano SLO30 — IRs",
+        "tipo": "cab",
+        "capturas": 2,
+        "padrao": true,
+        "nota": "Caixa Soldano (poucos IRs dela na TONE3000)"
+      }
+    ]
+  },
+  "be_412": {
+    "busca": "Friedman",
+    "tons": [
+      {
+        "id": 64783,
+        "titulo": "Emil Rohbe - Friedman Jake E. Lee — IRs",
+        "tipo": "cab",
+        "capturas": 2,
+        "padrao": true,
+        "nota": "Caixa Friedman (poucos IRs dela na TONE3000)"
       }
     ]
   }

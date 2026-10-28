@@ -158,7 +158,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
-                                   juce::StringArray{"Brit 4x12", "Mark 4x12"}, 0));
+                                   juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12"}, 0));
     for (const char* id : kGraphicIds)
       layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
                                      "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));

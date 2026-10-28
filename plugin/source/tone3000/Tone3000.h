@@ -34,6 +34,7 @@ struct Tone
   juce::String gear; // amp, amp-cab, pedal, cab...
   int models = 0;    // capturas A2
   int downloads = 0;
+  int favorites = 0; // "favoritos" na TONE3000 (o "like" da comunidade)
   // Só nas recomendadas: como achar a posição do botão no nome de cada
   // captura (expressão com um grupo) e os trechos que o nome precisa ter
   // para entrar (a série certa do pacote).
@@ -80,7 +81,8 @@ public:
   {
     favorites,
     downloaded,
-    trending
+    trending,
+    mostLiked // busca pela palavra do equipamento, ordenada por favoritos
   };
 
   // Chave pública do Nexus na TONE3000 (definida na compilação). Sem ela,

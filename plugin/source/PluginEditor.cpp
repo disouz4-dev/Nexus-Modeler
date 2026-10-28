@@ -21,13 +21,13 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
-const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 0, 1, 0, 0};
+const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412"};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4};
 struct CabInfo
 {
   const char* inspiration;
 };
-const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}};
+const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -1231,7 +1231,6 @@ const Planned kPlanned[] = {
   {GearItem::Kind::amp, "Tweed 59", "Bassman 5F6-A"},
   {GearItem::Kind::amp, "Top Boost 30", "AC30"},
   {GearItem::Kind::amp, "Jazz 120", "JC-120"},
-  {GearItem::Kind::cab, "Recto 4x12", "Rectifier 4x12"},
   {GearItem::Kind::cab, "Blue 2x12", "AC30 2x12"},
   {GearItem::Kind::cab, "Twin 2x12", "Twin Reverb 2x12"},
 };
@@ -1315,6 +1314,7 @@ void NexusEditor::pickGear(const GearItem& item)
     if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
       cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(kCabOfAmp[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, item.look)])));
     loadHeadChannels(rig);
+    ensureCab(rig, true);
     select({Kind::amp, rig});
     break;
   }
@@ -1324,7 +1324,7 @@ void NexusEditor::pickGear(const GearItem& item)
     if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
       cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(item.look)));
     select({Kind::cab, rig});
-    ensureCab(rig);
+    ensureCab(rig, true);
     break;
   }
   }
@@ -1433,28 +1433,61 @@ bool defaultsEnabled()
 } // namespace
 
 void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter, const juce::String& gearName, int slotKey,
-                               std::function<void(const juce::File&)> land)
+                               std::function<void(const juce::File&)> land, const juce::String& searchWord)
 {
-  const auto key = juce::String(tone.id) + "|" + tone.packName;
+  const auto key = juce::String(tone.id) + "|" + tone.packName + "|" + searchWord;
   if (!defaultsEnabled() || !mT3k->hasKey() || !mT3k->signedIn() || mFetching.count(key) > 0)
     return;
   mFetching.insert(key);
   mFetchingSlots.insert(slotKey);
-  nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + tone.title + " " + tone.packName);
   auto safe = juce::Component::SafePointer<NexusEditor>(this);
-  mT3k->download(tone, filter, gearName, [](juce::String) {},
-                 [safe, key, slotKey, land](juce::File folder, juce::String error) {
-                   if (safe == nullptr)
-                     return;
-                   safe->mFetching.erase(key);
-                   safe->mFetchingSlots.erase(slotKey);
-                   if (error.isNotEmpty() || !folder.isDirectory())
-                   {
-                     nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + error);
-                     return;
-                   }
-                   land(folder);
-                 });
+  const juce::String gearFilter(filter);
+  // Baixa um tom; se ele não serve sozinho (sem a posição do botão nos nomes),
+  // passa para o próximo; no fim, a recomendada.
+  auto tryList = std::make_shared<std::function<void(std::vector<nexus::t3k::Tone>, size_t)>>();
+  *tryList = [safe, key, slotKey, land, gearFilter, gearName, tone, tryList](std::vector<nexus::t3k::Tone> list, size_t i) {
+    if (safe == nullptr)
+      return;
+    if (i >= list.size())
+    {
+      safe->mFetching.erase(key);
+      safe->mFetchingSlots.erase(slotKey);
+      nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: nenhuma serviu"));
+      return;
+    }
+    const auto candidate = list[i];
+    auto accept = [safe, key, slotKey, land](const juce::File& folder) {
+      safe->mFetching.erase(key);
+      safe->mFetchingSlots.erase(slotKey);
+      land(folder);
+    };
+    if (const auto have = nexus::t3k::downloadedFolder(candidate, gearName);
+        have.isDirectory() && !static_cast<bool>(juce::JSON::parse(have.getChildFile("pack.json"))["mapear"]))
+      return accept(have);
+    nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + candidate.title + " " + candidate.packName + " ("
+                                     + juce::String(candidate.favorites) + " favoritos)");
+    safe->mT3k->download(candidate, gearFilter, gearName, [](juce::String) {},
+                         [safe, list, i, accept, tryList](juce::File folder, juce::String error) {
+                           if (safe == nullptr)
+                             return;
+                           const bool usable = error.isEmpty() && folder.isDirectory()
+                                               && !static_cast<bool>(juce::JSON::parse(folder.getChildFile("pack.json"))["mapear"]);
+                           if (usable)
+                             return accept(folder);
+                           nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: não serviu ") + list[i].title + " " + error);
+                           (*tryList)(list, i + 1);
+                         });
+  };
+  if (searchWord.isEmpty())
+    return (*tryList)({tone}, 0);
+  // A mais curtida da comunidade primeiro (até três), depois a recomendada.
+  mT3k->list(nexus::t3k::Connection::List::mostLiked, gearFilter == "pedal" ? juce::String("pedal") : gearFilter == "cab" ? juce::String("cab")
+                                                                                                  : juce::String("amp_amp-cab"),
+             searchWord, [tone, tryList](std::vector<nexus::t3k::Tone> found, juce::String) {
+               std::vector<nexus::t3k::Tone> list(found.begin(), found.begin() + static_cast<long>(std::min<size_t>(3, found.size())));
+               list.push_back(tone);
+               (*tryList)(list, 0);
+             });
 }
 
 void NexusEditor::ensurePedal(int pedal)
@@ -1484,12 +1517,15 @@ void NexusEditor::ensurePedal(int pedal)
   }
   if (def)
     fetchDefault(*def, "pedal", art->name, NexusProcessor::pedalSlot(pedal),
-                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); });
+                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); }, nexus::t3k::filterWord(kPedalPrefixes[look]));
 }
 
-void NexusEditor::ensureCab(int rig)
+void NexusEditor::ensureCab(int rig, bool swapping)
 {
-  if (!defaultsEnabled() || mProcessor.packIncludesCab(rig) || mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())
+  // swapping: a caixa acabou de trocar (cabeçote ou caixa novos): o IR da
+  // caixa nova entra mesmo havendo outro carregado.
+  if (!defaultsEnabled() || mProcessor.packIncludesCab(rig)
+      || (!swapping && (mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())))
     return;
   // Caixa sem lista própria de IRs usa a da Brit 4x12 (os IRs servem a qualquer cabeçote).
   int look = juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig));
@@ -1518,7 +1554,7 @@ void NexusEditor::ensureCab(int rig)
   };
   if (const auto folder = nexus::t3k::downloadedFolder(*def, gearName); folder.isDirectory())
     return land(folder);
-  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land);
+  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land, nexus::t3k::filterWord(kCabPrefixes[look]));
 }
 
 void NexusEditor::ensureDefaults()
@@ -1571,8 +1607,12 @@ void NexusEditor::loadHeadChannels(int rig)
     {
       mProcessor.clearAmpPack(rig, c);
       if (def)
+        // Cabeçote de um canal: a mais curtida da TONE3000. Vários canais: a
+        // recomendada de cada canal (a busca não sabe qual captura é de qual canal).
         fetchDefault(*def, "amp_amp-cab", art.name, NexusProcessor::ampSlot(rig, c),
-                     [this, rig, c](const juce::File& folder) { mProcessor.loadAmpPack(rig, c, folder); });
+                     [this, rig, c](const juce::File& folder) { mProcessor.loadAmpPack(rig, c, folder); },
+                     count == 1 ? nexus::t3k::filterWord(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))])
+                                : juce::String());
     }
     else
     {

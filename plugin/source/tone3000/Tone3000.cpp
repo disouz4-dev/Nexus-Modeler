@@ -60,6 +60,7 @@ Tone toneFromApi(const juce::var& v)
   if (t.models == 0)
     t.models = static_cast<int>(v["models_count"]);
   t.downloads = static_cast<int>(v["downloads_count"]);
+  t.favorites = static_cast<int>(v["favorites_count"]);
   if (v["user"].isObject())
     t.creator = v["user"]["display_name"].toString().isNotEmpty() ? v["user"]["display_name"].toString()
                                                                  : v["user"]["username"].toString();
@@ -602,7 +603,14 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
     if (token.isEmpty() && which != List::trending)
       return post([done] { done({}, explain("sem_conta")); });
     juce::String path;
-    if (which == List::trending)
+    if (which == List::mostLiked)
+    {
+      if (word.isEmpty())
+        return post([done] { done({}, {}); });
+      path = "/api/v1/tones/search?page=1&page_size=25&sort=best-match&query=" + juce::URL::addEscapeChars(word, true)
+             + "&gears=" + juce::URL::addEscapeChars(gear.replaceCharacter(',', '_'), true);
+    }
+    else if (which == List::trending)
       path = "/api/v1/tones/trending?gear=" + juce::URL::addEscapeChars(gear, true);
     else
     {
@@ -615,8 +623,26 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
     std::vector<Tone> tones;
     if (const auto* data = json["data"].getArray())
       for (const auto& v : *data)
-        if (v["format"].toString().isEmpty() || v["format"].toString().equalsIgnoreCase("nam"))
+        if (v["format"].toString().isEmpty() || v["format"].toString().equalsIgnoreCase("nam") || gear == "cab")
           tones.push_back(toneFromApi(v));
+    if (which == List::mostLiked)
+    {
+      // Só os tons do equipamento certo (o título tem todas as palavras da
+      // busca) e com captura A2; o mais curtido primeiro, depois o mais baixado.
+      const auto words = juce::StringArray::fromTokens(word.toLowerCase(), " -", "");
+      tones.erase(std::remove_if(tones.begin(), tones.end(),
+                                 [&](const Tone& t) {
+                                   const auto title = t.title.toLowerCase().removeCharacters("-");
+                                   for (const auto& w : words)
+                                     if (w.length() >= 2 && !title.contains(w.removeCharacters("-")))
+                                       return true;
+                                   return t.models <= 0 && gear != "cab";
+                                 }),
+                  tones.end());
+      std::stable_sort(tones.begin(), tones.end(), [](const Tone& a, const Tone& b) {
+        return a.favorites != b.favorites ? a.favorites > b.favorites : a.downloads > b.downloads;
+      });
+    }
     post([done, tones = std::move(tones), error] { done(tones, error.isEmpty() ? juce::String() : explain(error)); });
   });
 }
@@ -715,6 +741,9 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         for (const auto& m : *data)
           list.emplace_back(m["name"].toString(), m["model_url"].toString());
       auto chosen = chooseCaptures(list, tone);
+      // Uma captura só, sem número de ganho no nome: vai para o meio do botão.
+      if (chosen.empty() && list.size() == 1)
+        chosen.push_back({5.0, list.front().first, list.front().second});
       if (juce::SystemStats::getEnvironmentVariable("NEXUS_DEPURAR", {}).isNotEmpty())
       {
         std::printf("depurar: tom %d (pedido %d), %d posições fixas, %d capturas A2, %d escolhidas\n", id, wanted.id,

@@ -209,9 +209,11 @@ private:
   // está conectada, baixa sozinha. Quem quiser outra troca pelo pacote.
   void ensureDefaults();
   void ensurePedal(int pedal);
-  void ensureCab(int rig);
+  void ensureCab(int rig, bool swapping = false);
+  // searchWord: busca a mais curtida da TONE3000 com essa palavra antes da
+  // recomendada (vazia: só a recomendada).
   void fetchDefault(const nexus::t3k::Tone& tone, const char* filter, const juce::String& gearName, int slotKey,
-                    std::function<void(const juce::File&)> land);
+                    std::function<void(const juce::File&)> land, const juce::String& searchWord = {});
   static constexpr int kCabSlotKey = 1000;
   void chooseIr(int rig);
   void chooseIrFile(int rig);
