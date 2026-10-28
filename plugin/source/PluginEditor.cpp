@@ -1,5 +1,7 @@
 #include "PluginEditor.h"
 
+#include <thread>
+
 #include "StandaloneLink.h"
 #include "report/Report.h"
 #include "ui/Brand.h"
@@ -1085,12 +1087,29 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mLook.setDefaultSansSerifTypeface(juce::Typeface::createSystemTypefaceFor(BinaryData::inter_ttf, BinaryData::inter_ttfSize));
   setLookAndFeel(&mLook);
 
-  for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
-    mAmpArts[static_cast<size_t>(i)] = GearArt::load(kAmpPrefixes[i]);
-  for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
-    mCabArts[static_cast<size_t>(i)] = GearArt::load(kCabPrefixes[i]);
-  for (int i = 0; i < kPedalLooks; ++i)
-    mPedalArts[static_cast<size_t>(i)] = GearArt::load(kPedalPrefixes[i]);
+  {
+    // Arte de todos os equipamentos (abrir as imagens é o que mais demora ao
+    // abrir a tela): em paralelo, uma peça por vez em cada núcleo.
+    const auto started = juce::Time::getMillisecondCounterHiRes();
+    std::vector<std::function<void()>> jobs;
+    for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
+      jobs.push_back([this, i] { mAmpArts[static_cast<size_t>(i)] = GearArt::load(kAmpPrefixes[i]); });
+    for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
+      jobs.push_back([this, i] { mCabArts[static_cast<size_t>(i)] = GearArt::load(kCabPrefixes[i]); });
+    for (int i = 0; i < kPedalLooks; ++i)
+      jobs.push_back([this, i] { mPedalArts[static_cast<size_t>(i)] = GearArt::load(kPedalPrefixes[i]); });
+    std::atomic<size_t> next{0};
+    std::vector<std::thread> workers;
+    for (int t = 0; t < juce::jlimit(1, 8, juce::SystemStats::getNumCpus()); ++t)
+      workers.emplace_back([&] {
+        for (size_t j = next++; j < jobs.size(); j = next++)
+          jobs[j]();
+      });
+    for (auto& w : workers)
+      w.join();
+    if (juce::SystemStats::getEnvironmentVariable("NEXUS_DEPURAR", {}).isNotEmpty())
+      std::printf("arte dos equipamentos: %.0f ms\n", juce::Time::getMillisecondCounterHiRes() - started);
+  }
 
   addAndMakeVisible(mEngine);
   mEngine.setFontSize(11.5f);

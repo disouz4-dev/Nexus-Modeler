@@ -13,17 +13,23 @@ struct GearKnobArt
 {
   juce::String id;
   juce::Rectangle<int> box; // onde o botão fica na imagem da frente, em pixels
-  juce::Image strip;        // posições empilhadas de cima para baixo
+  // Posições empilhadas de cima para baixo. Só abre na primeira vez que o
+  // botão aparece (abrir todas atrasaria a abertura do programa).
+  juce::String stripResource;
+  mutable juce::Image strip;
   int frames = 1;
   int size = 0;
   // Deslizante (equalizador gráfico): quadro retangular, arrasta na vertical.
   bool slider = false;
   int width = 0, height = 0;
 
+  juce::Image loadStrip() const;
   juce::Image frame(float value01) const
   {
     const int f = juce::jlimit(0, frames - 1, juce::roundToInt(value01 * static_cast<float>(frames - 1)));
     const int w = width > 0 ? width : size, h = height > 0 ? height : size;
+    if (!strip.isValid())
+      strip = loadStrip();
     return strip.getClippedImage({0, f * h, w, h});
   }
 };
