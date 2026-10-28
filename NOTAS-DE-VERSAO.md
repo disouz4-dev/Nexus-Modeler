@@ -3,13 +3,19 @@
 ## 0.1.0-beta.2 (em preparação)
 
 ### Equipamentos novos (nomes ainda provisórios, aguardando aprovação)
-- 16 cabeçotes novos, cada um com a sua caixa: Top Boost 30 (AC30), Match 30
-  (Matchless DC-30), Tiny 15 (Tiny Terror), Rocker 50 (Rockerverb), Recto
-  Triple, Power 100 (ENGL Powerball), Uber 100 (Uberschall), Sonic 60
+- 31 cabeçotes novos, cada um com a sua caixa. Guitarra: Top Boost 30 (AC30),
+  Match 30 (Matchless DC-30), Tiny 15 (Tiny Terror), Rocker 50 (Rockerverb),
+  Recto Triple, Power 100 (ENGL Powerball), Uber 100 (Uberschall), Sonic 60
   (Super-Sonic), Silver Twin (Twin Reverb), Tweed 59 (Bassman), Brit Plexi
-  (Super Lead 1959), Brit Jubilee (Silver Jubilee), Jazz 120 (JC-120) e os de
-  baixo Vault 300 (Ampeg SVT), Citrus Bass 200 (Orange AD200) e Granite 800
-  (Gallien-Krueger 800RB).
+  (Super Lead 1959), Brit Jubilee (Silver Jubilee) e Jazz 120 (JC-120).
+- 18 cabeçotes de baixo: Vault 300 (Ampeg SVT), Vault V4 (Ampeg V-4B),
+  Fliptop 15 (Ampeg B-15), Citrus Bass 200 (Orange AD200), Tiny Bass (Orange
+  Terror Bass), Granite 800 (Gallien-Krueger 800RB), Hart 1000 (Hartke
+  LH1000), Garden 800 (Eden), Glass 500 (Darkglass Microtubes 500), Solar T
+  (Sunn Model T), Bassline 100 (Fender Bassman 100T), Eagle 751 (Aguilar
+  DB751), Little Tube (Markbass Little Mark Tube), Workhorse 350 (SWR),
+  Underground 800 (Mesa Bass 800D), Acoustica 360 (Acoustic 360), Tracer 7
+  (Trace Elliot GP7) e Brit Bass (Marshall Super Bass).
 - 10 caixas novas: Citrus 4x12, Blue 2x12, Twin 2x12, Tweed 4x10, Match 2x12,
   Power 4x12, Uber 4x12, Jazz 2x12, Vault 8x10 e Granite 4x10. A lista das
   caixas agora é agrupada pelo tamanho (4x12, 2x12, 4x10, 8x10).
@@ -19,7 +25,8 @@
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
   Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).
-- Cores e detalhes de cada peça seguem o equipamento original.
+- Cores e detalhes de cada peça seguem o equipamento original; o nome do
+  pedal é uma fruta da mesma cor. Em frente clara, a marca tem letras pretas.
 
 ### Captura padrão
 - Ao escolher uma peça, o Nexus baixa sozinho a captura mais curtida pela

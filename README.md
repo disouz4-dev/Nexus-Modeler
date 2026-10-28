@@ -104,7 +104,7 @@ guitarra passa pela cadeia e se mistura com a música.*
 - **Efeitos feitos pelo Nexus** (sem captura): chorus, delay, reverb, phaser,
   flanger, tremolo, vibe, gate e o Cherry Drop (afinação para baixo
   polifônica, com visor).
-- **Catálogo:** 22 cabeçotes (3 de baixo), 15 caixas e 19 pedais. Ao escolher
+- **Catálogo:** 37 cabeçotes (18 de baixo), 15 caixas e 19 pedais. Ao escolher
   uma peça, o Nexus baixa sozinho a captura mais curtida pela comunidade da
   TONE3000; "trocar pacote" mostra a lista para escolher outra.
 - **Cabeçotes de vários canais** (Mark Five: Limpo, Crunch e Lead), cada canal
