@@ -220,12 +220,6 @@ const
 var
   PaginaIdioma: TInputOptionWizardPage;
 
-{ O Nexus pediu para ser aberto de novo depois da atualização silenciosa. }
-function Reabrir: Boolean;
-begin
-  Result := WizardSilent and (Pos('/REABRIR', Uppercase(GetCmdTail)) > 0);
-end;
-
 { Código de cada idioma, na mesma ordem e com os mesmos códigos de
   plugin/source/ui/Language.cpp. }
 function CodigoIdioma(Indice: Integer): String;
@@ -388,13 +382,7 @@ begin
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
-var
-  Codigo: Integer;
 begin
   if CurStep = ssPostInstall then
     GravarIdioma;
-  { Atualização pelo próprio Nexus: abre o Nexus de novo no fim. Aqui e não
-    no [Run], que o instalador pula quando teve de fechar o Nexus aberto. }
-  if (CurStep = ssDone) and Reabrir then
-    ExecAsOriginalUser(ExpandConstant('{app}\Nexus Modeler.exe'), '', '', SW_SHOWNORMAL, ewNoWait, Codigo);
 end;
