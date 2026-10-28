@@ -1598,7 +1598,8 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
       nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: nenhuma serviu"));
       return;
     }
-    const auto candidate = list[i];
+    auto candidate = list[i];
+    candidate.firstIfUnnamed = true;
     auto accept = [safe, key, slotKey, land](const juce::File& folder) {
       safe->mFetching.erase(key);
       safe->mFetchingSlots.erase(slotKey);

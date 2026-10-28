@@ -686,6 +686,7 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         tone.pattern = wanted.pattern;
         tone.series = wanted.series;
         tone.defaultIr = wanted.defaultIr;
+        tone.firstIfUnnamed = wanted.firstIfUnnamed;
         tone.fixedPositions = wanted.fixedPositions;
         tone.packName = wanted.packName;
       }
@@ -757,7 +758,7 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
       chosen.erase(std::remove_if(chosen.begin(), chosen.end(), [](const auto& c) { return c.position < 0.0 || c.position > 10.0; }),
                    chosen.end());
       // Uma captura só, sem número de ganho no nome: vai para o meio do botão.
-      if (chosen.empty() && list.size() == 1)
+      if (chosen.empty() && (list.size() == 1 || (tone.firstIfUnnamed && !list.empty())))
         chosen.push_back({5.0, list.front().first, list.front().second});
       if (juce::SystemStats::getEnvironmentVariable("NEXUS_DEPURAR", {}).isNotEmpty())
       {

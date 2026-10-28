@@ -212,6 +212,7 @@ int main(int argc, char** argv)
           finished = false;
           juce::File folder;
           juce::String error;
+          tries[i].firstIfUnnamed = true; // como na escolha automática
           t3k.download(tries[i], filter, "Conferir " + prefix, [](juce::String) {}, [&](juce::File f, juce::String e) {
             folder = f;
             error = e;

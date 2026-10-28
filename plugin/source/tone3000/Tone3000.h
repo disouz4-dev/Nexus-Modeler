@@ -47,6 +47,9 @@ struct Tone
   // Nome da pasta deste pacote, quando o mesmo tom rende vários (um por canal).
   juce::String packName;
   bool isDefault = false; // "padrao" nas recomendadas
+  // Escolha automática: sem a posição do botão nos nomes, a primeira captura
+  // vai para o meio do botão (em vez da tela de mapear).
+  bool firstIfUnnamed = false;
 };
 
 // Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),
