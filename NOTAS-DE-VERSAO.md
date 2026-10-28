@@ -22,6 +22,19 @@
 - Pedais de modulação feitos pelo próprio Nexus: Tangerine Phaser (Phase 90),
   Dragonfruit Flanger (Electric Mistress), Kiwi Tremolo (TR-2) e Blackberry Vibe
   (Uni-Vibe).
+- Pedais de ambiente de vários modos, feitos pelo próprio Nexus, com visor
+  que mostra o modo:
+  - Juniper Sky (no espírito do BigSky): hall, sala, placa, mola, nuvem,
+    swell e cinco shimmers (oitava acima, quinta + oitava, oitava abaixo, só
+    na cauda e duplo). Botões: decaimento, pré-atraso, modulação, tom,
+    shimmer e mistura.
+  - Lime Echo (no espírito do DL4): digital, analógico, fita, multi-cabeça,
+    ping-pong, reverso, modulado, lo-fi, slapback, swell e dueto. Segue o tap
+    tempo e as divisões.
+  - Plum Mod (no espírito do MM4): rotary, tremolo harmônico, vibrato, filtro
+    de envelope, wah automático, modulador em anel, chorus triplo, tremolo
+    picotado, phaser de 12 estágios, flanger por zero e detune. Segue o tap
+    tempo.
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
   Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).

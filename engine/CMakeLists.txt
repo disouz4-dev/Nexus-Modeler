@@ -27,6 +27,7 @@ endif()
 add_library(nexus_engine STATIC
   src/AmpVoice.cpp
   src/Effects.cpp
+  src/Ambience.cpp
   src/MorphEngine.cpp
   src/Pack.cpp
   src/TestSignal.cpp

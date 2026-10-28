@@ -17,7 +17,7 @@ import sys
 from PIL import Image
 
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-DEGRAUS = {"ganho": 11}  # botões em degraus: quantos quadros ficam
+DEGRAUS = {"ganho": 11, "modo": 11}  # botões em degraus: quantos quadros ficam
 
 
 def main():

@@ -3,30 +3,14 @@
 #include <array>
 #include <vector>
 
+#include "nexus/Ambience.h"
+#include "nexus/DelayLine.h"
+
 // Efeitos feitos pelo próprio Nexus (modulação, tempo e ambiente não se
 // capturam bem com NAM). Mono, em double, na taxa do motor. Os três botões
 // de cada pedal chegam de 0 a 1.
 namespace nexus
 {
-// Linha de atraso com leitura fracionária (interpolação linear).
-class DelayLine
-{
-public:
-  void prepare(int maxSamples);
-  void clear();
-  void push(double x)
-  {
-    mWrite = (mWrite + 1) % static_cast<int>(mBuffer.size());
-    mBuffer[static_cast<size_t>(mWrite)] = x;
-  }
-  // "delay" amostras atrás da última escrita (0 = a última).
-  double read(double delay) const;
-
-private:
-  std::vector<double> mBuffer;
-  int mWrite = 0;
-};
-
 // Chorus de duas vozes (estilo CE-2): atraso de 6 a 16 ms balançado por um
 // oscilador lento. Botões: velocidade, profundidade, mistura.
 class Chorus
@@ -205,13 +189,25 @@ public:
     phaser,
     flanger,
     tremolo,
-    vibe
+    vibe,
+    sky,     // Juniper Sky: reverb de vários modos
+    echo,    // Lime Echo: delay de vários modos
+    multiMod // Plum Mod: modulação de vários modos
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
   // Andamento (tap tempo ou o da música): velocidade da modulação em Hz e
   // tempo do delay em segundos; 0 nos dois = os botões mandam.
   void setSync(double hz, double seconds);
+  // Pedais de vários modos: o modo e os botões além dos três (tom, o quarto
+  // botão e, no reverb, o shimmer), de 0 a 1.
+  void setExtras(int mode, double tone, double fourth, double fifth)
+  {
+    mMode = mode;
+    mTone = tone;
+    mFourth = fourth;
+    mFifth = fifth;
+  }
   // on: pedal ligado; a, b, c: os três botões (0 a 1). Mexe no buffer no lugar.
   void process(Type type, bool on, double* buffer, int n, double a, double b, double c);
   // Ainda soando (ligado ou com rastro)? Quando não, não gasta processador.
@@ -226,7 +222,12 @@ private:
   Flanger mFlanger;
   Tremolo mTremolo;
   Vibe mVibe;
-  std::vector<double> mIn, mWet;
+  SkyReverb mSky;
+  EchoDelay mEcho;
+  MultiMod mMulti;
+  std::vector<double> mIn, mWet, mDry, mGains;
+  int mMode = 0;
+  double mTone = 0.5, mFourth = 0.5, mFifth = 0.5;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)
   double mMix = 0.0;

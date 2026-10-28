@@ -101,6 +101,12 @@ int main(int argc, char** argv)
     }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Juniper Sky, Lime Echo, Plum Mod).
+    if (const char* mode = std::getenv("NEXUS_MODO"))
+    {
+      auto* m = processor.params.getParameter("p1_modo");
+      m->setValueNotifyingHost(m->convertTo0to1(static_cast<float>(std::atof(mode))));
+    }
   }
   // NEXUS_IDIOMA=ja (por exemplo) tira a foto naquele idioma, sem mudar a preferência salva.
   if (const char* lang = std::getenv("NEXUS_IDIOMA"))
