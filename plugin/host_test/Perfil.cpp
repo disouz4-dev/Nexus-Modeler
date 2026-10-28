@@ -61,6 +61,28 @@ int main(int argc, char** argv)
   else
     guitar = nexus::makeGuitarLikeSignal(rate, 8.0, 3);
 
+  // NEXUS_PERFIL_ZERO=1: o JACK do PipeWire avisa taxa e bloco 0 ao religar;
+  // o processamento não pode prender. Mede quanto tempo cada bloco leva.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ZERO", {}).isNotEmpty())
+  {
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, 48000.0, 128);
+    juce::AudioBuffer<float> buf(2, 512);
+    juce::MidiBuffer m;
+    for (auto [sr, bs] : {std::pair{0.0, 0}, std::pair{48000.0, 0}, std::pair{0.0, 128}, std::pair{44100.0, 64}})
+    {
+      q.prepareToPlay(sr, bs);
+      const double t0 = juce::Time::getMillisecondCounterHiRes();
+      for (int k = 0; k < 50; ++k)
+      {
+        buf.clear();
+        q.processBlock(buf, m);
+      }
+      std::printf("taxa %.0f, bloco %d: 50 blocos em %.1f ms\n", sr, bs, juce::Time::getMillisecondCounterHiRes() - t0);
+    }
+    return 0;
+  }
+
   // NEXUS_PERFIL_RELATORIO=1: envia um relatório de teste pelo mesmo caminho
   // do botão "Reportar um problema" e mostra o issue criado.
   if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_RELATORIO", {}).isNotEmpty())

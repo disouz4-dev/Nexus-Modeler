@@ -225,7 +225,13 @@ bool NexusProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
 
 void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
 {
-  const int block = std::max(samplesPerBlock, 32);
+  // O JACK do PipeWire pode avisar taxa ou bloco 0 ao religar a placa (visto
+  // no Linux em 27/10/2026). Com taxa 0, o conversor de taxa e as contas de
+  // bloco viram infinito e o áudio prende; usa valores seguros até o próximo
+  // aviso de verdade.
+  if (!(sampleRate > 1000.0))
+    sampleRate = kEngineRate;
+  const int block = std::max(samplesPerBlock > 0 ? samplesPerBlock : 512, 32);
   mMono.assign(static_cast<size_t>(block), 0.0);
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
@@ -568,6 +574,7 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
   for (const auto& s : mSlots)
     if (s.active != nullptr && s.active->block > 0)
       chunk = std::min(chunk, s.active->block);
+  chunk = std::max(chunk, 1);
   const auto& layout = *mLayoutActive;
   for (int start = 0; start < numFrames; start += chunk)
   {
@@ -698,6 +705,12 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   const int inChannels = getTotalNumInputChannels();
   const int outChannels = getTotalNumOutputChannels();
   const int capacity = static_cast<int>(mMono.size());
+  if (capacity <= 0)
+  {
+    // Ainda não preparado: silêncio em vez de um laço sem fim.
+    buffer.clear();
+    return;
+  }
   const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
   // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
   // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
