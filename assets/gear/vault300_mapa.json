@@ -1,0 +1,140 @@
+{
+  "nome": "Vault 300",
+  "familia": "vault300",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 927,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1140,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1354,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1567,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1780,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1994,
+      "y": 801,
+      "tamanho": 137,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 317.4,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 995.8,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1208.7,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1421.5,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 1634.4,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1847.3,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 2060.2,
+      "y": 738.3,
+      "altura": 38.77,
+      "achatamento": 0.98,
+      "cor": "#303f61",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 1898.5,
+      "y": 926.8,
+      "altura": 29.25,
+      "achatamento": 0.974,
+      "cor": "#303f61",
+      "espaco": 1.0
+    }
+  ]
+}
