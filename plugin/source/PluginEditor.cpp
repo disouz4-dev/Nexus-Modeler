@@ -17,9 +17,9 @@ constexpr int kTitleHeight = 112;
 
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
                                                                "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
-                                                               "cherry_drop", "peach_phaser", "lime_flanger", "melon_tremolo",
-                                                               "tamarind_vibe", "plum_rat", "fig_buzzsaw", "grapefruit_fuzz",
-                                                               "mango_metal", "guava_mud", "apricot_treble"};
+                                                               "cherry_drop", "tangerine_phaser", "dragonfruit_flanger", "kiwi_tremolo",
+                                                               "blackberry_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
+                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
@@ -1275,16 +1275,16 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
   {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
   {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
-  {"Peach Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
-  {"Lime Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
-  {"Melon Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
-  {"Tamarind Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
-  {"Plum Rat", "ProCo RAT", "Drive e distorção", "Captura da TONE3000"},
-  {"Fig Buzzsaw", "HM-2", "Drive e distorção", "Captura da TONE3000"},
-  {"Grapefruit Fuzz", "Big Muff", "Drive e distorção", "Captura da TONE3000"},
-  {"Mango Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
-  {"Guava Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
-  {"Apricot Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
+  {"Tangerine Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
+  {"Dragonfruit Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
+  {"Kiwi Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
+  {"Blackberry Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
+  {"Açaí Rat", "ProCo RAT", "Drive e distorção", "Captura da TONE3000"},
+  {"Jabuticaba Buzzsaw", "HM-2", "Drive e distorção", "Captura da TONE3000"},
+  {"Lychee Fuzz", "Big Muff", "Drive e distorção", "Captura da TONE3000"},
+  {"Avocado Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
+  {"Pomegranate Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
+  {"Snow Pear Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.
@@ -1327,14 +1327,8 @@ struct Planned
 };
 const Planned kPlanned[] = {
   {GearItem::Kind::pedal, "Blueberry Blues", "BD-2"},
-  {GearItem::Kind::pedal, "Plum Rat", "RAT"},
-  {GearItem::Kind::pedal, "Fig Fuzz", "Big Muff"},
   {GearItem::Kind::pedal, "Cherry Fuzz", "Fuzz Face"},
-  {GearItem::Kind::pedal, "Blackberry Metal", "MT-2"},
   {GearItem::Kind::pedal, "Kiwi Drive", "OCD"},
-  {GearItem::Kind::pedal, "Peach Phaser", "Phase 90"},
-  {GearItem::Kind::pedal, "Lime Flanger", "MXR Flanger"},
-  {GearItem::Kind::pedal, "Melon Tremolo", "TR-2"},
   {GearItem::Kind::pedal, "Apple Comp", "Dyna Comp"},
   {GearItem::Kind::pedal, "Mango Wah", "Cry Baby"},
 };
@@ -1349,7 +1343,7 @@ void NexusEditor::refreshBrowser()
     it.kind = GearItem::Kind::pedal;
     it.look = i;
     it.art = &mPedalArts[static_cast<size_t>(i)];
-    it.name = kPedalInfo[i].name;
+    it.name = juce::String::fromUTF8(kPedalInfo[i].name);
     it.inspiration = kPedalInfo[i].inspiration;
     it.category = TRANS(juce::String::fromUTF8(kPedalInfo[i].category));
     it.source = kPedalInfo[i].source;
@@ -1385,7 +1379,7 @@ void NexusEditor::refreshBrowser()
   {
     GearItem it;
     it.kind = p.kind;
-    it.name = p.name;
+    it.name = juce::String::fromUTF8(p.name);
     it.inspiration = p.inspiration;
     items.push_back(it);
   }
@@ -2150,7 +2144,7 @@ void NexusEditor::timerCallback()
   else if (mSel.kind == Kind::pedal)
   {
     const auto* art = pedalArt(mSel.index);
-    title = art ? art->name : juce::String(kPedalInfo[pedalLook(mSel.index)].name);
+    title = art ? art->name : juce::String::fromUTF8(kPedalInfo[pedalLook(mSel.index)].name);
     if (NexusProcessor::isNativeLook(pedalLook(mSel.index)))
     {
       subtitle = TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura. O pisante liga e desliga."));

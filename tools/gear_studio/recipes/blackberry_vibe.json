@@ -1,46 +1,46 @@
 {
   "tipo": "pedal",
-  "nome": "Peach Phaser",
-  "familia": "peach_phaser",
-  "inspiracao": "phaser de caixinha laranja (estilo MXR Phase 90)",
+  "nome": "Blackberry Vibe",
+  "familia": "blackberry_vibe",
+  "inspiracao": "vibe de caixa larga preta com botões cromados (estilo Uni-Vibe de pedal)",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.064,
-    "comprimento": 0.112,
-    "altura": 0.034
+    "largura": 0.094,
+    "comprimento": 0.12,
+    "altura": 0.042
   },
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.95,
-      0.3,
-      0.02
+      0.012,
+      0.012,
+      0.013
     ],
-    "metalico": 0.1,
+    "metalico": 0.3,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.02,
-    0.02,
-    0.02
+    0.85,
+    0.85,
+    0.86
   ],
   "texto_cor2": [
-    0.02,
-    0.02,
-    0.02
+    0.85,
+    0.85,
+    0.86
   ],
-  "modelo": "PEACH PHASER",
+  "modelo": "BLACKBERRY VIBE",
   "logo_y": -0.12,
-  "tipo_texto": "PHASER",
+  "tipo_texto": "VIBE",
   "pisante_y": -0.6,
   "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.85,
+      0.85,
+      0.86
     ],
     "traco": [
       0.95,
@@ -53,28 +53,28 @@
       "id": "a",
       "rotulo": "VELOCIDADE",
       "pos": [
-        0.0,
-        0.42
+        -0.58,
+        0.55
       ],
-      "escala": 1.45
+      "escala": 1.1
     },
     {
       "id": "b",
-      "rotulo": "PROFUNDIDADE",
+      "rotulo": "INTENSIDADE",
       "pos": [
-        -0.62,
-        0.8
+        0.0,
+        0.55
       ],
-      "escala": 0.78
+      "escala": 1.1
     },
     {
       "id": "c",
-      "rotulo": "INTENSIDADE",
+      "rotulo": "MISTURA",
       "pos": [
-        0.62,
-        0.8
+        0.58,
+        0.55
       ],
-      "escala": 0.78
+      "escala": 1.1
     }
   ],
   "led": [
@@ -87,5 +87,5 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa 1590B: 64 x 112 x 31 mm"
+  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm"
 }

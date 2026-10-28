@@ -839,7 +839,7 @@
       }
     ]
   },
-  "plum_rat": {
+  "acai_rat": {
     "busca": "Rat",
     "tons": [
       {
@@ -866,7 +866,7 @@
       }
     ]
   },
-  "fig_buzzsaw": {
+  "jabuticaba_buzzsaw": {
     "busca": "HM-2",
     "tons": [
       {
@@ -893,7 +893,7 @@
       }
     ]
   },
-  "grapefruit_fuzz": {
+  "lychee_fuzz": {
     "busca": "Big Muff",
     "tons": [
       {
@@ -920,7 +920,7 @@
       }
     ]
   },
-  "mango_metal": {
+  "avocado_metal": {
     "busca": "Metal Zone",
     "tons": [
       {
@@ -940,7 +940,7 @@
       }
     ]
   },
-  "guava_mud": {
+  "pomegranate_mud": {
     "busca": "Mudhoney",
     "tons": [
       {
@@ -953,7 +953,7 @@
       }
     ]
   },
-  "apricot_treble": {
+  "snowpear_treble": {
     "busca": "Rangemaster",
     "tons": [
       {

@@ -77,9 +77,9 @@ public:
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
     PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
     PedalKind::drop,                                                                 // Cherry Drop
-    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Peach, Lime, Melon, Tamarind
-    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Plum, Fig, Grapefruit, Mango
-    PedalKind::capture, PedalKind::capture};                                         // Guava, Apricot
+    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
+    PedalKind::capture, PedalKind::capture};                                         // Pomegranate, Snow Pear
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }

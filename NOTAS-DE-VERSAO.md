@@ -13,12 +13,12 @@
 - 10 caixas novas: Citrus 4x12, Blue 2x12, Twin 2x12, Tweed 4x10, Match 2x12,
   Power 4x12, Uber 4x12, Jazz 2x12, Vault 8x10 e Granite 4x10. A lista das
   caixas agora é agrupada pelo tamanho (4x12, 2x12, 4x10, 8x10).
-- Pedais de modulação feitos pelo próprio Nexus: Peach Phaser (Phase 90),
-  Lime Flanger (Electric Mistress), Melon Tremolo (TR-2) e Tamarind Vibe
+- Pedais de modulação feitos pelo próprio Nexus: Tangerine Phaser (Phase 90),
+  Dragonfruit Flanger (Electric Mistress), Kiwi Tremolo (TR-2) e Blackberry Vibe
   (Uni-Vibe).
-- Pedais com captura da TONE3000: Plum Rat (RAT), Fig Buzzsaw (HM-2),
-  Grapefruit Fuzz (Big Muff), Mango Metal (MT-2), Guava Mud (Mudhoney) e
-  Apricot Treble (Rangemaster).
+- Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
+  Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
+  Snow Pear Treble (Rangemaster).
 - Cores e detalhes de cada peça seguem o equipamento original.
 
 ### Captura padrão

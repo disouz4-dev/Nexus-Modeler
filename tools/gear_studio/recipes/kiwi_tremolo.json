@@ -1,7 +1,7 @@
 {
   "tipo": "pedal",
-  "nome": "Melon Tremolo",
-  "familia": "melon_tremolo",
+  "nome": "Kiwi Tremolo",
+  "familia": "kiwi_tremolo",
   "inspiracao": "tremolo compacto verde-escuro (estilo BOSS TR-2)",
   "formato": "compacto",
   "medidas_m": {
@@ -24,7 +24,7 @@
     0.88,
     0.84
   ],
-  "modelo": "MELON TREMOLO",
+  "modelo": "KIWI TREMOLO",
   "tipo_texto": "",
   "rotulo_m": 0.0036,
   "botao_estilo": {

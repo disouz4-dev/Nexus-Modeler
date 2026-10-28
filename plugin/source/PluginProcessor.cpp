@@ -207,9 +207,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
-                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Peach Phaser",
-                                                     "Lime Flanger", "Melon Tremolo", "Tamarind Vibe", "Plum Rat", "Fig Buzzsaw",
-                                                     "Grapefruit Fuzz", "Mango Metal", "Guava Mud", "Apricot Treble"}, 0));
+                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Tangerine Phaser",
+                                                     "Dragonfruit Flanger", "Kiwi Tremolo", "Blackberry Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
+                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),

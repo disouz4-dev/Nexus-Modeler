@@ -1,37 +1,37 @@
 {
   "tipo": "pedal",
-  "nome": "Plum Rat",
-  "familia": "plum_rat",
-  "inspiracao": "distorção de caixa preta com letras brancas (estilo ProCo RAT)",
+  "nome": "Snow Pear Treble",
+  "familia": "snowpear_treble",
+  "inspiracao": "reforçador de agudos de caixa de alumínio martelado (estilo Rangemaster)",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.07,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.064,
+    "comprimento": 0.112,
+    "altura": 0.034
   },
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.012,
-      0.012,
-      0.013
+      0.66,
+      0.66,
+      0.66
     ],
-    "metalico": 0.15,
+    "metalico": 0.9,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.03,
+    0.03,
+    0.03
   ],
   "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.03,
+    0.03,
+    0.03
   ],
-  "modelo": "PLUM RAT",
+  "modelo": "SNOW PEAR TREBLE",
   "logo_y": -0.12,
-  "tipo_texto": "DISTORTION",
+  "tipo_texto": "TREBLE BOOSTER",
   "pisante_y": -0.6,
   "rotulo_m": 0.0034,
   "botao_estilo": {
@@ -51,30 +51,21 @@
   "botoes": [
     {
       "id": "ganho",
-      "rotulo": "DISTORÇÃO",
-      "pos": [
-        -0.58,
-        0.6
-      ],
-      "escala": 1.0
-    },
-    {
-      "id": "tom",
-      "rotulo": "FILTRO",
+      "rotulo": "REFORÇO",
       "pos": [
         0.0,
-        0.6
+        0.42
       ],
-      "escala": 1.0
+      "escala": 1.45
     },
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.58,
-        0.6
+        0.55,
+        0.78
       ],
-      "escala": 1.0
+      "escala": 0.78
     }
   ],
   "led": [
@@ -87,5 +78,5 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa estilo RAT: 70 x 120 x 42 mm"
+  "medidas_fonte": "caixa 1590B: 64 x 112 x 31 mm"
 }

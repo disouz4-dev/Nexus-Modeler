@@ -1,8 +1,8 @@
 {
   "tipo": "pedal",
-  "nome": "Mango Metal",
-  "familia": "mango_metal",
-  "inspiracao": "distorção de metal compacta grafite com letras laranja (estilo BOSS MT-2)",
+  "nome": "Jabuticaba Buzzsaw",
+  "familia": "jabuticaba_buzzsaw",
+  "inspiracao": "distorção sueca compacta preta com letras laranja (estilo BOSS HM-2)",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -12,19 +12,19 @@
   "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.1,
-      0.1,
-      0.11
+      0.06,
+      0.06,
+      0.065
     ],
     "metalico": 0.0,
     "aspereza": 0.22
   },
   "texto_cor": [
     0.95,
-    0.5,
-    0.06
+    0.45,
+    0.08
   ],
-  "modelo": "MANGO METAL",
+  "modelo": "JABUTICABA BUZZSAW",
   "tipo_texto": "",
   "rotulo_m": 0.0036,
   "botao_estilo": {
