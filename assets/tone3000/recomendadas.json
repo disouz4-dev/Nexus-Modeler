@@ -1037,5 +1037,200 @@
         "nota": "a mais curtida da busca (390 favoritos)"
       }
     ]
+  },
+  "fliptop15": {
+    "busca": "B-15",
+    "tons": [
+      {
+        "id": 26828,
+        "titulo": "Ampeg B-15 Fliptop",
+        "tipo": "amp",
+        "capturas": 2,
+        "padrao": true,
+        "nota": "a mais curtida da busca (496 favoritos)"
+      }
+    ]
+  },
+  "vaultv4": {
+    "busca": "V-4B",
+    "tons": [
+      {
+        "id": 68106,
+        "titulo": "Ampeg V-4B",
+        "tipo": "amp",
+        "capturas": 3,
+        "padrao": true,
+        "nota": "a mais curtida da busca (46 favoritos)"
+      }
+    ]
+  },
+  "hart1000": {
+    "busca": "LH1000",
+    "tons": [
+      {
+        "id": 5867,
+        "titulo": "Hartke LH1000 Bass Amp - Gallien Krueger 4X10 Cab",
+        "tipo": "amp",
+        "capturas": 5,
+        "padrao": true,
+        "nota": "a mais curtida da busca (455 favoritos)"
+      }
+    ]
+  },
+  "garden800": {
+    "busca": "Eden",
+    "tons": [
+      {
+        "id": 39392,
+        "titulo": "Eden Bass",
+        "tipo": "amp",
+        "capturas": 5,
+        "padrao": true,
+        "nota": "a mais curtida da busca (228 favoritos)"
+      }
+    ]
+  },
+  "glass500": {
+    "busca": "Microtubes",
+    "tons": [
+      {
+        "id": 35338,
+        "titulo": "DARKGLASS MICROTUBES 500v2 Full Rig",
+        "tipo": "amp",
+        "capturas": 22,
+        "padrao": true,
+        "nota": "a mais curtida da busca (153 favoritos)"
+      }
+    ]
+  },
+  "solart": {
+    "busca": "Sunn Model",
+    "tons": [
+      {
+        "id": 13705,
+        "titulo": "1998 Sunn Model T Reissue",
+        "tipo": "amp",
+        "capturas": 11,
+        "padrao": true,
+        "nota": "a mais curtida da busca (145 favoritos)"
+      }
+    ]
+  },
+  "bassline100": {
+    "busca": "Bassman 100",
+    "tons": [
+      {
+        "id": 32075,
+        "titulo": "Fender Bassman 100T",
+        "tipo": "amp",
+        "capturas": 4,
+        "padrao": true,
+        "nota": "a mais curtida da busca (137 favoritos)"
+      }
+    ]
+  },
+  "eagle751": {
+    "busca": "Aguilar",
+    "tons": [
+      {
+        "id": 39531,
+        "titulo": "Aguilar DB751",
+        "tipo": "amp",
+        "capturas": 2,
+        "padrao": true,
+        "nota": "a mais curtida da busca (123 favoritos)"
+      }
+    ]
+  },
+  "littletube": {
+    "busca": "Markbass",
+    "tons": [
+      {
+        "id": 30844,
+        "titulo": "Markbass Little Mark Tube 104 HF",
+        "tipo": "amp",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "a mais curtida da busca (111 favoritos)"
+      }
+    ]
+  },
+  "workhorse350": {
+    "busca": "SWR",
+    "tons": [
+      {
+        "id": 2735,
+        "titulo": "SWR WorkingPro 700 - Standard",
+        "tipo": "amp",
+        "capturas": 10,
+        "padrao": true,
+        "nota": "a 65737 (mais curtida, 103 favoritos) traz só a mesma captura com e sem microfone, sem posições de ganho"
+      }
+    ]
+  },
+  "underground800": {
+    "busca": "Mesa Bass",
+    "tons": [
+      {
+        "id": 54647,
+        "titulo": "MESA / BOOGIE BASS 800D",
+        "tipo": "amp",
+        "capturas": 5,
+        "padrao": true,
+        "nota": "a mais curtida da busca (68 favoritos)"
+      }
+    ]
+  },
+  "acoustica360": {
+    "busca": "Acoustic 360",
+    "tons": [
+      {
+        "id": 33139,
+        "titulo": "Acoustic 360",
+        "tipo": "amp",
+        "capturas": 4,
+        "padrao": true,
+        "nota": "a mais curtida da busca (66 favoritos)"
+      }
+    ]
+  },
+  "tinybass": {
+    "busca": "Terror Bass",
+    "tons": [
+      {
+        "id": 62115,
+        "titulo": "Orange Terror Bass",
+        "tipo": "amp",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "a mais curtida da busca (62 favoritos)"
+      }
+    ]
+  },
+  "tracer7": {
+    "busca": "Trace Elliot",
+    "tons": [
+      {
+        "id": 26545,
+        "titulo": "Trace Elliot GP7SM",
+        "tipo": "amp",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "a mais curtida da busca (48 favoritos)"
+      }
+    ]
+  },
+  "britbass": {
+    "busca": "Super Bass",
+    "tons": [
+      {
+        "id": 6713,
+        "titulo": "1977 Marshall Super Bass 4x12",
+        "tipo": "amp",
+        "capturas": 1,
+        "padrao": true,
+        "nota": "a mais curtida da busca (53 favoritos)"
+      }
+    ]
   }
 }

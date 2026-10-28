@@ -157,7 +157,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
                                    juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100",
-                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800"}, 0));
+                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800", "Fliptop 15", "Vault V4", "Hart 1000", "Garden 800", "Glass 500", "Solar T", "Bassline 100", "Eagle 751", "Little Tube", "Workhorse 350", "Underground 800", "Acoustica 360", "Tiny Bass", "Tracer 7", "Brit Bass"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
                                    juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12",

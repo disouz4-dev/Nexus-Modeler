@@ -23,12 +23,12 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
-                                                             "citrusbass200", "granite800"};
+                                                             "citrusbass200", "granite800", "fliptop15", "vaultv4", "hart1000", "garden800", "glass500", "solart", "bassline100", "eagle751", "littletube", "workhorse350", "underground800", "acoustica360", "tinybass", "tracer7", "britbass"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
                                                              "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
                                                              "granite_410"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
 struct CabInfo
 {
   const char* inspiration;
@@ -1316,6 +1316,21 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Ampeg SVT", "Baixo"},
   {"Orange AD200", "Baixo"},
   {"Gallien-Krueger 800RB", "Baixo"},
+  {"Ampeg B-15", "Baixo"},
+  {"Ampeg V-4B", "Baixo"},
+  {"Hartke LH1000", "Baixo"},
+  {"Eden", "Baixo"},
+  {"Darkglass Microtubes 500", "Baixo"},
+  {"Sunn Model T", "Baixo"},
+  {"Fender Bassman 100T", "Baixo"},
+  {"Aguilar DB751", "Baixo"},
+  {"Markbass Little Mark Tube", "Baixo"},
+  {"SWR Bass 350", "Baixo"},
+  {"Mesa Bass 800D", "Baixo"},
+  {"Acoustic 360", "Baixo"},
+  {"Orange Terror Bass", "Baixo"},
+  {"Trace Elliot GP7", "Baixo"},
+  {"Marshall Super Bass", "Baixo"},
 };
 
 // Planejados (docs/CATALOGO.md): aparecem em "Em breve".
