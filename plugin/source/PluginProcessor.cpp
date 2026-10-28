@@ -930,9 +930,44 @@ void NexusProcessor::loadIrAsync(int rig, const juce::File& file)
   }
   auto& cab = mCabs[static_cast<size_t>(rig)];
   cab.file = file;
-  // O próprio JUCE lê, ajusta a taxa e troca o IR fora do áudio.
-  cab.conv.loadImpulseResponse(file, juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::yes, 0,
-                               juce::dsp::Convolution::Normalise::yes);
+  juce::AudioFormatManager formats;
+  formats.registerBasicFormats();
+  std::unique_ptr<juce::AudioFormatReader> reader(formats.createReaderFor(file));
+  if (reader == nullptr || reader->lengthInSamples <= 0)
+  {
+    nexus::report::log("ir", "não consegui ler: " + file.getFullPathName());
+    return;
+  }
+  const int length = static_cast<int>(std::min<juce::int64>(reader->lengthInSamples, static_cast<juce::int64>(reader->sampleRate * 2.0)));
+  juce::AudioBuffer<float> ir(1, length);
+  reader->read(&ir, 0, length, 0, true, false);
+  // Volume do IR: o JUCE normalizaria para 18 dB abaixo, e ligar a caixa
+  // derrubava o som em 10 dB. Aqui o ganho deixa o volume igual ao de sem
+  // caixa para um som com o equilíbrio de uma saída de cabeçote (energia
+  // caindo com a frequência, de 80 Hz a 6 kHz).
+  {
+    const int order = juce::jlimit(10, 17, static_cast<int>(std::ceil(std::log2(static_cast<double>(length)))));
+    juce::dsp::FFT fft(order);
+    std::vector<float> data(static_cast<size_t>(2 << order), 0.0f);
+    std::copy(ir.getReadPointer(0), ir.getReadPointer(0) + std::min(length, 1 << order), data.begin());
+    fft.performFrequencyOnlyForwardTransform(data.data());
+    double weighted = 0.0, reference = 0.0;
+    const double binHz = reader->sampleRate / static_cast<double>(1 << order);
+    for (int k = 1; k < (1 << order) / 2; ++k)
+    {
+      const double f = k * binHz;
+      if (f < 80.0 || f > 6000.0)
+        continue;
+      const double w = 1.0 / f;
+      weighted += w * static_cast<double>(data[static_cast<size_t>(k)]) * data[static_cast<size_t>(k)];
+      reference += w;
+    }
+    if (weighted > 0.0)
+      ir.applyGain(static_cast<float>(std::sqrt(reference / weighted)));
+  }
+  // O JUCE ajusta a taxa e troca o IR fora do áudio.
+  cab.conv.loadImpulseResponse(std::move(ir), reader->sampleRate, juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::yes,
+                               juce::dsp::Convolution::Normalise::no);
   cab.loaded.store(true);
 }
 

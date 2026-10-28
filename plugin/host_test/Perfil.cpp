@@ -130,6 +130,51 @@ int main(int argc, char** argv)
     return 0;
   }
 
+  // NEXUS_PERFIL_IR=1: o cabeçote (argv[2]) com a caixa desligada e ligada
+  // com o IR (argv[3]); mostra quanto o volume muda ao ligar a caixa.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_IR", {}).isNotEmpty())
+  {
+    double levels[2] = {0, 0};
+    for (int withCab = 0; withCab < 2; ++withCab)
+    {
+      NexusProcessor q;
+      q.setPlayConfigDetails(2, 2, rate, block);
+      q.prepareToPlay(rate, block);
+      q.loadAmpPack(0, 0, juce::File(juce::String::fromUTF8(argv[2])));
+      q.loadIrAsync(0, juce::File(juce::String::fromUTF8(argv[3])));
+      juce::AudioBuffer<float> buf(2, block);
+      juce::MidiBuffer m;
+      for (int t = 0; t < 4000 && !(q.channelLoaded(0, 0) && q.irLoaded(0)); ++t)
+      {
+        buf.clear();
+        q.processBlock(buf, m);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+      }
+      setParam(q, "caixa", withCab ? 1.0f : 0.0f);
+      for (int t = 0; t < 400; ++t)
+      {
+        buf.clear();
+        q.processBlock(buf, m);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(1);
+      }
+      double e = 0;
+      size_t count = 0;
+      for (size_t k = 0; k + static_cast<size_t>(block) <= guitar.size(); k += static_cast<size_t>(block))
+      {
+        for (int c = 0; c < 2; ++c)
+          for (int i = 0; i < block; ++i)
+            buf.setSample(c, i, static_cast<float>(guitar[k + static_cast<size_t>(i)]));
+        q.processBlock(buf, m);
+        if (k > static_cast<size_t>(rate))
+          for (int i = 0; i < block; ++i, ++count)
+            e += buf.getSample(0, i) * buf.getSample(0, i);
+      }
+      levels[withCab] = 10 * std::log10(e / static_cast<double>(count) + 1e-20);
+    }
+    std::printf("sem caixa %.1f dB | com caixa %.1f dB | diferença %+.1f dB\n", levels[0], levels[1], levels[1] - levels[0]);
+    return 0;
+  }
+
   // NEXUS_PERFIL_ZERO=1: o JACK do PipeWire avisa taxa e bloco 0 ao religar;
   // o processamento não pode prender. Mede quanto tempo cada bloco leva.
   if (juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ZERO", {}).isNotEmpty())
