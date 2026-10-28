@@ -114,10 +114,10 @@ public:
     return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
            || k == PedalKind::vibe || k == PedalKind::echo || k == PedalKind::multiMod || k == PedalKind::triple;
   }
-  // Blueberry Chain: os botões de cada delay (tempo, repetições, nível) e a
-  // chave que liga cada um.
-  static constexpr const char* kTripleKnobs[3][3] = {{"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}};
-  static constexpr const char* kTripleSwitches[3] = {"on1", "on2", "on3"};
+  // Blueberry Chain: botões "a" (tempo), "b" (feedback) e "c" (repetição) e
+  // as duas chaves: quantos delays (2 ou 3) e se o tempo dobra ou cai pela
+  // metade de um delay para o outro.
+  static constexpr const char* kChainSwitches[2] = {"tres", "multiplica"};
   // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
   // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
   static constexpr int kDivisions = 9;
@@ -265,8 +265,8 @@ private:
     std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
     std::atomic<float>* mode = nullptr;     // modo dos pedais de vários modos
     std::atomic<float>* fourth = nullptr;   // quarto botão dos pedais de vários modos
-    std::array<std::atomic<float>*, 5> more{};   // Blueberry Chain: botões "e" a "i"
-    std::array<std::atomic<float>*, 3> stageOn{}; // Blueberry Chain: chave de cada delay
+    std::atomic<float>* three = nullptr;    // Blueberry Chain: 3 delays (ou 2)
+    std::atomic<float>* multiply = nullptr; // Blueberry Chain: dobra (ou divide) o tempo
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;

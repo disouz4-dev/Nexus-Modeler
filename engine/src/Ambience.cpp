@@ -780,7 +780,7 @@ void TripleDelay::reset()
 
 double TripleDelay::secondsFor(double time)
 {
-  return 0.02 * std::pow(100.0, std::clamp(time, 0.0, 1.0)); // 20 ms a 2 s
+  return 0.02 * std::pow(50.0, std::clamp(time, 0.0, 1.0)); // 20 ms a 1 s
 }
 
 void TripleDelay::process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages)
@@ -793,8 +793,7 @@ void TripleDelay::process(const double* in, double* wet, int n, const std::array
   for (int k = 0; k < kStages; ++k)
   {
     const auto& s = stages[static_cast<size_t>(k)];
-    const double seconds = s.syncSeconds > 0.0 ? std::min(3.0, s.syncSeconds) : secondsFor(s.time);
-    targets[static_cast<size_t>(k)] = seconds * mRate;
+    targets[static_cast<size_t>(k)] = std::clamp(s.seconds, 0.001, 3.0) * mRate;
     auto& l = mLines[static_cast<size_t>(k)];
     if (l.delay <= 0.0)
       l.delay = targets[static_cast<size_t>(k)];
@@ -808,8 +807,8 @@ void TripleDelay::process(const double* in, double* wet, int n, const std::array
       const auto& s = stages[static_cast<size_t>(k)];
       auto& l = mLines[static_cast<size_t>(k)];
       l.repeats = smooth(l.repeats, s.repeats, mRate);
-      // Nível: 10 = repetição na altura do som que entra. Desligado, o delay
-      // para de receber, mas o que já está nele continua soando até acabar.
+      // Repetição: 10 = na altura do som que entra. Desligado, o delay para de
+      // receber, mas o que já está nele continua soando até acabar.
       l.level = smooth(l.level, 0.8 * s.level, mRate);
       l.delay += (targets[static_cast<size_t>(k)] - l.delay) * 0.0006;
       const double echo = l.line.read(std::max(1.0, l.delay));

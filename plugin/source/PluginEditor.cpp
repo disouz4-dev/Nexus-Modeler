@@ -114,6 +114,59 @@ void drawLed(juce::Graphics& g, juce::Point<float> c, float r)
   g.fillEllipse(c.x - r * 0.35f, c.y - r * 0.55f, r * 0.5f, r * 0.35f); // reflexo da cúpula
 }
 
+// Chave alavanca de metal vista de cima: porca sextavada, a alavanca cromada
+// apontando para cima ou para baixo e as duas posições escritas acima e
+// abaixo. r: raio da porca.
+void drawToggle(juce::Graphics& g, juce::Point<float> c, float r, bool up, const juce::String& upText, const juce::String& downText)
+{
+  // Arruela e porca.
+  g.setColour(juce::Colours::black.withAlpha(0.45f));
+  g.fillEllipse(c.x - r * 1.25f, c.y - r * 1.05f, r * 2.5f, r * 2.5f);
+  g.setGradientFill(juce::ColourGradient(juce::Colour(0xffe9ecf1), c.x - r, c.y - r, juce::Colour(0xff6c717a), c.x + r, c.y + r, false));
+  g.fillEllipse(c.x - r * 1.15f, c.y - r * 1.15f, r * 2.3f, r * 2.3f);
+  juce::Path hex;
+  for (int i = 0; i < 6; ++i)
+  {
+    const float a = juce::MathConstants<float>::pi / 3.0f * static_cast<float>(i) + juce::MathConstants<float>::pi / 6.0f;
+    const juce::Point<float> p{c.x + std::cos(a) * r * 0.85f, c.y + std::sin(a) * r * 0.85f};
+    if (i == 0)
+      hex.startNewSubPath(p);
+    else
+      hex.lineTo(p);
+  }
+  hex.closeSubPath();
+  g.setGradientFill(juce::ColourGradient(juce::Colour(0xffc9ced6), c.x - r, c.y - r, juce::Colour(0xff4b5058), c.x + r, c.y + r, false));
+  g.fillPath(hex);
+  g.setColour(juce::Colours::black.withAlpha(0.35f));
+  g.strokePath(hex, juce::PathStrokeType(std::max(1.0f, r * 0.06f)));
+  // Alavanca: sai do centro para o lado escolhido, mais larga na ponta.
+  const float dir = up ? -1.0f : 1.0f;
+  const juce::Point<float> tip{c.x, c.y + dir * r * 1.9f};
+  juce::Path lever;
+  lever.startNewSubPath(c.x - r * 0.22f, c.y);
+  lever.lineTo(tip.x - r * 0.30f, tip.y);
+  lever.lineTo(tip.x + r * 0.30f, tip.y);
+  lever.lineTo(c.x + r * 0.22f, c.y);
+  lever.closeSubPath();
+  g.setColour(juce::Colours::black.withAlpha(0.4f));
+  g.fillPath(lever, juce::AffineTransform::translation(r * 0.18f, r * 0.22f)); // sombra
+  juce::ColourGradient chrome(juce::Colour(0xff7d838c), c.x - r * 0.32f, c.y, juce::Colour(0xff6a7079), c.x + r * 0.32f, c.y, false);
+  chrome.addColour(0.45, juce::Colour(0xfff4f6f9));
+  g.setGradientFill(chrome);
+  g.fillPath(lever);
+  g.setGradientFill(juce::ColourGradient(juce::Colour(0xfffbfcfd), tip.x - r * 0.2f, tip.y - r * 0.2f, juce::Colour(0xff737983), tip.x + r * 0.3f,
+                                         tip.y + r * 0.3f, true));
+  g.fillEllipse(tip.x - r * 0.36f, tip.y - r * 0.36f, r * 0.72f, r * 0.72f);
+  // Posições escritas no tampo: a escolhida acesa, a outra apagada.
+  const juce::Colour ink(0xfff1e8d4);
+  g.setFont(juce::Font(juce::FontOptions(r * 1.3f, juce::Font::bold)));
+  const auto box = [&](float dy) { return juce::Rectangle<float>(c.x - r * 1.5f, c.y + dy - r * 0.8f, r * 3.0f, r * 1.6f); };
+  g.setColour(ink.withAlpha(up ? 1.0f : 0.45f));
+  g.drawText(upText, box(-r * 3.1f), juce::Justification::centred, false);
+  g.setColour(ink.withAlpha(up ? 0.45f : 1.0f));
+  g.drawText(downText, box(r * 3.1f), juce::Justification::centred, false);
+}
+
 // Visor do Cherry Drop: cristal azul sempre aceso com os semitons escolhidos
 // (o LED é que mostra se o pedal está ligado).
 void drawDropDisplay(juce::Graphics& g, juce::Rectangle<float> r, float knobA)
@@ -201,16 +254,9 @@ juce::String nativeKnobLabel(int look, const juce::String& id)
   static const char* const sky[6] = {"Decaimento", "Pré-atraso", "Mistura", "Modulação", "Tom", "Shimmer"};
   static const char* const echo[6] = {"Tempo", "Repetições", "Mistura", "Modulação", "Tom", "Nível"};
   static const char* const multi[6] = {"Velocidade", "Profundidade", "Mistura", "Ajuste", "Tom", "Nível"};
-  // Blueberry Chain: cada coluna é um delay (tempo, repetições, nível).
+  // Blueberry Chain: tempo, feedback e repetição (o volume das repetições).
   if (NexusProcessor::pedalKind(look) == K::triple)
-  {
-    static const char* const triple[3] = {"Tempo", "Repetições", "Nível"};
-    for (const auto& column : NexusProcessor::kTripleKnobs)
-      for (int r = 0; r < 3; ++r)
-        if (id == column[r])
-          return juce::String::fromUTF8(triple[r]);
-    return {};
-  }
+    return juce::String::fromUTF8(id == "a" ? "Tempo" : id == "b" ? "Feedback" : "Repetição");
   if (NexusProcessor::hasModes(look))
   {
     if (id == "modo")
@@ -361,7 +407,7 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
         // Sincronizado ao andamento: a velocidade (ou o tempo do delay) vira divisão.
         // (no Blueberry Chain, o tempo de cada um dos três delays).
         if (mKind == Kind::pedal && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index))
-            && (k.id == "a" || (triple && (k.id == "d" || k.id == "g"))))
+            && k.id == "a")
           knob->valueText = [this](float v) {
             if (mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f)
               return juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(v)));
@@ -468,27 +514,13 @@ void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
     else
       drawDropDisplay(g, r, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "a"))->load());
   }
-  // Blueberry Chain: a chave de cada delay, com o número e um LED azul quando liga.
-  const auto switches = stageSwitches();
-  for (size_t s = 0; s < switches.size(); ++s)
+  // Blueberry Chain: as duas chaves alavanca (2 | 3 delays e x | /).
+  const auto toggles = chainToggles();
+  for (size_t t = 0; t < toggles.size(); ++t)
   {
-    const auto [c, r] = switches[s];
-    const bool lit = mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, NexusProcessor::kTripleSwitches[s]))->load() > 0.5f;
-    g.setGradientFill(juce::ColourGradient(juce::Colour(0xffd9dce2), c.x - r, c.y - r, juce::Colour(0xff5d626b), c.x + r, c.y + r, false));
-    g.fillEllipse(c.x - r, c.y - r, r * 2.0f, r * 2.0f);
-    const float in = r * 0.62f;
-    const juce::Colour glow = lit && pedalOn() ? juce::Colour(0xff6fb8ff) : juce::Colour(0xff10233a);
-    if (lit && pedalOn())
-    {
-      g.setGradientFill(juce::ColourGradient(glow.withAlpha(0.5f), c.x, c.y, glow.withAlpha(0.0f), c.x + r * 2.6f, c.y, true));
-      g.fillEllipse(c.x - r * 2.6f, c.y - r * 2.6f, r * 5.2f, r * 5.2f);
-    }
-    g.setColour(glow);
-    g.fillEllipse(c.x - in, c.y - in, in * 2.0f, in * 2.0f);
-    g.setColour(lit && pedalOn() ? juce::Colour(0xff0a1830) : juce::Colour(0xffb8c4d6));
-    g.setFont(juce::Font(juce::FontOptions(in * 1.5f, juce::Font::bold)));
-    g.drawText(juce::String(static_cast<int>(s) + 1), juce::Rectangle<float>(c.x - in, c.y - in, in * 2.0f, in * 2.0f), juce::Justification::centred,
-               false);
+    const bool up = mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, NexusProcessor::kChainSwitches[t]))->load() > 0.5f;
+    drawToggle(g, toggles[t].first, toggles[t].second, up, t == 0 ? "3" : juce::String::fromUTF8("\u00d7"),
+               t == 0 ? "2" : juce::String::fromUTF8("\u00f7"));
   }
   // Cabeçote de vários canais: acende o LED do canal que está tocando.
   if (mKind == Kind::amp && mArt != nullptr)
@@ -521,20 +553,19 @@ void NexusEditor::GearStage::mouseMove(const juce::MouseEvent& e)
   setMouseCursor(overFootswitch(e.position) ? juce::MouseCursor::PointingHandCursor : juce::MouseCursor::NormalCursor);
 }
 
-std::vector<std::pair<juce::Point<float>, float>> NexusEditor::GearStage::stageSwitches() const
+std::vector<std::pair<juce::Point<float>, float>> NexusEditor::GearStage::chainToggles() const
 {
-  // Blueberry Chain: uma chave acesa em cima de cada coluna (acima do tempo).
+  // Blueberry Chain: as chaves ficam no tampo, de cada lado do LED (posição
+  // relativa ao corpo, a mesma da receita 3D: x de -1 a 1, y para cima).
   std::vector<std::pair<juce::Point<float>, float>> out;
-  if (mKind != Kind::pedal || NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) != NexusProcessor::PedalKind::triple)
+  if (mKind != Kind::pedal || mArt == nullptr || NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) != NexusProcessor::PedalKind::triple)
     return out;
-  for (const auto& column : NexusProcessor::kTripleKnobs)
-    for (const auto& knob : mKnobs)
-      if (knob->art().id == column[0])
-      {
-        const auto b = knob->getBounds().toFloat();
-        const float r = std::max(7.0f, b.getWidth() * 0.13f);
-        out.push_back({{b.getCentreX(), b.getY() - r * 1.2f}, r});
-      }
+  const auto& b = mArt->body;
+  for (const float x : {-0.56f, 0.56f})
+  {
+    const juce::Point<float> px{b.getCentreX() + x * b.getWidth() * 0.5f, b.getCentreY() - 0.10f * b.getHeight() * 0.5f};
+    out.push_back({toScreen(px), b.getWidth() * mScale * 0.035f});
+  }
   return out;
 }
 
@@ -542,11 +573,11 @@ void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
 {
   if (mKind != Kind::pedal)
     return;
-  const auto switches = stageSwitches();
-  for (size_t s = 0; s < switches.size(); ++s)
-    if (e.position.getDistanceFrom(switches[s].first) <= switches[s].second * 1.6f)
+  const auto toggles = chainToggles();
+  for (size_t t = 0; t < toggles.size(); ++t)
+    if (e.position.getDistanceFrom(toggles[t].first) <= toggles[t].second * 2.5f)
     {
-      const auto id = NexusProcessor::pedalParam(mIndex, NexusProcessor::kTripleSwitches[s]);
+      const auto id = NexusProcessor::pedalParam(mIndex, NexusProcessor::kChainSwitches[t]);
       if (e.mods.isPopupMenu())
       {
         if (onMidiMenu)

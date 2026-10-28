@@ -474,3 +474,5 @@ countries: us gb au ca
 "Phaser 12" = "Phaser 12"
 "Flanger por zero" = "Thru-zero flanger"
 "Detune" = "Detune"
+"Feedback" = "Feedback"
+"Repetição" = "Repeat level"

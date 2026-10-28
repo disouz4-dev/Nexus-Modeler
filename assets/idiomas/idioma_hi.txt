@@ -474,3 +474,5 @@ countries: in
 "Phaser 12" = "फ़ेज़र 12"
 "Flanger por zero" = "थ्रू-ज़ीरो फ़्लैंजर"
 "Detune" = "डीट्यून"
+"Feedback" = "फ़ीडबैक"
+"Repetição" = "रिपीट स्तर"

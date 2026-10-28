@@ -474,3 +474,5 @@ countries: tr
 "Phaser 12" = "Phaser 12"
 "Flanger por zero" = "Sıfırdan geçen flanger"
 "Detune" = "Detune"
+"Feedback" = "Geri besleme"
+"Repetição" = "Tekrar seviyesi"

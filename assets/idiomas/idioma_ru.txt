@@ -474,3 +474,5 @@ countries: ru
 "Phaser 12" = "Фэйзер 12"
 "Flanger por zero" = "Флэнжер через ноль"
 "Detune" = "Расстройка"
+"Feedback" = "Обратная связь"
+"Repetição" = "Уровень повторов"

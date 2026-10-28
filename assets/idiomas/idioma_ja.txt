@@ -474,3 +474,5 @@ countries: jp
 "Phaser 12" = "フェイザー 12"
 "Flanger por zero" = "スルーゼロ フランジャー"
 "Detune" = "デチューン"
+"Feedback" = "フィードバック"
+"Repetição" = "リピート音量"

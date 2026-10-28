@@ -474,3 +474,5 @@ countries: id
 "Phaser 12" = "Phaser 12"
 "Flanger por zero" = "Flanger lewat nol"
 "Detune" = "Detune"
+"Feedback" = "Umpan balik"
+"Repetição" = "Level pengulangan"

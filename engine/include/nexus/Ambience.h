@@ -193,15 +193,14 @@ public:
   static constexpr int kStages = 3;
   struct Stage
   {
-    bool on = true;
-    double time = 0.5;        // botão de 0 a 1 (20 ms a 2 s)
-    double repeats = 0.5;     // botão de 0 a 1
-    double level = 0.4;       // botão de 0 a 1
-    double syncSeconds = 0.0; // tempo preso ao andamento (0 = segue o botão)
+    bool on = true;        // desligado, o som passa direto por este delay
+    double seconds = 0.25; // tempo da repetição (até 3 s)
+    double repeats = 0.5;  // feedback, de 0 a 1
+    double level = 0.4;    // volume da repetição, de 0 a 1
   };
   void prepare(double sampleRate);
   void reset();
-  // Tempo de cada delay em segundos para a posição do botão (sem andamento).
+  // Tempo do primeiro delay para a posição do botão (de 0 a 1): 20 ms a 1 s.
   static double secondsFor(double time);
   // in: o que entra (já com o liga/desliga); wet: só o que os delays somam.
   void process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages);

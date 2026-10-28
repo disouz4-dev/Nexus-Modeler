@@ -474,3 +474,5 @@ countries: sa eg ae ma
 "Phaser 12" = "فيزر 12"
 "Flanger por zero" = "فلانجر عبر الصفر"
 "Detune" = "إزاحة النغمة"
+"Feedback" = "التغذية الراجعة"
+"Repetição" = "مستوى التكرار"

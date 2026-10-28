@@ -34,10 +34,8 @@ NexusProcessor::NexusProcessor()
     p.sync = params.getRawParameterValue(pedalParam(i, "sinc"));
     p.mode = params.getRawParameterValue(pedalParam(i, "modo"));
     p.fourth = params.getRawParameterValue(pedalParam(i, "d"));
-    for (int k = 0; k < 5; ++k)
-      p.more[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, kTripleKnobs[1 + (k + 1) / 3][(k + 1) % 3]));
-    for (int k = 0; k < 3; ++k)
-      p.stageOn[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, kTripleSwitches[k]));
+    p.three = params.getRawParameterValue(pedalParam(i, kChainSwitches[0]));
+    p.multiply = params.getRawParameterValue(pedalParam(i, kChainSwitches[1]));
     for (int k = 0; k < 3; ++k)
       p.fx[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, k == 0 ? "a" : k == 1 ? "b" : "c"));
   }
@@ -243,21 +241,13 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "modo"), 1}, name + "modo", stepped, 0.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "d"), 1}, name + "efeito D", knob, 4.0f));
   }
-  // Blueberry Chain: os botões do segundo e do terceiro delay ("d" é o tempo
-  // do segundo) e a chave de cada um. No fim, como os de cima.
+  // Blueberry Chain: as duas chaves (2 ou 3 delays; dobrar ou dividir o
+  // tempo). No fim, como os de cima.
   for (int i = 0; i < kPedals; ++i)
   {
     const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
-    const float defaults[5] = {5.0f, 4.0f, 6.0f, 4.0f, 3.0f}; // e, f, g, h, i
-    for (int k = 0; k < 5; ++k)
-    {
-      const char* id = kTripleKnobs[1 + (k + 1) / 3][(k + 1) % 3];
-      layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, id), 1}, name + "efeito " + juce::String(id).toUpperCase(), knob,
-                                     defaults[k]));
-    }
-    for (int k = 0; k < 3; ++k)
-      layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kTripleSwitches[k]), 1},
-                                     name + "delay " + juce::String(k + 1) + " ligado", true));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[0]), 1}, name + juce::String::fromUTF8("três delays"), true));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[1]), 1}, name + "multiplicar o tempo", true));
   }
   return layout;
 }
@@ -473,20 +463,20 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
     auto& p = mPedals[static_cast<size_t>(pedal)];
     if (pedalKind(look) == PedalKind::triple)
     {
-      // Três delays em série: cada um com seus botões; no andamento, o tempo
-      // de cada um escolhe a sua divisão.
-      const bool sync = p.sync->load() > 0.5f;
-      const std::array<float, 9> k = {p.fx[0]->load(), p.fx[1]->load(), p.fx[2]->load(), p.fourth->load(), p.more[0]->load(),
-                                      p.more[1]->load(), p.more[2]->load(), p.more[3]->load(), p.more[4]->load()};
+      // Delays em série: o primeiro no tempo do botão (ou na divisão do
+      // andamento); cada um seguinte no dobro (x) ou na metade (/) do anterior.
+      const float knob = p.fx[0]->load();
+      const double first = p.sync->load() > 0.5f ? divisionBeats(divisionFor(knob)) * 60.0 / tempoBpm()
+                                                 : nexus::TripleDelay::secondsFor(knob / 10.0);
+      const double ratio = p.multiply->load() > 0.5f ? 2.0 : 0.5;
       std::array<nexus::TripleDelay::Stage, 3> stages{};
       for (size_t s = 0; s < 3; ++s)
       {
         auto& st = stages[s];
-        st.on = p.stageOn[s]->load() > 0.5f;
-        st.time = k[s * 3] / 10.0;
-        st.repeats = k[s * 3 + 1] / 10.0;
-        st.level = k[s * 3 + 2] / 10.0;
-        st.syncSeconds = sync ? divisionBeats(divisionFor(k[s * 3])) * 60.0 / tempoBpm() : 0.0;
+        st.on = s < 2 || p.three->load() > 0.5f;
+        st.seconds = first * std::pow(ratio, static_cast<double>(s));
+        st.repeats = p.fx[1]->load() / 10.0;
+        st.level = p.fx[2]->load() / 10.0;
       }
       p.native.setTriple(stages);
       p.native.process(nexus::NativePedal::Type::triple, p.on->load() > 0.5f, buffer, n, 0.0, 0.0, 0.0);

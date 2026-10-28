@@ -474,3 +474,5 @@ countries: bd in
 "Phaser 12" = "ফেজার 12"
 "Flanger por zero" = "থ্রু-জিরো ফ্ল্যাঞ্জার"
 "Detune" = "ডিটিউন"
+"Feedback" = "ফিডব্যাক"
+"Repetição" = "রিপিট লেভেল"

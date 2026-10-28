@@ -865,8 +865,8 @@ int main(int argc, char** argv)
              "440/220 no shimmer: " + juce::String(ratio[1], 2) + ", no hall: " + juce::String(ratio[0], 2));
     }
 
-    // 8c. Blueberry Chain: três delays digitais em série, cada um com a sua chave.
-    std::printf("\nBlueberry Chain (três delays em série)\n");
+    // 8c. Blueberry Chain: delays em cadeia, com as chaves 2 | 3 e x | /.
+    std::printf("\nBlueberry Chain (delays em cadeia)\n");
     {
       auto p = make(22, 0, true);
       const auto out = play(*p, signal);
@@ -878,18 +878,18 @@ int main(int argc, char** argv)
              juce::String::fromUTF8("diferença: ") + juce::String(gap, 1) + " dB");
     }
     {
-      // 120 BPM: delay 1 em 1/4 (500 ms), delay 2 em 1/8 (250 ms), delay 3 em
-      // 1/16 (125 ms), sem repetições. Em série, o som passa pelos três:
-      // aparece uma repetição em 500 + 250 + 125 = 875 ms.
-      auto chain = [&](bool second) {
+      // 120 BPM, sem feedback. Chave x com o tempo em 1/16: delays em 125,
+      // 250 e 500 ms; chave / com o tempo em 1/4: 500, 250 e 125 ms. Em série,
+      // o som passa pelos três: aparece uma repetição em 125 + 250 + 500 = 875 ms.
+      auto chain = [&](bool multiply, bool three) {
         auto p = make(22, 0, true);
         setParam(*p, "andamento", 120.0f);
         setParam(*p, "p1_sinc", 1.0f);
-        const std::pair<const char*, float> knobs[] = {{"p1_a", 2.5f}, {"p1_d", 6.25f}, {"p1_g", 8.75f}, {"p1_b", 0.0f}, {"p1_e", 0.0f},
-                                                       {"p1_h", 0.0f}, {"p1_c", 10.0f}, {"p1_f", 10.0f}, {"p1_i", 10.0f}};
-        for (const auto& [id, v] : knobs)
-          setParam(*p, id, v);
-        setParam(*p, "p1_on2", second ? 1.0f : 0.0f);
+        setParam(*p, "p1_a", multiply ? 8.75f : 2.5f);
+        setParam(*p, "p1_b", 0.0f);
+        setParam(*p, "p1_c", 10.0f);
+        setParam(*p, "p1_multiplica", multiply ? 1.0f : 0.0f);
+        setParam(*p, "p1_tres", three ? 1.0f : 0.0f);
         play(*p, std::vector<double>(48000, 0.0));
         std::vector<double> click(72000, 0.0);
         for (int i = 0; i < 48; ++i)
@@ -903,18 +903,27 @@ int main(int argc, char** argv)
           best = std::max(best, std::abs(out[i]));
         return best;
       };
-      const auto all = chain(true);
-      const auto without2 = chain(false);
-      const float cascade = peakAt(all, 875.0), quiet = peakAt(all, 1100.0);
-      report(cascade > 0.01f && cascade > quiet * 10.0f, "Em série: a repetição passa pelos três delays (875 ms)",
-             juce::String::fromUTF8("pico em 875 ms: ") + juce::String(cascade, 3) + ", em 1100 ms: " + juce::String(quiet, 4));
-      const float second = peakAt(all, 250.0), off = peakAt(without2, 250.0);
-      report(second > 0.01f && off < second * 0.05f, "Chave do delay 2 desligada: some a repetição dele (250 ms)",
-             "ligado: " + juce::String(second, 3) + ", desligado: " + juce::String(off, 4));
+      auto present = [&](const std::vector<float>& out, std::initializer_list<double> on, std::initializer_list<double> off) {
+        float low = 1.0f, high = 0.0f;
+        for (double ms : on)
+          low = std::min(low, peakAt(out, ms));
+        for (double ms : off)
+          high = std::max(high, peakAt(out, ms));
+        return std::pair<float, float>{low, high};
+      };
+      const auto [timesLow, timesHigh] = present(chain(true, true), {125.0, 250.0, 500.0, 875.0}, {1100.0});
+      report(timesLow > 0.01f && timesHigh < timesLow * 0.1f, "Chave x: 125, 250 e 500 ms, e a cascata dos três em 875 ms",
+             juce::String::fromUTF8("menor pico esperado: ") + juce::String(timesLow, 3) + ", fora: " + juce::String(timesHigh, 4));
+      const auto [divLow, divHigh] = present(chain(false, true), {500.0, 250.0, 125.0, 875.0}, {1100.0});
+      report(divLow > 0.01f && divHigh < divLow * 0.1f, "Chave /: 500, 250 e 125 ms, e a cascata em 875 ms",
+             juce::String::fromUTF8("menor pico esperado: ") + juce::String(divLow, 3) + ", fora: " + juce::String(divHigh, 4));
+      const auto [twoLow, twoHigh] = present(chain(true, false), {125.0, 250.0, 375.0}, {500.0, 875.0});
+      report(twoLow > 0.01f && twoHigh < twoLow * 0.1f, "Chave em 2: só dois delays (125 e 250 ms), sem o de 500 ms",
+             juce::String::fromUTF8("menor pico esperado: ") + juce::String(twoLow, 3) + ", terceiro: " + juce::String(twoHigh, 4));
     }
     {
       auto p = make(22, 0, true);
-      for (const char* id : {"p1_a", "p1_b", "p1_c", "p1_d", "p1_e", "p1_f", "p1_g", "p1_h", "p1_i"})
+      for (const char* id : {"p1_a", "p1_b", "p1_c"})
         setParam(*p, id, 10.0f);
       const auto out = play(*p, nexus::makeGuitarLikeSignal(48000.0, 20.0, 9));
       const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });

@@ -474,3 +474,5 @@ countries: cn sg
 "Phaser 12" = "移相 12"
 "Flanger por zero" = "过零镶边"
 "Detune" = "失谐"
+"Feedback" = "反馈"
+"Repetição" = "重复音量"

@@ -514,7 +514,9 @@ TABELA = [
     ("Tremolo picotado", "Slicer tremolo", "Trémolo cortado", "Trémolo haché", "Tremolo a gradini", "Zerhacktes Tremolo", "スライサー トレモロ", "切片颤音", "슬라이서 트레몰로", "स्लाइसर ट्रेमोलो", "تريمولو متقطع", "স্লাইসার ট্রেমোলো", "Рубленое тремоло", "Tremolo potong", "Kesik tremolo"),
     ("Phaser 12", "Phaser 12", "Phaser 12", "Phaser 12", "Phaser 12", "Phaser 12", "フェイザー 12", "移相 12", "페이저 12", "फ़ेज़र 12", "فيزر 12", "ফেজার 12", "Фэйзер 12", "Phaser 12", "Phaser 12"),
     ("Flanger por zero", "Thru-zero flanger", "Flanger por cero", "Flanger à passage par zéro", "Flanger thru-zero", "Thru-Zero-Flanger", "スルーゼロ フランジャー", "过零镶边", "스루제로 플랜저", "थ्रू-ज़ीरो फ़्लैंजर", "فلانجر عبر الصفر", "থ্রু-জিরো ফ্ল্যাঞ্জার", "Флэнжер через ноль", "Flanger lewat nol", "Sıfırdan geçen flanger"),
-    ("Detune", "Detune", "Desafinación", "Désaccord", "Detune", "Verstimmung", "デチューン", "失谐", "디튠", "डीट्यून", "إزاحة النغمة", "ডিটিউন", "Расстройка", "Detune", "Detune"),
+    ("Detune", "Detune", "Desafinación", "Désaccord", "Detune", "Verstimmung", "デチューン", "失谐", "디튠", "डीट्यून", "إزاحة النغمة", "ডিটিউন", "Расстройка", "Detune", "Detune"),    # Blueberry Chain: os botões de feedback e de repetição (volume das repetições).
+    ("Feedback", "Feedback", "Realimentación", "Réinjection", "Feedback", "Rückkopplung", "フィードバック", "反馈", "피드백", "फ़ीडबैक", "التغذية الراجعة", "ফিডব্যাক", "Обратная связь", "Umpan balik", "Geri besleme"),
+    ("Repetição", "Repeat level", "Nivel de repetición", "Niveau des répétitions", "Livello ripetizioni", "Echo-Pegel", "リピート音量", "重复音量", "리피트 볼륨", "रिपीट स्तर", "مستوى التكرار", "রিপিট লেভেল", "Уровень повторов", "Level pengulangan", "Tekrar seviyesi"),
 ]
 
 

@@ -474,3 +474,5 @@ countries: kr
 "Phaser 12" = "페이저 12"
 "Flanger por zero" = "스루제로 플랜저"
 "Detune" = "디튠"
+"Feedback" = "피드백"
+"Repetição" = "리피트 볼륨"

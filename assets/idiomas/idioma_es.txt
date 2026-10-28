@@ -474,3 +474,5 @@ countries: es mx ar co cl
 "Phaser 12" = "Phaser 12"
 "Flanger por zero" = "Flanger por cero"
 "Detune" = "Desafinación"
+"Feedback" = "Realimentación"
+"Repetição" = "Nivel de repetición"

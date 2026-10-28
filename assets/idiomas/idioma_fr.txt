@@ -474,3 +474,5 @@ countries: fr ca be ch
 "Phaser 12" = "Phaser 12"
 "Flanger por zero" = "Flanger à passage par zéro"
 "Detune" = "Désaccord"
+"Feedback" = "Réinjection"
+"Repetição" = "Niveau des répétitions"

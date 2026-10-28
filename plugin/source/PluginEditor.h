@@ -90,8 +90,8 @@ private:
     bool pedalOn() const;
     juce::Point<float> toScreen(juce::Point<float> imagePx) const;
     bool overFootswitch(juce::Point<float> p) const;
-    // Chaves de cada delay do Blueberry Chain: centro e raio na tela.
-    std::vector<std::pair<juce::Point<float>, float>> stageSwitches() const;
+    // Chaves alavanca do Blueberry Chain (2 | 3 e x | /): centro e raio na tela.
+    std::vector<std::pair<juce::Point<float>, float>> chainToggles() const;
 
     NexusProcessor& mProcessor;
     Kind mKind;
