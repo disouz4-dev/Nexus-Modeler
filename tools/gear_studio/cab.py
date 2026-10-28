@@ -54,7 +54,9 @@ def build(rec, fonts):
     lfont = fonts[lg.get("fonte", "script")]
     if lg.get("tipo") == "marca":
         # A marca do programa (triângulo + NEXUS + MODELER), igual à dos cabeçotes.
-        brand_plate.build((lx, lz), lg["altura_m"], cloth_front - 0.006, fonts, lg.get("modeler", True), satin=True)
+        cloth = [(a + b) / 2 for a, b in zip(rec["tela"]["cor_a"], rec["tela"]["cor_b"])]
+        brand_plate.build((lx, lz), lg["altura_m"], cloth_front - 0.006, fonts, lg.get("modeler", True), satin=True,
+                          dark=lg.get("escuro", brand_plate.is_light(cloth)))
         lg = dict(lg, sublinhado=None, contorno=False, texto="")
     if lg.get("contorno", True):
         st.text("logo_contorno", lg["texto"], lfont, lg["altura_m"], (lx, cloth_front - 0.003, lz),

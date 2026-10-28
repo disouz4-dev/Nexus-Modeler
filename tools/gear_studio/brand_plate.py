@@ -121,18 +121,30 @@ def _solid(name, pts2d, scale, origin, depth, material):
     return obj
 
 
-def build(center, height, front_y, fonts, with_modeler=True, depth=0.003, satin=False):
+def is_light(rgb):
+    """Frente clara (prateada, creme, tela clara): a marca precisa de letra escura."""
+    r, g, b = rgb
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.42
+
+
+def build(center, height, front_y, fonts, with_modeler=True, depth=0.003, satin=False, dark=False):
     """Monta a marca centrada em center (x, z), com o NEXUS da altura dada.
-    Devolve a largura total."""
+    dark: letras pretas brilhantes, para frente clara. Devolve a largura total."""
+    if dark:
+        letters = st.mat_plastic("marca_letras", (0.012, 0.012, 0.014), rough=0.18, coat=1.0)
+    elif satin:
+        # Prateado acetinado (claro mesmo sem nada para refletir, como na caixa).
+        letters = st.mat_plastic("marca_letras", (0.78, 0.8, 0.83), rough=0.3, coat=0.6)
+    else:
+        letters = st.mat_metal("marca_letras", (0.93, 0.95, 0.97), rough=0.14)
     mats = {
-        # satin: prateado acetinado (claro mesmo sem nada para refletir, como na caixa).
-        "letters": (st.mat_plastic("marca_letras", (0.78, 0.8, 0.83), rough=0.3, coat=0.6) if satin
-                    else st.mat_metal("marca_letras", (0.93, 0.95, 0.97), rough=0.14)),
+        "letters": letters,
         "x": st.mat_metal("marca_x", (0.10, 0.52, 0.95), rough=0.22),
         "nxx": st.mat_metal("marca_azul_claro", (0.18, 0.62, 0.98), rough=0.25),
         "nxy": st.mat_metal("marca_azul_fundo", (0.03, 0.26, 0.78), rough=0.25),
         "nxz": st.mat_metal("marca_aco", (0.42, 0.52, 0.62), rough=0.28),
-        "modeler": st.mat_glow("marca_modeler", (0.16, 0.71, 1.0), 2.2),
+        "modeler": (st.mat_plastic("marca_modeler", (0.01, 0.12, 0.42), rough=0.25, coat=0.8) if dark
+                    else st.mat_glow("marca_modeler", (0.16, 0.71, 1.0), 2.2)),
     }
     letters, xmark, word_w = wordmark(1.0)
     tri = penrose()
