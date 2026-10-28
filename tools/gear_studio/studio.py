@@ -1,6 +1,7 @@
 # Nexus Gear Studio: estúdio de render (luz, câmera, materiais) comum a
 # todos os equipamentos. Roda dentro do Blender 4.5.
 import math
+import os
 
 import bpy
 from mathutils import Vector
@@ -523,9 +524,31 @@ def shadow_floor(z):
     return floor
 
 
+def use_gpu():
+    """Liga a placa de vídeo (Metal no Mac, depois OptiX/CUDA/HIP) para o
+    Cycles. Sem placa compatível (ou com NEXUS_GEAR_CPU=1), fica no processador."""
+    if os.environ.get("NEXUS_GEAR_CPU"):
+        return False
+    prefs = bpy.context.preferences.addons["cycles"].preferences
+    for kind in ("METAL", "OPTIX", "CUDA", "HIP", "ONEAPI"):
+        try:
+            prefs.compute_device_type = kind
+        except TypeError:
+            continue
+        prefs.get_devices()
+        gpus = [d for d in prefs.devices if d.type == kind]
+        if gpus:
+            for d in prefs.devices:
+                # Só a placa dedicada: a integrada da Intel deixa tudo mais lento.
+                d.use = d.type == kind and "Intel" not in d.name
+            print("[gear] placa de vídeo:", kind, [d.name for d in gpus if d.use])
+            return any(d.use for d in gpus)
+    return False
+
+
 def render_settings(scene, width, height, samples):
     scene.render.engine = "CYCLES"
-    scene.cycles.device = "CPU"
+    scene.cycles.device = "GPU" if use_gpu() else "CPU"
     scene.cycles.samples = samples
     scene.cycles.use_adaptive_sampling = True
     scene.cycles.adaptive_threshold = 0.01
@@ -542,3 +565,95 @@ def render_settings(scene, width, height, samples):
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Medium High Contrast"
     scene.render.threads_mode = "AUTO"
+
+
+def _math(nodes, links, op, a, b=None):
+    """Nó de conta: a e b são saídas de outros nós ou números."""
+    n = nodes.new("ShaderNodeMath")
+    n.operation = op
+    for i, v in enumerate((a, b)):
+        if v is None:
+            continue
+        if isinstance(v, (int, float)):
+            n.inputs[i].default_value = v
+        else:
+            links.new(v, n.inputs[i])
+    return n.outputs[0]
+
+
+def mat_diamond_plate(name, color, pitch_mm=11.0, rough=0.16):
+    """Chapa de alumínio xadrez (diamond plate): gomos em relevo alternando
+    +45 e -45 graus, alumínio polido (frente dos Rectifier)."""
+    mat, nodes, links, bsdf = _principled(name)
+    coords = _object_coords(nodes)
+    bsdf.inputs["Base Color"].default_value = (*color, 1)
+    bsdf.inputs["Metallic"].default_value = 1.0
+    bsdf.inputs["Roughness"].default_value = rough
+    s = 1000.0 / pitch_mm
+    sep = nodes.new("ShaderNodeSeparateXYZ")
+    links.new(coords, sep.inputs[0])
+    x = _math(nodes, links, "MULTIPLY", sep.outputs["X"], s)
+    z = _math(nodes, links, "MULTIPLY", sep.outputs["Z"], s)
+    fx = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", x), 0.5)
+    fz = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", z), 0.5)
+    parity = _math(nodes, links, "MODULO", _math(nodes, links, "ADD", _math(nodes, links, "FLOOR", x), _math(nodes, links, "FLOOR", z)), 2.0)
+    sign = _math(nodes, links, "SUBTRACT", 1.0, _math(nodes, links, "MULTIPLY", _math(nodes, links, "ABSOLUTE", parity), 2.0))
+    sfz = _math(nodes, links, "MULTIPLY", fz, sign)
+    u = _math(nodes, links, "MULTIPLY", _math(nodes, links, "ADD", fx, sfz), 0.7071)
+    v = _math(nodes, links, "MULTIPLY", _math(nodes, links, "SUBTRACT", fx, sfz), 0.7071)
+    du = _math(nodes, links, "POWER", _math(nodes, links, "DIVIDE", u, 0.36), 2.0)
+    dv = _math(nodes, links, "POWER", _math(nodes, links, "DIVIDE", v, 0.085), 2.0)
+    h = _math(nodes, links, "SUBTRACT", 1.0, _math(nodes, links, "ADD", du, dv))
+    h = _math(nodes, links, "POWER", _math(nodes, links, "MAXIMUM", h, 0.0), 0.5)
+    bump = nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 1.0
+    bump.inputs["Distance"].default_value = 0.0012
+    links.new(h, bump.inputs["Height"])
+    # Riscos leves de polimento por cima.
+    noise = nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 900.0
+    rmap = nodes.new("ShaderNodeMapRange")
+    rmap.inputs["To Min"].default_value = rough - 0.05
+    rmap.inputs["To Max"].default_value = rough + 0.08
+    links.new(noise.outputs["Fac"], rmap.inputs["Value"])
+    links.new(rmap.outputs["Result"], bsdf.inputs["Roughness"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
+
+
+def mat_perforated(name, color, hole_mm=3.2, pitch_mm=4.8, rough=0.38, shape="redondo"):
+    """Grade de metal perfurado pintado: furos redondos em fileiras
+    desencontradas, com o fundo escuro aparecendo (grade do Soldano)."""
+    mat, nodes, links, bsdf = _principled(name)
+    coords = _object_coords(nodes)
+    bsdf.inputs["Metallic"].default_value = 0.6
+    bsdf.inputs["Roughness"].default_value = rough
+    s = 1000.0 / pitch_mm
+    sep = nodes.new("ShaderNodeSeparateXYZ")
+    links.new(coords, sep.inputs[0])
+    z = _math(nodes, links, "MULTIPLY", sep.outputs["Z"], s)
+    row = _math(nodes, links, "FLOOR", z)
+    shift = _math(nodes, links, "MULTIPLY", _math(nodes, links, "MODULO", row, 2.0), 0.5)
+    x = _math(nodes, links, "ADD", _math(nodes, links, "MULTIPLY", sep.outputs["X"], s), shift)
+    fx = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", x), 0.5)
+    fz = _math(nodes, links, "SUBTRACT", _math(nodes, links, "FRACT", z), 0.5)
+    if shape == "losango":
+        # Metal expandido: furos em losango deitado (largo e baixo), como a grade do Soldano.
+        d = _math(nodes, links, "ADD", _math(nodes, links, "ABSOLUTE", fx), _math(nodes, links, "MULTIPLY", _math(nodes, links, "ABSOLUTE", fz), 1.8))
+        r = 0.5 * hole_mm / pitch_mm
+    else:
+        d = _math(nodes, links, "SQRT", _math(nodes, links, "ADD", _math(nodes, links, "MULTIPLY", fx, fx), _math(nodes, links, "MULTIPLY", fz, fz)))
+        r = 0.5 * hole_mm / pitch_mm
+    solid = _math(nodes, links, "MINIMUM", _math(nodes, links, "MAXIMUM", _math(nodes, links, "DIVIDE", _math(nodes, links, "SUBTRACT", d, r), 0.06), 0.0), 1.0)
+    mix = nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    mix.inputs[6].default_value = (0.002, 0.002, 0.002, 1)
+    mix.inputs[7].default_value = (*color, 1)
+    links.new(solid, mix.inputs[0])
+    links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    bump = nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.8
+    bump.inputs["Distance"].default_value = 0.0008
+    links.new(solid, bump.inputs["Height"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat

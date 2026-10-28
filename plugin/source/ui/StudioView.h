@@ -116,6 +116,9 @@ private:
   std::array<juce::Rectangle<float>, nexus::studio::kStems> mStemRows;
   float mMusicVolume = 0.8f;
   bool mWasBusy = false;
+  // Diagnóstico do play (registro de erros).
+  double mPlayStartPos = 0.0;
+  juce::uint32 mPlayStartMs = 0;
 
   static constexpr float kRowHeight = 40.0f;
 };

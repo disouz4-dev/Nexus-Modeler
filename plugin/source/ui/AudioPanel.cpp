@@ -43,10 +43,10 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
     refresh();
   };
   mInputDevice.box.onChange = [this] {
-    apply([this](auto& s) { s.inputDeviceName = mInputDevice.box.getText(); s.useDefaultInputChannels = true; });
+    apply([this](auto& s) { s.inputDeviceName = mInputDevice.chosen(); s.useDefaultInputChannels = true; });
   };
   mOutputDevice.box.onChange = [this] {
-    apply([this](auto& s) { s.outputDeviceName = mOutputDevice.box.getText(); s.useDefaultOutputChannels = true; });
+    apply([this](auto& s) { s.outputDeviceName = mOutputDevice.chosen(); s.useDefaultOutputChannels = true; });
   };
   mGuitar.box.onChange = [this] {
     const int ch = mGuitar.box.getSelectedId() - 1;
@@ -70,6 +70,27 @@ AudioPanel::AudioPanel(juce::AudioDeviceManager& devices, std::function<void()> 
   };
   mBuffer.box.onChange = [this] {
     const int size = mBuffer.box.getSelectedId();
+    if (isPipeWireJack())
+    {
+      // No JACK do PipeWire o bloco é pedido na abertura da conexão: guarda o
+      // pedido e reabre a conexão (o JACK não troca o bloco com ela aberta).
+      if (mRefreshing)
+        return;
+      const double sr = mDevices.getCurrentAudioDevice() != nullptr ? mDevices.getCurrentAudioDevice()->getCurrentSampleRate() : 48000.0;
+      setPipeWireLatency(size, sr);
+      auto setup = mDevices.getAudioDeviceSetup();
+      setup.bufferSize = size;
+      // Fecha a conexão de vez: só uma conexão nova lê o bloco pedido (reabrir
+      // a mesma mantinha o bloco antigo e a lista voltava ao valor anterior).
+      mDevices.closeAudioDevice();
+      mError = mDevices.setAudioDeviceSetup(setup, true);
+      if (mError.isNotEmpty())
+        nexus::report::log("audio", "JACK " + juce::String(size) + ": " + mError);
+      if (mSave)
+        mSave();
+      refresh();
+      return;
+    }
     apply([size](auto& s) { s.bufferSize = size; });
   };
 
@@ -128,6 +149,26 @@ void AudioPanel::visibilityChanged()
     stopTimer();
 }
 
+bool AudioPanel::isPipeWireJack() const
+{
+ #if JUCE_LINUX || JUCE_BSD
+  // O pedido de bloco só vale quando quem atende o JACK é o PipeWire.
+  return mDevices.getCurrentAudioDeviceType() == "JACK" && juce::File("/run/user").isDirectory()
+         && juce::File("/usr/lib/x86_64-linux-gnu/pipewire-0.3/jack/libjack.so.0").existsAsFile();
+ #else
+  return false;
+ #endif
+}
+
+void AudioPanel::setPipeWireLatency(int blockSize, double sampleRate)
+{
+ #if JUCE_LINUX || JUCE_BSD
+  setenv("PIPEWIRE_LATENCY", (juce::String(blockSize) + "/" + juce::String(juce::roundToInt(sampleRate))).toRawUTF8(), 1);
+ #else
+  juce::ignoreUnused(blockSize, sampleRate);
+ #endif
+}
+
 void AudioPanel::apply(const std::function<void(juce::AudioDeviceManager::AudioDeviceSetup&)>& change)
 {
   if (mRefreshing)
@@ -158,12 +199,23 @@ void AudioPanel::refresh()
   const bool separate = type != nullptr && type->hasSeparateInputsAndOutputs();
   auto fillDevices = [&](Row& row, bool input, const juce::String& current) {
     row.box.clear(juce::dontSendNotification);
+    row.names.clear();
     if (type == nullptr)
       return;
-    int i = 1;
-    for (const auto& name : type->getDeviceNames(input))
-      row.box.addItem(name, i++);
-    row.box.setText(current, juce::dontSendNotification);
+    // No Linux, o dispositivo padrão do ALSA se chama "Default ALSA Output"
+    // também na lista de entradas; mostramos "Padrão do sistema".
+    auto shown = [](const juce::String& name) {
+      return name.startsWith("Default ALSA") ? TRANS(juce::String::fromUTF8("Padrão do sistema")) + name.fromFirstOccurrenceOf(" (", true, false)
+                                             : name;
+    };
+    row.names = type->getDeviceNames(input);
+    for (int i = 0; i < row.names.size(); ++i)
+      row.box.addItem(shown(row.names[i]), i + 1);
+    const int at = row.names.indexOf(current);
+    if (at >= 0)
+      row.box.setSelectedId(at + 1, juce::dontSendNotification);
+    else
+      row.box.setText(shown(current), juce::dontSendNotification);
   };
   fillDevices(mInputDevice, true, setup.inputDeviceName);
   fillDevices(mOutputDevice, false, setup.outputDeviceName);
@@ -197,7 +249,15 @@ void AudioPanel::refresh()
     mRate.box.setSelectedId(juce::roundToInt(device->getCurrentSampleRate()), juce::dontSendNotification);
 
     const double sr = device->getCurrentSampleRate();
-    for (auto size : device->getAvailableBufferSizes())
+    // O JACK só informa o bloco atual; com o PipeWire dá para pedir outro.
+    auto sizes = device->getAvailableBufferSizes();
+    if (isPipeWireJack())
+    {
+      sizes = {64, 128, 256, 512, 1024};
+      sizes.addIfNotAlreadyThere(device->getCurrentBufferSizeSamples());
+      sizes.sort();
+    }
+    for (auto size : sizes)
       mBuffer.box.addItem(TRANS("%1 amostras").replace("%1", juce::String(size)) + "  (" + ms(1000.0 * size / sr) + ")", size);
     mBuffer.box.setSelectedId(device->getCurrentBufferSizeSamples(), juce::dontSendNotification);
     mDriverPanel.setVisible(device->hasControlPanel());

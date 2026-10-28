@@ -100,10 +100,15 @@ public:
         g.fillRoundedRectangle(card.getX(), card.getY() + 10.0f, 2.5f, card.getHeight() - 20.0f, 1.25f);
       }
       auto inner = card.reduced(12.0f, 8.0f);
-      auto thumb = inner.removeFromLeft(it.kind == GearItem::Kind::pedal ? 52.0f : 92.0f);
-      const auto& img = it.art->front;
-      g.setImageResamplingQuality(juce::Graphics::highResamplingQuality);
-      g.drawImage(img, juce::RectanglePlacement(juce::RectanglePlacement::centred).appliedTo(img.getBounds().toFloat(), thumb));
+      auto thumb = inner.removeFromLeft(it.kind == GearItem::Kind::pedal && it.paintThumb == nullptr ? 52.0f : 92.0f);
+      if (it.art != nullptr && it.art->valid())
+      {
+        const auto& img = it.art->front;
+        g.setImageResamplingQuality(juce::Graphics::highResamplingQuality);
+        g.drawImage(img, juce::RectanglePlacement(juce::RectanglePlacement::centred).appliedTo(img.getBounds().toFloat(), thumb));
+      }
+      else if (it.paintThumb)
+        it.paintThumb(g, thumb);
       inner.removeFromLeft(12.0f);
       g.setColour(colour::text);
       g.setFont(Fonts::get().display(15.0f).withExtraKerningFactor(language::allowsLetterSpacing() ? 0.08f : 0.0f));

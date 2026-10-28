@@ -19,11 +19,11 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 | Silver Twin | Fender Twin Reverb | 2 (Normal, Vibrato) | planejado |
 | Tweed 59 | Fender Bassman 5F6-A | 1 | planejado |
 | Top Boost 30 | Vox AC30 | 2 (Normal, Top Boost) | planejado |
-| Block 5150 | Peavey 5150 / 6505 | 2 (Ritmo, Solo) | planejado |
-| Recto Dual | Mesa/Boogie Dual Rectifier | 3 (Limpo, Crunch, Moderno) | planejado |
-| Mark Five | Mesa/Boogie Mark V | 3 | planejado |
-| SL 100 | Soldano SLO-100 | 2 (Normal, Overdrive) | planejado |
-| BE 100 | Friedman BE-100 | 2 | planejado |
+| Block 5150 | Peavey 5150 / 6505 | 2 (Ritmo, Solo) | pronto |
+| Recto Dual | Mesa/Boogie Dual Rectifier | 1 no Nexus (Moderno; o original tem 3) | pronto |
+| Mark Five | Mesa/Boogie Mark V | 3 (Limpo, Crunch, Lead) | pronto |
+| SL 100 | Soldano SLO-100 | 2 (Normal, Overdrive) | pronto |
+| BE 100 | Friedman BE-100 | 1 no Nexus (BE; o original tem 2) | pronto |
 | Jazz 120 | Roland JC-120 | 1 | planejado |
 
 ## Pedais de captura (o som vem da TONE3000)
@@ -54,7 +54,7 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 | Lime Flanger | MXR Flanger | flanger | planejado |
 | Melon Tremolo | Boss TR-2 | tremolo | planejado |
 | Apple Comp | MXR Dyna Comp | compressor | planejado |
-| Pear Gate | ISP Decimator | redutor de ruído | planejado |
+| Pear Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
 | Mango Wah | Dunlop Cry Baby | wah | planejado |
 
 ## Caixas
@@ -62,6 +62,7 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 | Nome no Nexus | Inspirado em | Situação |
 |---|---|---|
 | Brit 4x12 | Marshall 1960A | pronto |
+| Mark 4x12 | Mesa/Boogie 4x12 (acompanha o Mark Five) | pronto |
 | Recto 4x12 | Mesa/Boogie Rectifier 4x12 | planejado |
 | Blue 2x12 | Vox AC30 (alto-falantes Alnico Blue) | planejado |
 | Twin 2x12 | Fender Twin | planejado |

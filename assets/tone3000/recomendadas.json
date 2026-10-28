@@ -1,5 +1,5 @@
 {
-  "_sobre": "Tons da TONE3000 recomendados para cada equipamento do Nexus. Guardamos só o número, o nome e como ler a posição do botão no nome de cada captura; as capturas são baixadas pela conta de quem usa. 'posicao' é uma expressão com um grupo que pega o número; 'serie' são trechos que o nome precisa ter.",
+  "_sobre": "Tons da TONE3000 recomendados para cada equipamento do Nexus. Guardamos só o número, o nome e como ler a posição do botão no nome de cada captura; as capturas são baixadas pela conta de quem usa. 'posicao' é uma expressão com um grupo que pega o número; 'serie' são trechos que o nome precisa ter. 'padrao': a captura que o Nexus baixa e carrega sozinho quando a peça (ou o canal) está vazio; sem 'padrao', vale a primeira da lista (do canal).",
   "brit800": {
     "busca": "JCM800",
     "tons": [
@@ -280,6 +280,212 @@
         "capturas": 11,
         "downloads": 1565,
         "nota": "G12T-75, a caixa do JCM800"
+      }
+    ]
+  },
+  "mark5": {
+    "busca": "Mark V",
+    "tons": [
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Canal 1: limpo no 2, Tweed no limite da saturação no 6 e com pouco ganho no 9",
+        "mapa": {
+          "(Ch 1 Clean) CLN": 2,
+          "(Ch 1 Tweed) EOB [": 6,
+          "(Ch 1 Tweed) LG": 9
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 2 Crunch",
+        "nota": "Canal 2: Crunch no limite no 3, pouco ganho no 6 e médio no 9",
+        "mapa": {
+          "(Ch 2 Cru) EOB": 3,
+          "(Ch 2 Cru) LG": 6,
+          "(Ch 2 Cru) MG": 9
+        }
+      },
+      {
+        "id": 57410,
+        "titulo": "Mesa Boogie - Mark V [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 8789,
+        "pacote": "Canal 2 MK-I",
+        "nota": "Canal 2 no modo MK-I: pouco ganho no 3, médio no 6 e alto no 9",
+        "mapa": {
+          "(Ch 2 MK-I) LG": 3,
+          "(Ch 2 MK-I) MG": 6,
+          "(Ch 2 MK-I) HG": 9
+        }
+      },
+      {
+        "id": 2399,
+        "titulo": "MKV:25 MKIICp/MKIV",
+        "criador": "ricwaltz",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 3 IIC+ (Mikko)",
+        "nota": "Canal 3 no modo IIC+, ajuste do Mikko: o Lead mais limpo nas pausas entre as notas (testado com o Lemon na frente)",
+        "mapa": {
+          "MikkoIICP": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 2399,
+        "titulo": "MKV:25 MKIICp/MKIV",
+        "criador": "ricwaltz",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 3 MK-IV (Mikko)",
+        "nota": "Canal 3 no modo MK-IV, ajuste do Mikko",
+        "mapa": {
+          "MikkoMKIV": 8
+        }
+      },
+      {
+        "id": 2365,
+        "titulo": "Mark V:25 crunch+lead",
+        "criador": "ricwaltz",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 3 IIC+ (V25)",
+        "nota": "Canal 3 no modo IIC+ de um Mark V:25",
+        "mapa": {
+          "CH2IICP": 8
+        }
+      }
+    ]
+  },
+  "block5150": {
+    "busca": "5150",
+    "tons": [
+      {
+        "id": 44664,
+        "titulo": "5150 BLOCK LETTER",
+        "tipo": "amp",
+        "capturas": 3,
+        "pacote": "Canal 1 Ritmo",
+        "padrao": true,
+        "nota": "5150 Block Letter, canal vermelho em três ganhos (só o pré; use a caixa)",
+        "mapa": {
+          "GAIN 1": 3,
+          "GAIN 2": 6,
+          "GAIN 3": 9
+        }
+      },
+      {
+        "id": 29609,
+        "titulo": "Peavey 5150 Blockletter Lead Channel",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Solo",
+        "padrao": true,
+        "nota": "Canal de solo do 5150 Block Letter",
+        "mapa": {
+          "Lead Channel": 8
+        }
+      }
+    ]
+  },
+  "recto_dual": {
+    "busca": "Dual Rectifier",
+    "tons": [
+      {
+        "id": 70207,
+        "titulo": "MESA DUAL RECTIFIER (REV G 1998) - FULL GAIN PACK",
+        "tipo": "amp",
+        "capturas": 9,
+        "padrao": true,
+        "nota": "Rev G 1998, canal laranja no modo Modern, ganho de 1 a 9",
+        "mapa": {
+          "GAIN 1": 1,
+          "GAIN 2": 2,
+          "GAIN 3": 3,
+          "GAIN 4": 4,
+          "GAIN 5": 5,
+          "GAIN 6": 6,
+          "GAIN 7": 7,
+          "GAIN 8": 8,
+          "GAIN 9": 9
+        }
+      }
+    ]
+  },
+  "sl100": {
+    "busca": "SLO 100",
+    "tons": [
+      {
+        "id": 64436,
+        "titulo": "Soldano SLO 100",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 1 Normal",
+        "padrao": true,
+        "nota": "Canal normal com crunch",
+        "mapa": {
+          "NRM-CRN": 6
+        }
+      },
+      {
+        "id": 64436,
+        "titulo": "Soldano SLO 100",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Overdrive",
+        "padrao": true,
+        "nota": "Canal overdrive (The King)",
+        "mapa": {
+          "OVD The King": 8
+        }
+      },
+      {
+        "id": 84137,
+        "titulo": "SLO100 Sweet Lead",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Sweet Lead",
+        "nota": "Solo do canal overdrive",
+        "mapa": {
+          "SweetLead": 8
+        }
+      }
+    ]
+  },
+  "be100": {
+    "busca": "BE 100",
+    "tons": [
+      {
+        "id": 72085,
+        "titulo": "FRIEDMAN BE-100 (GAIN STAGES)",
+        "tipo": "amp",
+        "capturas": 9,
+        "padrao": true,
+        "nota": "Canal BE com ganho de 1 a 9",
+        "mapa": {
+          "BE - GAIN 1": 1,
+          "BE - GAIN 2": 2,
+          "BE - GAIN 3": 3,
+          "BE - GAIN 4": 4,
+          "BE - GAIN 5": 5,
+          "BE - GAIN 6": 6,
+          "BE - GAIN 7": 7,
+          "BE - GAIN 8": 8,
+          "BE - GAIN 9": 9
+        }
       }
     ]
   }

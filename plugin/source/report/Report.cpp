@@ -13,6 +13,9 @@ const juce::String kRepo = "https://github.com/disouz4-dev/Nexus-Modeler";
 constexpr juce::int64 kMaxLogBytes = 512 * 1024;
 // O GitHub recusa endereços muito longos; o resto vai pela área de transferência.
 constexpr int kMaxUrlLength = 7000;
+// Ponte dos relatórios (tools/relatorio, na Cloudflare): cria o issue sem a
+// pessoa precisar de conta no GitHub. Vazio: abre o GitHub preenchido.
+const juce::String kRelay = "https://nexus-relatorio.nexusmodeler.workers.dev/relatorio";
 
 juce::CriticalSection& logLock()
 {
@@ -145,10 +148,58 @@ juce::URL issueUrl(Kind kind, const juce::String& description, const juce::Strin
   return url;
 }
 
-void send(Kind kind, const juce::String& description, const juce::String& details)
+static Sent sendDirect(Kind kind, const juce::String& description, const juce::String& details)
 {
-  juce::SystemClipboard::copyTextToClipboard(description + "\n\n" + systemInfo() + "\n\n" + details);
+  if (kRelay.isEmpty())
+    return {};
+  juce::DynamicObject::Ptr body = new juce::DynamicObject();
+  body->setProperty("tipo", kind == Kind::crash ? "travamento" : "problema");
+  body->setProperty("versao", nexus::update::currentVersion());
+  body->setProperty("descricao", description);
+  body->setProperty("sistema", systemInfo());
+  body->setProperty("registro", details.getLastCharacters(18000));
+  int status = 0;
+  auto stream = juce::URL(kRelay).withPOSTData(juce::JSON::toString(juce::var(body.get()), true))
+                  .createInputStream(juce::URL::InputStreamOptions(juce::URL::ParameterHandling::inPostData)
+                                       .withExtraHeaders("Content-Type: application/json\r\nUser-Agent: NexusModeler/" + nexus::update::currentVersion())
+                                       .withConnectionTimeoutMs(15000)
+                                       .withStatusCode(&status));
+  Sent sent;
+  if (stream == nullptr)
+  {
+    sent.error = "sem conexão com a ponte";
+    return sent;
+  }
+  const auto reply = juce::JSON::parse(stream->readEntireStreamAsString());
+  sent.number = static_cast<int>(reply["numero"]);
+  sent.address = reply["endereco"].toString();
+  if (status != 200 || sent.number <= 0)
+    sent.error = reply["erro"].toString().isNotEmpty() ? reply["erro"].toString() : "a ponte respondeu " + juce::String(status);
+  return sent;
+}
+
+void send(Kind kind, const juce::String& description, const juce::String& details, std::function<void(Sent)> done)
+{
   log("relatorio", kind == Kind::crash ? "enviando relatório de travamento" : "enviando relatório de problema");
-  issueUrl(kind, description, details).launchInDefaultBrowser();
+  juce::Thread::launch([kind, description, details, done] {
+    auto sent = sendDirect(kind, description, details);
+    if (sent.number <= 0)
+    {
+      // Sem a ponte: abre o GitHub preenchido (precisa de conta) e copia o texto.
+      if (sent.error.isNotEmpty())
+        log("relatorio", "ponte: " + sent.error);
+      juce::MessageManager::callAsync([kind, description, details] {
+        juce::SystemClipboard::copyTextToClipboard(description + "\n\n" + systemInfo() + "\n\n" + details);
+        issueUrl(kind, description, details).launchInDefaultBrowser();
+      });
+      sent.openedBrowser = true;
+    }
+    else
+      log("relatorio", "issue #" + juce::String(sent.number));
+    juce::MessageManager::callAsync([done, sent] {
+      if (done)
+        done(sent);
+    });
+  });
 }
 } // namespace nexus::report

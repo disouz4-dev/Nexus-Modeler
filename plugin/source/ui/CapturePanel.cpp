@@ -223,7 +223,8 @@ void CapturePanel::paintListBoxItem(int row, juce::Graphics& g, int width, int h
   inner.removeFromRight(12.0f);
   g.setColour(colour::text);
   g.setFont(Fonts::get().ui(14.0f));
-  g.drawText(t.title, inner.removeFromTop(inner.getHeight() * 0.5f), juce::Justification::centredLeft, true);
+  g.drawText(t.packName.isNotEmpty() ? t.title + juce::String::fromUTF8("  ·  ") + TRANS(t.packName) : t.title,
+             inner.removeFromTop(inner.getHeight() * 0.5f), juce::Justification::centredLeft, true);
   juce::StringArray details;
   if (t.creator.isNotEmpty())
     details.add("@" + t.creator);

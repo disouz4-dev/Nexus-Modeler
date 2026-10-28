@@ -29,7 +29,9 @@ struct GearItem
   juce::String category;    // "Drive e distorção", "Modulação"...
   juce::String source;      // "Captura da TONE3000" ou "Efeito do Nexus"
   const GearArt* art = nullptr;
-  bool available() const { return look >= 0 && art != nullptr && art->valid(); }
+  // Peças sem imagem renderizada (equalizadores): miniatura desenhada.
+  std::function<void(juce::Graphics&, juce::Rectangle<float>)> paintThumb;
+  bool available() const { return look >= 0 && ((art != nullptr && art->valid()) || paintThumb != nullptr); }
 };
 
 class GearBrowser : public juce::Component

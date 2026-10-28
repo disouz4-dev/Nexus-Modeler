@@ -16,7 +16,18 @@ constexpr int kPathHeight = 176;
 constexpr int kTitleHeight = 112;
 
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
-                                                               "blueberry_chorus", "coconut_delay", "grape_reverb"};
+                                                               "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
+                                                               "cherry_drop"};
+// Cabeçotes, na ordem do parâmetro "cabecote".
+const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100"};
+// Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
+const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412"};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 0, 1, 0, 0};
+struct CabInfo
+{
+  const char* inspiration;
+};
+const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -85,10 +96,12 @@ void drawLed(juce::Graphics& g, juce::Point<float> c, float r)
 
 juce::String nativeKnobLabel(int look, const juce::String& id)
 {
-  static const char* const names[3][3] = {{"Velocidade", "Profundidade", "Mistura"},
+  static const char* const names[5][3] = {{"Velocidade", "Profundidade", "Mistura"},
                                          {"Tempo", "Repetições", "Mistura"},
-                                         {"Tamanho", "Tom", "Mistura"}};
-  const int type = juce::jlimit(0, 2, look - NexusProcessor::kFirstNativeLook);
+                                         {"Tamanho", "Tom", "Mistura"},
+                                         {"Sensibilidade", "Ataque", "Release"},
+                                         {"Drop", "Mistura", ""}};
+  const int type = juce::jlimit(0, 4, look - NexusProcessor::kFirstNativeLook);
   const int knob = id == "a" ? 0 : id == "b" ? 1 : 2;
   return juce::String::fromUTF8(names[type][knob]);
 }
@@ -102,6 +115,8 @@ juce::String knobLabel(const juce::String& id)
   if (id == "presenca") return juce::String::fromUTF8("Presença");
   if (id == "tom") return "Tom";
   if (id == "nivel") return juce::String::fromUTF8("Nível");
+  // Faixas do equalizador gráfico ("eq750" -> "750 Hz").
+  if (id.startsWith("eq")) return id.substring(2) + " Hz";
   return "Volume";
 }
 
@@ -291,9 +306,19 @@ void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
 
 // ================================================================ CabStage
 
-NexusEditor::CabStage::CabStage(NexusProcessor& p, const GearArt& art)
+const GearArt& NexusEditor::CabStage::art() const
+{
+  return mArts[juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(mRig))];
+}
+
+const GearArt& NexusEditor::cabArt(int rig) const
+{
+  return mCabArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig)))];
+}
+
+NexusEditor::CabStage::CabStage(NexusProcessor& p, const GearArt* arts)
 : mProcessor(p)
-, mArt(art)
+, mArts(arts)
 {
   addAndMakeVisible(mModes);
   mModes.setFontSize(12.0f);
@@ -308,12 +333,12 @@ void NexusEditor::CabStage::resized()
 {
   auto area = getLocalBounds().toFloat();
   mModes.setBounds(area.removeFromTop(56.0f).withSizeKeepingCentre(420.0f, 36.0f).translated(0.0f, 6.0f).toNearestInt());
-  mImage = fitImage(mArt.front, area.reduced(24.0f, 8.0f));
+  mImage = fitImage(art().front, area.reduced(24.0f, 8.0f));
 }
 
 void NexusEditor::CabStage::paint(juce::Graphics& g)
 {
-  drawGear(g, mArt.front, mImage, mDim ? 0.42f : 1.0f);
+  drawGear(g, art().front, mImage, mDim ? 0.42f : 1.0f);
 }
 
 void NexusEditor::CabStage::refresh()
@@ -452,6 +477,7 @@ void NexusEditor::ChainView::rebuild()
     const size_t loops = std::max(layout.loop[0].size(), layout.dual ? layout.loop[1].size() : size_t(0));
     w += aw + gap + static_cast<float>(loops) * (pw + gap) + cw + gap;                // cabeçote, entre, caixa
     w += static_cast<float>(layout.post.size()) * (pw + gap);                         // pedais depois
+    w += aw * 0.62f + gap;                                                            // equalizador do fim
     return w;
   };
   const float scale = std::min(1.0f, (x1 - x0) / std::max(1.0f, widthOf()));
@@ -511,6 +537,8 @@ void NexusEditor::ChainView::rebuild()
     addCard(CardType::pedal, layout.post[i], pw, ph, cy);
   }
   addDrop(3, static_cast<int>(layout.post.size()), x - gap * 0.5f, cy);
+  // Equalizador do fim da cadeia: fixo, todo o som passa por ele.
+  addCard(CardType::eq, 0, cw * 0.86f, cw * 0.86f, cy);
 
   // Fios: entrada até a divisão, os dois lados, a junção até a saída.
   juce::Path main;
@@ -589,19 +617,25 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
       break;
     }
     case CardType::amp:
-      drawGear(g, mEditor.mAmpArt.front, fitImage(mEditor.mAmpArt.front, c.r), layout.dual && activeRig != c.index ? 0.45f : 1.0f);
+      drawGear(g, mEditor.ampArt(c.index).front, fitImage(mEditor.ampArt(c.index).front, c.r), layout.dual && activeRig != c.index ? 0.45f : 1.0f);
       break;
     case CardType::cab:
     {
       const bool cabOn = proc.packIncludesCab(c.index)
                          || (proc.params.getRawParameterValue(NexusProcessor::ampParam(c.index, "caixa"))->load() > 0.5f && proc.irLoaded(c.index));
-      drawGear(g, mEditor.mCabArt.front, fitImage(mEditor.mCabArt.front, c.r),
+      drawGear(g, mEditor.cabArt(c.index).front, fitImage(mEditor.cabArt(c.index).front, c.r),
                cabOn && !(layout.dual && activeRig != c.index) ? 1.0f : 0.4f);
       break;
     }
     case CardType::ab:
       drawAbPedal(g, c.r, activeRig, 1.0f);
       break;
+    case CardType::eq:
+    {
+      const bool on = proc.params.getRawParameterValue("eq_ligado")->load() > 0.5f;
+      nexus::ui::EqStage::paintThumb(g, c.r, proc.params, on ? 1.0f : 0.4f);
+      break;
+    }
     case CardType::add:
     {
       juce::Path dash;
@@ -657,6 +691,7 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
     case CardType::cab: name = TRANS("Caixa"); break;
     case CardType::ab: name = TRANS("Pedal A/B: clique para trocar o lado"); break;
     case CardType::add: name = TRANS("Adicionar pedal"); break;
+    case CardType::eq: name = TRANS("Equalizador"); break;
     }
     drawCaps(g, name, {0.0f, r.getBottom() - 22.0f, r.getWidth(), 16.0f}, 10.0f, juce::Justification::centred, colour::dim);
   }
@@ -772,6 +807,7 @@ void NexusEditor::ChainView::mouseUp(const juce::MouseEvent& e)
   case CardType::pedal: mEditor.select({Kind::pedal, c.index}); break;
   case CardType::amp: mEditor.select({Kind::amp, c.index}); break;
   case CardType::cab: mEditor.select({Kind::cab, c.index}); break;
+  case CardType::eq: mEditor.select({Kind::eq, c.index}); break;
   case CardType::add: mEditor.addPedal(); break;
   case CardType::ab:
   {
@@ -821,6 +857,7 @@ void NexusEditor::ChainView::itemDropped(const SourceDetails& d)
   mExternal = false;
   const int look = d.description.toString().fromLastOccurrenceOf(":", false, false).getIntValue();
   const auto at = d.localPosition.toFloat();
+
   // Solto em cima de um pedal: troca o visual dele; senão, pedal novo ali.
   const int card = cardAt(at);
   if (card >= 0 && mCards[static_cast<size_t>(card)].type == CardType::pedal)
@@ -847,6 +884,18 @@ void NexusEditor::ChainView::showCardMenu(int card)
   if (c.type == CardType::amp)
   {
     mEditor.showMidiMenu(NexusProcessor::ampParam(c.index, "canal"), *this);
+    return;
+  }
+  if (c.type == CardType::eq)
+  {
+    const bool isOn = proc.params.getRawParameterValue("eq_ligado")->load() > 0.5f;
+    juce::PopupMenu menu;
+    menu.addItem(TRANS(isOn ? "Desligar" : "Ligar"), [this, isOn] {
+      mEditor.mProcessor.params.getParameter("eq_ligado")->setValueNotifyingHost(isOn ? 0.0f : 1.0f);
+      repaint();
+    });
+    menu.addItem(TRANS("Zerar o equalizador"), [this] { mEditor.mEqStage->clearBands(); });
+    menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(this));
     return;
   }
   if (c.type != CardType::pedal)
@@ -925,8 +974,10 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mLook.setDefaultSansSerifTypeface(juce::Typeface::createSystemTypefaceFor(BinaryData::inter_ttf, BinaryData::inter_ttfSize));
   setLookAndFeel(&mLook);
 
-  mAmpArt = GearArt::load("brit800");
-  mCabArt = GearArt::load("brit412");
+  for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
+    mAmpArts[static_cast<size_t>(i)] = GearArt::load(kAmpPrefixes[i]);
+  for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
+    mCabArts[static_cast<size_t>(i)] = GearArt::load(kCabPrefixes[i]);
   for (int i = 0; i < kPedalLooks; ++i)
     mPedalArts[static_cast<size_t>(i)] = GearArt::load(kPedalPrefixes[i]);
 
@@ -940,7 +991,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 
   mPedalStage = std::make_unique<GearStage>(p, Kind::pedal);
   mAmpStage = std::make_unique<GearStage>(p, Kind::amp);
-  mCabStage = std::make_unique<CabStage>(p, mCabArt);
+  mCabStage = std::make_unique<CabStage>(p, mCabArts.data());
   addChildComponent(*mPedalStage);
   addChildComponent(*mAmpStage);
   addChildComponent(*mCabStage);
@@ -965,7 +1016,9 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mRail);
   addAndMakeVisible(mChangeLink);
   mChangeLink.onClick = [this] {
-    if (mSel.kind == Kind::cab)
+    if (mSel.kind == Kind::eq)
+      mEqStage->clearBands();
+    else if (mSel.kind == Kind::cab)
       chooseIr(mSel.index);
     else
       choosePack();
@@ -999,6 +1052,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mChain);
 
   // Estúdio: no lugar dos equipamentos, com o caminho do sinal embaixo.
+  mEqStage = std::make_unique<nexus::ui::EqStage>(mProcessor.params);
+  addChildComponent(*mEqStage);
   mStudio = std::make_unique<nexus::ui::StudioView>(mProcessor.studio(), mProcessor.separation());
   addChildComponent(*mStudio);
   addAndMakeVisible(mMode);
@@ -1061,6 +1116,11 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   setSize(kWidth, kHeight);
   select({Kind::amp, 0});
   retranslate();
+  // Depois que o estado salvo terminou de abrir as peças: completa as vazias.
+  juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
+    if (safe != nullptr)
+      safe->ensureDefaults();
+  });
   startTimerHz(30);
 }
 
@@ -1091,6 +1151,7 @@ void NexusEditor::addPedal()
 
 void NexusEditor::insertPedal(int look, int list, int position)
 {
+
   auto layout = mProcessor.layout();
   const int pedal = layout.freePedal();
   if (pedal < 0)
@@ -1106,6 +1167,7 @@ void NexusEditor::insertPedal(int look, int list, int position)
   mProcessor.setLayout(layout);
   mChain->rebuild();
   select({Kind::pedal, pedal});
+  ensurePedal(pedal);
 }
 
 namespace
@@ -1126,6 +1188,23 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Blueberry Chorus", "CE-2", "Modulação", "Efeito do Nexus"},
   {"Coconut Delay", "DD-3", "Delay", "Efeito do Nexus"},
   {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
+  {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
+  {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
+};
+
+// Cabeçotes: o original que inspirou cada um e a família na coluna.
+struct AmpInfo
+{
+  const char* inspiration;
+  const char* category;
+};
+const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
+  {"JCM800 2203", "Britânicos"},
+  {"Mark V", "Americanos de alto ganho"},
+  {"5150", "Americanos de alto ganho"},
+  {"Dual Rectifier", "Americanos de alto ganho"},
+  {"SLO-100", "Americanos de alto ganho"},
+  {"BE-100", "Americanos de alto ganho"},
 };
 
 // Planejados (docs/CATALOGO.md): aparecem em "Em breve".
@@ -1146,17 +1225,11 @@ const Planned kPlanned[] = {
   {GearItem::Kind::pedal, "Lime Flanger", "MXR Flanger"},
   {GearItem::Kind::pedal, "Melon Tremolo", "TR-2"},
   {GearItem::Kind::pedal, "Apple Comp", "Dyna Comp"},
-  {GearItem::Kind::pedal, "Pear Gate", "Decimator"},
   {GearItem::Kind::pedal, "Mango Wah", "Cry Baby"},
   {GearItem::Kind::amp, "Brit Plexi", "Super Lead 1959"},
   {GearItem::Kind::amp, "Silver Twin", "Twin Reverb"},
   {GearItem::Kind::amp, "Tweed 59", "Bassman 5F6-A"},
   {GearItem::Kind::amp, "Top Boost 30", "AC30"},
-  {GearItem::Kind::amp, "Block 5150", "5150"},
-  {GearItem::Kind::amp, "Recto Dual", "Dual Rectifier"},
-  {GearItem::Kind::amp, "Mark Five", "Mark V"},
-  {GearItem::Kind::amp, "SL 100", "SLO-100"},
-  {GearItem::Kind::amp, "BE 100", "BE-100"},
   {GearItem::Kind::amp, "Jazz 120", "JC-120"},
   {GearItem::Kind::cab, "Recto 4x12", "Rectifier 4x12"},
   {GearItem::Kind::cab, "Blue 2x12", "AC30 2x12"},
@@ -1179,24 +1252,31 @@ void NexusEditor::refreshBrowser()
     it.source = kPedalInfo[i].source;
     items.push_back(it);
   }
-  GearItem amp;
-  amp.kind = GearItem::Kind::amp;
-  amp.look = 0;
-  amp.art = &mAmpArt;
-  amp.name = mAmpArt.name;
-  amp.inspiration = "JCM800 2203";
-  amp.category = TRANS(juce::String::fromUTF8("Britânicos"));
-  amp.source = "Captura da TONE3000";
-  items.push_back(amp);
-  GearItem cab;
-  cab.kind = GearItem::Kind::cab;
-  cab.look = 0;
-  cab.art = &mCabArt;
-  cab.name = mCabArt.name;
-  cab.inspiration = "1960A 4x12";
-  cab.category = "4x12";
-  cab.source = "IR ou captura full rig";
-  items.push_back(cab);
+  for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
+  {
+    GearItem amp;
+    amp.kind = GearItem::Kind::amp;
+    amp.look = i;
+    amp.art = &mAmpArts[static_cast<size_t>(i)];
+    amp.name = mAmpArts[static_cast<size_t>(i)].name.isNotEmpty() ? mAmpArts[static_cast<size_t>(i)].name
+                                                                  : juce::String(kAmpPrefixes[i]);
+    amp.inspiration = kAmpInfo[i].inspiration;
+    amp.category = TRANS(juce::String::fromUTF8(kAmpInfo[i].category));
+    amp.source = "Captura da TONE3000";
+    items.push_back(amp);
+  }
+  for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
+  {
+    GearItem cab;
+    cab.kind = GearItem::Kind::cab;
+    cab.look = i;
+    cab.art = &mCabArts[static_cast<size_t>(i)];
+    cab.name = cab.art->name;
+    cab.inspiration = kCabInfo[i].inspiration;
+    cab.category = "4x12";
+    cab.source = "IR ou captura full rig";
+    items.push_back(cab);
+  }
   for (const auto& p : kPlanned)
   {
     GearItem it;
@@ -1219,16 +1299,34 @@ void NexusEditor::pickGear(const GearItem& item)
       auto* visual = mProcessor.params.getParameter(NexusProcessor::pedalParam(mSel.index, "visual"));
       visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(item.look)));
       select(mSel);
+      ensurePedal(mSel.index);
     }
     else
       insertPedal(item.look, 0, static_cast<int>(mProcessor.layout().pre.size()));
     break;
   case GearItem::Kind::amp:
-    select({Kind::amp, mSel.kind == Kind::pedal ? 0 : mSel.index});
+  {
+    // Troca o cabeçote do lado escolhido por este e abre os pacotes de cada
+    // canal que estiverem na pasta dele.
+    const int rig = mSel.kind == Kind::pedal ? 0 : mSel.index;
+    if (auto* look = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "cabecote")))
+      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(item.look)));
+    // A caixa acompanha o cabeçote (dá para trocar depois na lista de caixas).
+    if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
+      cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(kCabOfAmp[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, item.look)])));
+    loadHeadChannels(rig);
+    select({Kind::amp, rig});
     break;
+  }
   case GearItem::Kind::cab:
-    select({Kind::cab, mSel.kind == Kind::pedal ? 0 : mSel.index});
+  {
+    const int rig = mSel.kind == Kind::pedal ? 0 : mSel.index;
+    if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
+      cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(item.look)));
+    select({Kind::cab, rig});
+    ensureCab(rig);
     break;
+  }
   }
   mChain->repaint();
 }
@@ -1246,6 +1344,8 @@ void NexusEditor::select(Selection s)
   mPedalStage->setVisible(s.kind == Kind::pedal);
   mAmpStage->setVisible(s.kind == Kind::amp);
   mCabStage->setVisible(s.kind == Kind::cab);
+  mEqStage->setVisible(s.kind == Kind::eq);
+
   if (s.kind == Kind::pedal)
   {
     mShownPedalLook = pedalLook(s.index);
@@ -1254,15 +1354,21 @@ void NexusEditor::select(Selection s)
   if (s.kind == Kind::amp)
   {
     mShownChannel = mProcessor.selectedChannel(s.index);
-    mAmpStage->setTarget(s.index, &mAmpArt);
+    mShownAmpLook = mProcessor.ampLook(s.index);
+    mAmpStage->setTarget(s.index, &ampArt(s.index), true);
   }
   if (s.kind == Kind::cab)
     mCabStage->setRig(s.index);
   mRail->setVisible(s.kind == Kind::amp || (s.kind == Kind::pedal && !NexusProcessor::isNativeLook(pedalLook(s.index))));
   mRail->setSlot(railSlot());
-  mBrowser->setTab(s.kind == Kind::pedal ? GearItem::Kind::pedal : s.kind == Kind::amp ? GearItem::Kind::amp : GearItem::Kind::cab);
-  mBrowser->setCurrent(s.kind == Kind::pedal ? GearItem::Kind::pedal : s.kind == Kind::amp ? GearItem::Kind::amp : GearItem::Kind::cab,
-                       s.kind == Kind::pedal ? pedalLook(s.index) : 0);
+  // Equalizadores ficam na aba dos pedais; o cabeçote marca o modelo escolhido.
+  const auto tab = s.kind == Kind::pedal ? GearItem::Kind::pedal
+                   : s.kind == Kind::amp                      ? GearItem::Kind::amp
+                                                              : GearItem::Kind::cab;
+  mBrowser->setTab(tab);
+  mBrowser->setCurrent(tab, s.kind == Kind::pedal ? pedalLook(s.index)
+                            : s.kind == Kind::amp ? mProcessor.ampLook(s.index)
+                                                  : mProcessor.cabLook(s.index));
   timerCallback();
   mChain->repaint();
   repaint();
@@ -1275,20 +1381,217 @@ void NexusEditor::choosePack()
   mPackTarget = mSel;
   mPackChannel = mSel.kind == Kind::amp ? mProcessor.selectedChannel(mSel.index) : 0;
   const bool pedal = mSel.kind == Kind::pedal;
-  const juce::String prefix = pedal ? juce::String(kPedalPrefixes[pedalLook(mSel.index)]) : juce::String("brit800");
-  const juce::String name = pedal ? (pedalArt(mSel.index) ? pedalArt(mSel.index)->name : TRANS("Pedal")) : mAmpArt.name;
+  const juce::String prefix = pedal ? juce::String(kPedalPrefixes[pedalLook(mSel.index)])
+                                   : juce::String(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(mSel.index))]);
+  const juce::String name = pedal ? (pedalArt(mSel.index) ? pedalArt(mSel.index)->name : TRANS("Pedal")) : ampArt(mSel.index).name;
   mPackGearName = name;
   mCapturePanel->open(prefix, name, pedal ? nexus::ui::CapturePanel::Gear::pedal : nexus::ui::CapturePanel::Gear::amp);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
 }
 
+namespace
+{
+// Canal de um pacote pelo nome da pasta: "... Canal 2 Crunch" vai no canal 2
+// (índice 1). Sem "Canal N" no nome, -1.
+int packChannel(const juce::File& folder)
+{
+  const auto name = folder.getFileName();
+  const int at = name.indexOfIgnoreCase("Canal ");
+  if (at < 0)
+    return -1;
+  const int n = name.substring(at + 6, at + 7).getIntValue();
+  return n >= 1 && n <= NexusProcessor::kChannels ? n - 1 : -1;
+}
+} // namespace
+
 void NexusEditor::loadPackInto(Selection target, int channel, const juce::File& folder)
 {
   if (target.kind == Kind::pedal)
+  {
     mProcessor.loadPedalPack(target.index, folder);
-  else
-    mProcessor.loadAmpPack(target.index, channel, folder);
+    return;
+  }
+  // Pacote de um canal certo (como os do Mark Five) vai para esse canal,
+  // qualquer que seja o canal escolhido na tela.
+  const int fixed = packChannel(folder);
+  if (fixed >= 0 && fixed < ampArt(target.index).channels.size())
+    channel = fixed;
+  mProcessor.loadAmpPack(target.index, channel, folder);
+  auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(target.index, "canal"));
+  param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(channel)));
+}
+
+namespace
+{
+// Os testes e as ferramentas de foto desligam a captura padrão (NEXUS_SEM_PADRAO=1):
+// a tela deles não pode baixar nem trocar peças sozinha.
+bool defaultsEnabled()
+{
+  return juce::SystemStats::getEnvironmentVariable("NEXUS_SEM_PADRAO", {}).isEmpty();
+}
+} // namespace
+
+void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter, const juce::String& gearName, int slotKey,
+                               std::function<void(const juce::File&)> land)
+{
+  const auto key = juce::String(tone.id) + "|" + tone.packName;
+  if (!defaultsEnabled() || !mT3k->hasKey() || !mT3k->signedIn() || mFetching.count(key) > 0)
+    return;
+  mFetching.insert(key);
+  mFetchingSlots.insert(slotKey);
+  nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + tone.title + " " + tone.packName);
+  auto safe = juce::Component::SafePointer<NexusEditor>(this);
+  mT3k->download(tone, filter, gearName, [](juce::String) {},
+                 [safe, key, slotKey, land](juce::File folder, juce::String error) {
+                   if (safe == nullptr)
+                     return;
+                   safe->mFetching.erase(key);
+                   safe->mFetchingSlots.erase(slotKey);
+                   if (error.isNotEmpty() || !folder.isDirectory())
+                   {
+                     nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + error);
+                     return;
+                   }
+                   land(folder);
+                 });
+}
+
+void NexusEditor::ensurePedal(int pedal)
+{
+  const int look = pedalLook(pedal);
+  const auto* art = pedalArt(pedal);
+  if (!defaultsEnabled() || NexusProcessor::isNativeLook(look) || art == nullptr)
+    return;
+  // Já tem um pacote deste pedal (o visual pode ter mudado e o pacote não).
+  const auto root = nexus::t3k::Connection::packsFolder(art->name);
+  const auto current = mProcessor.slotFolder(NexusProcessor::pedalSlot(pedal));
+  if (current.isDirectory() && current.getParentDirectory() == root)
+    return;
+  const auto def = nexus::t3k::defaultTone(kPedalPrefixes[look]);
+  juce::File pick = def ? nexus::t3k::downloadedFolder(*def, art->name) : juce::File();
+  if (!pick.isDirectory())
+  {
+    auto folders = root.findChildFiles(juce::File::findDirectories, false);
+    folders.sort();
+    if (!folders.isEmpty())
+      pick = folders.getFirst();
+  }
+  if (pick.isDirectory())
+  {
+    mProcessor.loadPedalPack(pedal, pick);
+    return;
+  }
+  if (def)
+    fetchDefault(*def, "pedal", art->name, NexusProcessor::pedalSlot(pedal),
+                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); });
+}
+
+void NexusEditor::ensureCab(int rig)
+{
+  if (!defaultsEnabled() || mProcessor.packIncludesCab(rig) || mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())
+    return;
+  // Caixa sem lista própria de IRs usa a da Brit 4x12 (os IRs servem a qualquer cabeçote).
+  int look = juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig));
+  auto def = nexus::t3k::defaultTone(kCabPrefixes[look]);
+  if (!def)
+  {
+    look = 0;
+    def = nexus::t3k::defaultTone(kCabPrefixes[0]);
+  }
+  if (!def)
+    return;
+  const auto gearName = mCabArts[static_cast<size_t>(look)].name;
+  auto land = [this, rig](const juce::File& folder) {
+    const auto preferred = juce::JSON::parse(folder.getChildFile("pack.json"))["ir_padrao"].toString();
+    auto files = folder.findChildFiles(juce::File::findFiles, false, "*.wav;*.aif;*.aiff");
+    files.sort();
+    juce::File pick = files.isEmpty() ? juce::File() : files.getFirst();
+    for (const auto& f : files)
+      if (preferred.isNotEmpty() && f.getFileNameWithoutExtension() == preferred)
+        pick = f;
+    if (!pick.existsAsFile())
+      return;
+    mProcessor.loadIrAsync(rig, pick);
+    if (auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "caixa")))
+      param->setValueNotifyingHost(1.0f);
+  };
+  if (const auto folder = nexus::t3k::downloadedFolder(*def, gearName); folder.isDirectory())
+    return land(folder);
+  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land);
+}
+
+void NexusEditor::ensureDefaults()
+{
+  // Abertura do programa: tudo o que está na cadeia e vazio recebe a padrão.
+  if (!defaultsEnabled())
+    return;
+  const auto layout = mProcessor.layout();
+  for (const auto* list : {&layout.pre, &layout.loop[0], &layout.loop[1], &layout.post})
+    for (int pedal : *list)
+      ensurePedal(pedal);
+  for (int rig = 0; rig < (layout.dual ? 2 : 1); ++rig)
+  {
+    bool anyEmpty = false;
+    for (int c = 0; c < std::min(ampArt(rig).channels.size(), NexusProcessor::kChannels); ++c)
+      anyEmpty = anyEmpty || !mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c)).isDirectory();
+    if (anyEmpty)
+      loadHeadChannels(rig);
+    ensureCab(rig);
+  }
+}
+
+void NexusEditor::loadHeadChannels(int rig)
+{
+  // Cabeçote novo: cada canal abre o pacote dele na pasta do cabeçote
+  // (Documentos/Nexus Modeler/<cabeçote>). Fica o que já estava aberto se for
+  // desse cabeçote; canal sem pacote do cabeçote fica vazio (ao clicar, pede).
+  const auto& art = ampArt(rig);
+  const auto root = nexus::t3k::Connection::packsFolder(art.name);
+  auto folders = root.findChildFiles(juce::File::findDirectories, false);
+  folders.sort();
+  const int count = std::min(art.channels.size(), NexusProcessor::kChannels);
+  int first = -1;
+  for (int c = 0; c < count; ++c)
+  {
+    const auto current = mProcessor.slotFolder(NexusProcessor::ampSlot(rig, c));
+    const bool ours = current.isDirectory() && current.getParentDirectory() == root;
+    juce::File pick = ours ? current : juce::File();
+    const auto def = nexus::t3k::defaultTone(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))], c);
+    if (pick == juce::File() && def)
+      pick = nexus::t3k::downloadedFolder(*def, art.name);
+    if (pick == juce::File())
+      for (const auto& f : folders)
+        if (packChannel(f) == c || (count == 1 && packChannel(f) < 0))
+        {
+          pick = f;
+          break;
+        }
+    if (pick == juce::File())
+    {
+      mProcessor.clearAmpPack(rig, c);
+      if (def)
+        fetchDefault(*def, "amp_amp-cab", art.name, NexusProcessor::ampSlot(rig, c),
+                     [this, rig, c](const juce::File& folder) { mProcessor.loadAmpPack(rig, c, folder); });
+    }
+    else
+    {
+      if (!ours)
+        mProcessor.loadAmpPack(rig, c, pick);
+      first = first < 0 ? c : first;
+    }
+  }
+  // Pacote sem "Canal N" (de um canal só) entra no primeiro canal vazio.
+  if (first < 0)
+    for (const auto& f : folders)
+      if (packChannel(f) < 0)
+      {
+        mProcessor.loadAmpPack(rig, 0, f);
+        first = 0;
+        break;
+      }
+  auto* param = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "canal"));
+  param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(std::max(0, first))));
 }
 
 void NexusEditor::chooseFolder()
@@ -1345,8 +1648,10 @@ void NexusEditor::openIrCatalog(int rig)
 {
   mPackTarget = {Kind::cab, rig};
   mPackChannel = 0;
-  mPackGearName = mCabArt.name;
-  mCapturePanel->open("brit412", mCabArt.name, nexus::ui::CapturePanel::Gear::cab);
+  mPackGearName = cabArt(rig).name;
+  // Lista de IRs recomendados da caixa; sem lista própria, a da Brit 4x12.
+  mCapturePanel->open(kCabPrefixes[juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig))], cabArt(rig).name,
+                      nexus::ui::CapturePanel::Gear::cab);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
 }
@@ -1415,9 +1720,8 @@ void NexusEditor::showAbout()
 void NexusEditor::reportProblem()
 {
   auto* w = new juce::AlertWindow(TRANS(juce::String::fromUTF8("Reportar um problema")),
-                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus abre o GitHub com o relatório "
-                                                               "preenchido (versão, sistema e os últimos erros registrados); é só conferir e enviar. "
-                                                               "Precisa de uma conta no GitHub.")),
+                                  TRANS(juce::String::fromUTF8("Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema "
+                                                               "e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta.")),
                                   juce::MessageBoxIconType::NoIcon, this);
   w->addTextEditor("texto", {}, {});
   if (auto* editor = w->getTextEditor("texto"))
@@ -1426,13 +1730,15 @@ void NexusEditor::reportProblem()
     editor->setReturnKeyStartsNewLine(true);
     editor->setSize(460, 120);
   }
-  w->addButton(TRANS(juce::String::fromUTF8("Abrir no GitHub")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
+  w->addButton(TRANS(juce::String::fromUTF8("Enviar relatório")), 1, juce::KeyPress(juce::KeyPress::returnKey, juce::ModifierKeys::commandModifier, 0));
   w->addButton(TRANS("Cancelar"), 0, juce::KeyPress(juce::KeyPress::escapeKey));
-  w->enterModalState(true, juce::ModalCallbackFunction::create([w](int result) {
+  auto safe = juce::Component::SafePointer<NexusEditor>(this);
+  w->enterModalState(true, juce::ModalCallbackFunction::create([w, safe](int result) {
     if (result == 1)
     {
       const auto text = w->getTextEditorContents("texto").trim();
-      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60));
+      nexus::report::send(nexus::report::Kind::problem, text, nexus::report::recentLog(60),
+                          [safe](nexus::report::Sent sent) { if (safe != nullptr) safe->showReportResult(sent); });
     }
   }), true);
 }
@@ -1447,12 +1753,22 @@ void NexusEditor::offerCrashReport()
     TRANS(juce::String::fromUTF8("Quer enviar o relatório para o GitHub? Ele leva a versão, o sistema e onde o programa parou, "
                                  "sem nenhum dado pessoal. Isso ajuda a corrigir o problema.")),
     TRANS(juce::String::fromUTF8("Enviar relatório")), TRANS(juce::String::fromUTF8("Agora não")), this,
-    juce::ModalCallbackFunction::create([crash](int ok) {
+    juce::ModalCallbackFunction::create([crash, safe = juce::Component::SafePointer<NexusEditor>(this)](int ok) {
       if (ok != 0)
-        nexus::report::send(nexus::report::Kind::crash,
-                            juce::String::fromUTF8("O Nexus fechou sozinho. (Se lembrar, conte aqui o que estava fazendo.)"),
-                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30));
+        nexus::report::send(nexus::report::Kind::crash, juce::String::fromUTF8("O Nexus fechou sozinho."),
+                            crash + juce::String::fromUTF8("\n\nÚltimos erros registrados:\n") + nexus::report::recentLog(30),
+                            [safe](nexus::report::Sent sent) { if (safe != nullptr) safe->showReportResult(sent); });
     }));
+}
+
+void NexusEditor::showReportResult(const nexus::report::Sent& sent)
+{
+  if (sent.openedBrowser)
+    return; // o GitHub abriu no navegador: a pessoa termina lá
+  juce::AlertWindow::showMessageBoxAsync(
+    juce::MessageBoxIconType::InfoIcon, TRANS(juce::String::fromUTF8("Relatório enviado")),
+    TRANS(juce::String::fromUTF8("Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá.")).replace("%1", "#" + juce::String(sent.number)),
+    "OK", this);
 }
 
 void NexusEditor::showAudioPanel(bool show)
@@ -1506,6 +1822,8 @@ void NexusEditor::retranslate()
   mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
   mLanguageButton.setTooltip(TRANS("Idioma"));
   mUpdate.retranslate();
+  if (mChain)
+    mChain->testBar().retranslate();
   mBrowser->retranslate();
   refreshBrowser();
   if (mAudioPanel)
@@ -1581,6 +1899,8 @@ juce::String NexusEditor::packSummary(int slot) const
   {
     // Carregando ou erro: o aviso do processador; senão, o convite.
     const auto status = mProcessor.statusText(slot);
+    if (mFetchingSlots.count(slot) > 0)
+      return TRANS(juce::String::fromUTF8("Baixando a captura padrão da TONE3000..."));
     if (status.startsWith("Carregando"))
       return TRANS("Carregando...");
     if (status.startsWith("Erro"))
@@ -1593,6 +1913,11 @@ juce::String NexusEditor::packSummary(int slot) const
   const bool lite = slot < NexusProcessor::kPedals
                       ? mProcessor.params.getParameter(NexusProcessor::pedalParam(slot, "lite"))->getValue() > 0.5f
                       : mProcessor.params.getParameter("lite")->getValue() > 0.5f;
+  if (count == 1)
+    return TRANS("%1: 1 captura, ganho %2 (%3)")
+      .replace("%1", mProcessor.packName(slot))
+      .replace("%2", number(mProcessor.capturePosition(0, slot)))
+      .replace("%3", lite ? "A2 Lite" : "A2 Full");
   return TRANS("%1: %2 capturas, ganho de %3 a %4 (%5)")
     .replace("%1", mProcessor.packName(slot))
     .replace("%2", juce::String(count))
@@ -1607,21 +1932,31 @@ void NexusEditor::refreshChannels()
   // não mostra seletor. Canal sem pacote aparece apagado e, ao clicar, pede
   // o pacote dele.
   const int rig = mSel.index;
-  const int count = std::min(mAmpArt.channels.size(), NexusProcessor::kChannels);
+  const auto& art = ampArt(rig);
+  const int count = std::min(art.channels.size(), NexusProcessor::kChannels);
   juce::StringArray items;
   for (int c = 0; c < count; ++c)
-    items.add(TRANS(mAmpArt.channels[c]) + (mProcessor.channelLoaded(rig, c) ? juce::String() : juce::String::fromUTF8(" · ") + TRANS("vazio")));
+    items.add(TRANS(art.channels[c]) + (mProcessor.channelLoaded(rig, c) ? juce::String() : juce::String::fromUTF8(" · ") + TRANS("vazio")));
   mChannels.setItems(items);
   mChannels.setSelected(juce::jlimit(0, std::max(0, count - 1), mProcessor.selectedChannel(rig)));
   mChannels.setVisible(mSel.kind == Kind::amp && count > 1);
   mChannels.setBounds(getLocalBounds().withTrimmedRight(kBrowserWidth).withTrimmedTop(kTopBar).removeFromTop(52).withSizeKeepingCentre(170 * std::max(1, count), 34).translated(0, 6));
 
   // O botão de ganho do painel segue o canal escolhido.
-  if (mSel.kind == Kind::amp && mProcessor.selectedChannel(rig) != mShownChannel)
+  // O botão de ganho segue o canal; o visual segue o cabeçote escolhido.
+  if (mSel.kind == Kind::amp && (mProcessor.selectedChannel(rig) != mShownChannel || mProcessor.ampLook(rig) != mShownAmpLook))
   {
+    const bool lookChanged = mProcessor.ampLook(rig) != mShownAmpLook;
     mShownChannel = mProcessor.selectedChannel(rig);
-    mAmpStage->setTarget(rig, &mAmpArt, true);
+    mShownAmpLook = mProcessor.ampLook(rig);
+    mAmpStage->setTarget(rig, &art, true);
     mRail->setSlot(railSlot());
+    if (lookChanged)
+    {
+      resized();
+      mChain->repaint();
+      refreshBrowser();
+    }
   }
 }
 
@@ -1662,7 +1997,7 @@ void NexusEditor::timerCallback()
   juce::String title, subtitle, link;
   if (mSel.kind == Kind::amp)
   {
-    title = mAmpArt.name + side;
+    title = ampArt(mSel.index).name + side;
     subtitle = packSummary(railSlot());
     link = mProcessor.slotLoaded(railSlot()) ? TRANS("trocar pacote") : TRANS("abrir pacote");
   }
@@ -1682,9 +2017,15 @@ void NexusEditor::timerCallback()
       link = loaded ? TRANS("trocar pacote") : TRANS("abrir pacote do pedal");
     }
   }
+  else if (mSel.kind == Kind::eq)
+  {
+    title = TRANS("Equalizador");
+    subtitle = TRANS(juce::String::fromUTF8("Duplo clique na curva cria uma faixa; arraste para mudar; roda do mouse muda a largura; botão direito troca o tipo."));
+    link = TRANS("zerar");
+  }
   else
   {
-    title = mCabArt.name + side;
+    title = cabArt(mSel.index).name + side;
     if (mProcessor.packIncludesCab(mSel.index))
     {
       subtitle = TRANS(juce::String::fromUTF8("Caixa incluída na captura (full rig): o IR fica desligado para respeitar o som original"));
@@ -1692,7 +2033,9 @@ void NexusEditor::timerCallback()
     }
     else
     {
-      subtitle = mProcessor.irLoaded(mSel.index) ? "IR: " + mProcessor.irName(mSel.index) : TRANS("Nenhum IR escolhido");
+      subtitle = mProcessor.irLoaded(mSel.index)                         ? "IR: " + mProcessor.irName(mSel.index)
+                 : mFetchingSlots.count(kCabSlotKey + mSel.index) > 0 ? TRANS(juce::String::fromUTF8("Baixando a captura padrão da TONE3000..."))
+                                                                      : TRANS("Nenhum IR escolhido");
       link = mProcessor.irLoaded(mSel.index) ? TRANS("trocar IR") : TRANS("escolher IR");
     }
     mCabStage->refresh();
@@ -1808,7 +2151,8 @@ void NexusEditor::resized()
   mChain->setBounds(r.removeFromBottom(kPathHeight));
   mTitleArea = r.removeFromBottom(kTitleHeight);
   mPedalStage->setBounds(r);
-  mAmpStage->setBounds(mAmpArt.channels.size() > 1 ? r.withTrimmedTop(46) : r);
+  mAmpStage->setBounds(ampArt(mSel.kind == Kind::amp ? mSel.index : 0).channels.size() > 1 ? r.withTrimmedTop(46) : r);
   mCabStage->setBounds(r);
+  mEqStage->setBounds(r);
   layoutTitle();
 }

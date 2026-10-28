@@ -196,9 +196,16 @@ void testScreen(NexusProcessor& p)
   report(tabsVisible && knobsHidden, "Trocar para a caixa mostra as abas da caixa e esconde o amplificador",
          juce::String::fromUTF8(tabsVisible ? "abas visíveis" : "abas escondidas"));
   e->select({NexusEditor::Kind::amp, 0});
-  const bool back = visibleIn(*knobs.front(), *editor) && (tabs.empty() || !visibleIn(*tabs.front(), *editor));
+  // A tela do cabeçote monta os botões de novo: os ponteiros antigos não valem mais.
+  std::vector<nexus::ui::FilmKnob*> again;
+  collect(*editor, again);
+  int shown = 0;
+  for (auto* kn : again)
+    shown += visibleIn(*kn, *editor) ? 1 : 0;
+  const bool back = shown == 6 && (tabs.empty() || !visibleIn(*tabs.front(), *editor));
   report(back, "Voltar ao amplificador mostra os botões de novo",
-         juce::String::fromUTF8(back ? "botões visíveis, abas escondidas" : "estado errado"));
+         juce::String::fromUTF8(back ? "botões visíveis, abas escondidas"
+                                     : shown == 6 ? "abas da caixa continuam visíveis" : "botões escondidos"));
 }
 } // namespace
 
@@ -357,7 +364,9 @@ int main(int argc, char** argv)
         p->loadPedalPack(0, packs.getChildFile("ganho"));
       for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && (!withPedal || p->slotLoaded(0))); t += 50)
         settle(*p, 50);
-      settle(*p, 300);
+      // Aquecimento da captura (132 ms de som) + passagem suave (30 ms): cada
+      // 5 ms aqui tocam 2,7 ms de som, então 600 ms dão folga.
+      settle(*p, 600);
       return p;
     };
     auto none = make(false, true);
@@ -554,7 +563,9 @@ int main(int argc, char** argv)
       p->loadPedalPack(0, packs.getChildFile("ganho"));
       for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && p->channelLoaded(1, 0) && p->slotLoaded(0)); t += 50)
         settle(*p, 50);
-      settle(*p, 300);
+      // Aquecimento da captura (132 ms de som) + passagem suave (30 ms): cada
+      // 5 ms aqui tocam 2,7 ms de som, então 600 ms dão folga.
+      settle(*p, 600);
       return p;
     };
     ChainLayout before;

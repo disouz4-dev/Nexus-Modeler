@@ -1,0 +1,129 @@
+{
+  "tipo": "cabecote",
+  "nome": "Block 5150",
+  "familia": "block_5150",
+  "medidas_m": {
+    "largura": 0.67,
+    "altura": 0.285,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "grade",
+    "cor": [
+      0.025,
+      0.025,
+      0.027
+    ],
+    "furo_mm": 3.0,
+    "passo_mm": 4.0
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.62,
+    "lado_rel": 0.0,
+    "cor": [
+      0.88,
+      0.89,
+      0.9
+    ]
+  },
+  "painel": {
+    "altura_m": 0.07,
+    "pintado": false,
+    "cor": [
+      0.78,
+      0.79,
+      0.82
+    ],
+    "texto_cor": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "modelo": "BLOCK 5150",
+    "marca": "NEXUS MODELER"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.024,
+    "corpo": [
+      0.01,
+      0.01,
+      0.01
+    ],
+    "tampa": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "tampa_plastico": true,
+    "traco": [
+      0.95,
+      0.95,
+      0.95
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Ritmo"
+    },
+    {
+      "nome": "Solo"
+    }
+  ],
+  "leds_canais_x": 0.078,
+  "leds_canais_passo": 0.03,
+  "leds_canais_z": 0.026,
+  "disposicao": {
+    "modelo_x": 0.108,
+    "modelo_z": 0.06,
+    "modelo_tamanho": 0.019,
+    "modelo_inclinacao": 0.0
+  },
+  "selo_grade": {
+    "texto": "5150",
+    "altura_m": 0.036,
+    "margem_m": 0.04
+  }
+}

@@ -45,4 +45,79 @@ private:
   bool mFlat = true;
 };
 
+// Equalizador gráfico de 5 faixas dos cabeçotes de inspiração Mark (80, 240,
+// 750, 2200 e 6600 Hz), também depois da caixa. Cada deslizante vai de -12 a
+// +12 dB; tudo em 0 deixa o som intacto.
+class GraphicEq5
+{
+public:
+  static constexpr int kBands = 5;
+  static constexpr double kFrequency[kBands] = {80.0, 240.0, 750.0, 2200.0, 6600.0};
+
+  void prepare(double sampleRate);
+  void setBands(const std::array<double, kBands>& db) { mTarget = db; }
+  void reset();
+  void process(double* buffer, int numFrames);
+  double responseDb(double frequency) const;
+
+private:
+  void rebuild();
+  std::array<IirSection<2>, kBands> mBands{};
+  std::array<double, kBands> mTarget{}, mCurrent{};
+  double mSampleRate = 48000.0;
+  double mAlpha = 1.0;
+  bool mFlat = true;
+};
+
+// Equalizador do fim da cadeia, no estilo do FabFilter Pro-Q: fixo depois
+// da caixa (todo o som passa por ele) e com até 24 faixas livres. Cada faixa
+// tem tipo, frequência, ganho, largura (Q) e, nos cortes, inclinação de 12 a
+// 48 dB por oitava. Sem nenhuma faixa ligada, o som passa intacto.
+class FreeEq
+{
+public:
+  static constexpr int kMaxBands = 24;
+  enum class Type
+  {
+    bell,
+    lowShelf,
+    highShelf,
+    lowCut,
+    highCut,
+    notch,
+  };
+  struct Band
+  {
+    bool on = false;
+    Type type = Type::bell;
+    double freq = 1000.0;
+    double gainDb = 0.0;
+    double q = 1.0;
+    int slope = 1; // cortes: 1 a 4 (12, 24, 36 ou 48 dB por oitava)
+    bool operator==(const Band&) const = default;
+  };
+  using Bands = std::array<Band, kMaxBands>;
+
+  void prepare(double sampleRate);
+  void set(const Bands& b) { mTarget = b; }
+  void reset();
+  void process(double* buffer, int numFrames);
+  // Resposta (dB) de um ajuste qualquer: a curva da tela (todas as faixas ou
+  // só uma, com "only").
+  static double responseDb(const Bands& b, double frequency, double sampleRate, int only = -1);
+
+private:
+  struct Sections
+  {
+    std::array<IirSection<2>, 4> s{};
+    int count = 0;
+  };
+  static Sections design(const Band& b, double sampleRate);
+  void rebuild(int band);
+  Bands mTarget{}, mCurrent{};
+  std::array<Sections, kMaxBands> mFilters{};
+  double mSampleRate = 48000.0;
+  double mAlpha = 1.0;
+};
+
 } // namespace nexus

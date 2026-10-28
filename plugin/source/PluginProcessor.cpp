@@ -45,6 +45,9 @@ NexusProcessor::NexusProcessor()
     rig.treble = params.getRawParameterValue(ampParam(r, "agudo"));
     rig.presence = params.getRawParameterValue(ampParam(r, "presenca"));
     rig.master = params.getRawParameterValue(ampParam(r, "master"));
+    rig.look = params.getRawParameterValue(ampParam(r, "cabecote"));
+    for (size_t k = 0; k < rig.graphic.size(); ++k)
+      rig.graphic[k] = params.getRawParameterValue(ampParam(r, kGraphicIds[k]));
     mCabs[static_cast<size_t>(r)].mode = params.getRawParameterValue(ampParam(r, "caixa"));
   }
   mAb = params.getRawParameterValue("ab");
@@ -65,6 +68,17 @@ NexusProcessor::NexusProcessor()
   };
   for (auto* p : getParameters())
     p->addListener(this);
+  mEqOn = params.getRawParameterValue("eq_ligado");
+  for (int i = 0; i < nexus::FreeEq::kMaxBands; ++i)
+  {
+    auto& b = mEqBands[static_cast<size_t>(i)];
+    b.on = params.getRawParameterValue(eqParam(i, "ligado"));
+    b.type = params.getRawParameterValue(eqParam(i, "tipo"));
+    b.freq = params.getRawParameterValue(eqParam(i, "freq"));
+    b.gain = params.getRawParameterValue(eqParam(i, "ganho"));
+    b.q = params.getRawParameterValue(eqParam(i, "q"));
+    b.slope = params.getRawParameterValue(eqParam(i, "inclinacao"));
+  }
   startTimerHz(30);
 }
 
@@ -140,8 +154,38 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, "master"), 1}, "Volume do amplificador" + side, knob, 5.0f));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "caixa"), 1}, "Caixa" + side,
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
+    layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
+                                   juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100"}, 0));
+    // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
+    layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
+                                   juce::StringArray{"Brit 4x12", "Mark 4x12"}, 0));
+    for (const char* id : kGraphicIds)
+      layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
+                                     "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));
   }
   layout.add(std::make_unique<C>(juce::ParameterID{"ab", 1}, "Pedal A/B", juce::StringArray{"A", "B"}, 0));
+
+  // Equalizador do fim da cadeia (estilo Pro-Q): ligado/desligado geral e
+  // 24 faixas. A tela usa as faixas na ordem em que são criadas.
+  layout.add(std::make_unique<B>(juce::ParameterID{"eq_ligado", 1}, "EQ ligado", true));
+  {
+    juce::NormalisableRange<float> freq(10.0f, 22000.0f, 0.1f);
+    freq.setSkewForCentre(std::sqrt(10.0f * 22000.0f));
+    juce::NormalisableRange<float> q(0.1f, 40.0f, 0.001f);
+    q.setSkewForCentre(1.0f);
+    const juce::StringArray types{"Sino", "Prateleira de graves", "Prateleira de agudos", "Corte de graves", "Corte de agudos", "Notch"};
+    const juce::StringArray slopes{"12 dB/oitava", "24 dB/oitava", "36 dB/oitava", "48 dB/oitava"};
+    for (int i = 0; i < nexus::FreeEq::kMaxBands; ++i)
+    {
+      const juce::String n = "EQ " + juce::String(i + 1) + " ";
+      layout.add(std::make_unique<B>(juce::ParameterID{eqParam(i, "ligado"), 1}, n + "ligado", false));
+      layout.add(std::make_unique<C>(juce::ParameterID{eqParam(i, "tipo"), 1}, n + "tipo", types, 0));
+      layout.add(std::make_unique<P>(juce::ParameterID{eqParam(i, "freq"), 1}, n + juce::String::fromUTF8("frequência"), freq, 1000.0f));
+      layout.add(std::make_unique<P>(juce::ParameterID{eqParam(i, "ganho"), 1}, n + "ganho", juce::NormalisableRange<float>(-30.0f, 30.0f, 0.01f), 0.0f));
+      layout.add(std::make_unique<P>(juce::ParameterID{eqParam(i, "q"), 1}, n + "Q", q, 1.0f));
+      layout.add(std::make_unique<C>(juce::ParameterID{eqParam(i, "inclinacao"), 1}, n + juce::String::fromUTF8("inclinação"), slopes, 1));
+    }
+  }
   for (int i = 0; i < kPedals; ++i)
   {
     const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
@@ -157,7 +201,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
-                                                     "Coconut Delay", "Grape Reverb"}, 0));
+                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -181,7 +225,13 @@ bool NexusProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
 
 void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
 {
-  const int block = std::max(samplesPerBlock, 32);
+  // O JACK do PipeWire pode avisar taxa ou bloco 0 ao religar a placa (visto
+  // no Linux em 27/10/2026). Com taxa 0, o conversor de taxa e as contas de
+  // bloco viram infinito e o áudio prende; usa valores seguros até o próximo
+  // aviso de verdade.
+  if (!(sampleRate > 1000.0))
+    sampleRate = kEngineRate;
+  const int block = std::max(samplesPerBlock > 0 ? samplesPerBlock : 512, 32);
   mMono.assign(static_cast<size_t>(block), 0.0);
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
@@ -213,9 +263,16 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   }
   mOutputGain = juce::Decibels::decibelsToGain(mOutput->load());
   mInputGain = juce::Decibels::decibelsToGain(mInput->load());
+  mDropFloat.assign(static_cast<size_t>(kEngineBlock), 0.0f);
   for (auto& p : mPedals)
   {
     p.native.prepare(kEngineRate, kEngineBlock);
+    // Drop: janela de 384 amostras (8 ms de atraso), a escolhida de ouvido
+    // entre 256, 384, 512 e 1024 com o riff Pesado descendo 5 semitons.
+    if (!p.drop)
+      p.drop = std::make_unique<nexus::fx::PitchDrop>();
+    p.drop->prepare(kEngineRate, kEngineBlock, 384);
+    p.dropMix = 0.0f;
     p.mix = p.on->load() > 0.5f ? 1.0f : 0.0f;
     const float l = p.levelParam->load() / 5.0f;
     p.level = l * l;
@@ -228,6 +285,9 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   }
   for (auto& e : mEq)
     e.prepare(kEngineRate);
+  for (auto& e : mGraphicEq)
+    e.prepare(kEngineRate);
+  mFreeEq.prepare(kEngineRate);
   // As caixas rodam dentro da cadeia, na taxa das capturas.
   for (auto& c : mCabs)
   {
@@ -246,6 +306,27 @@ int NexusProcessor::audibleSlot(int rig) const
 {
   const int cur = mRigs[static_cast<size_t>(rig)].current;
   return cur >= 0 ? cur : ampSlot(rig, selectedChannel(rig));
+}
+
+void NexusProcessor::settle(NexusEngine& e, const double* dry, double* out, int n)
+{
+  if (e.settleLeft < 0)
+    return;
+  if (e.settleLeft > 0)
+  {
+    e.settleLeft = std::max(0, e.settleLeft - n);
+    for (int i = 0; i < n; ++i)
+      out[i] = dry != nullptr ? dry[i] : 0.0;
+    return;
+  }
+  const float step = static_cast<float>(1.0 / (kSwitchFadeSeconds * kEngineRate));
+  for (int i = 0; i < n; ++i)
+  {
+    e.settleGain = std::min(1.0f, e.settleGain + step);
+    out[i] = (dry != nullptr ? dry[i] : 0.0) * (1.0 - e.settleGain) + out[i] * e.settleGain;
+  }
+  if (e.settleGain >= 1.0f)
+    e.settleLeft = -1;
 }
 
 int NexusProcessor::warmupOf(const NexusEngine& e)
@@ -291,16 +372,49 @@ struct LoadTimer
 };
 } // namespace
 
+void NexusProcessor::runDrop(int pedal, double* buffer, int n)
+{
+  // Cherry Drop: botão A escolhe o drop (1 a 7 semitons, oitava, oitava com o
+  // som limpo); botão B é a mistura (10 = só o som com o tom baixado).
+  auto& p = mPedals[static_cast<size_t>(pedal)];
+  const float target = p.on->load() > 0.5f ? 1.0f : 0.0f;
+  if (target == 0.0f && p.dropMix == 0.0f)
+    return;
+  if (target == 1.0f && p.dropMix == 0.0f)
+    p.drop->reset(); // liga limpo, sem resto da última vez
+  const int sel = juce::jlimit(0, 8, juce::roundToInt(p.fx[0]->load() / 10.0f * 8.0f));
+  const float semis = sel < 7 ? -static_cast<float>(sel + 1) : -12.0f;
+  if (semis != p.dropSemitones)
+  {
+    p.dropSemitones = semis;
+    p.drop->setSemitones(semis);
+  }
+  const float wet = juce::jlimit(0.0f, 1.0f, p.fx[1]->load() / 10.0f);
+  const float dryKeep = sel == 8 ? 1.0f : 1.0f - wet; // oitava com o limpo: o limpo fica inteiro
+  for (int i = 0; i < n; ++i)
+    mDropFloat[static_cast<size_t>(i)] = static_cast<float>(buffer[i]);
+  p.drop->process(mDropFloat.data(), n);
+  const float mixStep = static_cast<float>(1.0 / (kPedalFadeSeconds * kEngineRate));
+  for (int i = 0; i < n; ++i)
+  {
+    p.dropMix = target > p.dropMix ? std::min(target, p.dropMix + mixStep) : std::max(target, p.dropMix - mixStep);
+    const double effect = buffer[i] * dryKeep + mDropFloat[static_cast<size_t>(i)] * wet;
+    buffer[i] = buffer[i] * (1.0 - p.dropMix) + effect * p.dropMix;
+  }
+}
+
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
   const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
+  if (pedalLook(pedal) == kDropLook)
+    return runDrop(pedal, buffer, n);
   // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
     auto& p = mPedals[static_cast<size_t>(pedal)];
     static constexpr nexus::NativePedal::Type types[] = {nexus::NativePedal::Type::chorus, nexus::NativePedal::Type::delay,
-                                                         nexus::NativePedal::Type::reverb};
-    const auto type = types[std::min(2, look - kFirstNativeLook)];
+                                                         nexus::NativePedal::Type::reverb, nexus::NativePedal::Type::gate};
+    const auto type = types[std::min(3, look - kFirstNativeLook)];
     p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
     return;
   }
@@ -320,6 +434,7 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
   }
   std::copy(buffer, buffer + n, mDry.begin());
   engine->voice.process(buffer, buffer, n);
+  settle(*engine, mDry.data(), buffer, n);
   if (p.warming && p.warmLeft > 0)
   {
     p.warmLeft -= n;
@@ -369,7 +484,10 @@ void NexusProcessor::runAmp(int rig, double* buffer, int n)
   {
     auto* current = mSlots[static_cast<size_t>(r.current)].active;
     if (r.next < 0)
+    {
       current->voice.process(buffer, buffer, n);
+      settle(*current, nullptr, buffer, n); // cabeçote novo: sobe do silêncio
+    }
     else
     {
       auto* next = mSlots[static_cast<size_t>(r.next)].active;
@@ -439,6 +557,15 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
   const auto& r = mRigs[static_cast<size_t>(rig)];
   mEq[static_cast<size_t>(rig)].setKnobs({r.bass->load(), r.mid->load(), r.treble->load(), r.presence->load()});
   mEq[static_cast<size_t>(rig)].process(buffer, n);
+  // Cabeçote com equalizador gráfico (Mark Five): as 5 faixas, também depois da caixa.
+  if (ampLook(rig) == kMarkFive)
+  {
+    std::array<double, nexus::GraphicEq5::kBands> db{};
+    for (size_t k = 0; k < db.size(); ++k)
+      db[k] = r.graphic[k]->load();
+    mGraphicEq[static_cast<size_t>(rig)].setBands(db);
+    mGraphicEq[static_cast<size_t>(rig)].process(buffer, n);
+  }
 }
 
 void NexusProcessor::runRigs(double* buffer, int n)
@@ -487,6 +614,7 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
   for (const auto& s : mSlots)
     if (s.active != nullptr && s.active->block > 0)
       chunk = std::min(chunk, s.active->block);
+  chunk = std::max(chunk, 1);
   const auto& layout = *mLayoutActive;
   for (int start = 0; start < numFrames; start += chunk)
   {
@@ -497,6 +625,7 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
     runRigs(b, n);
     for (int p : layout.post)
       runPedal(p, b, n);
+    runEndEqs(b, n);
   }
   // A cada meio segundo de som, publica a parte de um núcleo que cada bloco usou.
   mLoadWindow += numFrames / kEngineRate;
@@ -509,6 +638,27 @@ void NexusProcessor::runEngines(double* buffer, int numFrames)
     }
     mLoadWindow = 0.0;
   }
+}
+
+void NexusProcessor::runEndEqs(double* buffer, int n)
+{
+  // Equalizador do fim: fixo, todo o som passa por ele (plano sem faixas).
+  if (mEqOn->load() < 0.5f)
+    return;
+  nexus::FreeEq::Bands bands;
+  for (size_t i = 0; i < bands.size(); ++i)
+  {
+    const auto& p = mEqBands[i];
+    auto& b = bands[i];
+    b.on = p.on->load() > 0.5f;
+    b.type = static_cast<nexus::FreeEq::Type>(juce::roundToInt(p.type->load()));
+    b.freq = p.freq->load();
+    b.gainDb = p.gain->load();
+    b.q = p.q->load();
+    b.slope = juce::roundToInt(p.slope->load()) + 1;
+  }
+  mFreeEq.set(bands);
+  mFreeEq.process(buffer, n);
 }
 
 void NexusProcessor::publish(int slot)
@@ -545,6 +695,8 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       if (auto* next = s.pending.exchange(nullptr))
       {
         s.retired.store(s.active);
+        next->settleLeft = warmupOf(*next);
+        next->settleGain = 0.0f;
         s.active = next;
       }
       else if (s.clear.exchange(false))
@@ -593,6 +745,12 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   const int inChannels = getTotalNumInputChannels();
   const int outChannels = getTotalNumOutputChannels();
   const int capacity = static_cast<int>(mMono.size());
+  if (capacity <= 0)
+  {
+    // Ainda não preparado: silêncio em vez de um laço sem fim.
+    buffer.clear();
+    return;
+  }
   const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
   // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
   // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
@@ -713,6 +871,8 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       const int block = mEngineBlock.load();
       options.maxBlockSize = block;
       options.slimmableSize = lite ? 0.0 : 1.0;
+      // Pedal sai no nível da própria captura; cabeçote, no volume de referência.
+      options.keepCaptureLevel = slotIndex < kPedals;
       auto engine = std::make_unique<NexusEngine>();
       engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);

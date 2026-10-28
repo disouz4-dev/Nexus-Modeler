@@ -8,6 +8,7 @@
 #include <juce_dsp/juce_dsp.h>
 
 #include "ChainLayout.h"
+#include "fx/PitchDrop.h"
 #include "MidiMap.h"
 #include "TestSource.h"
 #include "studio/Player.h"
@@ -34,6 +35,10 @@ struct NexusEngine
   std::shared_ptr<nexus::Pack> pack;
   nexus::AmpVoice voice;
   int block = 0; // maior pedaço para o qual as capturas foram preparadas
+  // Acabou de entrar na cadeia: primeiro aquece ouvindo a guitarra (sem
+  // tocar), depois entra suave. Sem isso, o pacote novo estala ao entrar.
+  int settleLeft = -1;
+  float settleGain = 1.0f;
 };
 
 class NexusProcessor : public juce::AudioProcessor, private juce::Timer, private juce::AudioProcessorParameter::Listener
@@ -53,7 +58,15 @@ public:
   static constexpr int kChannels = 3;
   // Visuais de pedal: 0 a 3 tocam captura (drive); 4 em diante são efeitos
   // do próprio Nexus (chorus, delay, reverb), com os botões "a", "b" e "c".
-  static constexpr int kPedalLooks = 7;
+  static constexpr int kPedalLooks = 9;
+  static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
+  // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
+  static constexpr int kAmpLooks = 6;
+  static constexpr int kMarkFive = 1;
+  // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
+  static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
+  // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
+  static juce::String eqParam(int band, const char* name) { return "eq" + juce::String(band + 1) + "_" + name; }
   static constexpr int kFirstNativeLook = 4;
   static bool isNativeLook(int look) { return look >= kFirstNativeLook; }
 
@@ -103,11 +116,17 @@ public:
   // ----- Tela: pacotes
   void loadPedalPack(int pedal, const juce::File& folder) { loadSlot(pedalSlot(pedal), folder); }
   void loadAmpPack(int rig, int channel, const juce::File& folder) { loadSlot(ampSlot(rig, channel), folder); }
+  void clearAmpPack(int rig, int channel) { clearSlot(ampSlot(rig, channel)); }
+  // Pasta do pacote aberto no espaço (vazia se não há pacote).
+  juce::File slotFolder(int slot) const { return mSlots[static_cast<size_t>(slot)].folder; }
   int selectedChannel(int rig) const;
   bool channelLoaded(int rig, int channel) const { return slotLoaded(ampSlot(rig, channel)); }
   // Canal que toca agora no cabeçote (ou o escolhido, se nenhum tocou ainda).
   int audibleSlot(int rig) const;
   int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
+  int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
+  static constexpr int kCabLooks = 2;
+  int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;
   juce::String packName(int slot) const;
@@ -178,6 +197,9 @@ private:
     std::atomic<float>* visual = nullptr;
     std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
     nexus::NativePedal native;
+    std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
+    float dropMix = 0.0f;
+    float dropSemitones = 0.0f;
   };
 
   // Estado de áudio de cada cabeçote: troca de canal com aquecimento.
@@ -193,6 +215,8 @@ private:
     std::atomic<float>* treble = nullptr;
     std::atomic<float>* presence = nullptr;
     std::atomic<float>* master = nullptr;
+    std::atomic<float>* look = nullptr;
+    std::array<std::atomic<float>*, 5> graphic{};
     float masterGain = 1.0f;
   };
 
@@ -212,6 +236,7 @@ private:
   void clearSlot(int slot);
   void runEngines(double* buffer, int numFrames);
   void runPedal(int pedal, double* buffer, int n);
+  void runDrop(int pedal, double* buffer, int n);
   void runRigs(double* buffer, int n);
   void runRig(int rig, double* buffer, int n);
   void runAmp(int rig, double* buffer, int n);
@@ -220,6 +245,8 @@ private:
   nexus::AmpVoice::Controls pedalControls(int pedal) const;
   void publish(int slot);
   static int warmupOf(const NexusEngine& e);
+  // Pacote recém-entrado: troca a saída por "dry" enquanto aquece e cruza.
+  static void settle(NexusEngine& e, const double* dry, double* out, int n);
 
   std::array<Slot, kSlots> mSlots;
   std::array<UiMirror, kSlots> mUi;
@@ -250,6 +277,7 @@ private:
   bool mNeedsResampling = false;
   std::vector<double> mMono, mMonoOut, mDry, mChannelIn, mChannelOut, mRigIn;
   std::vector<float> mCabFloat;
+  std::vector<float> mDropFloat; // pedal de drop (o motor trabalha em float)
 
   // Carregamento em segundo plano.
   juce::ThreadPool mLoader{1};
@@ -269,6 +297,16 @@ private:
   std::atomic<int> mEngineBlock{256};
   // Grave, médio, agudo e presença: equalizador universal depois da caixa.
   std::array<nexus::UniversalEq, kRigs> mEq;
+  std::array<nexus::GraphicEq5, kRigs> mGraphicEq;
+  // Equalizador do fim da cadeia (estilo Pro-Q, fixo depois da caixa).
+  nexus::FreeEq mFreeEq;
+  void runEndEqs(double* buffer, int n);
+  struct EqBandParams
+  {
+    std::atomic<float>*on = nullptr, *type = nullptr, *freq = nullptr, *gain = nullptr, *q = nullptr, *slope = nullptr;
+  };
+  std::atomic<float>* mEqOn = nullptr;
+  std::array<EqBandParams, nexus::FreeEq::kMaxBands> mEqBands;
   // Mão no botão que troca captura (drive de um pedal, ganho de um
   // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
   // depois de soltar.

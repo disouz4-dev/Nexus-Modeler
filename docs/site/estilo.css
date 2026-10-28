@@ -158,6 +158,11 @@ input[type="range"] { width: 100%; accent-color: var(--ciano); height: 32px; cur
 .ficha li span:first-child { color: var(--texto-3); }
 .ficha li span:last-child { text-align: right; }
 .pedais { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.cabecotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
+.cabecotes .pedal figure { aspect-ratio: 2.3 / 1; }
+.cabecotes .pedal img { width: 100%; height: auto; max-height: none; }
+.aviso-beta { max-width: 760px; margin: 0 auto 28px; padding: 16px 20px; border: 1px solid var(--borda); border-left: 3px solid var(--ciano); border-radius: var(--raio); background: var(--painel); color: var(--texto-2); font-size: 15px; }
+.aviso-beta b { color: var(--texto); }
 .pedal { background: radial-gradient(ellipse at 50% 20%, #1c1f25, var(--painel) 70%); border: 1px solid var(--borda); border-radius: var(--raio); padding: 22px 20px 20px; display: flex; flex-direction: column; }
 .pedal figure { margin: 0 0 16px; aspect-ratio: 1 / 1.05; display: grid; place-items: center; }
 .pedal img, .pedal figure svg { max-height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.55)); }
@@ -253,6 +258,7 @@ input[type="range"] { width: 100%; accent-color: var(--ciano); height: 32px; cur
   .troca, .eq, .cadeia, .t3k, .idiomas, .aberto, .cabecote { grid-template-columns: minmax(0, 1fr); }
   .eq figure, .t3k figure { order: -1; }
   .pedais { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cabecotes { grid-template-columns: minmax(0, 1fr); }
   .recursos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sistemas { grid-template-columns: minmax(0, 1fr); }
   .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }

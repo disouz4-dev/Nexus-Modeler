@@ -1,0 +1,169 @@
+{
+  "tipo": "cabecote",
+  "nome": "Mark Five",
+  "familia": "mark_five",
+  "medidas_m": {
+    "largura": 0.67,
+    "altura": 0.27,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.01,
+      0.01,
+      0.01
+    ],
+    "cor_b": [
+      0.028,
+      0.028,
+      0.028
+    ],
+    "trama_mm": 2.2
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.55,
+    "lado_rel": 0.0,
+    "cor": [
+      0.86,
+      0.87,
+      0.89
+    ]
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "pintado": true,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "marca": "NEXUS MODELER",
+    "texto_cor": [
+      0.8,
+      0.8,
+      0.8
+    ],
+    "modelo": "MARK FIVE"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "deslizantes": [
+    {
+      "id": "eq80",
+      "rotulo": "80"
+    },
+    {
+      "id": "eq240",
+      "rotulo": "240"
+    },
+    {
+      "id": "eq750",
+      "rotulo": "750"
+    },
+    {
+      "id": "eq2200",
+      "rotulo": "2200"
+    },
+    {
+      "id": "eq6600",
+      "rotulo": "6600"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.026,
+    "corpo": [
+      0.014,
+      0.014,
+      0.014
+    ],
+    "tampa": [
+      0.02,
+      0.02,
+      0.021
+    ],
+    "tampa_plastico": true,
+    "traco": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "cursor": [
+      0.018,
+      0.018,
+      0.018
+    ]
+  },
+  "disposicao": {
+    "liga_x": 0.03,
+    "modelo_x": 0.108,
+    "modelo_tamanho": 0.02,
+    "modelo_inclinacao": 0.0,
+    "modelo_z": 0.06,
+    "botoes_x0": 0.192,
+    "botoes_passo": 0.056,
+    "escala_raio": 0.0168,
+    "escala_numero": 0.0044,
+    "deslizantes_x0": 0.508,
+    "deslizantes_passo": 0.021,
+    "deslizantes_curso": 0.034,
+    "entradas_dir": 0.02,
+    "entradas_passo": 0.05,
+    "marca_dir": 0.04
+  },
+  "leds_canais_x": 0.078,
+  "leds_canais_passo": 0.03,
+  "leds_canais_z": 0.026,
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "Crunch"
+    },
+    {
+      "nome": "Lead"
+    }
+  ]
+}

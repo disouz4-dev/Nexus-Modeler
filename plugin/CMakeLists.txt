@@ -7,6 +7,21 @@ FetchContent_Declare(JUCE
   GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(JUCE)
 
+# Correção no JUCE: o JACK do PipeWire pode informar bloco 0 quando a placa
+# está parada no instante em que o áudio religa. O JUCE divide o som em
+# pedaços desse tamanho e, com 0, o laço não avança: o áudio fica preso a 100%
+# e a tela congela (visto no Linux em 27/10/2026). Com 0, não divide.
+set(_nexus_juce_adm "${juce_SOURCE_DIR}/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.cpp")
+file(READ "${_nexus_juce_adm}" _nexus_text)
+string(REPLACE "const auto blockLength = jmin (maximumSize, numSamples - position);"
+               "const auto blockLength = maximumSize > 0 ? jmin (maximumSize, numSamples - position) : numSamples - position;"
+               _nexus_fixed "${_nexus_text}")
+if(NOT _nexus_fixed STREQUAL _nexus_text)
+  file(WRITE "${_nexus_juce_adm}" "${_nexus_fixed}")
+elseif(NOT _nexus_text MATCHES "maximumSize > 0 \\?")
+  message(FATAL_ERROR "A correção do bloco 0 no JUCE não se aplicou (o JUCE mudou?)")
+endif()
+
 set(NEXUS_FORMATS VST3 Standalone)
 if(APPLE)
   list(APPEND NEXUS_FORMATS AU)
@@ -48,6 +63,7 @@ set(NEXUS_UI_SOURCES
   source/ui/PackMapper.cpp
   source/ui/TestBar.cpp
   source/ui/StudioView.cpp
+  source/ui/EqStage.cpp
   source/update/Updater.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
@@ -62,6 +78,7 @@ set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
   source/studio/Library.cpp
   source/studio/Player.cpp
+  source/fx/PitchDrop.cpp
   source/TestSource.cpp
   source/MidiMap.cpp)
 target_sources(NexusModeler PRIVATE
@@ -96,7 +113,7 @@ if(WIN32)
   target_compile_definitions(NexusModeler PUBLIC JUCE_ASIO=1 JUCE_WASAPI=1 JUCE_DIRECTSOUND=1 JUCE_USE_WINRT_MIDI=1)
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   # Internet (TONE3000) no Linux pelo curl, carregado só quando usado.
-  target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1 JUCE_USE_CURL=1 JUCE_LOAD_CURL_SYMBOLS_LAZILY=1)
+target_compile_definitions(NexusModeler PUBLIC JUCE_JACK=1 JUCE_ALSA=1 JUCE_USE_CURL=1 JUCE_LOAD_CURL_SYMBOLS_LAZILY=1)
 else()
   target_compile_definitions(NexusModeler PUBLIC JUCE_USE_CURL=0)
 endif()
@@ -259,3 +276,10 @@ if(NEXUS_BUILD_TOOLS)
   add_test(NAME plugin_aberto_no_programa
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")
 endif()
+
+# Testes que abrem a tela: captura padrão desligada (não baixam nada da TONE3000).
+foreach(teste caixa_e_full_rig plugin_aberto_no_programa)
+  if(TEST ${teste})
+    set_tests_properties(${teste} PROPERTIES ENVIRONMENT "NEXUS_SEM_PADRAO=1")
+  endif()
+endforeach()

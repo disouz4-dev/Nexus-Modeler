@@ -36,12 +36,17 @@ private:
   {
     juce::String label;
     juce::ComboBox box;
+    juce::StringArray names; // nome de verdade de cada item (a lista mostra um nome mais claro)
+    juce::String chosen() const { return names[box.getSelectedId() - 1]; }
   };
 
   void changeListenerCallback(juce::ChangeBroadcaster*) override { refresh(); }
   void timerCallback() override;
   void refresh();
   void apply(const std::function<void(juce::AudioDeviceManager::AudioDeviceSetup&)>& change);
+  bool isPipeWireJack() const;
+  // Bloco pedido ao PipeWire (vale na próxima abertura da conexão JACK).
+  static void setPipeWireLatency(int blockSize, double sampleRate);
   juce::Rectangle<int> card() const;
 
   juce::AudioDeviceManager& mDevices;

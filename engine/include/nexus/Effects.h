@@ -89,6 +89,30 @@ private:
 
 // Pedal nativo completo: o efeito, a mistura com o som seco e o "rastro"
 // (desligado, o delay e o reverb terminam de soar em vez de cortar).
+// Noise gate (estilo ISP Decimator): fecha o som abaixo do limiar, sem
+// cortar o fim das notas. Detector rápido de pico, histerese de 6 dB (abre
+// no limiar, fecha 6 dB abaixo), espera de 25 ms antes de fechar, abertura
+// no tempo do "ataque" e fechamento no tempo do "release".
+class NoiseGate
+{
+public:
+  void prepare(double sampleRate);
+  void reset();
+  // sensitivity, attack, release: botões de 0 a 1.
+  //   sensibilidade: limiar de -90 dB (quase não corta) a -30 dB (corta muito)
+  //   ataque: 0,1 a 30 ms     release: 10 ms a 1,5 s
+  void process(double* buffer, int n, double sensitivity, double attack, double release);
+  static double thresholdDb(double sensitivity) { return -90.0 + 60.0 * sensitivity; }
+  double gainDb() const;
+
+private:
+  double mRate = 48000.0;
+  double mEnv = 0.0;
+  double mGain = 1.0;
+  int mHold = 0;
+  bool mOpen = true;
+};
+
 class NativePedal
 {
 public:
@@ -96,7 +120,8 @@ public:
   {
     chorus,
     delay,
-    reverb
+    reverb,
+    gate
   };
   void prepare(double sampleRate, int maxBlock);
   void reset();
@@ -109,6 +134,7 @@ private:
   Chorus mChorus;
   Delay mDelay;
   Reverb mReverb;
+  NoiseGate mGate;
   std::vector<double> mIn, mWet;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)

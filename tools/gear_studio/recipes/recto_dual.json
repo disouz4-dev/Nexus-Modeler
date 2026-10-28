@@ -1,0 +1,118 @@
+{
+  "tipo": "cabecote",
+  "nome": "Recto Dual",
+  "familia": "recto_dual",
+  "medidas_m": {
+    "largura": 0.74,
+    "altura": 0.285,
+    "profundidade": 0.24
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "fachada": {
+    "tipo": "xadrez",
+    "cor": [
+      0.82,
+      0.83,
+      0.85
+    ],
+    "passo_mm": 12.0
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.03,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
+    "cor": [
+      0.02,
+      0.02,
+      0.02
+    ]
+  },
+  "painel": {
+    "altura_m": 0.088,
+    "pintado": true,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "texto_cor": [
+      0.88,
+      0.88,
+      0.88
+    ],
+    "modelo": "RECTO DUAL",
+    "marca": "NEXUS MODELER"
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "GANHO"
+    },
+    {
+      "id": "grave",
+      "rotulo": "GRAVE"
+    },
+    {
+      "id": "medio",
+      "rotulo": "MÉDIO"
+    },
+    {
+      "id": "agudo",
+      "rotulo": "AGUDO"
+    },
+    {
+      "id": "presenca",
+      "rotulo": "PRESENÇA"
+    },
+    {
+      "id": "volume",
+      "rotulo": "VOLUME"
+    }
+  ],
+  "botao_estilo": {
+    "diametro_m": 0.022,
+    "corpo": [
+      0.86,
+      0.86,
+      0.88
+    ],
+    "corpo_metal": true,
+    "tampa": [
+      0.9,
+      0.9,
+      0.92
+    ],
+    "traco": [
+      0.02,
+      0.02,
+      0.02
+    ]
+  },
+  "chave_liga": {
+    "rotulo": "LIGA"
+  },
+  "entradas": [
+    "ENTRADA"
+  ],
+  "canais": [
+    {
+      "nome": "Moderno"
+    }
+  ],
+  "disposicao": {
+    "modelo_x": 0.108,
+    "modelo_z": 0.06,
+    "modelo_tamanho": 0.019,
+    "modelo_inclinacao": 0.0
+  },
+  "cantos": "cromo"
+}

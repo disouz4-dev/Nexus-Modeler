@@ -7,6 +7,7 @@ on:
       - "docs/site/**"
       - "packaging/instalar.sh"
       - "packaging/instalar.ps1"
+      - "packaging/instalar-windows.ps1"
       - ".github/workflows/site.yml"
   workflow_dispatch:
 
@@ -34,7 +35,7 @@ jobs:
       # Os instaladores de terminal também ficam no site, para o comando ser
       # curto: curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash
       - name: Instaladores de terminal no site
-        run: cp packaging/instalar.sh packaging/instalar.ps1 docs/site/
+        run: cp packaging/instalar.sh packaging/instalar.ps1 packaging/instalar-windows.ps1 docs/site/
 
       - uses: actions/upload-pages-artifact@v3
         with:

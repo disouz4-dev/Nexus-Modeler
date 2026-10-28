@@ -1,0 +1,171 @@
+{
+  "nome": "SL 100",
+  "familia": "sl_100",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 796,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 976,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1155,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1335,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1514,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1693,
+      "y": 736,
+      "tamanho": 113,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal",
+    "Overdrive"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 283.4,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 853.7,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1032.7,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1211.6,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 1390.6,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1569.5,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1748.5,
+      "y": 682.5,
+      "altura": 32.59,
+      "achatamento": 0.981,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 1961.5,
+      "y": 841.4,
+      "altura": 24.61,
+      "achatamento": 0.976,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 408.2,
+      "y": 784.8,
+      "altura": 19.72,
+      "achatamento": 0.978,
+      "cor": "#303030",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OVERDRIVE",
+      "x": 495.2,
+      "y": 784.8,
+      "altura": 19.72,
+      "achatamento": 0.978,
+      "cor": "#303030",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 407.6,
+      "y": 816.7,
+      "raio": 8.7
+    },
+    {
+      "x": 494.6,
+      "y": 816.7,
+      "raio": 8.7
+    }
+  ]
+}

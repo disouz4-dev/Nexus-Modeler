@@ -1,0 +1,44 @@
+{
+  "tipo": "pedal",
+  "nome": "Pear Gate",
+  "familia": "pear_gate",
+  "inspiracao": "noise gate de caixinha branca de três botões (estilo MXR)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.064,
+    "comprimento": 0.112,
+    "altura": 0.034
+  },
+  "chanfro_m": 0.0035,
+  "pintura": {
+    "cor": [0.86, 0.86, 0.83],
+    "metalico": 0.0,
+    "aspereza": 0.3
+  },
+  "texto_cor": [0.02, 0.02, 0.02],
+  "texto_cor2": [0.02, 0.02, 0.02],
+  "modelo": "PEAR GATE",
+  "logo_y": -0.12,
+  "tipo_texto": "NOISE GATE",
+  "pisante_y": -0.6,
+  "rotulo_m": 0.0034,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "corpo": [0.012, 0.012, 0.012],
+    "traco": [0.95, 0.95, 0.92]
+  },
+  "botoes": [
+    {"id": "a", "rotulo": "SENSIBILIDADE", "pos": [0.0, 0.42], "escala": 1.45},
+    {"id": "b", "rotulo": "ATAQUE", "pos": [-0.62, 0.8], "escala": 0.78},
+    {"id": "c", "rotulo": "RELEASE", "pos": [0.62, 0.8], "escala": 0.78}
+  ],
+  "led": [0.0, 0.08],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true,
+  "medidas_fonte": "caixa 1590B (MXR): 64 x 112 x 31 mm"
+}

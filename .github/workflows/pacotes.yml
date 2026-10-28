@@ -107,9 +107,22 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
+          # O programa e o plugin não podem depender das bibliotecas do Visual
+          # Studio (um Windows limpo não tem MSVCP140.dll nem VCRUNTIME140.dll).
+          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath
+          $dumpbin = Get-ChildItem "$vs\VC\Tools\MSVC\*\bin\Hostx64\x64\dumpbin.exe" | Select-Object -First 1
+          $binarios = @("build\plugin\NexusModeler_artefacts\Release\Standalone\Nexus Modeler.exe") +
+                      (Get-ChildItem -Recurse "build\plugin\NexusModeler_artefacts\Release\VST3" -Filter *.vst3 -File).FullName
+          foreach ($b in $binarios) {
+            $deps = & $dumpbin.FullName /dependents $b | Out-String
+            if ($deps -match "(?i)(msvcp|vcruntime)\d+\.dll") { Write-Error "$b depende de $($Matches[0])"; exit 1 }
+            Write-Host "ok, sem bibliotecas do Visual Studio: $b"
+          }
+
           # Inno Setup 6.3 ou mais novo (instala ou atualiza o que vem na máquina).
           choco upgrade innosetup -y --no-progress
-          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersao=$env:NEXUS_VERSAO" packaging\windows\nexus.iss
+          $num = ($env:NEXUS_VERSAO -split "-")[0]
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DVersao=$env:NEXUS_VERSAO" "/DVersaoNum=$num" packaging\windows\nexus.iss
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
           $artefatos = "build\plugin\NexusModeler_artefacts\Release"

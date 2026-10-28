@@ -1,0 +1,171 @@
+{
+  "nome": "Block 5150",
+  "familia": "block_5150",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 870,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1067,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1266,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1463,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1661,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1859,
+      "y": 760,
+      "tamanho": 120,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Ritmo",
+    "Solo"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 302.9,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 930.9,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1127.9,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1324.9,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 1522.0,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1719.0,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1916.0,
+      "y": 754.9,
+      "altura": 35.88,
+      "achatamento": 0.979,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 1927.7,
+      "y": 873.5,
+      "altura": 27.13,
+      "achatamento": 0.975,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RITMO",
+      "x": 438.8,
+      "y": 811.1,
+      "altura": 21.75,
+      "achatamento": 0.977,
+      "cor": "#272727",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SOLO",
+      "x": 534.8,
+      "y": 811.1,
+      "altura": 21.75,
+      "achatamento": 0.977,
+      "cor": "#272727",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 438.2,
+      "y": 846.4,
+      "raio": 9.6
+    },
+    {
+      "x": 534.2,
+      "y": 846.4,
+      "raio": 9.6
+    }
+  ]
+}

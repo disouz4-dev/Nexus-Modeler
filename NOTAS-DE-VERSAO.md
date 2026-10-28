@@ -53,6 +53,47 @@
   efeito), cortadas em compassos inteiros para a repetição cair no tempo.
 - "Gravar 15 s": grava a sua guitarra e repete enquanto você ajusta os botões.
 
+### Equalizador do fim da cadeia
+- Um equalizador fixo depois do cabeçote e da caixa: todo o som passa por ele
+  (sem faixas, passa intacto). Estilo FabFilter Pro-Q: até 24 faixas; duplo
+  clique na curva cria uma faixa, arrastar muda frequência e ganho, a roda do
+  mouse muda a largura e o botão direito troca o tipo (sino, prateleiras,
+  cortes de 12 a 48 dB por oitava, notch) ou apaga.
+- Na cadeia, o ícone mostra cinco deslizantes que acompanham a curva.
+
+### Equipamentos novos
+- Mark Five (inspirado no Mark V): três canais, cada um com a sua captura.
+  Ao escolher o cabeçote, os pacotes "Canal 1", "Canal 2" e "Canal 3" da
+  pasta dele entram sozinhos no canal certo.
+- Mark 4x12: caixa que acompanha o Mark Five (cada cabeçote abre com a sua
+  caixa; dá para trocar na lista de caixas).
+- Pear Gate: redutor de ruído de caixinha branca, com um botão grande de
+  sensibilidade e dois pequenos de ataque e release.
+- Os equipamentos 3D passam a ser gerados na placa de vídeo (lab2, RTX 3050):
+  um pedal completo em 26 minutos, antes 2 a 3 horas no processador do Mac.
+
+### Som com duas capturas, Windows e Linux
+- Pedal entra no cabeçote no nível da própria captura, como no NAM. Antes,
+  cada pedal era levado a -18 dB: o TS9 da TONE3000 entrava 15 dB mais forte
+  que o pedal real, com muito mais distorção e chiado ao ligar duas capturas.
+  Medido com o Lemon na frente: chiado do Brit 800 de -68 para -82 dB. O
+  botão nível ajusta até +12 dB.
+- Prova do motor: com as mesmas capturas, o Nexus dá o mesmo som do NAM
+  oficial (diferença 152 dB abaixo do som).
+- Mark Five, canal Lead: a captura padrão passa a ser a Mikko IIC+ (pacote
+  2399). As de alto ganho do pacote 57410 deixavam as pausas quase no volume
+  das notas.
+- Captura padrão automática: peça vazia (pedal, canal do cabeçote, caixa)
+  recebe a captura padrão sozinha, do computador ou baixada da TONE3000 com
+  a conta conectada. Trocar continua pelo pacote.
+- Windows: o programa e o plugin não dependem mais das bibliotecas do Visual
+  C++ (num Windows limpo não abriam); a janela se reduz em telas menores que
+  1400x800.
+- Linux: com o pipewire-jack instalado, o Nexus usa o JACK do PipeWire (cada
+  placa pelo nome, como a Focusrite, e o bloco pedido ao PipeWire: 128
+  amostras, 5,2 ms de ida e volta na Scarlett 2i2). O dispositivo padrão do
+  ALSA aparece como "Padrão do sistema".
+
 ### Som e uso ao vivo
 - TOM dos pedais refeito: agora é uma prateleira de agudos a partir de
   1,2 kHz, ±12 dB, como no TS9 e no SD-1. Antes ficava acima de 4 kHz e,

@@ -184,7 +184,7 @@ std::unique_ptr<Pack> loadPack(const fs::path& folder, const PackOptions& option
   for (auto& c : pack->captures)
   {
     const double refDb = options.levelMode == LevelMode::EqualizeEach ? c.measuredRmsDb : meanDb;
-    c.levelGain = std::pow(10.0, (options.targetRmsDb - refDb) / 20.0);
+    c.levelGain = options.keepCaptureLevel ? 1.0 : std::pow(10.0, (options.targetRmsDb - refDb) / 20.0);
   }
   return pack;
 }
