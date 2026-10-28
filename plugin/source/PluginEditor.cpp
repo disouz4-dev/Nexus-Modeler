@@ -24,7 +24,7 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
                                                                "cherry_drop", "tangerine_phaser", "dragonfruit_flanger", "kiwi_tremolo",
                                                                "blackberry_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
                                                                "avocado_metal", "pomegranate_mud", "snowpear_treble",
-                                                               "juniper_sky", "lime_echo", "plum_mod"};
+                                                               "juniper_sky", "lime_echo", "plum_mod", "blueberry_chain"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
@@ -201,6 +201,16 @@ juce::String nativeKnobLabel(int look, const juce::String& id)
   static const char* const sky[6] = {"Decaimento", "Pré-atraso", "Mistura", "Modulação", "Tom", "Shimmer"};
   static const char* const echo[6] = {"Tempo", "Repetições", "Mistura", "Modulação", "Tom", "Nível"};
   static const char* const multi[6] = {"Velocidade", "Profundidade", "Mistura", "Ajuste", "Tom", "Nível"};
+  // Blueberry Chain: cada coluna é um delay (tempo, repetições, nível).
+  if (NexusProcessor::pedalKind(look) == K::triple)
+  {
+    static const char* const triple[3] = {"Tempo", "Repetições", "Nível"};
+    for (const auto& column : NexusProcessor::kTripleKnobs)
+      for (int r = 0; r < 3; ++r)
+        if (id == column[r])
+          return juce::String::fromUTF8(triple[r]);
+    return {};
+  }
   if (NexusProcessor::hasModes(look))
   {
     if (id == "modo")
@@ -340,13 +350,18 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
           label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
         if (mKind == Kind::pedal && NexusProcessor::hasModes(mProcessor.pedalLook(index)))
           label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
+        const bool triple = mKind == Kind::pedal && NexusProcessor::pedalKind(mProcessor.pedalLook(index)) == NexusProcessor::PedalKind::triple;
+        if (triple)
+          label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
         auto knob = std::make_unique<FilmKnob>(*param, k, label);
         knob->onChange = [this] { repaint(); };
         // Seletor de modo: o balão mostra o nome do modo.
         if (mKind == Kind::pedal && k.id == "modo")
           knob->valueText = [this](float v) { return NexusProcessor::modeName(mProcessor.pedalLook(mIndex), v); };
         // Sincronizado ao andamento: a velocidade (ou o tempo do delay) vira divisão.
-        if (mKind == Kind::pedal && k.id == "a" && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index)))
+        // (no Blueberry Chain, o tempo de cada um dos três delays).
+        if (mKind == Kind::pedal && NexusProcessor::syncsToTempo(mProcessor.pedalLook(index))
+            && (k.id == "a" || (triple && (k.id == "d" || k.id == "g"))))
           knob->valueText = [this](float v) {
             if (mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "sinc"))->load() > 0.5f)
               return juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(v)));
@@ -453,6 +468,28 @@ void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
     else
       drawDropDisplay(g, r, mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, "a"))->load());
   }
+  // Blueberry Chain: a chave de cada delay, com o número e um LED azul quando liga.
+  const auto switches = stageSwitches();
+  for (size_t s = 0; s < switches.size(); ++s)
+  {
+    const auto [c, r] = switches[s];
+    const bool lit = mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(mIndex, NexusProcessor::kTripleSwitches[s]))->load() > 0.5f;
+    g.setGradientFill(juce::ColourGradient(juce::Colour(0xffd9dce2), c.x - r, c.y - r, juce::Colour(0xff5d626b), c.x + r, c.y + r, false));
+    g.fillEllipse(c.x - r, c.y - r, r * 2.0f, r * 2.0f);
+    const float in = r * 0.62f;
+    const juce::Colour glow = lit && pedalOn() ? juce::Colour(0xff6fb8ff) : juce::Colour(0xff10233a);
+    if (lit && pedalOn())
+    {
+      g.setGradientFill(juce::ColourGradient(glow.withAlpha(0.5f), c.x, c.y, glow.withAlpha(0.0f), c.x + r * 2.6f, c.y, true));
+      g.fillEllipse(c.x - r * 2.6f, c.y - r * 2.6f, r * 5.2f, r * 5.2f);
+    }
+    g.setColour(glow);
+    g.fillEllipse(c.x - in, c.y - in, in * 2.0f, in * 2.0f);
+    g.setColour(lit && pedalOn() ? juce::Colour(0xff0a1830) : juce::Colour(0xffb8c4d6));
+    g.setFont(juce::Font(juce::FontOptions(in * 1.5f, juce::Font::bold)));
+    g.drawText(juce::String(static_cast<int>(s) + 1), juce::Rectangle<float>(c.x - in, c.y - in, in * 2.0f, in * 2.0f), juce::Justification::centred,
+               false);
+  }
   // Cabeçote de vários canais: acende o LED do canal que está tocando.
   if (mKind == Kind::amp && mArt != nullptr)
   {
@@ -484,9 +521,44 @@ void NexusEditor::GearStage::mouseMove(const juce::MouseEvent& e)
   setMouseCursor(overFootswitch(e.position) ? juce::MouseCursor::PointingHandCursor : juce::MouseCursor::NormalCursor);
 }
 
+std::vector<std::pair<juce::Point<float>, float>> NexusEditor::GearStage::stageSwitches() const
+{
+  // Blueberry Chain: uma chave acesa em cima de cada coluna (acima do tempo).
+  std::vector<std::pair<juce::Point<float>, float>> out;
+  if (mKind != Kind::pedal || NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) != NexusProcessor::PedalKind::triple)
+    return out;
+  for (const auto& column : NexusProcessor::kTripleKnobs)
+    for (const auto& knob : mKnobs)
+      if (knob->art().id == column[0])
+      {
+        const auto b = knob->getBounds().toFloat();
+        const float r = std::max(7.0f, b.getWidth() * 0.13f);
+        out.push_back({{b.getCentreX(), b.getY() - r * 1.2f}, r});
+      }
+  return out;
+}
+
 void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
 {
-  if (mKind != Kind::pedal || !overFootswitch(e.position))
+  if (mKind != Kind::pedal)
+    return;
+  const auto switches = stageSwitches();
+  for (size_t s = 0; s < switches.size(); ++s)
+    if (e.position.getDistanceFrom(switches[s].first) <= switches[s].second * 1.6f)
+    {
+      const auto id = NexusProcessor::pedalParam(mIndex, NexusProcessor::kTripleSwitches[s]);
+      if (e.mods.isPopupMenu())
+      {
+        if (onMidiMenu)
+          onMidiMenu(id, *this);
+        return;
+      }
+      auto* param = mProcessor.params.getParameter(id);
+      param->setValueNotifyingHost(param->getValue() > 0.5f ? 0.0f : 1.0f);
+      repaint();
+      return;
+    }
+  if (!overFootswitch(e.position))
     return;
   const auto id = NexusProcessor::pedalParam(mIndex, "ligado");
   if (e.mods.isPopupMenu())
@@ -1458,6 +1530,7 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Juniper Sky", "Strymon BigSky", "Reverb", "Efeito do Nexus"},
   {"Lime Echo", "Line 6 DL4", "Delay", "Efeito do Nexus"},
   {"Plum Mod", "Line 6 MM4", "Modulação", "Efeito do Nexus"},
+  {"Blueberry Chain", "Três DD-3 em série", "Delay", "Efeito do Nexus"},
 };
 
 // Cabeçotes: o original que inspirou cada um e a família na coluna.

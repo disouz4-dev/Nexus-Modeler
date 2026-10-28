@@ -756,4 +756,71 @@ void MultiMod::process(double* buffer, int n, int mode, double rate, double dept
     buffer[i] = (x + (mToneLow - x) * mMix) * comp;
   }
 }
+
+// ---------------------------------------------------------------- TripleDelay
+
+void TripleDelay::prepare(double sampleRate)
+{
+  mRate = sampleRate;
+  for (auto& l : mLines)
+    l.line.prepare(static_cast<int>(3.2 * sampleRate));
+  reset();
+}
+
+void TripleDelay::reset()
+{
+  for (auto& l : mLines)
+  {
+    l.line.clear();
+    l.delay = 0.0;
+    l.low = l.high = 0.0;
+    l.level = 0.0;
+  }
+}
+
+double TripleDelay::secondsFor(double time)
+{
+  return 0.02 * std::pow(100.0, std::clamp(time, 0.0, 1.0)); // 20 ms a 2 s
+}
+
+void TripleDelay::process(const double* in, double* wet, int n, const std::array<Stage, kStages>& stages)
+{
+  // Digital: repetições limpas, só um corte suave de agudo e de grave para
+  // a cascata não embolar.
+  const double lowCoef = onePole(7500.0, mRate);
+  const double highCoef = onePole(50.0, mRate);
+  std::array<double, kStages> targets{};
+  for (int k = 0; k < kStages; ++k)
+  {
+    const auto& s = stages[static_cast<size_t>(k)];
+    const double seconds = s.syncSeconds > 0.0 ? std::min(3.0, s.syncSeconds) : secondsFor(s.time);
+    targets[static_cast<size_t>(k)] = seconds * mRate;
+    auto& l = mLines[static_cast<size_t>(k)];
+    if (l.delay <= 0.0)
+      l.delay = targets[static_cast<size_t>(k)];
+  }
+  for (int i = 0; i < n; ++i)
+  {
+    // Cada delay recebe o que saiu do anterior (o som seco mais as repetições).
+    double x = in[i];
+    for (int k = 0; k < kStages; ++k)
+    {
+      const auto& s = stages[static_cast<size_t>(k)];
+      auto& l = mLines[static_cast<size_t>(k)];
+      l.repeats = smooth(l.repeats, s.repeats, mRate);
+      // Nível: 10 = repetição na altura do som que entra. Desligado, o delay
+      // para de receber, mas o que já está nele continua soando até acabar.
+      l.level = smooth(l.level, 0.8 * s.level, mRate);
+      l.delay += (targets[static_cast<size_t>(k)] - l.delay) * 0.0006;
+      const double echo = l.line.read(std::max(1.0, l.delay));
+      l.low += (echo - l.low) * lowCoef;
+      l.high += (l.low - l.high) * highCoef;
+      const double shaped = l.low - l.high;
+      const double fb = 0.92 * l.repeats;
+      l.line.push(std::tanh((s.on ? x : 0.0) + shaped * fb));
+      x += shaped * l.level;
+    }
+    wet[i] = x - in[i];
+  }
+}
 } // namespace nexus

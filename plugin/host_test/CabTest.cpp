@@ -864,6 +864,62 @@ int main(int argc, char** argv)
       report(ratio[1] > ratio[0] * 3.0, "Shimmer: a cauda sobe uma oitava (440 Hz) e o hall não",
              "440/220 no shimmer: " + juce::String(ratio[1], 2) + ", no hall: " + juce::String(ratio[0], 2));
     }
+
+    // 8c. Blueberry Chain: três delays digitais em série, cada um com a sua chave.
+    std::printf("\nBlueberry Chain (três delays em série)\n");
+    {
+      auto p = make(22, 0, true);
+      const auto out = play(*p, signal);
+      const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+      const double gap = rmsDb(out) - rmsDb(outDry);
+      report(ok && diffDb(outDry, out) > -30.0, "Blueberry Chain ligado: muda o som, sem valores infinitos",
+             juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, out), 1) + " dB");
+      report(std::abs(gap) < 3.0, "Blueberry Chain: volume ligado parecido com desligado (até 3 dB)",
+             juce::String::fromUTF8("diferença: ") + juce::String(gap, 1) + " dB");
+    }
+    {
+      // 120 BPM: delay 1 em 1/4 (500 ms), delay 2 em 1/8 (250 ms), delay 3 em
+      // 1/16 (125 ms), sem repetições. Em série, o som passa pelos três:
+      // aparece uma repetição em 500 + 250 + 125 = 875 ms.
+      auto chain = [&](bool second) {
+        auto p = make(22, 0, true);
+        setParam(*p, "andamento", 120.0f);
+        setParam(*p, "p1_sinc", 1.0f);
+        const std::pair<const char*, float> knobs[] = {{"p1_a", 2.5f}, {"p1_d", 6.25f}, {"p1_g", 8.75f}, {"p1_b", 0.0f}, {"p1_e", 0.0f},
+                                                       {"p1_h", 0.0f}, {"p1_c", 10.0f}, {"p1_f", 10.0f}, {"p1_i", 10.0f}};
+        for (const auto& [id, v] : knobs)
+          setParam(*p, id, v);
+        setParam(*p, "p1_on2", second ? 1.0f : 0.0f);
+        play(*p, std::vector<double>(48000, 0.0));
+        std::vector<double> click(72000, 0.0);
+        for (int i = 0; i < 48; ++i)
+          click[static_cast<size_t>(1000 + i)] = 0.3 * std::sin(i / 48.0 * 3.14159);
+        return play(*p, click);
+      };
+      auto peakAt = [](const std::vector<float>& out, double ms) {
+        const auto c = static_cast<size_t>(1024.0 + ms * 48.0);
+        float best = 0.0f;
+        for (size_t i = c - 240; i < c + 240 && i < out.size(); ++i)
+          best = std::max(best, std::abs(out[i]));
+        return best;
+      };
+      const auto all = chain(true);
+      const auto without2 = chain(false);
+      const float cascade = peakAt(all, 875.0), quiet = peakAt(all, 1100.0);
+      report(cascade > 0.01f && cascade > quiet * 10.0f, "Em série: a repetição passa pelos três delays (875 ms)",
+             juce::String::fromUTF8("pico em 875 ms: ") + juce::String(cascade, 3) + ", em 1100 ms: " + juce::String(quiet, 4));
+      const float second = peakAt(all, 250.0), off = peakAt(without2, 250.0);
+      report(second > 0.01f && off < second * 0.05f, "Chave do delay 2 desligada: some a repetição dele (250 ms)",
+             "ligado: " + juce::String(second, 3) + ", desligado: " + juce::String(off, 4));
+    }
+    {
+      auto p = make(22, 0, true);
+      for (const char* id : {"p1_a", "p1_b", "p1_c", "p1_d", "p1_e", "p1_f", "p1_g", "p1_h", "p1_i"})
+        setParam(*p, id, 10.0f);
+      const auto out = play(*p, nexus::makeGuitarLikeSignal(48000.0, 20.0, 9));
+      const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+      report(ok, "Blueberry Chain com tudo no máximo por 20 s: não dispara", ok ? "ok" : "estourou");
+    }
   }
 
   // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
