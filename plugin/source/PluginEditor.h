@@ -112,6 +112,7 @@ private:
     const nexus::ui::GearArt& art() const;
     nexus::ui::Segmented mModes{{"Desligada", "Captura", "IR"}};
     juce::Rectangle<float> mImage;
+    juce::Rectangle<float> mArea; // espaço para a imagem (sem as abas)
     int mRig = 0;
     bool mDim = false;
   };

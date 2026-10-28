@@ -398,11 +398,14 @@ void NexusEditor::CabStage::resized()
 {
   auto area = getLocalBounds().toFloat();
   mModes.setBounds(area.removeFromTop(56.0f).withSizeKeepingCentre(420.0f, 36.0f).translated(0.0f, 6.0f).toNearestInt());
-  mImage = fitImage(art().front, area.reduced(24.0f, 8.0f));
+  mArea = area.reduced(24.0f, 8.0f);
 }
 
 void NexusEditor::CabStage::paint(juce::Graphics& g)
 {
+  // Cada caixa tem a sua proporção (a 8x10 é em pé): o encaixe é refeito a
+  // cada desenho, não só quando o palco muda de tamanho.
+  mImage = fitImage(art().front, mArea);
   drawGear(g, art().front, mImage, mDim ? 0.42f : 1.0f);
 }
 
