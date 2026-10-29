@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:33:19Z",
+ "gerado": "2026-10-29T19:39:33Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4365,8 +4365,8 @@
   },
   "nebula_flanger": {
    "nome": "Nebula Flanger",
-   "hash": "70f70b7a7f59e75e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "cd0614b9faf4dee3",
+   "data": "2026-10-29T19:39:33Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "nebula_flanger_botao_a.png",
@@ -4378,21 +4378,21 @@
     "nebula_flanger_mapa.json"
    ],
    "sha256": {
-    "nebula_flanger_botao_a.png": "278c42bd543f3e05d194dd866baf1c937553c5dc4878384128507d60fa5f0dd1",
-    "nebula_flanger_botao_b.png": "eb0a1a2fe1a584a48b2ea854a84bac3f9dcf40c207ca01368f71bef0341bb1c0",
-    "nebula_flanger_botao_c.png": "8f1c1d17081093731c964b3834811fc1ccdd587d6d26c61a21d58f852157f23c",
-    "nebula_flanger_frente.jpg": "557da6f76fa767a9f748d6d7294fcacd54534efb68a8fd015f9cb1c52a0796ad",
-    "nebula_flanger_frente_alfa.png": "c2394cad04ae4488aea4b52962eabc009819a120a1fbc0e9961fff4e4c3d67a0",
-    "nebula_flanger_manifesto.json": "157f1f982f3b5db3b66ad0e6493000dc8f82da1ee23cb03b3209f19af6efe37e",
-    "nebula_flanger_mapa.json": "905eb57f8837a0c1c7625ce196300e393c222811377401bf13074504a8fa2629"
+    "nebula_flanger_botao_a.png": "62a1764d51cb2c46d1cf58a437442eee750e83863a4f157e2de6fb7416390876",
+    "nebula_flanger_botao_b.png": "088f8b8b89dc4e176fc2327fd9d0c756d5254df485dcb35e15fc83dd3a8f10c7",
+    "nebula_flanger_botao_c.png": "2069f6b38caa61c307f7469b1d7460456842be938142ffea56c53916e875f2c1",
+    "nebula_flanger_frente.jpg": "1085d79a86fc95142a5012ad5f7c48bad95646483ee15f41d6479c2527731111",
+    "nebula_flanger_frente_alfa.png": "124fa47a260e5787f89089c7a824299e5c463c0f73adb2d4c1836e018f722cbf",
+    "nebula_flanger_manifesto.json": "69490e459761120d45624280a5862b7d39ff450e4df5184b9570829848d4af34",
+    "nebula_flanger_mapa.json": "720bb1a712bc51a13ef73247a2ba34577492e5d8d94faa9f4ecaaa60a06e4a50"
    },
-   "tamanho": 209633,
+   "tamanho": 392048,
    "tipo": "pedal",
    "inspiracao": "Electric Mistress",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "flanger",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },

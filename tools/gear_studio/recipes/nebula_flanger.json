@@ -2,93 +2,103 @@
   "tipo": "pedal",
   "nome": "Nebula Flanger",
   "familia": "nebula_flanger",
-  "inspiracao": "flanger de caixa larga de alumínio com letras vermelhas (estilo Electric Mistress)",
+  "inspiracao": "Caixa grande de alumínio prateado escovado (110 x 140 x 57 mm), no feitio clássico, letras pretas e o nome grande em letra cursiva; botões pretos COR, FAIXA e VELOCIDADE em fila no alto, minichave FILTER MATRIX no meio, LED vermelho e pisante. Tema: nebulosa prateada com estrelas novas. Original: Electro-Harmonix Electric Mistress (clássico).",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.11,
+    "comprimento": 0.14,
+    "altura": 0.057
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0189,
-      0.0017,
-      0.0446
+      0.5732,
+      0.586,
+      0.5989
     ],
-    "metalico": 0.35,
-    "aspereza": 0.26
+    "metalico": 0.9,
+    "aspereza": 0.3
   },
   "texto_cor": [
-    1.0,
-    0.6524,
-    0.8592
-  ],
-  "texto_cor2": [
-    1.0,
-    0.6524,
-    0.8592
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "NEBULA FLANGER",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.019,
+    "altura_m": 0.015,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
-      "id": "a",
-      "rotulo": "VELOCIDADE",
+      "id": "c",
+      "rotulo": "COR",
       "pos": [
         -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.7
+      ]
     },
     {
       "id": "b",
-      "rotulo": "PROFUNDIDADE",
+      "rotulo": "FAIXA",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.7
+      ]
     },
     {
-      "id": "c",
-      "rotulo": "REALIMENTAÇÃO",
+      "id": "a",
+      "rotulo": "VELOCIDADE",
       "pos": [
         0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.7
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "caixa clássica grande, aprox. 110 x 140 x 57 mm (estimativa pela caixa EHX antiga)",
+  "estampa": {
+    "svg": "estampas/nebula_flanger.svg"
+  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "rotulo_m": 0.0048,
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
-  "estampa": {
-    "svg": "estampas/nebula_flanger.svg"
-  }
+  "led": [
+    0.42,
+    -0.5
+  ],
+  "pisante_y": -0.62,
+  "logo_script": true,
+  "logo_y": 0.02,
+  "logo_m": 0.024,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "tipo_texto": "",
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.0,
+        0.32
+      ],
+      "rotulo": "FILTRO"
+    }
+  ]
 }
