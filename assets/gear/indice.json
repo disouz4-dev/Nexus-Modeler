@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:14:09Z",
+ "gerado": "2026-10-29T18:14:15Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2825,8 +2825,8 @@
   },
   "hart1000": {
    "nome": "Hart 1000",
-   "hash": "ac0cab8c272d0f0a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "86b1080254aea0e2",
+   "data": "2026-10-29T18:14:15Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart1000_botao_agudo.png",
@@ -2841,24 +2841,24 @@
     "hart1000_mapa.json"
    ],
    "sha256": {
-    "hart1000_botao_agudo.png": "f0f1f72a594066b9c19a068a79fa65e3bb5829aa24d9c4e73064ba3e7066d853",
-    "hart1000_botao_ganho.png": "ba84b86489de32a9018aca56f84a5a1cda579f7ab69cb25f78bc69ef89339c18",
-    "hart1000_botao_grave.png": "f58699b7b99fdf3fe98ab25eab01ad932d37db65f2f70ef0fcbcf509acc6b45b",
-    "hart1000_botao_medio.png": "4c54ac403d76238445471e5b5f443ccd660331eb36097a37d1bc31ea5354123c",
-    "hart1000_botao_presenca.png": "ac6ca91d7acad4aa0b0c88490f30109e8663a45f6c621999eabf3cc7298c19f3",
-    "hart1000_botao_volume.png": "38b0434fc1a73b8e365393642b97e0bef7bf39448957f78603c4371fd6747851",
-    "hart1000_frente.jpg": "d11daff5a2b31bc692d94501612509c30bff6579e50d3b47ac3c92d0c6c2d8ce",
-    "hart1000_frente_alfa.png": "e9340d4884fc78c0eda6d54579f3f602cabbd0da606a330d77edcf79325a2d57",
-    "hart1000_manifesto.json": "5cd8773332da638636254b46c0caffdf2b090f2005019f16c9b829749764a7b6",
-    "hart1000_mapa.json": "4d9c4566f338050d03a26cd719cee9b034c3b9ebf63ca41b47fef4814e2ca09d"
+    "hart1000_botao_agudo.png": "af99c8ee15e2d307a3cbc2fbfdd4238184813d6089dafc832e724e1fd4451d2b",
+    "hart1000_botao_ganho.png": "ba08d664c3ba2419985205aeba839ba7e61da1d20673cb8439dfe6a5aba81ad6",
+    "hart1000_botao_grave.png": "2aea62937aa5f1b6bfeb61572ecd0e0ff4a9b55640bb89cf3f0a3edeb2e9e5e4",
+    "hart1000_botao_medio.png": "4ac24b145587a5dbbdf147c540799741a7a0a28eb6172f004489914c1e898d31",
+    "hart1000_botao_presenca.png": "b6fc18474018af013571abd6d3b29d8dc8471761055207dafe2e118459bce58c",
+    "hart1000_botao_volume.png": "39e504c298bbd7caf98f386fe9c3a522a57ec46de0b2cbe022e9c9b33794cf52",
+    "hart1000_frente.jpg": "1080a8652fb31595d4ec45ee0cf8ad8009e3f9be870656e00a924c7374925891",
+    "hart1000_frente_alfa.png": "e9929b314d1c572defc660a3e34042a8ad66a51cde2e323727b1f17a4cfb77b9",
+    "hart1000_manifesto.json": "a76b750c9dd873015a60c13ef61e9f66b9d77549e47dfe3587ed18f261542265",
+    "hart1000_mapa.json": "5c5d091a92c1db1b8faa15e88c449bfe8a6f7d86ad44662e1e2974afd6ccd6b5"
    },
-   "tamanho": 1798972,
+   "tamanho": 687673,
    "tipo": "cabecote",
    "inspiracao": "Hartke LH1000",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
