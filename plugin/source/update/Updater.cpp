@@ -379,6 +379,19 @@ void Updater::skipThisVersion()
   dismiss();
 }
 
+bool Updater::takeNewVersion()
+{
+  // As ferramentas de teste (NEXUS_SEM_PADRAO) não mexem na versão vista.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_SEM_PADRAO", {}).isNotEmpty())
+    return false;
+  const juce::ScopedLock lock(mLock);
+  if (mPrefs->getValue("versao_vista") == currentVersion())
+    return false;
+  mPrefs->setValue("versao_vista", currentVersion());
+  mPrefs->saveIfNeeded();
+  return true;
+}
+
 void Updater::dismiss()
 {
   mDismissed = true;

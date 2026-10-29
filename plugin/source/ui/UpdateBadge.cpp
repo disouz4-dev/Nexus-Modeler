@@ -3,6 +3,7 @@
 #include "Controls.h"
 #include "Language.h"
 #include "Theme.h"
+#include "WhatsNew.h"
 
 namespace nexus::ui
 {
@@ -22,6 +23,33 @@ UpdateBadge::UpdateBadge()
   mUpdater->addChangeListener(this);
   mUpdater->checkIfDue();
   refresh();
+  // Primeira abertura desta versão: as novidades, uma vez (depois de a tela
+  // estar montada, para a janela abrir em cima dela).
+  juce::MessageManager::callAsync([safe = juce::Component::SafePointer<UpdateBadge>(this)] {
+    if (safe != nullptr && safe->mUpdater->takeNewVersion())
+      safe->showWhatsNew();
+  });
+}
+
+void UpdateBadge::showWhatsNew()
+{
+  const auto notes = whatsnew::bundled();
+  if (notes.isEmpty())
+    return;
+  whatsnew::show(tr("Novidades da versão %1").replace("%1", nexus::update::currentVersion()), notes, tr("Fechar"), {}, nullptr,
+                 getTopLevelComponent());
+}
+
+// "Ver o que mudou": o texto do lançamento (sem texto, a página dele).
+void UpdateBadge::showReleaseNotes()
+{
+  const auto r = mUpdater->release();
+  if (r.notes.trim().isEmpty())
+  {
+    mUpdater->openPage();
+    return;
+  }
+  whatsnew::show(tr("O que muda na versão %1").replace("%1", r.version), r.notes, tr("Fechar"), {}, nullptr, getTopLevelComponent());
 }
 
 UpdateBadge::~UpdateBadge()
@@ -117,6 +145,22 @@ void UpdateBadge::ask()
   const auto version = mUpdater->release().version;
   const bool installer = mUpdater->release().assetUrl.isNotEmpty();
   auto message = tr("Você está na versão %1. Quer atualizar agora?").replace("%1", nexus::update::currentVersion());
+  // Com o texto do lançamento: a pergunta mostra o que entra na versão nova.
+  if (const auto notes = mUpdater->release().notes.trim(); s == State::available && notes.isNotEmpty())
+  {
+    whatsnew::show(tr("Nova versão %1 disponível").replace("%1", version), message + "\n\n" + notes,
+                   installer ? tr("Atualizar agora") : tr("Abrir a página"), tr("Agora não"),
+                   [this, installer](bool ok) {
+                     if (!ok)
+                       return;
+                     if (installer)
+                       mUpdater->downloadAndOpen();
+                     else
+                       mUpdater->openPage();
+                   },
+                   this);
+    return;
+  }
   if (s == State::failed)
     message = tr("Não foi possível baixar a versão %1.").replace("%1", version) + "\n" + mUpdater->error() + "\n\n"
               + tr("Quer tentar de novo?");
@@ -181,7 +225,7 @@ void UpdateBadge::showMenu()
     else if (r == 3)
       mUpdater->downloadAndOpen();
     else if (r == 4)
-      mUpdater->openPage();
+      showReleaseNotes();
     else if (r == 5)
       mUpdater->dismiss();
     else if (r == 6)
@@ -194,6 +238,7 @@ void UpdateBadge::showMenu()
 void UpdateBadge::addMenuItems(juce::PopupMenu& menu)
 {
   menu.addItem(tr("Procurar atualizações agora"), [this] { mUpdater->checkNow(); });
+  menu.addItem(tr("Novidades desta versão"), !whatsnew::bundled().isEmpty(), false, [this] { showWhatsNew(); });
   menu.addItem(tr("Procurar atualizações sozinho ao abrir"), true, mUpdater->automatic(),
                [this] { mUpdater->setAutomatic(!mUpdater->automatic()); });
 }

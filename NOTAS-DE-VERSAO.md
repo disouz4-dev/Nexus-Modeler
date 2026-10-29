@@ -64,6 +64,9 @@
   já na versão nova.
 - Os instaladores do Mac e do Windows trazem o número completo da versão
   (com -beta.N), para as versões seguintes aparecerem.
+- Notas de versão na tela: o aviso de versão nova mostra o que entra nela,
+  e na primeira abertura depois de atualizar o Nexus mostra as novidades da
+  versão. Para ler de novo: menu "i", "Novidades desta versão".
 
 ### Afinador
 - Afinador de rack fixo no começo da cadeia: nota, oitava, cents e

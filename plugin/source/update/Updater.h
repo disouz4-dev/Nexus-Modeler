@@ -96,6 +96,9 @@ public:
   // Verdadeiro só na primeira vez: a pergunta "quer atualizar?" aparece uma
   // vez por abertura, mesmo com várias janelas do plugin.
   bool takeFirstAsk() { return !mAsked.exchange(true); }
+  // Verdadeiro uma vez na primeira abertura de cada versão (depois de
+  // atualizar, a tela mostra as novidades). Já anota a versão como vista.
+  bool takeNewVersion();
 
 private:
   enum class Job

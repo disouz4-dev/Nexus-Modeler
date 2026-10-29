@@ -152,6 +152,21 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Só para ler as notas de versão.
+      - uses: actions/checkout@v4
+
+      # Texto do lançamento: a seção "## <versão>" do NOTAS-DE-VERSAO.md. O
+      # Nexus mostra esse texto no aviso de versão nova.
+      - name: Notas desta versão
+        run: |
+          versao="${GITHUB_REF_NAME#v}"
+          awk -v v="$versao" '/^## /{ if (on) exit; on = ($2 == v); next } on' NOTAS-DE-VERSAO.md > notas.md
+          if [[ ! -s notas.md ]]; then
+            echo "::warning::NOTAS-DE-VERSAO.md não tem a seção ## $versao"
+            echo "Versão $versao." > notas.md
+          fi
+          cat notas.md
+
       - uses: actions/download-artifact@v4
         with:
           pattern: nexus-modeler-pacotes-*
@@ -165,4 +180,5 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           files: pacotes/*
+          body_path: notas.md
           fail_on_unmatched_files: true

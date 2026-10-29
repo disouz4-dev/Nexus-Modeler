@@ -35,6 +35,8 @@ private:
   void showMenu();
   void showResult();
   void ask();
+  void showReleaseNotes();
+  void showWhatsNew();
   juce::String text() const;
 
   juce::SharedResourcePointer<nexus::update::Updater> mUpdater;

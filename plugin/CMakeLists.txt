@@ -60,6 +60,7 @@ set(NEXUS_UI_SOURCES
   source/ui/GearBrowser.cpp
   source/ui/PresetBar.cpp
   source/ui/UpdateBadge.cpp
+  source/ui/WhatsNew.cpp
   source/ui/PackMapper.cpp
   source/ui/TestBar.cpp
   source/ui/StudioView.cpp
@@ -128,6 +129,8 @@ file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/
      "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json"
      "${PROJECT_SOURCE_DIR}/assets/marca/*.svg"
      "${PROJECT_SOURCE_DIR}/assets/teste/*.flac")
+# As notas de versão vão junto: depois de atualizar, a tela mostra as novidades.
+list(APPEND NEXUS_GEAR_FILES "${PROJECT_SOURCE_DIR}/NOTAS-DE-VERSAO.md")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData
