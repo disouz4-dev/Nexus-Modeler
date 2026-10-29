@@ -1736,8 +1736,6 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       select({Kind::amp, 0});
     });
   addAndMakeVisible(*mPresets);
-  mMk300 = std::make_unique<nexus::ui::Mk300Export>(*this);
-  mPresets->onExport = [this] { exportMk300(); };
   addChildComponent(mUpdate);
   mUpdate.onLayoutChange = [this] { resized(); };
   // Depois da janela aparecer: pergunta se manda o relatório de travamento.
@@ -2506,35 +2504,6 @@ void NexusEditor::openIrCatalog(int rig)
                       nexus::ui::CapturePanel::Gear::cab);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
-}
-
-// Exportar para a MK-300: o que toca agora no lado ativo (a captura do
-// cabeçote na posição do ganho, o IR da caixa) e os pedais de captura da cadeia.
-void NexusEditor::exportMk300()
-{
-  using Item = nexus::ui::Mk300Export::Item;
-  std::vector<Item> items;
-  const int rig = mProcessor.activeRig();
-  const int amp = mProcessor.audibleSlot(rig);
-  if (mProcessor.slotLoaded(amp))
-  {
-    const auto file = mProcessor.captureFileNear(amp);
-    if (file.existsAsFile())
-      items.push_back({Item::Kind::amp, TRANS(juce::String::fromUTF8("Cabeçote")) + ": " + mProcessor.packName(amp), file});
-  }
-  if (mProcessor.irLoaded(rig) && !mProcessor.packIncludesCab(rig) && mProcessor.irFile(rig).existsAsFile())
-    items.push_back({Item::Kind::ir, TRANS("Caixa (IR)") + ": " + mProcessor.irName(rig), mProcessor.irFile(rig)});
-  const auto layout = mProcessor.layout();
-  for (int i = 0; i < NexusProcessor::kPedals; ++i)
-  {
-    const int look = mProcessor.pedalLook(i);
-    if (!layout.uses(i) || NexusProcessor::isNativeLook(look) || !mProcessor.slotLoaded(NexusProcessor::pedalSlot(i)))
-      continue;
-    const auto file = mProcessor.captureFileNear(NexusProcessor::pedalSlot(i));
-    if (file.existsAsFile())
-      items.push_back({Item::Kind::pedal, TRANS("Pedal") + ": " + juce::String::fromUTF8(kPedalInfo[look].name), file});
-  }
-  mMk300->start(std::move(items));
 }
 
 void NexusEditor::chooseIr(int rig)
