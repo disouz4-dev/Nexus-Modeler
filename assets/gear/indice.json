@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:20:50Z",
+ "gerado": "2026-10-29T20:22:56Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3688,8 +3688,8 @@
   },
   "maple400": {
    "nome": "Maple 400",
-   "hash": "895a7b7e0f129657",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "44e7ed1da3640f2d",
+   "data": "2026-10-29T20:22:56Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "maple400_botao_agudo.png",
@@ -3704,24 +3704,24 @@
     "maple400_mapa.json"
    ],
    "sha256": {
-    "maple400_botao_agudo.png": "694b1dbb424539fc1b1d3e5934caaa9338889851c48a7a9600a40a399aadc7ba",
-    "maple400_botao_ganho.png": "f2ca9606168aa840c5bd7356f44c43b65142189f8556a4fdefd660fd74f0f7a6",
-    "maple400_botao_grave.png": "c6201bf19963e09c2e26071be355c1c988ce0018108ab1186deec7387ade59fd",
-    "maple400_botao_medio.png": "aad2c7699642441d767a09bd61d075b339a0e5586d8e95ca8cac924e8458af69",
-    "maple400_botao_presenca.png": "dd9ffe270911799246223ffdc4b9020817f3da0374061e525595bcdabd5173b9",
-    "maple400_botao_volume.png": "eb400e944d13fc8458c2aacb7c192a0d79f3a6f43b2b351b4129a60709aaea5a",
-    "maple400_frente.jpg": "d64bdd20e1396618aa6ab2eac17b5cca2f3765d377578014d170ac0568d3353c",
-    "maple400_frente_alfa.png": "86e6fb44d002c2f688d8b85cac83aae604eade890370ea5e5bc752fa454e2d51",
-    "maple400_manifesto.json": "29ee50df49e624417cd37d37558f510c15d91d80b240b13be3c48f394aeb89c5",
-    "maple400_mapa.json": "373f900a8c7d452ec583457f68dd75ff6e6f4a4c018691366434dbb67fdb8fb0"
+    "maple400_botao_agudo.png": "662a3971a23cb3af39f78659a6e54770b759a8f217ff87f3dc11da7fffe35470",
+    "maple400_botao_ganho.png": "969c011fbbed4869778cec989a9acd57d8144297cfb3d58e1008ec1be0ef6cbb",
+    "maple400_botao_grave.png": "0694ce73d27122660a49b8059e3601c304b2a9ea6489d0ca306e93cf23685158",
+    "maple400_botao_medio.png": "57daf0c883e8a87277039fdead7609938d2154cfb1e09fcee2bb2ced3fdc58c1",
+    "maple400_botao_presenca.png": "9a359996d6e176c43d0c0a1fc0bd5287e0f8102a366bf34e09a8d5622cc4a392",
+    "maple400_botao_volume.png": "d3b561e95ac2917cd4cdb17070225f13ba37d3b9ddec58c4b67fb210b2c79bc1",
+    "maple400_frente.jpg": "9b0b04a318b62cefb7d35a1a2b16ba434499fa190d4d0ab955b56edd6cf66110",
+    "maple400_frente_alfa.png": "73aacf067b8df7e55668951d036f2cb4e45f0175521feaf9b206601ddce11c57",
+    "maple400_manifesto.json": "106d800aa42df860c34a1deaa439b4d3f2d4d19a7f7857331066c42a118d7ec3",
+    "maple400_mapa.json": "669e89599565e1db9c2a2b8a55cef61b4c0d0d78417cc766d4fc183f2b792178"
    },
-   "tamanho": 1741973,
+   "tamanho": 772841,
    "tipo": "cabecote",
    "inspiracao": "Traynor YBA-200",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
