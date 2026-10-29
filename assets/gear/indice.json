@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:18:39Z",
+ "gerado": "2026-10-29T15:18:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4131,8 +4131,8 @@
   },
   "match_212": {
    "nome": "Match 2x12",
-   "hash": "54cd8bb94d2ea277",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "0955155aa12bac3d",
+   "data": "2026-10-29T15:18:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match_212_frente.jpg",
@@ -4141,18 +4141,18 @@
     "match_212_mapa.json"
    ],
    "sha256": {
-    "match_212_frente.jpg": "4353c025dc9e3b70f56806eba242532695005314399b5eadcbd5b295f7cebebe",
-    "match_212_frente_alfa.png": "02c6d0d8364a42d76c420bce0684b51129e791e2ea5017d9e8c75e241742578c",
-    "match_212_manifesto.json": "df95499c68b4fabef3bb7c26727c231f31ffbaf0c2f19d7f378f6949e723ea7e",
-    "match_212_mapa.json": "a16065f83e978546cce9fce14ce2919243b3d56b2e1cb7de80571c52c60ed871"
+    "match_212_frente.jpg": "ffc5341ec4a8bd11ce61e2e1279b5f627a685744d372897298d36c7ab68fc4bd",
+    "match_212_frente_alfa.png": "930772561b24d3622183d5cd974c85277a7a5637ceb9f183b3084ffb77a8a6e2",
+    "match_212_manifesto.json": "52293e3f6e9e2a3f73408def9402bddb480c6ef96d1eb31c1d1eb0d1f2c959ce",
+    "match_212_mapa.json": "ebb13ee7b63797f9571a4c92a1194d846bfe04d0d0757cfca938dee29f477a76"
    },
-   "tamanho": 625962,
+   "tamanho": 1168710,
    "tipo": "caixa",
    "inspiracao": "Matchless 2x12",
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
