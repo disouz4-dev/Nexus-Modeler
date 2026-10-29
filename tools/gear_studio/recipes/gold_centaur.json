@@ -2,57 +2,41 @@
   "tipo": "pedal",
   "nome": "Gold Centaur",
   "familia": "gold_centaur",
-  "inspiracao": "overdrive dourado de luxo de três botões (estilo Klon Centaur)",
+  "inspiracao": "Caixa deitada dourada fosca, cor de bronze (120 x 95 x 40 mm), letras pretas; botões grandes cor de sangue de boi GANHO, AGUDO e SAÍDA em fila, LED vermelho à esquerda do GANHO, pisante pequeno no canto de baixo à direita, GOLD embaixo à esquerda e CENTAUR à direita. Tema: coroa de louros dourada. Original: Klon Centaur.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.119,
-    "altura": 0.051
+    "largura": 0.12,
+    "comprimento": 0.095,
+    "altura": 0.04
   },
-  "chanfro_m": 0.004,
   "pintura": {
     "cor": [
-      0.92,
-      0.6,
-      0.16
+      0.5605,
+      0.3297,
+      0.0619
     ],
-    "metalico": 1.0,
-    "aspereza": 0.22
+    "metalico": 0.55,
+    "aspereza": 0.5
   },
   "texto_cor": [
-    0.006,
-    0.005,
-    0.004
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "texto_cor2": [
-    0.006,
-    0.005,
-    0.004
-  ],
-  "modelo": "Gold Centaur",
-  "logo_script": true,
-  "logo_m": 0.019,
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
+  "modelo": "GOLD CENTAUR",
   "botao_estilo": {
-    "diametro_m": 0.017,
-    "altura_m": 0.013,
-    "com_tampa": true,
+    "diametro_m": 0.021,
+    "altura_m": 0.016,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.82,
-      0.82,
-      0.84
+      0.0658,
+      0.0046,
+      0.0029
     ],
     "traco": [
-      0.02,
-      0.02,
-      0.02
+      0.8122,
+      0.6941,
+      0.5356
     ]
   },
   "botoes": [
@@ -60,8 +44,8 @@
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        -0.56,
-        0.58
+        -0.55,
+        0.5
       ]
     },
     {
@@ -69,30 +53,78 @@
       "rotulo": "AGUDO",
       "pos": [
         0.0,
-        0.58
+        0.5
       ]
     },
     {
       "id": "nivel",
       "rotulo": "SAÍDA",
       "pos": [
-        0.56,
-        0.58
+        0.55,
+        0.5
       ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
-  "quadro": {
-    "largura_rel": 1.6,
-    "proporcao": 1.05,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "formato Klon: 94 x 119 x 51 mm (4,7 x 3,7 pol.)",
+  "medidas_fonte": "aprox. 120 x 95 x 40 mm (medida de loja; a Klon não publica)",
   "estampa": {
     "svg": "estampas/gold_centaur.svg"
-  }
+  },
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.95,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0045,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    -0.84,
+    0.5
+  ],
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.5,
+      -0.36
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "GOLD",
+      "pos": [
+        -0.6,
+        -0.78
+      ],
+      "tam_m": 0.0062,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "espaco": 1.6
+    },
+    {
+      "texto": "CENTAUR",
+      "pos": [
+        0.6,
+        -0.78
+      ],
+      "tam_m": 0.0062,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "espaco": 1.4
+    }
+  ]
 }

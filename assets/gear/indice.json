@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:23:47Z",
+ "gerado": "2026-10-29T15:23:57Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2693,8 +2693,8 @@
   },
   "gold_centaur": {
    "nome": "Gold Centaur",
-   "hash": "800d7f2cbdc329a0",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "53742bec013e6202",
+   "data": "2026-10-29T15:23:57Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "gold_centaur_botao_ganho.png",
@@ -2706,21 +2706,21 @@
     "gold_centaur_mapa.json"
    ],
    "sha256": {
-    "gold_centaur_botao_ganho.png": "75714eaaec57238f34453c3e23a93433d817c3b207442e8430c77f7db8f7e361",
-    "gold_centaur_botao_nivel.png": "0422d6b7aa46256a5c1d21aebd85469e0664218241c071dfd16f124b55ea03fb",
-    "gold_centaur_botao_tom.png": "e138527b55b20ab9570bba018af29253a66f707304bf92b6940c6b31df7ac043",
-    "gold_centaur_frente.jpg": "5610033b833edfe05a9952ad4f396babd52ccc53c5981ba1b8f6d38745987b2b",
-    "gold_centaur_frente_alfa.png": "91ad71e09006e187ef3dc280c091e4781bc8e9b2d3d185897a8fb7dc74bc4ef2",
-    "gold_centaur_manifesto.json": "0e75935a6a0b37aeb738b4345f71fb1ceda691262a04e88749889425809145ad",
-    "gold_centaur_mapa.json": "9d0e06da1160b0b2c55aa5741ec93b5e7a5f751bfecdb06faf51406ae08447fd"
+    "gold_centaur_botao_ganho.png": "985cda58a8120c381664a5b8b69c902f9c825a6b5abdb811cedac5d73d10f2f4",
+    "gold_centaur_botao_nivel.png": "d1916c487849de6b63f2e6f7dbf5216d5caa45c47f89b577b108eb22cbe2a128",
+    "gold_centaur_botao_tom.png": "833931295eba700f37aba48541605abacf854e6d183a5c85b063d4fd23ec72fa",
+    "gold_centaur_frente.jpg": "e15a6634817e11737318847cd17ba58195271ada685914dc5c318c7e1903f7c5",
+    "gold_centaur_frente_alfa.png": "ba7f46a34fd1a79b9aca6efa67432bb384cd8c17d49103a6c33245920b650f9a",
+    "gold_centaur_manifesto.json": "f72234805747f55afbdb89de5c2158ac3985a7d3c595d8f975fe720e2b06888c",
+    "gold_centaur_mapa.json": "3624d9c74a2946716d119a140b344caf09baeca5ec66fc191f17786a18d6b942"
    },
-   "tamanho": 456784,
+   "tamanho": 398931,
    "tipo": "pedal",
    "inspiracao": "Klon Centaur",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
