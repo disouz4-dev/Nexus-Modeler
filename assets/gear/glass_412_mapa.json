@@ -2,9 +2,10 @@
   "nome": "Glass 4x12",
   "familia": "glass_412",
   "largura": 2400,
-  "altura": 2688,
+  "altura": 2735,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
     760,
     760
@@ -14,6 +15,5 @@
     "colunas": 2,
     "polegadas": 12
   },
-  "canais": [],
   "rotulos": []
 }

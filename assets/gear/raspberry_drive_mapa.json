@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 173,
+      "y": 88,
+      "tamanho": 88,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 339,
+      "y": 88,
+      "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 174,
+      "y": 206,
+      "tamanho": 68,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,46 +36,64 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    56,
+    122
   ],
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 219.1,
+      "y": 198.9,
+      "altura": 20.64,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "DRIVE",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 380.9,
+      "y": 198.9,
+      "altura": 20.64,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 210.4,
+      "y": 299.1,
+      "altura": 20.64,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AR",
+      "x": 300.0,
+      "y": 299.1,
+      "altura": 20.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REFORÇO",
+      "x": 389.6,
+      "y": 299.1,
+      "altura": 20.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "x": 225.0,
+    "y": 623.0,
+    "raio": 64.0
   },
   "led": {
-    "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "x": 227.4,
+    "y": 549.0,
+    "raio": 16.1
   }
 }

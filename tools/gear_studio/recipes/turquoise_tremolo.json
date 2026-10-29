@@ -2,42 +2,47 @@
   "tipo": "pedal",
   "nome": "Turquoise Tremolo",
   "familia": "turquoise_tremolo",
-  "inspiracao": "tremolo compacto verde-escuro (estilo BOSS TR-2)",
-  "formato": "padrao",
+  "inspiracao": "Boss compacto verde-azulado (turquesa) (73 x 129 x 59 mm), letras pretas; botões pretos com saia e tampa dourada: VELOCIDADE, FORMA (no meio, mais baixo) e PROFUNDIDADE, LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: turquesa polida com veios marrons, facetas tom sobre tom. Original: Boss TR-2 Tremolo.",
+  "formato": "compacto",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.073,
+    "comprimento": 0.129,
+    "altura": 0.059
   },
   "pintura": {
     "cor": [
       0.009,
-      0.0119,
-      0.0254
+      0.259,
+      0.2428
     ],
     "metalico": 0.0,
-    "aspereza": 0.22
+    "aspereza": 0.24
   },
   "texto_cor": [
-    0.7969,
-    0.7818,
-    0.7227
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "TURQUOISE TREMOLO",
-  "tipo_texto": "",
-  "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
+    "saia": true,
     "corpo": [
-      0.8524,
-      0.8324,
-      0.7549
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.0039,
-      0.0063,
-      0.023
+      0.8913,
+      0.8913,
+      0.8434
+    ],
+    "com_tampa": true,
+    "tampa": [
+      0.586,
+      0.3587,
+      0.0781
     ]
   },
   "botoes": [
@@ -45,50 +50,85 @@
       "id": "a",
       "rotulo": "VELOCIDADE",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
-    },
-    {
-      "id": "b",
-      "rotulo": "PROFUNDIDADE",
-      "pos": [
-        0.0,
-        0.55
-      ],
-      "escala": 1.1
+        -0.6,
+        0.68
+      ]
     },
     {
       "id": "c",
       "rotulo": "FORMA",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.0,
+        0.56
+      ]
+    },
+    {
+      "id": "b",
+      "rotulo": "PROFUNDIDADE",
+      "pos": [
+        0.6,
+        0.68
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "Boss TR-2 Tremolo: 73 x 129 x 59 mm (Boss, ficha oficial)",
+  "estampa": {
+    "svg": "estampas/turquoise_tremolo.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.21,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "base_rel": 0.68,
+  "basculante_rel": 0.6,
+  "basculante_ang": 0.0,
+  "borracha_rel": 0.36,
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
   "rotulo_embaixo": true,
-  "medidas_fonte": "BOSS CE-2: 73 x 129 x 59 mm",
-  "chanfro_m": 0.0035,
-  "texto_cor2": [
-    0.7969,
-    0.7818,
-    0.7227
+  "rotulo_m": 0.0042,
+  "disposicao": "boss",
+  "led": [
+    0.0,
+    0.9
   ],
-  "logo_y": -0.367,
-  "pisante_y": -0.667,
-  "estampa": {
-    "svg": "estampas/turquoise_tremolo.svg"
-  }
+  "textos": [
+    {
+      "texto": "CHECK",
+      "pos": [
+        0.0,
+        0.965
+      ],
+      "tam_m": 0.0022,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "espaco": 1.2
+    }
+  ],
+  "paineis": [],
+  "pecas": [
+    {
+      "tipo": "rotulo",
+      "pos": [
+        -0.6,
+        0.27
+      ],
+      "rotulo": "SAÍDA",
+      "rotulo_m": 0.0034
+    },
+    {
+      "tipo": "rotulo",
+      "pos": [
+        0.6,
+        0.27
+      ],
+      "rotulo": "ENTRADA",
+      "rotulo_m": 0.0034
+    }
+  ]
 }

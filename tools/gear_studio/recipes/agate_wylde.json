@@ -2,92 +2,92 @@
   "tipo": "pedal",
   "nome": "Agate Wylde",
   "familia": "agate_wylde",
-  "inspiracao": "preto e branco com o desenho de alvo em círculos, caixa pequena de metal (estilo MXR Wylde Overdrive)",
+  "inspiracao": "Caixa MXR prateada, cinza-azulada (62 x 111 x 32 mm), com o alvo de anéis pretos pintado no tampo e o LED vermelho no centro dele; botões transparentes SAÍDA (esq.), TOM (no alto, no meio) e GANHO (dir.); letras creme. Tema: os anéis do alvo desenhados como as faixas de uma ágata cinza. Original: MXR Wylde Overdrive.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.2684,
-      0.0004,
-      0.0063
+      0.4313,
+      0.4647,
+      0.4995
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.5,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8434,
+    0.6941
   ],
   "modelo": "AGATE WYLDE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
+    "diametro_m": 0.014,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.6941,
+      0.7227,
+      0.7519
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
-    ]
+      0.0104,
+      0.0104,
+      0.0104
+    ],
+    "material": "transparente"
   },
   "botoes": [
     {
       "id": "nivel",
       "rotulo": "SAÍDA",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.6,
+        0.5
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.78
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.6,
+        0.5
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/agate_wylde.svg"
+  },
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/agate_wylde.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    0.18
+  ]
 }

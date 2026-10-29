@@ -1,17 +1,19 @@
 {
   "nome": "Citrus 4x12",
   "familia": "citrus_412",
-  "largura": 1600,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2604,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
-    760,
-    760
+    780,
+    740
   ],
   "falantes": {
     "linhas": 2,
     "colunas": 2,
     "polegadas": 12
-  }
+  },
+  "rotulos": []
 }

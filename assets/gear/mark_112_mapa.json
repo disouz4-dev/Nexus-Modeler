@@ -1,8 +1,19 @@
 {
   "nome": "Mark 1x12",
   "familia": "mark_112",
-  "largura": 1527,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2042,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    572,
+    419
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
 }

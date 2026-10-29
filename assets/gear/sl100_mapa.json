@@ -2,60 +2,60 @@
   "nome": "SL 100",
   "familia": "sl_100",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1190,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 796,
-      "y": 736,
-      "tamanho": 113,
+      "x": 759,
+      "y": 813,
+      "tamanho": 107,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 976,
-      "y": 736,
-      "tamanho": 113,
+      "x": 902,
+      "y": 813,
+      "tamanho": 106,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1155,
-      "y": 736,
-      "tamanho": 113,
+      "x": 1045,
+      "y": 813,
+      "tamanho": 106,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1335,
-      "y": 736,
-      "tamanho": 113,
+      "x": 1188,
+      "y": 813,
+      "tamanho": 106,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1514,
-      "y": 736,
-      "tamanho": 113,
-      "arquivo": "botao_presenca.png",
+      "id": "volume",
+      "x": 1474,
+      "y": 813,
+      "tamanho": 106,
+      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1693,
-      "y": 736,
-      "tamanho": 113,
-      "arquivo": "botao_volume.png",
+      "id": "presenca",
+      "x": 1616,
+      "y": 812,
+      "tamanho": 108,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -66,106 +66,160 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 283.4,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
+      "texto": "INPUT",
+      "x": 265.4,
+      "y": 909.7,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 853.7,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
+      "texto": "OD / NORMAL",
+      "x": 367.0,
+      "y": 910.2,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1032.7,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
+      "texto": "BRIGHT",
+      "x": 448.3,
+      "y": 910.2,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1211.6,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
-      "espaco": 1.0
-    },
-    {
-      "texto": "AGUDO",
-      "x": 1390.6,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENÇA",
-      "x": 1569.5,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 1748.5,
-      "y": 682.5,
-      "altura": 32.59,
-      "achatamento": 0.981,
-      "cor": "#303030",
-      "espaco": 1.0
-    },
-    {
-      "texto": "ENTRADA",
-      "x": 1961.5,
-      "y": 841.4,
-      "altura": 24.61,
-      "achatamento": 0.976,
-      "cor": "#303030",
+      "texto": "CRUNCH",
+      "x": 529.5,
+      "y": 910.2,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "NORMAL",
-      "x": 408.2,
-      "y": 784.8,
-      "altura": 19.72,
-      "achatamento": 0.978,
-      "cor": "#303030",
+      "x": 671.8,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "OVERDRIVE",
-      "x": 495.2,
-      "y": 784.8,
-      "altura": 19.72,
-      "achatamento": 0.978,
-      "cor": "#303030",
+      "x": 814.0,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 956.2,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1098.4,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1240.6,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 1382.9,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OVERDRIVE",
+      "x": 1525.1,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1667.3,
+      "y": 925.4,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 1972.0,
+      "y": 910.2,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 2053.3,
+      "y": 910.2,
+      "altura": 17.7,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PREAMP",
+      "x": 742.9,
+      "y": 733.7,
+      "altura": 16.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1454.0,
+      "y": 733.7,
+      "altura": 16.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     }
   ],
   "leds_canais": [
     {
-      "x": 407.6,
-      "y": 816.7,
-      "raio": 8.7
+      "x": 365.3,
+      "y": 739.6,
+      "raio": 10.2
     },
     {
-      "x": 494.6,
-      "y": 816.7,
-      "raio": 8.7
+      "x": 528.2,
+      "y": 739.6,
+      "raio": 10.2
     }
   ]
 }

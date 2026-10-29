@@ -2,60 +2,60 @@
   "nome": "Citrus 30",
   "familia": "citrus30",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1416,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "ganho",
-      "x": 834,
-      "y": 707,
-      "tamanho": 122,
-      "arquivo": "botao_ganho.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "grave",
-      "x": 1023,
-      "y": 707,
-      "tamanho": 122,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 1213,
-      "y": 707,
-      "tamanho": 122,
-      "arquivo": "botao_medio.png",
+      "id": "volume",
+      "x": 743,
+      "y": 860,
+      "tamanho": 105,
+      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1403,
-      "y": 707,
-      "tamanho": 122,
+      "x": 999,
+      "y": 873,
+      "tamanho": 78,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1592,
-      "y": 707,
-      "tamanho": 122,
-      "arquivo": "botao_presenca.png",
+      "id": "medio",
+      "x": 1242,
+      "y": 873,
+      "tamanho": 78,
+      "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1782,
-      "y": 707,
-      "tamanho": 122,
-      "arquivo": "botao_volume.png",
+      "id": "grave",
+      "x": 1484,
+      "y": 873,
+      "tamanho": 79,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1713,
+      "y": 860,
+      "tamanho": 106,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1896,
+      "y": 863,
+      "tamanho": 62,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -66,106 +66,70 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.1,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "MASTER",
+      "x": 798.3,
+      "y": 765.6,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.3,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "TREBLE",
+      "x": 1039.3,
+      "y": 765.6,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "MIDDLE",
+      "x": 1280.3,
+      "y": 765.6,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.9,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "BASS",
+      "x": 1521.4,
+      "y": 765.6,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "AGUDO",
-      "x": 1463.1,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "GAIN",
+      "x": 1762.4,
+      "y": 765.6,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "PRESENÇA",
-      "x": 1652.4,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 1841.7,
-      "y": 652.0,
-      "altura": 34.47,
-      "achatamento": 0.982,
-      "cor": "#272727",
-      "espaco": 1.0
-    },
-    {
-      "texto": "ENTRADA",
-      "x": 1943.9,
-      "y": 820.1,
-      "altura": 26.02,
-      "achatamento": 0.977,
-      "cor": "#272727",
-      "espaco": 1.0
-    },
-    {
-      "texto": "CRUNCH",
-      "x": 415.0,
-      "y": 766.3,
-      "altura": 20.85,
-      "achatamento": 0.978,
-      "cor": "#272727",
-      "espaco": 1.0
-    },
-    {
-      "texto": "DRIVE",
-      "x": 488.6,
-      "y": 766.3,
-      "altura": 20.85,
-      "achatamento": 0.978,
-      "cor": "#272727",
+      "x": 1923.1,
+      "y": 857.3,
+      "altura": 15.69,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     }
   ],
   "leds_canais": [
     {
-      "x": 414.3,
-      "y": 800.0,
-      "raio": 9.2
+      "x": 606.0,
+      "y": 1075.9,
+      "raio": 11.8
     },
     {
-      "x": 488.0,
-      "y": 800.0,
-      "raio": 9.2
+      "x": 606.0,
+      "y": 993.8,
+      "raio": 11.8
     }
   ]
 }
