@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:19:46Z",
+ "gerado": "2026-10-29T15:19:54Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4398,8 +4398,8 @@
   },
   "neptune_chorus": {
    "nome": "Neptune Chorus",
-   "hash": "77bdf2b1c01c1adf",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "936aa05160f082c7",
+   "data": "2026-10-29T15:19:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "neptune_chorus_botao_a.png",
@@ -4411,21 +4411,21 @@
     "neptune_chorus_mapa.json"
    ],
    "sha256": {
-    "neptune_chorus_botao_a.png": "693a4804c7545abb584547cb91162a7fc6309d4118c31f518d5341e9541d6970",
-    "neptune_chorus_botao_b.png": "8410751bcf56b5a3e4141eaa46b3047569cece0a2bcfb2a1da6314f2182e04e0",
-    "neptune_chorus_botao_c.png": "b764a9ca7d723c97f86fd3e698f7623f76719bb0f3e41780f1022f2eb2a542e4",
-    "neptune_chorus_frente.jpg": "99eb0251abab5f2a82c8ab6358cfa9dc25d84cc03852300c58369d00debb0174",
-    "neptune_chorus_frente_alfa.png": "1ef43ec9040b4813663550e15c8280286ce144730f0eaef63fb14508f55ab961",
-    "neptune_chorus_manifesto.json": "3ba7b111433285f53878d7715c82e8626935bdb82e42684d8a24ab083d609477",
-    "neptune_chorus_mapa.json": "ffd253d438ba9d71dea7f46ac0bccdd6f7e7fd71ecb1ac07fcc095cf2a40aa3d"
+    "neptune_chorus_botao_a.png": "d5accbcef8952f0d1112c6265cc65fae13f3b59e3693cfb746a05baf34b91727",
+    "neptune_chorus_botao_b.png": "14887663f72df26a9757b72816392076caf304575b886dd4877dd69c879178a5",
+    "neptune_chorus_botao_c.png": "b17128577ba6ef2ac0594b19fd918771b4e4041d972fe51f14ee78c87dcd1376",
+    "neptune_chorus_frente.jpg": "6a97fa7dd773e07e35217002fdf1cbd3ab304092dc9a631cca16b2dc6fc2e1bf",
+    "neptune_chorus_frente_alfa.png": "c34fb33816d8ce469feae879e2eed152d8d26d2f4d0bfa455547dabb03f98b12",
+    "neptune_chorus_manifesto.json": "e88a3036d166f03ce8bfc1439e9bd2310b0b51630db9800b8fd3230f4935c317",
+    "neptune_chorus_mapa.json": "8cfdef3178fbd086dc3f28eb5bc15d8de86687a3adaf29ba169c8963a4929622"
    },
-   "tamanho": 237108,
+   "tamanho": 372771,
    "tipo": "pedal",
    "inspiracao": "CE-2",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "chorus",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
