@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:17:28Z",
+ "gerado": "2026-10-29T15:17:33Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1691,8 +1691,8 @@
   },
   "citrus_412": {
    "nome": "Citrus 4x12",
-   "hash": "37b30cf231c26919",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "017dd886303092ff",
+   "data": "2026-10-29T15:17:33Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus_412_frente.jpg",
@@ -1701,18 +1701,18 @@
     "citrus_412_mapa.json"
    ],
    "sha256": {
-    "citrus_412_frente.jpg": "b948e3e2b3bcd5ad2aecc3e5430b4aa93dcc57c54a63cefacea41842451465a0",
-    "citrus_412_frente_alfa.png": "d06e3ba3a9c473857aea92447db584fc4d03c00d4757fb20e86297580384be63",
-    "citrus_412_manifesto.json": "2a704d96a7b6a80afc0e97df0ecd785f8b1a59fe72208d2f59df4456f8079e60",
-    "citrus_412_mapa.json": "72edfa0b5df373a095d549812783f9807ad2014c2f46a5fbe4b3d3ca248a22ee"
+    "citrus_412_frente.jpg": "fb542d0826bd9d6dc258c24084b157ce3e21c47107ac339fe497d5f5cd2d3bf8",
+    "citrus_412_frente_alfa.png": "ef048ec67e2936a0813adacc5faf3326913f11a0108cdadd20c369f8068b0d70",
+    "citrus_412_manifesto.json": "3d91df161669168665957f0a5b38f2bc261f4d3b828d9114324f130b4422b624",
+    "citrus_412_mapa.json": "19ce875afac4711b084c8078c43414a8c886ea9586511d9b0abcf4f5be764b45"
    },
-   "tamanho": 776262,
+   "tamanho": 1268977,
    "tipo": "caixa",
    "inspiracao": "Orange 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
