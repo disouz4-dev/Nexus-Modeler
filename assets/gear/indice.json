@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:21:56Z",
+ "gerado": "2026-10-29T15:22:01Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5616,8 +5616,8 @@
   },
   "sonic60": {
    "nome": "Sonic 60",
-   "hash": "63d5fd7642604fe5",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "0f021e6f1203e730",
+   "data": "2026-10-29T15:22:01Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sonic60_botao_agudo.png",
@@ -5632,24 +5632,24 @@
     "sonic60_mapa.json"
    ],
    "sha256": {
-    "sonic60_botao_agudo.png": "fed638a9510eeb5af55a7c6906b1b7d73adfefd29a9a378092ed8cc3a9254eff",
-    "sonic60_botao_ganho.png": "51caef3b79514e135417276a31a409e921ba4077d0b193bc6c262e471d540b43",
-    "sonic60_botao_grave.png": "7d6d32fe8d1ae4f9e49b896a1ebef9ead24c8709c52de0906b09227e83038c4a",
-    "sonic60_botao_medio.png": "a002952c761fe78de1a307850a4880d563f00605b5c3c62a09af66483f23ac02",
-    "sonic60_botao_presenca.png": "59864f82023c9ed72750e40d86305e52eff0cffa8616dffbf328b44be5477a74",
-    "sonic60_botao_volume.png": "0fa638ffddb5545ac0a30b048ea2b16305e6fbc8d5ace5d820c45cb3b7464fc3",
-    "sonic60_frente.jpg": "35a46dc05ce64d8958fc8d3ecce83f8cadc2359c66e84d94726515a5dc03db72",
-    "sonic60_frente_alfa.png": "a12aa144be4aec4618503919f67251d885daedcf4c1658dfb6e6c51e0c5cb8f8",
-    "sonic60_manifesto.json": "d184b6fcd409fd014edcc818aa3aa80d239ed976a46dd4113b55ae9b1424e5ed",
-    "sonic60_mapa.json": "0bf2573eed6f16470215e32dd34ac1d081e0b1eeb50f732c7eaa6dd236f4a206"
+    "sonic60_botao_agudo.png": "692b52968e6653b06562c4499c7fa15d34c2ae6f54c9f20096d22ed1c7b49f92",
+    "sonic60_botao_ganho.png": "30094fc8b6eef2f40f32a1fe8f1d99970298deb544b044882aa3110dfd1ae8fa",
+    "sonic60_botao_grave.png": "d98f3b5a4d7aac271527f46723c1d201b597083635c61657135d79e884f63b0a",
+    "sonic60_botao_medio.png": "579065b5c992507cee2684351ccf9c3fc680ac2e496931a571e26409c8182ebe",
+    "sonic60_botao_presenca.png": "abd1cd4df4e780b75ae1dfaaf6dc2147b043dd0da20ffe66ffeb61bd3c60f79e",
+    "sonic60_botao_volume.png": "84276f6acaa3a4c327b5f68cf758581f27d844ad2df010345bff55e1ba8249dd",
+    "sonic60_frente.jpg": "db3c6a78f5a6b732ca57380726a1fb17d1e2bd313af9dabb2fa4776ebca67a6f",
+    "sonic60_frente_alfa.png": "21f8d93a21b7192bcaa9be4160b4c7c8dfb5b7eac98b5b25c96a7f667d90ac8b",
+    "sonic60_manifesto.json": "7238d96ddb8cfb0983697326fb314820796684b3b0196fc6199919974c1e96ba",
+    "sonic60_mapa.json": "ae656aebc97c745f299ef9b58fc3e01af39186fb05ddc28d2e94067226e009ec"
    },
-   "tamanho": 1683606,
+   "tamanho": 918317,
    "tipo": "cabecote",
    "inspiracao": "Super-Sonic",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
