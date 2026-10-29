@@ -5,6 +5,15 @@
   "altura": 2688,
   "posicoes": 101,
   "botoes": [],
+  "medidas_mm": [
+    760,
+    760
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
   "canais": [],
   "rotulos": []
 }

@@ -24,6 +24,11 @@
     "altura": 1.0,
     "profundidade": 0.42
   },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 15
+  },
   "couro": {
     "cor": [
       0.005,
