@@ -1,37 +1,37 @@
 {
-  "nome": "Apricot Overdrive",
+  "nome": "Citrine Overdrive",
   "familia": "apricot_overdrive",
   "largura": 600,
   "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "ganho",
-      "x": 126,
-      "y": 78,
-      "tamanho": 113,
-      "arquivo": "botao_ganho.png",
+      "id": "nivel",
+      "x": 144,
+      "y": 114,
+      "tamanho": 101,
+      "arquivo": "botao_nivel.png",
       "angulo_min": -150,
-      "angulo_max": 150,
-      "posicoes": 11
+      "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 244,
-      "y": 78,
-      "tamanho": 113,
+      "x": 250,
+      "y": 151,
+      "tamanho": 100,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "nivel",
-      "x": 361,
-      "y": 78,
-      "tamanho": 113,
-      "arquivo": "botao_nivel.png",
+      "id": "ganho",
+      "x": 356,
+      "y": 114,
+      "tamanho": 101,
+      "arquivo": "botao_ganho.png",
       "angulo_min": -150,
-      "angulo_max": 150
+      "angulo_max": 150,
+      "posicoes": 11
     }
   ],
   "canais": [],
@@ -41,41 +41,59 @@
   ],
   "rotulos": [
     {
-      "texto": "DRIVE",
-      "x": 185.9,
-      "y": 213.4,
-      "altura": 23.96,
+      "texto": "NÍVEL",
+      "x": 196.9,
+      "y": 235.1,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
       "x": 300.0,
-      "y": 213.4,
-      "altura": 23.96,
+      "y": 271.5,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "NÍVEL",
-      "x": 414.1,
-      "y": 213.4,
-      "altura": 23.96,
+      "texto": "DRIVE",
+      "x": 403.1,
+      "y": 235.1,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 196.9,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 403.1,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 517.5,
-    "raio": 169.0
+    "y": 503.0,
+    "raio": 152.0
   },
   "led": {
-    "x": 154.2,
-    "y": 353.6,
-    "raio": 17.2
+    "x": 300.0,
+    "y": 100.5,
+    "raio": 14.7
   }
 }
