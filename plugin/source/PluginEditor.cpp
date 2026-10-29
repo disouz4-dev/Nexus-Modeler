@@ -448,13 +448,21 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
 
 void NexusEditor::GearStage::refreshCaptureSteps()
 {
-  if (mKind != Kind::amp)
+  const bool pedal = mKind == Kind::pedal;
+  // Efeito do próprio Nexus não tem captura: o botão fica como sempre.
+  if (pedal && NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) != NexusProcessor::PedalKind::capture)
+  {
+    for (auto& knob : mKnobs)
+      knob->setCaptureSteps(0, {});
     return;
-  const int slot = NexusProcessor::ampSlot(mIndex, mProcessor.selectedChannel(mIndex));
+  }
+  const int slot = pedal ? NexusProcessor::pedalSlot(mIndex) : NexusProcessor::ampSlot(mIndex, mProcessor.selectedChannel(mIndex));
   const int count = mProcessor.slotLoaded(slot) ? mProcessor.captureCount(slot) : 0;
+  const auto note = pedal ? juce::String::fromUTF8("fixo: este pedal tem uma captura só, por enquanto")
+                          : juce::String::fromUTF8("fixo: este cabeçote tem uma captura só, por enquanto");
   for (auto& knob : mKnobs)
     if (knob->art().id == "ganho")
-      knob->setCaptureSteps(count);
+      knob->setCaptureSteps(count, note);
 }
 
 void NexusEditor::GearStage::refreshTempo()
@@ -2844,7 +2852,10 @@ void NexusEditor::timerCallback()
     mAmpStage->refreshCaptureSteps();
   }
   else
+  {
     mChannels.setVisible(false);
+    mPedalStage->refreshCaptureSteps();
+  }
 
   // MIDI aprendido: confirma; tempo esgotado: cancela.
   auto& midi = mProcessor.midi();

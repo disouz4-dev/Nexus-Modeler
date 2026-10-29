@@ -62,6 +62,7 @@ countries: cn sg
 "Nenhum pacote de capturas carregado" = "未加载采样包"
 "%1 de %2" = "%1 / %2"
 "fixo: este cabeçote tem uma captura só, por enquanto" = "固定：此音箱头目前只有一个采样"
+"fixo: este pedal tem uma captura só, por enquanto" = "固定：此效果器目前只有一个采样"
 "%1: 1 captura, ganho %2 (%3)" = "%1：1 个采样，增益 %2（%3）"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1：%2 个采样，增益 %3 至 %4（%5）"
 "Botões em degraus: param só nas posições capturadas" = "步进旋钮：只停在采样位置"

@@ -115,8 +115,9 @@ void FilmKnob::mouseDown(const juce::MouseEvent& e)
   mDrag.mouseDown(e);
 }
 
-void FilmKnob::setCaptureSteps(int count)
+void FilmKnob::setCaptureSteps(int count, const juce::String& fixedNote)
 {
+  mFixedNote = fixedNote;
   if (count == mCaptureSteps)
     return;
   mCaptureSteps = count;
@@ -165,7 +166,7 @@ juce::String FilmKnob::bubbleText() const
   const float v = p.convertFrom0to1(mDrag.value01());
   const bool stepped = p.getNormalisableRange().interval >= 1.0f;
   if (fixed())
-    return TRANS(mLabel) + "  " + TRANS(juce::String::fromUTF8("fixo: este cabeçote tem uma captura só, por enquanto"));
+    return TRANS(mLabel) + "  " + TRANS(mFixedNote);
   if (mCaptureSteps >= 2)
     return TRANS(mLabel) + "  " + TRANS("%1 de %2").replace("%1", juce::String(mDrag.step() + 1)).replace("%2", juce::String(mCaptureSteps));
   if (valueText)

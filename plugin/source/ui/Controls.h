@@ -58,10 +58,10 @@ public:
   void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu() && !fixed()) mDrag.mouseUp(e); }
   void mouseDoubleClick(const juce::MouseEvent&) override { if (!fixed()) mDrag.mouseDoubleClick(); }
   void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { if (!fixed()) mDrag.mouseWheel(w); }
-  // Ganho do cabeçote: uma parada por captura do pacote. Com uma captura
-  // só, o botão fica morto (apagado e parado), mas o cabeçote toca normal.
-  // 0 = botão comum.
-  void setCaptureSteps(int count);
+  // Ganho do cabeçote e drive do pedal: uma parada por captura do pacote.
+  // Com uma captura só, o botão fica morto (apagado e parado), mas a peça
+  // toca normal; o balão mostra o aviso. 0 = botão comum.
+  void setCaptureSteps(int count, const juce::String& fixedNote);
   bool fixed() const { return mCaptureSteps == 1; }
   void mouseEnter(const juce::MouseEvent&) override { mHover = true; changed(); }
   // Clique com o botão direito: menu de MIDI (aprender / esquecer).
@@ -83,6 +83,7 @@ private:
   juce::String mLabel;
   bool mHover = false;
   int mCaptureSteps = 0;
+  juce::String mFixedNote;
 };
 
 // Controle deslizante de nível (entrada e saída) com o medidor de pico

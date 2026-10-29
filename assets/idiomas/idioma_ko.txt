@@ -62,6 +62,7 @@ countries: kr
 "Nenhum pacote de capturas carregado" = "불러온 캡처 팩이 없습니다"
 "%1 de %2" = "%2 중 %1"
 "fixo: este cabeçote tem uma captura só, por enquanto" = "고정: 이 앰프는 아직 캡처가 하나뿐입니다"
+"fixo: este pedal tem uma captura só, por enquanto" = "고정: 이 페달은 아직 캡처가 하나뿐입니다"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 캡처 1개, 게인 %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: 캡처 %2개, 게인 %3~%4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "단계식 노브: 캡처된 위치에서만 멈춤"

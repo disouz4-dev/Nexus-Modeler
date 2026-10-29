@@ -390,8 +390,9 @@ nexus::AmpVoice::Controls NexusProcessor::ampControls(int rig, int channel) cons
 
 namespace
 {
-// O ganho do cabeçote vai direto para a captura da sua parada, sem misturar
-// duas vizinhas: o botão é uma chave com uma posição por captura.
+// O ganho do cabeçote e o drive do pedal vão direto para a captura da sua
+// parada, sem misturar duas vizinhas: o botão é uma chave com uma posição por
+// captura.
 void snapGainToCapture(nexus::AmpVoice::Controls& c, const nexus::Pack& pack)
 {
   if (pack.captures.empty())
@@ -848,7 +849,11 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     }
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
-      e->voice.setControls(pedalControls(i));
+    {
+      auto controls = pedalControls(i);
+      snapGainToCapture(controls, *e->pack);
+      e->voice.setControls(controls);
+    }
   for (int r = 0; r < kRigs; ++r)
     for (int c = 0; c < kChannels; ++c)
       if (auto* e = mSlots[static_cast<size_t>(ampSlot(r, c))].active)
@@ -1077,10 +1082,10 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
       auto start = controls;
+      snapGainToCapture(start, *engine->pack);
       if (slotIndex >= kPedals)
       {
         // Cabeçote: o equalizador é o universal (depois da caixa).
-        snapGainToCapture(start, *engine->pack);
         start.tone = engine->pack->captureTone;
         start.presence = engine->pack->capturePresence;
       }

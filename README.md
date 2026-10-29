@@ -92,11 +92,10 @@ guitarra passa pela cadeia e se mistura com a música.*
 - **Entrada no mudo:** botão "Mudo" ao lado da entrada, e o controle todo para
   baixo também corta de vez (para o microfone do notebook não apitar com os
   alto-falantes). O "Testar o som" continua tocando com a entrada no mudo.
-- **Ganho do cabeçote com uma posição por captura.** Com 7 capturas, o botão
-  tem 7 posições espalhadas pelo giro; com 3, tem 3. Com uma captura só, o
-  botão fica parado, com um cadeado, e o cabeçote toca normal com ela. O
-  drive dos pedais continua contínuo: entre duas posições, mistura as
-  vizinhas.
+- **Ganho do cabeçote e drive do pedal com uma posição por captura.** Com 7
+  capturas, o botão tem 7 posições espalhadas pelo giro; com 3, tem 3. Com
+  uma captura só, o botão fica parado, com um cadeado, e a peça toca normal
+  com ela.
 - **Equalizador universal** (grave, médio, agudo e presença) depois da
   captura e da caixa, o mesmo em todo cabeçote: grave em 220 Hz, médio em
   750 Hz, agudo a partir de 2,8 kHz e presença em 5,5 kHz, até ±12 dB (a

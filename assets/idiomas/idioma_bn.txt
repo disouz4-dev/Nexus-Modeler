@@ -62,6 +62,7 @@ countries: bd in
 "Nenhum pacote de capturas carregado" = "কোনো ক্যাপচার প্যাক লোড হয়নি"
 "%1 de %2" = "%2-এর মধ্যে %1"
 "fixo: este cabeçote tem uma captura só, por enquanto" = "স্থির: এই হেডে এখন একটিই ক্যাপচার আছে"
+"fixo: este pedal tem uma captura só, por enquanto" = "স্থির: এই প্যাডেলে এখন একটিই ক্যাপচার আছে"
 "%1: 1 captura, ganho %2 (%3)" = "%1: ১টি ক্যাপচার, গেইন %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2টি ক্যাপচার, গেইন %3 থেকে %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "ধাপে ধাপে নব: শুধু ক্যাপচার করা জায়গায় থামে"

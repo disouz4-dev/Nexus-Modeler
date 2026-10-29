@@ -62,6 +62,7 @@ countries: it ch
 "Nenhum pacote de capturas carregado" = "Nessun pacchetto di catture caricato"
 "%1 de %2" = "%1 di %2"
 "fixo: este cabeçote tem uma captura só, por enquanto" = "fisso: questa testata ha una sola cattura per ora"
+"fixo: este pedal tem uma captura só, por enquanto" = "fisso: questo pedale ha una sola cattura per ora"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 cattura, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 catture, gain da %3 a %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Manopole a scatti: solo nelle posizioni catturate"
