@@ -88,6 +88,8 @@
   Blender): todos os pedais da cadeia, na ordem do som, ligados por cabos.
   O LED aceso mostra quem está ligado; pisar no pisante de qualquer pedal liga
   e desliga, e clicar no pedal escolhe ele para mexer nos botões.
+- Até quatro pedais, uma fileira; com mais, duas fileiras (a de trás com o
+  começo do som, a da frente com o resto).
 - Cabeçote ou caixa: a pedaleira some e aparece só a peça.
 - A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
 

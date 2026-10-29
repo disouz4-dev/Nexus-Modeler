@@ -686,31 +686,47 @@ std::vector<NexusEditor::BoardView::Slot> NexusEditor::BoardView::layoutSlots() 
                        .withTrimmedTop(mBoardImage.getHeight() * 0.13f)
                        .withTrimmedBottom(mBoardImage.getHeight() * 0.04f);
   const float gap = inner.getWidth() * 0.02f;
-  std::vector<juce::Rectangle<float>> bodies;
-  float aspect = 0.0f; // soma das larguras com altura 1
-  for (int p : pedals)
-  {
+  // Até quatro pedais, uma fileira; mais que isso, duas (como numa pedaleira
+  // de verdade): a de trás com o começo do som, a da frente com o resto.
+  const size_t rows = pedals.size() > 4 ? 2 : 1;
+  const size_t perRow = (pedals.size() + rows - 1) / rows;
+  const float rowGap = rows > 1 ? mBoardImage.getHeight() * 0.10f : 0.0f; // espaço dos cabos da fileira da frente
+  const float rowH = (inner.getHeight() - rowGap) / static_cast<float>(rows);
+  auto bodyOf = [this](int p) {
     const auto* art = mEditor.pedalArt(p);
-    auto body = art != nullptr && !art->body.isEmpty() ? art->body : juce::Rectangle<float>(0.0f, 0.0f, 360.0f, 600.0f);
-    bodies.push_back(body);
-    aspect += body.getWidth() / body.getHeight();
-  }
-  const float gaps = gap * static_cast<float>(pedals.size() - 1);
-  // Todos com a mesma altura; se não couberem, encolhem juntos.
-  const float h = std::min(inner.getHeight(), (inner.getWidth() - gaps) / aspect);
-  float x = inner.getCentreX() - (aspect * h + gaps) * 0.5f;
-  for (size_t i = 0; i < pedals.size(); ++i)
+    return art != nullptr && !art->body.isEmpty() ? art->body : juce::Rectangle<float>(0.0f, 0.0f, 360.0f, 600.0f);
+  };
+  // Mesma altura para todos: a da fileira mais larga, se não couber inteira.
+  float h = rowH;
+  for (size_t r = 0; r < rows; ++r)
   {
-    const auto* art = mEditor.pedalArt(pedals[i]);
-    const auto& b = bodies[i];
-    const float k = h / b.getHeight();
-    const juce::Rectangle<float> body(x, inner.getCentreY() - h * 0.5f, b.getWidth() * k, h);
-    const auto image = art != nullptr ? juce::Rectangle<float>(body.getX() - b.getX() * k, body.getY() - b.getY() * k,
-                                                               static_cast<float>(art->front.getWidth()) * k,
-                                                               static_cast<float>(art->front.getHeight()) * k)
-                                      : body;
-    out.push_back({pedals[i], image, body, k});
-    x += body.getWidth() + gap;
+    float aspect = 0.0f; // soma das larguras com altura 1
+    size_t n = 0;
+    for (size_t i = r * perRow; i < std::min(pedals.size(), (r + 1) * perRow); ++i, ++n)
+      aspect += bodyOf(pedals[i]).getWidth() / bodyOf(pedals[i]).getHeight();
+    h = std::min(h, (inner.getWidth() - gap * static_cast<float>(n - 1)) / aspect);
+  }
+  for (size_t r = 0; r < rows; ++r)
+  {
+    const size_t first = r * perRow, last = std::min(pedals.size(), (r + 1) * perRow);
+    float width = gap * static_cast<float>(last - first - 1);
+    for (size_t i = first; i < last; ++i)
+      width += bodyOf(pedals[i]).getWidth() / bodyOf(pedals[i]).getHeight() * h;
+    const float cy = inner.getY() + rowH * 0.5f + static_cast<float>(r) * (rowH + rowGap);
+    float x = inner.getCentreX() - width * 0.5f;
+    for (size_t i = first; i < last; ++i)
+    {
+      const auto* art = mEditor.pedalArt(pedals[i]);
+      const auto b = bodyOf(pedals[i]);
+      const float k = h / b.getHeight();
+      const juce::Rectangle<float> body(x, cy - h * 0.5f, b.getWidth() * k, h);
+      const auto image = art != nullptr ? juce::Rectangle<float>(body.getX() - b.getX() * k, body.getY() - b.getY() * k,
+                                                                 static_cast<float>(art->front.getWidth()) * k,
+                                                                 static_cast<float>(art->front.getHeight()) * k)
+                                        : body;
+      out.push_back({pedals[i], image, body, k});
+      x += body.getWidth() + gap;
+    }
   }
   return out;
 }
@@ -802,11 +818,13 @@ void NexusEditor::BoardView::paint(juce::Graphics& g)
   const float rise = mBoardImage.getHeight() * 0.09f;
   const auto in = [](const Slot& s) { return juce::Point<float>(s.body.getX() + s.body.getWidth() * 0.26f, s.body.getY() + 2.0f); };
   const auto out = [](const Slot& s) { return juce::Point<float>(s.body.getRight() - s.body.getWidth() * 0.26f, s.body.getY() + 2.0f); };
-  const float edgeY = mSlots.front().body.getY() - rise * 0.7f;
-  drawPatchCable(g, {mBoardImage.getX() + mBoardImage.getWidth() * 0.012f, edgeY}, in(mSlots.front()), rise * 0.4f, thick);
+  drawPatchCable(g, {mBoardImage.getX() + mBoardImage.getWidth() * 0.012f, mSlots.front().body.getY() - rise * 0.7f}, in(mSlots.front()),
+                 rise * 0.4f, thick);
+  // Da fileira de trás para a da frente, o cabo passa por baixo dos pedais.
   for (size_t i = 0; i + 1 < mSlots.size(); ++i)
     drawPatchCable(g, out(mSlots[i]), in(mSlots[i + 1]), rise, thick);
-  drawPatchCable(g, out(mSlots.back()), {mBoardImage.getRight() - mBoardImage.getWidth() * 0.012f, edgeY}, rise * 0.4f, thick);
+  drawPatchCable(g, out(mSlots.back()), {mBoardImage.getRight() - mBoardImage.getWidth() * 0.012f, mSlots.back().body.getY() - rise * 0.7f},
+                 rise * 0.4f, thick);
 
   auto& params = mEditor.mProcessor.params;
   for (const auto& s : mSlots)
