@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:24:53Z",
+ "gerado": "2026-10-29T15:24:58Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2228,8 +2228,8 @@
   },
   "feral120": {
    "nome": "Feral 120",
-   "hash": "949765698c132692",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "20d56d8c3570fefc",
+   "data": "2026-10-29T15:24:58Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "feral120_botao_agudo.png",
@@ -2244,24 +2244,24 @@
     "feral120_mapa.json"
    ],
    "sha256": {
-    "feral120_botao_agudo.png": "ce8018a2bacf1cd330e89639ca76b597d1ea7a3e53d5168d40ac29e19292ea8d",
-    "feral120_botao_ganho.png": "99adbfe47bbc45c6c15181424bbbdbe7226a1292d77ae086d6b3a8c87c56d07e",
-    "feral120_botao_grave.png": "ace71aef6face057d311b5a6a972d7a4d92a79003c780e066b51a63aafe82a78",
-    "feral120_botao_medio.png": "b2faae4ab7619809bbfcdfdde2eafce66ec2afcbfc3893c475c11447ac7f6bf6",
-    "feral120_botao_presenca.png": "e2209a6192d57ca63aa2ccad4a66069074a2cf8e7838917ce34b11d88b71a440",
-    "feral120_botao_volume.png": "95e29f318b152612042839113cbfa7762672fe6aba4ea72d6f0fbcca437381a5",
-    "feral120_frente.jpg": "76f06744fe03b55f633501be339abeefddce20b11a667b2a1a7eff72fa203be5",
-    "feral120_frente_alfa.png": "0434915521a37474f4e5171fedebb06ff0158367f4febb2ae168945adf1aa1f0",
-    "feral120_manifesto.json": "cd41cee858eb6f9ccbd73305291d84f0f3a3afb65b24688ffef1810d3b999b4d",
-    "feral120_mapa.json": "5e3370f94d3b7f53c006b281fa754b527f8dcfe5a747f50b92222999b40bb63a"
+    "feral120_botao_agudo.png": "3283038a3733fbebdef84be000b94dbd27f3ab807b307f4aca5295ecdf391962",
+    "feral120_botao_ganho.png": "34d2fabe4594891cda317d804741b9183dce6f134e76f1150fccf4771e2fbe93",
+    "feral120_botao_grave.png": "8226327fb4267d791db8a1e3ce214913141e9bdb0cd02074a841d1c7451b24a8",
+    "feral120_botao_medio.png": "28e74d4da81d344e016e69a365d4635d64d1b1dfb60be10b03c0a2f56b8b2d15",
+    "feral120_botao_presenca.png": "cf3f6222cc1dae2f553ab6bfccfd6c26fab66dee78ca2dfdbabcc25083412e2e",
+    "feral120_botao_volume.png": "4f614def7e0238ab82b1b4319732ef7c6ad03bc999e0ccf3582b89036a85ef1a",
+    "feral120_frente.jpg": "358dce3a4de20c4e4a5d3968098d4f5de2919a944d825e94f3b0df2ef55e39cd",
+    "feral120_frente_alfa.png": "6d5e78ea610920db44f8ddd17a9194dac23cd78493ce7345bb69b8eb9cb4fc03",
+    "feral120_manifesto.json": "347ba77bd0581c6ae08af577f84867dcc5c861641b2ed0c977c34fdffece14a6",
+    "feral120_mapa.json": "78c9d8db1460a4e50a98dca9d17f6e684086c47f2fcd7f6ae5f94a81439b77cb"
    },
-   "tamanho": 1795915,
+   "tamanho": 792038,
    "tipo": "cabecote",
    "inspiracao": "ENGL Savage",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
