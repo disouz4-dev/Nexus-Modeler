@@ -201,6 +201,18 @@ void GearCatalog::loadEmbedded()
   std::sort(loose.begin(), loose.end(), [](const GearEntry& a, const GearEntry& b) { return a.id < b.id; });
   for (auto& e : loose)
     add(std::move(e));
+
+  // Peças que trocaram de código (os 34 pedais renomeados na 0.2.0): o preset
+  // salvo antes da troca ainda acha a peça.
+  int size = 0;
+  if (const char* data = BinaryData::getNamedResource("codigos_antigos_json", size))
+  {
+    const auto renamed = juce::JSON::parse(juce::String::fromUTF8(data, size));
+    for (const auto kind : {Kind::pedal, Kind::amp, Kind::cab})
+      if (const auto* pairs = renamed[juce::Identifier(kindText(kind))].getDynamicObject())
+        for (const auto& p : pairs->getProperties())
+          mRenamed[static_cast<size_t>(kind)].set(p.name.toString(), p.value.toString());
+  }
 }
 
 void GearCatalog::add(GearEntry e)
@@ -411,8 +423,10 @@ std::optional<GearEntry> GearCatalog::entry(Kind kind, int look) const
 int GearCatalog::find(Kind kind, const juce::String& id) const
 {
   std::lock_guard<std::mutex> l(mLock);
+  const auto& renamed = mRenamed[static_cast<size_t>(kind)];
+  const auto current = renamed.containsKey(id) ? renamed[id] : id;
   for (const auto& e : mEntries[static_cast<size_t>(kind)])
-    if (e.id == id)
+    if (e.id == current)
       return e.look;
   return -1;
 }

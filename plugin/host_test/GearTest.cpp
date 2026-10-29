@@ -161,6 +161,25 @@ static void testState()
   check(x3->getStringAttribute("p1_visual_id") == "fruta_que_nao_existe", U("salvar de novo não perde o id da peça que falta"));
   d.choosePedal(0, 3);
   check(d.missingGear(Kind::pedal, 0).isEmpty() && d.gearId(Kind::pedal, 0) == "gold_centaur", U("escolher outra peça tira a marca"));
+
+  // Preset salvo antes da troca de código dos 34 pedais (Lemon Drive virou
+  // Greengage Drive): abre com a peça, sem o cartão, e salva o código novo.
+  const auto& catalog = GearCatalog::instance();
+  NexusProcessor before;
+  setParam(before, NexusProcessor::pedalParam(0, "visual"), static_cast<float>(catalog.find(Kind::pedal, "greengage_drive")));
+  setParam(before, NexusProcessor::pedalParam(1, "visual"), static_cast<float>(catalog.find(Kind::pedal, "aquamarine_sky")));
+  const auto oldState = stateOf(before);
+  auto oldXml = juce::AudioProcessor::getXmlFromBinary(oldState.getData(), static_cast<int>(oldState.getSize()));
+  oldXml->setAttribute("p1_visual_id", "lemon_drive");
+  oldXml->setAttribute("p2_visual_id", "juniper_sky");
+  juce::MemoryBlock renamed;
+  juce::AudioProcessor::copyXmlToBinary(*oldXml, renamed);
+  NexusProcessor e;
+  e.setStateInformation(renamed.getData(), static_cast<int>(renamed.getSize()));
+  check(e.missingGear(Kind::pedal, 0).isEmpty() && e.missingGear(Kind::pedal, 1).isEmpty()
+            && e.pedalLook(0) == catalog.find(Kind::pedal, "greengage_drive") && e.pedalLook(1) == catalog.find(Kind::pedal, "aquamarine_sky"),
+        U("preset com código antigo (lemon_drive, juniper_sky) abre com o pedal renomeado"));
+  check(e.gearId(Kind::pedal, 0) == "greengage_drive" && e.gearId(Kind::pedal, 1) == "aquamarine_sky", U("e salva de novo com o código novo"));
 }
 
 // Pacote montado por tools/gear_studio/montar_equipamento.py --pacote, com
