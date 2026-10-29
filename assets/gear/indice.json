@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:02:34Z",
+ "gerado": "2026-10-29T16:12:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3060,8 +3060,8 @@
   },
   "honeydew_drive": {
    "nome": "Honeydew Drive",
-   "hash": "a1d96aef25cc34a8",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "8e41fead58997420",
+   "data": "2026-10-29T16:12:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "honeydew_drive_botao_ganho.png",
@@ -3073,21 +3073,21 @@
     "honeydew_drive_mapa.json"
    ],
    "sha256": {
-    "honeydew_drive_botao_ganho.png": "67d1270145631df8a2465c6bb4f5136ffea7b05d6aeef8f98a982375b2b09afe",
-    "honeydew_drive_botao_nivel.png": "471f972c659a80b2be14e3122dbc5dab6afb88de98f075934d1f44c65e142e85",
-    "honeydew_drive_botao_tom.png": "b9f60d6e806b9d5bbadc3fd483c22ffd085a5de246c94d1500f984877e52ba57",
-    "honeydew_drive_frente.jpg": "cd6fac1bd7d182339fba2af3d2871e9c22dfa223f31ffe3593c2ed59ad76ee68",
-    "honeydew_drive_frente_alfa.png": "d2f92bedeeed2a1f4d1a7f294391122853f1009d2fc03a819d75717a046baa3e",
-    "honeydew_drive_manifesto.json": "5debddc5d27e228e0bacdc0c8d6c76694946b25a3e094798a62d379dccd41a39",
-    "honeydew_drive_mapa.json": "75c536b57abf82c14ddada4ab005ecd928fe436d3b5aeacc284f94a3132c9ea7"
+    "honeydew_drive_botao_ganho.png": "4c631487010fcb8a53bcc9d8b0ba0a1a7adb8cb6414adb7aff5bd818a800e8f2",
+    "honeydew_drive_botao_nivel.png": "65fa610d0bb456abfd206b754e589f1de4fd6ba5c97f305eb0f76f0cf5814a38",
+    "honeydew_drive_botao_tom.png": "533a4921f975f831659053225a8ad4c68ce5a707841605e58a1d93d8bec20cdb",
+    "honeydew_drive_frente.jpg": "16344d11982201011394f1ac01c74dfcc3429c22f076bcf7318a6835e4b6d3be",
+    "honeydew_drive_frente_alfa.png": "1ede67286debdd9a61ea7be3166a676b712870265502b24d621565b900297d5a",
+    "honeydew_drive_manifesto.json": "1cd28e7736333e03e96fbd252c274309321751aa4b3c6c3b0a27dc18684358d9",
+    "honeydew_drive_mapa.json": "25e3dbf4f9bdcf2e6c86054ce37e8ce37c4506d2867ecaab9bd8ef8a16e18032"
    },
-   "tamanho": 185092,
+   "tamanho": 321409,
    "tipo": "pedal",
    "inspiracao": "Paul Cochrane Timmy",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },

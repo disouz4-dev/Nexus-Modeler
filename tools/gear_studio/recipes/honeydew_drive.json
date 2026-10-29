@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Honeydew Drive",
   "familia": "honeydew_drive",
-  "inspiracao": "branco com letras pretas, caixa bem pequena (estilo Paul Cochrane Timmy)",
+  "inspiracao": "Caixa estreita verde-água claro (o lote Surf Green), 60 x 112 x 32 mm, letras azul-marinho; botões pretos VOLUME e GANHO no alto, GRAVE (fixo) e AGUDO embaixo, minichave de clipagem no meio, LED acima do pisante. Tema: melão honeydew verde-claro, listras tom sobre tom. Original: Paul Cochrane Timmy.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.06,
+    "comprimento": 0.112,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.5156,
-      0.7176,
-      0.2793
+      0.2674,
+      0.6187,
+      0.4423
     ],
     "metalico": 0.0,
-    "aspereza": 0.26
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.0066,
+    0.0189,
+    0.1011
   ],
   "modelo": "HONEYDEW DRIVE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
+    "diametro_m": 0.015,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,69 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.52,
+        0.74
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.0,
-        0.55
+        0.52,
+        0.74
+      ]
+    },
+    {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        -0.52,
+        0.36
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.8
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.58,
-        0.55
+        0.52,
+        0.36
       ],
-      "escala": 1.1
+      "escala": 0.8
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/honeydew_drive.svg"
+  },
+  "medidas_fonte": "aprox. 60 x 112 mm, caixa 1590B (sem página oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.33,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/honeydew_drive.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0066,
+    0.0189,
+    0.1011
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.0,
+        0.56
+      ]
+    }
+  ]
 }
