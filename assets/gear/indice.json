@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:27:23Z",
+ "gerado": "2026-10-29T15:31:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5655,8 +5655,8 @@
   },
   "special100": {
    "nome": "Special 100",
-   "hash": "0c35b40ae1af2e2c",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "01808541b668529f",
+   "data": "2026-10-29T15:31:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "special100_botao_agudo.png",
@@ -5671,24 +5671,24 @@
     "special100_mapa.json"
    ],
    "sha256": {
-    "special100_botao_agudo.png": "e112a6005d8814857cb9f2bc495a2f3d56628b4fa0b5e891b3b8d3bc4988d51a",
-    "special100_botao_ganho.png": "60a00a92f6fd257f857bd2a4c949bd9de5db584f26da8a9b04347d07153d53f6",
-    "special100_botao_grave.png": "82ee04b5f6054b12103e122a4078d6e36fc099403a94d98fb541575a3724ff4b",
-    "special100_botao_medio.png": "b0ddd909bc3b00da47869af1b82acb42b100361cbe5eff5beb820124738eeb5a",
-    "special100_botao_presenca.png": "bf2e2f115b8d1992e7241493f9bf0fa9cccff64cf07767442d08dd8495233904",
-    "special100_botao_volume.png": "ff91d7b75dfab73757416da90c01cb191966c6fa3b122564f408e6eb133581d8",
-    "special100_frente.jpg": "1ec2e35da85b062eb0edd9da461edd80c941cb821ba07602974d0e0e7de2209c",
-    "special100_frente_alfa.png": "9aaa859b838b628e4b0584b12631223802ab20676962a1fd6e2946f03a6fbec7",
-    "special100_manifesto.json": "cf7eae30633846968c1c1fac821e6f9c19b3a003441ad7d3d69616f8eb5626dd",
-    "special100_mapa.json": "bcacc582c690c3fdc6137262df31b8bf66ff2f52e71b55edb00796752c7a7a36"
+    "special100_botao_agudo.png": "c76cdd85b3fe2cd81491a7f7df4a71678dabf156333de88bd38ef0dc119275c3",
+    "special100_botao_ganho.png": "21788191f75621df00714b73855362ec14dd6608d729e17ea8940afe9fef0e4d",
+    "special100_botao_grave.png": "3f53351d7bbc8183beba9b03603673198a6336625ec2f46f40f9aa94e6535add",
+    "special100_botao_medio.png": "659bd9743d51168978b82a2c831c3131e2f1001b224cd9bb4f38e4b027c0c4fc",
+    "special100_botao_presenca.png": "962e1393d14b09d80e64071d4a5868841ff41d19e63a168abe54a77136c6393a",
+    "special100_botao_volume.png": "da7838ca2b92923973a662b45be27f8f0ce97d5a506f8c5ebf5c2d431ee961dc",
+    "special100_frente.jpg": "f6248ea45cb1549cd8a1a1c8c32fa6451df71f1221fc5ef49d3b6caaefa72873",
+    "special100_frente_alfa.png": "87ad483407c464d1cfded8d964e9852f1a40d50771221d4b7d764e9f5dc581af",
+    "special100_manifesto.json": "d52c4b6264886359005f4a6f9932e80d1f6b1fdf622611771f104261bf2a420e",
+    "special100_mapa.json": "735e1664affbc63de9c97928dc2e3a21b2ad6badab00d6326b5b3bd583513e8c"
    },
-   "tamanho": 1606123,
+   "tamanho": 1030483,
    "tipo": "cabecote",
    "inspiracao": "Dumble Overdrive Special",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
