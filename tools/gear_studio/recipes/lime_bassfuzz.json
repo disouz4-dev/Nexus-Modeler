@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Lime Bass Fuzz",
   "familia": "lime_bassfuzz",
-  "inspiracao": "prateado com letras verdes, caixa pequena de metal (estilo Electro-Harmonix Bass Big Muff)",
+  "inspiracao": "Caixa de alumínio fundido (102 x 121 x 45 mm) com o tampo verde-limão vivo e as bordas prateadas, letras pretas e o nome em branco; botões pretos VOLUME, TOM e SUSTAIN em fila, minichave BASS BOOST / NORM / DRY embaixo deles, LED vermelho e pisante. Tema: fatia de limão verde, raios tom sobre tom. Original: Electro-Harmonix Bass Big Muff Pi.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.102,
+    "comprimento": 0.121,
+    "altura": 0.045
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.6462,
-      0.0707,
-      0.0993
+      0.2428,
+      0.6121,
+      0.009
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "LIME BASS FUZZ",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.019,
+    "altura_m": 0.015,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,70 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.6,
+        0.68
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.68
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "SUSTAIN",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.6,
+        0.68
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/lime_bassfuzz.svg"
+  },
+  "medidas_fonte": "121 x 102 x 57 mm (EHX: 4,75 x 4 x 2,25 pol.)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "pintura_lados": {
+    "cor": [
+      0.586,
+      0.5989,
+      0.6121
+    ],
+    "cromo": true
+  },
+  "tampo_margem_m": 0.005,
+  "chanfro_m": 0.005,
+  "rotulo_m": 0.0042,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/lime_bassfuzz.svg"
-  }
+  "led": [
+    0.62,
+    -0.38
+  ],
+  "pisante_y": -0.62,
+  "logo_y": -0.12,
+  "logo_m": 0.013,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "transformacao": "Standard",
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        -0.5,
+        0.3
+      ],
+      "rotulo": "GRAVE",
+      "rotulo_pos": "baixo"
+    }
+  ]
 }
