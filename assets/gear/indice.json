@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:17:33Z",
+ "gerado": "2026-10-29T15:17:40Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5727,8 +5727,8 @@
   },
   "star_412": {
    "nome": "Star 4x12",
-   "hash": "afa9e1d7caf9536e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "8be51e81cc03bf84",
+   "data": "2026-10-29T15:17:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "star_412_frente.jpg",
@@ -5737,18 +5737,18 @@
     "star_412_mapa.json"
    ],
    "sha256": {
-    "star_412_frente.jpg": "907000b95bedc4951579777784d552c994c375528631aa033caa5c3a4a5eb7ba",
-    "star_412_frente_alfa.png": "708371eb632ee62e49c62efde90a65b571a0bf929256896c76d61aa2a418e3a3",
-    "star_412_manifesto.json": "517d7a3dccb5c06f2284f6bef628a636b5c0575942f941db8dd02439e3a0ee4b",
-    "star_412_mapa.json": "05bd47f8a913bacddece73ec69ae64b1d109d8ec6da18b1a78da74e858bef070"
+    "star_412_frente.jpg": "0a61bf664c71e00c2c303a0bced44335a47f9be6d8b28f7c6ececcd35a6c5c11",
+    "star_412_frente_alfa.png": "9d16b46ee2665b77c2e89485a52b9c50efd79403f01a1baa1e2ff937491c991a",
+    "star_412_manifesto.json": "2988e78e0ebeaeb94c24e1325c0a6dc16bb4551e9aa23e35e00ea8ca212ded10",
+    "star_412_mapa.json": "c032c69f5851a4705b054581018c16e2c19d3762c3f9949090ae2a7d85420e8f"
    },
-   "tamanho": 441617,
+   "tamanho": 940818,
    "tipo": "caixa",
    "inspiracao": "Blackstar 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
