@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T21:17:01Z",
+ "gerado": "2026-10-29T21:17:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3474,8 +3474,8 @@
   },
   "labradorite_omega": {
    "nome": "Labradorite Omega",
-   "hash": "800c12868924965d",
-   "data": "2026-10-29T17:12:42Z",
+   "hash": "6d87328054898ab6",
+   "data": "2026-10-29T21:17:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "labradorite_omega_botao_ganho.png",
@@ -3487,21 +3487,21 @@
     "labradorite_omega_mapa.json"
    ],
    "sha256": {
-    "labradorite_omega_botao_ganho.png": "e3c3bd7d80e5912e2bf24541009cf0ef258358dc0b4afad7ebcb31db5966ed69",
-    "labradorite_omega_botao_nivel.png": "4bb92dbbfd6dd1626631053e841290bb235b567c619d57e22546f5b9fe4316f0",
-    "labradorite_omega_botao_tom.png": "e069645c61b39ad0bf5d0a0a3690725feef6e6c2db8893ef11d267e11871b05a",
-    "labradorite_omega_frente.jpg": "080dd5a98cd9f33e8dc6f9111bbbb73575fd87d1e807a76ddb2074d0921e6887",
-    "labradorite_omega_frente_alfa.png": "1afb0921e702dd9fcedb2bef31f5c611d2656a2dae68b23e3145d4864da7aa07",
-    "labradorite_omega_manifesto.json": "1c3550a58a5198444d8e35e77559bc48bb2d341205f4e0ef15da3ec105249efd",
-    "labradorite_omega_mapa.json": "c23c89daeaebccedddae332e7b9a431ab5d9685bdd14b71b51c1968ca8afcb0d"
+    "labradorite_omega_botao_ganho.png": "85b735e3417f50e1b07bed5b700516bf81204c984457ff7514327804398ba487",
+    "labradorite_omega_botao_nivel.png": "bbde8fdaa04cfe71f60978cd87fa062d4a1028ebf0abb310b0ab08e93b8dac30",
+    "labradorite_omega_botao_tom.png": "cd835d266d74164a01d3bf450e8267c27e940da38ad2412de34ee32ae8792a16",
+    "labradorite_omega_frente.jpg": "96e226d733bab97285a74403ca6e4d2c63c989cb4c2594dbece5849071703d71",
+    "labradorite_omega_frente_alfa.png": "33298fb43e5dde9f843d022fe61a28c71982bbba8d6f09894316eb69bd103540",
+    "labradorite_omega_manifesto.json": "5fbf65c086575a34d983e32532b60d23713e88ff2f2d09f509816a795fcd4951",
+    "labradorite_omega_mapa.json": "3e5204da1a22c7b32bab189370ef8257e83e05eb2a76bc216299c704d8c12157"
    },
-   "tamanho": 186006,
+   "tamanho": 217725,
    "tipo": "pedal",
    "inspiracao": "Darkglass Alpha Omega",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
