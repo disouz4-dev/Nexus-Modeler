@@ -390,7 +390,7 @@ P["lychee_fuzz"].update(paint="#C8384E", ink=CREME)
 P["cherry_drop"].update(at=(37.0, 48.0, 15.0))
 # Caixas largas de vários modos e o Blueberry Chain: desenho em lugar marcado.
 P["juniper_sky"] = dict(emblem=A.juniper, pattern=("dots", 3.2, 0.9), at=(132.0, 90.0, 52.0))
-P["lime_echo"] = dict(emblem="lime_slice", pattern=("rings", 3.4, 0.45), at=(150.0, 100.0, 34.0))
+P["lime_echo"] = dict(emblem="lime_slice", pattern=("rings", 3.4, 0.45), at=(113.0, 81.0, 27.0))
 P["galaxy_mod"] = dict(ink="#F2EEFF", paint="#2A0E46", pattern=("stars", "#C8B2F0", 30), emblem=A.galaxy, halo=False,
                        at=(150.0, 100.0, 58.0), stars=("#FFFFFF", 6))
 P["blueberry_chain"] = dict(emblem=A.blueberry_chain_art, pattern=("dots", 3.2, 0.9), at=(62.5, 64.0, 40.0), led=[0.0, -0.12])
