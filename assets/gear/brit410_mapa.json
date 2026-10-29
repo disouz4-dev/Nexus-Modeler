@@ -2,60 +2,60 @@
   "nome": "Brit 410",
   "familia": "brit410",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1176,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "ganho",
-      "x": 826,
-      "y": 715,
-      "tamanho": 138,
-      "arquivo": "botao_ganho.png",
+      "id": "volume",
+      "x": 612,
+      "y": 751,
+      "tamanho": 82,
+      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1015,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1026,
+      "y": 752,
+      "tamanho": 79,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1205,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1129,
+      "y": 752,
+      "tamanho": 79,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1395,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1233,
+      "y": 752,
+      "tamanho": 79,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1584,
-      "y": 715,
-      "tamanho": 138,
-      "arquivo": "botao_presenca.png",
+      "id": "ganho",
+      "x": 1336,
+      "y": 752,
+      "tamanho": 79,
+      "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1774,
-      "y": 715,
-      "tamanho": 138,
-      "arquivo": "botao_volume.png",
+      "id": "presenca",
+      "x": 612,
+      "y": 892,
+      "tamanho": 82,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -67,120 +67,354 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "POWER",
+      "x": 235.2,
+      "y": 881.2,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "STANDBY",
+      "x": 235.2,
+      "y": 998.1,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "MASTER 2",
+      "x": 553.4,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "MASTER 1",
+      "x": 656.0,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "RVB OD1",
+      "x": 758.6,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "texto": "RVB CLEAN",
+      "x": 861.3,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272119",
+      "x": 963.9,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#272119",
+      "texto": "BASS",
+      "x": 1066.6,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "LIMPO",
-      "x": 415.3,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#272119",
+      "texto": "MIDDLE",
+      "x": 1169.2,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1271.8,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1374.5,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1477.1,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1579.8,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1682.4,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1785.1,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1887.7,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RESONANCE",
+      "x": 553.4,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 656.0,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB OD2",
+      "x": 758.6,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB CRUNCH",
+      "x": 861.3,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 963.9,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1066.6,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1169.2,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1271.8,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1374.5,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1477.1,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1579.8,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1682.4,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1785.1,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1887.7,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "FX LOOP",
+      "x": 1990.3,
+      "y": 801.1,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 2051.9,
+      "y": 801.1,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN",
+      "x": 1990.3,
+      "y": 903.4,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "CRUNCH",
-      "x": 488.9,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#272119",
+      "x": 2051.9,
+      "y": 903.4,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "OVERDRIVE",
-      "x": 562.5,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#272119",
+      "texto": "OD1",
+      "x": 1990.3,
+      "y": 999.9,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD2",
+      "x": 2051.9,
+      "y": 999.9,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 2154.6,
+      "y": 892.5,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     }
   ],
   "leds_canais": [
     {
-      "x": 414.7,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 2022.6,
+      "y": 822.9,
+      "raio": 8.8
     },
     {
-      "x": 488.3,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 2084.3,
+      "y": 822.9,
+      "raio": 8.8
     },
     {
-      "x": 561.9,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 2022.6,
+      "y": 916.7,
+      "raio": 8.8
     }
   ]
 }

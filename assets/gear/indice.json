@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:22:49Z",
+ "gerado": "2026-10-29T15:22:53Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1029,8 +1029,8 @@
   },
   "brit410": {
    "nome": "Brit 410",
-   "hash": "41dbdf70bd58ef4a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "9d9768c8a7e4e096",
+   "data": "2026-10-29T15:22:53Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit410_botao_agudo.png",
@@ -1045,24 +1045,24 @@
     "brit410_mapa.json"
    ],
    "sha256": {
-    "brit410_botao_agudo.png": "86d588123933b60e490840190604593a3aa4c6e1351c00ca6f43df11afd4bb3f",
-    "brit410_botao_ganho.png": "cbc1893f67777bf77ed42edcd42407b0551d2a7c521ccf4f8373a04234043be8",
-    "brit410_botao_grave.png": "0b65d5d3c93b1cc61b94df8d8f5c94ae9d3193ab58936a7cc7aa0aae56f3e161",
-    "brit410_botao_medio.png": "cccf829986f0b143d551c02a100f481682f0dfa1663b8ec68fd3aa6b329fd063",
-    "brit410_botao_presenca.png": "e12785bf2e60cd0bcc7edcab7327c5b6d2ceffa3747a166c8aea229020fb83a9",
-    "brit410_botao_volume.png": "de2f2cde3aa6dcd029e645a819a69456fbab3fc88b8592d62d7361af6f5d164b",
-    "brit410_frente.jpg": "53329be64bfd394bdbc016848f951172715d84e2f8be791db0029dd5aa3d4e97",
-    "brit410_frente_alfa.png": "45f58f8b42b8d5cbc5996f24675f4eae88009227958706d58ceedd39ad67f2ca",
-    "brit410_manifesto.json": "9d0d1488e2e9b2b8672df05ad8d27f7a8349eccae1b3a6e6310cb146f29ac2e4",
-    "brit410_mapa.json": "a5718fb553ab1e4d731e06cec502fe8daf709f751a89c17bfaf3f03e43aa2349"
+    "brit410_botao_agudo.png": "df1905659bcf1651de46335d73a5bc781884a9e49a8ea3731a526d6c9b2d2021",
+    "brit410_botao_ganho.png": "62a9fbf1c47433bc641da3ea6dd94adcdae7db097d96260db31800f39decbb3e",
+    "brit410_botao_grave.png": "9056a86b24a6587ae41fe2da2a668b856bc1c3144dcebfea58a46e84b63be0e7",
+    "brit410_botao_medio.png": "c2437ba0c8e8fb63e6dee288137f4b5d21bdfbf3b45333755832deb7fbd3c435",
+    "brit410_botao_presenca.png": "c6dbe9bbccc35d8b1c74f6b97d549a0a78719941037327d9c46d465d62c10a57",
+    "brit410_botao_volume.png": "ded76cbde7167d9bc9bce073e456c56510e09aed6b11a068160c5083a5cf375b",
+    "brit410_frente.jpg": "de1228dc2b97c81c1fafc3a61cf15621d25b501abbfaae23644e5f5cba62f06f",
+    "brit410_frente_alfa.png": "4f98ca8590c0a76860a6e3a2020ee7a18457ab313fe5dd1066afe72df704630d",
+    "brit410_manifesto.json": "0232df22079c71c63bb4cce149206a58258f5f0e6d97a1375423cad941aa2358",
+    "brit410_mapa.json": "bd106c3c365d2f272015f9d23016d3189a5ca7babd2661227f416f8669946a13"
    },
-   "tamanho": 2356858,
+   "tamanho": 1020900,
    "tipo": "cabecote",
    "inspiracao": "Marshall JVM410",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
