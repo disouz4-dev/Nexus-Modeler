@@ -4,14 +4,15 @@
 
 #include "../update/Updater.h"
 
-// Ícone de atualização na barra de cima: uma nuvem com seta para baixo, acesa,
-// quando há versão nova. Ao abrir o Nexus, se houver versão nova, pergunta
-// uma vez se a pessoa quer atualizar; o clique no ícone pergunta de novo. O
-// botão direito abre o menu (ver o que mudou, ignorar esta versão). Durante o
-// download, um anel em volta mostra o andamento. Some quando não há nada.
+// Ícone de atualização na barra de cima: uma nuvem com seta para baixo, sempre
+// visível. Apagado quando não há versão nova (o clique procura agora; pisca
+// enquanto procura); aceso, com um ponto, quando há (o clique baixa e instala).
+// Ao abrir o Nexus ele procura sozinho e só acende, sem perguntar. O botão
+// direito no ícone aceso abre o menu (ver o que mudou, lembrar depois, ignorar
+// esta versão). Durante o download, um anel em volta mostra o andamento.
 namespace nexus::ui
 {
-class UpdateBadge : public juce::Component, public juce::SettableTooltipClient, private juce::ChangeListener
+class UpdateBadge : public juce::Component, public juce::SettableTooltipClient, private juce::ChangeListener, private juce::Timer
 {
 public:
   UpdateBadge();
@@ -31,6 +32,9 @@ public:
 
 private:
   void changeListenerCallback(juce::ChangeBroadcaster*) override;
+  void timerCallback() override { mBlink = !mBlink; repaint(); }
+  bool lit() const;
+  bool mBlink = false;
   void refresh();
   void showMenu();
   void showResult();
