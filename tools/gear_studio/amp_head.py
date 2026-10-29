@@ -8,6 +8,7 @@ import bpy
 import knobs
 import brand_plate
 import studio as st
+import amp_fiel
 
 
 def _knob(rec, idx, ctl, center, panel_front, mats):
@@ -89,6 +90,10 @@ def _slider(idx, ctl, x, z_mid, travel, panel_front, ink_y, mats, font_num, text
 
 
 def build(rec, fonts):
+    # Receita fiel ao original (fileiras de botões, combo, rack, caixinha):
+    # vai para o gerador novo. As receitas antigas seguem por aqui.
+    if "fileiras" in rec:
+        return amp_fiel.build(rec, fonts)
     W = rec["medidas_m"]["largura"]
     H = rec["medidas_m"]["altura"]
     D = rec["medidas_m"]["profundidade"]
