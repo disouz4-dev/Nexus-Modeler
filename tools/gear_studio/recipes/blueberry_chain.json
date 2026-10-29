@@ -81,7 +81,7 @@
   ],
   "led": [
     0.0,
-    0.1
+    -0.12
   ],
   "quadro": {
     "largura_rel": 1.6,
@@ -89,5 +89,8 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa de pedal grande: 125 x 160 x 55 mm"
+  "medidas_fonte": "caixa de pedal grande: 125 x 160 x 55 mm",
+  "estampa": {
+    "svg": "estampas/blueberry_chain.svg"
+  }
 }

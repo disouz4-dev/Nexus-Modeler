@@ -766,6 +766,52 @@ def gold_laurel(ink, gold):
     return out
 
 
+def juniper():
+    """Raminho de zimbro: agulhas finas e as frutinhas azuladas com pó claro."""
+    out = [(stroke(curve((-44, 30), (-4, 8), (40, -30)), 2.4), "#5A4A2A")]
+    for i in range(14):
+        t = i / 13
+        x, y = -44 + 84 * t, 30 - 60 * t + 8 * math.sin(math.pi * t)
+        for side in (-1, 1):
+            out.append((leaf(x, y, 14, 2.6, -40 + side * 60 - t * 10, 0.0), "#3E6A4A" if side < 0 else "#4E7E5A"))
+    for x, y, r in ((-20, 18, 9), (-4, 24, 8.5), (6, 6, 9.5), (20, 14, 8), (16, -6, 8.5), (-12, 2, 8)):
+        b = circle(x, y, r)
+        out += [(b, "#3E4E86"), (shade(b, -2.4, -2), "#28325E"), (hl(b, -2.8, -3, 0.45), "#A8B6DE"),
+                (star(x + r * 0.2, y + r * 0.1, r * 0.22, 3, 0.4, 90), "#28325E")]
+    return out
+
+
+def blueberry_chain_art():
+    """Três mirtilos ligados por um cabinho, como uma corrente."""
+    out = [(stroke(curve((-44, 4), (-22, -22), (0, 4)), 2.2), "#4E6B1E"),
+           (stroke(curve((0, 4), (22, -22), (44, 4)), 2.2), "#4E6B1E"),
+           (leaf(-22, -14, 22, 10, -150, 0.1), "#3E8E2E"), (leaf(22, -14, 22, 10, -30, 0.1), "#4E9A3A")]
+    for x in (-34, 0, 34):
+        b = circle(x, 18, 15)
+        out += [(b, "#3A5BB0"), (shade(b, -4, -3.5), "#22337A"), (hl(b, -4.5, -5, 0.3), "#9AB4F0"),
+                (star(x + 2, 19, 4.6, 5, 0.4), "#22337A")]
+    return out
+
+
+def galaxy(core="#FFF2FA", inner="#F2A6D8", outer="#8A5AE0", dust="#4A2A8A"):
+    """Galáxia em espiral: dois braços de estrelas e o miolo brilhante."""
+    out = [(ellipse(0, 0, 46, 26, -20), dust)]
+    rnd = random.Random(21)
+    for arm in (0, math.pi):
+        for i in range(70):
+            t = i / 69
+            a = arm + t * 3.6
+            r = 6 + 40 * t
+            x, y = r * math.cos(a), r * math.sin(a) * 0.55
+            x, y = x * math.cos(-0.35) - y * math.sin(-0.35), x * math.sin(-0.35) + y * math.cos(-0.35)
+            size = (3.4 - 2.4 * t) * rnd.uniform(0.6, 1.1)
+            out.append((circle(x + rnd.uniform(-1.5, 1.5), y + rnd.uniform(-1.5, 1.5), size, 10), outer if t > 0.55 else inner))
+    out += [(ellipse(0, 0, 11, 7, -20), inner), (ellipse(0, 0, 6, 4, -20), core)]
+    for x, y, r in ((-30, -20, 2.6), (34, 18, 2.0), (26, -24, 1.6)):
+        out.append((star(x, y, r, 4, 0.2), "#FFFFFF"))
+    return out
+
+
 FRUTAS = {
     "lemon": lemon, "lime_slice": lime_slice, "orange_slice": orange_slice, "orange": orange_whole,
     "grapefruit": grapefruit_slice, "kiwi": kiwi_slice, "starfruit": starfruit_slice, "cherries": cherries,

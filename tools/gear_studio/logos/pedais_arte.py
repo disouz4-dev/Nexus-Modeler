@@ -75,17 +75,18 @@ def geometry(rec):
         m = cham + 1.0
         g["areas"] = [A.poly([(m, m), (W - m, m), (W - m, H - m), (m, H - m)]).buffer(-1.5).buffer(1.5)]
         ny = sy(rec.get("logo_y", 0.0))
-        size = rec.get("logo_m", 0.024) * 1000 if rec.get("logo_script") else 10.0
+        nx = sx(rec.get("logo_x", 0.0))
+        size = rec.get("logo_m", 0.024 if rec.get("logo_script") else 0.01) * 1000
         nw = len(rec["modelo"]) * size * (0.42 if rec.get("logo_script") else 0.5) + 4
-        name = box(W / 2 - nw / 2, ny - size * 0.62, W / 2 + nw / 2, ny + size * 0.62)
-        g["name"] = (W / 2, ny, size, rec["modelo"], rec.get("logo_script", False))
+        name = box(nx - nw / 2, ny - size * 0.62, nx + nw / 2, ny + size * 0.62)
+        g["name"] = (nx, ny, size, rec["modelo"], rec.get("logo_script", False))
         g["obst"].append(name)
         g["clear"].append(name)
         if rec.get("tipo_texto"):
             ty = ny + 11
             tw = len(rec["tipo_texto"]) * 4.5 * 0.62 * 1.6 + 3
-            tb = box(W / 2 - tw / 2, ty - 3.2, W / 2 + tw / 2, ty + 3.2)
-            g["tipo"] = (W / 2, ty, 4.5, rec["tipo_texto"])
+            tb = box(nx - tw / 2, ty - 3.2, nx + tw / 2, ty + 3.2)
+            g["tipo"] = (nx, ty, 4.5, rec["tipo_texto"])
             g["obst"].append(tb)
             g["clear"].append(tb)
         py = sy(rec.get("pisante_y", -0.55))
@@ -387,9 +388,16 @@ P["pear_gate"].update(paint="#D8E07E", ink="#1E2410")
 P["jabuticaba_buzzsaw"].update(paint="#1C0A18")
 P["lychee_fuzz"].update(paint="#C8384E", ink=CREME)
 P["cherry_drop"].update(at=(37.0, 48.0, 15.0))
+# Caixas largas de vários modos e o Blueberry Chain: desenho em lugar marcado.
+P["juniper_sky"] = dict(emblem=A.juniper, pattern=("dots", 3.2, 0.9), at=(132.0, 90.0, 52.0))
+P["lime_echo"] = dict(emblem="lime_slice", pattern=("rings", 3.4, 0.45), at=(150.0, 100.0, 34.0))
+P["galaxy_mod"] = dict(ink="#F2EEFF", paint="#2A0E46", pattern=("stars", "#C8B2F0", 30), emblem=A.galaxy, halo=False,
+                       at=(150.0, 100.0, 58.0), stars=("#FFFFFF", 6))
+P["blueberry_chain"] = dict(emblem=A.blueberry_chain_art, pattern=("dots", 3.2, 0.9), at=(62.5, 64.0, 40.0), led=[0.0, -0.12])
+ASTROS_EXTRA = ("galaxy_mod",)
 
 ASTROS = ("mars_phaser", "nebula_flanger", "moon_tremolo", "eclipse_vibe", "comet_wah", "pulsar_echo", "jupiter_octave")
-KEEP_LAYOUT = ("cherry_drop", "saturn_rotary", "neptune_chorus")
+KEEP_LAYOUT = ("cherry_drop", "saturn_rotary", "neptune_chorus", "juniper_sky", "lime_echo", "galaxy_mod", "blueberry_chain")
 
 
 def lin(hexcolor):
@@ -413,6 +421,8 @@ def prepare(p, rec):
     if spec.get("ink"):
         rec["texto_cor"] = rec["texto_cor2"] = lin(spec["ink"])
     rec.pop("estampa_ondas", None)
+    if spec.get("led"):
+        rec["led"] = spec["led"]
     if rec["formato"] == "compacto":
         rec["borracha_rel"] = 0.36
         # nome no tamanho cheio; o pedal.py encolhe o que não couber ao lado do LED
