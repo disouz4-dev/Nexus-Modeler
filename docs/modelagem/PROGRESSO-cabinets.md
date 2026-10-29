@@ -5,6 +5,12 @@ Ponto de retomada desta frente: ver a última etapa marcada e seguir da próxima
 Cada etapa termina com um commit só com os arquivos desta frente
 (`tools/gear_studio/cab.py`, receitas de tipo "caixa", este arquivo).
 
+## Regra do Diego (29/10, 05h40)
+
+Nada angulado: nenhuma cabinet inclinada (sem o campo `inclinada` nas receitas) e câmera
+reta de frente em todas (`quadro.elevacao` = 0). O recurso `inclinada` continua no cab.py,
+mas não deve ser usado. Commits do coordenador: e3f343b e 0e863d4.
+
 ## Escopo
 
 As 27 caixas com veredito "trocar" em `docs/modelagem/verificado_caixas.json`.
