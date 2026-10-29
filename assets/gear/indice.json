@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T21:23:26Z",
+ "gerado": "2026-10-29T21:25:34Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4823,8 +4823,8 @@
   },
   "pulsar_echo": {
    "nome": "Pulsar Echo",
-   "hash": "93799b3fc7faaec5",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "bc7a5af7ff429cc9",
+   "data": "2026-10-29T21:25:34Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pulsar_echo_botao_a.png",
@@ -4836,21 +4836,21 @@
     "pulsar_echo_mapa.json"
    ],
    "sha256": {
-    "pulsar_echo_botao_a.png": "15bf009dff1fbd409c80defa3705f8d3e1ef48ff78d3304b3bb91266b07a43de",
-    "pulsar_echo_botao_b.png": "543198b0392d57ff1d7871b65001dd3f933af736e13a9df00d75c13d47020bae",
-    "pulsar_echo_botao_c.png": "822dfe107ba6f7f417acbbaf3b0cd3193d77a71ba265d5ff0c47f2bc3d27373a",
-    "pulsar_echo_frente.jpg": "e63efbe4cb22047d598dec981f74f3cf6da00a4fccdad355243d0a3d45183b09",
-    "pulsar_echo_frente_alfa.png": "a1d4457d94708b18eb71474c5d8297ffb72efe30f7e8f752dcd639c570eaa077",
-    "pulsar_echo_manifesto.json": "c6112fd49447b4593a03d20b162c1dd5c6e698b3381e25cbb65d3c8ad6fb186a",
-    "pulsar_echo_mapa.json": "3cd0ac4a83b0dc999561fee277569fcd9ff3c24e1e451e20e1ac178eb162daf8"
+    "pulsar_echo_botao_a.png": "ec319edfbf5794c3332667cfd715ea7938dde1e86052dd91e04ea70837c478fa",
+    "pulsar_echo_botao_b.png": "c2eb8b9550f67709603b2098bdadaa950ea2ac5d0a62544bfda252ad5a11e0a6",
+    "pulsar_echo_botao_c.png": "577ab3c92fad87a71d3355c02f925fe7617af4d132fbc59e9a1737011d6dd472",
+    "pulsar_echo_frente.jpg": "586471543501f020eec89aa4f4205682bdec8f8c52958bbb592462f2eba5e3a8",
+    "pulsar_echo_frente_alfa.png": "67c1775319c8580d941bf8a6e30a26f7de2c42d4a079dbae4a461d49293b5108",
+    "pulsar_echo_manifesto.json": "c79696c8280f1ad12d6852dae873e1fcd955e56f6538ee885d5ecf16756a4ed3",
+    "pulsar_echo_mapa.json": "b37d26093b9429bfa677e3ddbdc1fca0d85970760cbaf87aa4bc70fc3dc7bcff"
    },
-   "tamanho": 215290,
+   "tamanho": 196726,
    "tipo": "pedal",
    "inspiracao": "Electro-Harmonix Memory Man",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_analogico",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
