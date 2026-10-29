@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:24:44Z",
+ "gerado": "2026-10-29T15:24:48Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3165,8 +3165,8 @@
   },
   "iron120": {
    "nome": "Iron 120",
-   "hash": "69060cdcfad58970",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "5b381c2559022806",
+   "data": "2026-10-29T15:24:48Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "iron120_botao_agudo.png",
@@ -3181,24 +3181,24 @@
     "iron120_mapa.json"
    ],
    "sha256": {
-    "iron120_botao_agudo.png": "214090e51b84e74976132d3de3001b104e23afb11e6019e7fca472cff3782d94",
-    "iron120_botao_ganho.png": "e80f9e83a2c69d65a8590bcf33a526b8417237258478f43fe8cee674d26e68e1",
-    "iron120_botao_grave.png": "b21edd1bcefd03d8ec4d83933fb3a4956c99d06a6f28f49e1437bbb883031a5b",
-    "iron120_botao_medio.png": "a22ee106f26c860e89df76e490ae423dc277716eacb32f92ed70249fca054e38",
-    "iron120_botao_presenca.png": "2c8b7074b6539f0df5aa17d4b32d27a984533eb1d4c5c73f0b68af2883b348a8",
-    "iron120_botao_volume.png": "a2011264d43aaabf2ca519dac8eb700fbdab7cefef18848591322aaa684a027b",
-    "iron120_frente.jpg": "4db08c8a76227632f42a067839fc4d94ad278d5caa2383643ebf5c6e1e4894ce",
-    "iron120_frente_alfa.png": "67b0c81fc102c28ddc4c0e173aeff8392445d9f4913ce5798b2b09c75b854cc1",
-    "iron120_manifesto.json": "c6ffccd74eea80700cc77d41dda0adc7e7ce28c54932c601474b517d621a8e01",
-    "iron120_mapa.json": "118c877ca039a70beeee2cb0817dccc40ee18654d666cc0d02f0119e0825e61c"
+    "iron120_botao_agudo.png": "bc8fdd1ffda429899a29244b43082777a7a1e7a79f96a4a02c7d85779ace7be9",
+    "iron120_botao_ganho.png": "d8839939c731d22731b875e6b61fcdb402850be579d9a823909df573c77b0553",
+    "iron120_botao_grave.png": "a47415d6d71a51fb107c27c338f7d0b455603777f7fe7b30df28048da7a48d8b",
+    "iron120_botao_medio.png": "14d15741288c2bcfc7945de8a93cfaa3c38c09c224666070bec11a337c52eac5",
+    "iron120_botao_presenca.png": "07ffcc5a0a4af94f1f8a78da21bd7deaf21c47f0a46eeb82de5ea4b6bfa5425f",
+    "iron120_botao_volume.png": "ea3bf6c22d8a17e9ddab158047bca6753a4b41f8efea6ae948ed665f6212e2fe",
+    "iron120_frente.jpg": "672d5fdbb6ac766e95e82e867c92e5ef49e61c4804048ff12d26703fbbcf81ee",
+    "iron120_frente_alfa.png": "bd060336fe60b12b344677b6ebccd7c75388f29450796bdbdee3d154080230e2",
+    "iron120_manifesto.json": "c9d9962eaae310846ee58bc68d6df00dbd8011b1436552828fbe4be040be4406",
+    "iron120_mapa.json": "2f85cc7ab79cec69e2b255149cad3efec3e7afc0254e1de7a9724b5fcfc1d52b"
    },
-   "tamanho": 1700096,
+   "tamanho": 607277,
    "tipo": "cabecote",
    "inspiracao": "Laney Ironheart",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
