@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "silversuper",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Silver Super",
+  "inspiracao": "Fender Super Reverb",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 45,
+  "signature": null,
+  "caixa_padrao": "tweed_410"
+}

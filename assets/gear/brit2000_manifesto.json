@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "brit2000",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Brit 2000",
+  "inspiracao": "Marshall JCM2000 (DSL e TSL)",
+  "categoria": "Britânicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 41,
+  "signature": null,
+  "caixa_padrao": "brit412"
+}

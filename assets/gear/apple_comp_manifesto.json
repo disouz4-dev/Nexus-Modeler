@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "apple_comp",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Apple Comp",
+  "inspiracao": "MXR Dyna Comp",
+  "categoria": "Utilidades",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "compressor",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 62,
+  "signature": null
+}

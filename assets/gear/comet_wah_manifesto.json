@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "comet_wah",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Comet Wah",
+  "inspiracao": "Dunlop Cry Baby",
+  "categoria": "Modulação",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "wah",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 58,
+  "signature": null
+}

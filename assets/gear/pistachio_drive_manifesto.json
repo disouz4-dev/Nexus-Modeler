@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "pistachio_drive",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Pistachio Drive",
+  "inspiracao": "Maxon OD808",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 24,
+  "signature": null
+}

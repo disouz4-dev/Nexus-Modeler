@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "cherry_drop",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Cherry Drop",
+  "inspiracao": "DigiTech Drop",
+  "categoria": "Afinação",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "drop",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 8,
+  "signature": null
+}

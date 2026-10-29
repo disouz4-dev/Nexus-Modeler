@@ -81,6 +81,7 @@ endif()
 set_source_files_properties(source/update/Updater.cpp PROPERTIES COMPILE_DEFINITIONS "NEXUS_VERSAO=\"${NEXUS_VERSAO}\"")
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
+  source/gear/GearCatalog.cpp
   source/studio/Library.cpp
   source/studio/Player.cpp
   source/fx/PitchDrop.cpp
@@ -258,6 +259,23 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_gui_basics
     juce::juce_audio_processors
     juce::juce_recommended_config_flags)
+
+  # Catálogo de equipamentos e id em texto no estado (presets antigos abrem iguais).
+  juce_add_console_app(nexus_gear_test PRODUCT_NAME "nexus_gear_test")
+  target_sources(nexus_gear_test PRIVATE host_test/GearTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_gear_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_gear_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_gear_test PRIVATE
+    nexus_engine
+    nexus_studio
+    signalsmith-stretch
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+  add_test(NAME catalogo_de_equipamentos
+           COMMAND nexus_gear_test "${PROJECT_SOURCE_DIR}/assets/gear")
 
   # Ferramenta manual: passa uma gravação de guitarra pela cadeia com material da TONE3000.
   juce_add_console_app(nexus_render PRODUCT_NAME "nexus_render")

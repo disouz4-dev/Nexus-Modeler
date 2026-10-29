@@ -1,0 +1,20 @@
+{
+  "formato": 1,
+  "id": "mark2plus",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Mark Two Plus",
+  "inspiracao": "Mesa Boogie Mark IIC+",
+  "categoria": "Americanos de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 50,
+  "signature": null,
+  "caixa_padrao": "mark_112",
+  "equalizador_grafico": true
+}

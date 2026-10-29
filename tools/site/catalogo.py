@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Monta a galeria de equipamentos do site (docs/site/index.html) a partir do
-que o programa tem: as listas de equipamentos de plugin/source/PluginEditor.cpp,
+que o programa tem: as fichas dos equipamentos (assets/gear/<id>_manifesto.json),
 os nomes dos mapas em assets/gear e a arte de frente de cada peça.
 
 Gera a miniatura de cada peça em docs/site/img/catalogo/<peça>.webp e a foto
@@ -130,14 +130,35 @@ def filtro(chave, pt, en, conta, ativo=False):
             f'<span class="pt">{pt}</span><span class="en" lang="en">{en}</span> <span class="catalogo-conta">{conta}</span></button>\n')
 
 
-def main():
+def fichas():
+    """Fichas de fábrica (assets/gear/<id>_manifesto.json) por tipo, na ordem dos parâmetros."""
+    por_tipo = {"pedal": [], "cabecote": [], "caixa": []}
+    gear = os.path.join(FONTE, "assets", "gear")
+    for nome in sorted(os.listdir(gear)):
+        if nome.endswith("_manifesto.json"):
+            f = json.load(open(os.path.join(gear, nome), encoding="utf-8"))
+            por_tipo[f["tipo"]].append(f)
+    for lista_ in por_tipo.values():
+        # Fábrica na ordem antiga; as sem índice (novas) no fim, pelo id.
+        lista_.sort(key=lambda f: (f.get("indice_de_fabrica") is None, f.get("indice_de_fabrica") or 0, f["id"]))
+    return por_tipo
+
+
+def listas():
+    """Peças do programa: das fichas e, numa fonte antiga sem fichas, das tabelas do PluginEditor.cpp."""
+    f = fichas()
+    if f["pedal"]:
+        return ([x["id"] for x in f["cabecote"]], [(x["inspiracao"], x["categoria"]) for x in f["cabecote"]],
+                [x["id"] for x in f["caixa"]], [x["inspiracao"] for x in f["caixa"]],
+                [x["id"] for x in f["pedal"]], [(x["nome"], x["inspiracao"], x["categoria"], x["fonte"]) for x in f["pedal"]])
     codigo = open(os.path.join(FONTE, "plugin", "source", "PluginEditor.cpp"), encoding="utf-8").read()
-    amp_prefixos = textos(lista(codigo, "kAmpPrefixes"))
-    amp_info = re.findall(r'\{"([^"]*)",\s*"([^"]*)"\}', lista(codigo, "kAmpInfo"))
-    cab_prefixos = textos(lista(codigo, "kCabPrefixes"))
-    cab_info = textos(lista(codigo, "kCabInfo"))
-    ped_prefixos = textos(lista(codigo, "kPedalPrefixes"))
-    ped_info = re.findall(r'\{"([^"]*)",\s*"([^"]*)",\s*"([^"]*)",\s*"([^"]*)"\}', lista(codigo, "kPedalInfo"))
+    return (textos(lista(codigo, "kAmpPrefixes")), re.findall(r'\{"([^"]*)",\s*"([^"]*)"\}', lista(codigo, "kAmpInfo")),
+            textos(lista(codigo, "kCabPrefixes")), textos(lista(codigo, "kCabInfo")), textos(lista(codigo, "kPedalPrefixes")),
+            re.findall(r'\{"([^"]*)",\s*"([^"]*)",\s*"([^"]*)",\s*"([^"]*)"\}', lista(codigo, "kPedalInfo")))
+
+
+def main():
+    amp_prefixos, amp_info, cab_prefixos, cab_info, ped_prefixos, ped_info = listas()
 
     # As imagens são a parte demorada: uma peça por núcleo.
     pedidos = ([(p, 420, "cat-cabecote") for p in amp_prefixos] + [(p, 220, "cat-caixa") for p in cab_prefixos]

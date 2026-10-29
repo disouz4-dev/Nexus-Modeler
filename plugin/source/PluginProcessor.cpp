@@ -22,6 +22,8 @@ NexusProcessor::NexusProcessor()
                    .withOutput(juce::String::fromUTF8("Saída"), juce::AudioChannelSet::stereo(), true))
 , params(*this, nullptr, "NexusModeler", createLayout())
 {
+  // O catálogo abre aqui, fora do áudio (o áudio só lê o motor de cada peça).
+  nexus::gear::GearCatalog::instance();
   for (int i = 0; i < kPedals; ++i)
   {
     auto& p = mPedals[static_cast<size_t>(i)];
@@ -63,6 +65,21 @@ NexusProcessor::NexusProcessor()
   mInputMute = params.getRawParameterValue("entrada_mudo");
   mTunerMute = params.getRawParameterValue("afinador_mudo");
 
+  for (auto& c : mPedalChoice)
+    c.store(-1);
+  for (auto& c : mAmpChoice)
+    c.store(-1);
+  for (auto& c : mCabChoice)
+    c.store(-1);
+  for (auto& m : mPedalMissing)
+    m.store(false);
+  for (int i = 0; i < kPedals; ++i)
+    mMissing[0].add({});
+  for (int r = 0; r < kRigs; ++r)
+  {
+    mMissing[1].add({});
+    mMissing[2].add({});
+  }
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
   mLayoutUi = ChainLayout::fromValueTree({});
@@ -480,7 +497,10 @@ void NexusProcessor::runDrop(int pedal, double* buffer, int n)
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
   const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
-  if (pedalLook(pedal) == kDropLook)
+  // Peça que o preset pediu e não está instalada: o som passa direto.
+  if (mPedalMissing[static_cast<size_t>(pedal)].load())
+    return;
+  if (pedalKind(pedalLook(pedal)) == PedalKind::drop)
     return runDrop(pedal, buffer, n);
   // Efeito do próprio Nexus (modulação, delay, reverb, gate): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
@@ -1280,6 +1300,134 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
         cab.file = juce::File();
       }
     }
+  }
+}
+
+// ================================================================ Peça de cada posição
+
+juce::String NexusProcessor::gearIdKey(nexus::gear::Kind kind, int position)
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return pedalParam(position, "visual_id");
+    case nexus::gear::Kind::amp: return ampParam(position, "cabecote_id");
+    case nexus::gear::Kind::cab: break;
+  }
+  return ampParam(position, "gabinete_id");
+}
+
+juce::RangedAudioParameter* NexusProcessor::choiceParam(nexus::gear::Kind kind, int position) const
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return params.getParameter(pedalParam(position, "visual"));
+    case nexus::gear::Kind::amp: return params.getParameter(ampParam(position, "cabecote"));
+    case nexus::gear::Kind::cab: break;
+  }
+  return params.getParameter(ampParam(position, "gabinete"));
+}
+
+std::atomic<int>& NexusProcessor::choiceOf(nexus::gear::Kind kind, int position)
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return mPedalChoice[static_cast<size_t>(position)];
+    case nexus::gear::Kind::amp: return mAmpChoice[static_cast<size_t>(position)];
+    case nexus::gear::Kind::cab: break;
+  }
+  return mCabChoice[static_cast<size_t>(position)];
+}
+
+void NexusProcessor::choose(nexus::gear::Kind kind, int position, int look)
+{
+  const auto& catalog = nexus::gear::GearCatalog::instance();
+  auto* param = choiceParam(kind, position);
+  const int factory = catalog.fallbackFor(kind, look);
+  auto& choice = choiceOf(kind, position);
+  {
+    const juce::ScopedLock l(mMissingLock);
+    mMissing[static_cast<size_t>(kind)].set(position, {});
+  }
+  if (kind == nexus::gear::Kind::pedal)
+    mPedalMissing[static_cast<size_t>(position)].store(false);
+  const auto entry = catalog.entry(kind, look);
+  const bool builtIn = entry && entry->builtInIndex >= 0;
+  // A escolha vale antes de o parâmetro mudar: a tela, ao ver o parâmetro
+  // novo, já acha a peça certa.
+  choice.store(builtIn || !entry ? -1 : (look << 8) | factory);
+  param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(builtIn ? look : factory)));
+}
+
+juce::String NexusProcessor::gearId(nexus::gear::Kind kind, int position) const
+{
+  if (auto missing = missingGear(kind, position); missing.isNotEmpty())
+    return missing;
+  const int look = kind == nexus::gear::Kind::pedal ? pedalLook(position) : kind == nexus::gear::Kind::amp ? ampLook(position) : cabLook(position);
+  return nexus::gear::GearCatalog::instance().idOf(kind, look);
+}
+
+juce::String NexusProcessor::missingGear(nexus::gear::Kind kind, int position) const
+{
+  const juce::ScopedLock l(mMissingLock);
+  return mMissing[static_cast<size_t>(kind)][position];
+}
+
+void NexusProcessor::applyGearId(nexus::gear::Kind kind, int position, const juce::String& id)
+{
+  const auto& catalog = nexus::gear::GearCatalog::instance();
+  auto& choice = choiceOf(kind, position);
+  const int look = id.isEmpty() ? -1 : catalog.find(kind, id);
+  const auto entry = catalog.entry(kind, look);
+  if (id.isNotEmpty() && !entry)
+  {
+    // Pedida pelo preset e não instalada: guarda o id (salvar de novo não o
+    // perde) e a tela mostra o cartão para baixar.
+    choice.store(-1);
+    {
+      const juce::ScopedLock l(mMissingLock);
+      mMissing[static_cast<size_t>(kind)].set(position, id);
+    }
+    if (kind == nexus::gear::Kind::pedal)
+      mPedalMissing[static_cast<size_t>(position)].store(true);
+    return;
+  }
+  {
+    const juce::ScopedLock l(mMissingLock);
+    mMissing[static_cast<size_t>(kind)].set(position, {});
+  }
+  if (kind == nexus::gear::Kind::pedal)
+    mPedalMissing[static_cast<size_t>(position)].store(false);
+  if (!entry || entry->builtInIndex >= 0)
+  {
+    // Preset antigo (sem id) ou peça de fábrica: vale o índice do parâmetro.
+    choice.store(-1);
+    return;
+  }
+  // Peça baixada: o parâmetro ficou com o de fábrica do mesmo motor.
+  const int param = juce::roundToInt(choiceParam(kind, position)->convertFrom0to1(choiceParam(kind, position)->getValue()));
+  choice.store((look << 8) | param);
+}
+
+void NexusProcessor::restoreGearIds(const juce::ValueTree& state)
+{
+  for (int i = 0; i < kPedals; ++i)
+    applyGearId(nexus::gear::Kind::pedal, i, state.getProperty(gearIdKey(nexus::gear::Kind::pedal, i)).toString());
+  for (int r = 0; r < kRigs; ++r)
+  {
+    applyGearId(nexus::gear::Kind::amp, r, state.getProperty(gearIdKey(nexus::gear::Kind::amp, r)).toString());
+    applyGearId(nexus::gear::Kind::cab, r, state.getProperty(gearIdKey(nexus::gear::Kind::cab, r)).toString());
+  }
+}
+
+void NexusProcessor::gearInstalled()
+{
+  for (size_t k = 0; k < 3; ++k)
+  {
+    const auto kind = static_cast<nexus::gear::Kind>(k);
+    const int positions = kind == nexus::gear::Kind::pedal ? kPedals : kRigs;
+    for (int p = 0; p < positions; ++p)
+      if (const auto id = missingGear(kind, p); id.isNotEmpty() && nexus::gear::GearCatalog::instance().find(kind, id) >= 0)
+        choose(kind, p, nexus::gear::GearCatalog::instance().find(kind, id));
   }
 }
 

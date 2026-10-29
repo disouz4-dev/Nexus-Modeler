@@ -50,6 +50,22 @@ juce::var recommendedJson()
   return json;
 }
 
+std::function<juce::var(const juce::String&)>& recommendedLookup()
+{
+  static std::function<juce::var(const juce::String&)> lookup;
+  return lookup;
+}
+
+// Bloco das recomendadas de uma peça: o da ficha dela (equipamento baixado)
+// e, se não tiver, o do recomendadas.json embutido.
+juce::var recommendedEntry(const juce::String& gearPrefix)
+{
+  if (auto& lookup = recommendedLookup())
+    if (const auto v = lookup(gearPrefix); v.isObject())
+      return v;
+  return recommendedJson()[juce::Identifier(gearPrefix)];
+}
+
 Tone toneFromApi(const juce::var& v)
 {
   Tone t;
@@ -93,10 +109,15 @@ juce::String explain(const juce::String& code)
 
 // ================================================================ Recomendadas
 
+void setRecommendedLookup(std::function<juce::var(const juce::String&)> lookup)
+{
+  recommendedLookup() = std::move(lookup);
+}
+
 std::vector<Tone> recommended(const juce::String& gearPrefix)
 {
   std::vector<Tone> out;
-  const auto entry = recommendedJson()[juce::Identifier(gearPrefix)];
+  const auto entry = recommendedEntry(gearPrefix);
   if (const auto* tones = entry["tons"].getArray())
     for (const auto& v : *tones)
     {
@@ -162,7 +183,7 @@ juce::File downloadedFolder(const Tone& tone, const juce::String& gearName)
 
 juce::String filterWord(const juce::String& gearPrefix)
 {
-  return recommendedJson()[juce::Identifier(gearPrefix)]["busca"].toString();
+  return recommendedEntry(gearPrefix)["busca"].toString();
 }
 
 // ================================================================ Escolha das capturas

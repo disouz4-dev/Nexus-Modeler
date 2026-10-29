@@ -19,37 +19,16 @@ constexpr int kTopBar = 68;
 constexpr int kPathHeight = 176;
 constexpr int kTitleHeight = 112;
 
-const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
-                                                               "neptune_chorus", "coconut_delay", "grape_reverb", "pear_gate",
-                                                               "cherry_drop", "mars_phaser", "nebula_flanger", "moon_tremolo",
-                                                               "eclipse_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
-                                                               "avocado_metal", "pomegranate_mud", "snowpear_treble",
-                                                               "juniper_sky", "lime_echo", "galaxy_mod", "blueberry_chain",
-                                                               "olive_drive", "pistachio_drive", "blueberry_blues", "apricot_overdrive", "clementine_turbo", "cherry_fuzz", "fig_bender", "kiwi_drive", "quince_plus", "starfruit_rock", "tamarind_amp", "blackcurrant_bass", "mulberry_omega", "guava_precision", "peach_glory", "raspberry_drive", "honeydew_drive", "pineapple_king", "cashew_boost", "papaya_grind", "persimmon_33", "strawberry_5150", "gooseberry_g3", "nectarine_od", "cranberry_wylde", "kumquat_klone", "elderberry_war", "mangosteen_fuzz", "grapefruit_drive", "jackfruit_monkey", "pitanga_250", "lychee_bassfuzz", "cupuacu_hammer", "graviola_bassdi", "acerola_eq", "comet_wah", "saturn_rotary", "pulsar_echo", "jupiter_octave", "apple_comp"};
-// Cabeçotes, na ordem do parâmetro "cabecote".
-const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
-                                                             "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
-                                                             "citrusbass200", "granite800", "fliptop15", "vaultv4", "hart1000", "garden800", "glass500", "solart", "bassline100", "eagle751", "littletube", "workhorse350", "underground800", "acoustica360", "tinybass", "tracer7", "britbass",
-                                                             "britplexi50", "brit45", "brit900", "brit410", "brit2000", "britds20", "britrack1", "silverdeluxe", "silversuper", "silverprince", "tweed57", "hotrod40", "champion5", "mark2plus", "mark3", "mark4", "markjp", "badland100", "lonestar100", "block5150iii", "topboost15", "citrus50", "citrus30", "blackcountry100", "iron120", "fire100", "feral120", "steel20", "vier100", "herb180", "bliss100", "goddess80", "dirty40", "special100", "doublestone50", "blackcat30", "hi103", "darkstar20", "tri100", "gen120", "nova100", "emperor20", "rg100", "arch100", "kraken50", "magick25", "deliver120", "ash500",
-                                                             "vault4pro", "maple400", "nord650", "wind300", "bassboxv", "eaglehammer500", "bebop15", "fliptop18", "vault210"};
-// Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
-const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
-                                                             "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
-                                                             "granite_410", "silver_112", "mark_112", "star_412", "country_412", "vier_412", "hi_412", "rg_412", "hart_410", "glass_410", "solar_412", "fliptop_115", "bassline_215", "solar_215", "glass_412"};
+// Peças vêm do catálogo (fichas embutidas e baixadas): id e ficha pela posição.
+using nexus::gear::GearCatalog;
+namespace G = nexus::gear;
+juce::String gearIdOf(G::Kind kind, int look)
+{
+  return GearCatalog::instance().idOf(kind, look);
+}
 // Microfones, na ordem de nexus::ui::MicKind.
 const char* const kMicPrefixes[kMicKinds] = {"microfone_dinamico_bastao", "microfone_dinamico_lateral", "microfone_condensador_grande",
                                               "microfone_condensador_lapis", "microfone_fita"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 25, 13, 22, 14, 23, 24, 26, 28, 14, 14, 14, 13, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 15, 8, 15, 15, 15, 15, 16, 16, 1, 1, 1, 16, 2, 6, 5, 5, 18, 18, 10, 10, 10, 19, 19, 11, 11, 4, 7, 7, 9, 20, 17, 10, 1, 1, 15, 21, 1, 1, 15, 1, 22, 13, 25, 22, 27, 14, 14, 25, 25, 14};
-struct CabInfo
-{
-  const char* inspiration;
-};
-const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"},
-                                                    {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"},
-                                                    {"Ampeg 8x10"}, {"Gallien-Krueger 4x10"},
-                                                    {"Fender Deluxe Reverb 1x12"}, {"Mesa Boogie Mark 1x12"}, {"Blackstar 4x12"}, {"Laney 4x12"}, {"Diezel 4x12"}, {"Hiwatt 4x12"}, {"Randall 4x12"}, {"Hartke 4x10"}, {"Darkglass 4x10"}, {"Sunn 4x12"}, {"Ampeg B-15 1x15"},
-                                                    {"Fender Bassman 2x15"}, {"Sunn 2x15"}, {"Darkglass 4x12"}};
-
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
   if (!img.isValid())
@@ -443,7 +422,7 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
             return juce::String();
           };
         // Cherry Drop: o botão do drop mostra os semitons (meio-dia = 0).
-        if (mKind == Kind::pedal && k.id == "a" && mProcessor.pedalLook(index) == NexusProcessor::kDropLook)
+        if (mKind == Kind::pedal && k.id == "a" && NexusProcessor::pedalKind(mProcessor.pedalLook(index)) == NexusProcessor::PedalKind::drop)
           knob->valueText = [](float v) {
             const int semis = NexusProcessor::dropSemitones(v);
             return (semis > 0 ? "+" : "") + juce::String(semis) + " " + TRANS("semitons");
@@ -974,15 +953,15 @@ void NexusEditor::BoardView::mouseUp(const juce::MouseEvent& e)
 
 const GearArt& NexusEditor::CabStage::art() const
 {
-  return mArts[juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(mRig))];
+  return mArts[static_cast<size_t>(juce::jlimit(0, static_cast<int>(mArts.size()) - 1, mProcessor.cabLook(mRig)))];
 }
 
 const GearArt& NexusEditor::cabArt(int rig) const
 {
-  return mCabArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig)))];
+  return mCabArts[static_cast<size_t>(juce::jlimit(0, static_cast<int>(mCabArts.size()) - 1, mProcessor.cabLook(rig)))];
 }
 
-NexusEditor::CabStage::CabStage(NexusProcessor& p, const GearArt* arts, const GearArt* micArts)
+NexusEditor::CabStage::CabStage(NexusProcessor& p, const std::deque<GearArt>& arts, const GearArt* micArts)
 : mProcessor(p)
 , mArts(arts)
 , mMicArts(micArts)
@@ -1602,8 +1581,7 @@ void NexusEditor::ChainView::itemDropped(const SourceDetails& d)
   if (card >= 0 && mCards[static_cast<size_t>(card)].type == CardType::pedal)
   {
     const int pedal = mCards[static_cast<size_t>(card)].index;
-    auto* visual = mEditor.mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, "visual"));
-    visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(look)));
+    mEditor.mProcessor.choosePedal(pedal, look);
     mEditor.select({Kind::pedal, pedal});
     mEditor.ensurePedal(pedal); // a captura do pedal novo entra sozinha
   }
@@ -1747,14 +1725,19 @@ NexusEditor::NexusEditor(NexusProcessor& p)
     // abrir a tela): em paralelo, uma peça por vez em cada núcleo.
     const auto started = juce::Time::getMillisecondCounterHiRes();
     std::vector<std::function<void()>> jobs;
-    for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
-      jobs.push_back([this, i] { mAmpArts[static_cast<size_t>(i)] = GearArt::load(kAmpPrefixes[i]); });
-    for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
-      jobs.push_back([this, i] { mCabArts[static_cast<size_t>(i)] = GearArt::load(kCabPrefixes[i]); });
+    // Uma arte por peça do catálogo, na mesma posição (as baixadas vêm da
+    // pasta Equipamentos/<id>, pelo próprio GearArt::load).
+    auto queue = [&jobs](std::deque<GearArt>& arts, G::Kind kind) {
+      const auto list = GearCatalog::instance().entries(kind);
+      arts.resize(list.size());
+      for (size_t i = 0; i < list.size(); ++i)
+        jobs.push_back([&arts, i, id = list[i].id] { arts[i] = GearArt::load(id); });
+    };
+    queue(mAmpArts, G::Kind::amp);
+    queue(mCabArts, G::Kind::cab);
+    queue(mPedalArts, G::Kind::pedal);
     for (int i = 0; i < kMicKinds; ++i)
       jobs.push_back([this, i] { mMicArts[static_cast<size_t>(i)] = GearArt::load(kMicPrefixes[i]); });
-    for (int i = 0; i < kPedalLooks; ++i)
-      jobs.push_back([this, i] { mPedalArts[static_cast<size_t>(i)] = GearArt::load(kPedalPrefixes[i]); });
     std::atomic<size_t> next{0};
     std::vector<std::thread> workers;
     for (int t = 0; t < juce::jlimit(1, 8, juce::SystemStats::getNumCpus()); ++t)
@@ -1779,7 +1762,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mBoard = std::make_unique<BoardView>(*this);
   mPedalStage = std::make_unique<GearStage>(p, Kind::pedal);
   mAmpStage = std::make_unique<GearStage>(p, Kind::amp);
-  mCabStage = std::make_unique<CabStage>(p, mCabArts.data(), mMicArts.data());
+  mCabStage = std::make_unique<CabStage>(p, mCabArts, mMicArts.data());
   addChildComponent(*mBoard); // por baixo do pedal escolhido
   addChildComponent(*mPedalStage);
   addChildComponent(*mAmpStage);
@@ -1914,19 +1897,28 @@ NexusEditor::NexusEditor(NexusProcessor& p)
     if (safe != nullptr)
       safe->ensureDefaults();
   });
+  GearCatalog::instance().addChangeListener(this);
+  // Capturas recomendadas: as da ficha do equipamento baixado valem antes das embutidas.
+  nexus::t3k::setRecommendedLookup([](const juce::String& id) -> juce::var {
+    const auto& catalog = GearCatalog::instance();
+    for (auto kind : {G::Kind::pedal, G::Kind::amp, G::Kind::cab})
+      if (const auto e = catalog.entry(kind, catalog.find(kind, id)))
+        return e->recommended();
+    return {};
+  });
   startTimerHz(30);
 }
 
 NexusEditor::~NexusEditor()
 {
+  GearCatalog::instance().removeChangeListener(this);
   stopTimer();
   setLookAndFeel(nullptr);
 }
 
 int NexusEditor::pedalLook(int pedal) const
 {
-  return juce::jlimit(0, kPedalLooks - 1,
-                      juce::roundToInt(mProcessor.params.getRawParameterValue(NexusProcessor::pedalParam(pedal, "visual"))->load()));
+  return juce::jlimit(0, static_cast<int>(mPedalArts.size()) - 1, mProcessor.pedalLook(pedal));
 }
 
 const GearArt* NexusEditor::pedalArt(int pedal) const
@@ -1953,8 +1945,7 @@ void NexusEditor::insertPedal(int look, int list, int position)
   for (const char* id : {"drive", "tom", "nivel", "ligado"})
     if (auto* param = mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, id)))
       param->setValueNotifyingHost(param->getDefaultValue());
-  auto* visual = mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, "visual"));
-  visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(look)));
+  mProcessor.choosePedal(pedal, look);
   auto& dest = ChainView::list(layout, list);
   dest.insert(dest.begin() + juce::jlimit(0, static_cast<int>(dest.size()), position), pedal);
   mProcessor.setLayout(layout);
@@ -1963,228 +1954,73 @@ void NexusEditor::insertPedal(int look, int list, int position)
   ensurePedal(pedal);
 }
 
-namespace
-{
-// Pedais: o clássico que inspirou cada visual e de onde vem o som.
-struct PedalInfo
-{
-  const char* name;
-  const char* inspiration;
-  const char* category;
-  const char* source;
-};
-const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
-  {"Lemon Drive", "TS9", "Drive e distorção", "Captura da TONE3000"},
-  {"Orange Drive", "DS-1", "Drive e distorção", "Captura da TONE3000"},
-  {"Banana Overdrive", "SD-1", "Drive e distorção", "Captura da TONE3000"},
-  {"Gold Centaur", "Klon Centaur", "Drive e distorção", "Captura da TONE3000"},
-  {"Neptune Chorus", "CE-2", "Modulação", "Efeito do Nexus"},
-  {"Coconut Delay", "DD-3", "Delay", "Efeito do Nexus"},
-  {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
-  {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
-  {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
-  {"Mars Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
-  {"Nebula Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
-  {"Moon Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
-  {"Eclipse Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
-  {"Açaí Rat", "ProCo RAT", "Drive e distorção", "Captura da TONE3000"},
-  {"Jabuticaba Buzzsaw", "HM-2", "Drive e distorção", "Captura da TONE3000"},
-  {"Lychee Fuzz", "Big Muff", "Drive e distorção", "Captura da TONE3000"},
-  {"Avocado Metal", "MT-2", "Drive e distorção", "Captura da TONE3000"},
-  {"Pomegranate Mud", "Mudhoney", "Drive e distorção", "Captura da TONE3000"},
-  {"Snow Pear Treble", "Rangemaster", "Drive e distorção", "Captura da TONE3000"},
-  {"Juniper Sky", "Strymon BigSky", "Reverb", "Efeito do Nexus"},
-  {"Lime Echo", "Line 6 DL4", "Delay", "Efeito do Nexus"},
-  {"Galaxy Mod", "Line 6 MM4", "Modulação", "Efeito do Nexus"},
-  {"Blueberry Chain", "Três DD-3 em série", "Delay", "Efeito do Nexus"},
-  {"Olive Drive", "Ibanez TS808 Tube Screamer", "Drive e distorção", "Captura da TONE3000"},
-  {"Pistachio Drive", "Maxon OD808", "Drive e distorção", "Captura da TONE3000"},
-  {"Blueberry Blues", "Boss BD-2 Blues Driver", "Drive e distorção", "Captura da TONE3000"},
-  {"Apricot Overdrive", "Boss OD-3", "Drive e distorção", "Captura da TONE3000"},
-  {"Clementine Turbo", "Boss DS-2 Turbo Distortion", "Drive e distorção", "Captura da TONE3000"},
-  {"Cherry Fuzz", "Dunlop Fuzz Face", "Drive e distorção", "Captura da TONE3000"},
-  {"Fig Bender", "Tone Bender", "Drive e distorção", "Captura da TONE3000"},
-  {"Kiwi Drive", "Fulltone OCD", "Drive e distorção", "Captura da TONE3000"},
-  {"Quince Plus", "MXR Distortion+", "Drive e distorção", "Captura da TONE3000"},
-  {"Starfruit Rock", "Rockman X100", "Drive e distorção", "Captura da TONE3000"},
-  {"Tamarind Amp", "Tech 21 SansAmp", "Drive e distorção", "Captura da TONE3000"},
-  {"Blackcurrant Bass", "Darkglass B7K", "Drive e distorção", "Captura da TONE3000"},
-  {"Mulberry Omega", "Darkglass Alpha Omega", "Drive e distorção", "Captura da TONE3000"},
-  {"Guava Precision", "Horizon Devices Precision Drive", "Drive e distorção", "Captura da TONE3000"},
-  {"Peach Glory", "JHS Morning Glory", "Drive e distorção", "Captura da TONE3000"},
-  {"Raspberry Drive", "JHS Andy Timmons", "Drive e distorção", "Captura da TONE3000"},
-  {"Honeydew Drive", "Paul Cochrane Timmy", "Drive e distorção", "Captura da TONE3000"},
-  {"Pineapple King", "Analogman King of Tone", "Drive e distorção", "Captura da TONE3000"},
-  {"Cashew Boost", "Xotic EP Booster", "Drive e distorção", "Captura da TONE3000"},
-  {"Papaya Grind", "Fortin Grind", "Drive e distorção", "Captura da TONE3000"},
-  {"Persimmon 33", "Fortin 33", "Drive e distorção", "Captura da TONE3000"},
-  {"Strawberry 5150", "EVH 5150 Overdrive", "Drive e distorção", "Captura da TONE3000"},
-  {"Gooseberry G3", "Revv G3", "Drive e distorção", "Captura da TONE3000"},
-  {"Nectarine OD", "Friedman BE-OD", "Drive e distorção", "Captura da TONE3000"},
-  {"Cranberry Wylde", "MXR Wylde Overdrive", "Drive e distorção", "Captura da TONE3000"},
-  {"Kumquat Klone", "Wampler Tumnus", "Drive e distorção", "Captura da TONE3000"},
-  {"Elderberry War", "Death By Audio Fuzz War", "Drive e distorção", "Captura da TONE3000"},
-  {"Mangosteen Fuzz", "EarthQuaker Hizumitas", "Drive e distorção", "Captura da TONE3000"},
-  {"Grapefruit Drive", "EarthQuaker Plumes", "Drive e distorção", "Captura da TONE3000"},
-  {"Jackfruit Monkey", "DigiTech Bad Monkey", "Drive e distorção", "Captura da TONE3000"},
-  {"Pitanga 250", "DOD Overdrive Preamp 250", "Drive e distorção", "Captura da TONE3000"},
-  {"Lychee Bass Fuzz", "Electro-Harmonix Bass Big Muff", "Drive e distorção", "Captura da TONE3000"},
-  {"Cupuaçu Hammer", "Aguilar Tone Hammer", "Drive e distorção", "Captura da TONE3000"},
-  {"Graviola Bass DI", "MXR M80 Bass DI", "Drive e distorção", "Captura da TONE3000"},
-  {"Acerola EQ", "Boss GE-7", "Utilidades", "Efeito do Nexus"},
-  {"Comet Wah", "Dunlop Cry Baby", "Modulação", "Efeito do Nexus"},
-  {"Saturn Rotary", "Leslie (caixa rotativa)", "Modulação", "Efeito do Nexus"},
-  {"Pulsar Echo", "Electro-Harmonix Memory Man", "Delay", "Efeito do Nexus"},
-  {"Jupiter Octave", "Boss OC-2", "Afinação", "Efeito do Nexus"},
-  {"Apple Comp", "MXR Dyna Comp", "Utilidades", "Efeito do Nexus"},
-};
-
-// Cabeçotes: o original que inspirou cada um e a família na coluna.
-struct AmpInfo
-{
-  const char* inspiration;
-  const char* category;
-};
-const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
-  {"JCM800 2203", "Britânicos"},
-  {"Mark V", "Americanos de alto ganho"},
-  {"5150", "Americanos de alto ganho"},
-  {"Dual Rectifier", "Americanos de alto ganho"},
-  {"SLO-100", "Americanos de alto ganho"},
-  {"BE-100", "Americanos de alto ganho"},
-  {"AC30", "Britânicos"},
-  {"DC-30", "Americanos boutique"},
-  {"Tiny Terror", "Britânicos"},
-  {"Rockerverb 50", "Britânicos"},
-  {"Triple Rectifier", "Americanos de alto ganho"},
-  {"Powerball", "Alemães de alto ganho"},
-  {"Uberschall", "Alemães de alto ganho"},
-  {"Super-Sonic", "Americanos clássicos"},
-  {"Twin Reverb", "Americanos clássicos"},
-  {"Bassman 5F6-A", "Americanos clássicos"},
-  {"Super Lead 1959", "Britânicos"},
-  {"Silver Jubilee 2555", "Britânicos"},
-  {"JC-120", "Limpos de transistor"},
-  {"Ampeg SVT", "Baixo"},
-  {"Orange AD200", "Baixo"},
-  {"Gallien-Krueger 800RB", "Baixo"},
-  {"Ampeg B-15", "Baixo"},
-  {"Ampeg V-4B", "Baixo"},
-  {"Hartke LH1000", "Baixo"},
-  {"Eden", "Baixo"},
-  {"Darkglass Microtubes 500", "Baixo"},
-  {"Sunn Model T", "Baixo"},
-  {"Fender Bassman silverface (50 e 100T)", "Baixo"},
-  {"Aguilar DB751", "Baixo"},
-  {"Markbass Little Mark Tube", "Baixo"},
-  {"SWR Bass 350", "Baixo"},
-  {"Mesa Bass 800D", "Baixo"},
-  {"Acoustic 360", "Baixo"},
-  {"Orange Terror Bass", "Baixo"},
-  {"Trace Elliot (GP7, GP12, Speed Twin)", "Baixo"},
-  {"Marshall Super Bass", "Baixo"},
-  {"Marshall 1987 Lead 50 W", "Britânicos"},
-  {"Marshall JTM45", "Britânicos"},
-  {"Marshall JCM900", "Britânicos"},
-  {"Marshall JVM410", "Britânicos"},
-  {"Marshall JCM2000 (DSL e TSL)", "Britânicos"},
-  {"Marshall DSL (série nova)", "Britânicos"},
-  {"Marshall JMP-1", "Britânicos"},
-  {"Fender Deluxe Reverb", "Americanos clássicos"},
-  {"Fender Super Reverb", "Americanos clássicos"},
-  {"Fender Princeton Reverb", "Americanos clássicos"},
-  {"Fender Tweed Deluxe 5E3", "Americanos clássicos"},
-  {"Fender Hot Rod Deluxe", "Americanos clássicos"},
-  {"Fender Champ", "Americanos clássicos"},
-  {"Mesa Boogie Mark IIC+", "Americanos de alto ganho"},
-  {"Mesa Boogie Mark III", "Americanos de alto ganho"},
-  {"Mesa Boogie Mark IV", "Americanos de alto ganho"},
-  {"Mesa Boogie JP-2C", "Americanos de alto ganho"},
-  {"Mesa Boogie Badlander", "Americanos de alto ganho"},
-  {"Mesa Boogie Lonestar", "Americanos clássicos"},
-  {"EVH 5150 III", "Americanos de alto ganho"},
-  {"Vox AC15", "Britânicos"},
-  {"Orange OR50", "Britânicos"},
-  {"Orange AD30", "Britânicos"},
-  {"Laney Supergroup", "Britânicos"},
-  {"Laney Ironheart", "Britânicos"},
-  {"ENGL Fireball", "Alemães de alto ganho"},
-  {"ENGL Savage", "Alemães de alto ganho"},
-  {"ENGL Ironball", "Alemães de alto ganho"},
-  {"Diezel VH4", "Alemães de alto ganho"},
-  {"Diezel Herbert", "Alemães de alto ganho"},
-  {"Bogner Ecstasy", "Alemães de alto ganho"},
-  {"Bogner Shiva", "Alemães de alto ganho"},
-  {"Friedman Dirty Shirley", "Americanos de alto ganho"},
-  {"Dumble Overdrive Special", "Americanos boutique"},
-  {"Two-Rock Classic Reverb", "Americanos boutique"},
-  {"Bad Cat Hot Cat", "Americanos boutique"},
-  {"Hiwatt DR103", "Britânicos"},
-  {"Blackstar HT e Series One", "Britânicos"},
-  {"Hughes & Kettner TriAmp", "Alemães de alto ganho"},
-  {"Revv Generator 120", "Americanos de alto ganho"},
-  {"Fortin Natas", "Americanos de alto ganho"},
-  {"Tone King Imperial", "Americanos clássicos"},
-  {"Randall RG100ES", "Americanos de alto ganho"},
-  {"PRS Archon", "Americanos de alto ganho"},
-  {"Victory Kraken", "Britânicos"},
-  {"Supro Black Magick", "Americanos clássicos"},
-  {"Fryette Deliverance", "Americanos de alto ganho"},
-  {"Ashdown ABM", "Baixo"},
-  {"Ampeg SVT-4 Pro", "Baixo"},
-  {"Traynor YBA-200", "Baixo"},
-  {"EBS Classic 500", "Baixo"},
-  {"Peavey Mark III", "Baixo"},
-  {"Behringer Bass V-Amp Pro", "Baixo"},
-  {"Aguilar Tone Hammer 500", "Baixo"},
-  {"Polytone Mini Brute", "Baixo"},
-  {"Ampeg B-18 Portaflex", "Baixo"},
-  {"Ampeg BA-210", "Baixo"},
-};
-} // namespace
-
 void NexusEditor::refreshBrowser()
 {
   std::vector<GearItem> items;
-  for (int i = 0; i < kPedalLooks; ++i)
+  // Tudo o que está no catálogo, na ordem dele (fábrica e depois baixados).
+  for (const auto& e : GearCatalog::instance().entries(G::Kind::pedal))
   {
+    if (e.look >= static_cast<int>(mPedalArts.size()))
+      break;
     GearItem it;
     it.kind = GearItem::Kind::pedal;
-    it.look = i;
-    it.art = &mPedalArts[static_cast<size_t>(i)];
-    it.name = juce::String::fromUTF8(kPedalInfo[i].name);
-    it.inspiration = kPedalInfo[i].inspiration;
-    it.category = TRANS(juce::String::fromUTF8(kPedalInfo[i].category));
-    it.source = kPedalInfo[i].source;
+    it.look = e.look;
+    it.art = &mPedalArts[static_cast<size_t>(e.look)];
+    it.name = e.name;
+    it.inspiration = e.inspiration;
+    it.category = TRANS(e.category);
+    it.source = e.source;
     items.push_back(it);
   }
-  for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
+  for (const auto& e : GearCatalog::instance().entries(G::Kind::amp))
   {
+    if (e.look >= static_cast<int>(mAmpArts.size()))
+      break;
     GearItem amp;
     amp.kind = GearItem::Kind::amp;
-    amp.look = i;
-    amp.art = &mAmpArts[static_cast<size_t>(i)];
-    amp.name = mAmpArts[static_cast<size_t>(i)].name.isNotEmpty() ? mAmpArts[static_cast<size_t>(i)].name
-                                                                  : juce::String(kAmpPrefixes[i]);
-    amp.inspiration = kAmpInfo[i].inspiration;
-    amp.category = TRANS(juce::String::fromUTF8(kAmpInfo[i].category));
-    amp.source = "Captura da TONE3000";
+    amp.look = e.look;
+    amp.art = &mAmpArts[static_cast<size_t>(e.look)];
+    amp.name = amp.art->name.isNotEmpty() ? amp.art->name : e.id;
+    amp.inspiration = e.inspiration;
+    amp.category = TRANS(e.category);
+    amp.source = e.source;
     items.push_back(amp);
   }
-  for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
+  for (const auto& e : GearCatalog::instance().entries(G::Kind::cab))
   {
+    if (e.look >= static_cast<int>(mCabArts.size()))
+      break;
     GearItem cab;
     cab.kind = GearItem::Kind::cab;
-    cab.look = i;
-    cab.art = &mCabArts[static_cast<size_t>(i)];
+    cab.look = e.look;
+    cab.art = &mCabArts[static_cast<size_t>(e.look)];
     cab.name = cab.art->name;
-    cab.inspiration = kCabInfo[i].inspiration;
-    // Grupo pelo tamanho no fim do nome ("4x12", "2x12", "8x10"...).
-    cab.category = juce::String(kCabInfo[i].inspiration).fromLastOccurrenceOf(" ", false, false);
-    cab.source = "IR ou captura full rig";
+    cab.inspiration = e.inspiration;
+    // Grupo pelo tamanho ("4x12", "2x12", "8x10"...).
+    cab.category = e.category;
+    cab.source = e.source;
     items.push_back(cab);
   }
   mBrowser->setItems(std::move(items));
+}
+
+void NexusEditor::catalogChanged()
+{
+  // Equipamento novo instalado: a arte dele entra no fim de cada lista (as
+  // posições das que já estavam não mudam) e a lista se refaz.
+  auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
+    for (const auto& e : GearCatalog::instance().entries(kind))
+      if (e.look >= static_cast<int>(arts.size()))
+        arts.push_back(GearArt::load(e.id));
+      else if (e.origin == G::GearEntry::Origin::downloaded)
+        arts[static_cast<size_t>(e.look)] = GearArt::load(e.id); // peça baixada atualizada
+  };
+  grow(mPedalArts, G::Kind::pedal);
+  grow(mAmpArts, G::Kind::amp);
+  grow(mCabArts, G::Kind::cab);
+  mProcessor.gearInstalled();
+  refreshBrowser();
+  select(mSel);
 }
 
 void NexusEditor::pickGear(const GearItem& item)
@@ -2195,8 +2031,7 @@ void NexusEditor::pickGear(const GearItem& item)
     if (mSel.kind == Kind::pedal)
     {
       // Troca o pedal escolhido por este.
-      auto* visual = mProcessor.params.getParameter(NexusProcessor::pedalParam(mSel.index, "visual"));
-      visual->setValueNotifyingHost(visual->convertTo0to1(static_cast<float>(item.look)));
+      mProcessor.choosePedal(mSel.index, item.look);
       select(mSel);
       ensurePedal(mSel.index);
     }
@@ -2208,11 +2043,11 @@ void NexusEditor::pickGear(const GearItem& item)
     // Troca o cabeçote do lado escolhido por este e abre os pacotes de cada
     // canal que estiverem na pasta dele.
     const int rig = mSel.kind == Kind::pedal ? 0 : mSel.index;
-    if (auto* look = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "cabecote")))
-      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(item.look)));
+    mProcessor.chooseAmp(rig, item.look);
     // A caixa acompanha o cabeçote (dá para trocar depois na lista de caixas).
-    if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
-      cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(kCabOfAmp[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, item.look)])));
+    if (const auto amp = GearCatalog::instance().entry(G::Kind::amp, item.look))
+      if (const int cab = GearCatalog::instance().find(G::Kind::cab, amp->cabId); cab >= 0)
+        mProcessor.chooseCab(rig, cab);
     loadHeadChannels(rig);
     ensureCab(rig, true);
     select({Kind::amp, rig});
@@ -2221,8 +2056,7 @@ void NexusEditor::pickGear(const GearItem& item)
   case GearItem::Kind::cab:
   {
     const int rig = mSel.kind == Kind::pedal ? 0 : mSel.index;
-    if (auto* cab = mProcessor.params.getParameter(NexusProcessor::ampParam(rig, "gabinete")))
-      cab->setValueNotifyingHost(cab->convertTo0to1(static_cast<float>(item.look)));
+    mProcessor.chooseCab(rig, item.look);
     select({Kind::cab, rig});
     ensureCab(rig, true);
     break;
@@ -2286,8 +2120,7 @@ void NexusEditor::choosePack()
   mPackTarget = mSel;
   mPackChannel = mSel.kind == Kind::amp ? mProcessor.selectedChannel(mSel.index) : 0;
   const bool pedal = mSel.kind == Kind::pedal;
-  const juce::String prefix = pedal ? juce::String(kPedalPrefixes[pedalLook(mSel.index)])
-                                   : juce::String(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(mSel.index))]);
+  const juce::String prefix = pedal ? gearIdOf(G::Kind::pedal, pedalLook(mSel.index)) : gearIdOf(G::Kind::amp, mProcessor.ampLook(mSel.index));
   const juce::String name = pedal ? (pedalArt(mSel.index) ? pedalArt(mSel.index)->name : TRANS("Pedal")) : ampArt(mSel.index).name;
   mPackGearName = name;
   mCapturePanel->open(prefix, name, pedal ? nexus::ui::CapturePanel::Gear::pedal : nexus::ui::CapturePanel::Gear::amp);
@@ -2405,7 +2238,7 @@ void NexusEditor::ensurePedal(int pedal)
   const auto current = mProcessor.slotFolder(NexusProcessor::pedalSlot(pedal));
   if (current.isDirectory() && current.getParentDirectory() == root && mProcessor.slotLoaded(NexusProcessor::pedalSlot(pedal)))
     return;
-  const auto def = nexus::t3k::defaultTone(kPedalPrefixes[look]);
+  const auto def = nexus::t3k::defaultTone(gearIdOf(G::Kind::pedal, look));
   juce::File pick = def ? nexus::t3k::downloadedFolder(*def, art->name) : juce::File();
   if (!pick.isDirectory())
   {
@@ -2425,7 +2258,7 @@ void NexusEditor::ensurePedal(int pedal)
   }
   if (def)
     fetchDefault(*def, "pedal", art->name, NexusProcessor::pedalSlot(pedal),
-                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); }, nexus::t3k::filterWord(kPedalPrefixes[look]));
+                 [this, pedal](const juce::File& folder) { mProcessor.loadPedalPack(pedal, folder); }, nexus::t3k::filterWord(gearIdOf(G::Kind::pedal, look)));
 }
 
 void NexusEditor::ensureCab(int rig, bool swapping)
@@ -2436,12 +2269,12 @@ void NexusEditor::ensureCab(int rig, bool swapping)
       || (!swapping && (mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())))
     return;
   // Caixa sem lista própria de IRs usa a da Brit 4x12 (os IRs servem a qualquer cabeçote).
-  int look = juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig));
-  auto def = nexus::t3k::defaultTone(kCabPrefixes[look]);
+  int look = juce::jlimit(0, static_cast<int>(mCabArts.size()) - 1, mProcessor.cabLook(rig));
+  auto def = nexus::t3k::defaultTone(gearIdOf(G::Kind::cab, look));
   if (!def)
   {
     look = 0;
-    def = nexus::t3k::defaultTone(kCabPrefixes[0]);
+    def = nexus::t3k::defaultTone(gearIdOf(G::Kind::cab, 0));
   }
   if (!def)
     return;
@@ -2462,7 +2295,7 @@ void NexusEditor::ensureCab(int rig, bool swapping)
   };
   if (const auto folder = nexus::t3k::downloadedFolder(*def, gearName); folder.isDirectory())
     return land(folder);
-  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land, nexus::t3k::filterWord(kCabPrefixes[look]));
+  fetchDefault(*def, "cab", gearName, kCabSlotKey + rig, land, nexus::t3k::filterWord(gearIdOf(G::Kind::cab, look)));
 }
 
 void NexusEditor::ensureDefaults()
@@ -2503,7 +2336,7 @@ void NexusEditor::loadHeadChannels(int rig)
     const bool ours = current.isDirectory() && current.getParentDirectory() == root
                       && mProcessor.slotLoaded(NexusProcessor::ampSlot(rig, c));
     juce::File pick = ours ? current : juce::File();
-    const auto def = nexus::t3k::defaultTone(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))], c);
+    const auto def = nexus::t3k::defaultTone(gearIdOf(G::Kind::amp, mProcessor.ampLook(rig)), c);
     if (pick == juce::File() && def)
       pick = nexus::t3k::downloadedFolder(*def, art.name);
     if (pick == juce::File())
@@ -2521,7 +2354,7 @@ void NexusEditor::loadHeadChannels(int rig)
         // recomendada de cada canal (a busca não sabe qual captura é de qual canal).
         fetchDefault(*def, "amp_amp-cab", art.name, NexusProcessor::ampSlot(rig, c),
                      [this, rig, c](const juce::File& folder) { mProcessor.loadAmpPack(rig, c, folder); },
-                     count == 1 ? nexus::t3k::filterWord(kAmpPrefixes[juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig))])
+                     count == 1 ? nexus::t3k::filterWord(gearIdOf(G::Kind::amp, mProcessor.ampLook(rig)))
                                 : juce::String());
     }
     else
@@ -2600,7 +2433,7 @@ void NexusEditor::openIrCatalog(int rig)
   mPackChannel = 0;
   mPackGearName = cabArt(rig).name;
   // Lista de IRs recomendados da caixa; sem lista própria, a da Brit 4x12.
-  mCapturePanel->open(kCabPrefixes[juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig))], cabArt(rig).name,
+  mCapturePanel->open(gearIdOf(G::Kind::cab, mProcessor.cabLook(rig)), cabArt(rig).name,
                       nexus::ui::CapturePanel::Gear::cab);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
@@ -2989,7 +2822,7 @@ void NexusEditor::timerCallback()
   else if (mSel.kind == Kind::pedal)
   {
     const auto* art = pedalArt(mSel.index);
-    title = art ? art->name : juce::String::fromUTF8(kPedalInfo[pedalLook(mSel.index)].name);
+    title = art ? art->name : GearCatalog::instance().entry(G::Kind::pedal, pedalLook(mSel.index)).value_or(G::GearEntry{}).name;
     if (NexusProcessor::isNativeLook(pedalLook(mSel.index)))
     {
       subtitle = TRANS(juce::String::fromUTF8("Efeito do Nexus: não usa captura."));

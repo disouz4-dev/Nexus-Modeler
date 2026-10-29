@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "glass_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Glass 4x10",
+  "inspiracao": "Darkglass 4x10",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 23,
+  "signature": null
+}

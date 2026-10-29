@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "vier100",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Vier 100",
+  "inspiracao": "Diezel VH4",
+  "categoria": "Alemães de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 65,
+  "signature": null,
+  "caixa_padrao": "vier_412"
+}

@@ -3,6 +3,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 
 #include <array>
+#include <deque>
 #include <set>
 
 #include "PluginProcessor.h"
@@ -28,7 +29,7 @@
 // da peça, o pacote e o trilho das capturas; e a cadeia de sinal, montada por
 // clique e arrasta: pedais antes, pedal A/B, cabeçote, pedais entre cabeçote
 // e caixa, caixa, pedais depois.
-class NexusEditor : public juce::AudioProcessorEditor, public juce::DragAndDropContainer, private juce::Timer
+class NexusEditor : public juce::AudioProcessorEditor, public juce::DragAndDropContainer, private juce::Timer, private juce::ChangeListener
 {
 public:
   static constexpr int kWidth = 1400;
@@ -56,6 +57,7 @@ public:
   // Testes: uma leitura do afinador fora do relógio.
   void updateTuner() { mTunerStage->update(); }
   ~NexusEditor() override;
+  void changeListenerCallback(juce::ChangeBroadcaster*) override { catalogChanged(); }
 
   void paint(juce::Graphics&) override;
   void paintOverChildren(juce::Graphics&) override;
@@ -174,7 +176,7 @@ private:
   class CabStage : public juce::Component
   {
   public:
-    CabStage(NexusProcessor& p, const nexus::ui::GearArt* arts, const nexus::ui::GearArt* micArts);
+    CabStage(NexusProcessor& p, const std::deque<nexus::ui::GearArt>& arts, const nexus::ui::GearArt* micArts);
     void setRig(int rig) { mRig = rig; refresh(); }
     void paint(juce::Graphics&) override;
     void resized() override;
@@ -182,7 +184,7 @@ private:
 
   private:
     NexusProcessor& mProcessor;
-    const nexus::ui::GearArt* mArts; // uma por visual de caixa (NexusProcessor::kCabLooks)
+    const std::deque<nexus::ui::GearArt>& mArts; // uma por caixa do catálogo
     const nexus::ui::GearArt* mMicArts; // uma por tipo de microfone (nexus::ui::kMicKinds)
     void paintMics(juce::Graphics& g);
     const nexus::ui::GearArt& art() const;
@@ -309,6 +311,8 @@ private:
   void showMidiMenu(const juce::String& paramId, juce::Component& target);
   // Coluna de equipamentos: lista, aba e peça marcada.
   void refreshBrowser();
+  // O catálogo mudou (equipamento instalado): arte e lista novas.
+  void catalogChanged();
   void pickGear(const nexus::ui::GearItem& item);
   // Põe um pedal novo, com esse visual, na lista e posição dadas.
   void insertPedal(int look, int list, int position);
@@ -332,17 +336,19 @@ private:
   NexusProcessor& mProcessor;
   Look mLook;
   juce::TooltipWindow mTooltips{this, 600};
-  // Visual de cada cabeçote (Brit 800, Mark Five...), pelo parâmetro "cabecote".
-  std::array<nexus::ui::GearArt, NexusProcessor::kAmpLooks> mAmpArts;
-  std::array<nexus::ui::GearArt, NexusProcessor::kCabLooks> mCabArts;
+  // Arte de cada peça, na posição dela no catálogo (gear/GearCatalog). Fila
+  // de duas pontas: equipamento novo entra no fim sem mudar o endereço das
+  // outras (a lista de equipamentos guarda ponteiros).
+  std::deque<nexus::ui::GearArt> mAmpArts;
+  std::deque<nexus::ui::GearArt> mCabArts;
   std::array<nexus::ui::GearArt, nexus::ui::kMicKinds> mMicArts;
   juce::SharedResourcePointer<nexus::t3k::Connection> mT3k;
   std::set<juce::String> mFetching; // tons baixando (número + pacote)
   std::set<int> mFetchingSlots;     // espaços esperando a captura padrão
   const nexus::ui::GearArt& cabArt(int rig) const;
-  const nexus::ui::GearArt& ampArt(int rig) const { return mAmpArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kAmpLooks - 1, mProcessor.ampLook(rig)))]; }
+  const nexus::ui::GearArt& ampArt(int rig) const { return mAmpArts[static_cast<size_t>(juce::jlimit(0, static_cast<int>(mAmpArts.size()) - 1, mProcessor.ampLook(rig)))]; }
   int mShownAmpLook = -1;
-  std::array<nexus::ui::GearArt, kPedalLooks> mPedalArts;
+  std::deque<nexus::ui::GearArt> mPedalArts;
   Selection mSel;
   int mShownPedalLook = -1;
   int mShownChannel = -1;

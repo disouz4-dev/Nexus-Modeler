@@ -55,6 +55,9 @@ struct Tone
 // Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),
 // e a palavra usada para filtrar as listas da conta ("JCM800").
 std::vector<Tone> recommended(const juce::String& gearPrefix);
+// Quem responde antes do recomendadas.json embutido (o catálogo, com as
+// fichas dos equipamentos baixados): devolve o bloco {"busca", "tons"} ou vazio.
+void setRecommendedLookup(std::function<juce::var(const juce::String&)> lookup);
 // Captura padrão de um equipamento (a que o Nexus baixa sozinho quando a peça
 // está vazia). channel >= 0: a do canal (pacote com "Canal N" no nome); um
 // cabeçote sem pacotes por canal usa a primeira no canal 1.
