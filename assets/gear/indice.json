@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:09:14Z",
+ "gerado": "2026-10-29T23:11:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5793,8 +5793,8 @@
   },
   "tiny15": {
    "nome": "Tiny 15",
-   "hash": "895e628ef5c6b353",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "c947cca798e08b24",
+   "data": "2026-10-29T23:11:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tiny15_botao_agudo.png",
@@ -5809,24 +5809,24 @@
     "tiny15_mapa.json"
    ],
    "sha256": {
-    "tiny15_botao_agudo.png": "f597793beb5e2dd7db2f0819a7525df64959c151b9755630b9de2f1be5e50a96",
-    "tiny15_botao_ganho.png": "4457acfffe876fbc8d994132165e4381ff8a4ed672ef4703d851eb2bd814d29e",
-    "tiny15_botao_grave.png": "78a1938250a5a94f154935d0f081d3e7a5fc9afb2557ce1ade3b451b674bb814",
-    "tiny15_botao_medio.png": "3ab1e9711adf8d29372c92c9ae6cfb87d0187e4a1f447e6086a8449b5b11f191",
-    "tiny15_botao_presenca.png": "17f16f408f7b19b38b3d3d7247cb2e0ddc10bd5d84076aa8868de65ab1c1c364",
-    "tiny15_botao_volume.png": "2b85f55af1635732b2090fbeed70344660dbca17d06e7ca6b05141706ca41b50",
-    "tiny15_frente.jpg": "81ac27408237c16b8f60c34e881259dca651605fec651070507f0bdeed12d859",
-    "tiny15_frente_alfa.png": "8ae450c89a5fd91d80bc062df4829294d2d8ec9010d5fd639d8a975e0f97c7f2",
-    "tiny15_manifesto.json": "752d407d073b43c7005dfbe68943dcb067cf83027040b7b6645c72d76705c5bf",
-    "tiny15_mapa.json": "0f13f8c3048fbe65156b2302b54f672cd1e5fb2d13a08c445e27c33c2d13c25a"
+    "tiny15_botao_agudo.png": "9ec72bcb545af9abdc2b5079ba3fb0f9a1e22847489675b7a8a61316d934e5ba",
+    "tiny15_botao_ganho.png": "ec1fd449c50bbe5718d285d02ebc7d65c9c2660e9b6c974bd6daa2b9085ab9d8",
+    "tiny15_botao_grave.png": "23c6df4f84af34c3276490e9a53e499905802815758bba6bc569820bfdd2d00f",
+    "tiny15_botao_medio.png": "0a7b6bd12bdce63b6a09b73e9786fdcf742cd1a4c659beeba4b6434470dde913",
+    "tiny15_botao_presenca.png": "1044cd0e7b812d5b4443c8f4fbb10a0716b85c391a964ef04c3498aa3ab9c466",
+    "tiny15_botao_volume.png": "e086698511f58b6e8842c9d523a850cb55e9d670515cfff2f2b9b451375e37dc",
+    "tiny15_frente.jpg": "68c9773647f0bba16e51e1c918ab6eeedbb75a2b3662ecbdd73c14cd9af44eab",
+    "tiny15_frente_alfa.png": "4fc110c4e69d8ef5260d8a184ff5933c67cfbc6ee3b43474c55b2166563ea9ab",
+    "tiny15_manifesto.json": "d0300a0e350b307d8810370fb9008918c49bd8e02ab8866ffea911026e6dffb8",
+    "tiny15_mapa.json": "3956f49cd8c739e2faa09772226c506de77fe5c2b0ba6a31b1a568e9ef931a22"
    },
-   "tamanho": 1923415,
+   "tamanho": 2084818,
    "tipo": "cabecote",
    "inspiracao": "Tiny Terror",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
