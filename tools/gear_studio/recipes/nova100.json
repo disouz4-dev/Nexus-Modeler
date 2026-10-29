@@ -117,10 +117,5 @@
     "modelo_z": 0.06,
     "modelo_tamanho": 0.019,
     "modelo_inclinacao": 0.0
-  },
-  "selo_grade": {
-    "texto": "5150",
-    "altura_m": 0.036,
-    "margem_m": 0.04
   }
 }
