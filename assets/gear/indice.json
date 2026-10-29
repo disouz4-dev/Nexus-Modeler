@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:56:18Z",
+ "gerado": "2026-10-29T17:00:24Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5031,8 +5031,8 @@
   },
   "rg100": {
    "nome": "RG 100",
-   "hash": "d4f5c267f0c0c525",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "5c79476dcd4daf4d",
+   "data": "2026-10-29T17:00:24Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg100_botao_agudo.png",
@@ -5047,24 +5047,24 @@
     "rg100_mapa.json"
    ],
    "sha256": {
-    "rg100_botao_agudo.png": "1f90493ccf5107c58d39e7dc51b83464c7a456e6a2889d26065aafceae4cf856",
-    "rg100_botao_ganho.png": "22fe5864bb0240c400cf77d7040ba69700df01b4092ccc81834374c3f7a294aa",
-    "rg100_botao_grave.png": "abe9d79ea193c65bdcb1108dc38b359556d63466de27311ea2e02d357b82e9cd",
-    "rg100_botao_medio.png": "6a4adffac3e481b73318a47736012067357a3a343fb76aafa6a2cc3f10f58c8b",
-    "rg100_botao_presenca.png": "26743686b7c3a573cbae1e2205f447e951cd7a833eaeb7eaa7489c8ff9c2a4c9",
-    "rg100_botao_volume.png": "066fa7b801472ba000f30540a2a31bff0e1f93ef0a8177e213d0e544e30a6c34",
-    "rg100_frente.jpg": "1c67a174546125dfacd6871ba7b0cca5f46d0dc75e7f9c2a1f7daf4ea134dc67",
-    "rg100_frente_alfa.png": "ea07bda9edf09fa691442b265719ceee5bbdf33e280d778f4dddd5d54fa14e62",
-    "rg100_manifesto.json": "112c3e0ff4f967881b81fc72f272f830935df3a77ca256b3b124817e287fd6b4",
-    "rg100_mapa.json": "61e15e16a43d4758df251479115e038bb2b24f4f7bd52783be35c150b349b175"
+    "rg100_botao_agudo.png": "7412735b65e560ecc21dba94a17fa30e26050baf7b13983788ffca5fc9a29d11",
+    "rg100_botao_ganho.png": "ce1343cc3d85d37fbf4469469d5e31ccf9f03397a913ae3d5ecc71caebab0dcb",
+    "rg100_botao_grave.png": "10f493ba73c8f4405b52ad161fcad2e4c884454f1944f42b39029b2f9f2ffcbb",
+    "rg100_botao_medio.png": "04d466f7fbdf0eedf42852768431f942b09011cc98c1ab709b7a7984ffcb1184",
+    "rg100_botao_presenca.png": "a8fae2a65c5c2d2436317fe9b184797af244e93d651e7250de286c2b503d0c0c",
+    "rg100_botao_volume.png": "dc5ba757206bd270677637753e80384073debcaf737b200058b58c616cbfc697",
+    "rg100_frente.jpg": "f5c4e9c1d3a7564354d610c9c567e9c2cf459f2026aefd78899519c16118a8d8",
+    "rg100_frente_alfa.png": "3a807c53a420267b12f458e6a96cfc2592cd3b5668c91c2cc782b733d04aabc1",
+    "rg100_manifesto.json": "c771c9b7f91ce41619a0377eae59e320ca4f5f3a49a0f74a50da6389cef8c94c",
+    "rg100_mapa.json": "40eb27637bb7ba68ab82d92c66ca113aa96e612a473fba88cab6c36c74385527"
    },
-   "tamanho": 1697409,
+   "tamanho": 982168,
    "tipo": "cabecote",
    "inspiracao": "Randall RG100ES",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
