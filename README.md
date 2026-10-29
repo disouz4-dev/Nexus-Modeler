@@ -6,6 +6,8 @@ Plugin de guitarra gratuito e de código aberto para Windows, Mac e Linux.
 
 Site do projeto: https://disouz4-dev.github.io/Nexus-Modeler/
 
+Criado por **Diego de Souza**, desenvolvedor ([@disouz4-dev](https://github.com/disouz4-dev)).
+
 Hoje o guitarrista escolhe entre dois mundos:
 
 - a **modelagem** de amplificador: você gira os botões e timbra à vontade, mas
@@ -35,21 +37,23 @@ Tudo isso toca capturas do
 [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
 (NAM A2 Full e A2 Lite).
 
-> **Estado atual: em desenvolvimento, ainda sem versão publicada.** Já
-> funcionam o motor de troca de capturas, a tela 3D com o cabeçote Brit 800,
-> a caixa 4x12 e sete pedais, a cadeia completa com dois cabeçotes, as
-> capturas da TONE3000 dentro do programa, presets, MIDI, 15 idiomas, os
-> instaladores, a atualização automática, o "Testar o som" com gravações de
-> guitarra por estilo, o relatório de problemas para o GitHub e a primeira
-> versão do estúdio (separar as faixas de uma música e tocar junto). Lista
-> completa de equipamentos em
+> **Estado atual: versão de teste publicada (0.2.0-beta.1).** Dá para
+> baixar e testar nos três sistemas. Funcionam o motor de troca de capturas,
+> a tela 3D com 94 cabeçotes (de guitarra e de baixo), 29 caixas e 63
+> pedais, o afinador de rack no começo da cadeia, a cadeia com
+> dois cabeçotes e pedal A/B, as capturas da TONE3000 dentro do programa (a
+> mais curtida pela comunidade entra sozinha), o equalizador do fim da cadeia
+> no estilo Pro-Q, presets, MIDI, 15 idiomas, os instaladores, a atualização
+> automática, o "Testar o som", o relatório de problemas sem precisar de
+> conta e a primeira versão do estúdio (separar as faixas de uma música e
+> tocar junto). Lista completa de equipamentos em
 > [docs/CATALOGO.md](docs/CATALOGO.md).
 
 ![Nexus Modeler com o cabeçote Brit 800](docs/imagens/tela-amplificador.webp)
 
-*O cabeçote Brit 800: com o ganho entre duas posições, as duas capturas
-vizinhas tocam juntas (os losangos acesos no trilho embaixo do nome). À
-direita, a coluna dos equipamentos; embaixo, o caminho do sinal.*
+*O cabeçote Brit 800: cada losango do trilho embaixo do nome é uma captura,
+e o aceso é a que está tocando. À direita, a coluna dos equipamentos;
+embaixo, o caminho do sinal.*
 
 ![Pedal Banana Overdrive](docs/imagens/tela-pedal.webp)
 
@@ -88,8 +92,10 @@ guitarra passa pela cadeia e se mistura com a música.*
 - **Entrada no mudo:** botão "Mudo" ao lado da entrada, e o controle todo para
   baixo também corta de vez (para o microfone do notebook não apitar com os
   alto-falantes). O "Testar o som" continua tocando com a entrada no mudo.
-- **Botão contínuo ou em degraus.** Contínuo mistura as vizinhas; em degraus,
-  o botão só para nas posições que têm captura.
+- **Ganho do cabeçote e drive do pedal com uma posição por captura.** Com 7
+  capturas, o botão tem 7 posições espalhadas pelo giro; com 3, tem 3. Com
+  uma captura só, o botão fica parado, com um cadeado, e a peça toca normal
+  com ela.
 - **Equalizador universal** (grave, médio, agudo e presença) depois da
   captura e da caixa, o mesmo em todo cabeçote: grave em 220 Hz, médio em
   750 Hz, agudo a partir de 2,8 kHz e presença em 5,5 kHz, até ±12 dB (a
@@ -98,7 +104,15 @@ guitarra passa pela cadeia e se mistura com a música.*
   da caixa, até 24 faixas (sino, prateleiras, cortes de 12 a 48 dB por oitava
   e notch). Duplo clique na curva cria a faixa; arrastar, roda do mouse e
   botão direito ajustam.
-- **Pear Gate:** redutor de ruído com sensibilidade, ataque e release.
+- **Marcasite Gate:** redutor de ruído com sensibilidade, ataque e release.
+- **Afinador de rack** fixo no começo da cadeia: nota, cents, frequência,
+  fileira de luzes, lá de referência de 430 a 450 Hz e mudo ao afinar.
+- **Efeitos feitos pelo Nexus** (sem captura): chorus, delay, reverb, phaser,
+  flanger, tremolo, vibe, gate e o Cherry Drop (afinação para baixo
+  polifônica, com visor).
+- **Catálogo:** 37 cabeçotes (18 de baixo), 15 caixas e 19 pedais. Ao escolher
+  uma peça, o Nexus baixa sozinho a captura mais curtida pela comunidade da
+  TONE3000; "trocar pacote" mostra a lista para escolher outra.
 - **Cabeçotes de vários canais** (Mark Five: Limpo, Crunch e Lead), cada canal
   com a sua captura, e uma caixa para cada cabeçote.
 - **A2 Full e A2 Lite** com um botão (o mesmo arquivo serve para os dois).
@@ -116,9 +130,9 @@ guitarra passa pela cadeia e se mistura com a música.*
 - **Pedais:** até 12, cada um tocando captura NAM de pedal (pacote de drive
   com troca sem clique). Drive em degraus de 0 a 10, Tom e Nível livres; clique
   no pisante liga e desliga em 20 ms, sem estalo, com o LED vermelho aceso
-  quando ligado. Pedais de captura: Lemon Drive (inspirado no TS9), Orange
+  quando ligado. Pedais de captura: Greengage Drive (inspirado no TS9), Orange
   Drive (DS-1), Banana Overdrive (SD-1) e Gold Centaur (Klon). Efeitos do
-  próprio Nexus: Blueberry Chorus, Coconut Delay e Grape Reverb, com rastro
+  próprio Nexus: Neptune Chorus, Coconut Delay e Meteorite Reverb, com rastro
   ao desligar.
 - **Coluna de equipamentos** à direita: clique troca a peça escolhida,
   arrastar para a cadeia acrescenta. Lista completa, com os planejados, em
@@ -238,6 +252,24 @@ capturas** para você dizer a posição de cada uma. O resultado fica num
 Circuitos de equalizador disponíveis: `marshall`, `fender`, `alto_ganho`,
 `mesa_mark`.
 
+## Requisitos
+
+- **Windows** 10 ou 11, 64 bits. Não precisa instalar nada além do Nexus.
+- **Mac** com processador Intel ou Apple (M1 em diante), macOS 11 ou mais novo.
+- **Linux** de 64 bits (x86_64). Com PipeWire, instale o `pipewire-jack` para
+  a menor latência; o Nexus usa o JACK do PipeWire sozinho.
+- Uma interface de áudio é recomendada; o "Testar o som" funciona sem ela.
+- Para baixar capturas dentro do programa, uma conta gratuita na
+  [TONE3000](https://www.tone3000.com).
+
+## Encontrou um problema?
+
+No Nexus, clique no **i** no canto de cima e em **Reportar um problema**.
+O relatório chega aqui nos [Issues](https://github.com/disouz4-dev/Nexus-Modeler/issues)
+sem você precisar de conta no GitHub: vai a versão, o sistema e o que você
+escreveu, sem nenhum dado pessoal. Se o Nexus fechar sozinho, na próxima vez
+ele oferece mandar o relatório do travamento.
+
 ## Como instalar
 
 Pelo site, cada sistema tem o botão do instalador e o comando do terminal:
@@ -245,7 +277,7 @@ https://disouz4-dev.github.io/Nexus-Modeler/#sistemas
 
 Os instaladores ficam na página de
 [lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest)
-(a primeira versão ainda não foi publicada). Depois de instalado, o Nexus
+(hoje, a versão de teste 0.2.0-beta.1). Depois de instalado, o Nexus
 avisa sozinho quando sai uma versão nova e instala com um clique.
 
 ### Windows
@@ -340,6 +372,10 @@ docs/       site, catálogo, imagens e o plano dos modelos 3D
 ## Novidades
 
 O que mudou em cada versão está em [NOTAS-DE-VERSAO.md](NOTAS-DE-VERSAO.md).
+
+## Autor
+
+Criado por **Diego de Souza**, desenvolvedor ([@disouz4-dev](https://github.com/disouz4-dev)).
 
 ## Licença
 

@@ -1,0 +1,81 @@
+{
+  "nome": "Blackcurrant Bass",
+  "familia": "blackcurrant_bass",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 148,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 262,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 378,
+      "y": 198,
+      "tamanho": 75,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    94,
+    120
+  ],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 186.9,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 300.0,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 413.1,
+      "y": 291.8,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 545.5,
+    "raio": 51.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 165.2,
+    "raio": 12.9
+  }
+}

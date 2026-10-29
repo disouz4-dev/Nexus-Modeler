@@ -1,0 +1,20 @@
+{
+  "formato": 1,
+  "id": "markjp",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Mark JP",
+  "inspiracao": "Mesa Boogie JP-2C",
+  "categoria": "Americanos de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 53,
+  "signature": null,
+  "caixa_padrao": "mark5_412",
+  "equalizador_grafico": true
+}

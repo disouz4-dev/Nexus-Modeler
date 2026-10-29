@@ -60,11 +60,16 @@ set(NEXUS_UI_SOURCES
   source/ui/GearBrowser.cpp
   source/ui/PresetBar.cpp
   source/ui/UpdateBadge.cpp
+  source/ui/WhatsNew.cpp
+  source/ui/ArteBadge.cpp
   source/ui/PackMapper.cpp
   source/ui/TestBar.cpp
   source/ui/StudioView.cpp
   source/ui/EqStage.cpp
+  source/ui/Tuner.cpp
+  source/ui/IrMic.cpp
   source/update/Updater.cpp
+  source/update/GearStore.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
 
@@ -76,6 +81,7 @@ endif()
 set_source_files_properties(source/update/Updater.cpp PROPERTIES COMPILE_DEFINITIONS "NEXUS_VERSAO=\"${NEXUS_VERSAO}\"")
 set(NEXUS_PROCESSOR_SOURCES
   source/PluginProcessor.cpp
+  source/gear/GearCatalog.cpp
   source/studio/Library.cpp
   source/studio/Player.cpp
   source/fx/PitchDrop.cpp
@@ -123,10 +129,12 @@ endif()
 set(NEXUS_ART_DIR "${CMAKE_CURRENT_BINARY_DIR}/art")
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/inter-Inter[opsz,wght].ttf" "${NEXUS_ART_DIR}/inter.ttf" COPYONLY)
 configure_file("${PROJECT_SOURCE_DIR}/assets/fonts/oswald-Oswald[wght].ttf" "${NEXUS_ART_DIR}/oswald.ttf" COPYONLY)
-file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
+file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*.png" "${PROJECT_SOURCE_DIR}/assets/gear/*.jpg" "${PROJECT_SOURCE_DIR}/assets/gear/*.json"
      "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json"
      "${PROJECT_SOURCE_DIR}/assets/marca/*.svg"
      "${PROJECT_SOURCE_DIR}/assets/teste/*.flac")
+# As notas de versão vão junto: depois de atualizar, a tela mostra as novidades.
+list(APPEND NEXUS_GEAR_FILES "${PROJECT_SOURCE_DIR}/NOTAS-DE-VERSAO.md")
 juce_add_binary_data(NexusArt
   HEADER_NAME BinaryData.h
   NAMESPACE BinaryData
@@ -241,6 +249,39 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_data_structures
     juce::juce_cryptography
     juce::juce_recommended_config_flags)
+
+  # Teste dos equipamentos novos sem reinstalar (pasta local no lugar do GitHub):
+  # nexus_arte_test <pasta com indice.json e os arquivos> <peça nova> <nome>
+  juce_add_console_app(nexus_arte_test PRODUCT_NAME "nexus_arte_test")
+  target_sources(nexus_arte_test PRIVATE host_test/GearStoreTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_arte_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_arte_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_arte_test PRIVATE
+    nexus_engine
+    nexus_studio
+    signalsmith-stretch
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+
+  # Catálogo de equipamentos e id em texto no estado (presets antigos abrem iguais).
+  juce_add_console_app(nexus_gear_test PRODUCT_NAME "nexus_gear_test")
+  target_sources(nexus_gear_test PRIVATE host_test/GearTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_gear_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_gear_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
+  target_link_libraries(nexus_gear_test PRIVATE
+    nexus_engine
+    nexus_studio
+    signalsmith-stretch
+    NexusArt
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+  add_test(NAME catalogo_de_equipamentos
+           COMMAND nexus_gear_test "${PROJECT_SOURCE_DIR}/assets/gear")
 
   # Ferramenta manual: passa uma gravação de guitarra pela cadeia com material da TONE3000.
   juce_add_console_app(nexus_render PRODUCT_NAME "nexus_render")

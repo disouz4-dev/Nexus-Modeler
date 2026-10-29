@@ -1,0 +1,68 @@
+{
+  "nome": "Cherry Drop",
+  "familia": "cherry_drop",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 150,
+      "y": 274,
+      "tamanho": 98,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 352,
+      "y": 274,
+      "tamanho": 98,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "DROP",
+      "x": 201.9,
+      "y": 394.4,
+      "altura": 18.02,
+      "achatamento": 1.0,
+      "cor": "#f9f9f7",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 398.1,
+      "y": 394.4,
+      "altura": 18.02,
+      "achatamento": 1.0,
+      "cor": "#f9f9f7",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 592.5,
+    "raio": 66.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 381.4,
+    "raio": 16.5
+  },
+  "visor": {
+    "x": 174.0,
+    "y": 119.7,
+    "w": 251.9,
+    "h": 127.7
+  },
+  "medidas_mm": [
+    74,
+    120
+  ]
+}

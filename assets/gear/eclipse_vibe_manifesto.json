@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "eclipse_vibe",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Eclipse Vibe",
+  "inspiracao": "Uni-Vibe",
+  "categoria": "Modulação",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "vibe",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 12,
+  "signature": null
+}

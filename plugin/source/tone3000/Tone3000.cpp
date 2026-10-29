@@ -50,6 +50,22 @@ juce::var recommendedJson()
   return json;
 }
 
+std::function<juce::var(const juce::String&)>& recommendedLookup()
+{
+  static std::function<juce::var(const juce::String&)> lookup;
+  return lookup;
+}
+
+// Bloco das recomendadas de uma peça: o da ficha dela (equipamento baixado)
+// e, se não tiver, o do recomendadas.json embutido.
+juce::var recommendedEntry(const juce::String& gearPrefix)
+{
+  if (auto& lookup = recommendedLookup())
+    if (const auto v = lookup(gearPrefix); v.isObject())
+      return v;
+  return recommendedJson()[juce::Identifier(gearPrefix)];
+}
+
 Tone toneFromApi(const juce::var& v)
 {
   Tone t;
@@ -60,6 +76,7 @@ Tone toneFromApi(const juce::var& v)
   if (t.models == 0)
     t.models = static_cast<int>(v["models_count"]);
   t.downloads = static_cast<int>(v["downloads_count"]);
+  t.favorites = static_cast<int>(v["favorites_count"]);
   if (v["user"].isObject())
     t.creator = v["user"]["display_name"].toString().isNotEmpty() ? v["user"]["display_name"].toString()
                                                                  : v["user"]["username"].toString();
@@ -92,10 +109,15 @@ juce::String explain(const juce::String& code)
 
 // ================================================================ Recomendadas
 
+void setRecommendedLookup(std::function<juce::var(const juce::String&)> lookup)
+{
+  recommendedLookup() = std::move(lookup);
+}
+
 std::vector<Tone> recommended(const juce::String& gearPrefix)
 {
   std::vector<Tone> out;
-  const auto entry = recommendedJson()[juce::Identifier(gearPrefix)];
+  const auto entry = recommendedEntry(gearPrefix);
   if (const auto* tones = entry["tons"].getArray())
     for (const auto& v : *tones)
     {
@@ -139,18 +161,29 @@ std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel)
   return std::nullopt;
 }
 
+// Pasta baixada que dá para tocar: capturas com posição no pack.json (sem
+// "mapear") ou, numa caixa, algum IR. Download de uma versão antiga que deu
+// errado não conta, e a padrão é baixada de novo.
+bool usableFolder(const juce::File& folder)
+{
+  const auto pack = juce::JSON::parse(folder.getChildFile("pack.json"));
+  if (auto* caps = pack["capturas"].getDynamicObject(); caps != nullptr && caps->getProperties().size() > 0)
+    return !static_cast<bool>(pack["mapear"]);
+  return folder.getNumberOfChildFiles(juce::File::findFiles, "*.wav") > 0;
+}
+
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName)
 {
   for (const auto& f : Connection::packsFolder(gearName).findChildFiles(juce::File::findDirectories, false))
     if (f.getFileName().startsWith(juce::String(tone.id) + " ")
-        && (tone.packName.isEmpty() || f.getFileName().containsIgnoreCase(safeName(tone.packName))))
+        && (tone.packName.isEmpty() || f.getFileName().containsIgnoreCase(safeName(tone.packName))) && usableFolder(f))
       return f;
   return {};
 }
 
 juce::String filterWord(const juce::String& gearPrefix)
 {
-  return recommendedJson()[juce::Identifier(gearPrefix)]["busca"].toString();
+  return recommendedEntry(gearPrefix)["busca"].toString();
 }
 
 // ================================================================ Escolha das capturas
@@ -602,7 +635,14 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
     if (token.isEmpty() && which != List::trending)
       return post([done] { done({}, explain("sem_conta")); });
     juce::String path;
-    if (which == List::trending)
+    if (which == List::mostLiked)
+    {
+      if (word.isEmpty())
+        return post([done] { done({}, {}); });
+      path = "/api/v1/tones/search?page=1&page_size=25&sort=best-match&query=" + juce::URL::addEscapeChars(word, true)
+             + "&gears=" + juce::URL::addEscapeChars(gear.replaceCharacter(',', '_'), true);
+    }
+    else if (which == List::trending)
       path = "/api/v1/tones/trending?gear=" + juce::URL::addEscapeChars(gear, true);
     else
     {
@@ -615,8 +655,26 @@ void Connection::list(List which, const juce::String& gear, const juce::String& 
     std::vector<Tone> tones;
     if (const auto* data = json["data"].getArray())
       for (const auto& v : *data)
-        if (v["format"].toString().isEmpty() || v["format"].toString().equalsIgnoreCase("nam"))
+        if (v["format"].toString().isEmpty() || v["format"].toString().equalsIgnoreCase("nam") || gear == "cab")
           tones.push_back(toneFromApi(v));
+    if (which == List::mostLiked)
+    {
+      // Só os tons do equipamento certo (o título tem todas as palavras da
+      // busca) e com captura A2; o mais curtido primeiro, depois o mais baixado.
+      const auto words = juce::StringArray::fromTokens(word.toLowerCase(), " -", "");
+      tones.erase(std::remove_if(tones.begin(), tones.end(),
+                                 [&](const Tone& t) {
+                                   const auto title = t.title.toLowerCase().removeCharacters("-");
+                                   for (const auto& w : words)
+                                     if (w.length() >= 2 && !title.contains(w.removeCharacters("-")))
+                                       return true;
+                                   return t.models <= 0 && gear != "cab";
+                                 }),
+                  tones.end());
+      std::stable_sort(tones.begin(), tones.end(), [](const Tone& a, const Tone& b) {
+        return a.favorites != b.favorites ? a.favorites > b.favorites : a.downloads > b.downloads;
+      });
+    }
     post([done, tones = std::move(tones), error] { done(tones, error.isEmpty() ? juce::String() : explain(error)); });
   });
 }
@@ -649,6 +707,7 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         tone.pattern = wanted.pattern;
         tone.series = wanted.series;
         tone.defaultIr = wanted.defaultIr;
+        tone.firstIfUnnamed = wanted.firstIfUnnamed;
         tone.fixedPositions = wanted.fixedPositions;
         tone.packName = wanted.packName;
       }
@@ -715,6 +774,20 @@ void Connection::download(const Tone& wanted, const juce::String& gearFilter, co
         for (const auto& m : *data)
           list.emplace_back(m["name"].toString(), m["model_url"].toString());
       auto chosen = chooseCaptures(list, tone);
+      // O botão vai de 0 a 10: número fora disso no nome é modelo ou ano
+      // ("VX 304 NR Crunch", "2203"), não a posição do ganho.
+      chosen.erase(std::remove_if(chosen.begin(), chosen.end(), [](const auto& c) { return c.position < 0.0 || c.position > 10.0; }),
+                   chosen.end());
+      // Uma captura só, sem número de ganho no nome: vai para o meio do botão.
+      if (chosen.empty() && (list.size() == 1 || (tone.firstIfUnnamed && !list.empty())))
+        chosen.push_back({5.0, list.front().first, list.front().second});
+      if (juce::SystemStats::getEnvironmentVariable("NEXUS_DEPURAR", {}).isNotEmpty())
+      {
+        std::printf("depurar: tom %d (pedido %d), %d posições fixas, %d capturas A2, %d escolhidas\n", id, wanted.id,
+                    static_cast<int>(tone.fixedPositions.size()), static_cast<int>(list.size()), static_cast<int>(chosen.size()));
+        for (const auto& [n, u] : list)
+          std::printf("  [%s]\n", n.toRawUTF8());
+      }
       // Sem a posição do botão nos nomes: baixa todas (até 40) e o usuário mapeia.
       const bool needsMapping = chosen.empty();
       if (needsMapping)

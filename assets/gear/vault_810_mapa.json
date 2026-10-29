@@ -1,0 +1,17 @@
+{
+  "nome": "Vault 8x10",
+  "familia": "vault_810",
+  "largura": 800,
+  "altura": 1600,
+  "posicoes": 101,
+  "botoes": [],
+  "medidas_mm": [
+    610,
+    1220
+  ],
+  "falantes": {
+    "linhas": 4,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}

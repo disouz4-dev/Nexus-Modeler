@@ -1,6 +1,246 @@
 # Notas de versão
 
-## Próxima versão (em desenvolvimento, ainda não publicada)
+## 0.2.0-beta.1
+
+### Equipamentos novos
+- 31 cabeçotes novos, cada um com a sua caixa. Guitarra: Top Boost 30 (AC30),
+  Match 30 (Matchless DC-30), Tiny 15 (Tiny Terror), Rocker 50 (Rockerverb),
+  Recto Triple, Power 100 (ENGL Powerball), Uber 100 (Uberschall), Sonic 60
+  (Super-Sonic), Silver Twin (Twin Reverb), Tweed 59 (Bassman), Brit Plexi
+  (Super Lead 1959), Brit Jubilee (Silver Jubilee) e Jazz 120 (JC-120).
+- 18 cabeçotes de baixo: Vault 300 (Ampeg SVT), Vault V4 (Ampeg V-4B),
+  Fliptop 15 (Ampeg B-15), Citrus Bass 200 (Orange AD200), Tiny Bass (Orange
+  Terror Bass), Granite 800 (Gallien-Krueger 800RB), Hart 1000 (Hartke
+  LH1000), Garden 800 (Eden), Glass 500 (Darkglass Microtubes 500), Solar T
+  (Sunn Model T), Bassline 100 (Fender Bassman 100T), Eagle 751 (Aguilar
+  DB751), Little Tube (Markbass Little Mark Tube), Workhorse 350 (SWR),
+  Underground 800 (Mesa Bass 800D), Acoustica 360 (Acoustic 360), Tracer 7
+  (Trace Elliot GP7) e Brit Bass (Marshall Super Bass).
+- 10 caixas novas: Citrus 4x12, Blue 2x12, Twin 2x12, Tweed 4x10, Match 2x12,
+  Power 4x12, Uber 4x12, Jazz 2x12, Vault 8x10 e Granite 4x10. A lista das
+  caixas agora é agrupada pelo tamanho (4x12, 2x12, 4x10, 8x10).
+- Pedais de modulação feitos pelo próprio Nexus: Mars Phaser (Phase 90),
+  Nebula Flanger (Electric Mistress), Turquoise Tremolo (TR-2) e Eclipse Vibe
+  (Uni-Vibe).
+- Pedais de ambiente de vários modos, feitos pelo próprio Nexus, com visor
+  que mostra o modo:
+  - Aquamarine Sky (no espírito do BigSky): hall, sala, placa, mola, nuvem,
+    swell e cinco shimmers (oitava acima, quinta + oitava, oitava abaixo, só
+    na cauda e duplo). Botões: decaimento, pré-atraso, modulação, tom,
+    shimmer e mistura.
+  - Emerald Echo (no espírito do DL4): digital, analógico, fita, multi-cabeça,
+    ping-pong, reverso, modulado, lo-fi, slapback, swell e dueto. Segue o tap
+    tempo e as divisões.
+  - Galaxy Mod (no espírito do MM4): rotary, tremolo harmônico, vibrato, filtro
+    de envelope, wah automático, modulador em anel, chorus triplo, tremolo
+    picotado, phaser de 12 estágios, flanger por zero e detune. Segue o tap
+    tempo.
+- Blueberry Chain: delays digitais em cadeia (um alimenta o outro). Botões
+  de tempo, feedback e repetição; chave 2 | 3 escolhe dois ou três delays e
+  chave x | / faz cada delay repetir o dobro ou a metade de vezes do anterior
+  (4, 8 e 16 repetições ou 4, 2 e 1). Todos no mesmo tempo; segue o tap tempo.
+- Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
+  Pearl Fuzz (Big Muff), Onyx Metal (MT-2), Heliodor Mud (Mudhoney) e
+  Snow Pear Treble (Rangemaster).
+- O nome de cada pedal é uma fruta, pedra ou metal da cor do original; os de
+  modulação têm nome de astro. Em frente clara, a marca tem letras pretas.
+
+### Seleção da TONE3000
+- 48 cabeçotes novos, cada um com as capturas mais curtidas da comunidade da
+  TONE3000 já escolhidas: Brit Plexi 50 (Marshall 1987 Lead 50 W), Brit 45
+  (Marshall JTM45), Brit 900 (Marshall JCM900), Brit 410 (Marshall JVM410),
+  Brit 2000 (Marshall JCM2000 (DSL e TSL)), Brit DS 20 (Marshall DSL (série
+  nova)), Brit Rack 1 (Marshall JMP-1), Silver Deluxe (Fender Deluxe Reverb),
+  Silver Super (Fender Super Reverb), Silver Prince (Fender Princeton Reverb),
+  Tweed 57 (Fender Tweed Deluxe 5E3), Hot Rod 40 (Fender Hot Rod Deluxe),
+  Champion 5 (Fender Champ), Mark Two Plus (Mesa Boogie Mark IIC+), Mark Three
+  (Mesa Boogie Mark III), Mark Four (Mesa Boogie Mark IV), Mark JP (Mesa
+  Boogie JP-2C), Badland 100 (Mesa Boogie Badlander), Lone Star 100 (Mesa
+  Boogie Lonestar), Block 5150 III (EVH 5150 III), Top Boost 15 (Vox AC15),
+  Citrus 50 (Orange OR50), Citrus 30 (Orange AD30), Black Country 100 (Laney
+  Supergroup), Iron 120 (Laney Ironheart), Fire 100 (ENGL Fireball), Feral 120
+  (ENGL Savage), Steel 20 (ENGL Ironball), Vier 100 (Diezel VH4), Herb 180
+  (Diezel Herbert), Bliss 100 (Bogner Ecstasy), Goddess 80 (Bogner Shiva),
+  Dirty 40 (Friedman Dirty Shirley), Special 100 (Dumble Overdrive Special),
+  Double Stone 50 (Two-Rock Classic Reverb), Black Cat 30 (Bad Cat Hot Cat),
+  Hi 103 (Hiwatt DR103), Dark Star 20 (Blackstar HT e Series One), Tri 100
+  (Hughes & Kettner TriAmp), Gen 120 (Revv Generator 120), Nova 100 (Fortin
+  Natas), Emperor 20 (Tone King Imperial), RG 100 (Randall RG100ES), Arch 100
+  (PRS Archon), Kraken 50 (Victory Kraken), Magick 25 (Supro Black Magick),
+  Deliver 120 (Fryette Deliverance), Ash 500 (Ashdown ABM).
+- 11 caixas novas: Silver 1x12 (Fender Deluxe Reverb 1x12), Mark 1x12 (Mesa
+  Boogie Mark 1x12), Star 4x12 (Blackstar 4x12), Country 4x12 (Laney 4x12),
+  Vier 4x12 (Diezel 4x12), Hi 4x12 (Hiwatt 4x12), RG 4x12 (Randall 4x12), Hart
+  4x10 (Hartke 4x10), Glass 4x10 (Darkglass 4x10), Solar 4x12 (Sunn 4x12),
+  Fliptop 1x15 (Ampeg B-15 1x15).
+- 9 cabeçotes de baixo novos: Vault 4 Pro (Ampeg SVT-4 Pro), Maple 400
+  (Traynor YBA-200), Nord 650 (EBS Classic 500), Wind 300 (Peavey Mark III),
+  Bass Box V (Behringer Bass V-Amp Pro), Eagle Hammer 500 (Aguilar Tone
+  Hammer 500), Bebop 15 (Polytone Mini Brute), Fliptop 18 (Ampeg B-18
+  Portaflex) e Vault 210 (Ampeg BA-210).
+- 3 caixas de baixo novas: Bassline 2x15 (Fender Bassman 2x15), Solar 2x15
+  (Sunn 2x15) e Glass 4x12 (Darkglass 4x12).
+- Bassline 100 passa a ser o Bassman silverface (Bassman 50 e 100T), com a
+  caixa Bassline 2x15; Tracer 7 junta a linha Trace Elliot (GP7, GP12 e Speed
+  Twin); Vault V4 ganha mais capturas; Eagle 751 abre com a Glass 4x12 e
+  Acoustica 360 com a Vault 8x10.
+- 34 pedais novos de captura: Olive Drive (Ibanez TS808 Tube Screamer),
+  Pistachio Drive (Maxon OD808), Blueberry Blues (Boss BD-2 Blues Driver),
+  Citrine Overdrive (Boss OD-3), Clementine Turbo (Boss DS-2 Turbo
+  Distortion), Cherry Fuzz (Dunlop Fuzz Face), Mercury Bender (Tone Bender), Opal
+  Drive (Fulltone OCD), Quince Plus (MXR Distortion+), Hematite Rock (Rockman
+  X100), Basalt Amp (Tech 21 SansAmp), Blackcurrant Bass (Darkglass B7K),
+  Labradorite Omega (Darkglass Alpha Omega), Spinel Precision (Horizon Devices
+  Precision Drive), Amber Glory (JHS Morning Glory), Raspberry Drive (JHS Andy
+  Timmons), Honeydew Drive (Paul Cochrane Timmy), Amethyst King (Analogman
+  King of Tone), Magnetite Boost (Xotic EP Booster), Tourmaline Grind (Fortin Grind),
+  Sapote 33 (Fortin 33), Jet 5150 (EVH 5150 Overdrive), Charoite
+  G3 (Revv G3), Jamun OD (Friedman BE-OD), Agate Wylde (MXR Wylde
+  Overdrive), Pyrite Klone (Wampler Tumnus), Howlite War (Death By Audio
+  Fuzz War), Moonstone Fuzz (EarthQuaker Hizumitas), Peridot Drive
+  (EarthQuaker Plumes), Jackfruit Monkey (DigiTech Bad Monkey), Topaz 250
+  (DOD Overdrive Preamp 250), Lime Bass Fuzz (Electro-Harmonix Bass Big
+  Muff), Galena Hammer (Aguilar Tone Hammer), Melanite Bass DI (MXR M80 Bass
+  DI).
+- Mark Two Plus, Mark Three, Mark Four e Mark JP também têm o equalizador
+  gráfico de 5 faixas, como o Mark Five.
+
+### Efeitos novos do Nexus
+- Comet Wah (Cry Baby), Saturn Rotary (caixa rotativa Leslie), Pulsar Echo
+  (delay analógico no espírito do Memory Man), Jupiter Octave (oitavador no
+  espírito do OC-2) e Apple Comp (compressor no espírito do Dyna Comp).
+- Selenite EQ: equalizador gráfico no espírito do GE-7, com sete deslizantes
+  (100, 200, 400 e 800 Hz, 1,6, 3,2 e 6,4 kHz), cada um de −15 a +15 dB, e o
+  deslizante de nível. Com tudo no meio, o som passa sem mudança.
+
+### Nomes e arte dos pedais
+- 34 pedais trocaram de nome para combinar com a cor do original (a
+  configuração salva continua abrindo): Lemon Drive virou Greengage Drive,
+  Grape Reverb virou Meteorite Reverb, Pear Gate virou Marcasite Gate, Lychee
+  Fuzz virou Pearl Fuzz, Avocado Metal virou Onyx Metal, Juniper Sky virou
+  Aquamarine Sky, Lime Echo virou Emerald Echo e Acerola EQ virou Selenite
+  EQ, entre outros.
+- Cada pedal tem a sua arte impressa no tampo, sobre raios, listras ou pontos
+  no tom do pedal; nos de modulação, o astro sobre um céu estrelado.
+- Os efeitos de modulação trocaram de nome para nomes de astros, no mesmo
+  lugar dos antigos (as configurações salvas continuam abrindo): Blueberry
+  Chorus virou Neptune Chorus, Tangerine Phaser virou Mars Phaser, Dragonfruit
+  Flanger virou Nebula Flanger, Kiwi Tremolo virou Turquoise Tremolo, Blackberry
+  Vibe virou Eclipse Vibe e Plum Mod virou Galaxy Mod.
+
+### Linux
+- O estúdio não engasga mais a guitarra ao separar uma música e tocar junto: a
+  separação usa menos núcleos do processador e o ajuste de velocidade e tom do
+  player espalha a conta pelos blocos de áudio. Numa medida de 60 segundos
+  separando e tocando, os estouros caíram de 252 para 6, o mesmo de só tocar.
+
+### Captura padrão
+- Ao escolher uma peça, o Nexus baixa sozinho a captura mais curtida pela
+  comunidade da TONE3000. "Trocar pacote" abre a lista ("Mais curtidas" é a
+  primeira aba) para escolher outra.
+
+### Equipamentos novos sem atualizar o programa
+- Cabeçotes, caixas e pedais de captura novos chegam inteiros (nome, arte,
+  capturas e caixa) sem instalar versão nova do Nexus. Um ícone na coluna de
+  equipamentos fica apagado quando não há novidade (o clique procura na hora)
+  e aceso, com a quantidade, quando há; o clique baixa e as peças entram na
+  lista. A arte refeita de uma peça também chega assim.
+- Os presets passam a guardar o nome de cada peça, e não a posição dela na
+  lista: as peças novas não bagunçam os presets salvos, e os antigos
+  continuam abrindo.
+
+### Atualização
+- Ícone próprio no topo (nuvem com seta para baixo), sempre visível. Apagado,
+  não há versão nova, e o clique procura na hora (o ícone pisca enquanto
+  procura); aceso, há versão nova, e o clique baixa e instala. Ao abrir, o
+  Nexus só procura e acende o ícone, sem perguntar. O botão direito no ícone
+  aceso mostra o que mudou, lembra depois ou ignora a versão.
+- No Mac, a atualização troca o programa e os plugins no lugar onde já estão,
+  sem abrir instalador. Se estiverem nas pastas do sistema, o Mac pede a
+  senha uma vez, na janela dele.
+- No Windows, a atualização instala sem perguntas e abre o Nexus de novo
+  sozinha. Dentro do programa de gravação, o instalador abre normal, para a
+  pessoa salvar o projeto antes.
+- No Linux (instalação pelo terminal), "Reabrir agora" fecha e abre o Nexus
+  já na versão nova.
+- Os instaladores do Mac e do Windows trazem o número completo da versão
+  (com -beta.N), para as versões seguintes aparecerem.
+- Notas de versão na tela: o aviso de versão nova mostra o que entra nela,
+  e na primeira abertura depois de atualizar o Nexus mostra as novidades da
+  versão. Para ler de novo: menu "i", "Novidades desta versão".
+
+### Afinador
+- Afinador de rack fixo no começo da cadeia: nota, oitava, cents e
+  frequência, fileira de luzes (verde no meio = afinada), lá de referência de
+  430 a 450 Hz e "mudo ao afinar".
+
+### Phaser
+- Mars Phaser refeito no molde do circuito do MXR Phase 90: quatro
+  estágios varridos por um oscilador triangular, som limpo e defasado meio a
+  meio. Velocidade de 0,1 a 10 Hz (o botão mostra em Hz), profundidade é a
+  largura da varredura, intensidade é a realimentação do Phase 90 de logotipo
+  em bloco (zerada, é o "script").
+
+### Pedaleira (MIDI)
+- Aprender uma pisada: a pedaleira que manda o banco junto com a troca de
+  patch ligava qualquer pisada ao pedal. Agora fica só a pisada aprendida, e
+  o registro anota o que foi aprendido.
+
+### Pedaleira na tela
+
+- Ao escolher um pedal, o palco mostra a pedaleira inteira (modelada em 3D no
+  Blender): todos os pedais da cadeia, na ordem do som, ligados por cabos.
+  O LED aceso mostra quem está ligado; pisar no pisante de qualquer pedal liga
+  e desliga, e clicar no pedal escolhe ele para mexer nos botões.
+- Os pedais ficam numa fileira só enquanto cabem bem; quando apertar a ponto
+  de ficarem menores do que em duas, abre a fileira da frente (a de trás com
+  o começo do som, a da frente com o resto).
+- Cada pedal aparece no tamanho de verdade em relação aos outros: um pedal
+  pequeno fica menor que um comum, e o Emerald Echo ficou mais compacto
+  (15 x 10,5 cm).
+- Cabeçote ou caixa: a pedaleira some e aparece só a peça.
+- A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
+- A câmera chega perto até os pedais ocuparem o palco e se ajusta quando um
+  pedal entra ou sai. Dois cliques num pedal mostram ele grande, com o resto
+  escurecido; dois cliques, Esc ou um clique fora voltam à pedaleira.
+
+### Equalizador do fim da cadeia
+- Botão Ligado/Bypass: em bypass, o som passa intacto e as faixas ficam
+  guardadas para quando ligar de novo.
+- Em cima do ponto sob o mouse, arrastado ou escolhido, aparecem a frequência
+  e o ganho.
+
+### Microfones na frente da caixa
+
+- Com IR próprio, a caixa mostra o microfone com que o IR foi gravado, em 3D,
+  na frente do falante e na posição da gravação (centro, borda da calota,
+  cone, borda ou a distância em polegadas), com uma etiqueta do modelo e do
+  tipo. Um IR que mistura dois microfones mostra os dois, lado a lado.
+- O arquivo de IR não guarda o microfone por dentro: o Nexus lê o nome do
+  arquivo (ex.: "Engl_MD421_Cone", "UL 4x12 M201 1.25in"). Quando o nome não
+  diz, a caixa aparece sozinha, como antes.
+- Cinco modelos de microfone, sem marca: dinâmico de bastão (estilo SM57),
+  dinâmico lateral (estilo MD421), condensador grande (estilo U87),
+  condensador de lápis (estilo KM184) e fita (estilo R121).
+- Os nomes dos tipos de microfone ainda aparecem só em português.
+
+### Primeira abertura
+- A cadeia de sinal começa só com o Brit 800 e a caixa dele, sem pedais. Nas
+  vezes seguintes, abre como a pessoa deixou.
+
+### Cherry Drop
+- Visual novo: visor azul sempre aceso mostrando os semitons, estampa de
+  ondas e aro cromado. O LED mostra se o pedal está ligado.
+- Botão do drop com o meio-dia sem mudar o tom: para a esquerda desce até
+  −12 semitons, para a direita sobe até +12. O segundo botão é o brilho, para
+  o som não ficar opaco quando desce.
+
+### Menor
+- Imagens dos botões em 256 cores: a arte dos equipamentos caiu de 284 MB
+  para cerca de 100 MB, mesmo com o dobro de peças.
+
+## 0.1.0-beta.1
+
 
 ### Tela
 - Tela nova com identidade própria: marca do Nexus (triângulo impossível
@@ -148,6 +388,12 @@
 - A separação roda em prioridade baixa, em no máximo 6 linhas e sem as
   linhas extras do Accelerate: o áudio e a tela seguem leves enquanto separa
   (medido: o áudio cabe no tempo do bloco com uma separação rodando).
+- Linux: tocar a música e a guitarra enquanto outra música é separada não
+  engasga mais. A separação usa no máximo 3 linhas no Linux (lá o áudio quase
+  nunca tem prioridade de tempo real) e o ajuste de velocidade e tom espalha
+  a conta pelos blocos em vez de pesar num bloco só. Medido com a Focusrite a
+  128 amostras: de cerca de 170 estouros em 29 s para nenhum; a separação
+  ficou só 15% mais lenta.
 - Player: tocar/pausar (barra de espaço), voltar ao começo, forma da música
   (clique pula; arrastar marca o trecho A–B), "Repetir A–B", volume, mudo e
   solo por faixa com medidor, velocidade 50–100% sem mudar o tom, tom −6 a +6

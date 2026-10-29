@@ -2,22 +2,22 @@
   "tipo": "pedal",
   "nome": "Cherry Drop",
   "familia": "cherry_drop",
-  "inspiracao": "pedal de drop polifônico vermelho (estilo DigiTech Drop)",
+  "inspiracao": "pedal de drop polifônico vermelho com visor digital azul (no espírito do DigiTech Drop e do visual do HyperTune, com desenho próprio)",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.064,
-    "comprimento": 0.112,
-    "altura": 0.034
+    "largura": 0.074,
+    "comprimento": 0.12,
+    "altura": 0.038
   },
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.55,
-      0.02,
-      0.03
+      0.48,
+      0.006,
+      0.016
     ],
-    "metalico": 0.35,
-    "aspereza": 0.28
+    "metalico": 0.5,
+    "aspereza": 0.22
   },
   "texto_cor": [
     0.95,
@@ -30,9 +30,9 @@
     0.93
   ],
   "modelo": "CHERRY DROP",
-  "logo_y": -0.12,
+  "logo_y": -0.22,
   "tipo_texto": "POLYPHONIC DROP",
-  "pisante_y": -0.6,
+  "pisante_y": -0.66,
   "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
@@ -53,24 +53,24 @@
       "id": "a",
       "rotulo": "DROP",
       "pos": [
-        0.0,
-        0.42
+        -0.5,
+        0.16
       ],
-      "escala": 1.45
+      "escala": 1.15
     },
     {
       "id": "b",
       "rotulo": "MISTURA",
       "pos": [
-        0.62,
-        0.8
+        0.5,
+        0.16
       ],
-      "escala": 0.78
+      "escala": 1.15
     }
   ],
   "led": [
     0.0,
-    0.08
+    -0.02
   ],
   "quadro": {
     "largura_rel": 2.0,
@@ -78,5 +78,17 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa compacta de pedal de drop: 64 x 112 x 50 mm"
+  "medidas_fonte": "caixa de pedal de drop com visor: 74 x 120 x 38 mm",
+  "aro_cromo": true,
+  "visor": {
+    "pos": [
+      0.0,
+      0.6
+    ],
+    "largura_rel": 0.64,
+    "altura_rel": 0.2
+  },
+  "estampa": {
+    "svg": "estampas/cherry_drop.svg"
+  }
 }

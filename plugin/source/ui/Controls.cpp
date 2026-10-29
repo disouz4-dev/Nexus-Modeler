@@ -18,9 +18,22 @@ DragValue::DragValue(juce::RangedAudioParameter& p, juce::Component& owner)
   mAttachment.sendInitialUpdate();
 }
 
+float DragValue::snapped(float v01) const
+{
+  v01 = juce::jlimit(0.0f, 1.0f, v01);
+  if (mSteps < 2)
+    return v01;
+  return static_cast<float>(juce::roundToInt(v01 * static_cast<float>(mSteps - 1))) / static_cast<float>(mSteps - 1);
+}
+
+int DragValue::step() const
+{
+  return mSteps < 2 ? 0 : juce::jlimit(0, mSteps - 1, juce::roundToInt(mValue * static_cast<float>(mSteps - 1)));
+}
+
 void DragValue::set(float v01)
 {
-  mAttachment.setValueAsPartOfGesture(mParam.convertFrom0to1(juce::jlimit(0.0f, 1.0f, v01)));
+  mAttachment.setValueAsPartOfGesture(mParam.convertFrom0to1(snapped(v01)));
   // Mostra o valor que o parâmetro aceitou: nos botões de estágios, o clique.
   mValue = mParam.getValue();
   if (onValueChanged)
@@ -59,12 +72,21 @@ void DragValue::mouseUp(const juce::MouseEvent&)
 
 void DragValue::mouseDoubleClick()
 {
-  mAttachment.setValueAsCompleteGesture(mParam.convertFrom0to1(mParam.getDefaultValue()));
+  mAttachment.setValueAsCompleteGesture(mParam.convertFrom0to1(snapped(mParam.getDefaultValue())));
 }
 
 void DragValue::mouseWheel(const juce::MouseWheelDetails& w)
 {
   const float d = (w.deltaY != 0.0f ? w.deltaY : -w.deltaX) * (w.isReversed ? -1.0f : 1.0f);
+  if (mSteps >= 2)
+  {
+    // Com paradas, cada giro da roda anda uma parada.
+    if (d == 0.0f)
+      return;
+    const int next = juce::jlimit(0, mSteps - 1, step() + (d > 0.0f ? 1 : -1));
+    mAttachment.setValueAsCompleteGesture(mParam.convertFrom0to1(static_cast<float>(next) / static_cast<float>(mSteps - 1)));
+    return;
+  }
   mAttachment.setValueAsCompleteGesture(mParam.convertFrom0to1(juce::jlimit(0.0f, 1.0f, mValue + d * 0.1f)));
 }
 
@@ -82,6 +104,8 @@ FilmKnob::FilmKnob(juce::RangedAudioParameter& p, const GearKnobArt& art, juce::
 
 void FilmKnob::mouseDown(const juce::MouseEvent& e)
 {
+  if (fixed())
+    return;
   if (e.mods.isPopupMenu())
   {
     if (onMidiMenu)
@@ -91,10 +115,40 @@ void FilmKnob::mouseDown(const juce::MouseEvent& e)
   mDrag.mouseDown(e);
 }
 
+void FilmKnob::setCaptureSteps(int count, const juce::String& fixedNote)
+{
+  mFixedNote = fixedNote;
+  if (count == mCaptureSteps)
+    return;
+  mCaptureSteps = count;
+  mDrag.setSteps(count >= 2 ? count : 0);
+  setMouseCursor(fixed() ? juce::MouseCursor::NormalCursor : juce::MouseCursor::UpDownResizeCursor);
+  repaint();
+}
+
 void FilmKnob::paint(juce::Graphics& g)
 {
   g.setImageResamplingQuality(juce::Graphics::highResamplingQuality);
-  g.drawImage(mArt.frame(mDrag.value01()), getLocalBounds().toFloat(), juce::RectanglePlacement::stretchToFit);
+  // Com paradas por captura, o botão aparece sempre na parada que toca, mesmo
+  // quando o valor vem de um preset, da automação ou do MIDI.
+  float shown = mDrag.value01();
+  if (fixed())
+    shown = 0.5f;
+  else if (mCaptureSteps >= 2)
+    shown = static_cast<float>(mDrag.step()) / static_cast<float>(mCaptureSteps - 1);
+  g.drawImage(mArt.frame(shown), getLocalBounds().toFloat(), juce::RectanglePlacement::stretchToFit);
+  if (fixed())
+  {
+    // Botão morto (uma captura só): parado no meio, com um véu escuro e um
+    // cadeado. A frente do cabeçote já traz o botão desenhado por baixo,
+    // então deixar o botão transparente não apagaria nada.
+    const auto disc = getLocalBounds().toFloat().reduced(getWidth() * 0.1f);
+    g.setColour(juce::Colours::black.withAlpha(0.6f));
+    g.fillEllipse(disc);
+    const float s = disc.getWidth() * 0.3f;
+    g.setColour(juce::Colours::white.withAlpha(0.85f));
+    g.fillPath(iconPath(Icon::lock, juce::Rectangle<float>(s, s).withCentre(disc.getCentre())));
+  }
 }
 
 bool FilmKnob::hitTest(int x, int y)
@@ -111,6 +165,13 @@ juce::String FilmKnob::bubbleText() const
   auto& p = mDrag.parameter();
   const float v = p.convertFrom0to1(mDrag.value01());
   const bool stepped = p.getNormalisableRange().interval >= 1.0f;
+  if (fixed())
+    return TRANS(mLabel) + "  " + TRANS(mFixedNote);
+  if (mCaptureSteps >= 2)
+    return TRANS(mLabel) + "  " + TRANS("%1 de %2").replace("%1", juce::String(mDrag.step() + 1)).replace("%2", juce::String(mCaptureSteps));
+  if (valueText)
+    if (const auto custom = valueText(v); custom.isNotEmpty())
+      return TRANS(mLabel) + "  " + custom;
   if (mArt.slider)
     return TRANS(mLabel) + "  " + (v > 0.05f ? "+" : "") + juce::String(v, 1).replaceCharacter('.', ',') + " dB";
   return TRANS(mLabel) + "  " + (stepped ? juce::String(juce::roundToInt(v)) : juce::String(v, 1).replaceCharacter('.', ','));
@@ -336,6 +397,23 @@ juce::Path iconPath(Icon icon, juce::Rectangle<float> r)
     k.addEllipse(x + w * 0.70f, y + h * 0.37f, w * 0.17f, h * 0.26f);
     out.addPath(stroke(k, 1.4f));
     return out;
+  }
+  case Icon::download:
+  {
+    // Nuvem com uma seta para baixo: há uma versão nova para baixar.
+    juce::Path s;
+    s.startNewSubPath(x + w * 0.30f, y + h * 0.74f);
+    s.lineTo(x + w * 0.24f, y + h * 0.74f);
+    s.cubicTo(x - w * 0.02f, y + h * 0.74f, x + w * 0.02f, y + h * 0.38f, x + w * 0.24f, y + h * 0.40f);
+    s.cubicTo(x + w * 0.28f, y + h * 0.06f, x + w * 0.72f, y + h * 0.06f, x + w * 0.76f, y + h * 0.36f);
+    s.cubicTo(x + w * 1.02f, y + h * 0.36f, x + w * 1.02f, y + h * 0.74f, x + w * 0.76f, y + h * 0.74f);
+    s.lineTo(x + w * 0.70f, y + h * 0.74f);
+    s.startNewSubPath(x + w * 0.5f, y + h * 0.42f);
+    s.lineTo(x + w * 0.5f, y + h * 0.96f);
+    s.startNewSubPath(x + w * 0.36f, y + h * 0.82f);
+    s.lineTo(x + w * 0.5f, y + h * 0.96f);
+    s.lineTo(x + w * 0.64f, y + h * 0.82f);
+    return stroke(s, 1.6f);
   }
   case Icon::lock:
   {

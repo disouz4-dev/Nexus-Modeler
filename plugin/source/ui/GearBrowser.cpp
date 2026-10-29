@@ -1,5 +1,7 @@
 #include "GearBrowser.h"
 
+#include <algorithm>
+
 #include "Language.h"
 #include "Theme.h"
 
@@ -11,9 +13,42 @@ constexpr int kHeader = 34;
 constexpr int kItem = 88;
 constexpr int kPlanned = 30;
 constexpr int kPad = 12;
+const juce::String kPlannedKey = "\x01planned"; // "Em breve" também encolhe
+
+// Minúsculas, sem acento e só letras e números: "JCM 800", "jcm-800" e
+// "JCM800" ficam iguais.
+juce::String fold(const juce::String& s)
+{
+  juce::String out;
+  for (auto p = s.getCharPointer(); !p.isEmpty();)
+  {
+    auto c = p.getAndAdvance();
+    if (c >= 0xC0 && c <= 0xDE && c != 0xD7)
+      c += 0x20;
+    c = juce::CharacterFunctions::toLowerCase(c);
+    if (c >= 0xE0 && c <= 0xE5)
+      c = 'a';
+    else if (c == 0xE7)
+      c = 'c';
+    else if (c >= 0xE8 && c <= 0xEB)
+      c = 'e';
+    else if (c >= 0xEC && c <= 0xEF)
+      c = 'i';
+    else if (c == 0xF1)
+      c = 'n';
+    else if (c >= 0xF2 && c <= 0xF6)
+      c = 'o';
+    else if (c >= 0xF9 && c <= 0xFC)
+      c = 'u';
+    if (juce::CharacterFunctions::isLetterOrDigit(c))
+      out += juce::String::charToString(c);
+  }
+  return out;
+}
 } // namespace
 
 // Lista rolável: cabeçalho de cada categoria, os equipamentos e, no fim, os planejados.
+// Com pesquisa, só o que bate, com todas as categorias abertas.
 class GearBrowser::List : public juce::Component
 {
 public:
@@ -25,12 +60,16 @@ public:
     {
       header,
       item,
-      planned
+      planned,
+      empty
     };
     Type type;
     juce::String text;
     int item = -1;
     juce::Rectangle<int> r;
+    juce::String key; // cabeçalho: a categoria que ele encolhe
+    int count = 0;    // cabeçalho: quantas peças tem embaixo
+    bool collapsed = false;
   };
 
   void rebuild(int width)
@@ -41,29 +80,36 @@ public:
       mRows.push_back({t, text, item, {0, y, width, h}});
       y += h;
     };
+    const bool searching = !mOwner.mQuery.isEmpty();
+    const auto& collapsed = mOwner.mCollapsed[static_cast<size_t>(mOwner.mTab)];
+    // Um grupo: o cabeçalho e as peças embaixo (nenhuma, se estiver encolhido).
+    auto group = [&](const juce::String& title, const juce::String& key, Row::Type type, auto&& belongs) {
+      std::vector<int> members;
+      for (size_t i = 0; i < mOwner.mItems.size(); ++i)
+        if (const auto& it = mOwner.mItems[i]; it.kind == mOwner.mTab && belongs(it) && mOwner.matches(it))
+          members.push_back(static_cast<int>(i));
+      if (members.empty())
+        return;
+      const bool closed = !searching && collapsed.count(key) > 0;
+      add(Row::Type::header, title, -1, kHeader);
+      mRows.back().key = key;
+      mRows.back().count = static_cast<int>(members.size());
+      mRows.back().collapsed = closed;
+      if (!closed)
+        for (int i : members)
+          add(type, {}, i, type == Row::Type::item ? kItem : kPlanned);
+      y += 6;
+    };
     juce::StringArray categories;
     for (const auto& it : mOwner.mItems)
       if (it.kind == mOwner.mTab && it.available() && !categories.contains(it.category))
         categories.add(it.category);
     for (const auto& cat : categories)
-    {
-      add(Row::Type::header, cat, -1, kHeader);
-      for (size_t i = 0; i < mOwner.mItems.size(); ++i)
-        if (const auto& it = mOwner.mItems[i]; it.kind == mOwner.mTab && it.available() && it.category == cat)
-          add(Row::Type::item, {}, static_cast<int>(i), kItem);
-      y += 6;
-    }
-    bool plannedHeader = false;
-    for (size_t i = 0; i < mOwner.mItems.size(); ++i)
-      if (const auto& it = mOwner.mItems[i]; it.kind == mOwner.mTab && !it.available())
-      {
-        if (!plannedHeader)
-        {
-          add(Row::Type::header, TRANS("Em breve"), -1, kHeader);
-          plannedHeader = true;
-        }
-        add(Row::Type::planned, {}, static_cast<int>(i), kPlanned);
-      }
+      group(cat, cat, Row::Type::item, [&](const GearItem& it) { return it.available() && it.category == cat; });
+    group(TRANS("Em breve"), kPlannedKey, Row::Type::planned, [](const GearItem& it) { return !it.available(); });
+    if (mRows.empty() && searching)
+      add(Row::Type::empty, TRANS("Nada encontrado."), -1, 60);
+    mHover = -1;
     setSize(width, y + 12);
     repaint();
   }
@@ -74,9 +120,30 @@ public:
     {
       const auto& row = mRows[i];
       auto r = row.r.toFloat().reduced(static_cast<float>(kPad), 0.0f);
+      if (row.type == Row::Type::empty)
+      {
+        g.setColour(colour::faint);
+        g.setFont(Fonts::get().ui(12.0f));
+        g.drawText(row.text, r, juce::Justification::centred, true);
+        continue;
+      }
       if (row.type == Row::Type::header)
       {
-        drawCaps(g, row.text, r.withTrimmedTop(10.0f), 10.0f, juce::Justification::centredLeft, colour::dim);
+        // Seta (aberto aponta para baixo), título e, à direita, quantas peças.
+        const bool hover = static_cast<int>(i) == mHover;
+        auto line = r.withTrimmedTop(10.0f);
+        auto arrow = line.removeFromLeft(14.0f).withSizeKeepingCentre(7.0f, 7.0f);
+        juce::Path p;
+        p.addTriangle(arrow.getX(), arrow.getY() + 1.0f, arrow.getRight(), arrow.getY() + 1.0f, arrow.getCentreX(), arrow.getBottom() - 0.5f);
+        if (row.collapsed)
+          p.applyTransform(juce::AffineTransform::rotation(-juce::MathConstants<float>::halfPi, arrow.getCentreX(), arrow.getCentreY()));
+        const auto c = hover ? colour::text : colour::dim;
+        g.setColour(c.withMultipliedAlpha(0.8f));
+        g.fillPath(p);
+        g.setColour(colour::faint);
+        g.setFont(Fonts::get().ui(10.5f));
+        g.drawText(juce::String(row.count), line.removeFromRight(30.0f), juce::Justification::centredRight, false);
+        drawCaps(g, row.text, line, 10.0f, juce::Justification::centredLeft, c);
         continue;
       }
       const auto& it = mOwner.mItems[static_cast<size_t>(row.item)];
@@ -122,17 +189,18 @@ public:
     }
   }
 
-  int rowAt(juce::Point<int> p) const
+  // Linha clicável (peça ou cabeçalho) no ponto; só peças com itemsOnly.
+  int rowAt(juce::Point<int> p, bool itemsOnly = true) const
   {
     for (size_t i = 0; i < mRows.size(); ++i)
-      if (mRows[i].type == Row::Type::item && mRows[i].r.contains(p))
+      if ((mRows[i].type == Row::Type::item || (!itemsOnly && mRows[i].type == Row::Type::header)) && mRows[i].r.contains(p))
         return static_cast<int>(i);
     return -1;
   }
 
   void mouseMove(const juce::MouseEvent& e) override
   {
-    const int h = rowAt(e.getPosition());
+    const int h = rowAt(e.getPosition(), mOwner.mQuery.isEmpty());
     setMouseCursor(h >= 0 ? juce::MouseCursor::PointingHandCursor : juce::MouseCursor::NormalCursor);
     if (h != mHover)
     {
@@ -170,6 +238,19 @@ public:
     mDragging = false;
     if (wasDragging || e.mouseWasDraggedSinceMouseDown())
       return;
+    // Cabeçalho: encolhe ou abre a categoria (na pesquisa ficam todas abertas).
+    if (const int h = rowAt(e.getPosition(), false); h >= 0 && mRows[static_cast<size_t>(h)].type == Row::Type::header)
+    {
+      if (!mOwner.mQuery.isEmpty())
+        return;
+      auto& closed = mOwner.mCollapsed[static_cast<size_t>(mOwner.mTab)];
+      const auto& key = mRows[static_cast<size_t>(h)].key;
+      if (!closed.erase(key))
+        closed.insert(key);
+      rebuild(getWidth());
+      mHover = rowAt(e.getPosition(), false);
+      return;
+    }
     const int row = rowAt(e.getPosition());
     if (row >= 0 && mOwner.onPick)
       mOwner.onPick(mOwner.mItems[static_cast<size_t>(mRows[static_cast<size_t>(row)].item)]);
@@ -188,6 +269,24 @@ GearBrowser::GearBrowser()
   addAndMakeVisible(mTabs);
   mTabs.setFontSize(10.5f);
   mTabs.onSelect = [this](int i) { setTab(static_cast<GearItem::Kind>(i)); };
+  addAndMakeVisible(mSearch);
+  mSearch.setFont(Fonts::get().ui(12.5f));
+  mSearch.setIndents(10, 0);
+  mSearch.setJustification(juce::Justification::centredLeft);
+  mSearch.setColour(juce::TextEditor::backgroundColourId, colour::box);
+  mSearch.setColour(juce::TextEditor::outlineColourId, colour::line);
+  mSearch.setColour(juce::TextEditor::focusedOutlineColourId, colour::accent.withAlpha(0.7f));
+  mSearch.setColour(juce::TextEditor::textColourId, colour::text);
+  mSearch.setColour(juce::TextEditor::highlightColourId, colour::accent.withAlpha(0.35f));
+  mSearch.setColour(juce::CaretComponent::caretColourId, colour::accent);
+  mSearch.setTextToShowWhenEmpty(TRANS("Pesquisar (nome ou original)"), colour::faint);
+  mSearch.onTextChange = [this] { searchChanged(); };
+  mSearch.onEscapeKey = [this] {
+    mSearch.clear();
+    searchChanged();
+    mSearch.unfocusAllComponents();
+  };
+  mSearch.onReturnKey = [this] { mSearch.unfocusAllComponents(); };
   addAndMakeVisible(mViewport);
   mViewport.setViewedComponent(mList.get(), false);
   mViewport.setScrollBarsShown(true, false);
@@ -207,12 +306,49 @@ void GearBrowser::setItems(std::vector<GearItem> items)
   resized();
 }
 
+bool GearBrowser::matches(const GearItem& item) const
+{
+  if (mQuery.isEmpty())
+    return true;
+  const auto hay = fold(item.name + " " + item.inspiration + " " + item.category + " " + TRANS(item.category) + " " + item.source);
+  for (const auto& word : mQuery)
+    if (!hay.contains(word))
+      return false;
+  return true;
+}
+
+void GearBrowser::searchChanged()
+{
+  mQuery.clear();
+  for (const auto& word : juce::StringArray::fromTokens(mSearch.getText(), " ,/", ""))
+    if (const auto w = fold(word); w.isNotEmpty())
+      mQuery.add(w);
+  // Nada nesta aba e algo em outra (JCM800 digitado em Pedais): vai para lá.
+  auto has = [this](GearItem::Kind k) {
+    return std::any_of(mItems.begin(), mItems.end(), [&](const GearItem& it) { return it.kind == k && matches(it); });
+  };
+  if (!mQuery.isEmpty() && !has(mTab))
+    for (auto k : {GearItem::Kind::pedal, GearItem::Kind::amp, GearItem::Kind::cab})
+      if (has(k))
+      {
+        setTab(k);
+        break;
+      }
+  resized();
+  mViewport.setViewPosition(0, 0);
+}
+
 void GearBrowser::setTab(GearItem::Kind kind)
 {
+  // A mesma aba (escolher ou soltar uma peça): a lista fica onde está. Outra
+  // aba: volta ao ponto em que ela estava da última vez.
+  if (kind == mTab)
+    return;
+  mScroll[static_cast<size_t>(mTab)] = mViewport.getViewPositionY();
   mTab = kind;
   mTabs.setSelected(static_cast<int>(kind));
-  mViewport.setViewPosition(0, 0);
   resized();
+  mViewport.setViewPosition(0, mScroll[static_cast<size_t>(kind)]);
 }
 
 void GearBrowser::setCurrent(GearItem::Kind kind, int look)
@@ -227,6 +363,15 @@ void GearBrowser::setCurrent(GearItem::Kind kind, int look)
 void GearBrowser::retranslate()
 {
   mTabs.setItems({TRANS("Pedais"), TRANS(juce::String::fromUTF8("Cabeçotes")), TRANS("Caixas")});
+  mSearch.setTextToShowWhenEmpty(TRANS("Pesquisar (nome ou original)"), colour::faint);
+  resized();
+}
+
+void GearBrowser::setAccessory(juce::Component* c)
+{
+  mAccessory = c;
+  if (c != nullptr)
+    addChildComponent(c);
   resized();
 }
 
@@ -235,6 +380,14 @@ void GearBrowser::resized()
   auto r = getLocalBounds();
   r.removeFromTop(16);
   mTabs.setBounds(r.removeFromTop(32).reduced(kPad, 0));
+  r.removeFromTop(8);
+  auto searchRow = r.removeFromTop(30).reduced(kPad, 0);
+  if (mAccessory != nullptr && mAccessory->isVisible())
+  {
+    mAccessory->setBounds(searchRow.removeFromRight(30));
+    searchRow.removeFromRight(6);
+  }
+  mSearch.setBounds(searchRow);
   r.removeFromTop(6);
   r.removeFromBottom(44); // dica embaixo
   mViewport.setBounds(r);

@@ -1,7 +1,9 @@
 #include "UpdateBadge.h"
 
+#include "Controls.h"
 #include "Language.h"
 #include "Theme.h"
+#include "WhatsNew.h"
 
 namespace nexus::ui
 {
@@ -21,6 +23,33 @@ UpdateBadge::UpdateBadge()
   mUpdater->addChangeListener(this);
   mUpdater->checkIfDue();
   refresh();
+  // Primeira abertura desta versão: as novidades, uma vez (depois de a tela
+  // estar montada, para a janela abrir em cima dela).
+  juce::MessageManager::callAsync([safe = juce::Component::SafePointer<UpdateBadge>(this)] {
+    if (safe != nullptr && safe->mUpdater->takeNewVersion())
+      safe->showWhatsNew();
+  });
+}
+
+void UpdateBadge::showWhatsNew()
+{
+  const auto notes = whatsnew::bundled();
+  if (notes.isEmpty())
+    return;
+  whatsnew::show(tr("Novidades da versão %1").replace("%1", nexus::update::currentVersion()), notes, tr("Fechar"), {}, nullptr,
+                 getTopLevelComponent());
+}
+
+// "Ver o que mudou": o texto do lançamento (sem texto, a página dele).
+void UpdateBadge::showReleaseNotes()
+{
+  const auto r = mUpdater->release();
+  if (r.notes.trim().isEmpty())
+  {
+    mUpdater->openPage();
+    return;
+  }
+  whatsnew::show(tr("O que muda na versão %1").replace("%1", r.version), r.notes, tr("Fechar"), {}, nullptr, getTopLevelComponent());
 }
 
 UpdateBadge::~UpdateBadge()
@@ -28,36 +57,53 @@ UpdateBadge::~UpdateBadge()
   mUpdater->removeChangeListener(this);
 }
 
+// Aceso: há o que fazer (versão nova, baixando, pronta, ou falha ao baixar).
+bool UpdateBadge::lit() const
+{
+  return mUpdater->showBadge();
+}
+
 juce::String UpdateBadge::text() const
 {
   const auto s = mUpdater->state();
   const auto version = mUpdater->release().version;
+  if (s == State::checking)
+    return tr("Procurando atualização");
+  if (!lit())
+    return s == State::failed ? tr("Não foi possível procurar atualizações agora.")
+                              : tr("Você está na versão mais nova (%1)").replace("%1", nexus::update::currentVersion());
   if (s == State::downloading)
     return tr("Baixando a versão %1").replace("%1", version) + "  " + juce::String(juce::roundToInt(mUpdater->progress() * 100.0f)) + "%";
   if (s == State::ready)
-    return tr("Instalador aberto");
+    return mUpdater->installedInPlace() ? tr("Versão %1 instalada: reiniciar").replace("%1", version) : tr("Instalador aberto");
   if (s == State::failed)
     return tr("Falha ao baixar a versão %1").replace("%1", version);
   return tr("Nova versão %1").replace("%1", version);
 }
 
-int UpdateBadge::idealWidth() const
-{
-  return juce::GlyphArrangement::getStringWidthInt(Fonts::get().ui(12.5f), text()) + 44;
-}
-
 void UpdateBadge::refresh()
 {
-  const bool show = mUpdater->showBadge();
-  if (show != isVisible())
-    setVisible(show);
+  if (!isVisible())
+    setVisible(true);
   const auto s = mUpdater->state();
-  if (s == State::ready)
-    setTooltip(tr("O instalador foi aberto. Feche o Nexus e o programa de música onde ele está aberto para terminar."));
+  juce::String hint;
+  if (s == State::checking)
+    hint = {};
+  else if (!lit())
+    hint = tr("Clique para procurar agora");
+  else if (s == State::ready && mUpdater->installedInPlace())
+    hint = tr("Clique para reabrir o Nexus já na versão nova");
+  else if (s == State::ready)
+    hint = tr("O instalador foi aberto. Feche o Nexus e o programa de música onde ele está aberto para terminar.");
   else if (s == State::failed)
-    setTooltip(mUpdater->error());
+    hint = mUpdater->error();
+  else if (s != State::downloading)
+    hint = tr("Clique para baixar e instalar");
+  setTooltip(hint.isEmpty() ? text() : text() + "\n" + hint);
+  if (s == State::checking)
+    startTimerHz(6);
   else
-    setTooltip(tr("Clique para baixar e instalar a versão nova"));
+    stopTimer();
   if (onLayoutChange)
     onLayoutChange();
   repaint();
@@ -71,13 +117,80 @@ void UpdateBadge::changeListenerCallback(juce::ChangeBroadcaster*)
   refresh();
   if (finished)
   {
-    juce::AlertWindow::showMessageBoxAsync(
-      juce::MessageBoxIconType::NoIcon, tr("Versão %1 baixada").replace("%1", mUpdater->release().version),
-      tr("O instalador foi aberto (o arquivo está na pasta Downloads). Para terminar, feche o Nexus e o programa de música onde ele está aberto e siga o instalador.")
-        + "\n\n" + mUpdater->downloadedFile().getFullPathName());
+    const auto version = mUpdater->release().version;
+    if (mUpdater->installedInPlace())
+    {
+      // Linux pela pasta do usuário: já trocou os arquivos; só falta reabrir.
+      if (juce::JUCEApplicationBase::isStandaloneApp())
+        juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, tr("Versão %1 instalada").replace("%1", version),
+                                           tr("Reabra o Nexus para usar a versão nova."), tr("Reabrir agora"), tr("Depois"), nullptr,
+                                           juce::ModalCallbackFunction::create([](int ok) {
+                                             if (ok == 1)
+                                               nexus::update::Updater::restartProgram();
+                                           }));
+      else
+        juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::NoIcon, tr("Versão %1 instalada").replace("%1", version),
+                                               tr("Feche e abra de novo o programa de música para usar a versão nova."));
+    }
+    else
+    {
+#if JUCE_WINDOWS
+      const auto message = tr("O instalador está atualizando. O Nexus fecha e abre sozinho na versão nova; no programa de música, feche e abra de novo.");
+#else
+      const auto message = tr("O instalador foi aberto (o arquivo está na pasta Downloads). Para terminar, feche o Nexus e o programa de música onde ele está aberto e siga o instalador.");
+#endif
+      juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::NoIcon, tr("Versão %1 baixada").replace("%1", version),
+                                             message + "\n\n" + mUpdater->downloadedFile().getFullPathName());
+    }
   }
-  if (mUpdater->takeManualResult())
+  // Procura pelo clique: versão nova só acende o ícone, e "já está na mais
+  // nova" deixa apagado. Só a falha de conexão vira aviso.
+  if (mUpdater->takeManualResult() && s == State::failed && !lit())
     showResult();
+}
+
+// "Quer atualizar?" com duas respostas. Agora não: o ícone continua no topo.
+void UpdateBadge::ask()
+{
+  const auto s = mUpdater->state();
+  if (s != State::available && s != State::failed)
+  {
+    showMenu();
+    return;
+  }
+  mUpdater->takeFirstAsk(); // já perguntou nesta abertura
+  const auto version = mUpdater->release().version;
+  const bool installer = mUpdater->release().assetUrl.isNotEmpty();
+  auto message = tr("Você está na versão %1. Quer atualizar agora?").replace("%1", nexus::update::currentVersion());
+  // Com o texto do lançamento: a pergunta mostra o que entra na versão nova.
+  if (const auto notes = mUpdater->release().notes.trim(); s == State::available && notes.isNotEmpty())
+  {
+    whatsnew::show(tr("Nova versão %1 disponível").replace("%1", version), message + "\n\n" + notes,
+                   installer ? tr("Atualizar agora") : tr("Abrir a página"), tr("Agora não"),
+                   [this, installer](bool ok) {
+                     if (!ok)
+                       return;
+                     if (installer)
+                       mUpdater->downloadAndOpen();
+                     else
+                       mUpdater->openPage();
+                   },
+                   this);
+    return;
+  }
+  if (s == State::failed)
+    message = tr("Não foi possível baixar a versão %1.").replace("%1", version) + "\n" + mUpdater->error() + "\n\n"
+              + tr("Quer tentar de novo?");
+  juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, tr("Nova versão %1 disponível").replace("%1", version), message,
+                                     installer ? tr("Atualizar agora") : tr("Abrir a página"), tr("Agora não"), this,
+                                     juce::ModalCallbackFunction::create([this, installer](int ok) {
+                                       if (ok != 1)
+                                         return;
+                                       if (installer)
+                                         mUpdater->downloadAndOpen();
+                                       else
+                                         mUpdater->openPage();
+                                     }));
 }
 
 // Resultado de "Procurar atualizações agora".
@@ -86,7 +199,7 @@ void UpdateBadge::showResult()
   const auto s = mUpdater->state();
   if (s == State::available)
   {
-    showMenu();
+    ask();
     return;
   }
   const auto message = s == State::upToDate
@@ -103,7 +216,9 @@ void UpdateBadge::showMenu()
   juce::PopupMenu menu;
   const auto version = mUpdater->release().version;
   menu.addSectionHeader(tr("Versão %1 (você tem a %2)").replace("%1", version).replace("%2", nexus::update::currentVersion()));
-  if (s == State::ready)
+  if (s == State::ready && mUpdater->installedInPlace())
+    menu.addItem(7, tr("Reabrir o Nexus agora"), juce::JUCEApplicationBase::isStandaloneApp());
+  else if (s == State::ready)
   {
     menu.addItem(1, tr("Abrir o instalador de novo"));
     menu.addItem(2, tr("Mostrar na pasta"));
@@ -127,53 +242,85 @@ void UpdateBadge::showMenu()
     else if (r == 3)
       mUpdater->downloadAndOpen();
     else if (r == 4)
-      mUpdater->openPage();
+      showReleaseNotes();
     else if (r == 5)
       mUpdater->dismiss();
     else if (r == 6)
       mUpdater->skipThisVersion();
+    else if (r == 7)
+      nexus::update::Updater::restartProgram();
   });
 }
 
 void UpdateBadge::addMenuItems(juce::PopupMenu& menu)
 {
   menu.addItem(tr("Procurar atualizações agora"), [this] { mUpdater->checkNow(); });
+  menu.addItem(tr("Novidades desta versão"), !whatsnew::bundled().isEmpty(), false, [this] { showWhatsNew(); });
   menu.addItem(tr("Procurar atualizações sozinho ao abrir"), true, mUpdater->automatic(),
                [this] { mUpdater->setAutomatic(!mUpdater->automatic()); });
 }
 
 void UpdateBadge::paint(juce::Graphics& g)
 {
-  auto r = getLocalBounds().toFloat().reduced(1.0f, 6.0f);
-  const bool failed = mUpdater->state() == State::failed;
-  const auto tint = failed ? colour::danger : colour::accent;
-  g.setColour(tint.withAlpha(isMouseOver(true) ? 0.22f : 0.14f));
-  g.fillRoundedRectangle(r, r.getHeight() * 0.5f);
-  g.setColour(tint.withAlpha(0.6f));
-  g.drawRoundedRectangle(r.reduced(0.5f), r.getHeight() * 0.5f, 1.0f);
+  auto r = getLocalBounds().toFloat();
+  const auto s = mUpdater->state();
+  const bool on = lit();
+  auto tint = s == State::failed && on ? colour::danger : on ? colour::accent : juce::Colours::grey;
+  if (s == State::checking)
+    tint = colour::accent.withAlpha(mBlink ? 0.9f : 0.35f);
+  g.setColour(tint.withAlpha(isMouseOver(true) ? 0.24f : on ? 0.14f : 0.06f));
+  g.fillEllipse(r.reduced(4.0f));
+  if (!on && s != State::checking)
+    tint = tint.withAlpha(isMouseOver(true) ? 0.8f : 0.5f);
 
-  // Barra de progresso dentro da pílula durante o download.
-  if (mUpdater->state() == State::downloading)
+  // Anel do download em volta do ícone.
+  if (s == State::downloading)
   {
-    auto bar = r.reduced(r.getHeight() * 0.5f, 0.0f).removeFromBottom(2.0f).translated(0.0f, -4.0f);
-    g.setColour(colour::accent.withAlpha(0.25f));
-    g.fillRect(bar);
-    g.setColour(colour::accent);
-    g.fillRect(bar.withWidth(bar.getWidth() * juce::jlimit(0.0f, 1.0f, mUpdater->progress())));
+    const auto ring = r.reduced(3.0f);
+    juce::Path arc;
+    arc.addCentredArc(ring.getCentreX(), ring.getCentreY(), ring.getWidth() * 0.5f, ring.getHeight() * 0.5f, 0.0f, 0.0f,
+                      juce::MathConstants<float>::twoPi * juce::jlimit(0.0f, 1.0f, mUpdater->progress()), true);
+    g.setColour(tint.withAlpha(0.25f));
+    g.drawEllipse(ring, 2.0f);
+    g.setColour(tint);
+    g.strokePath(arc, juce::PathStrokeType(2.0f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
   }
 
-  // Ponto aceso à esquerda, como o LED de um equipamento.
-  const float d = 7.0f;
   g.setColour(tint);
-  g.fillEllipse(r.getX() + 13.0f, r.getCentreY() - d * 0.5f, d, d);
-  g.setColour(colour::text);
-  g.setFont(Fonts::get().ui(12.5f));
-  g.drawText(text(), r.withTrimmedLeft(28.0f).withTrimmedRight(12.0f), juce::Justification::centredLeft, true);
+  g.fillPath(iconPath(Icon::download, r.withSizeKeepingCentre(20.0f, 20.0f)));
+
+  // Ponto aceso no canto: tem algo para fazer.
+  if (on && (s == State::available || s == State::failed || s == State::ready))
+  {
+    const float d = 8.0f;
+    const auto dot = juce::Rectangle<float>(d, d).withPosition(r.getRight() - d - 4.0f, r.getY() + 4.0f);
+    g.setColour(colour::danger);
+    g.fillEllipse(dot);
+  }
 }
 
 void UpdateBadge::mouseUp(const juce::MouseEvent& e)
 {
-  if (contains(e.getPosition()))
+  if (!contains(e.getPosition()))
+    return;
+  const auto s = mUpdater->state();
+  if (s == State::checking || s == State::downloading)
+    return;
+  // Apagado: procura agora.
+  if (!lit())
+  {
+    mUpdater->checkNow();
+    return;
+  }
+  if (e.mods.isPopupMenu() || s == State::ready)
+  {
     showMenu();
+    return;
+  }
+  // Aceso: baixa e instala (sem instalador para o sistema: abre a página).
+  if (mUpdater->release().assetUrl.isNotEmpty())
+    mUpdater->downloadAndOpen();
+  else
+    mUpdater->openPage();
 }
 } // namespace nexus::ui

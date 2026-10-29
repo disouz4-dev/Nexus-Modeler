@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "pulsar_echo",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Pulsar Echo",
+  "inspiracao": "Electro-Harmonix Memory Man",
+  "categoria": "Delay",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "delay_analogico",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 60,
+  "signature": null
+}

@@ -105,5 +105,10 @@ set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "pipewire-jack, libjack-jackd2-0 | libjack0"
 option(NEXUS_DEB_SHLIBDEPS "Calcular dependências com o dpkg-shlibdeps" ON)
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ${NEXUS_DEB_SHLIBDEPS})
 
+# Depois de instalar: junta a instalação antiga da pasta do usuário à do
+# sistema (veja packaging/linux/postinst).
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_LIST_DIR}/postinst")
+set(CPACK_DEBIAN_PACKAGE_CONTROL_STRICT_PERMISSION TRUE)
+
 set(CPACK_GENERATOR "DEB")
 include(CPack)

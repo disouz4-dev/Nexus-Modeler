@@ -28,14 +28,22 @@ public:
   juce::String paramId() const;
   // Chamado a cada mudança de valor (arraste, roda, automação, MIDI).
   std::function<void()> onValueChanged;
+  // Paradas espalhadas pelo giro todo (ex.: 7 capturas, 7 posições); 0 usa
+  // as do próprio parâmetro.
+  void setSteps(int steps) { mSteps = steps; }
+  int steps() const { return mSteps; }
+  // Em qual parada o botão está (0 a steps - 1).
+  int step() const;
 
 private:
   void set(float v01);
+  float snapped(float v01) const;
   juce::RangedAudioParameter& mParam;
   juce::ParameterAttachment mAttachment;
   float mValue = 0.0f;
   float mStartValue = 0.0f;
   bool mDragging = false;
+  int mSteps = 0;
 };
 
 // Botão do equipamento: mostra a posição certa da tira renderizada.
@@ -46,10 +54,15 @@ public:
   void paint(juce::Graphics&) override;
   bool hitTest(int x, int y) override;
   void mouseDown(const juce::MouseEvent& e) override;
-  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) mDrag.mouseDrag(e); }
-  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu()) mDrag.mouseUp(e); }
-  void mouseDoubleClick(const juce::MouseEvent&) override { mDrag.mouseDoubleClick(); }
-  void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { mDrag.mouseWheel(w); }
+  void mouseDrag(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu() && !fixed()) mDrag.mouseDrag(e); }
+  void mouseUp(const juce::MouseEvent& e) override { if (!e.mods.isPopupMenu() && !fixed()) mDrag.mouseUp(e); }
+  void mouseDoubleClick(const juce::MouseEvent&) override { if (!fixed()) mDrag.mouseDoubleClick(); }
+  void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails& w) override { if (!fixed()) mDrag.mouseWheel(w); }
+  // Ganho do cabeçote e drive do pedal: uma parada por captura do pacote.
+  // Com uma captura só, o botão fica morto (apagado e parado), mas a peça
+  // toca normal; o balão mostra o aviso. 0 = botão comum.
+  void setCaptureSteps(int count, const juce::String& fixedNote);
+  bool fixed() const { return mCaptureSteps == 1; }
   void mouseEnter(const juce::MouseEvent&) override { mHover = true; changed(); }
   // Clique com o botão direito: menu de MIDI (aprender / esquecer).
   std::function<void(const juce::String& paramId, juce::Component&)> onMidiMenu;
@@ -59,6 +72,9 @@ public:
   juce::String bubbleText() const;
   const GearKnobArt& art() const { return mArt; }
   std::function<void()> onChange;
+  // Texto do valor no balão (vazio = o número de sempre). Ex.: "1/8" com o
+  // pedal sincronizado ao andamento.
+  std::function<juce::String(float value)> valueText;
 
 private:
   void changed() { if (onChange) onChange(); }
@@ -66,6 +82,8 @@ private:
   DragValue mDrag;
   juce::String mLabel;
   bool mHover = false;
+  int mCaptureSteps = 0;
+  juce::String mFixedNote;
 };
 
 // Controle deslizante de nível (entrada e saída) com o medidor de pico
@@ -141,6 +159,7 @@ enum class Icon
   right,
   audio,
   globe,
+  download,
 };
 juce::Path iconPath(Icon icon, juce::Rectangle<float> r);
 

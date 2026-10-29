@@ -10,6 +10,7 @@
 #include "ChainLayout.h"
 #include "fx/PitchDrop.h"
 #include "MidiMap.h"
+#include "gear/GearCatalog.h"
 #include "TestSource.h"
 #include "studio/Player.h"
 #include "nexus/UniversalEq.h"
@@ -56,25 +57,99 @@ public:
   static constexpr int kRigs = ChainLayout::kRigs;
   // Cada cabeçote tem até 3 canais, cada um com pacote e ganho próprios.
   static constexpr int kChannels = 3;
-  // Visuais de pedal: 0 a 3 tocam captura (drive); 4 em diante são efeitos
-  // do próprio Nexus (chorus, delay, reverb), com os botões "a", "b" e "c".
-  static constexpr int kPedalLooks = 9;
+  // Visuais de pedal, na ordem do parâmetro "visual" (os presets guardam o
+  // número: os novos entram sempre no fim). Cada um toca captura (drive) ou
+  // um efeito do próprio Nexus, com os botões "a", "b" e "c".
+  enum class PedalKind
+  {
+    capture,
+    chorus,
+    delay,
+    reverb,
+    gate,
+    drop,
+    phaser,
+    flanger,
+    tremolo,
+    vibe,
+    wah,
+    rotary,
+    analogdelay,
+    octave,
+    comp,
+    geq,
+    sky,     // reverb de vários modos, com shimmer
+    echo,    // delay de vários modos
+    multiMod, // modulação de vários modos
+    triple    // três delays em série
+  };
+  // Quantos visuais de fábrica cada parâmetro de escolha tem. Os parâmetros
+  // estão congelados (mesmas opções, mesma ordem, para os presets e as
+  // automações antigas): equipamento novo entra só pelo id no estado. O que
+  // cada um é (nome, motor, caixa...) está na ficha de cada peça
+  // (assets/gear/<id>_manifesto.json), lida pelo catálogo (gear/GearCatalog).
+  static constexpr int kPedalLooks = 63;
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
+  // Semitons do Cherry Drop pelo botão A (0 a 10): 5 (meio-dia) = 0, 0 = -12, 10 = +12.
+  static int dropSemitones(float knobA) { return juce::jlimit(-12, 12, juce::roundToInt((knobA - 5.0f) / 5.0f * 12.0f)); }
+  static constexpr int kGateLook = 7;
+  // Motor do visual (de fábrica ou baixado), pela ficha. Serve no áudio.
+  static_assert(nexus::gear::kPedalEngineCount == static_cast<int>(PedalKind::triple) + 1, "motores fora da ordem do catálogo");
+  static PedalKind pedalKind(int look) { return static_cast<PedalKind>(nexus::gear::GearCatalog::instance().pedalEngineAt(look)); }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
-  static constexpr int kAmpLooks = 6;
+  static constexpr int kAmpLooks = 94;
   static constexpr int kMarkFive = 1;
+  // Cabeçotes com o equalizador gráfico de 5 faixas: Mark Five, Mark Two Plus,
+  // Mark Three, Mark Four e Mark JP.
+  static bool hasGraphicEq(int look) { return nexus::gear::GearCatalog::instance().graphicEqAt(look); }
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
   static juce::String eqParam(int band, const char* name) { return "eq" + juce::String(band + 1) + "_" + name; }
-  static constexpr int kFirstNativeLook = 4;
-  static bool isNativeLook(int look) { return look >= kFirstNativeLook; }
+  static bool isNativeLook(int look) { return pedalKind(look) != PedalKind::capture; }
+  // Pedais com seletor de modo (botão "modo", de 0 a 10) e botões a mais.
+  static bool hasModes(int look)
+  {
+    const auto k = pedalKind(look);
+    return k == PedalKind::sky || k == PedalKind::echo || k == PedalKind::multiMod;
+  }
+  // Nome do modo escolhido (vazio se o pedal não tem modos).
+  static juce::String modeName(int look, float modeKnob);
+  // Efeitos que podem andar no andamento (tap tempo ou o da música).
+  static bool syncsToTempo(int look)
+  {
+    const auto k = pedalKind(look);
+    return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
+           || k == PedalKind::vibe || k == PedalKind::analogdelay || k == PedalKind::echo || k == PedalKind::multiMod
+           || k == PedalKind::triple;
+  }
+  // Blueberry Chain: botões "a" (tempo), "b" (feedback) e "c" (repetição) e
+  // as duas chaves: quantos delays (2 ou 3) e se o tempo dobra ou cai pela
+  // metade de um delay para o outro.
+  static constexpr const char* kChainSwitches[2] = {"tres", "multiplica"};
+  // Divisões do andamento, do mais longo ao mais curto: "1/4" é uma batida,
+  // "1/8." é a colcheia pontuada, "1/6" e "1/12" são tercinas.
+  static constexpr int kDivisions = 9;
+  static const char* divisionName(int i);
+  static double divisionBeats(int i);
+  // Botão de velocidade (0 a 10) com o pedal sincronizado: qual divisão.
+  static int divisionFor(float knob) { return juce::jlimit(0, kDivisions - 1, juce::roundToInt(knob / 10.0f * (kDivisions - 1))); }
+  // Andamento em uso: o do programa de música (se ele mandar) ou o do tap.
+  double tempoBpm() const;
+  bool tempoFromHost() const { return mHostBpm.load() > 0.0; }
 
   // Posições dos pacotes: 0 a 11 são os pedais; depois, os canais dos dois
   // cabeçotes (lado A: 12 a 14, lado B: 15 a 17).
   static constexpr int kSlots = kPedals + kRigs * kChannels;
   static constexpr int pedalSlot(int pedal) { return pedal; }
   static constexpr int ampSlot(int rig, int channel) { return kPedals + rig * kChannels + channel; }
+  // Ganho do cabeçote e drive do pedal: uma parada por captura do pacote,
+  // espalhadas pelo giro todo (7 capturas, 7 posições). Diz qual captura o
+  // botão (0 a 10) escolhe; com uma captura só, é sempre ela.
+  static int gainStep(float gain, int count)
+  {
+    return count < 2 ? 0 : juce::jlimit(0, count - 1, juce::roundToInt(gain / 10.0f * static_cast<float>(count - 1)));
+  }
 
   // Nomes dos parâmetros: pedal n -> "p<n>_drive"...; cabeçote A usa o nome
   // simples ("ganho"), o B ganha "_b" ("ganho_b").
@@ -123,10 +198,25 @@ public:
   bool channelLoaded(int rig, int channel) const { return slotLoaded(ampSlot(rig, channel)); }
   // Canal que toca agora no cabeçote (ou o escolhido, se nenhum tocou ainda).
   int audibleSlot(int rig) const;
-  int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
-  int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
-  static constexpr int kCabLooks = 2;
-  int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
+  // Peça em cada posição: o número dela no catálogo do tipo (o mesmo do
+  // parâmetro nas de fábrica; depois delas, as baixadas).
+  int pedalLook(int pedal) const { return resolveLook(mPedals[static_cast<size_t>(pedal)].visual->load(), mPedalChoice[static_cast<size_t>(pedal)].load()); }
+  int ampLook(int rig) const { return resolveLook(mRigs[static_cast<size_t>(rig)].look->load(), mAmpChoice[static_cast<size_t>(rig)].load()); }
+  static constexpr int kCabLooks = 29;
+  int cabLook(int rig) const { return resolveLook(params.getRawParameterValue(ampParam(rig, "gabinete"))->load(), mCabChoice[static_cast<size_t>(rig)].load()); }
+  // Escolhe a peça de uma posição pelo número do catálogo. De fábrica: muda o
+  // parâmetro (como sempre). Baixada: guarda a escolha e deixa o parâmetro no
+  // de fábrica do mesmo motor (programa de gravação velho toca algo parecido).
+  void choosePedal(int pedal, int look) { choose(nexus::gear::Kind::pedal, pedal, look); }
+  void chooseAmp(int rig, int look) { choose(nexus::gear::Kind::amp, rig, look); }
+  void chooseCab(int rig, int look) { choose(nexus::gear::Kind::cab, rig, look); }
+  // Id em texto da peça na posição (o que vai no preset). Se o preset pediu
+  // uma peça que não está instalada, é o id dela.
+  juce::String gearId(nexus::gear::Kind kind, int position) const;
+  // Id pedido pelo preset que não está instalado (vazio: está tudo certo).
+  juce::String missingGear(nexus::gear::Kind kind, int position) const;
+  // Equipamento novo instalado: as posições que esperavam por ele passam a usá-lo.
+  void gearInstalled();
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;
   juce::String packName(int slot) const;
@@ -144,6 +234,13 @@ public:
   juce::String irName(int rig) const;
   juce::File irFile(int rig) const { return mCabs[static_cast<size_t>(rig)].file; }
   bool irLoaded(int rig) const { return mCabs[static_cast<size_t>(rig)].loaded.load(); }
+
+  // Afinador (fixo no começo da cadeia): a tela copia as últimas amostras da
+  // guitarra, antes do controle e do mudo da entrada. Devolve a taxa delas.
+  static constexpr int kTunerRing = 8192;
+  double tunerSnapshot(float* dest, int count) const;
+  // Tela do afinador aberta: com "mudo ao afinar", a saída fica em silêncio.
+  void setTunerOpen(bool open) { mTunerOpen.store(open); }
 
   // Medidores de pico (0 a 1) da entrada e da saída.
   float inputPeak() const { return mInPeak.load(); }
@@ -195,11 +292,18 @@ private:
     std::atomic<float>* on = nullptr;
     std::atomic<float>* lite = nullptr;
     std::atomic<float>* visual = nullptr;
-    std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
+    std::array<std::atomic<float>*, 7> fx{}; // botões dos efeitos nativos ("a" a "g")
+    std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
+    std::atomic<float>* mode = nullptr;     // modo dos pedais de vários modos
+    std::atomic<float>* fourth = nullptr;   // quarto botão dos pedais de vários modos
+    std::atomic<float>* three = nullptr;    // Blueberry Chain: 3 delays (ou 2)
+    std::atomic<float>* multiply = nullptr; // Blueberry Chain: dobra (ou divide) o tempo
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa
     float dropMix = 0.0f;
+    float dropShift = 0.0f; // 0 no meio-dia (som direto), 1 com drop escolhido
     float dropSemitones = 0.0f;
+    double dropLow = 0.0;   // filtro do brilho
   };
 
   // Estado de áudio de cada cabeçote: troca de canal com aquecimento.
@@ -228,6 +332,29 @@ private:
     std::atomic<bool> loaded{false};
     std::atomic<float>* mode = nullptr;
   };
+
+  // Escolha de peça que não é de fábrica: (número no catálogo << 8) | valor
+  // do parâmetro naquela hora; -1 = vale o parâmetro. Se o programa de
+  // gravação mexer no parâmetro, a escolha cai e volta a valer o de fábrica.
+  static int resolveLook(float param, int choice)
+  {
+    const int p = juce::roundToInt(param);
+    return choice >= 0 && (choice & 0xff) == p ? choice >> 8 : p;
+  }
+  void choose(nexus::gear::Kind kind, int position, int look);
+  juce::RangedAudioParameter* choiceParam(nexus::gear::Kind kind, int position) const;
+  std::atomic<int>& choiceOf(nexus::gear::Kind kind, int position);
+  // Lê os ids do estado (preset novo) ou deixa os índices (preset antigo).
+  void restoreGearIds(const juce::ValueTree& state);
+  void applyGearId(nexus::gear::Kind kind, int position, const juce::String& id);
+  static juce::String gearIdKey(nexus::gear::Kind kind, int position);
+  std::array<std::atomic<int>, kPedals> mPedalChoice;
+  std::array<std::atomic<int>, kRigs> mAmpChoice, mCabChoice;
+  // Peça pedida pelo preset e não instalada: pedal passa o som direto;
+  // cabeçote e caixa seguem com o pacote e o IR salvos.
+  std::array<std::atomic<bool>, kPedals> mPedalMissing;
+  mutable juce::CriticalSection mMissingLock;
+  std::array<juce::StringArray, 3> mMissing; // por tipo, um id por posição
 
   static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
   void timerCallback() override;
@@ -287,6 +414,11 @@ private:
   std::atomic<float>* mOutput;
   std::atomic<float>* mInput;
   std::atomic<float>* mInputMute;
+  std::atomic<float>* mTunerMute;
+  std::array<float, kTunerRing> mTunerRing{};
+  std::atomic<int> mTunerWrite{0};
+  std::atomic<double> mTunerRate{48000.0};
+  std::atomic<bool> mTunerOpen{false};
   float mOutputGain = 1.0f;
   float mInputGain = 1.0f;
 
@@ -310,7 +442,16 @@ private:
   // Mão no botão que troca captura (drive de um pedal, ganho de um
   // cabeçote): aquece as vizinhas só daquele equipamento, até um pouco
   // depois de soltar.
-  void parameterValueChanged(int, float) override {}
+  void parameterValueChanged(int index, float) override;
+  // Tap tempo: cada toque (botão da tela ou pisada aprendida por MIDI) mede o
+  // tempo desde o anterior; a média dos últimos vira o andamento.
+  void tap();
+  int mTapIndex = -1;
+  std::array<double, 4> mTapIntervals{};
+  int mTapCount = 0;
+  double mLastTap = 0.0;
+  std::atomic<float>* mTempo = nullptr;
+  std::atomic<double> mHostBpm{0.0};
   void parameterGestureChanged(int index, bool starting) override;
   struct Anticipation
   {

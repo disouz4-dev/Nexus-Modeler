@@ -163,7 +163,10 @@ def build(rec, fonts):
     lfont = fonts[lg.get("fonte", "script")]
     if lg.get("tipo") == "marca":
         # A marca do programa (triângulo + NEXUS + MODELER), em relevo.
-        brand_plate.build((logo_x, logo_z), lg["altura_m"], fascia_front - 0.0045, fonts, lg.get("modeler", True))
+        fa = rec["fachada"]
+        face = fa.get("cor") or [(a + b) / 2 for a, b in zip(fa["cor_a"], fa["cor_b"])]
+        brand_plate.build((logo_x, logo_z), lg["altura_m"], fascia_front - 0.0045, fonts, lg.get("modeler", True),
+                          dark=lg.get("escuro", brand_plate.is_light(face)))
         lg = dict(lg, sublinhado=None)
     elif lg.get("contorno", True):
         st.text("logo_contorno", lg["texto"], lfont, lsize, (logo_x, fascia_front - 0.002, logo_z),

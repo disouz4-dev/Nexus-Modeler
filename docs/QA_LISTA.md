@@ -23,7 +23,7 @@ de cada passo marcado com 📷.
 - [ ] Pedal sem pacote mostra "vazio" e pede o pacote ao clicar.
 - [ ] Drive anda pelas capturas (a barra de capturas acompanha).
 - [ ] TOM e nível mexem no som.
-- [ ] Pear Gate (caixinha branca): sensibilidade, ataque e release; com a
+- [ ] Marcasite Gate (caixinha branca): sensibilidade, ataque e release; com a
       entrada em silêncio, o chiado some; tocando, a nota passa. 📷
 - [ ] Chorus, delay e reverb: botões mudam o som; pisante liga e desliga.
 

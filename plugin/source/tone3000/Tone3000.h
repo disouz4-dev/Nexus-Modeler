@@ -34,6 +34,7 @@ struct Tone
   juce::String gear; // amp, amp-cab, pedal, cab...
   int models = 0;    // capturas A2
   int downloads = 0;
+  int favorites = 0; // "favoritos" na TONE3000 (o "like" da comunidade)
   // Só nas recomendadas: como achar a posição do botão no nome de cada
   // captura (expressão com um grupo) e os trechos que o nome precisa ter
   // para entrar (a série certa do pacote).
@@ -46,16 +47,24 @@ struct Tone
   // Nome da pasta deste pacote, quando o mesmo tom rende vários (um por canal).
   juce::String packName;
   bool isDefault = false; // "padrao" nas recomendadas
+  // Escolha automática: sem a posição do botão nos nomes, a primeira captura
+  // vai para o meio do botão (em vez da tela de mapear).
+  bool firstIfUnnamed = false;
 };
 
-// Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),
+// Recomendadas de um equipamento (prefixo do visual: "brit800", "greengage_drive"...),
 // e a palavra usada para filtrar as listas da conta ("JCM800").
 std::vector<Tone> recommended(const juce::String& gearPrefix);
+// Quem responde antes do recomendadas.json embutido (o catálogo, com as
+// fichas dos equipamentos baixados): devolve o bloco {"busca", "tons"} ou vazio.
+void setRecommendedLookup(std::function<juce::var(const juce::String&)> lookup);
 // Captura padrão de um equipamento (a que o Nexus baixa sozinho quando a peça
 // está vazia). channel >= 0: a do canal (pacote com "Canal N" no nome); um
 // cabeçote sem pacotes por canal usa a primeira no canal 1.
 std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel = -1);
 // Pasta já baixada desse tom (Documentos/Nexus Modeler/<equipamento>), ou vazia.
+// Pasta de pacote que dá para tocar (capturas com posição ou algum IR).
+bool usableFolder(const juce::File& folder);
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName);
 juce::String filterWord(const juce::String& gearPrefix);
 
@@ -80,7 +89,8 @@ public:
   {
     favorites,
     downloaded,
-    trending
+    trending,
+    mostLiked // busca pela palavra do equipamento, ordenada por favoritos
   };
 
   // Chave pública do Nexus na TONE3000 (definida na compilação). Sem ela,

@@ -1,0 +1,81 @@
+{
+  "nome": "Açaí Rat",
+  "familia": "acai_rat",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 135,
+      "y": 120,
+      "tamanho": 95,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 252,
+      "y": 120,
+      "tamanho": 95,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 370,
+      "y": 120,
+      "tamanho": 95,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    70,
+    120
+  ],
+  "rotulos": [
+    {
+      "texto": "DISTORÇÃO",
+      "x": 185.4,
+      "y": 240.9,
+      "altura": 19.2,
+      "achatamento": 1.0,
+      "cor": "#f2e7f0",
+      "espaco": 1.15
+    },
+    {
+      "texto": "FILTRO",
+      "x": 300.0,
+      "y": 240.9,
+      "altura": 19.2,
+      "achatamento": 1.0,
+      "cor": "#f2e7f0",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 414.6,
+      "y": 240.9,
+      "altura": 19.2,
+      "achatamento": 1.0,
+      "cor": "#f2e7f0",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 610.0,
+    "raio": 70.5
+  },
+  "led": {
+    "x": 300.0,
+    "y": 88.9,
+    "raio": 17.6
+  }
+}

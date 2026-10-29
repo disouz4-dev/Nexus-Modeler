@@ -94,8 +94,20 @@ bool Separator::loaded() const
 int Separator::defaultThreads()
 {
   const int n = static_cast<int>(std::thread::hardware_concurrency());
+#if defined(__linux__)
+  // No Linux o áudio quase nunca tem prioridade de tempo real (o PipeWire e o
+  // JACK sem o grupo "audio" rodam na prioridade comum) e a separação disputa
+  // com ele a memória e os núcleos. Medido num Ryzen 7 de 16 núcleos lógicos,
+  // bloco de 128, tocando a música e a guitarra enquanto separa: 6 linhas
+  // davam cerca de 170 estouros em 29 s; 3 linhas, nenhum. E a separação só
+  // ficou 15% mais lenta (1,50 para 1,73 vez a duração da música): o que
+  // limita é a memória, não os núcleos. Um quarto dos núcleos lógicos, no
+  // máximo 3.
+  return std::clamp(n / 4, 1, 3);
+#else
   // Metade dos núcleos lógicos, no máximo 6: sobra para o áudio e o resto.
   return std::clamp(n / 2, 1, 6);
+#endif
 }
 
 bool Separator::separate(const Stereo& mix, int threads, const std::function<void(float)>& progress,

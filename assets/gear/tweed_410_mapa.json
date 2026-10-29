@@ -1,0 +1,17 @@
+{
+  "nome": "Tweed 4x10",
+  "familia": "tweed_410",
+  "largura": 1600,
+  "altura": 1600,
+  "posicoes": 101,
+  "botoes": [],
+  "medidas_mm": [
+    600,
+    620
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}

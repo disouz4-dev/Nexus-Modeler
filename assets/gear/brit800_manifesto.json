@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "brit800",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Brit 800",
+  "inspiracao": "JCM800 2203",
+  "categoria": "Britânicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 0,
+  "signature": null,
+  "caixa_padrao": "brit412"
+}

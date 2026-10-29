@@ -305,7 +305,8 @@ int main(int argc, char** argv)
 
   // 1. Cabeçote: o IR tem de mudar o som.
   {
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>(); // no heap: o processador tem ~200 KB e a pilha do Windows, 1 MB
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
@@ -329,7 +330,8 @@ int main(int argc, char** argv)
 
   // 2. Full rig: a caixa fica trancada, o IR não toca.
   {
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadIrAsync(0, ir);
@@ -361,7 +363,12 @@ int main(int argc, char** argv)
       p->prepareToPlay(48000.0, 128);
       p->loadAmpPack(0, 0, packs.getChildFile("ganho"));
       if (withPedal)
+      {
+        ChainLayout l; // a cadeia nova abre sem pedais
+        l.pre = {0};
+        p->setLayout(l);
         p->loadPedalPack(0, packs.getChildFile("ganho"));
+      }
       for (int t = 0; t < 120000 && !(p->channelLoaded(0, 0) && (!withPedal || p->slotLoaded(0))); t += 50)
         settle(*p, 50);
       // Aquecimento da captura (132 ms de som) + passagem suave (30 ms): cada
@@ -435,7 +442,8 @@ int main(int argc, char** argv)
   // 4. Cabeçote de canais: só os canais 1 e 3 têm pacote.
   {
     std::printf("\nCanais do cabeçote\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     setParam(p, "caixa", 0.0f);
@@ -500,7 +508,8 @@ int main(int argc, char** argv)
   // 5. MIDI.
   {
     std::printf("\nMIDI\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     juce::AudioBuffer<float> buffer(2, 128);
@@ -535,11 +544,72 @@ int main(int argc, char** argv)
     report(p.midi().ccFor("ganho") == 22 && value("ganho") < 6.0f, "Reaprender troca o controle (o antigo para de agir)",
            "agora CC " + juce::String(p.midi().ccFor("ganho")) + ", ganho " + juce::String(value("ganho"), 2));
 
+    // Pedaleira (M-VAVE Chocolate e parecidas): cada pisada manda PC ou nota.
+    p.midi().learn("p2_ligado");
+    send(juce::MidiMessage::programChange(1, 4)); // PC 5
+    const bool pcOn = p.midi().ccFor("p2_ligado") == 128 + 4 && value("p2_ligado") < 0.5f;
+    send(juce::MidiMessage::programChange(1, 4));
+    report(pcOn && value("p2_ligado") > 0.5f && juce::roundToInt(value("canal")) == 2,
+           "Aprender: PC 5 da pedaleira liga e desliga o pedal 2 (e não troca o canal)", MidiMap::describe(p.midi().ccFor("p2_ligado")));
+    p.midi().learn("p3_ligado");
+    send(juce::MidiMessage::noteOn(1, 60, 1.0f));
+    const float afterFirst = value("p3_ligado");
+    send(juce::MidiMessage::noteOff(1, 60));
+    send(juce::MidiMessage::noteOn(1, 60, 1.0f));
+    report(p.midi().ccFor("p3_ligado") == 256 + 60 && std::abs(afterFirst - value("p3_ligado")) > 0.5f,
+           "Aprender: nota 60 alterna o pedal 3 a cada pisada", MidiMap::describe(p.midi().ccFor("p3_ligado")));
+
+    // Pedaleira que manda o banco (CC 0) junto com a troca de patch: aprende a
+    // pisada (o PC), e outra pisada não mexe no pedal.
+    {
+      auto sendPair = [&](int program) {
+        juce::MidiBuffer midi;
+        midi.addEvent(juce::MidiMessage::controllerEvent(1, 0, 0), 0);
+        midi.addEvent(juce::MidiMessage::programChange(1, program), 1);
+        buffer.clear();
+        p.processBlock(buffer, midi);
+      };
+      p.midi().learn("p4_ligado");
+      sendPair(10);
+      const float first = value("p4_ligado");
+      sendPair(11); // outra pisada
+      const bool untouched = std::abs(first - value("p4_ligado")) < 0.01f;
+      sendPair(10);
+      report(p.midi().ccFor("p4_ligado") == 128 + 10 && untouched && std::abs(first - value("p4_ligado")) > 0.5f,
+             "Aprender: com banco + troca de patch, só a pisada aprendida liga o pedal 4", MidiMap::describe(p.midi().ccFor("p4_ligado")));
+    }
+
+    // Tap tempo: quatro toques a cada 0,5 s = 120 BPM; um toque pisado pela pedaleira também conta.
+    // O sleep atrasa em máquina carregada (a do GitHub chega a 570 ms), então o
+    // andamento esperado sai do intervalo medido entre o primeiro e o último toque.
+    double firstTap = 0.0, lastTap = 0.0;
+    for (int t = 0; t < 4; ++t)
+    {
+      auto* tapParam = p.params.getParameter("tap");
+      lastTap = juce::Time::getMillisecondCounterHiRes();
+      if (t == 0)
+        firstTap = lastTap;
+      tapParam->setValueNotifyingHost(tapParam->getValue() > 0.5f ? 0.0f : 1.0f);
+      if (t < 3)
+        juce::Thread::sleep(500);
+    }
+    const double expectedBpm = 60000.0 / ((lastTap - firstTap) / 3.0);
+    report(std::abs(p.tempoBpm() - expectedBpm) < 3.0 && std::abs(expectedBpm - 120.0) < 25.0,
+           "Tap tempo: quatro toques a cada meio segundo dão 120 BPM",
+           juce::String(p.tempoBpm(), 1) + " BPM (toques medidos: " + juce::String(expectedBpm, 1) + " BPM)");
+    report(std::abs(NexusProcessor::divisionBeats(NexusProcessor::divisionFor(5.0f)) * 60.0 / 120.0 - 1.0 / 3.0) < 1e-6
+             && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(0.0f))) == "1/1"
+             && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(10.0f))) == "1/32",
+           "Divisões do andamento (meio do botão = 1/6 a 120 BPM = 333 ms)", "1/1 a 1/32");
+
     juce::MemoryBlock state;
     p.getStateInformation(state);
-    NexusProcessor q;
+    auto qBox = std::make_unique<NexusProcessor>();
+    auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
-    report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22, "O mapa MIDI volta ao abrir o projeto",
+    report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22 && q.midi().ccFor("p2_ligado") == 132
+             && q.midi().ccFor("p3_ligado") == 316,
+           "O mapa MIDI volta ao abrir o projeto (CC, PC e nota)",
            "pedal CC " + juce::String(q.midi().ccFor("p1_ligado")) + ", ganho CC " + juce::String(q.midi().ccFor("ganho")));
   }
 
@@ -585,10 +655,25 @@ int main(int argc, char** argv)
     report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
 
+    // Primeira abertura: só o Brit 800 com a caixa dele, sem pedais.
+    {
+      auto freshBox = std::make_unique<NexusProcessor>();
+      auto& fresh = *freshBox;
+      const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
+      const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
+      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: Brit 800 e a caixa dele, sem pedais",
+             juce::String(fresh.layout().count()) + " pedais, cabeçote " + juce::String(head) + ", caixa " + juce::String(cab));
+    }
+    // Cherry Drop: meio-dia não muda o tom; as pontas são -12 e +12.
+    report(NexusProcessor::dropSemitones(5.0f) == 0 && NexusProcessor::dropSemitones(0.0f) == -12 && NexusProcessor::dropSemitones(10.0f) == 12
+             && NexusProcessor::dropSemitones(5.0f + 5.0f / 12.0f) == 1,
+           "Cherry Drop: meio-dia em 0, de -12 a +12 semitons", juce::String(NexusProcessor::dropSemitones(5.0f)));
+
     // A cadeia volta igual ao reabrir o projeto.
     juce::MemoryBlock state;
     pBetween->getStateInformation(state);
-    NexusProcessor q;
+    auto qBox = std::make_unique<NexusProcessor>();
+    auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
     report(q.layout().loop[0] == std::vector<int>{0} && q.layout().pre.empty(), "A ordem da cadeia volta ao abrir o projeto",
            juce::String::fromUTF8(q.layout().loop[0].size() == 1 ? "pedal entre cabeçote e caixa" : "ordem perdida"));
@@ -673,10 +758,201 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
   }
 
+  // 8b. Pedais de vários modos: Aquamarine Sky (reverb), Emerald Echo (delay) e Galaxy Mod (modulação).
+  {
+    std::printf("\nPedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod)\n");
+    auto make = [&](int look, int mode, bool on) {
+      auto p = std::make_unique<NexusProcessor>();
+      p->setPlayConfigDetails(2, 2, 48000.0, 128);
+      p->prepareToPlay(48000.0, 128);
+      setParam(*p, "p1_visual", static_cast<float>(look));
+      setParam(*p, "p1_modo", static_cast<float>(mode));
+      setParam(*p, "p1_ligado", on ? 1.0f : 0.0f);
+      ChainLayout l;
+      l.pre = {0};
+      p->setLayout(l);
+      settle(*p, 20);
+      return p;
+    };
+    auto rmsDb = [](const std::vector<float>& v) {
+      double s = 1e-30;
+      for (float x : v)
+        s += static_cast<double>(x) * x;
+      return 10.0 * std::log10(s / static_cast<double>(std::max<size_t>(1, v.size())));
+    };
+    const auto outDry = play(*make(19, 0, false), signal);
+    const char* const kinds[3] = {"Aquamarine Sky", "Emerald Echo", "Galaxy Mod"};
+    for (int k = 0; k < 3; ++k)
+    {
+      int finite = 0, changed = 0, level = 0;
+      double worstLevel = 0.0;
+      juce::String odd;
+      for (int mode = 0; mode < 11; ++mode)
+      {
+        auto p = make(19 + k, mode, true);
+        const auto out = play(*p, signal);
+        const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+        const double gap = rmsDb(out) - rmsDb(outDry);
+        finite += ok ? 1 : 0;
+        changed += diffDb(outDry, out) > -30.0 ? 1 : 0;
+        level += std::abs(gap) < 3.0 ? 1 : 0;
+        if (std::abs(gap) > std::abs(worstLevel))
+          worstLevel = gap;
+        if (!ok || std::abs(gap) >= 3.0 || diffDb(outDry, out) <= -30.0)
+          odd += NexusProcessor::modeName(19 + k, static_cast<float>(mode)) + " ";
+      }
+      report(finite == 11, (juce::String(kinds[k]) + ": os 11 modos sem valores infinitos nem estouro").toRawUTF8(),
+             juce::String(finite) + " de 11" + (odd.isEmpty() ? juce::String() : ", fora: " + odd));
+      report(changed == 11, (juce::String(kinds[k]) + ": cada modo ligado muda o som").toRawUTF8(), juce::String(changed) + " de 11");
+      report(level == 11, (juce::String(kinds[k]) + ": volume ligado parecido com desligado (até 3 dB)").toRawUTF8(),
+             juce::String::fromUTF8("maior diferença: ") + juce::String(worstLevel, 1) + " dB");
+    }
+
+    // Tudo no máximo por 20 s (shimmer realimentado, repetições no fim): continua finito.
+    {
+      int bounded = 0;
+      const auto longSignal = nexus::makeGuitarLikeSignal(48000.0, 20.0, 9);
+      for (int k = 0; k < 3; ++k)
+        for (int mode : {0, 4, 6, 10})
+        {
+          auto p = make(19 + k, mode, true);
+          for (const char* id : {"p1_a", "p1_b", "p1_c", "p1_d", "p1_tom", "p1_nivel"})
+            setParam(*p, id, 10.0f);
+          const auto out = play(*p, longSignal);
+          const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+          bounded += ok ? 1 : 0;
+        }
+      report(bounded == 12, juce::String::fromUTF8("Botões no máximo por 20 s: nenhum modo dispara").toRawUTF8(),
+             juce::String(bounded) + " de 12");
+    }
+
+    // Emerald Echo no andamento: 1/4 a 120 BPM repete meio segundo depois.
+    {
+      auto firstEcho = [](const std::vector<float>& out) {
+        size_t best = 4000;
+        for (size_t i = 4000; i < out.size(); ++i)
+          if (std::abs(out[i]) > std::abs(out[best]))
+            best = i;
+        return (static_cast<double>(best) - 1024.0) / 48.0;
+      };
+      auto p = make(20, 0, true);
+      setParam(*p, "andamento", 120.0f);
+      setParam(*p, "p1_sinc", 1.0f);
+      setParam(*p, "p1_a", 2.5f); // terceira divisão: 1/4
+      setParam(*p, "p1_b", 0.0f);
+      setParam(*p, "p1_c", 10.0f);
+      std::vector<double> click(48000, 0.0);
+      for (int i = 0; i < 48; ++i)
+        click[static_cast<size_t>(1000 + i)] = 0.5 * std::sin(i / 48.0 * 3.14159);
+      const double ms = firstEcho(play(*p, click));
+      report(std::abs(ms - 500.0) < 5.0, "Emerald Echo sincronizado: 1/4 a 120 BPM repete em 500 ms",
+             juce::String(ms, 1) + " ms (" + NexusProcessor::divisionName(NexusProcessor::divisionFor(2.5f)) + ")");
+      setParam(*p, "andamento", 90.0f);
+      play(*p, std::vector<double>(96000, 0.0)); // o tempo desliza até o novo
+      const double ms90 = firstEcho(play(*p, click));
+      report(std::abs(ms90 - 666.7) < 8.0, "Mudou o andamento (90 BPM): a repetição acompanha", juce::String(ms90, 1) + " ms");
+    }
+
+    // Shimmer oitava acima: uma nota de 220 Hz ganha energia em 440 Hz na cauda.
+    {
+      auto energyAt = [](const std::vector<float>& v, size_t from, double hz) {
+        double re = 0.0, im = 0.0;
+        for (size_t i = from; i < v.size(); ++i)
+        {
+          re += v[i] * std::cos(2.0 * 3.14159265358979 * hz * static_cast<double>(i) / 48000.0);
+          im += v[i] * std::sin(2.0 * 3.14159265358979 * hz * static_cast<double>(i) / 48000.0);
+        }
+        return std::sqrt(re * re + im * im);
+      };
+      std::vector<double> note(48000 * 4, 0.0);
+      for (size_t i = 0; i < 48000; ++i)
+        note[i] = 0.3 * std::sin(2.0 * 3.14159265358979 * 220.0 * static_cast<double>(i) / 48000.0);
+      double ratio[2] = {};
+      for (int s = 0; s < 2; ++s)
+      {
+        auto p = make(19, s == 0 ? 0 : 6, true); // hall e shimmer oitava acima
+        setParam(*p, "p1_a", 7.0f);
+        setParam(*p, "p1_c", 10.0f);
+        setParam(*p, "p1_nivel", 8.0f);
+        const auto out = play(*p, note);
+        ratio[s] = energyAt(out, 48000 * 2, 440.0) / (energyAt(out, 48000 * 2, 220.0) + 1e-9);
+      }
+      report(ratio[1] > ratio[0] * 3.0, "Shimmer: a cauda sobe uma oitava (440 Hz) e o hall não",
+             "440/220 no shimmer: " + juce::String(ratio[1], 2) + ", no hall: " + juce::String(ratio[0], 2));
+    }
+
+    // 8c. Blueberry Chain: delays em cadeia, com as chaves 2 | 3 e x | /.
+    std::printf("\nBlueberry Chain (delays em cadeia)\n");
+    {
+      auto p = make(22, 0, true);
+      const auto out = play(*p, signal);
+      const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+      const double gap = rmsDb(out) - rmsDb(outDry);
+      report(ok && diffDb(outDry, out) > -30.0, "Blueberry Chain ligado: muda o som, sem valores infinitos",
+             juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, out), 1) + " dB");
+      report(std::abs(gap) < 3.0, "Blueberry Chain: volume ligado parecido com desligado (até 3 dB)",
+             juce::String::fromUTF8("diferença: ") + juce::String(gap, 1) + " dB");
+    }
+    {
+      // 120 BPM, tempo em 1/4 (500 ms): os três delays no mesmo tempo, então
+      // toda repetição cai em múltiplos de 500 ms. A chave x | / muda quantas
+      // vezes cada um repete: no x o rastro dura muito mais que no /.
+      auto chain = [&](bool multiply, bool three, float feedback) {
+        auto p = make(22, 0, true);
+        setParam(*p, "andamento", 120.0f);
+        setParam(*p, "p1_sinc", 1.0f);
+        setParam(*p, "p1_a", 2.5f);
+        setParam(*p, "p1_b", feedback);
+        setParam(*p, "p1_c", 10.0f);
+        setParam(*p, "p1_multiplica", multiply ? 1.0f : 0.0f);
+        setParam(*p, "p1_tres", three ? 1.0f : 0.0f);
+        play(*p, std::vector<double>(48000, 0.0));
+        std::vector<double> click(192000, 0.0);
+        for (int i = 0; i < 48; ++i)
+          click[static_cast<size_t>(1000 + i)] = 0.3 * std::sin(i / 48.0 * 3.14159);
+        return play(*p, click);
+      };
+      auto peakAt = [](const std::vector<float>& out, double ms) {
+        const auto c = static_cast<size_t>(1024.0 + ms * 48.0);
+        float best = 0.0f;
+        for (size_t i = c - 240; i < c + 240 && i < out.size(); ++i)
+          best = std::max(best, std::abs(out[i]));
+        return best;
+      };
+      auto tailDb = [](const std::vector<float>& out) {
+        double sum = 0.0;
+        for (size_t i = 96000; i < 144000; ++i)
+          sum += static_cast<double>(out[i]) * out[i];
+        return 10.0 * std::log10(sum / 48000.0 + 1e-20);
+      };
+      const auto grid = chain(true, true, 0.0f);
+      const float onGrid = std::min({peakAt(grid, 500.0), peakAt(grid, 1000.0), peakAt(grid, 1500.0)});
+      const float offGrid = std::max(peakAt(grid, 250.0), peakAt(grid, 750.0));
+      report(onGrid > 0.01f && offGrid < onGrid * 0.1f, "Os três delays no mesmo tempo: repetições em 500, 1000 e 1500 ms",
+             juce::String::fromUTF8("menor pico: ") + juce::String(onGrid, 3) + ", fora do tempo: " + juce::String(offGrid, 4));
+      const double times = tailDb(chain(true, true, 3.0f));
+      const double divide = tailDb(chain(false, true, 3.0f));
+      report(times - divide > 10.0, "Chave x repete muito mais que a chave / (rastro de 2 a 3 s)",
+             juce::String::fromUTF8("x: ") + juce::String(times, 1) + " dB, /: " + juce::String(divide, 1) + " dB");
+      const double two = tailDb(chain(true, false, 3.0f));
+      report(times - two > 3.0, "Chave em 2: sem o terceiro delay o rastro acaba antes",
+             juce::String::fromUTF8("3: ") + juce::String(times, 1) + " dB, 2: " + juce::String(two, 1) + " dB");
+    }
+    {
+      auto p = make(22, 0, true);
+      for (const char* id : {"p1_a", "p1_b", "p1_c"})
+        setParam(*p, id, 10.0f);
+      const auto out = play(*p, nexus::makeGuitarLikeSignal(48000.0, 20.0, 9));
+      const bool ok = std::all_of(out.begin(), out.end(), [](float x) { return std::isfinite(x) && std::abs(x) < 8.0f; });
+      report(ok, "Blueberry Chain com tudo no máximo por 20 s: não dispara", ok ? "ok" : "estourou");
+    }
+  }
+
   // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
   {
     std::printf("\nPresets\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
@@ -689,7 +965,9 @@ int main(int argc, char** argv)
     juce::MemoryBlock withPack;
     p.getStateInformation(withPack);
 
-    NexusProcessor empty;
+    auto emptyBox = std::make_unique<NexusProcessor>();
+
+    auto& empty = *emptyBox;
     juce::MemoryBlock withoutPack;
     empty.getStateInformation(withoutPack);
     p.setStateInformation(withoutPack.getData(), static_cast<int>(withoutPack.getSize()));
@@ -733,7 +1011,7 @@ int main(int argc, char** argv)
     const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
     report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
     int all = 0;
-    for (const auto* g : {"brit800", "lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
+    for (const auto* g : {"brit800", "greengage_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }
@@ -815,8 +1093,10 @@ int main(int argc, char** argv)
     std::printf("\nAtualização\n");
     namespace up = nexus::update;
     report(up::compareVersions("0.2.0", "0.1.9") > 0 && up::compareVersions("v1.0", "1.0.0") == 0
-             && up::compareVersions("0.10.0", "0.9.5") > 0 && up::compareVersions("0.2.0-beta", "0.2.0") == 0,
-           "Comparação de versões", "0.2.0 > 0.1.9, v1.0 = 1.0.0, 0.10.0 > 0.9.5");
+             && up::compareVersions("0.10.0", "0.9.5") > 0 && up::compareVersions("0.2.0-beta", "0.2.0") < 0
+             && up::compareVersions("0.2.0-beta.2", "0.2.0-beta.1") > 0 && up::compareVersions("0.2.0-beta.10", "0.2.0-beta.9") > 0
+             && up::compareVersions("0.2.0-beta.1", "0.1.0-beta.1") > 0 && up::compareVersions("v0.2.0-beta.1", "0.2.0-beta.1") == 0,
+           "Comparação de versões", "0.2.0 > 0.1.9, v1.0 = 1.0.0, 0.10.0 > 0.9.5, final > beta, beta.2 > beta.1, beta.10 > beta.9");
     const juce::String json = R"({"tag_name":"v0.3.0","html_url":"https://github.com/disouz4-dev/Nexus-Modeler/releases/tag/v0.3.0","body":"Novidades",
       "assets":[{"name":"NexusModeler-0.3.0-Windows-instalador.exe","browser_download_url":"https://x/w.exe","size":10},
                 {"name":"NexusModeler-0.3.0-Windows.zip","browser_download_url":"https://x/w.zip","size":9},
@@ -826,7 +1106,7 @@ int main(int argc, char** argv)
                 {"name":"NexusModeler-0.3.0-Linux-x86_64.tar.gz","browser_download_url":"https://x/l.tgz","size":13}]})";
     const auto w = up::parseRelease(json, "windows"), m = up::parseRelease(json, "mac");
     const auto d = up::parseRelease(json, "linux-deb"), t = up::parseRelease(json, "linux");
-    report(w.version == "0.3.0" && w.assetName.endsWith("instalador.exe") && m.assetName.endsWith(".dmg")
+    report(w.version == "0.3.0" && w.assetName.endsWith("instalador.exe") && m.assetName.endsWith("Mac.zip") && up::parseRelease(json.replace("Mac.zip", "Mac.txt"), "mac").assetName.endsWith(".dmg")
              && d.assetName.endsWith(".deb") && t.assetName.endsWith(".tar.gz") && w.assetSize == 10,
            "Instalador certo para cada sistema", w.assetName + ", " + m.assetName + ", " + d.assetName + ", " + t.assetName);
     report(up::compareVersions(up::currentVersion(), "0.0.1") > 0, juce::String::fromUTF8("O programa sabe a própria versão").toRawUTF8(), up::currentVersion());
@@ -835,7 +1115,8 @@ int main(int argc, char** argv)
   // 12. Testar o som: a gravação entra no lugar da guitarra; gravar a própria guitarra.
   {
     std::printf("\nTestar o som\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 44100.0, 128);
     p.prepareToPlay(44100.0, 128);
     auto& test = p.testSource();

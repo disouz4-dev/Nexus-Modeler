@@ -61,9 +61,11 @@ def slider_box(scene, cam, ctl):
     em qualquer posição) e a profundidade do cursor."""
     cx, cy, cz = ctl["center"]
     pts = []
+    along_y = ctl.get("eixo") == "y"  # no pedal o cursor corre no tampo (eixo Y)
     for dx in (-ctl["w"] / 2, ctl["w"] / 2):
-        for dz in (-ctl["h"] / 2, ctl["h"] / 2):
-            for dy in (-ctl["depth"] / 2, ctl["depth"] / 2):
+        for dh in (-ctl["h"] / 2, ctl["h"] / 2):
+            for dd in (-ctl["depth"] / 2, ctl["depth"] / 2):
+                dy, dz = (dh, dd) if along_y else (dd, dh)
                 pts.append(to_pixels(scene, cam, (cx + dx, cy + dy, cz + dz)))
     xs = [p[0] for p in pts]
     ys = [p[1] for p in pts]
@@ -133,7 +135,10 @@ def clean_shadow(path):
 
 def set_knobs(controls, value):
     for c in controls:
-        if c.get("tipo") == "deslizante":
+        if c.get("tipo") == "deslizante" and c.get("eixo") == "y":
+            x, _, z = c["pivot"].location
+            c["pivot"].location = (x, c["z0"] + (value - 0.5) * c["curso"], z)
+        elif c.get("tipo") == "deslizante":
             x, y, _ = c["pivot"].location
             c["pivot"].location = (x, y, c["z0"] + (value - 0.5) * c["curso"])
         else:
@@ -172,10 +177,16 @@ def main():
     view_w = W * frame["largura_rel"]
     dist = (view_w / 2) / math.tan(math.atan(18 / lens))
     cam = st.camera(scene, built.get("target", (0, built["front"], H * 0.52)), dist, frame["elevacao"], lens)
+    if rec["tipo"] == "caixa" and frame["proporcao"] > 1.0:
+        # Caixa alta (8x10): a imagem fica em pé e o Blender passaria a medir
+        # o sensor pela altura; a conta acima é pela largura.
+        cam.data.sensor_fit = "HORIZONTAL"
 
     controls = built["controls"]
     bpy.context.view_layer.update()  # câmera e peças no lugar antes de medir
     if not a.so_mapa:
+        # Guarda a cena para abrir e editar depois, com as fontes e imagens dentro do arquivo.
+        bpy.ops.file.pack_all()
         bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(a.saida), "cena.blend"))
         set_knobs(controls, 0.5)
         t0 = time.time()
@@ -188,6 +199,15 @@ def main():
               "posicoes": frames, "botoes": [],
               # Canais do amplificador original (nome de cada um), se houver.
               "canais": [c["nome"] for c in rec.get("canais", [])]}
+    # Pedais: tamanho de verdade (a pedaleira da tela põe um do lado do outro em escala).
+    if "comprimento" in rec.get("medidas_m", {}):
+        layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["comprimento"] * 1000)]
+    # Caixas: tamanho de verdade e a grade de falantes atrás da tela (a tela
+    # põe o microfone de cada IR na frente do falante certo).
+    if rec.get("tipo") == "caixa":
+        layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["altura"] * 1000)]
+        if "falantes" in rec:
+            layout["falantes"] = rec["falantes"]
     boxes = []
     for c in controls:
         b = knob_box(scene, cam, c)
@@ -233,6 +253,11 @@ def main():
         px, py = to_pixels(scene, cam, (lx, ly, lz))
         ex, _ = to_pixels(scene, cam, (lx + lr, ly, lz))
         layout["led"] = {"x": round(px, 1), "y": round(py, 1), "raio": round(abs(ex - px), 1)}
+    if built.get("display"):
+        vx, vy, vz, vw, vl = built["display"]
+        corners = [to_pixels(scene, cam, (vx + sx * vw / 2, vy + sy * vl / 2, vz)) for sx in (-1, 1) for sy in (-1, 1)]
+        xs, ys = [c[0] for c in corners], [c[1] for c in corners]
+        layout["visor"] = {"x": round(min(xs), 1), "y": round(min(ys), 1), "w": round(max(xs) - min(xs), 1), "h": round(max(ys) - min(ys), 1)}
     with open(os.path.join(a.saida, "mapa.json"), "w", encoding="utf-8") as f:
         json.dump(layout, f, ensure_ascii=False, indent=2)
     if a.so_frente or a.so_mapa or not controls:

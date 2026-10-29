@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "badland100",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Badland 100",
+  "inspiracao": "Mesa Boogie Badlander",
+  "categoria": "Americanos de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 54,
+  "signature": null,
+  "caixa_padrao": "mark5_412"
+}

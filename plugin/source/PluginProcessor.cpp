@@ -22,6 +22,8 @@ NexusProcessor::NexusProcessor()
                    .withOutput(juce::String::fromUTF8("Saída"), juce::AudioChannelSet::stereo(), true))
 , params(*this, nullptr, "NexusModeler", createLayout())
 {
+  // O catálogo abre aqui, fora do áudio (o áudio só lê o motor de cada peça).
+  nexus::gear::GearCatalog::instance();
   for (int i = 0; i < kPedals; ++i)
   {
     auto& p = mPedals[static_cast<size_t>(i)];
@@ -31,8 +33,14 @@ NexusProcessor::NexusProcessor()
     p.on = params.getRawParameterValue(pedalParam(i, "ligado"));
     p.lite = params.getRawParameterValue(pedalParam(i, "lite"));
     p.visual = params.getRawParameterValue(pedalParam(i, "visual"));
-    for (int k = 0; k < 3; ++k)
-      p.fx[static_cast<size_t>(k)] = params.getRawParameterValue(pedalParam(i, k == 0 ? "a" : k == 1 ? "b" : "c"));
+    p.sync = params.getRawParameterValue(pedalParam(i, "sinc"));
+    static constexpr const char* kFxIds[7] = {"a", "b", "c", "d", "e", "f", "g"};
+    for (size_t k = 0; k < p.fx.size(); ++k)
+      p.fx[k] = params.getRawParameterValue(pedalParam(i, kFxIds[k]));
+    p.mode = params.getRawParameterValue(pedalParam(i, "modo"));
+    p.fourth = params.getRawParameterValue(pedalParam(i, "d"));
+    p.three = params.getRawParameterValue(pedalParam(i, kChainSwitches[0]));
+    p.multiply = params.getRawParameterValue(pedalParam(i, kChainSwitches[1]));
   }
   for (int r = 0; r < kRigs; ++r)
   {
@@ -55,7 +63,23 @@ NexusProcessor::NexusProcessor()
   mOutput = params.getRawParameterValue("volume");
   mInput = params.getRawParameterValue("entrada");
   mInputMute = params.getRawParameterValue("entrada_mudo");
+  mTunerMute = params.getRawParameterValue("afinador_mudo");
 
+  for (auto& c : mPedalChoice)
+    c.store(-1);
+  for (auto& c : mAmpChoice)
+    c.store(-1);
+  for (auto& c : mCabChoice)
+    c.store(-1);
+  for (auto& m : mPedalMissing)
+    m.store(false);
+  for (int i = 0; i < kPedals; ++i)
+    mMissing[0].add({});
+  for (int r = 0; r < kRigs; ++r)
+  {
+    mMissing[1].add({});
+    mMissing[2].add({});
+  }
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
   mLayoutUi = ChainLayout::fromValueTree({});
@@ -68,6 +92,10 @@ NexusProcessor::NexusProcessor()
   };
   for (auto* p : getParameters())
     p->addListener(this);
+  mTempo = params.getRawParameterValue("andamento");
+  for (int i = 0; i < getParameters().size(); ++i)
+    if (auto* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(getParameters()[i]); p != nullptr && p->paramID == "tap")
+      mTapIndex = i;
   mEqOn = params.getRawParameterValue("eq_ligado");
   for (int i = 0; i < nexus::FreeEq::kMaxBands; ++i)
   {
@@ -155,10 +183,15 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "caixa"), 1}, "Caixa" + side,
                                    juce::StringArray{"Desligada", juce::String::fromUTF8("IR próprio")}, 1));
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "cabecote"), 1}, juce::String::fromUTF8("Cabeçote") + side,
-                                   juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100"}, 0));
+                                   juce::StringArray{"Brit 800", "Mark Five", "Block 5150", "Recto Dual", "SL 100", "BE 100",
+                                                     "Top Boost 30", "Match 30", "Tiny 15", "Rocker 50", "Recto Triple", "Power 100", "Uber 100", "Sonic 60", "Silver Twin", "Tweed 59", "Brit Plexi", "Brit Jubilee", "Jazz 120", "Vault 300", "Citrus Bass 200", "Granite 800", "Fliptop 15", "Vault V4", "Hart 1000", "Garden 800", "Glass 500", "Solar T", "Bassline 100", "Eagle 751", "Little Tube", "Workhorse 350", "Underground 800", "Acoustica 360", "Tiny Bass", "Tracer 7", "Brit Bass",
+                                                     "Brit Plexi 50", "Brit 45", "Brit 900", "Brit 410", "Brit 2000", "Brit DS 20", "Brit Rack 1", "Silver Deluxe", "Silver Super", "Silver Prince", "Tweed 57", "Hot Rod 40", "Champion 5", "Mark Two Plus", "Mark Three", "Mark Four", "Mark JP", "Badland 100", "Lone Star 100", "Block 5150 III", "Top Boost 15", "Citrus 50", "Citrus 30", "Black Country 100", "Iron 120", "Fire 100", "Feral 120", "Steel 20", "Vier 100", "Herb 180", "Bliss 100", "Goddess 80", "Dirty 40", "Special 100", "Double Stone 50", "Black Cat 30", "Hi 103", "Dark Star 20", "Tri 100", "Gen 120", "Nova 100", "Emperor 20", "RG 100", "Arch 100", "Kraken 50", "Magick 25", "Deliver 120", "Ash 500",
+                                                     "Vault 4 Pro", "Maple 400", "Nord 650", "Wind 300", "Bass Box V", "Eagle Hammer 500", "Bebop 15", "Fliptop 18", "Vault 210"}, 0));
     // Visual da caixa: cada cabeçote tem a sua, escolhida junto com ele.
     layout.add(std::make_unique<C>(juce::ParameterID{ampParam(r, "gabinete"), 1}, "Gabinete" + side,
-                                   juce::StringArray{"Brit 4x12", "Mark 4x12"}, 0));
+                                   juce::StringArray{"Brit 4x12", "Mark 4x12", "Block 4x12", "SL 4x12", "BE 4x12",
+                                                     "Citrus 4x12", "Blue 2x12", "Twin 2x12", "Tweed 4x10", "Match 2x12", "Power 4x12", "Uber 4x12", "Jazz 2x12", "Vault 8x10", "Granite 4x10",
+                                                     "Silver 1x12", "Mark 1x12", "Star 4x12", "Country 4x12", "Vier 4x12", "Hi 4x12", "RG 4x12", "Hart 4x10", "Glass 4x10", "Solar 4x12", "Fliptop 1x15", "Bassline 2x15", "Solar 2x15", "Glass 4x12"}, 0));
     for (const char* id : kGraphicIds)
       layout.add(std::make_unique<P>(juce::ParameterID{ampParam(r, id), 1},
                                      "EQ " + juce::String(id + 2) + " Hz" + side, juce::NormalisableRange<float>(-12.0f, 12.0f, 0.1f), 0.0f));
@@ -168,6 +201,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Equalizador do fim da cadeia (estilo Pro-Q): ligado/desligado geral e
   // 24 faixas. A tela usa as faixas na ordem em que são criadas.
   layout.add(std::make_unique<B>(juce::ParameterID{"eq_ligado", 1}, "EQ ligado", true));
+  layout.add(std::make_unique<B>(juce::ParameterID{"afinador_mudo", 1}, "Afinador: mudo ao afinar", true));
+  layout.add(std::make_unique<P>(juce::ParameterID{"andamento", 1}, "Andamento (BPM)", juce::NormalisableRange<float>(40.0f, 240.0f, 0.1f), 120.0f));
+  // Cada mudança é um toque (o valor em si não importa): dá para aprender por MIDI.
+  layout.add(std::make_unique<B>(juce::ParameterID{"tap", 1}, "Tap tempo", false));
+  layout.add(std::make_unique<P>(juce::ParameterID{"afinador_la", 1}, juce::String::fromUTF8("Afinador: lá de referência"),
+                                 juce::NormalisableRange<float>(430.0f, 450.0f, 1.0f), 440.0f));
   {
     juce::NormalisableRange<float> freq(10.0f, 22000.0f, 0.1f);
     freq.setSkewForCentre(std::sqrt(10.0f * 22000.0f));
@@ -198,10 +237,21 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "a"), 1}, name + "efeito A", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "b"), 1}, name + "efeito B", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "c"), 1}, name + "efeito C", knob, 4.0f));
+    // Faixas a mais do equalizador gráfico (Selenite EQ: "a" a "g" são as sete
+    // faixas, do grave ao agudo).
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "d"), 1}, name + "efeito D", knob, 5.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "e"), 1}, name + "efeito E", knob, 5.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "f"), 1}, name + "efeito F", knob, 5.0f));
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "g"), 1}, name + "efeito G", knob, 5.0f));
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "sinc"), 1}, name + "sincronizar com o andamento", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
-                                   juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Blueberry Chorus",
-                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop"}, 0));
+                                   juce::StringArray{"Greengage Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Neptune Chorus",
+                                                     "Coconut Delay", "Meteorite Reverb", "Marcasite Gate", "Cherry Drop", "Mars Phaser",
+                                                     "Nebula Flanger", "Turquoise Tremolo", "Eclipse Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
+                                                     "Pearl Fuzz", "Onyx Metal", "Heliodor Mud", "Snow Pear Treble", "Aquamarine Sky",
+                                                     "Emerald Echo", "Galaxy Mod", "Blueberry Chain",
+                                                     "Olive Drive", "Pistachio Drive", "Blueberry Blues", "Citrine Overdrive", "Clementine Turbo", "Cherry Fuzz", "Mercury Bender", "Opal Drive", "Quince Plus", "Hematite Rock", "Basalt Amp", "Blackcurrant Bass", "Labradorite Omega", "Spinel Precision", "Amber Glory", "Raspberry Drive", "Honeydew Drive", "Amethyst King", "Magnetite Boost", "Tourmaline Grind", "Sapote 33", "Jet 5150", "Charoite G3", "Jamun OD", "Agate Wylde", "Pyrite Klone", "Howlite War", "Moonstone Fuzz", "Peridot Drive", "Jackfruit Monkey", "Topaz 250", "Lime Bass Fuzz", juce::String::fromUTF8("Galena Hammer"), "Melanite Bass DI", "Selenite EQ", "Comet Wah", "Saturn Rotary", "Pulsar Echo", "Jupiter Octave", "Apple Comp"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -211,6 +261,21 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
   // O "Testar o som" continua tocando com a entrada no mudo.
   layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
+  // Pedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod): o seletor de
+  // modo e o quarto botão. No fim da lista, para não mexer na ordem dos outros.
+  for (int i = 0; i < kPedals; ++i)
+  {
+    const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "modo"), 1}, name + "modo", stepped, 0.0f));
+  }
+  // Blueberry Chain: as duas chaves (2 ou 3 delays; dobrar ou dividir o
+  // tempo). No fim, como os de cima.
+  for (int i = 0; i < kPedals; ++i)
+  {
+    const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[0]), 1}, name + juce::String::fromUTF8("três delays"), true));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[1]), 1}, name + "multiplicar o tempo", true));
+  }
   return layout;
 }
 
@@ -236,6 +301,7 @@ void NexusProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   mMonoOut.assign(static_cast<size_t>(block), 0.0);
   mTestBuffer.assign(static_cast<size_t>(block), 0.0f);
   mTest.prepare(sampleRate);
+  mTunerRate.store(sampleRate);
   mStudio.prepare(sampleRate, block);
   // Capturas no tamanho do bloco que vai chegar (na taxa das capturas).
   {
@@ -349,6 +415,21 @@ nexus::AmpVoice::Controls NexusProcessor::ampControls(int rig, int channel) cons
   return c;
 }
 
+namespace
+{
+// O ganho do cabeçote e o drive do pedal vão direto para a captura da sua
+// parada, sem misturar duas vizinhas: o botão é uma chave com uma posição por
+// captura.
+void snapGainToCapture(nexus::AmpVoice::Controls& c, const nexus::Pack& pack)
+{
+  if (pack.captures.empty())
+    return;
+  const int step = NexusProcessor::gainStep(static_cast<float>(c.main), static_cast<int>(pack.captures.size()));
+  c.main = pack.captures[static_cast<size_t>(step)].position;
+  c.stepped = true;
+}
+} // namespace
+
 nexus::AmpVoice::Controls NexusProcessor::pedalControls(int pedal) const
 {
   // O pedal usa o mesmo motor: o drive troca as capturas; o "tom" é uma
@@ -374,31 +455,41 @@ struct LoadTimer
 
 void NexusProcessor::runDrop(int pedal, double* buffer, int n)
 {
-  // Cherry Drop: botão A escolhe o drop (1 a 7 semitons, oitava, oitava com o
-  // som limpo); botão B é a mistura (10 = só o som com o tom baixado).
+  // Cherry Drop: botão A escolhe os semitons (meio-dia = sem mudar, para a
+  // esquerda desce até -12, para a direita sobe até +12); botão B é o brilho,
+  // para compensar o som que fica mais opaco quando desce.
   auto& p = mPedals[static_cast<size_t>(pedal)];
   const float target = p.on->load() > 0.5f ? 1.0f : 0.0f;
   if (target == 0.0f && p.dropMix == 0.0f)
     return;
-  if (target == 1.0f && p.dropMix == 0.0f)
-    p.drop->reset(); // liga limpo, sem resto da última vez
-  const int sel = juce::jlimit(0, 8, juce::roundToInt(p.fx[0]->load() / 10.0f * 8.0f));
-  const float semis = sel < 7 ? -static_cast<float>(sel + 1) : -12.0f;
-  if (semis != p.dropSemitones)
+  const int semis = dropSemitones(p.fx[0]->load());
+  const float shiftTarget = semis != 0 ? 1.0f : 0.0f;
+  if (semis != 0 && static_cast<float>(semis) != p.dropSemitones)
   {
-    p.dropSemitones = semis;
-    p.drop->setSemitones(semis);
+    p.dropSemitones = static_cast<float>(semis);
+    p.drop->setSemitones(p.dropSemitones);
   }
-  const float wet = juce::jlimit(0.0f, 1.0f, p.fx[1]->load() / 10.0f);
-  const float dryKeep = sel == 8 ? 1.0f : 1.0f - wet; // oitava com o limpo: o limpo fica inteiro
+  // O motor só trabalha com drop escolhido; no meio-dia passa o som direto.
+  const bool shifting = shiftTarget > 0.0f || p.dropShift > 0.0f;
+  if (shifting && (p.dropShift == 0.0f || p.dropMix == 0.0f))
+    p.drop->reset(); // começa limpo, sem resto da última vez
   for (int i = 0; i < n; ++i)
     mDropFloat[static_cast<size_t>(i)] = static_cast<float>(buffer[i]);
-  p.drop->process(mDropFloat.data(), n);
+  if (shifting)
+    p.drop->process(mDropFloat.data(), n);
+  // Brilho: meio-dia é o som como sai; para a direita realça os agudos, para a
+  // esquerda escurece (filtro de prateleira simples em volta de 1,5 kHz).
+  const float b = (p.fx[1]->load() - 5.0f) / 5.0f;
+  const double bright = b >= 0.0f ? 1.5 * b : 0.75 * b;
+  const double lowCoef = 1.0 - std::exp(-juce::MathConstants<double>::twoPi * 1500.0 / kEngineRate);
   const float mixStep = static_cast<float>(1.0 / (kPedalFadeSeconds * kEngineRate));
   for (int i = 0; i < n; ++i)
   {
     p.dropMix = target > p.dropMix ? std::min(target, p.dropMix + mixStep) : std::max(target, p.dropMix - mixStep);
-    const double effect = buffer[i] * dryKeep + mDropFloat[static_cast<size_t>(i)] * wet;
+    p.dropShift = shiftTarget > p.dropShift ? std::min(shiftTarget, p.dropShift + mixStep) : std::max(shiftTarget, p.dropShift - mixStep);
+    double effect = buffer[i] * (1.0 - p.dropShift) + mDropFloat[static_cast<size_t>(i)] * p.dropShift;
+    p.dropLow += lowCoef * (effect - p.dropLow);
+    effect += bright * (effect - p.dropLow);
     buffer[i] = buffer[i] * (1.0 - p.dropMix) + effect * p.dropMix;
   }
 }
@@ -406,16 +497,79 @@ void NexusProcessor::runDrop(int pedal, double* buffer, int n)
 void NexusProcessor::runPedal(int pedal, double* buffer, int n)
 {
   const LoadTimer timer(mLoadSeconds[static_cast<size_t>(pedalSlot(pedal))]);
-  if (pedalLook(pedal) == kDropLook)
+  // Peça que o preset pediu e não está instalada: o som passa direto.
+  if (mPedalMissing[static_cast<size_t>(pedal)].load())
+    return;
+  if (pedalKind(pedalLook(pedal)) == PedalKind::drop)
     return runDrop(pedal, buffer, n);
-  // Efeito do próprio Nexus (chorus, delay, reverb): sem captura.
+  // Efeito do próprio Nexus (modulação, delay, reverb, gate): sem captura.
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
     auto& p = mPedals[static_cast<size_t>(pedal)];
-    static constexpr nexus::NativePedal::Type types[] = {nexus::NativePedal::Type::chorus, nexus::NativePedal::Type::delay,
-                                                         nexus::NativePedal::Type::reverb, nexus::NativePedal::Type::gate};
-    const auto type = types[std::min(3, look - kFirstNativeLook)];
-    p.native.process(type, p.on->load() > 0.5f, buffer, n, p.fx[0]->load() / 10.0, p.fx[1]->load() / 10.0, p.fx[2]->load() / 10.0);
+    if (pedalKind(look) == PedalKind::triple)
+    {
+      // Delays em série, todos no tempo do botão (ou na divisão do andamento).
+      // O feedback dá quantas vezes o primeiro repete (de 1 a 8); cada um
+      // seguinte repete o dobro (x) ou a metade (/) de vezes do anterior.
+      const float knob = p.fx[0]->load();
+      const double seconds = p.sync->load() > 0.5f ? divisionBeats(divisionFor(knob)) * 60.0 / tempoBpm()
+                                                   : nexus::TripleDelay::secondsFor(knob / 10.0);
+      const double first = 1.0 + 7.0 * p.fx[1]->load() / 10.0;
+      const double ratio = p.multiply->load() > 0.5f ? 2.0 : 0.5;
+      std::array<nexus::TripleDelay::Stage, 3> stages{};
+      for (size_t s = 0; s < 3; ++s)
+      {
+        auto& st = stages[s];
+        st.on = s < 2 || p.three->load() > 0.5f;
+        st.seconds = seconds;
+        st.repeats = first * std::pow(ratio, static_cast<double>(s));
+        st.level = p.fx[2]->load() / 10.0;
+      }
+      p.native.setTriple(stages);
+      p.native.process(nexus::NativePedal::Type::triple, p.on->load() > 0.5f, buffer, n, 0.0, 0.0, 0.0);
+      return;
+    }
+    // Andamento: a velocidade (botão A) escolhe a divisão; no delay, o tempo.
+    if (p.sync->load() > 0.5f && syncsToTempo(look))
+    {
+      const double seconds = divisionBeats(divisionFor(p.fx[0]->load())) * 60.0 / tempoBpm();
+      if (pedalKind(look) == PedalKind::delay || pedalKind(look) == PedalKind::analogdelay || pedalKind(look) == PedalKind::echo)
+        p.native.setSync(0.0, seconds);
+      else
+        p.native.setSync(1.0 / seconds, 0.0);
+    }
+    else
+      p.native.setSync(0.0, 0.0);
+    using T = nexus::NativePedal::Type;
+    T type = T::chorus;
+    switch (pedalKind(look))
+    {
+      case PedalKind::delay: type = T::delay; break;
+      case PedalKind::reverb: type = T::reverb; break;
+      case PedalKind::gate: type = T::gate; break;
+      case PedalKind::phaser: type = T::phaser; break;
+      case PedalKind::flanger: type = T::flanger; break;
+      case PedalKind::tremolo: type = T::tremolo; break;
+      case PedalKind::vibe: type = T::vibe; break;
+      case PedalKind::wah: type = T::wah; break;
+      case PedalKind::rotary: type = T::rotary; break;
+      case PedalKind::analogdelay: type = T::analogdelay; break;
+      case PedalKind::octave: type = T::octave; break;
+      case PedalKind::comp: type = T::comp; break;
+      case PedalKind::geq: type = T::geq; break;
+      case PedalKind::sky: type = T::sky; break;
+      case PedalKind::echo: type = T::echo; break;
+      case PedalKind::multiMod: type = T::multiMod; break;
+      default: break;
+    }
+    // Vários modos: o modo, o tom, o quarto botão e (no reverb) o shimmer, que usa o "nível".
+    if (hasModes(look))
+      p.native.setExtras(juce::roundToInt(p.mode->load()), p.tone->load() / 10.0, p.fourth->load() / 10.0, p.levelParam->load() / 10.0);
+    nexus::NativePedal::Knobs knobs{};
+    for (size_t k = 0; k < knobs.size(); ++k)
+      knobs[k] = p.fx[k]->load() / 10.0;
+    // O nível só vale no equalizador gráfico (os outros efeitos não o usam).
+    p.native.process(type, p.on->load() > 0.5f, buffer, n, knobs, p.levelParam->load() / 10.0);
     return;
   }
   auto* engine = mSlots[static_cast<size_t>(pedalSlot(pedal))].active;
@@ -557,8 +711,8 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
   const auto& r = mRigs[static_cast<size_t>(rig)];
   mEq[static_cast<size_t>(rig)].setKnobs({r.bass->load(), r.mid->load(), r.treble->load(), r.presence->load()});
   mEq[static_cast<size_t>(rig)].process(buffer, n);
-  // Cabeçote com equalizador gráfico (Mark Five): as 5 faixas, também depois da caixa.
-  if (ampLook(rig) == kMarkFive)
+  // Cabeçote com equalizador gráfico (os Mark): as 5 faixas, também depois da caixa.
+  if (hasGraphicEq(ampLook(rig)))
   {
     std::array<double, nexus::GraphicEq5::kBands> db{};
     for (size_t k = 0; k < db.size(); ++k)
@@ -684,6 +838,13 @@ void NexusProcessor::publish(int slot)
 void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
   juce::ScopedNoDenormals noDenormals;
+  // Andamento do programa de música (quando ele manda): vale no lugar do tap.
+  double hostBpm = 0.0;
+  if (auto* head = getPlayHead())
+    if (const auto pos = head->getPosition())
+      if (const auto bpm = pos->getBpm())
+        hostBpm = *bpm;
+  mHostBpm.store(juce::JUCEApplicationBase::isStandaloneApp() ? 0.0 : hostBpm);
   // MIDI primeiro: canal, pedais, A/B e botões valem já neste bloco.
   mMidi->process(midiMessages);
   midiMessages.clear();
@@ -728,7 +889,11 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     }
   for (int i = 0; i < kPedals; ++i)
     if (auto* e = mSlots[static_cast<size_t>(pedalSlot(i))].active)
-      e->voice.setControls(pedalControls(i));
+    {
+      auto controls = pedalControls(i);
+      snapGainToCapture(controls, *e->pack);
+      e->voice.setControls(controls);
+    }
   for (int r = 0; r < kRigs; ++r)
     for (int c = 0; c < kChannels; ++c)
       if (auto* e = mSlots[static_cast<size_t>(ampSlot(r, c))].active)
@@ -736,6 +901,7 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
         // O equalizador do cabeçote agora é o universal (depois da caixa):
         // o da família fica na posição da captura, sem mexer no som.
         auto controls = ampControls(r, c);
+        snapGainToCapture(controls, *e->pack);
         controls.tone = e->pack->captureTone;
         controls.presence = e->pack->capturePresence;
         e->voice.setControls(controls);
@@ -751,7 +917,9 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
     buffer.clear();
     return;
   }
-  const float targetGain = juce::Decibels::decibelsToGain(mOutput->load());
+  // Afinando com o mudo: a saída desce a zero (com a rampa de sempre, sem estalo).
+  const bool tunerMute = mTunerOpen.load() && mTunerMute->load() > 0.5f;
+  const float targetGain = tunerMute ? 0.0f : juce::Decibels::decibelsToGain(mOutput->load());
   // Entrada no mudo, ou o controle todo para baixo: corta de vez (o mínimo de
   // -24 dB ainda deixa passar o bastante para apitar com ganho alto).
   const bool inputOff = mInputMute->load() > 0.5f || mInput->load() <= -23.95f;
@@ -768,6 +936,14 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
       in = mTestBuffer.data();
     if (in != nullptr)
     {
+      // Afinador: guarda a guitarra crua (o mudo da entrada não cala o afinador).
+      int w = mTunerWrite.load(std::memory_order_relaxed);
+      for (int i = 0; i < n; ++i)
+      {
+        mTunerRing[static_cast<size_t>(w)] = in[i];
+        w = (w + 1) & (kTunerRing - 1);
+      }
+      mTunerWrite.store(w, std::memory_order_release);
       // O teste já vem no nível de uma guitarra: não passa pelo controle de
       // entrada nem pelo mudo (quem baixou a entrada por causa do microfone
       // do notebook ouviria o teste quase mudo).
@@ -826,6 +1002,75 @@ void NexusProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
   mUiActiveRig.store(mRigNext >= 0 ? mRigNext : mRigCurrent);
 }
 
+const char* NexusProcessor::divisionName(int i)
+{
+  static const char* const names[kDivisions] = {"1/1", "1/2", "1/4", "1/8.", "1/6", "1/8", "1/12", "1/16", "1/32"};
+  return names[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+juce::String NexusProcessor::modeName(int look, float modeKnob)
+{
+  const int mode = juce::roundToInt(modeKnob);
+  switch (pedalKind(look))
+  {
+    case PedalKind::sky: return TRANS(juce::String::fromUTF8(nexus::SkyReverb::modeName(mode)));
+    case PedalKind::echo: return TRANS(juce::String::fromUTF8(nexus::EchoDelay::modeName(mode)));
+    case PedalKind::multiMod: return TRANS(juce::String::fromUTF8(nexus::MultiMod::modeName(mode)));
+    default: return {};
+  }
+}
+
+double NexusProcessor::divisionBeats(int i)
+{
+  static constexpr double beats[kDivisions] = {4.0, 2.0, 1.0, 0.75, 2.0 / 3.0, 0.5, 1.0 / 3.0, 0.25, 0.125};
+  return beats[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+double NexusProcessor::tempoBpm() const
+{
+  const double host = mHostBpm.load();
+  return host > 0.0 ? host : static_cast<double>(mTempo->load());
+}
+
+void NexusProcessor::parameterValueChanged(int index, float)
+{
+  if (index == mTapIndex)
+    tap();
+}
+
+void NexusProcessor::tap()
+{
+  // Toques com mais de 2 s de distância começam a contagem de novo.
+  const double now = juce::Time::getMillisecondCounterHiRes();
+  const double interval = now - mLastTap;
+  mLastTap = now;
+  if (interval > 2000.0 || interval < 150.0)
+  {
+    mTapCount = 0;
+    return;
+  }
+  mTapIntervals[static_cast<size_t>(mTapCount % static_cast<int>(mTapIntervals.size()))] = interval;
+  ++mTapCount;
+  const int n = std::min(mTapCount, static_cast<int>(mTapIntervals.size()));
+  double sum = 0.0;
+  for (int i = 0; i < n; ++i)
+    sum += mTapIntervals[static_cast<size_t>(i)];
+  const double bpm = juce::jlimit(40.0, 240.0, 60000.0 / (sum / n));
+  if (auto* tempo = params.getParameter("andamento"))
+    tempo->setValueNotifyingHost(tempo->convertTo0to1(static_cast<float>(bpm)));
+}
+
+double NexusProcessor::tunerSnapshot(float* dest, int count) const
+{
+  // Cópia sem trava: um pedaço pode ser sobrescrito no meio, o que só atrapalha
+  // uma leitura entre trinta por segundo.
+  count = std::min(count, kTunerRing);
+  const int end = mTunerWrite.load(std::memory_order_acquire);
+  for (int i = 0; i < count; ++i)
+    dest[i] = mTunerRing[static_cast<size_t>((end - count + i + kTunerRing) & (kTunerRing - 1))];
+  return mTunerRate.load();
+}
+
 void NexusProcessor::setLayout(const ChainLayout& layout)
 {
   mLayoutUi = layout;
@@ -877,6 +1122,7 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       engine->block = block;
       engine->pack = nexus::loadPack(folder.getFullPathName().toStdString(), options);
       auto start = controls;
+      snapGainToCapture(start, *engine->pack);
       if (slotIndex >= kPedals)
       {
         // Cabeçote: o equalizador é o universal (depois da caixa).
@@ -930,9 +1176,44 @@ void NexusProcessor::loadIrAsync(int rig, const juce::File& file)
   }
   auto& cab = mCabs[static_cast<size_t>(rig)];
   cab.file = file;
-  // O próprio JUCE lê, ajusta a taxa e troca o IR fora do áudio.
-  cab.conv.loadImpulseResponse(file, juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::yes, 0,
-                               juce::dsp::Convolution::Normalise::yes);
+  juce::AudioFormatManager formats;
+  formats.registerBasicFormats();
+  std::unique_ptr<juce::AudioFormatReader> reader(formats.createReaderFor(file));
+  if (reader == nullptr || reader->lengthInSamples <= 0)
+  {
+    nexus::report::log("ir", "não consegui ler: " + file.getFullPathName());
+    return;
+  }
+  const int length = static_cast<int>(std::min<juce::int64>(reader->lengthInSamples, static_cast<juce::int64>(reader->sampleRate * 2.0)));
+  juce::AudioBuffer<float> ir(1, length);
+  reader->read(&ir, 0, length, 0, true, false);
+  // Volume do IR: o JUCE normalizaria para 18 dB abaixo, e ligar a caixa
+  // derrubava o som em 10 dB. Aqui o ganho deixa o volume igual ao de sem
+  // caixa para um som com o equilíbrio de uma saída de cabeçote (energia
+  // caindo com a frequência, de 80 Hz a 6 kHz).
+  {
+    const int order = juce::jlimit(10, 17, static_cast<int>(std::ceil(std::log2(static_cast<double>(length)))));
+    juce::dsp::FFT fft(order);
+    std::vector<float> data(static_cast<size_t>(2 << order), 0.0f);
+    std::copy(ir.getReadPointer(0), ir.getReadPointer(0) + std::min(length, 1 << order), data.begin());
+    fft.performFrequencyOnlyForwardTransform(data.data());
+    double weighted = 0.0, reference = 0.0;
+    const double binHz = reader->sampleRate / static_cast<double>(1 << order);
+    for (int k = 1; k < (1 << order) / 2; ++k)
+    {
+      const double f = k * binHz;
+      if (f < 80.0 || f > 6000.0)
+        continue;
+      const double w = 1.0 / f;
+      weighted += w * static_cast<double>(data[static_cast<size_t>(k)]) * data[static_cast<size_t>(k)];
+      reference += w;
+    }
+    if (weighted > 0.0)
+      ir.applyGain(static_cast<float>(std::sqrt(reference / weighted)));
+  }
+  // O JUCE ajusta a taxa e troca o IR fora do áudio.
+  cab.conv.loadImpulseResponse(std::move(ir), reader->sampleRate, juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::yes,
+                               juce::dsp::Convolution::Normalise::no);
   cab.loaded.store(true);
 }
 
@@ -962,6 +1243,15 @@ void NexusProcessor::getStateInformation(juce::MemoryBlock& destData)
     state.setProperty("pacote_" + juce::String(i), mSlots[static_cast<size_t>(i)].folder.getFullPathName(), nullptr);
   for (int r = 0; r < kRigs; ++r)
     state.setProperty("ir_" + juce::String(r), mCabs[static_cast<size_t>(r)].file.getFullPathName(), nullptr);
+  // Id em texto de cada peça, além do índice no parâmetro: equipamento
+  // baixado só existe por aqui.
+  for (int i = 0; i < kPedals; ++i)
+    state.setProperty(gearIdKey(nexus::gear::Kind::pedal, i), gearId(nexus::gear::Kind::pedal, i), nullptr);
+  for (int r = 0; r < kRigs; ++r)
+  {
+    state.setProperty(gearIdKey(nexus::gear::Kind::amp, r), gearId(nexus::gear::Kind::amp, r), nullptr);
+    state.setProperty(gearIdKey(nexus::gear::Kind::cab, r), gearId(nexus::gear::Kind::cab, r), nullptr);
+  }
   for (const char* child : {"midi", "cadeia"})
     state.removeChild(state.getChildWithName(child), nullptr);
   state.appendChild(mMidi->toValueTree(), nullptr);
@@ -978,6 +1268,7 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     if (!state.hasType(params.state.getType()))
       return;
     params.replaceState(state);
+    restoreGearIds(state);
     mMidi->fromValueTree(state.getChildWithName("midi"));
     setLayout(ChainLayout::fromValueTree(state.getChildWithName("cadeia")));
     for (int i = 0; i < kSlots; ++i)
@@ -1019,6 +1310,134 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
         cab.file = juce::File();
       }
     }
+  }
+}
+
+// ================================================================ Peça de cada posição
+
+juce::String NexusProcessor::gearIdKey(nexus::gear::Kind kind, int position)
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return pedalParam(position, "visual_id");
+    case nexus::gear::Kind::amp: return ampParam(position, "cabecote_id");
+    case nexus::gear::Kind::cab: break;
+  }
+  return ampParam(position, "gabinete_id");
+}
+
+juce::RangedAudioParameter* NexusProcessor::choiceParam(nexus::gear::Kind kind, int position) const
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return params.getParameter(pedalParam(position, "visual"));
+    case nexus::gear::Kind::amp: return params.getParameter(ampParam(position, "cabecote"));
+    case nexus::gear::Kind::cab: break;
+  }
+  return params.getParameter(ampParam(position, "gabinete"));
+}
+
+std::atomic<int>& NexusProcessor::choiceOf(nexus::gear::Kind kind, int position)
+{
+  switch (kind)
+  {
+    case nexus::gear::Kind::pedal: return mPedalChoice[static_cast<size_t>(position)];
+    case nexus::gear::Kind::amp: return mAmpChoice[static_cast<size_t>(position)];
+    case nexus::gear::Kind::cab: break;
+  }
+  return mCabChoice[static_cast<size_t>(position)];
+}
+
+void NexusProcessor::choose(nexus::gear::Kind kind, int position, int look)
+{
+  const auto& catalog = nexus::gear::GearCatalog::instance();
+  auto* param = choiceParam(kind, position);
+  const int factory = catalog.fallbackFor(kind, look);
+  auto& choice = choiceOf(kind, position);
+  {
+    const juce::ScopedLock l(mMissingLock);
+    mMissing[static_cast<size_t>(kind)].set(position, {});
+  }
+  if (kind == nexus::gear::Kind::pedal)
+    mPedalMissing[static_cast<size_t>(position)].store(false);
+  const auto entry = catalog.entry(kind, look);
+  const bool builtIn = entry && entry->builtInIndex >= 0;
+  // A escolha vale antes de o parâmetro mudar: a tela, ao ver o parâmetro
+  // novo, já acha a peça certa.
+  choice.store(builtIn || !entry ? -1 : (look << 8) | factory);
+  param->setValueNotifyingHost(param->convertTo0to1(static_cast<float>(builtIn ? look : factory)));
+}
+
+juce::String NexusProcessor::gearId(nexus::gear::Kind kind, int position) const
+{
+  if (auto missing = missingGear(kind, position); missing.isNotEmpty())
+    return missing;
+  const int look = kind == nexus::gear::Kind::pedal ? pedalLook(position) : kind == nexus::gear::Kind::amp ? ampLook(position) : cabLook(position);
+  return nexus::gear::GearCatalog::instance().idOf(kind, look);
+}
+
+juce::String NexusProcessor::missingGear(nexus::gear::Kind kind, int position) const
+{
+  const juce::ScopedLock l(mMissingLock);
+  return mMissing[static_cast<size_t>(kind)][position];
+}
+
+void NexusProcessor::applyGearId(nexus::gear::Kind kind, int position, const juce::String& id)
+{
+  const auto& catalog = nexus::gear::GearCatalog::instance();
+  auto& choice = choiceOf(kind, position);
+  const int look = id.isEmpty() ? -1 : catalog.find(kind, id);
+  const auto entry = catalog.entry(kind, look);
+  if (id.isNotEmpty() && !entry)
+  {
+    // Pedida pelo preset e não instalada: guarda o id (salvar de novo não o
+    // perde) e a tela mostra o cartão para baixar.
+    choice.store(-1);
+    {
+      const juce::ScopedLock l(mMissingLock);
+      mMissing[static_cast<size_t>(kind)].set(position, id);
+    }
+    if (kind == nexus::gear::Kind::pedal)
+      mPedalMissing[static_cast<size_t>(position)].store(true);
+    return;
+  }
+  {
+    const juce::ScopedLock l(mMissingLock);
+    mMissing[static_cast<size_t>(kind)].set(position, {});
+  }
+  if (kind == nexus::gear::Kind::pedal)
+    mPedalMissing[static_cast<size_t>(position)].store(false);
+  if (!entry || entry->builtInIndex >= 0)
+  {
+    // Preset antigo (sem id) ou peça de fábrica: vale o índice do parâmetro.
+    choice.store(-1);
+    return;
+  }
+  // Peça baixada: o parâmetro ficou com o de fábrica do mesmo motor.
+  const int param = juce::roundToInt(choiceParam(kind, position)->convertFrom0to1(choiceParam(kind, position)->getValue()));
+  choice.store((look << 8) | param);
+}
+
+void NexusProcessor::restoreGearIds(const juce::ValueTree& state)
+{
+  for (int i = 0; i < kPedals; ++i)
+    applyGearId(nexus::gear::Kind::pedal, i, state.getProperty(gearIdKey(nexus::gear::Kind::pedal, i)).toString());
+  for (int r = 0; r < kRigs; ++r)
+  {
+    applyGearId(nexus::gear::Kind::amp, r, state.getProperty(gearIdKey(nexus::gear::Kind::amp, r)).toString());
+    applyGearId(nexus::gear::Kind::cab, r, state.getProperty(gearIdKey(nexus::gear::Kind::cab, r)).toString());
+  }
+}
+
+void NexusProcessor::gearInstalled()
+{
+  for (size_t k = 0; k < 3; ++k)
+  {
+    const auto kind = static_cast<nexus::gear::Kind>(k);
+    const int positions = kind == nexus::gear::Kind::pedal ? kPedals : kRigs;
+    for (int p = 0; p < positions; ++p)
+      if (const auto id = missingGear(kind, p); id.isNotEmpty() && nexus::gear::GearCatalog::instance().find(kind, id) >= 0)
+        choose(kind, p, nexus::gear::GearCatalog::instance().find(kind, id));
   }
 }
 

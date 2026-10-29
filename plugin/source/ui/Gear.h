@@ -13,17 +13,24 @@ struct GearKnobArt
 {
   juce::String id;
   juce::Rectangle<int> box; // onde o botão fica na imagem da frente, em pixels
-  juce::Image strip;        // posições empilhadas de cima para baixo
+  // Posições empilhadas de cima para baixo. Só abre na primeira vez que o
+  // botão aparece (abrir todas atrasaria a abertura do programa).
+  juce::String stripResource;
+  juce::File folder; // pasta da peça no disco (o arquivo dela vale antes do embutido)
+  mutable juce::Image strip;
   int frames = 1;
   int size = 0;
   // Deslizante (equalizador gráfico): quadro retangular, arrasta na vertical.
   bool slider = false;
   int width = 0, height = 0;
 
+  juce::Image loadStrip() const;
   juce::Image frame(float value01) const
   {
     const int f = juce::jlimit(0, frames - 1, juce::roundToInt(value01 * static_cast<float>(frames - 1)));
     const int w = width > 0 ? width : size, h = height > 0 ? height : size;
+    if (!strip.isValid())
+      strip = loadStrip();
     return strip.getClippedImage({0, f * h, w, h});
   }
 };
@@ -54,6 +61,21 @@ struct GearArt
   float footswitchRadius = 0.0f;
   juce::Point<float> led;
   float ledRadius = 0.0f;
+  // Visor digital (Cherry Drop): retângulo em pixels da frente onde a tela
+  // escreve o valor; vazio = não tem.
+  juce::Rectangle<float> display;
+  // Onde a peça de fato está na imagem (sem a folga transparente em volta).
+  juce::Rectangle<float> body;
+  // Pedais: largura e comprimento de verdade; caixas: largura e altura. Em
+  // milímetros (0 = não se sabe).
+  juce::Point<float> sizeMm;
+  // Caixas: grade de falantes atrás da tela e o tamanho deles (0 = não se sabe).
+  int speakerRows = 0, speakerCols = 0;
+  float speakerInches = 0.0f;
+  // Microfones: a ponta (onde encosta no falante), em pixels da frente, e
+  // quantos pixels da frente dá cada milímetro de verdade.
+  juce::Point<float> tip;
+  float pixelsPerMm = 0.0f;
   // Amplificadores de vários canais: um LED por canal, na ordem dos canais.
   std::vector<std::pair<juce::Point<float>, float>> channelLeds;
 
@@ -66,7 +88,11 @@ struct GearArt
     return nullptr;
   }
 
-  // Carrega "<prefixo>_frente.png", "<prefixo>_mapa.json" e as tiras dos botões.
+  // Carrega "<prefixo>_frente.png", "<prefixo>_mapa.json" e as tiras dos
+  // botões: da pasta Equipamentos/<prefixo> (peça baixada ou arte refeita) e,
+  // o que não estiver lá, de dentro do programa.
   static GearArt load(const juce::String& prefix);
+  // O mesmo, lendo primeiro de uma pasta dada (pacote ainda não instalado).
+  static GearArt loadFolder(const juce::File& folder, const juce::String& prefix);
 };
 } // namespace nexus::ui

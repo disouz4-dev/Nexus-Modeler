@@ -85,7 +85,10 @@ int main(int argc, char** argv)
   const juce::String stage = argc > 4 ? juce::String(argv[4]) : juce::String();
   if (stage.startsWith("pedal:"))
   {
-    // O pedal 1 recebe o pacote no lugar do cabeçote.
+    // O pedal 1 recebe o pacote no lugar do cabeçote (a cadeia abre sem pedais).
+    ChainLayout l;
+    l.pre = {0};
+    processor.setLayout(l);
     processor.loadPedalPack(0, folder);
     for (int t = 0; t < 3000 && !processor.slotLoaded(0); ++t)
     {
@@ -101,6 +104,12 @@ int main(int argc, char** argv)
     }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod).
+    if (const char* mode = std::getenv("NEXUS_MODO"))
+    {
+      auto* m = processor.params.getParameter("p1_modo");
+      m->setValueNotifyingHost(m->convertTo0to1(static_cast<float>(std::atof(mode))));
+    }
   }
   // NEXUS_IDIOMA=ja (por exemplo) tira a foto naquele idioma, sem mudar a preferência salva.
   if (const char* lang = std::getenv("NEXUS_IDIOMA"))
@@ -182,22 +191,74 @@ int main(int argc, char** argv)
       look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
       e->select({NexusEditor::Kind::amp, 0});
     }
+    else if (stage == "pedaleira")
+    {
+      // Pedaleira: cinco pedais (três antes, um entre cabeçote e caixa, um
+      // depois), alguns ligados, com o segundo escolhido.
+      ChainLayout l;
+      l.pre = {0, 1, 2};
+      l.loop[0] = {3};
+      l.post = {4};
+      processor.setLayout(l);
+      const int looks[5] = {0, NexusProcessor::kDropLook, 3, 12, 20};
+      for (int i = 0; i < 5; ++i)
+      {
+        auto* look = processor.params.getParameter(NexusProcessor::pedalParam(i, "visual"));
+        look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(looks[i])));
+        processor.params.getParameter(NexusProcessor::pedalParam(i, "ligado"))->setValueNotifyingHost(i % 2 == 0 ? 1.0f : 0.0f);
+      }
+      e->select({NexusEditor::Kind::pedal, 1});
+    }
     else if (stage == "gate")
     {
-      // Pedal 1 com o visual do Pear Gate (o último da lista de visuais).
+      // Pedal 1 com o visual do Marcasite Gate.
       auto* look = processor.params.getParameter(NexusProcessor::pedalParam(0, "visual"));
-      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusEditor::kPedalLooks - 1)));
+      look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusProcessor::kGateLook)));
       e->select({NexusEditor::Kind::pedal, 0});
     }
     else if (stage.startsWith("pedal"))
       e->select({NexusEditor::Kind::pedal, 0});
     else if (stage == "caixa")
       e->select({NexusEditor::Kind::cab, 0});
-    else if (stage == "caixa_mark")
+    else if (stage.startsWith("caixa_ir:"))
     {
+      // "caixa_ir:<visual>:<arquivo do IR>": caixa com o IR próprio (os microfones do nome aparecem).
+      const auto rest = stage.fromFirstOccurrenceOf(":", false, false);
       auto* cab = processor.params.getParameter(NexusProcessor::ampParam(0, "gabinete"));
-      cab->setValueNotifyingHost(cab->convertTo0to1(1.0f));
+      cab->setValueNotifyingHost(cab->convertTo0to1(rest.upToFirstOccurrenceOf(":", false, false).getFloatValue()));
+      processor.params.getParameter(NexusProcessor::ampParam(0, "caixa"))->setValueNotifyingHost(1.0f);
+      processor.loadIrAsync(0, juce::File(rest.fromFirstOccurrenceOf(":", false, false)));
+      for (int t = 0; t < 3000 && !processor.irLoaded(0); ++t)
+      {
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+        buffer.clear();
+        processor.processBlock(buffer, midi);
+      }
       e->select({NexusEditor::Kind::cab, 0});
+    }
+    else if (stage == "caixa_mark" || stage.startsWith("caixa:"))
+    {
+      // Caixa pelo número do visual (caixa_mark é a 1).
+      auto* cab = processor.params.getParameter(NexusProcessor::ampParam(0, "gabinete"));
+      const float n = stage == "caixa_mark" ? 1.0f : stage.fromFirstOccurrenceOf(":", false, false).getFloatValue();
+      cab->setValueNotifyingHost(cab->convertTo0to1(n));
+      e->select({NexusEditor::Kind::cab, 0});
+    }
+    else if (stage.startsWith("afinador"))
+    {
+      e->select({NexusEditor::Kind::tuner, 0});
+      // "afinador:blues": toca o teste de som e lê o afinador (como na tela).
+      if (stage.contains(":"))
+      {
+        processor.testSource().setStyle(nexus::TestSource::blues);
+        processor.testSource().setPlaying(true);
+        for (int t = 0; t < 400; ++t)
+        {
+          processor.processBlock(buffer, midi);
+          if (t % 10 == 0)
+            e->updateTuner();
+        }
+      }
     }
     else if (stage == "capturas")
       e->showCaptures();

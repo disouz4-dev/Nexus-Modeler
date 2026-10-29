@@ -30,7 +30,7 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 
 | Nome no Nexus | Inspirado em | Cor | Situação |
 |---|---|---|---|
-| Lemon Drive | Ibanez TS9 Tube Screamer | verde | pronto |
+| Greengage Drive | Ibanez TS9 Tube Screamer | verde | pronto |
 | Orange Drive | Boss DS-1 | laranja | pronto |
 | Banana Overdrive | Boss SD-1 | amarelo | pronto |
 | Gold Centaur | Klon Centaur | dourado | pronto |
@@ -39,7 +39,7 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 | Fig Fuzz | Electro-Harmonix Big Muff | prata e vermelho | planejado |
 | Cherry Fuzz | Dallas Fuzz Face | vermelho, redondo | planejado |
 | Blackberry Metal | Boss MT-2 Metal Zone | preto | planejado |
-| Kiwi Drive | Fulltone OCD | creme | planejado |
+| Opal Drive | Fulltone OCD | creme | planejado |
 
 ## Pedais nativos (som feito pelo próprio Nexus, sem captura)
 
@@ -47,15 +47,16 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 
 | Nome no Nexus | Inspirado em | Tipo | Situação |
 |---|---|---|---|
-| Blueberry Chorus | Boss CE-2 | chorus | pronto |
+| Neptune Chorus | Boss CE-2 | chorus | pronto |
 | Coconut Delay | Boss DD-3 | delay | pronto |
-| Grape Reverb | Boss RV-6 | reverb | pronto |
+| Meteorite Reverb | Boss RV-6 | reverb | pronto |
 | Peach Phaser | MXR Phase 90 | phaser | planejado |
 | Lime Flanger | MXR Flanger | flanger | planejado |
 | Melon Tremolo | Boss TR-2 | tremolo | planejado |
 | Apple Comp | MXR Dyna Comp | compressor | planejado |
-| Pear Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
-| Mango Wah | Dunlop Cry Baby | wah | planejado |
+| Marcasite Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
+| Comet Wah | Dunlop Cry Baby | wah | planejado |
+| Selenite EQ | Boss GE-7 | equalizador gráfico: 7 faixas (100 Hz a 6,4 kHz, cada uma de -15 a +15 dB) e nível | pronto |
 
 ## Caixas
 
@@ -66,3 +67,138 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 | Recto 4x12 | Mesa/Boogie Rectifier 4x12 | planejado |
 | Blue 2x12 | Vox AC30 (alto-falantes Alnico Blue) | planejado |
 | Twin 2x12 | Fender Twin | planejado |
+
+## Peças novas da seleção da TONE3000 (outubro de 2026)
+
+Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específico, o cabeçote, o pedal e a caixa TONE3000 abrem a biblioteca inteira.
+
+### Cabeçotes
+
+| Nome no Nexus | Inspirado em |
+|---|---|
+| Brit Plexi 50 | Marshall 1987 Lead 50 W |
+| Brit 45 | Marshall JTM45 |
+| Brit 900 | Marshall JCM900 |
+| Brit 410 | Marshall JVM410 |
+| Brit 2000 | Marshall JCM2000 (DSL e TSL) |
+| Brit DS 20 | Marshall DSL (série nova) |
+| Brit Rack 1 | Marshall JMP-1 |
+| Silver Deluxe | Fender Deluxe Reverb |
+| Silver Super | Fender Super Reverb |
+| Silver Prince | Fender Princeton Reverb |
+| Tweed 57 | Fender Tweed Deluxe 5E3 |
+| Hot Rod 40 | Fender Hot Rod Deluxe |
+| Champion 5 | Fender Champ |
+| Mark Two Plus | Mesa Boogie Mark IIC+ |
+| Mark Three | Mesa Boogie Mark III |
+| Mark Four | Mesa Boogie Mark IV |
+| Mark JP | Mesa Boogie JP-2C |
+| Badland 100 | Mesa Boogie Badlander |
+| Lone Star 100 | Mesa Boogie Lonestar |
+| Block 5150 III | EVH 5150 III |
+| Top Boost 15 | Vox AC15 |
+| Citrus 50 | Orange OR50 |
+| Citrus 30 | Orange AD30 |
+| Black Country 100 | Laney Supergroup |
+| Iron 120 | Laney Ironheart |
+| Fire 100 | ENGL Fireball |
+| Feral 120 | ENGL Savage |
+| Steel 20 | ENGL Ironball |
+| Vier 100 | Diezel VH4 |
+| Herb 180 | Diezel Herbert |
+| Bliss 100 | Bogner Ecstasy |
+| Goddess 80 | Bogner Shiva |
+| Dirty 40 | Friedman Dirty Shirley |
+| Special 100 | Dumble Overdrive Special |
+| Double Stone 50 | Two-Rock Classic Reverb |
+| Black Cat 30 | Bad Cat Hot Cat |
+| Hi 103 | Hiwatt DR103 |
+| Dark Star 20 | Blackstar HT e Series One |
+| Tri 100 | Hughes & Kettner TriAmp |
+| Gen 120 | Revv Generator 120 |
+| Nova 100 | Fortin Natas |
+| Emperor 20 | Tone King Imperial |
+| RG 100 | Randall RG100ES |
+| Arch 100 | PRS Archon |
+| Kraken 50 | Victory Kraken |
+| Magick 25 | Supro Black Magick |
+| Deliver 120 | Fryette Deliverance |
+| Ash 500 | Ashdown ABM (baixo) |
+| Vault 4 Pro | Ampeg SVT-4 Pro (baixo) |
+| Maple 400 | Traynor YBA-200 (baixo) |
+| Nord 650 | EBS Classic 500 (baixo) |
+| Wind 300 | Peavey Mark III (baixo) |
+| Bass Box V | Behringer Bass V-Amp Pro (baixo) |
+| Eagle Hammer 500 | Aguilar Tone Hammer 500 (baixo) |
+| Bebop 15 | Polytone Mini Brute (baixo) |
+| Fliptop 18 | Ampeg B-18 Portaflex (baixo) |
+| Vault 210 | Ampeg BA-210 (baixo) |
+
+### Pedais de captura
+
+| Nome no Nexus | Inspirado em |
+|---|---|
+| Olive Drive | Ibanez TS808 Tube Screamer |
+| Pistachio Drive | Maxon OD808 |
+| Blueberry Blues | Boss BD-2 Blues Driver |
+| Citrine Overdrive | Boss OD-3 |
+| Clementine Turbo | Boss DS-2 Turbo Distortion |
+| Cherry Fuzz | Dunlop Fuzz Face |
+| Mercury Bender | Tone Bender |
+| Opal Drive | Fulltone OCD |
+| Quince Plus | MXR Distortion+ |
+| Hematite Rock | Rockman X100 |
+| Basalt Amp | Tech 21 SansAmp |
+| Blackcurrant Bass | Darkglass B7K |
+| Labradorite Omega | Darkglass Alpha Omega |
+| Spinel Precision | Horizon Devices Precision Drive |
+| Amber Glory | JHS Morning Glory |
+| Raspberry Drive | JHS Andy Timmons |
+| Honeydew Drive | Paul Cochrane Timmy |
+| Amethyst King | Analogman King of Tone |
+| Magnetite Boost | Xotic EP Booster |
+| Tourmaline Grind | Fortin Grind |
+| Sapote 33 | Fortin 33 |
+| Jet 5150 | EVH 5150 Overdrive |
+| Charoite G3 | Revv G3 |
+| Jamun OD | Friedman BE-OD |
+| Agate Wylde | MXR Wylde Overdrive |
+| Pyrite Klone | Wampler Tumnus |
+| Howlite War | Death By Audio Fuzz War |
+| Moonstone Fuzz | EarthQuaker Hizumitas |
+| Peridot Drive | EarthQuaker Plumes |
+| Jackfruit Monkey | DigiTech Bad Monkey |
+| Topaz 250 | DOD Overdrive Preamp 250 |
+| Lime Bass Fuzz | Electro-Harmonix Bass Big Muff |
+| Galena Hammer | Aguilar Tone Hammer |
+| Melanite Bass DI | MXR M80 Bass DI |
+
+### Pedais nativos
+
+| Nome no Nexus | Inspirado em |
+|---|---|
+| Comet Wah | Dunlop Cry Baby |
+| Saturn Rotary | Leslie (caixa rotativa) |
+| Pulsar Echo | Electro-Harmonix Memory Man |
+| Jupiter Octave | Boss OC-2 |
+| Apple Comp | MXR Dyna Comp |
+| Selenite EQ | Boss GE-7 (equalizador gráfico de 7 faixas, de 100 Hz a 6,4 kHz, cada uma de -15 a +15 dB, e o nível) |
+
+### Caixas
+
+| Nome no Nexus | Inspirado em |
+|---|---|
+| Silver 1x12 | Fender Deluxe Reverb 1x12 |
+| Mark 1x12 | Mesa Boogie Mark 1x12 |
+| Star 4x12 | Blackstar 4x12 |
+| Country 4x12 | Laney 4x12 |
+| Vier 4x12 | Diezel 4x12 |
+| Hi 4x12 | Hiwatt 4x12 |
+| RG 4x12 | Randall 4x12 |
+| Hart 4x10 | Hartke 4x10 |
+| Glass 4x10 | Darkglass 4x10 |
+| Solar 4x12 | Sunn 4x12 |
+| Fliptop 1x15 | Ampeg B-15 1x15 |
+| Bassline 2x15 | Fender Bassman 2x15 |
+| Solar 2x15 | Sunn 2x15 |
+| Glass 4x12 | Darkglass 4x12 |

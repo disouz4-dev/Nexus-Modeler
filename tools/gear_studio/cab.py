@@ -4,6 +4,7 @@ import math
 
 import bpy
 
+import brand_plate
 import studio as st
 
 
@@ -51,11 +52,24 @@ def build(rec, fonts):
     lz = H / 2 + inner_h * lg.get("altura_rel", 0.36)
     lx = inner_w * lg.get("lado_rel", 0.0)
     lfont = fonts[lg.get("fonte", "script")]
+    if lg.get("tipo") == "marca":
+        # A marca do programa (triângulo + NEXUS + MODELER), igual à dos cabeçotes.
+        cloth = [(a + b) / 2 for a, b in zip(rec["tela"]["cor_a"], rec["tela"]["cor_b"])]
+        brand_plate.build((lx, lz), lg["altura_m"], cloth_front - 0.006, fonts, lg.get("modeler", True), satin=True,
+                          dark=lg.get("escuro", brand_plate.is_light(cloth)))
+        lg = dict(lg, sublinhado=None, contorno=False, texto="")
     if lg.get("contorno", True):
         st.text("logo_contorno", lg["texto"], lfont, lg["altura_m"], (lx, cloth_front - 0.003, lz),
                 mats["logo_edge"], extrude=0.0022, offset=0.002, bevel=0.0005)
-    st.text("logo", lg["texto"], lfont, lg["altura_m"], (lx, cloth_front - 0.0065, lz),
-            mats["logo"], extrude=0.002, bevel=0.0008)
+    if lg["texto"]:
+        st.text("logo", lg["texto"], lfont, lg["altura_m"], (lx, cloth_front - 0.0065, lz),
+                mats["logo"], extrude=0.002, bevel=0.0008)
+    # Número na tela, no canto de baixo à direita (como o 5150).
+    if rec.get("selo"):
+        sg = rec["selo"]
+        st.text("selo", sg["texto"], fonts["label"], sg.get("altura_m", 0.05),
+                (inner_w / 2 - sg.get("margem_m", 0.06), cloth_front - 0.004, t + sg.get("altura_m", 0.05) * 0.9),
+                st.mat_brushed("selo", (0.86, 0.87, 0.9), rough=0.2), extrude=0.002, bevel=0.0005, align="RIGHT")
     # Sublinhado em traço, igual ao do cabeçote da mesma família.
     if lg.get("sublinhado"):
         sub = lg["sublinhado"]
@@ -69,7 +83,7 @@ def build(rec, fonts):
             for cy in (front, -front):
                 st.box("cantoneira", (0.05, 0.05, 0.05),
                        (cx - math.copysign(0.018, cx), cy - math.copysign(0.018, cy), cz - math.copysign(0.018, cz - H / 2)),
-                       bevel=0.014, segments=5, material=mats["black_metal"])
+                       bevel=0.014, segments=5, material=mats["chrome"] if rec.get("cantos") == "cromo" else mats["black_metal"])
                 if cy == front:
                     st.cylinder("parafuso_canto", 0.0032, 0.0018,
                                 (cx - math.copysign(0.013, cx), front - 0.0078, cz - math.copysign(0.013, cz - H / 2)),

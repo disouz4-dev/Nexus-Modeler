@@ -80,5 +80,11 @@
   "base_rel": 0.68,
   "rotulo_embaixo": true,
   "led_no_basculante": true,
-  "medidas_fonte": "BOSS DS-1: 73 x 129 x 59 mm"
+  "medidas_fonte": "BOSS DS-1: 73 x 129 x 59 mm",
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/orange_drive.svg"
+  },
+  "modelo_m": 0.0085,
+  "modelo_x": 0.12
 }

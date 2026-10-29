@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "mercury_bender",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Mercury Bender",
+  "inspiracao": "Tone Bender",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 29,
+  "signature": null
+}

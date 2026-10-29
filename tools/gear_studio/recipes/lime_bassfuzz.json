@@ -1,0 +1,93 @@
+{
+  "tipo": "pedal",
+  "nome": "Lime Bass Fuzz",
+  "familia": "lime_bassfuzz",
+  "inspiracao": "prateado com letras verdes, caixa pequena de metal (estilo Electro-Harmonix Bass Big Muff)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.094,
+    "comprimento": 0.12,
+    "altura": 0.042
+  },
+  "chanfro_m": 0.0035,
+  "pintura": {
+    "cor": [
+      0.6462,
+      0.0707,
+      0.0993
+    ],
+    "metalico": 0.3,
+    "aspereza": 0.26
+  },
+  "texto_cor": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "texto_cor2": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "modelo": "LIME BASS FUZZ",
+  "logo_y": -0.367,
+  "tipo_texto": "",
+  "pisante_y": -0.667,
+  "rotulo_m": 0.0034,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "corpo": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "nivel",
+      "rotulo": "VOLUME",
+      "pos": [
+        -0.58,
+        0.55
+      ],
+      "escala": 1.1
+    },
+    {
+      "id": "tom",
+      "rotulo": "TOM",
+      "pos": [
+        0.0,
+        0.55
+      ],
+      "escala": 1.1
+    },
+    {
+      "id": "ganho",
+      "rotulo": "SUSTAIN",
+      "pos": [
+        0.58,
+        0.55
+      ],
+      "escala": 1.1
+    }
+  ],
+  "led": [
+    0.0,
+    0.84
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true,
+  "estampa": {
+    "svg": "estampas/lime_bassfuzz.svg"
+  }
+}

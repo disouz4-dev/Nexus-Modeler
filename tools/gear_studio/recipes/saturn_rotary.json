@@ -1,0 +1,94 @@
+{
+  "tipo": "pedal",
+  "nome": "Saturn Rotary",
+  "familia": "saturn_rotary",
+  "inspiracao": "caixa rotativa em pedal largo dourado (estilo Leslie)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.094,
+    "comprimento": 0.12,
+    "altura": 0.042
+  },
+  "chanfro_m": 0.0035,
+  "pintura": {
+    "cor": [
+      0.6814,
+      0.4009,
+      0.0932
+    ],
+    "metalico": 0.55,
+    "aspereza": 0.26
+  },
+  "texto_cor": [
+    0.0177,
+    0.0078,
+    0.0014
+  ],
+  "texto_cor2": [
+    0.0177,
+    0.0078,
+    0.0014
+  ],
+  "modelo": "SATURN ROTARY",
+  "logo_y": -0.367,
+  "tipo_texto": "",
+  "pisante_y": -0.667,
+  "rotulo_m": 0.0034,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "corpo": [
+      0.0177,
+      0.0078,
+      0.0014
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "a",
+      "rotulo": "VELOCIDADE",
+      "pos": [
+        -0.58,
+        0.55
+      ],
+      "escala": 1.1
+    },
+    {
+      "id": "b",
+      "rotulo": "GANHO",
+      "pos": [
+        0.0,
+        0.55
+      ],
+      "escala": 1.1
+    },
+    {
+      "id": "c",
+      "rotulo": "MISTURA",
+      "pos": [
+        0.58,
+        0.55
+      ],
+      "escala": 1.1
+    }
+  ],
+  "led": [
+    0.0,
+    0.84
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true,
+  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
+  "estampa": {
+    "svg": "saturno_estampa.svg"
+  }
+}

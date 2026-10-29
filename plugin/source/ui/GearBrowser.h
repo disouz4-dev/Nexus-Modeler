@@ -1,5 +1,8 @@
 #pragma once
 
+#include <array>
+#include <set>
+
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include <functional>
@@ -12,6 +15,8 @@
 // Caixas; cada equipamento com a imagem 3D, o nome, o clássico que inspirou e
 // de onde vem o som. Clique troca a peça escolhida; arrastar para a cadeia
 // acrescenta a peça onde ela for solta. Os planejados aparecem em "Em breve".
+// A pesquisa procura no nome e no original ("JCM800" acha o Bridge 800); cada
+// categoria encolhe com um clique no título.
 namespace nexus::ui
 {
 struct GearItem
@@ -46,6 +51,9 @@ public:
   // Peça que a tela mostra agora (fica marcada na lista).
   void setCurrent(GearItem::Kind kind, int look);
   void retranslate();
+  // Componente pequeno à direita da pesquisa (o ícone de equipamentos novos);
+  // só ocupa lugar quando está visível.
+  void setAccessory(juce::Component* c);
 
   void paint(juce::Graphics&) override;
   void resized() override;
@@ -56,11 +64,19 @@ public:
 
 private:
   class List;
+  bool matches(const GearItem& item) const;
+  void searchChanged();
+
   Segmented mTabs{{"Pedais", juce::String::fromUTF8("Cabeçotes"), "Caixas"}};
+  juce::TextEditor mSearch;
+  juce::StringArray mQuery; // palavras da pesquisa, já simplificadas
+  std::array<std::set<juce::String>, 3> mCollapsed; // categorias encolhidas em cada aba
   std::unique_ptr<List> mList;
   juce::Viewport mViewport;
   std::vector<GearItem> mItems;
   GearItem::Kind mTab = GearItem::Kind::pedal;
+  std::array<int, 3> mScroll{}; // onde cada aba estava (pedais, cabeçotes, caixas)
+  juce::Component* mAccessory = nullptr;
   GearItem::Kind mCurrentKind = GearItem::Kind::amp;
   int mCurrentLook = -1;
 };

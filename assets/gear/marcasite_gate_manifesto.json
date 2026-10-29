@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "marcasite_gate",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Marcasite Gate",
+  "inspiracao": "MXR Smart Gate",
+  "categoria": "Utilidades",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "gate",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 7,
+  "signature": null
+}
