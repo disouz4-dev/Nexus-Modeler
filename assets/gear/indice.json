@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:12:37Z",
+ "gerado": "2026-10-29T20:20:50Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -288,8 +288,8 @@
   },
   "ash500": {
    "nome": "Ash 500",
-   "hash": "4d1d6d8c61b80792",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "eb37613ba4a102f9",
+   "data": "2026-10-29T20:20:50Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "ash500_botao_agudo.png",
@@ -304,24 +304,24 @@
     "ash500_mapa.json"
    ],
    "sha256": {
-    "ash500_botao_agudo.png": "f24dbb6ebced844740c41b69507b9efcbadc3efa9fe9a743aac2231c049a3fd7",
-    "ash500_botao_ganho.png": "87f9bde1a884c21ee3c3d5db4303f98eab3ce101c186c8952ad38798055d8334",
-    "ash500_botao_grave.png": "ab3d5a2e8cb1ba8288473219ef95dc20adf23afd4d4bbbafc39b24ca47b604db",
-    "ash500_botao_medio.png": "68cdfde0fc3c130227bed12918b80f680d4bfd58395a559ad951bf59060bc592",
-    "ash500_botao_presenca.png": "7d77350ca4719000c242b8061667c79a7b7d45928f03ecdb9efcff7bd4cc2c1a",
-    "ash500_botao_volume.png": "19d65cfa1c6891ca8284cd0f3a2e1f846f9be48a81bfa12f504ade1469a3ca5e",
-    "ash500_frente.jpg": "1476d62ee9cbe906c727ee92cda43d0ee90633917d859a1c67993fd41f7a3527",
-    "ash500_frente_alfa.png": "3119ceec38d69f30dc136be2e01db4c456a6f09d1439e54be50cf3c2c60ac099",
-    "ash500_manifesto.json": "768dc57679365150ef30a5d9171e943d7c587429766a39905d21b994bab57e9a",
-    "ash500_mapa.json": "891c27d0d384df324cfb2fff7a95ab0c423f68600497491875f68760c2e16097"
+    "ash500_botao_agudo.png": "8e070a7b099109fdf4508d7b1b50427f22d9de70190b7e843d7503c379caa8a8",
+    "ash500_botao_ganho.png": "1b5fb62194a9317a68b8ab41e3c0f1f063512c48195218326ee1853ecf6be3f0",
+    "ash500_botao_grave.png": "40b772b1f5e3534460a2f38c18ca3d358200b4ef8605c7aa6635a3c792834723",
+    "ash500_botao_medio.png": "2fc6a6eeaff42827dc28d33cea1516ec1945482638c1b562a7d3626b94795e6d",
+    "ash500_botao_presenca.png": "ac24fb696799dcc1e65b7682a3b4b9071fdf81fea6145a07df14ac1de64c3147",
+    "ash500_botao_volume.png": "307537e73b3ac0dc918ea54a673afb446c75cefcbbcaae67ba0b2fc662060698",
+    "ash500_frente.jpg": "0c22710a85609571280bd44dea861da6da74fbca8838daabdc302c40772d0dc4",
+    "ash500_frente_alfa.png": "6c5667106c45a53cac170a5f2744a6ae3b681ea623705e9bdc2b2a3aeb990f9b",
+    "ash500_manifesto.json": "90d7a1c4de761fd8d41f60449b122f6e0f6e2dc6795ce080b481ff1460665e93",
+    "ash500_mapa.json": "87d0e815d1354a0498e4f00f009ddb92191e469372012529b6d5513e41f3bead"
    },
-   "tamanho": 1803501,
+   "tamanho": 514049,
    "tipo": "cabecote",
    "inspiracao": "Ashdown ABM",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
