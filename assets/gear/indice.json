@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:55:56Z",
+ "gerado": "2026-10-29T20:56:02Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2078,8 +2078,8 @@
   },
   "eaglehammer500": {
    "nome": "Eagle Hammer 500",
-   "hash": "dcf055b10881025d",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "a918f64e19d2256b",
+   "data": "2026-10-29T20:56:02Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "eaglehammer500_botao_agudo.png",
@@ -2094,24 +2094,24 @@
     "eaglehammer500_mapa.json"
    ],
    "sha256": {
-    "eaglehammer500_botao_agudo.png": "5b750ea1882d7a48b1f0200c472c5237d9e751a3e37bf36d751fa96ae028a279",
-    "eaglehammer500_botao_ganho.png": "156d389996ab9b1610d2d374e8dce9d561e3fe50e194e5ab3e7c9a28c5a836e9",
-    "eaglehammer500_botao_grave.png": "67197bc4249067355d0b999a6e6f9ee7e2853692f3b792931059c8e80648c7fd",
-    "eaglehammer500_botao_medio.png": "70f1781e044628042de9456b275d34a62a193c1cf7d5e8d1b0ab73729f549c17",
-    "eaglehammer500_botao_presenca.png": "45f39d338eeb0fd6a2707afecb4164e5c3afb7aa6eb5ee853902121fc570a77e",
-    "eaglehammer500_botao_volume.png": "d559d459e5e46af5d6836524d7d0158ae5f70e6c798eebafa98ee097929ad12a",
-    "eaglehammer500_frente.jpg": "0a34b1a63a840115724caab8cb4a12a04e14349d5c1f7d6020c852d96460748e",
-    "eaglehammer500_frente_alfa.png": "6430db3bc0a3968f75002f91ba4025369832024c69a4b0ae48fd930d012f8075",
-    "eaglehammer500_manifesto.json": "30b15d1d45d5e7980497408f73e808439b2cf54c9331e32f9b07700b1ab5f89f",
-    "eaglehammer500_mapa.json": "583ba3ea0a2faedf6562af62042d9b9cd6200c3a3804f39f082c1eff15f3fba2"
+    "eaglehammer500_botao_agudo.png": "507100be23b0fcfc44ddcc7b27454a4f48f8d1021e79d1921c0429ffed1a278f",
+    "eaglehammer500_botao_ganho.png": "87cbc0741d9d83a4c27b57966d7df1f96c95e67798ce9eed8a96e7b57f52aa05",
+    "eaglehammer500_botao_grave.png": "186c8ee2913519c8c2f2b23c1640262c53ba4ae7fe450416a90e7b23ae49543e",
+    "eaglehammer500_botao_medio.png": "b76cb517e365500bd291a71f5585e7172f63693f90b11e3304d80a44779134bf",
+    "eaglehammer500_botao_presenca.png": "efc2e1f3f119096fbf5f49a280546c180da8baa3237b3cdf5e01d62c2c265a07",
+    "eaglehammer500_botao_volume.png": "62bdefa555ef6dffe41cbd72c82dbd40231c45b2e5bc60941d0d8fb8925323b6",
+    "eaglehammer500_frente.jpg": "2f054a74a90c17d3a7b9934c4037adc56a9ade8a2baebb617e24589443ea7c1f",
+    "eaglehammer500_frente_alfa.png": "ce93c840d258e7ed9495789262f16371f305406bcd7a9e64407c17d42b786782",
+    "eaglehammer500_manifesto.json": "cf7e7231b45d13b1f06049428e69a4d127b4632e37e77c3b1af5b9aac8b90c2d",
+    "eaglehammer500_mapa.json": "8e97001de8125f0bf07d488050145a7082ce57fe9e2ebb785724e2249aaccfae"
    },
-   "tamanho": 1753089,
+   "tamanho": 781145,
    "tipo": "cabecote",
    "inspiracao": "Aguilar Tone Hammer 500",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
