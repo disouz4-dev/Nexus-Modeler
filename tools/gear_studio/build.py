@@ -182,6 +182,40 @@ def main():
         # passaria a medir o sensor pela altura; a conta acima é pela largura.
         cam.data.sensor_fit = "HORIZONTAL"
 
+    # Vistas: normalmente uma (a frente). Com o painel deitado no tampo (Vox,
+    # tweed), a imagem junta duas, sem ângulo: o tampo visto reto de cima, com
+    # os botões, em cima; a frente vista reta embaixo.
+    views = [{"cam": cam, "w": width, "h": height, "yoff": 0}]
+    band = built.get("top_band")
+    if band:
+        y0b, y1b, ztop = band
+        margin = 0.025
+        h_top = int(round(width * ((y1b - y0b) + 2 * margin) / view_w))
+        cam_top = st.camera(scene, (0, (y0b + y1b) / 2, ztop), dist, 90.0, lens)
+        cam_top.data.sensor_fit = "HORIZONTAL"
+        views = [{"cam": cam_top, "w": width, "h": h_top, "yoff": 0, "topo": True},
+                 {"cam": cam, "w": width, "h": height, "yoff": h_top}]
+
+    def use(view):
+        scene.camera = view["cam"]
+        scene.render.resolution_x, scene.render.resolution_y = view["w"], view["h"]
+
+    def view_of(point=None, axis=None):
+        """Vista onde o ponto aparece: no tampo (de cima) ou na frente."""
+        if len(views) == 1:
+            return views[0]
+        if axis is not None:
+            return views[0] if abs(axis[2]) > 0.7 else views[1]
+        y0b, y1b, ztop = band
+        on_top = point[2] >= ztop - 0.004 and y0b - 0.03 <= point[1] <= y1b + 0.03
+        return views[0] if on_top else views[1]
+
+    def px(view, point):
+        use(view)
+        x, y = to_pixels(scene, view["cam"], point)
+        return x, y + view["yoff"]
+
+    total_h = sum(v["h"] for v in views)
     controls = built["controls"]
     bpy.context.view_layer.update()  # câmera e peças no lugar antes de medir
     if not a.so_mapa:
@@ -190,12 +224,21 @@ def main():
         bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(a.saida), "cena.blend"))
         set_knobs(controls, 0.5)
         t0 = time.time()
-        scene.render.filepath = os.path.join(os.path.abspath(a.saida), "frente.png")
-        bpy.ops.render.render(write_still=True)
-        clean_shadow(scene.render.filepath)
+        out = os.path.join(os.path.abspath(a.saida), "frente.png")
+        parts = []
+        for k, view in enumerate(views):
+            use(view)
+            scene.render.filepath = out if len(views) == 1 else os.path.join(os.path.abspath(a.saida), f"_vista{k}.png")
+            bpy.ops.render.render(write_still=True)
+            clean_shadow(scene.render.filepath)
+            parts.append(scene.render.filepath)
+        if len(views) > 1:
+            save_pixels(out, np.concatenate([load_pixels(f) for f in parts], axis=0))
+            for f in parts:
+                os.remove(f)
         print(f"[gear] frente em {time.time() - t0:.0f} s")
 
-    layout = {"nome": rec["nome"], "familia": rec["familia"], "largura": width, "altura": height,
+    layout = {"nome": rec["nome"], "familia": rec["familia"], "largura": width, "altura": total_h,
               "posicoes": frames, "botoes": [],
               # Canais do amplificador original (nome de cada um), se houver.
               "canais": [c["nome"] for c in rec.get("canais", [])]}
@@ -204,9 +247,12 @@ def main():
         layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["comprimento"] * 1000)]
     boxes = []
     for c in controls:
-        b = knob_box(scene, cam, c)
+        view = view_of(axis=c.get("axis", (0.0, 1.0, 0.0)))
+        use(view)
+        b = knob_box(scene, view["cam"], c)
+        b["view"] = view
         boxes.append(b)
-        entry = {"id": c["id"], "x": b["x"], "y": b["y"], "tamanho": b["size"],
+        entry = {"id": c["id"], "x": b["x"], "y": b["y"] + view["yoff"], "tamanho": b["size"],
                  "arquivo": f"botao_{c['id']}.png", "angulo_min": -150, "angulo_max": 150}
         if b.get("rect"):
             # Deslizante: quadro retangular (largura x altura), arrasta na vertical.
@@ -222,9 +268,10 @@ def main():
         p = Vector(lab["local"])
         up = Vector((0, 0, 1)) if lab["cima"] == "Z" else Vector((0, 1, 0))
         s = lab["tamanho"]
-        cx, cy = to_pixels(scene, cam, p)
-        rx, ry = to_pixels(scene, cam, p + Vector((s, 0, 0)))
-        ux, uy = to_pixels(scene, cam, p + up * s)
+        view = view_of(point=p)
+        cx, cy = px(view, p)
+        rx, ry = px(view, p + Vector((s, 0, 0)))
+        ux, uy = px(view, p + up * s)
         horizontal = math.hypot(rx - cx, ry - cy)
         vertical = math.hypot(ux - cx, uy - cy)
         color = "#" + "".join(f"{round(srgb(v) * 255):02x}" for v in lab["cor"])
@@ -233,23 +280,27 @@ def main():
                                   "cor": color, "espaco": lab["espaco"]})
     if "footswitch" in built:
         (fx, fy, fz), fr = built["footswitch"]
-        px, py = to_pixels(scene, cam, (fx, fy, fz))
-        ex, _ = to_pixels(scene, cam, (fx + fr, fy, fz))
-        layout["pisante"] = {"x": round(px), "y": round(py), "raio": round(abs(ex - px))}
+        view = view_of(point=(fx, fy, fz))
+        px_, py_ = px(view, (fx, fy, fz))
+        ex, _ = px(view, (fx + fr, fy, fz))
+        layout["pisante"] = {"x": round(px_), "y": round(py_), "raio": round(abs(ex - px_))}
     if built.get("channel_leds"):
         layout["leds_canais"] = []
         for (lx, ly, lz), lr in built["channel_leds"]:
-            px, py = to_pixels(scene, cam, (lx, ly, lz))
-            ex, _ = to_pixels(scene, cam, (lx + lr, ly, lz))
-            layout["leds_canais"].append({"x": round(px, 1), "y": round(py, 1), "raio": round(abs(ex - px), 1)})
+            view = view_of(point=(lx, ly, lz))
+            px_, py_ = px(view, (lx, ly, lz))
+            ex, _ = px(view, (lx + lr, ly, lz))
+            layout["leds_canais"].append({"x": round(px_, 1), "y": round(py_, 1), "raio": round(abs(ex - px_), 1)})
     if built.get("led"):
         (lx, ly, lz), lr = built["led"]
-        px, py = to_pixels(scene, cam, (lx, ly, lz))
-        ex, _ = to_pixels(scene, cam, (lx + lr, ly, lz))
-        layout["led"] = {"x": round(px, 1), "y": round(py, 1), "raio": round(abs(ex - px), 1)}
+        view = view_of(point=(lx, ly, lz))
+        px_, py_ = px(view, (lx, ly, lz))
+        ex, _ = px(view, (lx + lr, ly, lz))
+        layout["led"] = {"x": round(px_, 1), "y": round(py_, 1), "raio": round(abs(ex - px_), 1)}
     if built.get("display"):
         vx, vy, vz, vw, vl = built["display"]
-        corners = [to_pixels(scene, cam, (vx + sx * vw / 2, vy + sy * vl / 2, vz)) for sx in (-1, 1) for sy in (-1, 1)]
+        view = view_of(point=(vx, vy, vz))
+        corners = [px(view, (vx + sx * vw / 2, vy + sy * vl / 2, vz)) for sx in (-1, 1) for sy in (-1, 1)]
         xs, ys = [c[0] for c in corners], [c[1] for c in corners]
         layout["visor"] = {"x": round(min(xs), 1), "y": round(min(ys), 1), "w": round(max(xs) - min(xs), 1), "h": round(max(ys) - min(ys), 1)}
     with open(os.path.join(a.saida, "mapa.json"), "w", encoding="utf-8") as f:
@@ -257,43 +308,49 @@ def main():
     if a.so_frente or a.so_mapa or not controls:
         return
 
-    # Uma faixa de render cobre todos os botões; cada posição gira todos
-    # juntos e recorta cada botão dessa faixa.
-    x0 = min(b["x"] for b in boxes)
-    x1 = max(b["x"] + b.get("w", b["size"]) for b in boxes)
-    y0 = min(b["y"] for b in boxes)
-    y1 = max(b["y"] + b.get("h", b["size"]) for b in boxes)
-    r = scene.render
-    r.use_border = True
-    r.use_crop_to_border = True
-    r.border_min_x, r.border_max_x = x0 / width, x1 / width
-    r.border_min_y, r.border_max_y = 1 - y1 / height, 1 - y0 / height
-
+    # Uma faixa de render por vista cobre os botões dela; cada posição gira
+    # todos juntos e recorta cada botão dessa faixa.
     strips = [np.zeros((b.get("h", b["size"]) * frames, b.get("w", b["size"]), 4), dtype=np.float32) for b in boxes]
     tmp = os.path.join(os.path.abspath(a.saida), "_faixa.png")
+    r = scene.render
     t0 = time.time()
-    for f in range(frames):
-        set_knobs(controls, f / (frames - 1))
-        r.filepath = tmp
-        bpy.ops.render.render(write_still=True)
-        band = load_pixels(tmp)
-        # A faixa pode sair um pixel diferente do pedido (arredondamento do
-        # Blender); alinhamos pelo canto de cima à esquerda.
-        for b, strip in zip(boxes, strips):
-            ox, oy = b["x"] - x0, b["y"] - y0
-            bw, bh = b.get("w", b["size"]), b.get("h", b["size"])
-            # A faixa pode sair um pixel menor que o pedido; o que faltar
-            # fica transparente (cai fora do círculo do botão).
-            crop = np.zeros((bh, bw, 4), dtype=np.float32)
-            part = band[oy:oy + bh, ox:ox + bw]
-            crop[:part.shape[0], :part.shape[1]] = part
-            if not b.get("rect"):
-                yy, xx = np.mgrid[0:bh, 0:bw]
-                d = np.sqrt((xx + 0.5 - b["cx"]) ** 2 + (yy + 0.5 - b["cy"]) ** 2)
-                mask = np.clip((b["radius"] - d) / 2.0, 0.0, 1.0)
-                crop[..., 3] *= mask
-            strip[f * bh:(f + 1) * bh] = crop
-        print(f"[gear] posição {f + 1}/{frames} ({time.time() - t0:.0f} s)")
+    for view in views:
+        mine = [i for i, b in enumerate(boxes) if b["view"] is view]
+        if not mine:
+            continue
+        use(view)
+        vw_, vh_ = view["w"], view["h"]
+        x0 = min(boxes[i]["x"] for i in mine)
+        x1 = max(boxes[i]["x"] + boxes[i].get("w", boxes[i]["size"]) for i in mine)
+        y0 = min(boxes[i]["y"] for i in mine)
+        y1 = max(boxes[i]["y"] + boxes[i].get("h", boxes[i]["size"]) for i in mine)
+        r.use_border = True
+        r.use_crop_to_border = True
+        r.border_min_x, r.border_max_x = x0 / vw_, x1 / vw_
+        r.border_min_y, r.border_max_y = 1 - y1 / vh_, 1 - y0 / vh_
+        for f in range(frames):
+            set_knobs(controls, f / (frames - 1))
+            r.filepath = tmp
+            bpy.ops.render.render(write_still=True)
+            band_px = load_pixels(tmp)
+            # A faixa pode sair um pixel diferente do pedido (arredondamento do
+            # Blender); alinhamos pelo canto de cima à esquerda.
+            for i in mine:
+                b, strip = boxes[i], strips[i]
+                ox, oy = b["x"] - x0, b["y"] - y0
+                bw, bh = b.get("w", b["size"]), b.get("h", b["size"])
+                # A faixa pode sair um pixel menor que o pedido; o que faltar
+                # fica transparente (cai fora do círculo do botão).
+                crop = np.zeros((bh, bw, 4), dtype=np.float32)
+                part = band_px[oy:oy + bh, ox:ox + bw]
+                crop[:part.shape[0], :part.shape[1]] = part
+                if not b.get("rect"):
+                    yy, xx = np.mgrid[0:bh, 0:bw]
+                    d = np.sqrt((xx + 0.5 - b["cx"]) ** 2 + (yy + 0.5 - b["cy"]) ** 2)
+                    mask = np.clip((b["radius"] - d) / 2.0, 0.0, 1.0)
+                    crop[..., 3] *= mask
+                strip[f * bh:(f + 1) * bh] = crop
+            print(f"[gear] posição {f + 1}/{frames} ({time.time() - t0:.0f} s)")
     os.remove(tmp)
     for c, strip in zip(controls, strips):
         save_pixels(os.path.join(a.saida, f"botao_{c['id']}.png"), strip)

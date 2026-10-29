@@ -218,7 +218,7 @@ FICHAS["tweed59"] = dict(
     couro={"cor": [0.62, 0.4, 0.13], "tweed": True, "grao_mm": 3.2},
     fachada={"tipo": "listras", "cor": [0.18, 0.09, 0.04], "linha": [0.62, 0.46, 0.18], "passo_mm": 8.0},
     logo={"lado_rel": -0.25, "altura_rel": 0.9, "altura_m": 0.016},
-    painel=dict(posicao="cima", altura_m=0.07, largura_m=0.5, cor=rgb(0.86, 0.86, 0.88), material="cromo", texto_cor=TINTA),
+    painel=dict(posicao="topo", altura_m=0.07, largura_m=0.5, cor=rgb(0.86, 0.86, 0.88), material="cromo", texto_cor=TINTA),
     estilos={"padrao": estilo("chicken", 0.022, (0.012, 0.012, 0.012), traco=(0.9, 0.9, 0.9), escala="nenhuma")},
     cantos="nenhum", aba_m=0.024,
     fileiras=[ROW(0.45, 0.0, 1.0, T("STANDBY", x=0.06), T("ON", x=0.11), JW((0.9, 0.05, 0.02), x=0.16, raio_m=0.007),

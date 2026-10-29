@@ -957,5 +957,10 @@ def build(rec, fonts):
     if lying:
         # Vista de cima e da frente: mira no meio do volume para caber o tampo.
         target = (0, -D * 0.22, H * 0.6)
-    return {"controls": p.controls, "size": (W, D, H), "front": front, "channel_leds": p.channel_leds,
-            "target": target}
+    out = {"controls": p.controls, "size": (W, D, H), "front": front, "channel_leds": p.channel_leds,
+           "target": target}
+    if lying:
+        # Faixa do tampo onde fica o painel (y de, y até, altura do tampo): o
+        # build.py faz a vista dupla (tampo visto de cima em cima, frente embaixo).
+        out["top_band"] = (y_front, y_front + pd, H)
+    return out
