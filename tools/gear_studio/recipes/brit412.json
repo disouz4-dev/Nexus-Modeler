@@ -2,7 +2,7 @@
   "tipo": "caixa",
   "nome": "Brit 4x12",
   "familia": "brit_412",
-  "inspiracao": "caixa 4x12 inclinada (estilo Marshall 1960A): tolex preto levant, metade de cima da frente inclinada para trás, tela preta com fio prateado em trama de cesto, friso branco em volta da tela, cantoneiras pretas; 770 x 755 x 365 mm",
+  "inspiracao": "caixa 4x12 reta (estilo Marshall 1960A): tolex preto levant, tela preta com fio prateado em trama de cesto, friso branco em volta da tela, cantoneiras pretas; 770 x 755 x 365 mm",
   "medidas_m": {
     "largura": 0.77,
     "altura": 0.755,
@@ -50,10 +50,6 @@
     "largura_rel": 1.12,
     "proporcao": 1.119,
     "elevacao": 8.0
-  },
-  "inclinada": {
-    "recuo_m": 0.1,
-    "inicio_rel": 0.5
   },
   "cantos": "preto",
   "falantes": {

@@ -2,7 +2,7 @@
   "tipo": "caixa",
   "nome": "SL 4x12",
   "familia": "sl_412",
-  "inspiracao": "caixa 4x12 inclinada (estilo Soldano 4x12 slant): tolex preto, tela preta, sem friso e sem cantoneiras, logo prateado no centro; 711 x 730 x 356 mm",
+  "inspiracao": "caixa 4x12 reta (estilo Soldano 4x12): tolex preto, tela preta, sem friso e sem cantoneiras, logo prateado no centro; 711 x 730 x 356 mm",
   "medidas_m": {
     "largura": 0.711,
     "altura": 0.73,
@@ -48,10 +48,6 @@
   },
   "friso": null,
   "cantos": "nenhum",
-  "inclinada": {
-    "recuo_m": 0.1,
-    "inicio_rel": 0.5
-  },
   "pes": {
     "altura_m": 0.012
   },

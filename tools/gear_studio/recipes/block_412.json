@@ -2,7 +2,7 @@
   "tipo": "caixa",
   "nome": "Block 4x12",
   "familia": "block_412",
-  "inspiracao": "caixa 4x12 inclinada com rodízios (estilo Peavey 5150 4x12 slant): tolex preto texturizado, tela preta com trama fina prateada, sem friso, cantoneiras pretas, número 5150 no canto de baixo à direita; 762 x 822 x 359 mm com rodízios",
+  "inspiracao": "caixa 4x12 reta com rodízios (estilo Peavey 5150 4x12): tolex preto texturizado, tela preta com trama fina prateada, sem friso, cantoneiras pretas, número 5150 no canto de baixo à direita; 762 x 822 x 359 mm com rodízios",
   "medidas_m": {
     "largura": 0.762,
     "altura": 0.822,
@@ -51,10 +51,6 @@
     "texto": "5150",
     "altura_m": 0.055,
     "margem_m": 0.05
-  },
-  "inclinada": {
-    "recuo_m": 0.1,
-    "inicio_rel": 0.5
   },
   "cantos": "preto",
   "rodizios": {

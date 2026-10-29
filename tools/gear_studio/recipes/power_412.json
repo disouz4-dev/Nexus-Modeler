@@ -2,7 +2,7 @@
   "tipo": "caixa",
   "nome": "Power 4x12",
   "familia": "power_412",
-  "inspiracao": "caixa 4x12 inclinada (estilo ENGL E412VSB): tolex preto, grade de metal preta soldada em malha com os quatro falantes aparecendo atrás, sem friso, cantoneiras cromadas embaixo, marca no centro; 740 x 750 x 360 mm",
+  "inspiracao": "caixa 4x12 reta (estilo ENGL E412VSB): tolex preto, grade de metal preta soldada em malha com os quatro falantes aparecendo atrás, sem friso, cantoneiras cromadas embaixo, marca no centro; 740 x 750 x 360 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
@@ -45,10 +45,6 @@
     ]
   },
   "friso": null,
-  "inclinada": {
-    "recuo_m": 0.1,
-    "inicio_rel": 0.5
-  },
   "cantos": "cromo",
   "cantos_onde": "baixo",
   "falantes": {

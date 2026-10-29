@@ -2,7 +2,7 @@
   "tipo": "caixa",
   "nome": "Country 4x12",
   "familia": "country_412",
-  "inspiracao": "caixa 4x12 inclinada com rodízios (estilo Laney LA412 da linha Supergroup): tolex preto, tela sal e pimenta cinza, friso branco em volta da tela, sem cantoneiras, plaqueta preta no centro; 765 x 765 x 355 mm de caixa, mais os rodízios",
+  "inspiracao": "caixa 4x12 reta com rodízios (estilo Laney LA412 da linha Supergroup): tolex preto, tela sal e pimenta cinza, friso branco em volta da tela, sem cantoneiras, plaqueta preta no centro; 765 x 765 x 355 mm de caixa, mais os rodízios",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
@@ -63,10 +63,6 @@
     0.85,
     0.84
   ],
-  "inclinada": {
-    "recuo_m": 0.1,
-    "inicio_rel": 0.5
-  },
   "cantos": "nenhum",
   "rodizios": {
     "altura_m": 0.06
