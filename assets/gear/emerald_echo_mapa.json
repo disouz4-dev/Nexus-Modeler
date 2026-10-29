@@ -1,15 +1,15 @@
 {
   "nome": "Emerald Echo",
-  "familia": "emerald_echo",
+  "familia": "lime_echo",
   "largura": 600,
   "altura": 510,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 189,
-      "y": 112,
-      "tamanho": 74,
+      "x": 87,
+      "y": 148,
+      "tamanho": 68,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,45 +17,45 @@
     },
     {
       "id": "a",
-      "x": 96,
-      "y": 216,
-      "tamanho": 56,
+      "x": 176,
+      "y": 159,
+      "tamanho": 46,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 185,
-      "y": 218,
-      "tamanho": 54,
+      "x": 234,
+      "y": 160,
+      "tamanho": 44,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 274,
-      "y": 219,
-      "tamanho": 52,
+      "x": 292,
+      "y": 160,
+      "tamanho": 44,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 362,
-      "y": 218,
-      "tamanho": 54,
+      "x": 350,
+      "y": 160,
+      "tamanho": 44,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 448,
-      "y": 216,
-      "tamanho": 56,
+      "x": 408,
+      "y": 158,
+      "tamanho": 46,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -63,79 +63,73 @@
   ],
   "canais": [],
   "medidas_mm": [
-    150,
-    105
+    250,
+    152
   ],
   "rotulos": [
     {
       "texto": "MODO",
-      "x": 227.6,
-      "y": 198.3,
-      "altura": 9.65,
+      "x": 123.3,
+      "y": 220.2,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TEMPO",
-      "x": 126.2,
-      "y": 284.3,
-      "altura": 9.65,
+      "x": 199.7,
+      "y": 211.1,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "REPETIÇÕES",
-      "x": 213.2,
-      "y": 284.3,
-      "altura": 9.65,
+      "x": 257.0,
+      "y": 211.1,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MODULAÇÃO",
-      "x": 300.0,
-      "y": 284.3,
-      "altura": 9.65,
+      "x": 314.4,
+      "y": 211.1,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "TOM",
-      "x": 386.9,
-      "y": 284.3,
-      "altura": 9.65,
+      "texto": "TWEEZ",
+      "x": 371.6,
+      "y": 211.1,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 473.8,
-      "y": 284.3,
-      "altura": 9.65,
+      "x": 428.9,
+      "y": 211.1,
+      "altura": 7.26,
       "achatamento": 1.0,
-      "cor": "#f9faf3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 359.0,
-    "raio": 39.5
+    "x": 125.5,
+    "y": 346.5,
+    "raio": 23.5
   },
   "led": {
-    "x": 300.0,
-    "y": 309.2,
-    "raio": 10.0
-  },
-  "visor": {
-    "x": 77.3,
-    "y": 112.7,
-    "w": 106.5,
-    "h": 74.5
+    "x": 127.7,
+    "y": 307.4,
+    "raio": 6.0
   }
 }
