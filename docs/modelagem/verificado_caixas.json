@@ -1,0 +1,917 @@
+[
+ {
+  "id": "brit412",
+  "original": "1960A 4x12",
+  "versao_referencia": "Marshall 1960A 4x12 Angled (atual, Celestion G12T-75)",
+  "original_cores": {
+   "tolex": "preto levant",
+   "tela": "preta com fio prateado (basketweave)",
+   "frisos": "friso branco em volta da tela; cantoneiras pretas; plaqueta dourada '1960' no canto inferior esquerdo da tela"
+  },
+  "original_medidas_mm": "770 x 755 x 365 (L x A x P) — ficha oficial Marshall",
+  "original_falantes": "4 x 12\"",
+  "original_formato": "inclinada (topo angulado), fechada",
+  "atual_resumo": "Preta, tela preta/cinza escura, friso branco, cantoneiras pretas, 760x760x360, frente reta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato"
+  ],
+  "explicacao": "Foto e ficha oficiais confirmam: preta, tela preta/prata, friso branco, cantoneiras pretas, 770x755x365. Só o formato diverge: a 1960A tem a metade de cima inclinada e a arte é reta. Detalhe que faltava: plaqueta dourada '1960' no canto inferior esquerdo (a arte não tem; o nome é próprio, então só registrar).",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.marshall.com/us/es/product/1960a-4x12-angled-cabinet"
+  ],
+  "fonte_fabricante": "https://www.marshall.com/us/en/product/1960a-4x12-angled-cabinet",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/brit412_1.jpg"
+  ],
+  "corrigido": "Nada de errado no veredito. Medidas agora citadas da ficha oficial; acrescentada a plaqueta dourada '1960' nos detalhes."
+ },
+ {
+  "id": "mark5_412",
+  "original": "Mesa 4x12",
+  "versao_referencia": "Mesa/Boogie Rectifier Standard 4x12 Straight, Black Bronco (0.412R.STR.AB.F)",
+  "original_cores": {
+   "tolex": "preto (Black Bronco; também Black Taurus)",
+   "tela": "juta preta trançada (twisted jute) montada em quadro separado",
+   "frisos": "sem friso; cantoneiras pretas pequenas; plaqueta MESA Engineering no centro"
+  },
+  "original_medidas_mm": "765 x 835 x 362 (L x A x P) — loja (Humbucker); a página oficial não mostra medidas",
+  "original_falantes": "4 x 12\" (Celestion V30)",
+  "original_formato": "reta, fechada (também existe a versão inclinada)",
+  "atual_resumo": "Toda preta, tela preta lisa, sem friso, cantoneiras pretas, 740x760x370",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho"
+  ],
+  "explicacao": "Cor, tela e formato batem com a foto oficial. Mas a Standard é a 4x12 'oversized', bem mais alta que larga (835 x 765); a arte é quase quadrada (740 x 760). Pela regra de medidas reais, subir altura para ~835 e largura para ~765.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.humbuckermusic.com/products/mesa-boogie-412-rectifier-straght-guitar-cab",
+   "https://www.andertons.co.uk/mesa-boogie-4x12-rectifier-standard-straight-cabinet"
+  ],
+  "fonte_fabricante": "https://www.gibson.com/products/mesa-boogie-4x12-rectifier-standard-straight-cabinet-black-bronco.js",
+  "outras_fontes": [
+   "https://www.humbuckermusic.com/products/mesa-boogie-412-rectifier-straght-guitar-cab",
+   "https://www.andertons.co.uk/mesa-boogie-4x12-rectifier-standard-straight-cabinet"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/mark5_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar tamanho: a diferença de altura (760 vs 835, ~9%) é justamente o que caracteriza a Standard 'oversized'; a foto oficial mostra a caixa visivelmente mais alta que larga."
+ },
+ {
+  "id": "block_412",
+  "original": "5150 4x12",
+  "versao_referencia": "Peavey 6505 Reissue 412 Slant (a caixa do 5150 de 1992, mesmas especificações; o 5150 virou 6505)",
+  "original_cores": {
+   "tolex": "preto texturizado",
+   "tela": "preta com trama fina prateada",
+   "frisos": "sem friso; cantoneiras metálicas pretas; plaquinha com o número (5150 na original, 6505 hoje) no canto inferior direito; rodízios"
+  },
+  "original_medidas_mm": "762 x 822 x 359 (L x A x P; 30 x 32-3/8 x 14-1/8 pol., com rodízios) — ficha oficial Peavey",
+  "original_falantes": "4 x 12\" (Sheffield 1230+ no reissue; Sheffield 1200 na original)",
+  "original_formato": "inclinada (metade de cima), fechada; existe a reta",
+  "atual_resumo": "Preta, tela preta, sem friso, selo '5150' embaixo à direita, frente reta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato",
+   "tamanho"
+  ],
+  "explicacao": "Ficha e foto oficiais: preta, tela preta/prata, cantoneiras pretas, plaquinha no canto inferior direito, inclinada, 762 x 822 x 359 com rodízios. A arte é reta e baixa (760). Trocar para inclinada e altura ~822 (ou ~790 sem rodízios).",
+  "confianca": "alta",
+  "fontes": [
+   "https://equipboard.com/items/peavey-5150-4x12-speaker-cabinet"
+  ],
+  "fonte_fabricante": "https://assets.peavey.com/literature/manuals/119279_38584.pdf",
+  "outras_fontes": [
+   "https://peavey.com/en-int/products/6505-reissue-412-slant-guitar-cabinet"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/block_412_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/pdf/pv.pdf"
+  ],
+  "corrigido": "Medidas eram 'padrão de 4x12' sem fonte; agora oficiais (822 de altura, não 760). Acrescentado tamanho ao que trocar e os rodízios aos detalhes. Confiança media -> alta."
+ },
+ {
+  "id": "sl_412",
+  "original": "Soldano 4x12",
+  "versao_referencia": "Soldano 4x12 Angled (Slant) Classic; a página oficial mostra a roxa, a preta com tela preta é a mesma caixa",
+  "original_cores": {
+   "tolex": "preto (opção roxa e outras)",
+   "tela": "preta",
+   "frisos": "sem friso; sem cantoneiras metálicas aparentes na frente; logo 'soldano' prateado no centro"
+  },
+  "original_medidas_mm": "711 x 730 x 356 (L x A x P; 28 x 28.75 x 14 pol.) — página oficial Soldano",
+  "original_falantes": "4 x 12\" (Celestion V30)",
+  "original_formato": "inclinada, fechada",
+  "atual_resumo": "Preta, tela preta, cantoneiras cromadas, 760x760x360, frente reta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato",
+   "tamanho",
+   "detalhes"
+  ],
+  "explicacao": "Página oficial confirma inclinada e 711 x 730 x 356. A arte é reta, 760 x 760 (7% maior) e tem cantoneiras cromadas que a foto oficial não mostra.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.soldano.com/products/classic/cabinets/4x12-slant-purple",
+   "https://www.tapestrymusic.com/p-16515-soldano-4x12-slant-cabinet-celestion-vintage-30s-240w-16-ohms-black-tolex-black-grille.aspx"
+  ],
+  "fonte_fabricante": "https://www.soldano.com/products/classic/cabinets/4x12-slant-purple/",
+  "outras_fontes": [
+   "https://www.tapestrymusic.com/p-16515-soldano-4x12-slant-cabinet-celestion-vintage-30s-240w-16-ohms-black-tolex-black-grille.aspx"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/sl_412_1.jpg"
+  ],
+  "corrigido": "Acrescentados tamanho (711x730, a arte está 7% maior) e detalhes (tirar cantoneiras cromadas). Confiança media -> alta."
+ },
+ {
+  "id": "be_412",
+  "original": "Friedman 4x12",
+  "versao_referencia": "Friedman 412 (BE 412), 2x Greenback + 2x V30; padrão de fábrica com tela preta e friso dourado",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "preta (padrão); opções de fábrica: Checked, Gold Weave, Silver Weave, Vintage",
+   "frisos": "friso dourado fino em volta da tela; sem cantoneiras metálicas; plaqueta dourada 'FRIEDMAN' no centro"
+  },
+  "original_medidas_mm": "762 x 762 x 356 (30 x 30 x 14 pol.) — página oficial Friedman",
+  "original_falantes": "4 x 12\" (2 Greenback + 2 V30)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela salt & pepper marrom/bege, friso dourado, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: tela PRETA com friso dourado, sem cantoneiras. A arte usa tela sal e pimenta marrom/bege (não é o padrão; no máximo a opção 'Vintage', que não confirmei) e cantoneiras pretas de plástico que a original não tem. Tamanho bate.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.thomann.de/cz/friedman_412_black.htm",
+   "https://www.andertons.co.uk/friedman-4x12-cab/",
+   "https://boutique.drummondmusique.com/en/products/friedman-be-412-cab-brown-eye-cabinet-4-x-12-2x-greenback-2x-vintage-30-black-grille-gold-piping"
+  ],
+  "fonte_fabricante": "https://friedmanamplification.com/shop/cabs/friedman-412/",
+  "outras_fontes": [
+   "https://www.thomann.co.uk/friedman_412_black.htm",
+   "https://boutique.drummondmusique.com/en/products/friedman-be-412-cab-brown-eye-cabinet-4-x-12-2x-greenback-2x-vintage-30-black-grille-gold-piping"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/be_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar: a tela padrão é preta (sal e pimenta não é a de catálogo) e não há cantoneiras."
+ },
+ {
+  "id": "citrus_412",
+  "original": "Orange 4x12",
+  "versao_referencia": "Orange PPC412 (reta, laranja)",
+  "original_cores": {
+   "tolex": "vinil laranja vivo, com moldura de tolex chanfrada em volta da tela",
+   "tela": "bege-claro/palha em trama de cesto (basketweave), tom quente e claro",
+   "frisos": "sem friso; cantoneiras pretas de plástico nos 4 cantos da frente; brasão Orange + plaqueta 'ORANGE' no centro"
+  },
+  "original_medidas_mm": "780 x 740 x 370 (L x A x P) — página oficial Orange",
+  "original_falantes": "4 x 12\" (Celestion V30)",
+  "original_formato": "reta, fechada (PPC412A é a inclinada)",
+  "atual_resumo": "Laranja, tela bege mesclada, cantoneiras pretas, sem friso, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "tamanho"
+  ],
+  "explicacao": "Foto oficial: tela palha clara e quente com trama de cesto bem visível. A arte tem tela cinza-acastanhada mesclada e escura demais. A caixa é mais larga que alta (780 x 740); a arte é 760 x 760.",
+  "confianca": "alta",
+  "fontes": [
+   "https://musicstore.de/en_DE/EUR/Orange-PPC412-Cabinet/art-GIT0004399-000"
+  ],
+  "fonte_fabricante": "https://orangeamps.com/products/ppc412/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/citrus_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar tela (cor e padrão) e tamanho; medidas oficiais 780x740x370 (a triagem tinha ~760x740x365)."
+ },
+ {
+  "id": "blue_212",
+  "original": "Vox AC30 2x12",
+  "versao_referencia": "Vox V212C (caixa 2x12 do AC30 Custom)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "losangos (diamond) marrom-avermelhada com fios creme, só nos 2/3 de baixo",
+   "frisos": "terço de cima é um painel preto (vinil) com logo VOX dourado; faixa dourada separando painel e tela; friso branco em volta da frente; cantoneiras pretas; alças de couro no topo"
+  },
+  "original_medidas_mm": "705 x 571 x 266 (L x A x P) — página oficial Vox",
+  "original_falantes": "2 x 12\" (Celestion Greenback)",
+  "original_formato": "reta, aberta atrás",
+  "atual_resumo": "Preta, tela marrom mesclada sem desenho, friso branco, 700x500x260",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: o terço de cima não é tela, é um painel preto com faixa dourada embaixo; a tela de losangos só ocupa o resto. A arte tem tela marrom lisa na frente toda e é baixa (500 em vez de 571).",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.voxamps.co.uk/products/v212c"
+  ],
+  "fonte_fabricante": "https://voxamps.com/product/v212c-extension-cabinet/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/blue_212_1.jpg"
+  ],
+  "corrigido": "Acrescentados o painel preto superior e a faixa dourada (detalhes); a tela é vinho/marrom com losangos creme. Medidas confirmadas na fonte oficial."
+ },
+ {
+  "id": "twin_212",
+  "original": "Fender Twin 2x12",
+  "versao_referencia": "Fender '65 Twin Reverb (reedição)",
+  "original_cores": {
+   "tolex": "preto texturizado",
+   "tela": "prateada (fio prata e preto em trama listrada fina)",
+   "frisos": "SEM friso em volta da tela; painel de controle preto em faixa no topo da frente; cantoneiras metálicas pequenas (niqueladas) nos cantos; logo Fender script no canto superior esquerdo"
+  },
+  "original_medidas_mm": "673 x 505 x 264 (L x A x P; 26.5 x 19.87 x 10.375 pol.) — fender.com, lido no resumo da busca",
+  "original_falantes": "2 x 12\"",
+  "original_formato": "reta, aberta atrás (combo)",
+  "atual_resumo": "Preta, tela prata, friso claro, cantoneiras pretas de plástico, 680x500x260",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: não há friso claro em volta da tela (a triagem e a arte têm); as cantoneiras são pequenas e metálicas, não de plástico preto; e há a faixa do painel de controle preto no topo. Tamanho e cores batem.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.americanmusical.com/p/fender-65-twin-reverb-85-watt-2x12-guitar-combo-amplifier"
+  ],
+  "fonte_fabricante": "https://www.fender.com/products/65-twin-reverb.js",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/twin_212_1.jpg"
+  ],
+  "corrigido": "Triagem errou o friso: a original não tem friso em volta da tela (tirar). Cantoneiras metálicas pequenas no lugar das pretas de plástico; painel preto no topo."
+ },
+ {
+  "id": "tweed_410",
+  "original": "Fender 4x10",
+  "versao_referencia": "Fender '59 Bassman LTD (tweed)",
+  "original_cores": {
+   "tolex": "tweed laqueado amarelo-âmbar com trama diagonal bem marcada",
+   "tela": "marrom-escuro (oxblood) com listras horizontais douradas",
+   "frisos": "sem friso; sem cantoneiras; plaqueta 'Fender Bassman' vinho no topo da frente"
+  },
+  "original_medidas_mm": "597 x 568 x 270 (L x A x P; 23.5 x 22.37 x 10.6 pol.) — fender.com, lido no resumo da busca",
+  "original_falantes": "4 x 10\" (Jensen P10R)",
+  "original_formato": "reta, aberta atrás (combo)",
+  "atual_resumo": "Tweed bege, tela marrom-acinzentada lisa, cantoneiras pretas, 600x620x260",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "detalhes",
+   "tamanho",
+   "couro"
+  ],
+  "explicacao": "Foto oficial: tweed âmbar saturado (a arte é bege pálido), tela marrom-escura com listras douradas horizontais (a arte é lisa), sem cantoneiras (a arte tem pretas). A caixa é mais larga que alta (597 x 568); a arte é 600 x 620.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.fender.com/en-US/guitar-amplifiers/vintage-pro-tube/59-bassman-ltd/2171000010.html"
+  ],
+  "fonte_fabricante": "https://www.fender.com/products/59-bassman-ltd.js",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/tweed_410_1.jpg"
+  ],
+  "corrigido": "Acrescentados tamanho (altura 620 -> ~568) e cor do tweed (mais âmbar/amarelo)."
+ },
+ {
+  "id": "match_212",
+  "original": "Matchless 2x12",
+  "versao_referencia": "Matchless ESD212 preta/prata",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "cinza/prata mesclada (preto e branco), só nos 2/3 de baixo",
+   "frisos": "terço de cima é painel de tolex preto com plaqueta MATCHLESS; friso fino prateado/branco contornando painel e tela; alça no topo"
+  },
+  "original_medidas_mm": "~686 x 533 x 267 (27 x 21 x 10.5 pol.) — lojas (Eddie's, Equipboard); a página oficial não dá medidas",
+  "original_falantes": "2 x 12\" (Celestion G12H + G12M)",
+  "original_formato": "reta, semi-aberta",
+  "atual_resumo": "Preta, tela cinza mesclada, friso branco, 700x500x260",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: a ESD212 tem um painel de tolex preto ocupando o terço de cima, com a plaqueta; a tela só começa embaixo dele. A arte tem tela na frente toda. Cores e tamanho batem.",
+  "confianca": "alta",
+  "fontes": [
+   "https://guitarfactory.net/products/matchless-esd-212-speaker-cabinet-black-silver",
+   "https://www.maharsvintageguitars.com/products/matchless-2003-esd-2x12-guitar-amp-cabinet-excellent"
+  ],
+  "fonte_fabricante": "https://www.matchlessamplifiers.com/amplifiers-and-cabinets/esd212",
+  "outras_fontes": [
+   "https://eddiesguitars.com/amplifiers/matchless-esd212-2x12-cabinet-black-silver-a073126/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/match_212_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar: faltava o painel preto superior."
+ },
+ {
+  "id": "power_412",
+  "original": "ENGL 4x12",
+  "versao_referencia": "ENGL E412VSB (inclinada, V30)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "NÃO é pano: grade metálica preta soldada (trama tipo cesto em metal), com os falantes aparecendo atrás",
+   "frisos": "sem friso; moldura preta em volta da grade; cantoneiras cromadas embaixo; logo ENGL cromado no centro"
+  },
+  "original_medidas_mm": "740 x 750 x 360 — página oficial ENGL",
+  "original_falantes": "4 x 12\" (Celestion V30)",
+  "original_formato": "inclinada, fechada (existe a reta E412SS)",
+  "atual_resumo": "Toda preta, tela preta, sem friso, 760x760x360, frente reta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato",
+   "tela"
+  ],
+  "explicacao": "A página oficial diz 'Solid hand welded Metal Grille' e a foto mostra a grade metálica com os 4 falantes visíveis. A arte tem pano preto liso e é reta.",
+  "confianca": "alta",
+  "fontes": [
+   "https://bax-shop.co.uk/speaker-cabinet/engl-e412vsb-pro-slanted-4x12-guitar-speaker-cabinet-240w"
+  ],
+  "fonte_fabricante": "https://www.engl-amps.com/shop/cabinets/engl-e412vsb-cabinet/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/power_412_1.jpg"
+  ],
+  "corrigido": "Tela corrigida: grade metálica soldada, não pano preto. Acrescentada a tela ao que trocar; cantoneiras cromadas inferiores."
+ },
+ {
+  "id": "uber_412",
+  "original": "Bogner 4x12",
+  "versao_referencia": "Bogner 412STU Uberkab reta (tolex Comet)",
+  "original_cores": {
+   "tolex": "preto 'Comet' (textura com relevo, puxa levemente para marrom-escuro)",
+   "tela": "preta",
+   "frisos": "friso fino claro em volta da tela; sem cantoneiras metálicas; logo 'Bogner' creme no centro"
+  },
+  "original_medidas_mm": "756 x 781 x 356 (29.75 L x 30.75 A x 14 P pol.) — loja (Greentoe)",
+  "original_falantes": "4 x 12\" (2 V30 + 2 G12T-75)",
+  "original_formato": "reta, fechada (meio traseira aberta interna)",
+  "atual_resumo": "Preta, tela preta, cantoneiras cromadas, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "detalhes"
+  ],
+  "explicacao": "Foto de loja: tem friso fino claro e não tem cantoneiras cromadas; a arte é o contrário (sem friso, cantoneiras cromadas). Altura ~3% maior que a arte, irrelevante.",
+  "confianca": "media",
+  "fontes": [
+   "https://equipboard.com/items/bogner-uberkab-4x12-straight-cabinet",
+   "https://www.wwbw.com/Bogner-412STU-210W-4x12-Uberkab-Guitar-Speaker-Cabinet-Comet-Straight-423051-423051000001306.wwbw"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.greentoe.com/product/Bogner_412STU"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/uber_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar detalhes (pôr friso claro, tirar cantoneiras cromadas). Site da Bogner não respondeu."
+ },
+ {
+  "id": "jazz_212",
+  "original": "Roland JC 2x12",
+  "versao_referencia": "Roland JC-120 Jazz Chorus",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "preta com quadriculado prateado fino",
+   "frisos": "faixas de alumínio em cima e embaixo da tela; tachas douradas ao longo de todas as bordas; cantoneiras metálicas pretas; logo Roland no canto superior esquerdo; painel de controle no topo; rodízios"
+  },
+  "original_medidas_mm": "760 x 622 x 280 (com rodízios) — ficha oficial Roland",
+  "original_falantes": "2 x 12\"",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta, sem friso, 760x500x260",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "detalhes"
+  ],
+  "explicacao": "Ficha e foto oficiais: 760 x 622 x 280 com rodízios (a arte tem 500 de altura). Faltam as tachas douradas em volta, as faixas de alumínio acima e abaixo da tela e o quadriculado prateado da tela.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.roland.com/se/products/jc-120/"
+  ],
+  "fonte_fabricante": "https://www.roland.com/global/products/jc-120/specifications/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/jazz_212_1.jpg"
+  ],
+  "corrigido": "Acrescentados detalhes (tachas, faixas de alumínio, quadriculado prateado). Medidas confirmadas na Roland."
+ },
+ {
+  "id": "vault_810",
+  "original": "Ampeg 8x10",
+  "versao_referencia": "Ampeg SVT-810E (Classic/Heritage)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "preta (fio prateado bem discreto)",
+   "frisos": "friso branco fino em volta da tela; logo Ampeg redondo no canto superior esquerdo; plaquinha no canto inferior direito"
+  },
+  "original_medidas_mm": "660 x 1219 x 406 (26 x 48 x 16 pol.) — lojas (SoundPro, AVL); a página da Ampeg não dá medidas",
+  "original_falantes": "8 x 10\"",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela cinza escura mesclada, friso branco, 610x1220x400",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "tela"
+  ],
+  "explicacao": "Foto oficial: a SVT-810E TEM friso branco fino em volta da tela (a triagem dizia que não), então o friso da arte está certo. Falta: tela mais preta (a arte está cinza mesclada clara) e largura 660 (a arte tem 610).",
+  "confianca": "alta",
+  "fontes": [
+   "https://ampeg.com/products/heritage/svt810e",
+   "https://reverb.com/item/491861-ampeg-svt-810e-bass-amplifier-cabinet"
+  ],
+  "fonte_fabricante": "https://ampeg.com/products/classic/cabs.html",
+  "outras_fontes": [
+   "https://soundpro.com/ampeg-svt-810e-8x10-inch-800w-bass-cabinet"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault_810_1.jpg"
+  ],
+  "corrigido": "Triagem errou o friso: a original tem friso branco (manter). Troca passa a ser tamanho (610 -> 660) e tela mais escura."
+ },
+ {
+  "id": "granite_410",
+  "original": "Gallien-Krueger 4x10",
+  "versao_referencia": "Gallien-Krueger 410RBH",
+  "original_cores": {
+   "tolex": "carpete preto",
+   "tela": "grade de aço preta com malha quadrada larga, falantes aparentes, logo GK branco no alto da grade",
+   "frisos": "sem friso; cantoneiras pretas de encaixe (interlocking); dois respiros frontais; rodízios niquelados"
+  },
+  "original_medidas_mm": "610 x 699 x 457 (24 L x 27.5 A x 18 P pol.) — manual oficial RBH",
+  "original_falantes": "4 x 10\" + corneta",
+  "original_formato": "reta, fechada (ported)",
+  "atual_resumo": "Preta, tela de pano escuro mesclado, cantoneiras cromadas, 600x600x400",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Manual oficial: 24 x 27.5 x 18 pol., carpete preto, grade de aço. A arte tem tela de pano mesclado, cantoneiras cromadas e 600 x 600 x 400 (altura e profundidade bem menores).",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.soundhouse.co.jp/en/products/detail/item/39429/",
+   "https://www.sweetwater.com/store/detail/410RBH8",
+   "https://bluebookofguitarvalues.com/products/gallien-krueger-410-rbh-speaker-cabinet"
+  ],
+  "fonte_fabricante": "https://www.gallien-krueger.com/s/RBH-Owners-Manual.pdf",
+  "outras_fontes": [
+   "https://www.gallien-krueger.com/rbh-cabinets"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/granite_410_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/pdf/gk.pdf"
+  ],
+  "corrigido": "Largura corrigida 584 -> 610 (fonte oficial). Tela detalhada (malha quadrada); cantoneiras pretas, não cromadas."
+ },
+ {
+  "id": "silver_112",
+  "original": "Fender Deluxe Reverb 1x12",
+  "versao_referencia": "Fender '65 Deluxe Reverb (reedição)",
+  "original_cores": {
+   "tolex": "preto texturizado",
+   "tela": "prateada (fio prata e preto em trama listrada fina)",
+   "frisos": "SEM friso em volta da tela; painel de controle preto em faixa no topo da frente; cantoneiras metálicas pequenas só em cima; logo Fender script no canto superior esquerdo"
+  },
+  "original_medidas_mm": "622 x 445 x 241 (24.5 x 17.5 x 9.5 pol.) — fender.com, lido no resumo da busca",
+  "original_falantes": "1 x 12\"",
+  "original_formato": "reta, aberta atrás (combo)",
+  "atual_resumo": "Preta, tela prata, friso claro, cantoneiras pretas, 500x460x240",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial (CDN da Fender): sem friso em volta da tela e sem cantoneiras de plástico; tem a faixa do painel preto no topo. A arte tem friso branco, cantoneiras pretas e só 500 de largura (a original tem 622).",
+  "confianca": "media",
+  "fontes": [
+   "https://www.zzounds.com/item--FEN0217400000?siid=510"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://cdn.shopify.com/s/files/1/0712/3510/9086/files/0217400000_amp_frt_001_nr.png (foto oficial no CDN da loja Fender)",
+   "https://www.fender.com/products/65-deluxe-reverb (só o resumo da busca; página bloqueada 403/429)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/silver_112_1.jpg"
+  ],
+  "corrigido": "Triagem errou o friso: a original não tem friso (tirar) nem cantoneiras de plástico; painel preto no topo. Tamanho mantido (622 de largura)."
+ },
+ {
+  "id": "mark_112",
+  "original": "Mesa Boogie Mark 1x12",
+  "versao_referencia": "Mesa/Boogie 1x12 WideBody fechada",
+  "original_cores": {
+   "tolex": "preto (Black Taurus)",
+   "tela": "juta preta trançada",
+   "frisos": "sem friso; sem cantoneiras cromadas (cantos arredondados em tolex, pés pretos); plaqueta MESA Engineering no canto superior esquerdo; alça no topo"
+  },
+  "original_medidas_mm": "572 x 419 x 286 (22.5 L x 16.5 A x 11.25 P pol.) — loja (Humbucker)",
+  "original_falantes": "1 x 12\" (Celestion C90)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta, cantoneiras cromadas, 520x460x280",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "detalhes"
+  ],
+  "explicacao": "Foto de loja: sem cantoneiras cromadas (a arte tem). Mais larga e mais baixa que a arte: 572 x 419 contra 520 x 460.",
+  "confianca": "media",
+  "fontes": [
+   "https://www.humbuckermusic.com/products/mesa-boogie-1x12-widebody-closed-back-cab",
+   "https://fullcompass.com/prod/210957-mesa-boogie-widebody-closed-1x12-1x12-widebody-closed-back-guitar-cabinet-1x12-90w-guitar-speaker-cabinet"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.humbuckermusic.com/products/mesa-boogie-1x12-widebody-closed-back-cab"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/mark_112_1.jpg"
+  ],
+  "corrigido": "Acrescentados detalhes (tirar cantoneiras cromadas). Página da Gibson/Mesa bloqueou (429)."
+ },
+ {
+  "id": "star_412",
+  "original": "Blackstar 4x12",
+  "versao_referencia": "Blackstar HTV-412B MkIII reta (existe a 412A inclinada, mesmas medidas)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "cinza-escura em trama fina",
+   "frisos": "SEM friso claro (só a moldura de tolex preto); sem cantoneiras metálicas; plaqueta Blackstar pequena no centro"
+  },
+  "original_medidas_mm": "~756 x 751 x 358 — lojas (Turra, City Music); a página oficial não dá medidas",
+  "original_falantes": "4 x 12\" (Celestion)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta, friso cinza claro, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: não há friso claro nem cantoneiras; a arte tem friso cinza-claro e cantoneiras pretas. Tamanho bate.",
+  "confianca": "alta",
+  "fontes": [
+   "https://zzounds.com/item--BLCHTV412BMK3",
+   "https://www.adorama.com/blhtv412amk3.html"
+  ],
+  "fonte_fabricante": "https://blackstaramps.com/product/htv-412b-mk-iii/",
+  "outras_fontes": [
+   "https://turramusic.com.au/products/blackstar-htv-412b-mkiii"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/star_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar detalhes: a triagem disse 'friso fino prateado', mas a foto oficial não tem friso."
+ },
+ {
+  "id": "country_412",
+  "original": "Laney 4x12",
+  "versao_referencia": "Laney Supergroup LA412 (a caixa da linha Supergroup, par do LA100SM; réplica da LA412 do Tony Iommi)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "sal e pimenta cinza (preto e branco, bem mais clara que preta)",
+   "frisos": "friso branco em volta da tela; sem cantoneiras metálicas aparentes na frente; plaqueta Laney no centro; rodízios"
+  },
+  "original_medidas_mm": "765 x 765 x 355 (A x L x P) — página oficial Laney",
+  "original_falantes": "4 x 12\" (Celestion G12H 75Hz)",
+  "original_formato": "inclinada (single angle), fechada",
+  "atual_resumo": "Preta, tela preta, friso cinza claro, 760x760x360, frente reta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato",
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "A Laney da linha Supergroup é a LA412, não a GS412IA. Página e fotos oficiais: inclinada, tela sal e pimenta cinza, friso branco, sem cantoneiras aparentes, 765 x 765 x 355. A arte é reta, tem tela quase preta e cantoneiras pretas. Tamanho bate.",
+  "confianca": "alta",
+  "fontes": [
+   "https://pmtonline.co.uk/laney-gs412ia-4x12-angled-guitar-cabinet",
+   "https://www.gak.co.uk/en/laney-lionheart-l412/57238"
+  ],
+  "fonte_fabricante": "https://www.laney.co.uk/amps/guitar/supergroup/la412",
+  "outras_fontes": [
+   "https://www.laney.co.uk/amps/guitar/supergroup/la100sm"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/country_412_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/country_412_2.jpg"
+  ],
+  "corrigido": "Referência trocada de GS412IA para LA412 (Supergroup). Medidas 715 -> 765x765x355. Acrescentadas tela (sal e pimenta cinza) e detalhes (sem cantoneiras). Confiança -> alta."
+ },
+ {
+  "id": "vier_412",
+  "original": "Diezel 4x12",
+  "versao_referencia": "Diezel 412RV (Rear-Loaded, V30)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "preta",
+   "frisos": "sem friso; cantoneiras cromadas pequenas; logo Diezel branco no centro"
+  },
+  "original_medidas_mm": "~737 x 756 x 362 (29 x 29.75 x 14.25 pol.) — lojas (WWBW, United Music); a página oficial não dá medidas",
+  "original_falantes": "4 x 12\" (Celestion V30)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta, cantoneiras cromadas, 800x780x380",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho"
+  ],
+  "explicacao": "Foto oficial bate em cor, tela e cantoneiras cromadas. A arte está maior que as medidas de loja (800 x 780 x 380 contra ~737 x 756 x 362; largura +8%).",
+  "confianca": "alta",
+  "fontes": [
+   "https://thomann.co.uk/diezel_4x12_rear_loaded.htm"
+  ],
+  "fonte_fabricante": "https://www.diezelamplification.com/cabinets/",
+  "outras_fontes": [
+   "https://www.wwbw.com/Diezel-412RV-280W-4x12-Rear-Loaded-Guitar-Amplifier-Cabinet-J41311-J41311000001000.wwbw"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vier_412_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar tamanho; a medida 745x745x365 da triagem não tinha fonte, a de loja é ~737x756x362."
+ },
+ {
+  "id": "hi_412",
+  "original": "Hiwatt 4x12",
+  "versao_referencia": "Hiwatt SE4123F (Custom Shop, Fane)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos arredondados em tolex",
+   "tela": "cinza-clara/prateada em trama (bem clara)",
+   "frisos": "friso branco em volta da tela; sem cantoneiras metálicas; plaqueta HIWATT preta com letras brancas"
+  },
+  "original_medidas_mm": "760 x 775 x 350 (L x A x P) — catálogo oficial Hiwatt 2019",
+  "original_falantes": "4 x 12\" (Fane)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela cinza mesclada, sem friso, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Catálogo oficial: tela cinza-clara com friso branco em volta. A arte não tem friso e a tela é mesclada mais escura. Tamanho bate.",
+  "confianca": "alta",
+  "fontes": [
+   "https://britampco.co.uk/hiwatt/shop/details/HW-SE412F-4X12CAB-F75-12-BLACK.html",
+   "https://bluebookofguitarvalues.com/guitar-values/guitar-amplifiers/manufacturer/hiwatt/category/hiwatt-speaker-cabinets/models"
+  ],
+  "fonte_fabricante": "https://web.archive.org/web/2024id_/http://hiwatt.com/static/media/Hiwatt%20Product%20Catalogue%202019.9f42aa09ff49ff44231e.pdf",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/pdf/hw.pdf"
+  ],
+  "corrigido": "Veredito ok -> trocar: falta o friso branco e a tela é mais clara. Medidas oficiais 760x775x350 (a triagem tinha 760x760x330)."
+ },
+ {
+  "id": "rg_412",
+  "original": "Randall 4x12",
+  "versao_referencia": "Randall RG412",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "grade de metal expandido preta em losangos grandes (não é chapa perfurada), falantes aparentes",
+   "frisos": "sem friso; cantoneiras pretas; logo Randall prateado no centro; rodízios"
+  },
+  "original_medidas_mm": "686 x 696 x 356 (27.01 x 27.40 x 14.02 pol.) — página oficial Randall (arquivada)",
+  "original_falantes": "4 x 12\"",
+  "original_formato": "reta, fechada (ported na frente)",
+  "atual_resumo": "Preta, tela de pano preto, sem friso, 760x760x360",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "tamanho"
+  ],
+  "explicacao": "Página e foto oficiais: grade de metal expandido em losango com os 4 falantes visíveis; caixa menor (686 x 696). A arte tem pano preto e 760 x 760.",
+  "confianca": "alta",
+  "fontes": [
+   "https://zzounds.com/item--RANRG412",
+   "https://bluebookofguitarvalues.com/products/randall-rg412-speaker-cabinet"
+  ],
+  "fonte_fabricante": "https://web.archive.org/web/20210506192626/https://www.randallamplifiers.com/product/rg412-cabinet/",
+  "outras_fontes": [
+   "https://zzounds.com/item--RANRG412"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/rg_412_1.jpg"
+  ],
+  "corrigido": "Tela corrigida: metal expandido em losango, não chapa perfurada. Medidas confirmadas pela Randall."
+ },
+ {
+  "id": "hart_410",
+  "original": "Hartke 4x10",
+  "versao_referencia": "Hartke 410XL (V2)",
+  "original_cores": {
+   "tolex": "vinil preto texturizado (o 410XL antigo era carpete)",
+   "tela": "chapa de aço preta perfurada, com os 4 cones de alumínio prateados aparecendo",
+   "frisos": "sem friso; cantoneiras pretas de plástico reforçadas; plaqueta 'Hartke 410XL' no alto"
+  },
+  "original_medidas_mm": "635 x 622 x 381 (25 x 24.5 x 15 pol.) — página oficial Hartke (a ordem dos eixos não é dita; a foto parece quase quadrada)",
+  "original_falantes": "4 x 10\" (cone de alumínio)",
+  "original_formato": "reta, fechada (dupla câmara)",
+  "atual_resumo": "Preta, tela de pano cinza clara mesclada, cantoneiras cromadas, 600x620x400",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Página e foto oficiais: grade de aço perfurada preta com os cones prateados à mostra e cantoneiras pretas de plástico. A arte tem pano cinza-claro e cantoneiras cromadas. Tamanho próximo.",
+  "confianca": "alta",
+  "fontes": [
+   "https://zzounds.com/item--HTKHCX410V2",
+   "https://www.long-mcquade.com/192412/Guitars/Bass-Amps/Samson/410XL-V2-400w-4x10-Bass-Cab.htm"
+  ],
+  "fonte_fabricante": "https://www.hartke.com/products/cabinets/xl-cabinets/410xl-2/",
+  "outras_fontes": [
+   "https://www.long-mcquade.com/192412/Guitars/Bass-Amps/Samson/410XL-V2-400w-4x10-Bass-Cab.htm"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/hart_410_1.jpg"
+  ],
+  "corrigido": "Acrescentados detalhes (cantoneiras pretas, não cromadas). Profundidade oficial 15 pol. = 381 (a triagem tinha 389)."
+ },
+ {
+  "id": "glass_410",
+  "original": "Darkglass 4x10",
+  "versao_referencia": "Darkglass DG410NE (atual da linha N)",
+  "original_cores": {
+   "tolex": "CINZA-PRATA com textura de fibra de carbono (não é preto)",
+   "tela": "xadrez fino preto e branco (aparência cinza média)",
+   "frisos": "sem friso; cantoneiras pretas de plástico; logo redondo Darkglass no canto superior direito da tela"
+  },
+  "original_medidas_mm": "610 x 634 x 430 (L x A x P) — lojas (Kirstein, Turra); a página oficial não dá medidas",
+  "original_falantes": "4 x 10\" (Eminence neo) + corneta",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta fina, cantoneiras cromadas, 600x600x400",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "couro",
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Foto oficial: tolex cinza claro tipo fibra de carbono, tela xadrez preto e branco, cantoneiras pretas. A arte é toda preta com cantoneiras cromadas. Tamanho próximo (altura 600 -> ~634).",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.kirstein.de/en/Bass-Cabinets/Darkglass-DG410N-Cabinet.html",
+   "https://www.bonedo.de/artikel/darkglass-dg410n-test/"
+  ],
+  "fonte_fabricante": "https://www.darkglass.com/products.json?limit=250 (catálogo oficial, produto dg410ne)",
+  "outras_fontes": [
+   "https://www.kirstein.de/en/Bass-Cabinets/Darkglass-DG410N-Cabinet.html"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/glass_410_1.jpg"
+  ],
+  "corrigido": "Veredito ok -> trocar: tolex é cinza-prata (não preto), tela é xadrez preto/branco (não preta), cantoneiras pretas (não cromadas)."
+ },
+ {
+  "id": "solar_412",
+  "original": "Sunn 4x12",
+  "versao_referencia": "Sunn 412S (anos 70, do Model T)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "prateada com brilho (silver sparkle); nas de meados dos 70 passou a preta",
+   "frisos": "sem informação confiável"
+  },
+  "original_medidas_mm": "sem ficha oficial; ~760 x 760-800 x 360 (padrão 4x12)",
+  "original_falantes": "4 x 12\" (Sunn 1216G)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela prateada/cinza, friso claro, 760x800x380",
+  "veredito": "ok",
+  "o_que_trocar": [],
+  "explicacao": "Não conferido nesta rodada: é modelo dos anos 70 sem página de fabricante (Sunn acabou) e o limite de buscas acabou antes de achar fotos confiáveis. Fica como na triagem (de memória).",
+  "confianca": "baixa",
+  "fontes": [
+   "https://mmguitarbar.com/products/1973-sunn-model-t-vintage-tube-amp-1st-gen-serviced-retubed-w-412s-speaker-cab",
+   "https://www.talkbass.com/threads/vintage-sunn-o.379940/"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [],
+  "fotos": [],
+  "corrigido": "Nada; segue sem confirmação."
+ },
+ {
+  "id": "fliptop_115",
+  "original": "Ampeg B-15 1x15",
+  "versao_referencia": "Ampeg B-15N Portaflex (1960-67, blue check)",
+  "original_cores": {
+   "tolex": "blue check (xadrez azul-marinho)",
+   "tela": "cinza/prata",
+   "frisos": "sem friso marcado"
+  },
+  "original_medidas_mm": "~533 x 533-670 x 356 (só caixa; fonte de anúncio)",
+  "original_falantes": "1 x 15\"",
+  "original_formato": "reta, fechada (bass reflex, amp vira dentro)",
+  "atual_resumo": "Tolex azul-acinzentado liso, tela cinza clara, friso claro, 580x660x400",
+  "veredito": "ok",
+  "o_que_trocar": [],
+  "explicacao": "Não conferido nesta rodada: B-15N dos anos 60 sem página atual da Ampeg; o limite de buscas acabou antes de achar foto confiável. Fica como na triagem (de memória).",
+  "confianca": "baixa",
+  "fontes": [
+   "https://reverb.com/ie/item/98727235-ampeg-b-15-n-1966-w-altec-speaker-serviced-blue-checker",
+   "https://bluebookofguitarvalues.com/products/ampeg-b-15x-portaflex"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [],
+  "fotos": [],
+  "corrigido": "Nada; segue sem confirmação."
+ },
+ {
+  "id": "bassline_215",
+  "original": "Fender Bassman 2x15",
+  "versao_referencia": "Fender Bassman 2x15 silverface (1968-71)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "prata/azulada (silver-blue)",
+   "frisos": "moldura de alumínio em volta da tela"
+  },
+  "original_medidas_mm": "749 x 1016 x 292",
+  "original_falantes": "2 x 15\"",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela cinza escura mesclada, friso branco, 760x1070x400",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "tela"
+  ],
+  "explicacao": "Não conferido nesta rodada: Bassman 2x15 silverface sem página da Fender (e o site da Fender bloqueou acesso); limite de buscas acabou. Fica como na triagem (de memória).",
+  "confianca": "baixa",
+  "fontes": [
+   "https://be.steelguitarforum.com/viewtopic.php?p=529042",
+   "https://reverb.com/item/84758247-1969-fender-bassman-head-with-2x15-cabinet"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [],
+  "fotos": [],
+  "corrigido": "Nada; segue sem confirmação."
+ },
+ {
+  "id": "solar_215",
+  "original": "Sunn 2x15",
+  "versao_referencia": "Sunn 200S 2x15 (anos 60, corneta dobrada)",
+  "original_cores": {
+   "tolex": "preto",
+   "tela": "prateada com brilho",
+   "frisos": "sem informação confiável"
+  },
+  "original_medidas_mm": "610 x 1016 x 381",
+  "original_falantes": "2 x 15\" (JBL D140)",
+  "original_formato": "reta, fechada (corneta dobrada / carga traseira)",
+  "atual_resumo": "Preta, tela prateada/cinza, friso claro, 740x1000x420",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho"
+  ],
+  "explicacao": "Não conferido nesta rodada: Sunn 200S dos anos 60 sem página de fabricante; limite de buscas acabou. Fica como na triagem (de memória).",
+  "confianca": "baixa",
+  "fontes": [
+   "https://www.talkbass.com/threads/nad-sunn-200s.1566578/",
+   "https://www.chicagomusicexchange.com/en-ca/products/sunn-200s-60w-single-channel-all-tube-bass-amp-head-2440933"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [],
+  "fotos": [],
+  "corrigido": "Nada; segue sem confirmação."
+ },
+ {
+  "id": "glass_412",
+  "original": "Darkglass 4x12",
+  "versao_referencia": "não existe 4x12 Darkglass: o catálogo oficial só tem DG112, DG210, DG212 e DG410; referência visual = DG410NE",
+  "original_cores": {
+   "tolex": "cinza-prata com textura de fibra de carbono (como a DG410NE)",
+   "tela": "xadrez fino preto e branco",
+   "frisos": "sem friso; cantoneiras pretas de plástico; logo redondo no canto superior direito"
+  },
+  "original_medidas_mm": "sem original; 4x12 padrão ~760 x 760 x 360",
+  "original_falantes": "4 x 12\" (sem original confirmado)",
+  "original_formato": "reta, fechada",
+  "atual_resumo": "Preta, tela preta, friso cinza claro, 760x760x380",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "couro",
+   "tela",
+   "detalhes"
+  ],
+  "explicacao": "Sem original. Se a ideia é seguir o visual da linha Darkglass, a foto oficial da DG410NE mostra tolex cinza-prata, tela xadrez preto/branco e sem friso; a arte é toda preta com friso cinza-claro.",
+  "confianca": "media",
+  "fontes": [
+   "https://equipboard.com/items/darkglass-electronics-darkglass-dges412-bass-cabinet",
+   "https://www.zzounds.com/item--DAR212NE"
+  ],
+  "fonte_fabricante": "https://www.darkglass.com/products.json?limit=250 (catálogo oficial: sem 4x12)",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/glass_410_1.jpg"
+  ],
+  "corrigido": "Confirmado no catálogo oficial que não há 4x12. Veredito ok -> trocar para seguir o visual real da linha (cinza-prata, tela xadrez, sem friso)."
+ }
+]

@@ -1,0 +1,1238 @@
+[
+ {
+  "id": "starfruit_rock",
+  "nome_atual": "Starfruit Rock",
+  "original": "Rockman X100",
+  "versao_referencia": "MXR MX100 Rockman X100 (pedal de 2025; o original de 1984 era amplificador de fone de cinto)",
+  "original_cor_caixa": "preto, com painel superior azul-celeste (onde ficam os deslizantes e botões)",
+  "original_cor_letras": "azul-celeste (ROCKMAN X100) e brancas (MXR, OUTPUT/INPUT/CTRL); no painel azul as letras são pretas/brancas",
+  "original_medidas_mm": "caixa MXR padrão, aprox. 64 x 111 x 50 (Dunlop não publica medidas; pela foto do manual)",
+  "original_botoes": [
+   "VOLUME (deslizante)",
+   "INPUT GAIN (deslizante)"
+  ],
+  "original_chaves_e_extras": "Botão MODE com 4 LEDs (DIST vermelho, EDGE amarelo, CLN1 verde, CLN2 azul); botão CHORUS com LED vermelho; LED de ligado; pisante; entrada CTRL na lateral; chave interna mono/estéreo",
+  "atual_resumo": "Caixa 94x120 amarela, 2 botões giratórios MODO/VOLUME, tema carambola",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O pedal MX100 é preto com um painel azul-celeste no alto: 2 deslizantes (VOLUME, INPUT GAIN), botão MODE com 4 LEDs e botão CHORUS. É uma caixa MXR padrão, estreita, e não a larga. Carambola é amarela, então o tema muda para um nome preto.",
+  "tema_proposto": "Hematite Rock",
+  "confianca": "alta",
+  "fontes": [
+   "https://jimdunlop.com/content/manuals/MX100.pdf",
+   "https://jimdunlop.com/mxr-rockman-x100-analog-tone-processor"
+  ],
+  "fonte_fabricante": "https://jimdunlop.com/content/manuals/MX100.pdf",
+  "outras_fontes": [
+   "https://jimdunlop.com/mxr-rockman-x100-analog-tone-processor"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/starfruit_rock_1.jpg"
+  ],
+  "corrigido": [
+   "caixa é MXR padrão estreita (não a larga de 92 x 120)",
+   "acrescentado o painel azul-celeste e os 4 LEDs de modo",
+   "tema: Damson (roxo-escuro) não é a cor; trocado por Hematite Rock (preto)"
+  ]
+ },
+ {
+  "id": "tamarind_amp",
+  "nome_atual": "Tamarind Amp",
+  "original": "Tech 21 SansAmp",
+  "versao_referencia": "Tech 21 SansAmp GT2",
+  "original_cor_caixa": "preto texturizado (pintura martelada/salpicada)",
+  "original_cor_letras": "amarelas",
+  "original_medidas_mm": "95 x 121 x 51 (3,75 x 4,75 x 2 pol., fabricante)",
+  "original_botoes": [
+   "LEVEL",
+   "HIGH",
+   "LOW",
+   "DRIVE"
+  ],
+  "original_chaves_e_extras": "3 chaves deslizantes de 3 posições: MIC (Classic/Center/Off Axis), MOD (Clean/Hi Gain/Hot Wired), AMP (Tweed/British/California); LED vermelho; pisante; botões pretos com risco amarelo",
+  "atual_resumo": "Caixa 94x120 marrom, 3 botões NÍVEL/AGUDO/DRIVE, tema tamarindo",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O GT2 é preto texturizado com letras amarelas (não prateado), com 4 botões e 3 chaves deslizantes de 3 posições. Tamarindo é marrom, então o tema muda para um nome preto.",
+  "tema_proposto": "Basalt Amp",
+  "confianca": "alta",
+  "fontes": [
+   "https://tech21nyc.com/?p=1100"
+  ],
+  "fonte_fabricante": "https://tech21nyc.com/?p=1100",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/tamarind_amp_1.jpg"
+  ],
+  "corrigido": [
+   "cor da caixa: preto texturizado, não prateado",
+   "cor das letras: amarelas, não pretas",
+   "tema: Diamond (incolor) trocado por Basalt Amp (preto)",
+   "chaves são deslizantes"
+  ]
+ },
+ {
+  "id": "blackcurrant_bass",
+  "nome_atual": "Blackcurrant Bass",
+  "original": "Darkglass B7K",
+  "versao_referencia": "Darkglass Microtubes B7K Ultra",
+  "original_cor_caixa": "tampo preto com as laterais da caixa brancas/prateadas (B7K Ultra V2)",
+  "original_cor_letras": "brancas",
+  "original_medidas_mm": "125 de largura x 96 de comprimento x 57 de altura (fabricante) — caixa deitada, mais larga que comprida",
+  "original_botoes": [
+   "MASTER",
+   "BLEND",
+   "LEVEL",
+   "DRIVE",
+   "BASS",
+   "LO MIDS",
+   "HI MIDS",
+   "TREBLE"
+  ],
+  "original_chaves_e_extras": "Mini-chaves ATTACK e GRUNT (3 posições) e seletores LO MIDS (250/500/1k) e HI MIDS (750/1,5k/3k); 2 pisantes (DISTORTION e BYPASS); LED; saída XLR, fone, AUX, USB; chaves traseiras Ground Lift e Cab Sim",
+  "atual_resumo": "Caixa 94x120 preta, 3 botões NÍVEL/DRIVE/AGUDO, tema groselha-preta",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "botoes",
+   "chaves",
+   "detalhes"
+  ],
+  "explicacao": "O preto serve. O B7K Ultra V2 é uma caixa deitada de 125 x 96 mm, com 8 botões em duas fileiras, 4 mini-chaves e 2 pisantes.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.darkglass.com/products/b7uv2a"
+  ],
+  "fonte_fabricante": "https://www.darkglass.com/products/b7uv2a",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/blackcurrant_bass_1.jpg"
+  ],
+  "corrigido": [
+   "medidas: 125 x 96 x 57 (caixa deitada), não 120 x 95 x 60",
+   "acrescentados tamanho e 2 pisantes no que trocar",
+   "cor: laterais brancas/prateadas"
+  ]
+ },
+ {
+  "id": "mulberry_omega",
+  "nome_atual": "Mulberry Omega",
+  "original": "Darkglass Alpha Omega",
+  "versao_referencia": "Darkglass Alpha·Omega",
+  "original_cor_caixa": "azul-acinzentado (azul ardósia)",
+  "original_cor_letras": "brancas",
+  "original_medidas_mm": "94 x 120 x 46 (fabricante)",
+  "original_botoes": [
+   "BLEND",
+   "LEVEL",
+   "DRIVE",
+   "MOD",
+   "BASS",
+   "MID",
+   "TREBLE"
+  ],
+  "original_chaves_e_extras": "Mini-chaves GROWL e BITE; LED vermelho; 1 pisante; saídas OUTPUT, DIRECT OUTPUT (XLR), PARALLEL OUTPUT; GROUND LIFT; desenho de triângulo e círculo em linhas brancas",
+  "atual_resumo": "Caixa 94x120 roxo-escuro quase preto, 3 botões NÍVEL/DRIVE/AGUDO, tema amora",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O Alpha·Omega é azul-acinzentado, não preto. Tem 7 botões (BLEND, LEVEL, DRIVE em cima; MOD, BASS, MID, TREBLE embaixo) e as mini-chaves Growl e Bite. A caixa 94 x 120 já bate. Amora é roxo-escuro, então o tema muda.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.darkglass.com/creation/alpha-omega/"
+  ],
+  "tema_proposto": "Labradorite Omega",
+  "fonte_fabricante": "https://www.darkglass.com/creation/alpha-omega/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/mulberry_omega_1.jpg"
+  ],
+  "corrigido": [
+   "cor da caixa: azul-acinzentado, não preto",
+   "veredito agora inclui cor e tema",
+   "botões: não há MASTER; são 7 (BLEND, LEVEL, DRIVE, MOD, BASS, MID, TREBLE)",
+   "medidas do fabricante 94 x 120 x 46",
+   "tema novo: Labradorite Omega"
+  ]
+ },
+ {
+  "id": "guava_precision",
+  "nome_atual": "Guava Precision",
+  "original": "Horizon Devices Precision Drive",
+  "versao_referencia": "Horizon Devices Precision Drive",
+  "original_cor_caixa": "preto/cinza-chumbo com brilho (sparkle)",
+  "original_cor_letras": "azuis",
+  "original_medidas_mm": "aprox. 60 x 112 (caixa estreita tipo 1590B; o fabricante não publica medidas)",
+  "original_botoes": [
+   "VOL",
+   "BRIGHT",
+   "ATTACK",
+   "DRIVE",
+   "GATE (trimpot pequeno no centro)"
+  ],
+  "original_chaves_e_extras": "LED azul do GATE; LED azul de ligado; pisante; sem chave",
+  "atual_resumo": "Caixa 94x120 rosa-goiaba, 3 botões VOLUME/DRIVE/ATAQUE, tema goiaba",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "tema_nome"
+  ],
+  "explicacao": "O Precision Drive é preto com letras azuis, numa caixa estreita. Tem 4 botões (VOL, BRIGHT, ATTACK, DRIVE) e um GATE pequeno no centro com LED azul. BRIGHT é botão, não chave. Goiaba é rosa, então o tema muda.",
+  "tema_proposto": "Spinel Precision",
+  "confianca": "media",
+  "fontes": [
+   "https://horizondevices.com/products/precision-drive"
+  ],
+  "fonte_fabricante": "https://horizondevices.com/products/precision-drive",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/guava_precision_1.jpg"
+  ],
+  "corrigido": [
+   "BRIGHT é botão giratório, não chave",
+   "GATE é um trimpot pequeno com LED azul",
+   "letras azuis, não brancas",
+   "ATTACK não aparece como chave de 6 posições na foto"
+  ]
+ },
+ {
+  "id": "peach_glory",
+  "nome_atual": "Peach Glory",
+  "original": "JHS Morning Glory",
+  "versao_referencia": "JHS Morning Glory V4",
+  "original_cor_caixa": "dourado envelhecido (latão escovado)",
+  "original_cor_letras": "pretas",
+  "original_medidas_mm": "66 x 122 x 41 (2,6 x 4,8 x 1,6 pol., fabricante)",
+  "original_botoes": [
+   "VOLUME",
+   "DRIVE",
+   "TONE"
+  ],
+  "original_chaves_e_extras": "Mini-chave GAIN no tampo; chave HI-CUT na lateral; LED azul (fica vermelho com o boost do Red Remote); pisante; botões brancos",
+  "atual_resumo": "Caixa 94x120 pêssego, 3 botões brancos VOLUME/DRIVE/TOM, tema pêssego",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "A Morning Glory V4 é dourada com letras pretas e botões brancos, numa caixa mais estreita, com a mini-chave GAIN. Pêssego não tem esse tom, então o tema muda.",
+  "tema_proposto": "Amber Glory",
+  "confianca": "alta",
+  "fontes": [
+   "https://jhspedals.info/products/morning-glory"
+  ],
+  "fonte_fabricante": "https://jhspedals.info/products/morning-glory",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/peach_glory_1.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante: 66 x 122 x 41",
+   "HI-CUT fica na lateral; LED azul"
+  ]
+ },
+ {
+  "id": "raspberry_drive",
+  "nome_atual": "Raspberry Drive",
+  "original": "JHS Andy Timmons",
+  "versao_referencia": "JHS AT+ (Andy Timmons, V2)",
+  "original_cor_caixa": "vermelho",
+  "original_cor_letras": "pretas",
+  "original_medidas_mm": "56 x 122 x 41 (2,2 x 4,8 x 1,6 pol., fabricante)",
+  "original_botoes": [
+   "VOLUME",
+   "DRIVE",
+   "EQ",
+   "AIR",
+   "BOOST"
+  ],
+  "original_chaves_e_extras": "Mini-chave de 3 posições (25 W / 50 W / 100 W); 2 pisantes (drive e boost) com 2 LEDs vermelhos; logo @ no centro",
+  "atual_resumo": "Caixa 94x120 vermelho-framboesa, 3 botões VOLUME/DRIVE/TOM, tema framboesa",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "botoes",
+   "chaves",
+   "detalhes"
+  ],
+  "explicacao": "O vermelho bate. O AT+ é estreito (56 mm), tem 5 botões (VOLUME, DRIVE, EQ, AIR, BOOST), a chave de 25/50/100 W e 2 pisantes com 2 LEDs.",
+  "confianca": "alta",
+  "fontes": [
+   "https://jhspedals.info/products/at"
+  ],
+  "fonte_fabricante": "https://jhspedals.info/products/at",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/raspberry_drive_1.jpg"
+  ],
+  "corrigido": [
+   "botões são VOLUME, DRIVE, EQ, AIR e BOOST (não há TREBLE/BASS)",
+   "medidas: 56 x 122 x 41, não 94 x 119",
+   "acrescentados tamanho e 2 pisantes no que trocar"
+  ]
+ },
+ {
+  "id": "honeydew_drive",
+  "nome_atual": "Honeydew Drive",
+  "original": "Paul Cochrane Timmy",
+  "versao_referencia": "Paul Cochrane Timmy",
+  "original_cor_caixa": "varia por lote (azul-escuro com brilho, dourado, verde \"Surf Green\" etc.)",
+  "original_cor_letras": "brancas (no lote azul da foto)",
+  "original_medidas_mm": "aprox. 60 x 112 (caixa 1590B; Paul Cochrane não tem página oficial com medidas)",
+  "original_botoes": [
+   "VOLUME",
+   "GAIN",
+   "BASS",
+   "TREBLE"
+  ],
+  "original_chaves_e_extras": "Mini-chave de clipagem no centro; LED; pisante; DIP interno",
+  "atual_resumo": "Caixa 94x120 verde-melão claro, 3 botões VOLUME/GANHO/AGUDO, tema melão",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "A cor muda de lote a lote (há um lote verde-claro \"Surf Green\" na Humbucker Music), então o verde-melão passa. A caixa é estreita, com 4 botões do mesmo tamanho e a mini-chave no centro.",
+  "confianca": "media",
+  "fontes": [
+   "https://www.humbuckermusic.com/products/pacopatipe"
+  ],
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.humbuckermusic.com/products/pacopatipe"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/honeydew_drive_1.jpg"
+  ],
+  "corrigido": [
+   "os 4 botões têm o mesmo tamanho (não há BASS/TREBLE pequenos)",
+   "letras brancas, não pretas, no lote visto"
+  ]
+ },
+ {
+  "id": "pineapple_king",
+  "nome_atual": "Pineapple King",
+  "original": "Analogman King of Tone",
+  "versao_referencia": "Analogman King of Tone",
+  "original_cor_caixa": "roxo (roxo-vinho)",
+  "original_cor_letras": "douradas/amarelas (rosa dos ventos, KING of TONE e ANALOG.MAN)",
+  "original_medidas_mm": "121 de largura x 95 de comprimento x 38 de altura (4,75 x 3,75 x 1,5 pol., fabricante) — caixa deitada",
+  "original_botoes": [
+   "Fileira de cima: VOLUME, DRIVE (lado amarelo), VOLUME, DRIVE (lado vermelho)",
+   "Embaixo: TONE, TONE"
+  ],
+  "original_chaves_e_extras": "2 pisantes; 2 LEDs (amarelo à esquerda, vermelho à direita); DIP interno de 4 posições (Clean/OD/DIST por lado); trimpot TREBLE interno",
+  "atual_resumo": "Caixa 94x120 amarela, 3 botões e 1 pisante, tema abacaxi",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "detalhes",
+   "tema_nome"
+  ],
+  "explicacao": "O King of Tone é roxo com letras douradas, numa caixa deitada (121 x 95). Tem 6 botões (4 em cima, 2 TONE embaixo), 2 pisantes e LEDs amarelo e vermelho. Abacaxi é amarelo, então o tema muda.",
+  "tema_proposto": "Amethyst King",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.analogman.com/kingtone.htm"
+  ],
+  "fonte_fabricante": "https://www.analogman.com/kingtone.htm",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/pineapple_king_1.jpg"
+  ],
+  "corrigido": [
+   "letras douradas, não brancas/prata",
+   "caixa deitada 121 x 95 x 38; tamanho entra no que trocar",
+   "disposição dos 6 botões: 4 em cima, 2 TONE embaixo",
+   "LEDs amarelo e vermelho"
+  ]
+ },
+ {
+  "id": "cashew_boost",
+  "nome_atual": "Cashew Boost",
+  "original": "Xotic EP Booster",
+  "versao_referencia": "Xotic EP Booster",
+  "original_cor_caixa": "tampo preto com moldura/laterais cromadas (prateadas)",
+  "original_cor_letras": "brancas/prateadas",
+  "original_medidas_mm": "38 x 89 x 38 (1,5 x 3,5 x 1,5 pol., fabricante)",
+  "original_botoes": [
+   "BOOST (único botão, transparente)"
+  ],
+  "original_chaves_e_extras": "DIP interno (Default/Unity/Vintage); LED azul; pisante",
+  "atual_resumo": "Caixa 94x120 bege, 2 botões REFORÇO/VOLUME, tema caju",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "tema_nome"
+  ],
+  "explicacao": "O EP Booster é mini (38 x 89 mm), com tampo preto, moldura cromada, letras brancas e um botão transparente só. Caju é bege/vermelho, então o tema muda para um nome preto metálico.",
+  "tema_proposto": "Magnetite Boost",
+  "confianca": "alta",
+  "fontes": [
+   "https://xotic.us/effects/ep-booster/"
+  ],
+  "fonte_fabricante": "https://xotic.us/effects/ep-booster/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/cashew_boost_1.jpg"
+  ],
+  "corrigido": [
+   "tampo é preto (só a moldura é cromada), letras brancas",
+   "medidas do fabricante 38 x 89 x 38",
+   "tema: Quartz (branco) trocado por Magnetite Boost (preto metálico)",
+   "LED azul, botão transparente"
+  ]
+ },
+ {
+  "id": "papaya_grind",
+  "nome_atual": "Papaya Grind",
+  "original": "Fortin Grind",
+  "versao_referencia": "Fortin Grind (BlackOut)",
+  "original_cor_caixa": "preto fosco",
+  "original_cor_letras": "preto brilhante sobre preto fosco (grafismos ornamentados)",
+  "original_medidas_mm": "112 x 60 x 27 (fabricante)",
+  "original_botoes": [
+   "LEVEL (único botão, ponteiro branco)"
+  ],
+  "original_chaves_e_extras": "Mini chave deslizante de polaridade ao lado do jack remoto lateral; LED no centro; pisante",
+  "atual_resumo": "Caixa 94x120 laranja-mamão, 3 botões VOLUME/GANHO/AGUDO, tema mamão",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O Grind é todo preto (letras em preto brilhante), estreito, com um botão só e o jack remoto lateral com chave de polaridade. Mamão é laranja, então o tema muda.",
+  "tema_proposto": "Tourmaline Grind",
+  "confianca": "alta",
+  "fontes": [
+   "https://fortinamps.com/products/fortin-grind-blackout"
+  ],
+  "fonte_fabricante": "https://fortinamps.com/products/fortin-grind-blackout",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/papaya_grind_1.jpg"
+  ],
+  "corrigido": [
+   "letras são preto brilhante, não brancas",
+   "a chave é de polaridade do jack remoto, não momentâneo/trava"
+  ]
+ },
+ {
+  "id": "persimmon_33",
+  "nome_atual": "Persimmon 33",
+  "original": "Fortin 33",
+  "versao_referencia": "Fortin 33 (Fredrik Thordendal)",
+  "original_cor_caixa": "preto fosco",
+  "original_cor_letras": "pretas brilhantes",
+  "original_medidas_mm": "112 x 60 x 27 (fabricante)",
+  "original_botoes": [
+   "LEVEL (único botão)"
+  ],
+  "original_chaves_e_extras": "Chave lateral de polaridade e jack remoto de canal; LED no centro; pisante; \"33\" grande em preto brilhante",
+  "atual_resumo": "Caixa 94x120 laranja-caqui, 2 botões VOLUME/GANHO, tema caqui",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "tema_nome"
+  ],
+  "explicacao": "O 33 é todo preto (letras em preto brilhante sobre preto fosco), estreito, com um botão só. Caqui é laranja, então o tema muda.",
+  "tema_proposto": "Sapote 33",
+  "confianca": "alta",
+  "fontes": [
+   "https://fortinamps.com/products/fortin-33-fredrik-thordendal-signature-pedal"
+  ],
+  "fonte_fabricante": "https://fortinamps.com/products/fortin-33-fredrik-thordendal-signature-pedal",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/persimmon_33_1.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante 112 x 60 x 27",
+   "acrescentados jack remoto e chave de polaridade"
+  ]
+ },
+ {
+  "id": "strawberry_5150",
+  "nome_atual": "Strawberry 5150",
+  "original": "EVH 5150 Overdrive",
+  "versao_referencia": "MXR EVH 5150 Overdrive",
+  "original_cor_caixa": "preto/cinza-escuro escovado com listras pretas (estilo EVH)",
+  "original_cor_letras": "brancas; logo EVH em oval branco",
+  "original_medidas_mm": "122 de largura x 91 de comprimento x 52 de altura (Thomann; Dunlop não publica) — caixa deitada",
+  "original_botoes": [
+   "OUTPUT",
+   "BASS",
+   "MID",
+   "TREBLE",
+   "GAIN",
+   "GATE (pequeno, à esquerda)"
+  ],
+  "original_chaves_e_extras": "Botão BOOST com LED (à direita); LED; pisante",
+  "atual_resumo": "Caixa 94x120 vermelho-morango, 3 botões SAÍDA/AGUDO/GANHO, tema morango",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O 5150 OD é preto com listras pretas, numa caixa deitada (122 x 91). Tem 5 botões em fila (OUTPUT, BASS, MID, TREBLE, GAIN), o GATE pequeno à esquerda e o botão BOOST à direita. Morango é vermelho, então o tema muda.",
+  "tema_proposto": "Jet 5150",
+  "confianca": "media",
+  "fontes": [
+   "https://www.jimdunlop.com/mxr-evh-5150-overdrive/"
+  ],
+  "fonte_fabricante": "https://www.jimdunlop.com/mxr-evh-5150-overdrive/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/strawberry_5150_1.jpg"
+  ],
+  "corrigido": [
+   "caixa deitada 122 x 91 (tamanho entra no que trocar)",
+   "ordem dos botões confirmada; GATE pequeno à esquerda"
+  ]
+ },
+ {
+  "id": "gooseberry_g3",
+  "nome_atual": "Gooseberry G3",
+  "original": "Revv G3",
+  "versao_referencia": "Revv G3 original (2018, roxo); a Anniversary é preta com botões roxos",
+  "original_cor_caixa": "roxo",
+  "original_cor_letras": "brancas",
+  "original_medidas_mm": "70 x 119 x 32 (2,75 x 4,7 x 1,25 pol., fabricante)",
+  "original_botoes": [
+   "BASS",
+   "MIDDLE",
+   "TREBLE",
+   "VOLUME",
+   "GAIN"
+  ],
+  "original_chaves_e_extras": "Mini-chave AGGRESSION (Blue/Off/Red) entre VOLUME e GAIN; LED; pisante; jacks no topo",
+  "atual_resumo": "Caixa 94x120 verde-groselha, 3 botões VOLUME/GANHO/AGUDO, tema groselha",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O G3 é roxo com letras brancas, numa caixa estreita (70 mm), com 5 botões e a chave Aggression. Groselha verde não serve. Plum já existe no catálogo (Plum Mod), então o tema é outro.",
+  "tema_proposto": "Charoite G3",
+  "confianca": "alta",
+  "fontes": [
+   "https://revvamplification.com/products/g3",
+   "https://revvamplification.com/products/g3-v2",
+   "https://web.archive.org/web/2020/https://revvamplification.com/products/g3-pedal"
+  ],
+  "fonte_fabricante": "https://revvamplification.com/products/g3",
+  "outras_fontes": [
+   "https://revvamplification.com/products/g3-v2",
+   "https://web.archive.org/web/2020/https://revvamplification.com/products/g3-pedal"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/gooseberry_g3_3.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/gooseberry_g3_2.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante 70 x 119 x 32 (tamanho entra no que trocar)",
+   "tema: Plum repete \"Plum Mod\" do catálogo; trocado por Charoite G3"
+  ]
+ },
+ {
+  "id": "nectarine_od",
+  "nome_atual": "Nectarine OD",
+  "original": "Friedman BE-OD",
+  "versao_referencia": "Friedman BE-OD",
+  "original_cor_caixa": "preto, com moldura creme/dourada nas bordas",
+  "original_cor_letras": "creme/douradas",
+  "original_medidas_mm": "aprox. 64 x 112 (caixa estreita; o fabricante não publica medidas)",
+  "original_botoes": [
+   "BASS",
+   "TREBLE",
+   "PRES",
+   "VOL",
+   "GAIN",
+   "TIGHT"
+  ],
+  "original_chaves_e_extras": "LED; pisante; faixa creme com FRIEDMAN",
+  "atual_resumo": "Caixa 94x120 laranja-nectarina, 3 botões VOLUME/GANHO/AGUDO, tema nectarina",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "tema_nome"
+  ],
+  "explicacao": "O BE-OD é preto com borda e letras creme, numa caixa estreita. Tem 6 botões em 2 fileiras: BASS, TREBLE, PRES em cima; VOL, GAIN, TIGHT embaixo. Não há MIDDLE. Nectarina laranja não serve.",
+  "tema_proposto": "Jamun OD",
+  "confianca": "media",
+  "fontes": [
+   "https://friedmanamplification.com/shop/pedals/be-od/"
+  ],
+  "fonte_fabricante": "https://friedmanamplification.com/shop/pedals/be-od/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/nectarine_od_1.jpg"
+  ],
+  "corrigido": [
+   "não há MIDDLE; o sexto botão é PRESENCE",
+   "letras creme/douradas, não brancas",
+   "caixa estreita (tamanho entra no que trocar)"
+  ]
+ },
+ {
+  "id": "cranberry_wylde",
+  "nome_atual": "Cranberry Wylde",
+  "original": "MXR Wylde Overdrive",
+  "versao_referencia": "MXR WA44 Wylde Audio Overdrive",
+  "original_cor_caixa": "prateado/cinza-azulado com alvo de anéis pretos",
+  "original_cor_letras": "brancas/creme",
+  "original_medidas_mm": "caixa MXR padrão, aprox. 64 x 111 (Dunlop não publica medidas)",
+  "original_botoes": [
+   "OUTPUT",
+   "TONE",
+   "GAIN (botões transparentes)"
+  ],
+  "original_chaves_e_extras": "LED vermelho no centro do alvo; pisante",
+  "atual_resumo": "Caixa 94x120 vermelho-cranberry, SAÍDA/TOM/GANHO, tema cranberry",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "tema_nome"
+  ],
+  "explicacao": "O WA44 é prateado com um alvo de anéis pretos, botões transparentes (TONE em cima, OUTPUT e GAIN dos lados) e caixa MXR estreita. Cranberry vermelho não serve, então o tema muda.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.jimdunlop.com/mxr-wylde-audio-overdrive-parts/"
+  ],
+  "tema_proposto": "Agate Wylde",
+  "fonte_fabricante": "https://www.jimdunlop.com/mxr-wylde-audio-overdrive-parts/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/cranberry_wylde_1.jpg"
+  ],
+  "corrigido": [
+   "cor confirmada: prateado com alvo preto (não creme)",
+   "nome do modelo: WA44 (não ZW44)",
+   "cor e tema entram no que trocar; tema novo Agate Wylde (ágata em faixas)"
+  ]
+ },
+ {
+  "id": "kumquat_klone",
+  "nome_atual": "Kumquat Klone",
+  "original": "Wampler Tumnus",
+  "versao_referencia": "Wampler Tumnus",
+  "original_cor_caixa": "dourado",
+  "original_cor_letras": "pretas",
+  "original_medidas_mm": "38 x 89 x 38 (1,5 x 3,5 x 1,5 pol., fabricante)",
+  "original_botoes": [
+   "GAIN",
+   "VOLUME",
+   "TREBLE"
+  ],
+  "original_chaves_e_extras": "LED azul; pisante; jacks na lateral e alimentação no topo",
+  "atual_resumo": "Caixa 94x120 laranja-kumquat, VOLUME/AGUDO/GANHO, tema kumquat",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "cor",
+   "tema_nome"
+  ],
+  "explicacao": "O Tumnus é mini (38 x 89 mm), dourado com letras pretas e LED azul. Dourado não é laranja-kumquat, então cor e tema mudam.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.wamplerpedals.com/products/distortion-overdrive/tumnus/",
+   "https://web.archive.org/web/2021/https://www.wamplerpedals.com/products/distortion-overdrive/tumnus/"
+  ],
+  "tema_proposto": "Pyrite Klone",
+  "fonte_fabricante": "https://www.wamplerpedals.com/products/distortion-overdrive/tumnus/",
+  "outras_fontes": [
+   "https://web.archive.org/web/2021/https://www.wamplerpedals.com/products/distortion-overdrive/tumnus/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/kumquat_klone_1.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante 38 x 89 x 38 (não 66 x 120)",
+   "dourado não é laranja: cor e tema entram no que trocar (Pyrite Klone)"
+  ]
+ },
+ {
+  "id": "elderberry_war",
+  "nome_atual": "Elderberry War",
+  "original": "Death By Audio Fuzz War",
+  "versao_referencia": "Death By Audio Fuzz War",
+  "original_cor_caixa": "alumínio branco/prateado com grafismos pretos pintados em spray",
+  "original_cor_letras": "pretas",
+  "original_medidas_mm": "149 x 120 x 64 com peças (5,87 x 4,72 x 2,5 pol., fabricante)",
+  "original_botoes": [
+   "FUZZ (grande)",
+   "TONE (grande)",
+   "VOLUME (pequeno, entre os dois)"
+  ],
+  "original_chaves_e_extras": "LED vermelho; pisante",
+  "atual_resumo": "Caixa 94x120 roxo-escuro, VOLUME/TOM/FUZZ, tema sabugueiro",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "tema_nome"
+  ],
+  "explicacao": "O Fuzz War é branco/alumínio com grafismos pretos em spray, mais largo. FUZZ e TONE são grandes e o VOLUME é pequeno. Sabugueiro é roxo-escuro, então o tema muda.",
+  "tema_proposto": "Howlite War",
+  "confianca": "alta",
+  "fontes": [
+   "https://deathbyaudio.com/products/fuzz-war"
+  ],
+  "fonte_fabricante": "https://deathbyaudio.com/products/fuzz-war",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/elderberry_war_1.jpg"
+  ],
+  "corrigido": [
+   "cor: branco/alumínio com preto, não cinza",
+   "VOLUME é um botão pequeno",
+   "tema: Hematite (cinza-escuro) trocado por Howlite War (branco com veios pretos)"
+  ]
+ },
+ {
+  "id": "mangosteen_fuzz",
+  "nome_atual": "Mangosteen Fuzz",
+  "original": "EarthQuaker Hizumitas",
+  "versao_referencia": "EarthQuaker Devices Hizumitas",
+  "original_cor_caixa": "prateado (alumínio)",
+  "original_cor_letras": "roxas (desenho de coelhos em roxo)",
+  "original_medidas_mm": "64 x 121 x 57 com botões (2,5 x 4,75 x 2,25 pol., fabricante)",
+  "original_botoes": [
+   "VOLUME",
+   "SUSTAIN (centro, em cima)",
+   "TONE"
+  ],
+  "original_chaves_e_extras": "LED; pisante; jacks no topo",
+  "atual_resumo": "Caixa 94x120 roxo-mangostão, VOLUME/SUSTAIN/TOM, tema mangostão",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "tema_nome"
+  ],
+  "explicacao": "O Hizumitas é prateado com letras roxas, numa caixa mais estreita. O roxo do mangostão pode ir para as letras.",
+  "tema_proposto": "Moonstone Fuzz",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.earthquakerdevices.com/hizumitas"
+  ],
+  "fonte_fabricante": "https://www.earthquakerdevices.com/hizumitas",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/mangosteen_fuzz_1.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante 64 x 121 x 57"
+  ]
+ },
+ {
+  "id": "grapefruit_drive",
+  "nome_atual": "Grapefruit Drive",
+  "original": "EarthQuaker Plumes",
+  "versao_referencia": "EarthQuaker Devices Plumes",
+  "original_cor_caixa": "verde-oliva, com painel superior amarelo-mostarda",
+  "original_cor_letras": "verdes no painel mostarda; mostarda na parte verde",
+  "original_medidas_mm": "64 x 121 x 57 com botões (2,5 x 4,75 x 2,25 pol., fabricante)",
+  "original_botoes": [
+   "LEVEL",
+   "TONE (centro, mais baixo)",
+   "GAIN"
+  ],
+  "original_chaves_e_extras": "Mini-chave MODE 1|2|3 (LED / sem clipagem / silício); LED; pisante; jacks no topo",
+  "atual_resumo": "Caixa 94x120 rosa-toranja, 3 botões NÍVEL/TOM/GANHO, tema toranja",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O Plumes é verde-oliva com painel mostarda, numa caixa estreita, com a chave de 3 modos. Toranja rosa não serve; peridoto é verde-oliva.",
+  "tema_proposto": "Peridot Drive",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.earthquakerdevices.com/plumes"
+  ],
+  "fonte_fabricante": "https://www.earthquakerdevices.com/plumes",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/grapefruit_drive_1.jpg"
+  ],
+  "corrigido": [
+   "cor: verde-oliva com painel mostarda, não verde-limão",
+   "letras verdes/mostarda, não pretas",
+   "medidas do fabricante 64 x 121 x 57"
+  ]
+ },
+ {
+  "id": "jackfruit_monkey",
+  "nome_atual": "Jackfruit Monkey",
+  "original": "DigiTech Bad Monkey",
+  "versao_referencia": "DigiTech Bad Monkey",
+  "original_cor_caixa": "verde",
+  "original_cor_letras": "brancas nos controles; BAD MONKEY em amarelo/laranja",
+  "original_medidas_mm": "79 x 125 x 54 (Bax Music; DigiTech não publica)",
+  "original_botoes": [
+   "LEVEL",
+   "LOW",
+   "HIGH",
+   "GAIN"
+  ],
+  "original_chaves_e_extras": "Caixa DigiTech com pedal basculante largo de borracha (logo DigiTech); saídas OUT 2 MIXER e OUT 1 AMP; LED; botões pretos",
+  "atual_resumo": "Caixa 94x120 amarelo-mostarda, 3 botões NÍVEL/GANHO/AGUDO, tema jaca",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "formato_caixa",
+   "botoes"
+  ],
+  "explicacao": "O Bad Monkey é verde, numa caixa DigiTech com pedal basculante largo de borracha (não pisante), com 4 botões (LEVEL, LOW, HIGH, GAIN). A casca da jaca é verde: o nome fica, só a cor vai para verde.",
+  "confianca": "alta",
+  "fontes": [
+   "https://digitech.com/vintage-product-spotlight-digitech-bad-monkey/"
+  ],
+  "fonte_fabricante": "https://digitech.com/vintage-product-spotlight-digitech-bad-monkey/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/jackfruit_monkey_1.jpg"
+  ],
+  "corrigido": [
+   "tipo de caixa: DigiTech com pedal basculante, não pisante",
+   "medidas 79 x 125 x 54 (loja)",
+   "letras BAD MONKEY amarelas"
+  ]
+ },
+ {
+  "id": "pitanga_250",
+  "nome_atual": "Pitanga 250",
+  "original": "DOD Overdrive Preamp 250",
+  "versao_referencia": "DOD Overdrive Preamp 250 (relançamento 2023)",
+  "original_cor_caixa": "amarelo (o fabricante chama de \"bullion gold\"; na foto é amarelo vivo)",
+  "original_cor_letras": "pretas",
+  "original_medidas_mm": "67 x 119 x 57 (2,63 x 4,68 x 2,25 pol., fabricante)",
+  "original_botoes": [
+   "GAIN",
+   "LEVEL"
+  ],
+  "original_chaves_e_extras": "LED azul; pisante; listras pretas verticais embaixo",
+  "atual_resumo": "Caixa 94x120 vermelha, 2 botões NÍVEL/GANHO, tema pitanga",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "tema_nome"
+  ],
+  "explicacao": "O 250 conhecido é amarelo (ou cinza no original), numa caixa mais estreita. Pitanga vermelha não serve.",
+  "tema_proposto": "Topaz 250",
+  "confianca": "alta",
+  "fontes": [
+   "https://digitech.com/dp/overdrive-preamp-250/"
+  ],
+  "fonte_fabricante": "https://digitech.com/dp/overdrive-preamp-250/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/pitanga_250_1.jpg"
+  ],
+  "corrigido": [
+   "medidas do fabricante 67 x 119 x 57",
+   "ordem dos botões: GAIN à esquerda, LEVEL à direita",
+   "LED azul"
+  ]
+ },
+ {
+  "id": "lychee_bassfuzz",
+  "nome_atual": "Lychee Bass Fuzz",
+  "original": "Electro-Harmonix Bass Big Muff",
+  "versao_referencia": "Electro-Harmonix Bass Big Muff Pi",
+  "original_cor_caixa": "verde-limão vivo, sobre caixa de alumínio fundido (bordas prateadas)",
+  "original_cor_letras": "pretas; BIG MUFF em branco com contorno preto",
+  "original_medidas_mm": "121 x 102 x 57 (4,75 x 4 x 2,25 pol., fabricante)",
+  "original_botoes": [
+   "VOLUME",
+   "TONE",
+   "SUSTAIN"
+  ],
+  "original_chaves_e_extras": "Mini-chave BASS BOOST / NORM / DRY; LED vermelho; pisante; saídas EFFECT OUT e DRY OUT",
+  "atual_resumo": "Caixa 94x120 vermelho-lichia, VOLUME/TOM/SUSTAIN, tema lichia",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "chaves",
+   "tema_nome"
+  ],
+  "explicacao": "O Bass Big Muff é verde-limão vivo, numa caixa larga (121 x 102), com a chave Bass Boost/Norm/Dry e duas saídas. Lichia vermelha não serve.",
+  "tema_proposto": "Greengage Bass Fuzz",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.ehx.com/products/bass-big-muff-pi/"
+  ],
+  "fonte_fabricante": "https://www.ehx.com/products/bass-big-muff-pi/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/lychee_bassfuzz_1.jpg"
+  ],
+  "corrigido": [
+   "cor: verde-limão vivo, não verde-militar",
+   "medidas do fabricante 121 x 102 x 57 (tamanho entra no que trocar)",
+   "tema: Malachite (verde-escuro) trocado por Greengage (verde-amarelado)"
+  ]
+ },
+ {
+  "id": "cupuacu_hammer",
+  "nome_atual": "Cupuaçu Hammer",
+  "original": "Aguilar Tone Hammer",
+  "versao_referencia": "Aguilar Tone Hammer Preamp (versão atual, 18 V, 2 pisantes)",
+  "original_cor_caixa": "prateado",
+  "original_cor_letras": "pretas, com DRIVE em etiquetas vermelhas",
+  "original_medidas_mm": "140 x 102 x 38 (5,5 x 4 x 1,5 pol., fabricante) — caixa deitada",
+  "original_botoes": [
+   "GAIN",
+   "TREBLE",
+   "BASS",
+   "VOLUME",
+   "MID FREQ",
+   "MID LEVEL",
+   "DRIVE (pequeno)",
+   "MIX do fone (pequeno)"
+  ],
+  "original_chaves_e_extras": "2 pisantes (ENGAGE e DRIVE); LEDs azul (ENGAGE) e amarelo (DRIVE); saída XLR com GND lift e pré/pós; fone e AUX IN",
+  "atual_resumo": "Caixa 94x120 marrom, 3 botões GANHO/AGUDO/NÍVEL, tema cupuaçu",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes",
+   "tema_nome"
+  ],
+  "explicacao": "O Tone Hammer atual é prateado com letras pretas, deitado (140 x 102), com 6 botões grandes, 2 pequenos (DRIVE e MIX) e 2 pisantes. Cupuaçu marrom não serve.",
+  "tema_proposto": "Galena Hammer",
+  "confianca": "alta",
+  "fontes": [
+   "https://aguilaramp.com/products/tone-hammer-preamp",
+   "http://www.aguilaramp.com/effect-pedals-2/tone-hammer/"
+  ],
+  "fonte_fabricante": "https://aguilaramp.com/products/tone-hammer-preamp",
+  "outras_fontes": [
+   "http://www.aguilaramp.com/effect-pedals-2/tone-hammer/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/cupuacu_hammer_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/cupuacu_hammer_1.jpg"
+  ],
+  "corrigido": [
+   "não há painel preto: é todo prateado",
+   "o volume se chama VOLUME (não LEVEL); acrescentados DRIVE e MIX pequenos",
+   "2 pisantes (ENGAGE e DRIVE)"
+  ]
+ },
+ {
+  "id": "graviola_bassdi",
+  "nome_atual": "Graviola Bass DI",
+  "original": "MXR M80 Bass DI",
+  "versao_referencia": "MXR M80 Bass D.I.+",
+  "original_cor_caixa": "preto",
+  "original_cor_letras": "brancas",
+  "original_medidas_mm": "não publicado pela Dunlop; caixa MXR deitada de baixo, aprox. 122 x 92 (estimativa pela foto, sem fonte)",
+  "original_botoes": [
+   "CLEAN VOLUME",
+   "DISTORTION VOLUME",
+   "BLEND",
+   "TRIGGER",
+   "GAIN",
+   "BASS",
+   "MID",
+   "TREBLE"
+  ],
+  "original_chaves_e_extras": "Botões de pressão COLOR, GATE e PHANTOM/GROUND; 2 pisantes (EFFECT e DISTORTION); LEDs vermelho (efeito), vermelho (distorção) e amarelo (gate); saída XLR e PARALLEL OUTPUT",
+  "atual_resumo": "Caixa 94x120 verde-graviola, 3 botões VOLUME/DISTORÇÃO/AGUDO, tema graviola",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "botoes",
+   "detalhes",
+   "tema_nome"
+  ],
+  "explicacao": "O M80 é preto com letras brancas, com 8 botões (CLEAN VOLUME, VOLUME, BLEND, TRIGGER, GAIN; BASS, MID, TREBLE), 3 botões de pressão (COLOR, GATE, PHANTOM/GROUND) e 2 pisantes. Graviola verde não serve.",
+  "tema_proposto": "Melanite Bass DI",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.jimdunlop.com/content/manuals/M80.pdf",
+   "https://www.jimdunlop.com/mxr-bass-di/"
+  ],
+  "fonte_fabricante": "https://www.jimdunlop.com/content/manuals/M80.pdf",
+  "outras_fontes": [
+   "https://www.jimdunlop.com/mxr-bass-di/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/graviola_bassdi_1.jpg"
+  ],
+  "corrigido": [
+   "8 botões, não 6 (faltavam CLEAN VOLUME e TRIGGER; DIST se chama GAIN)",
+   "letras brancas (não vermelhas)",
+   "acrescentados botões GATE e PHANTOM/GROUND",
+   "medidas sem fonte oficial"
+  ]
+ },
+ {
+  "id": "acerola_eq",
+  "nome_atual": "Acerola EQ",
+  "original": "Boss GE-7",
+  "versao_referencia": "Boss GE-7 Equalizer",
+  "original_cor_caixa": "branco-acinzentado (bege claro), com faixa preta no alto onde ficam os deslizantes",
+  "original_cor_letras": "pretas no corpo; brancas na faixa preta",
+  "original_medidas_mm": "73 x 129 x 59 (fabricante)",
+  "original_botoes": [
+   "100 Hz",
+   "200 Hz",
+   "400 Hz",
+   "800 Hz",
+   "1.6 kHz",
+   "3.2 kHz",
+   "6.4 kHz",
+   "LEVEL (8 deslizantes)"
+  ],
+  "original_chaves_e_extras": "Caixa compacta Boss com pedal basculante; LED CHECK vermelho no alto; 8 deslizantes com pontas brancas",
+  "atual_resumo": "Boss compacto vermelho, 8 deslizantes, tema acerola",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tema_nome"
+  ],
+  "explicacao": "O GE-7 é branco. Caixa e deslizantes já batem. Acerola vermelha não serve.",
+  "tema_proposto": "Selenite EQ",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.boss.info/global/products/ge-7/"
+  ],
+  "fonte_fabricante": "https://www.boss.info/global/products/ge-7/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/acerola_eq_1.jpg"
+  ],
+  "corrigido": [
+   "acrescentada a faixa preta com letras brancas atrás dos deslizantes"
+  ]
+ },
+ {
+  "id": "comet_wah",
+  "nome_atual": "Comet Wah",
+  "original": "Dunlop Cry Baby",
+  "versao_referencia": "Dunlop Cry Baby GCB95",
+  "original_cor_caixa": "preto texturizado",
+  "original_cor_letras": "brancas sobre placa preta (cry baby)",
+  "original_medidas_mm": "aprox. 254 x 102 x 64 (10 x 4 x 2,5 pol., zZounds; Dunlop não publica)",
+  "original_botoes": [
+   "Pedal basculante de wah (sem botões)"
+  ],
+  "original_chaves_e_extras": "Chave liga/desliga sob o pedal; sem LED; jacks nas laterais",
+  "atual_resumo": "Caixa retangular 94x120 preta com 3 botões (PEDAL/FAIXA/NÍVEL), tema cometa",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato_caixa",
+   "tamanho",
+   "botoes"
+  ],
+  "explicacao": "O Cry Baby é um pedal de wah preto texturizado com plataforma basculante e sem botões; a placa com \"cry baby\" é preta com letras brancas. Cometa não tem cor fixa.",
+  "confianca": "media",
+  "fontes": [
+   "https://www.jimdunlop.com/cry-baby-standard-wah/",
+   "https://www.zzounds.com/item--DAVGCB95"
+  ],
+  "fonte_fabricante": "https://www.jimdunlop.com/cry-baby-standard-wah/",
+  "outras_fontes": [
+   "https://www.zzounds.com/item--DAVGCB95"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/comet_wah_1.jpg"
+  ],
+  "corrigido": [
+   "a placa é preta com letras brancas, não cromada",
+   "altura 64 mm (2,5 pol.), não 76"
+  ]
+ },
+ {
+  "id": "saturn_rotary",
+  "nome_atual": "Saturn Rotary",
+  "original": "Leslie (caixa rotativa)",
+  "versao_referencia": "Leslie 122 / Hammond Leslie 122H Heritage (gabinete de madeira, não é pedal)",
+  "original_cor_caixa": "madeira nogueira, marrom-avermelhado com acabamento brilhante",
+  "original_cor_letras": "—",
+  "original_medidas_mm": "743 x 525 x 1045 (122H, Thomann); o fabricante não lista medidas na página",
+  "original_botoes": [
+   "—"
+  ],
+  "original_chaves_e_extras": "Velocidade lenta/rápida por pedal ou chave no órgão; venezianas na frente",
+  "atual_resumo": "Caixa 94x120 bege-dourada, 3 botões VELOCIDADE/GANHO/MISTURA, tema Saturno",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor"
+  ],
+  "explicacao": "Não há pedal original para copiar. O gabinete é nogueira marrom-avermelhado, mais escuro que o bege-dourado atual; vale escurecer a cor. Saturno é bege-dourado; se a cor mudar, o nome pode virar Jasper Rotary (jaspe vermelho-amarronzado). Decisão do dono.",
+  "confianca": "media",
+  "fontes": [
+   "https://hammondorganco.com/heritage-leslies"
+  ],
+  "tema_proposto": "Jasper Rotary (opcional)",
+  "fonte_fabricante": "https://hammondorganco.com/heritage-leslies",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/saturn_rotary_1.jpg"
+  ],
+  "corrigido": [
+   "cor do Leslie é nogueira marrom-avermelhado, mais escura que o bege-dourado: veredito passou de ok para trocar a cor (opcional)",
+   "medidas 743 x 525 x 1045 (122H)"
+  ]
+ },
+ {
+  "id": "pulsar_echo",
+  "nome_atual": "Pulsar Echo",
+  "original": "Electro-Harmonix Memory Man",
+  "versao_referencia": "Electro-Harmonix Deluxe Memory Man",
+  "original_cor_caixa": "prateado e preto, divididos na diagonal",
+  "original_cor_letras": "brancas no preto, pretas no prateado; DELUXE e Echo/Chorus/Vibrato em vermelho",
+  "original_medidas_mm": "146 x 121 x 64 (5,75 x 4,75 x 2,5 pol., fabricante) — caixa deitada",
+  "original_botoes": [
+   "BLEND",
+   "LEVEL",
+   "FEEDBACK",
+   "CHRS/VIBR",
+   "DEPTH",
+   "DELAY"
+  ],
+  "original_chaves_e_extras": "Sem chave: chorus/vibrato é um botão giratório; LED OVERLOAD; LED de ligado; pisante; saídas DIRECT OUT e EFFECT OUT; alimentação 24 V",
+  "atual_resumo": "Caixa 94x120 azul-marinho, 3 botões TEMPO/REPETIÇÕES/MISTURA, tema pulsar",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "botoes"
+  ],
+  "explicacao": "O Deluxe Memory Man é prateado e preto na diagonal, deitado (146 x 121), com 6 botões em fila e LED OVERLOAD. Não há chave Chorus/Vibrato: é um botão. Pulsar não tem cor fixa: fica o nome.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.ehx.com/products/deluxe-memory-man/"
+  ],
+  "fonte_fabricante": "https://www.ehx.com/products/deluxe-memory-man/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/pulsar_echo_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/pulsar_echo_2.jpg"
+  ],
+  "corrigido": [
+   "6 botões, não 5 (CHRS/VIBR e DEPTH são botões)",
+   "não há chave Chorus/Vibrato",
+   "cor: prateado e preto na diagonal",
+   "medidas do fabricante 146 x 121 x 64"
+  ]
+ },
+ {
+  "id": "jupiter_octave",
+  "nome_atual": "Jupiter Octave",
+  "original": "Boss OC-2",
+  "versao_referencia": "Boss OC-2 Octave",
+  "original_cor_caixa": "marrom metálico (o primeiro \"Octaver\" de 1982 era marrom-avermelhado)",
+  "original_cor_letras": "brancas",
+  "original_medidas_mm": "70 x 125 x 55 (base de conhecimento Boss); a Boss atual dá 73 x 129 x 59 para a caixa compacta",
+  "original_botoes": [
+   "OCT 2",
+   "DIRECT LEVEL (centro, mais baixo)",
+   "OCT 1"
+  ],
+  "original_chaves_e_extras": "Caixa compacta Boss com pedal basculante; LED CHECK no alto",
+  "atual_resumo": "Caixa retangular 94x120 marrom-alaranjado com 3 botões brancos DIRETO/OITAVA 1/OITAVA 2, tema Júpiter",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "formato_caixa",
+   "tamanho"
+  ],
+  "explicacao": "Cor e botões batem. O OC-2 é Boss compacto com pedal basculante, e não a caixa retangular.",
+  "confianca": "media",
+  "fontes": [
+   "https://www.boss.info/global/products/oc-2/",
+   "https://www.effectsdatabase.com/model/boss/compact/oc2"
+  ],
+  "fonte_fabricante": "https://www.boss.info/global/products/oc-2/",
+  "outras_fontes": [
+   "https://www.effectsdatabase.com/model/boss/compact/oc2"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/jupiter_octave_1.jpg"
+  ],
+  "corrigido": [
+   "ordem dos botões: OCT 2 à esquerda, DIRECT LEVEL no centro, OCT 1 à direita",
+   "medidas da Boss para o OC-2: 70 x 125 x 55"
+  ]
+ },
+ {
+  "id": "apple_comp",
+  "nome_atual": "Apple Comp",
+  "original": "MXR Dyna Comp",
+  "versao_referencia": "MXR M102 Dyna Comp",
+  "original_cor_caixa": "vermelho",
+  "original_cor_letras": "pretas (logo MXR em bloco)",
+  "original_medidas_mm": "caixa MXR padrão, aprox. 64 x 111 (Dunlop não publica medidas)",
+  "original_botoes": [
+   "OUTPUT",
+   "SENSITIVITY"
+  ],
+  "original_chaves_e_extras": "LED vermelho; pisante; botões pretos",
+  "atual_resumo": "Caixa MXR vermelha, 3 botões NÍVEL/COMPRESSÃO/ATAQUE (um grande no centro), tema maçã",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "botoes"
+  ],
+  "explicacao": "Cor e caixa batem. O M102 atual é vermelho com letras pretas e tem só 2 botões, OUTPUT e SENSITIVITY.",
+  "confianca": "alta",
+  "fontes": [
+   "https://www.jimdunlop.com/mxr-dyna-comp-compressor/"
+  ],
+  "fonte_fabricante": "https://www.jimdunlop.com/mxr-dyna-comp-compressor/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/apple_comp_1.jpg"
+  ],
+  "corrigido": [
+   "letras pretas no M102 (as brancas em script são da versão Script Dyna Comp)"
+  ]
+ }
+]

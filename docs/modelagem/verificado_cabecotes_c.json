@@ -1,0 +1,1358 @@
+[
+ {
+  "id": "steel20",
+  "original": "ENGL Ironball",
+  "versao_referencia": "Ironball Special Edition E606SE (cabeçote lunchbox 20 W; é o Ironball que a ENGL vende hoje; o E606 comum tem a mesma fileira de 8 botões)",
+  "original_cores": {
+   "tolex": "caixa de metal preta texturizada (sem tolex), alça cromada",
+   "painel": "faixa de alumínio escovado prateado na parte de BAIXO da frente (~1/3 da altura), letras pretas",
+   "grade": "grade de metal preta em losango cobrindo os 2/3 de cima, com as válvulas iluminadas de vermelho atrás e logo branco grande",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "340 L × 140 A × 220 P, 7 kg (página ENGL do E606SE)",
+  "original_botoes": [
+   "(da esquerda p/ direita, depois da entrada INPUT) CLEAN GAIN",
+   "LEAD GAIN",
+   "BASS",
+   "MIDDLE",
+   "TREBLE",
+   "LEAD PRESENCE",
+   "LEAD VOLUME",
+   "MASTER"
+  ],
+  "original_chaves_e_extras": "Entrada INPUT à esquerda; 8 minichaves com leds em 2 fileiras à direita (Store, M.V.B., Reverb, Delay / Gain Boost, Clean-Lead, FX Loop, Noise Gate); alavancas Stand By e Power à direita; botões pretos com traço branco. Seletor de potência fica atrás.",
+  "atual_resumo": "Cabeçote grande 700×270×240 preto, grade preta, painel prateado, 6 botões pretos genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "painel",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Caixa de 340×140×220 (hoje 700×270×240). A frente é grade de metal preta em losango em cima e faixa prata escovada embaixo com 8 botões pretos na ordem CLEAN GAIN…MASTER, 8 minichaves e as alavancas Stand By/Power.",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://www.thomannmusic.com/engl_ironball_head_20_bundle.htm",
+   "https://www.americanmusical.com/p/engl-e606-ironball-tube-head-20-watts"
+  ],
+  "formato_original": "caixinha/lunchbox",
+  "fonte_fabricante": "https://www.engl-amps.com/shop/heads/ironball-special-edition-e606se/",
+  "outras_fontes": [
+   "https://www.engl-amps.com/wp-content/uploads/2024/09/E606SE-OM-4-Ironball-Special-Edition.pdf (baixado, não lido)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/steel20_1.jpg"
+  ],
+  "corrigido": "Triagem dizia 'painel ocupando quase toda a frente' e 'sem tela': errado, há grade de metal em losango nos 2/3 de cima e o painel é só a faixa de baixo. Medida corrigida para 340×140×220 (fabricante). Acrescentadas as 8 minichaves e as alavancas; seletor 20/5/1 W não está na frente."
+ },
+ {
+  "id": "vier100",
+  "original": "Diezel VH4",
+  "versao_referencia": "VH4 cabeçote 100 W (atual)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos cromados, alça preta",
+   "painel": "alumínio escovado PRATA/branco na metade de baixo, com faixas pretas diagonais sob cada fileira de botões (letras brancas nas faixas)",
+   "grade": "grade de metal preta recortada com o padrão de 'garras' da Diezel (não é losango), válvulas visíveis, logo branco",
+   "letras": "brancas nas faixas pretas; CH1–CH4 em preto"
+  },
+  "original_medidas_mm": "740 L × 300 A × 280 P, 21 kg (Diezel: 74×28×30 cm; '29\" length × 11\" wide × 12\" high')",
+  "original_botoes": [
+   "4 canais lado a lado, cada um em diagonal de cima p/ baixo: GAIN, VOLUME, TREBLE, MIDDLE, BASS (20 botões)",
+   "à direita, em diagonal: VOLUME (master)",
+   "VOLUME PARALLEL LOOP",
+   "PRESENCE",
+   "DEEP"
+  ],
+  "original_chaves_e_extras": "Entradas In e Thru à esquerda; minichaves Bright no CH1 e CH2; leds vermelhos CH1–CH4, Send 2, Store, Mute, Channel Insert; gangorras pretas STANDBY (Run) e POWER (On); botões pretos facetados; 24 botões no total.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade em losango preta, painel azul, 6 botões cromados, cantos cromados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "tamanho",
+   "chaves"
+  ],
+  "explicacao": "O painel do VH4 é prata escovado com faixas pretas, não azul; a grade é a de 'garras' da Diezel, não losango; botões pretos, não cromados. São 20 botões em 4 diagonais + master, loop paralelo, presence e deep. Original é um pouco maior (740×300×280).",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://www.guitarcenter.com/Open-Box/Diezel/VH4-100W-Tube-Guitar-Amp-Head-Level-1-J25073004000000.gc",
+   "https://www.thomann.co.uk/diezel_vhx_el34_head.htm?type=quickSearch"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.diezelamplification.com/vh4",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vier100_p00000.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vier100_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vier100_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vier100_d00003.jpg"
+  ],
+  "corrigido": "Triagem dizia painel azul, grade em losango e visual 'já fiel': errado (painel prata escovado com faixas pretas, grade de garras, botões pretos). Botões por canal são GAIN, VOLUME, TREBLE, MIDDLE, BASS; não há MASTER 1/2, e sim VOLUME e VOLUME PARALLEL LOOP. Medidas do fabricante: 740×300×280, 21 kg."
+ },
+ {
+  "id": "herb180",
+  "original": "Diezel Herbert",
+  "versao_referencia": "Herbert (foto oficial mostra Mk2; MkIII tem o mesmo leiaute de frente)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos cromados",
+   "painel": "alumínio escovado PRATA na faixa de baixo, com cada grupo de botões num rebaixo; letras pretas",
+   "grade": "grade de metal preta recortada com o padrão de 'garras' da Diezel, válvulas visíveis, logo branco",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "740 L × 270 A × 280 P, 25 kg (Diezel: 74×28×27 cm; '29\" L × 11\" W × 10.75\" H')",
+  "original_botoes": [
+   "INPUT (entrada à esquerda)",
+   "CHANNEL 1: VOLUME, TREBLE, MIDDLE, BASS",
+   "CHANNEL 2: GAIN, VOLUME, TREBLE, MIDDLE, BASS",
+   "CHANNEL 3: GAIN, VOLUME, TREBLE, MIDDLE, BASS",
+   "MIDCUT: INTENSITY, LEVEL",
+   "MASTER: VOLUME 2, PRESENCE, DEEP, VOLUME 1"
+  ],
+  "original_chaves_e_extras": "Minichave −/+ sob o Channel 2; leds por canal, Midcut e V2; botõezinhos Loop, Mute, Store com leds; gangorras pretas Standby (Run) e Power (On); botões pretos; 20 botões no total.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade em losango, painel azul escuro, 6 botões cromados, cantos cromados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Painel do Herbert é prata escovado (não azul) e a grade é a de 'garras' da Diezel (não losango); botões pretos. Ordem: CH1 VOLUME-TREBLE-MIDDLE-BASS, CH2 e CH3 GAIN-VOLUME-TREBLE-MIDDLE-BASS, MIDCUT INTENSITY-LEVEL, MASTER VOLUME 2-PRESENCE-DEEP-VOLUME 1. Medidas 740×270×280 batem com a arte na largura/altura.",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://www.musik-produktiv.com/no/diezel-herbert-mkiii.html",
+   "https://iguitarmusic.co.th/?p=57757",
+   "https://thomann.pl/diezel_herbert_el34_mkiii.htm"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.diezelamplification.com/herbert",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/herb180_p00002.jpg"
+  ],
+  "corrigido": "Triagem dizia painel azul escuro e grade em losango: errado (prata escovado, grade de garras). Ordem dos botões por canal corrigida (VOLUME antes de TREBLE; GAIN primeiro no CH2/CH3). Midcut são INTENSITY e LEVEL; master é VOLUME 2, PRESENCE, DEEP, VOLUME 1. Medidas e peso do fabricante (740×270×280, 25 kg)."
+ },
+ {
+  "id": "bliss100",
+  "original": "Bogner Ecstasy",
+  "versao_referencia": "Ecstasy 101B / Classic",
+  "original_cores": {
+   "tolex": "preto",
+   "painel": "cromado (Classic/101B); placa dourada estilo plexi na 20th Anniversary",
+   "grade": "tela bege/salt-and-pepper",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "≈ 711 L × 279 A × 260 P (altura e fundo de anúncio; largura estimada)",
+  "original_botoes": [
+   "CH1: VOLUME, TREBLE, MIDDLE, BASS",
+   "CH2: GAIN, VOLUME, TREBLE, MIDDLE, BASS",
+   "CH3: GAIN, VOLUME, TREBLE, MIDDLE, BASS",
+   "PRESENCE 1",
+   "PRESENCE 2",
+   "EXCURSION 1",
+   "EXCURSION 2",
+   "MASTER 1",
+   "MASTER 2"
+  ],
+  "original_chaves_e_extras": "Muitas minichaves: Plexi, Pre-EQ, Boost, Structure, Variac por canal",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela bege-acinzentada, painel creme, 6 botões cromados, cantos cromados, 3 leds.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Tamanho e couro ok; o painel do Ecstasy clássico é cromado (não creme); faltam os 3 canais, as duas presenças/excursões e as minichaves.",
+  "confianca": "baixa",
+  "fontes_triagem_anterior": [
+   "https://fr.audiofanzine.com/tete-d-ampli-guitare-tout-lampe/bogner/Ecstasy-XTC-101B-Head/avis/r.105067.html",
+   "https://reverb.com/item/2009170-bogner-ecstasy-classic-xtc-amp-head",
+   "https://www.cottonwoodmusicemporium.com/products/2005-bogner-ecstasy-101b-head-footswitch-cover"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [],
+  "fotos": [],
+  "corrigido": "Nada mudou: o site da Bogner não carrega sem JavaScript, web.archive.org está inacessível daqui, Sweetwater/Reverb/Thomann recusaram ou não acharam a página e a busca na web acabou. Segue como na triagem, sem confirmação."
+ },
+ {
+  "id": "goddess80",
+  "original": "Bogner Shiva",
+  "versao_referencia": "Shiva 20th Anniversary (cabeçote com grade de metal; é a versão da linha atual)",
+  "original_cores": {
+   "tolex": "preto com textura em relevo (desenho floral/paisley)",
+   "painel": "DOURADO/champanhe fosco na faixa de baixo, letras pretas",
+   "grade": "grade de metal preta com aberturas inclinadas em fileiras, logo creme em script",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "622 L × 292 A × 267 P, 18,6 kg (loja Eddie's Guitars: 24,5\" × 11,5\" × 10,5\", 41 lb)",
+  "original_botoes": [
+   "(da esquerda p/ direita) PRESENCE",
+   "M.VOL",
+   "B.VOL (volume do boost)",
+   "VOLUME (ch2)",
+   "TREBLE (ch2)",
+   "MIDDLE (ch2)",
+   "BASS (ch2)",
+   "GAIN (ch2)",
+   "TREBLE (ch1)",
+   "BASS (ch1)",
+   "VOLUME (ch1)"
+  ],
+  "original_chaves_e_extras": "Alavanca ST.BY/OFF/PLAY e luz piloto verde à esquerda; minichaves SHIFT e BRIGHT/MODE no ch2, BRIGHT no ch1; leds pequenos; entrada à DIREITA; botões pretos tipo chicken-head; reverb/excursion atrás. 11 botões.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela preta, painel preto, 6 botões cromados, cantos cromados, 2 leds.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "tamanho"
+  ],
+  "explicacao": "Painel é dourado (hoje preto) e a grade é de metal preta com aberturas (hoje tela). 11 botões pretos na ordem PRESENCE, M.VOL, B.VOL, ch2 VOLUME-TREBLE-MIDDLE-BASS-GAIN, ch1 TREBLE-BASS-VOLUME, entrada à direita. Largura 622 (hoje 700).",
+  "confianca": "media",
+  "fontes_triagem_anterior": [
+   "https://reverb.com/item/96999286-2000s-bogner-shiva-guitar-amplifier-head-live-rentals-by-korn-hole-courtney-love-dan-balan-kelly-rowland-david-kershenbaum",
+   "https://www.makenmusic.com/products/bogner-amps-shiva-head-el-34-reverb-80-watts-tube-guitar-amplifier",
+   "https://eddiesguitars.com/product/amplifiers/types-of-guitar-amps/guitar-amplifier-heads/bogner-20th-anniversary-shiva-head-reverb-metal-grill"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://eddiesguitars.com/product/amplifiers/types-of-guitar-amps/guitar-amplifier-heads/bogner-20th-anniversary-shiva-head-reverb-metal-grill"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/goddess80_1.jpg"
+  ],
+  "corrigido": "Painel é dourado/champanhe, não preto; grade de metal preta, não tela; não há botão REVERB na frente e há B.VOL e M.VOL; ordem completa pela foto; entrada à direita; peso 18,6 kg. Site da Bogner não abriu (só JavaScript)."
+ },
+ {
+  "id": "dirty40",
+  "original": "Friedman Dirty Shirley",
+  "versao_referencia": "Dirty Shirley 40 W cabeçote",
+  "original_cores": {
+   "tolex": "preto com friso branco fino",
+   "painel": "faixa PRATA/cinza-clara pequena, só no canto de baixo à direita da frente, letras pretas",
+   "grade": "tela basketweave preta e prata (xadrez miúdo) em toda a frente, placa branca com logo vermelho à esquerda",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "610 L × 254 A × 216 P, 13,8 kg (Friedman: 24\" W × 10\" H × 8,5\" D, 30,5 lb)",
+  "original_botoes": [
+   "(da esquerda p/ direita) PRESENCE",
+   "BASS",
+   "MIDDLE",
+   "TREBLE",
+   "MASTER",
+   "GAIN"
+  ],
+  "original_chaves_e_extras": "Alavancas OFF/ON e STANDBY e luz INDICATOR laranja à esquerda do painel; entradas H e L à direita e uma minichave pequena junto delas; botões pretos com traço branco; seletor 4/8/16 Ω atrás. Sem chave de ganho de 3 posições.",
+  "atual_resumo": "Cabeçote 740×285×240 preto, tela escura salpicada de dourado, painel cinza, 6 botões pretos de tampa dourada.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "painel",
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "Largura 610 e profundidade 216 (hoje 740×285×240). Painel é uma faixa prata baixa à direita, dentro da tela basketweave preto/prata; botões pretos sem tampa dourada, na ordem PRESENCE, BASS, MIDDLE, TREBLE, MASTER, GAIN.",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://friedmanamplification.com/shop/heads/dirty-shirley/",
+   "https://andertons.co.uk/friedman-dirty-shirley-amp-head",
+   "https://www.greentoe.com/product/Friedman_DIRTY_SHIRLEY_HEAD"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://friedmanamplification.com/shop/heads/dirty-shirley/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/dirty40_1.png"
+  ],
+  "corrigido": "Painel não é dourado: é faixa prata/cinza-clara; tela é basketweave preto e prata, não tan. Ordem dos botões invertida (PRESENCE primeiro, GAIN por último). Não há chave de ganho de 3 posições na frente. Profundidade 216, não 267; peso 13,8 kg."
+ },
+ {
+  "id": "special100",
+  "original": "Dumble Overdrive Special",
+  "versao_referencia": "Overdrive Special de cabeçote (foto de referência: DOD 150 do Wikimedia; cada unidade varia)",
+  "original_cores": {
+   "tolex": "preto (há unidades em creme/bege, como a de Robben Ford)",
+   "painel": "PRETO com letras brancas, faixa de baixo da frente, emoldurado por friso prata",
+   "grade": "tela PRETA em toda a parte de cima",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "não há fonte do fabricante (Dumble não tem site); pela foto, proporção ≈ 2,3:1 (ex.: ≈ 650 L × 280 A)",
+  "original_botoes": [
+   "(entradas FET e NOR à esquerda) PREAMP: VOLUME",
+   "TREBLE",
+   "MIDDLE",
+   "BASS",
+   "OVERDRIVE: LEVEL",
+   "RATIO",
+   "(nesta unidade) REVERB: SEND, RETURN",
+   "(nesta unidade) TREMOLO: RATE, MODULATION",
+   "MASTER",
+   "PRESENCE"
+  ],
+  "original_chaves_e_extras": "Minichaves BRIGHT, DEEP, ROCK/JAZZ entre VOLUME e TREBLE; botões pretos estriados com traço branco e os dois de OVERDRIVE cromados; luz piloto laranja; alavancas OPERATE/STANDBY, ON/OFF e GROUND. Reverb e tremolo não existem em todas as unidades.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela marrom, painel creme, 6 botões cromados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Unidade de referência: tolex preto, tela preta, painel preto com letras brancas (hoje tela marrom e painel creme). Botões VOLUME, TREBLE, MIDDLE, BASS, LEVEL, RATIO, MASTER, PRESENCE (+ reverb/tremolo em algumas) e as minichaves Bright/Deep/Rock-Jazz.",
+  "confianca": "media",
+  "fontes_triagem_anterior": [
+   "https://en.wikipedia.org/wiki/Dumble_Overdrive_Special",
+   "https://vintageguitar.com/31567/dumble-overdrive-special-od150-wr"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://en.wikipedia.org/wiki/Dumble_Overdrive_Special",
+   "https://commons.wikimedia.org/wiki/File:DOD_150_Front.jpg"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/special100_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/special100_2.jpg"
+  ],
+  "corrigido": "Não existe botão 'OVERDRIVE (DRIVE)': o overdrive tem só LEVEL e RATIO (cromados). Tela é preta, não clara. Entradas FET/NOR, minichaves e as três alavancas confirmadas pela foto. Fabricante não tem site; medidas seguem sem fonte."
+ },
+ {
+  "id": "doublestone50",
+  "original": "Two-Rock Classic Reverb",
+  "versao_referencia": "Classic Reverb Signature cabeçote (40/20 W)",
+  "original_cores": {
+   "tolex": "preto com friso branco (outras cores sob encomenda, ex. turquesa com tela bege)",
+   "painel": "alumínio escovado PRATA na faixa de cima da frente, letras pretas e nome em script",
+   "grade": "tela PRETA na versão preta (bege/trigo nas versões coloridas), com logo em script",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "524 L × 305 A × 270 P, 19,5 kg (Two-Rock: 20 5/8\" W × 12\" H × 10 5/8\" D, 43 lb)",
+  "original_botoes": [
+   "(da esquerda p/ direita, depois da INPUT) FET GAIN",
+   "TREBLE",
+   "MIDDLE",
+   "BASS",
+   "GAIN",
+   "MASTER",
+   "REVERB SEND",
+   "REVERB RETURN",
+   "CONTOUR"
+  ],
+  "original_chaves_e_extras": "Minichaves acima dos botões: FET, BRIGHT, MID, DEEP, EQ/TSB (bypass do tone stack), GAIN STRUCTURE (3 posições), BYPASS; alavanca ON/STANDBY e luz piloto azul à direita; botões cromados serrilhados. Chave High/Low power atrás.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela cinza clara, painel prateado, 6 botões cromados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "botoes",
+   "chaves",
+   "grade"
+  ],
+  "explicacao": "Original é mais estreito e alto (524×305×270). Painel prata no alto com 9 botões cromados: FET GAIN, TREBLE, MIDDLE, BASS, GAIN, MASTER, SEND, RETURN, CONTOUR, e 7 minichaves; tela preta na versão preta (hoje cinza clara).",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://www.chicagomusicexchange.com/products/two-rock-classic-reverb-signature-40w-head-golden-brown-2358961"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.two-rock.com/amps/classic-reverb-signature/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/doublestone50_1.png",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/doublestone50_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/doublestone50_3.jpg"
+  ],
+  "corrigido": "Não há VOLUME, LEAD MASTER nem REVERB único: os botões são FET GAIN, TREBLE, MIDDLE, BASS, GAIN, MASTER, REVERB SEND, RETURN, CONTOUR. Tela é preta (na versão de tolex preto), não prateada. Medidas e peso do fabricante (524×305×270, 19,5 kg). Rótulo exato da 5ª minichave pouco legível na foto."
+ },
+ {
+  "id": "blackcat30",
+  "original": "Bad Cat Hot Cat",
+  "versao_referencia": "Hot Cat 50 Mod Shop (único Hot Cat de cabeçote no site atual da Bad Cat; o Hot Cat 30 antigo saiu de linha e não tem página)",
+  "original_cores": {
+   "tolex": "preto com textura de couro de crocodilo, friso prata",
+   "painel": "faixa CREME/branca no alto da frente, curvada nas pontas, letras pretas",
+   "grade": "SEM tela: a frente é do mesmo tolex, com placa preta do logo no centro",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "527 L × 267 A × 260 P (Bad Cat: 20,75\" W × 10,5\" H × 10,25\" D); peso não informado",
+  "original_botoes": [
+   "(da esquerda p/ direita, depois da INPUT) GAIN 1",
+   "GAIN 2",
+   "BASS",
+   "MID",
+   "TREBLE",
+   "VOLUME 1",
+   "VOLUME 2",
+   "MASTER",
+   "PRESENCE",
+   "REVERB"
+  ],
+  "original_chaves_e_extras": "Minichaves CH1/CH2 e LO/HI com leds entre VOLUME 2 e MASTER; botões pretos estriados; entrada à esquerda.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela cinza clara, painel creme, 6 botões cromados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "Painel creme no alto já bate. Original é menor (527×267×260), sem tela (frente de tolex croco preto com placa do logo) e tem 10 botões pretos: GAIN 1, GAIN 2, BASS, MID, TREBLE, VOLUME 1, VOLUME 2, MASTER, PRESENCE, REVERB.",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://bluebookofguitarvalues.com/products/bad-cat-hot-cat-30w-head",
+   "https://www.greentoe.com/product/Bad_Cat_HC_15_HD"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.badcatamps.com/shop/c50ms-hd-120v-hot-cat-50-mod-shop-head-120v-1283",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/blackcat30_1.png"
+  ],
+  "corrigido": "Referência passou ao Hot Cat 50 (o 30 não tem página do fabricante). Painel é creme, não cromado: a arte atual está certa nisso. Não há tela: a frente é tolex croco. Botões EDGE/LEVEL/BRILLIANCE e chicken-heads eram do Hot Cat 30 antigo e não foram confirmados. Medidas do fabricante: 527×267×260."
+ },
+ {
+  "id": "hi103",
+  "original": "Hiwatt DR103",
+  "versao_referencia": "DR103 head (Custom Hiwatt 100), linha atual Custom Handwired",
+  "original_cores": {
+   "tolex": "preto com friso branco, incluindo friso horizontal no meio da frente",
+   "painel": "preto com letras brancas, rebaixado na faixa de baixo",
+   "grade": "SEM tela: a frente é do mesmo tolex preto texturizado, com placa preta do logo com letras brancas",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "631 L × 280 A × 280 P (manual Hiwatt citado na triagem; o link do PDF agora dá 404 e a página do produto não traz medidas)",
+  "original_botoes": [
+   "(entradas à esquerda) NORMAL VOL",
+   "BRIGHT VOL",
+   "BASS",
+   "TREBLE",
+   "MIDDLE",
+   "PRESENCE",
+   "MASTER VOL"
+  ],
+  "original_chaves_e_extras": "4 entradas (NORMAL e BRIGHT, 2×2) à esquerda; luz piloto vermelha; alavancas STANDBY e MAINS à direita; botões pretos com ponteiro branco.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela cinza, painel preto, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "botoes",
+   "grade",
+   "tamanho"
+  ],
+  "explicacao": "Cores do painel e tolex ok, mas a frente do cabeçote não tem tela cinza: é tolex preto com friso branco e a placa do logo. São 7 botões na ordem NORMAL VOL, BRIGHT VOL, BASS, TREBLE, MIDDLE, PRESENCE, MASTER VOL; largura 631.",
+  "confianca": "alta",
+  "fontes_triagem_anterior": [
+   "https://britampco.co.uk/shared-res/downloads/hiwatt-custom-shop-owners-manual.pdf",
+   "https://12fret.com/electronics/hiwatt-custom-100-dr103-tube-amplifier-head-1981",
+   "https://bluebookofguitarvalues.com/guitar-values/guitar-amplifiers/manufacturer/hiwatt/category/hiwatt-electric-tube-amplifiers-early-head-units/models"
+  ],
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://britampco.co.uk/hiwatt/shop/details/dr103-head/",
+  "outras_fontes": [
+   "https://britampco.co.uk/shared-res/downloads/hiwatt-custom-shop-owners-manual.pdf (hoje 404)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/hi103_1.png"
+  ],
+  "corrigido": "Triagem dizia 'tela cinza clara (basketweave)': errado para o cabeçote, a frente é tolex preto com friso branco e placa do logo. Botões e ordem confirmados; alavancas Standby/Mains são de alavanca pequena, não chaves grandes."
+ },
+ {
+  "id": "darkstar20",
+  "original": "Blackstar HT e Series One",
+  "versao_referencia": "HT-20RH MkIII (cabeçote 20 W; casa com o nome '20'). Alternativa da mesma lista: Series One 100 MkII. O campo inspiracao 'Mesa Bass 800D' da receita está ERRADO",
+  "original_cores": {
+   "tolex": "preto com textura craquelada (crackle)",
+   "painel": "preto, letras brancas, faixa baixa na frente",
+   "grade": "SEM grade: a frente é toda forrada do mesmo tolex preto, com placa Blackstar cromada no centro (o Series One MkII é que tem grade de metal preta com furos hexagonais)",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "HT-20RH MkIII: 468 L × 245 A × 222 P, 9,57 kg (manual Blackstar). Series One 100 MkII: 695 × 278 × 270, 23,19 kg (manual Blackstar; ordem L×A×P)",
+  "original_botoes": [
+   "(da esquerda p/ direita) MASTER VOLUME",
+   "REVERB LEVEL",
+   "ISF",
+   "TREBLE",
+   "MIDDLE",
+   "BASS",
+   "OD VOLUME",
+   "OD GAIN",
+   "CLEAN TONE",
+   "CLEAN VOLUME"
+  ],
+  "original_chaves_e_extras": "HT-20RH MkIII: chave POWER (alavanca) à esquerda com led, chave 20W/2W, botõezinhos VOICE (clean e OD) e OD SELECT com leds, entrada INPUT na DIREITA; botões pretos. Series One 100 MkII (se for o alvo): 4 canais (Clean/Crunch/OD1/OD2), cada um GAIN+VOLUME, dois blocos BASS/MIDDLE/TREBLE/ISF, MASTER RESONANCE/PRESENCE/VOLUME, DPR, chaves Standby/Power, entrada à esquerda — 20 botões pretos",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade de metal em losango, painel preto, 6 botões cromados, 3 leds.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Pelo nome (20) o alvo é o HT-20RH MkIII: bem menor (468×245×222), frente toda em tolex craquelado sem grade, 10 botões pretos na ordem invertida (master à esquerda, entrada à direita). Botões cromados e grade em losango não existem em nenhum dos dois. Se preferir o Series One, o tamanho atual serve, mas a grade é hexagonal e são 20 botões pretos.",
+  "confianca": "alta",
+  "formato_original": "cabeçote (HT-20RH MkIII é cabeçote pequeno; Series One 100 MkII é cabeçote grande)",
+  "fonte_fabricante": "https://blackstaramps.com/product/ht-20rh-mk-iii/",
+  "outras_fontes": [
+   "https://eadn-wc01-3990025.nxedge.io/wp-content/uploads/2024/04/HT-5-20-MK-III-Handbook.pdf",
+   "https://blackstaramps.com/product/series-one-100-mk-ii/",
+   "https://eadn-wc01-3990025.nxedge.io/wp-content/uploads/2024/10/SERIES-ONE-100-MK-II-OWNERS-MANUAL.pdf"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/darkstar20_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/darkstar20_1.jpg"
+  ],
+  "corrigido": "Alvo trocado de Series One 100 para HT-20RH MkIII (nome 20); medidas do fabricante; frente é tolex sem grade (não grade preta texturizada); 10 botões e ordem real; triagem dizia 'tamanho ok' e 'botões' — agora também tamanho e grade. Dados do Series One MkII corrigidos (695×278×270, 4 canais, 20 botões, grade hexagonal).",
+  "fontes_triagem_anterior": [
+   "https://www.pmtonline.co.uk/blackstar-series-one-100-guitar-amplifier-head",
+   "https://bluebookofguitarvalues.com/products/blackstar-amplification-series-one-100-head",
+   "https://www.premierguitar.com/gear/blackstar-series-one-100-amp-review"
+  ]
+ },
+ {
+  "id": "tri100",
+  "original": "Hughes & Kettner TriAmp",
+  "versao_referencia": "TriAmp Mark 3",
+  "original_cores": {
+   "tolex": "preto",
+   "painel": "vidro/acrílico preto brilhante com letras e anéis iluminados em azul (cor do led ajustável)",
+   "grade": "SEM grade: frente aberta com vidro escurecido mostrando as válvulas e o logo Hughes & Kettner em neon azul; cantoneiras pretas",
+   "letras": "brancas/azuis iluminadas"
+  },
+  "original_medidas_mm": "740 L × 303 A × 254 P, 22 kg (site Hughes & Kettner)",
+  "original_botoes": [
+   "(esq. p/ dir.) MASTER: VOLUME, PRESENCE, RESONANCE",
+   "AMP 3 (fileiras A em cima e B embaixo): MASTER, TREBLE, MID, BASS, GAIN",
+   "AMP 2 (A/B): MASTER, TREBLE, MID, BASS, GAIN",
+   "AMP 1 (A/B): MASTER, TREBLE, MID, BASS, GAIN",
+   "Total 33 botões cromados com anel azul"
+  ],
+  "original_chaves_e_extras": "Botão ON + chave POWER, MIDI LEARN/PLAY, STANDBY; botões iluminados NOISE GATE, FX LOOP, POWERAMP TUBES 1/2, 3/4, 5/6; botões de CHANNEL 3A/3B, 2A/2B, 1A/1B; STOMP BOOST; INPUT na direita; alça cromada",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade preta, painel prateado fosco, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "chaves",
+   "tamanho"
+  ],
+  "explicacao": "Painel é preto brilhante iluminado em azul (não prata fosco), a frente é vidro com as válvulas à mostra e o logo em neon (não grade preta), 33 botões cromados em duas fileiras por amp; altura 303 (hoje 270).",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://hughes-and-kettner.com/product/triamp-mark-3/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/tri100_1.jpg"
+  ],
+  "corrigido": "Medida fechada pelo fabricante (740×303×254, 22 kg; a triagem dava altura 310-390). Painel: preto brilhante com iluminação azul, não 'acrílico de cor ajustável' genérico; frente é vidro com válvulas e logo neon, não grade de metal; ordem exata dos 33 botões (MASTER, TREBLE, MID, BASS, GAIN por amp, fileiras A/B) e PRESENCE/RESONANCE são globais, não por amp.",
+  "fontes_triagem_anterior": [
+   "https://www.thomannmusic.com/hugheskettner_triamp_mark_3.htm",
+   "https://tonymckenzie.com/reviews-2026/hughes-kettner-triamp-mk3-review.htm",
+   "https://guitar.com/reviews/hughes-kettner-triamp-mark-3-review/"
+  ]
+ },
+ {
+  "id": "gen120",
+  "original": "Revv Generator 120",
+  "versao_referencia": "Generator 120 MkIII (rev. B). O campo inspiracao 'Mesa Bass 800D' da receita está ERRADO",
+  "original_cores": {
+   "tolex": "preto/grafite com textura craquelada, cantoneiras pretas",
+   "painel": "preto com letras brancas, faixa baixa",
+   "grade": "SEM grade: frente forrada de tolex com placa REVV (fundo preto, letras brancas, borda cromada) iluminada",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "673 L × 267 A × 254 P (26,5 × 10,5 × 10 pol.), 20,9 kg (46 lb) (site Revv)",
+  "original_botoes": [
+   "(esq. p/ dir.) CH1 em cima: TREBLE, MID, BASS, LEVEL",
+   "CH2 embaixo: GAIN, TREBLE, MID, BASS, LEVEL",
+   "CH3 em cima: GAIN, TREBLE, MID, BASS, LEVEL",
+   "CH4 embaixo: GAIN, TREBLE, MID, BASS, LEVEL",
+   "MASTER 1, MASTER 2 (em cima)",
+   "PRESENCE, DEPTH (embaixo)",
+   "LEVEL (fone/XLR)",
+   "VIRTUAL CAB (seletor de 6 posições)"
+  ],
+  "original_chaves_e_extras": "INPUT à esquerda; botões CH1/CH2 (WIDE, DRIVE), CH3/CH4 (AGGRESSION), botões BRIGHT, STORE, CUT, FAT, REVERB, GATE com leds; saída de fone; led CLIP; alavancas STANDBY e POWER à direita; botões pretos. As cores dos canais (azul/verde/roxo/vermelho) são só nomes/leds, o painel é todo preto",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade perfurada preta, painel preto, 6 botões cromados, 3 leds.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "grade",
+   "botoes",
+   "chaves",
+   "tamanho"
+  ],
+  "explicacao": "Frente é tolex com placa iluminada, não grade perfurada; botões pretos (não cromados), 4 canais em duas fileiras + masters/presence/depth = 22 botões + LEVEL e seletor de caixa; 673×267×254.",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://revvamplification.com/products/generator120",
+  "outras_fontes": [
+   "https://cdn.shopify.com/s/files/1/0549/5852/2550/files/REVV_-_GENERATOR_120_-_REV.B_-_MANUAL.pdf?v=1750433892",
+   "https://long-mcquade.com/215040/Guitars/Guitar-Amps/Revv/Generator-120-MkIII-Tube-Head.htm"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/gen120_1.jpg"
+  ],
+  "corrigido": "Painel NÃO tem áreas coloridas por canal (é todo preto); frente é tolex sem grade (não grade com logo iluminado); CH1 não tem GAIN; existem MASTER 1/2, DEPTH, LEVEL e seletor VIRTUAL CAB; chaves corretas são WIDE/DRIVE/AGGRESSION/BRIGHT/CUT/FAT/REVERB/GATE/STORE. Medidas confirmadas pelo fabricante e peso 20,9 kg.",
+  "fontes_triagem_anterior": [
+   "https://long-mcquade.com/215040/Guitars/Guitar-Amps/Revv/Generator-120-MkIII-Tube-Head.htm",
+   "https://www.andertons.co.uk/revv/revv-amplification-generator-120-mkiii-4x-channel-100-10w-tube-amp-head"
+  ]
+ },
+ {
+  "id": "nova100",
+  "original": "Fortin Natas",
+  "versao_referencia": "NATAS 2 canais (lançado em 2010)",
+  "original_cores": {
+   "tolex": "preto",
+   "painel": "VERMELHO anodizado com letras brancas",
+   "grade": "grade de metal preta com fendas horizontais (venezianas) mostrando as válvulas; placa FORTIN cromada com letras vermelhas",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "não encontrado (site da Fortin bloqueou acesso e o modelo não aparece no catálogo atual); estimativa visual ≈ 700 × 270 × 260",
+  "original_botoes": [
+   "(esq. p/ dir.) CH1: GIRTH, GRIND, GAIN, VOLUME, BASS, MIDDLE, TREBLE",
+   "CH2: GAIN, VOLUME, BASS, MIDDLE, TREBLE",
+   "DEPTH, PRESENCE, MASTER"
+  ],
+  "original_chaves_e_extras": "INPUT à esquerda; minichave KILL entre GAIN e VOLUME do CH1; minichave BRIGHT entre GAIN e VOLUME do CH2; minichave de canal embaixo; chaves gangorra vermelhas STANDBY e POWER à direita; botões pretos de ponteiro",
+  "atual_resumo": "Cabeçote 670×285×240 preto, grade preta, painel preto, 6 botões pretos, 3 leds.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "O painel do NATAS é vermelho (não preto) e a grade tem fendas horizontais; 15 botões pretos na ordem GIRTH, GRIND, GAIN..., minichaves Kill/Bright e gangorras vermelhas.",
+  "confianca": "media",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.premierguitar.com/articles/Fortin_Amplification_Releases_NATAS_Tube_Guitar_Amplifier"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/nova100_1.jpg"
+  ],
+  "corrigido": "Painel é VERMELHO com letras brancas (triagem: preto); grade é de fendas horizontais com placa cromada; chaves Standby/Power são gangorras vermelhas. Medidas seguem sem fonte.",
+  "fontes_triagem_anterior": [
+   "https://www.premierguitar.com/articles/Fortin_Amplification_Releases_NATAS_Tube_Guitar_Amplifier"
+  ]
+ },
+ {
+  "id": "emperor20",
+  "original": "Tone King Imperial",
+  "versao_referencia": "Imperial MkII Head 20 W",
+  "original_cores": {
+   "tolex": "opções do fabricante: Black, Brown/Beige, Cream, Turquoise (foto oficial: tolex preto com frente creme)",
+   "painel": "no TOPO da frente, preto com filetes e letras douradas/creme",
+   "grade": "tela prata/preta (estilo silverface) dentro de moldura creme, com placa Tone King",
+   "letras": "creme/douradas"
+  },
+  "original_medidas_mm": "572 L × 267 A × 229 P (22,5 × 10,5 × 9 pol.), 11,3 kg (25 lb) (site Tone King)",
+  "original_botoes": [
+   "(esq. p/ dir.) LEAD CHANNEL: VOLUME, TONE, MID-BITE",
+   "RHYTHM CHANNEL: VOLUME, TREBLE, BASS",
+   "REVERB",
+   "TREMOLO: SPEED, DEPTH"
+  ],
+  "original_chaves_e_extras": "Entrada INSTRUMENT à esquerda; chave LEAD/RHYTHM entre os canais; lâmpada piloto (joia) à direita; botões creme com saia e ponteiro; atenuador, HF COMP e bypass do Rhythm ficam atrás",
+  "atual_resumo": "Cabeçote 700×270×240 creme, tela marrom, painel preto, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "painel",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Original é 572×267×229 (hoje 700×270×240). O painel fica no alto da frente, preto com letras douradas e 9 botões creme; a grade é prata/preta dentro de moldura creme, não tela marrom. Lead tem VOLUME, TONE, MID-BITE (não treble/bass).",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.toneking.com/shop/amps/imperial-mk-ii-head/",
+  "outras_fontes": [
+   "https://www.toneking.com/wp-content/uploads/2021/10/Imperial_MKII_Manual_v2_5-25-21.pdf"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/emperor20_1.jpg"
+  ],
+  "corrigido": "Altura e profundidade estavam trocadas (é 267 A × 229 P); painel é preto com letras douradas, no topo, não cromado; tela é prata/preta com moldura creme, não marrom/trigo; botões são creme; canal Lead é VOLUME, TONE, MID-BITE; tremolo é SPEED/DEPTH. Couro creme existe como opção.",
+  "fontes_triagem_anterior": [
+   "https://www.chicagomusicexchange.com/products/tone-king-imperial-mkii-head-20w-cream-681156",
+   "https://www.premierguitar.com/tone-king-releases-the-imperial-mark-ii-head"
+  ]
+ },
+ {
+  "id": "rg100",
+  "original": "Randall RG100ES",
+  "versao_referencia": "RG100ES (anos 80, transistorizado, 120 W)",
+  "original_cores": {
+   "tolex": "preto (mais comum) ou pele de cobra cinza/branca",
+   "painel": "preto com letras brancas, faixa estreita embaixo",
+   "grade": "SEM grade: frente forrada de tolex com friso branco em volta e logo Randall cromado/preto grande",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "≈ 737 L × 279 A × 254 P (29 × 11 × 10 pol.), 18 kg (40 lb) — fonte: loja Cream City Music; sem fonte do fabricante",
+  "original_botoes": [
+   "(esq. p/ dir.) REVERB",
+   "PRESENCE",
+   "BASS",
+   "MIDDLE",
+   "TREBLE",
+   "MASTER (lead)",
+   "GAIN (lead)",
+   "MASTER (clean)",
+   "GAIN (clean)"
+  ],
+  "original_chaves_e_extras": "Chave liga à esquerda e lâmpada piloto vermelha; 2 entradas (HI/LO) à direita; botões pretos com tampa clara; alças laterais de plástico preto embutidas; cantoneiras pretas",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade perfurada preta, painel preto, 6 botões pretos, 1 led.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "A frente é toda forrada (sem grade perfurada) com friso branco; 9 botões na ordem REVERB, PRESENCE, BASS, MIDDLE, TREBLE e dois pares MASTER/GAIN, entradas à direita. Tamanho próximo.",
+  "confianca": "media",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.creamcitymusic.com/vintage-randall-rg100es-120w-amp-head-snakeskin-1987"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/rg100_3.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/rg100_4.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/rg100_painel.jpg"
+  ],
+  "corrigido": "Frente é tolex com friso branco, não tela preta; ordem real dos botões é inversa (REVERB primeiro, depois EQ, depois MASTER/GAIN de cada canal); treble com puxador não confirmado na foto; peso 18 kg.",
+  "fontes_triagem_anterior": [
+   "https://www.creamcitymusic.com/vintage-randall-rg100es-120w-amp-head-snakeskin-1987",
+   "https://bluebookofguitarvalues.com/products/randall-rgt-100es-head",
+   "https://equipboard.com/items/randall-rg100es"
+  ]
+ },
+ {
+  "id": "arch100",
+  "original": "PRS Archon",
+  "versao_referencia": "Archon 100 cabeçote",
+  "original_cores": {
+   "tolex": "preto",
+   "painel": "preto com letras creme e filetes creme agrupando os canais",
+   "grade": "em cima, grade de metal preta perfurada (furos redondos) mostrando as válvulas, com 'ARCHON' prata; no meio faixa de madeira preta (flame maple tingido) com assinatura Paul Reed Smith dourada",
+   "letras": "creme"
+  },
+  "original_medidas_mm": "≈ 546 L × 267 A × 254 P (21,5 × 10,5 × 10 pol.), 19,5 kg (43 lb) — lojas/Blue Book; site da PRS bloqueou acesso",
+  "original_botoes": [
+   "(esq. p/ dir.) CLEAN MASTER",
+   "LEAD MASTER",
+   "DEPTH",
+   "PRESENCE",
+   "CLEAN CHANNEL: BASS, MIDDLE, TREBLE, VOLUME",
+   "LEAD CHANNEL: BASS, MIDDLE, TREBLE, VOLUME"
+  ],
+  "original_chaves_e_extras": "Chave de 3 posições ST-BY/ON/OFF com led verde à esquerda; minichave BRIGHT em cada canal; minichave LEAD/CLEAN; INPUT à direita; botões pretos de ponteiro com risco branco",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade perfurada preta, painel prateado, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "painel",
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "Largura 546 (hoje 700). Painel é preto (hoje prateado); frente tem grade preta perfurada em cima e faixa de madeira escura no meio; 12 botões com os masters/depth/presence à ESQUERDA e os canais com BASS, MIDDLE, TREBLE, VOLUME.",
+  "confianca": "media",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.soundpure.com/p/prs-archon-100-amp-head-used/21670",
+   "https://www.zzounds.com/item--PAUARCHON100",
+   "https://bluebookofguitarvalues.com/products/paul-reed-smith-prs-archon-100-head"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/arch100_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/arch100_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/arch100_3.jpg"
+  ],
+  "corrigido": "Ordem dos botões corrigida (masters ficam à esquerda, não um por canal no fim; EQ começa por BASS); grade é preta perfurada, não tela cinza/prata; faixa de madeira com assinatura; painel atual prateado deve virar preto; chaves Bright, Lead/Clean e Standby de 3 posições.",
+  "fontes_triagem_anterior": [
+   "https://bluebookofguitarvalues.com/products/paul-reed-smith-prs-archon-100-head",
+   "https://www.zzounds.com/item--PAUARCHON100",
+   "https://musicradar.com/reviews/guitars/prs-archon-100-watt-head-609581"
+  ]
+ },
+ {
+  "id": "kraken50",
+  "original": "Victory Kraken",
+  "versao_referencia": "VX The Kraken MkII 50 W — versão Compact Head (caixa de madeira com tolex); existe também a versão Lunchbox de metal",
+  "original_cores": {
+   "tolex": "preto/grafite texturizado, cantoneiras pretas (Compact Head); Lunchbox: chapa grafite perfurada",
+   "painel": "metal azul-acinzentado (ardósia) com letras pretas",
+   "grade": "tela preta com aba diagonal de tolex à esquerda segurando o brasão V com louros prateado (Compact); Lunchbox: chapa perfurada com furos redondos e brasão dourado",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "Compact Head: 350 L × 220 A × 220 P, 9,2 kg; Lunchbox: 350 × 180 × 190, 7,15 kg (site Victory)",
+  "original_botoes": [
+   "(esq. p/ dir.) CLEAN/GAIN I",
+   "GAIN II",
+   "BASS",
+   "MIDDLE",
+   "TREBLE",
+   "MASTER I",
+   "MASTER II",
+   "PRESENCE"
+  ],
+  "original_chaves_e_extras": "INPUT à esquerda; minichave CLEAN/GAIN I; lâmpada piloto; chave HIGH/PREHEAT/LOW à direita; botões pretos de ponteiro",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade perfurada, painel prateado, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "painel",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Cabeçote pequeno 350×220×220 (hoje 700×270×240); painel azul-ardósia (hoje prata); frente com tela preta e aba diagonal com brasão; 8 botões pretos e chave HIGH/PREHEAT/LOW.",
+  "confianca": "alta",
+  "formato_original": "cabeçote compacto (versão Lunchbox: caixinha/lunchbox de metal)",
+  "fonte_fabricante": "https://www.victoryamps.com/product/vx-the-kraken-mkii-compact-head/",
+  "outras_fontes": [
+   "https://www.victoryamps.com/product/vx-the-kraken-mkii-lunch-box-head/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/kraken50_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/kraken50_2.jpg"
+  ],
+  "corrigido": "Medidas do fabricante (350×220×220 ou 350×180×190; triagem 390×220×190); são 8 botões, não 9 (não existe GAIN I BALANCE); não há chave de 3 posições de canal (é minichave Clean/Gain I + chave HIGH/PREHEAT/LOW); painel azul-ardósia com letras pretas; frente com tela preta e brasão.",
+  "fontes_triagem_anterior": [
+   "https://www.thomann.de/be/victory_amplifiers_vx_kraken_mkii_lunchbox.htm",
+   "https://www.andertons.co.uk/victory-vx-mkii-the-kraken-50w-wooden-compact-sleeve-valve-head-6l6"
+  ]
+ },
+ {
+  "id": "magick25",
+  "original": "Supro Black Magick",
+  "versao_referencia": "Black Magick Head 1695TH 25 W",
+  "original_cores": {
+   "tolex": "Black Rhino Hide (preto com trama clara; na foto parece tecido mesclado preto/branco), faixa creme no topo; friso branco",
+   "painel": "dourado/latão escovado com filetes e letras pretas",
+   "grade": "tela Supro prata/preta recortada em forma de flecha (Supro Arrow) na metade de cima da frente, logo Supro branco",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "520 L × 254 A × 185 P (20,3 × 10 × 7,3 pol.), 11 kg (site Supro)",
+  "original_botoes": [
+   "(esq. p/ dir.) VOL1",
+   "VOL2",
+   "TONE",
+   "SPEED",
+   "DEPTH"
+  ],
+  "original_chaves_e_extras": "Entradas IN 1+2 e IN 2 à esquerda; jaque TREMOLO (pedal) entre SPEED e DEPTH; alavanca STANDBY, lâmpada vermelha, alavanca POWER ON/OFF à direita; botões cromados; alça tipo osso",
+  "atual_resumo": "Cabeçote 700×270×240 de couro AZUL, tela cinza, painel preto, 6 botões pretos genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "cor",
+   "tamanho",
+   "painel",
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "Couro é preto mesclado (não azul); painel é DOURADO na parte de baixo (hoje preto); tela em forma de flecha; 5 botões cromados (VOL1, VOL2, TONE, SPEED, DEPTH); 520×254×185.",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.suprousa.com/amplifiers/black-magick-head/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/magick25_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/magick25_2.jpg"
+  ],
+  "corrigido": "Painel é dourado/latão com letras pretas (triagem: cromado/metal); 5 botões com TONE único — a ficha do site lista Treble e Bass, mas o painel da foto oficial mostra só TONE; botões cromados; tela em flecha; medidas do fabricante 52×25,4×18,5 cm e 11 kg.",
+  "fontes_triagem_anterior": [
+   "https://www.suprousa.com/amplifiers/black-magick-head",
+   "https://zzounds.com/item--SUP1695TH",
+   "https://greentoe.com/product/Supro_1695TH"
+  ]
+ },
+ {
+  "id": "deliver120",
+  "original": "Fryette Deliverance",
+  "versao_referencia": "Deliverance One Twenty II+ (atual da Fryette)",
+  "original_cores": {
+   "tolex": "preto texturizado",
+   "painel": "metal preto escovado com letras brancas",
+   "grade": "SEM grade: frente forrada de tolex preto com placa FRYETTE (prata com borda cromada) no centro",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "743 L × 267 A × 241 P (site: 29,25 × 9,5 × 10,5 pol. = 74 × 24 × 27 cm; pela foto a altura é a de 267), 21 kg (site Fryette)",
+  "original_botoes": [
+   "(esq. p/ dir.) GAIN I VOICING (Crisp–Thick)",
+   "GAIN II OVERDRIVE",
+   "MASTER VOLUME",
+   "SOLO VOLUME",
+   "TREBLE",
+   "MIDDLE",
+   "BASS",
+   "PRESENCE",
+   "DEPTH"
+  ],
+  "original_chaves_e_extras": "INPUT à esquerda; minichaves BRIGHT/SOLO e MORE/SOLO; leds vermelhos; gangorra OPERATE/STANDBY preta e gangorra MAINS verde iluminada à direita; botões pretos de ponteiro",
+  "atual_resumo": "Cabeçote 700×270×240 preto, grade perfurada, painel prateado, 6 botões pretos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "grade",
+   "painel",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "Frente é toda tolex com placa (não grade perfurada); painel preto escovado (hoje prateado); 9 botões pretos na ordem GAIN I, GAIN II, MASTER, SOLO, TREBLE, MIDDLE, BASS, PRESENCE, DEPTH; gangorra verde de força.",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://www.fryette.com/copy-of-old-style-deliverance-120-head-sold-out/",
+  "outras_fontes": [
+   "https://store-qis3kuj7.mybigcommerce.com/content/D60-D120H_II-Plus_Manual.pdf",
+   "https://www.fryette.com/deliverance-series/"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/deliver120_1.jpg"
+  ],
+  "corrigido": "Versão atual é a II+; frente sem grade (tolex com placa) e painel preto escovado com letras brancas (triagem: tela preta e metal com letras pretas); ordem dos botões confirmada; medidas e peso do fabricante (altura × profundidade estavam trocadas na triagem: 267 A × 241 P).",
+  "fontes_triagem_anterior": [
+   "https://zzounds.com/item--FRYD120HII",
+   "https://www.andertons.co.uk/fryette-deliverance-one-twenty-series-ii-plus-valve-amp-head/"
+  ]
+ },
+ {
+  "id": "ash500",
+  "original": "Ashdown ABM",
+  "versao_referencia": "ABM 500 EVO III (cabeçote, 575 W). A receita cita 'Hartke LH1000' na inspiração: ERRADO, o original é o Ashdown ABM.",
+  "original_cores": {
+   "tolex": "caixa revestida de tolex preto, com moldura/cantos pretos (não é chassi de metal nu)",
+   "painel": "cinza-azulado (azul acinzentado claro) ocupando toda a frente, com VU meter de fundo amarelo/âmbar à esquerda",
+   "grade": "sem grade nem tela: a frente inteira é o painel",
+   "letras": "claras (brancas/cinza-claro)"
+  },
+  "original_medidas_mm": "474 L × 134 A × 315 P, 14 kg (página oficial Ashdown: 134 × 474 × 315 mm, A × L × P)",
+  "original_botoes": [
+   "INPUT (ganho de entrada, ao lado do VU)",
+   "VALVE DRIVE (fileira de baixo)",
+   "BASS (±15 dB @ 45 Hz)",
+   "2 deslizantes de EQ (180 Hz e 340 Hz) entre BASS e MIDDLE",
+   "MIDDLE (±15 dB @ 660 Hz)",
+   "2 deslizantes de EQ entre MIDDLE e TREBLE",
+   "COMPRESSION (fileira de baixo)",
+   "TREBLE (±15 dB @ 7 kHz)",
+   "SUB HARMONICS (fileira de baixo)",
+   "OUTPUT"
+  ],
+  "original_chaves_e_extras": "VU meter iluminado (âmbar); entrada de instrumento com chave passivo/ativo; botões pequenos de liga/desliga do drive, do EQ, do compressor e do sub; saída D.I. XLR com pre/post e mute na frente; tuner out. Não achei o SHAPE no EVO III (a triagem listou SHAPE; ele é do EVO IV).",
+  "atual_resumo": "Cabeçote valvulado 700×270×240 preto com grade perfurada, painel prateado, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "painel",
+   "botoes",
+   "detalhes"
+  ],
+  "explicacao": "Cabeçote baixo (474×134×315) sem grade, painel cinza-azulado com VU âmbar, 4 knobs em cima (INPUT, BASS, MIDDLE, TREBLE + OUTPUT) e 3 embaixo (VALVE DRIVE, COMPRESSION, SUB HARMONICS) com 4 deslizantes no meio. Hoje é um cabeçote de guitarra 700×270 com grade e 6 botões genéricos.",
+  "confianca": "alta",
+  "formato_original": "cabeçote (baixo, compacto, sem grade)",
+  "fonte_fabricante": "https://ashdownmusic.com/de/products/abm-500-evo-iii",
+  "outras_fontes": [
+   "https://commons.wikimedia.org/wiki/File:Ashdown_ABM_300_Bass_Amplifier.jpg (ABM 300, mesma família, para cor do painel)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/ash500_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/ash500_1.jpg"
+  ],
+  "corrigido": "Painel não é 'alumínio escovado com letras pretas': é cinza-azulado com letras claras e VU âmbar; caixa é coberta de tolex preto, não chassi metálico nu; tirei SHAPE (não aparece no EVO III) e pus INPUT/OUTPUT/os 4 deslizantes na ordem real; medidas confirmadas pelo fabricante (474×134×315, 14 kg)."
+ },
+ {
+  "id": "vault4pro",
+  "original": "Ampeg SVT-4 Pro",
+  "versao_referencia": "SVT-4PRO (rack 3U, 1200 W em ponte)",
+  "original_cores": {
+   "tolex": "sem tolex: rack de chapa de metal preta",
+   "painel": "frontal preto com alças de rack pretas; painel de controle rebaixado embaixo e janela do EQ gráfico no alto ao centro",
+   "grade": "sem tela/grade (orelhas de rack com alças)",
+   "letras": "brancas/cinza-claro"
+  },
+  "original_medidas_mm": "483 L (com orelhas; 442 sem orelhas) × 142 A (com pés) × 394 P; 17,9 kg (manual Ampeg)",
+  "original_botoes": [
+   "GAIN",
+   "COMPRESSION",
+   "BASS",
+   "MIDRANGE",
+   "FREQUENCY (chave rotativa de 5 posições: 220/450/800/1,6k/3k Hz)",
+   "TREBLE",
+   "LINE OUT LEVEL",
+   "MASTER",
+   "CROSSOVER FREQUENCY",
+   "CROSSOVER BALANCE",
+   "EQ gráfico de 9 deslizantes (33, 80, 150, 300, 600, 900 Hz, 2k, 5k, 8k) + deslizante LEVEL"
+  ],
+  "original_chaves_e_extras": "Entrada e TUNER OUT na esquerda; botões MUTE, −15 dB, ULTRA HI, ULTRA LO, BRIGHT, GRAPHIC EQ, EFFECTS BYPASS, LIMIT DEFEAT; LEDs PEAK, LIMIT, POWER e EQ ACTIVE; chave basculante grande ON/OFF à direita, no alto.",
+  "atual_resumo": "Cabeçote 700×270×240 preto com grade perfurada, painel preto, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "botoes",
+   "detalhes"
+  ],
+  "explicacao": "É gaveta de rack 3U preta (483×142×394) com alças, EQ gráfico de 9 bandas numa janela no alto e uma fileira de 10 knobs embaixo; hoje é cabeçote alto com grade e 6 botões.",
+  "confianca": "alta",
+  "formato_original": "rack 3U",
+  "fonte_fabricante": "https://ampeg.com/data/6/0a020a4141205f43de83aa81f/application/pdf/Owner’s Manual - English .pdf",
+  "outras_fontes": [
+   "https://avlgear.com/products/ampeg-svt-4pro-1200w-tube-bass-head (foto)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault4pro_3.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault4pro_1.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault4pro_2.jpg"
+  ],
+  "corrigido": "Não existem MASTER A e MASTER B nem BALANCE solto: é um MASTER só, mais CROSSOVER FREQUENCY e CROSSOVER BALANCE e LINE OUT LEVEL; o EQ gráfico tem também o deslizante LEVEL; chaves corrigidas (não há 'Bridge' na frente; há Graphic EQ, Effects Bypass, Limit Defeat, Mute, −15 dB); medidas exatas do manual (483×142×394, 17,9 kg)."
+ },
+ {
+  "id": "maple400",
+  "original": "Traynor YBA-200",
+  "versao_referencia": "Traynor YBA200 / YBA200-2 (Bassmaster, 200 W, 4× KT88). Não achei um 'YBA-200 dos anos 70': o YBA200 é dos anos 2000; a inspiração da receita ('anos 70') está errada.",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos cromados, alças embutidas nas laterais",
+   "painel": "preto, na faixa de cima da frente",
+   "grade": "grade de METAL preta perfurada embaixo do painel (YBA200-2: furos redondos/hexagonais; YBA200 antigo: metal expandido em losango com emblema oval cromado)",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "570 L × 240 A × 290 P; 20 kg (ficha Long & McQuade, rede da própria Yorkville/Traynor: 'DWH 29 x 57 x 24 cm')",
+  "original_botoes": [
+   "GAIN",
+   "TREBLE",
+   "MID",
+   "RANGE (frequência do médio)",
+   "BASS",
+   "SCOOP",
+   "RESONANCE",
+   "MASTER"
+  ],
+  "original_chaves_e_extras": "Duas entradas (0 dB passivo / −6 dB ativo), TUNER out, botão MUTE com LED, BRIGHT, SCOOP liga/desliga, PRE-AMP OUT com Pre/Post, AMP IN, LINE OUT XLR com −20 dB e Ground Lift, lâmpada piloto âmbar, chaves alavanca STANDBY e POWER.",
+  "atual_resumo": "Cabeçote 720×300×360 preto, tela prateada salpicada, painel preto, 6 botões prateados.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "grade",
+   "botoes",
+   "tamanho",
+   "chaves"
+  ],
+  "explicacao": "Tela não é prateada: é grade de metal preta. Botões reais: 8 (GAIN, TREBLE, MID, RANGE, BASS, SCOOP, RESONANCE, MASTER), sem PRESENÇA. Medida real 570×240×290: hoje 720×300×360 está ~26% maior em tudo.",
+  "confianca": "media",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.long-mcquade.com/827/Guitars/Amps/Traynor/200-Watt-All-Tube-Bass-Head.htm",
+   "https://www.long-mcquade.com/GearHunter/503136/TRAYNOR-YBA-200.htm",
+   "https://traynoramps.com/products/yba200 (aberta; hoje só mostra o YBA300, sem dados do YBA200)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/maple400_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/maple400_1.jpg"
+  ],
+  "corrigido": "Versão: YBA200 dos anos 2000, não 'anos 70'; grade preta de metal (não tela prateada); botões trocados pelos 8 reais; medidas achadas (570×240×290, 20 kg) no lugar da estimativa."
+ },
+ {
+  "id": "nord650",
+  "original": "EBS Classic 500",
+  "versao_referencia": "EBS Classic 500 (valvulado/híbrido, 500 W)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos cromados, alça de couro preta em cima",
+   "painel": "faixa preta embaixo com letras brancas; faixa preta lisa no alto com o logo luminoso",
+   "grade": "TELA de pano cinza-escura/preta ocupando o meio da frente, com placa de nome cromada",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "490 L × 215 A × 300 P; 14 kg (EBS: 49 × 30 × 21,5 cm)",
+  "original_botoes": [
+   "GAIN",
+   "BASS",
+   "LOW MID (nível)",
+   "LOW MID FREQ (150–900 Hz, knob menor)",
+   "HIGH MID (nível)",
+   "HIGH MID FREQ (1,2k–7k Hz, knob menor)",
+   "TREBLE",
+   "DRIVE",
+   "VOLUME"
+  ],
+  "original_chaves_e_extras": "Entrada à esquerda; botão CHARACTER com LED e LED PEAK ao lado do GAIN; chaves alavanca STANDBY e POWER; lâmpada piloto vermelha grande à direita.",
+  "atual_resumo": "Cabeçote 700×270×240 preto com grade perfurada, painel cinza-escuro, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "É um cabeçote clássico com tolex, cantos cromados e tela, não uma caixa sem grade. Tem 9 controles na ordem GAIN, BASS, LOW MID + freq, HIGH MID + freq, TREBLE, DRIVE, VOLUME, mais Standby/Power e lâmpada vermelha. Largura real 490 (hoje 700).",
+  "confianca": "alta",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": "https://ebssweden.com/amps/classic-500/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/nord650_1.jpg"
+  ],
+  "corrigido": "A triagem dizia 'sem tela' e 'chassi preto': errado, tem tolex, cantos cromados e tela de pano; ordem dos botões corrigida (DRIVE e VOLUME no fim, médios em pares nível+frequência, chamados LOW MID/HIGH MID); altura e profundidade corrigidas (215 A × 300 P confere com a foto)."
+ },
+ {
+  "id": "wind300",
+  "original": "Peavey Mark III",
+  "versao_referencia": "Peavey Bass Mark III (anos 70–80; série 400BH/Century tem variações)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos cromados",
+   "painel": "preto, ocupando toda a frente (cabeçote baixo), com botões de tampa cromada/prata",
+   "grade": "sem tela (frente toda de painel) na foto de época achada",
+   "letras": "brancas/prata"
+  },
+  "original_medidas_mm": "não encontrado em fonte do fabricante",
+  "original_botoes": [
+   "Canal 1 (passivo): VOLUME, BASS, MIDDLE?, TREBLE (+BRIGHT)",
+   "Canal 2 (ativo): VOLUME, BASS, MID/SHIFT, TREBLE",
+   "EQ gráfico (em parte dos modelos)",
+   "COMPRESSOR",
+   "AUTOMIX (entrada que mistura os dois canais)"
+  ],
+  "original_chaves_e_extras": "Duas entradas por canal + entrada Automix; chaves Bright, Punch; mute; lâmpada vermelha; chaves de terra e liga.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela cinza salpicada, painel prateado, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "painel",
+   "grade",
+   "botoes"
+  ],
+  "explicacao": "Na única foto de cabeçote Peavey de baixo da época, o painel é PRETO com botões de tampa prata e a frente é toda painel (sem tela); a arte atual tem tela cinza e painel prateado. Controles e medidas do Mark III exato continuam sem fonte do fabricante.",
+  "confianca": "baixa",
+  "formato_original": "cabeçote",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://commons.wikimedia.org/wiki/File:Peavey_head_%26_Ampeg_Classic_cabinet.jpg (Peavey 'Bass' do início dos anos 70, modelo exato não identificado)",
+   "https://www.talkbass.com/threads/older-peavey-heads.671935/",
+   "https://equipboard.com/items/peavey-bass-mark-iii-series-400bh",
+   "https://manualsnet.com/peavey/mark-iii-bass-xp-series"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/wind300_1.jpg"
+  ],
+  "corrigido": "A triagem dizia painel 'alumínio prata com letras pretas' e 'cores coerentes'; a foto de época mostra painel preto com letras claras e frente sem tela. Mas a foto pode não ser do Mark III exato: tratar como pista, não como regra."
+ },
+ {
+  "id": "bassboxv",
+  "original": "Behringer Bass V-Amp Pro",
+  "versao_referencia": "BASS V-AMP PRO (LX1B PRO), rack 2U",
+  "original_cores": {
+   "tolex": "sem tolex: rack de metal",
+   "painel": "prata/cinza-claro com desenhos e letras pretos",
+   "grade": "sem grade (orelhas de rack com furos)",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "482,6 L × 89 A × 135 P; ≈2,76 kg (manual Behringer, cópia hospedada por terceiro)",
+  "original_botoes": [
+   "GAIN (DRIVE)",
+   "VOLUME (BOOST)",
+   "BASS (DEEP)",
+   "MID (SHIFT/TONE)",
+   "TREBLE (PRESENCE)",
+   "AMPS (seletor de 32 modelos, no alto)",
+   "REVERB/ATTACK (o texto do manual chama esse knob de COMPRESSOR)",
+   "EFFECTS (seletor, 2nd parameter)",
+   "MASTER"
+  ],
+  "original_chaves_e_extras": "Chave POWER quadrada à esquerda; botões A–E de configuração; visor de LED de 2 dígitos no centro com marcação de afinador; botões TUNER, BANK DOWN/UP, TAP; chave LINE IN, entrada INPUT e PHONES à direita.",
+  "atual_resumo": "Cabeçote 700×270×240 preto com grade, painel dourado, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "painel",
+   "botoes",
+   "detalhes"
+  ],
+  "explicacao": "Rack 2U prata (482×89×135) com 5 knobs de EQ embaixo à esquerda, seletor AMPS no alto, visor no centro e REVERB/EFFECTS/MASTER à direita. Hoje é cabeçote alto, com grade e painel dourado.",
+  "confianca": "media",
+  "formato_original": "rack 2U",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://img.audiomania.ru/data/behringer_bass_v-amp_pro.pdf (manual oficial Behringer em russo, hospedado por loja)",
+   "https://www.soundonsound.com/reviews/behringer-v-amp-pro-bass-v-amp-pro",
+   "https://www.bhphotovideo.com/c/product/280642-REG/Behringer_BASSVAMPPRO_BASS_V_AMP_PRO.html"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/bassboxv_1.jpg"
+  ],
+  "corrigido": "Profundidade corrigida de ~200 para 135 mm (manual); ordem real dos knobs (GAIN, VOLUME, BASS, MID, TREBLE ... MASTER); painel confirmado prata com letras pretas; tirei o 'DRIVE' como knob próprio (é o GAIN) e o 'FX ADJUST' (o knob é EFFECTS/2nd parameter). Visor é LED de 2 dígitos, não LCD."
+ },
+ {
+  "id": "eaglehammer500",
+  "original": "Aguilar Tone Hammer 500",
+  "versao_referencia": "Tone Hammer 500",
+  "original_cores": {
+   "tolex": "sem tolex: caixa de metal com base preta",
+   "painel": "prata (cinza-claro) com moldura arredondada e letras pretas",
+   "grade": "sem grade",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "273 L × 76 A × 216 P; 1,9 kg (Aguilar: 10.75 × 8.5 × 3 in, L × P × A)",
+  "original_botoes": [
+   "GAIN (alto)",
+   "DRIVE (baixo)",
+   "MID LEVEL (alto)",
+   "MID FREQ (baixo)",
+   "BASS (alto)",
+   "TREBLE (baixo)",
+   "VOLUME (alto, separado à direita)"
+  ],
+  "original_chaves_e_extras": "Entrada com botão −10 dB à esquerda; D.I. XLR com botões POST/PRE e LIFT/GND; botão MUTE; LEDs STATUS e OPERATE; knobs pretos em duas fileiras desencontradas.",
+  "atual_resumo": "Cabeçote valvulado 700×270×240 preto com grade, painel prateado, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "botoes",
+   "detalhes"
+  ],
+  "explicacao": "Painel prata ok, mas é uma caixinha de 273×76×216 sem grade; 7 knobs pretos em duas fileiras (GAIN/DRIVE, MID LEVEL/MID FREQ, BASS/TREBLE) e VOLUME à parte, com DI XLR e botões pequenos.",
+  "confianca": "alta",
+  "formato_original": "caixinha/lunchbox (micro cabeçote)",
+  "fonte_fabricante": "https://aguilaramp.com/products/tone-hammer-500/",
+  "outras_fontes": [],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/eaglehammer500_1.jpg"
+  ],
+  "corrigido": "O último knob é VOLUME (não MASTER); ordem física em duas fileiras registrada; extras corrigidos (botão −10 dB, POST/PRE, LIFT, MUTE, LEDs STATUS/OPERATE; não há chave liga na frente)."
+ },
+ {
+  "id": "bebop15",
+  "original": "Polytone Mini Brute",
+  "versao_referencia": "Mini Brute IV (combo 1×15, 100–110 W)",
+  "original_cores": {
+   "tolex": "preto texturizado, cantos plásticos pretos",
+   "painel": "no TOPO, recuado, cor bordô bem escuro (vinho quase preto) com letras brancas",
+   "grade": "grade de METAL expandido preta (losangos), não tela de pano",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "≈ 445 L × 483 A × 279 P (17,5 × 19 × 11 in, anúncio de usuário no TalkBass; sem fonte do fabricante); ≈ 16–17 kg",
+  "original_botoes": [
+   "MASTER VOLUME",
+   "GAIN (Sonic Circuit, canal II)",
+   "CONTOUR (LO–HI)",
+   "PROGRAM (seletor WARM/EDGE/DRIVE)",
+   "BASS",
+   "MID",
+   "TREBLE",
+   "VOLUME CH1",
+   "REVERB"
+  ],
+  "original_chaves_e_extras": "Chave alavanca POWER com LED vermelho; chave BOOST/CUT; entradas HI GAIN e LO GAIN; FX LOOP (input/output); PREAMP OUT; remoto CH I–CH II/REVERB. Botões pretos pequenos de ponteiro branco.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela marrom, painel preto, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "grade",
+   "painel",
+   "botoes"
+  ],
+  "explicacao": "É combo quase cúbico (≈445×483×279) com painel no topo cor de vinho escuro e grade de metal preta em losango; controles incluem MASTER, Sonic Circuit (GAIN/CONTOUR/PROGRAM), EQ de 3 bandas, VOLUME e REVERB. A tela marrom da receita está errada.",
+  "confianca": "media",
+  "formato_original": "combo (1×15, painel no topo)",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://www.themusiczoo.com/products/polytone-mini-brute-iv-1x15-combo-amplifier",
+   "https://www.talkbass.com/threads/polytone-mini-brute-iv-100w-combo.1265283/",
+   "https://commons.wikimedia.org/wiki/File:Polytone_Mini-Brute_II.jpg"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/bebop15_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/bebop15_3.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/bebop15_1.jpg"
+  ],
+  "corrigido": "Grade é de metal expandido preta (não tela marrom); painel do topo é vinho escuro (não preto); botões corrigidos para os 9 reais do IV (havia só 5 na triagem); medidas trocadas de 432×470×267 para ≈445×483×279 (anúncio, não fabricante)."
+ },
+ {
+  "id": "fliptop18",
+  "original": "Ampeg B-18 Portaflex",
+  "versao_referencia": "B-18N Portaflex (1963–67), cabeçote flip-top sobre caixa 1×18",
+  "original_cores": {
+   "tolex": "Blue Check (xadrez azul-marinho e preto miúdo), na caixa e no estojo do chassi",
+   "painel": "cromado (espelhado) com letras pretas, estreito, na frente do chassi",
+   "grade": "tela cinza-prateada com listras escuras (na caixa)",
+   "letras": "pretas"
+  },
+  "original_medidas_mm": "não encontrado (nem fabricante nem loja dão medidas do B-18N)",
+  "original_botoes": [
+   "VOLUME 1",
+   "TREBLE 1",
+   "BASS 1",
+   "VOLUME 2",
+   "TREBLE 2",
+   "BASS 2"
+  ],
+  "original_chaves_e_extras": "3 entradas à esquerda (Guitar/Bass/Instrument conforme anúncio); chaves alavanca STANDBY, GROUND SWITCH e ON/OFF à direita; knobs pretos de saia; chassi com válvulas à mostra entre dois blocos de transformador, que vira para dentro da caixa.",
+  "atual_resumo": "Cabeçote 700×270×240 de couro azul liso, tela cinza salpicada, painel prateado, 6 botões pretos genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "botoes",
+   "detalhes",
+   "tamanho"
+  ],
+  "explicacao": "Cores certas no geral (azul, tela cinza, painel cromado), mas o couro deveria ter a textura xadrez Blue Check; botões são só os 6 (VOLUME/TREBLE/BASS ×2) e três chaves alavanca à direita. O original é um chassi baixo e estreito sobre a caixa, não um cabeçote 700×270 comum.",
+  "confianca": "media",
+  "formato_original": "combo flip-top (chassi que vira para dentro da caixa 1×18)",
+  "fonte_fabricante": null,
+  "outras_fontes": [
+   "https://vintageandrare.com/product/Ampeg-B18N-Portaflex-Fliptop-1965-44276",
+   "https://bluebookofguitarvalues.com/products/ampeg-b-18n-portaflex (via resumo de busca; a página deu 403)",
+   "https://en.wikipedia.org/wiki/Ampeg_Portaflex",
+   "https://commons.wikimedia.org/wiki/File:Ampeg_Portaflex_B-15N_(front).jpg (B-15N posterior, só para comparação)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/fliptop18_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/fliptop18_3.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/fliptop18_1.jpg"
+  ],
+  "corrigido": "Acrescentei as três chaves alavanca (Standby, Ground, On/Off) e as 3 entradas; marquei que o formato é flip-top (afeta o tamanho); tela descrita como cinza-prateada listrada. Botões e cores da triagem confirmados pela foto."
+ },
+ {
+  "id": "vault210",
+  "original": "Ampeg BA-210",
+  "versao_referencia": "BA-210v2 (combo 2×10, 450 W)",
+  "original_cores": {
+   "tolex": "preto, cantos pretos",
+   "painel": "preto, na frente no alto (faixa horizontal), com letras brancas, logo Ampeg magenta iluminado e 'SCRAMBLER' em verde",
+   "grade": "tela preta, com placa Ampeg prateada quadrada no canto superior esquerdo",
+   "letras": "brancas"
+  },
+  "original_medidas_mm": "630 A × 508 L × 381 P; 21,8 kg (guia rápido Ampeg: H × W × D 630 × 508 × 381)",
+  "original_botoes": [
+   "DRIVE (Scrambler)",
+   "BLEND (Scrambler)",
+   "VOLUME",
+   "BASS",
+   "MID",
+   "TREBLE",
+   "AUX LEVEL"
+  ],
+  "original_chaves_e_extras": "INPUT com botão −15 dB; botão liga do SCRAMBLER; botões ULTRA HI e ULTRA LO entre VOLUME e BASS; AUX IN; LINE OUT XLR; SEND/RETURN; PHONES; botão HF MUTE; FOOTSWITCH; chave POWER à direita.",
+  "atual_resumo": "Cabeçote 700×270×240 preto, tela preta, painel preto letras brancas, 6 botões genéricos.",
+  "veredito": "trocar",
+  "o_que_trocar": [
+   "tamanho",
+   "botoes",
+   "chaves"
+  ],
+  "explicacao": "É combo mais alto que largo (508 L × 630 A × 381 P) com painel preto na frente no alto; 7 knobs (DRIVE, BLEND, VOLUME, BASS, MID, TREBLE, AUX LEVEL) e botões Ultra Hi/Lo, −15 dB, HF Mute.",
+  "confianca": "alta",
+  "formato_original": "combo (2×10 + tweeter)",
+  "fonte_fabricante": "https://ampeg.com/data/6/0a020a40717e6008a2b268874/application/pdf/Quick Start Guide - English .pdf",
+  "outras_fontes": [
+   "https://www.muziker.lt/ampeg-ba-210-v2 (foto)"
+  ],
+  "fotos": [
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault210_2.jpg",
+   "/private/tmp/claude-504/-Users-diego-Documents-Projetos-Nexus-Modeler/4432a839-4de4-429a-847b-84c5defd728f/scratchpad/pesquisa/fotos/vault210_1.jpg"
+  ],
+  "corrigido": "Medidas resolvidas pelo fabricante: altura 630, largura 508 (não o contrário); 'MIX' é BLEND; ULTRA LO/HI são botões, não knobs; acrescentei −15 dB, HF Mute e o logo magenta/Scrambler verde; ordem real dos knobs."
+ }
+]
