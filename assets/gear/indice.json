@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:22:56Z",
+ "gerado": "2026-10-29T20:31:09Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4431,8 +4431,8 @@
   },
   "nord650": {
    "nome": "Nord 650",
-   "hash": "d0819a26e032572d",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "2d7b05723ab31682",
+   "data": "2026-10-29T20:31:09Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "nord650_botao_agudo.png",
@@ -4447,24 +4447,24 @@
     "nord650_mapa.json"
    ],
    "sha256": {
-    "nord650_botao_agudo.png": "8f91ac9e6eab218b9e48877c27d928a2a36ea7755da3a7ddf14f1df9dfd618f8",
-    "nord650_botao_ganho.png": "e4a2e7e84ff8787bb1df54e4b3e450f00081b6068614f0aa9eb3a9f558363101",
-    "nord650_botao_grave.png": "e8300a82725d2927ce8e03a70f9cb56fc27ef3913d16583fe561b25b4d2565cb",
-    "nord650_botao_medio.png": "674cf75b1477d2e4c9a2485f80c6a7e00c21bf27950b93d314553746e9246d70",
-    "nord650_botao_presenca.png": "d7863a5430a9a8f8a644807abfcb36a02bcd4d914ad890efea37104f0830f72f",
-    "nord650_botao_volume.png": "e83b3274d2497913207fb06f5801b41bcbd1533565aa03cd881b230aeed76bca",
-    "nord650_frente.jpg": "1fc1d752db9bc3566c98d961a0e2932c5b8520b6edd274d69630eb5b72822560",
-    "nord650_frente_alfa.png": "014b7ee83d5bb70af09810f91619278ba66372cd03d11ceb21282f4d2ae0fd60",
-    "nord650_manifesto.json": "0e67e7c42c3f7e746d14749535f33b57cd99b70de2708d2e7adc5a0e1545e7dc",
-    "nord650_mapa.json": "344d512fd0220f92d662dfdcda2db98bb902915823e4d921f1242c61b5d79a0f"
+    "nord650_botao_agudo.png": "a8d59786ed6f972244e1c02d8c0830ab4b44d077020401b4158a451e4929a797",
+    "nord650_botao_ganho.png": "a33ca199ffeaab8a0060f7c53860f6f1c36ab365db5db71dd3d2a0ce81779d80",
+    "nord650_botao_grave.png": "7fc879ac5de647dee4da35d7d410b53101b478983b6c01aa8609f847b5b74352",
+    "nord650_botao_medio.png": "523aae2dabb678ae4a79a0c3d0fb3f8df2b07e2cc504cc01319fd865ba677954",
+    "nord650_botao_presenca.png": "54877f6c1d131d014ec5a7234c44a698e1e39af54318eee12bf9bc437fb58c6d",
+    "nord650_botao_volume.png": "e62d028d2ede30884fb77e01e8421d6b738db8eceb64eab291dc571a4b91cac8",
+    "nord650_frente.jpg": "911f505540354e84ff5e250f1fb58aa20eca7a7b175823d3f413b893fabe939b",
+    "nord650_frente_alfa.png": "36818988e55bde247d144b5d160adca537021c66f7b5c10b247e2b84d8a7d372",
+    "nord650_manifesto.json": "c4f29ca83b0f98bd96842c0d13872cee8135c13bacc386f6792c3d599e814553",
+    "nord650_mapa.json": "ace511f473ff0e73a74a1965e90a9d2b06e88e6e8abcd5f6b7ec74be29ac3040"
    },
-   "tamanho": 1572614,
+   "tamanho": 728744,
    "tipo": "cabecote",
    "inspiracao": "EBS Classic 500",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
