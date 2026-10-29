@@ -2,60 +2,60 @@
   "nome": "Tri 100",
   "familia": "tri100",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1154,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "ganho",
-      "x": 834,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_ganho.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "grave",
-      "x": 1023,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 1213,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_medio.png",
+      "id": "volume",
+      "x": 1671,
+      "y": 805,
+      "tamanho": 68,
+      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1403,
-      "y": 723,
-      "tamanho": 122,
+      "x": 1753,
+      "y": 804,
+      "tamanho": 69,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1592,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_presenca.png",
+      "id": "medio",
+      "x": 1835,
+      "y": 804,
+      "tamanho": 69,
+      "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1782,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_volume.png",
+      "id": "grave",
+      "x": 1917,
+      "y": 804,
+      "tamanho": 70,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1999,
+      "y": 803,
+      "tamanho": 71,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 475,
+      "y": 804,
+      "tamanho": 70,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -65,75 +65,318 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "MASTER",
+      "x": 727.9,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "TREBLE",
+      "x": 810.0,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "MID",
+      "x": 892.1,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "BASS",
+      "x": 974.2,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "GAIN",
+      "x": 1056.3,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "texto": "CHANNEL",
+      "x": 1138.4,
+      "y": 805.1,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "3B",
+      "x": 1138.4,
+      "y": 892.8,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1220.5,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1302.6,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1384.8,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1466.9,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1549.0,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CHANNEL",
+      "x": 1631.1,
+      "y": 805.1,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "2B",
+      "x": 1631.1,
+      "y": 892.8,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1702.9,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1785.1,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1867.2,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1949.3,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 2031.4,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CHANNEL",
+      "x": 2113.5,
+      "y": 805.1,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "1B",
+      "x": 2113.5,
+      "y": 892.8,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ON",
+      "x": 235.2,
+      "y": 804.5,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 235.2,
+      "y": 972.8,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDI LEARN",
+      "x": 327.6,
+      "y": 803.7,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 327.6,
+      "y": 972.8,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#272727",
+      "x": 430.2,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#272727",
+      "texto": "PRESENCE",
+      "x": 512.3,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RESONANCE",
+      "x": 594.4,
+      "y": 799.4,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NOISE GATE",
+      "x": 430.2,
+      "y": 958.9,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "FX LOOP",
+      "x": 502.0,
+      "y": 958.9,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "1/2",
+      "x": 573.9,
+      "y": 958.9,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "3/4",
+      "x": 625.2,
+      "y": 958.9,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "5/6",
+      "x": 676.5,
+      "y": 958.9,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STOMP BOOST",
+      "x": 2175.1,
+      "y": 813.3,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 2175.1,
+      "y": 957.5,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#e1eaff",
       "espaco": 1.0
     }
   ]
