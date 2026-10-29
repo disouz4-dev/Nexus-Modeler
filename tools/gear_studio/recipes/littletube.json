@@ -2,29 +2,25 @@
   "tipo": "cabecote",
   "nome": "Little Tube",
   "familia": "littletube",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Markbass Little Mark Tube 800: caixinha de metal de 276 × 83 × 250 mm com painel de bronze escovado, frisos e letras amarelo-dourados: em cima a entrada XLR, GAIN 2, PHANTOM, MIX, a marca, MASTER e a gangorra preta de liga; embaixo INPUT, GAIN 1, LED azul, LINE OUT e o EQ de seis botões amarelos (LOW, MID LOW, MID HIGH, HIGH, VLE, VPF) com o LED ON.",
+  "formato": "caixinha",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.276,
+    "altura": 0.083,
+    "profundidade": 0.25
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
       0.03,
       0.03,
-      0.03
+      0.032
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.5
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +35,220 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "LITTLE TUBE",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.015,
-      0.015,
-      0.015
+      0.32,
+      0.2,
+      0.08
     ],
     "texto_cor": [
-      0.98,
-      0.8,
-      0.05
+      0.9,
+      0.72,
+      0.1
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.012,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    },
+    "amarelo": {
+      "forma": "liso",
+      "diametro_m": 0.012,
+      "corpo": [
+        0.85,
+        0.65,
+        0.08
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.72,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "BAL IN",
+          "x": 0.05
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN 2",
+          "x": 0.13
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "PHANTOM",
+          "x": 0.19
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIX",
+          "x": 0.26
+        },
+        {
+          "tipo": "logo",
+          "altura_m": 0.0065,
+          "x": 0.5,
+          "z": 0.74
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.78
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": null,
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.92,
+          "largura_m": 0.012,
+          "altura_m": 0.016
+        }
+      ],
+      "letra_m": 0.0028,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.27,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.05
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN 1",
+          "x": 0.13
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.1,
+            0.3,
+            1.0
+          ],
+          "aceso": false,
+          "x": 0.18
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LINE OUT",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "LOW",
+          "estilo": "amarelo",
+          "x": 0.34
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID LOW",
+          "estilo": "amarelo",
+          "x": 0.43
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "MID HIGH",
+          "estilo": "amarelo",
+          "x": 0.52
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "HIGH",
+          "estilo": "amarelo",
+          "x": 0.61
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VLE",
+          "estilo": "amarelo",
+          "x": 0.7
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VPF",
+          "estilo": "amarelo",
+          "x": 0.79
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.1,
+            0.3,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.88
+        }
+      ],
+      "letra_m": 0.0028,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.02,
+      "z0": 0.5,
+      "x1": 0.98,
+      "z1": 0.5,
+      "esp_m": 0.0012,
+      "cor": [
+        0.9,
+        0.72,
+        0.1
+      ]
     }
   ],
-  "inspiracao": "cabeçote de baixo compacto (estilo Markbass Little Mark Tube): preto com letras amarelas"
+  "alca": "nenhuma",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.512,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "Painel bronze (decisão do PROGRESSO). A presença do Nexus ficou no MID HIGH."
 }

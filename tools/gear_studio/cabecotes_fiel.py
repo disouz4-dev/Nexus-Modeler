@@ -170,6 +170,8 @@ def quadro(fmt, W, H, D, painel):
 def _quadro(fmt, W, H, D, painel):
     """Enquadramento: pela largura, com folga para a alça e a sombra."""
     top = 0.04 if fmt in ("cabecote", "combo") else 0.035 if fmt == "caixinha" else 0.09 if fmt == "fliptop" else 0.012
+    if fmt == "rack":
+        top += D * 0.18  # o tampo do rack aparece por cima da frente
     prop = (H + top + 0.03) * 1.05 / (W * 1.10)
     elev = 10.0
     if painel.get("posicao") == "topo":

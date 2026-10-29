@@ -2,29 +2,26 @@
   "tipo": "cabecote",
   "nome": "Vault 4 Pro",
   "familia": "vault4pro",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Ampeg SVT-4 Pro: rack 3U (483 × 142 × 394 mm) de chapa preta com alças de rack, a janela do EQ gráfico de nove deslizantes e LEVEL no alto ao centro e o painel de controle rebaixado embaixo com letras claras: entrada e TUNER OUT, GAIN, COMPRESSION, BASS, MIDRANGE, FREQUENCY, TREBLE, LINE OUT, MASTER, CROSSOVER FREQUENCY e BALANCE em botões pretos, as teclas MUTE, -15 dB, ULTRA HI, ULTRA LO, BRIGHT, GRAPHIC EQ, BYPASS e LIMIT, os LEDs e a gangorra ON/OFF à direita.",
+  "formato": "rack",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.483,
+    "altura": 0.142,
+    "profundidade": 0.394
   },
+  "rack_u": 3,
   "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
     "cor": [
       0.02,
       0.02,
       0.022
     ],
-    "furo_mm": 2.0,
-    "passo_mm": 3.0
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +36,346 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "VAULT 4 PRO",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.015,
-      0.015,
-      0.017
+      0.012,
+      0.012,
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.92,
-      0.92,
-      0.92
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.015,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.72,
+      "x0": 0.28,
+      "x1": 0.72,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "33"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "80"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "150"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "300"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "600"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "900"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "2K"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "5K"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "8K"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "LEVEL"
+        }
+      ],
+      "curso_m": 0.03,
+      "letra_m": 0.003,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.72,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "logo",
+          "altura_m": 0.008,
+          "x": 0.14,
+          "z": 0.78
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.008,
+          "x": 0.82,
+          "z": 0.78,
+          "texto": "VAULT 4 PRO"
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "ON/OFF",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.93,
+          "z": 0.75
+        }
+      ],
+      "letra_m": 0.0034,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.22,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.04
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MUTE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.08,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "-15dB",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.11,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.16
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "COMP",
+          "x": 0.215
+        },
+        {
+          "tipo": "push",
+          "rotulo": "ULTRA HI",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.255,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "ULTRA LO",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.29,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.335
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.39
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "FREQ",
+          "x": 0.445
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.5
+        },
+        {
+          "tipo": "push",
+          "rotulo": "BRIGHT",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.54,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "EQ",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.575,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LINE",
+          "x": 0.62
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.675
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.72,
+          "z": 0.6
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "XOVER",
+          "x": 0.77
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BALANCE",
+          "x": 0.825
+        },
+        {
+          "tipo": "push",
+          "rotulo": "LIMIT",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.87,
+          "tamanho_m": 0.005
+        }
+      ],
+      "letra_m": 0.0032,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.26,
+      "z0": 0.72,
+      "x1": 0.74,
+      "z1": 0.72,
+      "esp_m": 0.065,
+      "cor": [
+        0.05,
+        0.05,
+        0.055
+      ]
+    },
+    {
+      "x0": 0.02,
+      "z0": 0.22,
+      "x1": 0.98,
+      "z1": 0.22,
+      "esp_m": 0.06,
+      "cor": [
+        0.03,
+        0.03,
+        0.033
+      ]
     }
   ],
-  "inspiracao": "cabeçote de baixo de transistor de 1200 W em gaveta de rack (estilo Ampeg SVT-4 Pro): tudo preto, letras brancas"
+  "alca": "rack",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.504,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "O EQ gráfico de nove faixas ficou desenhado fixo. O SVT-4 Pro não tem presença: ficou num botão pequeno depois do MASTER."
 }

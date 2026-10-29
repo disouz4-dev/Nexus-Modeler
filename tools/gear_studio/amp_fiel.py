@@ -652,6 +652,8 @@ def _fascia_mat(fa, name="fachada"):
         return mat_diamond_cloth(name, fa["cor"], fa.get("linha", (0.55, 0.5, 0.32)), fa.get("passo_mm", 38.0))
     if kind == "garras":
         return mat_claws(name, fa["cor"], fa.get("passo_mm", 14.0))
+    if kind == "aletas":
+        return mat_claws(name, fa["cor"], fa.get("passo_mm", 9.0), curve=0.0, slant=0.0)
     if kind == "inclinadas":
         return mat_claws(name, fa["cor"], fa.get("passo_mm", 12.0), curve=0.0, slant=0.6)
     if kind == "barras":

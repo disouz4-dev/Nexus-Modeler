@@ -2,29 +2,26 @@
   "tipo": "cabecote",
   "nome": "Glass 500",
   "familia": "glass500",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Darkglass Microtubes 500: caixinha de metal preta fosca de 230 × 71 × 180 mm com letras brancas finas: entrada e as três teclas com LED à esquerda, a seção MICROTUBES com COMP, DRIVE e LEVEL em cima e TONE e BLEND embaixo, o EQ de seis deslizantes com cursor azul, MUTE e o MASTER à direita, em botões pretos com marca branca.",
+  "formato": "caixinha",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.23,
+    "altura": 0.071,
+    "profundidade": 0.18
   },
   "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
     "cor": [
       0.02,
       0.02,
       0.022
     ],
-    "furo_mm": 2.5,
-    "passo_mm": 3.6
+    "metal": true,
+    "aspereza": 0.7
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +36,224 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "GLASS 500",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.012,
-      0.012,
-      0.013
+      0.015,
+      0.015,
+      0.016
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.88,
-      0.88,
-      0.88
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.013,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.008,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.7,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.05
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "COMP",
+          "x": 0.15
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "DRIVE",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEVEL",
+          "x": 0.33
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.92
+        }
+      ],
+      "letra_m": 0.003,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.3,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.04,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.08,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.12,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TONE",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "BLEND",
+          "x": 0.33
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "GRAVE",
+          "estilo": "extra",
+          "x": 0.405,
+          "z": 0.55
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "estilo": "extra",
+          "x": 0.405,
+          "z": 0.2
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MUTE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.92,
+          "tamanho_m": 0.005
+        }
+      ],
+      "letra_m": 0.003,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.47,
+      "x1": 0.84,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "LO"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "250"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "500"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "1.5K"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "3K"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "HI"
+        }
+      ],
+      "curso_m": 0.03,
+      "letra_m": 0.0028,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "alca": "nenhuma",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.564,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo compacto com distorção (estilo Darkglass Microtubes 500): metal preto, letras brancas"
+  "notas_modelagem": "O EQ de seis deslizantes ficou desenhado fixo; grave e médio do Nexus são dois botões pequenos ao lado do BLEND, o agudo é o TONE e a presença o BLEND."
 }

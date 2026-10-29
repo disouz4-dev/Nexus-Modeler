@@ -2,44 +2,51 @@
   "tipo": "cabecote",
   "nome": "Bassline 100",
   "familia": "bassline100",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Fender Bassman silverface: cabeçote de 610 × 241 × 241 mm em tolex preto, painel de alumínio prateado na faixa de cima com letras pretas, o nome em azul-turquesa e friso fino, e a tela prateada e turquesa embaixo com a marca: canal BASS INSTRUMENT (entradas, DEEP, VOLUME, TREBLE, BASS; o que toca) e canal NORMAL (entradas, BRIGHT, VOLUME, TREBLE, BASS) em botões pretos de tampa prateada e saia numerada, a joia piloto e as chaves.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.61,
+    "altura": 0.241,
+    "profundidade": 0.241
   },
   "couro": {
     "cor": [
       0.006,
       0.006,
-      0.007
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
-      0.06,
-      0.06,
-      0.07
+      0.42,
+      0.5,
+      0.52
     ],
     "cor_b": [
-      0.62,
-      0.63,
-      0.66
+      0.06,
+      0.07,
+      0.08
     ],
-    "trama_mm": 2.4,
+    "trama_mm": 2.0,
     "friso": [
-      0.85,
-      0.85,
-      0.86
+      0.75,
+      0.75,
+      0.76
     ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
+    "altura_m": 0.016,
+    "altura_rel": 0.7,
+    "lado_rel": -0.3,
     "cor": [
       0.9,
       0.9,
@@ -47,76 +54,214 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BASSLINE 100",
-    "pintado": true,
+    "posicao": "cima",
+    "altura_m": 0.07,
     "cor": [
-      0.012,
-      0.012,
-      0.013
+      0.68,
+      0.69,
+      0.7
     ],
     "texto_cor": [
-      0.88,
-      0.88,
-      0.88
+      0.012,
+      0.012,
+      0.012
+    ],
+    "friso": [
+      0.3,
+      0.3,
+      0.32
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
+  "estilos": {
+    "padrao": {
+      "forma": "saia_numerada",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "saia": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "numeros": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma",
+      "tampa_metal": true,
+      "tampa": [
+        0.75,
+        0.76,
+        0.78
+      ]
     },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.55,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.035
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.075
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "DEEP",
+          "x": 0.11
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.16
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.22
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.28
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "BASS INSTRUMENT",
+          "x": 0.17,
+          "z": 0.15,
+          "letra_m": 0.0052
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.36
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.4
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRIGHT",
+          "x": 0.435
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.485
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.545
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.605
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "NORMAL",
+          "x": 0.49,
+          "z": 0.15,
+          "letra_m": 0.0052
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "estilo": "extra",
+          "x": 0.665,
+          "z": 0.7
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.665,
+          "z": 0.3
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.014,
+          "x": 0.79,
+          "z": 0.55,
+          "cor": [
+            0.1,
+            0.5,
+            0.55
+          ],
+          "texto": "BASSLINE"
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.89,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": null,
+          "x": 0.95
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "nenhum",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.487,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo valvulado (estilo Fender Bassman 100T): tolex preto, tela prateada, painel preto"
+  "notas_modelagem": "O Bassman não tem médio, presença nem master: o volume do Nexus é o VOLUME do canal Normal; médio e presença em botões pequenos."
 }

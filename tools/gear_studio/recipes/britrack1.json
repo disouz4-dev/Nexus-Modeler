@@ -377,7 +377,7 @@
   ],
   "quadro": {
     "largura_rel": 1.1,
-    "proporcao": 0.17,
+    "proporcao": 0.262,
     "elevacao": 10.0
   },
   "notas_modelagem": "Os botões que tocam ficam no lugar das teclas de cima do JMP-1 (que no original escolhem o parâmetro do botão DATA). Os LEDs de canal são as teclas CLEAN 1 (Limpo) e OD 1 (Overdrive)."
