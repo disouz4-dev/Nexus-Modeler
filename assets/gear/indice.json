@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:20:04Z",
+ "gerado": "2026-10-29T15:20:13Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -366,8 +366,8 @@
   },
   "banana_overdrive": {
    "nome": "Banana Overdrive",
-   "hash": "432c6b005a5f305a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "14be0b57a0c7f081",
+   "data": "2026-10-29T15:20:13Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "banana_overdrive_botao_ganho.png",
@@ -379,21 +379,21 @@
     "banana_overdrive_mapa.json"
    ],
    "sha256": {
-    "banana_overdrive_botao_ganho.png": "83cbebd4f7649edd1429c32680ad521f426224cbabc902a34ca3eec6a83de39c",
-    "banana_overdrive_botao_nivel.png": "5f489d314036b6cb7425298b33022936baec3589b78242f779456869b4412757",
-    "banana_overdrive_botao_tom.png": "a5aac6ee89d840642f9c5db2d061a8150e799bb101db3c676d80c36ef9cdbcf4",
-    "banana_overdrive_frente.jpg": "c7c7a9c048e99b2327cf638ce14962f75be17bc61bcf095473f7378abfce14fa",
-    "banana_overdrive_frente_alfa.png": "e3b08b474443c55fb491486fb52b1f4039eaab9de0eb46057a4fe0bb0d71f2a1",
-    "banana_overdrive_manifesto.json": "60e9c40b7db2689dd38cb33fc43bcf8aa2068fca034a5a6633a23aed1b037474",
-    "banana_overdrive_mapa.json": "e935b0cb9bffad460b8daeb02c1376b64391fb3a13c9e1ee9cbcbcb633b41969"
+    "banana_overdrive_botao_ganho.png": "b01d0aeedc4464199b3a165254f3c63066cf189b7763476db10448de61cd8c98",
+    "banana_overdrive_botao_nivel.png": "69f9a14e1e01ecbc0d3c24b056e878611beba64697a1616c536c385fde6f85b8",
+    "banana_overdrive_botao_tom.png": "b83e010c62b6ccf83b85ec24c5731ca1f745c054ae6b9e79b9032c3f3ebce123",
+    "banana_overdrive_frente.jpg": "78fd1dbfc42d0488b86b9f7af913a6ffa95e547d71c65f49f75d86aab912f1b5",
+    "banana_overdrive_frente_alfa.png": "84300be99d1809c9d457c86622c72032846060a7f06832792a555a0f7e14db0a",
+    "banana_overdrive_manifesto.json": "e7848f6a969fcedcfdce076299f583246512c6694b1fa5228ec846cc1839febf",
+    "banana_overdrive_mapa.json": "1caea09a913574edc4a80a92144e3b133c0832da34c75273d387329ce0013e7d"
    },
-   "tamanho": 436500,
+   "tamanho": 405520,
    "tipo": "pedal",
    "inspiracao": "SD-1",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
