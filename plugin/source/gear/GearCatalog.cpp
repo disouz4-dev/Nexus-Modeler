@@ -250,19 +250,9 @@ void GearCatalog::reload()
         add(std::move(e));
         added = true;
       }
-      else if (same->origin == GearEntry::Origin::downloaded)
-      {
-        // Atualização de uma peça baixada: mesma posição, ficha nova.
-        e.look = same->look;
-        if (e.kind == Kind::pedal)
-          mPedalEngine[static_cast<size_t>(e.look)].store(e.engineCode);
-        if (e.kind == Kind::amp)
-          mGraphicEq[static_cast<size_t>(e.look)].store(e.graphicEq);
-        *same = std::move(e);
-        added = true;
-      }
-      // Mesmo id de uma peça de fábrica: vale a ficha embutida (a pasta só
-      // troca a arte).
+      // Peça que já estava no catálogo (atualização de uma baixada, ou arte
+      // nova de uma de fábrica): não troca no meio do uso; vale a partir da
+      // próxima abertura. Nas de fábrica vale sempre a ficha embutida.
     }
   }
   if (added)

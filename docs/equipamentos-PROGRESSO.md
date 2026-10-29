@@ -46,7 +46,32 @@ Decisões do dono que valem sobre o plano:
   ficha, o sha256 e o tamanho de cada arquivo no índice.
   Teste: `nexus_gear_test assets/gear <pacote>` com um pedal novo
   (`caqui_drive`, montado de um render de mentira) e `nexus_arte_test`.
-- [ ] **5. Busca e download no mesmo repositório.**
+- [x] **5. Busca e download no mesmo repositório.** `update/ArteNova` virou
+  `update/GearStore` (mesmo índice, mesma pasta): lê
+  `raw.githubusercontent.com/disouz4-dev/Nexus-Modeler/main/assets/gear/indice.json`
+  (ou `NEXUS_EQUIPAMENTOS_URL` / `NEXUS_ARTE_URL`), pula o que pede Nexus
+  mais novo ou motor desconhecido, e **procura e baixa sozinho ao abrir**,
+  conferindo o sha256 de cada arquivo, e instala pelo catálogo. Equipamento
+  novo entra na lista na hora; peça que já existia (pode estar tocando) troca
+  ao abrir de novo. O ícone saiu da barra de cima e foi para a coluna de
+  equipamentos, ao lado da pesquisa (`GearBrowser::setAccessory`), e só mostra
+  o estado (procurando, baixando com andamento, quantos chegaram, erro; clique
+  só no erro, para tentar de novo). O cartão "não está instalado" ganhou o
+  nome do índice e o link "Baixar" (ou "Precisa de uma versão mais nova").
+  Teste de ponta a ponta: `nexus_arte_test <remoto> caqui_drive "Caqui Drive"`.
+
+## Teste de ponta a ponta (como foi rodado)
+
+```
+# cópia do projeto como "GitHub" local
+mkdir -p /tmp/remoto/tools /tmp/remoto/assets
+cp -R tools/gear_studio /tmp/remoto/tools/ && cp -R assets/gear /tmp/remoto/assets/ && cp CMakeLists.txt /tmp/remoto/
+# render de mentira (qualquer saída do build.py serve) e a peça nova
+cd /tmp/remoto && python3 tools/gear_studio/montar_equipamento.py caqui_drive --tipo pedal \
+  --saida <render> --inspiracao "Fulltone OCD" --categoria "Drive e distorção" --busca OCD --pacote /tmp/pacotes
+build-teste/plugin/nexus_arte_test_artefacts/Release/nexus_arte_test /tmp/remoto/assets/gear caqui_drive "Caqui Drive"
+build-teste/plugin/nexus_gear_test_artefacts/Release/nexus_gear_test assets/gear /tmp/pacotes/caqui_drive-1.0.0.equipamento
+```
 
 ## Para retomar
 

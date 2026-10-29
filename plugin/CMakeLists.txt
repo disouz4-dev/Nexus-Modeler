@@ -69,7 +69,7 @@ set(NEXUS_UI_SOURCES
   source/ui/Tuner.cpp
   source/ui/IrMic.cpp
   source/update/Updater.cpp
-  source/update/ArteNova.cpp
+  source/update/GearStore.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
 
@@ -250,14 +250,20 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
-  # Teste dos equipamentos novos sem reinstalar (pasta local no lugar do GitHub).
+  # Teste dos equipamentos novos sem reinstalar (pasta local no lugar do GitHub):
+  # nexus_arte_test <pasta com indice.json e os arquivos> <peça nova> <nome>
   juce_add_console_app(nexus_arte_test PRODUCT_NAME "nexus_arte_test")
-  target_sources(nexus_arte_test PRIVATE host_test/ArteNovaTest.cpp source/update/ArteNova.cpp source/update/Updater.cpp source/report/Report.cpp source/ui/Gear.cpp source/gear/GearCatalog.cpp)
-  target_compile_definitions(nexus_arte_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
+  target_sources(nexus_arte_test PRIVATE host_test/GearStoreTest.cpp ${NEXUS_PROCESSOR_SOURCES} ${NEXUS_UI_SOURCES})
+  target_include_directories(nexus_arte_test SYSTEM PRIVATE "${NEXUS_RESAMPLER_DIR}")
+  target_compile_definitions(nexus_arte_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_MODAL_LOOPS_PERMITTED=1 NEXUS_T3K_KEY="${NEXUS_T3K_KEY}")
   target_link_libraries(nexus_arte_test PRIVATE
+    nexus_engine
+    nexus_studio
+    signalsmith-stretch
     NexusArt
-    juce::juce_gui_basics
-    juce::juce_audio_processors
+    juce::juce_dsp
+    juce::juce_audio_utils
+    juce::juce_cryptography
     juce::juce_recommended_config_flags)
 
   # Catálogo de equipamentos e id em texto no estado (presets antigos abrem iguais).

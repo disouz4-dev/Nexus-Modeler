@@ -51,6 +51,9 @@ public:
   // Peça que a tela mostra agora (fica marcada na lista).
   void setCurrent(GearItem::Kind kind, int look);
   void retranslate();
+  // Componente pequeno à direita da pesquisa (o ícone de equipamentos novos);
+  // só ocupa lugar quando está visível.
+  void setAccessory(juce::Component* c);
 
   void paint(juce::Graphics&) override;
   void resized() override;
@@ -73,6 +76,7 @@ private:
   std::vector<GearItem> mItems;
   GearItem::Kind mTab = GearItem::Kind::pedal;
   std::array<int, 3> mScroll{}; // onde cada aba estava (pedais, cabeçotes, caixas)
+  juce::Component* mAccessory = nullptr;
   GearItem::Kind mCurrentKind = GearItem::Kind::amp;
   int mCurrentLook = -1;
 };

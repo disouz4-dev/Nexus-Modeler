@@ -2,7 +2,7 @@ name: Índice da arte
 
 # Todo push no main que mexe em assets/gear refaz o assets/gear/indice.json,
 # que os Nexus instalados leem ao abrir para baixar só os equipamentos novos ou
-# refeitos, sem esperar uma versão nova do programa (update/ArteNova.cpp).
+# refeitos, sem esperar uma versão nova do programa (update/GearStore.cpp).
 on:
   push:
     branches: [main]

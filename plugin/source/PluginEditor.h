@@ -390,6 +390,7 @@ private:
   std::unique_ptr<nexus::ui::PresetBar> mPresets;
   nexus::ui::UpdateBadge mUpdate;
   nexus::ui::ArteBadge mArteNova;
+  juce::SharedResourcePointer<nexus::update::GearStore> mStore; // o mesmo do aviso
   std::unique_ptr<juce::FileChooser> mChooser;
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;

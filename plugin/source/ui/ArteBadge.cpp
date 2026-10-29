@@ -6,7 +6,7 @@
 
 namespace nexus::ui
 {
-using State = nexus::update::ArteNova::State;
+using State = nexus::update::GearStore::State;
 
 namespace
 {
@@ -36,74 +36,50 @@ ArteBadge::~ArteBadge()
 
 void ArteBadge::refresh()
 {
+  // Só mostra o estado: procurando, baixando, quantas chegaram ou o erro.
   const auto s = mArte->state();
-  const bool show = s == State::available || s == State::downloading || s == State::ready || s == State::failed;
+  const bool show = s == State::checking || s == State::available || s == State::downloading || s == State::ready || s == State::failed;
   if (show != isVisible())
   {
     setVisible(show);
     if (onLayoutChange)
       onLayoutChange();
   }
-  juce::String tip = countText(mArte->count());
-  if (s == State::downloading)
+  juce::String tip;
+  if (s == State::checking)
+    tip = tr("Procurando equipamentos novos");
+  else if (s == State::downloading || s == State::available)
     tip = tr("Baixando equipamentos novos") + "  " + juce::String(juce::roundToInt(mArte->progress() * 100.0f)) + "%";
   else if (s == State::ready)
-    tip = tr("Equipamentos novos baixados: abra o Nexus de novo para usar");
+  {
+    auto names = mArte->names();
+    if (names.size() > 12)
+    {
+      names.removeRange(12, names.size());
+      names.add(juce::String::fromUTF8("…"));
+    }
+    tip = (mArte->count() == 1 ? tr("Chegou 1 equipamento novo") : tr("Chegaram %1 equipamentos novos").replace("%1", juce::String(mArte->count())))
+          + ": " + names.joinIntoString(", ");
+    if (mArte->needsRestart())
+      tip += "\n" + tr("A arte nova das peças que já existiam vale ao abrir o Nexus de novo.");
+  }
   else if (s == State::failed)
-    tip = mArte->error();
-  else
-    tip += "\n" + tr("Clique para baixar");
+    tip = mArte->error() + "\n" + tr("Clique para tentar de novo");
   setTooltip(tip);
   repaint();
 }
 
 void ArteBadge::changeListenerCallback(juce::ChangeBroadcaster*)
 {
-  const auto s = mArte->state();
-  const bool done = s == State::ready && mShown != State::ready;
-  mShown = s;
+  mShown = mArte->state();
   refresh();
-  if (done)
-    finished();
 }
 
-void ArteBadge::ask()
+void ArteBadge::mouseUp(const juce::MouseEvent&)
 {
-  const auto s = mArte->state();
-  if (s == State::ready)
-  {
-    finished();
-    return;
-  }
-  if (s != State::available && s != State::failed)
-    return;
-  auto names = mArte->names();
-  auto list = names.joinIntoString(", ");
-  if (names.size() > 12)
-  {
-    names.removeRange(12, names.size());
-    list = names.joinIntoString(", ") + "…";
-  }
-  juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, countText(mArte->count()),
-                                     list + "\n\n" + tr("Baixar agora? Eles ficam guardados no computador."), tr("Baixar"),
-                                     tr("Agora não"), this, juce::ModalCallbackFunction::create([this](int ok) {
-                                       if (ok == 1)
-                                         mArte->download();
-                                     }));
-}
-
-void ArteBadge::finished()
-{
-  if (juce::JUCEApplicationBase::isStandaloneApp())
-    juce::AlertWindow::showOkCancelBox(juce::MessageBoxIconType::NoIcon, tr("Equipamentos novos baixados"),
-                                       tr("Abra o Nexus de novo para usar a arte nova."), tr("Reabrir agora"), tr("Depois"), nullptr,
-                                       juce::ModalCallbackFunction::create([](int ok) {
-                                         if (ok == 1)
-                                           nexus::update::Updater::restartProgram();
-                                       }));
-  else
-    juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::NoIcon, tr("Equipamentos novos baixados"),
-                                           tr("Feche e abra de novo a janela do Nexus para usar a arte nova."));
+  // Sem confirmação: só o erro aceita clique, para tentar de novo.
+  if (mArte->state() == State::failed)
+    mArte->download();
 }
 
 void ArteBadge::paint(juce::Graphics& g)
@@ -135,24 +111,18 @@ void ArteBadge::paint(juce::Graphics& g)
   for (int i = 0; i < 3; ++i)
     g.drawHorizontalLine(juce::roundToInt(amp.getY() + 9.0f + 2.0f * static_cast<float>(i)), amp.getX() + 3.0f, amp.getRight() - 3.0f);
 
-  // Quantidade no canto.
-  if (s == State::available || s == State::failed || s == State::ready)
+  // No canto: quantas chegam (ou chegaram) e "!" no erro.
+  if (s == State::available || s == State::downloading || s == State::failed || s == State::ready)
   {
     const auto n = mArte->count();
-    const auto text = s == State::ready ? juce::String::fromUTF8("✓") : n > 99 ? juce::String("99+") : juce::String(n);
+    const auto text = s == State::failed ? juce::String("!") : n > 99 ? juce::String("99+") : juce::String(n);
     const float w = juce::jmax(14.0f, 7.0f * static_cast<float>(text.length()) + 6.0f);
     const auto dot = juce::Rectangle<float>(w, 14.0f).withPosition(r.getRight() - w - 1.0f, r.getY() + 1.0f);
-    g.setColour(s == State::ready ? colour::accent : colour::danger);
+    g.setColour(s == State::failed ? colour::danger : colour::accent);
     g.fillRoundedRectangle(dot, 7.0f);
     g.setColour(juce::Colours::white);
     g.setFont(juce::FontOptions(10.0f, juce::Font::bold));
     g.drawText(text, dot, juce::Justification::centred, false);
   }
-}
-
-void ArteBadge::mouseUp(const juce::MouseEvent& e)
-{
-  if (contains(e.getPosition()))
-    ask();
 }
 } // namespace nexus::ui

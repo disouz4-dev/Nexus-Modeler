@@ -1788,7 +1788,9 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mRail);
   addAndMakeVisible(mChangeLink);
   mChangeLink.onClick = [this] {
-    if (mSel.kind == Kind::eq)
+    if (const auto missing = missingHere(); missing.isNotEmpty())
+      mStore->downloadOne(missing); // cartão "não está instalado"
+    else if (mSel.kind == Kind::eq)
       mEqStage->clearBands();
     else if (mSel.kind == Kind::cab)
       chooseIr(mSel.index);
@@ -1810,14 +1812,16 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mPresets);
   addChildComponent(mUpdate);
   mUpdate.onLayoutChange = [this] { resized(); };
-  addChildComponent(mArteNova);
-  mArteNova.onLayoutChange = [this] { resized(); };
   // Depois da janela aparecer: pergunta se manda o relatório de travamento.
   juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
     if (safe != nullptr && safe->isShowing())
       safe->offerCrashReport();
   });
   mBrowser = std::make_unique<GearBrowser>();
+  // Equipamentos novos: o ícone fica na coluna, ao lado da pesquisa, e só
+  // mostra o estado (o Nexus procura e baixa sozinho ao abrir).
+  mBrowser->setAccessory(&mArteNova);
+  mArteNova.onLayoutChange = [this] { mBrowser->resized(); };
   mBrowser->onPick = [this](const GearItem& item) { pickGear(item); };
   addAndMakeVisible(*mBrowser);
   refreshBrowser();
@@ -2007,13 +2011,12 @@ void NexusEditor::refreshBrowser()
 void NexusEditor::catalogChanged()
 {
   // Equipamento novo instalado: a arte dele entra no fim de cada lista (as
-  // posições das que já estavam não mudam) e a lista se refaz.
+  // posições e a arte das que já estavam não mudam: a peça em uso troca só ao
+  // abrir de novo) e a lista se refaz.
   auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
     for (const auto& e : GearCatalog::instance().entries(kind))
       if (e.look >= static_cast<int>(arts.size()))
         arts.push_back(GearArt::load(e.id));
-      else if (e.origin == G::GearEntry::Origin::downloaded)
-        arts[static_cast<size_t>(e.look)] = GearArt::load(e.id); // peça baixada atualizada
   };
   grow(mPedalArts, G::Kind::pedal);
   grow(mAmpArts, G::Kind::amp);
@@ -2941,12 +2944,18 @@ juce::String NexusEditor::missingHere() const
 
 juce::String NexusEditor::missingName(const juce::String& id) const
 {
-  return id;
+  const auto name = mStore->remoteEntry(id)["nome"].toString();
+  return name.isNotEmpty() ? name : id;
 }
 
-juce::String NexusEditor::missingLink(const juce::String&) const
+juce::String NexusEditor::missingLink(const juce::String& id) const
 {
-  return {};
+  const auto entry = mStore->remoteEntry(id);
+  if (!entry.isObject())
+    return {};
+  if (const auto why = nexus::update::GearStore::unsupported(entry); why.isNotEmpty())
+    return TRANS(why);
+  return mStore->state() == nexus::update::GearStore::State::downloading ? TRANS("baixando...") : TRANS("Baixar");
 }
 
 void NexusEditor::layoutTitle()
@@ -3015,9 +3024,6 @@ void NexusEditor::resized()
   // Ícone de atualização (só quando há versão nova), junto dos outros ícones.
   if (mUpdate.isVisible())
     mUpdate.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
-  // Equipamentos novos para baixar (arte nova sem reinstalar).
-  if (mArteNova.isVisible())
-    mArteNova.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());

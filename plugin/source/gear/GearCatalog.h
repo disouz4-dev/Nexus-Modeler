@@ -120,7 +120,8 @@ public:
   static juce::var localIndex();
 
   // Relê a pasta Equipamentos: peças novas entram no fim (as posições das que
-  // já estavam não mudam). Avisa os ouvintes se entrou alguma.
+  // já estavam não mudam) e avisam os ouvintes. Peça que já estava não muda
+  // enquanto o programa está aberto (pode estar tocando).
   void reload();
 
 private:

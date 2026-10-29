@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Gera assets/gear/indice.json, o índice que o Nexus lê no GitHub para achar
-equipamentos novos sem reinstalar (plugin/source/update/ArteNova.cpp).
+equipamentos novos sem reinstalar (plugin/source/update/GearStore.cpp).
 
 Para cada peça (cada <prefixo>_mapa.json em assets/gear): os arquivos dela
 (arte e, se tiver, a ficha <prefixo>_manifesto.json), o sha256 e o tamanho de

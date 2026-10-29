@@ -2,11 +2,13 @@
 
 #include <juce_gui_basics/juce_gui_basics.h>
 
-#include "../update/ArteNova.h"
+#include "../update/GearStore.h"
 
-// Ícone de equipamentos novos na barra de cima: um amplificador pequeno com a
-// quantidade de peças novas ou refeitas que já podem ser baixadas. O clique
-// mostra quais são e baixa; depois de baixadas, ficam no Mac e passam a valer
+// Ícone de equipamentos novos na coluna de equipamentos, ao lado da pesquisa:
+// um amplificador pequeno que só mostra o estado do GearStore, que procura e
+// baixa sozinho ao abrir (procurando, baixando com o andamento, quantas peças
+// chegaram, ou o erro; clique só no erro, para tentar de novo). Equipamento
+// novo entra na lista na hora; arte refeita de uma peça que já existia vale
 // quando o Nexus abre de novo. Some quando não há nada novo.
 namespace nexus::ui
 {
@@ -28,10 +30,8 @@ public:
 private:
   void changeListenerCallback(juce::ChangeBroadcaster*) override;
   void refresh();
-  void ask();
-  void finished();
 
-  juce::SharedResourcePointer<nexus::update::ArteNova> mArte;
-  nexus::update::ArteNova::State mShown = nexus::update::ArteNova::State::idle;
+  juce::SharedResourcePointer<nexus::update::GearStore> mArte;
+  nexus::update::GearStore::State mShown = nexus::update::GearStore::State::idle;
 };
 } // namespace nexus::ui
