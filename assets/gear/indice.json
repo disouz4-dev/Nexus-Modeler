@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:01:58Z",
+ "gerado": "2026-10-29T18:04:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6505,8 +6505,8 @@
   },
   "vaultv4": {
    "nome": "Vault V4",
-   "hash": "b1a1117c383f3e2e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "3b660bd236548aeb",
+   "data": "2026-10-29T18:04:04Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vaultv4_botao_agudo.png",
@@ -6521,24 +6521,24 @@
     "vaultv4_mapa.json"
    ],
    "sha256": {
-    "vaultv4_botao_agudo.png": "61aeb54943d3ce0fee51fa3bae1385d7dc737c38f0b6d215e0f3dfc40a2cd88a",
-    "vaultv4_botao_ganho.png": "3f793e1f8760bd9f3e01b857bd7b2c52ce2df498b2d7462fe835c0f404385913",
-    "vaultv4_botao_grave.png": "88c32e1f90044fc17f6444fa3ea6d6e3eff3bf2eb913911fb95c4b6977d2b06b",
-    "vaultv4_botao_medio.png": "7e4e5cf628a054a01c90da9d1e74d49b83b7b1210945ac0994ffd4b9e475861e",
-    "vaultv4_botao_presenca.png": "e82b90ae6b860e6190f2b5dfa765909ea994c49acc38a68b4cd0eb3d1588b3b7",
-    "vaultv4_botao_volume.png": "e630a1922d5b60c45a0bc4efe8e8bd83cf1d2de555eb9d663bda0b483c8790f0",
-    "vaultv4_frente.jpg": "76630f6809939b04b8f5371509e5a2d474ff464be1a3f9e6fa30c300bd98b338",
-    "vaultv4_frente_alfa.png": "510ebb9ed4d7e4b3ddf62eddea807d0532ba6cfe76a42f65b88e9008ddb7c5eb",
-    "vaultv4_manifesto.json": "c73cac9fee6c0bba8fccc53b506f005f3a409f7b475e95466e7915fc41514049",
-    "vaultv4_mapa.json": "ce0714c4303fabdc9d81251433f5a296d225d15c46b709e7ab4fba3693a77b5d"
+    "vaultv4_botao_agudo.png": "b61fffed58fab0491cb0b73a9f3592f9c13dfc2fa932855079017bcf45cc46cc",
+    "vaultv4_botao_ganho.png": "f223292c169349be2c4b4c381842fea7684cc3e52186d5935fc11856c50011e2",
+    "vaultv4_botao_grave.png": "62d2b914020fb794f27829a428b642d30b740b96c6503de1fd42d775f2c4ac7f",
+    "vaultv4_botao_medio.png": "f56bb38b7c89cc1ab782cb97d9dd3393a6bc84de75914d833e2827ce2f185eae",
+    "vaultv4_botao_presenca.png": "21e988ef0a4335731c72eac66d49066280acb975f6884824702c871b4f83412f",
+    "vaultv4_botao_volume.png": "bf779d454e23574cc65a06c18dc54add1a6270989e6308182ae7d374f401ba38",
+    "vaultv4_frente.jpg": "4a400b5e64b0167cecafe81a44c969e7680e3b822bf3b0de73b067716ab9d8e1",
+    "vaultv4_frente_alfa.png": "4d85953d760c315d967786ea40cfe7ff8cda7ff3b1944c3d3b50be8d14d7f754",
+    "vaultv4_manifesto.json": "0e248456ede74a54114ad1c318d6b2684d7f39ab8df9a37760f5572a209a954f",
+    "vaultv4_mapa.json": "d2727a011eb577c1f3f68a0cf44d553c7c458b6e40c02935cc62aa2e526ec5d5"
    },
-   "tamanho": 1880485,
+   "tamanho": 1069833,
    "tipo": "cabecote",
    "inspiracao": "Ampeg V-4B",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
