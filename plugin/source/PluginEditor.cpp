@@ -30,15 +30,16 @@ const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "or
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
                                                              "citrusbass200", "granite800", "fliptop15", "vaultv4", "hart1000", "garden800", "glass500", "solart", "bassline100", "eagle751", "littletube", "workhorse350", "underground800", "acoustica360", "tinybass", "tracer7", "britbass",
-                                                             "britplexi50", "brit45", "brit900", "brit410", "brit2000", "britds20", "britrack1", "silverdeluxe", "silversuper", "silverprince", "tweed57", "hotrod40", "champion5", "mark2plus", "mark3", "mark4", "markjp", "badland100", "lonestar100", "block5150iii", "topboost15", "citrus50", "citrus30", "blackcountry100", "iron120", "fire100", "feral120", "steel20", "vier100", "herb180", "bliss100", "goddess80", "dirty40", "special100", "doublestone50", "blackcat30", "hi103", "darkstar20", "tri100", "gen120", "nova100", "emperor20", "rg100", "arch100", "kraken50", "magick25", "deliver120", "ash500"};
+                                                             "britplexi50", "brit45", "brit900", "brit410", "brit2000", "britds20", "britrack1", "silverdeluxe", "silversuper", "silverprince", "tweed57", "hotrod40", "champion5", "mark2plus", "mark3", "mark4", "markjp", "badland100", "lonestar100", "block5150iii", "topboost15", "citrus50", "citrus30", "blackcountry100", "iron120", "fire100", "feral120", "steel20", "vier100", "herb180", "bliss100", "goddess80", "dirty40", "special100", "doublestone50", "blackcat30", "hi103", "darkstar20", "tri100", "gen120", "nova100", "emperor20", "rg100", "arch100", "kraken50", "magick25", "deliver120", "ash500",
+                                                             "vault4pro", "maple400", "nord650", "wind300", "bassboxv", "eaglehammer500", "bebop15", "fliptop18", "vault210"};
 // Caixas, na ordem do parâmetro "gabinete"; cada cabeçote abre com a sua.
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
                                                              "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
-                                                             "granite_410", "silver_112", "mark_112", "star_412", "country_412", "vier_412", "hi_412", "rg_412", "hart_410", "glass_410", "solar_412", "fliptop_115"};
+                                                             "granite_410", "silver_112", "mark_112", "star_412", "country_412", "vier_412", "hi_412", "rg_412", "hart_410", "glass_410", "solar_412", "fliptop_115", "bassline_215", "solar_215", "glass_412"};
 // Microfones, na ordem de nexus::ui::MicKind.
 const char* const kMicPrefixes[kMicKinds] = {"microfone_dinamico_bastao", "microfone_dinamico_lateral", "microfone_condensador_grande",
                                               "microfone_condensador_lapis", "microfone_fita"};
-const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 25, 13, 22, 14, 23, 24, 14, 14, 14, 14, 14, 14, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 15, 8, 15, 15, 15, 15, 16, 16, 1, 1, 1, 16, 2, 6, 5, 5, 18, 18, 10, 10, 10, 19, 19, 11, 11, 4, 7, 7, 9, 20, 17, 10, 1, 1, 15, 21, 1, 1, 15, 1, 22};
+const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 25, 13, 22, 14, 23, 24, 26, 28, 14, 14, 14, 13, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 15, 8, 15, 15, 15, 15, 16, 16, 1, 1, 1, 16, 2, 6, 5, 5, 18, 18, 10, 10, 10, 19, 19, 11, 11, 4, 7, 7, 9, 20, 17, 10, 1, 1, 15, 21, 1, 1, 15, 1, 22, 13, 25, 22, 27, 14, 14, 25, 25, 14};
 struct CabInfo
 {
   const char* inspiration;
@@ -46,7 +47,8 @@ struct CabInfo
 const CabInfo kCabInfo[NexusProcessor::kCabLooks] = {{"1960A 4x12"}, {"Mesa 4x12"}, {"5150 4x12"}, {"Soldano 4x12"}, {"Friedman 4x12"},
                                                     {"Orange 4x12"}, {"Vox AC30 2x12"}, {"Fender Twin 2x12"}, {"Fender 4x10"}, {"Matchless 2x12"}, {"ENGL 4x12"}, {"Bogner 4x12"}, {"Roland JC 2x12"},
                                                     {"Ampeg 8x10"}, {"Gallien-Krueger 4x10"},
-                                                    {"Fender Deluxe Reverb 1x12"}, {"Mesa Boogie Mark 1x12"}, {"Blackstar 4x12"}, {"Laney 4x12"}, {"Diezel 4x12"}, {"Hiwatt 4x12"}, {"Randall 4x12"}, {"Hartke 4x10"}, {"Darkglass 4x10"}, {"Sunn 4x12"}, {"Ampeg B-15 1x15"}};
+                                                    {"Fender Deluxe Reverb 1x12"}, {"Mesa Boogie Mark 1x12"}, {"Blackstar 4x12"}, {"Laney 4x12"}, {"Diezel 4x12"}, {"Hiwatt 4x12"}, {"Randall 4x12"}, {"Hartke 4x10"}, {"Darkglass 4x10"}, {"Sunn 4x12"}, {"Ampeg B-15 1x15"},
+                                                    {"Fender Bassman 2x15"}, {"Sunn 2x15"}, {"Darkglass 4x12"}};
 
 juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> area)
 {
@@ -2070,14 +2072,14 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Eden", "Baixo"},
   {"Darkglass Microtubes 500", "Baixo"},
   {"Sunn Model T", "Baixo"},
-  {"Fender Bassman 100T", "Baixo"},
+  {"Fender Bassman silverface (50 e 100T)", "Baixo"},
   {"Aguilar DB751", "Baixo"},
   {"Markbass Little Mark Tube", "Baixo"},
   {"SWR Bass 350", "Baixo"},
   {"Mesa Bass 800D", "Baixo"},
   {"Acoustic 360", "Baixo"},
   {"Orange Terror Bass", "Baixo"},
-  {"Trace Elliot GP7", "Baixo"},
+  {"Trace Elliot (GP7, GP12, Speed Twin)", "Baixo"},
   {"Marshall Super Bass", "Baixo"},
   {"Marshall 1987 Lead 50 W", "Britânicos"},
   {"Marshall JTM45", "Britânicos"},
@@ -2127,6 +2129,15 @@ const AmpInfo kAmpInfo[NexusProcessor::kAmpLooks] = {
   {"Supro Black Magick", "Americanos clássicos"},
   {"Fryette Deliverance", "Americanos de alto ganho"},
   {"Ashdown ABM", "Baixo"},
+  {"Ampeg SVT-4 Pro", "Baixo"},
+  {"Traynor YBA-200", "Baixo"},
+  {"EBS Classic 500", "Baixo"},
+  {"Peavey Mark III", "Baixo"},
+  {"Behringer Bass V-Amp Pro", "Baixo"},
+  {"Aguilar Tone Hammer 500", "Baixo"},
+  {"Polytone Mini Brute", "Baixo"},
+  {"Ampeg B-18 Portaflex", "Baixo"},
+  {"Ampeg BA-210", "Baixo"},
 };
 } // namespace
 

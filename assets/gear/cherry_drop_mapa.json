@@ -25,10 +25,6 @@
     }
   ],
   "canais": [],
-  "medidas_mm": [
-    74,
-    120
-  ],
   "rotulos": [
     {
       "texto": "DROP",
@@ -40,7 +36,7 @@
       "espaco": 1.15
     },
     {
-      "texto": "BRILHO",
+      "texto": "MISTURA",
       "x": 398.1,
       "y": 394.4,
       "altura": 18.02,
@@ -64,5 +60,9 @@
     "y": 119.7,
     "w": 251.9,
     "h": 127.7
-  }
+  },
+  "medidas_mm": [
+    74,
+    120
+  ]
 }

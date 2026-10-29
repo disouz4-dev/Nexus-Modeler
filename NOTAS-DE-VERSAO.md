@@ -74,6 +74,17 @@
   Vier 4x12 (Diezel 4x12), Hi 4x12 (Hiwatt 4x12), RG 4x12 (Randall 4x12), Hart
   4x10 (Hartke 4x10), Glass 4x10 (Darkglass 4x10), Solar 4x12 (Sunn 4x12),
   Fliptop 1x15 (Ampeg B-15 1x15).
+- 9 cabeçotes de baixo novos: Vault 4 Pro (Ampeg SVT-4 Pro), Maple 400
+  (Traynor YBA-200), Nord 650 (EBS Classic 500), Wind 300 (Peavey Mark III),
+  Bass Box V (Behringer Bass V-Amp Pro), Eagle Hammer 500 (Aguilar Tone
+  Hammer 500), Bebop 15 (Polytone Mini Brute), Fliptop 18 (Ampeg B-18
+  Portaflex) e Vault 210 (Ampeg BA-210).
+- 3 caixas de baixo novas: Bassline 2x15 (Fender Bassman 2x15), Solar 2x15
+  (Sunn 2x15) e Glass 4x12 (Darkglass 4x12).
+- Bassline 100 passa a ser o Bassman silverface (Bassman 50 e 100T), com a
+  caixa Bassline 2x15; Tracer 7 junta a linha Trace Elliot (GP7, GP12 e Speed
+  Twin); Vault V4 ganha mais capturas; Eagle 751 abre com a Glass 4x12 e
+  Acoustica 360 com a Vault 8x10.
 - 34 pedais novos de captura: Olive Drive (Ibanez TS808 Tube Screamer),
   Pistachio Drive (Maxon OD808), Blueberry Blues (Boss BD-2 Blues Driver),
   Apricot Overdrive (Boss OD-3), Clementine Turbo (Boss DS-2 Turbo

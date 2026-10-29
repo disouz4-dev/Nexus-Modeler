@@ -46,7 +46,7 @@
       "y": 240.9,
       "altura": 19.2,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2e7f0",
       "espaco": 1.15
     },
     {
@@ -55,7 +55,7 @@
       "y": 240.9,
       "altura": 19.2,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2e7f0",
       "espaco": 1.15
     },
     {
@@ -64,18 +64,18 @@
       "y": 240.9,
       "altura": 19.2,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2e7f0",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 586.5,
+    "y": 610.0,
     "raio": 70.5
   },
   "led": {
     "x": 300.0,
-    "y": 347.8,
+    "y": 88.9,
     "raio": 17.6
   }
 }

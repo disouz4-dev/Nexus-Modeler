@@ -124,6 +124,15 @@ Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específ
 | Magick 25 | Supro Black Magick |
 | Deliver 120 | Fryette Deliverance |
 | Ash 500 | Ashdown ABM (baixo) |
+| Vault 4 Pro | Ampeg SVT-4 Pro (baixo) |
+| Maple 400 | Traynor YBA-200 (baixo) |
+| Nord 650 | EBS Classic 500 (baixo) |
+| Wind 300 | Peavey Mark III (baixo) |
+| Bass Box V | Behringer Bass V-Amp Pro (baixo) |
+| Eagle Hammer 500 | Aguilar Tone Hammer 500 (baixo) |
+| Bebop 15 | Polytone Mini Brute (baixo) |
+| Fliptop 18 | Ampeg B-18 Portaflex (baixo) |
+| Vault 210 | Ampeg BA-210 (baixo) |
 
 ### Pedais de captura
 
@@ -190,3 +199,6 @@ Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específ
 | Glass 4x10 | Darkglass 4x10 |
 | Solar 4x12 | Sunn 4x12 |
 | Fliptop 1x15 | Ampeg B-15 1x15 |
+| Bassline 2x15 | Fender Bassman 2x15 |
+| Solar 2x15 | Sunn 2x15 |
+| Glass 4x12 | Darkglass 4x12 |

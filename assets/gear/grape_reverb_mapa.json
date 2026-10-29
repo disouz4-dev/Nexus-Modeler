@@ -34,10 +34,6 @@
     }
   ],
   "canais": [],
-  "medidas_mm": [
-    73,
-    129
-  ],
   "rotulos": [
     {
       "texto": "TAMANHO",
@@ -76,5 +72,9 @@
     "x": 154.2,
     "y": 353.6,
     "raio": 17.2
-  }
+  },
+  "medidas_mm": [
+    73,
+    129
+  ]
 }

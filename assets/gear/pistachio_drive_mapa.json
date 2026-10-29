@@ -1,0 +1,81 @@
+{
+  "nome": "Pistachio Drive",
+  "familia": "pistachio_drive",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 134,
+      "y": 86,
+      "tamanho": 126,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 255,
+      "y": 180,
+      "tamanho": 90,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 340,
+      "y": 86,
+      "tamanho": 126,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    74,
+    124
+  ],
+  "rotulos": [
+    {
+      "texto": "DRIVE",
+      "x": 200.2,
+      "y": 235.1,
+      "altura": 28.06,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 300.0,
+      "y": 294.4,
+      "altura": 28.06,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 399.9,
+      "y": 235.1,
+      "altura": 28.06,
+      "achatamento": 1.0,
+      "cor": "#f7f7f5",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 560.5,
+    "raio": 165.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 106.0,
+    "raio": 16.8
+  }
+}

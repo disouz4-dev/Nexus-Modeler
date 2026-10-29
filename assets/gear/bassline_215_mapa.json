@@ -1,0 +1,19 @@
+{
+  "nome": "Bassline 2x15",
+  "familia": "bassline_215",
+  "largura": 2400,
+  "altura": 3720,
+  "posicoes": 101,
+  "botoes": [],
+  "medidas_mm": [
+    760,
+    1070
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 15
+  },
+  "canais": [],
+  "rotulos": []
+}
