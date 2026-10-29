@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:18:21Z",
+ "gerado": "2026-10-29T18:26:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2483,8 +2483,8 @@
   },
   "garden800": {
    "nome": "Garden 800",
-   "hash": "563815cbe2881d07",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "3b9e08a91e7e59c2",
+   "data": "2026-10-29T18:26:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "garden800_botao_agudo.png",
@@ -2499,24 +2499,24 @@
     "garden800_mapa.json"
    ],
    "sha256": {
-    "garden800_botao_agudo.png": "1841585179fc330a5d876845eb2b2de2d7d72fa69e615cd2cde6ee63a4c504e2",
-    "garden800_botao_ganho.png": "9c0af536c06b87e3f1ef0540bbdf590bf767ceebbdc4b742c3171dd35d6fa70f",
-    "garden800_botao_grave.png": "e3103ef6d8c4af37de1f84072334d00db066d06801ae51f9e75e4709c5a2674f",
-    "garden800_botao_medio.png": "d2765483afe690d32b4245c89985ad4de9b69f251058563cd093789784b1489f",
-    "garden800_botao_presenca.png": "7d74158624bfe5cc89d6b690cf2742ef0d969943174900dbe61ff3aab9e64948",
-    "garden800_botao_volume.png": "c7e684240d4ef531e519276a099830684ba0b0dbdd709011342b9a23a81ddb13",
-    "garden800_frente.jpg": "5f138a464a69f87136c04998c4c27febab28d337e89b5145fb283671d92f4f14",
-    "garden800_frente_alfa.png": "baa3804da07f74577643cc978a0b9d14b99261b289a3ecde429cdebdeb2b2057",
-    "garden800_manifesto.json": "425e67c297afbd725fd56f5cf22c36ecd7afddb64075c7383fd0497d30b2fc72",
-    "garden800_mapa.json": "ac0c0ceff707abee1a04835b8b93d0b315119b0c8e518da6321478f77c512467"
+    "garden800_botao_agudo.png": "d2cd8974aac7d0e0fdf439501787f21a0af69ed46db4e07ff3379c0188cfab0c",
+    "garden800_botao_ganho.png": "db0d1497827f97bbbd9cf364970fdc80e95a136ab343308ede6ac5f336630ade",
+    "garden800_botao_grave.png": "f0fe4989b5332273e3d66249492973cc6a9d60fdc3bf1ace985979b91fe74d60",
+    "garden800_botao_medio.png": "06b482a4dd239f4004eacc8626d97a70e142ee9ca57b21bf1f6c2a2310fe3176",
+    "garden800_botao_presenca.png": "0abeb5958d4cb65b8d492c7cac62992125687c52accf1fcab6c628cc3f88da58",
+    "garden800_botao_volume.png": "e0abf0abe29969a0173a99ec81f74490f1df761b83b603c0a182a2e0d77af2a0",
+    "garden800_frente.jpg": "05b1ea476ee2c945765986c50055afaabdb003a916a05f394df56a59e373805c",
+    "garden800_frente_alfa.png": "019ccdfc42941f013b95dd9fa40cd23a5ede67b7b8e0314150d18402fabb8e5b",
+    "garden800_manifesto.json": "780379ac5f94a30ccc3c367635a427d34d626cfbb3b6ad03bfd23c086c62d1a8",
+    "garden800_mapa.json": "428e07e9fe84eff18e7220584d3eac4a14018e4f086d312efd198a773fff1d89"
    },
-   "tamanho": 1742274,
+   "tamanho": 1109765,
    "tipo": "cabecote",
    "inspiracao": "Eden",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
