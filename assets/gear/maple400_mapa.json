@@ -1,0 +1,140 @@
+{
+  "nome": "Maple 400",
+  "familia": "maple400",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 814,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 998,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1183,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1367,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1551,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1735,
+      "y": 763,
+      "tamanho": 119,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 288.8,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.981,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 874.4,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1058.1,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1241.8,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 1425.6,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1609.3,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1793.0,
+      "y": 709.5,
+      "altura": 33.46,
+      "achatamento": 0.98,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 1952.0,
+      "y": 872.5,
+      "altura": 25.26,
+      "achatamento": 0.975,
+      "cor": "#ededed",
+      "espaco": 1.0
+    }
+  ]
+}

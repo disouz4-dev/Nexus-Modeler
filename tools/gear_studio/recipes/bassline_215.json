@@ -1,0 +1,53 @@
+{
+  "tipo": "caixa",
+  "aba_m": 0.03,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.045,
+    "altura_rel": 0.36,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.55,
+    "elevacao": 8.0
+  },
+  "nome": "Bassline 2x15",
+  "familia": "bassline_215",
+  "medidas_m": {
+    "largura": 0.76,
+    "altura": 1.07,
+    "profundidade": 0.4
+  },
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.007
+    ],
+    "grao_mm": 1.8
+  },
+  "tela": {
+    "cor_a": [
+      0.06,
+      0.06,
+      0.07
+    ],
+    "cor_b": [
+      0.62,
+      0.63,
+      0.66
+    ],
+    "trama_mm": 2.4
+  },
+  "friso": [
+    0.85,
+    0.85,
+    0.86
+  ]
+}

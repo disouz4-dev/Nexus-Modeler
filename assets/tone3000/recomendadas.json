@@ -1061,6 +1061,24 @@
         "capturas": 3,
         "padrao": true,
         "nota": "a mais curtida da busca (46 favoritos)"
+      },
+      {
+        "id": 56596,
+        "titulo": "Ampeg V4",
+        "criador": "perimeteraudio",
+        "tipo": "amp",
+        "capturas": 6,
+        "downloads": 983,
+        "nota": "V4, seis capturas"
+      },
+      {
+        "id": 47795,
+        "titulo": "Ampeg V4",
+        "criador": "torchtrax",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1961,
+        "nota": "V4, o mais baixado"
       }
     ]
   },
@@ -1117,15 +1135,44 @@
     ]
   },
   "bassline100": {
-    "busca": "Bassman 100",
+    "busca": "Bassman",
     "tons": [
+      {
+        "id": 1882,
+        "titulo": "Fender Bassman 50 (0.5.2)",
+        "criador": "arlingtonaudio",
+        "tipo": "amp",
+        "capturas": 144,
+        "downloads": 27573,
+        "nota": "Bassman 50 silverface, 144 capturas, o mais baixado",
+        "padrao": true
+      },
+      {
+        "id": 13776,
+        "titulo": "1971 Fender Bassman",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 29,
+        "downloads": 6112,
+        "nota": "Bassman de 1971"
+      },
+      {
+        "id": 6107,
+        "titulo": "1971 Fender Bassman",
+        "criador": "dahmanmusic",
+        "tipo": "amp",
+        "capturas": 24,
+        "downloads": 2199,
+        "nota": "outro Bassman de 1971"
+      },
       {
         "id": 32075,
         "titulo": "Fender Bassman 100T",
         "tipo": "amp",
         "capturas": 4,
-        "padrao": true,
-        "nota": "a mais curtida da busca (137 favoritos)"
+        "nota": "Bassman 100T, o de antes",
+        "criador": "salamiexcerpt5j",
+        "downloads": 5337
       }
     ]
   },
@@ -1217,6 +1264,33 @@
         "capturas": 1,
         "padrao": true,
         "nota": "a mais curtida da busca (48 favoritos)"
+      },
+      {
+        "id": 30181,
+        "titulo": "Trace Elliot GP12SMX",
+        "criador": "eugenelivada",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 618,
+        "nota": "GP12SMX"
+      },
+      {
+        "id": 59315,
+        "titulo": "Trace Elliot - Speed Twin 50H [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 20,
+        "downloads": 490,
+        "nota": "Speed Twin 50H valvulado, 20 capturas"
+      },
+      {
+        "id": 65003,
+        "titulo": "Trace Elliot AH500X + Trace Elliot 1248H",
+        "criador": "westofben",
+        "tipo": "amp-cab",
+        "capturas": 5,
+        "downloads": 876,
+        "nota": "AH500X com a caixa 1248H"
       }
     ]
   },
@@ -5570,6 +5644,357 @@
         "mapa": {
           "Clean only the amp head": 5
         }
+      }
+    ]
+  },
+  "vault4pro": {
+    "busca": "SVT-4",
+    "tons": [
+      {
+        "id": 29376,
+        "titulo": "Ampeg SVT 4 Pro",
+        "criador": "noamp",
+        "tipo": "amp-cab",
+        "capturas": 2,
+        "downloads": 5550,
+        "nota": "SVT-4 Pro com a caixa, o mais baixado",
+        "padrao": true
+      },
+      {
+        "id": 6629,
+        "titulo": "AAF AMPEG SVT-4 PRO",
+        "criador": "anthillaudio",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 4754,
+        "nota": "SVT-4 Pro, só o cabeçote"
+      },
+      {
+        "id": 64094,
+        "titulo": "Ampeg SVT 4 Pro — Amp Head",
+        "criador": "noamp",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 338,
+        "nota": "SVT-4 Pro sem a caixa"
+      },
+      {
+        "id": 64496,
+        "titulo": "Ampeg SVT3PRO — Amp Head",
+        "criador": "bassmint",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 393,
+        "nota": "o irmão menor, SVT-3 Pro"
+      }
+    ]
+  },
+  "maple400": {
+    "busca": "Traynor",
+    "tons": [
+      {
+        "id": 45197,
+        "titulo": "TRAYNOR YBA-200 AMP",
+        "criador": "maxalbe",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 660,
+        "nota": "YBA-200 com a caixa",
+        "padrao": true
+      },
+      {
+        "id": 6333,
+        "titulo": "Traynor TS 120 B",
+        "criador": "rbrt",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 401,
+        "nota": "TS-120B, só o cabeçote"
+      },
+      {
+        "id": 723,
+        "titulo": "JZ1978 bass preamp - modded Traynor TS-120B (batch 1)",
+        "criador": "jz1978",
+        "tipo": "amp",
+        "capturas": 10,
+        "downloads": 532,
+        "nota": "TS-120B modificado, dez posições"
+      },
+      {
+        "id": 2693,
+        "titulo": "Traynor 200H - Bass Full Rig",
+        "criador": "philvr",
+        "tipo": "amp-cab",
+        "capturas": 2,
+        "downloads": 769,
+        "nota": "200H com a caixa"
+      }
+    ]
+  },
+  "nord650": {
+    "busca": "EBS",
+    "tons": [
+      {
+        "id": 46888,
+        "titulo": "EBS (Marcus Miller, Tal Wilkenfeld, Henrik Linder...)",
+        "criador": "difesa98",
+        "tipo": "amp-cab",
+        "capturas": 12,
+        "downloads": 2716,
+        "nota": "timbres de baixistas que usam EBS, doze capturas",
+        "padrao": true
+      },
+      {
+        "id": 30825,
+        "titulo": "EBS Classic 500",
+        "criador": "mkrumme",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 320,
+        "nota": "Classic 500"
+      },
+      {
+        "id": 61637,
+        "titulo": "Reidmar + Sansamp Tech21 Bass Driver DI",
+        "criador": "pipppriss",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 897,
+        "nota": "Reidmar 750 com um SansAmp na frente"
+      }
+    ]
+  },
+  "wind300": {
+    "busca": "Peavey",
+    "tons": [
+      {
+        "id": 6631,
+        "titulo": "Peavey Standard Mark III Series Amp Head",
+        "criador": "markswarbrick",
+        "tipo": "amp",
+        "capturas": 36,
+        "downloads": 1466,
+        "nota": "Mark III dos anos 70, 36 capturas",
+        "padrao": true
+      },
+      {
+        "id": 28559,
+        "titulo": "Peavey Century Extended Range",
+        "criador": "markswarbrick",
+        "tipo": "amp",
+        "capturas": 31,
+        "downloads": 1621,
+        "nota": "Century, 31 capturas"
+      },
+      {
+        "id": 1780,
+        "titulo": "Peavey T-Max Bass Amp",
+        "criador": "thumas",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 2751,
+        "nota": "T-Max, o mais baixado"
+      }
+    ]
+  },
+  "bassboxv": {
+    "busca": "Bass V-Amp",
+    "tons": [
+      {
+        "id": 2550,
+        "titulo": "Bass V-Amp - Gold Panel (0.7.0)",
+        "criador": "arlingtonaudiovamp",
+        "tipo": "amp",
+        "capturas": 17,
+        "downloads": 2052,
+        "nota": "o mais baixado, 17 capturas",
+        "padrao": true
+      },
+      {
+        "id": 2545,
+        "titulo": "Bass V-Amp - Jazz Tone",
+        "criador": "arlingtonaudiovamp",
+        "tipo": "amp",
+        "capturas": 17,
+        "downloads": 551,
+        "nota": "timbre de jazz"
+      },
+      {
+        "id": 2552,
+        "titulo": "Bass V-Amp - Rock Classic",
+        "criador": "arlingtonaudiovamp",
+        "tipo": "amp",
+        "capturas": 17,
+        "downloads": 482,
+        "nota": "rock clássico"
+      }
+    ]
+  },
+  "eaglehammer500": {
+    "busca": "Tone Hammer",
+    "tons": [
+      {
+        "id": 45787,
+        "titulo": "Aguilar Tone Hammer 500",
+        "criador": "zadu666",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 2448,
+        "nota": "o cabeçote Tone Hammer 500",
+        "padrao": true
+      },
+      {
+        "id": 28183,
+        "titulo": "Aguilar Tone Hammer",
+        "criador": "stephenlanebass",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 2554,
+        "nota": "Tone Hammer, o mais baixado"
+      },
+      {
+        "id": 60511,
+        "titulo": "Aguilar Tone Hammer 500",
+        "criador": "kurtwhiting",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 505,
+        "nota": "outra captura do 500"
+      }
+    ]
+  },
+  "bebop15": {
+    "busca": "Polytone",
+    "tons": [
+      {
+        "id": 56824,
+        "titulo": "Polytone Mini Brute III 15\" (Jazz Only)",
+        "criador": "matz",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 2188,
+        "nota": "Mini Brute III com o alto-falante de 15, para jazz",
+        "padrao": true
+      }
+    ]
+  },
+  "fliptop18": {
+    "busca": "B-18",
+    "tons": [
+      {
+        "id": 43868,
+        "titulo": "Ampeg B-18N Portaflex Fliptop",
+        "criador": "tone3000",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 2778,
+        "nota": "B-18N Portaflex, três capturas",
+        "padrao": true
+      }
+    ]
+  },
+  "vault210": {
+    "busca": "BA-210",
+    "tons": [
+      {
+        "id": 63861,
+        "titulo": "Ampeg BA-210 V2 Bass Amp Combo  — Amp Head",
+        "criador": "studioampcaptures",
+        "tipo": "amp",
+        "capturas": 12,
+        "downloads": 270,
+        "nota": "BA-210 sem o alto-falante, doze capturas",
+        "padrao": true
+      },
+      {
+        "id": 5865,
+        "titulo": "Ampeg BA-210 V2 Bass Amp Combo",
+        "criador": "studioampcaptures",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 4900,
+        "nota": "BA-210 inteiro, o mais baixado"
+      }
+    ]
+  },
+  "bassline_215": {
+    "busca": "2x15",
+    "tons": [
+      {
+        "id": 60274,
+        "titulo": "1970 Fender Bassman 2x15 Cabinet Original CTS Speakers",
+        "criador": "maestrodimusica",
+        "tipo": "cab",
+        "capturas": 58,
+        "downloads": 14065,
+        "nota": "Bassman 2x15 de 1970, 58 posições de microfone",
+        "padrao": true
+      },
+      {
+        "id": 13131,
+        "titulo": "Fender Dual Showman 2x15",
+        "criador": "vulturized",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 2420,
+        "nota": "Dual Showman 2x15"
+      }
+    ]
+  },
+  "solar_215": {
+    "busca": "Sunn 2x15",
+    "tons": [
+      {
+        "id": 5937,
+        "titulo": "1968 SUNN 2x15 Cabinet Original speakers",
+        "criador": "basswizard",
+        "tipo": "cab",
+        "capturas": 3,
+        "downloads": 1279,
+        "nota": "Sunn 2x15 de 1968",
+        "padrao": true
+      },
+      {
+        "id": 50027,
+        "titulo": "Peavey 2x15 Bass Cabinet",
+        "criador": "erdosi",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 2846,
+        "nota": "outra 2x15 de baixo"
+      },
+      {
+        "id": 5939,
+        "titulo": "Custom Stewart 2x15 Bass cab",
+        "criador": "basswizard",
+        "tipo": "cab",
+        "capturas": 4,
+        "downloads": 916,
+        "nota": "2x15 feita à mão"
+      }
+    ]
+  },
+  "glass_412": {
+    "busca": "Darkglass",
+    "tons": [
+      {
+        "id": 5566,
+        "titulo": "Darkglass Elite 4x12 Cab",
+        "criador": "mikhailkurochkin",
+        "tipo": "cab",
+        "capturas": 16,
+        "downloads": 2737,
+        "nota": "Darkglass 4x12, 16 posições",
+        "padrao": true
+      },
+      {
+        "id": 80355,
+        "titulo": "Darkglass DG212NE Cab IR",
+        "criador": "thefoxking",
+        "tipo": "cab",
+        "capturas": 2,
+        "downloads": 1990,
+        "nota": "a 2x12 da mesma linha"
       }
     ]
   }
