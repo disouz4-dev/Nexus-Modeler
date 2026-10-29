@@ -2,108 +2,6 @@
   "tipo": "cabecote",
   "nome": "Feral 120",
   "familia": "feral120",
-  "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "cor": [
-      0.03,
-      0.03,
-      0.033
-    ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.2
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
-    "cor": [
-      0.9,
-      0.9,
-      0.9
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "marca": "NEXUS MODELER",
-    "modelo": "FERAL 120",
-    "pintado": false,
-    "cor": [
-      0.6,
-      0.61,
-      0.64
-    ],
-    "texto_cor": [
-      0.02,
-      0.02,
-      0.02
-    ]
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Limpo"
@@ -114,5 +12,281 @@
     {
       "nome": "Solo"
     }
-  ]
+  ],
+  "inspiracao": "ENGL Savage 120 Mark II: cabeçote de 710 × 270 × 290 mm em tolex preto com cantoneiras cromadas, frente de cinco barras horizontais pretas com a luz azul das válvulas atrás e a marca no meio, painel antracite embaixo com letras brancas: vinte botões pretos de saia em duas fileiras (CLEAN GAIN, CRUNCH I GAIN, BASS, MID LEAN, MID BOLD, TREBLE, os VOLUMEs e PRESENCE A e B em cima, que é a que toca; CRUNCH II e LEAD GAIN, BASS, MIDDLE, TREBLE, TONE BALANCE, VOLUMEs e MASTER A e B embaixo), teclinhas com LED, a entrada e as gangorras STAND BY (preta) e POWER (azul acesa).",
+  "formato": "cabecote",
+  "medidas_m": {
+    "largura": 0.71,
+    "altura": 0.27,
+    "profundidade": 0.29
+  },
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 2.6
+  },
+  "fachada": {
+    "tipo": "barras",
+    "cor": [
+      0.015,
+      0.015,
+      0.016
+    ],
+    "barras": 5,
+    "luz": [
+      0.1,
+      0.3,
+      1.0
+    ]
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.024,
+    "altura_rel": 0.5,
+    "lado_rel": 0.0,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "FERAL 120",
+    "posicao": "baixo",
+    "altura_m": 0.1,
+    "cor": [
+      0.035,
+      0.036,
+      0.04
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.85
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.017,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.72,
+      "x0": 0.06,
+      "x1": 0.84,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CLEAN GAIN"
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "CRUNCH GAIN"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID LEAN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID BOLD"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CLEAN VOL."
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "CRUNCH VOL."
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRES. A"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRES. B"
+        }
+      ],
+      "letra_m": 0.0038,
+      "rotulo_pos": "cima"
+    },
+    {
+      "z": 0.26,
+      "x0": 0.06,
+      "x1": 0.84,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CRUNCH II"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD GAIN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TONE BAL."
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CRUNCH II VOL."
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD VOL."
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER A"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER B"
+        }
+      ],
+      "letra_m": 0.0038,
+      "rotulo_pos": "baixo"
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.028,
+          "z": 0.25
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.028,
+          "z": 0.72,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.86,
+          "z": 0.85,
+          "rotulo": "CLEAN"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.885,
+          "z": 0.85,
+          "rotulo": "CRUNCH"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.91,
+          "z": 0.85,
+          "rotulo": "LEAD"
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "STAND BY",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.88,
+          "z": 0.4
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.1,
+            0.3,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.94,
+          "z": 0.4
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "baixo"
+    }
+  ],
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.457,
+    "elevacao": 10.0
+  }
 }

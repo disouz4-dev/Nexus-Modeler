@@ -2,44 +2,51 @@
   "tipo": "cabecote",
   "nome": "Dirty 40",
   "familia": "dirty40",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Friedman Dirty Shirley: cabeçote de 610 × 254 × 216 mm em tolex preto com friso branco fino, tela de trama preta e prata em toda a frente com a marca à esquerda, e a placa prata pequena no canto de baixo à direita com letras pretas: alavancas OFF/ON e STANDBY e a luz INDICATOR laranja, seis botões pretos de traço branco (PRESENCE, BASS, MIDDLE, TREBLE, MASTER, GAIN), as entradas H e L e uma minichave.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.74,
-    "altura": 0.285,
-    "profundidade": 0.24
+    "largura": 0.61,
+    "altura": 0.254,
+    "profundidade": 0.216
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
-      0.05,
-      0.035,
-      0.02
+      0.03,
+      0.03,
+      0.032
     ],
     "cor_b": [
-      0.42,
-      0.34,
-      0.22
+      0.4,
+      0.4,
+      0.42
     ],
-    "trama_mm": 4.5,
+    "trama_mm": 2.2,
     "friso": [
-      0.78,
-      0.6,
-      0.22
+      0.85,
+      0.85,
+      0.82
     ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
+    "altura_m": 0.016,
+    "altura_rel": 0.7,
+    "lado_rel": -0.28,
     "cor": [
       0.9,
       0.88,
@@ -47,75 +54,127 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
-    "pintado": true,
+    "marca": "NEXUS MODELER",
+    "modelo": "DIRTY 40",
+    "posicao": "sobre",
+    "altura_m": 0.062,
+    "largura_m": 0.4,
+    "x_m": 0.075,
     "cor": [
-      0.6,
-      0.6,
-      0.62
+      0.66,
+      0.67,
+      0.68
     ],
     "texto_cor": [
-      0.02,
-      0.015,
-      0.01
-    ],
-    "modelo": "DIRTY 40",
-    "marca": "NEXUS MODELER"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.027,
-    "corpo": [
       0.012,
       0.012,
       0.012
-    ],
-    "tampa": [
-      0.62,
-      0.5,
-      0.24
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
   },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "fileiras": [
     {
-      "nome": "Normal"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "OFF/ON",
+          "x": 0.06
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.13
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.95,
+            0.45,
+            0.05
+          ],
+          "rotulo": null,
+          "x": 0.19,
+          "raio_m": 0.0055
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.27
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.36
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.45
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.54
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.63
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.72
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "H",
+          "x": 0.8
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "L",
+          "x": 0.87
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.94
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "baixo"
     }
   ],
-  "disposicao": {
-    "modelo_x": 0.108,
-    "modelo_z": 0.06,
-    "modelo_tamanho": 0.019,
-    "modelo_inclinacao": 0.0
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.507,
+    "elevacao": 10.0
   }
 }

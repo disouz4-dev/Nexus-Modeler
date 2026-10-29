@@ -38,14 +38,18 @@ leia este arquivo, `git log --oneline -5` e siga da primeira etapa sem [x].
 
 - [x] 1. Recursos novos no gerador (prévias de teste: brit800, mark5,
       silvertwin, topboost15, britrack1, tiny15, vier100, tri100)
-- [ ] 2. Receitas em lotes (~10) + render de cada lote
+- [ ] 2. Receitas em lotes (~10) + render de cada lote (lotes 1–5 feitos; faltam os outros da lista abaixo)
 - [ ] 3. Conferir na fila que todos ficaram "pronta"
 
 ## Lotes
 
 | lote | cabeçotes | commit | render |
 |------|-----------|--------|--------|
-| 1 | brit800 mark5 silvertwin topboost15 britrack1 tiny15 vier100 tri100 | | |
+| 1 | brit800 mark5 silvertwin topboost15 britrack1 tiny15 vier100 tri100 | f063a68 | pedido 04:26 |
+| 2 | recto_dual recto_triple sl100 block5150 block5150iii britplexi britjubilee rocker50 be100 power100 | e316e2d | pedido 04:35 |
+| 3 | uber100 sonic60 tweed59 britbass britplexi50 brit45 brit900 brit410 brit2000 britds20 | 5f6be9d | pedido |
+| 4 | mark2plus mark3 mark4 markjp badland100 lonestar100 citrus50 citrus30 topboost30 match30 | 8fcc4a4 | pedido |
+| 5 | blackcountry100 iron120 fire100 feral120 steel20 herb180 bliss100 goddess80 dirty40 special100 | (este) | pedido |
 
 ## Decisões para o Diego
 

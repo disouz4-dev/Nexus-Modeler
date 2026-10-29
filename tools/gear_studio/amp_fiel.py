@@ -44,7 +44,7 @@ U = 0.04445  # uma unidade de rack
 
 # ---------------------------------------------------------------- materiais próprios
 
-def mat_claws(name, color, pitch_mm=14.0, rough=0.4):
+def mat_claws(name, color, pitch_mm=14.0, rough=0.4, curve=0.9, slant=0.45):
     """Grade de metal recortada em "garras" (frente dos Diezel): rasgos
     curvos inclinados, desencontrados, com o fundo escuro aparecendo."""
     mat, nodes, links, bsdf = st._principled(name)
@@ -62,8 +62,8 @@ def mat_claws(name, color, pitch_mm=14.0, rough=0.4):
     fx = m(nodes, links, "SUBTRACT", m(nodes, links, "FRACT", x), 0.5)
     fz = m(nodes, links, "SUBTRACT", m(nodes, links, "FRACT", z), 0.5)
     # Rasgo curvo: a coluna do rasgo anda com o quadrado da altura (garra).
-    bend = m(nodes, links, "SUBTRACT", fx, m(nodes, links, "ADD", m(nodes, links, "MULTIPLY", fz, 0.45),
-                                                  m(nodes, links, "MULTIPLY", m(nodes, links, "MULTIPLY", fz, fz), 0.9)))
+    bend = m(nodes, links, "SUBTRACT", fx, m(nodes, links, "ADD", m(nodes, links, "MULTIPLY", fz, slant),
+                                                  m(nodes, links, "MULTIPLY", m(nodes, links, "MULTIPLY", fz, fz), curve)))
     d = m(nodes, links, "MAXIMUM", m(nodes, links, "DIVIDE", m(nodes, links, "ABSOLUTE", bend), 0.13),
           m(nodes, links, "DIVIDE", m(nodes, links, "ABSOLUTE", fz), 0.40))
     solid = m(nodes, links, "MINIMUM", m(nodes, links, "MAXIMUM", m(nodes, links, "DIVIDE", m(nodes, links, "SUBTRACT", d, 1.0), 0.25), 0.0), 1.0)
@@ -637,6 +637,10 @@ def _fascia_mat(fa, name="fachada"):
         return mat_diamond_cloth(name, fa["cor"], fa.get("linha", (0.55, 0.5, 0.32)), fa.get("passo_mm", 38.0))
     if kind == "garras":
         return mat_claws(name, fa["cor"], fa.get("passo_mm", 14.0))
+    if kind == "inclinadas":
+        return mat_claws(name, fa["cor"], fa.get("passo_mm", 12.0), curve=0.0, slant=0.6)
+    if kind == "barras":
+        return st.mat_paint(name, (0.004, 0.004, 0.004), 0.8)
     if kind == "vidro":
         return mat_glass(name, fa.get("cor", (0.3, 0.3, 0.34)), rough=0.18)
     return st.mat_leather(name, fa["cor"], fa.get("grao_mm", 1.2), rough=0.42, strength=0.35)
@@ -725,10 +729,14 @@ def build(rec, fonts):
             panel_z0, fz0, fz1 = t, t + ph + gap, H - t
         elif pos == "cima":
             panel_z0, fz0, fz1 = H - t - ph, t, H - t - ph - gap
+        elif pos == "sobre":
+            # Placa pequena por cima da tela (Dirty Shirley): a tela cobre tudo.
+            panel_z0, fz0, fz1 = t + pn.get("margem_m", 0.012), t, H - t
+            panel_front = fascia_y - 0.004
         else:
             panel_z0, fz0, fz1 = t, t, H - t
         panel_w = min(inner_w, pn.get("largura_m", inner_w))
-        panel_x0, panel_h = -panel_w / 2, ph
+        panel_x0, panel_h = -panel_w / 2 + pn.get("x_m", 0.0), ph
         st.box("fundo_frente", (inner_w, 0.004, inner_h), (0, front + inset, H / 2),
                material=mats["tolex"] if fa.get("tipo") in (None, "tolex") else st.mat_paint("fundo", (0.004, 0.004, 0.004)))
         fascia = None
@@ -749,6 +757,16 @@ def build(rec, fonts):
                 fz1 -= bh
                 fh = fz1 - fz0
             st.box("fachada", (inner_w, 0.006, fh), (0, fy + 0.003, fz0 + fh / 2), bevel=0.002, material=fm)
+            if fa.get("tipo") == "barras":
+                # Venezianas: barras horizontais com a luz das válvulas atrás.
+                n = fa.get("barras", 5)
+                bar_mat = st.mat_plastic("veneziana", fa.get("cor", (0.02, 0.02, 0.02)), rough=0.35, coat=0.3)
+                if fa.get("luz"):
+                    st.box("luz_valvulas", (inner_w * 0.8, 0.001, fh * 0.5), (0, fy - 0.0006, fz0 + fh / 2),
+                           material=st.mat_glow("luz_valvulas", fa["luz"], 0.5))
+                for k in range(n):
+                    bz = fz0 + fh * (k + 0.5) / n
+                    st.box(f"veneziana_{k}", (inner_w - 0.004, 0.008, fh / n * 0.62), (0, fy - 0.003, bz), bevel=0.002, material=bar_mat)
             if fa.get("tipo") == "vidro":
                 # Válvulas acesas atrás do vidro escuro.
                 n = fa.get("valvulas", 6)
@@ -794,7 +812,8 @@ def build(rec, fonts):
                 lz = fz0 + fh * lg.get("altura_rel", 0.5)
                 lx = inner_w * lg.get("lado_rel", 0.0)
                 face = fa.get("cor") or [(a + b) / 2 for a, b in zip(fa.get("cor_a", (0, 0, 0)), fa.get("cor_b", (0, 0, 0)))]
-                brand_plate.build((lx, lz), lg.get("altura_m", 0.03), fy - 0.0045, fonts, lg.get("modeler", True),
+                ly = fy - (0.0105 if fa.get("tipo") == "barras" else 0.0045)
+                brand_plate.build((lx, lz), lg.get("altura_m", 0.03), ly, fonts, lg.get("modeler", True),
                                   dark=lg.get("escuro", brand_plate.is_light(face)))
 
     # ---- painel
