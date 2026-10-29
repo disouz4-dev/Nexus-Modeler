@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Jackfruit Monkey",
   "familia": "jackfruit_monkey",
-  "inspiracao": "verde-oliva com o desenho de um macaco, caixa média (estilo DigiTech Bad Monkey)",
-  "formato": "padrao",
+  "inspiracao": "Caixa DigiTech verde (79 x 125 x 54 mm) com o pedal basculante largo de borracha; botões pretos NÍVEL, GRAVE (fixo), AGUDO e GANHO em fila no alto, LED vermelho, letras brancas e o nome em amarelo. Tema: jaca verde aberta, listras tom sobre tom. Original: DigiTech Bad Monkey.",
+  "formato": "compacto",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.079,
+    "comprimento": 0.125,
+    "altura": 0.054
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.4563,
-      0.4281,
-      0.029
+      0.0231,
+      0.259,
+      0.0385
     ],
-    "metalico": 0.3,
+    "metalico": 0.0,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "JACKFRUIT MONKEY",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,66 @@
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.58,
-        0.55
+        -0.69,
+        0.7
       ],
-      "escala": 1.1
+      "escala": 0.85
     },
     {
-      "id": "ganho",
-      "rotulo": "GANHO",
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
       "pos": [
-        0.0,
-        0.55
+        -0.23,
+        0.7
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.85
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.58,
-        0.55
+        0.23,
+        0.7
       ],
-      "escala": 1.1
+      "escala": 0.85
+    },
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        0.69,
+        0.7
+      ],
+      "escala": 0.85
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/jackfruit_monkey.svg"
+  },
+  "medidas_fonte": "79 x 125 x 54 mm (Bax Music; a DigiTech não publica)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "base_rel": 0.7,
+  "basculante_rel": 0.6,
+  "basculante_ang": 0.0,
+  "borracha_rel": 0.62,
+  "borracha_larg": 0.9,
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/jackfruit_monkey.svg"
-  }
+  "rotulo_m": 0.0036,
+  "led": [
+    0.0,
+    0.9
+  ],
+  "modelo_cor": [
+    0.8913,
+    0.548,
+    0.009
+  ]
 }
