@@ -2,38 +2,46 @@
   "tipo": "cabecote",
   "nome": "Champion 5",
   "familia": "champion5",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Fender Champ (tweed): combo pequeno de 343 × 318 × 193 mm em tweed laqueado cor de mostarda, tela marrom com fios dourados e a marca no alto, e o painel cromado espelhado no tampo com letras pretas: alavanca OFF/ON, joia vermelha, o botão VOLUME preto de ponteiro com a escala de 1 a 12 impressa e as entradas INSTRUMENTS 1 e 2.",
+  "formato": "combo",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.343,
+    "altura": 0.318,
+    "profundidade": 0.193
   },
   "couro": {
     "cor": [
-      0.46,
-      0.36,
-      0.2
+      0.62,
+      0.4,
+      0.13
     ],
-    "grao_mm": 1.2
+    "tweed": true,
+    "grao_mm": 3.2
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.22,
-      0.13,
-      0.07
+    "tipo": "listras",
+    "cor": [
+      0.18,
+      0.09,
+      0.04
     ],
-    "cor_b": [
-      0.48,
-      0.34,
-      0.2
+    "linha": [
+      0.62,
+      0.46,
+      0.18
     ],
-    "trama_mm": 2.0
+    "passo_mm": 8.0
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.011,
+    "altura_rel": 0.86,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -42,75 +50,151 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "CHAMPION 5",
-    "pintado": false,
+    "posicao": "topo",
+    "altura_m": 0.06,
+    "largura_m": 0.29,
     "cor": [
-      0.8,
-      0.8,
-      0.82
+      0.86,
+      0.86,
+      0.88
     ],
+    "material": "cromo",
     "texto_cor": [
-      0.03,
-      0.03,
-      0.03
+      0.015,
+      0.012,
+      0.01
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
+  "estilos": {
+    "padrao": {
+      "forma": "chicken",
+      "diametro_m": 0.022,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "numeros"
     },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.009,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "OFF/ON",
+          "x": 0.08
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.18,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.34
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "AGUDO",
+          "estilo": "extra",
+          "x": 0.5,
+          "z": 0.75
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "estilo": "extra",
+          "x": 0.58,
+          "z": 0.75
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "GRAVE",
+          "estilo": "extra",
+          "x": 0.66,
+          "z": 0.75
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.54,
+          "z": 0.3
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "estilo": "extra",
+          "x": 0.62,
+          "z": 0.3
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.8
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.9
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "INSTRUMENTS",
+          "x": 0.85,
+          "z": 0.92
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.72,
-      0.64,
-      0.48
-    ],
-    "tampa": [
-      0.78,
-      0.7,
-      0.53
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.05,
-      0.05,
-      0.05
-    ]
+  "cantos": "nenhum",
+  "alca": "couro",
+  "aba_m": 0.02,
+  "quadro": {
+    "largura_rel": 1.334,
+    "proporcao": 1.0,
+    "elevacao": 34.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "notas_modelagem": "O Champ só tem VOLUME: agudo, médio, grave, presença e o volume de saída do Nexus ficaram em cinco botões pequenos."
 }

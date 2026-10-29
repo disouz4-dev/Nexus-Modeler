@@ -160,6 +160,21 @@ def mat_striped_cloth(name, base, stripe, pitch_mm=9.0, weave_mm=1.6):
     return mat
 
 
+def mat_check(name, color_a, color_b, pitch_mm=3.0):
+    """Tolex xadrez miúdo (o Blue Check da Ampeg), com o grão do couro."""
+    mat = st.mat_leather(name, color_a, 1.6, rough=0.45, strength=0.35)
+    nodes, links = mat.node_tree.nodes, mat.node_tree.links
+    bsdf = nodes["Principled BSDF"]
+    coords = st._object_coords(nodes)
+    checker = nodes.new("ShaderNodeTexChecker")
+    checker.inputs["Scale"].default_value = 1000.0 / pitch_mm
+    checker.inputs["Color1"].default_value = (*color_a, 1)
+    checker.inputs["Color2"].default_value = (*color_b, 1)
+    links.new(coords, checker.inputs["Vector"])
+    links.new(checker.outputs["Color"], bsdf.inputs["Base Color"])
+    return mat
+
+
 def mat_glass(name, tint=(0.02, 0.02, 0.025), rough=0.04):
     mat, _, _, bsdf = st._principled(name)
     bsdf.inputs["Base Color"].default_value = (*tint, 1)
@@ -660,6 +675,7 @@ def build(rec, fonts):
     mats = {
         "tolex": (st.mat_plastic("caixa", rec["couro"]["cor"], rough=rec["couro"].get("aspereza", 0.45), coat=0.2) if shell_metal
                   else mat_tweed("couro", rec["couro"]["cor"], rec["couro"].get("grao_mm", 3.0)) if rec["couro"].get("tweed")
+                  else mat_check("couro", rec["couro"]["cor"], rec["couro"]["xadrez"], rec["couro"].get("passo_mm", 3.0)) if rec["couro"].get("xadrez")
                   else st.mat_leather("couro", rec["couro"]["cor"], rec["couro"]["grao_mm"])),
         "piping": st.mat_plastic("friso", fa.get("friso") or (0.8, 0.78, 0.72), rough=0.32, coat=0.4),
         "panel": {"pintado": lambda: st.mat_plastic("painel", pn["cor"], rough=0.48, coat=0.15),
@@ -679,7 +695,39 @@ def build(rec, fonts):
     front = -D / 2
 
     # ---- caixa e moldura da frente
-    if fmt == "rack":
+    if fmt == "fliptop":
+        # Flip-top (Ampeg Portaflex): caixa com tela embaixo e o chassi em cima,
+        # com o painel na frente do chassi e a gaiola das válvulas no alto.
+        Hc = rec.get("caixa_altura_m", H * 0.75)
+        Hs = H - Hc
+        t = 0.02
+        cab_box = st.box("caixa", (W, D, Hc), (0, 0, Hc / 2), bevel=0.012, segments=6, material=mats["tolex"])
+        cutter = st.box("corte_frente", (W - 2 * t, 0.04, Hc - 2 * t), (0, front, Hc / 2), bevel=0.004)
+        st.cut(cab_box, cutter)
+        fy = front + 0.007
+        fm = _fascia_mat(fa)
+        st.box("fachada", (W - 2 * t, 0.006, Hc - 2 * t), (0, fy + 0.003, Hc / 2), bevel=0.002, material=fm)
+        lg = rec.get("logo", {})
+        if lg:
+            face = fa.get("cor") or [(a + b) / 2 for a, b in zip(fa.get("cor_a", (0, 0, 0)), fa.get("cor_b", (0, 0, 0)))]
+            brand_plate.build((W * lg.get("lado_rel", 0.0), t + (Hc - 2 * t) * lg.get("altura_rel", 0.85)), lg.get("altura_m", 0.016),
+                              fy - 0.0045, fonts, lg.get("modeler", True), dark=lg.get("escuro", brand_plate.is_light(face)))
+        cw, cd = W - 0.05, D - 0.08
+        st.box("chassi", (cw, cd, Hs), (0, 0.01, Hc + Hs / 2), bevel=0.008, segments=5, material=mats["tolex"])
+        # Gaiola das válvulas entre os dois blocos dos transformadores.
+        st.box("gaiola", (cw * 0.42, cd * 0.6, 0.006), (0, 0.03, Hc + Hs + 0.003), bevel=0.002,
+               material=st.mat_perforated("gaiola", (0.03, 0.03, 0.032), 3.0, 4.6))
+        for bx in (-cw * 0.33, cw * 0.33):
+            st.box("bloco_trafo", (cw * 0.2, cd * 0.55, 0.05), (bx, 0.03, Hc + Hs + 0.025), bevel=0.006, material=mats["black_metal"])
+        panel_front = -cd / 2 + 0.01 - 0.0015
+        panel_w = cw - 0.03
+        panel_x0 = -panel_w / 2
+        panel_z0 = Hc + 0.012
+        panel_h = Hs - 0.024
+        st.box("painel", (panel_w, 0.003, panel_h), (0, panel_front + 0.0015, panel_z0 + panel_h / 2), bevel=0.0008,
+               material=mats["panel"])
+        fascia = None
+    elif fmt == "rack":
         units = rec.get("rack_u", max(1, round(H / U)))
         H = units * U
         body_w = W - 0.04
@@ -843,7 +891,7 @@ def build(rec, fonts):
         origin = (panel_x0 + panel_w / 2, panel_front, panel_z0)
         frame = Frame(origin, False)
     with frame:
-        if fmt != "rack":
+        if fmt not in ("rack", "fliptop"):
             st.box("painel", (panel_w - 0.004, 0.003, panel_h), (0, 0.0015, panel_h / 2), bevel=0.0008, material=mats["panel"])
         if pn.get("friso"):
             st.rounded_rect_curve("painel_friso", panel_w - 0.006, panel_h - 0.004, 0.003, 0.0016,

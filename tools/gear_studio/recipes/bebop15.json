@@ -2,43 +2,41 @@
   "tipo": "cabecote",
   "nome": "Bebop 15",
   "familia": "bebop15",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Polytone Mini Brute: combo 1×15 de cerca de 445 × 483 × 279 mm em tolex preto com cantos plásticos, grade de metal expandido preta na frente com a marca e o painel bordô escuro recuado no tampo com letras brancas: alavanca POWER com LED, chave BOOST/CUT, entradas HI e LO GAIN, MASTER VOLUME, GAIN, CONTOUR, o seletor PROGRAM, BASS, MID, TREBLE, VOLUME e REVERB em botões pretos pequenos de ponteiro branco.",
+  "formato": "combo",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.445,
+    "altura": 0.483,
+    "profundidade": 0.279
   },
   "couro": {
     "cor": [
-      0.006,
-      0.006,
+      0.007,
+      0.007,
       0.007
     ],
-    "grao_mm": 2.0
+    "grao_mm": 2.2
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.08,
-      0.05,
-      0.03
+    "tipo": "losango",
+    "cor": [
+      0.02,
+      0.02,
+      0.022
     ],
-    "cor_b": [
-      0.38,
-      0.27,
-      0.17
-    ],
-    "trama_mm": 2.2,
-    "friso": [
-      0.85,
-      0.85,
-      0.86
-    ]
+    "furo_mm": 7.0,
+    "passo_mm": 8.5
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.016,
+    "altura_rel": 0.85,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -47,76 +45,152 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BEBOP 15",
-    "pintado": true,
+    "posicao": "topo",
+    "altura_m": 0.065,
+    "largura_m": 0.38,
     "cor": [
-      0.02,
-      0.02,
+      0.08,
+      0.015,
       0.02
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.9,
-      0.9,
-      0.9
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "pointer",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.04
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": true,
+          "x": 0.04,
+          "z": 0.9
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BOOST",
+          "x": 0.09
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "HI",
+          "x": 0.14
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "LO",
+          "x": 0.19
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.25
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.32
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "CONTOUR",
+          "x": 0.39
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PROGRAM",
+          "x": 0.46
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.53
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.6
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.67
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.74
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "x": 0.81
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "FX",
+          "x": 0.88
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "OUT",
+          "x": 0.94
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.468,
+    "proporcao": 1.0,
+    "elevacao": 34.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "combo de baixo e jazz de transistor com alto-falante de 15 (estilo Polytone Mini Brute): couro preto, tela marrom, painel preto"
+  "notas_modelagem": "Medidas de anúncio (sem fonte do fabricante). A presença do Nexus é o CONTOUR."
 }

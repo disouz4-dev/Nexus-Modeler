@@ -2,44 +2,51 @@
   "tipo": "cabecote",
   "nome": "Silver Prince",
   "familia": "silverprince",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Fender Princeton Reverb (blackface): combo 1×10 de 505 × 406 × 241 mm em tolex preto, tela prateada com a marca no alto à esquerda e painel preto com friso prateado em cima: entradas 1 e 2 (INSTRUMENTS), VOLUME, TREBLE, BASS, REVERB, SPEED e INTENSITY em botões pretos de saia numerada, o nome em script e a joia vermelha.",
+  "formato": "combo",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.505,
+    "altura": 0.406,
+    "profundidade": 0.241
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.007,
+      0.007,
+      0.007
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.2
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
-      0.3,
-      0.31,
-      0.34
+      0.5,
+      0.51,
+      0.52
     ],
     "cor_b": [
-      0.78,
-      0.79,
-      0.82
+      0.36,
+      0.37,
+      0.39
     ],
-    "trama_mm": 2.0,
+    "trama_mm": 1.8,
     "friso": [
-      0.85,
-      0.85,
-      0.87
+      0.75,
+      0.75,
+      0.75
     ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
+    "altura_m": 0.016,
+    "altura_rel": 0.86,
+    "lado_rel": -0.28,
     "cor": [
       0.9,
       0.9,
@@ -47,75 +54,184 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "SILVER PRINCE",
-    "pintado": true,
+    "posicao": "cima",
+    "altura_m": 0.068,
     "cor": [
-      0.012,
-      0.012,
-      0.013
+      0.008,
+      0.008,
+      0.009
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.9,
-      0.9,
-      0.9
+      0.85,
+      0.85,
+      0.85
+    ],
+    "friso": [
+      0.78,
+      0.79,
+      0.8
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
+  "estilos": {
+    "padrao": {
+      "forma": "saia_numerada",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "saia": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "numeros": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma",
+      "tampa_metal": true,
+      "tampa": [
+        0.75,
+        0.76,
+        0.78
+      ]
     },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.55,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.05
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.1
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "INSTRUMENTS",
+          "x": 0.075,
+          "z": 0.18,
+          "letra_m": 0.0058
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.18
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.25
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.32
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "x": 0.39
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SPEED",
+          "x": 0.46
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "INTENSITY",
+          "x": 0.53
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "estilo": "extra",
+          "x": 0.6,
+          "z": 0.7
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "estilo": "extra",
+          "x": 0.6,
+          "z": 0.3
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.014,
+          "x": 0.845,
+          "z": 0.6,
+          "fonte": "script",
+          "cor": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "texto": "Silver Prince"
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.95,
+            0.05,
+            0.03
+          ],
+          "rotulo": null,
+          "x": 0.94,
+          "raio_m": 0.0075
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0052
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.9,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "notas_modelagem": "O Princeton Reverb não tem médio, presença nem master: a presença ficou no INTENSITY e médio e volume em dois botões pequenos."
 }

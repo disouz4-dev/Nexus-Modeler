@@ -2,38 +2,50 @@
   "tipo": "cabecote",
   "nome": "Jazz 120",
   "familia": "jazz_120",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Roland JC-120: combo 2×12 de 760 × 622 × 280 mm em tolex preto com tachas, tela preta de malha prateada com frisos de alumínio e a marca no alto, e painel cinza-grafite na faixa de cima com letras brancas: entradas e chave BRI de cada canal, canal 1 (VOLUME, TREBLE, MIDDLE, BASS) e canal 2 (VOLUME, TREBLE, MIDDLE, BASS, DISTORTION, REVERB; o que toca), a seção dourada SPEED, DEPTH e o seletor de VIB/CHORUS, o nome, a luz vermelha e a alavanca POWER, em botões pretos de tampa prateada.",
+  "formato": "combo",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.76,
+    "altura": 0.622,
+    "profundidade": 0.28
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.007,
+      0.007,
+      0.007
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.2
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
       0.02,
       0.02,
-      0.02
+      0.022
     ],
     "cor_b": [
-      0.22,
-      0.22,
-      0.23
+      0.32,
+      0.32,
+      0.34
     ],
-    "trama_mm": 1.6
+    "trama_mm": 3.2,
+    "friso": [
+      0.7,
+      0.71,
+      0.72
+    ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.02,
+    "altura_rel": 0.86,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -42,75 +54,226 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "JAZZ 120",
-    "pintado": false,
+    "posicao": "cima",
+    "altura_m": 0.08,
     "cor": [
-      0.78,
-      0.79,
-      0.82
+      0.05,
+      0.05,
+      0.055
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.75,
+        0.76,
+        0.78
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "HIGH",
+          "x": 0.025,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "LOW",
+          "x": 0.025,
+          "z": 0.25
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRI",
+          "x": 0.055
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.09
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "TREBLE",
+          "x": 0.135
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE",
+          "x": 0.18
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.225
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "HIGH",
+          "x": 0.27,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "LOW",
+          "x": 0.27,
+          "z": 0.25
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRI",
+          "x": 0.3
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.335
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.38
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.425
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.47
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "DISTORTION",
+          "x": 0.515
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "x": 0.56
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SPEED",
+          "x": 0.615
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DEPTH",
+          "x": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VIB/CHO",
+          "x": 0.705
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.014,
+          "x": 0.8,
+          "z": 0.55,
+          "cor": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "texto": "JAZZ 120"
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.885,
+          "raio_m": 0.006
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.94
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "cima"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.595,
+      "z0": 0.5,
+      "x1": 0.725,
+      "z1": 0.5,
+      "esp_m": 0.07,
+      "cor": [
+        0.42,
+        0.36,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.75,
+      "z0": 0.5,
+      "x1": 0.85,
+      "z1": 0.5,
+      "esp_m": 0.05,
+      "cor": [
+        0.01,
+        0.01,
+        0.01
+      ]
     }
-  ]
+  ],
+  "cantos": "nenhum",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.869,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "O JC-120 não tem presença: a presença do Nexus é o TREBLE do canal 1."
 }

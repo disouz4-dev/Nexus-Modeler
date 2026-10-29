@@ -2,117 +2,6 @@
   "tipo": "cabecote",
   "nome": "Hot Rod 40",
   "familia": "hotrod40",
-  "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.3,
-      0.31,
-      0.34
-    ],
-    "cor_b": [
-      0.78,
-      0.79,
-      0.82
-    ],
-    "trama_mm": 2.0,
-    "friso": [
-      0.85,
-      0.85,
-      0.87
-    ]
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
-    "cor": [
-      0.9,
-      0.9,
-      0.9
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "marca": "NEXUS MODELER",
-    "modelo": "HOT ROD 40",
-    "pintado": false,
-    "cor": [
-      0.78,
-      0.79,
-      0.82
-    ],
-    "texto_cor": [
-      0.02,
-      0.02,
-      0.02
-    ]
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Limpo"
@@ -120,5 +9,245 @@
     {
       "nome": "Drive"
     }
-  ]
+  ],
+  "inspiracao": "Fender Hot Rod Deluxe: combo 1×12 de 597 × 476 × 265 mm em vinil preto, tela prateada envelhecida com a marca no alto à esquerda e o painel PRETO no tampo, virado para trás, com letras brancas: entradas 1 e 2, teclas BRIGHT, MORE DRIVE e CHANNEL SELECT, oito botões marfim bico-de-galinha (VOLUME, DRIVE, TREBLE, BASS, MIDDLE, MASTER, REVERB, PRESENCE), os jaques PREAMP OUT, POWER AMP IN e FOOT SWITCH, a joia vermelha e as alavancas STANDBY e POWER.",
+  "formato": "combo",
+  "medidas_m": {
+    "largura": 0.597,
+    "altura": 0.476,
+    "profundidade": 0.265
+  },
+  "couro": {
+    "cor": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "grao_mm": 2.2
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.5,
+      0.48,
+      0.42
+    ],
+    "cor_b": [
+      0.3,
+      0.29,
+      0.26
+    ],
+    "trama_mm": 1.8,
+    "friso": [
+      0.75,
+      0.73,
+      0.68
+    ]
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.016,
+    "altura_rel": 0.86,
+    "lado_rel": -0.3,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "HOT ROD 40",
+    "posicao": "topo",
+    "altura_m": 0.07,
+    "largura_m": 0.54,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.85
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "chicken",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.82,
+        0.78,
+        0.66
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.03
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.065
+        },
+        {
+          "tipo": "push",
+          "rotulo": "BRIGHT",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.1,
+          "tamanho_m": 0.007
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.145
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MORE DRIVE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.19,
+          "tamanho_m": 0.007
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "DRIVE",
+          "x": 0.235
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHANNEL",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.28,
+          "tamanho_m": 0.007
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.28,
+          "z": 0.88,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.3,
+          "z": 0.88,
+          "rotulo": ""
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.33
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.385
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.495
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "x": 0.55
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.605
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "PRE OUT",
+          "x": 0.66
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "PWR IN",
+          "x": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "FT SW",
+          "x": 0.74
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.95,
+            0.05,
+            0.03
+          ],
+          "rotulo": null,
+          "x": 0.8,
+          "raio_m": 0.007
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.86
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.92
+        }
+      ],
+      "letra_m": 0.0045,
+      "rotulo_pos": "baixo"
+    }
+  ],
+  "cantos": "nenhum",
+  "quadro": {
+    "largura_rel": 1.24,
+    "proporcao": 0.863,
+    "elevacao": 34.0
+  }
 }

@@ -2,43 +2,50 @@
   "tipo": "cabecote",
   "nome": "Fliptop 18",
   "familia": "fliptop18",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Ampeg B-18 Portaflex: flip-top em tolex xadrez azul-marinho (Blue Check), a caixa 1×18 com tela cinza-prateada e a marca no alto e o chassi em cima com as válvulas entre os blocos dos transformadores; na frente do chassi o painel cromado estreito com letras pretas: três entradas, VOLUME, TREBLE e BASS dos canais 1 (o que toca) e 2 em botões pretos de saia, e as alavancas STANDBY, GROUND e ON/OFF à direita.",
+  "formato": "fliptop",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.6,
+    "altura": 0.9,
+    "profundidade": 0.4
   },
   "couro": {
     "cor": [
-      0.12,
-      0.18,
-      0.3
+      0.05,
+      0.07,
+      0.16
     ],
-    "grao_mm": 2.0
+    "xadrez": [
+      0.01,
+      0.012,
+      0.02
+    ],
+    "passo_mm": 2.6
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
-      0.03,
-      0.03,
-      0.035
+      0.45,
+      0.46,
+      0.48
     ],
     "cor_b": [
-      0.5,
-      0.51,
-      0.54
+      0.12,
+      0.12,
+      0.13
     ],
-    "trama_mm": 2.6,
-    "friso": [
-      0.85,
-      0.85,
-      0.86
-    ]
+    "trama_mm": 2.0
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.016,
+    "altura_rel": 0.86,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -47,76 +54,257 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "FLIPTOP 18",
-    "pintado": false,
+    "posicao": "inteiro",
     "cor": [
-      0.74,
-      0.75,
-      0.77
+      0.86,
+      0.86,
+      0.88
     ],
     "texto_cor": [
-      0.02,
-      0.02,
-      0.03
+      0.012,
+      0.012,
+      0.012
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "saia_numerada",
+      "diametro_m": 0.015,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "saia": [
+        0.75,
+        0.76,
+        0.78
+      ],
+      "numeros": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "nenhuma",
+      "tampa_metal": true,
+      "tampa": [
+        0.78,
+        0.78,
+        0.8
+      ]
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.48,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.05
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.11
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.17
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "INPUTS",
+          "x": 0.11,
+          "z": 0.9
+        }
+      ],
+      "letra_m": 0.005,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.48,
+      "x0": 0.27,
+      "x1": 0.48,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        }
+      ],
+      "letra_m": 0.005,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
+      "z": 0.48,
+      "x0": 0.5,
+      "x1": 0.71,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        }
+      ],
+      "letra_m": 0.005,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "agudo",
-      "rotulo": "AGUDO"
+      "z": 0.48,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "estilo": "extra",
+          "x": 0.765,
+          "z": 0.72
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.011,
+          "x": 0.8,
+          "z": 0.6
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POLARITY",
+          "x": 0.86,
+          "z": 0.4
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.91,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.96,
+          "z": 0.4
+        }
+      ],
+      "letra_m": 0.005,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.92,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "texto",
+          "rotulo": "ONE",
+          "x": 0.375
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TWO",
+          "x": 0.605
+        }
+      ],
+      "letra_m": 0.005
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.25,
+      "z0": 0.08,
+      "x1": 0.25,
+      "z1": 0.92,
+      "esp_m": 0.0006,
+      "cor": [
+        0.012,
+        0.012,
+        0.012
+      ]
+    },
+    {
+      "x0": 0.495,
+      "z0": 0.08,
+      "x1": 0.495,
+      "z1": 0.92,
+      "esp_m": 0.0006,
+      "cor": [
+        0.012,
+        0.012,
+        0.012
+      ]
+    },
+    {
+      "x0": 0.735,
+      "z0": 0.08,
+      "x1": 0.735,
+      "z1": 0.92,
+      "esp_m": 0.0006,
+      "cor": [
+        0.012,
+        0.012,
+        0.012
+      ]
     }
   ],
-  "inspiracao": "cabeçote de baixo valvulado de 60 W dos anos 60 (estilo Ampeg B-18 Portaflex): couro azul, tela prateada"
+  "cantos": "nenhum",
+  "alca": "nenhuma",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.785,
+    "proporcao": 1.0,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "Medidas do B-18 não encontradas: estimadas a partir do B-15 com a caixa 1×18 maior (600 × 940 × 400). O volume do Nexus é o VOLUME do canal 2 e a presença o TREBLE dele; o médio ficou num botão pequeno."
 }
