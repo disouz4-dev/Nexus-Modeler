@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Amber Glory",
   "familia": "amber_glory",
-  "inspiracao": "azul-claro com letras pretas e botões creme, caixa média (estilo JHS Morning Glory)",
+  "inspiracao": "Caixa dourada envelhecida, latão escovado (66 x 122 x 41 mm), letras pretas; botões brancos VOLUME e DRIVE no alto e TOM embaixo à direita, minichave GANHO à esquerda, LED azul ao lado do pisante. Tema: âmbar dourado com uma folha presa, pontos tom sobre tom. Original: JHS Morning Glory.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.066,
+    "comprimento": 0.122,
+    "altura": 0.041
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.9565,
-      0.4281,
-      0.2373
+      0.4647,
+      0.3297,
+      0.0869
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.55,
+    "aspereza": 0.4
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "AMBER GLORY",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.016,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.9,
-      0.86,
-      0.74
+      0.8913,
+      0.8751,
+      0.8277
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.0037,
+      0.0037,
+      0.0037
     ]
   },
   "botoes": [
@@ -53,41 +44,65 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.5,
+        0.74
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.5,
+        0.74
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.5,
+        0.4
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/amber_glory.svg"
+  },
+  "medidas_fonte": "66 x 122 x 41 mm (JHS, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.31,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.42,
+  "logo_m": 0.0085,
+  "pisante_y": -0.74,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/amber_glory.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.62,
+    -0.74
+  ],
+  "led_cor": [
+    0.0008,
+    0.009,
+    0.145
+  ],
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        -0.5,
+        0.42
+      ],
+      "rotulo": "GANHO",
+      "rotulo_pos": "baixo"
+    }
+  ]
 }
