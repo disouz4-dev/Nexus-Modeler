@@ -475,3 +475,4 @@ countries: it ch
 "Detune" = "Detune"
 "Feedback" = "Feedback"
 "Repetição" = "Livello ripetizioni"
+"Arraste um pedal da coluna da direita para a cadeia" = "Trascina un pedale dalla colonna di destra nella catena"

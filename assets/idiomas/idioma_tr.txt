@@ -475,3 +475,4 @@ countries: tr
 "Detune" = "Detune"
 "Feedback" = "Geri besleme"
 "Repetição" = "Tekrar seviyesi"
+"Arraste um pedal da coluna da direita para a cadeia" = "Sağ sütundan zincire bir pedal sürükleyin"

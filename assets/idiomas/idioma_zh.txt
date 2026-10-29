@@ -475,3 +475,4 @@ countries: cn sg
 "Detune" = "失谐"
 "Feedback" = "反馈"
 "Repetição" = "重复音量"
+"Arraste um pedal da coluna da direita para a cadeia" = "从右侧栏把踏板拖到信号链中"

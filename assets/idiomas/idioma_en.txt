@@ -475,3 +475,4 @@ countries: us gb au ca
 "Detune" = "Detune"
 "Feedback" = "Feedback"
 "Repetição" = "Repeat level"
+"Arraste um pedal da coluna da direita para a cadeia" = "Drag a pedal from the right column into the chain"

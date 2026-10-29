@@ -475,3 +475,4 @@ countries: ru
 "Detune" = "Расстройка"
 "Feedback" = "Обратная связь"
 "Repetição" = "Уровень повторов"
+"Arraste um pedal da coluna da direita para a cadeia" = "Перетащите педаль из правой колонки в цепь"

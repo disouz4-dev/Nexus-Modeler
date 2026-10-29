@@ -475,3 +475,4 @@ countries: bd in
 "Detune" = "ডিটিউন"
 "Feedback" = "ফিডব্যাক"
 "Repetição" = "রিপিট লেভেল"
+"Arraste um pedal da coluna da direita para a cadeia" = "ডান কলাম থেকে একটি প্যাডেল চেইনে টেনে আনুন"

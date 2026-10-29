@@ -82,6 +82,15 @@
   patch ligava qualquer pisada ao pedal. Agora fica só a pisada aprendida, e
   o registro anota o que foi aprendido.
 
+### Pedaleira na tela
+
+- Ao escolher um pedal, o palco mostra a pedaleira inteira (modelada em 3D no
+  Blender): todos os pedais da cadeia, na ordem do som, ligados por cabos.
+  O LED aceso mostra quem está ligado; pisar no pisante de qualquer pedal liga
+  e desliga, e clicar no pedal escolhe ele para mexer nos botões.
+- Cabeçote ou caixa: a pedaleira some e aparece só a peça.
+- A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
+
 ### Primeira abertura
 - A cadeia de sinal começa só com o Brit 800 e a caixa dele, sem pedais. Nas
   vezes seguintes, abre como a pessoa deixou.

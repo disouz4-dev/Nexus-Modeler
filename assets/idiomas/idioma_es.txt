@@ -475,3 +475,4 @@ countries: es mx ar co cl
 "Detune" = "Desafinación"
 "Feedback" = "Realimentación"
 "Repetição" = "Nivel de repetición"
+"Arraste um pedal da coluna da direita para a cadeia" = "Arrastra un pedal de la columna derecha a la cadena"

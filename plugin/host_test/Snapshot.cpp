@@ -191,6 +191,24 @@ int main(int argc, char** argv)
       look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
       e->select({NexusEditor::Kind::amp, 0});
     }
+    else if (stage == "pedaleira")
+    {
+      // Pedaleira: cinco pedais (três antes, um entre cabeçote e caixa, um
+      // depois), alguns ligados, com o segundo escolhido.
+      ChainLayout l;
+      l.pre = {0, 1, 2};
+      l.loop[0] = {3};
+      l.post = {4};
+      processor.setLayout(l);
+      const int looks[5] = {0, NexusProcessor::kDropLook, 3, 12, 20};
+      for (int i = 0; i < 5; ++i)
+      {
+        auto* look = processor.params.getParameter(NexusProcessor::pedalParam(i, "visual"));
+        look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(looks[i])));
+        processor.params.getParameter(NexusProcessor::pedalParam(i, "ligado"))->setValueNotifyingHost(i % 2 == 0 ? 1.0f : 0.0f);
+      }
+      e->select({NexusEditor::Kind::pedal, 1});
+    }
     else if (stage == "gate")
     {
       // Pedal 1 com o visual do Pear Gate.

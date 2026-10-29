@@ -328,6 +328,17 @@ void drawAbPedal(juce::Graphics& g, juce::Rectangle<float> r, int active, float 
                                          juce::Colour(0xff7b7f86).withMultipliedAlpha(alpha), foot.getRight(), foot.getBottom(), false));
   g.fillEllipse(foot);
 }
+// Blueberry Chain: as chaves ficam no tampo, de cada lado do LED (posição
+// relativa ao corpo, a mesma da receita 3D: x de -1 a 1, y para cima).
+// Centro e raio em pixels da imagem da frente.
+std::vector<std::pair<juce::Point<float>, float>> chainTogglePixels(const GearArt& art)
+{
+  std::vector<std::pair<juce::Point<float>, float>> out;
+  const auto& b = art.body;
+  for (const float x : {-0.56f, 0.56f})
+    out.push_back({{b.getCentreX() + x * b.getWidth() * 0.5f, b.getCentreY() - 0.10f * b.getHeight() * 0.5f}, b.getWidth() * 0.035f});
+  return out;
+}
 } // namespace
 
 // ================================================================ GearStage
@@ -465,11 +476,28 @@ bool NexusEditor::GearStage::overFootswitch(juce::Point<float> p) const
   return p.getDistanceFrom(toScreen(mArt->footswitch)) <= mArt->footswitchRadius * mScale * 1.15f;
 }
 
+void NexusEditor::GearStage::setArea(juce::Rectangle<float> area)
+{
+  if (area == mArea)
+    return;
+  mArea = area;
+  resized();
+  repaint();
+}
+
+bool NexusEditor::GearStage::hitTest(int x, int y)
+{
+  if (mArea.isEmpty())
+    return true;
+  const juce::Point<int> p{x, y};
+  return mImage.contains(p.toFloat()) || (mSync.isVisible() && mSync.getBounds().contains(p)) || (mTap.isVisible() && mTap.getBounds().contains(p));
+}
+
 void NexusEditor::GearStage::resized()
 {
   if (mArt == nullptr)
     return;
-  mImage = fitImage(mArt->front, getLocalBounds().toFloat().reduced(24.0f, 18.0f));
+  mImage = fitImage(mArt->front, mArea.isEmpty() ? getLocalBounds().toFloat().reduced(24.0f, 18.0f) : mArea);
   mScale = mImage.getWidth() / static_cast<float>(std::max(1, mArt->front.getWidth()));
   for (auto& knob : mKnobs)
   {
@@ -481,6 +509,13 @@ void NexusEditor::GearStage::resized()
   // Andamento: ao lado direito da peça, na altura do meio.
   const auto body = juce::Rectangle<float>(mImage.getX() + mArt->body.getX() * mScale, mImage.getY() + mArt->body.getY() * mScale,
                                            mArt->body.getWidth() * mScale, mArt->body.getHeight() * mScale);
+  if (!mArea.isEmpty())
+  {
+    // Na pedaleira: no canto de cima, à direita, fora dos pedais.
+    mTap.setBounds(getWidth() - 186, 6, 170, 30);
+    mSync.setBounds(mTap.getX() - 182, 6, 170, 30);
+    return;
+  }
   const int x = juce::roundToInt(body.getRight()) + 40;
   const int y = juce::roundToInt(body.getCentreY()) - 40;
   mSync.setBounds(x, y, 170, 34);
@@ -555,17 +590,11 @@ void NexusEditor::GearStage::mouseMove(const juce::MouseEvent& e)
 
 std::vector<std::pair<juce::Point<float>, float>> NexusEditor::GearStage::chainToggles() const
 {
-  // Blueberry Chain: as chaves ficam no tampo, de cada lado do LED (posição
-  // relativa ao corpo, a mesma da receita 3D: x de -1 a 1, y para cima).
   std::vector<std::pair<juce::Point<float>, float>> out;
   if (mKind != Kind::pedal || mArt == nullptr || NexusProcessor::pedalKind(mProcessor.pedalLook(mIndex)) != NexusProcessor::PedalKind::triple)
     return out;
-  const auto& b = mArt->body;
-  for (const float x : {-0.56f, 0.56f})
-  {
-    const juce::Point<float> px{b.getCentreX() + x * b.getWidth() * 0.5f, b.getCentreY() - 0.10f * b.getHeight() * 0.5f};
-    out.push_back({toScreen(px), b.getWidth() * mScale * 0.035f});
-  }
+  for (const auto& [px, r] : chainTogglePixels(*mArt))
+    out.push_back({toScreen(px), r * mScale});
   return out;
 }
 
@@ -601,6 +630,269 @@ void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
   auto* on = mProcessor.params.getParameter(id);
   on->setValueNotifyingHost(on->getValue() > 0.5f ? 0.0f : 1.0f);
   repaint();
+}
+
+// ================================================================ BoardView
+
+namespace
+{
+// Cabo de pedal visto de cima: sai do topo de um pedal (plugue em pé), faz um
+// arco por trás e entra no topo do outro.
+void drawPatchCable(juce::Graphics& g, juce::Point<float> from, juce::Point<float> to, float rise, float thick)
+{
+  juce::Path cable;
+  cable.startNewSubPath(from);
+  cable.cubicTo(from.translated(0.0f, -rise), to.translated(0.0f, -rise), to);
+  g.setColour(juce::Colours::black.withAlpha(0.45f)); // sombra no velcro
+  g.strokePath(cable, juce::PathStrokeType(thick * 1.5f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded),
+               juce::AffineTransform::translation(thick * 0.5f, thick * 0.8f));
+  g.setColour(juce::Colour(0xff0d0d0e));
+  g.strokePath(cable, juce::PathStrokeType(thick, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
+  g.setColour(juce::Colour(0xff3c3e42)); // brilho da capa de borracha
+  g.strokePath(cable, juce::PathStrokeType(thick * 0.28f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded),
+               juce::AffineTransform::translation(-thick * 0.2f, -thick * 0.2f));
+  // Plugues: corpo de metal escuro com o anel cromado.
+  for (const auto& p : {from, to})
+  {
+    const juce::Rectangle<float> plug(p.x - thick * 0.95f, p.y - thick * 2.6f, thick * 1.9f, thick * 2.8f);
+    g.setGradientFill(juce::ColourGradient(juce::Colour(0xff5b5f66), plug.getX(), 0.0f, juce::Colour(0xff17181a), plug.getRight(), 0.0f, false));
+    g.fillRoundedRectangle(plug, thick * 0.4f);
+    g.setColour(juce::Colour(0xffc9ccd2));
+    g.fillRect(plug.getX(), plug.getBottom() - thick * 0.7f, plug.getWidth(), thick * 0.35f);
+  }
+}
+} // namespace
+
+NexusEditor::BoardView::BoardView(NexusEditor& editor)
+: mEditor(editor)
+, mBoard(GearArt::load("pedaleira"))
+{
+}
+
+std::vector<NexusEditor::BoardView::Slot> NexusEditor::BoardView::layoutSlots() const
+{
+  std::vector<Slot> out;
+  // Na ordem do som: antes, entre cabeçote e caixa (A e B) e depois.
+  const auto layout = mEditor.mProcessor.layout();
+  std::vector<int> pedals(layout.pre);
+  for (const auto* v : {&layout.loop[0], &layout.loop[1], &layout.post})
+    if (v != &layout.loop[1] || layout.dual)
+      pedals.insert(pedals.end(), v->begin(), v->end());
+  if (pedals.empty() || mBoardImage.isEmpty())
+    return out;
+
+  // Faixa útil: entre as cabeceiras, deixando a ripa de trás para os cabos.
+  const auto inner = mBoardImage.reduced(mBoardImage.getWidth() * 0.05f, 0.0f)
+                       .withTrimmedTop(mBoardImage.getHeight() * 0.13f)
+                       .withTrimmedBottom(mBoardImage.getHeight() * 0.04f);
+  const float gap = inner.getWidth() * 0.02f;
+  std::vector<juce::Rectangle<float>> bodies;
+  float aspect = 0.0f; // soma das larguras com altura 1
+  for (int p : pedals)
+  {
+    const auto* art = mEditor.pedalArt(p);
+    auto body = art != nullptr && !art->body.isEmpty() ? art->body : juce::Rectangle<float>(0.0f, 0.0f, 360.0f, 600.0f);
+    bodies.push_back(body);
+    aspect += body.getWidth() / body.getHeight();
+  }
+  const float gaps = gap * static_cast<float>(pedals.size() - 1);
+  // Todos com a mesma altura; se não couberem, encolhem juntos.
+  const float h = std::min(inner.getHeight(), (inner.getWidth() - gaps) / aspect);
+  float x = inner.getCentreX() - (aspect * h + gaps) * 0.5f;
+  for (size_t i = 0; i < pedals.size(); ++i)
+  {
+    const auto* art = mEditor.pedalArt(pedals[i]);
+    const auto& b = bodies[i];
+    const float k = h / b.getHeight();
+    const juce::Rectangle<float> body(x, inner.getCentreY() - h * 0.5f, b.getWidth() * k, h);
+    const auto image = art != nullptr ? juce::Rectangle<float>(body.getX() - b.getX() * k, body.getY() - b.getY() * k,
+                                                               static_cast<float>(art->front.getWidth()) * k,
+                                                               static_cast<float>(art->front.getHeight()) * k)
+                                      : body;
+    out.push_back({pedals[i], image, body, k});
+    x += body.getWidth() + gap;
+  }
+  return out;
+}
+
+juce::Rectangle<float> NexusEditor::BoardView::imageOf(int pedal) const
+{
+  for (const auto& s : layoutSlots())
+    if (s.pedal == pedal)
+      return s.image;
+  return {};
+}
+
+const NexusEditor::BoardView::Slot* NexusEditor::BoardView::slotAt(juce::Point<float> p) const
+{
+  for (const auto& s : mSlots)
+    if (s.body.contains(p))
+      return &s;
+  return nullptr;
+}
+
+bool NexusEditor::BoardView::overFootswitch(const Slot& s, juce::Point<float> p) const
+{
+  const auto* art = mEditor.pedalArt(s.pedal);
+  if (art == nullptr || art->footswitchRadius <= 0.0f)
+    return false;
+  const auto c = s.image.getTopLeft() + art->footswitch * s.scale;
+  return p.getDistanceFrom(c) <= std::max(10.0f, art->footswitchRadius * s.scale * 1.3f);
+}
+
+juce::String NexusEditor::BoardView::signature() const
+{
+  auto& params = mEditor.mProcessor.params;
+  const auto value = [&params](int pedal, const char* id) {
+    auto* raw = params.getRawParameterValue(NexusProcessor::pedalParam(pedal, id));
+    return raw != nullptr ? juce::String(raw->load(), 2) : juce::String();
+  };
+  const auto layout = mEditor.mProcessor.layout();
+  juce::String sig = layout.toValueTree().toXmlString() + juce::String(getWidth()) + "x" + juce::String(getHeight());
+  sig << "|" << (mEditor.mSel.kind == Kind::pedal ? mEditor.mSel.index : -1);
+  for (int p = 0; p < ChainLayout::kPedals; ++p)
+  {
+    if (!layout.uses(p))
+      continue;
+    sig << "|" << mEditor.pedalLook(p) << value(p, "ligado") << value(p, "modo");
+    if (const auto* art = mEditor.pedalArt(p))
+      for (const auto& k : art->knobs)
+        sig << "," << value(p, k.id == "ganho" ? "drive" : k.id.toRawUTF8());
+    for (const auto* id : NexusProcessor::kChainSwitches)
+      sig << value(p, id);
+  }
+  return sig;
+}
+
+void NexusEditor::BoardView::tick()
+{
+  if (auto sig = signature(); sig != mSignature)
+  {
+    mSignature = sig;
+    repaint();
+  }
+}
+
+void NexusEditor::BoardView::resized()
+{
+  // Espaço de cima livre (sincronizar e tap do pedal escolhido).
+  const auto area = getLocalBounds().toFloat().withTrimmedTop(40.0f).reduced(14.0f, 2.0f);
+  mBoardImage = mBoard.valid() ? fitImage(mBoard.front, area) : area;
+  mSignature.clear();
+}
+
+void NexusEditor::BoardView::paint(juce::Graphics& g)
+{
+  mSlots = layoutSlots();
+  if (mBoard.valid())
+    drawGear(g, mBoard.front, mBoardImage);
+  else
+  {
+    g.setColour(juce::Colour(0xff0c0c0d));
+    g.fillRoundedRectangle(mBoardImage, 12.0f);
+  }
+  if (mSlots.empty())
+  {
+    drawCaps(g, TRANS("Arraste um pedal da coluna da direita para a cadeia"), mBoardImage, 12.0f, juce::Justification::centred, colour::dim);
+    return;
+  }
+
+  // Cabos: entrada pela esquerda, de pedal em pedal, e saída pela direita.
+  const float thick = juce::jlimit(3.0f, 7.0f, mSlots.front().body.getWidth() * 0.035f);
+  const float rise = mBoardImage.getHeight() * 0.09f;
+  const auto in = [](const Slot& s) { return juce::Point<float>(s.body.getX() + s.body.getWidth() * 0.26f, s.body.getY() + 2.0f); };
+  const auto out = [](const Slot& s) { return juce::Point<float>(s.body.getRight() - s.body.getWidth() * 0.26f, s.body.getY() + 2.0f); };
+  const float edgeY = mSlots.front().body.getY() - rise * 0.7f;
+  drawPatchCable(g, {mBoardImage.getX() + mBoardImage.getWidth() * 0.012f, edgeY}, in(mSlots.front()), rise * 0.4f, thick);
+  for (size_t i = 0; i + 1 < mSlots.size(); ++i)
+    drawPatchCable(g, out(mSlots[i]), in(mSlots[i + 1]), rise, thick);
+  drawPatchCable(g, out(mSlots.back()), {mBoardImage.getRight() - mBoardImage.getWidth() * 0.012f, edgeY}, rise * 0.4f, thick);
+
+  auto& params = mEditor.mProcessor.params;
+  for (const auto& s : mSlots)
+  {
+    const bool chosen = mEditor.mSel.kind == Kind::pedal && mEditor.mSel.index == s.pedal;
+    if (chosen)
+    {
+      // O escolhido: brilho ciano por baixo; o GearStage desenha o pedal.
+      g.setColour(colour::accent.withAlpha(0.16f));
+      g.fillRoundedRectangle(s.body.expanded(7.0f), 12.0f);
+      g.setColour(colour::accent.withAlpha(0.75f));
+      g.drawRoundedRectangle(s.body.expanded(7.0f), 12.0f, 1.6f);
+      continue;
+    }
+    const auto* art = mEditor.pedalArt(s.pedal);
+    if (art == nullptr)
+    {
+      g.setColour(juce::Colour(0xff2a2d33));
+      g.fillRoundedRectangle(s.body, 6.0f);
+      continue;
+    }
+    drawGear(g, art->front, s.image);
+    drawGearLabels(g, *art, s.image);
+    const auto at = [&s](juce::Point<float> px) { return s.image.getTopLeft() + px * s.scale; };
+    g.setImageResamplingQuality(juce::Graphics::highResamplingQuality);
+    for (const auto& k : art->knobs)
+      if (auto* param = params.getParameter(NexusProcessor::pedalParam(s.pedal, k.id == "ganho" ? "drive" : k.id.toRawUTF8())))
+      {
+        const auto box = k.box.toFloat();
+        g.drawImage(k.frame(param->getValue()), {s.image.getX() + box.getX() * s.scale, s.image.getY() + box.getY() * s.scale,
+                                                 box.getWidth() * s.scale, box.getHeight() * s.scale},
+                    juce::RectanglePlacement::stretchToFit);
+      }
+    const int look = mEditor.pedalLook(s.pedal);
+    if (!art->display.isEmpty())
+    {
+      const auto tl = at(art->display.getTopLeft());
+      const juce::Rectangle<float> r{tl.x, tl.y, art->display.getWidth() * s.scale, art->display.getHeight() * s.scale};
+      if (NexusProcessor::hasModes(look))
+        drawModeDisplay(g, r, look, params.getRawParameterValue(NexusProcessor::pedalParam(s.pedal, "modo"))->load());
+      else
+        drawDropDisplay(g, r, params.getRawParameterValue(NexusProcessor::pedalParam(s.pedal, "a"))->load());
+    }
+    if (NexusProcessor::pedalKind(look) == NexusProcessor::PedalKind::triple)
+    {
+      const auto toggles = chainTogglePixels(*art);
+      for (size_t t = 0; t < toggles.size(); ++t)
+      {
+        const bool up = params.getRawParameterValue(NexusProcessor::pedalParam(s.pedal, NexusProcessor::kChainSwitches[t]))->load() > 0.5f;
+        drawToggle(g, at(toggles[t].first), toggles[t].second * s.scale, up, t == 0 ? "3" : juce::String::fromUTF8("×"),
+                   t == 0 ? "2" : juce::String::fromUTF8("÷"));
+      }
+    }
+    // LED: o que diz se o pedal está ligado (com um tamanho mínimo para ver de longe).
+    if (art->ledRadius > 0.0f && params.getRawParameterValue(NexusProcessor::pedalParam(s.pedal, "ligado"))->load() > 0.5f)
+      drawLed(g, at(art->led), std::max(2.6f, art->ledRadius * s.scale));
+  }
+}
+
+void NexusEditor::BoardView::mouseMove(const juce::MouseEvent& e)
+{
+  setMouseCursor(slotAt(e.position) != nullptr ? juce::MouseCursor::PointingHandCursor : juce::MouseCursor::NormalCursor);
+}
+
+void NexusEditor::BoardView::mouseUp(const juce::MouseEvent& e)
+{
+  const auto* s = slotAt(e.position);
+  if (s == nullptr)
+    return;
+  const int pedal = s->pedal;
+  // Pisante: liga e desliga sem trocar o pedal escolhido.
+  if (overFootswitch(*s, e.position))
+  {
+    const auto id = NexusProcessor::pedalParam(pedal, "ligado");
+    if (e.mods.isPopupMenu())
+    {
+      mEditor.showMidiMenu(id, *this);
+      return;
+    }
+    auto* on = mEditor.mProcessor.params.getParameter(id);
+    on->setValueNotifyingHost(on->getValue() > 0.5f ? 0.0f : 1.0f);
+    tick();
+    return;
+  }
+  if (!e.mods.isPopupMenu())
+    mEditor.select({Kind::pedal, pedal});
 }
 
 // ================================================================ CabStage
@@ -1345,9 +1637,11 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(mLanguageButton);
   mLanguageButton.onClick = [this] { showLanguageMenu(); };
 
+  mBoard = std::make_unique<BoardView>(*this);
   mPedalStage = std::make_unique<GearStage>(p, Kind::pedal);
   mAmpStage = std::make_unique<GearStage>(p, Kind::amp);
   mCabStage = std::make_unique<CabStage>(p, mCabArts.data());
+  addChildComponent(*mBoard); // por baixo do pedal escolhido
   addChildComponent(*mPedalStage);
   addChildComponent(*mAmpStage);
   addChildComponent(*mCabStage);
@@ -1732,6 +2026,8 @@ int NexusEditor::railSlot() const
 void NexusEditor::select(Selection s)
 {
   mSel = s;
+  // Pedal: a pedaleira inteira; cabeçote ou caixa: só a peça.
+  mBoard->setVisible(s.kind == Kind::pedal);
   mPedalStage->setVisible(s.kind == Kind::pedal);
   mAmpStage->setVisible(s.kind == Kind::amp);
   mCabStage->setVisible(s.kind == Kind::cab);
@@ -1742,6 +2038,8 @@ void NexusEditor::select(Selection s)
   {
     mShownPedalLook = pedalLook(s.index);
     mPedalStage->setTarget(s.index, pedalArt(s.index));
+    mPedalStage->setArea(mBoard->imageOf(s.index));
+    mBoard->tick();
   }
   if (s.kind == Kind::amp)
   {
@@ -2442,6 +2740,13 @@ void NexusEditor::timerCallback()
     repaint();
   }
 
+  // Os mesmos pedais na pedaleira e na cadeia de baixo, na mesma ordem.
+  if (const auto shown = mProcessor.layout().toValueTree().toXmlString(); shown != mShownLayout)
+  {
+    mShownLayout = shown;
+    mChain->rebuild();
+  }
+
   // O visual do pedal escolhido pode mudar pelas setas ou pela automação.
   if (mSel.kind == Kind::pedal && pedalLook(mSel.index) != mShownPedalLook)
   {
@@ -2528,6 +2833,9 @@ void NexusEditor::timerCallback()
   mChain->repaint();
   if (mSel.kind == Kind::pedal)
   {
+    // A cadeia pode ter mudado (pedal posto, tirado ou arrastado).
+    mPedalStage->setArea(mBoard->imageOf(mSel.index));
+    mBoard->tick();
     mPedalStage->tick();
     mPedalStage->repaint();
   }
@@ -2616,7 +2924,10 @@ void NexusEditor::resized()
   mBrowser->setBounds(r.removeFromRight(kBrowserWidth));
   mChain->setBounds(r.removeFromBottom(kPathHeight));
   mTitleArea = r.removeFromBottom(kTitleHeight);
+  mBoard->setBounds(r);
   mPedalStage->setBounds(r);
+  if (mSel.kind == Kind::pedal)
+    mPedalStage->setArea(mBoard->imageOf(mSel.index));
   mAmpStage->setBounds(ampArt(mSel.kind == Kind::amp ? mSel.index : 0).channels.size() > 1 ? r.withTrimmedTop(46) : r);
   mCabStage->setBounds(r);
   mEqStage->setBounds(r);

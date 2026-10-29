@@ -21,7 +21,8 @@
 #include "ui/Gear.h"
 
 // Tela do Nexus Modeler. De cima para baixo: barra com a marca e o motor;
-// o palco, com a peça escolhida renderizada em 3D sob um foco de luz; o nome
+// o palco, com a peça escolhida renderizada em 3D sob um foco de luz (pedal
+// escolhido: a pedaleira com todos os pedais da cadeia); o nome
 // da peça, o pacote e o trilho das capturas; e a cadeia de sinal, montada por
 // clique e arrasta: pedais antes, pedal A/B, cabeçote, pedais entre cabeçote
 // e caixa, caixa, pedais depois.
@@ -84,6 +85,11 @@ private:
     std::function<void(const juce::String&, juce::Component&)> onMidiMenu;
     // Relógio da tela: atualiza o BPM mostrado no TAP.
     void tick() { refreshTempo(); }
+    // Pedaleira: o pedal escolhido é desenhado neste retângulo (a imagem
+    // inteira, com a folga) e só ele recebe o mouse; o resto da área deixa
+    // passar o clique para a pedaleira por baixo. Vazio = ocupa tudo.
+    void setArea(juce::Rectangle<float> area);
+    bool hitTest(int x, int y) override;
 
   private:
     juce::String paramFor(const juce::String& knobId) const;
@@ -99,6 +105,7 @@ private:
     const nexus::ui::GearArt* mArt = nullptr;
     std::vector<std::unique_ptr<nexus::ui::FilmKnob>> mKnobs;
     juce::Rectangle<float> mImage;
+    juce::Rectangle<float> mArea;
     float mScale = 1.0f;
     // Andamento (modulações e delay): sincronizar e tap tempo. Botão direito
     // no TAP liga uma pisada da pedaleira (aprender MIDI).
@@ -116,6 +123,44 @@ private:
     juce::TextButton mSync;
     TapButton mTap;
     void refreshTempo();
+  };
+
+  // Pedaleira (vista dos pedais): todos os pedais da cadeia, na ordem do
+  // som, montados na pedaleira 3D e ligados por cabos. O LED mostra quem
+  // está ligado; clicar escolhe o pedal e pisar no pisante liga e desliga.
+  // O pedal escolhido não é desenhado aqui: o GearStage fica por cima, no
+  // lugar dele, com os botões de verdade.
+  class BoardView : public juce::Component
+  {
+  public:
+    explicit BoardView(NexusEditor& editor);
+    void paint(juce::Graphics&) override;
+    void resized() override;
+    void mouseUp(const juce::MouseEvent&) override;
+    void mouseMove(const juce::MouseEvent&) override;
+    // Onde fica a imagem do pedal (vazio se não está na cadeia).
+    juce::Rectangle<float> imageOf(int pedal) const;
+    // Relógio da tela: redesenha só se algo mudou (pedais, LEDs, botões).
+    void tick();
+
+  private:
+    struct Slot
+    {
+      int pedal;
+      juce::Rectangle<float> image; // imagem inteira do pedal, na tela
+      juce::Rectangle<float> body;  // o pedal em si (sem a folga)
+      float scale;
+    };
+    std::vector<Slot> layoutSlots() const;
+    const Slot* slotAt(juce::Point<float> p) const;
+    bool overFootswitch(const Slot& s, juce::Point<float> p) const;
+    juce::String signature() const;
+
+    NexusEditor& mEditor;
+    nexus::ui::GearArt mBoard;
+    juce::Rectangle<float> mBoardImage;
+    std::vector<Slot> mSlots;
+    juce::String mSignature;
   };
 
   // Caixa grande, com o seletor Desligada / Captura / IR próprio.
@@ -291,6 +336,9 @@ private:
   Selection mSel;
   int mShownPedalLook = -1;
   int mShownChannel = -1;
+  // Cadeia que a tela está mostrando: mudou por fora (preset, automação),
+  // a cadeia de baixo e a pedaleira se refazem juntas.
+  juce::String mShownLayout;
 
   nexus::ui::Segmented mEngine{{"A2 Full", "A2 Lite"}};
   nexus::ui::Segmented mMode{{"Equipamento", juce::String::fromUTF8("Estúdio")}};
@@ -307,6 +355,7 @@ private:
   juce::String mPackGearName;
   Selection mPackTarget;
   int mPackChannel = 0;
+  std::unique_ptr<BoardView> mBoard;
   std::unique_ptr<GearStage> mPedalStage, mAmpStage;
   std::unique_ptr<CabStage> mCabStage;
   std::unique_ptr<CaptureRail> mRail;

@@ -475,3 +475,4 @@ countries: sa eg ae ma
 "Detune" = "إزاحة النغمة"
 "Feedback" = "التغذية الراجعة"
 "Repetição" = "مستوى التكرار"
+"Arraste um pedal da coluna da direita para a cadeia" = "اسحب دواسة من العمود الأيمن إلى السلسلة"

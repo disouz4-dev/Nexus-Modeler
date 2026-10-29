@@ -475,3 +475,4 @@ countries: jp
 "Detune" = "デチューン"
 "Feedback" = "フィードバック"
 "Repetição" = "リピート音量"
+"Arraste um pedal da coluna da direita para a cadeia" = "右の列からペダルをチェーンにドラッグしてください"

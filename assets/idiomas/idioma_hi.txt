@@ -475,3 +475,4 @@ countries: in
 "Detune" = "डीट्यून"
 "Feedback" = "फ़ीडबैक"
 "Repetição" = "रिपीट स्तर"
+"Arraste um pedal da coluna da direita para a cadeia" = "दाईं कॉलम से एक पेडल को चेन में खींचें"

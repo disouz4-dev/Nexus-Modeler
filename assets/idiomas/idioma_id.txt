@@ -475,3 +475,4 @@ countries: id
 "Detune" = "Detune"
 "Feedback" = "Umpan balik"
 "Repetição" = "Level pengulangan"
+"Arraste um pedal da coluna da direita para a cadeia" = "Seret pedal dari kolom kanan ke rantai"

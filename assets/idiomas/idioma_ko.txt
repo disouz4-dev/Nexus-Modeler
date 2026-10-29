@@ -475,3 +475,4 @@ countries: kr
 "Detune" = "디튠"
 "Feedback" = "피드백"
 "Repetição" = "리피트 볼륨"
+"Arraste um pedal da coluna da direita para a cadeia" = "오른쪽 열에서 페달을 체인으로 끌어 놓으세요"

@@ -475,3 +475,4 @@ countries: de at ch
 "Detune" = "Verstimmung"
 "Feedback" = "Rückkopplung"
 "Repetição" = "Echo-Pegel"
+"Arraste um pedal da coluna da direita para a cadeia" = "Ziehe ein Pedal aus der rechten Spalte in die Kette"

@@ -475,3 +475,4 @@ countries: fr ca be ch
 "Detune" = "Désaccord"
 "Feedback" = "Réinjection"
 "Repetição" = "Niveau des répétitions"
+"Arraste um pedal da coluna da direita para a cadeia" = "Faites glisser une pédale de la colonne de droite vers la chaîne"
