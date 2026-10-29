@@ -2,50 +2,42 @@
   "tipo": "pedal",
   "nome": "Mars Phaser",
   "familia": "mars_phaser",
-  "inspiracao": "phaser de caixinha laranja (estilo MXR Phase 90)",
+  "inspiracao": "Caixa MXR laranja vivo com pintura enrugada (62 x 111 x 32 mm), letras pretas; um botão preto grande VELOCIDADE (SPEED) no alto, LED vermelho acima do pisante; PROFUNDIDADE e INTENSIDADE, que o original não tem, ficam pequenas nos cantos de baixo. Tema: o planeta Marte com dunas, pontos tom sobre tom. Original: MXR Phase 90.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.064,
-    "comprimento": 0.112,
-    "altura": 0.034
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.3489,
-      0.0329,
+      0.8751,
+      0.1768,
       0.0055
     ],
-    "metalico": 0.1,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28,
+    "textura": "enrugado"
   },
   "texto_cor": [
-    0.924,
-    0.7667,
-    0.6121
-  ],
-  "texto_cor2": [
-    0.924,
-    0.7667,
-    0.6121
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "MARS PHASER",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.0125,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -54,41 +46,53 @@
       "rotulo": "VELOCIDADE",
       "pos": [
         0.0,
-        0.5
+        0.6
       ],
-      "escala": 1.45
+      "escala": 1.15
     },
     {
       "id": "b",
       "rotulo": "PROFUNDIDADE",
       "pos": [
-        -0.62,
-        0.84
+        -0.72,
+        -0.5
       ],
-      "escala": 0.78
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     },
     {
       "id": "c",
       "rotulo": "INTENSIDADE",
       "pos": [
-        0.62,
-        0.84
+        0.72,
+        -0.5
       ],
-      "escala": 0.78
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
+  "estampa": {
+    "svg": "estampas/mars_phaser.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0075,
+  "pisante_y": -0.6,
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa 1590B: 64 x 112 x 31 mm",
-  "estampa": {
-    "svg": "estampas/mars_phaser.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ]
 }
