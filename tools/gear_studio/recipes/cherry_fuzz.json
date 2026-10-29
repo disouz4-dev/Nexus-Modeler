@@ -2,83 +2,108 @@
   "tipo": "pedal",
   "nome": "Cherry Fuzz",
   "familia": "cherry_fuzz",
-  "inspiracao": "vermelho, caixa redonda e baixa de metal com o pisante no meio (não há formato redondo: usar a caixa padrão) (estilo Dunlop Fuzz Face)",
-  "formato": "padrao",
+  "inspiracao": "Caixa redonda vermelha com pintura martelada (150 mm de diâmetro, 55 de altura), letras brancas; botões pretos VOLUME e FUZZ na borda de trás, o nome em letra cursiva no meio e, na frente, a placa preta triangular com frisos e o pisante pequeno no meio dela; sem LED. Tema: par de cerejas vermelhas. Original: Dunlop Fuzz Face.",
+  "formato": "redondo",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.15,
+    "comprimento": 0.15,
+    "altura": 0.055
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.55,
-      0.03,
-      0.04
+      0.586,
+      0.009,
+      0.017
     ],
-    "metalico": 0.4,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28,
+    "textura": "martelado"
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "CHERRY FUZZ",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "Cherry Fuzz",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.019,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
-      "id": "ganho",
-      "rotulo": "FUZZ",
-      "pos": [
-        -0.45,
-        0.55
-      ],
-      "escala": 1.1
-    },
-    {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.45,
-        0.55
-      ],
-      "escala": 1.1
+        -0.42,
+        0.56
+      ]
+    },
+    {
+      "id": "ganho",
+      "rotulo": "FUZZ",
+      "pos": [
+        0.42,
+        0.56
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/cherry_fuzz.svg"
+  },
+  "medidas_fonte": "aprox. 150 mm de diâmetro x 55 mm (estimativa; a Dunlop não publica)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.012,
+  "logo_y": 0.2,
+  "logo_m": 0.026,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/cherry_fuzz.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "logo_script": true,
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.5
+    ]
+  },
+  "pecas": [
+    {
+      "tipo": "placa",
+      "forma": "triangulo",
+      "pos": [
+        0.0,
+        -0.46
+      ],
+      "tam_m": [
+        0.09,
+        0.06
+      ],
+      "cor": [
+        0.0017,
+        0.0017,
+        0.0017
+      ],
+      "frisos": true
+    }
+  ]
 }

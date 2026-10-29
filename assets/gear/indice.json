@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:16:25Z",
+ "gerado": "2026-10-29T19:18:32Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1549,8 +1549,8 @@
   },
   "cherry_fuzz": {
    "nome": "Cherry Fuzz",
-   "hash": "011864ae477b1b1e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "112a9067ff82b7e5",
+   "data": "2026-10-29T19:18:32Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "cherry_fuzz_botao_ganho.png",
@@ -1561,20 +1561,20 @@
     "cherry_fuzz_mapa.json"
    ],
    "sha256": {
-    "cherry_fuzz_botao_ganho.png": "b2643f4ced2f3eafa7c8c8519165701897fbc52ccc4e493dba14effa75396457",
-    "cherry_fuzz_botao_nivel.png": "33cca5a7f63261c26a0709d2d00a4a472e25baf6f4166fc7391285c28d413e4b",
-    "cherry_fuzz_frente.jpg": "7f1ed8e7a7e5ff02d1902e08e211a58fa28146d24efb5f72863a7b18ef53b480",
-    "cherry_fuzz_frente_alfa.png": "2f38516465e8c119dfa17293d1fa41685c376d08fa35d3ab3f1fcc03ebcd38f7",
-    "cherry_fuzz_manifesto.json": "8216d61ea7a6de90b270a90681a34843fdc49fbffd54856fb7223dc4eeb11dc7",
-    "cherry_fuzz_mapa.json": "506265121acfef03bdac92bd12c12297b3e728ed6a32428c141c0d6779952dff"
+    "cherry_fuzz_botao_ganho.png": "e6779d85f4d2c69917c3f27865296af87d93a7f12693c2f489637bb814bd1f59",
+    "cherry_fuzz_botao_nivel.png": "bd166e70025418cf8241c8fc0fe1df16007089b1c2dccfd1c5e556aac47ea277",
+    "cherry_fuzz_frente.jpg": "03aa22131cfdbb806848721dbbc6d2d842e1fc7bb1a1a9f49a77b91691a0a555",
+    "cherry_fuzz_frente_alfa.png": "21eb8f9c101a62b0bddd3b12bb0c749ae9886e5227c577af8dfb937ab725e3a3",
+    "cherry_fuzz_manifesto.json": "f8c52ccf228bc849be70551586f3190f843dd7e4b7f184e3932f928eb334e797",
+    "cherry_fuzz_mapa.json": "858ae22e615d8cd515febbeea223dbb3cde008da19fafa1fd68223582694db5d"
    },
-   "tamanho": 134124,
+   "tamanho": 112742,
    "tipo": "pedal",
    "inspiracao": "Dunlop Fuzz Face",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
