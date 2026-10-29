@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:52:09Z",
+ "gerado": "2026-10-29T16:00:17Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -76,8 +76,8 @@
   },
   "agate_wylde": {
    "nome": "Agate Wylde",
-   "hash": "8e619aa6decbde87",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "dd204822e6633a0f",
+   "data": "2026-10-29T16:00:17Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "agate_wylde_botao_ganho.png",
@@ -89,21 +89,21 @@
     "agate_wylde_mapa.json"
    ],
    "sha256": {
-    "agate_wylde_botao_ganho.png": "ab12f7ac6b4159b5553755e714481e4b78447148da6cfa7b230a82c41f628097",
-    "agate_wylde_botao_nivel.png": "60de33e71c37d9458a2144964efcc2c8409eb2f773c6b5dc0bf0e4677a72081c",
-    "agate_wylde_botao_tom.png": "34cb9ce040fbbee937b0554ed5ad44f879a26de7ed23f92cb9c335a497960f1e",
-    "agate_wylde_frente.jpg": "8775d2024d4c32b06c30293996aad595bac9e5e45ee03769b94e478761796eeb",
-    "agate_wylde_frente_alfa.png": "a1dd56135b31ed1850050aa207d47dc3fde4e1d37e7745d62cfab44a0b4e38bf",
-    "agate_wylde_manifesto.json": "8b54ced450af114e1af105baa035303a548e017a2fc2d366139e223f8530abea",
-    "agate_wylde_mapa.json": "a3eaf37822fe1bbf930df0f3641b5fc2f7565792d8b80bd8628d4e0ddd578571"
+    "agate_wylde_botao_ganho.png": "348235ed53b085fccaad2c722e6115da089891d100c97d2e40c04a5ffa7beef3",
+    "agate_wylde_botao_nivel.png": "3e67ea08aa6cedaecb590469728af4c1f929c3d4e66c3b5be3edbe5452faaaaf",
+    "agate_wylde_botao_tom.png": "e014c5b6b544e32ba37e48d3ffcb699f5caed07b7b3b6ab0e2cd36a8ee5a2794",
+    "agate_wylde_frente.jpg": "f16c9c5b073f88d1459483de9f386c8e872e884efd0f909f173b75080b512136",
+    "agate_wylde_frente_alfa.png": "818dad757dd07c9e25b092b02af0b5af5fca35c24aa3f408ee3583d62742c3b4",
+    "agate_wylde_manifesto.json": "d580ac0137dffb4e2b10e957f538be6a0f14b9420ada84613eb7810a896b24c0",
+    "agate_wylde_mapa.json": "419512faef002fc965c06b76734d997744b6b1174cdc5919178322629bbf751b"
    },
-   "tamanho": 185833,
+   "tamanho": 487813,
    "tipo": "pedal",
    "inspiracao": "MXR Wylde Overdrive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
