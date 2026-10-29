@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:50:08Z",
+ "gerado": "2026-10-29T19:52:14Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -37,8 +37,8 @@
   },
   "acoustica360": {
    "nome": "Acoustica 360",
-   "hash": "6ff2812464662f0a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "2889816e0454b2cc",
+   "data": "2026-10-29T19:52:14Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "acoustica360_botao_agudo.png",
@@ -53,24 +53,24 @@
     "acoustica360_mapa.json"
    ],
    "sha256": {
-    "acoustica360_botao_agudo.png": "04ded515c86a7765fc140ddd5c8107dcda4d89d987829c74445cdbeb00e9f1f3",
-    "acoustica360_botao_ganho.png": "8c14a20edd83f89f2bbad0500aa40f0f7ca9e5f489e0e154df379b292e11e531",
-    "acoustica360_botao_grave.png": "c8cf930d99c35cef8cdd562c0dc76f04a35b694489fb9ab892f7b2b55d282f78",
-    "acoustica360_botao_medio.png": "3b062d0aeb000fa6639afed88a8a2094fcb4e5d8c50017004f4e51d6efed67b4",
-    "acoustica360_botao_presenca.png": "07136bc0a44c6cbab0bfa973495a69263e93f93ae3b774e87f904387e9a7bc48",
-    "acoustica360_botao_volume.png": "7eb292863a29dc96877988470d90f7b12f2517a894f5c1e677ebbb26f73a1170",
-    "acoustica360_frente.jpg": "05754175a52fd424d47dc5ca68a872840cb5116410b87b027c7e0e094ac2480c",
-    "acoustica360_frente_alfa.png": "60337e0cc1403ba0d8f0289338725105a399dd667d2c2ba77312c4a9e9335be2",
-    "acoustica360_manifesto.json": "4724bbd2d85dacd7269c2056e9dca15f259cde736def6b8f3fb511709fd413e7",
-    "acoustica360_mapa.json": "786e7f5a5de03e46f0c91b90125615b0a832376e469325b50748fa24644f0554"
+    "acoustica360_botao_agudo.png": "b8e98abf6b8ce85fe2b76fd230cfa009655fb5ffb4378995e5a59eed15cd6633",
+    "acoustica360_botao_ganho.png": "9961834855d4cbac94b7fa72c3c03d210433a6b4b40a009b525c68df543ba822",
+    "acoustica360_botao_grave.png": "00b4def039e2d93cc24d996bfb2ff734248a480c52b4f08b1699c35faa913791",
+    "acoustica360_botao_medio.png": "945fe19303be954196aafa5d8d749524bfb440f00d7a04faa7c844f853070aa6",
+    "acoustica360_botao_presenca.png": "31730559389f72eb162de620a243058d767bd5a3ee4d618dad370f2682064fd4",
+    "acoustica360_botao_volume.png": "ae7bcbaf83b8f32a823a0dda547a7cbf9264125ee52efc155031e05ef56b1405",
+    "acoustica360_frente.jpg": "c7456ba038939e6bdd83185a13598a783a457daf1d9b60d38106377328feb73f",
+    "acoustica360_frente_alfa.png": "65be4f8e9b9840042d60d8dba9a2244eeb0788e05494d86e6cd7ed686ff87990",
+    "acoustica360_manifesto.json": "1cb691346e0361a6e3356ded388165c6d593d5a4c307ed8597e452fd7b5f8284",
+    "acoustica360_mapa.json": "b0e3d39234a2072dce44d32aae61d8a5b0ada3d832fbc184e68d34dfad0b9f1e"
    },
-   "tamanho": 1740075,
+   "tamanho": 1029619,
    "tipo": "cabecote",
    "inspiracao": "Acoustic 360",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
