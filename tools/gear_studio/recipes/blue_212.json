@@ -1,28 +1,31 @@
 {
   "tipo": "caixa",
+  "nome": "Blue 2x12",
+  "familia": "blue_212",
+  "inspiracao": "caixa 2x12 aberta atrás (estilo Vox V212C, do AC30): tolex preto, painel preto no terço de cima com faixa dourada embaixo, tela de losangos marrom-avermelhada com linhas creme, friso creme em volta da frente, cantoneiras pretas; 705 x 571 x 266 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.04,
+    "altura_m": 0.034,
     "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "no_painel": true,
+    "lado_rel": -0.2
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 0.8342857142857143,
+    "proporcao": 0.935,
     "elevacao": 8.0
   },
-  "nome": "Blue 2x12",
-  "familia": "blue_212",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.5,
-    "profundidade": 0.26
+    "largura": 0.705,
+    "altura": 0.571,
+    "profundidade": 0.266
   },
   "couro": {
     "cor": [
@@ -33,21 +36,56 @@
     "grao_mm": 2.4
   },
   "tela": {
+    "padrao": "losango",
     "cor_a": [
-      0.12,
-      0.07,
-      0.04
+      0.15,
+      0.035,
+      0.022
     ],
     "cor_b": [
-      0.42,
-      0.27,
-      0.15
+      0.24,
+      0.07,
+      0.035
     ],
-    "trama_mm": 3.4
+    "trama_mm": 1.6,
+    "cor_linha": [
+      0.72,
+      0.6,
+      0.4
+    ],
+    "passo_mm": [
+      88,
+      118
+    ],
+    "largura_rel": 0.03
   },
   "friso": [
     0.85,
     0.83,
-    0.78
-  ]
+    0.76
+  ],
+  "painel": {
+    "altura_m": 0.165
+  },
+  "faixas": [
+    {
+      "onde": "acima_tela",
+      "altura_m": 0.008,
+      "cor": [
+        0.78,
+        0.56,
+        0.2
+      ]
+    }
+  ],
+  "friso_onde": "abertura",
+  "cantos": "preto",
+  "pes": {
+    "altura_m": 0.015
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

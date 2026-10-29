@@ -1,49 +1,89 @@
 {
   "tipo": "caixa",
-  "aba_m": 0.03,
+  "nome": "Tweed 4x10",
+  "familia": "tweed_410",
+  "inspiracao": "combo 4x10 tweed (estilo Fender '59 Bassman): tweed laqueado âmbar com sarja diagonal, tela marrom-escura (oxblood) com listras douradas, faixa de tweed no topo com plaqueta vinho, sem friso e sem cantoneiras; 597 x 568 x 270 mm",
+  "aba_m": 0.022,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
+    "altura_m": 0.014,
     "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "no_painel": true,
+    "placa": {
+      "cor": [
+        0.2,
+        0.025,
+        0.03
+      ],
+      "borda": [
+        0.75,
+        0.6,
+        0.3
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.088,
     "elevacao": 8.0
   },
-  "nome": "Tweed 4x10",
-  "familia": "tweed_410",
   "medidas_m": {
-    "largura": 0.6,
-    "altura": 0.62,
-    "profundidade": 0.26
+    "largura": 0.597,
+    "altura": 0.568,
+    "profundidade": 0.27
   },
   "couro": {
     "cor": [
-      0.46,
-      0.36,
-      0.2
+      0.66,
+      0.38,
+      0.04
     ],
-    "grao_mm": 1.2
+    "grao_mm": 1.2,
+    "tipo": "tweed",
+    "cor_b": [
+      0.2,
+      0.09,
+      0.015
+    ],
+    "passo_mm": 3.0
   },
   "tela": {
+    "padrao": "listrada",
     "cor_a": [
-      0.22,
-      0.13,
-      0.07
+      0.035,
+      0.012,
+      0.008
     ],
     "cor_b": [
-      0.48,
-      0.34,
-      0.2
+      0.05,
+      0.02,
+      0.012
     ],
-    "trama_mm": 2.0
+    "trama_mm": 1.4,
+    "cor_linha": [
+      0.45,
+      0.28,
+      0.08
+    ],
+    "passo_mm": 2.6,
+    "largura_rel": 0.25
   },
-  "friso": null
+  "friso": null,
+  "aba_topo_m": 0.02,
+  "chanfro_m": 0.012,
+  "painel": {
+    "altura_m": 0.05
+  },
+  "cantos": "nenhum",
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }

@@ -1,28 +1,42 @@
 {
   "tipo": "caixa",
+  "nome": "Match 2x12",
+  "familia": "match_212",
+  "inspiracao": "caixa 2x12 (estilo Matchless ESD212): tolex preto, painel de tolex no terço de cima com plaqueta preta de borda prateada, tela cinza mesclada de preto e branco embaixo, friso branco contornando painel e tela, sem cantoneiras; 686 x 533 x 267 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.04,
+    "altura_m": 0.03,
     "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "no_painel": true,
+    "placa": {
+      "cor": [
+        0.015,
+        0.015,
+        0.017
+      ],
+      "borda": [
+        0.8,
+        0.8,
+        0.82
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 0.8342857142857143,
+    "proporcao": 0.899,
     "elevacao": 8.0
   },
-  "nome": "Match 2x12",
-  "familia": "match_212",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.5,
-    "profundidade": 0.26
+    "largura": 0.686,
+    "altura": 0.533,
+    "profundidade": 0.267
   },
   "couro": {
     "cor": [
@@ -34,20 +48,33 @@
   },
   "tela": {
     "cor_a": [
-      0.16,
-      0.16,
-      0.17
+      0.035,
+      0.035,
+      0.04
     ],
     "cor_b": [
       0.5,
       0.5,
       0.52
     ],
-    "trama_mm": 2.0
+    "trama_mm": 2.4
   },
   "friso": [
-    0.9,
-    0.9,
-    0.88
-  ]
+    0.88,
+    0.88,
+    0.86
+  ],
+  "painel": {
+    "altura_m": 0.15
+  },
+  "friso_onde": "ambos",
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.015
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

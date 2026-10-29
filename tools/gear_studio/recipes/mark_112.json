@@ -1,28 +1,43 @@
 {
   "tipo": "caixa",
-  "aba_m": 0.03,
+  "nome": "Mark 1x12",
+  "familia": "mark_112",
+  "inspiracao": "caixa 1x12 fechada (estilo Mesa/Boogie 1x12 WideBody): tolex preto, quinas arredondadas, tela de juta preta, sem friso e sem cantoneiras, plaqueta prateada no canto de cima à esquerda, pés pretos; 572 x 419 x 286 mm",
+  "aba_m": 0.026,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.035,
-    "altura_rel": 0.36,
+    "altura_m": 0.022,
+    "altura_rel": 0.34,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "lado_rel": -0.25,
+    "placa": {
+      "cor": [
+        0.75,
+        0.76,
+        0.78
+      ],
+      "metal": true,
+      "borda": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0481,
+    "proporcao": 0.851,
     "elevacao": 8.0
   },
-  "nome": "Mark 1x12",
-  "familia": "mark_112",
   "medidas_m": {
-    "largura": 0.52,
-    "altura": 0.46,
-    "profundidade": 0.28
+    "largura": 0.572,
+    "altura": 0.419,
+    "profundidade": 0.286
   },
   "couro": {
     "cor": [
@@ -34,17 +49,26 @@
   },
   "tela": {
     "cor_a": [
-      0.01,
-      0.01,
-      0.01
+      0.007,
+      0.007,
+      0.007
     ],
     "cor_b": [
-      0.05,
-      0.05,
-      0.05
+      0.04,
+      0.038,
+      0.035
     ],
-    "trama_mm": 2.2
+    "trama_mm": 3.0
   },
   "friso": null,
-  "cantos": "cromo"
+  "cantos": "nenhum",
+  "chanfro_m": 0.028,
+  "pes": {
+    "altura_m": 0.016
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  }
 }
