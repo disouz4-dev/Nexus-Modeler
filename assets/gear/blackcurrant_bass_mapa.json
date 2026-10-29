@@ -2,23 +2,23 @@
   "nome": "Blackcurrant Bass",
   "familia": "blackcurrant_bass",
   "largura": 600,
-  "altura": 750,
+  "altura": 552,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 317,
+      "y": 111,
+      "tamanho": 80,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 429,
+      "y": 110,
+      "tamanho": 82,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 429,
+      "y": 220,
+      "tamanho": 82,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,46 +36,118 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    125,
+    96
   ],
   "rotulos": [
     {
-      "texto": "NÍVEL",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "VOLUME",
+      "x": 133.8,
+      "y": 207.8,
+      "altura": 13.11,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 244.6,
+      "y": 207.8,
+      "altura": 13.11,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 355.4,
+      "y": 207.8,
+      "altura": 13.11,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "DRIVE",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 466.2,
+      "y": 207.8,
+      "altura": 13.11,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 133.8,
+      "y": 315.1,
+      "altura": 13.11,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO GRAVE",
+      "x": 244.6,
+      "y": 315.1,
+      "altura": 13.11,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO AGUDO",
+      "x": 355.4,
+      "y": 315.1,
+      "altura": 13.11,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "AGUDO",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 466.2,
+      "y": 315.1,
+      "altura": 13.11,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
       "espaco": 1.15
+    },
+    {
+      "texto": "ATAQUE",
+      "x": 189.2,
+      "y": 165.6,
+      "altura": 10.02,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    },
+    {
+      "texto": "GRUNT",
+      "x": 410.8,
+      "y": 165.6,
+      "altura": 10.02,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    },
+    {
+      "texto": "DISTORÇÃO",
+      "x": 141.0,
+      "y": 398.1,
+      "altura": 11.56,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "x": 464.5,
+    "y": 402.0,
+    "raio": 48.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "y": 354.1,
+    "raio": 12.0
   }
 }
