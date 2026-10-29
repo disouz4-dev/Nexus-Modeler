@@ -52,7 +52,7 @@ juce::String GearStore::baseUrl()
 juce::String GearStore::unsupported(const juce::var& entry)
 {
   const auto minimum = entry["nexus_minimo"].toString();
-  if (minimum.isNotEmpty() && compareVersions(currentVersion(), minimum) < 0)
+  if (!meetsMinimum(minimum))
     return juce::String::fromUTF8("Precisa de uma versão mais nova do Nexus");
   // Peça com ficha: o motor tem de ser um que este Nexus toca.
   if (entry["tipo"].toString().isNotEmpty())
