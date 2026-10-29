@@ -1,17 +1,19 @@
 {
   "nome": "Mark 4x12",
   "familia": "mark_412",
-  "largura": 1600,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2973,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
-    740,
-    760
+    765,
+    835
   ],
   "falantes": {
     "linhas": 2,
     "colunas": 2,
     "polegadas": 12
-  }
+  },
+  "rotulos": []
 }

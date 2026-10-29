@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T22:17:48Z",
+ "gerado": "2026-10-29T22:19:54Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3907,8 +3907,8 @@
   },
   "mark5_412": {
    "nome": "Mark 4x12",
-   "hash": "7c3cf1fbfcc8aae6",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "c72af369da19ee2e",
+   "data": "2026-10-29T22:19:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark5_412_frente.jpg",
@@ -3917,18 +3917,18 @@
     "mark5_412_mapa.json"
    ],
    "sha256": {
-    "mark5_412_frente.jpg": "37d3d0f023d27de792e169275c2e7bbd605e361317f7fddee62f6752dd194f29",
-    "mark5_412_frente_alfa.png": "e55432444119ae972b3f49cc402e033a3d7001306ad498102761bb8ce62ae81e",
-    "mark5_412_manifesto.json": "3d6ddb6aeb976d6aec8fd4c38310e677e0ae363248e0d75d7de00c5787aaeace",
-    "mark5_412_mapa.json": "8d71469b90bfaf6e8e710c3466f0fe10d7c58d873d480883cd25958bfd287720"
+    "mark5_412_frente.jpg": "d601108dfe45856ed78570443d2d5caae04df923bc7ba01efdea279b1ef36617",
+    "mark5_412_frente_alfa.png": "b9218a6700391e8ae22e834cb90f133b48bea9d10aa2de8834272234b0e6c413",
+    "mark5_412_manifesto.json": "154f964ed5f0617e6ff934496e7409c25dfee35e8b8fb7bcba2444145dae402d",
+    "mark5_412_mapa.json": "75ab4b8d6d8bd1235f2e1527449f8611d2d86c75607134956df5ee3068a6b9ff"
    },
-   "tamanho": 497235,
+   "tamanho": 1082564,
    "tipo": "caixa",
    "inspiracao": "Mesa 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
