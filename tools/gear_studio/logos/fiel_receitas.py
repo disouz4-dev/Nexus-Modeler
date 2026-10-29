@@ -546,7 +546,187 @@ def lote_c():
                  ((-0.55, "MIC"), (-0.15, "MOD"), (0.25, "AMP"))])
 
 
-LOTES = {"a": lote_a, "b": lote_b, "c": lote_c}
+def lote_d():
+    preto = estilo(diam=0.015, alt=0.013)
+    caixa("cashew_boost", "Magnetite Boost", "MAGNETITE",
+          "Caixa mini (38 x 89 x 38 mm) de tampo preto e laterais cromadas, letras prateadas; um botão transparente grande "
+          "REFORÇO no alto, LED azul e pisante; o VOLUME, que o original não tem, fica pequeno à direita do LED. Tema: cristal "
+          "de magnetita (octaedro cinza-chumbo). Original: Xotic EP Booster.", "38 x 89 x 38 mm (Xotic, ficha oficial)",
+          (38, 89, 38), "#141414", "#C8CACC",
+          [k("ganho", "REFORÇO", (0.0, 0.58), escala=1.1), k("nivel", "VOLUME", (0.62, 0.2), escala=0.4, rotulo_pos="nenhum")],
+          estilo(diam=0.018, alt=0.014, corpo="#D8DCE0", traco="#202020", material="transparente"), led=[0.0, 0.18],
+          led_cor=lin("#0A1E6A"), pintura_lados={"cor": lin("#E0E2E4"), "cromo": True}, tampo_margem_m=0.0028,
+          pisante_y=-0.6, logo_y=-0.08, logo_m=0.0058, rotulo_m=0.0034)
+    caixa("kumquat_klone", "Pyrite Klone", "PYRITE KLONE",
+          "Caixa mini dourada (38 x 89 x 38 mm), letras pretas; botões pretos pequenos VOLUME e GANHO no alto e AGUDO embaixo, "
+          "no meio, LED azul e pisante. Tema: cubos de pirita dourada. Original: Wampler Tumnus.",
+          "38 x 89 x 38 mm (Wampler, ficha oficial)", (38, 89, 38), "#C8A050", PRETO,
+          [k("nivel", "VOLUME", (-0.48, 0.8)), k("ganho", "GANHO", (0.48, 0.8)), k("tom", "AGUDO", (0.0, 0.52))],
+          estilo(diam=0.011, alt=0.011), led=[0.0, 0.2], led_cor=lin("#0A1E6A"), metalico=0.6, aspereza=0.35,
+          pisante_y=-0.62, logo_y=-0.1, logo_m=0.0052, rotulo_m=0.003, jacks_topo=False)
+    fortin = dict(aspereza=0.75, metalico=0.0, pisante_y=-0.66, rotulo_m=0.0036)
+    caixa("papaya_grind", "Tourmaline Grind", "TOURMALINE GRIND",
+          "Caixa estreita preta fosca (60 x 112 x 27 mm) com grafismos em preto brilhante, um botão preto NÍVEL de ponteiro "
+          "branco no alto, LED no meio e pisante; GANHO e AGUDO, que o original não tem, ficam pequenos nos cantos de baixo. "
+          "Tema: cristais de turmalina negra em preto brilhante. Original: Fortin Grind.", "112 x 60 x 27 mm (Fortin, ficha "
+          "oficial)", (60, 112, 27), "#121212", "#2C2C2E",
+          [k("nivel", "NÍVEL", (0.0, 0.66), escala=1.2), k("ganho", "GANHO", (-0.7, -0.5), escala=0.5, rotulo_m=0.0026),
+           k("tom", "AGUDO", (0.7, -0.5), escala=0.5, rotulo_m=0.0026)], preto, led=[0.0, 0.22],
+          logo_y=-0.9, logo_m=0.006, nome_cor="#3A3A3C", **fortin)
+    caixa("persimmon_33", "Sapote 33", "SAPOTE",
+          "Caixa estreita preta fosca (60 x 112 x 27 mm) com o 33 grande em preto brilhante, um botão preto NÍVEL no alto, LED "
+          "no meio e pisante; o GANHO, que o original não tem, fica pequeno no canto de baixo. Tema: sapota-preta aberta, em "
+          "tons quase pretos. Original: Fortin 33.", "112 x 60 x 27 mm (Fortin, ficha oficial)", (60, 112, 27), "#121212",
+          "#2C2C2E", [k("nivel", "NÍVEL", (0.0, 0.7), escala=1.1), k("ganho", "GANHO", (0.7, -0.5), escala=0.5, rotulo_m=0.0026)],
+          preto, led=[0.0, 0.42], logo_y=-0.9, logo_m=0.006, nome_cor="#3A3A3C",
+          textos=[{"texto": "33", "pos": [0.0, 0.0], "tam_m": 0.034, "cor": lin("#050505"), "grossura": 0.0004}], **fortin)
+    caixa("blackcurrant_bass", "Blackcurrant Bass", "BLACKCURRANT BASS",
+          "Caixa deitada (125 x 96 x 40 mm) de tampo preto e laterais prateadas, letras brancas; oito botões pretos em duas "
+          "fileiras: VOLUME (MASTER, fixo), MISTURA (fixo), NÍVEL e DRIVE em cima, GRAVE, MÉDIO GRAVE e MÉDIO AGUDO (fixos) e "
+          "AGUDO embaixo; minichaves ATTACK, GRUNT e as das frequências entre eles, LED e dois pisantes (DISTORÇÃO e BYPASS). "
+          "Tema: cacho de groselha-preta. Original: Darkglass Microtubes B7K Ultra.", "125 x 96 x 57 mm (Darkglass, ficha "
+          "oficial)", (125, 96, 40), "#141414", BRANCO,
+          [fixo("master", "VOLUME", (-0.69, 0.66)), fixo("blend", "MISTURA", (-0.23, 0.66)), k("nivel", "NÍVEL", (0.23, 0.66)),
+           k("ganho", "DRIVE", (0.69, 0.66)), fixo("grave", "GRAVE", (-0.69, 0.08)), fixo("lomid", "MÉDIO GRAVE", (-0.23, 0.08)),
+           fixo("himid", "MÉDIO AGUDO", (0.23, 0.08)), k("tom", "AGUDO", (0.69, 0.08))],
+          estilo(diam=0.017, alt=0.014), led=[0.0, -0.42], pintura_lados={"cor": lin("#D8DADC"), "cromo": True},
+          pisante={"pos": [0.66, -0.66]}, logo_y=-0.86, logo_m=0.0065, rotulo_m=0.0034, chanfro=0.005,
+          pecas=[{"tipo": "minichave", "pos": [-0.46, 0.42], "rotulo": "ATAQUE", "rotulo_m": 0.0026},
+                 {"tipo": "minichave", "pos": [0.46, 0.42], "rotulo": "GRUNT", "rotulo_m": 0.0026},
+                 {"tipo": "minichave", "pos": [-0.46, -0.12]}, {"tipo": "minichave", "pos": [0.46, -0.12]},
+                 {"tipo": "pisante", "pos": [-0.66, -0.66], "rotulo": "DISTORÇÃO", "rotulo_m": 0.003}])
+    caixa("mulberry_omega", "Labradorite Omega", "LABRADORITE OMEGA",
+          "Caixa azul-ardósia (94 x 120 x 46 mm), letras brancas e o triângulo com o círculo em linhas brancas; MISTURA (fixo), "
+          "NÍVEL e DRIVE na fileira de cima com as minichaves GROWL e BITE, MOD, GRAVE, MÉDIO (fixos) e AGUDO embaixo, LED "
+          "vermelho e pisante dentro do desenho. Tema: labradorita escura com reflexos azul e verde. Original: Darkglass Alpha "
+          "Omega.", "94 x 120 x 46 mm (Darkglass, ficha oficial)", (94, 120, 46), "#4A6A8E", BRANCO,
+          [fixo("blend", "MISTURA", (-0.6, 0.78)), k("nivel", "NÍVEL", (-0.12, 0.78)), k("ganho", "DRIVE", (0.36, 0.78)),
+           fixo("mod", "MOD", (-0.72, 0.4)), fixo("grave", "GRAVE", (-0.24, 0.4)), fixo("medio", "MÉDIO", (0.24, 0.4)),
+           k("tom", "AGUDO", (0.72, 0.4))], estilo(diam=0.015, alt=0.013), led=[0.0, 0.05], pisante_y=-0.58,
+          logo_y=-0.9, logo_m=0.0068, rotulo_m=0.0034, metalico=0.2,
+          pecas=[{"tipo": "minichave", "pos": [0.76, 0.86], "rotulo": "GROWL", "rotulo_pos": "baixo", "rotulo_m": 0.0026},
+                 {"tipo": "minichave", "pos": [0.76, 0.64]}])
+    caixa("pineapple_king", "Amethyst King", "AMETHYST KING",
+          "Caixa deitada roxo-vinho (121 x 95 x 38 mm), letras douradas; dois lados de overdrive: VOLUME e DRIVE em cima e TOM "
+          "embaixo em cada lado (o lado direito é fixo), LED amarelo à esquerda e vermelho à direita, dois pisantes. Tema: "
+          "drusa de ametista roxa no lugar da rosa dos ventos, pontos dourados tom sobre tom. Original: Analogman King of Tone.",
+          "121 x 95 x 38 mm (Analogman, ficha oficial)", (121, 95, 38), "#5A2448", "#D8B04A",
+          [k("nivel", "VOLUME", (-0.78, 0.62)), k("ganho", "DRIVE", (-0.38, 0.62)), fixo("vol2", "VOLUME", (0.38, 0.62)),
+           fixo("drive2", "DRIVE", (0.78, 0.62)), k("tom", "TOM", (-0.62, 0.08), escala=0.85),
+           fixo("tom2", "TOM", (0.62, 0.08), escala=0.85)],
+          estilo(diam=0.016, alt=0.014), led=[-0.4, -0.42], led_cor=lin("#6A5200"), pisante={"pos": [-0.66, -0.66]},
+          logo_y=-0.86, logo_m=0.0068, rotulo_m=0.0036, metalico=0.25,
+          pecas=[{"tipo": "pisante", "pos": [0.66, -0.66]}, {"tipo": "led", "pos": [0.4, -0.42]}])
+    caixa("strawberry_5150", "Jet 5150", "JET 5150",
+          "Caixa deitada cinza-escuro escovado com listras pretas (122 x 91 x 40 mm), letras brancas; botões pretos SAÍDA, "
+          "GRAVE e MÉDIO (fixos), AGUDO e GANHO em fila, o GATE pequeno à esquerda (fixo) e o botão de apertar REFORÇO com LED "
+          "à direita; LED e pisante. Tema: azeviche preto lapidado, listras pretas. Original: EVH 5150 Overdrive.",
+          "122 x 91 x 52 mm (Thomann; a Dunlop não publica)", (122, 91, 40), "#3A3C40", BRANCO,
+          [k("nivel", "SAÍDA", (-0.6, 0.62)), fixo("grave", "GRAVE", (-0.3, 0.62)), fixo("medio", "MÉDIO", (0.0, 0.62)),
+           k("tom", "AGUDO", (0.3, 0.62)), k("ganho", "GANHO", (0.6, 0.62)), fixo("gate", "GATE", (-0.86, 0.3), escala=0.6)],
+          estilo(diam=0.0145, alt=0.013), led=[0.0, -0.3], metalico=0.6, aspereza=0.35, pisante_y=-0.6, logo_y=-0.88,
+          logo_m=0.0065, rotulo_m=0.0032,
+          pecas=[{"tipo": "apertar", "pos": [0.86, 0.3], "diam_m": 0.006, "rotulo": "REFORÇO", "rotulo_m": 0.0026},
+                 {"tipo": "led", "pos": [0.86, 0.6], "raio_m": 0.0022}])
+    caixa("cupuacu_hammer", "Galena Hammer", "GALENA HAMMER",
+          "Caixa deitada prateada (140 x 102 x 38 mm), letras pretas com etiquetas vermelhas de DRIVE; GANHO, AGUDO, GRAVE "
+          "(fixo) e VOLUME na fileira de cima, FREQUÊNCIA e MÉDIO (fixos) embaixo, DRIVE e MISTURA pequenos (fixos), dois "
+          "pisantes (ENGAGE e DRIVE) com LED azul e amarelo. Tema: cubos de galena cinza-chumbo. Original: Aguilar Tone Hammer.",
+          "140 x 102 x 38 mm (Aguilar, ficha oficial)", (140, 102, 38), "#C8CACC", PRETO,
+          [k("ganho", "GANHO", (-0.72, 0.6)), k("tom", "AGUDO", (-0.24, 0.6)), fixo("grave", "GRAVE", (0.24, 0.6)),
+           k("nivel", "VOLUME", (0.72, 0.6)), fixo("freq", "FREQUÊNCIA", (-0.24, 0.02)), fixo("medio", "MÉDIO", (0.24, 0.02)),
+           fixo("drive", "DRIVE", (-0.48, 0.86), escala=0.5, rotulo_pos="cima", rotulo_m=0.0026),
+           fixo("mix", "MISTURA", (0.48, 0.86), escala=0.5, rotulo_pos="cima", rotulo_m=0.0026)],
+          estilo(diam=0.017, alt=0.014), led=[-0.62, -0.42], led_cor=lin("#0A1E6A"), metalico=0.8, aspereza=0.3,
+          pisante={"pos": [-0.62, -0.68]}, logo_y=-0.68, logo_m=0.0075, rotulo_m=0.0034,
+          pecas=[{"tipo": "pisante", "pos": [0.62, -0.68]}, {"tipo": "led", "pos": [0.62, -0.42], "cor": lin("#6A5200")},
+                 {"tipo": "placa", "pos": [-0.48, 0.74], "tam_m": [0.012, 0.004], "cor": lin("#C81E22")},
+                 {"tipo": "placa", "pos": [0.62, -0.88], "tam_m": [0.014, 0.0045], "cor": lin("#C81E22")}])
+    caixa("graviola_bassdi", "Melanite Bass DI", "MELANITE BASS DI",
+          "Caixa MXR deitada preta (122 x 92 x 40 mm), letras brancas; VOLUME (limpo), DISTORÇÃO, MISTURA, SENSIBILIDADE "
+          "(TRIGGER) e GANHO na fileira de cima, GRAVE, MÉDIO e AGUDO embaixo (os que o som não usa são fixos), botões de "
+          "apertar COR, GATE e PHANTOM, LEDs vermelho, vermelho e amarelo e dois pisantes (EFEITO e DISTORÇÃO). Tema: "
+          "melanita, granada negra lapidada. Original: MXR M80 Bass D.I.+.",
+          "aprox. 122 x 92 mm (estimativa; a Dunlop não publica)", (122, 92, 40), "#141414", BRANCO,
+          [k("nivel", "VOLUME", (-0.6, 0.68)), fixo("dist", "DISTORÇÃO", (-0.3, 0.68)), fixo("blend", "MISTURA", (0.0, 0.68)),
+           fixo("trigger", "SENSIBILIDADE", (0.3, 0.68)), k("ganho", "GANHO", (0.6, 0.68)), fixo("grave", "GRAVE", (-0.3, 0.2)),
+           fixo("medio", "MÉDIO", (0.0, 0.2)), k("tom", "AGUDO", (0.3, 0.2))],
+          estilo(diam=0.0145, alt=0.013), led=[-0.62, -0.42], pisante={"pos": [-0.62, -0.68]}, logo_y=-0.62,
+          logo_m=0.0068, rotulo_m=0.003,
+          pecas=[{"tipo": "apertar", "pos": [-0.86, 0.4], "diam_m": 0.005, "rotulo": "COR", "rotulo_m": 0.0026},
+                 {"tipo": "apertar", "pos": [0.68, 0.32], "diam_m": 0.005, "rotulo": "GATE", "rotulo_m": 0.0026},
+                 {"tipo": "led", "pos": [0.86, 0.32], "cor": lin("#6A5200"), "raio_m": 0.0022},
+                 {"tipo": "apertar", "pos": [-0.86, -0.05], "diam_m": 0.005, "rotulo": "PHANTOM", "rotulo_m": 0.0026},
+                 {"tipo": "pisante", "pos": [0.62, -0.68]}, {"tipo": "led", "pos": [0.62, -0.42]}])
+    caixa("pulsar_echo", "Pulsar Echo", "PULSAR ECHO",
+          "Caixa deitada (146 x 121 x 50 mm) dividida na diagonal: prateada em cima à esquerda, preta embaixo à direita; "
+          "botões pretos MISTURA, NÍVEL (fixo), REPETIÇÕES, CHORUS (fixo), PROFUNDIDADE (fixo) e TEMPO em fila no alto, LED de "
+          "sobrecarga e LED de ligado, pisante; letras pretas no prateado e brancas no preto. Tema: pulsar prateado com os "
+          "anéis de onda. Original: Electro-Harmonix Deluxe Memory Man.", "146 x 121 x 64 mm (EHX: 5,75 x 4,75 x 2,5 pol.)",
+          (146, 121, 50), "#141414", "#141414",
+          [k("c", "MISTURA", (-0.75, 0.68)), fixo("nivel", "NÍVEL", (-0.45, 0.68)), k("b", "REPETIÇÕES", (-0.15, 0.68)),
+           fixo("chorus", "CHORUS", (0.15, 0.68)), fixo("prof", "PROFUNDIDADE", (0.45, 0.68)), k("a", "TEMPO", (0.75, 0.68))],
+          estilo(diam=0.016, alt=0.014), led=[0.3, -0.36], pisante={"pos": [0.3, -0.62]}, logo_x=0.5, logo_y=0.0, logo_m=0.012,
+          rotulo_m=0.0032, rotulo_embaixo=True, nome_cor=BRANCO, metalico=0.2,
+          paineis=[{"pontos": [[-1, 1], [1, 1], [1, 0.42], [-1, -0.62]], "cor": lin("#C6C8CA"), "metal": True}],
+          pecas=[{"tipo": "led", "pos": [-0.62, 0.36], "rotulo": "SOBRECARGA", "rotulo_m": 0.0026, "rotulo_cor": lin(PRETO)}])
+    novo("jackfruit_monkey", "Jackfruit Monkey", "JACKFRUIT MONKEY",
+         "Caixa DigiTech verde (79 x 125 x 54 mm) com o pedal basculante largo de borracha; botões pretos NÍVEL, GRAVE (fixo), "
+         "AGUDO e GANHO em fila no alto, LED vermelho, letras brancas e o nome em amarelo. Tema: jaca verde aberta, listras "
+         "tom sobre tom. Original: DigiTech Bad Monkey.", "79 x 125 x 54 mm (Bax Music; a DigiTech não publica)", 79, 125, 54,
+         "#2E8A3A", BRANCO,
+         [k("nivel", "NÍVEL", (-0.69, 0.7), escala=0.85), fixo("grave", "GRAVE", (-0.23, 0.7), escala=0.85),
+          k("tom", "AGUDO", (0.23, 0.7), escala=0.85), k("ganho", "GANHO", (0.69, 0.7), escala=0.85)],
+         estilo(diam=0.0135, alt=0.012), formato="compacto", aspereza=0.26, base_rel=0.7, basculante_rel=0.6,
+         borracha_rel=0.62, borracha_larg=0.9, modelo_m=0.0084, modelo_x=0.0, tipo_texto="", rotulo_embaixo=True,
+         rotulo_m=0.0036, led=[0.0, 0.9], modelo_cor=lin("#F2C21E"))
+    novo("lychee_bassfuzz", "Lime Bass Fuzz", "LIME BASS FUZZ",
+         "Caixa de alumínio fundido (102 x 121 x 45 mm) com o tampo verde-limão vivo e as bordas prateadas, letras pretas e o "
+         "nome em branco; botões pretos VOLUME, TOM e SUSTAIN em fila, minichave BASS BOOST / NORM / DRY embaixo deles, LED "
+         "vermelho e pisante. Tema: fatia de limão verde, raios tom sobre tom. Original: Electro-Harmonix Bass Big Muff Pi.",
+         "121 x 102 x 57 mm (EHX: 4,75 x 4 x 2,25 pol.)", 102, 121, 45, "#86CC1E", PRETO,
+         [k("nivel", "VOLUME", (-0.6, 0.68)), k("tom", "TOM", (0.0, 0.68)), k("ganho", "SUSTAIN", (0.6, 0.68))],
+         estilo(diam=0.019, alt=0.015), pintura_lados={"cor": lin("#C8CACC"), "cromo": True}, tampo_margem_m=0.005,
+         chanfro_m=0.005, rotulo_m=0.0042, rotulo_embaixo=True, led=[0.62, -0.38], pisante_y=-0.62, logo_y=-0.12,
+         logo_m=0.013, texto_cor2=lin(BRANCO), transformacao="Standard",
+         pecas=[{"tipo": "minichave", "pos": [-0.5, 0.3], "rotulo": "GRAVE", "rotulo_pos": "baixo"}])
+    multi = dict(formato="padrao", chanfro_m=0.006, rotulo_m=0.0038, rotulo_embaixo=True, metalico=0.5, aspereza=0.26)
+    novo("juniper_sky", "Aquamarine Sky", "AQUAMARINE SKY",
+         "Caixa grande de alumínio anodizado azul-celeste (171 x 130 x 50 mm), letras brancas; visor verde no alto à "
+         "esquerda, seletor TIPO grande embaixo dele, VALOR (fixo), DECAIMENTO, PRÉ-ATRASO e MISTURA na fileira de cima, TOM, "
+         "PARAM 1, PARAM 2 (fixo) e MODULAÇÃO embaixo, três pisantes de metal A, B e C com um LED cada. Tema: água-marinha "
+         "lapidada azul-clara. Original: Strymon BigSky.", "171,5 x 129,5 x 68,6 mm com botões (Strymon: 6,75 x 5,1 x 2,7 pol.)",
+         171, 130, 50, "#1EAEDC", BRANCO,
+         [k("modo", "TIPO", (-0.72, 0.18), escala=1.25), fixo("valor", "VALOR", (-0.3, 0.7)), k("a", "DECAIMENTO", (0.04, 0.7)),
+          k("b", "PRÉ-ATRASO", (0.38, 0.7)), k("c", "MISTURA", (0.72, 0.7)), k("tom", "TOM", (-0.3, 0.2)),
+          k("nivel", "PARAM 1", (0.04, 0.2)), fixo("param2", "PARAM 2", (0.38, 0.2)), k("d", "MODULAÇÃO", (0.72, 0.2))],
+         estilo(diam=0.015, alt=0.013), visor={"pos": [-0.72, 0.72], "largura_rel": 0.2, "altura_rel": 0.14},
+         led=[-0.62, -0.42], pisante={"pos": [-0.62, -0.66]}, logo_x=0.0, logo_y=-0.25, logo_m=0.011, tipo_texto="",
+         pecas=[{"tipo": "pisante", "pos": [0.0, -0.66], "rotulo": "B", "rotulo_pos": "cima"}, {"tipo": "led", "pos": [0.0, -0.42]},
+                {"tipo": "pisante", "pos": [0.62, -0.66]}, {"tipo": "led", "pos": [0.62, -0.42]}], **multi)
+    for pid, nome, modelo, cor, orig, insp_cor, tema, rot in (
+            ("lime_echo", "Emerald Echo", "EMERALD ECHO", "#2E9A7E", "Line 6 DL4 Delay Modeler", "verde-mar metálico",
+             "esmeralda lapidada verde", ("TEMPO", "REPETIÇÕES")),
+            ("galaxy_mod", "Galaxy Mod", "GALAXY MOD", "#3A3AA8", "Line 6 MM4 Modulation Modeler", "azul-violeta metálico",
+             "galáxia espiral azul-violeta", ("VELOCIDADE", "PROFUNDIDADE"))):
+        tweak = {"lime_echo": "MODULAÇÃO", "galaxy_mod": "AJUSTE"}[pid]
+        novo(pid, nome, modelo,
+             f"Caixa grande {insp_cor} (250 x 152 x 64 mm) com o painel prateado escovado no alto, letras pretas no painel e "
+             f"brancas no corpo; seletor de modelo grande à esquerda e {rot[0]}, {rot[1]}, AJUSTE (TWEAK), TWEEZ e MISTURA em "
+             f"fila no painel, quatro pisantes de metal (A, B, C e TAP) com um LED vermelho em cima de cada; sem visor. Tema: "
+             f"{tema}. Original: {orig}.", "aprox. 250 x 152 x 64 mm (medida de lojas; a Line 6 não publica)", 250, 152, 64,
+             cor, BRANCO,
+             [k("modo", "MODO", (-0.74, 0.5), escala=1.5, rotulo_cor=lin(PRETO)), k("a", rot[0], (-0.42, 0.5), rotulo_cor=lin(PRETO)),
+              k("b", rot[1], (-0.18, 0.5), rotulo_cor=lin(PRETO)), k("d", tweak, (0.06, 0.5), rotulo_cor=lin(PRETO)),
+              k("tom", "TWEEZ", (0.30, 0.5), rotulo_cor=lin(PRETO)), k("c", "MISTURA", (0.54, 0.5), rotulo_cor=lin(PRETO))],
+             estilo(diam=0.019, alt=0.015), led=[-0.72, -0.36], pisante={"pos": [-0.72, -0.62]}, logo_x=0.78, logo_y=0.5,
+             logo_m=0.0085, tipo_texto="", texto_cor2=lin(PRETO),
+             paineis=[{"pos": [0.0, 0.5], "tam_m": [0.236, 0.056], "cor": lin("#C4C6C8"), "metal": True, "raio_m": 0.002}],
+             pecas=[{"tipo": "pisante", "pos": [x, -0.62]} for x in (-0.24, 0.24, 0.72)] +
+                   [{"tipo": "led", "pos": [x, -0.36]} for x in (-0.24, 0.24, 0.72)], **dict(multi, metalico=0.6))
+
+
+LOTES = {"a": lote_a, "b": lote_b, "c": lote_c, "d": lote_d}
 if __name__ == "__main__":
     for a in sys.argv[1:]:
         if a == "acerola_eq":

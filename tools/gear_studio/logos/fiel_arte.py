@@ -23,6 +23,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 REC = os.path.join(AQUI, "..", "recipes")
 OUT = os.path.join(AQUI, "estampas")
 CREME = "#F6F0E2"
+BRANCO_ARTE = "#F2F0EA"
 
 
 # ------------------------------------------------------------------ pedras, astros e frutas novas
@@ -623,6 +624,14 @@ def compose(pid, rec, spec):
         k = er * spec.get("fill", 0.96) / rad
         shapes += [(affinity.translate(affinity.scale(gg, k, k, origin=(cx0, cy0)), ecx - cx0 + spec.get("dx", 0),
                                        ecy - cy0 + spec.get("dy", 0)), cc) for gg, cc in art]
+    for ln in spec.get("linhas", []):
+        # traços do desenho do original (o triângulo e o círculo do Alpha Omega)
+        if ln[0] == "circulo":
+            _, x, y, r, w = ln
+            shapes.append((A.ring(A.circle(x, y, r, 96), w).difference(clear), ink))
+        else:
+            _, pts, w = ln
+            shapes.append((A.stroke(list(pts) + [pts[0]], w).difference(clear), ink))
     shapes = [(sh.intersection(g["safe"]), cc) for sh, cc in shapes]
     return g, shapes
 
@@ -699,6 +708,28 @@ TEMAS.update({
     "elderberry_war": F(lambda: cabochao("#F2F2EE", "veios", "#6A6A6A"), pattern=("rays", 22), tone="#2A2A2A",
                         halo="#141414", halo_w=1.8),
     "tamarind_amp": F(lambda: colunas("#4A4C50"), pattern=("dots", 3.2, 0.8), tone="#2E2E2E", halo="#F2C81E", halo_w=1.2),
+})
+TEMAS.update({
+    # Lote D: mini, deitadas e grandes
+    "cashew_boost": F(lambda: octaedro("#55585E"), pattern=("facets", 7), halo="#C8CACC", halo_w=1.4),
+    "kumquat_klone": F(lambda: cubos("#D0A844"), pattern=("facets", 7), halo="#3A2A10", halo_w=1.2),
+    "papaya_grind": F(lambda: cristais("#2A2A2E", 5, 1.3, "#1E1E20"), pattern=("rays", 24), tone="#050505",
+                      halo="#3A3A3C", halo_w=1.2),
+    "persimmon_33": F(sapote, pattern=("none",), halo="#3A3A3C", halo_w=1.2),
+    "blackcurrant_bass": F("blackcurrant", pattern=("dots", 3.2, 1.0)),
+    "mulberry_omega": F(lambda: cabochao("#2E3640", "brilho", "#3A9AE0", "#5AC0A0"), pattern=("facets", 9),
+                        linhas=[("poligono", [(47.0, 64.0), (13.0, 112.0), (81.0, 112.0)], 0.7), ("circulo", 47.0, 96.0, 15.0, 0.7)]),
+    "pineapple_king": F(lambda: cristais("#9A5AC8", 5, 1.0, "#5A4A3A"), pattern=("dots", 3.2, 1.0), tone="#7A4A3A"),
+    "strawberry_5150": F(lambda: brilhante("#202024"), pattern=("stripes", 4.0, 7.0, -35), tone="#0C0C0E", halo=BRANCO_ARTE,
+                         halo_w=1.4),
+    "cupuacu_hammer": F(lambda: cubos("#7A7E84"), pattern=("dots", 3.2, 0.9)),
+    "graviola_bassdi": F(lambda: brilhante("#4A1016"), pattern=("facets", 9), halo=BRANCO_ARTE, halo_w=1.4),
+    "pulsar_echo": F(pulsar_prata, pattern=("rings", 3.4, 0.4), halo=False),
+    "jackfruit_monkey": F("jackfruit", pattern=("stripes", 2.0, 3.2, 30)),
+    "lychee_bassfuzz": F("lime_slice", pattern=("rays", 28)),
+    "juniper_sky": F(lambda: brilhante("#8ADCEA"), pattern=("dots", 3.2, 0.9)),
+    "lime_echo": F(lambda: esmeralda("#1E9A5A"), pattern=("facets", 10)),
+    "galaxy_mod": F(galaxia_azul, pattern=("stars", "#FFFFFF", 30), halo=False),
 })
 for _k, _v in TEMAS.items():
     if _v.get("pattern", ("",))[0] == "stars" and _v["pattern"][1] is None:

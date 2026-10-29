@@ -1,93 +1,147 @@
 {
   "tipo": "pedal",
-  "nome": "Mulberry Omega",
+  "nome": "Labradorite Omega",
   "familia": "mulberry_omega",
-  "inspiracao": "cinza-escuro com letras brancas, caixa média com controles deslizantes de equalização (estilo Darkglass Alpha Omega)",
+  "inspiracao": "Caixa azul-ardósia (94 x 120 x 46 mm), letras brancas e o triângulo com o círculo em linhas brancas; MISTURA (fixo), NÍVEL e DRIVE na fileira de cima com as minichaves GROWL e BITE, MOD, GRAVE, MÉDIO (fixos) e AGUDO embaixo, LED vermelho e pisante dentro do desenho. Tema: labradorita escura com reflexos azul e verde. Original: Darkglass Alpha Omega.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.094,
     "comprimento": 0.12,
-    "altura": 0.042
+    "altura": 0.046
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0561,
-      0.0014,
-      0.029
+      0.0658,
+      0.145,
+      0.2758
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.2,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "MULBERRY OMEGA",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "LABRADORITE OMEGA",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.015,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
+      "id": "fixo_blend",
+      "rotulo": "MISTURA",
+      "pos": [
+        -0.6,
+        0.78
+      ],
+      "fixo": true
+    },
+    {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.12,
+        0.78
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.0,
-        0.55
+        0.36,
+        0.78
+      ]
+    },
+    {
+      "id": "fixo_mod",
+      "rotulo": "MOD",
+      "pos": [
+        -0.72,
+        0.4
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        -0.24,
+        0.4
+      ],
+      "fixo": true
+    },
+    {
+      "id": "fixo_medio",
+      "rotulo": "MÉDIO",
+      "pos": [
+        0.24,
+        0.4
+      ],
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.72,
+        0.4
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/mulberry_omega.svg"
+  },
+  "medidas_fonte": "94 x 120 x 46 mm (Darkglass, ficha oficial)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.9,
+  "logo_m": 0.0068,
+  "pisante_y": -0.58,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/mulberry_omega.svg"
-  }
+  "rotulo_m": 0.0034,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "led": [
+    0.0,
+    0.05
+  ],
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.76,
+        0.86
+      ],
+      "rotulo": "GROWL",
+      "rotulo_pos": "baixo",
+      "rotulo_m": 0.0026
+    },
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.76,
+        0.64
+      ]
+    }
+  ]
 }

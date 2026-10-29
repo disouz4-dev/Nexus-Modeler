@@ -1,51 +1,42 @@
 {
   "tipo": "pedal",
-  "nome": "Kumquat Klone",
+  "nome": "Pyrite Klone",
   "familia": "kumquat_klone",
-  "inspiracao": "prateado com letras pretas, caixa mini (estilo Wampler Tumnus)",
+  "inspiracao": "Caixa mini dourada (38 x 89 x 38 mm), letras pretas; botões pretos pequenos VOLUME e GANHO no alto e AGUDO embaixo, no meio, LED azul e pisante. Tema: cubos de pirita dourada. Original: Wampler Tumnus.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.038,
+    "comprimento": 0.089,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.8933,
-      0.3017,
-      0.0039
+      0.586,
+      0.3587,
+      0.0781
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.6,
+    "aspereza": 0.35
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "modelo": "KUMQUAT KLONE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "PYRITE KLONE",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.011,
+    "altura_m": 0.011,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,55 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.48,
+        0.8
+      ]
+    },
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        0.48,
+        0.8
+      ]
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
-    },
-    {
-      "id": "ganho",
-      "rotulo": "GANHO",
-      "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.52
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/kumquat_klone.svg"
+  },
+  "medidas_fonte": "38 x 89 x 38 mm (Wampler, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.93,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.1,
+  "logo_m": 0.0052,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/kumquat_klone.svg"
-  }
+  "rotulo_m": 0.003,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    0.2
+  ],
+  "led_cor": [
+    0.0008,
+    0.009,
+    0.145
+  ],
+  "jacks_topo": false
 }

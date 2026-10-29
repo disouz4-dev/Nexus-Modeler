@@ -28,7 +28,7 @@ e rodar com esse python.
       fileira de LEDs, placa, pisante a mais), painéis e textos com cor própria.
       Quadro: com proporção > 1 a câmera mede pela altura (altura vista =
       largura x largura_rel); pedal comprido precisa de largura_rel maior.
-- [ ] 2. Receitas em lotes (cor, medidas, botões, chaves, nome, estampa, inspiração)
+- [x] 2. Receitas em lotes (cor, medidas, botões, chaves, nome, estampa, inspiração)
   - [x] Lote A: Boss compactos (orange_drive, banana_overdrive, neptune_chorus,
         coconut_delay, grape_reverb, moon_tremolo, jabuticaba_buzzsaw,
         avocado_metal, blueberry_blues, apricot_overdrive, clementine_turbo,
@@ -41,7 +41,7 @@ e rodar com esse python.
         pistachio_drive, gold_centaur, cherry_drop, acai_rat, snowpear_treble,
         cherry_fuzz, fig_bender, kiwi_drive, comet_wah, pomegranate_mud,
         lychee_fuzz, nebula_flanger, elderberry_war, tamarind_amp)
-  - [ ] Lote D: caixas mini, deitadas e grandes (cashew_boost, kumquat_klone,
+  - [x] Lote D: caixas mini, deitadas e grandes (cashew_boost, kumquat_klone,
         papaya_grind, persimmon_33, blackcurrant_bass, mulberry_omega,
         pineapple_king, strawberry_5150, cupuacu_hammer, graviola_bassdi,
         pulsar_echo, jackfruit_monkey, lychee_bassfuzz, juniper_sky, lime_echo,
@@ -67,6 +67,11 @@ Ficam funcionando, pequenos e no canto mais discreto. O dono decide depois.
   lisa atrás do basculante. O clique de liga/desliga fica na ponta do basculante.
 - nebula_flanger: Electric Mistress clássico prateado e grande (decisão do dono); a medida
   (110 x 140 x 57) é estimada, a EHX não publica a da caixa antiga.
+- cashew_boost (EP Booster: 1 botão, caixa mini): VOLUME (`nivel`) pequeno, sem rótulo, à direita do LED.
+- papaya_grind (Grind: 1 botão): GANHO e AGUDO (`ganho`, `tom`) pequenos ao lado do pisante.
+- persimmon_33 (33: 1 botão): GANHO (`ganho`) pequeno ao lado do pisante.
+- lime_echo e galaxy_mod: o DL4 e o MM4 não têm visor; o visor saiu da arte (a tela não terá onde
+  escrever o modo). Se o dono quiser o visor de volta, é só repor o campo "visor" na receita.
 - starfruit_rock: os dois controles viraram deslizantes (como no Rockman X100), com os mesmos ids.
 
 Botões, chaves e pisantes que o original tem a mais entram como peças fixas
