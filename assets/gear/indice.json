@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:17:40Z",
+ "gerado": "2026-10-29T23:29:58Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6013,8 +6013,8 @@
   },
   "tracer7": {
    "nome": "Tracer 7",
-   "hash": "bd63c9df496743e9",
-   "data": "2026-10-29T20:12:37Z",
+   "hash": "c412825ab34fc152",
+   "data": "2026-10-29T23:29:58Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tracer7_botao_agudo.png",
@@ -6029,24 +6029,24 @@
     "tracer7_mapa.json"
    ],
    "sha256": {
-    "tracer7_botao_agudo.png": "0bbdce2cf334a78aae5206d065fad231a4f185a60d493ac96df38c08b0d658b0",
-    "tracer7_botao_ganho.png": "dd3ea88b6e8bf19e827a7e88818bac7804499d0bd64d597089af9457736eb9b9",
-    "tracer7_botao_grave.png": "9b37cf1b7647e6db225be1b4350819cd0abfd11b402f7c6460b5feae1535a244",
-    "tracer7_botao_medio.png": "73278a8aec6d31b237b5905f7bec46106e94aa969b1481e9ea1552982113e8f6",
-    "tracer7_botao_presenca.png": "18e64ac6bb7a114aa8c9eecb8a2d8fc78dbb61ecaaf2fec0749757fa29713dcd",
-    "tracer7_botao_volume.png": "63da74d8dbda66ae7f2e29b26794db1faa7bb31ebf3e7e5b568b384bd56b3b1f",
-    "tracer7_frente.jpg": "f7c1798beb67ceffefcaf60318c87b74f637f4ab57f5864352b716890a85930a",
-    "tracer7_frente_alfa.png": "adcdc0ec20be53a81c80db8c79a77d51fe7757b4d7747600b89bb100e08e64cc",
-    "tracer7_manifesto.json": "e8da8267365310876bc471152cab4547c60d2b4d8f7a737e8d3f0fb9aa51999c",
+    "tracer7_botao_agudo.png": "bf7a85ba50fbe4cb643243faa30c8db94cd98b49a189340eac0175efcb02c149",
+    "tracer7_botao_ganho.png": "217c2c60116bc50c6e9db5574c320a9f706642fda0cc8a9f79e6ad83d3618020",
+    "tracer7_botao_grave.png": "887799b7b284777a9da0268a620f5faad8571455dcd12743ef36a894b32be210",
+    "tracer7_botao_medio.png": "f2a6792b060e23f05d293fb0d4e32483ea25dee4d77559669ea315f660881f9d",
+    "tracer7_botao_presenca.png": "a14c9d18ec604e9983b273015fd38ecda917fcf6deffcc6b41c6cf48f807773c",
+    "tracer7_botao_volume.png": "99d46473e40c01c9753caa95895941421dbcfe44fdd7c7e0c9fb54c7d12be7ac",
+    "tracer7_frente.jpg": "3fb05bb82d43820bdf221c6abc3afb3085d3c1f020f010648be8cf6913c0454b",
+    "tracer7_frente_alfa.png": "488c4f6c9c61382f29a285b466f600abfba10a26d6841a1f7afccc8c9ef36e84",
+    "tracer7_manifesto.json": "e71c6bb1276dfd9528d638f7dc1f14f0f8ebd16ccfbe57600824c0e6f1f71362",
     "tracer7_mapa.json": "faff5fbbfda68bfd22c0a5620553a01db2597da0724b57f3399ca7ab28c12199"
    },
-   "tamanho": 767265,
+   "tamanho": 751885,
    "tipo": "cabecote",
    "inspiracao": "Trace Elliot (GP7, GP12, Speed Twin)",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
