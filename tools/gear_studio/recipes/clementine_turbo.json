@@ -2,93 +2,193 @@
   "tipo": "pedal",
   "nome": "Clementine Turbo",
   "familia": "clementine_turbo",
-  "inspiracao": "laranja com letras pretas, caixa compacta com pedal basculante (estilo Boss DS-2 Turbo Distortion)",
+  "inspiracao": "Boss compacto laranja (73 x 129 x 59 mm), letras pretas; botões laranja com saia sobre a faixa preta: NÍVEL, TOM, DISTORÇÃO e, separado à direita, o seletor TURBO menor (fixo), LED CHECK no alto, no centro, e pedal basculante com borracha frisada, faixa preta atrás dos botões e um filete separando o TURBO. Tema: clementina com folha, listras laranja-escuro tom sobre tom. Original: Boss DS-2 Turbo Distortion.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
     "comprimento": 0.129,
     "altura": 0.059
   },
-  "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.85,
-      0.35,
-      0.04
+      0.8751,
+      0.145,
+      0.0078
     ],
-    "metalico": 0.1,
-    "aspereza": 0.22
+    "metalico": 0.0,
+    "aspereza": 0.24
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "CLEMENTINE TURBO",
-  "tipo_texto": "TURBO",
-  "rotulo_m": 0.0046,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
     "saia": true,
     "corpo": [
-      0.014,
-      0.014,
-      0.014
+      0.8751,
+      0.1975,
+      0.017
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.0037,
+      0.0037,
+      0.0037
     ]
   },
   "botoes": [
     {
-      "id": "ganho",
-      "rotulo": "DISTORÇÃO",
+      "id": "nivel",
+      "rotulo": "NÍVEL",
       "pos": [
-        -0.6,
-        0.7
+        -0.72,
+        0.66
+      ],
+      "escala": 0.88,
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
       ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.0,
-        0.7
+        -0.3,
+        0.66
+      ],
+      "escala": 0.88,
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
       ]
     },
     {
-      "id": "nivel",
-      "rotulo": "NÍVEL",
+      "id": "ganho",
+      "rotulo": "DISTORÇÃO",
       "pos": [
-        0.6,
-        0.7
+        0.12,
+        0.66
+      ],
+      "escala": 0.88,
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ]
+    },
+    {
+      "id": "fixo_turbo",
+      "rotulo": "TURBO",
+      "pos": [
+        0.66,
+        0.66
+      ],
+      "fixo": true,
+      "escala": 0.72,
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
       ]
     }
   ],
-  "led": [
-    -0.72,
-    0.06
-  ],
+  "estampa": {
+    "svg": "estampas/clementine_turbo.svg"
+  },
+  "medidas_fonte": "Boss DS-2 Turbo Distortion: 73 x 129 x 59 mm (Boss, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.21,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
   "base_rel": 0.68,
-  "rotulo_embaixo": true,
-  "led_no_basculante": true,
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "modelo_m": 0.0085,
-  "modelo_x": 0.12,
+  "basculante_rel": 0.6,
+  "basculante_ang": 0.0,
   "borracha_rel": 0.36,
-  "estampa": {
-    "svg": "estampas/clementine_turbo.svg"
-  }
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0042,
+  "disposicao": "boss",
+  "led": [
+    0.0,
+    0.9
+  ],
+  "textos": [
+    {
+      "texto": "CHECK",
+      "pos": [
+        0.0,
+        0.965
+      ],
+      "tam_m": 0.0022,
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "espaco": 1.2
+    }
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.665
+      ],
+      "tam_m": [
+        0.0655,
+        0.0405
+      ],
+      "cor": [
+        0.0026,
+        0.0026,
+        0.0029
+      ],
+      "metal": false,
+      "raio_m": 0.0015
+    },
+    {
+      "pos": [
+        0.42,
+        0.665
+      ],
+      "tam_m": [
+        0.0008,
+        0.034
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ]
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "rotulo",
+      "pos": [
+        -0.6,
+        0.27
+      ],
+      "rotulo": "SAÍDA",
+      "rotulo_m": 0.0034
+    },
+    {
+      "tipo": "rotulo",
+      "pos": [
+        0.6,
+        0.27
+      ],
+      "rotulo": "ENTRADA",
+      "rotulo_m": 0.0034
+    }
+  ]
 }
