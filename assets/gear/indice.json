@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:38:23Z",
+ "gerado": "2026-10-29T18:38:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2039,8 +2039,8 @@
   },
   "eagle751": {
    "nome": "Eagle 751",
-   "hash": "d25e0cefd05e68cc",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "42a6a10b80d092db",
+   "data": "2026-10-29T18:38:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "eagle751_botao_agudo.png",
@@ -2055,24 +2055,24 @@
     "eagle751_mapa.json"
    ],
    "sha256": {
-    "eagle751_botao_agudo.png": "201fea513d62c302308688c2881422680bedf5cf374aa0ace8d2d4176ef76b89",
-    "eagle751_botao_ganho.png": "40f2a29db36752e6b150b5fd29745c1862b43f64ef46da76a6afef36f385fc00",
-    "eagle751_botao_grave.png": "973efad3a35bde18d5ff87d22ec2eeb0e92eea542d40f469c85172c5316d5cd1",
-    "eagle751_botao_medio.png": "c71b74dfe4be8b0fb070dd2d0168cb43a121fb3cd9e307c594d7e6cad6a41516",
-    "eagle751_botao_presenca.png": "ea11f704f8cd2e372ad8be4fd4eca73760be290ded80c5ec9b80340affb0da22",
-    "eagle751_botao_volume.png": "0861fc050d017a346e0fa4ee778cfa4356d89e9ce134966531f54414b5506a5f",
-    "eagle751_frente.jpg": "5736c715a672a55457a7abe6f14299c5f7b65e3d21de883c4a3f7964fa4c7c54",
-    "eagle751_frente_alfa.png": "860684f57c2d73d6fcccf0c02647e3c109a3ae0ed638c6acecae3752bc6a6057",
-    "eagle751_manifesto.json": "e089dca1ebd37efbd2dd40d6dcbe3224ba12959597fb3018940aa9abf2fc6426",
-    "eagle751_mapa.json": "b336b95439964997e4c37f918944e8bcde78481a00d37b4a95ee1b8d8f3214a6"
+    "eagle751_botao_agudo.png": "d619e7b217387138221184d4485c259f92749e1e13ddc2dd2beb9d9dd490e517",
+    "eagle751_botao_ganho.png": "7217032fcaa8d87cf4042099b8e5f3154a6b6742c1fe498bcdc54af4d3490751",
+    "eagle751_botao_grave.png": "cf096293fa026d393171c500d3b4574e4b76ce59ba5348ccd7ab132084cde3de",
+    "eagle751_botao_medio.png": "05e133f509c018d68465931a7ff04bea20bbe9579f9226b1825fed035b30cce3",
+    "eagle751_botao_presenca.png": "0c0ea24e50537f8093a75679aeca62e7ead279f4294797da8d2b2a179c3670d3",
+    "eagle751_botao_volume.png": "856892b679211366423bd2caf51aa37eebee85b3ab67b9ff5fb6597a742d742b",
+    "eagle751_frente.jpg": "d7f9daf1f865cb86a1f01f1466c711a3e11e17e22d5ef7f802742b8284491bb0",
+    "eagle751_frente_alfa.png": "9164cfd3f4e27cf9eaa24d7ef3386975a2d1b7d342167de8271d8083cd469592",
+    "eagle751_manifesto.json": "3c938cafbfbe8303ca3755ee2596c0dd133ebd996518676e702ade5c246c4e65",
+    "eagle751_mapa.json": "284d2c76a8f62f5eeb08852c863d0add6395928242d3cffa943490ae35a01930"
    },
-   "tamanho": 1819052,
+   "tamanho": 517010,
    "tipo": "cabecote",
    "inspiracao": "Aguilar DB751",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
