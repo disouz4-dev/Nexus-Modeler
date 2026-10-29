@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:03:03Z",
+ "gerado": "2026-10-29T23:09:14Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4992,8 +4992,8 @@
   },
   "recto_triple": {
    "nome": "Recto Triple",
-   "hash": "a1c8f4e724df165a",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "af8e64c5f132ae7c",
+   "data": "2026-10-29T23:09:14Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_triple_botao_agudo.png",
@@ -5008,24 +5008,24 @@
     "recto_triple_mapa.json"
    ],
    "sha256": {
-    "recto_triple_botao_agudo.png": "16dbb827dbda6fe533f13ddf348b8cad5557bee21b8eb743c5f45215e39eda3d",
-    "recto_triple_botao_ganho.png": "fa133c245d8eba1956125b17edee5b61cec8d0271871a4dcb6a41e66ad02f23b",
-    "recto_triple_botao_grave.png": "993f04982e3a622840582ad223ab95dd85b273c9ff15222e627e55c72d8db9c9",
-    "recto_triple_botao_medio.png": "60fa35c2807b3f2f4eb0e8b83d73fc7dc30dc5db99036972367131f14f201a6b",
-    "recto_triple_botao_presenca.png": "8b68b6f352226bfe0d9ab8d90351c68b16258d76521dc53b112d74af89d63126",
-    "recto_triple_botao_volume.png": "f1ee37eb88bcfe93e45d3ddcff080a1d25197f5c478a34d169624e7d5052502a",
-    "recto_triple_frente.jpg": "fe927d5f4af22624c6185455d328c94ccfa6c1f8498599dc076a89007961e683",
-    "recto_triple_frente_alfa.png": "65b520b62421f8ef5af736592b981874f1562b989cec52718cc099e23da7586f",
-    "recto_triple_manifesto.json": "81f1e0bd966c819279518ddfaad1625e6b0dc74d782f89c1b1788feedcd5787b",
+    "recto_triple_botao_agudo.png": "0d071eaf4a60d43c05cc98c65e2f6879b0099c6e54457fd20084b8c6b756a3de",
+    "recto_triple_botao_ganho.png": "96154f1334be915c064867c667f2fad231b6d6420aa08e110c630f75a027b371",
+    "recto_triple_botao_grave.png": "889dce0462f49e608ca8873a7c64aec2eadd5ea3fe24a08dfbfb4a91d70797c2",
+    "recto_triple_botao_medio.png": "3a2ee877ec71859de0629d2ccb24acf2f282b3aaf571cfbf259790f9e2c3b42b",
+    "recto_triple_botao_presenca.png": "0eef93ff1522941af24ed09daa8835ba2f74d5b011b32a163cf4800e9ab6a99d",
+    "recto_triple_botao_volume.png": "f54e888ab9bc86236c9b2527e1aae53bc8093ee94c97df93751b259ec45354ee",
+    "recto_triple_frente.jpg": "cc11264e0c66da91725b95aeeb7f30faa09f1c380a716fb3826f4a3a0b88641a",
+    "recto_triple_frente_alfa.png": "489fb3110c56616c7fe6ac01f0321dd5a96e05ad2362cdd28e783b1a5e1633c9",
+    "recto_triple_manifesto.json": "c86f63123bd8c62d4e39272c5fec6d97509552bbff2ab22180bc5213e2dbe187",
     "recto_triple_mapa.json": "558aaf905042a2954744652987d5396182a02a22e6102f7358c46abd972f6e9f"
    },
-   "tamanho": 1134223,
+   "tamanho": 1136993,
    "tipo": "cabecote",
    "inspiracao": "Triple Rectifier",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
