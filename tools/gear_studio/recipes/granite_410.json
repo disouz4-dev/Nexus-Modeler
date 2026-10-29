@@ -1,11 +1,14 @@
 {
   "tipo": "caixa",
+  "nome": "Granite 4x10",
+  "familia": "granite_410",
+  "inspiracao": "caixa 4x10 de baixo com rodízios (estilo Gallien-Krueger 410RBH): carpete preto, grade de aço preta em malha quadrada larga com os falantes à mostra, marca branca no alto da grade, sem friso, cantoneiras pretas; 610 x 699 x 457 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.034,
+    "altura_rel": 0.43,
     "cor": [
       0.9,
       0.9,
@@ -14,37 +17,49 @@
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.298,
     "elevacao": 8.0
   },
-  "nome": "Granite 4x10",
-  "familia": "granite_410",
   "medidas_m": {
-    "largura": 0.6,
-    "altura": 0.6,
-    "profundidade": 0.4
+    "largura": 0.61,
+    "altura": 0.699,
+    "profundidade": 0.457
   },
   "couro": {
     "cor": [
-      0.006,
-      0.006,
-      0.007
+      0.01,
+      0.01,
+      0.011
     ],
-    "grao_mm": 2.2
+    "grao_mm": 2.2,
+    "tipo": "carpete",
+    "cor_b": [
+      0.004,
+      0.004,
+      0.004
+    ]
   },
   "tela": {
-    "cor_a": [
-      0.02,
-      0.02,
-      0.02
+    "tipo": "grade",
+    "grade": "quadrada",
+    "passo_mm": 22,
+    "fio_mm": 3.0,
+    "cor": [
+      0.025,
+      0.025,
+      0.027
     ],
-    "cor_b": [
-      0.16,
-      0.16,
-      0.17
-    ],
-    "trama_mm": 4.0
+    "metalico": 0.7,
+    "aspereza": 0.35
   },
   "friso": null,
-  "cantos": "cromo"
+  "cantos": "preto",
+  "rodizios": {
+    "altura_m": 0.06
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }

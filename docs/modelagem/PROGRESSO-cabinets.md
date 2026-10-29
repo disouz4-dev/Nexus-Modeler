@@ -16,7 +16,7 @@ As 27 caixas com veredito "trocar" em `docs/modelagem/verificado_caixas.json`.
 - [x] 2a. Lote 1: brit412, mark5_412, block_412, sl_412, be_412, citrus_412, star_412
 - [x] 2b. Lote 2: blue_212, twin_212, tweed_410, match_212, silver_112, mark_112, jazz_212
 - [x] 2c. Lote 3: power_412, uber_412, country_412, vier_412, hi_412, rg_412, glass_412
-- [ ] 2d. Lote 4: vault_810, granite_410, hart_410, glass_410, bassline_215, solar_215
+- [x] 2d. Lote 4: vault_810, granite_410, hart_410, glass_410, bassline_215, solar_215
 - [ ] 3. Conferir na fila que todas ficaram "pronta"
 
 ## Recursos do cab.py (etapa 1)
@@ -57,3 +57,13 @@ Todos opcionais; sem eles a receita sai igual ao gerador antigo (conferido com b
   Prévias agora numa cópia separada no lab2 (`repo-fiel-cabinets-previa`), para não mexer no que a fila está renderizando.
 - 29/10: lote 3 (ENGL, Bogner, Laney, Diezel, Hiwatt, Randall, Glass 4x12), render pedido.
   Laney: 765 de caixa mais 60 mm de rodízios (a foto mostra rodízios; a ficha dá a caixa). Randall: os 696 mm já contam os rodízios (incerto).
+- 29/10: lote 4 (Ampeg 8x10, GK, Hartke, Darkglass 4x10, Bassman 2x15, Sunn 2x15), render pedido.
+
+## Incertezas (confiança baixa)
+
+- `bassline_215` (Bassman 2x15 silverface): cores, moldura de alumínio e medidas 749 x 1016 x 292
+  vêm da triagem de memória, sem página da Fender. Cantoneiras pretas mantidas (sem dado).
+- `solar_215` (Sunn 200S): só o tamanho mudou (610 x 1016 x 381, de memória); tela, friso e
+  cantoneiras ficaram como estavam, por falta de foto ou ficha confiável.
+- `solar_412` e `fliptop_115`: veredito "ok" na conferência; não mexi.
+- `hart_410`: a Hartke não diz a ordem dos eixos (25 x 24.5 x 15 pol.); usei 635 L x 622 A.

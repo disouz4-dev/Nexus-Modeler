@@ -1,28 +1,30 @@
 {
   "tipo": "caixa",
+  "nome": "Vault 8x10",
+  "familia": "vault_810",
+  "inspiracao": "caixa 8x10 de baixo (estilo Ampeg SVT-810E): tolex preto, tela preta com fio prateado discreto, friso branco fino em volta da tela, cantoneiras pretas, marca no canto de cima à esquerda; 660 x 1219 x 406 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.036,
+    "altura_rel": 0.44,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "lado_rel": -0.18
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 2.0,
+    "proporcao": 2.055,
     "elevacao": 8.0
   },
-  "nome": "Vault 8x10",
-  "familia": "vault_810",
   "medidas_m": {
-    "largura": 0.61,
-    "altura": 1.22,
-    "profundidade": 0.4
+    "largura": 0.66,
+    "altura": 1.219,
+    "profundidade": 0.406
   },
   "couro": {
     "cor": [
@@ -34,20 +36,27 @@
   },
   "tela": {
     "cor_a": [
-      0.03,
-      0.03,
-      0.035
+      0.008,
+      0.008,
+      0.009
     ],
     "cor_b": [
-      0.5,
-      0.51,
-      0.53
+      0.07,
+      0.07,
+      0.075
     ],
-    "trama_mm": 3.0
+    "trama_mm": 2.4
   },
   "friso": [
-    0.85,
-    0.85,
-    0.86
-  ]
+    0.86,
+    0.86,
+    0.85
+  ],
+  "friso_m": 0.0025,
+  "cantos": "preto",
+  "falantes": {
+    "linhas": 4,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }

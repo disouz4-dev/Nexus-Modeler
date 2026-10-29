@@ -1,5 +1,8 @@
 {
   "tipo": "caixa",
+  "nome": "Solar 2x15",
+  "familia": "solar_215",
+  "inspiracao": "caixa 2x15 de baixo (estilo Sunn 200S dos anos 60; dados de memória, sem conferir no fabricante): tolex preto, tela prateada com brilho, friso claro em volta da tela, cantoneiras pretas; 610 x 1016 x 381 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
@@ -14,15 +17,13 @@
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.5,
+    "proporcao": 1.859,
     "elevacao": 8.0
   },
-  "nome": "Solar 2x15",
-  "familia": "solar_215",
   "medidas_m": {
-    "largura": 0.74,
-    "altura": 1.0,
-    "profundidade": 0.42
+    "largura": 0.61,
+    "altura": 1.016,
+    "profundidade": 0.381
   },
   "falantes": {
     "linhas": 2,

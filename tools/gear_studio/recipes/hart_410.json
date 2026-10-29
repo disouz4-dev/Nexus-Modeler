@@ -1,28 +1,41 @@
 {
   "tipo": "caixa",
+  "nome": "Hart 4x10",
+  "familia": "hart_410",
+  "inspiracao": "caixa 4x10 de baixo (estilo Hartke 410XL): vinil preto texturizado, chapa de aço preta perfurada com os quatro cones de alumínio prateados aparecendo, sem friso, cantoneiras pretas de plástico, plaqueta no alto; 635 x 622 x 381 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.026,
+    "altura_rel": 0.455,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "placa": {
+      "cor": [
+        0.02,
+        0.02,
+        0.022
+      ],
+      "borda": [
+        0.8,
+        0.8,
+        0.82
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.175,
+    "proporcao": 1.118,
     "elevacao": 8.0
   },
-  "nome": "Hart 4x10",
-  "familia": "hart_410",
   "medidas_m": {
-    "largura": 0.6,
-    "altura": 0.62,
-    "profundidade": 0.4
+    "largura": 0.635,
+    "altura": 0.622,
+    "profundidade": 0.381
   },
   "couro": {
     "cor": [
@@ -33,18 +46,23 @@
     "grao_mm": 2.4
   },
   "tela": {
-    "cor_a": [
-      0.18,
-      0.18,
-      0.19
+    "tipo": "grade",
+    "grade": "perfurada",
+    "passo_mm": 5.5,
+    "furo_mm": 3.9,
+    "cor": [
+      0.02,
+      0.02,
+      0.022
     ],
-    "cor_b": [
-      0.55,
-      0.55,
-      0.57
-    ],
-    "trama_mm": 4.5
+    "cones": "aluminio"
   },
   "friso": null,
-  "cantos": "cromo"
+  "cantos": "preto",
+  "cantos_m": 0.055,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }
