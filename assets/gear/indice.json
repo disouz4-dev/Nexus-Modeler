@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:33:35Z",
+ "gerado": "2026-10-29T16:33:43Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5871,8 +5871,8 @@
   },
   "topaz_250": {
    "nome": "Topaz 250",
-   "hash": "88ce8bfa5076650c",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "6f41876aac18bdb2",
+   "data": "2026-10-29T16:33:43Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topaz_250_botao_ganho.png",
@@ -5883,20 +5883,20 @@
     "topaz_250_mapa.json"
    ],
    "sha256": {
-    "topaz_250_botao_ganho.png": "4b8f53f004aef65346815e076146354a386139e964449e3cb5be898ab3cfc3ea",
-    "topaz_250_botao_nivel.png": "7c11c3ae0fa5900f40022f628549c439720c29fa92a98ae881eded6204fb60b5",
-    "topaz_250_frente.jpg": "710ced71ccaf3c3d11bbad13ef21c08191b6d5f32c6aaf54291730a6b75409a7",
-    "topaz_250_frente_alfa.png": "a7c39456eea2586d7850ec7bab99b7516a922b20bd3f898edd8f09b1a0aa5e3c",
-    "topaz_250_manifesto.json": "22776e8c29a2e198cb3e004c0e3d99c254970154488d28097605fef438853d7a",
-    "topaz_250_mapa.json": "c0f2a333d2481744b846fba636f20eda3ade93b33e9cda5648f05ad79505d838"
+    "topaz_250_botao_ganho.png": "925e00ff6fe76ed51bffb5e408b9f3c3ca3513371e9c3a2b3b00789a4dd40081",
+    "topaz_250_botao_nivel.png": "535d52a233a96f9551b3ecdc402dddf2fe37cab131cf0c6b1c19ce3dfd9d30c7",
+    "topaz_250_frente.jpg": "7c21dfc3aa1270d8ed3a69cd3b4e5cc88668bcc1443834fe661d5cfabcb2d612",
+    "topaz_250_frente_alfa.png": "2314adcde2c7d19bc671c01680560a03c8c5caa9bfc6bd1cc90e4642338e8022",
+    "topaz_250_manifesto.json": "c6bb26baae894f387f632e6b23276f755654ec34114326a805719cf9f3cd6940",
+    "topaz_250_mapa.json": "8c554ddf96fadfce94078491798a7bddb931ea9abfa8fb60c1bd20c57f19915a"
    },
-   "tamanho": 141076,
+   "tamanho": 349415,
    "tipo": "pedal",
    "inspiracao": "DOD Overdrive Preamp 250",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
