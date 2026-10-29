@@ -1,28 +1,41 @@
 {
   "tipo": "caixa",
+  "nome": "Country 4x12",
+  "familia": "country_412",
+  "inspiracao": "caixa 4x12 inclinada com rodízios (estilo Laney LA412 da linha Supergroup): tolex preto, tela sal e pimenta cinza, friso branco em volta da tela, sem cantoneiras, plaqueta preta no centro; 765 x 765 x 355 mm de caixa, mais os rodízios",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.032,
+    "altura_rel": 0.02,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "placa": {
+      "cor": [
+        0.015,
+        0.015,
+        0.017
+      ],
+      "borda": [
+        0.8,
+        0.8,
+        0.82
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.1118,
+    "proporcao": 1.225,
     "elevacao": 8.0
   },
-  "nome": "Country 4x12",
-  "familia": "country_412",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
-    "profundidade": 0.36
+    "largura": 0.765,
+    "altura": 0.825,
+    "profundidade": 0.355
   },
   "couro": {
     "cor": [
@@ -34,20 +47,33 @@
   },
   "tela": {
     "cor_a": [
-      0.01,
-      0.01,
-      0.01
+      0.03,
+      0.03,
+      0.032
     ],
     "cor_b": [
-      0.12,
-      0.12,
-      0.12
+      0.42,
+      0.42,
+      0.43
     ],
-    "trama_mm": 2.4
+    "trama_mm": 2.0
   },
   "friso": [
-    0.82,
-    0.82,
-    0.82
-  ]
+    0.85,
+    0.85,
+    0.84
+  ],
+  "inclinada": {
+    "recuo_m": 0.1,
+    "inicio_rel": 0.5
+  },
+  "cantos": "nenhum",
+  "rodizios": {
+    "altura_m": 0.06
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

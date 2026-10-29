@@ -1,11 +1,14 @@
 {
   "tipo": "caixa",
+  "nome": "Power 4x12",
+  "familia": "power_412",
+  "inspiracao": "caixa 4x12 inclinada (estilo ENGL E412VSB): tolex preto, grade de metal preta soldada em malha com os quatro falantes aparecendo atrás, sem friso, cantoneiras cromadas embaixo, marca no centro; 740 x 750 x 360 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
     "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_rel": 0.0,
     "cor": [
       0.9,
       0.9,
@@ -14,14 +17,12 @@
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.155,
     "elevacao": 8.0
   },
-  "nome": "Power 4x12",
-  "familia": "power_412",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
+    "largura": 0.74,
+    "altura": 0.75,
     "profundidade": 0.36
   },
   "couro": {
@@ -33,17 +34,26 @@
     "grao_mm": 2.4
   },
   "tela": {
-    "cor_a": [
-      0.01,
-      0.01,
-      0.01
-    ],
-    "cor_b": [
-      0.06,
-      0.06,
-      0.06
-    ],
-    "trama_mm": 2.2
+    "tipo": "grade",
+    "grade": "quadrada",
+    "passo_mm": 6.5,
+    "fio_mm": 2.0,
+    "cor": [
+      0.03,
+      0.03,
+      0.032
+    ]
   },
-  "friso": null
+  "friso": null,
+  "inclinada": {
+    "recuo_m": 0.1,
+    "inicio_rel": 0.5
+  },
+  "cantos": "cromo",
+  "cantos_onde": "baixo",
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }
