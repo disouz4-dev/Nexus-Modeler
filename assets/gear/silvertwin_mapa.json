@@ -2,60 +2,60 @@
   "nome": "Silver Twin",
   "familia": "silver_twin",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1958,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 834,
-      "y": 723,
-      "tamanho": 122,
+      "x": 418,
+      "y": 305,
+      "tamanho": 109,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "grave",
-      "x": 1023,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 1213,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_medio.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "agudo",
-      "x": 1403,
-      "y": 723,
-      "tamanho": 122,
+      "x": 521,
+      "y": 306,
+      "tamanho": 108,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1592,
-      "y": 723,
-      "tamanho": 122,
-      "arquivo": "botao_presenca.png",
+      "id": "medio",
+      "x": 623,
+      "y": 306,
+      "tamanho": 108,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 726,
+      "y": 306,
+      "tamanho": 108,
+      "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1782,
-      "y": 723,
-      "tamanho": 122,
+      "x": 1074,
+      "y": 306,
+      "tamanho": 108,
       "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1689,
+      "y": 306,
+      "tamanho": 108,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -65,75 +65,183 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
+      "texto": "1",
+      "x": 251.4,
+      "y": 405.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
+      "texto": "2",
+      "x": 318.7,
+      "y": 405.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
+      "texto": "BRIGHT",
+      "x": 384.0,
+      "y": 406.2,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
-      "espaco": 1.0
-    },
-    {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
+      "texto": "NORMAL",
+      "x": 282.0,
+      "y": 445.7,
+      "altura": 19.92,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f3f3f3",
+      "x": 475.8,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#f3f3f3",
+      "texto": "TREBLE",
+      "x": 577.8,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 679.8,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 781.8,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "1",
+      "x": 904.2,
+      "y": 405.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "2",
+      "x": 971.5,
+      "y": 405.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BRIGHT",
+      "x": 1036.8,
+      "y": 406.2,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VIBRATO",
+      "x": 938.9,
+      "y": 445.7,
+      "altura": 19.92,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1128.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1230.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1332.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1434.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "REVERB",
+      "x": 1536.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SPEED",
+      "x": 1638.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INTENSITY",
+      "x": 1740.6,
+      "y": 422.7,
+      "altura": 17.67,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "REVERB-AMP",
+      "x": 1954.8,
+      "y": 432.2,
+      "altura": 16.06,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     }
   ]
