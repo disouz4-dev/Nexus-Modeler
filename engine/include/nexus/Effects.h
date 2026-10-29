@@ -5,31 +5,14 @@
 #include <vector>
 
 #include "nexus/UniversalEq.h"
+#include "nexus/Ambience.h"
+#include "nexus/DelayLine.h"
 
 // Efeitos feitos pelo próprio Nexus (modulação, tempo e ambiente não se
 // capturam bem com NAM). Mono, em double, na taxa do motor. Os três botões
 // de cada pedal chegam de 0 a 1.
 namespace nexus
 {
-// Linha de atraso com leitura fracionária (interpolação linear).
-class DelayLine
-{
-public:
-  void prepare(int maxSamples);
-  void clear();
-  void push(double x)
-  {
-    mWrite = (mWrite + 1) % static_cast<int>(mBuffer.size());
-    mBuffer[static_cast<size_t>(mWrite)] = x;
-  }
-  // "delay" amostras atrás da última escrita (0 = a última).
-  double read(double delay) const;
-
-private:
-  std::vector<double> mBuffer;
-  int mWrite = 0;
-};
-
 // Chorus de duas vozes (estilo CE-2): atraso de 6 a 16 ms balançado por um
 // oscilador lento. Botões: velocidade, profundidade, mistura.
 class Chorus
@@ -94,14 +77,22 @@ private:
   int mPreIndex = 0;
 };
 
-// Phaser de quatro estágios (estilo Phase 90): filtros passa-tudo varridos
-// por um oscilador lento, com realimentação. Botões: velocidade,
-// profundidade, intensidade (realimentação).
+// Phaser no molde do MXR Phase 90: quatro estágios passa-tudo de primeira
+// ordem (no pedal, um JFET como resistor variável com um capacitor de 47 nF
+// em cada estágio), varridos por um oscilador triangular, e o som limpo somado
+// meio a meio com o defasado, o que abre dois vales fundos no espectro (em
+// 0,41 e 2,41 vezes a frequência dos estágios). Botões:
+//   velocidade   0,1 a 10 Hz, em escala de oitavas (5 = 1 Hz)
+//   profundidade largura da varredura (10 = de 140 Hz a 2,5 kHz nos estágios)
+//   intensidade  realimentação do quarto estágio para o primeiro, como no
+//                Phase 90 de logotipo em bloco (0 = o "script", sem nenhuma)
 class Phaser
 {
 public:
   // Andamento: velocidade em Hz presa à divisão escolhida (0 = segue o botão).
   double syncHz = 0.0;
+  // Velocidade do botão (0 a 1) em Hz.
+  static double rateHz(double knob01);
   void prepare(double sampleRate);
   void reset();
   void process(double* buffer, int n, double rate, double depth, double feedback);
@@ -111,7 +102,7 @@ private:
   double mPhase = 0.0;
   std::array<double, 4> mState{};
   double mLast = 0.0;
-  double mDepth = 0.5, mFeedback = 0.3;
+  double mHz = 1.0, mDepth = 0.5, mFeedback = 0.0;
 };
 
 // Flanger (estilo Electric Mistress): atraso de 0,4 a 7 ms varrido devagar,
@@ -325,7 +316,11 @@ public:
     analogdelay,
     octave,
     comp,
-    geq
+    geq,
+    sky,     // Juniper Sky: reverb de vários modos
+    echo,    // Lime Echo: delay de vários modos
+    multiMod, // Galaxy Mod: modulação de vários modos
+    triple    // Blueberry Chain: três delays em série
   };
   // Equalizador gráfico (estilo GE-7): sete faixas e o nível.
   static constexpr int kGeqBands = 7;
@@ -337,6 +332,17 @@ public:
   // Andamento (tap tempo ou o da música): velocidade da modulação em Hz e
   // tempo do delay em segundos; 0 nos dois = os botões mandam.
   void setSync(double hz, double seconds);
+  // Pedais de vários modos: o modo e os botões além dos três (tom, o quarto
+  // botão e, no reverb, o shimmer), de 0 a 1.
+  void setExtras(int mode, double tone, double fourth, double fifth)
+  {
+    mMode = mode;
+    mTone = tone;
+    mFourth = fourth;
+    mFifth = fifth;
+  }
+  // Blueberry Chain: os botões e as chaves dos três delays.
+  void setTriple(const std::array<TripleDelay::Stage, TripleDelay::kStages>& stages) { mStages = stages; }
   // on: pedal ligado; a, b, c: os três botões (0 a 1). Mexe no buffer no lugar.
   void process(Type type, bool on, double* buffer, int n, double a, double b, double c);
   // Com todos os botões: knobs são "a" a "g" (0 a 1) e level é o nível (0 a
@@ -366,7 +372,14 @@ private:
   Knobs mGeqKnobs{0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
   double mGeqLevel = 0.5;     // pedido (0 a 1)
   double mGeqLevelGain = 1.0; // em uso, suavizado
-  std::vector<double> mIn, mWet;
+  SkyReverb mSky;
+  EchoDelay mEcho;
+  MultiMod mMulti;
+  TripleDelay mTriple;
+  std::array<TripleDelay::Stage, TripleDelay::kStages> mStages{};
+  std::vector<double> mIn, mWet, mDry, mGains;
+  int mMode = 0;
+  double mTone = 0.5, mFourth = 0.5, mFifth = 0.5;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)
   double mMix = 0.0;

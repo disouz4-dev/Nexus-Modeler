@@ -10,11 +10,12 @@
 //
 // As versões saem como "lançamentos" no GitHub (a etiqueta v0.2.0 vira a
 // versão 0.2.0, e o fluxo de pacotes anexa os instaladores). Ao abrir, o Nexus
-// pergunta ao GitHub qual é o último lançamento, no máximo uma vez por dia;
-// se for mais novo, mostra o aviso no topo da tela. Com um clique, baixa o
-// instalador do sistema (Windows .exe, Mac .dmg, Linux .deb ou .tar.gz) para a
-// pasta Downloads e o abre. A instalação em si é a do instalador: um plugin
-// aberto num programa de música não consegue trocar o próprio arquivo.
+// pergunta ao GitHub qual é o último lançamento; se for mais novo, pergunta se
+// a pessoa quer atualizar e deixa o ícone de atualização no topo da tela. Com
+// um clique, baixa a versão nova para a pasta Downloads. No Mac (.zip) e no
+// Linux instalado pelo terminal (.tar.gz), o próprio Nexus troca os arquivos
+// no lugar; no Windows (.exe) e no Linux pelo .deb, quem instala é o
+// instalador do sistema.
 //
 // Um só por processo (juce::SharedResourcePointer): várias janelas do plugin
 // mostram o mesmo aviso e não baixam duas vezes.
@@ -50,6 +51,11 @@ int compareVersions(const juce::String& a, const juce::String& b);
 Release parseRelease(const juce::String& json, const juce::String& system);
 // O sistema onde o programa está rodando, no formato acima.
 juce::String thisSystem();
+#if JUCE_MAC
+// Abre o .zip baixado e troca o programa e os plugins onde já estão
+// instalados. Devolve o erro (vazio: deu certo).
+juce::String installMacZip(const juce::File& zip, const juce::String& version);
+#endif
 
 class Updater : public juce::ChangeBroadcaster, private juce::Thread
 {
@@ -57,8 +63,7 @@ public:
   Updater();
   ~Updater() override;
 
-  // Ao abrir: só pergunta se a verificação automática está ligada e se já
-  // passou um dia da última vez.
+  // Ao abrir: pergunta toda vez, se a verificação automática está ligada.
   void checkIfDue();
   // Pelo menu: pergunta agora, mesmo com a automática desligada.
   void checkNow();
@@ -80,14 +85,17 @@ public:
   float progress() const { return mProgress.load(); }
   juce::String error() const;
   juce::File downloadedFile() const;
-  // Linux instalado pela pasta do usuário: a versão nova já foi colocada no
-  // lugar e só falta reabrir o Nexus.
+  // Mac, ou Linux instalado pela pasta do usuário: a versão nova já foi
+  // colocada no lugar e só falta reabrir o Nexus.
   bool installedInPlace() const { return mInPlace.load(); }
   // Abre o programa de novo (já na versão nova) e fecha este.
   static void restartProgram();
   // Verdadeiro uma vez depois de uma verificação pedida pelo menu (para a
   // tela mostrar o resultado mesmo quando não há versão nova).
   bool takeManualResult() { return mManualResult.exchange(false); }
+  // Verdadeiro só na primeira vez: a pergunta "quer atualizar?" aparece uma
+  // vez por abertura, mesmo com várias janelas do plugin.
+  bool takeFirstAsk() { return !mAsked.exchange(true); }
 
 private:
   enum class Job
@@ -112,6 +120,7 @@ private:
   std::atomic<bool> mDismissed{false};
   std::atomic<bool> mShowSkipped{false};
   std::atomic<bool> mInPlace{false};
+  std::atomic<bool> mAsked{false};
   juce::CriticalSection mLock;
   Release mRelease;
   juce::String mError;

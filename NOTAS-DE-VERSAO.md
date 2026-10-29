@@ -22,6 +22,23 @@
 - Pedais de modulação feitos pelo próprio Nexus: Tangerine Phaser (Phase 90),
   Dragonfruit Flanger (Electric Mistress), Kiwi Tremolo (TR-2) e Blackberry Vibe
   (Uni-Vibe).
+- Pedais de ambiente de vários modos, feitos pelo próprio Nexus, com visor
+  que mostra o modo:
+  - Juniper Sky (no espírito do BigSky): hall, sala, placa, mola, nuvem,
+    swell e cinco shimmers (oitava acima, quinta + oitava, oitava abaixo, só
+    na cauda e duplo). Botões: decaimento, pré-atraso, modulação, tom,
+    shimmer e mistura.
+  - Lime Echo (no espírito do DL4): digital, analógico, fita, multi-cabeça,
+    ping-pong, reverso, modulado, lo-fi, slapback, swell e dueto. Segue o tap
+    tempo e as divisões.
+  - Plum Mod (no espírito do MM4): rotary, tremolo harmônico, vibrato, filtro
+    de envelope, wah automático, modulador em anel, chorus triplo, tremolo
+    picotado, phaser de 12 estágios, flanger por zero e detune. Segue o tap
+    tempo.
+- Blueberry Chain: delays digitais em cadeia (um alimenta o outro). Botões
+  de tempo, feedback e repetição; chave 2 | 3 escolhe dois ou três delays e
+  chave x | / faz cada delay repetir o dobro ou a metade de vezes do anterior
+  (4, 8 e 16 repetições ou 4, 2 e 1). Todos no mesmo tempo; segue o tap tempo.
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
   Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).
@@ -34,6 +51,12 @@
   primeira aba) para escolher outra.
 
 ### Atualização
+- Ícone próprio no topo (nuvem com seta para baixo) quando há versão nova.
+  Toda vez que o Nexus abre, ele procura e pergunta se a pessoa quer
+  atualizar; "Agora não" deixa o ícone lá para depois.
+- No Mac, a atualização troca o programa e os plugins no lugar onde já estão,
+  sem abrir instalador. Se estiverem nas pastas do sistema, o Mac pede a
+  senha uma vez, na janela dele.
 - No Windows, a atualização instala sem perguntas e abre o Nexus de novo
   sozinha. Dentro do programa de gravação, o instalador abre normal, para a
   pessoa salvar o projeto antes.
@@ -47,9 +70,39 @@
   frequência, fileira de luzes (verde no meio = afinada), lá de referência de
   430 a 450 Hz e "mudo ao afinar".
 
+### Phaser
+- Tangerine Phaser refeito no molde do circuito do MXR Phase 90: quatro
+  estágios varridos por um oscilador triangular, som limpo e defasado meio a
+  meio. Velocidade de 0,1 a 10 Hz (o botão mostra em Hz), profundidade é a
+  largura da varredura, intensidade é a realimentação do Phase 90 de logotipo
+  em bloco (zerada, é o "script").
+
+### Pedaleira (MIDI)
+- Aprender uma pisada: a pedaleira que manda o banco junto com a troca de
+  patch ligava qualquer pisada ao pedal. Agora fica só a pisada aprendida, e
+  o registro anota o que foi aprendido.
+
+### Pedaleira na tela
+
+- Ao escolher um pedal, o palco mostra a pedaleira inteira (modelada em 3D no
+  Blender): todos os pedais da cadeia, na ordem do som, ligados por cabos.
+  O LED aceso mostra quem está ligado; pisar no pisante de qualquer pedal liga
+  e desliga, e clicar no pedal escolhe ele para mexer nos botões.
+- Até quatro pedais, uma fileira; com mais, duas fileiras (a de trás com o
+  começo do som, a da frente com o resto).
+- Cabeçote ou caixa: a pedaleira some e aparece só a peça.
+- A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
+
+### Primeira abertura
+- A cadeia de sinal começa só com o Brit 800 e a caixa dele, sem pedais. Nas
+  vezes seguintes, abre como a pessoa deixou.
+
 ### Cherry Drop
-- Visual novo: visor azul aceso mostrando o drop escolhido (−1 a −7, −12,
-  oitava + limpo), estampa de ondas e aro cromado.
+- Visual novo: visor azul sempre aceso mostrando os semitons, estampa de
+  ondas e aro cromado. O LED mostra se o pedal está ligado.
+- Botão do drop com o meio-dia sem mudar o tom: para a esquerda desce até
+  −12 semitons, para a direita sobe até +12. O segundo botão é o brilho, para
+  o som não ficar opaco quando desce.
 
 ### Menor
 - Imagens dos botões em 256 cores: a arte dos equipamentos caiu de 284 MB

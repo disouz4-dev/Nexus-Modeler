@@ -340,6 +340,23 @@ juce::Path iconPath(Icon icon, juce::Rectangle<float> r)
     out.addPath(stroke(k, 1.4f));
     return out;
   }
+  case Icon::download:
+  {
+    // Nuvem com uma seta para baixo: há uma versão nova para baixar.
+    juce::Path s;
+    s.startNewSubPath(x + w * 0.30f, y + h * 0.74f);
+    s.lineTo(x + w * 0.24f, y + h * 0.74f);
+    s.cubicTo(x - w * 0.02f, y + h * 0.74f, x + w * 0.02f, y + h * 0.38f, x + w * 0.24f, y + h * 0.40f);
+    s.cubicTo(x + w * 0.28f, y + h * 0.06f, x + w * 0.72f, y + h * 0.06f, x + w * 0.76f, y + h * 0.36f);
+    s.cubicTo(x + w * 1.02f, y + h * 0.36f, x + w * 1.02f, y + h * 0.74f, x + w * 0.76f, y + h * 0.74f);
+    s.lineTo(x + w * 0.70f, y + h * 0.74f);
+    s.startNewSubPath(x + w * 0.5f, y + h * 0.42f);
+    s.lineTo(x + w * 0.5f, y + h * 0.96f);
+    s.startNewSubPath(x + w * 0.36f, y + h * 0.82f);
+    s.lineTo(x + w * 0.5f, y + h * 0.96f);
+    s.lineTo(x + w * 0.64f, y + h * 0.82f);
+    return stroke(s, 1.6f);
+  }
   case Icon::lock:
   {
     p.addRoundedRectangle(x, y + h * 0.45f, w, h * 0.55f, 1.5f);

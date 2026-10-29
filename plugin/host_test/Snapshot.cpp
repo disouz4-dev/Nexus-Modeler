@@ -85,7 +85,10 @@ int main(int argc, char** argv)
   const juce::String stage = argc > 4 ? juce::String(argv[4]) : juce::String();
   if (stage.startsWith("pedal:"))
   {
-    // O pedal 1 recebe o pacote no lugar do cabeçote.
+    // O pedal 1 recebe o pacote no lugar do cabeçote (a cadeia abre sem pedais).
+    ChainLayout l;
+    l.pre = {0};
+    processor.setLayout(l);
     processor.loadPedalPack(0, folder);
     for (int t = 0; t < 3000 && !processor.slotLoaded(0); ++t)
     {
@@ -101,6 +104,12 @@ int main(int argc, char** argv)
     }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
+    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod).
+    if (const char* mode = std::getenv("NEXUS_MODO"))
+    {
+      auto* m = processor.params.getParameter("p1_modo");
+      m->setValueNotifyingHost(m->convertTo0to1(static_cast<float>(std::atof(mode))));
+    }
   }
   // NEXUS_IDIOMA=ja (por exemplo) tira a foto naquele idioma, sem mudar a preferência salva.
   if (const char* lang = std::getenv("NEXUS_IDIOMA"))
@@ -181,6 +190,24 @@ int main(int argc, char** argv)
       auto* look = processor.params.getParameter(NexusProcessor::ampParam(0, "cabecote"));
       look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
       e->select({NexusEditor::Kind::amp, 0});
+    }
+    else if (stage == "pedaleira")
+    {
+      // Pedaleira: cinco pedais (três antes, um entre cabeçote e caixa, um
+      // depois), alguns ligados, com o segundo escolhido.
+      ChainLayout l;
+      l.pre = {0, 1, 2};
+      l.loop[0] = {3};
+      l.post = {4};
+      processor.setLayout(l);
+      const int looks[5] = {0, NexusProcessor::kDropLook, 3, 12, 20};
+      for (int i = 0; i < 5; ++i)
+      {
+        auto* look = processor.params.getParameter(NexusProcessor::pedalParam(i, "visual"));
+        look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(looks[i])));
+        processor.params.getParameter(NexusProcessor::pedalParam(i, "ligado"))->setValueNotifyingHost(i % 2 == 0 ? 1.0f : 0.0f);
+      }
+      e->select({NexusEditor::Kind::pedal, 1});
     }
     else if (stage == "gate")
     {

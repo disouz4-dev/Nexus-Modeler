@@ -27,6 +27,7 @@ endif()
 add_library(nexus_engine STATIC
   src/AmpVoice.cpp
   src/Effects.cpp
+  src/Ambience.cpp
   src/MorphEngine.cpp
   src/Pack.cpp
   src/TestSignal.cpp
@@ -86,7 +87,8 @@ endif()
 # compressor): silêncio, valores finitos, desligar sem estalo e a resposta de cada um.
 if(NEXUS_BUILD_TOOLS)
   enable_testing()
-  add_executable(nexus_fx_test test/NativeFxTest.cpp src/Effects.cpp src/UniversalEq.cpp)
+  add_executable(nexus_fx_test test/NativeFxTest.cpp)
+  target_link_libraries(nexus_fx_test PRIVATE nexus_engine)
   target_include_directories(nexus_fx_test PRIVATE include)
   add_test(NAME efeitos_nativos COMMAND nexus_fx_test)
 endif()

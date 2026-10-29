@@ -434,14 +434,17 @@ def build(rec, fonts):
             lg = rec["logo"]
             px, py = lg.get("pos", [0.0, 0.27])
             _logo(lg, lg.get("tam_m", 0.014), (px * W / 2, py * L / 2, H + 0.0001))
+        # Nome: no meio, ou de lado nos pedais largos ("logo_x", de -1 a 1).
+        lx = rec.get("logo_x", 0.0) * W / 2
         if rec.get("logo_script"):
             name = _flat_text("logo", rec["modelo"], fonts["script"], rec.get("logo_m", 0.024),
-                              (0, rec.get("logo_y", 0.0) * L / 2, H + 0.0001), mats["ink2"])
+                              (lx, rec.get("logo_y", 0.0) * L / 2, H + 0.0001), mats["ink2"])
         else:
-            name = _flat_text("modelo", rec["modelo"], fonts["label"], 0.01, (0, rec.get("logo_y", 0.0) * L / 2, H + 0.0001), mats["ink2"])
-        _fit(name, W - 2 * rec.get("chanfro_m", 0.0045) - 0.006)
+            name = _flat_text("modelo", rec["modelo"], fonts["label"], rec.get("logo_m", 0.01),
+                              (lx, rec.get("logo_y", 0.0) * L / 2, H + 0.0001), mats["ink2"])
+        _fit(name, W - 2 * rec.get("chanfro_m", 0.0045) - 0.006 - 2 * abs(lx))
         if rec.get("tipo_texto"):
-            _flat_text("tipo", rec["tipo_texto"], fonts["label"], 0.0045, (0, rec.get("logo_y", 0.0) * L / 2 - 0.011, H + 0.0001),
+            _flat_text("tipo", rec["tipo_texto"], fonts["label"], 0.0045, (lx, rec.get("logo_y", 0.0) * L / 2 - 0.011, H + 0.0001),
                        mats["ink2"], spacing=1.6)
 
     _jacks(W, L * 0.22, top * 0.55 if shape == "compacto" else H * 0.55, mats)

@@ -35,6 +35,10 @@ NexusProcessor::NexusProcessor()
     static constexpr const char* kFxIds[7] = {"a", "b", "c", "d", "e", "f", "g"};
     for (size_t k = 0; k < p.fx.size(); ++k)
       p.fx[k] = params.getRawParameterValue(pedalParam(i, kFxIds[k]));
+    p.mode = params.getRawParameterValue(pedalParam(i, "modo"));
+    p.fourth = params.getRawParameterValue(pedalParam(i, "d"));
+    p.three = params.getRawParameterValue(pedalParam(i, kChainSwitches[0]));
+    p.multiply = params.getRawParameterValue(pedalParam(i, kChainSwitches[1]));
   }
   for (int r = 0; r < kRigs; ++r)
   {
@@ -227,7 +231,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
                                    juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Neptune Chorus",
                                                      "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Mars Phaser",
                                                      "Nebula Flanger", "Moon Tremolo", "Eclipse Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
-                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble",
+                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble", "Juniper Sky",
+                                                     "Lime Echo", "Galaxy Mod", "Blueberry Chain",
                                                      "Olive Drive", "Pistachio Drive", "Blueberry Blues", "Apricot Overdrive", "Clementine Turbo", "Cherry Fuzz", "Fig Bender", "Kiwi Drive", "Quince Plus", "Starfruit Rock", "Tamarind Amp", "Blackcurrant Bass", "Mulberry Omega", "Guava Precision", "Peach Glory", "Raspberry Drive", "Honeydew Drive", "Pineapple King", "Cashew Boost", "Papaya Grind", "Persimmon 33", "Strawberry 5150", "Gooseberry G3", "Nectarine OD", "Cranberry Wylde", "Kumquat Klone", "Elderberry War", "Mangosteen Fuzz", "Grapefruit Drive", "Jackfruit Monkey", "Pitanga 250", "Lychee Bass Fuzz", juce::String::fromUTF8("Cupuaçu Hammer"), "Graviola Bass DI", "Acerola EQ", "Comet Wah", "Saturn Rotary", "Pulsar Echo", "Jupiter Octave", "Apple Comp"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
@@ -238,6 +243,21 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
   // O "Testar o som" continua tocando com a entrada no mudo.
   layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
+  // Pedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod): o seletor de
+  // modo e o quarto botão. No fim da lista, para não mexer na ordem dos outros.
+  for (int i = 0; i < kPedals; ++i)
+  {
+    const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
+    layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "modo"), 1}, name + "modo", stepped, 0.0f));
+  }
+  // Blueberry Chain: as duas chaves (2 ou 3 delays; dobrar ou dividir o
+  // tempo). No fim, como os de cima.
+  for (int i = 0; i < kPedals; ++i)
+  {
+    const juce::String name = "Pedal " + juce::String(i + 1) + ": ";
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[0]), 1}, name + juce::String::fromUTF8("três delays"), true));
+    layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, kChainSwitches[1]), 1}, name + "multiplicar o tempo", true));
+  }
   return layout;
 }
 
@@ -402,31 +422,41 @@ struct LoadTimer
 
 void NexusProcessor::runDrop(int pedal, double* buffer, int n)
 {
-  // Cherry Drop: botão A escolhe o drop (1 a 7 semitons, oitava, oitava com o
-  // som limpo); botão B é a mistura (10 = só o som com o tom baixado).
+  // Cherry Drop: botão A escolhe os semitons (meio-dia = sem mudar, para a
+  // esquerda desce até -12, para a direita sobe até +12); botão B é o brilho,
+  // para compensar o som que fica mais opaco quando desce.
   auto& p = mPedals[static_cast<size_t>(pedal)];
   const float target = p.on->load() > 0.5f ? 1.0f : 0.0f;
   if (target == 0.0f && p.dropMix == 0.0f)
     return;
-  if (target == 1.0f && p.dropMix == 0.0f)
-    p.drop->reset(); // liga limpo, sem resto da última vez
-  const int sel = juce::jlimit(0, 8, juce::roundToInt(p.fx[0]->load() / 10.0f * 8.0f));
-  const float semis = sel < 7 ? -static_cast<float>(sel + 1) : -12.0f;
-  if (semis != p.dropSemitones)
+  const int semis = dropSemitones(p.fx[0]->load());
+  const float shiftTarget = semis != 0 ? 1.0f : 0.0f;
+  if (semis != 0 && static_cast<float>(semis) != p.dropSemitones)
   {
-    p.dropSemitones = semis;
-    p.drop->setSemitones(semis);
+    p.dropSemitones = static_cast<float>(semis);
+    p.drop->setSemitones(p.dropSemitones);
   }
-  const float wet = juce::jlimit(0.0f, 1.0f, p.fx[1]->load() / 10.0f);
-  const float dryKeep = sel == 8 ? 1.0f : 1.0f - wet; // oitava com o limpo: o limpo fica inteiro
+  // O motor só trabalha com drop escolhido; no meio-dia passa o som direto.
+  const bool shifting = shiftTarget > 0.0f || p.dropShift > 0.0f;
+  if (shifting && (p.dropShift == 0.0f || p.dropMix == 0.0f))
+    p.drop->reset(); // começa limpo, sem resto da última vez
   for (int i = 0; i < n; ++i)
     mDropFloat[static_cast<size_t>(i)] = static_cast<float>(buffer[i]);
-  p.drop->process(mDropFloat.data(), n);
+  if (shifting)
+    p.drop->process(mDropFloat.data(), n);
+  // Brilho: meio-dia é o som como sai; para a direita realça os agudos, para a
+  // esquerda escurece (filtro de prateleira simples em volta de 1,5 kHz).
+  const float b = (p.fx[1]->load() - 5.0f) / 5.0f;
+  const double bright = b >= 0.0f ? 1.5 * b : 0.75 * b;
+  const double lowCoef = 1.0 - std::exp(-juce::MathConstants<double>::twoPi * 1500.0 / kEngineRate);
   const float mixStep = static_cast<float>(1.0 / (kPedalFadeSeconds * kEngineRate));
   for (int i = 0; i < n; ++i)
   {
     p.dropMix = target > p.dropMix ? std::min(target, p.dropMix + mixStep) : std::max(target, p.dropMix - mixStep);
-    const double effect = buffer[i] * dryKeep + mDropFloat[static_cast<size_t>(i)] * wet;
+    p.dropShift = shiftTarget > p.dropShift ? std::min(shiftTarget, p.dropShift + mixStep) : std::max(shiftTarget, p.dropShift - mixStep);
+    double effect = buffer[i] * (1.0 - p.dropShift) + mDropFloat[static_cast<size_t>(i)] * p.dropShift;
+    p.dropLow += lowCoef * (effect - p.dropLow);
+    effect += bright * (effect - p.dropLow);
     buffer[i] = buffer[i] * (1.0 - p.dropMix) + effect * p.dropMix;
   }
 }
@@ -440,11 +470,34 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
   if (const int look = pedalLook(pedal); isNativeLook(look))
   {
     auto& p = mPedals[static_cast<size_t>(pedal)];
+    if (pedalKind(look) == PedalKind::triple)
+    {
+      // Delays em série, todos no tempo do botão (ou na divisão do andamento).
+      // O feedback dá quantas vezes o primeiro repete (de 1 a 8); cada um
+      // seguinte repete o dobro (x) ou a metade (/) de vezes do anterior.
+      const float knob = p.fx[0]->load();
+      const double seconds = p.sync->load() > 0.5f ? divisionBeats(divisionFor(knob)) * 60.0 / tempoBpm()
+                                                   : nexus::TripleDelay::secondsFor(knob / 10.0);
+      const double first = 1.0 + 7.0 * p.fx[1]->load() / 10.0;
+      const double ratio = p.multiply->load() > 0.5f ? 2.0 : 0.5;
+      std::array<nexus::TripleDelay::Stage, 3> stages{};
+      for (size_t s = 0; s < 3; ++s)
+      {
+        auto& st = stages[s];
+        st.on = s < 2 || p.three->load() > 0.5f;
+        st.seconds = seconds;
+        st.repeats = first * std::pow(ratio, static_cast<double>(s));
+        st.level = p.fx[2]->load() / 10.0;
+      }
+      p.native.setTriple(stages);
+      p.native.process(nexus::NativePedal::Type::triple, p.on->load() > 0.5f, buffer, n, 0.0, 0.0, 0.0);
+      return;
+    }
     // Andamento: a velocidade (botão A) escolhe a divisão; no delay, o tempo.
     if (p.sync->load() > 0.5f && syncsToTempo(look))
     {
       const double seconds = divisionBeats(divisionFor(p.fx[0]->load())) * 60.0 / tempoBpm();
-      if (pedalKind(look) == PedalKind::delay || pedalKind(look) == PedalKind::analogdelay)
+      if (pedalKind(look) == PedalKind::delay || pedalKind(look) == PedalKind::analogdelay || pedalKind(look) == PedalKind::echo)
         p.native.setSync(0.0, seconds);
       else
         p.native.setSync(1.0 / seconds, 0.0);
@@ -468,8 +521,14 @@ void NexusProcessor::runPedal(int pedal, double* buffer, int n)
       case PedalKind::octave: type = T::octave; break;
       case PedalKind::comp: type = T::comp; break;
       case PedalKind::geq: type = T::geq; break;
+      case PedalKind::sky: type = T::sky; break;
+      case PedalKind::echo: type = T::echo; break;
+      case PedalKind::multiMod: type = T::multiMod; break;
       default: break;
     }
+    // Vários modos: o modo, o tom, o quarto botão e (no reverb) o shimmer, que usa o "nível".
+    if (hasModes(look))
+      p.native.setExtras(juce::roundToInt(p.mode->load()), p.tone->load() / 10.0, p.fourth->load() / 10.0, p.levelParam->load() / 10.0);
     nexus::NativePedal::Knobs knobs{};
     for (size_t k = 0; k < knobs.size(); ++k)
       knobs[k] = p.fx[k]->load() / 10.0;
@@ -906,6 +965,18 @@ const char* NexusProcessor::divisionName(int i)
 {
   static const char* const names[kDivisions] = {"1/1", "1/2", "1/4", "1/8.", "1/6", "1/8", "1/12", "1/16", "1/32"};
   return names[juce::jlimit(0, kDivisions - 1, i)];
+}
+
+juce::String NexusProcessor::modeName(int look, float modeKnob)
+{
+  const int mode = juce::roundToInt(modeKnob);
+  switch (pedalKind(look))
+  {
+    case PedalKind::sky: return TRANS(juce::String::fromUTF8(nexus::SkyReverb::modeName(mode)));
+    case PedalKind::echo: return TRANS(juce::String::fromUTF8(nexus::EchoDelay::modeName(mode)));
+    case PedalKind::multiMod: return TRANS(juce::String::fromUTF8(nexus::MultiMod::modeName(mode)));
+    default: return {};
+  }
 }
 
 double NexusProcessor::divisionBeats(int i)

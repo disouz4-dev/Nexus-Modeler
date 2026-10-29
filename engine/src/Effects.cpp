@@ -217,24 +217,36 @@ void Phaser::reset()
   mPhase = 0.0;
 }
 
+double Phaser::rateHz(double knob01)
+{
+  return 0.1 * std::pow(100.0, std::clamp(knob01, 0.0, 1.0));
+}
+
 void Phaser::process(double* buffer, int n, double rate, double depth, double feedback)
 {
-  // 0,05 a 8 Hz; varredura de 200 Hz até 200 Hz x (2 a 16), em escala de oitavas.
-  const double hz = syncHz > 0.0 ? syncHz : 0.05 + 7.95 * rate * rate;
-  const double step = hz / mRate;
+  // Faixa da frequência dos estágios (no pedal, o JFET entre poucos kΩ e
+  // centenas de kΩ com os 47 nF): de 140 Hz a 2,5 kHz, centrada em ~590 Hz.
+  constexpr double kLow = 140.0, kHigh = 2500.0;
+  const double center = std::log(std::sqrt(kLow * kHigh));
+  const double span = std::log(kHigh / kLow);
+  const double hzTarget = syncHz > 0.0 ? syncHz : rateHz(rate);
   for (int i = 0; i < n; ++i)
   {
+    mHz = smooth(mHz, hzTarget, mRate);
     mDepth = smooth(mDepth, depth, mRate);
     mFeedback = smooth(mFeedback, feedback, mRate);
-    const double lfo = 0.5 - 0.5 * std::cos(2.0 * kPi * mPhase);
-    const double f = 200.0 * std::pow(2.0, lfo * (1.0 + 3.0 * mDepth));
+    // Oscilador triangular, como o do pedal.
+    const double tri = mPhase < 0.5 ? 4.0 * mPhase - 1.0 : 3.0 - 4.0 * mPhase;
+    const double f = std::exp(center + 0.5 * span * mDepth * tri);
     const double a = allPassCoef(f, mRate);
-    double y = buffer[i] + mLast * 0.75 * mFeedback;
+    // Realimentação limitada com suavidade, para nunca disparar.
+    double y = buffer[i] + std::tanh(mLast * 0.7 * mFeedback);
     for (auto& z : mState)
       y = allPass(y, a, z);
     mLast = y;
-    buffer[i] = 0.5 * (buffer[i] + y) * 1.15;
-    mPhase += step;
+    // Limpo e defasado meio a meio: é a soma que cria os vales.
+    buffer[i] = 0.5 * (buffer[i] + y) * 1.1;
+    mPhase += mHz / mRate;
     if (mPhase >= 1.0)
       mPhase -= 1.0;
   }
@@ -683,7 +695,8 @@ void Compressor::process(double* buffer, int n, double level, double sensitivity
 void NativePedal::setSync(double hz, double seconds)
 {
   mChorus.syncHz = mPhaser.syncHz = mFlanger.syncHz = mTremolo.syncHz = mVibe.syncHz = hz;
-  mDelay.syncSeconds = mAnalogDelay.syncSeconds = seconds;
+  mDelay.syncSeconds = mAnalogDelay.syncSeconds = mEcho.syncSeconds = seconds;
+  mMulti.syncHz = hz;
 }
 
 void NativePedal::prepare(double sampleRate, int maxBlock)
@@ -703,8 +716,14 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mOctave.prepare(sampleRate);
   mComp.prepare(sampleRate);
   mGeq.prepare(sampleRate);
+  mSky.prepare(sampleRate);
+  mEcho.prepare(sampleRate);
+  mMulti.prepare(sampleRate);
+  mTriple.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
+  mDry.assign(static_cast<size_t>(maxBlock), 1.0);
+  mGains.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
 }
 
@@ -725,6 +744,10 @@ void NativePedal::reset()
   mComp.reset();
   mGeq.reset();
   mGeqLevelGain = std::pow(10.0, (mGeqLevel - 0.5) * 2.0 * kGeqMaxDb / 20.0);
+  mSky.reset();
+  mEcho.reset();
+  mMulti.reset();
+  mTriple.reset();
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -835,10 +858,17 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mOctave.reset();
     mComp.reset();
     mGeq.reset();
+    mSky.reset();
+    mEcho.reset();
+    mMulti.reset();
+    mTriple.reset();
     mLast = type;
   }
+  // Rastro de até 6 s depois de desligar (o reverb de vários modos tem
+  // caudas de até 25 s; o delay, repetições longas).
+  const double tailSeconds = type == Type::sky ? 25.0 : type == Type::echo || type == Type::triple ? 12.0 : 6.0;
   if (on)
-    mTail = static_cast<int>(6.0 * mRate); // rastro de até 6 s depois de desligar
+    mTail = static_cast<int>(tailSeconds * mRate);
   else if (mTail > 0)
     mTail -= n;
   if (!on && mGain <= 0.0 && mTail <= 0)
@@ -859,7 +889,8 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  if (type != Type::delay && type != Type::reverb && type != Type::analogdelay)
+  if (type != Type::delay && type != Type::reverb && type != Type::analogdelay && type != Type::sky && type != Type::echo
+      && type != Type::triple)
   {
     // Modulação, wah, oitavador e compressor não têm rastro: liga e
     // desliga com transição de 20 ms.
@@ -875,6 +906,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       case Type::octave: mOctave.process(mIn.data(), n, a, b, c); break;
       case Type::comp: mComp.process(mIn.data(), n, a, b, c); break;
       case Type::geq: processGeq(mIn.data(), n); break;
+      case Type::multiMod: mMulti.process(mIn.data(), n, mMode, a, b, c, mTone, mFourth); break;
       default: mChorus.process(mIn.data(), n, a, b, c); break;
     }
     for (int i = 0; i < n; ++i)
@@ -886,7 +918,30 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       mTail = 0;
     return;
   }
-  // Delays e reverb: a entrada do efeito liga e desliga; a saída continua
+  // Reverb e delay de vários modos: como os de baixo, mas o modo swell
+  // também mexe no seco (a nota entra devagar) enquanto o pedal está ligado.
+  if (type == Type::sky || type == Type::echo)
+  {
+    for (int i = 0; i < n; ++i)
+    {
+      mGain = on ? std::min(1.0, mGain + step) : std::max(0.0, mGain - step);
+      mGains[static_cast<size_t>(i)] = mGain;
+      mIn[static_cast<size_t>(i)] = buffer[i] * mGain;
+    }
+    if (type == Type::sky)
+      mSky.process(mIn.data(), mWet.data(), mDry.data(), n, mMode, a, b, mTone, mFourth, mFifth);
+    else
+      mEcho.process(mIn.data(), mWet.data(), mDry.data(), n, mMode, a, b, mTone, mFourth);
+    for (int i = 0; i < n; ++i)
+    {
+      const auto s = static_cast<size_t>(i);
+      mMix = smooth(mMix, c, mRate);
+      const double dry = 1.0 - mGains[s] * (1.0 - mDry[s]);
+      buffer[i] = buffer[i] * dry + mWet[s] * mMix;
+    }
+    return;
+  }
+  // Delay e reverb: a entrada do efeito liga e desliga; a saída continua
   // soando até o rastro acabar (o som seco nunca é tocado).
   for (int i = 0; i < n; ++i)
   {
@@ -897,9 +952,12 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mDelay.process(mIn.data(), mWet.data(), n, a, b);
   else if (type == Type::analogdelay)
     mAnalogDelay.process(mIn.data(), mWet.data(), n, a, b);
+  else if (type == Type::triple)
+    mTriple.process(mIn.data(), mWet.data(), n, mStages);
   else
     mReverb.process(mIn.data(), mWet.data(), n, a, b);
-  const double target = type == Type::reverb ? c * 1.2 : c;
+  // No Blueberry Chain o nível de cada delay já está nas repetições.
+  const double target = type == Type::triple ? 1.0 : type == Type::reverb ? c * 1.2 : c;
   for (int i = 0; i < n; ++i)
   {
     mMix = smooth(mMix, target, mRate);

@@ -1,0 +1,93 @@
+{
+  "tipo": "pedal",
+  "nome": "Blueberry Chain",
+  "familia": "blueberry_chain",
+  "inspiracao": "delay de três repetições em cadeia, azul-mirtilo quase preto, com chaves 2|3 e x|/ (desenho próprio)",
+  "formato": "padrao",
+  "medidas_m": {
+    "largura": 0.125,
+    "comprimento": 0.16,
+    "altura": 0.055
+  },
+  "chanfro_m": 0.004,
+  "pintura": {
+    "cor": [
+      0.028,
+      0.032,
+      0.1
+    ],
+    "metalico": 0.65,
+    "aspereza": 0.2
+  },
+  "texto_cor": [
+    0.95,
+    0.91,
+    0.83
+  ],
+  "texto_cor2": [
+    0.95,
+    0.91,
+    0.83
+  ],
+  "modelo": "BLUEBERRY CHAIN",
+  "logo_x": 0.0,
+  "logo_y": -0.3,
+  "logo_m": 0.0105,
+  "tipo_texto": "CHAIN DELAY",
+  "pisante_y": -0.66,
+  "rotulo_m": 0.003,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.013,
+    "corpo": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "traco": [
+      0.95,
+      0.91,
+      0.83
+    ]
+  },
+  "botoes": [
+    {
+      "id": "a",
+      "rotulo": "TEMPO",
+      "pos": [
+        -0.6,
+        0.6
+      ],
+      "escala": 1.45
+    },
+    {
+      "id": "b",
+      "rotulo": "FEEDBACK",
+      "pos": [
+        0.0,
+        0.6
+      ],
+      "escala": 1.45
+    },
+    {
+      "id": "c",
+      "rotulo": "REPETIÇÃO",
+      "pos": [
+        0.6,
+        0.6
+      ],
+      "escala": 1.45
+    }
+  ],
+  "led": [
+    0.0,
+    0.1
+  ],
+  "quadro": {
+    "largura_rel": 1.6,
+    "proporcao": 0.85,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true,
+  "medidas_fonte": "caixa de pedal grande: 125 x 160 x 55 mm"
+}
