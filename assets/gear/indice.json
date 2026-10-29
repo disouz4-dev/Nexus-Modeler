@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:17:40Z",
+ "gerado": "2026-10-29T15:17:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4953,8 +4953,8 @@
   },
   "recto_dual": {
    "nome": "Recto Dual",
-   "hash": "f2e975d8aef670f7",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "54ca5396f9d274d5",
+   "data": "2026-10-29T15:17:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -4969,24 +4969,24 @@
     "recto_dual_mapa.json"
    ],
    "sha256": {
-    "recto_dual_botao_agudo.png": "abc400baedc59e8959b8b9332a33feb1fef99a51c3409fb649d50bf94c28a63a",
-    "recto_dual_botao_ganho.png": "4ae9ee2cbf506d594e1ad13075ddbcc20a5b2a0108e3df1efc35cdd8d672a43a",
-    "recto_dual_botao_grave.png": "6787a9e6bcfa91ea9282d887aa3d341f0e05288f5a28ce211c770ce3c62314ed",
-    "recto_dual_botao_medio.png": "fd0e6b8a39e37987b23f197edf0bc2be2f462cc7b8fc11dffcfc8fa4d8bc7199",
-    "recto_dual_botao_presenca.png": "aa2ee7e81173228f5123c7443eb1a96956c4d904c1473b8b609d9b67bdc07f14",
-    "recto_dual_botao_volume.png": "f31e1788bfcac061b1ce9b60b9a933f3c1536502c8dcd7966396fd4d2538cf78",
-    "recto_dual_frente.jpg": "e77fa59cebb400f4606d56f1a8b4679241eded37a52cbeefd5cb48c5678371f5",
-    "recto_dual_frente_alfa.png": "4f80ccc21f352319c8d357de5ebba29ff91b3c32b17851e82cf9e902bf0d0e98",
-    "recto_dual_manifesto.json": "6e0bafc657f10706a80133e0cafe9c8816b0aa3f1a59e958f4c68399ca7b62ea",
-    "recto_dual_mapa.json": "f1e95cdb7bb2cde8f728cee119f2dfe21d8e6e26ded17c1dfb60914c1fad313b"
+    "recto_dual_botao_agudo.png": "3cb68262f33b6509056e054b773435b16a7e371a6fcc33b8e96db1aad913158f",
+    "recto_dual_botao_ganho.png": "7023b3c29cb970593b6c413d0cad167166dc0b96f4bbd44f553cdd5982cfa101",
+    "recto_dual_botao_grave.png": "6c7ddd295bb84ba6328468265c790f66d7296f45b5e213d804cd09a4c34ff65b",
+    "recto_dual_botao_medio.png": "56e02c0721b83e6b3a913f66f037c043492d35b6112b440d596062d5931d73d9",
+    "recto_dual_botao_presenca.png": "76f21899baec441b8a99cb2b6ce8643aeb87fecda62887d010f5c6eedf84b8c2",
+    "recto_dual_botao_volume.png": "b6bb1fba82d646cfa1de512591d5b0cba812a1ece424cc4b51b666796bc45294",
+    "recto_dual_frente.jpg": "8e6b1d07f16c2ef3817a6c03e92058583b3dfade5a882a7fa35871ecf06ce003",
+    "recto_dual_frente_alfa.png": "5e6d2cd05db753a6c6f5c4493299f848901c5af3cf4cfc6b31989ed7a3ead749",
+    "recto_dual_manifesto.json": "f88d58387cb3ff9eda8318ba0621a08f8ea5731a5b7b1d65cf9b11206d7e9e9e",
+    "recto_dual_mapa.json": "cfa4b5cbe079894a50be7b8e90a639089e02511c0218a85621099518c3e7f61c"
    },
-   "tamanho": 1494984,
+   "tamanho": 1133874,
    "tipo": "cabecote",
    "inspiracao": "Dual Rectifier",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
