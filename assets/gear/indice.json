@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:33:43Z",
+ "gerado": "2026-10-29T16:35:48Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2000,8 +2000,8 @@
   },
   "doublestone50": {
    "nome": "Double Stone 50",
-   "hash": "d57445681b09670d",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "1b5c90882840052b",
+   "data": "2026-10-29T16:35:48Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "doublestone50_botao_agudo.png",
@@ -2016,24 +2016,24 @@
     "doublestone50_mapa.json"
    ],
    "sha256": {
-    "doublestone50_botao_agudo.png": "b94a660fa7991e5ab1dcf157ba1e954fd84646a5814f16fa937711b429aecf81",
-    "doublestone50_botao_ganho.png": "b9857f8d80056feefb08e8710719572b036390e024e45e10963e6003f3490969",
-    "doublestone50_botao_grave.png": "19bb7d1941131325dac9cec800fe6a0c8e9cd50d8edb036fc0d5ce85e8058984",
-    "doublestone50_botao_medio.png": "efef722cf4be9b460727441beb86a6c3823d3e4b518519c5a7d80f6d48cfaf41",
-    "doublestone50_botao_presenca.png": "c75cd9f1304d435e442f6da3fe713822d08b2524b65747d1d69331a76b6c4480",
-    "doublestone50_botao_volume.png": "8651e3483ea80e105f3e9694851a5341b26787239b9347a21ba48d8c7efdc01f",
-    "doublestone50_frente.jpg": "8633d040da9205af5c1de13442c129325030aacc23c2ffb38fd59293c47457d4",
-    "doublestone50_frente_alfa.png": "5ba2fddf86c15d608c729039ceb2596c083ad7cb79ec81dd1ad4cbc797190d43",
-    "doublestone50_manifesto.json": "439bb698a5affe162fbe014bfa158b094c7407966e04c2cb11185e1d37edf6f4",
-    "doublestone50_mapa.json": "3c4fd7cbd0fe159d4a405ff27228bb68b97688936d5f0e8c5d2338ab1a88944e"
+    "doublestone50_botao_agudo.png": "5d1a470a1d664af801522525760b77af77622194cc5adb86d2b16d0edb30da47",
+    "doublestone50_botao_ganho.png": "9427a4e53ae3a3514e7cabc1a29b642c7f43870f47aaea941459879cecbcb29f",
+    "doublestone50_botao_grave.png": "9e3626b99bd2b3d4a7ca4268fd1bdffd12776a98d31f0a9aebacf3ec7c8f11cb",
+    "doublestone50_botao_medio.png": "d0476fde5e309a4b1856e46cc81fef27b39674243c7805458278168bb5f2458b",
+    "doublestone50_botao_presenca.png": "2427f2cd673be3208dfaae391aa8ac5e72ebf2b4679e89e4e619b79e70e5b373",
+    "doublestone50_botao_volume.png": "2570f56bd53fcd997fd6e587f6237726fc0b23cbcae6aa5c2b30febd99d80410",
+    "doublestone50_frente.jpg": "b4829a6e3f523bf19dd87c089aac7ade11799908887c330dfb0a9e137852692f",
+    "doublestone50_frente_alfa.png": "5efe5a2df699cec5d48a2291aa99e97839eea62ab2a24a580fcc74b8a2d55306",
+    "doublestone50_manifesto.json": "81dd697d5b9251043a07a5b9505cc3de90d2e1a5864359546143e0f9734fe94d",
+    "doublestone50_mapa.json": "a39f739bfb1987c7f055ac8dd06eb9ad099b9fb9347f2c5129540103c7ba9261"
    },
-   "tamanho": 1679368,
+   "tamanho": 1682186,
    "tipo": "cabecote",
    "inspiracao": "Two-Rock Classic Reverb",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
