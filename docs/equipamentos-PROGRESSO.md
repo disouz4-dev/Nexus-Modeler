@@ -28,7 +28,11 @@ Decisões do dono que valem sobre o plano:
   3901d61 (`--conferir` compara). `tools/site/catalogo.py` lê as fichas.
   Teste: `nexus_gear_test assets/gear` (catálogo = fichas) e fotos da tela
   (`nexus_snapshot`) iguais às de antes, fora o texto de uso do processador.
-- [ ] **2. Id em texto no estado.**
+- [x] **2. Id em texto no estado.** `p<n>_visual_id`, `cabecote_id[_b]`,
+  `gabinete_id[_b]` no estado; parâmetros de escolha congelados; peça baixada
+  guarda a escolha à parte e deixa o parâmetro no de fábrica do mesmo motor;
+  id não instalado fica marcado (pedal passa direto) e não se perde ao salvar.
+  Teste: `nexus_gear_test` monta o estado da versão antiga (sem ids) e confere.
 - [ ] **4. Pacote no disco e instalação.**
 - [ ] **5. Busca e download no mesmo repositório.**
 

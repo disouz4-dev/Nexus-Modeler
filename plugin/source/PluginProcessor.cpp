@@ -1243,6 +1243,15 @@ void NexusProcessor::getStateInformation(juce::MemoryBlock& destData)
     state.setProperty("pacote_" + juce::String(i), mSlots[static_cast<size_t>(i)].folder.getFullPathName(), nullptr);
   for (int r = 0; r < kRigs; ++r)
     state.setProperty("ir_" + juce::String(r), mCabs[static_cast<size_t>(r)].file.getFullPathName(), nullptr);
+  // Id em texto de cada peça, além do índice no parâmetro: equipamento
+  // baixado só existe por aqui.
+  for (int i = 0; i < kPedals; ++i)
+    state.setProperty(gearIdKey(nexus::gear::Kind::pedal, i), gearId(nexus::gear::Kind::pedal, i), nullptr);
+  for (int r = 0; r < kRigs; ++r)
+  {
+    state.setProperty(gearIdKey(nexus::gear::Kind::amp, r), gearId(nexus::gear::Kind::amp, r), nullptr);
+    state.setProperty(gearIdKey(nexus::gear::Kind::cab, r), gearId(nexus::gear::Kind::cab, r), nullptr);
+  }
   for (const char* child : {"midi", "cadeia"})
     state.removeChild(state.getChildWithName(child), nullptr);
   state.appendChild(mMidi->toValueTree(), nullptr);
@@ -1259,6 +1268,7 @@ void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
     if (!state.hasType(params.state.getType()))
       return;
     params.replaceState(state);
+    restoreGearIds(state);
     mMidi->fromValueTree(state.getChildWithName("midi"));
     setLayout(ChainLayout::fromValueTree(state.getChildWithName("cadeia")));
     for (int i = 0; i < kSlots; ++i)
