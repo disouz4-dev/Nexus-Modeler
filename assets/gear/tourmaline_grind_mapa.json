@@ -1,24 +1,24 @@
 {
   "nome": "Tourmaline Grind",
-  "familia": "tourmaline_grind",
+  "familia": "papaya_grind",
   "largura": 600,
   "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 239,
+      "y": 103,
+      "tamanho": 122,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 154,
+      "y": 506,
+      "tamanho": 54,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 392,
+      "y": 506,
+      "tamanho": 54,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,46 +36,46 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    60,
+    112
   ],
   "rotulos": [
     {
-      "texto": "VOLUME",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "NÍVEL",
+      "x": 300.0,
+      "y": 250.4,
+      "altura": 19.98,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#28282a",
       "espaco": 1.15
     },
     {
       "texto": "GANHO",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 183.5,
+      "y": 581.6,
+      "altura": 14.43,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#28282a",
       "espaco": 1.15
     },
     {
       "texto": "AGUDO",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 416.5,
+      "y": 581.6,
+      "altura": 14.43,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#28282a",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 588.0,
+    "raio": 69.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "y": 306.3,
+    "raio": 17.3
   }
 }
