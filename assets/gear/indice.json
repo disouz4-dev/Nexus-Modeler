@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:15:02Z",
+ "gerado": "2026-10-29T16:23:11Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3270,8 +3270,8 @@
   },
   "jamun_od": {
    "nome": "Jamun OD",
-   "hash": "e26a8fa8afdd6f88",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "021c4641409d161a",
+   "data": "2026-10-29T16:23:11Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jamun_od_botao_ganho.png",
@@ -3283,21 +3283,21 @@
     "jamun_od_mapa.json"
    ],
    "sha256": {
-    "jamun_od_botao_ganho.png": "49c0a1dc6872ec96e46eab1be806fc6416a40a060032484a5a059438bc97ce43",
-    "jamun_od_botao_nivel.png": "4ab6e9f3a92b0bcc2e9621f945620308d6adf7af01cfa5b65d1ab7dad37e14e5",
-    "jamun_od_botao_tom.png": "428f5b565f7fa9992be9d53a93be01da026a7ac6eece1abdd4604513e3fd2eb9",
-    "jamun_od_frente.jpg": "401e0563a7dd0bf8ed3638d022ce3fa5d444aacb781687bec74df0d3cdec98fe",
-    "jamun_od_frente_alfa.png": "69ea79e2ce97991634002ddc1fe2acf4f0c0f7bc7526c9a73ec236d40ba138f7",
-    "jamun_od_manifesto.json": "c420562ef4e59fb3f64f902cbf53446a1416408a6602567cfccd2a81fc9c610a",
-    "jamun_od_mapa.json": "c5d8e94a078bbdc30fd81ee692976a29156d4f3f09f71e06046534e579c90342"
+    "jamun_od_botao_ganho.png": "f0ac8afdd34fe50e32da85a7f3cd86fcf0872183553a161aec40f9e86ae31836",
+    "jamun_od_botao_nivel.png": "b8dacfc6667b27ad3b3f09b378816efc54e826401dd5ed6cad1573e45447ca37",
+    "jamun_od_botao_tom.png": "9aa26b46245e774477b817f4117a3c7a73be767cd40256767896a9831ee94738",
+    "jamun_od_frente.jpg": "8b9d22be061961f02874a5dd4322c2d8459b2e6c872735ca21cf2edad6b773a7",
+    "jamun_od_frente_alfa.png": "8828c3a3b8bbc6af598c152889e4b9da37ebe4b758f34845d3ad9b90f0843327",
+    "jamun_od_manifesto.json": "f42edf89d472a4ee79cafb4f5c4f2c566a0d8b43cdd7f964717d420c6f4831af",
+    "jamun_od_mapa.json": "ec14622017ba403790f88999c269ab4db3926fbde4cb35dd05021f42717c228f"
    },
-   "tamanho": 210269,
+   "tamanho": 289080,
    "tipo": "pedal",
    "inspiracao": "Friedman BE-OD",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
