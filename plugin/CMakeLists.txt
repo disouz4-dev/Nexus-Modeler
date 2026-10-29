@@ -282,6 +282,11 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_recommended_config_flags)
   add_test(NAME catalogo_de_equipamentos
            COMMAND nexus_gear_test "${PROJECT_SOURCE_DIR}/assets/gear")
+  # O mesmo catálogo num programa de versão de teste (como o da etiqueta v0.2.0-beta.1):
+  # as peças que pedem "0.2.0" têm de abrir nele.
+  add_test(NAME catalogo_na_versao_de_teste
+           COMMAND nexus_gear_test "${PROJECT_SOURCE_DIR}/assets/gear")
+  set_tests_properties(catalogo_na_versao_de_teste PROPERTIES ENVIRONMENT "NEXUS_VERSAO_ATUAL=${PROJECT_VERSION}-beta.1")
 
   # Ferramenta manual: passa uma gravação de guitarra pela cadeia com material da TONE3000.
   juce_add_console_app(nexus_render PRODUCT_NAME "nexus_render")
