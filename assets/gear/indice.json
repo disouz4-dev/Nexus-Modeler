@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:18:35Z",
+ "gerado": "2026-10-29T15:18:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6229,8 +6229,8 @@
   },
   "twin_212": {
    "nome": "Twin 2x12",
-   "hash": "341ab7582b94c01b",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "e26f89e10a0d6188",
+   "data": "2026-10-29T15:18:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "twin_212_frente.jpg",
@@ -6239,18 +6239,18 @@
     "twin_212_mapa.json"
    ],
    "sha256": {
-    "twin_212_frente.jpg": "c6243df590d80129fdd5703ce591b297a93474182385dc2b9dc52aac15e49d5f",
-    "twin_212_frente_alfa.png": "704ae706dcb15f7e541066576381c510da34c8a8e3d17f05011d85a79d7990ad",
-    "twin_212_manifesto.json": "5c4c11ba4d4cf9aac33b126949acec5c0feedca87d9a537385809c2640a3c78d",
-    "twin_212_mapa.json": "2d7b1929a0fcdbb772506caeb3445bb1f13f8fe7c36869b0f266829923e791a1"
+    "twin_212_frente.jpg": "a778dce7a5f9783e4b82e0e81d933aad369e0c22efdef47441fe0055fb2aceb2",
+    "twin_212_frente_alfa.png": "09bcffeea884e053d4aef60d8f420bd0b7e0a38083f6bc3813baca958bec8153",
+    "twin_212_manifesto.json": "42ea65dc25b8da513f561be26100058d7908cdf5bd109a353c89ab2bca7198da",
+    "twin_212_mapa.json": "f05f9af377f767b8337951296d00adaee0f91477629cb03368394183e3433508"
    },
-   "tamanho": 547786,
+   "tamanho": 888926,
    "tipo": "caixa",
    "inspiracao": "Fender Twin 2x12",
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
