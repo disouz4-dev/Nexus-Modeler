@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:19:41Z",
+ "gerado": "2026-10-29T15:19:46Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5070,8 +5070,8 @@
   },
   "rg_412": {
    "nome": "RG 4x12",
-   "hash": "4327a5f6bcc3c20e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "d21d1bfdb179d823",
+   "data": "2026-10-29T15:19:46Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg_412_frente.jpg",
@@ -5080,18 +5080,18 @@
     "rg_412_mapa.json"
    ],
    "sha256": {
-    "rg_412_frente.jpg": "a3ae168993ac3f14a10f25c7f4a6b1eea56520aa9e02d81990a0f5f969ee1e8c",
-    "rg_412_frente_alfa.png": "0dd509d5f2232c9a31d4bad4937fb1e5db84a92913c382cb44a568c54f7e3a2a",
-    "rg_412_manifesto.json": "9dfa2ab358fb2abe9a94c1389c28c7391607b6374afc0df8289467e2c70d9853",
-    "rg_412_mapa.json": "ea4b60811eb6f8dddfca17eb97a3220b0a63e330ebcdd5bf85e362de54935870"
+    "rg_412_frente.jpg": "dd0c6e2460ad3f62c1bfb1fac0934d2f3165eb2c91216458734c3710a5ceaa7d",
+    "rg_412_frente_alfa.png": "1d5a1c82911e151d65afc5c28858393fa4e0fad2140846dbc82fb0e232bf41b6",
+    "rg_412_manifesto.json": "a226148e35d495537a1d044e9368891ac99e3c2b13bfd1fd45ec67f45c969ec0",
+    "rg_412_mapa.json": "73acb8d3884ca075bd2cc7ef639376ae26d980ec66c7b532f6c18d38f5c02b58"
    },
-   "tamanho": 453197,
+   "tamanho": 871581,
    "tipo": "caixa",
    "inspiracao": "Randall 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
