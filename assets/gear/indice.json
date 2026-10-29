@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:26:33Z",
+ "gerado": "2026-10-29T18:38:23Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -77,7 +77,7 @@
   "agate_wylde": {
    "nome": "Agate Wylde",
    "hash": "dd204822e6633a0f",
-   "data": "2026-10-29T16:00:17Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "agate_wylde_botao_ganho.png",
@@ -110,7 +110,7 @@
   "amber_glory": {
    "nome": "Amber Glory",
    "hash": "7a910990a6bf76e5",
-   "data": "2026-10-29T16:14:53Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amber_glory_botao_ganho.png",
@@ -143,7 +143,7 @@
   "amethyst_king": {
    "nome": "Amethyst King",
    "hash": "32af8c3d92d74410",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amethyst_king_botao_ganho.png",
@@ -176,7 +176,7 @@
   "apple_comp": {
    "nome": "Apple Comp",
    "hash": "e6f8116d4b8dddcc",
-   "data": "2026-10-29T16:02:27Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "apple_comp_botao_a.png",
@@ -209,7 +209,7 @@
   "aquamarine_sky": {
    "nome": "Aquamarine Sky",
    "hash": "1adbb3cc9f012559",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "aquamarine_sky_botao_a.png",
@@ -250,7 +250,7 @@
   "arch100": {
    "nome": "Arch 100",
    "hash": "8ecb97da3bf77fe8",
-   "data": "2026-10-29T17:04:29Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "arch100_botao_agudo.png",
@@ -328,7 +328,7 @@
   "badland100": {
    "nome": "Badland 100",
    "hash": "d5dce3a149f155d0",
-   "data": "2026-10-29T15:23:47Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "badland100_botao_agudo.png",
@@ -367,7 +367,7 @@
   "banana_overdrive": {
    "nome": "Banana Overdrive",
    "hash": "14be0b57a0c7f081",
-   "data": "2026-10-29T15:20:13Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "banana_overdrive_botao_ganho.png",
@@ -400,7 +400,7 @@
   "basalt_amp": {
    "nome": "Basalt Amp",
    "hash": "38686955746490d7",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "basalt_amp_botao_ganho.png",
@@ -511,7 +511,7 @@
   "bassline_215": {
    "nome": "Bassline 2x15",
    "hash": "3adb63d9bbffadc4",
-   "data": "2026-10-29T15:23:13Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bassline_215_frente.jpg",
@@ -538,7 +538,7 @@
   "be100": {
    "nome": "BE 100",
    "hash": "14246da009e5f20c",
-   "data": "2026-10-29T15:18:31Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -577,7 +577,7 @@
   "be_412": {
    "nome": "BE 4x12",
    "hash": "c145e80ab0bb7898",
-   "data": "2026-10-29T15:17:28Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be_412_frente.jpg",
@@ -604,7 +604,7 @@
   "bebop15": {
    "nome": "Bebop 15",
    "hash": "707432ddf3dda205",
-   "data": "2026-10-29T17:45:35Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bebop15_botao_agudo.png",
@@ -643,7 +643,7 @@
   "blackcat30": {
    "nome": "Black Cat 30",
    "hash": "c1d35e4448b683b8",
-   "data": "2026-10-29T16:41:54Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcat30_botao_agudo.png",
@@ -682,7 +682,7 @@
   "blackcountry100": {
    "nome": "Black Country 100",
    "hash": "b8c45baa9c10183c",
-   "data": "2026-10-29T15:24:38Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcountry100_botao_agudo.png",
@@ -754,7 +754,7 @@
   "bliss100": {
    "nome": "Bliss 100",
    "hash": "eebb33a457fc64b8",
-   "data": "2026-10-29T15:27:13Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bliss100_botao_agudo.png",
@@ -793,7 +793,7 @@
   "block5150": {
    "nome": "Block 5150",
    "hash": "fbed2e3a703e2ae0",
-   "data": "2026-10-29T15:18:06Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block5150_botao_agudo.png",
@@ -832,7 +832,7 @@
   "block5150iii": {
    "nome": "Block 5150 III",
    "hash": "af4b0adf1226fcf3",
-   "data": "2026-10-29T15:18:21Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block5150iii_botao_agudo.png",
@@ -871,7 +871,7 @@
   "block_412": {
    "nome": "Block 4x12",
    "hash": "8c40126df5e33366",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block_412_frente.jpg",
@@ -898,7 +898,7 @@
   "blue_212": {
    "nome": "Blue 2x12",
    "hash": "321cde154f1ed0c4",
-   "data": "2026-10-29T15:18:35Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blue_212_frente.jpg",
@@ -925,7 +925,7 @@
   "blueberry_blues": {
    "nome": "Blueberry Blues",
    "hash": "ade0f00a7ad1ac44",
-   "data": "2026-10-29T15:21:06Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_blues_botao_ganho.png",
@@ -991,7 +991,7 @@
   "brit2000": {
    "nome": "Brit 2000",
    "hash": "fd48bdcc3cc003a4",
-   "data": "2026-10-29T15:22:34Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit2000_botao_agudo.png",
@@ -1030,7 +1030,7 @@
   "brit410": {
    "nome": "Brit 410",
    "hash": "9d9768c8a7e4e096",
-   "data": "2026-10-29T15:22:53Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit410_botao_agudo.png",
@@ -1096,7 +1096,7 @@
   "brit45": {
    "nome": "Brit 45",
    "hash": "9b1b7edbf4045e08",
-   "data": "2026-10-29T15:22:23Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit45_botao_agudo.png",
@@ -1174,7 +1174,7 @@
   "brit900": {
    "nome": "Brit 900",
    "hash": "f1c36581f6f7ba04",
-   "data": "2026-10-29T15:22:29Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit900_botao_agudo.png",
@@ -1213,7 +1213,7 @@
   "britbass": {
    "nome": "Brit Bass",
    "hash": "97751b7a8f5b11d2",
-   "data": "2026-10-29T15:22:13Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britbass_botao_agudo.png",
@@ -1252,7 +1252,7 @@
   "britds20": {
    "nome": "Brit DS 20",
    "hash": "7058be90c4095658",
-   "data": "2026-10-29T15:22:38Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britds20_botao_agudo.png",
@@ -1291,7 +1291,7 @@
   "britjubilee": {
    "nome": "Brit Jubilee",
    "hash": "e77dd3ec2d457124",
-   "data": "2026-10-29T15:18:17Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britjubilee_botao_agudo.png",
@@ -1330,7 +1330,7 @@
   "britplexi50": {
    "nome": "Brit Plexi 50",
    "hash": "6984d145a6ed777a",
-   "data": "2026-10-29T15:22:18Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi50_botao_agudo.png",
@@ -1369,7 +1369,7 @@
   "britplexi": {
    "nome": "Brit Plexi",
    "hash": "9ac79299cc377f37",
-   "data": "2026-10-29T15:18:11Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi_botao_agudo.png",
@@ -1447,7 +1447,7 @@
   "champion5": {
    "nome": "Champion 5",
    "hash": "ea16cade16bed8a5",
-   "data": "2026-10-29T17:35:29Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "champion5_botao_agudo.png",
@@ -1486,7 +1486,7 @@
   "charoite_g3": {
    "nome": "Charoite G3",
    "hash": "b3b517b9692d7d72",
-   "data": "2026-10-29T16:25:17Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "charoite_g3_botao_ganho.png",
@@ -1581,7 +1581,7 @@
   "citrine_overdrive": {
    "nome": "Citrine Overdrive",
    "hash": "52764cd9767d9115",
-   "data": "2026-10-29T15:21:22Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrine_overdrive_botao_ganho.png",
@@ -1614,7 +1614,7 @@
   "citrus30": {
    "nome": "Citrus 30",
    "hash": "062addc6116c602e",
-   "data": "2026-10-29T15:24:28Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus30_botao_agudo.png",
@@ -1653,7 +1653,7 @@
   "citrus50": {
    "nome": "Citrus 50",
    "hash": "ca01adfefd89a701",
-   "data": "2026-10-29T15:24:17Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus50_botao_agudo.png",
@@ -1692,7 +1692,7 @@
   "citrus_412": {
    "nome": "Citrus 4x12",
    "hash": "017dd886303092ff",
-   "data": "2026-10-29T15:17:33Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus_412_frente.jpg",
@@ -1719,7 +1719,7 @@
   "citrusbass200": {
    "nome": "Citrus Bass 200",
    "hash": "673eca91e6c413fb",
-   "data": "2026-10-29T18:18:21Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrusbass200_botao_agudo.png",
@@ -1758,7 +1758,7 @@
   "clementine_turbo": {
    "nome": "Clementine Turbo",
    "hash": "1b059ed20f9ab88c",
-   "data": "2026-10-29T15:21:14Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "clementine_turbo_botao_ganho.png",
@@ -1791,7 +1791,7 @@
   "coconut_delay": {
    "nome": "Coconut Delay",
    "hash": "fe694e398afa0f97",
-   "data": "2026-10-29T15:20:32Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "coconut_delay_botao_a.png",
@@ -1857,7 +1857,7 @@
   "country_412": {
    "nome": "Country 4x12",
    "hash": "a8ded1a8ec75aed0",
-   "data": "2026-10-29T15:19:18Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "country_412_frente.jpg",
@@ -1884,7 +1884,7 @@
   "darkstar20": {
    "nome": "Dark Star 20",
    "hash": "69c1d4b5e04b9e0e",
-   "data": "2026-10-29T16:46:03Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "darkstar20_botao_agudo.png",
@@ -1923,7 +1923,7 @@
   "deliver120": {
    "nome": "Deliver 120",
    "hash": "a41496763eeb2dab",
-   "data": "2026-10-29T17:14:40Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "deliver120_botao_agudo.png",
@@ -1962,7 +1962,7 @@
   "dirty40": {
    "nome": "Dirty 40",
    "hash": "54bc73ae4d857261",
-   "data": "2026-10-29T15:27:23Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "dirty40_botao_agudo.png",
@@ -2001,7 +2001,7 @@
   "doublestone50": {
    "nome": "Double Stone 50",
    "hash": "1b5c90882840052b",
-   "data": "2026-10-29T16:35:48Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "doublestone50_botao_agudo.png",
@@ -2151,7 +2151,7 @@
   "emerald_echo": {
    "nome": "Emerald Echo",
    "hash": "712144c5278fc287",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emerald_echo_botao_a.png",
@@ -2190,7 +2190,7 @@
   "emperor20": {
    "nome": "Emperor 20",
    "hash": "cefe2cf37dafb14e",
-   "data": "2026-10-29T16:56:18Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emperor20_botao_agudo.png",
@@ -2229,7 +2229,7 @@
   "feral120": {
    "nome": "Feral 120",
    "hash": "20d56d8c3570fefc",
-   "data": "2026-10-29T15:24:58Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "feral120_botao_agudo.png",
@@ -2268,7 +2268,7 @@
   "fire100": {
    "nome": "Fire 100",
    "hash": "65387e8ca9c57749",
-   "data": "2026-10-29T15:24:53Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fire100_botao_agudo.png",
@@ -2307,7 +2307,7 @@
   "fliptop15": {
    "nome": "Fliptop 15",
    "hash": "0ccab435b8cc4535",
-   "data": "2026-10-29T17:51:46Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop15_botao_agudo.png",
@@ -2346,7 +2346,7 @@
   "fliptop18": {
    "nome": "Fliptop 18",
    "hash": "59b2b814cd865b70",
-   "data": "2026-10-29T18:01:58Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop18_botao_agudo.png",
@@ -2451,7 +2451,7 @@
   "galena_hammer": {
    "nome": "Galena Hammer",
    "hash": "f5a146d81554e5fc",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galena_hammer_botao_ganho.png",
@@ -2484,7 +2484,7 @@
   "garden800": {
    "nome": "Garden 800",
    "hash": "3b9e08a91e7e59c2",
-   "data": "2026-10-29T18:26:28Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "garden800_botao_agudo.png",
@@ -2523,7 +2523,7 @@
   "gen120": {
    "nome": "Gen 120",
    "hash": "418827d1f862d04b",
-   "data": "2026-10-29T16:54:12Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "gen120_botao_agudo.png",
@@ -2601,7 +2601,7 @@
   "glass_410": {
    "nome": "Glass 4x10",
    "hash": "9ccb823ccf5b2e2b",
-   "data": "2026-10-29T15:22:58Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "glass_410_frente.jpg",
@@ -2628,7 +2628,7 @@
   "glass_412": {
    "nome": "Glass 4x12",
    "hash": "aff3a81a2213ea3a",
-   "data": "2026-10-29T15:19:41Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "glass_412_frente.jpg",
@@ -2655,7 +2655,7 @@
   "goddess80": {
    "nome": "Goddess 80",
    "hash": "eb699af8ab731f95",
-   "data": "2026-10-29T15:27:18Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "goddess80_botao_agudo.png",
@@ -2694,7 +2694,7 @@
   "gold_centaur": {
    "nome": "Gold Centaur",
    "hash": "53742bec013e6202",
-   "data": "2026-10-29T15:23:57Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "gold_centaur_botao_ganho.png",
@@ -2727,7 +2727,7 @@
   "granite800": {
    "nome": "Granite 800",
    "hash": "603f60e07b841595",
-   "data": "2026-10-29T18:14:09Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "granite800_botao_agudo.png",
@@ -2766,7 +2766,7 @@
   "granite_410": {
    "nome": "Granite 4x10",
    "hash": "eca6f9610d0b7dd0",
-   "data": "2026-10-29T15:23:03Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "granite_410_frente.jpg",
@@ -2793,7 +2793,7 @@
   "greengage_drive": {
    "nome": "Greengage Drive",
    "hash": "5c5ad4c8ed0e01f8",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "greengage_drive_botao_ganho.png",
@@ -2826,7 +2826,7 @@
   "hart1000": {
    "nome": "Hart 1000",
    "hash": "86b1080254aea0e2",
-   "data": "2026-10-29T18:14:15Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart1000_botao_agudo.png",
@@ -2865,7 +2865,7 @@
   "hart_410": {
    "nome": "Hart 4x10",
    "hash": "7f56e0dc78982cf9",
-   "data": "2026-10-29T15:23:08Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart_410_frente.jpg",
@@ -2892,7 +2892,7 @@
   "heliodor_mud": {
    "nome": "Heliodor Mud",
    "hash": "89e8dde1b3309217",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "heliodor_mud_botao_ganho.png",
@@ -2925,7 +2925,7 @@
   "hematite_rock": {
    "nome": "Hematite Rock",
    "hash": "496830b3f209c815",
-   "data": "2026-10-29T15:52:09Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hematite_rock_botao_ganho.png",
@@ -2956,7 +2956,7 @@
   "herb180": {
    "nome": "Herb 180",
    "hash": "b24ea1d61994344b",
-   "data": "2026-10-29T15:25:09Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "herb180_botao_agudo.png",
@@ -2995,7 +2995,7 @@
   "hi103": {
    "nome": "Hi 103",
    "hash": "1e72aa45c3b5d9d1",
-   "data": "2026-10-29T16:41:58Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hi103_botao_agudo.png",
@@ -3034,7 +3034,7 @@
   "hi_412": {
    "nome": "Hi 4x12",
    "hash": "8889d288233057b3",
-   "data": "2026-10-29T15:19:37Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hi_412_frente.jpg",
@@ -3061,7 +3061,7 @@
   "honeydew_drive": {
    "nome": "Honeydew Drive",
    "hash": "8e41fead58997420",
-   "data": "2026-10-29T16:12:44Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "honeydew_drive_botao_ganho.png",
@@ -3094,7 +3094,7 @@
   "hotrod40": {
    "nome": "Hot Rod 40",
    "hash": "70068c1f10844c00",
-   "data": "2026-10-29T17:35:17Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hotrod40_botao_agudo.png",
@@ -3133,7 +3133,7 @@
   "howlite_war": {
    "nome": "Howlite War",
    "hash": "07437e269dc78c36",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "howlite_war_botao_ganho.png",
@@ -3166,7 +3166,7 @@
   "iron120": {
    "nome": "Iron 120",
    "hash": "5b381c2559022806",
-   "data": "2026-10-29T15:24:48Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "iron120_botao_agudo.png",
@@ -3205,7 +3205,7 @@
   "jabuticaba_buzzsaw": {
    "nome": "Jabuticaba Buzzsaw",
    "hash": "f62836b534960541",
-   "data": "2026-10-29T15:20:58Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jabuticaba_buzzsaw_botao_ganho.png",
@@ -3271,7 +3271,7 @@
   "jamun_od": {
    "nome": "Jamun OD",
    "hash": "021c4641409d161a",
-   "data": "2026-10-29T16:23:11Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jamun_od_botao_ganho.png",
@@ -3304,7 +3304,7 @@
   "jazz120": {
    "nome": "Jazz 120",
    "hash": "ff6e4d459209f10b",
-   "data": "2026-10-29T17:35:24Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jazz120_botao_agudo.png",
@@ -3343,7 +3343,7 @@
   "jazz_212": {
    "nome": "Jazz 2x12",
    "hash": "94d266c21d77ad77",
-   "data": "2026-10-29T15:19:07Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jazz_212_frente.jpg",
@@ -3370,7 +3370,7 @@
   "jet_5150": {
    "nome": "Jet 5150",
    "hash": "35d316c097b5c835",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jet_5150_botao_ganho.png",
@@ -3403,7 +3403,7 @@
   "jupiter_octave": {
    "nome": "Jupiter Octave",
    "hash": "4c0730223b845c42",
-   "data": "2026-10-29T15:21:30Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jupiter_octave_botao_a.png",
@@ -3436,7 +3436,7 @@
   "kraken50": {
    "nome": "Kraken 50",
    "hash": "415ae7dcb2919a07",
-   "data": "2026-10-29T17:06:35Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "kraken50_botao_agudo.png",
@@ -3475,7 +3475,7 @@
   "labradorite_omega": {
    "nome": "Labradorite Omega",
    "hash": "800c12868924965d",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "labradorite_omega_botao_ganho.png",
@@ -3508,7 +3508,7 @@
   "lime_bassfuzz": {
    "nome": "Lime Bass Fuzz",
    "hash": "7381bae731a1104a",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lime_bassfuzz_botao_ganho.png",
@@ -3580,7 +3580,7 @@
   "lonestar100": {
    "nome": "Lone Star 100",
    "hash": "26d4c6781a0e3302",
-   "data": "2026-10-29T15:24:12Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lonestar100_botao_agudo.png",
@@ -3619,7 +3619,7 @@
   "magick25": {
    "nome": "Magick 25",
    "hash": "fb259dd26fc994f5",
-   "data": "2026-10-29T17:14:45Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magick25_botao_agudo.png",
@@ -3658,7 +3658,7 @@
   "magnetite_boost": {
    "nome": "Magnetite Boost",
    "hash": "d922096e4135db6e",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magnetite_boost_botao_ganho.png",
@@ -3728,7 +3728,7 @@
   "marcasite_gate": {
    "nome": "Marcasite Gate",
    "hash": "dc79286933b25a05",
-   "data": "2026-10-29T15:45:49Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "marcasite_gate_botao_a.png",
@@ -3761,7 +3761,7 @@
   "mark2plus": {
    "nome": "Mark Two Plus",
    "hash": "50bb552293ac8166",
-   "data": "2026-10-29T15:23:26Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark2plus_botao_agudo.png",
@@ -3810,7 +3810,7 @@
   "mark3": {
    "nome": "Mark Three",
    "hash": "de67419051a5aff1",
-   "data": "2026-10-29T15:23:33Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark3_botao_agudo.png",
@@ -3859,7 +3859,7 @@
   "mark4": {
    "nome": "Mark Four",
    "hash": "f8fc46d2c87b2241",
-   "data": "2026-10-29T15:23:42Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark4_botao_agudo.png",
@@ -3984,7 +3984,7 @@
   "mark_112": {
    "nome": "Mark 1x12",
    "hash": "54735dc78c0f04ca",
-   "data": "2026-10-29T15:18:57Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark_112_frente.jpg",
@@ -4011,7 +4011,7 @@
   "markjp": {
    "nome": "Mark JP",
    "hash": "9754a946ce36b24a",
-   "data": "2026-10-29T15:24:24Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "markjp_botao_agudo.png",
@@ -4060,7 +4060,7 @@
   "mars_phaser": {
    "nome": "Mars Phaser",
    "hash": "fcf8797714ac25a8",
-   "data": "2026-10-29T15:47:59Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mars_phaser_botao_a.png",
@@ -4093,7 +4093,7 @@
   "match30": {
    "nome": "Match 30",
    "hash": "fb3c2522ec84eb5a",
-   "data": "2026-10-29T15:24:44Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match30_botao_agudo.png",
@@ -4132,7 +4132,7 @@
   "match_212": {
    "nome": "Match 2x12",
    "hash": "0955155aa12bac3d",
-   "data": "2026-10-29T15:18:44Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match_212_frente.jpg",
@@ -4159,7 +4159,7 @@
   "melanite_bassdi": {
    "nome": "Melanite Bass DI",
    "hash": "2dae9c148371d537",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "melanite_bassdi_botao_ganho.png",
@@ -4192,7 +4192,7 @@
   "mercury_bender": {
    "nome": "Mercury Bender",
    "hash": "bb16904466ab8869",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mercury_bender_botao_ganho.png",
@@ -4225,7 +4225,7 @@
   "meteorite_reverb": {
    "nome": "Meteorite Reverb",
    "hash": "c0f6de2b716ff204",
-   "data": "2026-10-29T15:20:22Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "meteorite_reverb_botao_a.png",
@@ -4333,7 +4333,7 @@
   "moonstone_fuzz": {
    "nome": "Moonstone Fuzz",
    "hash": "32735a087cdd6203",
-   "data": "2026-10-29T16:27:25Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "moonstone_fuzz_botao_ganho.png",
@@ -4399,7 +4399,7 @@
   "neptune_chorus": {
    "nome": "Neptune Chorus",
    "hash": "936aa05160f082c7",
-   "data": "2026-10-29T15:19:54Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "neptune_chorus_botao_a.png",
@@ -4471,7 +4471,7 @@
   "nova100": {
    "nome": "Nova 100",
    "hash": "4519970d95cb3980",
-   "data": "2026-10-29T16:54:08Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "nova100_botao_agudo.png",
@@ -4510,7 +4510,7 @@
   "olive_drive": {
    "nome": "Olive Drive",
    "hash": "36a4caf6cf4f456b",
-   "data": "2026-10-29T15:24:07Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "olive_drive_botao_ganho.png",
@@ -4543,7 +4543,7 @@
   "onyx_metal": {
    "nome": "Onyx Metal",
    "hash": "753cfeac00cac634",
-   "data": "2026-10-29T15:20:50Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "onyx_metal_botao_ganho.png",
@@ -4576,7 +4576,7 @@
   "opal_drive": {
    "nome": "Opal Drive",
    "hash": "309fb9161b77db96",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "opal_drive_botao_ganho.png",
@@ -4609,7 +4609,7 @@
   "orange_drive": {
    "nome": "Orange Drive",
    "hash": "c444b193ae31f579",
-   "data": "2026-10-29T15:20:04Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "orange_drive_botao_ganho.png",
@@ -4642,7 +4642,7 @@
   "pearl_fuzz": {
    "nome": "Pearl Fuzz",
    "hash": "839273c07506845e",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pearl_fuzz_botao_ganho.png",
@@ -4692,7 +4692,7 @@
   "peridot_drive": {
    "nome": "Peridot Drive",
    "hash": "3f31f378e59bac39",
-   "data": "2026-10-29T16:33:35Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "peridot_drive_botao_ganho.png",
@@ -4758,7 +4758,7 @@
   "power100": {
    "nome": "Power 100",
    "hash": "5fd5026da6c683e1",
-   "data": "2026-10-29T15:18:53Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power100_botao_agudo.png",
@@ -4797,7 +4797,7 @@
   "power_412": {
    "nome": "Power 4x12",
    "hash": "202934a810963161",
-   "data": "2026-10-29T15:19:28Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power_412_frente.jpg",
@@ -4857,7 +4857,7 @@
   "pyrite_klone": {
    "nome": "Pyrite Klone",
    "hash": "b8aed5c64cc5700b",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pyrite_klone_botao_ganho.png",
@@ -4890,7 +4890,7 @@
   "quince_plus": {
    "nome": "Quince Plus",
    "hash": "ac1e1e90bc16daaa",
-   "data": "2026-10-29T15:39:38Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "quince_plus_botao_ganho.png",
@@ -4921,7 +4921,7 @@
   "raspberry_drive": {
    "nome": "Raspberry Drive",
    "hash": "292820955d857419",
-   "data": "2026-10-29T16:15:02Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "raspberry_drive_botao_ganho.png",
@@ -4954,7 +4954,7 @@
   "recto_dual": {
    "nome": "Recto Dual",
    "hash": "54ca5396f9d274d5",
-   "data": "2026-10-29T15:17:44Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -4993,7 +4993,7 @@
   "recto_triple": {
    "nome": "Recto Triple",
    "hash": "a1c8f4e724df165a",
-   "data": "2026-10-29T15:17:49Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_triple_botao_agudo.png",
@@ -5032,7 +5032,7 @@
   "rg100": {
    "nome": "RG 100",
    "hash": "5c79476dcd4daf4d",
-   "data": "2026-10-29T17:00:24Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg100_botao_agudo.png",
@@ -5071,7 +5071,7 @@
   "rg_412": {
    "nome": "RG 4x12",
    "hash": "d21d1bfdb179d823",
-   "data": "2026-10-29T15:19:46Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg_412_frente.jpg",
@@ -5098,7 +5098,7 @@
   "rocker50": {
    "nome": "Rocker 50",
    "hash": "37362136b9efb842",
-   "data": "2026-10-29T15:18:26Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rocker50_botao_agudo.png",
@@ -5137,7 +5137,7 @@
   "sapote_33": {
    "nome": "Sapote 33",
    "hash": "d22d5c129c264ab6",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sapote_33_botao_ganho.png",
@@ -5201,7 +5201,7 @@
   "selenite_eq": {
    "nome": "Selenite EQ",
    "hash": "d73b90f990e107ad",
-   "data": "2026-10-29T15:21:51Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "selenite_eq_botao_a.png",
@@ -5244,7 +5244,7 @@
   "silver_112": {
    "nome": "Silver 1x12",
    "hash": "bf6aa8a4f7f75ca6",
-   "data": "2026-10-29T15:19:01Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silver_112_frente.jpg",
@@ -5271,7 +5271,7 @@
   "silverdeluxe": {
    "nome": "Silver Deluxe",
    "hash": "49fa213c4efedabe",
-   "data": "2026-10-29T17:16:51Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silverdeluxe_botao_agudo.png",
@@ -5310,7 +5310,7 @@
   "silverprince": {
    "nome": "Silver Prince",
    "hash": "cc8d78cf5f704174",
-   "data": "2026-10-29T17:25:00Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silverprince_botao_agudo.png",
@@ -5349,7 +5349,7 @@
   "silversuper": {
    "nome": "Silver Super",
    "hash": "b2748b3d174eb1fa",
-   "data": "2026-10-29T17:25:06Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silversuper_botao_agudo.png",
@@ -5427,7 +5427,7 @@
   "sl100": {
    "nome": "SL 100",
    "hash": "3df7f7eec170b6c6",
-   "data": "2026-10-29T15:18:02Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl100_botao_agudo.png",
@@ -5466,7 +5466,7 @@
   "sl_412": {
    "nome": "SL 4x12",
    "hash": "4b73d0d868b58881",
-   "data": "2026-10-29T15:17:22Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl_412_frente.jpg",
@@ -5524,7 +5524,7 @@
   "solar_215": {
    "nome": "Solar 2x15",
    "hash": "27f915768d0dd4fc",
-   "data": "2026-10-29T15:23:18Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solar_215_frente.jpg",
@@ -5578,7 +5578,7 @@
   "solart": {
    "nome": "Solar T",
    "hash": "a504678ac5175057",
-   "data": "2026-10-29T18:26:33Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solart_botao_agudo.png",
@@ -5617,7 +5617,7 @@
   "sonic60": {
    "nome": "Sonic 60",
    "hash": "0f021e6f1203e730",
-   "data": "2026-10-29T15:22:01Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sonic60_botao_agudo.png",
@@ -5656,7 +5656,7 @@
   "special100": {
    "nome": "Special 100",
    "hash": "01808541b668529f",
-   "data": "2026-10-29T15:31:28Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "special100_botao_agudo.png",
@@ -5695,7 +5695,7 @@
   "spinel_precision": {
    "nome": "Spinel Precision",
    "hash": "0d86b6df419c1c7e",
-   "data": "2026-10-29T16:02:34Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "spinel_precision_botao_ganho.png",
@@ -5728,7 +5728,7 @@
   "star_412": {
    "nome": "Star 4x12",
    "hash": "8be51e81cc03bf84",
-   "data": "2026-10-29T15:17:40Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "star_412_frente.jpg",
@@ -5755,7 +5755,7 @@
   "steel20": {
    "nome": "Steel 20",
    "hash": "c7a6a31d4e186b18",
-   "data": "2026-10-29T15:25:04Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "steel20_botao_agudo.png",
@@ -5872,7 +5872,7 @@
   "topaz_250": {
    "nome": "Topaz 250",
    "hash": "6f41876aac18bdb2",
-   "data": "2026-10-29T16:33:43Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topaz_250_botao_ganho.png",
@@ -5942,7 +5942,7 @@
   "topboost30": {
    "nome": "Top Boost 30",
    "hash": "e3a027f0409b59f9",
-   "data": "2026-10-29T15:24:34Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topboost30_botao_agudo.png",
@@ -5981,7 +5981,7 @@
   "tourmaline_grind": {
    "nome": "Tourmaline Grind",
    "hash": "6811dd88548dd00d",
-   "data": "2026-10-29T15:17:16Z",
+   "data": "2026-10-29T17:12:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tourmaline_grind_botao_ganho.png",
@@ -6092,7 +6092,7 @@
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",
    "hash": "de5394c5cddfeaec",
-   "data": "2026-10-29T15:20:41Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "turquoise_tremolo_botao_a.png",
@@ -6125,7 +6125,7 @@
   "tweed57": {
    "nome": "Tweed 57",
    "hash": "cbc32f09577cfe7b",
-   "data": "2026-10-29T17:25:11Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed57_botao_agudo.png",
@@ -6164,7 +6164,7 @@
   "tweed59": {
    "nome": "Tweed 59",
    "hash": "42bee698125665d5",
-   "data": "2026-10-29T15:22:08Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed59_botao_agudo.png",
@@ -6203,7 +6203,7 @@
   "tweed_410": {
    "nome": "Tweed 4x10",
    "hash": "56b26652c336263a",
-   "data": "2026-10-29T15:18:48Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed_410_frente.jpg",
@@ -6230,7 +6230,7 @@
   "twin_212": {
    "nome": "Twin 2x12",
    "hash": "e26f89e10a0d6188",
-   "data": "2026-10-29T15:18:39Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "twin_212_frente.jpg",
@@ -6257,7 +6257,7 @@
   "uber100": {
    "nome": "Uber 100",
    "hash": "2c17aeea04b5e591",
-   "data": "2026-10-29T15:21:56Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber100_botao_agudo.png",
@@ -6296,7 +6296,7 @@
   "uber_412": {
    "nome": "Uber 4x12",
    "hash": "ac63f6ab33a558ef",
-   "data": "2026-10-29T15:19:11Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber_412_frente.jpg",
@@ -6362,7 +6362,7 @@
   "vault210": {
    "nome": "Vault 210",
    "hash": "57e2cba95cd3875f",
-   "data": "2026-10-29T17:49:40Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault210_botao_agudo.png",
@@ -6401,7 +6401,7 @@
   "vault300": {
    "nome": "Vault 300",
    "hash": "e4129028a9fe433e",
-   "data": "2026-10-29T18:01:52Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault300_botao_agudo.png",
@@ -6479,7 +6479,7 @@
   "vault_810": {
    "nome": "Vault 8x10",
    "hash": "4d0208d7f1845c4d",
-   "data": "2026-10-29T15:22:49Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault_810_frente.jpg",
@@ -6506,7 +6506,7 @@
   "vaultv4": {
    "nome": "Vault V4",
    "hash": "3b660bd236548aeb",
-   "data": "2026-10-29T18:04:04Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vaultv4_botao_agudo.png",
@@ -6584,7 +6584,7 @@
   "vier_412": {
    "nome": "Vier 4x12",
    "hash": "06b08de2cabdb578",
-   "data": "2026-10-29T15:19:33Z",
+   "data": "2026-10-29T18:38:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vier_412_frente.jpg",

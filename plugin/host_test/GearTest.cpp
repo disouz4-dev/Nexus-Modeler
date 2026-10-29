@@ -10,6 +10,11 @@
 #include <cstdio>
 #include <cstdlib>
 
+#ifdef _WIN32
+// O Windows não tem setenv.
+static int setenv(const char* name, const char* value, int) { return _putenv_s(name, value); }
+#endif
+
 #include "../source/PluginProcessor.h"
 #include "../source/ui/Gear.h"
 
