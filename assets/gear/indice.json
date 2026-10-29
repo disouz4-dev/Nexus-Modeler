@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:40:12Z",
+ "gerado": "2026-10-29T23:40:17Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4092,8 +4092,8 @@
   },
   "match30": {
    "nome": "Match 30",
-   "hash": "fb3c2522ec84eb5a",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "6cc84f1b51c90d35",
+   "data": "2026-10-29T23:40:17Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match30_botao_agudo.png",
@@ -4108,24 +4108,24 @@
     "match30_mapa.json"
    ],
    "sha256": {
-    "match30_botao_agudo.png": "7ce63f4bc521bdd8d69768390c4d2e345f7a6bedc58c1e7d6c378af0fd176cc3",
-    "match30_botao_ganho.png": "c48a572967644725a3f96e2b0a8b88e8564f1b3e42c34520860b3634ed463c13",
-    "match30_botao_grave.png": "bfc2fa344a61e795ac8b93a53caa4559b1049113844f676cbd47b589325ab579",
-    "match30_botao_medio.png": "e2f04112ca7247894664147016d31cf3a4c23e166bfd5b5e5943c6dbedd36f36",
-    "match30_botao_presenca.png": "148a381430329c76c709f16a4f65cf0f304a0968bb3838fe77e757819654e82f",
-    "match30_botao_volume.png": "547a3aae3b7ccea603d04017462d8c7fb1875c9cddfacbeb294b922fc2b7591a",
-    "match30_frente.jpg": "29749c4b8b23e713a9c374695a47959019f894c1a5a914eca4aba822aa1d9791",
-    "match30_frente_alfa.png": "9e8d8e78af334d4ccacc31e0bc46774599c1bb1dcf51f4fe3ac97727a8d4913d",
-    "match30_manifesto.json": "1604f857388571afff9d93f8d346659e232a1f71c5010b245084c30e95e7cbea",
+    "match30_botao_agudo.png": "096f8de22fd41d9f2c3647d5e636e7bd92b5d7cedee4bcca2719f29bdd3722e4",
+    "match30_botao_ganho.png": "4ce3650bf88c04142d79051958a61c36104f9c26908c6e2b21f5276748a4148a",
+    "match30_botao_grave.png": "d925ccd6224771f4cfb54551929b81e9497a4cc459798a48eca241f371db610d",
+    "match30_botao_medio.png": "0e3fac90466b9f8d756aba9fba14ff78b020502ba4e7bd30a48970795f240dcc",
+    "match30_botao_presenca.png": "8d4c2287d86a5a8d1c8dc70693bea7056f1f80bfc7c74ffa7e94f56e9d707437",
+    "match30_botao_volume.png": "a916d11d1bb1d1088f8b99d3868694595245e407760a1d0cf7b646fe8189a3b8",
+    "match30_frente.jpg": "6e0feaef1aa23321ea4203d44e363eacfd093c7a528eaf111c8d5f16587e7a15",
+    "match30_frente_alfa.png": "536d67503e794bef502d194be03eb459dfa034bb5b5bd5d0f06bc8984260e93f",
+    "match30_manifesto.json": "9acf36df5f8db8969142f067f2eab768873716eacaa415436e6096a44e66a1ee",
     "match30_mapa.json": "9403003a989db0ec801601aab398bf3e0661c04b50cd65f5468f7d0f00643990"
    },
-   "tamanho": 1813072,
+   "tamanho": 1811857,
    "tipo": "cabecote",
    "inspiracao": "DC-30",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
