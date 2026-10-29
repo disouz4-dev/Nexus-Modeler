@@ -1,33 +1,33 @@
 {
   "nome": "Pearl Fuzz",
-  "familia": "pearl_fuzz",
+  "familia": "lychee_fuzz",
   "largura": 600,
   "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 155,
+      "y": 176,
+      "tamanho": 74,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 263,
+      "y": 176,
+      "tamanho": 74,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 371,
+      "y": 176,
+      "tamanho": 74,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -36,46 +36,46 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    140,
+    175
   ],
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 193.7,
+      "y": 169.9,
+      "altura": 15.2,
       "achatamento": 1.0,
-      "cor": "#f6f0e3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
       "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "y": 169.9,
+      "altura": 15.2,
       "achatamento": 1.0,
-      "cor": "#f6f0e3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "SUSTAIN",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 406.4,
+      "y": 169.9,
+      "altura": 15.2,
       "achatamento": 1.0,
-      "cor": "#f6f0e3",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 527.5,
+    "raio": 34.0
   },
   "led": {
-    "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "x": 245.7,
+    "y": 215.1,
+    "raio": 8.6
   }
 }
