@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:41:28Z",
+ "gerado": "2026-10-29T20:49:43Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5832,8 +5832,8 @@
   },
   "tinybass": {
    "nome": "Tiny Bass",
-   "hash": "0bb596bb0209cbfb",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "f873913ff2a54686",
+   "data": "2026-10-29T20:49:43Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tinybass_botao_agudo.png",
@@ -5848,24 +5848,24 @@
     "tinybass_mapa.json"
    ],
    "sha256": {
-    "tinybass_botao_agudo.png": "4833ce04fcd6b7a455fd87a8176a2db1c6259ec1dc2f065b0a9804e29c1b3548",
-    "tinybass_botao_ganho.png": "a35e730a6b3d99c603ab3b89e37dccbdede3432c8c8032fd9a0428e355419db8",
-    "tinybass_botao_grave.png": "958a6a47ba47cd737f65862b86e56f8b8e2607581e87726270e5ae06033beeba",
-    "tinybass_botao_medio.png": "b24800f9c55eccc1ba2a3c07f6641ca557eaf364376339ea3f2ba2acc30d351e",
-    "tinybass_botao_presenca.png": "de4a304dce21286bbcdd57725acfb0958035a84842fa95a61168a8c32acc89b0",
-    "tinybass_botao_volume.png": "152693992b66f842e4587519c06ccf72567641bcd76e23a7c2cfbd78281c192f",
-    "tinybass_frente.jpg": "75614d751e78d03023e905b4428c2a9af449e9aaf59f44d748df61ca2872c148",
-    "tinybass_frente_alfa.png": "1dfee2847ae95df54235bac5820332705adef780b8487970fc54031c59544cec",
-    "tinybass_manifesto.json": "4bf00038bb40f254019bf421697decd4f6a7c2428a322d536b1146a030d689ee",
-    "tinybass_mapa.json": "c6f1ded9abcc8f3f4d3053910eb76a2223a22fd21123ec9d5c2495efdc2654e8"
+    "tinybass_botao_agudo.png": "3caa803d9a7c1b635c4c6762cf729cf74fac9e90575c92d51cf6da6741dddb74",
+    "tinybass_botao_ganho.png": "6ddc91a9f177ce25a6e4cc47c36010e84c9f5da2c254ff10140ab0c7e19c0950",
+    "tinybass_botao_grave.png": "c9086ee04aee129edc289cfc98c847a539b043d38a0f73186c5033dcf35fd2a2",
+    "tinybass_botao_medio.png": "16754d52f08b6e1359a83bba0fd55ffe30197cd39ae5b82abf49c99a3ca9d503",
+    "tinybass_botao_presenca.png": "1a742ccea0471be67d1ef7d073dad842764cb7335f04521be75e0b7eca30a24f",
+    "tinybass_botao_volume.png": "6fc2083cb6ce15c990e02fbc23a0945e7ea8658f273a21f7bbf859b9a1be0a87",
+    "tinybass_frente.jpg": "3ff539bd857f84b5e5574645021e109e29d301d6265dc320af2d89bcfa30cff4",
+    "tinybass_frente_alfa.png": "5995f62c9988f69b37c91960ed02ecfacd240090f64268be8c90242162461cf0",
+    "tinybass_manifesto.json": "b6bbfa08573a4169afc5e5288dc41eba2b05b81fc0ed4242e1e66ad4c3e90929",
+    "tinybass_mapa.json": "38dca3408a64844a213ebd8202548b5583a0c1f6d5b41e149ba2356b8f4e9b4b"
    },
-   "tamanho": 1925227,
+   "tamanho": 2340689,
    "tipo": "cabecote",
    "inspiracao": "Orange Terror Bass",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
