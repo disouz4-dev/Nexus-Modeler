@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:27:18Z",
+ "gerado": "2026-10-29T15:27:23Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1961,8 +1961,8 @@
   },
   "dirty40": {
    "nome": "Dirty 40",
-   "hash": "9e14cce3d898db38",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "54bc73ae4d857261",
+   "data": "2026-10-29T15:27:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "dirty40_botao_agudo.png",
@@ -1977,24 +1977,24 @@
     "dirty40_mapa.json"
    ],
    "sha256": {
-    "dirty40_botao_agudo.png": "bf95c337dd5ba68cefd883620b0cc28316ac15ddd3853a37abb1aca07c6d7edf",
-    "dirty40_botao_ganho.png": "dacf61e0af274580631f379d28588bd6dd8bbb67c204551936ea9f6d2d0910e7",
-    "dirty40_botao_grave.png": "85bafd98419ff84d57da36df7ee0e55c9a5dca54d7e0687c8bb60f4e59a6b69a",
-    "dirty40_botao_medio.png": "227a2227f5202eadcceb56d4d3f8a9d01a1c04d23e7c2f336bdbdcea38453089",
-    "dirty40_botao_presenca.png": "d68c164c477f9cbebc445319625c79bb0c75f390c620c3578181778ba1b23cf9",
-    "dirty40_botao_volume.png": "f7c3a05bd004e0864308dfc926ee2832c299c5ff7946304933ae26dda559ee7d",
-    "dirty40_frente.jpg": "f1c9d7284301e0bd9b3de29154de87189c47c8e5c96624318e156afd90660c1e",
-    "dirty40_frente_alfa.png": "fd294fbec4f2f7de37851224e82b254af91d4bfc2f254d5c3c64b14821559240",
-    "dirty40_manifesto.json": "a05ea9fa6f97d8fc3bb89a99f59dd61bec253cbb055e05acb223bb180d1cb2bf",
-    "dirty40_mapa.json": "e3aacd1a91d815b8996b714aea671f20dc701ab023b381d413367548a46548e6"
+    "dirty40_botao_agudo.png": "1641933b2a305d73fe989802709b60f9bb6c7931b9275a9e977aea4f85f1833a",
+    "dirty40_botao_ganho.png": "3dabdf9c9d6dae765f741ff24326c928133e105ba5c37bdf96323e2fb2e9e5ef",
+    "dirty40_botao_grave.png": "6b343a963ce55366e32d89ed176dc8f098d103faef84100a47f877a8d8d21500",
+    "dirty40_botao_medio.png": "8a7de8a8f52f1181aeb7976f5efef2284bbd34c998725575a1bc6a1890861557",
+    "dirty40_botao_presenca.png": "ca3aa7356580e20947fc8ee0a0ced6f9b3ca27253337dd1a4ce3810df7dbbdbe",
+    "dirty40_botao_volume.png": "c79075d15311f098e43ea81560b5a4e9466064417c1dcb80816751f026a5a24b",
+    "dirty40_frente.jpg": "9bb72692b6ab101f3083ef501f9fc9142498debd9994cbb7c751855ecb506e41",
+    "dirty40_frente_alfa.png": "4b565830c2808664a195fb72eed05cd8bc0c78801a3e9dbe39fee082fce1e820",
+    "dirty40_manifesto.json": "4585128a8bd75cf85aa6828d3d4599bbecceee6487e269a67c6065698ea29ad8",
+    "dirty40_mapa.json": "72578d6473c989f1d4d2f9c7b1f3971c96ec2bae178c8508cce1fe4385c37068"
    },
-   "tamanho": 1870548,
+   "tamanho": 913402,
    "tipo": "cabecote",
    "inspiracao": "Friedman Dirty Shirley",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
