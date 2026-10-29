@@ -1,8 +1,10 @@
 {
   "nome": "Glass 4x10",
   "familia": "glass_410",
-  "largura": 1401,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2836,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "rotulos": []
 }
