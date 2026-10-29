@@ -49,7 +49,9 @@ manual do fabricante, mais foto do original.
 ## Etapas
 
 - [x] 0. Pesquisa, triagem e conferência no fabricante
-- [ ] 1. Fila 3D com retomada (lab2) e pasta de render própria do ramo
+- [x] 1. Fila 3D com retomada (lab2) e pasta de render própria do ramo
+      (`tools/gear_studio/lab2_sync.sh` manda o ramo para `~/nexus-gear/repo-fiel`;
+      pedidos com `--repo ~/nexus-gear/repo-fiel`)
 - [ ] 2. Gerador: recursos novos dos pedais (Boss com LED no alto e botão do
       meio mais baixo, redondo, wah, cunha, pisantes múltiplos, minichaves,
       fileiras de LEDs, mini, cunha RAT)
@@ -62,14 +64,20 @@ manual do fabricante, mais foto do original.
 - [ ] 8. Troca dos nomes e códigos no programa
 - [ ] 9. Arte nova no programa, descrições e galeria
 
+A cada lote pronto: trazer a arte para `assets/gear` deste ramo, compilar o
+Nexus de teste (Standalone) e avisar o Diego. O Nexus de sempre só muda quando
+ele aprovar juntar o ramo.
+
 ## Como retomar
 
 1. `git -C "Nexus Modeler-modelagem" log --oneline -5` e este arquivo.
 2. Fila no lab2: `ssh lab2 '~/nexus-gear/fila3d.sh ver'`. Se o lab2 reiniciou,
-   o trabalhador sobe sozinho (cron @reboot) e as peças que estavam
-   "rodando" voltam para a fila.
+   rodar `ssh lab2 '~/nexus-gear/fila3d.sh retomar'`: as peças que estavam
+   "rodando" voltam para a fila e o trabalhador segue. (O início automático
+   pelo cron precisa ser ligado pelo Diego.)
 3. Seguir da primeira etapa sem [x].
 
 ## Registro
 
 - 29/10 03h50: ramo criado, pesquisa guardada.
+- 29/10 04h00: fila com retomada e repo-fiel no lab2.
