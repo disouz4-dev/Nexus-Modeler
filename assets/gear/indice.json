@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:57:28Z",
+ "gerado": "2026-10-29T19:05:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4724,8 +4724,8 @@
   },
   "pistachio_drive": {
    "nome": "Pistachio Drive",
-   "hash": "5dab669238831c81",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "dc5f8342d996d1cf",
+   "data": "2026-10-29T19:05:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pistachio_drive_botao_ganho.png",
@@ -4737,21 +4737,21 @@
     "pistachio_drive_mapa.json"
    ],
    "sha256": {
-    "pistachio_drive_botao_ganho.png": "e39819c19f164ca15cd85f4067a4313dbb5d554c9b8a1f927eb4f1bdb0e9aceb",
-    "pistachio_drive_botao_nivel.png": "d15da404045b6dcb0ca64254110026ececea3d45e83bd8469eb4439c24680c46",
-    "pistachio_drive_botao_tom.png": "da19baf19dfcdfe2fbe8f4ee244d2c229a010eaa80f89d65e47ebcc8758398e9",
-    "pistachio_drive_frente.jpg": "f1b8abef765483969fac44c3642a000df354fb47776f5278ff4b65718e763579",
-    "pistachio_drive_frente_alfa.png": "5396ad641a064d83c4b4b06aaf15e15d018010d9e272b8a7d12263cb34277f1c",
-    "pistachio_drive_manifesto.json": "a1646d65a1e9c0e3a2793f940eb8be7669b6b5669501aecc5edb8dca8827d8da",
-    "pistachio_drive_mapa.json": "7b5f872580c477ea2c51135009fea44e840a48484822eba2ccfe7cb5242bf74b"
+    "pistachio_drive_botao_ganho.png": "5904f31a04149db45efd32e656d8fb428e282b43bac7d5df00fe9322a275339a",
+    "pistachio_drive_botao_nivel.png": "8c1b0a49728d4a396a2424d94ea087865732ac56bd6e8140d7c225dbab5d2ef8",
+    "pistachio_drive_botao_tom.png": "bef2503a92fc7d7c57e237c25993e86a90e8549f75f4c9a63057ba2e08752635",
+    "pistachio_drive_frente.jpg": "c4a3c64a785d5aba864fe2e28a086a1b421eb965df7437665eb2d46a7bacaffe",
+    "pistachio_drive_frente_alfa.png": "5c7af66e19771a24901eb484c4e009c8b94083766274c7f8eb99adc53cb5e49b",
+    "pistachio_drive_manifesto.json": "e1d0bdd2bda24b029059824a945a312002ececb2aedcbcf628f30f009a7e455a",
+    "pistachio_drive_mapa.json": "4693e195882f79ad4ae00636ed844f117f44fe33f35768ed77c6521e561a8319"
    },
-   "tamanho": 439115,
+   "tamanho": 439437,
    "tipo": "pedal",
    "inspiracao": "Maxon OD808",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
