@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:20:32Z",
+ "gerado": "2026-10-29T15:20:41Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6091,8 +6091,8 @@
   },
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",
-   "hash": "68d85b156ca5a98c",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "de5394c5cddfeaec",
+   "data": "2026-10-29T15:20:41Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "turquoise_tremolo_botao_a.png",
@@ -6104,21 +6104,21 @@
     "turquoise_tremolo_mapa.json"
    ],
    "sha256": {
-    "turquoise_tremolo_botao_a.png": "5174ad786ca2f8d1721a89d31d2339370a31ea8c5c7904b6f79f8ce0d5f38846",
-    "turquoise_tremolo_botao_b.png": "f8670b0e9312406103656f1392ed430bdf7c93bc38d4ced095bc78e945808721",
-    "turquoise_tremolo_botao_c.png": "e25a2daa7d694f8d07a6ad02fc44d8f5a03d3774ee3af3402c069f3e91074d14",
-    "turquoise_tremolo_frente.jpg": "fae089ca898008f5b1911752a09e2054caebabe67a6363dd18df04e2d786e87c",
-    "turquoise_tremolo_frente_alfa.png": "305ebbd306c53b5e3f2997d8451c891e797adad7cf10b9b0b8f3beda68d9e296",
-    "turquoise_tremolo_manifesto.json": "8c1c03cebd08939bd8dcb0de2e022ec50b4759f34eda42dda24d39e46a59eb84",
-    "turquoise_tremolo_mapa.json": "edf926a0ba24069ec1f835c17d2037b2b27fa27940ad5641dd4ae350aace5463"
+    "turquoise_tremolo_botao_a.png": "56d7a4f52ae40aff2cc08a4974a6668ddb3ae652c1ceaf76a978c60cb6a4645e",
+    "turquoise_tremolo_botao_b.png": "dbb3c4674923bcc0ed6f129cd07ca5af7b9793b41aca23ca2b0fb7568dd49d29",
+    "turquoise_tremolo_botao_c.png": "3690bfd706ead6c1ebacdb83f145ee6bec67bf68bf0e861ec4071d1cb5b4f5bc",
+    "turquoise_tremolo_frente.jpg": "176d389823c2958fb353c19c101a0f81d6c6851e264f60b71a690bf149a07d2f",
+    "turquoise_tremolo_frente_alfa.png": "e71374171eaf41328d33c4f3e71cf3994a2288c97f87aca86f61a3e911fb6bf8",
+    "turquoise_tremolo_manifesto.json": "70b84a7b4e34768c6461abff426f7664308360d05fddcf0b615b2a2f180a9afe",
+    "turquoise_tremolo_mapa.json": "c4e9a59e298629dce306867ab1b7c99f54ec98a2ef3823dd4b6d0326d7cf63a9"
    },
-   "tamanho": 199462,
+   "tamanho": 490666,
    "tipo": "pedal",
    "inspiracao": "TR-2",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "tremolo",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
