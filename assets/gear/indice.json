@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:19:18Z",
+ "gerado": "2026-10-29T15:19:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4796,8 +4796,8 @@
   },
   "power_412": {
    "nome": "Power 4x12",
-   "hash": "79e05f2285fd203a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "202934a810963161",
+   "data": "2026-10-29T15:19:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power_412_frente.jpg",
@@ -4806,18 +4806,18 @@
     "power_412_mapa.json"
    ],
    "sha256": {
-    "power_412_frente.jpg": "2764f3104273440fba22f39e7fc922952a3648fd0df0851f6721dd3750b98764",
-    "power_412_frente_alfa.png": "5511e0e1d62822c8cd70f6017fd457f716b6776eafbcf2862c0dc3f1d84529f7",
-    "power_412_manifesto.json": "943784085509d4a1e7d493874028a50d285c5f7dfbf8eb28d89df2ae1a592481",
-    "power_412_mapa.json": "6af9ae8b0b729f5cd5394415ccd619cf29ab6a6ffffe57f9ba83b6c9071b2e62"
+    "power_412_frente.jpg": "57d9f8a7745697a3c3e0ff4de3d35d10f39e9ba24b2c4c1855fde6d9a717f14e",
+    "power_412_frente_alfa.png": "fe6336646f17217793514275ad02352c74b8ec0c489400356286c7331b01f242",
+    "power_412_manifesto.json": "eb0fd4579c050d0d7622ad72461338f1b47bb1839e0d13cd6efac4b4fb89113b",
+    "power_412_mapa.json": "2adc4b6f568a7d188c662578a65ab685bac9d110890a5ef267ee9b9c5c262091"
    },
-   "tamanho": 523504,
+   "tamanho": 1190582,
    "tipo": "caixa",
    "inspiracao": "ENGL 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
