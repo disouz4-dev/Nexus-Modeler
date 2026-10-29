@@ -60,6 +60,8 @@ countries: es mx ar co cl
 "Carregando..." = "Cargando..."
 "Nenhuma captura no pedal." = "Ninguna captura en el pedal."
 "Nenhum pacote de capturas carregado" = "Ningún paquete de capturas cargado"
+"%1 de %2" = "%1 de %2"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "fijo: este cabezal tiene una sola captura por ahora"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 captura, ganancia %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 capturas, ganancia de %3 a %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Perillas por pasos: solo en las posiciones capturadas"

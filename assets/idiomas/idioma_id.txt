@@ -60,6 +60,8 @@ countries: id
 "Carregando..." = "Memuat..."
 "Nenhuma captura no pedal." = "Belum ada tangkapan di pedal."
 "Nenhum pacote de capturas carregado" = "Belum ada paket tangkapan"
+"%1 de %2" = "%1 dari %2"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "tetap: kepala ampli ini baru punya satu tangkapan"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 tangkapan, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 tangkapan, gain %3 sampai %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Kenop bertahap: hanya berhenti di posisi tangkapan"

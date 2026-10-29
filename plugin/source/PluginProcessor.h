@@ -134,6 +134,13 @@ public:
   static constexpr int kSlots = kPedals + kRigs * kChannels;
   static constexpr int pedalSlot(int pedal) { return pedal; }
   static constexpr int ampSlot(int rig, int channel) { return kPedals + rig * kChannels + channel; }
+  // Ganho do cabeçote: uma parada por captura do pacote, espalhadas pelo
+  // giro todo (7 capturas, 7 posições). Diz qual captura o ganho (0 a 10)
+  // escolhe; com uma captura só, é sempre ela.
+  static int gainStep(float gain, int count)
+  {
+    return count < 2 ? 0 : juce::jlimit(0, count - 1, juce::roundToInt(gain / 10.0f * static_cast<float>(count - 1)));
+  }
 
   // Nomes dos parâmetros: pedal n -> "p<n>_drive"...; cabeçote A usa o nome
   // simples ("ganho"), o B ganha "_b" ("ganho_b").

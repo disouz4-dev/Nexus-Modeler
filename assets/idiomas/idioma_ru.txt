@@ -60,6 +60,8 @@ countries: ru
 "Carregando..." = "Загрузка..."
 "Nenhuma captura no pedal." = "В педали нет захвата."
 "Nenhum pacote de capturas carregado" = "Пакет захватов не загружен"
+"%1 de %2" = "%1 из %2"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "фиксирован: у этого усилителя пока один захват"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 захват, гейн %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: захватов %2, гейн от %3 до %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Ступенчатые ручки: только на позициях захватов"

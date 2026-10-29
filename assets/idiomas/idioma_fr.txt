@@ -60,6 +60,8 @@ countries: fr ca be ch
 "Carregando..." = "Chargement..."
 "Nenhuma captura no pedal." = "Aucune capture dans la pédale."
 "Nenhum pacote de capturas carregado" = "Aucun pack de captures chargé"
+"%1 de %2" = "%1 sur %2"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "fixe : cette tête n'a qu'une capture pour l'instant"
 "%1: 1 captura, ganho %2 (%3)" = "%1 : 1 capture, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1 : %2 captures, gain de %3 à %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Boutons crantés : seulement aux positions capturées"

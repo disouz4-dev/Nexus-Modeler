@@ -437,9 +437,21 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
         addAndMakeVisible(*knob);
         mKnobs.push_back(std::move(knob));
       }
+  refreshCaptureSteps();
   refreshTempo();
   resized();
   repaint();
+}
+
+void NexusEditor::GearStage::refreshCaptureSteps()
+{
+  if (mKind != Kind::amp)
+    return;
+  const int slot = NexusProcessor::ampSlot(mIndex, mProcessor.selectedChannel(mIndex));
+  const int count = mProcessor.slotLoaded(slot) ? mProcessor.captureCount(slot) : 0;
+  for (auto& knob : mKnobs)
+    if (knob->art().id == "ganho")
+      knob->setCaptureSteps(count);
 }
 
 void NexusEditor::GearStage::refreshTempo()
@@ -2760,7 +2772,10 @@ void NexusEditor::timerCallback()
   const bool lite = mProcessor.params.getParameter("lite")->getValue() > 0.5f;
   mEngine.setSelected(lite ? 1 : 0);
   if (mSel.kind == Kind::amp)
+  {
     refreshChannels();
+    mAmpStage->refreshCaptureSteps();
+  }
   else
     mChannels.setVisible(false);
 

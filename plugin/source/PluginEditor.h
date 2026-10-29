@@ -90,6 +90,9 @@ private:
     // passar o clique para a pedaleira por baixo. Vazio = ocupa tudo.
     void setArea(juce::Rectangle<float> area);
     bool hitTest(int x, int y) override;
+    // Cabeçote: o ganho ganha uma parada por captura do canal aberto; com uma
+    // captura só, fica morto.
+    void refreshCaptureSteps();
 
   private:
     juce::String paramFor(const juce::String& knobId) const;

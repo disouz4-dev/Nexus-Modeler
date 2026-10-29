@@ -60,6 +60,8 @@ countries: us gb au ca
 "Carregando..." = "Loading..."
 "Nenhuma captura no pedal." = "No capture on the pedal."
 "Nenhum pacote de capturas carregado" = "No capture pack loaded"
+"%1 de %2" = "%1 of %2"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "fixed: this amp has only one capture for now"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 capture, gain %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 captures, gain %3 to %4 (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Stepped knobs: stop only at captured positions"

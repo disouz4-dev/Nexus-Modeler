@@ -60,6 +60,8 @@ countries: tr
 "Carregando..." = "Yükleniyor..."
 "Nenhuma captura no pedal." = "Pedalde yakalama yok."
 "Nenhum pacote de capturas carregado" = "Yakalama paketi yüklenmedi"
+"%1 de %2" = "%2 içinden %1"
+"fixo: este cabeçote tem uma captura só, por enquanto" = "sabit: bu kafada şimdilik tek yakalama var"
 "%1: 1 captura, ganho %2 (%3)" = "%1: 1 yakalama, kazanç %2 (%3)"
 "%1: %2 capturas, ganho de %3 a %4 (%5)" = "%1: %2 yakalama, gain %3 ile %4 arası (%5)"
 "Botões em degraus: param só nas posições capturadas" = "Kademeli düğmeler: yalnızca yakalanan konumlarda durur"
