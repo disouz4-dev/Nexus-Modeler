@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:18:17Z",
+ "gerado": "2026-10-29T15:18:21Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -831,8 +831,8 @@
   },
   "block5150iii": {
    "nome": "Block 5150 III",
-   "hash": "8b43089807a7ceba",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "af4b0adf1226fcf3",
+   "data": "2026-10-29T15:18:21Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block5150iii_botao_agudo.png",
@@ -847,24 +847,24 @@
     "block5150iii_mapa.json"
    ],
    "sha256": {
-    "block5150iii_botao_agudo.png": "e8b131cb3a7291606feaa5a740f7c35fa188f9a88022dc143d5570ea58c830f5",
-    "block5150iii_botao_ganho.png": "1292b3737cc9e89ade2d00439e149d7b2cc3fc90d2cf33f3b1f53be34e8802d1",
-    "block5150iii_botao_grave.png": "cfdde7d08b52b82cce1dedd720bdb504b4ae77d85c2113dd47dc3a63597985f2",
-    "block5150iii_botao_medio.png": "c79d6a3f772a93c1c7896ba2f88b48a577da1107027a43ca69150e9f4dff203d",
-    "block5150iii_botao_presenca.png": "9fc16fe36999ae87ff2f7f0e828edb9aadaca9b715f0ee4af88e851dde4f665c",
-    "block5150iii_botao_volume.png": "477c586a8dbbd21ece1b372edaa2367afca26d0afc740b4109dfc34ab6e17311",
-    "block5150iii_frente.jpg": "34a61d690a41d44cad778fc58016903f0bbeded2d1660a4f0328c57f4ea982e3",
-    "block5150iii_frente_alfa.png": "6d597a68c3bc64c051790c95cd8a4bb01e6ee64f797ce397a06130a87dc2f6c2",
-    "block5150iii_manifesto.json": "8e7634ee10e7343c2f05caab0f7d5229d1417c91e22a6008425473113a3f5fb4",
-    "block5150iii_mapa.json": "8e9e52c337588482495fe1537375c2d1b379593c1607e553d39d832605f28158"
+    "block5150iii_botao_agudo.png": "6c1a27650522d90cbe87021d99b9200bb8aff4bc668e87e3e2906ad0375d68aa",
+    "block5150iii_botao_ganho.png": "5d4a19de04ac41a990f1ddce9b6553997a48472cc6ca79c5e06b3d6d47545f88",
+    "block5150iii_botao_grave.png": "d0f5f3b65d2f6b19d81ae0f7f3650a04563e8c704ed4ebc4b5dbba3758d659f7",
+    "block5150iii_botao_medio.png": "eb41eee20b5a93f62667604f2f611dcfcfbcc06c6d3e0d6ed1fe6db177974795",
+    "block5150iii_botao_presenca.png": "c8fd1548f554c013b232ad665753a8bd8cbcc111f148a54f6b91444a44160f7e",
+    "block5150iii_botao_volume.png": "532ccb0ccd6aceba39a6f7d3817b2847177b42327de6907d015d43c60dbdccda",
+    "block5150iii_frente.jpg": "c50bebe9f4c7a514c60e1b993c0931b16efd0ac97090cc6896bc34bfc6587aa9",
+    "block5150iii_frente_alfa.png": "98f2a8bb33951e3cc4954b564cd94d113e726d33cfb3c5136d9f22f407ca57b0",
+    "block5150iii_manifesto.json": "e60fcb8e05be9e3a6df027ad795ee6c803c23cd06d00fad5bf5aee34146c080c",
+    "block5150iii_mapa.json": "427753821fd42536b533594da8ea2b5ae9cb89d93ae01dfc2b92f8fef7b3d0d8"
    },
-   "tamanho": 1662822,
+   "tamanho": 757028,
    "tipo": "cabecote",
    "inspiracao": "EVH 5150 III",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
