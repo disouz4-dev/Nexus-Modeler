@@ -46,6 +46,9 @@ enum class State
 juce::String currentVersion();
 // Compara versões "1.2.3" (o "v" da frente é ignorado): <0, 0 ou >0.
 int compareVersions(const juce::String& a, const juce::String& b);
+// Este programa atende à versão mínima pedida por uma peça? As versões de teste
+// valem como o número delas: a 0.2.0-beta.1 toca o que pede "0.2.0".
+bool meetsMinimum(const juce::String& minimum);
 // Lê a resposta do GitHub e escolhe o instalador para o sistema indicado
 // ("windows", "mac", "linux" ou "linux-deb"). Fica aqui, sem rede, para os testes.
 Release parseRelease(const juce::String& json, const juce::String& system);

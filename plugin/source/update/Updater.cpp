@@ -244,6 +244,16 @@ int compareVersions(const juce::String& a, const juce::String& b)
   return sx.compareNatural(sy) < 0 ? -1 : (sx == sy ? 0 : 1);
 }
 
+bool meetsMinimum(const juce::String& minimum)
+{
+  if (minimum.trim().isEmpty())
+    return true;
+  auto mine = currentVersion();
+  if (!minimum.contains("-"))
+    mine = mine.upToFirstOccurrenceOf("-", false, false);
+  return compareVersions(mine, minimum) >= 0;
+}
+
 juce::String thisSystem()
 {
 #if JUCE_WINDOWS

@@ -58,7 +58,7 @@ void prune(const juce::File& target)
     const auto mine = p.value;
     const auto inside = embedded["pecas"][p.name];
     const auto minimum = mine["nexus_minimo"].toString();
-    const bool understood = minimum.isEmpty() || update::compareVersions(update::currentVersion(), minimum) >= 0;
+    const bool understood = update::meetsMinimum(minimum);
     if ((inside.isObject() && inside["data"].toString() >= mine["data"].toString()) || !understood)
     {
       target.getChildFile(p.name.toString()).deleteRecursively();
@@ -125,7 +125,7 @@ juce::String GearCatalog::unsupported(const juce::var& manifest)
       || (*kind == Kind::cab && engine != "caixa"))
     return juce::String::fromUTF8("Precisa de uma versão mais nova do Nexus");
   const auto minimum = manifest["versao_minima_do_programa"].toString();
-  if (minimum.isNotEmpty() && update::compareVersions(update::currentVersion(), minimum) < 0)
+  if (!update::meetsMinimum(minimum))
     return juce::String::fromUTF8("Precisa de uma versão mais nova do Nexus");
   return {};
 }
