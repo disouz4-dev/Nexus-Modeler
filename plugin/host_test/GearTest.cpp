@@ -82,7 +82,7 @@ static void testCatalog(const juce::File& gear)
   check(NexusProcessor::pedalKind(8) == NexusProcessor::PedalKind::drop && NexusProcessor::pedalKind(7) == NexusProcessor::PedalKind::gate
           && NexusProcessor::pedalKind(22) == NexusProcessor::PedalKind::triple && NexusProcessor::pedalKind(57) == NexusProcessor::PedalKind::geq
           && NexusProcessor::pedalKind(62) == NexusProcessor::PedalKind::comp && NexusProcessor::pedalKind(0) == NexusProcessor::PedalKind::capture,
-        "motores dos pedais (Cherry Drop, Pear Gate, Blueberry Chain, Acerola EQ, Apple Comp, Lemon Drive)");
+        "motores dos pedais (Cherry Drop, Marcasite Gate, Blueberry Chain, Selenite EQ, Apple Comp, Greengage Drive)");
   bool eq = true;
   for (int i = 0; i < NexusProcessor::kAmpLooks; ++i)
     eq = eq && NexusProcessor::hasGraphicEq(i) == (i == 1 || (i >= 50 && i <= 53));
@@ -171,7 +171,7 @@ static void testPackage(const juce::File& package)
     const auto bad = package.getSiblingFile("ruim.equipamento");
     juce::ZipFile::Builder b;
     b.addEntry(new juce::MemoryInputStream(juce::String("{}").toUTF8(), 2, false), 0, id + "_manifesto.json", juce::Time());
-    b.addEntry(new juce::MemoryInputStream(juce::String("x").toUTF8(), 1, false), 0, "lemon_drive_mapa.json", juce::Time());
+    b.addEntry(new juce::MemoryInputStream(juce::String("x").toUTF8(), 1, false), 0, "greengage_drive_mapa.json", juce::Time());
     bad.deleteFile();
     juce::FileOutputStream out(bad);
     b.writeToStream(out, nullptr);
@@ -191,7 +191,7 @@ static void testPackage(const juce::File& package)
   a.choosePedal(0, look);
   check(a.pedalLook(0) == look && NexusProcessor::pedalKind(look) == NexusProcessor::PedalKind::capture
           && juce::roundToInt(a.params.getRawParameterValue("p1_visual")->load()) == 0,
-        U("escolhida num pedal: toca com o motor captura e o parâmetro fica no Lemon Drive"));
+        U("escolhida num pedal: toca com o motor captura e o parâmetro fica no Greengage Drive"));
   const auto saved = stateOf(a);
   NexusProcessor b;
   b.setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));

@@ -104,7 +104,7 @@ int main(int argc, char** argv)
     }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
-    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod).
+    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod).
     if (const char* mode = std::getenv("NEXUS_MODO"))
     {
       auto* m = processor.params.getParameter("p1_modo");
@@ -211,7 +211,7 @@ int main(int argc, char** argv)
     }
     else if (stage == "gate")
     {
-      // Pedal 1 com o visual do Pear Gate.
+      // Pedal 1 com o visual do Marcasite Gate.
       auto* look = processor.params.getParameter(NexusProcessor::pedalParam(0, "visual"));
       look->setValueNotifyingHost(look->convertTo0to1(static_cast<float>(NexusProcessor::kGateLook)));
       e->select({NexusEditor::Kind::pedal, 0});

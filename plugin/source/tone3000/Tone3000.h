@@ -52,7 +52,7 @@ struct Tone
   bool firstIfUnnamed = false;
 };
 
-// Recomendadas de um equipamento (prefixo do visual: "brit800", "lemon_drive"...),
+// Recomendadas de um equipamento (prefixo do visual: "brit800", "greengage_drive"...),
 // e a palavra usada para filtrar as listas da conta ("JCM800").
 std::vector<Tone> recommended(const juce::String& gearPrefix);
 // Quem responde antes do recomendadas.json embutido (o catálogo, com as

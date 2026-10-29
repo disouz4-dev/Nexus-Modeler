@@ -165,7 +165,7 @@ inconsistente. A **ferramenta gera os modelos a partir de uma receita**.
 
 | Pedal | Inspirado em | Formato |
 |---|---|---|
-| Lemon Drive | overdrive verde clássico de três botões (estilo Tube Screamer) | `classico`: tampa grande de pisar |
+| Greengage Drive | overdrive verde clássico de três botões (estilo Tube Screamer) | `classico`: tampa grande de pisar |
 | Laranja Dist | distorção compacta laranja (estilo DS-1) | `compacto`: pedal basculante com borracha frisada |
 | Ouro | overdrive dourado de luxo (estilo Klon Centaur) | `padrao`: pisante de metal |
 

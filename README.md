@@ -104,7 +104,7 @@ guitarra passa pela cadeia e se mistura com a música.*
   da caixa, até 24 faixas (sino, prateleiras, cortes de 12 a 48 dB por oitava
   e notch). Duplo clique na curva cria a faixa; arrastar, roda do mouse e
   botão direito ajustam.
-- **Pear Gate:** redutor de ruído com sensibilidade, ataque e release.
+- **Marcasite Gate:** redutor de ruído com sensibilidade, ataque e release.
 - **Afinador de rack** fixo no começo da cadeia: nota, cents, frequência,
   fileira de luzes, lá de referência de 430 a 450 Hz e mudo ao afinar.
 - **Efeitos feitos pelo Nexus** (sem captura): chorus, delay, reverb, phaser,
@@ -130,9 +130,9 @@ guitarra passa pela cadeia e se mistura com a música.*
 - **Pedais:** até 12, cada um tocando captura NAM de pedal (pacote de drive
   com troca sem clique). Drive em degraus de 0 a 10, Tom e Nível livres; clique
   no pisante liga e desliga em 20 ms, sem estalo, com o LED vermelho aceso
-  quando ligado. Pedais de captura: Lemon Drive (inspirado no TS9), Orange
+  quando ligado. Pedais de captura: Greengage Drive (inspirado no TS9), Orange
   Drive (DS-1), Banana Overdrive (SD-1) e Gold Centaur (Klon). Efeitos do
-  próprio Nexus: Neptune Chorus, Coconut Delay e Grape Reverb, com rastro
+  próprio Nexus: Neptune Chorus, Coconut Delay e Meteorite Reverb, com rastro
   ao desligar.
 - **Coluna de equipamentos** à direita: clique troca a peça escolhida,
   arrastar para a cadeia acrescenta. Lista completa, com os planejados, em

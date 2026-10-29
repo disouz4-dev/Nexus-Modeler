@@ -94,7 +94,7 @@ const char* nomeDe(Type t)
   }
 }
 
-// Equalizador gráfico (Acerola EQ): o tom de hz passa com os botões e o nível
+// Equalizador gráfico (Selenite EQ): o tom de hz passa com os botões e o nível
 // dados; devolve o ganho em dB do tom depois que tudo assentou.
 double ganhoEq(const nexus::NativePedal::Knobs& k, double nivel, double hz)
 {

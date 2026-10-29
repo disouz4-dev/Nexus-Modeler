@@ -758,9 +758,9 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
   }
 
-  // 8b. Pedais de vários modos: Juniper Sky (reverb), Lime Echo (delay) e Galaxy Mod (modulação).
+  // 8b. Pedais de vários modos: Aquamarine Sky (reverb), Emerald Echo (delay) e Galaxy Mod (modulação).
   {
-    std::printf("\nPedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod)\n");
+    std::printf("\nPedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod)\n");
     auto make = [&](int look, int mode, bool on) {
       auto p = std::make_unique<NexusProcessor>();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
@@ -781,7 +781,7 @@ int main(int argc, char** argv)
       return 10.0 * std::log10(s / static_cast<double>(std::max<size_t>(1, v.size())));
     };
     const auto outDry = play(*make(19, 0, false), signal);
-    const char* const kinds[3] = {"Juniper Sky", "Lime Echo", "Galaxy Mod"};
+    const char* const kinds[3] = {"Aquamarine Sky", "Emerald Echo", "Galaxy Mod"};
     for (int k = 0; k < 3; ++k)
     {
       int finite = 0, changed = 0, level = 0;
@@ -826,7 +826,7 @@ int main(int argc, char** argv)
              juce::String(bounded) + " de 12");
     }
 
-    // Lime Echo no andamento: 1/4 a 120 BPM repete meio segundo depois.
+    // Emerald Echo no andamento: 1/4 a 120 BPM repete meio segundo depois.
     {
       auto firstEcho = [](const std::vector<float>& out) {
         size_t best = 4000;
@@ -845,7 +845,7 @@ int main(int argc, char** argv)
       for (int i = 0; i < 48; ++i)
         click[static_cast<size_t>(1000 + i)] = 0.5 * std::sin(i / 48.0 * 3.14159);
       const double ms = firstEcho(play(*p, click));
-      report(std::abs(ms - 500.0) < 5.0, "Lime Echo sincronizado: 1/4 a 120 BPM repete em 500 ms",
+      report(std::abs(ms - 500.0) < 5.0, "Emerald Echo sincronizado: 1/4 a 120 BPM repete em 500 ms",
              juce::String(ms, 1) + " ms (" + NexusProcessor::divisionName(NexusProcessor::divisionFor(2.5f)) + ")");
       setParam(*p, "andamento", 90.0f);
       play(*p, std::vector<double>(96000, 0.0)); // o tempo desliza até o novo
@@ -1011,7 +1011,7 @@ int main(int argc, char** argv)
     const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
     report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
     int all = 0;
-    for (const auto* g : {"brit800", "lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
+    for (const auto* g : {"brit800", "greengage_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }

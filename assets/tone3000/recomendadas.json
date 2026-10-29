@@ -79,7 +79,7 @@
       }
     ]
   },
-  "lemon_drive": {
+  "greengage_drive": {
     "busca": "Tube Screamer",
     "tons": [
       {
@@ -893,7 +893,7 @@
       }
     ]
   },
-  "lychee_fuzz": {
+  "pearl_fuzz": {
     "busca": "Big Muff",
     "tons": [
       {
@@ -920,7 +920,7 @@
       }
     ]
   },
-  "avocado_metal": {
+  "onyx_metal": {
     "busca": "Metal Zone",
     "tons": [
       {
@@ -940,7 +940,7 @@
       }
     ]
   },
-  "pomegranate_mud": {
+  "heliodor_mud": {
     "busca": "Mudhoney",
     "tons": [
       {
@@ -1439,7 +1439,7 @@
       }
     ]
   },
-  "apricot_overdrive": {
+  "citrine_overdrive": {
     "busca": "OD-3",
     "tons": [
       {
@@ -1567,7 +1567,7 @@
       }
     ]
   },
-  "fig_bender": {
+  "mercury_bender": {
     "busca": "Tone Bender",
     "tons": [
       {
@@ -1605,7 +1605,7 @@
       }
     ]
   },
-  "kiwi_drive": {
+  "opal_drive": {
     "busca": "OCD",
     "tons": [
       {
@@ -1709,7 +1709,7 @@
       }
     ]
   },
-  "starfruit_rock": {
+  "hematite_rock": {
     "busca": "X100",
     "tons": [
       {
@@ -1763,7 +1763,7 @@
       }
     ]
   },
-  "tamarind_amp": {
+  "basalt_amp": {
     "busca": "SansAmp",
     "tons": [
       {
@@ -1879,7 +1879,7 @@
       }
     ]
   },
-  "mulberry_omega": {
+  "labradorite_omega": {
     "busca": "Alpha Omega",
     "tons": [
       {
@@ -1926,7 +1926,7 @@
       }
     ]
   },
-  "guava_precision": {
+  "spinel_precision": {
     "busca": "Precision Drive",
     "tons": [
       {
@@ -1958,7 +1958,7 @@
       }
     ]
   },
-  "peach_glory": {
+  "amber_glory": {
     "busca": "Morning Glory",
     "tons": [
       {
@@ -2083,7 +2083,7 @@
       }
     ]
   },
-  "pineapple_king": {
+  "amethyst_king": {
     "busca": "King of Tone",
     "tons": [
       {
@@ -2130,7 +2130,7 @@
       }
     ]
   },
-  "cashew_boost": {
+  "magnetite_boost": {
     "busca": "EP Booster",
     "tons": [
       {
@@ -2191,7 +2191,7 @@
       }
     ]
   },
-  "papaya_grind": {
+  "tourmaline_grind": {
     "busca": "Grind",
     "tons": [
       {
@@ -2222,7 +2222,7 @@
       }
     ]
   },
-  "persimmon_33": {
+  "sapote_33": {
     "busca": "Fortin 33",
     "tons": [
       {
@@ -2258,7 +2258,7 @@
       }
     ]
   },
-  "strawberry_5150": {
+  "jet_5150": {
     "busca": "5150 Overdrive",
     "tons": [
       {
@@ -2305,7 +2305,7 @@
       }
     ]
   },
-  "gooseberry_g3": {
+  "charoite_g3": {
     "busca": "G3",
     "tons": [
       {
@@ -2343,7 +2343,7 @@
       }
     ]
   },
-  "nectarine_od": {
+  "jamun_od": {
     "busca": "BE-OD",
     "tons": [
       {
@@ -2362,7 +2362,7 @@
       }
     ]
   },
-  "cranberry_wylde": {
+  "agate_wylde": {
     "busca": "Wylde",
     "tons": [
       {
@@ -2396,7 +2396,7 @@
       }
     ]
   },
-  "kumquat_klone": {
+  "pyrite_klone": {
     "busca": "Tumnus",
     "tons": [
       {
@@ -2433,7 +2433,7 @@
       }
     ]
   },
-  "elderberry_war": {
+  "howlite_war": {
     "busca": "Fuzz War",
     "tons": [
       {
@@ -2478,7 +2478,7 @@
       }
     ]
   },
-  "mangosteen_fuzz": {
+  "moonstone_fuzz": {
     "busca": "Hizumitas",
     "tons": [
       {
@@ -2497,7 +2497,7 @@
       }
     ]
   },
-  "grapefruit_drive": {
+  "peridot_drive": {
     "busca": "Plumes",
     "tons": [
       {
@@ -2583,7 +2583,7 @@
       }
     ]
   },
-  "pitanga_250": {
+  "topaz_250": {
     "busca": "DOD 250",
     "tons": [
       {
@@ -2613,7 +2613,7 @@
       }
     ]
   },
-  "lychee_bassfuzz": {
+  "lime_bassfuzz": {
     "busca": "Bass Big Muff",
     "tons": [
       {
@@ -2668,7 +2668,7 @@
       }
     ]
   },
-  "cupuacu_hammer": {
+  "galena_hammer": {
     "busca": "Tone Hammer",
     "tons": [
       {
@@ -2700,7 +2700,7 @@
       }
     ]
   },
-  "graviola_bassdi": {
+  "melanite_bassdi": {
     "busca": "M80",
     "tons": [
       {

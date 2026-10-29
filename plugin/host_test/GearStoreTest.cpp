@@ -153,7 +153,7 @@ int main(int argc, char** argv)
     if (e->getStringAttribute("id") == "p1_visual")
       visual = e->getDoubleAttribute("value");
   check(xml->getStringAttribute("p1_visual_id") == id && visual == 0.0,
-        U("salvo de novo: id da peça nova e o parâmetro no Lemon Drive (programa velho toca algo parecido)"));
+        U("salvo de novo: id da peça nova e o parâmetro no Greengage Drive (programa velho toca algo parecido)"));
 
   temp.deleteRecursively();
   std::printf(failures == 0 ? "tudo certo\n" : "%d falhas\n", failures);

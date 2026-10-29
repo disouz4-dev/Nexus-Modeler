@@ -88,7 +88,7 @@ não o amplificador real.
 | Crusher | distorção (base não informada) | não buscado | base real não identificada |
 | Dcomp | MXR Dyna Comp | efeito próprio (sem captura) | compressor; existem capturas (84038 "MXR Dynacomp", 5), mas compressor fica melhor nativo |
 | Delay | Boss DD-3 (provável) | já no Nexus (Coconut Delay) | efeito próprio |
-| Dime Noise Gate | MXR Smart Gate (coleção Dimebag) | já no Nexus (Pear Gate) | efeito próprio |
+| Dime Noise Gate | MXR Smart Gate (coleção Dimebag) | já no Nexus (Marcasite Gate) | efeito próprio |
 | Dime Wah | Dunlop Cry Baby From Hell (Dimebag) | efeito próprio (sem captura) | |
 | Diode Overdrive | overdrive de diodo (base não informada) | não buscado | base real não identificada |
 | Distortion | Boss DS-1 (provável) | já no Nexus (Orange Drive) | |
@@ -112,7 +112,7 @@ não o amplificador real.
 | Fuzz Age | Dallas Arbiter Fuzz Face (germânio) | 96791 — "Germanium Fuzz Face AC128" | 11 capturas |
 | Fuzz Age 2 | Fuzz Face de silício (provável) | 62226 — "Silicon Fuzz Face Clone - Reloaded (Cleanup)" | 6 capturas; é clone |
 | FuzzOne | Maestro FZ-1 Fuzz-Tone (provável) | 84643 — "Smitty Maelstrom Fuzz (Gibson Maestro Fuzz Tone Clone)" | clone; número de capturas não apareceu |
-| Gate | redutor de ruído | já no Nexus (Pear Gate) | |
+| Gate | redutor de ruído | já no Nexus (Marcasite Gate) | |
 | Harmonator | harmonizador | efeito próprio (sem captura) | tom/oitava |
 | LFO Filter | filtro com oscilador | efeito próprio (sem captura) | |
 | May Wah | wah de Brian May (Cry Baby) | efeito próprio (sem captura) | |
@@ -120,14 +120,14 @@ não o amplificador real.
 | Metal Distortion 2 | Boss HM-2 Heavy Metal (provável) | 58569 — "Boss HM-2 1985 MIJ TTSV10" | 48 capturas; alternativa 6778 "BOSS HM-2 1986" (11) |
 | Metal Flanger | flanger | efeito próprio (sem captura) | |
 | Nirvana | base não informada | não buscado | base real não identificada |
-| Noise Gate | redutor de ruído | já no Nexus (Pear Gate) | |
+| Noise Gate | redutor de ruído | já no Nexus (Marcasite Gate) | |
 | Nu-Tron III | Musitronics Mu-Tron III | efeito próprio (sem captura) | filtro de envelope |
-| OCD | Fulltone OCD | 75333 — "Fulltone OCD v2" | 8 capturas; alternativa 102967 "Fulltone OCD - Distortion Pedal" (7); já planejado no Nexus como Kiwi Drive |
+| OCD | Fulltone OCD | 75333 — "Fulltone OCD v2" | 8 capturas; alternativa 102967 "Fulltone OCD - Distortion Pedal" (7); já planejado no Nexus como Opal Drive |
 | Octa-V | Roger Mayer Octavia (Hendrix) | 92200 — "DIY Octavia Fuzz" | 12 capturas; é clone; oitava pode soar estranha em captura |
 | Octav | oitavador (provável Boss OC-2) | efeito próprio (sem captura) | tom/oitava |
 | OctoBlue | oitavador (base não informada) | efeito próprio (sem captura) | tom/oitava |
 | Opto Tremolo | tremolo óptico | efeito próprio (sem captura) | |
-| Overdrive | Ibanez Tube Screamer (provável) | já no Nexus (Lemon Drive, TS9) | para um TS808: 30104 "Ibanez TS808 (Japan Reissue 2003)" (50 capturas) |
+| Overdrive | Ibanez Tube Screamer (provável) | já no Nexus (Greengage Drive, TS9) | para um TS808: 30104 "Ibanez TS808 (Japan Reissue 2003)" (50 capturas) |
 | OverScream | overdrive (base não informada) | não buscado | base real não identificada |
 | Phaze Nine | MXR Phase 90 (provável) | efeito próprio (sem captura) | |
 | Phazer 10 | MXR Phase 100 (provável) | efeito próprio (sem captura) | |

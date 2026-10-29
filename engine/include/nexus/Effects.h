@@ -317,8 +317,8 @@ public:
     octave,
     comp,
     geq,
-    sky,     // Juniper Sky: reverb de vários modos
-    echo,    // Lime Echo: delay de vários modos
+    sky,     // Aquamarine Sky: reverb de vários modos
+    echo,    // Emerald Echo: delay de vários modos
     multiMod, // Galaxy Mod: modulação de vários modos
     triple    // Blueberry Chain: três delays em série
   };

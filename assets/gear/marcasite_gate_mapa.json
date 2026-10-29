@@ -1,0 +1,80 @@
+{
+  "nome": "Marcasite Gate",
+  "familia": "marcasite_gate",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 228,
+      "y": 125,
+      "tamanho": 144,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 132,
+      "y": 38,
+      "tamanho": 86,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 382,
+      "y": 38,
+      "tamanho": 86,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "rotulos": [
+    {
+      "texto": "SENSIBILIDADE",
+      "x": 300.0,
+      "y": 297.0,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#181f08",
+      "espaco": 1.15
+    },
+    {
+      "texto": "ATAQUE",
+      "x": 178.2,
+      "y": 152.3,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#181f08",
+      "espaco": 1.15
+    },
+    {
+      "texto": "RELEASE",
+      "x": 421.8,
+      "y": 152.3,
+      "altura": 20.87,
+      "achatamento": 1.0,
+      "cor": "#181f08",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 614.0,
+    "raio": 77.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 84.6,
+    "raio": 19.1
+  },
+  "medidas_mm": [
+    64,
+    112
+  ]
+}

@@ -50,7 +50,7 @@ struct GearEntry
     builtIn,
     downloaded
   };
-  juce::String id; // "lemon_drive": nunca muda, é o que vai nos presets
+  juce::String id; // "greengage_drive": nunca muda, é o que vai nos presets
   Kind kind = Kind::pedal;
   juce::String name, inspiration, category, source;
   juce::String engine;        // "captura", "chorus"...; caixa: "caixa"

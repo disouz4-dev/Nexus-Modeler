@@ -7,7 +7,7 @@ completo em build/gear/<pedal>/:
   então a tira dele fica só com 11 quadros em vez de 101;
 - corrige o mapa (posições de botões, rótulos, pisante e LED).
 
-Uso (com Pillow): reduzir_pedal.py <pedal> [escala]   ex.: reduzir_pedal.py lemon_drive 0.5
+Uso (com Pillow): reduzir_pedal.py <pedal> [escala]   ex.: reduzir_pedal.py greengage_drive 0.5
 Grava em assets/gear/<pedal>_*.
 """
 import json

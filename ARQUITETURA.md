@@ -1,7 +1,7 @@
 # Nexus Modeler — proposta de arquitetura
 
 Estado (26/10/2026): prova do motor pronta; tela 3D com o Brit 800, a caixa
-4x12 (IR e trava do full rig) e três pedais (Lemon Drive, Laranja Dist e Ouro)
+4x12 (IR e trava do full rig) e três pedais (Greengage Drive, Laranja Dist e Ouro)
 tocando capturas. O resto é proposta.
 Repositório: https://github.com/disouz4-dev/Nexus-Modeler
 

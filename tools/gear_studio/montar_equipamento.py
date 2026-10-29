@@ -18,7 +18,7 @@ no lab2 (Linux, python3 + Pillow) logo depois do render:
      --commit grava o commit (sem enviar: o envio é da automação).
 
 Exemplos:
-  montar_equipamento.py kiwi_drive --saida ~/nexus-gear/saida/kiwi_drive
+  montar_equipamento.py opal_drive --saida ~/nexus-gear/saida/opal_drive
   montar_equipamento.py fig_fuzz --saida ~/nexus-gear/saida/fig_fuzz \\
       --inspiracao "Fuzz Face" --categoria "Drive e distorção" --busca "Fuzz Face" --commit
 

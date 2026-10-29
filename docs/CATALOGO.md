@@ -30,7 +30,7 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 
 | Nome no Nexus | Inspirado em | Cor | Situação |
 |---|---|---|---|
-| Lemon Drive | Ibanez TS9 Tube Screamer | verde | pronto |
+| Greengage Drive | Ibanez TS9 Tube Screamer | verde | pronto |
 | Orange Drive | Boss DS-1 | laranja | pronto |
 | Banana Overdrive | Boss SD-1 | amarelo | pronto |
 | Gold Centaur | Klon Centaur | dourado | pronto |
@@ -39,7 +39,7 @@ pacote de capturas da TONE3000 e o ganho em degraus de 0 a 10.
 | Fig Fuzz | Electro-Harmonix Big Muff | prata e vermelho | planejado |
 | Cherry Fuzz | Dallas Fuzz Face | vermelho, redondo | planejado |
 | Blackberry Metal | Boss MT-2 Metal Zone | preto | planejado |
-| Kiwi Drive | Fulltone OCD | creme | planejado |
+| Opal Drive | Fulltone OCD | creme | planejado |
 
 ## Pedais nativos (som feito pelo próprio Nexus, sem captura)
 
@@ -49,14 +49,14 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 |---|---|---|---|
 | Neptune Chorus | Boss CE-2 | chorus | pronto |
 | Coconut Delay | Boss DD-3 | delay | pronto |
-| Grape Reverb | Boss RV-6 | reverb | pronto |
+| Meteorite Reverb | Boss RV-6 | reverb | pronto |
 | Peach Phaser | MXR Phase 90 | phaser | planejado |
 | Lime Flanger | MXR Flanger | flanger | planejado |
 | Melon Tremolo | Boss TR-2 | tremolo | planejado |
 | Apple Comp | MXR Dyna Comp | compressor | planejado |
-| Pear Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
+| Marcasite Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
 | Comet Wah | Dunlop Cry Baby | wah | planejado |
-| Acerola EQ | Boss GE-7 | equalizador gráfico: 7 faixas (100 Hz a 6,4 kHz, cada uma de -15 a +15 dB) e nível | pronto |
+| Selenite EQ | Boss GE-7 | equalizador gráfico: 7 faixas (100 Hz a 6,4 kHz, cada uma de -15 a +15 dB) e nível | pronto |
 
 ## Caixas
 
@@ -141,37 +141,37 @@ Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específ
 | Olive Drive | Ibanez TS808 Tube Screamer |
 | Pistachio Drive | Maxon OD808 |
 | Blueberry Blues | Boss BD-2 Blues Driver |
-| Apricot Overdrive | Boss OD-3 |
+| Citrine Overdrive | Boss OD-3 |
 | Clementine Turbo | Boss DS-2 Turbo Distortion |
 | Cherry Fuzz | Dunlop Fuzz Face |
-| Fig Bender | Tone Bender |
-| Kiwi Drive | Fulltone OCD |
+| Mercury Bender | Tone Bender |
+| Opal Drive | Fulltone OCD |
 | Quince Plus | MXR Distortion+ |
-| Starfruit Rock | Rockman X100 |
-| Tamarind Amp | Tech 21 SansAmp |
+| Hematite Rock | Rockman X100 |
+| Basalt Amp | Tech 21 SansAmp |
 | Blackcurrant Bass | Darkglass B7K |
-| Mulberry Omega | Darkglass Alpha Omega |
-| Guava Precision | Horizon Devices Precision Drive |
-| Peach Glory | JHS Morning Glory |
+| Labradorite Omega | Darkglass Alpha Omega |
+| Spinel Precision | Horizon Devices Precision Drive |
+| Amber Glory | JHS Morning Glory |
 | Raspberry Drive | JHS Andy Timmons |
 | Honeydew Drive | Paul Cochrane Timmy |
-| Pineapple King | Analogman King of Tone |
-| Cashew Boost | Xotic EP Booster |
-| Papaya Grind | Fortin Grind |
-| Persimmon 33 | Fortin 33 |
-| Strawberry 5150 | EVH 5150 Overdrive |
-| Gooseberry G3 | Revv G3 |
-| Nectarine OD | Friedman BE-OD |
-| Cranberry Wylde | MXR Wylde Overdrive |
-| Kumquat Klone | Wampler Tumnus |
-| Elderberry War | Death By Audio Fuzz War |
-| Mangosteen Fuzz | EarthQuaker Hizumitas |
-| Grapefruit Drive | EarthQuaker Plumes |
+| Amethyst King | Analogman King of Tone |
+| Magnetite Boost | Xotic EP Booster |
+| Tourmaline Grind | Fortin Grind |
+| Sapote 33 | Fortin 33 |
+| Jet 5150 | EVH 5150 Overdrive |
+| Charoite G3 | Revv G3 |
+| Jamun OD | Friedman BE-OD |
+| Agate Wylde | MXR Wylde Overdrive |
+| Pyrite Klone | Wampler Tumnus |
+| Howlite War | Death By Audio Fuzz War |
+| Moonstone Fuzz | EarthQuaker Hizumitas |
+| Peridot Drive | EarthQuaker Plumes |
 | Jackfruit Monkey | DigiTech Bad Monkey |
-| Pitanga 250 | DOD Overdrive Preamp 250 |
-| Lychee Bass Fuzz | Electro-Harmonix Bass Big Muff |
-| Cupuaçu Hammer | Aguilar Tone Hammer |
-| Graviola Bass DI | MXR M80 Bass DI |
+| Topaz 250 | DOD Overdrive Preamp 250 |
+| Lime Bass Fuzz | Electro-Harmonix Bass Big Muff |
+| Galena Hammer | Aguilar Tone Hammer |
+| Melanite Bass DI | MXR M80 Bass DI |
 
 ### Pedais nativos
 
@@ -182,7 +182,7 @@ Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específ
 | Pulsar Echo | Electro-Harmonix Memory Man |
 | Jupiter Octave | Boss OC-2 |
 | Apple Comp | MXR Dyna Comp |
-| Acerola EQ | Boss GE-7 (equalizador gráfico de 7 faixas, de 100 Hz a 6,4 kHz, cada uma de -15 a +15 dB, e o nível) |
+| Selenite EQ | Boss GE-7 (equalizador gráfico de 7 faixas, de 100 Hz a 6,4 kHz, cada uma de -15 a +15 dB, e o nível) |
 
 ### Caixas
 

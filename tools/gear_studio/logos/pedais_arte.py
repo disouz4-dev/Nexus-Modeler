@@ -296,7 +296,7 @@ P["nebula_flanger"] = dict(
     ink="#FFD2EE",
     paint="#2A0E3E", pattern=("stars", "#E8B8F0", 22),
     emblem=lambda: A.nebula(["#5A1E8A", "#A0287E", "#E2569E", "#FFC0DE"], 6), halo=False, scale=1.7, stars=("#FFFFFF", 5))
-P["moon_tremolo"] = dict(
+P["turquoise_tremolo"] = dict(
     ink="#E6E4DC",
     paint="#1E2230", pattern=("stars", "#B8C0D8", 20),
     emblem=lambda: A.moon(42, "#E9E6DC", "#CCC8BA", "#8A877E"), halo=False,
@@ -330,74 +330,74 @@ F = {
     "banana_overdrive": ("banana", ("stripes", 2.2, 3.2, -30)),
     "gold_centaur": (lambda: A.gold_laurel("#2A1E0E", "#B8892E"), ("dots", 3.0, 0.8)),
     "coconut_delay": ("coconut", ("waves", 1.2, 14, 4.5, 0.9)),
-    "grape_reverb": ("grapes", ("scatter", "grapes", 7, 13)),
-    "pear_gate": ("pear", ("dots", 3.2, 1.0)),
+    "meteorite_reverb": ("grapes", ("scatter", "grapes", 7, 13)),
+    "marcasite_gate": ("pear", ("dots", 3.2, 1.0)),
     "cherry_drop": ("cherries", ("dots", 3.0, 0.9)),
     "acai_rat": ("acai", ("stripes", 1.6, 3.0, 30)),
     "jabuticaba_buzzsaw": ("jabuticaba", ("stripes", 1.6, 3.0, 30)),
-    "lychee_fuzz": ("lychee", ("dots", 3.2, 1.0)),
-    "avocado_metal": ("avocado", ("rays", 30)),
-    "pomegranate_mud": ("pomegranate", ("rays", 30)),
+    "pearl_fuzz": ("lychee", ("dots", 3.2, 1.0)),
+    "onyx_metal": ("avocado", ("rays", 30)),
+    "heliodor_mud": ("pomegranate", ("rays", 30)),
     "snowpear_treble": ("snow_pear", ("dots", 3.2, 1.0)),
     # drives da seleção
     "blueberry_blues": ("blueberry", ("dots", 3.0, 0.9)),
-    "apricot_overdrive": ("apricot", ("rays", 28)),
+    "citrine_overdrive": ("apricot", ("rays", 28)),
     "clementine_turbo": ("clementine", ("stripes", 2.0, 3.0, 35)),
     "cherry_fuzz": ("cherries", ("scatter", "cherries", 7, 13)),
-    "fig_bender": ("fig", ("dots", 3.2, 1.0)),
-    "kiwi_drive": ("kiwi", ("scatter", A.slice_icon(), 8, 14)),
+    "mercury_bender": ("fig", ("dots", 3.2, 1.0)),
+    "opal_drive": ("kiwi", ("scatter", A.slice_icon(), 8, 14)),
     "quince_plus": ("quince", ("rays", 26)),
-    "starfruit_rock": ("starfruit", ("scatter", "starfruit", 7, 12)),
-    "tamarind_amp": ("tamarind", ("stripes", 1.8, 3.4, -35)),
+    "hematite_rock": ("starfruit", ("scatter", "starfruit", 7, 12)),
+    "basalt_amp": ("tamarind", ("stripes", 1.8, 3.4, -35)),
     "blackcurrant_bass": ("blackcurrant", ("dots", 3.2, 1.0)),
-    "mulberry_omega": ("mulberry", ("stripes", 1.8, 3.2, -30)),
-    "guava_precision": ("guava", ("rays", 30)),
-    "peach_glory": ("peach", ("dots", 3.2, 1.0)),
+    "labradorite_omega": ("mulberry", ("stripes", 1.8, 3.2, -30)),
+    "spinel_precision": ("guava", ("rays", 30)),
+    "amber_glory": ("peach", ("dots", 3.2, 1.0)),
     "raspberry_drive": ("raspberry", ("scatter", "raspberry", 7, 12)),
     "honeydew_drive": ("honeydew", ("stripes", 2.0, 3.2, 30)),
-    "pineapple_king": ("pineapple", ("rays", 30)),
-    "cashew_boost": ("cashew", ("dots", 3.2, 1.0)),
-    "papaya_grind": ("papaya", ("stripes", 2.2, 3.2, -30)),
-    "persimmon_33": ("persimmon", ("rays", 26)),
-    "strawberry_5150": ("strawberry", ("scatter", "strawberry", 7, 12)),
-    "gooseberry_g3": ("gooseberry", ("dots", 3.2, 1.0)),
-    "nectarine_od": ("nectarine", ("stripes", 2.0, 3.0, 35)),
-    "cranberry_wylde": ("cranberry", ("rays", 28)),
-    "kumquat_klone": ("kumquat", ("dots", 3.2, 1.0)),
-    "elderberry_war": ("elderberry", ("dots", 3.2, 1.0)),
-    "mangosteen_fuzz": ("mangosteen", ("rays", 30)),
-    "grapefruit_drive": ("grapefruit", ("scatter", A.slice_icon(), 8, 14)),
+    "amethyst_king": ("pineapple", ("rays", 30)),
+    "magnetite_boost": ("cashew", ("dots", 3.2, 1.0)),
+    "tourmaline_grind": ("papaya", ("stripes", 2.2, 3.2, -30)),
+    "sapote_33": ("persimmon", ("rays", 26)),
+    "jet_5150": ("strawberry", ("scatter", "strawberry", 7, 12)),
+    "charoite_g3": ("gooseberry", ("dots", 3.2, 1.0)),
+    "jamun_od": ("nectarine", ("stripes", 2.0, 3.0, 35)),
+    "agate_wylde": ("cranberry", ("rays", 28)),
+    "pyrite_klone": ("kumquat", ("dots", 3.2, 1.0)),
+    "howlite_war": ("elderberry", ("dots", 3.2, 1.0)),
+    "moonstone_fuzz": ("mangosteen", ("rays", 30)),
+    "peridot_drive": ("grapefruit", ("scatter", A.slice_icon(), 8, 14)),
     "jackfruit_monkey": ("jackfruit", ("stripes", 2.0, 3.2, 30)),
-    "pitanga_250": ("pitanga", ("dots", 3.2, 1.0)),
-    "lychee_bassfuzz": ("lychee", ("rays", 28)),
-    "cupuacu_hammer": ("cupuacu", ("rays", 28)),
-    "graviola_bassdi": ("graviola", ("dots", 3.2, 1.0)),
-    "acerola_eq": ("acerola", ("dots", 3.0, 0.9)),
+    "topaz_250": ("pitanga", ("dots", 3.2, 1.0)),
+    "lime_bassfuzz": ("lychee", ("rays", 28)),
+    "galena_hammer": ("cupuacu", ("rays", 28)),
+    "melanite_bassdi": ("graviola", ("dots", 3.2, 1.0)),
+    "selenite_eq": ("acerola", ("dots", 3.0, 0.9)),
     "apple_comp": ("apple", ("rays", 26)),
     # clássicos: o desenho vai na etiqueta, fatias tom sobre tom no tampo
-    "lemon_drive": ("lime_slice", ("scatter", A.slice_icon(), 9, 15)),
+    "greengage_drive": ("lime_slice", ("scatter", A.slice_icon(), 9, 15)),
     "olive_drive": ("olive", ("scatter", "olive", 9, 15)),
     "pistachio_drive": ("pistachio", ("dots", 3.2, 1.0)),
 }
 for k, (emb, pat) in F.items():
     P.setdefault(k, dict(emblem=emb, pattern=pat))
 # Pedais antigos repintados na cor da própria fruta.
-P["avocado_metal"].update(paint="#3A5420", ink=CREME)
+P["onyx_metal"].update(paint="#3A5420", ink=CREME)
 P["acai_rat"].update(paint="#2C0C2A", ink="#F2E6F0")
-P["pear_gate"].update(paint="#D8E07E", ink="#1E2410")
+P["marcasite_gate"].update(paint="#D8E07E", ink="#1E2410")
 P["jabuticaba_buzzsaw"].update(paint="#1C0A18")
-P["lychee_fuzz"].update(paint="#C8384E", ink=CREME)
+P["pearl_fuzz"].update(paint="#C8384E", ink=CREME)
 P["cherry_drop"].update(at=(37.0, 48.0, 15.0))
 # Caixas largas de vários modos e o Blueberry Chain: desenho em lugar marcado.
-P["juniper_sky"] = dict(emblem=A.juniper, pattern=("dots", 3.2, 0.9), at=(132.0, 90.0, 52.0))
-P["lime_echo"] = dict(emblem="lime_slice", pattern=("rings", 3.4, 0.45), at=(113.0, 81.0, 27.0))
+P["aquamarine_sky"] = dict(emblem=A.juniper, pattern=("dots", 3.2, 0.9), at=(132.0, 90.0, 52.0))
+P["emerald_echo"] = dict(emblem="lime_slice", pattern=("rings", 3.4, 0.45), at=(113.0, 81.0, 27.0))
 P["galaxy_mod"] = dict(ink="#F2EEFF", paint="#2A0E46", pattern=("stars", "#C8B2F0", 30), emblem=A.galaxy, halo=False,
                        at=(150.0, 100.0, 58.0), stars=("#FFFFFF", 6))
 P["blueberry_chain"] = dict(emblem=A.blueberry_chain_art, pattern=("dots", 3.2, 0.9), at=(62.5, 64.0, 40.0), led=[0.0, -0.12])
 ASTROS_EXTRA = ("galaxy_mod",)
 
-ASTROS = ("mars_phaser", "nebula_flanger", "moon_tremolo", "eclipse_vibe", "comet_wah", "pulsar_echo", "jupiter_octave")
-KEEP_LAYOUT = ("cherry_drop", "saturn_rotary", "neptune_chorus", "juniper_sky", "lime_echo", "galaxy_mod", "blueberry_chain")
+ASTROS = ("mars_phaser", "nebula_flanger", "turquoise_tremolo", "eclipse_vibe", "comet_wah", "pulsar_echo", "jupiter_octave")
+KEEP_LAYOUT = ("cherry_drop", "saturn_rotary", "neptune_chorus", "aquamarine_sky", "emerald_echo", "galaxy_mod", "blueberry_chain")
 
 
 def lin(hexcolor):

@@ -6,7 +6,7 @@
 #include "nexus/DelayLine.h"
 
 // Pedais de ambiente do próprio Nexus, com vários modos cada: reverb (Juniper
-// Sky, no espírito do BigSky, com shimmer), delay (Lime Echo, no espírito do
+// Sky, no espírito do BigSky, com shimmer), delay (Emerald Echo, no espírito do
 // DL4) e modulação (Galaxy Mod, no espírito do MM4). Mono, em double, na taxa
 // do motor; botões de 0 a 1.
 namespace nexus
@@ -37,7 +37,7 @@ struct StateVariable
   void process(double x, double hz, double q, double sampleRate);
 };
 
-// Reverb de vários modos (Juniper Sky): rede de oito linhas realimentadas
+// Reverb de vários modos (Aquamarine Sky): rede de oito linhas realimentadas
 // (FDN) com difusão na entrada, modulação nas linhas e troca de afinação
 // dentro da cauda nos modos shimmer.
 class SkyReverb
@@ -102,7 +102,7 @@ private:
   int mMode = -1;
 };
 
-// Delay de vários modos (Lime Echo).
+// Delay de vários modos (Emerald Echo).
 class EchoDelay
 {
 public:

@@ -20,15 +20,15 @@
   Power 4x12, Uber 4x12, Jazz 2x12, Vault 8x10 e Granite 4x10. A lista das
   caixas agora é agrupada pelo tamanho (4x12, 2x12, 4x10, 8x10).
 - Pedais de modulação feitos pelo próprio Nexus: Mars Phaser (Phase 90),
-  Nebula Flanger (Electric Mistress), Moon Tremolo (TR-2) e Eclipse Vibe
+  Nebula Flanger (Electric Mistress), Turquoise Tremolo (TR-2) e Eclipse Vibe
   (Uni-Vibe).
 - Pedais de ambiente de vários modos, feitos pelo próprio Nexus, com visor
   que mostra o modo:
-  - Juniper Sky (no espírito do BigSky): hall, sala, placa, mola, nuvem,
+  - Aquamarine Sky (no espírito do BigSky): hall, sala, placa, mola, nuvem,
     swell e cinco shimmers (oitava acima, quinta + oitava, oitava abaixo, só
     na cauda e duplo). Botões: decaimento, pré-atraso, modulação, tom,
     shimmer e mistura.
-  - Lime Echo (no espírito do DL4): digital, analógico, fita, multi-cabeça,
+  - Emerald Echo (no espírito do DL4): digital, analógico, fita, multi-cabeça,
     ping-pong, reverso, modulado, lo-fi, slapback, swell e dueto. Segue o tap
     tempo e as divisões.
   - Galaxy Mod (no espírito do MM4): rotary, tremolo harmônico, vibrato, filtro
@@ -40,11 +40,10 @@
   chave x | / faz cada delay repetir o dobro ou a metade de vezes do anterior
   (4, 8 e 16 repetições ou 4, 2 e 1). Todos no mesmo tempo; segue o tap tempo.
 - Pedais com captura da TONE3000: Açaí Rat (RAT), Jabuticaba Buzzsaw (HM-2),
-  Lychee Fuzz (Big Muff), Avocado Metal (MT-2), Pomegranate Mud (Mudhoney) e
+  Pearl Fuzz (Big Muff), Onyx Metal (MT-2), Heliodor Mud (Mudhoney) e
   Snow Pear Treble (Rangemaster).
-- Pedais de drive e de utilidade têm nome de fruta e são pintados na cor da
-  fruta; os de modulação têm nome de astro. Em frente clara, a marca tem
-  letras pretas.
+- O nome de cada pedal é uma fruta, pedra ou metal da cor do original; os de
+  modulação têm nome de astro. Em frente clara, a marca tem letras pretas.
 
 ### Seleção da TONE3000
 - 48 cabeçotes novos, cada um com as capturas mais curtidas da comunidade da
@@ -87,21 +86,21 @@
   Acoustica 360 com a Vault 8x10.
 - 34 pedais novos de captura: Olive Drive (Ibanez TS808 Tube Screamer),
   Pistachio Drive (Maxon OD808), Blueberry Blues (Boss BD-2 Blues Driver),
-  Apricot Overdrive (Boss OD-3), Clementine Turbo (Boss DS-2 Turbo
-  Distortion), Cherry Fuzz (Dunlop Fuzz Face), Fig Bender (Tone Bender), Kiwi
-  Drive (Fulltone OCD), Quince Plus (MXR Distortion+), Starfruit Rock (Rockman
-  X100), Tamarind Amp (Tech 21 SansAmp), Blackcurrant Bass (Darkglass B7K),
-  Mulberry Omega (Darkglass Alpha Omega), Guava Precision (Horizon Devices
-  Precision Drive), Peach Glory (JHS Morning Glory), Raspberry Drive (JHS Andy
-  Timmons), Honeydew Drive (Paul Cochrane Timmy), Pineapple King (Analogman
-  King of Tone), Cashew Boost (Xotic EP Booster), Papaya Grind (Fortin Grind),
-  Persimmon 33 (Fortin 33), Strawberry 5150 (EVH 5150 Overdrive), Gooseberry
-  G3 (Revv G3), Nectarine OD (Friedman BE-OD), Cranberry Wylde (MXR Wylde
-  Overdrive), Kumquat Klone (Wampler Tumnus), Elderberry War (Death By Audio
-  Fuzz War), Mangosteen Fuzz (EarthQuaker Hizumitas), Grapefruit Drive
-  (EarthQuaker Plumes), Jackfruit Monkey (DigiTech Bad Monkey), Pitanga 250
-  (DOD Overdrive Preamp 250), Lychee Bass Fuzz (Electro-Harmonix Bass Big
-  Muff), Cupuaçu Hammer (Aguilar Tone Hammer), Graviola Bass DI (MXR M80 Bass
+  Citrine Overdrive (Boss OD-3), Clementine Turbo (Boss DS-2 Turbo
+  Distortion), Cherry Fuzz (Dunlop Fuzz Face), Mercury Bender (Tone Bender), Opal
+  Drive (Fulltone OCD), Quince Plus (MXR Distortion+), Hematite Rock (Rockman
+  X100), Basalt Amp (Tech 21 SansAmp), Blackcurrant Bass (Darkglass B7K),
+  Labradorite Omega (Darkglass Alpha Omega), Spinel Precision (Horizon Devices
+  Precision Drive), Amber Glory (JHS Morning Glory), Raspberry Drive (JHS Andy
+  Timmons), Honeydew Drive (Paul Cochrane Timmy), Amethyst King (Analogman
+  King of Tone), Magnetite Boost (Xotic EP Booster), Tourmaline Grind (Fortin Grind),
+  Sapote 33 (Fortin 33), Jet 5150 (EVH 5150 Overdrive), Charoite
+  G3 (Revv G3), Jamun OD (Friedman BE-OD), Agate Wylde (MXR Wylde
+  Overdrive), Pyrite Klone (Wampler Tumnus), Howlite War (Death By Audio
+  Fuzz War), Moonstone Fuzz (EarthQuaker Hizumitas), Peridot Drive
+  (EarthQuaker Plumes), Jackfruit Monkey (DigiTech Bad Monkey), Topaz 250
+  (DOD Overdrive Preamp 250), Lime Bass Fuzz (Electro-Harmonix Bass Big
+  Muff), Galena Hammer (Aguilar Tone Hammer), Melanite Bass DI (MXR M80 Bass
   DI).
 - Mark Two Plus, Mark Three, Mark Four e Mark JP também têm o equalizador
   gráfico de 5 faixas, como o Mark Five.
@@ -110,21 +109,24 @@
 - Comet Wah (Cry Baby), Saturn Rotary (caixa rotativa Leslie), Pulsar Echo
   (delay analógico no espírito do Memory Man), Jupiter Octave (oitavador no
   espírito do OC-2) e Apple Comp (compressor no espírito do Dyna Comp).
-- Acerola EQ: equalizador gráfico no espírito do GE-7, com sete deslizantes
+- Selenite EQ: equalizador gráfico no espírito do GE-7, com sete deslizantes
   (100, 200, 400 e 800 Hz, 1,6, 3,2 e 6,4 kHz), cada um de −15 a +15 dB, e o
   deslizante de nível. Com tudo no meio, o som passa sem mudança.
 
-### Arte nova dos pedais
-- Cada pedal tem a sua arte impressa no tampo: a fruta do nome, desenhada como
-  adesivo, sobre raios, listras ou pontos no tom do pedal; nos de modulação, o
-  astro sobre um céu estrelado.
+### Nomes e arte dos pedais
+- 34 pedais trocaram de nome para combinar com a cor do original (a
+  configuração salva continua abrindo): Lemon Drive virou Greengage Drive,
+  Grape Reverb virou Meteorite Reverb, Pear Gate virou Marcasite Gate, Lychee
+  Fuzz virou Pearl Fuzz, Avocado Metal virou Onyx Metal, Juniper Sky virou
+  Aquamarine Sky, Lime Echo virou Emerald Echo e Acerola EQ virou Selenite
+  EQ, entre outros.
+- Cada pedal tem a sua arte impressa no tampo, sobre raios, listras ou pontos
+  no tom do pedal; nos de modulação, o astro sobre um céu estrelado.
 - Os efeitos de modulação trocaram de nome para nomes de astros, no mesmo
   lugar dos antigos (as configurações salvas continuam abrindo): Blueberry
   Chorus virou Neptune Chorus, Tangerine Phaser virou Mars Phaser, Dragonfruit
-  Flanger virou Nebula Flanger, Kiwi Tremolo virou Moon Tremolo, Blackberry
+  Flanger virou Nebula Flanger, Kiwi Tremolo virou Turquoise Tremolo, Blackberry
   Vibe virou Eclipse Vibe e Plum Mod virou Galaxy Mod.
-- Pedais repintados na cor da fruta: Avocado Metal verde, Açaí Rat roxo, Pear
-  Gate verde-claro e Lychee Fuzz vermelho.
 
 ### Linux
 - O estúdio não engasga mais a guitarra ao separar uma música e tocar junto: a
@@ -137,10 +139,22 @@
   comunidade da TONE3000. "Trocar pacote" abre a lista ("Mais curtidas" é a
   primeira aba) para escolher outra.
 
+### Equipamentos novos sem atualizar o programa
+- Cabeçotes, caixas e pedais de captura novos chegam inteiros (nome, arte,
+  capturas e caixa) sem instalar versão nova do Nexus. Um ícone na coluna de
+  equipamentos fica apagado quando não há novidade (o clique procura na hora)
+  e aceso, com a quantidade, quando há; o clique baixa e as peças entram na
+  lista. A arte refeita de uma peça também chega assim.
+- Os presets passam a guardar o nome de cada peça, e não a posição dela na
+  lista: as peças novas não bagunçam os presets salvos, e os antigos
+  continuam abrindo.
+
 ### Atualização
-- Ícone próprio no topo (nuvem com seta para baixo) quando há versão nova.
-  Toda vez que o Nexus abre, ele procura e pergunta se a pessoa quer
-  atualizar; "Agora não" deixa o ícone lá para depois.
+- Ícone próprio no topo (nuvem com seta para baixo), sempre visível. Apagado,
+  não há versão nova, e o clique procura na hora (o ícone pisca enquanto
+  procura); aceso, há versão nova, e o clique baixa e instala. Ao abrir, o
+  Nexus só procura e acende o ícone, sem perguntar. O botão direito no ícone
+  aceso mostra o que mudou, lembra depois ou ignora a versão.
 - No Mac, a atualização troca o programa e os plugins no lugar onde já estão,
   sem abrir instalador. Se estiverem nas pastas do sistema, o Mac pede a
   senha uma vez, na janela dele.
@@ -182,10 +196,19 @@
   de ficarem menores do que em duas, abre a fileira da frente (a de trás com
   o começo do som, a da frente com o resto).
 - Cada pedal aparece no tamanho de verdade em relação aos outros: um pedal
-  pequeno fica menor que um comum, e o Lime Echo ficou mais compacto
+  pequeno fica menor que um comum, e o Emerald Echo ficou mais compacto
   (15 x 10,5 cm).
 - Cabeçote ou caixa: a pedaleira some e aparece só a peça.
 - A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
+- A câmera chega perto até os pedais ocuparem o palco e se ajusta quando um
+  pedal entra ou sai. Dois cliques num pedal mostram ele grande, com o resto
+  escurecido; dois cliques, Esc ou um clique fora voltam à pedaleira.
+
+### Equalizador do fim da cadeia
+- Botão Ligado/Bypass: em bypass, o som passa intacto e as faixas ficam
+  guardadas para quando ligar de novo.
+- Em cima do ponto sob o mouse, arrastado ou escolhido, aparecem a frequência
+  e o ganho.
 
 ### Microfones na frente da caixa
 

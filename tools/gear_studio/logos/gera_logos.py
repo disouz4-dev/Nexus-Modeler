@@ -154,7 +154,7 @@ def saturn():
     save("saturno_estampa.svg", W, H, sh)
 
 
-# ---------------------------------------------------------------- Lemon Drive
+# ---------------------------------------------------------------- Greengage Drive
 # Tampo 74 x 124 mm. Fatias de limão em verde sobre verde atrás dos botões.
 def lemon():
     W, H = 74.0, 124.0

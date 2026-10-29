@@ -734,7 +734,7 @@ void testGraphicEq()
 // Noise gate: corta o chiado entre as notas sem cortar a nota.
 void testGate()
 {
-  std::printf("\n9. Pear Gate (noise gate)\n");
+  std::printf("\n9. Marcasite Gate (noise gate)\n");
   NoiseGate gate;
   gate.prepare(kFs);
   // 1 s de nota (-12 dB) caindo devagar, depois só chiado (-70 dB).

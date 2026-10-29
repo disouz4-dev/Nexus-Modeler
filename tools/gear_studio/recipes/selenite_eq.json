@@ -1,0 +1,113 @@
+{
+  "tipo": "pedal",
+  "nome": "Selenite EQ",
+  "familia": "selenite_eq",
+  "inspiracao": "equalizador gráfico compacto de sete faixas (estilo GE-7)",
+  "formato": "compacto",
+  "medidas_m": {
+    "largura": 0.073,
+    "comprimento": 0.129,
+    "altura": 0.059
+  },
+  "basculante_rel": 0.6,
+  "pintura": {
+    "cor": [
+      0.6121,
+      0.0039,
+      0.0039
+    ],
+    "metalico": 0.0,
+    "aspereza": 0.22
+  },
+  "texto_cor": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "modelo": "SELENITE EQ",
+  "tipo_texto": "EQUALIZER",
+  "rotulo_m": 0.0046,
+  "botao_estilo": {
+    "diametro_m": 0.0135,
+    "altura_m": 0.012,
+    "saia": true,
+    "corpo": [
+      0.014,
+      0.014,
+      0.014
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ],
+    "cursor": [
+      0.012,
+      0.012,
+      0.012
+    ]
+  },
+  "botoes": [],
+  "led": [
+    -0.72,
+    0.06
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "base_rel": 0.68,
+  "rotulo_embaixo": true,
+  "led_no_basculante": true,
+  "texto_cor2": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "modelo_m": 0.0085,
+  "modelo_x": 0.12,
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/selenite_eq.svg"
+  },
+  "deslizantes": [
+    {
+      "id": "a",
+      "rotulo": "100"
+    },
+    {
+      "id": "b",
+      "rotulo": "200"
+    },
+    {
+      "id": "c",
+      "rotulo": "400"
+    },
+    {
+      "id": "d",
+      "rotulo": "800"
+    },
+    {
+      "id": "e",
+      "rotulo": "1,6K"
+    },
+    {
+      "id": "f",
+      "rotulo": "3,2K"
+    },
+    {
+      "id": "g",
+      "rotulo": "6,4K"
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL"
+    }
+  ],
+  "deslizantes_layout": {
+    "y": 0.62,
+    "curso": 0.02,
+    "margem": 0.0075
+  }
+}

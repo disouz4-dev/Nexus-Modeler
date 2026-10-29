@@ -360,7 +360,7 @@ int main(int argc, char** argv)
       q.prepareToPlay(rate, block);
       ChainLayout l;
       l.pre = which == 0 ? std::vector<int>{0} : which == 1 ? std::vector<int>{1} : which == 2 ? std::vector<int>{0, 1} : std::vector<int>{};
-      // NEXUS_PERFIL_GATE=1: o pedal 3 vira o Pear Gate e entra no começo da cadeia.
+      // NEXUS_PERFIL_GATE=1: o pedal 3 vira o Marcasite Gate e entra no começo da cadeia.
       const bool gate = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_GATE", {}).isNotEmpty();
       if (gate)
         l.pre.insert(l.pre.begin(), 2);

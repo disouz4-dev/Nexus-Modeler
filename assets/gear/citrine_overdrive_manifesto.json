@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "citrine_overdrive",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Citrine Overdrive",
+  "inspiracao": "Boss OD-3",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 26,
+  "signature": null
+}

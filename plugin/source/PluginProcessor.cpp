@@ -237,7 +237,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "a"), 1}, name + "efeito A", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "b"), 1}, name + "efeito B", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "c"), 1}, name + "efeito C", knob, 4.0f));
-    // Faixas a mais do equalizador gráfico (Acerola EQ: "a" a "g" são as sete
+    // Faixas a mais do equalizador gráfico (Selenite EQ: "a" a "g" são as sete
     // faixas, do grave ao agudo).
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "d"), 1}, name + "efeito D", knob, 5.0f));
     layout.add(std::make_unique<P>(juce::ParameterID{pedalParam(i, "e"), 1}, name + "efeito E", knob, 5.0f));
@@ -246,12 +246,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "lite"), 1}, name + "A2 Lite", false));
     layout.add(std::make_unique<B>(juce::ParameterID{pedalParam(i, "sinc"), 1}, name + "sincronizar com o andamento", false));
     layout.add(std::make_unique<C>(juce::ParameterID{pedalParam(i, "visual"), 1}, name + "visual",
-                                   juce::StringArray{"Lemon Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Neptune Chorus",
-                                                     "Coconut Delay", "Grape Reverb", "Pear Gate", "Cherry Drop", "Mars Phaser",
-                                                     "Nebula Flanger", "Moon Tremolo", "Eclipse Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
-                                                     "Lychee Fuzz", "Avocado Metal", "Pomegranate Mud", "Snow Pear Treble", "Juniper Sky",
-                                                     "Lime Echo", "Galaxy Mod", "Blueberry Chain",
-                                                     "Olive Drive", "Pistachio Drive", "Blueberry Blues", "Apricot Overdrive", "Clementine Turbo", "Cherry Fuzz", "Fig Bender", "Kiwi Drive", "Quince Plus", "Starfruit Rock", "Tamarind Amp", "Blackcurrant Bass", "Mulberry Omega", "Guava Precision", "Peach Glory", "Raspberry Drive", "Honeydew Drive", "Pineapple King", "Cashew Boost", "Papaya Grind", "Persimmon 33", "Strawberry 5150", "Gooseberry G3", "Nectarine OD", "Cranberry Wylde", "Kumquat Klone", "Elderberry War", "Mangosteen Fuzz", "Grapefruit Drive", "Jackfruit Monkey", "Pitanga 250", "Lychee Bass Fuzz", juce::String::fromUTF8("Cupuaçu Hammer"), "Graviola Bass DI", "Acerola EQ", "Comet Wah", "Saturn Rotary", "Pulsar Echo", "Jupiter Octave", "Apple Comp"}, 0));
+                                   juce::StringArray{"Greengage Drive", "Orange Drive", "Banana Overdrive", "Gold Centaur", "Neptune Chorus",
+                                                     "Coconut Delay", "Meteorite Reverb", "Marcasite Gate", "Cherry Drop", "Mars Phaser",
+                                                     "Nebula Flanger", "Turquoise Tremolo", "Eclipse Vibe", juce::String::fromUTF8("Açaí Rat"), "Jabuticaba Buzzsaw",
+                                                     "Pearl Fuzz", "Onyx Metal", "Heliodor Mud", "Snow Pear Treble", "Aquamarine Sky",
+                                                     "Emerald Echo", "Galaxy Mod", "Blueberry Chain",
+                                                     "Olive Drive", "Pistachio Drive", "Blueberry Blues", "Citrine Overdrive", "Clementine Turbo", "Cherry Fuzz", "Mercury Bender", "Opal Drive", "Quince Plus", "Hematite Rock", "Basalt Amp", "Blackcurrant Bass", "Labradorite Omega", "Spinel Precision", "Amber Glory", "Raspberry Drive", "Honeydew Drive", "Amethyst King", "Magnetite Boost", "Tourmaline Grind", "Sapote 33", "Jet 5150", "Charoite G3", "Jamun OD", "Agate Wylde", "Pyrite Klone", "Howlite War", "Moonstone Fuzz", "Peridot Drive", "Jackfruit Monkey", "Topaz 250", "Lime Bass Fuzz", juce::String::fromUTF8("Galena Hammer"), "Melanite Bass DI", "Selenite EQ", "Comet Wah", "Saturn Rotary", "Pulsar Echo", "Jupiter Octave", "Apple Comp"}, 0));
   }
   layout.add(std::make_unique<B>(juce::ParameterID{"lite", 1}, juce::String::fromUTF8("A2 Lite (cabeçotes)"), false));
   layout.add(std::make_unique<P>(juce::ParameterID{"volume", 1}, juce::String::fromUTF8("Saída"),
@@ -261,7 +261,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout NexusProcessor::createLayout
   // Mudo da entrada (microfone do computador apitando, troca de guitarra...).
   // O "Testar o som" continua tocando com a entrada no mudo.
   layout.add(std::make_unique<B>(juce::ParameterID{"entrada_mudo", 1}, "Entrada no mudo", false));
-  // Pedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod): o seletor de
+  // Pedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod): o seletor de
   // modo e o quarto botão. No fim da lista, para não mexer na ordem dos outros.
   for (int i = 0; i < kPedals; ++i)
   {
