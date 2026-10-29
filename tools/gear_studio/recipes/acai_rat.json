@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Açaí Rat",
   "familia": "acai_rat",
-  "inspiracao": "Caixa preta em cunha, mais alta atrás (79 x 103 mm, 55 mm atrás e 30 na frente), letras brancas; botões pretos DISTORÇÃO, FILTRO e VOLUME em fila no alto, com os nomes em caixinhas, o nome grande no meio, LED vermelho e pisante. Tema: cacho de açaí roxo-escuro, listras tom sobre tom. Original: ProCo RAT.",
+  "inspiracao": "Caixa preta (79 x 103 x 55 mm; o original é em cunha, aqui o tampo fica reto, visto de cima), letras brancas; botões pretos DISTORÇÃO, FILTRO e VOLUME em fila no alto, com os nomes em caixinhas, o nome grande no meio, LED vermelho e pisante. Tema: cacho de açaí roxo-escuro, listras tom sobre tom. Original: ProCo RAT.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.079,
@@ -73,9 +73,6 @@
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
-  },
-  "cunha": {
-    "frente_m": 0.03
   },
   "chanfro_m": 0.004,
   "rotulo_m": 0.0034,

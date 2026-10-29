@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Comet Wah",
   "familia": "comet_wah",
-  "inspiracao": "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido com borracha frisada, o nome na ponta; chave liga/desliga embaixo da ponta, sem LED e sem botões no tampo; os três ajustes (PEDAL, FAIXA, NÍVEL), que o original não tem, ficam pequenos na faixa lisa atrás do basculante. Tema: cometa branco-azulado na ponta do pedal. Original: Dunlop Cry Baby.",
+  "inspiracao": "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido, reto, com borracha frisada, o nome na ponta; chave liga/desliga embaixo da ponta, sem LED e sem botões no tampo; os três ajustes (PEDAL, FAIXA, NÍVEL), que o original não tem, ficam pequenos na faixa lisa atrás do basculante. Tema: cometa branco-azulado na ponta do pedal. Original: Dunlop Cry Baby.",
   "formato": "wah",
   "medidas_m": {
     "largura": 0.102,
@@ -84,7 +84,7 @@
   "base_m": 0.032,
   "talao_m": 0.022,
   "borracha_rel": 0.66,
-  "inclinacao": 5.0,
+  "inclinacao": 0.0,
   "logo_m": 0.012,
   "texto_cor2": [
     0.8913,

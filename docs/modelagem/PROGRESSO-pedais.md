@@ -16,6 +16,15 @@ pisantes, textos, painéis) e desenha o tema (fruta, pedra ou astro) e o padrão
 de fundo. Precisa do shapely: `python3 -m venv venv && venv/bin/pip install shapely`
 e rodar com esse python.
 
+## Como refazer um pedal
+
+1. Mudar a receita em `logos/fiel_receitas.py` (funções `lote_a` ... `lote_d`, e `acerola`)
+   e rodar `python3 logos/fiel_receitas.py <lote>` (a, b, c, d ou acerola_eq). O script
+   confere que os ids dos botões que funcionam não mudaram.
+2. Tema em `TEMAS` no fim de `logos/fiel_arte.py`; rodar `fiel_arte.py <id>` (com shapely).
+3. Prévia no lab2 (`lab2_sync.sh repo-fiel-pedais` e build.py com `--previa --so-frente`).
+4. Commit e pedido na fila (`fila3d.sh pedir --repo ~/nexus-gear/repo-fiel-pedais ...`).
+
 ## Etapas
 
 - [x] 1. Recursos novos no pedal.py (com prévias de teste). Campos novos da receita
@@ -81,6 +90,13 @@ jabuticaba_buzzsaw (BAIXO), avocado_metal (MÉDIO duplo), clementine_turbo (TURB
 Rótulos: ficam em português (a tela traduz pela tabela de idiomas). Palavras novas
 sem tradução na tabela (ex. FORMA, OITAVA 1, DIRETO, MODO, TURBO, FUZZ, SUSTAIN)
 aparecem como estão; entram na tabela na etapa da troca de nomes.
+
+## Regra: nada angulado (Diego, 29/10 05h40)
+
+Pedais sempre vistos retos de cima (quadro.elevacao 90). Por isso acai_rat, snowpear_treble e
+fig_bender ficaram com o tampo reto (sem "cunha"; o recurso continua no pedal.py, sem uso), o
+wah com o basculante reto ("inclinacao": 0) e os compactos e clássicos com "basculante_ang" e
+"pisante_ang" 0.
 
 ## Mudanças em build.py
 

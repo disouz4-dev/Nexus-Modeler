@@ -87,6 +87,7 @@
   "pisante": {
     "estilo": "placa_pequena"
   },
+  "pisante_ang": 0.0,
   "led": [
     0.3,
     0.8

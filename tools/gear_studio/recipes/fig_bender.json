@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Mercury Bender",
   "familia": "fig_bender",
-  "inspiracao": "Caixa fundida cinza martelada em cunha, mais alta atrás (95 x 150 mm, 60 mm atrás e 30 na frente); placa preta no alto com os botões pretos ATAQUE e NÍVEL e o nome em letras brancas, pisante pequeno na frente; sem LED; o TOM, que o original não tem, fica pequeno ao lado do pisante. Tema: o planeta Mercúrio cinza com crateras. Original: Sola Sound Tone Bender (MK I).",
+  "inspiracao": "Caixa fundida cinza martelada (95 x 150 x 60 mm; o original é em cunha, aqui o tampo fica reto, visto de cima); placa preta no alto com os botões pretos ATAQUE e NÍVEL e o nome em letras brancas, pisante pequeno na frente; sem LED; o TOM, que o original não tem, fica pequeno ao lado do pisante. Tema: o planeta Mercúrio cinza com crateras. Original: Sola Sound Tone Bender (MK I).",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.095,
@@ -93,9 +93,6 @@
     0.8751,
     0.8277
   ],
-  "cunha": {
-    "frente_m": 0.03
-  },
   "pisante": {
     "estilo": "pequeno",
     "pos": [

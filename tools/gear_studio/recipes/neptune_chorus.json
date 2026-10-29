@@ -78,6 +78,7 @@
   },
   "base_rel": 0.68,
   "basculante_rel": 0.6,
+  "basculante_ang": 0.0,
   "borracha_rel": 0.36,
   "modelo_m": 0.0084,
   "modelo_x": 0.0,

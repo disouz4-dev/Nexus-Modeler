@@ -17,7 +17,7 @@ LIMPAR = ("logo", "logo_x", "logo_y", "logo_m", "logo_script", "tipo_texto", "pi
           "etiqueta_y", "transformacao", "aparencia", "deslizantes", "deslizantes_layout", "texto_cor2", "chanfro_m",
           "rotulo_m", "rotulo_embaixo", "quadro", "pisante", "pecas", "paineis", "textos", "cunha", "disposicao",
           "pintura_lados", "led_cor", "modelo_oculto", "modelo_cor", "jacks_topo", "base_m", "talao_m", "inclinacao", "etiqueta_estilo",
-          "borracha_larg", "tampo_margem_m")
+          "borracha_larg", "tampo_margem_m", "basculante_ang", "pisante_ang")
 
 
 def lin(h):
@@ -121,7 +121,7 @@ def boss(pid, nome, modelo, original, cor, letras, botoes, desc_botoes, tema, bo
             f"Original: {original}.")
     novo(pid, nome, modelo, insp, f"{original}: {W} x {L} x {H} mm (Boss, ficha oficial)", W, L, H, cor, letras, botoes,
          botao or estilo(saia=True), formato="compacto", metalico=metalico, aspereza=0.24,
-         base_rel=0.68, basculante_rel=0.6, borracha_rel=0.36, modelo_m=0.0084, modelo_x=0.0, tipo_texto="",
+         base_rel=0.68, basculante_rel=0.6, basculante_ang=0.0, borracha_rel=0.36, modelo_m=0.0084, modelo_x=0.0, tipo_texto="",
          rotulo_embaixo=True, rotulo_m=0.0042, disposicao="boss", led=[0.0, 0.9], textos=textos, paineis=paineis,
          pecas=[{"tipo": "rotulo", "pos": [-0.6, 0.27], "rotulo": "SAÍDA", "rotulo_m": 0.0034},
                 {"tipo": "rotulo", "pos": [0.6, 0.27], "rotulo": "ENTRADA", "rotulo_m": 0.0034}], **kw)
@@ -210,7 +210,7 @@ def acerola():
             "Original: Boss GE-7 Equalizer.")
     novo(pid, "Selenite EQ", "SELENITE EQ", insp, "Boss GE-7 Equalizer: 73 x 129 x 59 mm (Boss, ficha oficial)", W, L, H,
          "#D8D4C8", PRETO, [], estilo(saia=True, corpo=PRETO, cursor="#F2F2F2"), formato="compacto", aspereza=0.24,
-         base_rel=0.68, basculante_rel=0.6, borracha_rel=0.36, modelo_m=0.0084, modelo_x=0.0, tipo_texto="",
+         base_rel=0.68, basculante_rel=0.6, basculante_ang=0.0, borracha_rel=0.36, modelo_m=0.0084, modelo_x=0.0, tipo_texto="",
          rotulo_embaixo=True, rotulo_m=0.0042, led=[0.78, 0.93], deslizantes=sl, deslizantes_layout=lay,
          paineis=[{"pos": [0.0, 0.64], "tam_m": [0.0655, 0.044], "cor": lin("#111112"), "raio_m": 0.0015}])
 
@@ -396,7 +396,7 @@ def lote_c():
          "fatias tom sobre tom. Original: Ibanez TS9 Tube Screamer.", "Ibanez TS9: aprox. 74 x 124 x 53 mm (sem ficha oficial)",
          74, 124, 53, "#7EC04A", "#E2E6DC", trio(), ts, formato="classico", metalico=0.35, aspereza=0.3,
          chanfro_m=0.0065, texto_cor2=lin("#141414"), tipo_texto="OVERDRIVE", etiqueta_y=0.06, etiqueta_estilo="placa_prata",
-         pisante={"estilo": "placa_moldura"}, led=[0.0, 0.8], rotulo_embaixo=True)
+         pisante={"estilo": "placa_moldura"}, pisante_ang=0.0, led=[0.0, 0.8], rotulo_embaixo=True)
     novo("olive_drive", "Olive Drive", "OLIVE DRIVE",
          "Caixa Tube Screamer verde-médio azulado (74 x 124 x 53 mm), letras brancas e filete branco em volta do painel; "
          "botões pretos DRIVE (OVERDRIVE), TOM (pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto entre o TOM e o "
@@ -404,7 +404,7 @@ def lote_c():
          "azeitonas tom sobre tom. Original: Ibanez TS808 Tube Screamer.", "Ibanez TS808: aprox. 74 x 124 x 53 mm",
          74, 124, 53, "#1E9A5C", BRANCO, trio(), ts, formato="classico", metalico=0.2, aspereza=0.3, chanfro_m=0.0065,
          texto_cor2=lin(BRANCO), tipo_texto="OVERDRIVE PRO", etiqueta_y=0.08, etiqueta_estilo="nenhuma",
-         pisante={"estilo": "placa_pequena"}, led=[0.3, 0.8], rotulo_embaixo=True,
+         pisante={"estilo": "placa_pequena"}, pisante_ang=0.0, led=[0.3, 0.8], rotulo_embaixo=True,
          paineis=[{"pos": [0.0, 0.0], "tam_m": [0.0645, 0.1145], "cor": lin(BRANCO), "raio_m": 0.002, "fundo": True},
                   {"pos": [0.0, 0.0], "tam_m": [0.0629, 0.1129], "cor": lin("#1E9A5C"), "raio_m": 0.0015, "fundo": True}])
     caixa("pistachio_drive", "Pistachio Drive", "PISTACHIO",
@@ -437,25 +437,25 @@ def lote_c():
           pecas=[{"tipo": "minichave", "pos": [0.55, 0.74], "rotulo": "MOMENTÂNEO", "rotulo_pos": "baixo"},
                  {"tipo": "leds", "pos": [0.0, 0.38], "n": 9, "passo_m": 0.0068, "raio_m": 0.0019}])
     novo("acai_rat", "Açaí Rat", "AÇAÍ RAT",
-         "Caixa preta em cunha, mais alta atrás (79 x 103 mm, 55 mm atrás e 30 na frente), letras brancas; botões pretos "
+         "Caixa preta (79 x 103 x 55 mm; o original é em cunha, aqui o tampo fica reto, visto de cima), letras brancas; botões pretos "
          "DISTORÇÃO, FILTRO e VOLUME em fila no alto, com os nomes em caixinhas, o nome grande no meio, LED vermelho e pisante. "
          "Tema: cacho de açaí roxo-escuro, listras tom sobre tom. Original: ProCo RAT.",
          "aprox. 79 x 103 x 73 mm com botões (medida de loja)", 79, 103, 55, "#161616", BRANCO,
          [k("ganho", "DISTORÇÃO", (-0.6, 0.6)), k("tom", "FILTRO", (0.0, 0.6)), k("nivel", "VOLUME", (0.6, 0.6))],
-         estilo(diam=0.017, alt=0.014), cunha={"frente_m": 0.030}, chanfro_m=0.004, rotulo_m=0.0034,
+         estilo(diam=0.017, alt=0.014), chanfro_m=0.004, rotulo_m=0.0034,
          rotulo_embaixo=False, led=[0.0, -0.36], pisante_y=-0.64, logo_y=0.05, logo_m=0.017, texto_cor2=lin(BRANCO),
          paineis=[{"pos": [x, 0.88], "tam_m": [0.023, 0.0075], "cor": lin(BRANCO), "raio_m": 0.0004} for x in (-0.6, 0.0, 0.6)] +
                  [{"pos": [x, 0.88], "tam_m": [0.0216, 0.0061], "cor": lin("#161616"), "raio_m": 0.0003} for x in (-0.6, 0.0, 0.6)] +
                  [{"pos": [0.0, 0.05], "tam_m": [0.06, 0.022], "cor": lin(BRANCO), "raio_m": 0.0006},
                   {"pos": [0.0, 0.05], "tam_m": [0.0584, 0.0204], "cor": lin("#161616"), "raio_m": 0.0005}])
     caixa("snowpear_treble", "Snow Pear Treble", "SNOW PEAR TREBLE",
-          "Caixa deitada de chapa cinza, em cunha (110 x 65 mm, 60 mm atrás e 35 na frente), feita para ficar em cima do "
+          "Caixa deitada de chapa cinza (110 x 65 x 60 mm; o original é em cunha, aqui o tampo fica reto, visto de cima), feita para ficar em cima do "
           "amplificador; um botão preto REFORÇO à direita e a chave de alavanca liga/desliga à esquerda (sem pisante, sem LED); o "
           "VOLUME, que o original não tem, fica pequeno no canto. Tema: pera-da-neve cinza-esbranquiçada, pontos tom sobre tom. "
           "Original: Dallas Rangemaster Treble Booster.", "sem ficha do fabricante; medida estimada pelas fotos",
           (110, 65, 60), "#B4B6B8", PRETO,
           [k("ganho", "REFORÇO", (0.55, 0.3), escala=1.1), k("nivel", "VOLUME", (0.86, -0.62), escala=0.5, rotulo_m=0.0026)],
-          estilo(diam=0.019, alt=0.015), cunha={"frente_m": 0.035}, metalico=0.25, aspereza=0.4,
+          estilo(diam=0.019, alt=0.015), metalico=0.25, aspereza=0.4,
           pisante={"estilo": "nenhum", "pos": [-0.6, 0.3], "raio_m": 0.007}, logo_y=-0.55, logo_m=0.008,
           pecas=[{"tipo": "minichave", "pos": [-0.6, 0.3], "rotulo": "LIGA"}])
     caixa("cherry_fuzz", "Cherry Fuzz", "Cherry Fuzz",
@@ -469,13 +469,13 @@ def lote_c():
           pecas=[{"tipo": "placa", "forma": "triangulo", "pos": [0.0, -0.46], "tam_m": [0.09, 0.06], "cor": lin("#0E0E0E"),
                   "frisos": True}])
     caixa("fig_bender", "Mercury Bender", "MERCURY BENDER",
-          "Caixa fundida cinza martelada em cunha, mais alta atrás (95 x 150 mm, 60 mm atrás e 30 na frente); placa preta no "
+          "Caixa fundida cinza martelada (95 x 150 x 60 mm; o original é em cunha, aqui o tampo fica reto, visto de cima); placa preta no "
           "alto com os botões pretos ATAQUE e NÍVEL e o nome em letras brancas, pisante pequeno na frente; sem LED; o TOM, que o "
           "original não tem, fica pequeno ao lado do pisante. Tema: o planeta Mercúrio cinza com crateras. Original: Sola Sound "
           "Tone Bender (MK I).", "sem ficha do fabricante; medida estimada pelas fotos", (95, 150, 60), "#8C8E90", BRANCO,
           [k("ganho", "ATAQUE", (-0.38, 0.62)), k("nivel", "NÍVEL", (0.38, 0.62)),
            k("tom", "TOM", (0.62, -0.72), escala=0.5, rotulo_m=0.0026, rotulo_cor=lin(PRETO))],
-          estilo(diam=0.017, alt=0.014), cunha={"frente_m": 0.030}, textura="martelado", metalico=0.4,
+          estilo(diam=0.017, alt=0.014), textura="martelado", metalico=0.4,
           pisante={"estilo": "pequeno", "pos": [0.0, -0.72]}, logo_y=0.38, logo_m=0.0075,
           paineis=[{"pos": [0.0, 0.58], "tam_m": [0.07, 0.05], "cor": lin("#121212"), "raio_m": 0.002}])
     caixa("kiwi_drive", "Opal Drive", "OPAL DRIVE",
@@ -487,14 +487,14 @@ def lote_c():
           led_cor=lin("#8A8A88"), logo_y=-0.06, logo_m=0.012,
           pecas=[{"tipo": "minichave", "pos": [0.0, 0.32], "rotulo": "AGUDO"}])
     novo("comet_wah", "Comet Wah", "COMET WAH",
-         "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido com borracha frisada, o "
+         "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido, reto, com borracha frisada, o "
          "nome na ponta; chave liga/desliga embaixo da ponta, sem LED e sem botões no tampo; os três ajustes (PEDAL, FAIXA, "
          "NÍVEL), que o original não tem, ficam pequenos na faixa lisa atrás do basculante. Tema: cometa branco-azulado na "
          "ponta do pedal. Original: Dunlop Cry Baby.", "aprox. 102 x 254 x 64 mm (zZounds; a Dunlop não publica)",
          102, 254, 64, "#141414", BRANCO,
          [k("a", "PEDAL", (-0.5, 0.915), escala=0.5, rotulo_pos="nenhum"), k("b", "FAIXA", (0.0, 0.915), escala=0.5,
           rotulo_pos="nenhum"), k("c", "NÍVEL", (0.5, 0.915), escala=0.5, rotulo_pos="nenhum")],
-         estilo(), formato="wah", textura="enrugado", base_m=0.032, talao_m=0.022, borracha_rel=0.66, inclinacao=5.0,
+         estilo(), formato="wah", textura="enrugado", base_m=0.032, talao_m=0.022, borracha_rel=0.66, inclinacao=0.0,
          logo_m=0.012, texto_cor2=lin(BRANCO))
     caixa("pomegranate_mud", "Heliodor Mud", "HELIODOR MUD",
           "Caixa amarelo-gema (100 x 120 x 40 mm), letras pretas; botões pretos GANHO, TOM (no meio, mais baixo) e NÍVEL, botão "
@@ -677,7 +677,7 @@ def lote_d():
          "#2E8A3A", BRANCO,
          [k("nivel", "NÍVEL", (-0.69, 0.7), escala=0.85), fixo("grave", "GRAVE", (-0.23, 0.7), escala=0.85),
           k("tom", "AGUDO", (0.23, 0.7), escala=0.85), k("ganho", "GANHO", (0.69, 0.7), escala=0.85)],
-         estilo(diam=0.0135, alt=0.012), formato="compacto", aspereza=0.26, base_rel=0.7, basculante_rel=0.6,
+         estilo(diam=0.0135, alt=0.012), formato="compacto", aspereza=0.26, base_rel=0.7, basculante_rel=0.6, basculante_ang=0.0,
          borracha_rel=0.62, borracha_larg=0.9, modelo_m=0.0084, modelo_x=0.0, tipo_texto="", rotulo_embaixo=True,
          rotulo_m=0.0036, led=[0.0, 0.9], modelo_cor=lin("#F2C21E"))
     novo("lychee_bassfuzz", "Lime Bass Fuzz", "LIME BASS FUZZ",

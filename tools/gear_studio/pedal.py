@@ -277,6 +277,8 @@ def _jacks(W, y, z, mats):
 #   "cunha": {"frente_m": altura}   tampo inclinado, mais alto atrás (RAT, Rangemaster)
 #   "disposicao": "boss"  botões em fila no alto, o do meio mais baixo (3 botões),
 #                         o quarto menor (seletor) e o LED CHECK no alto, no centro
+#   "basculante_ang" (compacto, padrão -2) e "pisante_ang" (clássico, padrão -1,5):
+#                         inclinação em graus; 0 deixa reto, de frente para a câmera
 #   "pintura_lados": {...}  laterais de outra cor (o tampo leva "pintura")
 #   "pintura": {"textura": "martelado" | "enrugado" | "purpurina"}
 #   "led_cor": cor do vidro do LED apagado (azul, amarelo...)
@@ -302,6 +304,7 @@ def _jacks(W, y, z, mats):
 #       {"tipo": "placa", "pos", "tam_m": [w, l], "cor", "forma": "retangulo"|"triangulo",
 #        "metal": true?, "frisos": true?, "raio_m"?}                       placa no tampo
 #       {"tipo": "pisante", "pos", "estilo"}                               pisante a mais
+#       {"tipo": "rotulo", "pos", "rotulo"}                                 só o letreiro (SAÍDA, ENTRADA)
 #   "paineis": áreas pintadas de outra cor no tampo, desenhadas como chapa fina:
 #       {"pontos": [[x, y], ...]} ou {"pos": [x, y], "tam_m": [w, l], "raio_m"},
 #       "cor", "metal": true (escovado)?
@@ -727,7 +730,7 @@ def build(rec, fonts):
         ty = -L / 2 + tl / 2
         treadle = st.box("basculante", (W - 0.001, tl, H - base_h + 0.006), (0, ty, base_h + (H - base_h) / 2 - 0.003),
                          bevel=0.006, segments=6, material=mats["paint"])
-        treadle.rotation_euler = (math.radians(-2.0), 0, 0)
+        treadle.rotation_euler = (math.radians(rec.get("basculante_ang", -2.0)), 0, 0)
         # Borracha: a frente fica sempre no mesmo lugar; menor, sobra espaço para a arte.
         rub = rec.get("borracha_rel", 0.62)
         st.box("borracha", (W * rec.get("borracha_larg", 0.80), tl * rub, 0.0025), (0, ty - tl * 0.35 + tl * rub / 2, H + 0.0005),
@@ -829,7 +832,7 @@ def build(rec, fonts):
         # No compacto a arte vem separada na linha do basculante: a parte de trás
         # vai no tampo da base, a da frente segue o basculante (inclinado).
         objs, _ = _logo(rec["estampa"], L, (0, 0, 0))
-        _bend(objs, -L / 2 + tl, ty, math.radians(-2.0), base_h + (H - base_h) / 2 - 0.003, (H - base_h + 0.006) / 2, base_h)
+        _bend(objs, -L / 2 + tl, ty, math.radians(rec.get("basculante_ang", -2.0)), base_h + (H - base_h) / 2 - 0.003, (H - base_h + 0.006) / 2, base_h)
     elif "estampa" in rec:
         objs, _ = _logo(rec["estampa"], L, (0, 0, 0))
         wy, wth, wzc, whh, wtl, wledge = wah
@@ -885,22 +888,23 @@ def build(rec, fonts):
     foot = None
     if shape == "classico":
         pst = rec.get("pisante", {}).get("estilo", "almofada")
+        pang = rec.get("pisante_ang", -1.5)
         pl = L * 0.40
         py = -L / 2 + pl / 2 + 0.004
         if pst == "placa_moldura":
             # TS9: moldura preta e placa de metal com frisos dentro.
             st.box("pisante_moldura", (W * 0.86, pl, 0.0075), (0, py, H + 0.0035), bevel=0.0022, segments=4, material=mats["plastic"])
-            _ridged_plate("pisante", (W * 0.66, pl * 0.72, 0.0035), (0, py - pl * 0.02, H + 0.0085), mats, tilt=-1.5)
+            _ridged_plate("pisante", (W * 0.66, pl * 0.72, 0.0035), (0, py - pl * 0.02, H + 0.0085), mats, tilt=pang)
             foot = ((0.0, py, H + 0.0105), W * 0.33)
         elif pst == "placa_pequena":
             # TS808: placa de metal pequena direto na caixa.
             pw, pll = W * 0.62, pl * 0.62
-            _ridged_plate("pisante", (pw, pll, 0.0045), (0, py, H + 0.0035), mats, tilt=-1.5)
+            _ridged_plate("pisante", (pw, pll, 0.0045), (0, py, H + 0.0035), mats, tilt=pang)
             foot = ((0.0, py, H + 0.006), pw / 2)
         else:
             # Tampa grande de pisar, preta, na metade da frente, com borracha.
             pad = st.box("pisante", (W * 0.86, pl, 0.010), (0, py, H + 0.006), bevel=0.0028, segments=4, material=mats["plastic"])
-            pad.rotation_euler = (math.radians(-1.5), 0, 0)
+            pad.rotation_euler = (math.radians(pang), 0, 0)
             st.box("pisante_borracha", (W * 0.60, pl * 0.66, 0.0018), (0, py - pl * 0.02, H + 0.0115), bevel=0.0008,
                    material=mats["rubber"])
         # Etiqueta com moldura entre os botões e o pisante.

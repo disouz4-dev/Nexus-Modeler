@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Snow Pear Treble",
   "familia": "snowpear_treble",
-  "inspiracao": "Caixa deitada de chapa cinza, em cunha (110 x 65 mm, 60 mm atrás e 35 na frente), feita para ficar em cima do amplificador; um botão preto REFORÇO à direita e a chave de alavanca liga/desliga à esquerda (sem pisante, sem LED); o VOLUME, que o original não tem, fica pequeno no canto. Tema: pera-da-neve cinza-esbranquiçada, pontos tom sobre tom. Original: Dallas Rangemaster Treble Booster.",
+  "inspiracao": "Caixa deitada de chapa cinza (110 x 65 x 60 mm; o original é em cunha, aqui o tampo fica reto, visto de cima), feita para ficar em cima do amplificador; um botão preto REFORÇO à direita e a chave de alavanca liga/desliga à esquerda (sem pisante, sem LED); o VOLUME, que o original não tem, fica pequeno no canto. Tema: pera-da-neve cinza-esbranquiçada, pontos tom sobre tom. Original: Dallas Rangemaster Treble Booster.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.11,
@@ -80,9 +80,6 @@
     0.0037,
     0.0037
   ],
-  "cunha": {
-    "frente_m": 0.035
-  },
   "pisante": {
     "estilo": "nenhum",
     "pos": [
