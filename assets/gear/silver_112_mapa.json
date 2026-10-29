@@ -1,8 +1,19 @@
 {
   "nome": "Silver 1x12",
   "familia": "silver_112",
-  "largura": 1468,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 1999,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    622,
+    445
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
 }
