@@ -285,6 +285,7 @@ def _jacks(W, y, z, mats):
 #              no clássico: "almofada" | "placa_moldura" (TS9) | "placa_pequena" (TS808)
 #   "etiqueta_estilo": "placa_prata" no clássico (placa de metal do nome)
 #   "modelo_oculto": true  não escreve o nome sozinho (vai em "textos")
+#   "modelo_cor": cor só do nome (no compacto)
 #   "jacks_topo": true      entradas na face de trás, e não nas laterais
 #   "botoes": cada um pode ter "fixo": true (desenhado, fora dos controles),
 #             "tipo": "deslizante" (com "curso_m"), "estilo": {...} (troca o
@@ -581,6 +582,8 @@ def _pieces(rec, W, L, top, mats):
                                material=mats["rubber"] if not p.get("metal") else mats["chrome_dark"])
         elif kind == "pisante":
             _stomp(nm, p.get("estilo", "metal"), (x, y, top), mats)
+        elif kind == "rotulo":
+            pass  # só o letreiro (a tela escreve, traduzido)
         if p.get("rotulo"):
             ly = y + lab_dy if p.get("rotulo_pos", "cima") == "cima" else y - lab_dy
             st.label(p["rotulo"], (x, ly, top + 0.0001), p.get("rotulo_m", rec.get("rotulo_m", 0.0052) * 0.8), up="Y",
@@ -748,7 +751,8 @@ def build(rec, fonts):
                 left = (rec["led"][0] * W / 2 + 0.006) if "led" in rec and rec.get("led_no_basculante") else -W / 2 + 0.004
                 name_x = (left + right - lw - 0.002) / 2
             name = _flat_text("modelo", rec["modelo"], fonts["label"], size,
-                              (name_x, ty + tl * 0.38, H + 0.0004), mats["ink"], spacing=1.1,
+                              (name_x, ty + tl * 0.38, H + 0.0004),
+                              _ink(mats, rec["modelo_cor"]) if rec.get("modelo_cor") else mats["ink"], spacing=1.1,
                               offset=0.0002 if size >= 0.0085 else 0.0)
             if "logo" in rec:
                 _fit(name, right - lw - 0.002 - left)

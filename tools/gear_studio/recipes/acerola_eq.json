@@ -1,76 +1,71 @@
 {
   "tipo": "pedal",
-  "nome": "Acerola EQ",
+  "nome": "Selenite EQ",
   "familia": "acerola_eq",
-  "inspiracao": "equalizador gráfico compacto de sete faixas (estilo GE-7)",
+  "inspiracao": "Boss compacto branco-acinzentado (73 x 129 x 59 mm), letras pretas no corpo e brancas na faixa preta do alto, onde ficam os 8 deslizantes de pontas brancas (100 Hz a 6,4 kHz e NÍVEL); LED CHECK no alto, à direita, e pedal basculante com borracha frisada. Tema: cristais de selenita brancos em lâminas, facetas tom sobre tom. Original: Boss GE-7 Equalizer.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
     "comprimento": 0.129,
     "altura": 0.059
   },
-  "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.6121,
-      0.0039,
-      0.0039
+      0.6941,
+      0.6661,
+      0.586
     ],
     "metalico": 0.0,
-    "aspereza": 0.22
+    "aspereza": 0.24
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "modelo": "ACEROLA EQ",
-  "tipo_texto": "EQUALIZER",
-  "rotulo_m": 0.0046,
+  "modelo": "SELENITE EQ",
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
     "saia": true,
     "corpo": [
-      0.014,
-      0.014,
-      0.014
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ],
     "cursor": [
-      0.012,
-      0.012,
-      0.012
+      0.8913,
+      0.8913,
+      0.8913
     ]
   },
   "botoes": [],
-  "led": [
-    -0.72,
-    0.06
-  ],
+  "estampa": {
+    "svg": "estampas/acerola_eq.svg"
+  },
+  "medidas_fonte": "Boss GE-7 Equalizer: 73 x 129 x 59 mm (Boss, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.21,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
   "base_rel": 0.68,
-  "rotulo_embaixo": true,
-  "led_no_basculante": true,
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo_m": 0.0085,
-  "modelo_x": 0.12,
+  "basculante_rel": 0.6,
   "borracha_rel": 0.36,
-  "estampa": {
-    "svg": "estampas/acerola_eq.svg"
-  },
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0042,
+  "led": [
+    0.78,
+    0.93
+  ],
   "deslizantes": [
     {
       "id": "a",
@@ -108,6 +103,29 @@
   "deslizantes_layout": {
     "y": 0.62,
     "curso": 0.02,
-    "margem": 0.0075
-  }
+    "margem": 0.0075,
+    "rotulo_cor": [
+      0.8913,
+      0.8751,
+      0.8277
+    ]
+  },
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.64
+      ],
+      "tam_m": [
+        0.0655,
+        0.044
+      ],
+      "cor": [
+        0.0026,
+        0.0026,
+        0.0029
+      ],
+      "raio_m": 0.0015
+    }
+  ]
 }

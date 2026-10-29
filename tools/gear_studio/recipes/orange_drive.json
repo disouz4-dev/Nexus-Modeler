@@ -2,61 +2,58 @@
   "tipo": "pedal",
   "nome": "Orange Drive",
   "familia": "orange_drive",
-  "inspiracao": "distorção compacta laranja com pedal basculante (estilo DS-1)",
+  "inspiracao": "Boss compacto laranja (73 x 129 x 59 mm), letras pretas; botões pretos com saia: TOM, NÍVEL (no meio, mais baixo) e DISTORÇÃO, LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: fatia de laranja no basculante, raios laranja-escuro tom sobre tom. Original: Boss DS-1 Distortion.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
     "comprimento": 0.129,
     "altura": 0.059
   },
-  "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.85,
-      0.22,
-      0.012
+      0.8751,
+      0.145,
+      0.0055
     ],
     "metalico": 0.0,
-    "aspereza": 0.22
+    "aspereza": 0.24
   },
   "texto_cor": [
-    0.015,
-    0.012,
-    0.01
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "ORANGE DRIVE",
-  "tipo_texto": "",
-  "rotulo_m": 0.0046,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
     "saia": true,
     "corpo": [
-      0.014,
-      0.014,
-      0.014
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
-      "id": "nivel",
-      "rotulo": "NÍVEL",
-      "pos": [
-        -0.6,
-        0.7
-      ]
-    },
-    {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
+        -0.6,
+        0.68
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
         0.0,
-        0.7
+        0.56
       ]
     },
     {
@@ -64,27 +61,67 @@
       "rotulo": "DISTORÇÃO",
       "pos": [
         0.6,
-        0.7
+        0.68
       ]
     }
   ],
-  "led": [
-    -0.72,
-    0.06
-  ],
+  "medidas_fonte": "Boss DS-1 Distortion: 73 x 129 x 59 mm (Boss, ficha oficial)",
+  "estampa": {
+    "svg": "estampas/orange_drive.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.21,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
   "base_rel": 0.68,
-  "rotulo_embaixo": true,
-  "led_no_basculante": true,
-  "medidas_fonte": "BOSS DS-1: 73 x 129 x 59 mm",
+  "basculante_rel": 0.6,
   "borracha_rel": 0.36,
-  "estampa": {
-    "svg": "estampas/orange_drive.svg"
-  },
-  "modelo_m": 0.0085,
-  "modelo_x": 0.12
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0042,
+  "disposicao": "boss",
+  "led": [
+    0.0,
+    0.9
+  ],
+  "textos": [
+    {
+      "texto": "CHECK",
+      "pos": [
+        0.0,
+        0.965
+      ],
+      "tam_m": 0.0022,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "espaco": 1.2
+    }
+  ],
+  "paineis": [],
+  "pecas": [
+    {
+      "tipo": "rotulo",
+      "pos": [
+        -0.6,
+        0.27
+      ],
+      "rotulo": "SAÍDA",
+      "rotulo_m": 0.0034
+    },
+    {
+      "tipo": "rotulo",
+      "pos": [
+        0.6,
+        0.27
+      ],
+      "rotulo": "ENTRADA",
+      "rotulo_m": 0.0034
+    }
+  ]
 }

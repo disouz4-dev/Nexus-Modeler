@@ -2,89 +2,177 @@
   "tipo": "pedal",
   "nome": "Coconut Delay",
   "familia": "coconut_delay",
-  "inspiracao": "delay compacto branco (estilo DD-3)",
+  "inspiracao": "Boss compacto branco-prata (73 x 129 x 59 mm), letras azuis; botões azuis com saia sobre a faixa preta do alto: MISTURA (E.LEVEL), REPETIÇÕES (F.BACK), TEMPO (D.TIME) e o seletor MODO menor, à direita (fixo), LED CHECK no alto, no centro, e pedal basculante com borracha frisada, faixa preta atrás dos botões. Tema: meio coco com ondas azul-claro tom sobre tom. Original: Boss DD-3 Digital Delay.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
     "comprimento": 0.129,
     "altura": 0.059
   },
-  "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.86,
-      0.86,
-      0.83
+      0.7227,
+      0.6941,
+      0.6121
     ],
     "metalico": 0.0,
-    "aspereza": 0.22
+    "aspereza": 0.24
   },
   "texto_cor": [
-    0.02,
-    0.02,
-    0.02
+    0.0097,
+    0.1139,
+    0.4368
   ],
   "modelo": "COCONUT DELAY",
-  "tipo_texto": "",
-  "rotulo_m": 0.0036,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
     "saia": true,
     "corpo": [
-      0.014,
-      0.014,
-      0.014
+      0.0189,
+      0.3297,
+      0.7227
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
-      "id": "a",
-      "rotulo": "TEMPO",
+      "id": "c",
+      "rotulo": "MISTURA",
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
       "pos": [
-        -0.6,
-        0.7
-      ]
+        -0.69,
+        0.66
+      ],
+      "escala": 0.92
     },
     {
       "id": "b",
       "rotulo": "REPETIÇÕES",
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
       "pos": [
-        0.0,
-        0.7
-      ]
+        -0.23,
+        0.66
+      ],
+      "escala": 0.92
     },
     {
-      "id": "c",
-      "rotulo": "MISTURA",
+      "id": "a",
+      "rotulo": "TEMPO",
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
       "pos": [
-        0.6,
-        0.7
-      ]
+        0.23,
+        0.66
+      ],
+      "escala": 0.92
+    },
+    {
+      "id": "fixo_modo",
+      "rotulo": "MODO",
+      "fixo": true,
+      "rotulo_cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "pos": [
+        0.69,
+        0.66
+      ],
+      "escala": 0.78
     }
   ],
-  "led": [
-    -0.72,
-    0.06
-  ],
+  "medidas_fonte": "Boss DD-3 Digital Delay: 73 x 129 x 59 mm (Boss, ficha oficial)",
+  "estampa": {
+    "svg": "estampas/coconut_delay.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.21,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
   "base_rel": 0.68,
-  "rotulo_embaixo": true,
-  "led_no_basculante": true,
-  "medidas_fonte": "BOSS DD-3: 73 x 129 x 59 mm",
-  "modelo_m": 0.0085,
-  "modelo_x": 0.12,
+  "basculante_rel": 0.6,
   "borracha_rel": 0.36,
-  "estampa": {
-    "svg": "estampas/coconut_delay.svg"
-  }
+  "modelo_m": 0.0084,
+  "modelo_x": 0.0,
+  "tipo_texto": "",
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0042,
+  "disposicao": "boss",
+  "led": [
+    0.0,
+    0.9
+  ],
+  "textos": [
+    {
+      "texto": "CHECK",
+      "pos": [
+        0.0,
+        0.965
+      ],
+      "tam_m": 0.0022,
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "espaco": 1.2
+    }
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.665
+      ],
+      "tam_m": [
+        0.0655,
+        0.0405
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "metal": false,
+      "raio_m": 0.0015
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "rotulo",
+      "pos": [
+        -0.6,
+        0.27
+      ],
+      "rotulo": "SAÍDA",
+      "rotulo_m": 0.0034
+    },
+    {
+      "tipo": "rotulo",
+      "pos": [
+        0.6,
+        0.27
+      ],
+      "rotulo": "ENTRADA",
+      "rotulo_m": 0.0034
+    }
+  ]
 }

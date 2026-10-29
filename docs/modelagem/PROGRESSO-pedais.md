@@ -29,7 +29,7 @@ e rodar com esse python.
       Quadro: com proporção > 1 a câmera mede pela altura (altura vista =
       largura x largura_rel); pedal comprido precisa de largura_rel maior.
 - [ ] 2. Receitas em lotes (cor, medidas, botões, chaves, nome, estampa, inspiração)
-  - [ ] Lote A: Boss compactos (orange_drive, banana_overdrive, neptune_chorus,
+  - [x] Lote A: Boss compactos (orange_drive, banana_overdrive, neptune_chorus,
         coconut_delay, grape_reverb, moon_tremolo, jabuticaba_buzzsaw,
         avocado_metal, blueberry_blues, apricot_overdrive, clementine_turbo,
         jupiter_octave, acerola_eq)
@@ -54,12 +54,24 @@ Não mexer: saturn_rotary (decisão do dono), eclipse_vibe e blueberry_chain (ve
 
 Ficam funcionando, pequenos e no canto mais discreto. O dono decide depois.
 
-(preenchido a cada lote)
+- neptune_chorus (Boss CE-2 tem só VELOCIDADE e PROFUNDIDADE): o MISTURA (`c`) ficou
+  pequeno, no meio, mais baixo.
+
+Botões, chaves e pisantes que o original tem a mais entram como peças fixas
+(`"fixo": true` ou `"pecas"`): coconut_delay e grape_reverb (seletor MODO),
+jabuticaba_buzzsaw (BAIXO), avocado_metal (MÉDIO duplo), clementine_turbo (TURBO).
+
+Rótulos: ficam em português (a tela traduz pela tabela de idiomas). Palavras novas
+sem tradução na tabela (ex. FORMA, OITAVA 1, DIRETO, MODO, TURBO, FUZZ, SUSTAIN)
+aparecem como estão; entram na tabela na etapa da troca de nomes.
 
 ## Mudanças em build.py
 
 Nenhuma até agora.
 
 ## Registro
+
+- Lote A: receitas e estampas geradas por `logos/fiel_receitas.py a acerola_eq` e
+  `logos/fiel_arte.py <ids>`; prévias conferidas com as fotos.
 
 - 29/10: ramo e pasta criados.
