@@ -1,17 +1,19 @@
 {
   "nome": "Match 2x12",
   "familia": "match_212",
-  "largura": 1600,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2157,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
-    700,
-    500
+    686,
+    533
   ],
   "falantes": {
     "linhas": 1,
     "colunas": 2,
     "polegadas": 12
-  }
+  },
+  "rotulos": []
 }
