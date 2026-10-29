@@ -121,6 +121,8 @@ countries: ru
 "Efeito do Nexus" = "Эффект Nexus"
 "Em alta" = "В тренде"
 "Pesquisar (nome ou original)" = "Поиск (название или оригинал)"
+"Ligado" = "Вкл."
+"Bypass" = "Байпас"
 "Nada encontrado." = "Ничего не найдено."
 "Em breve" = "Скоро"
 "Entrada na TONE3000 cancelada." = "Вход в TONE3000 отменён."

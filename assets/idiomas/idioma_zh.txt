@@ -121,6 +121,8 @@ countries: cn sg
 "Efeito do Nexus" = "Nexus 效果"
 "Em alta" = "热门"
 "Pesquisar (nome ou original)" = "搜索（名称或原型）"
+"Ligado" = "开启"
+"Bypass" = "旁通"
 "Nada encontrado." = "未找到结果。"
 "Em breve" = "即将推出"
 "Entrada na TONE3000 cancelada." = "已取消登录 TONE3000。"

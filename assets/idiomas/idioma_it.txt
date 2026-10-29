@@ -121,6 +121,8 @@ countries: it ch
 "Efeito do Nexus" = "Effetto Nexus"
 "Em alta" = "Di tendenza"
 "Pesquisar (nome ou original)" = "Cerca (nome o originale)"
+"Ligado" = "Acceso"
+"Bypass" = "Bypass"
 "Nada encontrado." = "Nessun risultato."
 "Em breve" = "Prossimamente"
 "Entrada na TONE3000 cancelada." = "Accesso a TONE3000 annullato."

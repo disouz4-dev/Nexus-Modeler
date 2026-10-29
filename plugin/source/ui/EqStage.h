@@ -14,7 +14,8 @@
 //   arrastar um ponto: frequência (para os lados) e ganho (para cima e baixo);
 //   roda do mouse no ponto: largura (Q);
 //   botão direito no ponto: tipo, inclinação, ligar/desligar, apagar.
-// Embaixo, os controles da faixa escolhida.
+// O ponto debaixo do mouse (ou o escolhido) mostra a frequência e o ganho.
+// Embaixo, os controles da faixa escolhida e o bypass do equalizador inteiro.
 namespace nexus::ui
 {
 // Botão giratório desenhado (painel de estúdio): tampa colorida, traço branco.
@@ -67,6 +68,8 @@ private:
   float value(const juce::String& id) const;
   juce::RangedAudioParameter& param(const juce::String& id) const;
   void setParam(const juce::String& id, float plain);
+  bool eqOn() const;
+  void toggleBypass();
   bool bandOn(int band) const;
   int bandType(int band) const;
   bool hasGain(int band) const;
@@ -82,9 +85,12 @@ private:
   void deleteBand(int band);
   void paintCurve(juce::Graphics&);
   void paintStrip(juce::Graphics&);
+  void paintBypass(juce::Graphics&);
+  void paintTag(juce::Graphics&, int band);
 
   juce::AudioProcessorValueTreeState& mParams;
-  juce::Rectangle<float> mCurveArea, mStrip;
+  juce::Rectangle<float> mCurveArea, mStrip, mBypass;
+  bool mBypassHover = false;
   std::vector<std::unique_ptr<PanelKnob>> mKnobs;
   int mSelected = -1, mDrag = -1, mHover = -1;
   juce::uint32 mLastHash = 0;

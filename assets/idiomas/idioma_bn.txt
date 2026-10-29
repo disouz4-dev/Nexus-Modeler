@@ -121,6 +121,8 @@ countries: bd in
 "Efeito do Nexus" = "Nexus ইফেক্ট"
 "Em alta" = "ট্রেন্ডিং"
 "Pesquisar (nome ou original)" = "খুঁজুন (নাম বা মূল)"
+"Ligado" = "চালু"
+"Bypass" = "বাইপাস"
 "Nada encontrado." = "কিছু পাওয়া যায়নি।"
 "Em breve" = "শীঘ্রই আসছে"
 "Entrada na TONE3000 cancelada." = "TONE3000-এ সাইন ইন বাতিল হয়েছে।"

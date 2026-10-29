@@ -121,6 +121,8 @@ countries: sa eg ae ma
 "Efeito do Nexus" = "تأثير Nexus"
 "Em alta" = "الأكثر رواجًا"
 "Pesquisar (nome ou original)" = "بحث (الاسم أو الأصل)"
+"Ligado" = "مُشغّل"
+"Bypass" = "تجاوز"
 "Nada encontrado." = "لم يُعثر على شيء."
 "Em breve" = "قريبًا"
 "Entrada na TONE3000 cancelada." = "تم إلغاء تسجيل الدخول إلى TONE3000."
