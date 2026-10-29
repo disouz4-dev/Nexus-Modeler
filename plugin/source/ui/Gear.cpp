@@ -1,13 +1,28 @@
 #include "Gear.h"
 
 #include "BinaryData.h"
+#include "../update/ArteNova.h"
+
+#include <mutex>
 
 namespace nexus::ui
 {
 namespace
 {
+// Arte baixada depois da instalação (equipamentos novos, ArteNova): vale antes
+// da que veio dentro do programa. A limpeza da pasta roda uma vez, antes da
+// primeira imagem.
+juce::File downloaded(const juce::String& name)
+{
+  static std::once_flag pruned;
+  std::call_once(pruned, [] { nexus::update::ArteNova::prune(); });
+  return nexus::update::ArteNova::folder().getChildFile(name);
+}
+
 juce::Image imageResource(const juce::String& name)
 {
+  if (const auto file = downloaded(name); file.existsAsFile())
+    return juce::ImageCache::getFromFile(file);
   int size = 0;
   const auto resource = name.replaceCharacter('.', '_');
   if (const char* data = BinaryData::getNamedResource(resource.toRawUTF8(), size))
@@ -17,11 +32,20 @@ juce::Image imageResource(const juce::String& name)
 
 juce::var jsonResource(const juce::String& name)
 {
+  if (const auto file = downloaded(name); file.existsAsFile())
+    return juce::JSON::parse(file);
   int size = 0;
   const auto resource = name.replaceCharacter('.', '_');
   if (const char* data = BinaryData::getNamedResource(resource.toRawUTF8(), size))
     return juce::JSON::parse(juce::String::fromUTF8(data, size));
   return {};
+}
+
+bool hasResource(const juce::String& name)
+{
+  int size = 0;
+  return downloaded(name).existsAsFile()
+         || BinaryData::getNamedResource(name.replaceCharacter('.', '_').toRawUTF8(), size) != nullptr;
 }
 // Frente: JPEG da cor (já multiplicada pela transparência, fundo preto) e a
 // máscara de transparência em PNG cinza (tools/gear_studio/frente_jpeg.py).
@@ -122,8 +146,7 @@ GearArt GearArt::load(const juce::String& prefix)
       knob.stripResource = prefix + "_botao_" + knob.id + ".png";
       // Botão em degraus (drive) pode ter menos quadros que os outros.
       knob.frames = k.hasProperty("posicoes") ? static_cast<int>(k["posicoes"]) : frames;
-      int bytes = 0;
-      if (BinaryData::getNamedResource(knob.stripResource.replaceCharacter('.', '_').toRawUTF8(), bytes) != nullptr)
+      if (hasResource(knob.stripResource))
         art.knobs.push_back(std::move(knob));
     }
   if (const auto* labels = map["rotulos"].getArray())

@@ -61,6 +61,7 @@ set(NEXUS_UI_SOURCES
   source/ui/PresetBar.cpp
   source/ui/UpdateBadge.cpp
   source/ui/WhatsNew.cpp
+  source/ui/ArteBadge.cpp
   source/ui/PackMapper.cpp
   source/ui/TestBar.cpp
   source/ui/StudioView.cpp
@@ -68,6 +69,7 @@ set(NEXUS_UI_SOURCES
   source/ui/Tuner.cpp
   source/ui/IrMic.cpp
   source/update/Updater.cpp
+  source/update/ArteNova.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
 
@@ -245,6 +247,16 @@ if(NEXUS_BUILD_TOOLS)
     juce::juce_events
     juce::juce_data_structures
     juce::juce_cryptography
+    juce::juce_recommended_config_flags)
+
+  # Teste dos equipamentos novos sem reinstalar (pasta local no lugar do GitHub).
+  juce_add_console_app(nexus_arte_test PRODUCT_NAME "nexus_arte_test")
+  target_sources(nexus_arte_test PRIVATE host_test/ArteNovaTest.cpp source/update/ArteNova.cpp source/update/Updater.cpp source/report/Report.cpp source/ui/Gear.cpp)
+  target_compile_definitions(nexus_arte_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
+  target_link_libraries(nexus_arte_test PRIVATE
+    NexusArt
+    juce::juce_gui_basics
+    juce::juce_audio_processors
     juce::juce_recommended_config_flags)
 
   # Ferramenta manual: passa uma gravação de guitarra pela cadeia com material da TONE3000.

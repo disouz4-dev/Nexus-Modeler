@@ -1,0 +1,38 @@
+name: Índice da arte
+
+# Todo push no main que mexe em assets/gear refaz o assets/gear/indice.json,
+# que os Nexus instalados leem ao abrir para baixar só os equipamentos novos ou
+# refeitos, sem esperar uma versão nova do programa (update/ArteNova.cpp).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/gear/**"
+      - "!assets/gear/indice.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indice-arte
+  cancel-in-progress: false
+
+jobs:
+  indice:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refazer o índice
+        run: python3 tools/gear_studio/indice_arte.py
+      - name: Gravar se mudou
+        run: |
+          if git diff --quiet -- assets/gear/indice.json; then
+            echo "índice já estava em dia"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/gear/indice.json
+          git commit -m "Índice da arte refeito: equipamentos novos ou refeitos para os Nexus instalados baixarem"
+          git push

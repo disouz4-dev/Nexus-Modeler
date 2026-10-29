@@ -17,6 +17,7 @@
 #include "ui/Tuner.h"
 #include "ui/TestBar.h"
 #include "ui/UpdateBadge.h"
+#include "ui/ArteBadge.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
 #include "ui/IrMic.h"
@@ -374,6 +375,7 @@ private:
   std::unique_ptr<nexus::ui::GearBrowser> mBrowser;
   std::unique_ptr<nexus::ui::PresetBar> mPresets;
   nexus::ui::UpdateBadge mUpdate;
+  nexus::ui::ArteBadge mArteNova;
   std::unique_ptr<juce::FileChooser> mChooser;
   juce::String mTitle, mSubtitle;
   juce::Rectangle<int> mTitleArea;

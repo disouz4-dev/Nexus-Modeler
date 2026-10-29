@@ -1,0 +1,2897 @@
+{
+ "gerado": "2026-10-29T11:24:16Z",
+ "pecas": {
+  "acai_rat": {
+   "nome": "Açaí Rat",
+   "hash": "0d0d667005809f08",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "acai_rat_botao_ganho.png",
+    "acai_rat_botao_nivel.png",
+    "acai_rat_botao_tom.png",
+    "acai_rat_frente.jpg",
+    "acai_rat_frente_alfa.png",
+    "acai_rat_mapa.json"
+   ]
+  },
+  "acerola_eq": {
+   "nome": "Acerola EQ",
+   "hash": "fddd50cd321071e0",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "acerola_eq_botao_a.png",
+    "acerola_eq_botao_b.png",
+    "acerola_eq_botao_c.png",
+    "acerola_eq_botao_d.png",
+    "acerola_eq_botao_e.png",
+    "acerola_eq_botao_f.png",
+    "acerola_eq_botao_g.png",
+    "acerola_eq_botao_nivel.png",
+    "acerola_eq_frente.jpg",
+    "acerola_eq_frente_alfa.png",
+    "acerola_eq_mapa.json"
+   ]
+  },
+  "acoustica360": {
+   "nome": "Acoustica 360",
+   "hash": "199455d4983cbda8",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "acoustica360_botao_agudo.png",
+    "acoustica360_botao_ganho.png",
+    "acoustica360_botao_grave.png",
+    "acoustica360_botao_medio.png",
+    "acoustica360_botao_presenca.png",
+    "acoustica360_botao_volume.png",
+    "acoustica360_frente.jpg",
+    "acoustica360_frente_alfa.png",
+    "acoustica360_mapa.json"
+   ]
+  },
+  "apple_comp": {
+   "nome": "Apple Comp",
+   "hash": "2130bfdc180fa2d0",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "apple_comp_botao_a.png",
+    "apple_comp_botao_b.png",
+    "apple_comp_botao_c.png",
+    "apple_comp_frente.jpg",
+    "apple_comp_frente_alfa.png",
+    "apple_comp_mapa.json"
+   ]
+  },
+  "apricot_overdrive": {
+   "nome": "Apricot Overdrive",
+   "hash": "85775c6a47edb473",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "apricot_overdrive_botao_ganho.png",
+    "apricot_overdrive_botao_nivel.png",
+    "apricot_overdrive_botao_tom.png",
+    "apricot_overdrive_frente.jpg",
+    "apricot_overdrive_frente_alfa.png",
+    "apricot_overdrive_mapa.json"
+   ]
+  },
+  "arch100": {
+   "nome": "Arch 100",
+   "hash": "f58555e9829966b7",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "arch100_botao_agudo.png",
+    "arch100_botao_ganho.png",
+    "arch100_botao_grave.png",
+    "arch100_botao_medio.png",
+    "arch100_botao_presenca.png",
+    "arch100_botao_volume.png",
+    "arch100_frente.jpg",
+    "arch100_frente_alfa.png",
+    "arch100_mapa.json"
+   ]
+  },
+  "ash500": {
+   "nome": "Ash 500",
+   "hash": "3b0114ef5d310783",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "ash500_botao_agudo.png",
+    "ash500_botao_ganho.png",
+    "ash500_botao_grave.png",
+    "ash500_botao_medio.png",
+    "ash500_botao_presenca.png",
+    "ash500_botao_volume.png",
+    "ash500_frente.jpg",
+    "ash500_frente_alfa.png",
+    "ash500_mapa.json"
+   ]
+  },
+  "avocado_metal": {
+   "nome": "Avocado Metal",
+   "hash": "2981f21b3c78d333",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "avocado_metal_botao_ganho.png",
+    "avocado_metal_botao_nivel.png",
+    "avocado_metal_botao_tom.png",
+    "avocado_metal_frente.jpg",
+    "avocado_metal_frente_alfa.png",
+    "avocado_metal_mapa.json"
+   ]
+  },
+  "badland100": {
+   "nome": "Badland 100",
+   "hash": "c53b73c261d0f8ad",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "badland100_botao_agudo.png",
+    "badland100_botao_ganho.png",
+    "badland100_botao_grave.png",
+    "badland100_botao_medio.png",
+    "badland100_botao_presenca.png",
+    "badland100_botao_volume.png",
+    "badland100_frente.jpg",
+    "badland100_frente_alfa.png",
+    "badland100_mapa.json"
+   ]
+  },
+  "banana_overdrive": {
+   "nome": "Banana Overdrive",
+   "hash": "466fd9b5fcb89ae8",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "banana_overdrive_botao_ganho.png",
+    "banana_overdrive_botao_nivel.png",
+    "banana_overdrive_botao_tom.png",
+    "banana_overdrive_frente.jpg",
+    "banana_overdrive_frente_alfa.png",
+    "banana_overdrive_mapa.json"
+   ]
+  },
+  "bassboxv": {
+   "nome": "Bass Box V",
+   "hash": "24b096b65acad2d5",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bassboxv_botao_agudo.png",
+    "bassboxv_botao_ganho.png",
+    "bassboxv_botao_grave.png",
+    "bassboxv_botao_medio.png",
+    "bassboxv_botao_presenca.png",
+    "bassboxv_botao_volume.png",
+    "bassboxv_frente.jpg",
+    "bassboxv_frente_alfa.png",
+    "bassboxv_mapa.json"
+   ]
+  },
+  "bassline100": {
+   "nome": "Bassline 100",
+   "hash": "c217b5444a94c5bf",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bassline100_botao_agudo.png",
+    "bassline100_botao_ganho.png",
+    "bassline100_botao_grave.png",
+    "bassline100_botao_medio.png",
+    "bassline100_botao_presenca.png",
+    "bassline100_botao_volume.png",
+    "bassline100_frente.jpg",
+    "bassline100_frente_alfa.png",
+    "bassline100_mapa.json"
+   ]
+  },
+  "bassline_215": {
+   "nome": "Bassline 2x15",
+   "hash": "9b1dbde1c7ab21e3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bassline_215_frente.jpg",
+    "bassline_215_frente_alfa.png",
+    "bassline_215_mapa.json"
+   ]
+  },
+  "be100": {
+   "nome": "BE 100",
+   "hash": "014904a2c069b64b",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "be100_botao_agudo.png",
+    "be100_botao_ganho.png",
+    "be100_botao_grave.png",
+    "be100_botao_medio.png",
+    "be100_botao_presenca.png",
+    "be100_botao_volume.png",
+    "be100_frente.jpg",
+    "be100_frente_alfa.png",
+    "be100_mapa.json"
+   ]
+  },
+  "be_412": {
+   "nome": "BE 4x12",
+   "hash": "2ec70e16df2b61df",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "be_412_frente.jpg",
+    "be_412_frente_alfa.png",
+    "be_412_mapa.json"
+   ]
+  },
+  "bebop15": {
+   "nome": "Bebop 15",
+   "hash": "1eaba76ea580fdbc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bebop15_botao_agudo.png",
+    "bebop15_botao_ganho.png",
+    "bebop15_botao_grave.png",
+    "bebop15_botao_medio.png",
+    "bebop15_botao_presenca.png",
+    "bebop15_botao_volume.png",
+    "bebop15_frente.jpg",
+    "bebop15_frente_alfa.png",
+    "bebop15_mapa.json"
+   ]
+  },
+  "blackcat30": {
+   "nome": "Black Cat 30",
+   "hash": "23aacf5fe8eaee78",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blackcat30_botao_agudo.png",
+    "blackcat30_botao_ganho.png",
+    "blackcat30_botao_grave.png",
+    "blackcat30_botao_medio.png",
+    "blackcat30_botao_presenca.png",
+    "blackcat30_botao_volume.png",
+    "blackcat30_frente.jpg",
+    "blackcat30_frente_alfa.png",
+    "blackcat30_mapa.json"
+   ]
+  },
+  "blackcountry100": {
+   "nome": "Black Country 100",
+   "hash": "85f966fd6ece2e0d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blackcountry100_botao_agudo.png",
+    "blackcountry100_botao_ganho.png",
+    "blackcountry100_botao_grave.png",
+    "blackcountry100_botao_medio.png",
+    "blackcountry100_botao_presenca.png",
+    "blackcountry100_botao_volume.png",
+    "blackcountry100_frente.jpg",
+    "blackcountry100_frente_alfa.png",
+    "blackcountry100_mapa.json"
+   ]
+  },
+  "blackcurrant_bass": {
+   "nome": "Blackcurrant Bass",
+   "hash": "3c51b409ac50069f",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blackcurrant_bass_botao_ganho.png",
+    "blackcurrant_bass_botao_nivel.png",
+    "blackcurrant_bass_botao_tom.png",
+    "blackcurrant_bass_frente.jpg",
+    "blackcurrant_bass_frente_alfa.png",
+    "blackcurrant_bass_mapa.json"
+   ]
+  },
+  "bliss100": {
+   "nome": "Bliss 100",
+   "hash": "79edb1eeabebba8d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bliss100_botao_agudo.png",
+    "bliss100_botao_ganho.png",
+    "bliss100_botao_grave.png",
+    "bliss100_botao_medio.png",
+    "bliss100_botao_presenca.png",
+    "bliss100_botao_volume.png",
+    "bliss100_frente.jpg",
+    "bliss100_frente_alfa.png",
+    "bliss100_mapa.json"
+   ]
+  },
+  "block5150": {
+   "nome": "Block 5150",
+   "hash": "20bc7328f65fa08c",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "block5150_botao_agudo.png",
+    "block5150_botao_ganho.png",
+    "block5150_botao_grave.png",
+    "block5150_botao_medio.png",
+    "block5150_botao_presenca.png",
+    "block5150_botao_volume.png",
+    "block5150_frente.jpg",
+    "block5150_frente_alfa.png",
+    "block5150_mapa.json"
+   ]
+  },
+  "block5150iii": {
+   "nome": "Block 5150 III",
+   "hash": "60db4fdce775ddaf",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "block5150iii_botao_agudo.png",
+    "block5150iii_botao_ganho.png",
+    "block5150iii_botao_grave.png",
+    "block5150iii_botao_medio.png",
+    "block5150iii_botao_presenca.png",
+    "block5150iii_botao_volume.png",
+    "block5150iii_frente.jpg",
+    "block5150iii_frente_alfa.png",
+    "block5150iii_mapa.json"
+   ]
+  },
+  "block_412": {
+   "nome": "Block 4x12",
+   "hash": "56fb0efd8b5d69ff",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "block_412_frente.jpg",
+    "block_412_frente_alfa.png",
+    "block_412_mapa.json"
+   ]
+  },
+  "blue_212": {
+   "nome": "Blue 2x12",
+   "hash": "3c4448ab8b7db636",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blue_212_frente.jpg",
+    "blue_212_frente_alfa.png",
+    "blue_212_mapa.json"
+   ]
+  },
+  "blueberry_blues": {
+   "nome": "Blueberry Blues",
+   "hash": "7ed392144efa0c56",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blueberry_blues_botao_ganho.png",
+    "blueberry_blues_botao_nivel.png",
+    "blueberry_blues_botao_tom.png",
+    "blueberry_blues_frente.jpg",
+    "blueberry_blues_frente_alfa.png",
+    "blueberry_blues_mapa.json"
+   ]
+  },
+  "blueberry_chain": {
+   "nome": "Blueberry Chain",
+   "hash": "1deb53c20b17d610",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blueberry_chain_botao_a.png",
+    "blueberry_chain_botao_b.png",
+    "blueberry_chain_botao_c.png",
+    "blueberry_chain_frente.jpg",
+    "blueberry_chain_frente_alfa.png",
+    "blueberry_chain_mapa.json"
+   ]
+  },
+  "brit2000": {
+   "nome": "Brit 2000",
+   "hash": "286ba27824542bdf",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit2000_botao_agudo.png",
+    "brit2000_botao_ganho.png",
+    "brit2000_botao_grave.png",
+    "brit2000_botao_medio.png",
+    "brit2000_botao_presenca.png",
+    "brit2000_botao_volume.png",
+    "brit2000_frente.jpg",
+    "brit2000_frente_alfa.png",
+    "brit2000_mapa.json"
+   ]
+  },
+  "brit410": {
+   "nome": "Brit 410",
+   "hash": "82976e6732513d7b",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit410_botao_agudo.png",
+    "brit410_botao_ganho.png",
+    "brit410_botao_grave.png",
+    "brit410_botao_medio.png",
+    "brit410_botao_presenca.png",
+    "brit410_botao_volume.png",
+    "brit410_frente.jpg",
+    "brit410_frente_alfa.png",
+    "brit410_mapa.json"
+   ]
+  },
+  "brit412": {
+   "nome": "Brit 4x12",
+   "hash": "8a81775bfd20095f",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit412_frente.jpg",
+    "brit412_frente_alfa.png",
+    "brit412_mapa.json"
+   ]
+  },
+  "brit45": {
+   "nome": "Brit 45",
+   "hash": "7fe93db7884056c4",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit45_botao_agudo.png",
+    "brit45_botao_ganho.png",
+    "brit45_botao_grave.png",
+    "brit45_botao_medio.png",
+    "brit45_botao_presenca.png",
+    "brit45_botao_volume.png",
+    "brit45_frente.jpg",
+    "brit45_frente_alfa.png",
+    "brit45_mapa.json"
+   ]
+  },
+  "brit800": {
+   "nome": "Brit 800",
+   "hash": "a8793aa18aed468b",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit800_botao_agudo.png",
+    "brit800_botao_ganho.png",
+    "brit800_botao_grave.png",
+    "brit800_botao_medio.png",
+    "brit800_botao_presenca.png",
+    "brit800_botao_volume.png",
+    "brit800_frente.jpg",
+    "brit800_frente_alfa.png",
+    "brit800_mapa.json"
+   ]
+  },
+  "brit900": {
+   "nome": "Brit 900",
+   "hash": "4aadc3db18849346",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit900_botao_agudo.png",
+    "brit900_botao_ganho.png",
+    "brit900_botao_grave.png",
+    "brit900_botao_medio.png",
+    "brit900_botao_presenca.png",
+    "brit900_botao_volume.png",
+    "brit900_frente.jpg",
+    "brit900_frente_alfa.png",
+    "brit900_mapa.json"
+   ]
+  },
+  "britbass": {
+   "nome": "Brit Bass",
+   "hash": "51acc00a88fc083e",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britbass_botao_agudo.png",
+    "britbass_botao_ganho.png",
+    "britbass_botao_grave.png",
+    "britbass_botao_medio.png",
+    "britbass_botao_presenca.png",
+    "britbass_botao_volume.png",
+    "britbass_frente.jpg",
+    "britbass_frente_alfa.png",
+    "britbass_mapa.json"
+   ]
+  },
+  "britds20": {
+   "nome": "Brit DS 20",
+   "hash": "db4c75009094e5ff",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britds20_botao_agudo.png",
+    "britds20_botao_ganho.png",
+    "britds20_botao_grave.png",
+    "britds20_botao_medio.png",
+    "britds20_botao_presenca.png",
+    "britds20_botao_volume.png",
+    "britds20_frente.jpg",
+    "britds20_frente_alfa.png",
+    "britds20_mapa.json"
+   ]
+  },
+  "britjubilee": {
+   "nome": "Brit Jubilee",
+   "hash": "0cee439469716dda",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britjubilee_botao_agudo.png",
+    "britjubilee_botao_ganho.png",
+    "britjubilee_botao_grave.png",
+    "britjubilee_botao_medio.png",
+    "britjubilee_botao_presenca.png",
+    "britjubilee_botao_volume.png",
+    "britjubilee_frente.jpg",
+    "britjubilee_frente_alfa.png",
+    "britjubilee_mapa.json"
+   ]
+  },
+  "britplexi50": {
+   "nome": "Brit Plexi 50",
+   "hash": "f9699fac19d32f08",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britplexi50_botao_agudo.png",
+    "britplexi50_botao_ganho.png",
+    "britplexi50_botao_grave.png",
+    "britplexi50_botao_medio.png",
+    "britplexi50_botao_presenca.png",
+    "britplexi50_botao_volume.png",
+    "britplexi50_frente.jpg",
+    "britplexi50_frente_alfa.png",
+    "britplexi50_mapa.json"
+   ]
+  },
+  "britplexi": {
+   "nome": "Brit Plexi",
+   "hash": "35972f08a647a0d3",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britplexi_botao_agudo.png",
+    "britplexi_botao_ganho.png",
+    "britplexi_botao_grave.png",
+    "britplexi_botao_medio.png",
+    "britplexi_botao_presenca.png",
+    "britplexi_botao_volume.png",
+    "britplexi_frente.jpg",
+    "britplexi_frente_alfa.png",
+    "britplexi_mapa.json"
+   ]
+  },
+  "britrack1": {
+   "nome": "Brit Rack 1",
+   "hash": "98a1bee78b91f736",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "britrack1_botao_agudo.png",
+    "britrack1_botao_ganho.png",
+    "britrack1_botao_grave.png",
+    "britrack1_botao_medio.png",
+    "britrack1_botao_presenca.png",
+    "britrack1_botao_volume.png",
+    "britrack1_frente.jpg",
+    "britrack1_frente_alfa.png",
+    "britrack1_mapa.json"
+   ]
+  },
+  "cashew_boost": {
+   "nome": "Cashew Boost",
+   "hash": "1d7898301eea624c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "cashew_boost_botao_ganho.png",
+    "cashew_boost_botao_nivel.png",
+    "cashew_boost_frente.jpg",
+    "cashew_boost_frente_alfa.png",
+    "cashew_boost_mapa.json"
+   ]
+  },
+  "champion5": {
+   "nome": "Champion 5",
+   "hash": "240ce2fa41d50a0d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "champion5_botao_agudo.png",
+    "champion5_botao_ganho.png",
+    "champion5_botao_grave.png",
+    "champion5_botao_medio.png",
+    "champion5_botao_presenca.png",
+    "champion5_botao_volume.png",
+    "champion5_frente.jpg",
+    "champion5_frente_alfa.png",
+    "champion5_mapa.json"
+   ]
+  },
+  "cherry_drop": {
+   "nome": "Cherry Drop",
+   "hash": "33f48b90ceac5aa3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "cherry_drop_botao_a.png",
+    "cherry_drop_botao_b.png",
+    "cherry_drop_frente.jpg",
+    "cherry_drop_frente_alfa.png",
+    "cherry_drop_mapa.json"
+   ]
+  },
+  "cherry_fuzz": {
+   "nome": "Cherry Fuzz",
+   "hash": "991bd7a6fb6408bc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "cherry_fuzz_botao_ganho.png",
+    "cherry_fuzz_botao_nivel.png",
+    "cherry_fuzz_frente.jpg",
+    "cherry_fuzz_frente_alfa.png",
+    "cherry_fuzz_mapa.json"
+   ]
+  },
+  "citrus30": {
+   "nome": "Citrus 30",
+   "hash": "1c58d2521626f84d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus30_botao_agudo.png",
+    "citrus30_botao_ganho.png",
+    "citrus30_botao_grave.png",
+    "citrus30_botao_medio.png",
+    "citrus30_botao_presenca.png",
+    "citrus30_botao_volume.png",
+    "citrus30_frente.jpg",
+    "citrus30_frente_alfa.png",
+    "citrus30_mapa.json"
+   ]
+  },
+  "citrus50": {
+   "nome": "Citrus 50",
+   "hash": "41fa2a3527edc7f8",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus50_botao_agudo.png",
+    "citrus50_botao_ganho.png",
+    "citrus50_botao_grave.png",
+    "citrus50_botao_medio.png",
+    "citrus50_botao_presenca.png",
+    "citrus50_botao_volume.png",
+    "citrus50_frente.jpg",
+    "citrus50_frente_alfa.png",
+    "citrus50_mapa.json"
+   ]
+  },
+  "citrus_412": {
+   "nome": "Citrus 4x12",
+   "hash": "5e29e9c1f1a89b97",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus_412_frente.jpg",
+    "citrus_412_frente_alfa.png",
+    "citrus_412_mapa.json"
+   ]
+  },
+  "citrusbass200": {
+   "nome": "Citrus Bass 200",
+   "hash": "c4da52069d4fe108",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrusbass200_botao_agudo.png",
+    "citrusbass200_botao_ganho.png",
+    "citrusbass200_botao_grave.png",
+    "citrusbass200_botao_medio.png",
+    "citrusbass200_botao_presenca.png",
+    "citrusbass200_botao_volume.png",
+    "citrusbass200_frente.jpg",
+    "citrusbass200_frente_alfa.png",
+    "citrusbass200_mapa.json"
+   ]
+  },
+  "clementine_turbo": {
+   "nome": "Clementine Turbo",
+   "hash": "a094e632053067ff",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "clementine_turbo_botao_ganho.png",
+    "clementine_turbo_botao_nivel.png",
+    "clementine_turbo_botao_tom.png",
+    "clementine_turbo_frente.jpg",
+    "clementine_turbo_frente_alfa.png",
+    "clementine_turbo_mapa.json"
+   ]
+  },
+  "coconut_delay": {
+   "nome": "Coconut Delay",
+   "hash": "de8ce3260725d9c3",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "coconut_delay_botao_a.png",
+    "coconut_delay_botao_b.png",
+    "coconut_delay_botao_c.png",
+    "coconut_delay_frente.jpg",
+    "coconut_delay_frente_alfa.png",
+    "coconut_delay_mapa.json"
+   ]
+  },
+  "comet_wah": {
+   "nome": "Comet Wah",
+   "hash": "52da0bebef4ab7b6",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "comet_wah_botao_a.png",
+    "comet_wah_botao_b.png",
+    "comet_wah_botao_c.png",
+    "comet_wah_frente.jpg",
+    "comet_wah_frente_alfa.png",
+    "comet_wah_mapa.json"
+   ]
+  },
+  "country_412": {
+   "nome": "Country 4x12",
+   "hash": "0d3dd2583496e545",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "country_412_frente.jpg",
+    "country_412_frente_alfa.png",
+    "country_412_mapa.json"
+   ]
+  },
+  "cranberry_wylde": {
+   "nome": "Cranberry Wylde",
+   "hash": "a7abe13b8b5bae2c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "cranberry_wylde_botao_ganho.png",
+    "cranberry_wylde_botao_nivel.png",
+    "cranberry_wylde_botao_tom.png",
+    "cranberry_wylde_frente.jpg",
+    "cranberry_wylde_frente_alfa.png",
+    "cranberry_wylde_mapa.json"
+   ]
+  },
+  "cupuacu_hammer": {
+   "nome": "Cupuaçu Hammer",
+   "hash": "83faf1d84bad5140",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "cupuacu_hammer_botao_ganho.png",
+    "cupuacu_hammer_botao_nivel.png",
+    "cupuacu_hammer_botao_tom.png",
+    "cupuacu_hammer_frente.jpg",
+    "cupuacu_hammer_frente_alfa.png",
+    "cupuacu_hammer_mapa.json"
+   ]
+  },
+  "darkstar20": {
+   "nome": "Dark Star 20",
+   "hash": "76d761ddc3cac92c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "darkstar20_botao_agudo.png",
+    "darkstar20_botao_ganho.png",
+    "darkstar20_botao_grave.png",
+    "darkstar20_botao_medio.png",
+    "darkstar20_botao_presenca.png",
+    "darkstar20_botao_volume.png",
+    "darkstar20_frente.jpg",
+    "darkstar20_frente_alfa.png",
+    "darkstar20_mapa.json"
+   ]
+  },
+  "deliver120": {
+   "nome": "Deliver 120",
+   "hash": "a1b8300344f96a55",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "deliver120_botao_agudo.png",
+    "deliver120_botao_ganho.png",
+    "deliver120_botao_grave.png",
+    "deliver120_botao_medio.png",
+    "deliver120_botao_presenca.png",
+    "deliver120_botao_volume.png",
+    "deliver120_frente.jpg",
+    "deliver120_frente_alfa.png",
+    "deliver120_mapa.json"
+   ]
+  },
+  "dirty40": {
+   "nome": "Dirty 40",
+   "hash": "8d560f0d1bc4f86a",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "dirty40_botao_agudo.png",
+    "dirty40_botao_ganho.png",
+    "dirty40_botao_grave.png",
+    "dirty40_botao_medio.png",
+    "dirty40_botao_presenca.png",
+    "dirty40_botao_volume.png",
+    "dirty40_frente.jpg",
+    "dirty40_frente_alfa.png",
+    "dirty40_mapa.json"
+   ]
+  },
+  "doublestone50": {
+   "nome": "Double Stone 50",
+   "hash": "6612e90a77adb3fc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "doublestone50_botao_agudo.png",
+    "doublestone50_botao_ganho.png",
+    "doublestone50_botao_grave.png",
+    "doublestone50_botao_medio.png",
+    "doublestone50_botao_presenca.png",
+    "doublestone50_botao_volume.png",
+    "doublestone50_frente.jpg",
+    "doublestone50_frente_alfa.png",
+    "doublestone50_mapa.json"
+   ]
+  },
+  "eagle751": {
+   "nome": "Eagle 751",
+   "hash": "6fa3cae9875fe004",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "eagle751_botao_agudo.png",
+    "eagle751_botao_ganho.png",
+    "eagle751_botao_grave.png",
+    "eagle751_botao_medio.png",
+    "eagle751_botao_presenca.png",
+    "eagle751_botao_volume.png",
+    "eagle751_frente.jpg",
+    "eagle751_frente_alfa.png",
+    "eagle751_mapa.json"
+   ]
+  },
+  "eaglehammer500": {
+   "nome": "Eagle Hammer 500",
+   "hash": "d06fad7b05b92997",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "eaglehammer500_botao_agudo.png",
+    "eaglehammer500_botao_ganho.png",
+    "eaglehammer500_botao_grave.png",
+    "eaglehammer500_botao_medio.png",
+    "eaglehammer500_botao_presenca.png",
+    "eaglehammer500_botao_volume.png",
+    "eaglehammer500_frente.jpg",
+    "eaglehammer500_frente_alfa.png",
+    "eaglehammer500_mapa.json"
+   ]
+  },
+  "eclipse_vibe": {
+   "nome": "Eclipse Vibe",
+   "hash": "903719c03c0704f3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "eclipse_vibe_botao_a.png",
+    "eclipse_vibe_botao_b.png",
+    "eclipse_vibe_botao_c.png",
+    "eclipse_vibe_frente.jpg",
+    "eclipse_vibe_frente_alfa.png",
+    "eclipse_vibe_mapa.json"
+   ]
+  },
+  "elderberry_war": {
+   "nome": "Elderberry War",
+   "hash": "513138d171df9bdc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "elderberry_war_botao_ganho.png",
+    "elderberry_war_botao_nivel.png",
+    "elderberry_war_botao_tom.png",
+    "elderberry_war_frente.jpg",
+    "elderberry_war_frente_alfa.png",
+    "elderberry_war_mapa.json"
+   ]
+  },
+  "emperor20": {
+   "nome": "Emperor 20",
+   "hash": "fe839595e76ddf86",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "emperor20_botao_agudo.png",
+    "emperor20_botao_ganho.png",
+    "emperor20_botao_grave.png",
+    "emperor20_botao_medio.png",
+    "emperor20_botao_presenca.png",
+    "emperor20_botao_volume.png",
+    "emperor20_frente.jpg",
+    "emperor20_frente_alfa.png",
+    "emperor20_mapa.json"
+   ]
+  },
+  "feral120": {
+   "nome": "Feral 120",
+   "hash": "9d9eec3dbd53bc85",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "feral120_botao_agudo.png",
+    "feral120_botao_ganho.png",
+    "feral120_botao_grave.png",
+    "feral120_botao_medio.png",
+    "feral120_botao_presenca.png",
+    "feral120_botao_volume.png",
+    "feral120_frente.jpg",
+    "feral120_frente_alfa.png",
+    "feral120_mapa.json"
+   ]
+  },
+  "fig_bender": {
+   "nome": "Fig Bender",
+   "hash": "7d20c00432ce9665",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fig_bender_botao_ganho.png",
+    "fig_bender_botao_nivel.png",
+    "fig_bender_botao_tom.png",
+    "fig_bender_frente.jpg",
+    "fig_bender_frente_alfa.png",
+    "fig_bender_mapa.json"
+   ]
+  },
+  "fire100": {
+   "nome": "Fire 100",
+   "hash": "12345cfc252b69c0",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fire100_botao_agudo.png",
+    "fire100_botao_ganho.png",
+    "fire100_botao_grave.png",
+    "fire100_botao_medio.png",
+    "fire100_botao_presenca.png",
+    "fire100_botao_volume.png",
+    "fire100_frente.jpg",
+    "fire100_frente_alfa.png",
+    "fire100_mapa.json"
+   ]
+  },
+  "fliptop15": {
+   "nome": "Fliptop 15",
+   "hash": "a77ac7caface2a1d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fliptop15_botao_agudo.png",
+    "fliptop15_botao_ganho.png",
+    "fliptop15_botao_grave.png",
+    "fliptop15_botao_medio.png",
+    "fliptop15_botao_presenca.png",
+    "fliptop15_botao_volume.png",
+    "fliptop15_frente.jpg",
+    "fliptop15_frente_alfa.png",
+    "fliptop15_mapa.json"
+   ]
+  },
+  "fliptop18": {
+   "nome": "Fliptop 18",
+   "hash": "72920ce3a30c9862",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fliptop18_botao_agudo.png",
+    "fliptop18_botao_ganho.png",
+    "fliptop18_botao_grave.png",
+    "fliptop18_botao_medio.png",
+    "fliptop18_botao_presenca.png",
+    "fliptop18_botao_volume.png",
+    "fliptop18_frente.jpg",
+    "fliptop18_frente_alfa.png",
+    "fliptop18_mapa.json"
+   ]
+  },
+  "fliptop_115": {
+   "nome": "Fliptop 1x15",
+   "hash": "8e84b908367b602b",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fliptop_115_frente.jpg",
+    "fliptop_115_frente_alfa.png",
+    "fliptop_115_mapa.json"
+   ]
+  },
+  "galaxy_mod": {
+   "nome": "Galaxy Mod",
+   "hash": "666c5ebed9931432",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "galaxy_mod_botao_a.png",
+    "galaxy_mod_botao_b.png",
+    "galaxy_mod_botao_c.png",
+    "galaxy_mod_botao_d.png",
+    "galaxy_mod_botao_modo.png",
+    "galaxy_mod_botao_tom.png",
+    "galaxy_mod_frente.jpg",
+    "galaxy_mod_frente_alfa.png",
+    "galaxy_mod_mapa.json"
+   ]
+  },
+  "garden800": {
+   "nome": "Garden 800",
+   "hash": "6859c9647ec5e193",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "garden800_botao_agudo.png",
+    "garden800_botao_ganho.png",
+    "garden800_botao_grave.png",
+    "garden800_botao_medio.png",
+    "garden800_botao_presenca.png",
+    "garden800_botao_volume.png",
+    "garden800_frente.jpg",
+    "garden800_frente_alfa.png",
+    "garden800_mapa.json"
+   ]
+  },
+  "gen120": {
+   "nome": "Gen 120",
+   "hash": "5908ff77519442f0",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "gen120_botao_agudo.png",
+    "gen120_botao_ganho.png",
+    "gen120_botao_grave.png",
+    "gen120_botao_medio.png",
+    "gen120_botao_presenca.png",
+    "gen120_botao_volume.png",
+    "gen120_frente.jpg",
+    "gen120_frente_alfa.png",
+    "gen120_mapa.json"
+   ]
+  },
+  "glass500": {
+   "nome": "Glass 500",
+   "hash": "eb40f6c06b25c968",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "glass500_botao_agudo.png",
+    "glass500_botao_ganho.png",
+    "glass500_botao_grave.png",
+    "glass500_botao_medio.png",
+    "glass500_botao_presenca.png",
+    "glass500_botao_volume.png",
+    "glass500_frente.jpg",
+    "glass500_frente_alfa.png",
+    "glass500_mapa.json"
+   ]
+  },
+  "glass_410": {
+   "nome": "Glass 4x10",
+   "hash": "a196d89354360412",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "glass_410_frente.jpg",
+    "glass_410_frente_alfa.png",
+    "glass_410_mapa.json"
+   ]
+  },
+  "glass_412": {
+   "nome": "Glass 4x12",
+   "hash": "96b74f4fd02d7f98",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "glass_412_frente.jpg",
+    "glass_412_frente_alfa.png",
+    "glass_412_mapa.json"
+   ]
+  },
+  "goddess80": {
+   "nome": "Goddess 80",
+   "hash": "80b9424ea22f53d7",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "goddess80_botao_agudo.png",
+    "goddess80_botao_ganho.png",
+    "goddess80_botao_grave.png",
+    "goddess80_botao_medio.png",
+    "goddess80_botao_presenca.png",
+    "goddess80_botao_volume.png",
+    "goddess80_frente.jpg",
+    "goddess80_frente_alfa.png",
+    "goddess80_mapa.json"
+   ]
+  },
+  "gold_centaur": {
+   "nome": "Gold Centaur",
+   "hash": "edc4960b10c30130",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "gold_centaur_botao_ganho.png",
+    "gold_centaur_botao_nivel.png",
+    "gold_centaur_botao_tom.png",
+    "gold_centaur_frente.jpg",
+    "gold_centaur_frente_alfa.png",
+    "gold_centaur_mapa.json"
+   ]
+  },
+  "gooseberry_g3": {
+   "nome": "Gooseberry G3",
+   "hash": "401d5b68f3858a2c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "gooseberry_g3_botao_ganho.png",
+    "gooseberry_g3_botao_nivel.png",
+    "gooseberry_g3_botao_tom.png",
+    "gooseberry_g3_frente.jpg",
+    "gooseberry_g3_frente_alfa.png",
+    "gooseberry_g3_mapa.json"
+   ]
+  },
+  "granite800": {
+   "nome": "Granite 800",
+   "hash": "d41dc2a7a839aff9",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "granite800_botao_agudo.png",
+    "granite800_botao_ganho.png",
+    "granite800_botao_grave.png",
+    "granite800_botao_medio.png",
+    "granite800_botao_presenca.png",
+    "granite800_botao_volume.png",
+    "granite800_frente.jpg",
+    "granite800_frente_alfa.png",
+    "granite800_mapa.json"
+   ]
+  },
+  "granite_410": {
+   "nome": "Granite 4x10",
+   "hash": "9cd80c2c0cfa95bb",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "granite_410_frente.jpg",
+    "granite_410_frente_alfa.png",
+    "granite_410_mapa.json"
+   ]
+  },
+  "grape_reverb": {
+   "nome": "Grape Reverb",
+   "hash": "0f3d4247d51be394",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "grape_reverb_botao_a.png",
+    "grape_reverb_botao_b.png",
+    "grape_reverb_botao_c.png",
+    "grape_reverb_frente.jpg",
+    "grape_reverb_frente_alfa.png",
+    "grape_reverb_mapa.json"
+   ]
+  },
+  "grapefruit_drive": {
+   "nome": "Grapefruit Drive",
+   "hash": "c140855097e40a57",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "grapefruit_drive_botao_ganho.png",
+    "grapefruit_drive_botao_nivel.png",
+    "grapefruit_drive_botao_tom.png",
+    "grapefruit_drive_frente.jpg",
+    "grapefruit_drive_frente_alfa.png",
+    "grapefruit_drive_mapa.json"
+   ]
+  },
+  "graviola_bassdi": {
+   "nome": "Graviola Bass DI",
+   "hash": "ed0a21ed11411421",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "graviola_bassdi_botao_ganho.png",
+    "graviola_bassdi_botao_nivel.png",
+    "graviola_bassdi_botao_tom.png",
+    "graviola_bassdi_frente.jpg",
+    "graviola_bassdi_frente_alfa.png",
+    "graviola_bassdi_mapa.json"
+   ]
+  },
+  "guava_precision": {
+   "nome": "Guava Precision",
+   "hash": "055c039901fc9089",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "guava_precision_botao_ganho.png",
+    "guava_precision_botao_nivel.png",
+    "guava_precision_botao_tom.png",
+    "guava_precision_frente.jpg",
+    "guava_precision_frente_alfa.png",
+    "guava_precision_mapa.json"
+   ]
+  },
+  "hart1000": {
+   "nome": "Hart 1000",
+   "hash": "b0e0a00c020b3473",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hart1000_botao_agudo.png",
+    "hart1000_botao_ganho.png",
+    "hart1000_botao_grave.png",
+    "hart1000_botao_medio.png",
+    "hart1000_botao_presenca.png",
+    "hart1000_botao_volume.png",
+    "hart1000_frente.jpg",
+    "hart1000_frente_alfa.png",
+    "hart1000_mapa.json"
+   ]
+  },
+  "hart_410": {
+   "nome": "Hart 4x10",
+   "hash": "18f3ad403e5cd9bf",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hart_410_frente.jpg",
+    "hart_410_frente_alfa.png",
+    "hart_410_mapa.json"
+   ]
+  },
+  "herb180": {
+   "nome": "Herb 180",
+   "hash": "0224fa65c710fce0",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "herb180_botao_agudo.png",
+    "herb180_botao_ganho.png",
+    "herb180_botao_grave.png",
+    "herb180_botao_medio.png",
+    "herb180_botao_presenca.png",
+    "herb180_botao_volume.png",
+    "herb180_frente.jpg",
+    "herb180_frente_alfa.png",
+    "herb180_mapa.json"
+   ]
+  },
+  "hi103": {
+   "nome": "Hi 103",
+   "hash": "d4ec69ebe3abe106",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hi103_botao_agudo.png",
+    "hi103_botao_ganho.png",
+    "hi103_botao_grave.png",
+    "hi103_botao_medio.png",
+    "hi103_botao_presenca.png",
+    "hi103_botao_volume.png",
+    "hi103_frente.jpg",
+    "hi103_frente_alfa.png",
+    "hi103_mapa.json"
+   ]
+  },
+  "hi_412": {
+   "nome": "Hi 4x12",
+   "hash": "912e9106d019695b",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hi_412_frente.jpg",
+    "hi_412_frente_alfa.png",
+    "hi_412_mapa.json"
+   ]
+  },
+  "honeydew_drive": {
+   "nome": "Honeydew Drive",
+   "hash": "d79ea1e54844f828",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "honeydew_drive_botao_ganho.png",
+    "honeydew_drive_botao_nivel.png",
+    "honeydew_drive_botao_tom.png",
+    "honeydew_drive_frente.jpg",
+    "honeydew_drive_frente_alfa.png",
+    "honeydew_drive_mapa.json"
+   ]
+  },
+  "hotrod40": {
+   "nome": "Hot Rod 40",
+   "hash": "f6840b353ef050a9",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hotrod40_botao_agudo.png",
+    "hotrod40_botao_ganho.png",
+    "hotrod40_botao_grave.png",
+    "hotrod40_botao_medio.png",
+    "hotrod40_botao_presenca.png",
+    "hotrod40_botao_volume.png",
+    "hotrod40_frente.jpg",
+    "hotrod40_frente_alfa.png",
+    "hotrod40_mapa.json"
+   ]
+  },
+  "iron120": {
+   "nome": "Iron 120",
+   "hash": "4cf186383fc1f5f2",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "iron120_botao_agudo.png",
+    "iron120_botao_ganho.png",
+    "iron120_botao_grave.png",
+    "iron120_botao_medio.png",
+    "iron120_botao_presenca.png",
+    "iron120_botao_volume.png",
+    "iron120_frente.jpg",
+    "iron120_frente_alfa.png",
+    "iron120_mapa.json"
+   ]
+  },
+  "jabuticaba_buzzsaw": {
+   "nome": "Jabuticaba Buzzsaw",
+   "hash": "ffe6e096c20ad38b",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jabuticaba_buzzsaw_botao_ganho.png",
+    "jabuticaba_buzzsaw_botao_nivel.png",
+    "jabuticaba_buzzsaw_botao_tom.png",
+    "jabuticaba_buzzsaw_frente.jpg",
+    "jabuticaba_buzzsaw_frente_alfa.png",
+    "jabuticaba_buzzsaw_mapa.json"
+   ]
+  },
+  "jackfruit_monkey": {
+   "nome": "Jackfruit Monkey",
+   "hash": "fd51773a610eaaf3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jackfruit_monkey_botao_ganho.png",
+    "jackfruit_monkey_botao_nivel.png",
+    "jackfruit_monkey_botao_tom.png",
+    "jackfruit_monkey_frente.jpg",
+    "jackfruit_monkey_frente_alfa.png",
+    "jackfruit_monkey_mapa.json"
+   ]
+  },
+  "jazz120": {
+   "nome": "Jazz 120",
+   "hash": "b567731dc36cd0d8",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jazz120_botao_agudo.png",
+    "jazz120_botao_ganho.png",
+    "jazz120_botao_grave.png",
+    "jazz120_botao_medio.png",
+    "jazz120_botao_presenca.png",
+    "jazz120_botao_volume.png",
+    "jazz120_frente.jpg",
+    "jazz120_frente_alfa.png",
+    "jazz120_mapa.json"
+   ]
+  },
+  "jazz_212": {
+   "nome": "Jazz 2x12",
+   "hash": "3f28d02e5711d916",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jazz_212_frente.jpg",
+    "jazz_212_frente_alfa.png",
+    "jazz_212_mapa.json"
+   ]
+  },
+  "juniper_sky": {
+   "nome": "Juniper Sky",
+   "hash": "3c72ee6acfc2731a",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "juniper_sky_botao_a.png",
+    "juniper_sky_botao_b.png",
+    "juniper_sky_botao_c.png",
+    "juniper_sky_botao_d.png",
+    "juniper_sky_botao_modo.png",
+    "juniper_sky_botao_nivel.png",
+    "juniper_sky_botao_tom.png",
+    "juniper_sky_frente.jpg",
+    "juniper_sky_frente_alfa.png",
+    "juniper_sky_mapa.json"
+   ]
+  },
+  "jupiter_octave": {
+   "nome": "Jupiter Octave",
+   "hash": "a647422bd2aa7b56",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jupiter_octave_botao_a.png",
+    "jupiter_octave_botao_b.png",
+    "jupiter_octave_botao_c.png",
+    "jupiter_octave_frente.jpg",
+    "jupiter_octave_frente_alfa.png",
+    "jupiter_octave_mapa.json"
+   ]
+  },
+  "kiwi_drive": {
+   "nome": "Kiwi Drive",
+   "hash": "42698f60f170ae0e",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "kiwi_drive_botao_ganho.png",
+    "kiwi_drive_botao_nivel.png",
+    "kiwi_drive_botao_tom.png",
+    "kiwi_drive_frente.jpg",
+    "kiwi_drive_frente_alfa.png",
+    "kiwi_drive_mapa.json"
+   ]
+  },
+  "kraken50": {
+   "nome": "Kraken 50",
+   "hash": "4fe4b0f067ca5c24",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "kraken50_botao_agudo.png",
+    "kraken50_botao_ganho.png",
+    "kraken50_botao_grave.png",
+    "kraken50_botao_medio.png",
+    "kraken50_botao_presenca.png",
+    "kraken50_botao_volume.png",
+    "kraken50_frente.jpg",
+    "kraken50_frente_alfa.png",
+    "kraken50_mapa.json"
+   ]
+  },
+  "kumquat_klone": {
+   "nome": "Kumquat Klone",
+   "hash": "9c44a58a03ee1e03",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "kumquat_klone_botao_ganho.png",
+    "kumquat_klone_botao_nivel.png",
+    "kumquat_klone_botao_tom.png",
+    "kumquat_klone_frente.jpg",
+    "kumquat_klone_frente_alfa.png",
+    "kumquat_klone_mapa.json"
+   ]
+  },
+  "lemon_drive": {
+   "nome": "Lemon Drive",
+   "hash": "7d5ae9c8e9e67bcd",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lemon_drive_botao_ganho.png",
+    "lemon_drive_botao_nivel.png",
+    "lemon_drive_botao_tom.png",
+    "lemon_drive_frente.jpg",
+    "lemon_drive_frente_alfa.png",
+    "lemon_drive_mapa.json"
+   ]
+  },
+  "lime_echo": {
+   "nome": "Lime Echo",
+   "hash": "9dc3a6e663681241",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lime_echo_botao_a.png",
+    "lime_echo_botao_b.png",
+    "lime_echo_botao_c.png",
+    "lime_echo_botao_d.png",
+    "lime_echo_botao_modo.png",
+    "lime_echo_botao_tom.png",
+    "lime_echo_frente.jpg",
+    "lime_echo_frente_alfa.png",
+    "lime_echo_mapa.json"
+   ]
+  },
+  "littletube": {
+   "nome": "Little Tube",
+   "hash": "3b426af6bf2ab274",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "littletube_botao_agudo.png",
+    "littletube_botao_ganho.png",
+    "littletube_botao_grave.png",
+    "littletube_botao_medio.png",
+    "littletube_botao_presenca.png",
+    "littletube_botao_volume.png",
+    "littletube_frente.jpg",
+    "littletube_frente_alfa.png",
+    "littletube_mapa.json"
+   ]
+  },
+  "lonestar100": {
+   "nome": "Lone Star 100",
+   "hash": "00dc16f0b2c323c3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lonestar100_botao_agudo.png",
+    "lonestar100_botao_ganho.png",
+    "lonestar100_botao_grave.png",
+    "lonestar100_botao_medio.png",
+    "lonestar100_botao_presenca.png",
+    "lonestar100_botao_volume.png",
+    "lonestar100_frente.jpg",
+    "lonestar100_frente_alfa.png",
+    "lonestar100_mapa.json"
+   ]
+  },
+  "lychee_bassfuzz": {
+   "nome": "Lychee Bass Fuzz",
+   "hash": "e2199cf5142b4dcb",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lychee_bassfuzz_botao_ganho.png",
+    "lychee_bassfuzz_botao_nivel.png",
+    "lychee_bassfuzz_botao_tom.png",
+    "lychee_bassfuzz_frente.jpg",
+    "lychee_bassfuzz_frente_alfa.png",
+    "lychee_bassfuzz_mapa.json"
+   ]
+  },
+  "lychee_fuzz": {
+   "nome": "Lychee Fuzz",
+   "hash": "c621d581afa58d14",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lychee_fuzz_botao_ganho.png",
+    "lychee_fuzz_botao_nivel.png",
+    "lychee_fuzz_botao_tom.png",
+    "lychee_fuzz_frente.jpg",
+    "lychee_fuzz_frente_alfa.png",
+    "lychee_fuzz_mapa.json"
+   ]
+  },
+  "magick25": {
+   "nome": "Magick 25",
+   "hash": "25af94648df81109",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "magick25_botao_agudo.png",
+    "magick25_botao_ganho.png",
+    "magick25_botao_grave.png",
+    "magick25_botao_medio.png",
+    "magick25_botao_presenca.png",
+    "magick25_botao_volume.png",
+    "magick25_frente.jpg",
+    "magick25_frente_alfa.png",
+    "magick25_mapa.json"
+   ]
+  },
+  "mangosteen_fuzz": {
+   "nome": "Mangosteen Fuzz",
+   "hash": "3619241f53694b40",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mangosteen_fuzz_botao_ganho.png",
+    "mangosteen_fuzz_botao_nivel.png",
+    "mangosteen_fuzz_botao_tom.png",
+    "mangosteen_fuzz_frente.jpg",
+    "mangosteen_fuzz_frente_alfa.png",
+    "mangosteen_fuzz_mapa.json"
+   ]
+  },
+  "maple400": {
+   "nome": "Maple 400",
+   "hash": "27d18712fb4d2d27",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "maple400_botao_agudo.png",
+    "maple400_botao_ganho.png",
+    "maple400_botao_grave.png",
+    "maple400_botao_medio.png",
+    "maple400_botao_presenca.png",
+    "maple400_botao_volume.png",
+    "maple400_frente.jpg",
+    "maple400_frente_alfa.png",
+    "maple400_mapa.json"
+   ]
+  },
+  "mark2plus": {
+   "nome": "Mark Two Plus",
+   "hash": "d2af9a5ee424a54f",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark2plus_botao_agudo.png",
+    "mark2plus_botao_eq2200.png",
+    "mark2plus_botao_eq240.png",
+    "mark2plus_botao_eq6600.png",
+    "mark2plus_botao_eq750.png",
+    "mark2plus_botao_eq80.png",
+    "mark2plus_botao_ganho.png",
+    "mark2plus_botao_grave.png",
+    "mark2plus_botao_medio.png",
+    "mark2plus_botao_presenca.png",
+    "mark2plus_botao_volume.png",
+    "mark2plus_frente.jpg",
+    "mark2plus_frente_alfa.png",
+    "mark2plus_mapa.json"
+   ]
+  },
+  "mark3": {
+   "nome": "Mark Three",
+   "hash": "aa34ac24256a1098",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark3_botao_agudo.png",
+    "mark3_botao_eq2200.png",
+    "mark3_botao_eq240.png",
+    "mark3_botao_eq6600.png",
+    "mark3_botao_eq750.png",
+    "mark3_botao_eq80.png",
+    "mark3_botao_ganho.png",
+    "mark3_botao_grave.png",
+    "mark3_botao_medio.png",
+    "mark3_botao_presenca.png",
+    "mark3_botao_volume.png",
+    "mark3_frente.jpg",
+    "mark3_frente_alfa.png",
+    "mark3_mapa.json"
+   ]
+  },
+  "mark4": {
+   "nome": "Mark Four",
+   "hash": "a8ab328b8f3abcdf",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark4_botao_agudo.png",
+    "mark4_botao_eq2200.png",
+    "mark4_botao_eq240.png",
+    "mark4_botao_eq6600.png",
+    "mark4_botao_eq750.png",
+    "mark4_botao_eq80.png",
+    "mark4_botao_ganho.png",
+    "mark4_botao_grave.png",
+    "mark4_botao_medio.png",
+    "mark4_botao_presenca.png",
+    "mark4_botao_volume.png",
+    "mark4_frente.jpg",
+    "mark4_frente_alfa.png",
+    "mark4_mapa.json"
+   ]
+  },
+  "mark5_412": {
+   "nome": "Mark 4x12",
+   "hash": "c6202819a2aaada8",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark5_412_frente.jpg",
+    "mark5_412_frente_alfa.png",
+    "mark5_412_mapa.json"
+   ]
+  },
+  "mark5": {
+   "nome": "Mark Five",
+   "hash": "aa89d40c762169a5",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark5_botao_agudo.png",
+    "mark5_botao_eq2200.png",
+    "mark5_botao_eq240.png",
+    "mark5_botao_eq6600.png",
+    "mark5_botao_eq750.png",
+    "mark5_botao_eq80.png",
+    "mark5_botao_ganho.png",
+    "mark5_botao_grave.png",
+    "mark5_botao_medio.png",
+    "mark5_botao_presenca.png",
+    "mark5_botao_volume.png",
+    "mark5_frente.jpg",
+    "mark5_frente_alfa.png",
+    "mark5_mapa.json"
+   ]
+  },
+  "mark_112": {
+   "nome": "Mark 1x12",
+   "hash": "e500ee35d6d3eb92",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark_112_frente.jpg",
+    "mark_112_frente_alfa.png",
+    "mark_112_mapa.json"
+   ]
+  },
+  "markjp": {
+   "nome": "Mark JP",
+   "hash": "b7e17552a0c93207",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "markjp_botao_agudo.png",
+    "markjp_botao_eq2200.png",
+    "markjp_botao_eq240.png",
+    "markjp_botao_eq6600.png",
+    "markjp_botao_eq750.png",
+    "markjp_botao_eq80.png",
+    "markjp_botao_ganho.png",
+    "markjp_botao_grave.png",
+    "markjp_botao_medio.png",
+    "markjp_botao_presenca.png",
+    "markjp_botao_volume.png",
+    "markjp_frente.jpg",
+    "markjp_frente_alfa.png",
+    "markjp_mapa.json"
+   ]
+  },
+  "mars_phaser": {
+   "nome": "Mars Phaser",
+   "hash": "ae7ae5841e61aaf0",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mars_phaser_botao_a.png",
+    "mars_phaser_botao_b.png",
+    "mars_phaser_botao_c.png",
+    "mars_phaser_frente.jpg",
+    "mars_phaser_frente_alfa.png",
+    "mars_phaser_mapa.json"
+   ]
+  },
+  "match30": {
+   "nome": "Match 30",
+   "hash": "a842140dd81bf7ef",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "match30_botao_agudo.png",
+    "match30_botao_ganho.png",
+    "match30_botao_grave.png",
+    "match30_botao_medio.png",
+    "match30_botao_presenca.png",
+    "match30_botao_volume.png",
+    "match30_frente.jpg",
+    "match30_frente_alfa.png",
+    "match30_mapa.json"
+   ]
+  },
+  "match_212": {
+   "nome": "Match 2x12",
+   "hash": "02f405f59e6dda7e",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "match_212_frente.jpg",
+    "match_212_frente_alfa.png",
+    "match_212_mapa.json"
+   ]
+  },
+  "microfone_condensador_grande": {
+   "nome": "condensador_grande",
+   "hash": "c04e4b26cb466e49",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "microfone_condensador_grande_frente.png",
+    "microfone_condensador_grande_mapa.json"
+   ]
+  },
+  "microfone_condensador_lapis": {
+   "nome": "condensador_lapis",
+   "hash": "525855cf81aa4fab",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "microfone_condensador_lapis_frente.png",
+    "microfone_condensador_lapis_mapa.json"
+   ]
+  },
+  "microfone_dinamico_bastao": {
+   "nome": "dinamico_bastao",
+   "hash": "95819d0041a53f48",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "microfone_dinamico_bastao_frente.png",
+    "microfone_dinamico_bastao_mapa.json"
+   ]
+  },
+  "microfone_dinamico_lateral": {
+   "nome": "dinamico_lateral",
+   "hash": "196f91a9bdcee5af",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "microfone_dinamico_lateral_frente.png",
+    "microfone_dinamico_lateral_mapa.json"
+   ]
+  },
+  "microfone_fita": {
+   "nome": "fita",
+   "hash": "b9106171799c3bfd",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "microfone_fita_frente.png",
+    "microfone_fita_mapa.json"
+   ]
+  },
+  "moon_tremolo": {
+   "nome": "Moon Tremolo",
+   "hash": "4d3c5a4c5b9b18ab",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "moon_tremolo_botao_a.png",
+    "moon_tremolo_botao_b.png",
+    "moon_tremolo_botao_c.png",
+    "moon_tremolo_frente.jpg",
+    "moon_tremolo_frente_alfa.png",
+    "moon_tremolo_mapa.json"
+   ]
+  },
+  "mulberry_omega": {
+   "nome": "Mulberry Omega",
+   "hash": "89bfd093c852a23d",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mulberry_omega_botao_ganho.png",
+    "mulberry_omega_botao_nivel.png",
+    "mulberry_omega_botao_tom.png",
+    "mulberry_omega_frente.jpg",
+    "mulberry_omega_frente_alfa.png",
+    "mulberry_omega_mapa.json"
+   ]
+  },
+  "nebula_flanger": {
+   "nome": "Nebula Flanger",
+   "hash": "6f44dfbb533f81be",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nebula_flanger_botao_a.png",
+    "nebula_flanger_botao_b.png",
+    "nebula_flanger_botao_c.png",
+    "nebula_flanger_frente.jpg",
+    "nebula_flanger_frente_alfa.png",
+    "nebula_flanger_mapa.json"
+   ]
+  },
+  "nectarine_od": {
+   "nome": "Nectarine OD",
+   "hash": "1df9e966e4f07390",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nectarine_od_botao_ganho.png",
+    "nectarine_od_botao_nivel.png",
+    "nectarine_od_botao_tom.png",
+    "nectarine_od_frente.jpg",
+    "nectarine_od_frente_alfa.png",
+    "nectarine_od_mapa.json"
+   ]
+  },
+  "neptune_chorus": {
+   "nome": "Neptune Chorus",
+   "hash": "7fad86e262ee6d32",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "neptune_chorus_botao_a.png",
+    "neptune_chorus_botao_b.png",
+    "neptune_chorus_botao_c.png",
+    "neptune_chorus_frente.jpg",
+    "neptune_chorus_frente_alfa.png",
+    "neptune_chorus_mapa.json"
+   ]
+  },
+  "nord650": {
+   "nome": "Nord 650",
+   "hash": "1ef1bac47a427647",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nord650_botao_agudo.png",
+    "nord650_botao_ganho.png",
+    "nord650_botao_grave.png",
+    "nord650_botao_medio.png",
+    "nord650_botao_presenca.png",
+    "nord650_botao_volume.png",
+    "nord650_frente.jpg",
+    "nord650_frente_alfa.png",
+    "nord650_mapa.json"
+   ]
+  },
+  "nova100": {
+   "nome": "Nova 100",
+   "hash": "b9f38f1a7119b627",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nova100_botao_agudo.png",
+    "nova100_botao_ganho.png",
+    "nova100_botao_grave.png",
+    "nova100_botao_medio.png",
+    "nova100_botao_presenca.png",
+    "nova100_botao_volume.png",
+    "nova100_frente.jpg",
+    "nova100_frente_alfa.png",
+    "nova100_mapa.json"
+   ]
+  },
+  "olive_drive": {
+   "nome": "Olive Drive",
+   "hash": "bced3041510de09f",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "olive_drive_botao_ganho.png",
+    "olive_drive_botao_nivel.png",
+    "olive_drive_botao_tom.png",
+    "olive_drive_frente.jpg",
+    "olive_drive_frente_alfa.png",
+    "olive_drive_mapa.json"
+   ]
+  },
+  "orange_drive": {
+   "nome": "Orange Drive",
+   "hash": "2b3adbf9bcf9d1b9",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "orange_drive_botao_ganho.png",
+    "orange_drive_botao_nivel.png",
+    "orange_drive_botao_tom.png",
+    "orange_drive_frente.jpg",
+    "orange_drive_frente_alfa.png",
+    "orange_drive_mapa.json"
+   ]
+  },
+  "papaya_grind": {
+   "nome": "Papaya Grind",
+   "hash": "19479a3ad94fb8ed",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "papaya_grind_botao_ganho.png",
+    "papaya_grind_botao_nivel.png",
+    "papaya_grind_botao_tom.png",
+    "papaya_grind_frente.jpg",
+    "papaya_grind_frente_alfa.png",
+    "papaya_grind_mapa.json"
+   ]
+  },
+  "peach_glory": {
+   "nome": "Peach Glory",
+   "hash": "79c7b1ec35fe6d09",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "peach_glory_botao_ganho.png",
+    "peach_glory_botao_nivel.png",
+    "peach_glory_botao_tom.png",
+    "peach_glory_frente.jpg",
+    "peach_glory_frente_alfa.png",
+    "peach_glory_mapa.json"
+   ]
+  },
+  "pear_gate": {
+   "nome": "Pear Gate",
+   "hash": "9b3fd5a991119387",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pear_gate_botao_a.png",
+    "pear_gate_botao_b.png",
+    "pear_gate_botao_c.png",
+    "pear_gate_frente.jpg",
+    "pear_gate_frente_alfa.png",
+    "pear_gate_mapa.json"
+   ]
+  },
+  "pedaleira": {
+   "nome": "Pedaleira",
+   "hash": "78ec2b8fc8775adf",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pedaleira_frente.jpg",
+    "pedaleira_frente_alfa.png",
+    "pedaleira_mapa.json"
+   ]
+  },
+  "persimmon_33": {
+   "nome": "Persimmon 33",
+   "hash": "81139b13e7abae6c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "persimmon_33_botao_ganho.png",
+    "persimmon_33_botao_nivel.png",
+    "persimmon_33_frente.jpg",
+    "persimmon_33_frente_alfa.png",
+    "persimmon_33_mapa.json"
+   ]
+  },
+  "pineapple_king": {
+   "nome": "Pineapple King",
+   "hash": "a05b4a12382d98dc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pineapple_king_botao_ganho.png",
+    "pineapple_king_botao_nivel.png",
+    "pineapple_king_botao_tom.png",
+    "pineapple_king_frente.jpg",
+    "pineapple_king_frente_alfa.png",
+    "pineapple_king_mapa.json"
+   ]
+  },
+  "pistachio_drive": {
+   "nome": "Pistachio Drive",
+   "hash": "3b9f417345e485b6",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pistachio_drive_botao_ganho.png",
+    "pistachio_drive_botao_nivel.png",
+    "pistachio_drive_botao_tom.png",
+    "pistachio_drive_frente.jpg",
+    "pistachio_drive_frente_alfa.png",
+    "pistachio_drive_mapa.json"
+   ]
+  },
+  "pitanga_250": {
+   "nome": "Pitanga 250",
+   "hash": "fb7c092c2157da01",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pitanga_250_botao_ganho.png",
+    "pitanga_250_botao_nivel.png",
+    "pitanga_250_frente.jpg",
+    "pitanga_250_frente_alfa.png",
+    "pitanga_250_mapa.json"
+   ]
+  },
+  "pomegranate_mud": {
+   "nome": "Pomegranate Mud",
+   "hash": "6faca6c860617f83",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pomegranate_mud_botao_ganho.png",
+    "pomegranate_mud_botao_nivel.png",
+    "pomegranate_mud_botao_tom.png",
+    "pomegranate_mud_frente.jpg",
+    "pomegranate_mud_frente_alfa.png",
+    "pomegranate_mud_mapa.json"
+   ]
+  },
+  "power100": {
+   "nome": "Power 100",
+   "hash": "35ec4251aeb20e84",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "power100_botao_agudo.png",
+    "power100_botao_ganho.png",
+    "power100_botao_grave.png",
+    "power100_botao_medio.png",
+    "power100_botao_presenca.png",
+    "power100_botao_volume.png",
+    "power100_frente.jpg",
+    "power100_frente_alfa.png",
+    "power100_mapa.json"
+   ]
+  },
+  "power_412": {
+   "nome": "Power 4x12",
+   "hash": "520ddbb1e08e5796",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "power_412_frente.jpg",
+    "power_412_frente_alfa.png",
+    "power_412_mapa.json"
+   ]
+  },
+  "pulsar_echo": {
+   "nome": "Pulsar Echo",
+   "hash": "497791e621694b42",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pulsar_echo_botao_a.png",
+    "pulsar_echo_botao_b.png",
+    "pulsar_echo_botao_c.png",
+    "pulsar_echo_frente.jpg",
+    "pulsar_echo_frente_alfa.png",
+    "pulsar_echo_mapa.json"
+   ]
+  },
+  "quince_plus": {
+   "nome": "Quince Plus",
+   "hash": "ec4a4c6ff53e5623",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "quince_plus_botao_ganho.png",
+    "quince_plus_botao_nivel.png",
+    "quince_plus_frente.jpg",
+    "quince_plus_frente_alfa.png",
+    "quince_plus_mapa.json"
+   ]
+  },
+  "raspberry_drive": {
+   "nome": "Raspberry Drive",
+   "hash": "0cc9986c424e1ea9",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "raspberry_drive_botao_ganho.png",
+    "raspberry_drive_botao_nivel.png",
+    "raspberry_drive_botao_tom.png",
+    "raspberry_drive_frente.jpg",
+    "raspberry_drive_frente_alfa.png",
+    "raspberry_drive_mapa.json"
+   ]
+  },
+  "recto_dual": {
+   "nome": "Recto Dual",
+   "hash": "444a1beaf2ba76c7",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "recto_dual_botao_agudo.png",
+    "recto_dual_botao_ganho.png",
+    "recto_dual_botao_grave.png",
+    "recto_dual_botao_medio.png",
+    "recto_dual_botao_presenca.png",
+    "recto_dual_botao_volume.png",
+    "recto_dual_frente.jpg",
+    "recto_dual_frente_alfa.png",
+    "recto_dual_mapa.json"
+   ]
+  },
+  "recto_triple": {
+   "nome": "Recto Triple",
+   "hash": "6ce541d4db5f2c53",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "recto_triple_botao_agudo.png",
+    "recto_triple_botao_ganho.png",
+    "recto_triple_botao_grave.png",
+    "recto_triple_botao_medio.png",
+    "recto_triple_botao_presenca.png",
+    "recto_triple_botao_volume.png",
+    "recto_triple_frente.jpg",
+    "recto_triple_frente_alfa.png",
+    "recto_triple_mapa.json"
+   ]
+  },
+  "rg100": {
+   "nome": "RG 100",
+   "hash": "03979f82709f90bc",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rg100_botao_agudo.png",
+    "rg100_botao_ganho.png",
+    "rg100_botao_grave.png",
+    "rg100_botao_medio.png",
+    "rg100_botao_presenca.png",
+    "rg100_botao_volume.png",
+    "rg100_frente.jpg",
+    "rg100_frente_alfa.png",
+    "rg100_mapa.json"
+   ]
+  },
+  "rg_412": {
+   "nome": "RG 4x12",
+   "hash": "05b9ab821fcec6eb",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rg_412_frente.jpg",
+    "rg_412_frente_alfa.png",
+    "rg_412_mapa.json"
+   ]
+  },
+  "rocker50": {
+   "nome": "Rocker 50",
+   "hash": "d8b7b10521ce3972",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rocker50_botao_agudo.png",
+    "rocker50_botao_ganho.png",
+    "rocker50_botao_grave.png",
+    "rocker50_botao_medio.png",
+    "rocker50_botao_presenca.png",
+    "rocker50_botao_volume.png",
+    "rocker50_frente.jpg",
+    "rocker50_frente_alfa.png",
+    "rocker50_mapa.json"
+   ]
+  },
+  "saturn_rotary": {
+   "nome": "Saturn Rotary",
+   "hash": "d7cb4be928122fc4",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "saturn_rotary_botao_a.png",
+    "saturn_rotary_botao_b.png",
+    "saturn_rotary_botao_c.png",
+    "saturn_rotary_frente.jpg",
+    "saturn_rotary_frente_alfa.png",
+    "saturn_rotary_mapa.json"
+   ]
+  },
+  "silver_112": {
+   "nome": "Silver 1x12",
+   "hash": "b561ff5a08178797",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silver_112_frente.jpg",
+    "silver_112_frente_alfa.png",
+    "silver_112_mapa.json"
+   ]
+  },
+  "silverdeluxe": {
+   "nome": "Silver Deluxe",
+   "hash": "290008ce8c1e525c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silverdeluxe_botao_agudo.png",
+    "silverdeluxe_botao_ganho.png",
+    "silverdeluxe_botao_grave.png",
+    "silverdeluxe_botao_medio.png",
+    "silverdeluxe_botao_presenca.png",
+    "silverdeluxe_botao_volume.png",
+    "silverdeluxe_frente.jpg",
+    "silverdeluxe_frente_alfa.png",
+    "silverdeluxe_mapa.json"
+   ]
+  },
+  "silverprince": {
+   "nome": "Silver Prince",
+   "hash": "b375e9620c6d0305",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silverprince_botao_agudo.png",
+    "silverprince_botao_ganho.png",
+    "silverprince_botao_grave.png",
+    "silverprince_botao_medio.png",
+    "silverprince_botao_presenca.png",
+    "silverprince_botao_volume.png",
+    "silverprince_frente.jpg",
+    "silverprince_frente_alfa.png",
+    "silverprince_mapa.json"
+   ]
+  },
+  "silversuper": {
+   "nome": "Silver Super",
+   "hash": "9370024ba314d890",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silversuper_botao_agudo.png",
+    "silversuper_botao_ganho.png",
+    "silversuper_botao_grave.png",
+    "silversuper_botao_medio.png",
+    "silversuper_botao_presenca.png",
+    "silversuper_botao_volume.png",
+    "silversuper_frente.jpg",
+    "silversuper_frente_alfa.png",
+    "silversuper_mapa.json"
+   ]
+  },
+  "silvertwin": {
+   "nome": "Silver Twin",
+   "hash": "b7055f93535257f0",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silvertwin_botao_agudo.png",
+    "silvertwin_botao_ganho.png",
+    "silvertwin_botao_grave.png",
+    "silvertwin_botao_medio.png",
+    "silvertwin_botao_presenca.png",
+    "silvertwin_botao_volume.png",
+    "silvertwin_frente.jpg",
+    "silvertwin_frente_alfa.png",
+    "silvertwin_mapa.json"
+   ]
+  },
+  "sl100": {
+   "nome": "SL 100",
+   "hash": "0eb55c7c0ecbb75c",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sl100_botao_agudo.png",
+    "sl100_botao_ganho.png",
+    "sl100_botao_grave.png",
+    "sl100_botao_medio.png",
+    "sl100_botao_presenca.png",
+    "sl100_botao_volume.png",
+    "sl100_frente.jpg",
+    "sl100_frente_alfa.png",
+    "sl100_mapa.json"
+   ]
+  },
+  "sl_412": {
+   "nome": "SL 4x12",
+   "hash": "cb11307ca219d32f",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sl_412_frente.jpg",
+    "sl_412_frente_alfa.png",
+    "sl_412_mapa.json"
+   ]
+  },
+  "snowpear_treble": {
+   "nome": "Snow Pear Treble",
+   "hash": "868cefe5d4dbbed8",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "snowpear_treble_botao_ganho.png",
+    "snowpear_treble_botao_nivel.png",
+    "snowpear_treble_frente.jpg",
+    "snowpear_treble_frente_alfa.png",
+    "snowpear_treble_mapa.json"
+   ]
+  },
+  "solar_215": {
+   "nome": "Solar 2x15",
+   "hash": "ff827a1464dce604",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "solar_215_frente.jpg",
+    "solar_215_frente_alfa.png",
+    "solar_215_mapa.json"
+   ]
+  },
+  "solar_412": {
+   "nome": "Solar 4x12",
+   "hash": "e559277b97697f04",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "solar_412_frente.jpg",
+    "solar_412_frente_alfa.png",
+    "solar_412_mapa.json"
+   ]
+  },
+  "solart": {
+   "nome": "Solar T",
+   "hash": "5db8ddc7471b1e5e",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "solart_botao_agudo.png",
+    "solart_botao_ganho.png",
+    "solart_botao_grave.png",
+    "solart_botao_medio.png",
+    "solart_botao_presenca.png",
+    "solart_botao_volume.png",
+    "solart_frente.jpg",
+    "solart_frente_alfa.png",
+    "solart_mapa.json"
+   ]
+  },
+  "sonic60": {
+   "nome": "Sonic 60",
+   "hash": "c12c86cb0c7d5a9a",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sonic60_botao_agudo.png",
+    "sonic60_botao_ganho.png",
+    "sonic60_botao_grave.png",
+    "sonic60_botao_medio.png",
+    "sonic60_botao_presenca.png",
+    "sonic60_botao_volume.png",
+    "sonic60_frente.jpg",
+    "sonic60_frente_alfa.png",
+    "sonic60_mapa.json"
+   ]
+  },
+  "special100": {
+   "nome": "Special 100",
+   "hash": "f4b4c277365e0b8c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "special100_botao_agudo.png",
+    "special100_botao_ganho.png",
+    "special100_botao_grave.png",
+    "special100_botao_medio.png",
+    "special100_botao_presenca.png",
+    "special100_botao_volume.png",
+    "special100_frente.jpg",
+    "special100_frente_alfa.png",
+    "special100_mapa.json"
+   ]
+  },
+  "star_412": {
+   "nome": "Star 4x12",
+   "hash": "23c1a81f198af746",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "star_412_frente.jpg",
+    "star_412_frente_alfa.png",
+    "star_412_mapa.json"
+   ]
+  },
+  "starfruit_rock": {
+   "nome": "Starfruit Rock",
+   "hash": "ce999651a5187ed7",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "starfruit_rock_botao_ganho.png",
+    "starfruit_rock_botao_nivel.png",
+    "starfruit_rock_frente.jpg",
+    "starfruit_rock_frente_alfa.png",
+    "starfruit_rock_mapa.json"
+   ]
+  },
+  "steel20": {
+   "nome": "Steel 20",
+   "hash": "e160075205d8179a",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "steel20_botao_agudo.png",
+    "steel20_botao_ganho.png",
+    "steel20_botao_grave.png",
+    "steel20_botao_medio.png",
+    "steel20_botao_presenca.png",
+    "steel20_botao_volume.png",
+    "steel20_frente.jpg",
+    "steel20_frente_alfa.png",
+    "steel20_mapa.json"
+   ]
+  },
+  "strawberry_5150": {
+   "nome": "Strawberry 5150",
+   "hash": "bd1d9e89954c7d47",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "strawberry_5150_botao_ganho.png",
+    "strawberry_5150_botao_nivel.png",
+    "strawberry_5150_botao_tom.png",
+    "strawberry_5150_frente.jpg",
+    "strawberry_5150_frente_alfa.png",
+    "strawberry_5150_mapa.json"
+   ]
+  },
+  "tamarind_amp": {
+   "nome": "Tamarind Amp",
+   "hash": "b142a4e29e62c328",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tamarind_amp_botao_ganho.png",
+    "tamarind_amp_botao_nivel.png",
+    "tamarind_amp_botao_tom.png",
+    "tamarind_amp_frente.jpg",
+    "tamarind_amp_frente_alfa.png",
+    "tamarind_amp_mapa.json"
+   ]
+  },
+  "tiny15": {
+   "nome": "Tiny 15",
+   "hash": "282e4fff438c2872",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tiny15_botao_agudo.png",
+    "tiny15_botao_ganho.png",
+    "tiny15_botao_grave.png",
+    "tiny15_botao_medio.png",
+    "tiny15_botao_presenca.png",
+    "tiny15_botao_volume.png",
+    "tiny15_frente.jpg",
+    "tiny15_frente_alfa.png",
+    "tiny15_mapa.json"
+   ]
+  },
+  "tinybass": {
+   "nome": "Tiny Bass",
+   "hash": "a6c4df9186ddc463",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tinybass_botao_agudo.png",
+    "tinybass_botao_ganho.png",
+    "tinybass_botao_grave.png",
+    "tinybass_botao_medio.png",
+    "tinybass_botao_presenca.png",
+    "tinybass_botao_volume.png",
+    "tinybass_frente.jpg",
+    "tinybass_frente_alfa.png",
+    "tinybass_mapa.json"
+   ]
+  },
+  "topboost15": {
+   "nome": "Top Boost 15",
+   "hash": "9986d65317c507e0",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "topboost15_botao_agudo.png",
+    "topboost15_botao_ganho.png",
+    "topboost15_botao_grave.png",
+    "topboost15_botao_medio.png",
+    "topboost15_botao_presenca.png",
+    "topboost15_botao_volume.png",
+    "topboost15_frente.jpg",
+    "topboost15_frente_alfa.png",
+    "topboost15_mapa.json"
+   ]
+  },
+  "topboost30": {
+   "nome": "Top Boost 30",
+   "hash": "91da4c86a0f3ce4f",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "topboost30_botao_agudo.png",
+    "topboost30_botao_ganho.png",
+    "topboost30_botao_grave.png",
+    "topboost30_botao_medio.png",
+    "topboost30_botao_presenca.png",
+    "topboost30_botao_volume.png",
+    "topboost30_frente.jpg",
+    "topboost30_frente_alfa.png",
+    "topboost30_mapa.json"
+   ]
+  },
+  "tracer7": {
+   "nome": "Tracer 7",
+   "hash": "25418f8a380de113",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tracer7_botao_agudo.png",
+    "tracer7_botao_ganho.png",
+    "tracer7_botao_grave.png",
+    "tracer7_botao_medio.png",
+    "tracer7_botao_presenca.png",
+    "tracer7_botao_volume.png",
+    "tracer7_frente.jpg",
+    "tracer7_frente_alfa.png",
+    "tracer7_mapa.json"
+   ]
+  },
+  "tri100": {
+   "nome": "Tri 100",
+   "hash": "f678e87e1625e562",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tri100_botao_agudo.png",
+    "tri100_botao_ganho.png",
+    "tri100_botao_grave.png",
+    "tri100_botao_medio.png",
+    "tri100_botao_presenca.png",
+    "tri100_botao_volume.png",
+    "tri100_frente.jpg",
+    "tri100_frente_alfa.png",
+    "tri100_mapa.json"
+   ]
+  },
+  "tweed57": {
+   "nome": "Tweed 57",
+   "hash": "6da6eb2ac5b9a1cd",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tweed57_botao_agudo.png",
+    "tweed57_botao_ganho.png",
+    "tweed57_botao_grave.png",
+    "tweed57_botao_medio.png",
+    "tweed57_botao_presenca.png",
+    "tweed57_botao_volume.png",
+    "tweed57_frente.jpg",
+    "tweed57_frente_alfa.png",
+    "tweed57_mapa.json"
+   ]
+  },
+  "tweed59": {
+   "nome": "Tweed 59",
+   "hash": "ecea34a646f4a483",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tweed59_botao_agudo.png",
+    "tweed59_botao_ganho.png",
+    "tweed59_botao_grave.png",
+    "tweed59_botao_medio.png",
+    "tweed59_botao_presenca.png",
+    "tweed59_botao_volume.png",
+    "tweed59_frente.jpg",
+    "tweed59_frente_alfa.png",
+    "tweed59_mapa.json"
+   ]
+  },
+  "tweed_410": {
+   "nome": "Tweed 4x10",
+   "hash": "911d11af91dae140",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tweed_410_frente.jpg",
+    "tweed_410_frente_alfa.png",
+    "tweed_410_mapa.json"
+   ]
+  },
+  "twin_212": {
+   "nome": "Twin 2x12",
+   "hash": "54aa26a3d242f0c1",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "twin_212_frente.jpg",
+    "twin_212_frente_alfa.png",
+    "twin_212_mapa.json"
+   ]
+  },
+  "uber100": {
+   "nome": "Uber 100",
+   "hash": "b045d39f9173a143",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "uber100_botao_agudo.png",
+    "uber100_botao_ganho.png",
+    "uber100_botao_grave.png",
+    "uber100_botao_medio.png",
+    "uber100_botao_presenca.png",
+    "uber100_botao_volume.png",
+    "uber100_frente.jpg",
+    "uber100_frente_alfa.png",
+    "uber100_mapa.json"
+   ]
+  },
+  "uber_412": {
+   "nome": "Uber 4x12",
+   "hash": "25c4ad3b724d6cbe",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "uber_412_frente.jpg",
+    "uber_412_frente_alfa.png",
+    "uber_412_mapa.json"
+   ]
+  },
+  "underground800": {
+   "nome": "Underground 800",
+   "hash": "7e4eb746921a7de4",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "underground800_botao_agudo.png",
+    "underground800_botao_ganho.png",
+    "underground800_botao_grave.png",
+    "underground800_botao_medio.png",
+    "underground800_botao_presenca.png",
+    "underground800_botao_volume.png",
+    "underground800_frente.jpg",
+    "underground800_frente_alfa.png",
+    "underground800_mapa.json"
+   ]
+  },
+  "vault210": {
+   "nome": "Vault 210",
+   "hash": "6fa46864808d7443",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault210_botao_agudo.png",
+    "vault210_botao_ganho.png",
+    "vault210_botao_grave.png",
+    "vault210_botao_medio.png",
+    "vault210_botao_presenca.png",
+    "vault210_botao_volume.png",
+    "vault210_frente.jpg",
+    "vault210_frente_alfa.png",
+    "vault210_mapa.json"
+   ]
+  },
+  "vault300": {
+   "nome": "Vault 300",
+   "hash": "70aebf7bd454bf91",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault300_botao_agudo.png",
+    "vault300_botao_ganho.png",
+    "vault300_botao_grave.png",
+    "vault300_botao_medio.png",
+    "vault300_botao_presenca.png",
+    "vault300_botao_volume.png",
+    "vault300_frente.jpg",
+    "vault300_frente_alfa.png",
+    "vault300_mapa.json"
+   ]
+  },
+  "vault4pro": {
+   "nome": "Vault 4 Pro",
+   "hash": "1ae524f2b7e7e625",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault4pro_botao_agudo.png",
+    "vault4pro_botao_ganho.png",
+    "vault4pro_botao_grave.png",
+    "vault4pro_botao_medio.png",
+    "vault4pro_botao_presenca.png",
+    "vault4pro_botao_volume.png",
+    "vault4pro_frente.jpg",
+    "vault4pro_frente_alfa.png",
+    "vault4pro_mapa.json"
+   ]
+  },
+  "vault_810": {
+   "nome": "Vault 8x10",
+   "hash": "3b1b433b2ce5a828",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault_810_frente.jpg",
+    "vault_810_frente_alfa.png",
+    "vault_810_mapa.json"
+   ]
+  },
+  "vaultv4": {
+   "nome": "Vault V4",
+   "hash": "3fc8764b697f4a50",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vaultv4_botao_agudo.png",
+    "vaultv4_botao_ganho.png",
+    "vaultv4_botao_grave.png",
+    "vaultv4_botao_medio.png",
+    "vaultv4_botao_presenca.png",
+    "vaultv4_botao_volume.png",
+    "vaultv4_frente.jpg",
+    "vaultv4_frente_alfa.png",
+    "vaultv4_mapa.json"
+   ]
+  },
+  "vier100": {
+   "nome": "Vier 100",
+   "hash": "60a35cd334ca4fd3",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vier100_botao_agudo.png",
+    "vier100_botao_ganho.png",
+    "vier100_botao_grave.png",
+    "vier100_botao_medio.png",
+    "vier100_botao_presenca.png",
+    "vier100_botao_volume.png",
+    "vier100_frente.jpg",
+    "vier100_frente_alfa.png",
+    "vier100_mapa.json"
+   ]
+  },
+  "vier_412": {
+   "nome": "Vier 4x12",
+   "hash": "2c674d143026350e",
+   "data": "2026-10-29T11:24:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vier_412_frente.jpg",
+    "vier_412_frente_alfa.png",
+    "vier_412_mapa.json"
+   ]
+  },
+  "wind300": {
+   "nome": "Wind 300",
+   "hash": "af183c073dda028c",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "wind300_botao_agudo.png",
+    "wind300_botao_ganho.png",
+    "wind300_botao_grave.png",
+    "wind300_botao_medio.png",
+    "wind300_botao_presenca.png",
+    "wind300_botao_volume.png",
+    "wind300_frente.jpg",
+    "wind300_frente_alfa.png",
+    "wind300_mapa.json"
+   ]
+  },
+  "workhorse350": {
+   "nome": "Workhorse 350",
+   "hash": "0651b6f846cbae88",
+   "data": "2026-10-29T11:13:53Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "workhorse350_botao_agudo.png",
+    "workhorse350_botao_ganho.png",
+    "workhorse350_botao_grave.png",
+    "workhorse350_botao_medio.png",
+    "workhorse350_botao_presenca.png",
+    "workhorse350_botao_volume.png",
+    "workhorse350_frente.jpg",
+    "workhorse350_frente_alfa.png",
+    "workhorse350_mapa.json"
+   ]
+  }
+ }
+}

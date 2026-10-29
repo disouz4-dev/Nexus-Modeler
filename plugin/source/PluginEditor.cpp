@@ -1827,6 +1827,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   addAndMakeVisible(*mPresets);
   addChildComponent(mUpdate);
   mUpdate.onLayoutChange = [this] { resized(); };
+  addChildComponent(mArteNova);
+  mArteNova.onLayoutChange = [this] { resized(); };
   // Depois da janela aparecer: pergunta se manda o relatório de travamento.
   juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
     if (safe != nullptr && safe->isShowing())
@@ -2771,6 +2773,7 @@ void NexusEditor::retranslate()
   mAudioButton.setTooltip(TRANS(juce::String::fromUTF8("Interface de áudio")));
   mLanguageButton.setTooltip(TRANS("Idioma"));
   mUpdate.retranslate();
+  mArteNova.retranslate();
   if (mChain)
     mChain->testBar().retranslate();
   mBrowser->retranslate();
@@ -3126,6 +3129,9 @@ void NexusEditor::resized()
   // Ícone de atualização (só quando há versão nova), junto dos outros ícones.
   if (mUpdate.isVisible())
     mUpdate.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
+  // Equipamentos novos para baixar (arte nova sem reinstalar).
+  if (mArteNova.isVisible())
+    mArteNova.setBounds(right.removeFromRight(44).withSizeKeepingCentre(36, 36));
   right.removeFromRight(12);
   mEngine.setBounds(right.removeFromRight(196));
   mCapturePanel->setBounds(getLocalBounds());
