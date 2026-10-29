@@ -621,6 +621,19 @@ std::vector<std::pair<juce::Point<float>, float>> NexusEditor::GearStage::chainT
   return out;
 }
 
+void NexusEditor::GearStage::mouseDown(const juce::MouseEvent& e)
+{
+  // Clique no corpo do pedal (fora do pisante e das chaves): o
+  // editor vê se é o clique duplo que isola o pedal.
+  if (mKind != Kind::pedal || e.mods.isPopupMenu() || overFootswitch(e.position))
+    return;
+  for (const auto& t : chainToggles())
+    if (e.position.getDistanceFrom(t.first) <= t.second * 2.5f)
+      return;
+  if (onBodyClick)
+    onBodyClick(e.getNumberOfClicks());
+}
+
 void NexusEditor::GearStage::mouseUp(const juce::MouseEvent& e)
 {
   if (mKind != Kind::pedal)
@@ -703,7 +716,6 @@ std::vector<NexusEditor::BoardView::Slot> NexusEditor::BoardView::layoutSlots() 
       pedals.insert(pedals.end(), v->begin(), v->end());
   if (pedals.empty() || mBoardImage.isEmpty())
     return out;
-
   // Faixa útil: entre as cabeceiras, deixando a ripa de trás para os cabos.
   const auto inner = mBoardImage.reduced(mBoardImage.getWidth() * 0.05f, 0.0f)
                        .withTrimmedTop(mBoardImage.getHeight() * 0.13f)
@@ -776,8 +788,62 @@ std::vector<NexusEditor::BoardView::Slot> NexusEditor::BoardView::layoutSlots() 
   return out;
 }
 
+std::optional<NexusEditor::BoardView::Slot> NexusEditor::BoardView::zoomedSlot() const
+{
+  const float z = zoom();
+  if (mZoomPedal < 0 || z <= 0.0f)
+    return std::nullopt;
+  const auto* art = mEditor.pedalArt(mZoomPedal);
+  if (art == nullptr || !art->valid())
+    return std::nullopt;
+  for (const auto& from : layoutSlots())
+  {
+    if (from.pedal != mZoomPedal)
+      continue;
+    // Destino: o corpo do pedal (sem a folga da imagem) o maior que couber
+    // no palco inteiro, inclusive onde fica o título.
+    const auto area = getLocalBounds().toFloat().withTrimmedTop(44.0f).withTrimmedBottom(52.0f).reduced(24.0f, 0.0f);
+    const auto b = art->body.isEmpty() ? juce::Rectangle<float>(0.0f, 0.0f, static_cast<float>(art->front.getWidth()),
+                                                                static_cast<float>(art->front.getHeight()))
+                                       : art->body;
+    const float k = std::min(area.getWidth() / b.getWidth(), area.getHeight() / b.getHeight());
+    const auto body = juce::Rectangle<float>(b.getWidth() * k, b.getHeight() * k).withCentre(area.getCentre());
+    const juce::Rectangle<float> image(body.getX() - b.getX() * k, body.getY() - b.getY() * k, static_cast<float>(art->front.getWidth()) * k,
+                                       static_cast<float>(art->front.getHeight()) * k);
+    auto mix = [z](juce::Rectangle<float> a, juce::Rectangle<float> c) {
+      return juce::Rectangle<float>(a.getX() + (c.getX() - a.getX()) * z, a.getY() + (c.getY() - a.getY()) * z,
+                                    a.getWidth() + (c.getWidth() - a.getWidth()) * z, a.getHeight() + (c.getHeight() - a.getHeight()) * z);
+    };
+    return Slot{mZoomPedal, mix(from.image, image), mix(from.body, body), from.scale + (k - from.scale) * z};
+  }
+  return std::nullopt;
+}
+
+float NexusEditor::BoardView::zoom() const
+{
+  constexpr double kMs = 240.0;
+  const float to = mFocus >= 0 ? 1.0f : 0.0f;
+  const double t = juce::jlimit(0.0, 1.0, (juce::Time::getMillisecondCounterHiRes() - mZoomStart) / kMs);
+  const float eased = static_cast<float>(1.0 - std::pow(1.0 - t, 3.0)); // rápido no começo, assenta no fim
+  return mZoomFrom + (to - mZoomFrom) * eased;
+}
+
+bool NexusEditor::BoardView::zooming() const
+{
+  const float z = zoom();
+  return z > 0.0f && z < 1.0f && juce::Time::getMillisecondCounterHiRes() - mZoomStart < 400.0;
+}
+
+bool NexusEditor::BoardView::hitTest(int x, int y)
+{
+  // Fora do zoom, a faixa do título (embaixo) é do título.
+  return mFocus >= 0 || y < getHeight() - kTitleHeight;
+}
+
 juce::Rectangle<float> NexusEditor::BoardView::imageOf(int pedal) const
 {
+  if (const auto z = zoomedSlot(); z.has_value() && z->pedal == pedal)
+    return z->image;
   for (const auto& s : layoutSlots())
     if (s.pedal == pedal)
       return s.image;
@@ -786,6 +852,8 @@ juce::Rectangle<float> NexusEditor::BoardView::imageOf(int pedal) const
 
 const NexusEditor::BoardView::Slot* NexusEditor::BoardView::slotAt(juce::Point<float> p) const
 {
+  if (mFocus >= 0)
+    return mZoomSlot.has_value() && mZoomSlot->body.contains(p) ? &*mZoomSlot : nullptr;
   for (const auto& s : mSlots)
     if (s.body.contains(p))
       return &s;
@@ -810,7 +878,8 @@ juce::String NexusEditor::BoardView::signature() const
   };
   const auto layout = mEditor.mProcessor.layout();
   juce::String sig = layout.toValueTree().toXmlString() + juce::String(getWidth()) + "x" + juce::String(getHeight());
-  sig << "|" << (mEditor.mSel.kind == Kind::pedal ? mEditor.mSel.index : -1);
+  sig << "|" << (mEditor.mSel.kind == Kind::pedal ? mEditor.mSel.index : -1) << "|" << mFocus;
+  for (int p = 0; p < ChainLayout::kPedals; ++p)
   for (int p = 0; p < ChainLayout::kPedals; ++p)
   {
     if (!layout.uses(p))
@@ -827,24 +896,61 @@ juce::String NexusEditor::BoardView::signature() const
 
 void NexusEditor::BoardView::tick()
 {
+  // No zoom, a pedaleira escurece aos poucos.
+  if (zooming())
+    repaint();
+  if (mZoomPedal >= 0 && mFocus < 0 && zoom() <= 0.0f)
+    mZoomPedal = -1;
   if (auto sig = signature(); sig != mSignature)
   {
     mSignature = sig;
+    updateCamera(); // pedal posto ou tirado: a câmera se ajusta
     repaint();
   }
 }
 
+juce::Rectangle<float> NexusEditor::BoardView::stageArea() const
+{
+  // Espaço de cima livre (sincronizar e tap do pedal escolhido). Embaixo, a
+  // faixa do título: só o zoom do pedal isolado passa por cima dela.
+  return getLocalBounds().toFloat().withTrimmedTop(40.0f).withTrimmedBottom(static_cast<float>(kTitleHeight)).reduced(14.0f, 2.0f);
+}
+
+void NexusEditor::BoardView::updateCamera()
+{
+  // Câmera perto dos pedais: a pedaleira cresce até o grupo de pedais ocupar
+  // o palco (as pontas dela podem sair de quadro; um pedal, nunca).
+  mBoardImage = mBoardFit;
+  const auto slots = layoutSlots();
+  if (slots.empty())
+    return;
+  auto group = slots.front().body;
+  for (const auto& s : slots)
+    group = group.getUnion(s.body);
+  // Folga em volta: cabos em cima, selo MIDI embaixo.
+  group = group.withTrimmedTop(-group.getHeight() * 0.10f).withTrimmedBottom(-group.getHeight() * 0.08f).expanded(group.getWidth() * 0.02f, 0.0f);
+  const auto area = stageArea();
+  const float k = juce::jlimit(1.0f, 2.2f, std::min(area.getWidth() / group.getWidth(), area.getHeight() / group.getHeight()));
+  const auto move = juce::AffineTransform::translation(-group.getCentreX(), -group.getCentreY()).scaled(k).translated(area.getCentreX(), area.getCentreY());
+  mBoardImage = mBoardFit.transformedBy(move);
+}
+
 void NexusEditor::BoardView::resized()
 {
-  // Espaço de cima livre (sincronizar e tap do pedal escolhido).
-  const auto area = getLocalBounds().toFloat().withTrimmedTop(40.0f).reduced(14.0f, 2.0f);
-  mBoardImage = mBoard.valid() ? fitImage(mBoard.front, area) : area;
+  const auto area = stageArea();
+  mBoardFit = mBoard.valid() ? fitImage(mBoard.front, area) : area;
+  updateCamera();
   mSignature.clear();
 }
 
 void NexusEditor::BoardView::paint(juce::Graphics& g)
 {
   mSlots = layoutSlots();
+  mZoomSlot = zoomedSlot();
+  // A câmera perto pode levar a pedaleira para além do palco: corta na
+  // borda dele (a faixa do título fica livre).
+  g.saveState();
+  g.reduceClipRegion(getLocalBounds().withTrimmedBottom(kTitleHeight));
   if (mBoard.valid())
     drawGear(g, mBoard.front, mBoardImage);
   else
@@ -927,6 +1033,17 @@ void NexusEditor::BoardView::paint(juce::Graphics& g)
     if (art->ledRadius > 0.0f && params.getRawParameterValue(NexusProcessor::pedalParam(s.pedal, "ligado"))->load() > 0.5f)
       drawLed(g, at(art->led), std::max(2.6f, art->ledRadius * s.scale));
   }
+  g.restoreState();
+  // Pedal isolado: o palco inteiro escurece (o título também) e o GearStage
+  // desenha o pedal grande por cima.
+  if (const float z = zoom(); mZoomPedal >= 0 && z > 0.0f)
+  {
+    g.setColour(juce::Colour(0xff0a0b0d).withAlpha(0.95f * z));
+    g.fillRect(getLocalBounds());
+    g.setColour(colour::dim.withAlpha(z));
+    g.setFont(Fonts::get().ui(13.0f));
+    g.drawText(TRANS(juce::String::fromUTF8("Dois cliques no pedal ou Esc para voltar à pedaleira")), backArea(), juce::Justification::centred);
+  }
 }
 
 void NexusEditor::BoardView::mouseMove(const juce::MouseEvent& e)
@@ -936,6 +1053,13 @@ void NexusEditor::BoardView::mouseMove(const juce::MouseEvent& e)
 
 void NexusEditor::BoardView::mouseUp(const juce::MouseEvent& e)
 {
+  if (mFocus >= 0)
+  {
+    // Isolado: clicar fora do pedal volta à pedaleira.
+    if (slotAt(e.position) == nullptr)
+      mEditor.setPedalFocus(-1);
+    return;
+  }
   const auto* s = slotAt(e.position);
   if (s == nullptr)
     return;
@@ -955,7 +1079,35 @@ void NexusEditor::BoardView::mouseUp(const juce::MouseEvent& e)
     return;
   }
   if (!e.mods.isPopupMenu())
+  {
     mEditor.select({Kind::pedal, pedal});
+    // O segundo clique do clique duplo já cai no pedal escolhido (o GearStage
+    // por cima): ele confere a hora deste.
+    mEditor.mPedalChosenAt = juce::Time::getMillisecondCounter();
+  }
+}
+
+void NexusEditor::BoardView::setFocus(int pedal)
+{
+  if (pedal == mFocus)
+    return;
+  // O zoom sai de onde está agora (pode ter sido interrompido no meio).
+  mZoomFrom = zoom();
+  mZoomStart = juce::Time::getMillisecondCounterHiRes();
+  if (pedal >= 0)
+  {
+    if (pedal != mZoomPedal)
+      mZoomFrom = 0.0f;
+    mZoomPedal = pedal;
+  }
+  mFocus = pedal;
+  mSignature.clear();
+  repaint();
+}
+
+juce::Rectangle<float> NexusEditor::BoardView::backArea() const
+{
+  return getLocalBounds().toFloat().reduced(24.0f, 6.0f).removeFromBottom(26.0f);
 }
 
 // ================================================================ CabStage
@@ -1792,6 +1944,9 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mRail = std::make_unique<CaptureRail>(p);
   addAndMakeVisible(*mRail);
   addAndMakeVisible(mChangeLink);
+  // O pedal isolado cresce por cima do título: os controles dele ficam por baixo da pedaleira.
+  mRail->toBehind(mBoard.get());
+  mChangeLink.toBehind(mBoard.get());
   mChangeLink.onClick = [this] {
     if (mSel.kind == Kind::eq)
       mEqStage->clearBands();
@@ -1842,6 +1997,16 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   // MIDI: clique com o botão direito em qualquer controle.
   auto midiMenu = [this](const juce::String& id, juce::Component& c) { showMidiMenu(id, c); };
   mPedalStage->onMidiMenu = midiMenu;
+  // Dois cliques no pedal: isola e aumenta; de novo, volta à pedaleira. O
+  // primeiro clique pode ter caído na pedaleira (que escolheu o pedal).
+  mPedalStage->onBodyClick = [this](int clicks) {
+    const bool justChosen = juce::Time::getMillisecondCounter() - mPedalChosenAt < static_cast<juce::uint32>(juce::MouseEvent::getDoubleClickTimeout());
+    if (mSel.kind == Kind::pedal && (clicks >= 2 || justChosen))
+    {
+      mPedalChosenAt = 0;
+      setPedalFocus(mBoard->focus() == mSel.index ? -1 : mSel.index);
+    }
+  };
   mAmpStage->onMidiMenu = midiMenu;
   mChain->input().onMidiMenu = midiMenu;
   mChain->output().onMidiMenu = midiMenu;
@@ -2150,9 +2315,29 @@ int NexusEditor::railSlot() const
   return NexusProcessor::ampSlot(mSel.index, mProcessor.selectedChannel(mSel.index));
 }
 
+void NexusEditor::setPedalFocus(int pedal)
+{
+  mBoard->setFocus(pedal);
+  if (mSel.kind == Kind::pedal)
+    mPedalStage->setArea(mBoard->imageOf(mSel.index));
+  mBoard->tick();
+}
+
+bool NexusEditor::keyPressed(const juce::KeyPress& key)
+{
+  if (key == juce::KeyPress::escapeKey && mBoard->focus() >= 0)
+  {
+    setPedalFocus(-1);
+    return true;
+  }
+  return false;
+}
+
 void NexusEditor::select(Selection s)
 {
   mSel = s;
+  if (s.kind != Kind::pedal || s.index != mBoard->focus())
+    mBoard->setFocus(-1);
   // Pedal: a pedaleira inteira; cabeçote ou caixa: só a peça.
   mBoard->setVisible(s.kind == Kind::pedal);
   mPedalStage->setVisible(s.kind == Kind::pedal);
@@ -3057,8 +3242,10 @@ void NexusEditor::resized()
   mBrowser->setBounds(r.removeFromRight(kBrowserWidth));
   mChain->setBounds(r.removeFromBottom(kPathHeight));
   mTitleArea = r.removeFromBottom(kTitleHeight);
-  mBoard->setBounds(r);
-  mPedalStage->setBounds(r);
+  // A pedaleira e o pedal escolhido descem até o fim do título: o pedal
+  // isolado usa essa altura toda (fora disso, a faixa do título fica livre).
+  mBoard->setBounds(r.withBottom(mTitleArea.getBottom()));
+  mPedalStage->setBounds(r.withBottom(mTitleArea.getBottom()));
   if (mSel.kind == Kind::pedal)
     mPedalStage->setArea(mBoard->imageOf(mSel.index));
   mAmpStage->setBounds(ampArt(mSel.kind == Kind::amp ? mSel.index : 0).channels.size() > 1 ? r.withTrimmedTop(46) : r);
