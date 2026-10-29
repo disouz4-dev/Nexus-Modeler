@@ -35,6 +35,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    74,
+    124
+  ],
   "rotulos": [
     {
       "texto": "DRIVE",

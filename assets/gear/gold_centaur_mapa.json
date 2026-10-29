@@ -35,6 +35,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    94,
+    119
+  ],
   "rotulos": [
     {
       "texto": "GANHO",

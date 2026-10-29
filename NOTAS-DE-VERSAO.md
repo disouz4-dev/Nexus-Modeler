@@ -164,8 +164,12 @@
   Blender): todos os pedais da cadeia, na ordem do som, ligados por cabos.
   O LED aceso mostra quem está ligado; pisar no pisante de qualquer pedal liga
   e desliga, e clicar no pedal escolhe ele para mexer nos botões.
-- Até quatro pedais, uma fileira; com mais, duas fileiras (a de trás com o
-  começo do som, a da frente com o resto).
+- Os pedais ficam numa fileira só enquanto cabem bem; quando apertar a ponto
+  de ficarem menores do que em duas, abre a fileira da frente (a de trás com
+  o começo do som, a da frente com o resto).
+- Cada pedal aparece no tamanho de verdade em relação aos outros: um pedal
+  pequeno fica menor que um comum, e o Lime Echo ficou mais compacto
+  (15 x 10,5 cm).
 - Cabeçote ou caixa: a pedaleira some e aparece só a peça.
 - A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
 

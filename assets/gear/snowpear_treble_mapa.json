@@ -26,6 +26,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    64,
+    112
+  ],
   "rotulos": [
     {
       "texto": "REFORÇO",

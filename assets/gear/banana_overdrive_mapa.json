@@ -35,6 +35,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
   "rotulos": [
     {
       "texto": "NÍVEL",

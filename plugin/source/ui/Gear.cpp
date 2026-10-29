@@ -93,6 +93,8 @@ GearArt GearArt::load(const juce::String& prefix)
   }
   const auto map = jsonResource(prefix + "_mapa.json");
   art.name = map["nome"].toString();
+  if (const auto* mm = map["medidas_mm"].getArray(); mm != nullptr && mm->size() == 2)
+    art.sizeMm = {static_cast<float>((*mm)[0]), static_cast<float>((*mm)[1])};
   const int frames = static_cast<int>(map["posicoes"]);
   if (const auto* knobs = map["botoes"].getArray())
     for (const auto& k : *knobs)
