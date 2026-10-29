@@ -46,7 +46,7 @@ int main(int argc, char** argv)
     check(a.state() == ArteNova::State::available, "achou equipamentos novos: " + a.names().joinIntoString(", "));
     a.download();
     check(wait(a, {ArteNova::State::ready, ArteNova::State::failed}) && a.state() == ArteNova::State::ready, "baixou " + a.error());
-    check(ArteNova::folder().getChildFile(id + "_mapa.json").existsAsFile(), "a peça ficou na pasta Arte");
+    check(ArteNova::folder().getChildFile(id).getChildFile(id + "_mapa.json").existsAsFile(), "a peça ficou em Equipamentos/<id>");
   }
   {
     ArteNova b;

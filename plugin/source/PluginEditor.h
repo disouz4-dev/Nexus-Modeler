@@ -29,7 +29,7 @@
 // da peça, o pacote e o trilho das capturas; e a cadeia de sinal, montada por
 // clique e arrasta: pedais antes, pedal A/B, cabeçote, pedais entre cabeçote
 // e caixa, caixa, pedais depois.
-class NexusEditor : public juce::AudioProcessorEditor, public juce::DragAndDropContainer, private juce::Timer, private juce::ChangeListener
+class NexusEditor : public juce::AudioProcessorEditor, public juce::DragAndDropContainer, private juce::Timer, private juce::ChangeListener, public juce::FileDragAndDropTarget
 {
 public:
   static constexpr int kWidth = 1400;
@@ -313,6 +313,14 @@ private:
   void refreshBrowser();
   // O catálogo mudou (equipamento instalado): arte e lista novas.
   void catalogChanged();
+  // Peça pedida pelo preset e não instalada na posição escolhida (vazio: nenhuma),
+  // o nome dela para o cartão e o texto do link (baixar, se der).
+  juce::String missingHere() const;
+  juce::String missingName(const juce::String& id) const;
+  juce::String missingLink(const juce::String& id) const;
+  // Pacote de equipamento (.equipamento) arrastado para a janela: instala.
+  bool isInterestedInFileDrag(const juce::StringArray& files) override;
+  void filesDropped(const juce::StringArray& files, int, int) override;
   void pickGear(const nexus::ui::GearItem& item);
   // Põe um pedal novo, com esse visual, na lista e posição dadas.
   void insertPedal(int look, int list, int position);

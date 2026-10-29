@@ -103,6 +103,22 @@ public:
   // o primeiro de fábrica com o mesmo motor (programa de gravação velho ainda
   // toca algo parecido).
   int fallbackFor(Kind kind, int look) const;
+  // ----- Instalação (fora do áudio; nunca fica meia instalada)
+  // Confere uma peça aberta numa pasta (arquivos <id>_*): nomes, extensões,
+  // tamanho, ficha que este Nexus toca e uma tira para cada botão do mapa.
+  // Devolve o erro (vazio: está boa).
+  static juce::String validate(const juce::File& staged, const juce::String& id);
+  // Confere e troca Equipamentos/<id> pela pasta dada com um renomear, grava
+  // a peça no índice local (indexEntry) e relê o catálogo. Devolve o erro.
+  juce::String installFolder(const juce::File& staged, const juce::String& id, const juce::var& indexEntry);
+  // Pacote <id>-<versão>.equipamento (zip montado por
+  // tools/gear_studio/montar_equipamento.py --pacote): abre em
+  // Equipamentos/.baixando e instala. Devolve o erro.
+  juce::String installPackage(const juce::File& package);
+  // Índice das peças instaladas (Equipamentos/indice.json, mesmo formato do
+  // assets/gear/indice.json).
+  static juce::var localIndex();
+
   // Relê a pasta Equipamentos: peças novas entram no fim (as posições das que
   // já estavam não mudam). Avisa os ouvintes se entrou alguma.
   void reload();

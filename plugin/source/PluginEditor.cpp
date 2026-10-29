@@ -2480,6 +2480,28 @@ void NexusEditor::chooseIrFile(int rig)
                         });
 }
 
+bool NexusEditor::isInterestedInFileDrag(const juce::StringArray& files)
+{
+  for (const auto& f : files)
+    if (f.endsWithIgnoreCase(".equipamento"))
+      return true;
+  return false;
+}
+
+void NexusEditor::filesDropped(const juce::StringArray& files, int, int)
+{
+  for (const auto& f : files)
+    if (f.endsWithIgnoreCase(".equipamento"))
+    {
+      const auto error = GearCatalog::instance().installPackage(juce::File(f));
+      juce::AlertWindow::showMessageBoxAsync(error.isEmpty() ? juce::MessageBoxIconType::InfoIcon : juce::MessageBoxIconType::WarningIcon,
+                                             TRANS("Equipamento"),
+                                             error.isEmpty() ? TRANS("Equipamento instalado.")
+                                                             : TRANS(juce::String::fromUTF8("Não deu para instalar: %1")).replace("%1", error),
+                                             {}, this);
+    }
+}
+
 void NexusEditor::showAbout()
 {
   juce::PopupMenu menu;
@@ -2867,6 +2889,14 @@ void NexusEditor::timerCallback()
     }
     mCabStage->refresh();
   }
+  // Preset pede uma peça que não está neste computador: o cartão diz qual é
+  // (o som segue: o pedal passa direto; cabeçote e caixa com o pacote e o IR salvos).
+  if (const auto missing = missingHere(); missing.isNotEmpty())
+  {
+    title = TRANS(juce::String::fromUTF8("%1 não está instalado")).replace("%1", missingName(missing));
+    subtitle = TRANS(juce::String::fromUTF8("Este preset usa um equipamento que não está neste computador."));
+    link = missingLink(missing);
+  }
   if (title != mTitle || subtitle != mSubtitle)
   {
     mTitle = title;
@@ -2894,6 +2924,29 @@ void NexusEditor::timerCallback()
     mPedalStage->tick();
     mPedalStage->repaint();
   }
+}
+
+juce::String NexusEditor::missingHere() const
+{
+  switch (mSel.kind)
+  {
+    case Kind::pedal: return mProcessor.missingGear(G::Kind::pedal, mSel.index);
+    case Kind::amp: return mProcessor.missingGear(G::Kind::amp, mSel.index);
+    case Kind::cab: return mProcessor.missingGear(G::Kind::cab, mSel.index);
+    case Kind::eq:
+    case Kind::tuner: break;
+  }
+  return {};
+}
+
+juce::String NexusEditor::missingName(const juce::String& id) const
+{
+  return id;
+}
+
+juce::String NexusEditor::missingLink(const juce::String&) const
+{
+  return {};
 }
 
 void NexusEditor::layoutTitle()

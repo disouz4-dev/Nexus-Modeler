@@ -252,7 +252,7 @@ if(NEXUS_BUILD_TOOLS)
 
   # Teste dos equipamentos novos sem reinstalar (pasta local no lugar do GitHub).
   juce_add_console_app(nexus_arte_test PRODUCT_NAME "nexus_arte_test")
-  target_sources(nexus_arte_test PRIVATE host_test/ArteNovaTest.cpp source/update/ArteNova.cpp source/update/Updater.cpp source/report/Report.cpp source/ui/Gear.cpp)
+  target_sources(nexus_arte_test PRIVATE host_test/ArteNovaTest.cpp source/update/ArteNova.cpp source/update/Updater.cpp source/report/Report.cpp source/ui/Gear.cpp source/gear/GearCatalog.cpp)
   target_compile_definitions(nexus_arte_test PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
   target_link_libraries(nexus_arte_test PRIVATE
     NexusArt

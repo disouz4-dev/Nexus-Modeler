@@ -33,7 +33,19 @@ Decisões do dono que valem sobre o plano:
   guarda a escolha à parte e deixa o parâmetro no de fábrica do mesmo motor;
   id não instalado fica marcado (pedal passa direto) e não se perde ao salvar.
   Teste: `nexus_gear_test` monta o estado da versão antiga (sem ids) e confere.
-- [ ] **4. Pacote no disco e instalação.**
+- [x] **4. Pacote no disco e instalação** (sem assinatura). Pasta única
+  `Equipamentos/<id>/` com os arquivos `<id>_*` (a `Arte/` antiga é migrada
+  pelo catálogo ao abrir); `GearArt::loadFolder`; `GearCatalog::validate`,
+  `installFolder` (troca por renomear) e `installPackage` (zip
+  `<id>-<versao>.equipamento`, recusa nome de outra peça, `..`, extensão fora
+  de `.json .png .jpg .wav .nam` e arquivo acima de 200 MB); arrastar o
+  pacote para a janela instala; cartão "<nome> não está instalado" no título
+  da posição. Ferramenta única `tools/gear_studio/montar_equipamento.py <id>
+  --saida <render>` (python3 + Pillow, roda no lab2): arte como as outras,
+  ficha, índice, `--pacote` e `--commit`. `indice_arte.py` passou a pôr a
+  ficha, o sha256 e o tamanho de cada arquivo no índice.
+  Teste: `nexus_gear_test assets/gear <pacote>` com um pedal novo
+  (`caqui_drive`, montado de um render de mentira) e `nexus_arte_test`.
 - [ ] **5. Busca e download no mesmo repositório.**
 
 ## Para retomar

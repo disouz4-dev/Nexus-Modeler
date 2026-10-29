@@ -1,15 +1,17 @@
 // Teste sem janela do catálogo de equipamentos (gear/GearCatalog) e do id em
 // texto no estado (NexusProcessor::getStateInformation).
-//   nexus_gear_test <pasta assets/gear>
+//   nexus_gear_test <pasta assets/gear> [pacote.equipamento]
 // Confere:
 //  1. o catálogo tem as mesmas peças, na mesma ordem e com os mesmos dados
 //     das fichas embutidas (que vieram das tabelas antigas: manifestos.py --conferir);
 //  2. um preset salvo antes do id (só os índices) abre igual, um preset novo
-//     guarda e devolve os ids, e um id que não está instalado fica guardado.
+//     guarda e devolve os ids, e um id que não está instalado fica guardado;
+//  3. (com o pacote) um equipamento novo instala, aparece e vai num preset.
 #include <cstdio>
 #include <cstdlib>
 
 #include "../source/PluginProcessor.h"
+#include "../source/ui/Gear.h"
 
 using nexus::gear::GearCatalog;
 using nexus::gear::Kind;
@@ -156,12 +158,52 @@ static void testState()
   check(d.missingGear(Kind::pedal, 0).isEmpty() && d.gearId(Kind::pedal, 0) == "gold_centaur", U("escolher outra peça tira a marca"));
 }
 
+// Pacote montado por tools/gear_studio/montar_equipamento.py --pacote, com
+// uma peça que o programa não conhece: instala, entra no catálogo, a arte
+// carrega da pasta, toca num pedal e vai e volta num preset.
+static void testPackage(const juce::File& package)
+{
+  auto& catalog = GearCatalog::instance();
+  const auto id = package.getFileName().upToFirstOccurrenceOf("-", false, false);
+  check(catalog.find(Kind::pedal, id) < 0, U("antes de instalar, o catálogo não conhece ") + id);
+  // Pacote com arquivo de outra peça: recusado.
+  {
+    const auto bad = package.getSiblingFile("ruim.equipamento");
+    juce::ZipFile::Builder b;
+    b.addEntry(new juce::MemoryInputStream(juce::String("{}").toUTF8(), 2, false), 0, id + "_manifesto.json", juce::Time());
+    b.addEntry(new juce::MemoryInputStream(juce::String("x").toUTF8(), 1, false), 0, "lemon_drive_mapa.json", juce::Time());
+    bad.deleteFile();
+    juce::FileOutputStream out(bad);
+    b.writeToStream(out, nullptr);
+    out.flush();
+    const auto error = catalog.installPackage(bad);
+    check(error.isNotEmpty() && catalog.find(Kind::pedal, id) < 0, U("pacote com arquivo de outra peça é recusado (") + error + ")");
+    bad.deleteFile();
+  }
+  const auto error = catalog.installPackage(package);
+  check(error.isEmpty(), U("pacote instalado ") + error);
+  const int look = catalog.find(Kind::pedal, id);
+  check(look >= NexusProcessor::kPedalLooks, U("a peça nova entra no catálogo depois das de fábrica (posição ") + juce::String(look) + ")");
+  check(GearCatalog::folder().getChildFile(id).getChildFile(id + "_manifesto.json").existsAsFile(), U("ficou em Equipamentos/") + id);
+  const auto art = nexus::ui::GearArt::load(id);
+  check(art.valid() && art.knobs.size() == 3 && art.name.isNotEmpty(), U("a arte carrega da pasta (") + art.name + ", " + juce::String(art.knobs.size()) + U(" botões)"));
+  NexusProcessor a;
+  a.choosePedal(0, look);
+  check(a.pedalLook(0) == look && NexusProcessor::pedalKind(look) == NexusProcessor::PedalKind::capture
+          && juce::roundToInt(a.params.getRawParameterValue("p1_visual")->load()) == 0,
+        U("escolhida num pedal: toca com o motor captura e o parâmetro fica no Lemon Drive"));
+  const auto saved = stateOf(a);
+  NexusProcessor b;
+  b.setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));
+  check(b.pedalLook(0) == look && b.gearId(Kind::pedal, 0) == id, U("preset com a peça nova abre com ela (") + b.gearId(Kind::pedal, 0) + ")");
+}
+
 int main(int argc, char** argv)
 {
   juce::ScopedJuceInitialiser_GUI gui;
   if (argc < 2)
   {
-    std::puts("uso: nexus_gear_test <pasta assets/gear>");
+    std::puts("uso: nexus_gear_test <pasta assets/gear> [pacote.equipamento]");
     return 2;
   }
   // Pasta vazia no lugar da de equipamentos baixados: o teste não depende do Mac.
@@ -171,6 +213,8 @@ int main(int argc, char** argv)
   setenv("NEXUS_EQUIPAMENTOS_PASTA", temp.getChildFile("Equipamentos").getFullPathName().toRawUTF8(), 1);
   testCatalog(juce::File(U(argv[1])));
   testState();
+  if (argc > 2)
+    testPackage(juce::File(U(argv[2])));
   temp.deleteRecursively();
   std::printf(failures == 0 ? "tudo certo\n" : "%d falhas\n", failures);
   return failures == 0 ? 0 : 1;

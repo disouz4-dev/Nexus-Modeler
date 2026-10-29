@@ -269,6 +269,130 @@ void GearCatalog::reload()
     sendChangeMessage();
 }
 
+// ================================================================ Instalação
+
+namespace
+{
+constexpr juce::int64 kMaxFile = 200 * 1024 * 1024;
+
+bool allowedName(const juce::String& name, const juce::String& id)
+{
+  static const juce::StringArray extensions{".json", ".png", ".jpg", ".wav", ".nam"};
+  return name.startsWith(id + "_") && !name.containsAnyOf("/\\:") && !name.contains("..")
+         && extensions.contains(name.fromLastOccurrenceOf(".", true, false).toLowerCase());
+}
+} // namespace
+
+juce::var GearCatalog::localIndex()
+{
+  const auto parsed = juce::JSON::parse(folder().getChildFile("indice.json"));
+  return parsed.isObject() ? parsed : juce::var(new juce::DynamicObject());
+}
+
+juce::String GearCatalog::validate(const juce::File& staged, const juce::String& id)
+{
+  if (id.isEmpty() || id.containsAnyOf("/\\. ") || !staged.isDirectory())
+    return juce::String::fromUTF8("peça sem nome válido");
+  if (!staged.findChildFiles(juce::File::findDirectories, false).isEmpty())
+    return juce::String::fromUTF8("pasta dentro do pacote");
+  for (const auto& f : staged.findChildFiles(juce::File::findFiles, false))
+  {
+    if (!allowedName(f.getFileName(), id))
+      return juce::String::fromUTF8("arquivo não aceito: ") + f.getFileName();
+    if (f.getSize() > kMaxFile)
+      return juce::String::fromUTF8("arquivo grande demais: ") + f.getFileName();
+  }
+  const auto manifestFile = staged.getChildFile(id + "_manifesto.json");
+  if (manifestFile.existsAsFile())
+  {
+    const auto m = juce::JSON::parse(manifestFile);
+    if (m["id"].toString() != id)
+      return juce::String::fromUTF8("ficha de outra peça");
+    if (const auto why = unsupported(m); why.isNotEmpty())
+      return why;
+    if (!parse(m))
+      return juce::String::fromUTF8("ficha incompleta");
+  }
+  const auto mapFile = staged.getChildFile(id + "_mapa.json");
+  if (!mapFile.existsAsFile())
+    return juce::String::fromUTF8("falta o mapa da peça");
+  const auto map = juce::JSON::parse(mapFile);
+  if (!map.isObject())
+    return juce::String::fromUTF8("mapa com defeito");
+  if (!staged.getChildFile(id + "_frente.png").existsAsFile()
+      && !(staged.getChildFile(id + "_frente.jpg").existsAsFile() && staged.getChildFile(id + "_frente_alfa.png").existsAsFile()))
+    return juce::String::fromUTF8("falta a frente da peça");
+  if (const auto* knobs = map["botoes"].getArray())
+    for (const auto& k : *knobs)
+      if (!staged.getChildFile(id + "_botao_" + k["id"].toString() + ".png").existsAsFile())
+        return juce::String::fromUTF8("falta a tira do botão ") + k["id"].toString();
+  return {};
+}
+
+juce::String GearCatalog::installFolder(const juce::File& staged, const juce::String& id, const juce::var& indexEntry)
+{
+  if (const auto error = validate(staged, id); error.isNotEmpty())
+    return error;
+  const auto dir = folder();
+  dir.createDirectory();
+  const auto target = dir.getChildFile(id);
+  const auto old = dir.getChildFile(".velho-" + id);
+  old.deleteRecursively();
+  if (target.exists() && !target.moveFileTo(old))
+    return juce::String::fromUTF8("não deu para trocar a peça instalada");
+  if (!staged.moveFileTo(target))
+  {
+    old.moveFileTo(target); // volta a que estava
+    return juce::String::fromUTF8("não deu para instalar a peça");
+  }
+  old.deleteRecursively();
+  auto index = localIndex();
+  if (auto* root = index.getDynamicObject())
+  {
+    if (!root->getProperty("pecas").isObject())
+      root->setProperty("pecas", juce::var(new juce::DynamicObject()));
+    root->getProperty("pecas").getDynamicObject()->setProperty(juce::Identifier(id), indexEntry);
+    dir.getChildFile("indice.json").replaceWithText(juce::JSON::toString(index));
+  }
+  reload();
+  return {};
+}
+
+juce::String GearCatalog::installPackage(const juce::File& package)
+{
+  juce::ZipFile zip(package);
+  if (zip.getNumEntries() == 0)
+    return juce::String::fromUTF8("pacote vazio ou com defeito");
+  juce::String id;
+  for (int i = 0; i < zip.getNumEntries(); ++i)
+    if (const auto name = zip.getEntry(i)->filename; name.endsWith("_manifesto.json"))
+      id = name.dropLastCharacters(juce::String("_manifesto.json").length());
+  if (id.isEmpty())
+    return juce::String::fromUTF8("pacote sem ficha");
+  for (int i = 0; i < zip.getNumEntries(); ++i)
+  {
+    const auto* e = zip.getEntry(i);
+    if (!allowedName(e->filename, id) || e->uncompressedSize > kMaxFile)
+      return juce::String::fromUTF8("arquivo não aceito no pacote: ") + e->filename;
+  }
+  const auto staged = folder().getChildFile(".baixando").getChildFile(id);
+  staged.deleteRecursively();
+  staged.createDirectory();
+  if (zip.uncompressTo(staged, true).failed())
+  {
+    staged.deleteRecursively();
+    return juce::String::fromUTF8("não deu para abrir o pacote");
+  }
+  auto* entry = new juce::DynamicObject();
+  entry->setProperty("nome", juce::JSON::parse(staged.getChildFile(id + "_manifesto.json"))["nome"]);
+  entry->setProperty("hash", "pacote");
+  entry->setProperty("data", juce::Time::getCurrentTime().toISO8601(true));
+  entry->setProperty("pacote", package.getFileName());
+  const auto error = installFolder(staged, id, juce::var(entry));
+  folder().getChildFile(".baixando").deleteRecursively();
+  return error;
+}
+
 int GearCatalog::pedalEngineAt(int look) const
 {
   return look >= 0 && look < count(Kind::pedal) ? mPedalEngine[static_cast<size_t>(look)].load() : 0;

@@ -2,6 +2,7 @@
 
 #include "BinaryData.h"
 #include "Updater.h"
+#include "../gear/GearCatalog.h"
 
 namespace nexus::update
 {
@@ -61,11 +62,9 @@ bool understands(const juce::var& entry)
   return minimum.isEmpty() || compareVersions(currentVersion(), minimum) >= 0;
 }
 
-void removeFiles(const juce::var& entry)
+void removeFiles(const juce::String& id)
 {
-  if (const auto* files = entry["arquivos"].getArray())
-    for (const auto& f : *files)
-      ArteNova::folder().getChildFile(f.toString()).deleteFile();
+  ArteNova::folder().getChildFile(id).deleteRecursively();
 }
 } // namespace
 
@@ -78,40 +77,14 @@ ArteNova::~ArteNova()
 
 juce::File ArteNova::folder()
 {
-  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
-#if JUCE_MAC
-    .getChildFile("Application Support")
-#endif
-    .getChildFile("Nexus Modeler")
-    .getChildFile("Arte");
+  // Uma pasta por peça, Equipamentos/<id>/ (a antiga "Arte" é migrada pelo catálogo).
+  return nexus::gear::GearCatalog::folder();
 }
 
 void ArteNova::prune()
 {
-  if (!localIndexFile().existsAsFile())
-    return;
-  auto local = localIndex();
-  const auto embedded = embeddedIndex();
-  auto* list = pieces(local);
-  if (list == nullptr)
-    return;
-  juce::StringArray gone;
-  for (const auto& p : list->getProperties())
-  {
-    const auto mine = p.value;
-    const auto inside = piece(embedded, p.name.toString());
-    // Programa atualizado trouxe a mesma peça ou uma mais nova; ou esta
-    // versão do Nexus não entende a peça baixada.
-    if ((inside.isObject() && inside["data"].toString() >= mine["data"].toString()) || !understands(mine))
-    {
-      removeFiles(mine);
-      gone.add(p.name.toString());
-    }
-  }
-  for (const auto& id : gone)
-    list->removeProperty(juce::Identifier(id));
-  if (!gone.isEmpty())
-    saveLocalIndex(local);
+  // A limpeza e a migração da pasta antiga ficam no catálogo, que abre uma vez.
+  nexus::gear::GearCatalog::instance();
 }
 
 void ArteNova::checkIfDue()
@@ -239,9 +212,10 @@ void ArteNova::fetch()
     }
     if (ok)
     {
-      removeFiles(piece(local, id));
+      removeFiles(id);
+      folder().getChildFile(id).createDirectory();
       for (const auto& f : *files)
-        temp.getChildFile(f.toString()).moveFileTo(folder().getChildFile(f.toString()));
+        temp.getChildFile(f.toString()).moveFileTo(folder().getChildFile(id).getChildFile(f.toString()));
       if (auto* list = pieces(local))
         list->setProperty(juce::Identifier(id), entry);
       saveLocalIndex(local);

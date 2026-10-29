@@ -1,7 +1,7 @@
 #include "Gear.h"
 
 #include "BinaryData.h"
-#include "../update/ArteNova.h"
+#include "../gear/GearCatalog.h"
 
 #include <mutex>
 
@@ -9,19 +9,16 @@ namespace nexus::ui
 {
 namespace
 {
-// Arte baixada depois da instalação (equipamentos novos, ArteNova): vale antes
-// da que veio dentro do programa. A limpeza da pasta roda uma vez, antes da
-// primeira imagem.
-juce::File downloaded(const juce::String& name)
+// Arquivo da peça: o da pasta dela (equipamento baixado ou arte refeita, em
+// Equipamentos/<id>/) vale antes do que veio dentro do programa.
+juce::File onDisk(const juce::File& dir, const juce::String& name)
 {
-  static std::once_flag pruned;
-  std::call_once(pruned, [] { nexus::update::ArteNova::prune(); });
-  return nexus::update::ArteNova::folder().getChildFile(name);
+  return dir == juce::File() ? juce::File() : dir.getChildFile(name);
 }
 
-juce::Image imageResource(const juce::String& name)
+juce::Image imageResource(const juce::File& dir, const juce::String& name)
 {
-  if (const auto file = downloaded(name); file.existsAsFile())
+  if (const auto file = onDisk(dir, name); file.existsAsFile())
     return juce::ImageCache::getFromFile(file);
   int size = 0;
   const auto resource = name.replaceCharacter('.', '_');
@@ -30,9 +27,9 @@ juce::Image imageResource(const juce::String& name)
   return {};
 }
 
-juce::var jsonResource(const juce::String& name)
+juce::var jsonResource(const juce::File& dir, const juce::String& name)
 {
-  if (const auto file = downloaded(name); file.existsAsFile())
+  if (const auto file = onDisk(dir, name); file.existsAsFile())
     return juce::JSON::parse(file);
   int size = 0;
   const auto resource = name.replaceCharacter('.', '_');
@@ -41,22 +38,22 @@ juce::var jsonResource(const juce::String& name)
   return {};
 }
 
-bool hasResource(const juce::String& name)
+bool hasResource(const juce::File& dir, const juce::String& name)
 {
   int size = 0;
-  return downloaded(name).existsAsFile()
+  return onDisk(dir, name).existsAsFile()
          || BinaryData::getNamedResource(name.replaceCharacter('.', '_').toRawUTF8(), size) != nullptr;
 }
 // Frente: JPEG da cor (já multiplicada pela transparência, fundo preto) e a
 // máscara de transparência em PNG cinza (tools/gear_studio/frente_jpeg.py).
 // O JUCE guarda a cor assim mesmo, multiplicada: é só juntar os canais.
 // Sem o par, vale o PNG antigo com transparência.
-juce::Image frontImage(const juce::String& prefix)
+juce::Image frontImage(const juce::File& dir, const juce::String& prefix)
 {
-  const auto colour = imageResource(prefix + "_frente.jpg");
-  const auto alpha = imageResource(prefix + "_frente_alfa.png");
+  const auto colour = imageResource(dir, prefix + "_frente.jpg");
+  const auto alpha = imageResource(dir, prefix + "_frente_alfa.png");
   if (!colour.isValid() || !alpha.isValid() || colour.getBounds() != alpha.getBounds())
-    return imageResource(prefix + "_frente.png");
+    return imageResource(dir, prefix + "_frente.png");
   juce::Image out(juce::Image::ARGB, colour.getWidth(), colour.getHeight(), false);
   const juce::Image::BitmapData c(colour, juce::Image::BitmapData::readOnly);
   const juce::Image::BitmapData a(alpha, juce::Image::BitmapData::readOnly);
@@ -87,13 +84,22 @@ juce::Image frontImage(const juce::String& prefix)
 
 juce::Image GearKnobArt::loadStrip() const
 {
-  return imageResource(stripResource);
+  return imageResource(folder, stripResource);
 }
 
 GearArt GearArt::load(const juce::String& prefix)
 {
+  // O catálogo abre antes da primeira imagem: passa a arte da pasta antiga
+  // (Arte) para Equipamentos e limpa o que o programa atualizado já traz.
+  static std::once_flag prepared;
+  std::call_once(prepared, [] { nexus::gear::GearCatalog::instance(); });
+  return loadFolder(nexus::gear::GearCatalog::folder().getChildFile(prefix), prefix);
+}
+
+GearArt GearArt::loadFolder(const juce::File& folder, const juce::String& prefix)
+{
   GearArt art;
-  art.front = frontImage(prefix);
+  art.front = frontImage(folder, prefix);
   if (art.front.isValid())
   {
     // Contorno da peça: colunas e linhas com algum ponto opaco (de 2 em 2).
@@ -115,7 +121,7 @@ GearArt GearArt::load(const juce::String& prefix)
     art.body = x1 > x0 ? juce::Rectangle<float>(static_cast<float>(x0), static_cast<float>(y0), static_cast<float>(x1 - x0), static_cast<float>(y1 - y0))
                        : art.front.getBounds().toFloat();
   }
-  const auto map = jsonResource(prefix + "_mapa.json");
+  const auto map = jsonResource(folder, prefix + "_mapa.json");
   art.name = map["nome"].toString();
   if (const auto* mm = map["medidas_mm"].getArray(); mm != nullptr && mm->size() == 2)
     art.sizeMm = {static_cast<float>((*mm)[0]), static_cast<float>((*mm)[1])};
@@ -144,9 +150,10 @@ GearArt GearArt::load(const juce::String& prefix)
         knob.box.setSize(knob.width, knob.height);
       }
       knob.stripResource = prefix + "_botao_" + knob.id + ".png";
+      knob.folder = folder;
       // Botão em degraus (drive) pode ter menos quadros que os outros.
       knob.frames = k.hasProperty("posicoes") ? static_cast<int>(k["posicoes"]) : frames;
-      if (hasResource(knob.stripResource))
+      if (hasResource(folder, knob.stripResource))
         art.knobs.push_back(std::move(knob));
     }
   if (const auto* labels = map["rotulos"].getArray())
