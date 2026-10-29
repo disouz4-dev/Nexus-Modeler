@@ -317,8 +317,8 @@
   "alca": "nenhuma",
   "parafusos_painel": false,
   "quadro": {
-    "largura_rel": 1.762,
-    "proporcao": 1.0,
+    "largura_rel": 1.1,
+    "proporcao": 1.602,
     "elevacao": 10.0
   },
   "notas_modelagem": "Medidas: o chassi (405 × 250 × 300 mm nas fontes) em cima de uma caixa 1×15 estimada; total 560 × 860 × 380. O volume do Nexus é o VOLUME do canal TWO e a presença o TREBLE dele; o médio ficou num botão pequeno."

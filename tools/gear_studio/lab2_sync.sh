@@ -9,5 +9,4 @@ D=${1:-repo-fiel}
 ssh lab2 "mkdir -p ~/nexus-gear/$D/assets"
 rsync -a --delete --exclude __pycache__ "$RAIZ/tools/" "lab2:nexus-gear/$D/tools/"
 rsync -a --delete "$RAIZ/assets/fonts/" "lab2:nexus-gear/$D/assets/fonts/"
-scp -q "$RAIZ/tools/gear_studio/fila3d.sh" lab2:nexus-gear/fila3d.sh
 echo "lab2 atualizado: $D"

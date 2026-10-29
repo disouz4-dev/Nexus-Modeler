@@ -233,8 +233,8 @@
   ],
   "cantos": "preto",
   "quadro": {
-    "largura_rel": 1.447,
-    "proporcao": 1.0,
+    "largura_rel": 1.1,
+    "proporcao": 1.315,
     "elevacao": 10.0
   },
   "notas_modelagem": "O BA-210 não tem presença: ficou num botão pequeno depois do AUX LEVEL."

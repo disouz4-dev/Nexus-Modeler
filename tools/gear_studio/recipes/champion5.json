@@ -192,8 +192,8 @@
   "alca": "couro",
   "aba_m": 0.02,
   "quadro": {
-    "largura_rel": 1.334,
-    "proporcao": 1.0,
+    "largura_rel": 1.24,
+    "proporcao": 1.076,
     "elevacao": 34.0
   },
   "notas_modelagem": "O Champ só tem VOLUME: agudo, médio, grave, presença e o volume de saída do Nexus ficaram em cinco botões pequenos."

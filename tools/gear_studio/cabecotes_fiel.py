@@ -157,14 +157,9 @@ def tela(a, b, trama=2.0, friso=None):
 # ---------------------------------------------------------------- montagem
 
 def quadro(fmt, W, H, D, painel):
-    """Imagem nunca mais alta que larga: com proporção acima de 1 o Blender
-    passaria a medir a câmera pela altura (o build.py só corrige isso nas
-    caixas); aí a imagem fica quadrada e a vista abre na largura."""
-    q = _quadro(fmt, W, H, D, painel)
-    if q["proporcao"] > 1.0:
-        q["largura_rel"] = round(q["largura_rel"] * q["proporcao"], 3)
-        q["proporcao"] = 1.0
-    return q
+    """Combos altos e flip-tops ficam com a imagem em pé (o build.py mede a
+    câmera pela largura quando a proporção passa de 1)."""
+    return _quadro(fmt, W, H, D, painel)
 
 
 def _quadro(fmt, W, H, D, painel):

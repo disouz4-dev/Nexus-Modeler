@@ -302,8 +302,8 @@
   "alca": "nenhuma",
   "parafusos_painel": false,
   "quadro": {
-    "largura_rel": 1.785,
-    "proporcao": 1.0,
+    "largura_rel": 1.1,
+    "proporcao": 1.623,
     "elevacao": 10.0
   },
   "notas_modelagem": "Medidas do B-18 não encontradas: estimadas a partir do B-15 com a caixa 1×18 maior (600 × 940 × 400). O volume do Nexus é o VOLUME do canal 2 e a presença o TREBLE dele; o médio ficou num botão pequeno."
