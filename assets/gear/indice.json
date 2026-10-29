@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:07:51Z",
+ "gerado": "2026-10-29T19:14:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1518,8 +1518,8 @@
   },
   "cherry_drop": {
    "nome": "Cherry Drop",
-   "hash": "6344ea9527745228",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "18063d4a7c957db8",
+   "data": "2026-10-29T19:14:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "cherry_drop_botao_a.png",
@@ -1530,20 +1530,20 @@
     "cherry_drop_mapa.json"
    ],
    "sha256": {
-    "cherry_drop_botao_a.png": "6631c6fbf8497b9628b6a703672916bee5664b277d7c9163f0354bc5beb8eef5",
-    "cherry_drop_botao_b.png": "5245bc1af287e7fa73fb6bff563a1bacfcdea9ae3d1bebaf4eb750b32f1071e5",
-    "cherry_drop_frente.jpg": "dc02241a97f4ac91f1b28117d6a2dfa542044403242e5fdd6c80ecc692175310",
-    "cherry_drop_frente_alfa.png": "6de6157a7aba50de19f7487feb84f0ec07305791cd317e2c390b6b9d16a9fb8c",
-    "cherry_drop_manifesto.json": "810443a8a70c0c2657b4aadeddfd1761031d48a712b85127cbda4f4d037d4d8d",
-    "cherry_drop_mapa.json": "7343b2661fe4d5448a863e8bb379391b3fcfff9e5158b26c71a2ef9b7aaaa863"
+    "cherry_drop_botao_a.png": "66afb00c8e87fb2114eb491657e31bb6c29d99f4a4d457b9908fd84c60bbbc97",
+    "cherry_drop_botao_b.png": "3506f320b16e3c7e66d60b9303e96b63b58dbb2315163ce0be7f0ba7cf7d70c1",
+    "cherry_drop_frente.jpg": "817174cc232020d9f3f7d91828b7d2f4ca05c32b48f9f2093aa7ea7d2ed24c8f",
+    "cherry_drop_frente_alfa.png": "50d91329c4dc8dff15311a7cbb1d99815fd00fe6c940082d9aac3bdb4b3e0534",
+    "cherry_drop_manifesto.json": "67f0c9109664caa6b6e128f99539d8d2d8defd3fabad8a0be56794e5fd5d4e6c",
+    "cherry_drop_mapa.json": "aafe49def16b43c6a28c923f834c93cc77d27583d05535e19f69ce4bd5a9b7fa"
    },
-   "tamanho": 358210,
+   "tamanho": 387183,
    "tipo": "pedal",
    "inspiracao": "DigiTech Drop",
    "categoria": "Afinação",
    "fonte": "Efeito do Nexus",
    "motor": "drop",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
