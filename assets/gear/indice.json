@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:23:11Z",
+ "gerado": "2026-10-29T16:25:17Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1485,8 +1485,8 @@
   },
   "charoite_g3": {
    "nome": "Charoite G3",
-   "hash": "3af760adfc298897",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "b3b517b9692d7d72",
+   "data": "2026-10-29T16:25:17Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "charoite_g3_botao_ganho.png",
@@ -1498,21 +1498,21 @@
     "charoite_g3_mapa.json"
    ],
    "sha256": {
-    "charoite_g3_botao_ganho.png": "6fd99067c60c80bcc5979e0a6bb0c5f2774e4bd476226b86d04c8a2b146a0a2a",
-    "charoite_g3_botao_nivel.png": "b375bea697e055fabc1feecd1021def2f30f44bc494ad25b83057d716b24b33a",
-    "charoite_g3_botao_tom.png": "84e4dcc67ea1dd27a3f5abd8cdd6d06bfade3a3c296cfc5e761ce0c24de777f0",
-    "charoite_g3_frente.jpg": "64ad3b5633fa6b7125837db2302d904d20437d58cada078267fb4d18a6726f7a",
-    "charoite_g3_frente_alfa.png": "86a90f4f1316aa192eca16d71c49d2c6c60d607a30918fceac52953dece587c9",
-    "charoite_g3_manifesto.json": "a29391e3f14e10921374b302dd619e2e856ce3da85f5afa2d0b4df14c45f85e9",
-    "charoite_g3_mapa.json": "538d858ec90609c39b7189261cbf1b61b5fb691c493ea756c3a9bffa97cf13ca"
+    "charoite_g3_botao_ganho.png": "08d22eca7c88d71c26a49465c2eef533ff98e5a00a2e153b7cba6546348c3c28",
+    "charoite_g3_botao_nivel.png": "e60151bb9aaeb77ba8163c1c91a0179add4948d40472d4d38a7c263dc9ea913e",
+    "charoite_g3_botao_tom.png": "69c516ba320ed4d843fdb980afa056a9ed4d273b71f554451ee9c5f1994639c5",
+    "charoite_g3_frente.jpg": "156724f01b0ad3544eb72f9259d8ae046ea477401d7200d49f3b3ddea184bef6",
+    "charoite_g3_frente_alfa.png": "facd8cf63e04b3423933aed361bfab166c2c4da1ade6b97f585c1cb377bbb2b0",
+    "charoite_g3_manifesto.json": "849cebae549afa8d495835e8d2eec5dbf611703d14ca2344ba500d05d0c9fb08",
+    "charoite_g3_mapa.json": "8d54c671b9f1b0fd0af04048b5e9669a317e5e205c2f572f5e37440050edfde6"
    },
-   "tamanho": 197287,
+   "tamanho": 215248,
    "tipo": "pedal",
    "inspiracao": "Revv G3",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
