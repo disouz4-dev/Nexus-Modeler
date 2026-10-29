@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:39:40Z",
+ "gerado": "2026-10-29T19:41:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3132,8 +3132,8 @@
   },
   "howlite_war": {
    "nome": "Howlite War",
-   "hash": "07437e269dc78c36",
-   "data": "2026-10-29T17:12:42Z",
+   "hash": "70795700e4c5804f",
+   "data": "2026-10-29T19:41:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "howlite_war_botao_ganho.png",
@@ -3145,21 +3145,21 @@
     "howlite_war_mapa.json"
    ],
    "sha256": {
-    "howlite_war_botao_ganho.png": "c6ec40441646f574ccf5660f2fc5cf5b0e3268b358c313a39a113a1d40ff20f9",
-    "howlite_war_botao_nivel.png": "960ce5a99be09e849a90755a7e5dea517ceebeafdcbcd7037c4a6ba76929ba35",
-    "howlite_war_botao_tom.png": "4cea58b68989c53d511e3104c0d4181d5dfe144807fdfec7c0a8bfe28ea20b5b",
-    "howlite_war_frente.jpg": "414711a1856e56e949d0970f0b5be0453839ef119f079ffde57e0d2e36198c8e",
-    "howlite_war_frente_alfa.png": "ce033ce46643e5464889c3457b3b0e77b80eef15d8173af13ebd68edf617a53e",
-    "howlite_war_manifesto.json": "5fb36220a83ce2cf1f3d514cacf14ce5d3837721233c635d3d8aee3186e46154",
-    "howlite_war_mapa.json": "25c4bc21c252a48181f62c19b451a5ccfd16e2d3665b8dd72e7709ae0d84b71d"
+    "howlite_war_botao_ganho.png": "4b1a6c1106e606e1ed467f44506d46d63f50269a664816400fe381066ebb098a",
+    "howlite_war_botao_nivel.png": "67872f8d5d03a6734135cdaeaf892d71944fc45c510addaf1262a185f314349f",
+    "howlite_war_botao_tom.png": "b8ad264582f37ae83494ff91634861ba2f1f1e2181a8ad818eca3848cd1cc5d3",
+    "howlite_war_frente.jpg": "204e627afdf3a95477d4baeb65caedf99d36d4dfe0ef232cd12c1ba953e64583",
+    "howlite_war_frente_alfa.png": "c8b3f9d12c5d3050f6118768ac9940a217677a9c8c4fcd37d048c8dd9b357ca5",
+    "howlite_war_manifesto.json": "97a158456d181d8bbe5f1638b7deb096f25e0cabbaa174d9015b33e87cf5b9fe",
+    "howlite_war_mapa.json": "9317bfc8c7e215bb8a1a3405654debe91cdf631c26b72e4cf24e9125aa390e52"
    },
-   "tamanho": 178912,
+   "tamanho": 256255,
    "tipo": "pedal",
    "inspiracao": "Death By Audio Fuzz War",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
