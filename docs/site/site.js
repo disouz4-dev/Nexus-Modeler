@@ -205,4 +205,86 @@
       })
       .catch(function () {});
   }
+
+  // ---------- Galeria de equipamentos: filtros e foto maximizada ----------
+  var filtros = document.querySelectorAll(".filtro");
+  filtros.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      var escolha = botao.getAttribute("data-filtro");
+      filtros.forEach(function (b) { b.setAttribute("aria-pressed", b === botao ? "true" : "false"); });
+      document.querySelectorAll(".catalogo-grupo").forEach(function (g) {
+        g.hidden = escolha !== "todos" && g.getAttribute("data-grupo") !== escolha;
+      });
+    });
+  });
+
+  var visor = document.getElementById("visor");
+  var visorImg = document.getElementById("visor-img");
+  var atual = -1;
+
+  // As setas passam só pelas peças que o filtro está mostrando.
+  function pecasVisiveis() {
+    return Array.prototype.filter.call(document.querySelectorAll(".cat-abrir"), function (b) {
+      return !b.closest(".catalogo-grupo[hidden]");
+    });
+  }
+
+  function mostrar(indice) {
+    var pecas = pecasVisiveis();
+    if (!pecas.length) return;
+    atual = (indice + pecas.length) % pecas.length;
+    var peca = pecas[atual];
+    var en = raiz.getAttribute("data-lang") === "en";
+    var nome = peca.querySelector("h4").textContent;
+    var inspiracao = peca.getAttribute("data-inspiracao");
+    visorImg.src = peca.getAttribute("data-grande");
+    visorImg.width = peca.getAttribute("data-largura");
+    visorImg.height = peca.getAttribute("data-altura");
+    visorImg.alt = nome;
+    document.getElementById("visor-nome").textContent = nome;
+    document.getElementById("visor-categoria").textContent = peca.getAttribute(en ? "data-categoria-en" : "data-categoria");
+    document.getElementById("visor-inspiracao").textContent = (en ? "inspired by the " : "inspirado no ") + inspiracao;
+    document.getElementById("visor-posicao").textContent = (atual + 1) + (en ? " of " : " de ") + pecas.length;
+    // Já carrega as vizinhas, para a seta trocar sem espera.
+    [atual - 1, atual + 1].forEach(function (i) {
+      new Image().src = pecas[(i + pecas.length) % pecas.length].getAttribute("data-grande");
+    });
+  }
+
+  if (visor && visor.showModal) {
+    document.querySelectorAll(".cat-abrir").forEach(function (botao) {
+      botao.addEventListener("click", function () {
+        mostrar(pecasVisiveis().indexOf(botao));
+        visor.showModal();
+      });
+    });
+    visor.addEventListener("click", function (e) {
+      var acao = e.target.closest("[data-visor]");
+      if (acao) {
+        var qual = acao.getAttribute("data-visor");
+        if (qual === "fechar") visor.close();
+        else mostrar(atual + (qual === "proxima" ? 1 : -1));
+      } else if (e.target === visor || e.target.classList.contains("visor-foto")) {
+        visor.close();  // clique fora da foto fecha
+      }
+    });
+    visor.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { mostrar(atual + 1); e.preventDefault(); }
+      else if (e.key === "ArrowLeft") { mostrar(atual - 1); e.preventDefault(); }
+    });
+    visor.addEventListener("close", function () {
+      // Volta o foco para a peça aberta por último.
+      var pecas = pecasVisiveis();
+      if (pecas[atual]) pecas[atual].focus();
+    });
+    // No celular: arrastar para o lado passa a peça.
+    var inicioX = null;
+    visor.addEventListener("touchstart", function (e) { inicioX = e.touches[0].clientX; }, { passive: true });
+    visor.addEventListener("touchend", function (e) {
+      if (inicioX === null) return;
+      var dx = e.changedTouches[0].clientX - inicioX;
+      if (Math.abs(dx) > 50) mostrar(atual + (dx < 0 ? 1 : -1));
+      inicioX = null;
+    });
+  }
 })();
