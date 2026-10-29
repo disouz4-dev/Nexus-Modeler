@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Raspberry Drive",
   "familia": "raspberry_drive",
-  "inspiracao": "vinho com letras claras, caixa média (estilo JHS Andy Timmons)",
+  "inspiracao": "Caixa estreita vermelha (56 x 122 x 41 mm), letras pretas; botões pretos VOLUME e DRIVE no alto com a minichave de 3 posições entre eles, TOM (EQ), AR (fixo) e REFORÇO (fixo) menores na segunda fileira, dois pisantes (drive e reforço) com um LED vermelho cada. Tema: framboesa no lugar do @ do meio, framboesas tom sobre tom. Original: JHS Andy Timmons (AT).",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.056,
+    "comprimento": 0.122,
+    "altura": 0.041
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.531,
-      0.0039,
-      0.0707
+      0.6524,
+      0.009,
+      0.0152
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "RASPBERRY DRIVE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
+    "diametro_m": 0.015,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,102 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
+        -0.56,
+        0.76
       ],
-      "escala": 1.1
+      "escala": 0.9
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.0,
-        0.55
+        0.56,
+        0.76
       ],
-      "escala": 1.1
+      "escala": 0.9
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.58,
-        0.55
+        -0.62,
+        0.42
       ],
-      "escala": 1.1
+      "escala": 0.72
+    },
+    {
+      "id": "fixo_ar",
+      "rotulo": "AR",
+      "pos": [
+        0.0,
+        0.42
+      ],
+      "fixo": true,
+      "escala": 0.72
+    },
+    {
+      "id": "fixo_reforco",
+      "rotulo": "REFORÇO",
+      "pos": [
+        0.62,
+        0.42
+      ],
+      "fixo": true,
+      "escala": 0.72
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/raspberry_drive.svg"
+  },
+  "medidas_fonte": "56 x 122 x 41 mm (JHS, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.72,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.98,
+  "logo_m": 0.0001,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/raspberry_drive.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    -0.5,
+    -0.55
+  ],
+  "pisante": {
+    "pos": [
+      -0.5,
+      -0.76
+    ]
+  },
+  "modelo_oculto": true,
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.0,
+        0.8
+      ]
+    },
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.5,
+        -0.76
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.5,
+        -0.55
+      ]
+    }
+  ]
 }
