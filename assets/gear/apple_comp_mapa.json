@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "a",
-      "x": 132,
-      "y": 38,
-      "tamanho": 86,
+      "x": 162,
+      "y": 108,
+      "tamanho": 114,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 228,
-      "y": 125,
-      "tamanho": 144,
+      "x": 324,
+      "y": 108,
+      "tamanho": 114,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 382,
-      "y": 38,
-      "tamanho": 86,
+      "x": 398,
+      "y": 504,
+      "tamanho": 59,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -35,46 +35,46 @@
   ],
   "canais": [],
   "medidas_mm": [
-    64,
-    112
+    62,
+    111
   ],
   "rotulos": [
     {
-      "texto": "NÍVEL",
-      "x": 178.2,
-      "y": 152.3,
-      "altura": 20.87,
+      "texto": "SAÍDA",
+      "x": 221.6,
+      "y": 246.4,
+      "altura": 22.48,
       "achatamento": 1.0,
-      "cor": "#f9f9f6",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "COMPRESSÃO",
-      "x": 300.0,
-      "y": 297.0,
-      "altura": 20.87,
+      "texto": "SENSIBILIDADE",
+      "x": 378.4,
+      "y": 246.4,
+      "altura": 22.48,
       "achatamento": 1.0,
-      "cor": "#f9f9f6",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "ATAQUE",
-      "x": 421.8,
-      "y": 152.3,
-      "altura": 20.87,
+      "x": 425.4,
+      "y": 585.1,
+      "altura": 14.62,
       "achatamento": 1.0,
-      "cor": "#f9f9f6",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 614.0,
-    "raio": 77.0
+    "y": 576.0,
+    "raio": 70.0
   },
   "led": {
     "x": 300.0,
-    "y": 84.6,
-    "raio": 19.1
+    "y": 487.9,
+    "raio": 17.5
   }
 }

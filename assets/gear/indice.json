@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:00:17Z",
+ "gerado": "2026-10-29T16:02:27Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -175,8 +175,8 @@
   },
   "apple_comp": {
    "nome": "Apple Comp",
-   "hash": "795b08a2d5efea8d",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "e6f8116d4b8dddcc",
+   "data": "2026-10-29T16:02:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "apple_comp_botao_a.png",
@@ -188,21 +188,21 @@
     "apple_comp_mapa.json"
    ],
    "sha256": {
-    "apple_comp_botao_a.png": "ca5307d900158cb8e5c59d677f97ec4d1956adc0c6ad40ff12fa70629730f41b",
-    "apple_comp_botao_b.png": "6d6f2e1a0c7bb059004920a58074a5681c5439f9c80d717af7daada8f98376ae",
-    "apple_comp_botao_c.png": "f2780990e6f79f3abfefd90d374b7f74d5fe6958a01f928888e120f6a5fdb22e",
-    "apple_comp_frente.jpg": "db08fb15ff61e6c23a996edd8d4c31caa8764578af90e44414aeae12d490f70f",
-    "apple_comp_frente_alfa.png": "1ee55d5f97663a3ded0fd94e5d0efc89babbad255fc91dea2950c0ac01a9e24c",
-    "apple_comp_manifesto.json": "ec3c50c5e5d0e822f8c53b814f8e2758330a835bf939122942067a2030fc4d2c",
-    "apple_comp_mapa.json": "f68f93b6a7b8f288735ad5a523cc66664f524b5a9ab12f632b479c246f53f507"
+    "apple_comp_botao_a.png": "8958d1d4c3b6c35b9af77f46a1ef64189b84579a32be1d0fc06d56e5dba1cb22",
+    "apple_comp_botao_b.png": "953f3df25ea19deb2794fd37bf1c7b85c452124e403bbd7fd8181eec70c6a1e0",
+    "apple_comp_botao_c.png": "2dedf389491d19494329daefb58784a670e6bb12958116ca44b38ee19ea2e127",
+    "apple_comp_frente.jpg": "0e269527ba79abc2a1cd654099a7e50638965c40396a6eebd105c99e3e426b1c",
+    "apple_comp_frente_alfa.png": "8c5fdad269a35f7a3fd9086b14ceac005193c3eaf36068d55f38237a76309262",
+    "apple_comp_manifesto.json": "8622d40009f7d39943837ab22e866eeaeef2b02955d60c3c12c68bbb44573da5",
+    "apple_comp_mapa.json": "5305dd9eddab6e71952a821064b23f70cca44e11ecfaa6d9d71e71978f9303c5"
    },
-   "tamanho": 583195,
+   "tamanho": 518341,
    "tipo": "pedal",
    "inspiracao": "MXR Dyna Comp",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "compressor",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
