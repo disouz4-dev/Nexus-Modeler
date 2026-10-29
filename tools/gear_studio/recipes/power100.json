@@ -2,34 +2,42 @@
   "tipo": "cabecote",
   "nome": "Power 100",
   "familia": "power_100",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "ENGL Powerball II: cabeçote de 710 × 270 × 270 mm em tolex preto com cantoneiras cromadas, grade de metal preta vazada com a marca no meio e painel grafite fosco embaixo com letras brancas: entrada à esquerda, vinte botões pretos de saia em duas fileiras (CLEAN GAIN, CRUNCH GAIN, BASS, MIDDLE, TREBLE, VOLUMEs, PRESENCE e DEPTH PUNCH em cima, que é a que toca; LEAD GAIN 3 e 4, BASS, MIDDLE, MID BOOST, TREBLE, LEAD VOL 3 e 4, MASTER A e B embaixo), teclinhas com LEDs, o nome em script e as gangorras STAND BY (preta) e POWER (vermelha acesa) à direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
+    "largura": 0.71,
     "altura": 0.27,
-    "profundidade": 0.24
+    "profundidade": 0.27
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
     "tipo": "grade",
     "cor": [
-      0.03,
-      0.03,
-      0.033
+      0.02,
+      0.02,
+      0.022
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.2
+    "furo_mm": 4.5,
+    "passo_mm": 6.0,
+    "furo": "losango"
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.026,
+    "altura_rel": 0.52,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -38,75 +46,273 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "POWER 100",
-    "pintado": false,
+    "posicao": "baixo",
+    "altura_m": 0.1,
     "cor": [
-      0.78,
-      0.79,
-      0.82
+      0.04,
+      0.04,
+      0.042
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma",
+      "tampa": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.035,
+          "rotulo_pos": "baixo"
+        }
+      ],
+      "letra_m": 0.0048
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.7,
+      "x0": 0.08,
+      "x1": 0.8,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "CLEAN GAIN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CRUNCH GAIN"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "CLEAN VOL"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "CRUNCH VOL"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DEPTH PUNCH"
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
+      "z": 0.25,
+      "x0": 0.08,
+      "x1": 0.8,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD GAIN 3"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD GAIN 4"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID BOOST"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD VOL 3"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEAD VOL 4"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER A"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER B"
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": "CH 1/2",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.82,
+          "z": 0.72,
+          "tamanho_m": 0.007
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CH 3/4",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.82,
+          "z": 0.28,
+          "tamanho_m": 0.007
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.1,
+            0.8,
+            0.1
+          ],
+          "aceso": true,
+          "x": 0.845,
+          "z": 0.72
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.845,
+          "z": 0.28
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.013,
+          "x": 0.895,
+          "z": 0.5,
+          "fonte": "script",
+          "texto": "Power 100"
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "STAND BY",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.945,
+          "z": 0.55
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.85,
+            0.015,
+            0.008
+          ],
+          "aceso": true,
+          "x": 0.975,
+          "z": 0.55
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.457,
+    "elevacao": 10.0
+  }
 }

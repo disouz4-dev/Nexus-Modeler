@@ -121,9 +121,9 @@ def mat_acrylic(name, color):
     """Acrílico preto de piano (painel do TriAmp)."""
     mat, _, _, bsdf = st._principled(name)
     bsdf.inputs["Base Color"].default_value = (*color, 1)
-    bsdf.inputs["Roughness"].default_value = 0.06
-    bsdf.inputs["Coat Weight"].default_value = 1.0
-    bsdf.inputs["Coat Roughness"].default_value = 0.02
+    bsdf.inputs["Roughness"].default_value = 0.2
+    bsdf.inputs["Coat Weight"].default_value = 0.6
+    bsdf.inputs["Coat Roughness"].default_value = 0.16
     return mat
 
 
@@ -438,6 +438,14 @@ class Panel:
         st.box("push", (s, 0.004, s), (x, -0.003, z), bevel=0.0012, material=mat)
         return s / 2 + 0.003
 
+    def handle_bar(self, item, x, z, rowcfg):
+        """Puxador cromado em pé na frente (Orange Rockerverb)."""
+        h = item.get("altura_m", self.ph * 0.6)
+        for dz in (-h / 2, h / 2):
+            st.cylinder("puxador_pe", 0.0045, 0.02, (x, -0.01, z + dz), material=self.mats["chrome"])
+        st.cylinder("puxador", 0.0055, h + 0.011, (x, -0.02, z), axis="Z", material=self.mats["chrome"])
+        return h / 2
+
     def jewel(self, item, x, z, rowcfg):
         r = item.get("raio_m", 0.008)
         st.cylinder("joia_aro", r * 1.25, 0.004, (x, -0.002, z), material=self.mats["chrome"], bevel=0.0008)
@@ -523,7 +531,7 @@ class Panel:
                 z = (it["z"] if "z" in it else row.get("z", 0.5)) * self.ph + it.get("dz", 0.0)
                 fn = {"botao": self.knob, "deslizante": self.slider, "entrada": self.jack, "basculante": self.rocker,
                       "alavanca": self.toggle, "minichave": lambda i, a, b, c: self.toggle(i, a, b, c, small=True),
-                      "push": self.push, "joia": self.jewel, "led": self.led,
+                      "push": self.push, "joia": self.jewel, "puxador": self.handle_bar, "led": self.led,
                       "led_canal": lambda i, a, b, c: self.led(i, a, b, c, channel=True),
                       "vu": self.vu, "modelo": self.model, "marca": self.brand_text, "logo": self.logo,
                       "texto": lambda i, a, b, c: 0.0}[kind]
@@ -596,7 +604,7 @@ def build(rec, fonts):
                   else st.mat_leather("couro", rec["couro"]["cor"], rec["couro"]["grao_mm"])),
         "piping": st.mat_plastic("friso", fa.get("friso") or (0.8, 0.78, 0.72), rough=0.32, coat=0.4),
         "panel": {"pintado": lambda: st.mat_plastic("painel", pn["cor"], rough=0.48, coat=0.15),
-                  "cromo": lambda: st.mat_metal("painel", pn["cor"], rough=0.08),
+                  "cromo": lambda: st.mat_metal("painel", pn["cor"], rough=0.24),
                   "acrilico": lambda: mat_acrylic("painel", pn["cor"]),
                   "escovado": lambda: st.mat_brushed("painel", pn["cor"], rough=0.40, streak_axis="X")}[material](),
         "ink": st.mat_paint("tinta", text_color, rough=0.6),
@@ -701,10 +709,27 @@ def build(rec, fonts):
                 st.rounded_rect_curve("friso", inner_w - 0.006, fh - 0.006, 0.006, 0.0027,
                                       (0, fy - 0.0006, fz0 + fh / 2), mats["piping"])
             if rec.get("selo_grade"):
+                # Número ou nome na grade (5150): no canto de baixo à direita
+                # ou, com "x_rel"/"z_rel", centrado onde a receita disser.
                 sg = rec["selo_grade"]
-                st.text("selo_grade", sg["texto"], fonts["label"], sg.get("altura_m", 0.034),
-                        (inner_w / 2 - sg.get("margem_m", 0.05), fy - 0.0035, fz0 + sg.get("altura_m", 0.034) * 0.75),
-                        st.mat_brushed("selo", (0.86, 0.87, 0.9), rough=0.2), extrude=0.0015, bevel=0.0004, align="RIGHT")
+                sh = sg.get("altura_m", 0.034)
+                if "x_rel" in sg:
+                    loc, al = (inner_w * sg["x_rel"], fy - 0.0035, fz0 + fh * sg.get("z_rel", 0.5)), "CENTER"
+                else:
+                    loc, al = (inner_w / 2 - sg.get("margem_m", 0.05), fy - 0.0035, fz0 + sh * 0.75), "RIGHT"
+                st.text("selo_grade", sg["texto"], fonts[sg.get("fonte", "label")], sh, loc,
+                        st.mat_brushed("selo", sg.get("cor", (0.86, 0.87, 0.9)), rough=0.2), extrude=0.0015, bevel=0.0004,
+                        align=al)
+            if fa.get("janela"):
+                # Janela de ventilação com fendas (Rectifier) e a plaqueta embaixo.
+                jw = inner_w * fa["janela"].get("largura_rel", 0.32)
+                jh = fh * fa["janela"].get("altura_rel", 0.42)
+                jz = fz0 + fh * fa["janela"].get("z_rel", 0.5)
+                st.box("janela", (jw, 0.002, jh), (0, fy - 0.0012, jz), bevel=0.002, material=st.mat_paint("janela", (0.01, 0.01, 0.01), 0.7))
+                n = int(jw / 0.012)
+                for k in range(n):
+                    st.box(f"janela_fenda_{k}", (0.0045, 0.003, jh * 0.86), (-jw / 2 + (k + 0.5) * jw / n, fy - 0.0022, jz),
+                           bevel=0.001, material=mats["chrome"])
             lg = rec.get("logo", {})
             if band:
                 fz0, fh = fz1, fz1 + bh - fz1

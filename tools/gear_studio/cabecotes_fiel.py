@@ -104,6 +104,11 @@ def LOGO(altura_m=0.012, **kw):
     return dict(tipo="logo", altura_m=altura_m, **kw)
 
 
+def PUX(**kw):
+    """Puxador cromado em pé na frente do painel."""
+    return dict(tipo="puxador", **kw)
+
+
 def TX(rotulo, **kw):
     return dict(tipo="texto", rotulo=rotulo, **kw)
 

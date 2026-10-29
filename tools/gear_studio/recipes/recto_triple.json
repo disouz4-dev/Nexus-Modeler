@@ -2,33 +2,45 @@
   "tipo": "cabecote",
   "nome": "Recto Triple",
   "familia": "recto_triple",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Mesa/Boogie Triple Rectifier: igual ao Dual por fora (648 × 254 × 248 mm, tolex preto, chapa xadrez clara com janela de fendas, painel preto) com o nome Triple Rectifier em script creme; alavancas BOLD/SPONGY e STANDBY, joia vermelha, LOOP ACTIVE MASTER e duas fileiras de seis botões cromados (MASTER, PRESENCE, BASS, MID, TREBLE, GAIN; a de cima toca), LEDs de canal e as entradas FT. SW. e INPUT.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.648,
+    "altura": 0.254,
+    "profundidade": 0.248
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
     "tipo": "xadrez",
     "cor": [
-      0.1,
-      0.1,
-      0.11
+      0.78,
+      0.78,
+      0.8
     ],
-    "passo_mm": 12.0
+    "passo_mm": 11.0,
+    "janela": {
+      "largura_rel": 0.3,
+      "altura_rel": 0.5,
+      "z_rel": 0.55
+    }
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.012,
+    "altura_rel": 0.14,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -37,76 +49,261 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "RECTO TRIPLE",
-    "pintado": true,
+    "posicao": "baixo",
+    "altura_m": 0.092,
     "cor": [
       0.01,
       0.01,
       0.011
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.88,
-      0.88,
-      0.88
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "cromado",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.8,
+        0.8,
+        0.82
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "tracos",
+      "metal": true,
+      "tampa": [
+        0.88,
+        0.88,
+        0.9
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "BOLD",
+          "x": 0.035,
+          "z": 0.66
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "SPONGY",
+          "x": 0.035,
+          "z": 0.26,
+          "posicao": "baixo"
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "ON",
+          "x": 0.075,
+          "z": 0.66
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.075,
+          "z": 0.26,
+          "posicao": "baixo"
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.115,
+          "z": 0.5,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.017,
+          "x": 0.2,
+          "z": 0.55,
+          "fonte": "mesa",
+          "cor": [
+            0.8,
+            0.72,
+            0.52
+          ],
+          "texto": "Triple Rectifier"
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "SOLO HEAD",
+          "x": 0.2,
+          "z": 0.25,
+          "letra_m": 0.0048
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LOOP ACTIVE MASTER",
+          "x": 0.3,
+          "z": 0.5
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.72,
+      "x0": 0.37,
+      "x1": 0.83,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN"
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
+      "z": 0.24,
+      "x0": 0.37,
+      "x1": 0.83,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRESENCE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN"
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "led",
+          "rotulo": "CLEAN",
+          "cor": [
+            0.1,
+            0.8,
+            0.1
+          ],
+          "aceso": false,
+          "x": 0.865,
+          "z": 0.75
+        },
+        {
+          "tipo": "led",
+          "rotulo": "LOOP",
+          "cor": [
+            0.9,
+            0.4,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.865,
+          "z": 0.45
+        },
+        {
+          "tipo": "led",
+          "rotulo": "",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.865,
+          "z": 0.15
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "FT. SW.",
+          "x": 0.91,
+          "z": 0.5
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.96,
+          "z": 0.5
+        }
+      ],
+      "letra_m": 0.0045,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.024,
-    "corpo": [
-      0.86,
-      0.86,
-      0.88
-    ],
-    "corpo_metal": true,
-    "tampa": [
-      0.9,
-      0.9,
-      0.92
-    ],
-    "traco": [
-      0.02,
-      0.02,
-      0.02
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "cantos": "cromo"
+  "cantos": "preto",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.477,
+    "elevacao": 10.0
+  }
 }

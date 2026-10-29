@@ -2,34 +2,43 @@
   "tipo": "cabecote",
   "nome": "SL 100",
   "familia": "sl_100",
+  "canais": [
+    {
+      "nome": "Normal"
+    },
+    {
+      "nome": "Overdrive"
+    }
+  ],
+  "inspiracao": "Soldano SLO-100: cabeçote de 635 × 260 × 222 mm em tolex preto, grade de metal expandido preta em losangos na metade de cima com a marca no meio e painel cromado espelhado embaixo com letras pretas: entrada e as minichaves OVERDRIVE/NORMAL, BRIGHT e CRUNCH à esquerda, oito botões de alumínio com saia numerada (PREAMP NORMAL e OVERDRIVE, BASS, MIDDLE, TREBLE, MASTER NORMAL e OVERDRIVE, PRESENCE) e, à direita, as minichaves STANDBY e POWER e a joia azul.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.74,
-    "altura": 0.285,
-    "profundidade": 0.24
+    "largura": 0.635,
+    "altura": 0.26,
+    "profundidade": 0.222
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "grade",
-    "furo": "losango",
+    "tipo": "losango",
     "cor": [
       0.02,
       0.02,
       0.022
     ],
-    "furo_mm": 13.0,
-    "passo_mm": 15.0
+    "furo_mm": 6.5,
+    "passo_mm": 8.0
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
+    "altura_m": 0.026,
     "altura_rel": 0.5,
     "lado_rel": 0.0,
     "cor": [
@@ -39,88 +48,198 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
-    "pintado": true,
-    "cor": [
-      0.86,
-      0.85,
-      0.8
-    ],
-    "texto_cor": [
-      0.03,
-      0.03,
-      0.03
-    ],
+    "marca": "NEXUS MODELER",
     "modelo": "SL 100",
-    "marca": "NEXUS MODELER"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.72,
-      0.62,
-      0.45
+    "posicao": "baixo",
+    "altura_m": 0.082,
+    "cor": [
+      0.9,
+      0.9,
+      0.92
     ],
-    "tampa": [
-      0.78,
-      0.68,
-      0.5
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.03,
-      0.03,
-      0.03
+    "material": "cromo",
+    "texto_cor": [
+      0.012,
+      0.012,
+      0.012
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
+  "estilos": {
+    "padrao": {
+      "forma": "saia_numerada",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.78,
+        0.78,
+        0.8
+      ],
+      "saia": [
+        0.8,
+        0.8,
+        0.82
+      ],
+      "numeros": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "traco": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "escala": "nenhuma",
+      "metal": true,
+      "tampa_metal": true,
+      "tampa": [
+        0.86,
+        0.86,
+        0.88
+      ]
+    }
   },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "fileiras": [
     {
-      "nome": "Normal"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.04
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "OD / NORMAL",
+          "x": 0.09
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRIGHT",
+          "x": 0.13
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "CRUNCH",
+          "x": 0.17
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.09,
+          "z": 0.9,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.17,
+          "z": 0.9,
+          "rotulo": ""
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "NORMAL",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "OVERDRIVE",
+          "x": 0.31
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.38
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.45
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.52
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "NORMAL",
+          "x": 0.59
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "OVERDRIVE",
+          "x": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.73
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.014,
+          "x": 0.82,
+          "z": 0.62,
+          "texto": "SL 100"
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "STANDBY",
+          "x": 0.88
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "POWER",
+          "x": 0.92
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.15,
+            0.35,
+            1.0
+          ],
+          "rotulo": null,
+          "x": 0.965,
+          "raio_m": 0.0065
+        }
+      ],
+      "letra_m": 0.0052,
+      "rotulo_pos": "baixo"
     },
     {
-      "nome": "Overdrive"
+      "z": 0.92,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "texto",
+          "rotulo": "PREAMP",
+          "x": 0.275
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "MASTER",
+          "x": 0.625
+        }
+      ],
+      "letra_m": 0.0048
     }
   ],
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
-  "disposicao": {
-    "modelo_x": 0.108,
-    "modelo_z": 0.06,
-    "modelo_tamanho": 0.019,
-    "modelo_inclinacao": 0.0
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.496,
+    "elevacao": 10.0
   },
-  "cantos": "cromo"
+  "notas_modelagem": "O SLO-100 não tem LED de canal: os dois LEDs sobre as minichaves são para a tela mostrar Normal e Overdrive."
 }
