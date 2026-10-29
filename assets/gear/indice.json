@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:02:27Z",
+ "gerado": "2026-10-29T16:02:34Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5694,8 +5694,8 @@
   },
   "spinel_precision": {
    "nome": "Spinel Precision",
-   "hash": "c84d20b2184b2498",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "0d86b6df419c1c7e",
+   "data": "2026-10-29T16:02:34Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "spinel_precision_botao_ganho.png",
@@ -5707,21 +5707,21 @@
     "spinel_precision_mapa.json"
    ],
    "sha256": {
-    "spinel_precision_botao_ganho.png": "60bdbb071c5b9cd7f86cebb90eb5e8583e53523073d2371161597e6c1cf30666",
-    "spinel_precision_botao_nivel.png": "15146865e87c4fd7d53d8c01d439ecc95c652af9034857bfc884307264fbd5ba",
-    "spinel_precision_botao_tom.png": "c722f0aebecac77c7fcbc88442e33c2a110db8953c37d32d9f3cb2125a73bcdb",
-    "spinel_precision_frente.jpg": "0ceba6306c853fe431fa4184098768a980e9f439ccd2a67d8af7cf916c7826c8",
-    "spinel_precision_frente_alfa.png": "05198eccbb05fb441d19cb34785a83cc63ef2bfb3c21acc415638c79108bc57a",
-    "spinel_precision_manifesto.json": "7cf90b1cf804bc55a3e1e33adcd091fbaf4ecce74f821e32f8cf7c36e21aba44",
-    "spinel_precision_mapa.json": "b2bbede53bcdcc195b9c0e8c2997e5d6d66994468d8fcf37cd1c669cc6b6560d"
+    "spinel_precision_botao_ganho.png": "b2e8b890732c9feff6fbe77a4df90eddb869fd06c48792264c040fe8b73b07d4",
+    "spinel_precision_botao_nivel.png": "52f0b8f406ed53f2cdab4bc5fff150592b8e2716730023ac23e6d95e6541b058",
+    "spinel_precision_botao_tom.png": "dd641b57af692b15a7a07f410bb1e89ae96cf1aea07f5b1ac8ccbf6c2fab2054",
+    "spinel_precision_frente.jpg": "35adf934f45cd6a373aef9f9e374996718aa041d7bb85d00256488067ebf43f8",
+    "spinel_precision_frente_alfa.png": "37f5d2ba250f815609b7562503ff829d434447e1bce2c4d1375f03442d5f6ecd",
+    "spinel_precision_manifesto.json": "99d2b0a323bd9f7670549d1a4fab212f2292c89167732df10e214401bab7f928",
+    "spinel_precision_mapa.json": "c55662d244c2c6b0cef01b3bd1b8a9b3050210ba1b42809066423a8bb197e3d3"
    },
-   "tamanho": 191670,
+   "tamanho": 277168,
    "tipo": "pedal",
    "inspiracao": "Horizon Devices Precision Drive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
