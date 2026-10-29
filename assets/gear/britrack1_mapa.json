@@ -2,60 +2,60 @@
   "nome": "Brit Rack 1",
   "familia": "britrack1",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 628,
   "posicoes": 101,
   "botoes": [
     {
+      "id": "volume",
+      "x": 1406,
+      "y": 256,
+      "tamanho": 64,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
       "id": "ganho",
-      "x": 826,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1496,
+      "y": 256,
+      "tamanho": 65,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1015,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1586,
+      "y": 255,
+      "tamanho": 66,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1205,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1676,
+      "y": 255,
+      "tamanho": 67,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1395,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1767,
+      "y": 254,
+      "tamanho": 68,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1584,
-      "y": 715,
-      "tamanho": 138,
+      "x": 1857,
+      "y": 254,
+      "tamanho": 69,
       "arquivo": "botao_presenca.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "volume",
-      "x": 1774,
-      "y": 715,
-      "tamanho": 138,
-      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -66,106 +66,205 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "INPUT",
+      "x": 319.9,
+      "y": 273.2,
+      "altura": 16.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "PHONES",
+      "x": 415.6,
+      "y": 273.2,
+      "altura": 16.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "OUTPUT LEVEL",
+      "x": 530.4,
+      "y": 275.4,
+      "altura": 16.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "VALVE MIDI PRE-AMP",
+      "x": 798.2,
+      "y": 354.3,
+      "altura": 15.38,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "PATCH",
+      "x": 989.5,
+      "y": 265.3,
+      "altura": 15.38,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "texto": "DATA",
+      "x": 1104.3,
+      "y": 265.3,
+      "altura": 15.38,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "DATA",
+      "x": 1295.7,
+      "y": 275.4,
+      "altura": 16.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#ededed",
+      "x": 1436.4,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#ededed",
+      "texto": "GAIN",
+      "x": 1526.6,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "LIMPO",
-      "x": 415.3,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#ededed",
+      "texto": "BASS",
+      "x": 1616.8,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "OVERDRIVE",
-      "x": 488.9,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#ededed",
+      "texto": "MIDDLE",
+      "x": 1707.0,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1797.2,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1887.4,
+      "y": 250.4,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN 1",
+      "x": 1707.0,
+      "y": 391.3,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD 1",
+      "x": 1436.5,
+      "y": 391.3,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD 2",
+      "x": 1526.6,
+      "y": 402.8,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS SHIFT",
+      "x": 1616.8,
+      "y": 402.8,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN 2",
+      "x": 1797.2,
+      "y": 402.8,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STEP",
+      "x": 1887.4,
+      "y": 402.8,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CHANNEL",
+      "x": 1977.6,
+      "y": 402.8,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 2089.7,
+      "y": 278.5,
+      "altura": 15.38,
+      "achatamento": 1.0,
+      "cor": "#211d19",
       "espaco": 1.0
     }
   ],
   "leds_canais": [
     {
-      "x": 414.7,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 1708.4,
+      "y": 359.4,
+      "raio": 13.6
     },
     {
-      "x": 488.3,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 1437.1,
+      "y": 359.4,
+      "raio": 13.6
     }
   ]
 }
