@@ -1,15 +1,15 @@
 {
   "nome": "Aquamarine Sky",
-  "familia": "aquamarine_sky",
+  "familia": "juniper_sky",
   "largura": 600,
-  "altura": 510,
+  "altura": 546,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 216,
-      "y": 124,
-      "tamanho": 60,
+      "x": 91,
+      "y": 206,
+      "tamanho": 66,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,55 +17,55 @@
     },
     {
       "id": "a",
-      "x": 81,
-      "y": 220,
-      "tamanho": 50,
+      "x": 284,
+      "y": 117,
+      "tamanho": 53,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 160,
-      "y": 221,
-      "tamanho": 48,
+      "x": 366,
+      "y": 117,
+      "tamanho": 53,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "d",
-      "x": 238,
-      "y": 222,
-      "tamanho": 46,
-      "arquivo": "botao_d.png",
+      "id": "c",
+      "x": 448,
+      "y": 116,
+      "tamanho": 54,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 316,
-      "y": 222,
-      "tamanho": 46,
+      "x": 201,
+      "y": 210,
+      "tamanho": 52,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 392,
-      "y": 221,
-      "tamanho": 48,
+      "x": 284,
+      "y": 210,
+      "tamanho": 50,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "c",
-      "x": 469,
-      "y": 220,
-      "tamanho": 50,
-      "arquivo": "botao_c.png",
+      "id": "d",
+      "x": 448,
+      "y": 208,
+      "tamanho": 54,
+      "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -73,87 +73,114 @@
   "canais": [],
   "medidas_mm": [
     171,
-    114
+    130
   ],
   "rotulos": [
     {
-      "texto": "MODO",
-      "x": 247.3,
-      "y": 195.9,
-      "altura": 8.4,
+      "texto": "TIPO",
+      "x": 127.2,
+      "y": 281.9,
+      "altura": 10.66,
       "achatamento": 1.0,
-      "cor": "#383f4b",
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VALOR",
+      "x": 228.0,
+      "y": 181.8,
+      "altura": 10.66,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "DECAIMENTO",
-      "x": 108.3,
-      "y": 279.8,
-      "altura": 8.4,
+      "x": 309.6,
+      "y": 181.8,
+      "altura": 10.66,
       "achatamento": 1.0,
-      "cor": "#383f4b",
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "PRÉ-ATRASO",
-      "x": 185.0,
-      "y": 279.8,
-      "altura": 8.4,
+      "x": 391.2,
+      "y": 181.8,
+      "altura": 10.66,
       "achatamento": 1.0,
-      "cor": "#383f4b",
-      "espaco": 1.15
-    },
-    {
-      "texto": "MODULAÇÃO",
-      "x": 261.6,
-      "y": 279.8,
-      "altura": 8.4,
-      "achatamento": 1.0,
-      "cor": "#383f4b",
-      "espaco": 1.15
-    },
-    {
-      "texto": "TOM",
-      "x": 338.4,
-      "y": 279.8,
-      "altura": 8.4,
-      "achatamento": 1.0,
-      "cor": "#383f4b",
-      "espaco": 1.15
-    },
-    {
-      "texto": "SHIMMER",
-      "x": 415.0,
-      "y": 279.8,
-      "altura": 8.4,
-      "achatamento": 1.0,
-      "cor": "#383f4b",
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 491.6,
-      "y": 279.8,
-      "altura": 8.4,
+      "x": 472.8,
+      "y": 181.8,
+      "altura": 10.66,
       "achatamento": 1.0,
-      "cor": "#383f4b",
+      "cor": "#f2f0eb",
       "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 228.0,
+      "y": 273.0,
+      "altura": 10.66,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PARAM 1",
+      "x": 309.6,
+      "y": 273.0,
+      "altura": 10.66,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PARAM 2",
+      "x": 391.2,
+      "y": 273.0,
+      "altura": 10.66,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MODULAÇÃO",
+      "x": 472.8,
+      "y": 273.0,
+      "altura": 10.66,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "B",
+      "x": 300.0,
+      "y": 393.4,
+      "altura": 8.53,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 353.0,
+    "x": 147.5,
+    "y": 396.5,
     "raio": 34.5
   },
   "led": {
-    "x": 300.0,
-    "y": 306.3,
-    "raio": 8.7
+    "x": 150.7,
+    "y": 349.9,
+    "raio": 8.8
   },
   "visor": {
-    "x": 83.8,
-    "y": 117.3,
-    "w": 115.3,
-    "h": 76.8
+    "x": 78.7,
+    "y": 115.7,
+    "w": 96.2,
+    "h": 51.2
   }
 }

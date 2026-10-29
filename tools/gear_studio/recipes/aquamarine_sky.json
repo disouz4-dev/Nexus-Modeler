@@ -2,133 +2,184 @@
   "tipo": "pedal",
   "nome": "Aquamarine Sky",
   "familia": "aquamarine_sky",
-  "inspiracao": "reverb grande de vários modos, azul-acinzentado metálico, com visor e shimmer (no espírito do Strymon BigSky, com desenho próprio)",
+  "inspiracao": "Caixa grande de alumínio anodizado azul-celeste (171 x 130 x 50 mm), letras brancas; visor verde no alto à esquerda, seletor TIPO grande embaixo dele, VALOR (fixo), DECAIMENTO, PRÉ-ATRASO e MISTURA na fileira de cima, TOM, PARAM 1, PARAM 2 (fixo) e MODULAÇÃO embaixo, três pisantes de metal A, B e C com um LED cada. Tema: água-marinha lapidada azul-clara. Original: Strymon BigSky.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.171,
-    "comprimento": 0.114,
-    "altura": 0.048
+    "comprimento": 0.13,
+    "altura": 0.05
   },
-  "chanfro_m": 0.004,
   "pintura": {
     "cor": [
-      0.3,
-      0.38,
-      0.46
+      0.009,
+      0.4313,
+      0.7227
     ],
-    "metalico": 0.6,
-    "aspereza": 0.24
+    "metalico": 0.5,
+    "aspereza": 0.26
   },
   "texto_cor": [
-    0.04,
-    0.05,
-    0.07
-  ],
-  "texto_cor2": [
-    0.04,
-    0.05,
-    0.07
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "AQUAMARINE SKY",
-  "logo_x": 0.5,
-  "logo_y": 0.7,
-  "logo_m": 0.012,
-  "tipo_texto": "REVERBERATOR",
-  "pisante_y": -0.6,
-  "rotulo_m": 0.003,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.015,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.02,
-      0.02,
-      0.025
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
       "id": "modo",
-      "rotulo": "MODO",
+      "rotulo": "TIPO",
       "pos": [
-        -0.22,
-        0.62
+        -0.72,
+        0.18
       ],
-      "escala": 1.3
+      "escala": 1.25
+    },
+    {
+      "id": "fixo_valor",
+      "rotulo": "VALOR",
+      "pos": [
+        -0.3,
+        0.7
+      ],
+      "fixo": true
     },
     {
       "id": "a",
       "rotulo": "DECAIMENTO",
       "pos": [
-        -0.8,
-        0.06
+        0.04,
+        0.7
       ]
     },
     {
       "id": "b",
       "rotulo": "PRÉ-ATRASO",
       "pos": [
-        -0.48,
-        0.06
-      ]
-    },
-    {
-      "id": "d",
-      "rotulo": "MODULAÇÃO",
-      "pos": [
-        -0.16,
-        0.06
-      ]
-    },
-    {
-      "id": "tom",
-      "rotulo": "TOM",
-      "pos": [
-        0.16,
-        0.06
-      ]
-    },
-    {
-      "id": "nivel",
-      "rotulo": "SHIMMER",
-      "pos": [
-        0.48,
-        0.06
+        0.38,
+        0.7
       ]
     },
     {
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        0.8,
-        0.06
+        0.72,
+        0.7
+      ]
+    },
+    {
+      "id": "tom",
+      "rotulo": "TOM",
+      "pos": [
+        -0.3,
+        0.2
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "PARAM 1",
+      "pos": [
+        0.04,
+        0.2
+      ]
+    },
+    {
+      "id": "fixo_param2",
+      "rotulo": "PARAM 2",
+      "pos": [
+        0.38,
+        0.2
+      ],
+      "fixo": true
+    },
+    {
+      "id": "d",
+      "rotulo": "MODULAÇÃO",
+      "pos": [
+        0.72,
+        0.2
       ]
     }
   ],
-  "led": [
-    0.0,
-    -0.32
-  ],
-  "quadro": {
-    "largura_rel": 1.3,
-    "proporcao": 0.85,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa de reverb de mesa grande: 171 x 114 x 48 mm",
-  "visor": {
-    "pos": [
-      -0.66,
-      0.62
-    ],
-    "largura_rel": 0.24,
-    "altura_rel": 0.24
-  },
+  "medidas_fonte": "171,5 x 129,5 x 68,6 mm com botões (Strymon: 6,75 x 5,1 x 2,7 pol.)",
   "estampa": {
     "svg": "estampas/aquamarine_sky.svg"
-  }
+  },
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.91,
+    "elevacao": 90.0
+  },
+  "visor": {
+    "pos": [
+      -0.72,
+      0.72
+    ],
+    "largura_rel": 0.2,
+    "altura_rel": 0.14
+  },
+  "led": [
+    -0.62,
+    -0.42
+  ],
+  "pisante": {
+    "pos": [
+      -0.62,
+      -0.66
+    ]
+  },
+  "logo_x": 0.0,
+  "logo_y": -0.25,
+  "logo_m": 0.011,
+  "tipo_texto": "",
+  "pecas": [
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.0,
+        -0.66
+      ],
+      "rotulo": "B",
+      "rotulo_pos": "cima"
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.0,
+        -0.42
+      ]
+    },
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.62,
+        -0.66
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.62,
+        -0.42
+      ]
+    }
+  ],
+  "chanfro_m": 0.006,
+  "rotulo_m": 0.0038,
+  "rotulo_embaixo": true
 }
