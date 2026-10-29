@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:24:58Z",
+ "gerado": "2026-10-29T15:25:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5754,8 +5754,8 @@
   },
   "steel20": {
    "nome": "Steel 20",
-   "hash": "aef435c99871672a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "c7a6a31d4e186b18",
+   "data": "2026-10-29T15:25:04Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "steel20_botao_agudo.png",
@@ -5770,24 +5770,24 @@
     "steel20_mapa.json"
    ],
    "sha256": {
-    "steel20_botao_agudo.png": "648bfcbe8ed0d239bbab2a5bcf5d784536646040d3b88435e2ef2107c55307ab",
-    "steel20_botao_ganho.png": "5f10a9ccd1d7e5b5b26a68f3afd3704685b24f4787abfda09342caf1168bc077",
-    "steel20_botao_grave.png": "0ba41ea3460ed0b700d77d5904848f8c83c8568207eaf03c04b7067c96b02411",
-    "steel20_botao_medio.png": "21ad9eeb37685b0ffda04a632b42d20b5ebbaf2ea9d6492138658afdebd27c75",
-    "steel20_botao_presenca.png": "93fd8550090013292e5ca07f31620f05cd4e4b1070ef6a79ec05b75b7b55d5c0",
-    "steel20_botao_volume.png": "945d6bef1a23f5c10b69cd70365a6bcdd24a7bcafdf590a27ffd6a197f8124e6",
-    "steel20_frente.jpg": "139639f55882fcb37a0fe9c42a076cf48417cc706708c1d5f8adc2493d827ea0",
-    "steel20_frente_alfa.png": "5a9b52a2e4af65e24ba7230d2415039fae761149f02dca5335125d611480aa8c",
-    "steel20_manifesto.json": "56f550d87e774a3d961a41054be2e589fd3488c96c852acd7b935b09d8133184",
-    "steel20_mapa.json": "27530d4b372d2c59fc948c3c04a111375fef4c491333cb1f1d78317389cc97f4"
+    "steel20_botao_agudo.png": "cb89fe6903148f6a70c9b253bfe60e9f9477a0feaeb7f3ce130552d1fa884b22",
+    "steel20_botao_ganho.png": "8e13cbb6aa7686d5e742b582eba50fbc06f8c32c926e99b3a80d84e917b12212",
+    "steel20_botao_grave.png": "3cfffe662442c963e4435ffb20717a14cbdb7c0ae19753fbbe52a6b1459684c5",
+    "steel20_botao_medio.png": "6da8c36d9d19e33ca0009cbcc8440ed15ae22752f657cf4c4bef541f0804e0bf",
+    "steel20_botao_presenca.png": "78dbea66eabfbc0d960696e331e1e2b233ffe186888029a80cc5f9eb024028c5",
+    "steel20_botao_volume.png": "2aa6c1c936378066545c15cb21252d0d21141c373f0024cc67400f894f5e1727",
+    "steel20_frente.jpg": "ae905c0a1f3beb398b16702663a50880d66b7aae2adeae6fa6e536579e25a69e",
+    "steel20_frente_alfa.png": "1b3893124d1a45b3d96ccf68164c89f1d5d9124d69e1f5cff652ba0131be1205",
+    "steel20_manifesto.json": "62559e6b862e07390f81a8c25aa8d6b0f25852028b5da6cf567f03fe93efe3a8",
+    "steel20_mapa.json": "604c56f26e5d5df7a8ed8c1c1f9c37fdf33e6a94bdc07b1054cb80d697160a6a"
    },
-   "tamanho": 1892217,
+   "tamanho": 712267,
    "tipo": "cabecote",
    "inspiracao": "ENGL Ironball",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
