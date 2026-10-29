@@ -2,50 +2,42 @@
   "tipo": "pedal",
   "nome": "Quince Plus",
   "familia": "quince_plus",
-  "inspiracao": "amarelo com letras pretas, caixa pequena de metal (estilo MXR Distortion+)",
+  "inspiracao": "Caixa MXR amarela com pintura enrugada (62 x 111 x 32 mm), letras pretas; botões pretos SAÍDA e DISTORÇÃO no alto, LED vermelho acima do pisante. Tema: marmelo amarelo, raios tom sobre tom. Original: MXR Distortion+.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.88,
-      0.72,
-      0.05
+      0.8913,
+      0.6388,
+      0.0189
     ],
-    "metalico": 0.1,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28,
+    "textura": "enrugado"
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "QUINCE PLUS",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.0125,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -54,31 +46,41 @@
       "rotulo": "SAÍDA",
       "pos": [
         -0.45,
-        0.55
-      ],
-      "escala": 1.1
+        0.66
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DISTORÇÃO",
       "pos": [
         0.45,
-        0.55
-      ],
-      "escala": 1.1
+        0.66
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/quince_plus.svg"
+  },
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/quince_plus.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "transformacao": "Standard"
 }
