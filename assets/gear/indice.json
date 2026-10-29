@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:45:58Z",
+ "gerado": "2026-10-29T19:50:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6322,8 +6322,8 @@
   },
   "underground800": {
    "nome": "Underground 800",
-   "hash": "e19bd60360092723",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "2bc99f7dffef444c",
+   "data": "2026-10-29T19:50:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "underground800_botao_agudo.png",
@@ -6338,24 +6338,24 @@
     "underground800_mapa.json"
    ],
    "sha256": {
-    "underground800_botao_agudo.png": "9470a96fc151a7474770dce0d23e68584022f3e40a83b61c74fe82ff55640830",
-    "underground800_botao_ganho.png": "97c4497093ccf30e7467675d3d617f85f854eee8f8e6f23f2c1f0fcb15616ec8",
-    "underground800_botao_grave.png": "7c682808f52be222cc55541c81901ae659c3fab7e4530d40565b262a20773a79",
-    "underground800_botao_medio.png": "1844bafcc73036bfa7da7a9918b9a5e84b48e55ec55e21a38901e9d7e2e0fcaa",
-    "underground800_botao_presenca.png": "369c2618af6ce3cc19b14be207c54c5ef23eaf35900143239721538387453888",
-    "underground800_botao_volume.png": "2f5a64379d4d08e21fec565b70d004ab4cca64fe51ebdf258054e972c5351755",
-    "underground800_frente.jpg": "2ea7b11515b6599666054e639ed069aa0c741d547cc0879980d95535992f1387",
-    "underground800_frente_alfa.png": "22fc854db1aab2ae7b5a055fd4b1ea96e1bb2af2c6952a97dcdc89be8664fc47",
-    "underground800_manifesto.json": "1cf3e5b66767e9b80d08620c802248c3d5fef78be36bc6b9b43ddbd2eb11c3b4",
-    "underground800_mapa.json": "3b2ad53f957016805fb00c11541bedf07261eb1d4f99c992fc2e89e44afadf28"
+    "underground800_botao_agudo.png": "6c9c66d5fa6dd3587bdbb770583d1d6b3751d74cb883043fa2af41a9695bc16c",
+    "underground800_botao_ganho.png": "ef15047367486051ecdba6b7139ca6b2495f666eed3b745fb6d46795511d2f16",
+    "underground800_botao_grave.png": "37da8cbddbe28d7182a6369b03af4a7f5c67140d66afdabc992509a08d7459f5",
+    "underground800_botao_medio.png": "e5f165c8679cbca71a995ced7b1dd3ffb604aa99da26a97e6b7ed7f56f30607d",
+    "underground800_botao_presenca.png": "c7d54da9e12a91e79895275ceff7b20ddacd82d9222d676fec08848b16de7f70",
+    "underground800_botao_volume.png": "ff7d66617b0ce91d2eb6bbd00229197b04949c6f3e6bce308d22681d315b3c50",
+    "underground800_frente.jpg": "59f8dbe3dcc2e75b55b2da90057acbb4f85f679deb5fb17eae29b06647408b21",
+    "underground800_frente_alfa.png": "8c04a29359726bdc74344ef0eb284999e58c53d71983833a8d82b35e99bb7d06",
+    "underground800_manifesto.json": "6c7e11cbb31e184efad1ea1330ade2020756e186f2d3275225240af4a4cd4048",
+    "underground800_mapa.json": "7c41c87f14071b46305b129eaad4b76d479d1c805cce95c61ec671f977e28f3d"
    },
-   "tamanho": 1721365,
+   "tamanho": 751468,
    "tipo": "cabecote",
    "inspiracao": "Mesa Bass 800D",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
