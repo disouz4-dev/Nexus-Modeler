@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:46:03Z",
+ "gerado": "2026-10-29T16:54:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4470,8 +4470,8 @@
   },
   "nova100": {
    "nome": "Nova 100",
-   "hash": "2e651834676e4872",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "4519970d95cb3980",
+   "data": "2026-10-29T16:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "nova100_botao_agudo.png",
@@ -4486,24 +4486,24 @@
     "nova100_mapa.json"
    ],
    "sha256": {
-    "nova100_botao_agudo.png": "524b7e938f0b1f84e86706f4547cabd634d2b1a94c85dd784f7685c75c2dec05",
-    "nova100_botao_ganho.png": "bd442392479681b7fd10ceff21749cfa03eee6ec8db3859ea3c24ed6f52e8493",
-    "nova100_botao_grave.png": "de7f49e6b29ed0a1ed5eb1f04e385ad10757bdca97de74097b644f13e50b4fb7",
-    "nova100_botao_medio.png": "403ffe67f354fcda1e79902a303940bbaa6121c90910284ebc7115e992dd7306",
-    "nova100_botao_presenca.png": "925578111a19a4f88c5094dc58e073d5490a9dc19b5ad432c248501efadfb744",
-    "nova100_botao_volume.png": "cab71ef84188262a699cb00947e8dd441a5d6094dc5303f04344d2e25a327959",
-    "nova100_frente.jpg": "06a9b559b267c07ef1d3cad5e163ff735bfe356cecb9ff23defb3253fcf14504",
-    "nova100_frente_alfa.png": "839b8bd0ce5bcdf8334da549f5312c4cd5f0f2265580d2aefd18e4c0e39b4319",
-    "nova100_manifesto.json": "b9bcae57975fe5ff1d594912c3f50121c1c2070e98f4b22a0e4ef5b661d980f0",
-    "nova100_mapa.json": "580b593ed0e02fbe12f43ba5b586dc17119ca839cdda02d678f61d1076af96c8"
+    "nova100_botao_agudo.png": "38f0896bd39e2f46abafe64d0238b60c8c39e7e1dafe624feb1bb9bc820f3d48",
+    "nova100_botao_ganho.png": "8b277f0543da6d6f69e3884112efff9acc1aa33f70c8dc3947c5f5cdda707371",
+    "nova100_botao_grave.png": "e522b0406673c55bf69bb13dfb67455ce27fa0f97e0c6c5b99d52a78e1d4a9af",
+    "nova100_botao_medio.png": "425325ea796c6346f25ec11bdba074f32045aa86be3dbc0ca0818a93f10acff1",
+    "nova100_botao_presenca.png": "95a6ed14e8ce799f3258f2be01f6917e2ab74447b30b953079edd5dc889d2583",
+    "nova100_botao_volume.png": "ad2cfb60226f0c01c4dea670c43facd7da63fd73cd9906526f310eb42bd81246",
+    "nova100_frente.jpg": "218a977d80ce24bb0a7e5346293e8e448d99fcd59f37f0c6239c162be88fe91c",
+    "nova100_frente_alfa.png": "82183895efb72f18f6d126653844ab0f974efa885289afa6d0065d83d85781cd",
+    "nova100_manifesto.json": "d5a1d9ee17e3f71ebb7ce85f8557faefadfac087cb38508f54c61a5aaae4563c",
+    "nova100_mapa.json": "ab560267d26c2a4abc2aa942f45068c6ab57399be6907c9b6a0b0fefc918a4b0"
    },
-   "tamanho": 1669312,
+   "tamanho": 650237,
    "tipo": "cabecote",
    "inspiracao": "Fortin Natas",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
