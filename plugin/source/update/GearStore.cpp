@@ -73,10 +73,36 @@ void GearStore::checkIfDue()
   startThread(juce::Thread::Priority::low);
 }
 
+void GearStore::checkNow()
+{
+  const auto s = state();
+  if (s == State::checking || s == State::downloading)
+    return;
+  stopThread(10000);
+  mChecked = true;
+  mDownload = false;
+  {
+    std::lock_guard<std::mutex> l(mLock);
+    mError.clear();
+  }
+  startThread(juce::Thread::Priority::low);
+}
+
 void GearStore::download()
 {
   if (state() != State::available && state() != State::failed)
     return;
+  bool nothing;
+  {
+    std::lock_guard<std::mutex> l(mLock);
+    nothing = mPending.isEmpty();
+  }
+  // Erro na procura (sem internet): tentar de novo é procurar de novo.
+  if (nothing)
+  {
+    checkNow();
+    return;
+  }
   stopThread(10000);
   mDownload = true;
   startThread(juce::Thread::Priority::low);
@@ -142,8 +168,17 @@ void GearStore::check()
   const auto remote = juce::JSON::parse(text);
   if (!remote["pecas"].isObject())
   {
-    // Sem índice (sem internet, ou ainda não publicado): fica quieto.
-    setState(State::upToDate);
+    // Sem índice: sem internet (avisa, o clique procura de novo) ou ainda não
+    // publicado (fica apagado).
+    {
+      std::lock_guard<std::mutex> l(mLock);
+      mPending.clear();
+      mNames.clear();
+      if (text.isEmpty())
+        mError = juce::String::fromUTF8("Não foi possível procurar equipamentos novos agora (sem conexão?).");
+    }
+    mCount = 0;
+    setState(text.isEmpty() ? State::failed : State::upToDate);
     return;
   }
   const auto local = nexus::gear::GearCatalog::localIndex();

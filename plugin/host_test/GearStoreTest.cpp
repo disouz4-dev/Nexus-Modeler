@@ -99,15 +99,24 @@ int main(int argc, char** argv)
 
   useRemote(remote);
   {
-    // Como ao abrir o Nexus: procura e baixa sozinho, sem clique.
+    // Como ao abrir o Nexus: procura sozinho e o ícone acende; nada baixa
+    // antes do clique. O clique (download) baixa.
     GearStore a;
     a.checkIfDue();
-    check(wait(a, {GearStore::State::ready, GearStore::State::failed, GearStore::State::upToDate}) && a.state() == GearStore::State::ready,
-          U("procurou e baixou sozinho ") + a.error());
+    check(wait(a, {GearStore::State::available, GearStore::State::failed, GearStore::State::upToDate}) && a.state() == GearStore::State::available,
+          U("ao abrir, procurou e acendeu sem baixar ") + a.error());
+    check(!GearStore::folder().getChildFile(id).exists(), U("antes do clique nada foi baixado"));
+    a.download();
+    check(wait(a, {GearStore::State::ready, GearStore::State::failed}) && a.state() == GearStore::State::ready,
+          U("o clique baixou ") + a.error());
     check(a.count() == 1 && a.names().contains(expected), U("chegou só o equipamento novo: ") + a.names().joinIntoString(", "));
     check(a.remoteEntry(id)["tipo"].toString() == "pedal" && a.remoteEntry(id)["motor"].toString() == "captura",
           U("o índice traz a ficha (tipo e motor)"));
     check(!a.needsRestart(), U("equipamento novo não pede para abrir o Nexus de novo"));
+    // Clique no ícone apagado: procura de novo e não acha mais nada.
+    a.checkNow();
+    check(wait(a, {GearStore::State::available, GearStore::State::upToDate, GearStore::State::failed}) && a.state() == GearStore::State::upToDate,
+          U("procurar de novo depois de baixar fica apagado"));
   }
   const auto dir = GearStore::folder().getChildFile(id);
   check(dir.getChildFile(id + "_manifesto.json").existsAsFile() && dir.getChildFile(id + "_mapa.json").existsAsFile(),
