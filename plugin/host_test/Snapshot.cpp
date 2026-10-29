@@ -104,7 +104,7 @@ int main(int argc, char** argv)
     }
     auto* look = processor.params.getParameter("p1_visual");
     look->setValueNotifyingHost(look->convertTo0to1(stage.fromFirstOccurrenceOf(":", false, false).getFloatValue()));
-    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Juniper Sky, Lime Echo, Plum Mod).
+    // NEXUS_MODO=6 (por exemplo): modo dos pedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod).
     if (const char* mode = std::getenv("NEXUS_MODO"))
     {
       auto* m = processor.params.getParameter("p1_modo");

@@ -7,7 +7,7 @@
 
 // Pedais de ambiente do próprio Nexus, com vários modos cada: reverb (Juniper
 // Sky, no espírito do BigSky, com shimmer), delay (Lime Echo, no espírito do
-// DL4) e modulação (Plum Mod, no espírito do MM4). Mono, em double, na taxa
+// DL4) e modulação (Galaxy Mod, no espírito do MM4). Mono, em double, na taxa
 // do motor; botões de 0 a 1.
 namespace nexus
 {
@@ -143,7 +143,7 @@ private:
   int mMode = -1;
 };
 
-// Modulação de vários modos (Plum Mod). Sem rastro: mexe no som no lugar.
+// Modulação de vários modos (Galaxy Mod). Sem rastro: mexe no som no lugar.
 class MultiMod
 {
 public:

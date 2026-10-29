@@ -119,5 +119,8 @@
     ],
     "largura_rel": 0.22,
     "altura_rel": 0.22
+  },
+  "estampa": {
+    "svg": "estampas/lime_echo.svg"
   }
 }

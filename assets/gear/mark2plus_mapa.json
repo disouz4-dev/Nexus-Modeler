@@ -1,0 +1,276 @@
+{
+  "nome": "Mark Two Plus",
+  "familia": "mark2plus",
+  "largura": 2400,
+  "altura": 1056,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 737,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 917,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1097,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1278,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1458,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1638,
+      "y": 731,
+      "tamanho": 128,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "eq80",
+      "x": 1789,
+      "y": 682,
+      "tamanho": 158,
+      "arquivo": "botao_eq80.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 56,
+      "altura": 158
+    },
+    {
+      "id": "eq240",
+      "x": 1856,
+      "y": 682,
+      "tamanho": 158,
+      "arquivo": "botao_eq240.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 56,
+      "altura": 158
+    },
+    {
+      "id": "eq750",
+      "x": 1923,
+      "y": 682,
+      "tamanho": 158,
+      "arquivo": "botao_eq750.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 57,
+      "altura": 158
+    },
+    {
+      "id": "eq2200",
+      "x": 1990,
+      "y": 682,
+      "tamanho": 158,
+      "arquivo": "botao_eq2200.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 58,
+      "altura": 158
+    },
+    {
+      "id": "eq6600",
+      "x": 2058,
+      "y": 682,
+      "tamanho": 158,
+      "arquivo": "botao_eq6600.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 58,
+      "altura": 158
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Solo"
+  ],
+  "rotulos": [
+    {
+      "texto": "LIGA",
+      "x": 281.4,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.982,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GANHO",
+      "x": 801.7,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.981,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "AGUDO",
+      "x": 981.6,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.981,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1161.5,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.981,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GRAVE",
+      "x": 1341.3,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.981,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1521.2,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.981,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1701.1,
+      "y": 673.8,
+      "altura": 35.97,
+      "achatamento": 0.982,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "80",
+      "x": 1813.5,
+      "y": 841.5,
+      "altura": 26.2,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "240",
+      "x": 1880.5,
+      "y": 841.5,
+      "altura": 26.2,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "750",
+      "x": 1947.6,
+      "y": 841.5,
+      "altura": 26.2,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "2200",
+      "x": 2014.7,
+      "y": 841.5,
+      "altura": 26.2,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "6600",
+      "x": 2081.8,
+      "y": 841.5,
+      "altura": 26.2,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 2145.5,
+      "y": 849.2,
+      "altura": 27.15,
+      "achatamento": 0.976,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LIMPO",
+      "x": 438.3,
+      "y": 786.8,
+      "altura": 21.76,
+      "achatamento": 0.978,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SOLO",
+      "x": 534.3,
+      "y": 786.8,
+      "altura": 21.76,
+      "achatamento": 0.978,
+      "cor": "#e7e7e7",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 437.6,
+      "y": 822.0,
+      "raio": 9.6
+    },
+    {
+      "x": 533.7,
+      "y": 822.0,
+      "raio": 9.6
+    }
+  ]
+}

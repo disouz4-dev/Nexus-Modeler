@@ -127,5 +127,8 @@
     ],
     "largura_rel": 0.24,
     "altura_rel": 0.24
+  },
+  "estampa": {
+    "svg": "estampas/juniper_sky.svg"
   }
 }

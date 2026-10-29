@@ -1,0 +1,53 @@
+{
+  "tipo": "caixa",
+  "aba_m": 0.03,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.045,
+    "altura_rel": 0.36,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.2845,
+    "elevacao": 8.0
+  },
+  "nome": "Fliptop 1x15",
+  "familia": "fliptop_115",
+  "medidas_m": {
+    "largura": 0.58,
+    "altura": 0.66,
+    "profundidade": 0.4
+  },
+  "couro": {
+    "cor": [
+      0.1,
+      0.13,
+      0.17
+    ],
+    "grao_mm": 1.8
+  },
+  "tela": {
+    "cor_a": [
+      0.4,
+      0.41,
+      0.44
+    ],
+    "cor_b": [
+      0.75,
+      0.76,
+      0.78
+    ],
+    "trama_mm": 2.2
+  },
+  "friso": [
+    0.85,
+    0.85,
+    0.87
+  ]
+}

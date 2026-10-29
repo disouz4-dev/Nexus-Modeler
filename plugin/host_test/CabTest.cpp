@@ -742,9 +742,9 @@ int main(int argc, char** argv)
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(outDry, after), 1) + " dB");
   }
 
-  // 8b. Pedais de vários modos: Juniper Sky (reverb), Lime Echo (delay) e Plum Mod (modulação).
+  // 8b. Pedais de vários modos: Juniper Sky (reverb), Lime Echo (delay) e Galaxy Mod (modulação).
   {
-    std::printf("\nPedais de vários modos (Juniper Sky, Lime Echo, Plum Mod)\n");
+    std::printf("\nPedais de vários modos (Juniper Sky, Lime Echo, Galaxy Mod)\n");
     auto make = [&](int look, int mode, bool on) {
       auto p = std::make_unique<NexusProcessor>();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
@@ -765,7 +765,7 @@ int main(int argc, char** argv)
       return 10.0 * std::log10(s / static_cast<double>(std::max<size_t>(1, v.size())));
     };
     const auto outDry = play(*make(19, 0, false), signal);
-    const char* const kinds[3] = {"Juniper Sky", "Lime Echo", "Plum Mod"};
+    const char* const kinds[3] = {"Juniper Sky", "Lime Echo", "Galaxy Mod"};
     for (int k = 0; k < 3; ++k)
     {
       int finite = 0, changed = 0, level = 0;

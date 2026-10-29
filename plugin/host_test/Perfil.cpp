@@ -12,6 +12,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstdio>
+#include <thread>
 
 #include "../../tools/Wav.h"
 #include "../source/PluginProcessor.h"
@@ -463,6 +464,115 @@ int main(int argc, char** argv)
     return 0;
   }
 
+  // NEXUS_PERFIL_ESTUDIO_CADEIA=<pasta da música>: pedal, cabeçote e caixa
+  // (argv) tocando a guitarra, primeiro sem a música e depois com a música do
+  // estúdio junto; mede cada bloco inteiro no ritmo da placa (NEXUS_PERFIL_BLOCO).
+  if (const auto songId = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ESTUDIO_CADEIA", {}); songId.isNotEmpty())
+  {
+    const int blk = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_BLOCO", "128").getIntValue();
+    const double blkUs = 1e6 * blk / rate;
+    nexus::studio::Library lib;
+    lib.rescan();
+    const auto* song = lib.find(songId);
+    if (song == nullptr)
+      return 1;
+    NexusProcessor q;
+    q.setPlayConfigDetails(2, 2, rate, blk);
+    q.prepareToPlay(rate, blk);
+    ChainLayout l;
+    l.pre = {0};
+    q.setLayout(l);
+    setParam(q, "p1_visual", 2.0f);
+    setParam(q, "p1_drive", 4.0f);
+    setParam(q, "ganho", 7.0f);
+    setParam(q, "caixa", 1.0f);
+    q.loadPedalPack(0, juce::File(juce::String::fromUTF8(argv[1])));
+    q.loadAmpPack(0, 0, juce::File(juce::String::fromUTF8(argv[2])));
+    q.loadIrAsync(0, juce::File(juce::String::fromUTF8(argv[3])));
+    juce::AudioBuffer<float> buf(2, blk);
+    juce::MidiBuffer m;
+    size_t at = 0;
+    auto feed = [&] {
+      for (int i = 0; i < blk; ++i)
+      {
+        buf.setSample(0, i, static_cast<float>(guitar[at]));
+        buf.setSample(1, i, static_cast<float>(guitar[at]));
+        at = (at + 1) % guitar.size();
+      }
+    };
+    for (int t = 0; t < 4000 && !(q.slotLoaded(0) && q.channelLoaded(0, 0) && q.irLoaded(0)); ++t)
+    {
+      feed();
+      q.processBlock(buf, m);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+    }
+    for (int t = 0; t < 400; ++t)
+    {
+      feed();
+      q.processBlock(buf, m);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(1);
+    }
+    auto& player = q.studio();
+    player.open(*song);
+    player.setVolume(0.8f);
+    auto measure = [&](const char* name, double seconds) {
+      std::vector<double> us;
+      auto next = std::chrono::steady_clock::now();
+      for (int b = 0; b < static_cast<int>(seconds * rate / blk); ++b)
+      {
+        feed();
+        const auto t0 = std::chrono::steady_clock::now();
+        q.processBlock(buf, m);
+        us.push_back(std::chrono::duration<double, std::micro>(std::chrono::steady_clock::now() - t0).count());
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(0);
+        next += std::chrono::microseconds(static_cast<long long>(blkUs));
+        std::this_thread::sleep_until(next);
+      }
+      auto s = us;
+      std::sort(s.begin(), s.end());
+      double sum = 0;
+      int over = 0, overHalf = 0;
+      for (auto v : us)
+      {
+        sum += v;
+        over += v > blkUs ? 1 : 0;
+        overHalf += v > blkUs * 0.5 ? 1 : 0;
+      }
+      std::printf("%-28s bloco %d (%.0f us): média %4.0f us (%4.1f%%)  99%% %5.0f  99,9%% %5.0f  pior %5.0f  estouros %d, acima da metade %d, de %zu\n", name, blk,
+                  blkUs, sum / us.size(), 100.0 * sum / us.size() / blkUs, s[s.size() * 99 / 100], s[s.size() * 999 / 1000], s.back(), over, overHalf,
+                  us.size());
+    };
+    const double secs = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_TOCA", "8").getDoubleValue();
+    // NEXUS_PERFIL_SEPARAR=<arquivo>: separa essa música ao mesmo tempo (como
+    // o botão "Importar música"). Espera a separação chegar à etapa pesada.
+    if (const auto file = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_SEPARAR", {}); file.isNotEmpty())
+    {
+      measure("guitarra, antes de separar", secs);
+      q.separation().start(juce::File(file), [](const juce::String&, const juce::String& e) { std::printf("separação: %s\n", e.isEmpty() ? "pronta" : e.toRawUTF8()); });
+      for (int t = 0; t < 6000 && q.separation().stage() != nexus::studio::Separation::Stage::separating; ++t)
+      {
+        feed();
+        q.processBlock(buf, m);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(5);
+      }
+      measure("guitarra separando", secs);
+      player.setPlaying(true);
+      measure("guitarra + música, separando", secs);
+      q.separation().cancel();
+      for (int t = 0; t < 2000 && q.separation().busy(); ++t)
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(5);
+      return 0;
+    }
+    measure("guitarra sem a música", secs);
+    player.setPlaying(true);
+    measure("guitarra + música", secs);
+    nexus::studio::Mix mix = song->mix;
+    mix.speed = 0.75;
+    player.setMix(mix);
+    measure("guitarra + música a 75%", secs);
+    return 0;
+  }
+
   // NEXUS_PERFIL_ESTUDIO=<pasta da música>: abre no player do estúdio, dá
   // play e mede o que sai (bloco de NEXUS_PERFIL_BLOCO, padrão 64).
   if (const auto songId = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_ESTUDIO", {}); songId.isNotEmpty())
@@ -480,21 +590,47 @@ int main(int argc, char** argv)
     player.setVolume(0.8f);
     player.setPlaying(true);
     std::printf("Tocando: %s, duração %.1f s\n", player.playing() ? "sim" : "não", player.length());
+    // No ritmo da placa: cada bloco espera o seu tempo, e mede quanto o
+    // player gasta (o orçamento é o bloco inteiro, com a cadeia junto).
+    const double blkUs = 1e6 * blk / rate;
+    const int seconds = juce::SystemStats::getEnvironmentVariable("NEXUS_PERFIL_TOCA", "8").getIntValue();
     std::vector<float> l(static_cast<size_t>(blk)), r(static_cast<size_t>(blk));
-    for (int sec = 0; sec < 4; ++sec)
+    std::vector<double> us;
+    int silent = 0;
+    auto next = std::chrono::steady_clock::now();
+    for (int sec = 0; sec < seconds; ++sec)
     {
       double peak = 0;
       for (int b = 0; b < static_cast<int>(rate) / blk; ++b)
       {
         std::fill(l.begin(), l.end(), 0.0f);
         std::fill(r.begin(), r.end(), 0.0f);
+        const auto t0 = std::chrono::steady_clock::now();
         player.process(l.data(), r.data(), blk);
+        us.push_back(std::chrono::duration<double, std::micro>(std::chrono::steady_clock::now() - t0).count());
+        float blockPeak = 0.0f;
         for (auto v : l)
-          peak = std::max(peak, static_cast<double>(std::abs(v)));
-        juce::Thread::sleep(1);
+          blockPeak = std::max(blockPeak, std::abs(v));
+        silent += sec > 0 && blockPeak == 0.0f ? 1 : 0;
+        peak = std::max(peak, static_cast<double>(blockPeak));
+        next += std::chrono::microseconds(static_cast<long long>(blkUs));
+        std::this_thread::sleep_until(next);
       }
       std::printf("  %d s: pico %.1f dB, posição %.2f s\n", sec, 20 * std::log10(peak + 1e-12), player.position());
     }
+    auto s = us;
+    std::sort(s.begin(), s.end());
+    double sum = 0;
+    int overQuarter = 0, overHalf = 0;
+    for (auto v : us)
+    {
+      sum += v;
+      overQuarter += v > blkUs * 0.25 ? 1 : 0;
+      overHalf += v > blkUs * 0.5 ? 1 : 0;
+    }
+    std::printf("Player, bloco %d (%.0f us): média %.0f us (%.1f%%)  99%% %.0f  99,9%% %.0f  pior %.0f  acima de 1/4 do bloco %d, acima da metade %d, de %zu | blocos mudos %d\n",
+                blk, blkUs, sum / us.size(), 100.0 * sum / us.size() / blkUs, s[s.size() * 99 / 100], s[s.size() * 999 / 1000], s.back(),
+                overQuarter, overHalf, us.size(), silent);
     return 0;
   }
 

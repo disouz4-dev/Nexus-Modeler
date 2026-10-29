@@ -1,0 +1,92 @@
+{
+  "tipo": "pedal",
+  "nome": "Pistachio Drive",
+  "familia": "pistachio_drive",
+  "inspiracao": "verde-escuro com letras brancas, mesma caixa do overdrive verde japonês (estilo Maxon OD808)",
+  "formato": "classico",
+  "medidas_m": {
+    "largura": 0.074,
+    "comprimento": 0.124,
+    "altura": 0.053
+  },
+  "chanfro_m": 0.0065,
+  "pintura": {
+    "cor": [
+      0.04,
+      0.2,
+      0.08
+    ],
+    "metalico": 0.5,
+    "aspereza": 0.3
+  },
+  "texto_cor": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "texto_cor2": [
+    0.93,
+    0.93,
+    0.91
+  ],
+  "modelo": "PISTACHIO DRIVE",
+  "tipo_texto": "OVERDRIVE",
+  "etiqueta_y": 0.06,
+  "botao_estilo": {
+    "diametro_m": 0.019,
+    "altura_m": 0.014,
+    "corpo": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "traco": [
+      0.95,
+      0.95,
+      0.92
+    ]
+  },
+  "botoes": [
+    {
+      "id": "ganho",
+      "rotulo": "DRIVE",
+      "pos": [
+        -0.5,
+        0.66
+      ]
+    },
+    {
+      "id": "tom",
+      "rotulo": "TOM",
+      "pos": [
+        0.0,
+        0.44
+      ],
+      "escala": 0.72
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
+        0.5,
+        0.66
+      ]
+    }
+  ],
+  "led": [
+    0.0,
+    0.8
+  ],
+  "quadro": {
+    "largura_rel": 2.0,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "rotulo_embaixo": true,
+  "estampa": {
+    "svg": "estampas/pistachio_drive.svg"
+  },
+  "logo": {
+    "svg": "estampas/pistachio_drive_logo.svg"
+  }
+}

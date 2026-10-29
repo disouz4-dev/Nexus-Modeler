@@ -71,29 +71,42 @@ public:
     flanger,
     tremolo,
     vibe,
+    wah,
+    rotary,
+    analogdelay,
+    octave,
+    comp,
+    geq,
     sky,     // reverb de vários modos, com shimmer
     echo,    // delay de vários modos
     multiMod, // modulação de vários modos
     triple    // três delays em série
   };
-  static constexpr int kPedalLooks = 23;
+  static constexpr int kPedalLooks = 63;
   static constexpr PedalKind kPedalKinds[kPedalLooks] = {
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
-    PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Blueberry, Coconut, Grape, Pear
+    PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Neptune, Coconut, Grape, Pear
     PedalKind::drop,                                                                 // Cherry Drop
-    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
+    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Mars, Nebula, Moon, Eclipse
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
     PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
-    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod,                     // Juniper Sky, Lime Echo, Plum Mod
-    PedalKind::triple};                                                              // Blueberry Chain
+    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod,                     // Juniper Sky, Lime Echo, Galaxy Mod
+    PedalKind::triple,                                                              // Blueberry Chain
+    // Os 34 drives da seleção da TONE3000 (Olive Drive ... Graviola Bass DI), todos de
+    // captura; o Acerola EQ é o equalizador gráfico do Nexus.
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::geq,
+    PedalKind::wah, PedalKind::rotary, PedalKind::analogdelay, PedalKind::octave, PedalKind::comp}; // Comet, Saturn, Pulsar, Jupiter, Apple
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   // Semitons do Cherry Drop pelo botão A (0 a 10): 5 (meio-dia) = 0, 0 = -12, 10 = +12.
   static int dropSemitones(float knobA) { return juce::jlimit(-12, 12, juce::roundToInt((knobA - 5.0f) / 5.0f * 12.0f)); }
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
-  static constexpr int kAmpLooks = 37;
+  static constexpr int kAmpLooks = 85;
   static constexpr int kMarkFive = 1;
+  // Cabeçotes com o equalizador gráfico de 5 faixas: Mark Five, Mark Two Plus,
+  // Mark Three, Mark Four e Mark JP.
+  static bool hasGraphicEq(int look) { return look == kMarkFive || look == 50 || look == 51 || look == 52 || look == 53; }
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
@@ -112,7 +125,8 @@ public:
   {
     const auto k = pedalKind(look);
     return k == PedalKind::chorus || k == PedalKind::delay || k == PedalKind::phaser || k == PedalKind::flanger || k == PedalKind::tremolo
-           || k == PedalKind::vibe || k == PedalKind::echo || k == PedalKind::multiMod || k == PedalKind::triple;
+           || k == PedalKind::vibe || k == PedalKind::analogdelay || k == PedalKind::echo || k == PedalKind::multiMod
+           || k == PedalKind::triple;
   }
   // Blueberry Chain: botões "a" (tempo), "b" (feedback) e "c" (repetição) e
   // as duas chaves: quantos delays (2 ou 3) e se o tempo dobra ou cai pela
@@ -191,7 +205,7 @@ public:
   int audibleSlot(int rig) const;
   int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
   int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
-  static constexpr int kCabLooks = 15;
+  static constexpr int kCabLooks = 26;
   int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;
@@ -268,7 +282,7 @@ private:
     std::atomic<float>* on = nullptr;
     std::atomic<float>* lite = nullptr;
     std::atomic<float>* visual = nullptr;
-    std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
+    std::array<std::atomic<float>*, 7> fx{}; // botões dos efeitos nativos ("a" a "g")
     std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
     std::atomic<float>* mode = nullptr;     // modo dos pedais de vários modos
     std::atomic<float>* fourth = nullptr;   // quarto botão dos pedais de vários modos

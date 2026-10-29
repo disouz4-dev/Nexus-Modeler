@@ -132,7 +132,7 @@ guitarra passa pela cadeia e se mistura com a música.*
   no pisante liga e desliga em 20 ms, sem estalo, com o LED vermelho aceso
   quando ligado. Pedais de captura: Lemon Drive (inspirado no TS9), Orange
   Drive (DS-1), Banana Overdrive (SD-1) e Gold Centaur (Klon). Efeitos do
-  próprio Nexus: Blueberry Chorus, Coconut Delay e Grape Reverb, com rastro
+  próprio Nexus: Neptune Chorus, Coconut Delay e Grape Reverb, com rastro
   ao desligar.
 - **Coluna de equipamentos** à direita: clique troca a peça escolhida,
   arrastar para a cadeia acrescenta. Lista completa, com os planejados, em

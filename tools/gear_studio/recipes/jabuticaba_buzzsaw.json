@@ -12,9 +12,9 @@
   "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.06,
-      0.06,
-      0.065
+      0.0078,
+      0.0008,
+      0.0055
     ],
     "metalico": 0.0,
     "aspereza": 0.22
@@ -81,6 +81,10 @@
   "rotulo_embaixo": true,
   "led_no_basculante": true,
   "medidas_fonte": "BOSS CE-2: 73 x 129 x 59 mm",
-  "modelo_m": 0.0058,
-  "modelo_x": 0.12
+  "modelo_m": 0.0085,
+  "modelo_x": 0.12,
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/jabuticaba_buzzsaw.svg"
+  }
 }

@@ -83,5 +83,11 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "Ibanez TS9: 74 x 124 x 53 mm"
+  "medidas_fonte": "Ibanez TS9: 74 x 124 x 53 mm",
+  "logo": {
+    "svg": "estampas/lemon_drive_logo.svg"
+  },
+  "estampa": {
+    "svg": "estampas/lemon_drive.svg"
+  }
 }

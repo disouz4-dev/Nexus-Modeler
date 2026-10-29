@@ -79,19 +79,6 @@
   },
   "rotulo_embaixo": true,
   "medidas_fonte": "caixa de pedal de drop com visor: 74 x 120 x 38 mm",
-  "estampa_ondas": {
-    "centro": [
-      0.0,
-      -0.0396
-    ],
-    "passo_mm": 2.4,
-    "linha": 0.075,
-    "cor": [
-      0.16,
-      0.002,
-      0.006
-    ]
-  },
   "aro_cromo": true,
   "visor": {
     "pos": [
@@ -100,5 +87,8 @@
     ],
     "largura_rel": 0.64,
     "altura_rel": 0.2
+  },
+  "estampa": {
+    "svg": "estampas/cherry_drop.svg"
   }
 }

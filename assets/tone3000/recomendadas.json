@@ -1232,5 +1232,4345 @@
         "nota": "a mais curtida da busca (53 favoritos)"
       }
     ]
+  },
+  "olive_drive": {
+    "busca": "TS808",
+    "tons": [
+      {
+        "id": 30104,
+        "titulo": "Ibanez TS808 (Japan Reissue 2003)",
+        "criador": "v24x",
+        "tipo": "pedal",
+        "capturas": 11,
+        "downloads": 16553,
+        "serie": [
+          "Lvl6",
+          "_T3"
+        ],
+        "mapa": {
+          "_OD0_": 0,
+          "_OD1_": 1,
+          "_OD2_": 2,
+          "_OD3_": 3,
+          "_OD4_": 4,
+          "_OD5_": 5,
+          "_OD6_": 6,
+          "_OD7_": 7,
+          "_OD8_": 8,
+          "_OD9_": 9,
+          "_ODmax_": 10
+        },
+        "nota": "Reedição japonesa de 2003: drive de 0 a 10, tom no meio, nível em 6",
+        "padrao": true
+      },
+      {
+        "id": 66205,
+        "titulo": "TS808",
+        "criador": "skinsafeaudio",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 834,
+        "serie": [],
+        "posicao": "^G (\\d+) ",
+        "nota": "drive 0, 3 e 8"
+      }
+    ]
+  },
+  "pistachio_drive": {
+    "busca": "OD808",
+    "tons": [
+      {
+        "id": 1086,
+        "titulo": "Maxon OD808 Pack",
+        "criador": "gpso",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 2144,
+        "serie": [],
+        "mapa": {
+          " 00Drive": 0,
+          " 25Drive": 2.5,
+          " 50Drive": 5,
+          " 75Drive": 7.5,
+          " 100Drive": 10
+        },
+        "nota": "drive 0, 2,5, 5, 7,5 e 10, tom baixo e nível no máximo",
+        "padrao": true
+      },
+      {
+        "id": 6431,
+        "titulo": "Maxon OD808",
+        "criador": "outmodedelectronics",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 1490,
+        "serie": [
+          "B-10 T-5",
+          "TTSV10"
+        ],
+        "posicao": "D-(\\d+)",
+        "nota": "drive 0 e 3, tom no meio"
+      }
+    ]
+  },
+  "blueberry_blues": {
+    "busca": "BD-2",
+    "tons": [
+      {
+        "id": 12505,
+        "titulo": "Blues Driver BD-2",
+        "criador": "maestrodimusica",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 9133,
+        "serie": [
+          "Tone1200,"
+        ],
+        "mapa": {
+          "Gain700": 0,
+          "Gain900": 2,
+          "Gain1030": 3.5,
+          "Gain1200": 5,
+          "Gain130": 6.5,
+          "Gain300": 8,
+          "Gain500": 10
+        },
+        "nota": "ganho do mínimo ao máximo em sete posições, tom e volume no meio",
+        "padrao": true
+      },
+      {
+        "id": 37707,
+        "titulo": "Blues Driver BD-2w Waza Craft (Full Range Capture)",
+        "criador": "dissentuk",
+        "tipo": "pedal",
+        "capturas": 10,
+        "downloads": 5316,
+        "serie": [
+          "BD Standard",
+          "Tone_50%"
+        ],
+        "mapa": {
+          "Gain_0%": 0,
+          "Gain_15%": 1.5,
+          "Gain_30%": 3,
+          "Gain_40%": 4,
+          "Gain_50%": 5,
+          "Gain_60%": 6,
+          "Gain_70%": 7,
+          "Gain_85%": 8.5,
+          "Gain_90%": 9,
+          "Gain_99%": 10
+        },
+        "nota": "Waza Craft no modo padrão: ganho de 0 a 10, tom no meio"
+      }
+    ]
+  },
+  "apricot_overdrive": {
+    "busca": "OD-3",
+    "tons": [
+      {
+        "id": 39066,
+        "titulo": "Boss OD-3",
+        "criador": "musiciswigglyair",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 1722,
+        "serie": [
+          "CenterTone"
+        ],
+        "mapa": {
+          "NoDrive": 0,
+          "LowDrive": 3,
+          "MidDrive": 6,
+          "HiDrive": 10
+        },
+        "nota": "drive desligado, baixo, médio e alto, tom no meio",
+        "padrao": true
+      }
+    ]
+  },
+  "clementine_turbo": {
+    "busca": "DS-2",
+    "tons": [
+      {
+        "id": 5475,
+        "titulo": "BOSS DS-2 Turbo Distortion",
+        "criador": "ratchetstrapmedia",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1667,
+        "serie": [
+          "ds2 2 "
+        ],
+        "mapa": {
+          "boost": 2,
+          "default": 5,
+          "max dist": 10
+        },
+        "pacote": "Modo II Turbo",
+        "nota": "modo II (turbo): pouca distorção no 2, tudo no meio no 5 e distorção no máximo no 10",
+        "padrao": true
+      },
+      {
+        "id": 5475,
+        "titulo": "BOSS DS-2 Turbo Distortion",
+        "criador": "ratchetstrapmedia",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1667,
+        "serie": [
+          "ds2 1 "
+        ],
+        "mapa": {
+          "boost": 2,
+          "default": 5,
+          "max dist": 10
+        },
+        "pacote": "Modo I",
+        "nota": "modo I: pouca distorção no 2, tudo no meio no 5 e distorção no máximo no 10"
+      },
+      {
+        "id": 29355,
+        "titulo": "Boss Turbodistorsion DS-2",
+        "criador": "raultrathrash",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 1824,
+        "serie": [],
+        "mapa": {
+          "DS-2 I": 4,
+          "DS-2 II": 8
+        },
+        "nota": "modo I no 4 e modo II (turbo) no 8"
+      }
+    ]
+  },
+  "cherry_fuzz": {
+    "busca": "Fuzz Face",
+    "tons": [
+      {
+        "id": 1531,
+        "titulo": "Dunlop Jimi Hendrix Fuzz Face Distortion",
+        "criador": "matty",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 4753,
+        "serie": [],
+        "mapa": {
+          "FuzzFace": 5
+        },
+        "nota": "Fuzz Face Jimi Hendrix da Dunlop, uma captura",
+        "padrao": true
+      },
+      {
+        "id": 62226,
+        "titulo": "Silicon Fuzz Face Clone - Reloaded (Cleanup)",
+        "criador": "kosmicaudio",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 705,
+        "serie": [
+          "C-1"
+        ],
+        "mapa": {
+          "F-12_00": 5,
+          "F-3_00": 8
+        },
+        "nota": "clone de silício: fuzz no meio (5) e em 3 horas (8), volume no máximo"
+      },
+      {
+        "id": 46529,
+        "titulo": "RR Red Fuzz",
+        "criador": "robyrocks",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 7996,
+        "serie": [],
+        "mapa": {
+          "RR Red Fuzz": 5
+        },
+        "nota": "clone da Fuzz Face vermelha, uma captura"
+      }
+    ]
+  },
+  "fig_bender": {
+    "busca": "Tone Bender",
+    "tons": [
+      {
+        "id": 2316,
+        "titulo": "Boss TB-2w Tone Bender Fuzz Pedal Pack",
+        "criador": "ideofunk",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 888,
+        "serie": [
+          "-9V"
+        ],
+        "mapa": {
+          "TB-2w 01": 2,
+          "TB-2w 02": 4,
+          "TB-2w 03": 6,
+          "TB-2w 04": 8,
+          "TB-2w 05": 10
+        },
+        "nota": "Boss TB-2w (Tone Bender MkII): cinco ajustes de fuzz, do mais leve ao mais forte, em 9 volts",
+        "padrao": true
+      },
+      {
+        "id": 1687,
+        "titulo": "Tone Bender MKII OC81 v2",
+        "criador": "thetimreaper",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 628,
+        "serie": [],
+        "mapa": {
+          "ToneBender_MKII": 5
+        },
+        "nota": "Tone Bender MkII com transistores OC81, uma captura"
+      }
+    ]
+  },
+  "kiwi_drive": {
+    "busca": "OCD",
+    "tons": [
+      {
+        "id": 1821,
+        "titulo": "Fulltone OCD v1.2",
+        "criador": "jesco",
+        "tipo": "pedal",
+        "capturas": 11,
+        "downloads": 10298,
+        "serie": [
+          "li_ocd_9v_hp"
+        ],
+        "posicao": "drive(\\d+)",
+        "pacote": "Chave HP",
+        "nota": "chave HP, 9 volts: drive de 0 a 10, tom no meio, volume igualado",
+        "padrao": true
+      },
+      {
+        "id": 1821,
+        "titulo": "Fulltone OCD v1.2",
+        "criador": "jesco",
+        "tipo": "pedal",
+        "capturas": 11,
+        "downloads": 10298,
+        "serie": [
+          "li_ocd_9v_lp"
+        ],
+        "posicao": "drive(\\d+)",
+        "pacote": "Chave LP",
+        "nota": "chave LP, 9 volts: drive de 0 a 10, tom no meio, volume igualado"
+      },
+      {
+        "id": 49361,
+        "titulo": "Fulltone OCD v2",
+        "criador": "maestrodimusica",
+        "tipo": "pedal",
+        "capturas": 6,
+        "downloads": 1826,
+        "serie": [
+          "LP switch",
+          "T300"
+        ],
+        "mapa": {
+          " D900,": 2,
+          " D1030,": 3.5,
+          " D1200,": 5,
+          " D130,": 6.5,
+          " D300,": 8,
+          " D500,": 10
+        },
+        "nota": "versão 2, chave LP: drive do mínimo ao máximo em seis posições"
+      }
+    ]
+  },
+  "quince_plus": {
+    "busca": "Distortion+",
+    "tons": [
+      {
+        "id": 2172,
+        "titulo": "MXR Distortion+ 1981 Pack",
+        "criador": "gpso",
+        "tipo": "pedal",
+        "capturas": 11,
+        "downloads": 1075,
+        "serie": [],
+        "posicao": "\\[O10 D(\\d+)\\]",
+        "nota": "1981: distorção de 0 a 10, saída no máximo",
+        "padrao": true
+      },
+      {
+        "id": 57603,
+        "titulo": "MXR Distortion+",
+        "criador": "outmodedelectronics",
+        "tipo": "pedal",
+        "capturas": 9,
+        "downloads": 1964,
+        "serie": [
+          "O-10 "
+        ],
+        "posicao": "D-(\\d+)$",
+        "nota": "distorção de 2 a 10, saída no máximo"
+      },
+      {
+        "id": 35412,
+        "titulo": "MXR Distortion +",
+        "criador": "maestrodimusica",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 6085,
+        "serie": [],
+        "mapa": {
+          "Dist700": 0,
+          "Dist900": 2,
+          "Dist1030": 3.5,
+          "Dist1200": 5,
+          "Dist130": 6.5,
+          "Dist300": 8,
+          "Dist500": 10
+        },
+        "nota": "distorção do mínimo ao máximo em sete posições"
+      }
+    ]
+  },
+  "starfruit_rock": {
+    "busca": "X100",
+    "tons": [
+      {
+        "id": 30352,
+        "titulo": "MXR X100 Rockman [Hyper Accuracy+]",
+        "criador": "slamminmofo",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 7780,
+        "serie": [
+          "_FULL_"
+        ],
+        "mapa": {
+          "_CLN1_": 1,
+          "_CLN2_": 3,
+          "_EDGE_": 6,
+          "_DISTORTION_": 9
+        },
+        "nota": "os quatro modos: limpo 1 no 1, limpo 2 no 3, Edge no 6 e distorção no 9",
+        "padrao": true
+      },
+      {
+        "id": 44764,
+        "titulo": "RR MXR Rockman X100",
+        "criador": "robyrocks",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 3225,
+        "serie": [],
+        "mapa": {
+          "X100 CLN1": 1,
+          "X100 CLN2": 3,
+          "X100 EDGE": 6,
+          "X100 DIST": 9
+        },
+        "nota": "os quatro modos: limpo 1 no 1, limpo 2 no 3, Edge no 6 e distorção no 9"
+      },
+      {
+        "id": 26327,
+        "titulo": "MXR ROCKMAN X100",
+        "criador": "besttonecaptured",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 18968,
+        "serie": [],
+        "mapa": {
+          "Clean": 2,
+          "Lead": 9
+        },
+        "nota": "limpo clássico no 2 e o solo do Boston no 9"
+      }
+    ]
+  },
+  "tamarind_amp": {
+    "busca": "SansAmp",
+    "tons": [
+      {
+        "id": 34206,
+        "titulo": "Tech 21 Sansamp Driver V2",
+        "criador": "carlosalvgonz",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 6048,
+        "serie": [
+          "SANS NEUTRAL"
+        ],
+        "mapa": {
+          "CLEAN": 0,
+          "DRIVE LOW": 3,
+          "DRIVE MID": 5,
+          "DRIVE HIGH": 7,
+          "MAXED": 10
+        },
+        "pacote": "Neutro",
+        "nota": "chave no meio (neutra): limpo, drive baixo, médio, alto e no máximo",
+        "padrao": true
+      },
+      {
+        "id": 34206,
+        "titulo": "Tech 21 Sansamp Driver V2",
+        "criador": "carlosalvgonz",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 6048,
+        "serie": [
+          "SANS MIDFOCUS"
+        ],
+        "mapa": {
+          "CLEAN": 0,
+          "DRIVE LOW": 3,
+          "DRIVE MID": 5,
+          "DRIVE HIGH": 7,
+          "MAXED": 10
+        },
+        "pacote": "Médios realçados",
+        "nota": "com os médios realçados: limpo, drive baixo, médio, alto e no máximo"
+      },
+      {
+        "id": 34206,
+        "titulo": "Tech 21 Sansamp Driver V2",
+        "criador": "carlosalvgonz",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 6048,
+        "serie": [
+          "SANS SCOOPED"
+        ],
+        "mapa": {
+          "CLEAN": 0,
+          "DRIVE LOW": 3,
+          "DRIVE MID": 5,
+          "DRIVE HIGH": 7,
+          "MAXED": 10
+        },
+        "pacote": "Médios cavados",
+        "nota": "com os médios cavados: limpo, drive baixo, médio, alto e no máximo"
+      }
+    ]
+  },
+  "blackcurrant_bass": {
+    "busca": "B7K",
+    "tons": [
+      {
+        "id": 5319,
+        "titulo": "Darkglass B7K Bass Pack",
+        "criador": "ratchetstrapmedia",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 6135,
+        "serie": [],
+        "mapa": {
+          "B7K Clean": 0,
+          "B7K Hard Rock": 3,
+          "B7K Distortion": 5,
+          "B7K Heavy": 8,
+          "B7K Djent": 10
+        },
+        "nota": "cinco ajustes do autor, do limpo ao mais pesado",
+        "padrao": true
+      },
+      {
+        "id": 29364,
+        "titulo": "Darkglass Microtubes B7K Ultra",
+        "criador": "noamp",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 1246,
+        "serie": [],
+        "mapa": {
+          "Ultra Clean": 2,
+          "Ultra Distortion": 8
+        },
+        "nota": "B7K Ultra: limpo no 2 e distorcido no 8"
+      },
+      {
+        "id": 39351,
+        "titulo": "Darkglass B7K Ultra",
+        "criador": "pedrobecch",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 922,
+        "serie": [],
+        "mapa": {
+          "(NO CAB)": 6
+        },
+        "nota": "B7K Ultra sem simulação de caixa, uma captura"
+      }
+    ]
+  },
+  "mulberry_omega": {
+    "busca": "Alpha Omega",
+    "tons": [
+      {
+        "id": 44990,
+        "titulo": "Darkglass Alpha Omega Ultra - Full Pack",
+        "criador": "leenykeany",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 11889,
+        "serie": [
+          "Alpha-Neutral"
+        ],
+        "posicao": " G(\\d+)$",
+        "pacote": "Alpha",
+        "nota": "modo Alpha, médios neutros: drive de 0 a 10",
+        "padrao": true
+      },
+      {
+        "id": 44990,
+        "titulo": "Darkglass Alpha Omega Ultra - Full Pack",
+        "criador": "leenykeany",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 11889,
+        "serie": [
+          "Omega-Neutral"
+        ],
+        "posicao": " G(\\d+)$",
+        "pacote": "Omega",
+        "nota": "modo Omega, médios neutros: drive de 0 a 10"
+      },
+      {
+        "id": 2420,
+        "titulo": "Darkglass Alpha Omega Ultra",
+        "criador": "arlingtonaudio",
+        "tipo": "pedal",
+        "capturas": 19,
+        "downloads": 2844,
+        "serie": [
+          "- OMEGA -"
+        ],
+        "posicao": "G(\\d+(?:\\.\\d+)?)$",
+        "nota": "modo Omega: drive de 1 a 10 de meio em meio"
+      }
+    ]
+  },
+  "guava_precision": {
+    "busca": "Precision Drive",
+    "tons": [
+      {
+        "id": 33864,
+        "titulo": "Precision Drive by Horizon Devices",
+        "criador": "vicaudio",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 5098,
+        "serie": [],
+        "mapa": {
+          "Horizon Boost": 5
+        },
+        "nota": "Precision Drive original, uma captura (a mais curtida)",
+        "padrao": true
+      },
+      {
+        "id": 5511,
+        "titulo": "Precision Drive",
+        "criador": "viciousaudio",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 497,
+        "serie": [],
+        "mapa": {
+          "Precision Drive": 5
+        },
+        "nota": "Precision Drive original, uma captura"
+      }
+    ]
+  },
+  "peach_glory": {
+    "busca": "Morning Glory",
+    "tons": [
+      {
+        "id": 57368,
+        "titulo": "JHS Morning Glory v4",
+        "criador": "ethanmh",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 4467,
+        "serie": [
+          " T8"
+        ],
+        "posicao": "V5 D(\\d+) T",
+        "nota": "drive 2, 4, 6 e 8, tom em 8",
+        "padrao": true
+      },
+      {
+        "id": 2805,
+        "titulo": "JHS Morning Glory v3",
+        "criador": "danielbernhardsson",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 9944,
+        "serie": [
+          "high cut"
+        ],
+        "posicao": "Glory D(\\d+) T8",
+        "nota": "versão 3: drive 2, 4 e 8, tom em 8, chave de corte de agudos ligada"
+      }
+    ]
+  },
+  "raspberry_drive": {
+    "busca": "Andy Timmons",
+    "tons": [
+      {
+        "id": 26841,
+        "titulo": "JHS @ Andy Timmons",
+        "criador": "slamminmofo",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 27097,
+        "serie": [],
+        "mapa": {
+          "JHS_TIMMONS_MAIN_S": 5,
+          "JHS_TIMMONS_MAIN_BOOST_S": 8
+        },
+        "pacote": "Principal",
+        "nota": "o ajuste principal do Andy (drive em 1 hora) no 5 e com reforço no 8",
+        "padrao": true
+      },
+      {
+        "id": 26841,
+        "titulo": "JHS @ Andy Timmons",
+        "criador": "slamminmofo",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 27097,
+        "serie": [],
+        "mapa": {
+          "JHS_TIMMONS_DARK_S": 5,
+          "JHS_TIMMONS_DARK_BOOST_S": 8
+        },
+        "pacote": "Escuro",
+        "nota": "mais escuro no 5 e com reforço no 8"
+      },
+      {
+        "id": 26841,
+        "titulo": "JHS @ Andy Timmons",
+        "criador": "slamminmofo",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 27097,
+        "serie": [],
+        "mapa": {
+          "JHS_TIMMONS_BRIGHT_S": 5,
+          "JHS_TIMMONS_BRIGHT_BOOST_S": 8
+        },
+        "pacote": "Brilhante",
+        "nota": "mais brilhante no 5 e com reforço no 8"
+      }
+    ]
+  },
+  "honeydew_drive": {
+    "busca": "Timmy",
+    "tons": [
+      {
+        "id": 49375,
+        "titulo": "Paul Cochrane Timmy v2",
+        "criador": "maestrodimusica",
+        "tipo": "pedal",
+        "capturas": 6,
+        "downloads": 1651,
+        "serie": [],
+        "mapa": {
+          "B1200 T900 G900, switch mid": 2,
+          "B1200 T900 G1030, switch mid": 3.5,
+          "B1200 T900 G1200, switch mid": 5,
+          "B130 T900 G130, switch mid": 6.5,
+          "B130 T1030 G300, switch mid": 8,
+          "B130 T1030 G500, switch mid": 10
+        },
+        "nota": "versão 2, chave no meio: ganho do mínimo ao máximo (a partir do 6,5 o autor também mudou graves e agudos)",
+        "padrao": true
+      },
+      {
+        "id": 30891,
+        "titulo": "MXR Timmy",
+        "criador": "outmodedelectronics",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 2299,
+        "serie": [
+          "B-2_00 T-3_00",
+          "C-C"
+        ],
+        "mapa": {
+          "G-10_00": 3,
+          "G-12_00": 5,
+          "G-2_00": 7
+        },
+        "nota": "MXR Timmy: ganho em 10 horas, meio-dia e 2 horas"
+      }
+    ]
+  },
+  "pineapple_king": {
+    "busca": "King of Tone",
+    "tons": [
+      {
+        "id": 4666,
+        "titulo": "AM King of Tone clone",
+        "criador": "raksha",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 957,
+        "serie": [
+          "OD T5"
+        ],
+        "posicao": "Drv(\\d+)",
+        "pacote": "Overdrive",
+        "nota": "clone, modo overdrive: drive 2, 4, 6 e 8, tom no meio",
+        "padrao": true
+      },
+      {
+        "id": 4666,
+        "titulo": "AM King of Tone clone",
+        "criador": "raksha",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 957,
+        "serie": [
+          "DST T5"
+        ],
+        "posicao": "Drv(\\d+)",
+        "pacote": "Distorção",
+        "nota": "clone, modo distorção: drive 2, 4, 6 e 8, tom no meio"
+      },
+      {
+        "id": 29600,
+        "titulo": "King of Tone ver. 4 pedal - both sides on!",
+        "criador": "mikefont5150",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 1073,
+        "serie": [],
+        "mapa": {
+          "King of Tone both": 7
+        },
+        "nota": "King of Tone original com os dois lados ligados, uma captura"
+      }
+    ]
+  },
+  "cashew_boost": {
+    "busca": "EP Booster",
+    "tons": [
+      {
+        "id": 1643,
+        "titulo": "Xotic EP Booster Pack",
+        "criador": "gpso",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 2186,
+        "serie": [
+          " Vintage"
+        ],
+        "mapa": {
+          "Booster 00": 0,
+          "Booster 25": 2.5,
+          "Booster 40": 4,
+          "Booster 50": 5,
+          "Booster 60": 6,
+          "Booster 75": 7.5,
+          "Booster 100": 10
+        },
+        "pacote": "Vintage",
+        "nota": "reforço do mínimo ao máximo em sete posições, modo Vintage",
+        "padrao": true
+      },
+      {
+        "id": 1643,
+        "titulo": "Xotic EP Booster Pack",
+        "criador": "gpso",
+        "tipo": "pedal",
+        "capturas": 7,
+        "downloads": 2186,
+        "serie": [
+          " Bright"
+        ],
+        "mapa": {
+          "Booster 00": 0,
+          "Booster 25": 2.5,
+          "Booster 40": 4,
+          "Booster 50": 5,
+          "Booster 60": 6,
+          "Booster 75": 7.5,
+          "Booster 100": 10
+        },
+        "pacote": "Bright",
+        "nota": "reforço do mínimo ao máximo em sete posições, modo Bright (mais agudo)"
+      },
+      {
+        "id": 61869,
+        "titulo": "XOTIC EP Booster",
+        "criador": "johnandrewcarter",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1282,
+        "serie": [],
+        "posicao": "Booster on (\\d+)",
+        "nota": "reforço 0, 3 e 5"
+      }
+    ]
+  },
+  "papaya_grind": {
+    "busca": "Grind",
+    "tons": [
+      {
+        "id": 36821,
+        "titulo": "Fortin Grind Boost Pedal",
+        "criador": "studioampcaptures",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 1284,
+        "serie": [],
+        "posicao": "Knob at (\\d+(?:\\.\\d+)?)",
+        "nota": "botão de reforço em 5, 6, 8, 9 e 9,5",
+        "padrao": true
+      },
+      {
+        "id": 6139,
+        "titulo": "Fortin Grind",
+        "criador": "slamminmofo",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 3132,
+        "serie": [],
+        "mapa": {
+          "SLAMMIN_FORTIN_GRIND": 4,
+          "SLAMMIN_FORTIN_GRIND_KODY": 7
+        },
+        "nota": "dois ajustes: o normal no 4 e o do Kody no 7"
+      }
+    ]
+  },
+  "persimmon_33": {
+    "busca": "Fortin 33",
+    "tons": [
+      {
+        "id": 28672,
+        "titulo": "Fortin 33",
+        "criador": "elihis",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 3323,
+        "serie": [],
+        "mapa": {
+          "(1 o'clock)": 6,
+          "(2 o'clock)": 7,
+          "(3 o'clock)": 8,
+          "(4 o'clock)": 9,
+          "(5 o'clock)": 10
+        },
+        "nota": "ganho de 1 a 5 horas (6 a 10 no botão)",
+        "padrao": true
+      },
+      {
+        "id": 35461,
+        "titulo": "Fortin 33 - Fredrik Thordendal Signature",
+        "criador": "obijuan",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 1555,
+        "serie": [],
+        "mapa": {
+          "Fortin 33 - 1_30": 6.5
+        },
+        "nota": "assinatura do Fredrik Thordendal, ganho em 1 e meia, uma captura"
+      }
+    ]
+  },
+  "strawberry_5150": {
+    "busca": "5150 Overdrive",
+    "tons": [
+      {
+        "id": 34605,
+        "titulo": "MXR EVH 5150 Overdrive",
+        "criador": "sabinocf",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 3042,
+        "serie": [],
+        "mapa": {
+          "Boost Off": 5,
+          "Boost On": 8
+        },
+        "nota": "ganho em 10 horas: sem reforço no 5 e com reforço no 8",
+        "padrao": true
+      },
+      {
+        "id": 59845,
+        "titulo": "EVH 5150 Overdrive",
+        "criador": "johnnymillion",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 630,
+        "serie": [],
+        "mapa": {
+          "EVH 5150 Overdrive": 5
+        },
+        "nota": "uma captura"
+      },
+      {
+        "id": 2141,
+        "titulo": "5150 Overdrive Balanced Mid Boost",
+        "criador": "mhammed",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 495,
+        "serie": [],
+        "mapa": {
+          "EVH 5150 Balanced": 5,
+          "EVH 5150 Mid Boost": 7
+        },
+        "nota": "equilibrado no 5 e com os médios realçados no 7"
+      }
+    ]
+  },
+  "gooseberry_g3": {
+    "busca": "G3",
+    "tons": [
+      {
+        "id": 5166,
+        "titulo": "Pedal PCB Tyrian Distortion Aggression Red (Revv G3 Clone)",
+        "criador": "lynxx",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 282,
+        "serie": [
+          "- 555 -"
+        ],
+        "mapa": {
+          "Low Gain": 2,
+          "Mid Gain": 5,
+          "Hi Gain": 6.5
+        },
+        "nota": "clone fiel (Tyrian), chave de agressividade vermelha: ganho em 9 horas, meio-dia e 1 e meia, graves e agudos no meio",
+        "padrao": true
+      },
+      {
+        "id": 5087,
+        "titulo": "Revv G3",
+        "criador": "alemarfra",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 537,
+        "serie": [],
+        "mapa": {
+          "aggression off": 3,
+          "Aggression blue": 6,
+          "aggression red": 9
+        },
+        "nota": "Revv G3 original nas três posições da chave de agressividade: desligada no 3, azul no 6 e vermelha no 9"
+      }
+    ]
+  },
+  "nectarine_od": {
+    "busca": "BE-OD",
+    "tons": [
+      {
+        "id": 65779,
+        "titulo": "Friedman BE-OD",
+        "criador": "drprophecystudio",
+        "tipo": "pedal",
+        "capturas": 4,
+        "downloads": 1574,
+        "serie": [
+          "B5 T5 P5"
+        ],
+        "posicao": "P5 G(\\d+(?:\\.\\d+)?) T5$",
+        "nota": "ganho 0, 3, 7,5 e 10, resto no meio",
+        "padrao": true
+      }
+    ]
+  },
+  "cranberry_wylde": {
+    "busca": "Wylde",
+    "tons": [
+      {
+        "id": 67171,
+        "titulo": "MXR ZW44 Zakk Wylde Overdrive",
+        "criador": "drprophecystudio",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1780,
+        "serie": [
+          "Tone 5 Output 5"
+        ],
+        "posicao": "Gain (\\d+)",
+        "pacote": "Tom no meio",
+        "nota": "ZW44: ganho 1, 8 e 10, tom e saída no meio",
+        "padrao": true
+      },
+      {
+        "id": 67171,
+        "titulo": "MXR ZW44 Zakk Wylde Overdrive",
+        "criador": "drprophecystudio",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1780,
+        "serie": [
+          "Tone 3 Output 10"
+        ],
+        "posicao": "Gain (\\d+)",
+        "pacote": "Tom em 3",
+        "nota": "ZW44: ganho 0, 5 e 10, tom em 3 e saída no máximo"
+      }
+    ]
+  },
+  "kumquat_klone": {
+    "busca": "Tumnus",
+    "tons": [
+      {
+        "id": 57605,
+        "titulo": "Wampler Tumnus Deluxe",
+        "criador": "outmodedelectronics",
+        "tipo": "pedal",
+        "capturas": 8,
+        "downloads": 3130,
+        "serie": [
+          "Nrm B-5 M-5 T-5"
+        ],
+        "posicao": "G-(\\d+)$",
+        "nota": "Tumnus Deluxe no modo normal: ganho de 2 a 10, equalização no meio",
+        "padrao": true
+      },
+      {
+        "id": 25694,
+        "titulo": "Wampler Tumnus Deluxe",
+        "criador": "maestrodimusica",
+        "tipo": "pedal",
+        "capturas": 6,
+        "downloads": 1034,
+        "serie": [],
+        "mapa": {
+          " G700": 0,
+          " G900": 2,
+          " G1200": 5,
+          " G130": 6.5,
+          " G300": 8,
+          " G500": 10
+        },
+        "nota": "Tumnus Deluxe: ganho do mínimo ao máximo em seis posições"
+      }
+    ]
+  },
+  "elderberry_war": {
+    "busca": "Fuzz War",
+    "tons": [
+      {
+        "id": 1555,
+        "titulo": "Death By Audio Fuzz War Clone",
+        "criador": "fatdracula",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 1753,
+        "serie": [
+          "Tone 5/"
+        ],
+        "posicao": "Sustain (\\d+)",
+        "nota": "clone: sustain 5 e 10, tom no meio",
+        "padrao": true
+      },
+      {
+        "id": 2099,
+        "titulo": "Death by Audio Fuzz War",
+        "criador": "grassfed",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 599,
+        "serie": [],
+        "mapa": {
+          "FuzzWar": 7
+        },
+        "nota": "Fuzz War original, uma captura"
+      },
+      {
+        "id": 6238,
+        "titulo": "Fuzz War (Death by Audio)",
+        "criador": "boingtheduck",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 632,
+        "serie": [],
+        "mapa": {
+          "Fuzz War": 7
+        },
+        "nota": "Fuzz War original, uma captura"
+      }
+    ]
+  },
+  "mangosteen_fuzz": {
+    "busca": "Hizumitas",
+    "tons": [
+      {
+        "id": 36748,
+        "titulo": "Earthquaker Hizumitas Complete Pack",
+        "criador": "hangingpuppetaudio",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 2347,
+        "serie": [
+          ", Tone 5"
+        ],
+        "posicao": "Sustain (\\d+)",
+        "nota": "sustain 0, 3, 5, 7 e 10, tom no meio",
+        "padrao": true
+      }
+    ]
+  },
+  "grapefruit_drive": {
+    "busca": "Plumes",
+    "tons": [
+      {
+        "id": 5025,
+        "titulo": "Earthquaker Devices Plumes Overdrive Pedal",
+        "criador": "markswarbrick",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 1045,
+        "serie": [
+          "Mode 1 L4"
+        ],
+        "posicao": " G(\\d+)\\)",
+        "pacote": "Modo 1",
+        "nota": "modo 1 (LEDs): ganho 2, 4, 6, 8 e 10",
+        "padrao": true
+      },
+      {
+        "id": 5025,
+        "titulo": "Earthquaker Devices Plumes Overdrive Pedal",
+        "criador": "markswarbrick",
+        "tipo": "pedal",
+        "capturas": 5,
+        "downloads": 1045,
+        "serie": [
+          "Mode 3 L4"
+        ],
+        "posicao": " G(\\d+)\\)",
+        "pacote": "Modo 3",
+        "nota": "modo 3 (diodos de silício, o mais saturado): ganho 2, 4, 6, 8 e 10"
+      },
+      {
+        "id": 1853,
+        "titulo": "EarthQuaker Devices Plumes Switch 3 Pack",
+        "criador": "ktones",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1193,
+        "serie": [
+          "Tone 50"
+        ],
+        "mapa": {
+          "Gain 0 ": 0,
+          "Gain 50 ": 5,
+          "Gain 75 ": 7.5
+        },
+        "nota": "modo 3: ganho 0, 5 e 7,5, tom no meio"
+      }
+    ]
+  },
+  "jackfruit_monkey": {
+    "busca": "Bad Monkey",
+    "tons": [
+      {
+        "id": 32548,
+        "titulo": "Digitech Bad Monkey",
+        "criador": "jpisoutoftune",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 5994,
+        "serie": [],
+        "mapa": {
+          "Bad Monkey": 5
+        },
+        "nota": "uma captura (a mais curtida)",
+        "padrao": true
+      },
+      {
+        "id": 696,
+        "titulo": "Digitech Bad Monkey [feather/lite/std]",
+        "criador": "northernfox",
+        "tipo": "pedal",
+        "capturas": 2,
+        "downloads": 902,
+        "serie": [
+          "-standard"
+        ],
+        "mapa": {
+          "Boost3-V10-B7-T6-G0": 0,
+          "Boost3-V10-B7-T6-G4": 4
+        },
+        "nota": "como reforço: ganho em 0 e em 4"
+      }
+    ]
+  },
+  "pitanga_250": {
+    "busca": "DOD 250",
+    "tons": [
+      {
+        "id": 2154,
+        "titulo": "DOD 250 Overdrive - 1981 Full Pack",
+        "criador": "gpso",
+        "tipo": "pedal",
+        "capturas": 11,
+        "downloads": 749,
+        "serie": [],
+        "posicao": "\\[G(\\d+) L10\\]",
+        "nota": "1981: ganho de 0 a 10, nível no máximo",
+        "padrao": true
+      },
+      {
+        "id": 35206,
+        "titulo": "DOD 250 - 2013 Reissue",
+        "criador": "outmodedelectronics",
+        "tipo": "pedal",
+        "capturas": 9,
+        "downloads": 1252,
+        "serie": [
+          "L-10 "
+        ],
+        "posicao": "G-(\\d+) L",
+        "nota": "reedição de 2013: ganho de 0 a 10, nível no máximo"
+      }
+    ]
+  },
+  "lychee_bassfuzz": {
+    "busca": "Bass Big Muff",
+    "tons": [
+      {
+        "id": 34237,
+        "titulo": "EHX Bass Big Muff",
+        "criador": "carlosalvgonz",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 3295,
+        "serie": [
+          "NORMAL"
+        ],
+        "mapa": {
+          "LOW": 2,
+          "MID": 5,
+          "MAX": 10
+        },
+        "pacote": "Normal",
+        "nota": "modo normal: sustain baixo, médio e no máximo, tom pouco acima do meio",
+        "padrao": true
+      },
+      {
+        "id": 34237,
+        "titulo": "EHX Bass Big Muff",
+        "criador": "carlosalvgonz",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 3295,
+        "serie": [
+          "DRY"
+        ],
+        "mapa": {
+          "LOW": 2,
+          "MID": 5,
+          "MAX": 10
+        },
+        "pacote": "Dry",
+        "nota": "modo Dry (mistura com o som limpo): sustain baixo, médio e no máximo"
+      },
+      {
+        "id": 30968,
+        "titulo": "Electro Harmonix Bass Big Muff",
+        "criador": "everipper",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 1714,
+        "serie": [],
+        "mapa": {
+          "Bass Big Muff": 9
+        },
+        "nota": "tom no meio e ganho quase no máximo, uma captura"
+      }
+    ]
+  },
+  "cupuacu_hammer": {
+    "busca": "Tone Hammer",
+    "tons": [
+      {
+        "id": 45991,
+        "titulo": "Aguilar Tone Hammer",
+        "criador": "wolffire99",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 1583,
+        "serie": [],
+        "mapa": {
+          "tone hammer": 5
+        },
+        "nota": "pedal Tone Hammer, uma captura",
+        "padrao": true
+      },
+      {
+        "id": 28183,
+        "titulo": "Aguilar Tone Hammer",
+        "criador": "stephenlanebass",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 2554,
+        "serie": [],
+        "mapa": {
+          "Tone Hammer DI OUT": 5
+        },
+        "nota": "saída direta do cabeçote Tone Hammer (o mesmo pré), uma captura"
+      }
+    ]
+  },
+  "graviola_bassdi": {
+    "busca": "M80",
+    "tons": [
+      {
+        "id": 47315,
+        "titulo": "MXR M80 Bass DI+ 2025",
+        "criador": "basster",
+        "tipo": "pedal",
+        "capturas": 3,
+        "downloads": 1794,
+        "serie": [],
+        "mapa": {
+          "m80-color-all12": 0,
+          "m80-dist-color-b12-m14-t13-blend9-gain12": 5,
+          "m80-dist-all12-blendfull-gain14": 7
+        },
+        "nota": "limpo com a chave Color no 0, distorção no meio no 5 e distorção em 2 horas no 7",
+        "padrao": true
+      },
+      {
+        "id": 53111,
+        "titulo": "MXR M80",
+        "criador": "steeviedolly",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 267,
+        "serie": [],
+        "mapa": {
+          "MXR M80": 5
+        },
+        "nota": "uma captura"
+      }
+    ]
+  },
+  "silver_112": {
+    "busca": "Deluxe Reverb",
+    "tons": [
+      {
+        "id": 27465,
+        "titulo": "Fender Deluxe Reverb Mix Ready",
+        "criador": "vulturized",
+        "tipo": "cab",
+        "capturas": 4,
+        "downloads": 97722,
+        "nota": "Deluxe Reverb com alto-falante Oxford, pronto para mixar",
+        "ir_padrao": "DELUXE REVERB OXFORD - BIG",
+        "padrao": true
+      },
+      {
+        "id": 90763,
+        "titulo": "'66 Fender Deluxe Reverb - XR IR PACK",
+        "criador": "tonefactor",
+        "tipo": "cab",
+        "capturas": 3,
+        "downloads": 8026,
+        "nota": "Deluxe Reverb 1966 com Jensen C12N, três microfones",
+        "ir_padrao": "TF 66 DR 1X12 JENSN C12NA - 57 R121 70-30"
+      },
+      {
+        "id": 5855,
+        "titulo": "1966 Deluxe Reverb Cabinet Jensen P12Q",
+        "criador": "dahmanmusic",
+        "tipo": "cab",
+        "capturas": 35,
+        "downloads": 2683,
+        "nota": "Deluxe Reverb 1966 com Jensen P12Q, 35 posições de microfone",
+        "ir_padrao": "1966 Deluxe Reverb 1x12 Jensen P12Q - SM57 - Cone Edge"
+      }
+    ]
+  },
+  "mark_112": {
+    "busca": "Mark",
+    "tons": [
+      {
+        "id": 1685,
+        "titulo": "Mesa Boogie Mark IIC+",
+        "criador": "wendycabs",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 6190,
+        "nota": "combo Mark IIC+ 1x12 com Black Shadow, microfone SM57",
+        "ir_padrao": "Mesa MarkIIC MS12 blackShadow 44khz Sm57",
+        "padrao": true
+      },
+      {
+        "id": 74360,
+        "titulo": "Eminence MS-12 \"Black Shadow\" Mark III Combo",
+        "criador": "ruangsonmusic",
+        "tipo": "cab",
+        "capturas": 12,
+        "downloads": 595,
+        "nota": "combo Mark III 1x12 com Black Shadow MS-12, misturas e posições",
+        "ir_padrao": "MS-12 LEAD MIX"
+      },
+      {
+        "id": 64789,
+        "titulo": "Emil Rohbe - Mesa Boogie Mark IV Rev A — IRs",
+        "criador": "emilrohbe",
+        "tipo": "cab",
+        "capturas": 2,
+        "downloads": 262,
+        "nota": "Mark IV Rev A",
+        "ir_padrao": "Emil Rohbe YouTube IR"
+      },
+      {
+        "id": 96855,
+        "titulo": "Celestion Creamback M65 - Mesa Badlander 50 1x12 IR",
+        "criador": "outmodedelectronics",
+        "tipo": "cab",
+        "capturas": 31,
+        "downloads": 792,
+        "nota": "Mesa 1x12 (Badlander) com Creamback, 31 posições",
+        "ir_padrao": "G12M65 1x12 SM57 1.00in 0.0in"
+      }
+    ]
+  },
+  "star_412": {
+    "busca": "Blackstar",
+    "tons": [
+      {
+        "id": 1765,
+        "titulo": "Blackstar Blackfire 412 GUS G DUAL MIC MIXES",
+        "criador": "reynaldgrind",
+        "tipo": "cab",
+        "capturas": 60,
+        "downloads": 854,
+        "nota": "Blackstar Blackfire 4x12 com V30, misturas de dois microfones",
+        "ir_padrao": "BlS_GG_V30_SMD428B 0",
+        "padrao": true
+      },
+      {
+        "id": 97711,
+        "titulo": "Blackstar HT Stage 60 Celestion Seventy-80",
+        "criador": "samuelbednar",
+        "tipo": "cab",
+        "capturas": 6,
+        "downloads": 149,
+        "nota": "combo Blackstar HT Stage 60 (Seventy-80), microfone SM58"
+      },
+      {
+        "id": 28942,
+        "titulo": "Blackstar 1x12",
+        "criador": "returntozero",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 573,
+        "nota": "Blackstar 1x12, uma resposta"
+      }
+    ]
+  },
+  "country_412": {
+    "busca": "Laney",
+    "tons": [
+      {
+        "id": 103787,
+        "titulo": "Laney 4x12 AOR Series A Cab G12M70",
+        "criador": "derkater",
+        "tipo": "cab",
+        "capturas": 4,
+        "downloads": 263,
+        "nota": "Laney 4x12 com G12M70, SM57 e 421",
+        "ir_padrao": "Laney 412 G12M70 SM57 421 1 Mic Center Dustcap",
+        "padrao": true
+      },
+      {
+        "id": 5487,
+        "titulo": "Laney LA 412 cabinet",
+        "criador": "louramos",
+        "tipo": "cab",
+        "capturas": 16,
+        "downloads": 1731,
+        "nota": "Laney LA 4x12, quatro microfones",
+        "ir_padrao": "IRON CAB 57-1"
+      },
+      {
+        "id": 76706,
+        "titulo": "Laney LX412",
+        "criador": "esetipoysuguitarra",
+        "tipo": "cab",
+        "capturas": 12,
+        "downloads": 1368,
+        "nota": "Laney LX412, três microfones",
+        "ir_padrao": "Laney LX412 Shure SM58 NG 0.0cm 0.0cm"
+      },
+      {
+        "id": 98315,
+        "titulo": "Laney Lead100 Supergroup 4X12 + ORIGINAL GOODMANS SPEAKERS",
+        "criador": "flavortownstudios",
+        "tipo": "cab",
+        "capturas": 5,
+        "downloads": 593,
+        "nota": "Laney Lead100 Supergroup com Goodmans originais",
+        "ir_padrao": "LANEY_LEAD100_GOODMANS_E906_CENTRE_LL"
+      }
+    ]
+  },
+  "vier_412": {
+    "busca": "Diezel",
+    "tons": [
+      {
+        "id": 5835,
+        "titulo": "Diezel V30 SM57",
+        "criador": "anodized12",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 1341,
+        "nota": "Diezel 4x12 com V30, microfone SM57",
+        "ir_padrao": "Diezel V30 SM57 (6505 PowerAmp)",
+        "padrao": true
+      },
+      {
+        "id": 85427,
+        "titulo": "Diezel 4x12 Doc Rock",
+        "criador": "docrock5150",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 416,
+        "nota": "Diezel 4x12, mistura de três microfones"
+      }
+    ]
+  },
+  "hi_412": {
+    "busca": "Hiwatt",
+    "tons": [
+      {
+        "id": 1684,
+        "titulo": "Hiwatt Cab 4x12 Fane 50 Purple Label",
+        "criador": "wendycabs",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 5427,
+        "nota": "Hiwatt 4x12 com Fane Purple Label, microfone SM57",
+        "ir_padrao": "Hiwatt 4x12 Fane PL 50 sm57",
+        "padrao": true
+      },
+      {
+        "id": 98603,
+        "titulo": "HIWATT MAXWATT 4X12 2000s",
+        "criador": "flavortownstudios",
+        "tipo": "cab",
+        "capturas": 5,
+        "downloads": 763,
+        "nota": "Hiwatt Maxwatt 4x12, cinco posições de microfone",
+        "ir_padrao": "HIWATT_MAXWATT_4X12_E906_CENTRE_LL"
+      }
+    ]
+  },
+  "rg_412": {
+    "busca": "Randall",
+    "tons": [
+      {
+        "id": 6571,
+        "titulo": "Randall RG412 HiRez 2048 V30/RS1280",
+        "criador": "mikey",
+        "tipo": "cab",
+        "capturas": 12,
+        "downloads": 1191,
+        "nota": "Randall RG412 com V30 e RS1280",
+        "ir_padrao": "3_V30_57_Cap",
+        "padrao": true
+      },
+      {
+        "id": 5244,
+        "titulo": "Randall IR",
+        "criador": "sd67",
+        "tipo": "cab",
+        "capturas": 15,
+        "downloads": 2725,
+        "nota": "Randall 4x12, quinze microfones",
+        "ir_padrao": "Randall SM57"
+      },
+      {
+        "id": 6262,
+        "titulo": "RANDALL RX412 IR'S PACK",
+        "criador": "eliottlozano",
+        "tipo": "cab",
+        "capturas": 6,
+        "downloads": 1708,
+        "nota": "Randall RX412, seis posições",
+        "ir_padrao": "RX412 01"
+      },
+      {
+        "id": 29142,
+        "titulo": "Vulgar Display Of Power",
+        "criador": "metaldude",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 5829,
+        "nota": "Randall do Vulgar Display of Power (Pantera)"
+      }
+    ]
+  },
+  "hart_410": {
+    "busca": "Hartke",
+    "tons": [
+      {
+        "id": 66570,
+        "titulo": "Hartke HyDrive 410 Cab-IR",
+        "criador": "jorgeosoriobreton",
+        "tipo": "cab",
+        "capturas": 7,
+        "downloads": 1517,
+        "nota": "Hartke HyDrive 4x10, SM57, Beta52 e KSM44",
+        "ir_padrao": "Hartke HyDrive 410 > Beta52+SM57",
+        "padrao": true
+      },
+      {
+        "id": 90726,
+        "titulo": "Hartke 410TP",
+        "criador": "lavigiestudio",
+        "tipo": "cab",
+        "capturas": 5,
+        "downloads": 695,
+        "nota": "Hartke 4x10 TP",
+        "ir_padrao": "Hartke 410TP - Audix OM5 + AKG P2"
+      },
+      {
+        "id": 6574,
+        "titulo": "Hartke LH100+4x10 IRs",
+        "criador": "mikey",
+        "tipo": "cab",
+        "capturas": 22,
+        "downloads": 2160,
+        "nota": "Hartke 4x10 com o cabeçote LH1000, vários microfones",
+        "ir_padrao": "4_SM57_On"
+      }
+    ]
+  },
+  "glass_410": {
+    "busca": "Darkglass",
+    "tons": [
+      {
+        "id": 5565,
+        "titulo": "Darkglass ADAM Artist Сabs",
+        "criador": "mikhailkurochkin",
+        "tipo": "cab",
+        "capturas": 18,
+        "downloads": 5597,
+        "nota": "caixas Darkglass dos artistas, inclui a 4x10",
+        "ir_padrao": "Jon 410",
+        "padrao": true
+      },
+      {
+        "id": 102144,
+        "titulo": "Darkglass DG410C",
+        "criador": "felipedasg",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 36,
+        "nota": "Darkglass DG410C, Beta52 e U87",
+        "ir_padrao": "Darkglass DG410C (Beta52 A8 + U87 B5)"
+      },
+      {
+        "id": 80355,
+        "titulo": "Darkglass DG212NE Cab IR",
+        "criador": "thefoxking",
+        "tipo": "cab",
+        "capturas": 2,
+        "downloads": 1990,
+        "nota": "Darkglass 2x12 DG212NE",
+        "ir_padrao": "Darkglass DG212NE Beta52A"
+      }
+    ]
+  },
+  "solar_412": {
+    "busca": "Sunn",
+    "tons": [
+      {
+        "id": 5645,
+        "titulo": "Sunn 4x12 with Celestion G12T-75 IR Collection",
+        "criador": "dahmanmusic",
+        "tipo": "cab",
+        "capturas": 84,
+        "downloads": 4213,
+        "nota": "Sunn 4x12 com G12T-75, 84 posições de microfone",
+        "ir_padrao": "Sunn 4x12 G12T-75 - SM57 1 - Cap Edge",
+        "padrao": true
+      },
+      {
+        "id": 45930,
+        "titulo": "DRONE DOOM ESSENTIALS - IR Pack",
+        "criador": "serjthedruid",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 1679,
+        "nota": "Sunn 4x12 pesada, com muito grave"
+      }
+    ]
+  },
+  "fliptop_115": {
+    "busca": "B15",
+    "tons": [
+      {
+        "id": 67574,
+        "titulo": "Ampeg B15N",
+        "criador": "felipedasg",
+        "tipo": "cab",
+        "capturas": 2,
+        "downloads": 8841,
+        "nota": "Ampeg B-15N, SM57 e R121 (e outra misturada com uma 4x10)",
+        "ir_padrao": "Ampeg B15N (SM57 + R121)",
+        "padrao": true
+      },
+      {
+        "id": 31188,
+        "titulo": "Mesa Boogie Subway 1x15",
+        "criador": "salamiexcerpt5j",
+        "tipo": "cab",
+        "capturas": 1,
+        "downloads": 1776,
+        "nota": "Mesa Subway 1x15 (outra caixa de baixo de 15 polegadas)"
+      }
+    ]
+  },
+  "britplexi50": {
+    "busca": "1987X",
+    "tons": [
+      {
+        "id": 48523,
+        "titulo": "1973 Marshall JMP 1987",
+        "criador": "danielesporma",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 594,
+        "serie": [
+          "05,05,05,05,"
+        ],
+        "posicao": "^05,05,05,05,(\\d+),",
+        "nota": "ganho dos dois volumes juntos em 2, 5, 8 e 10, tonalidade toda no meio (entradas ligadas)",
+        "padrao": true
+      },
+      {
+        "id": 65578,
+        "titulo": "Marshall JMP-50 Lead 1969 Plexi A2",
+        "criador": "amalgamaudio",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 58411,
+        "nota": "a mais curtida (1701 favoritos): um só ajuste, já com a caixa"
+      },
+      {
+        "id": 1040,
+        "titulo": "Emil Rohbe - 73' Plexi Bright",
+        "criador": "emilrohbe",
+        "tipo": "amp-cab",
+        "capturas": 5,
+        "downloads": 1679,
+        "nota": "cinco ajustes de um Marshall 1973 (o nome diz o som, do mais limpo ao mais aceso)",
+        "mapa": {
+          "4 Plexi Cleanish": 2,
+          "1 Plexi - Emil": 4,
+          "5 Plexi Dark": 5,
+          "3 Plexi G10": 7,
+          "2 Plexi Boosted": 9
+        }
+      }
+    ]
+  },
+  "brit45": {
+    "busca": "JTM45",
+    "tons": [
+      {
+        "id": 33505,
+        "titulo": "Marshall JTM 45 [Hyper Accuracy+]",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 25717,
+        "serie": [
+          "_MIDS_P8_S"
+        ],
+        "posicao": "J45_V(\\d+)_MIDS",
+        "nota": "volume 3, 5, 8 e 10, médios realçados (presença 8)"
+      },
+      {
+        "id": 33505,
+        "titulo": "Marshall JTM 45 [Hyper Accuracy+]",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 25717,
+        "serie": [
+          "_CRANKED_P10_S"
+        ],
+        "posicao": "J45_V(\\d+)_CRANKED",
+        "nota": "volume 3, 5, 8 e 10, ajuste bem aceso (presença 10)"
+      },
+      {
+        "id": 1538,
+        "titulo": "Marshall JTM45",
+        "criador": "fatdracula",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 3352,
+        "serie": [
+          "/JTM45 Normal"
+        ],
+        "posicao": "Normal(\\d+)/",
+        "nota": "entrada Normal no volume 5 e no 10"
+      },
+      {
+        "id": 1538,
+        "titulo": "Marshall JTM45",
+        "criador": "fatdracula",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 3352,
+        "serie": [
+          "/JTM45 Treble"
+        ],
+        "posicao": "Treble(\\d+)/",
+        "nota": "entrada aguda no volume 5 e no 10"
+      }
+    ]
+  },
+  "brit900": {
+    "busca": "JCM900",
+    "tons": [
+      {
+        "id": 701,
+        "titulo": "JCM900 Amp Pack",
+        "criador": "timr",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1455,
+        "pacote": "Canal 1 Limpo",
+        "serie": [
+          "ChAG"
+        ],
+        "posicao": "ChAG(\\d+)",
+        "nota": "Canal A: ganho 4, 6, 8 e 10"
+      },
+      {
+        "id": 50958,
+        "titulo": "Marshall JCM900 Pre",
+        "criador": "alexanderperfilyev",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 1826,
+        "pacote": "Canal 1 Limpo (pré-amplificador)",
+        "serie": [
+          "_CH1_G"
+        ],
+        "posicao": "_CH1_G(\\d+)",
+        "nota": "Canal A só com o pré-amplificador: ganho 4, 8 e 10"
+      },
+      {
+        "id": 2462,
+        "titulo": "OB1 Marshall JCM 900 100 Watt Ch. B Pack",
+        "criador": "obijuan",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1220,
+        "pacote": "Canal 2 Solo",
+        "nota": "Canal B: ganho 4, 8, 12 e 16 do original (o botão dele vai até 20), graves, médios e agudos no 5",
+        "mapa": {
+          "Ch. B - 555 gain 04": 2,
+          "Ch. B - 555 gain 08": 4,
+          "Ch. B - 555 gain 12": 6,
+          "Ch. B - 555 gain 16": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 45684,
+        "titulo": "MARSHALL JCM 900 4100",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 10,
+        "downloads": 6832,
+        "pacote": "Canal 2 Solo (pré-amplificador)",
+        "nota": "Canal B só com o pré-amplificador, dez degraus numerados pelo autor: limpo, crunch, base e, no fim, com reforço na frente",
+        "mapa": {
+          "CLEAN 01": 1,
+          "CLEAN 02": 2,
+          "CRUNCH 01": 3,
+          "CRUNCH 02": 4,
+          "CRUNCH 03": 5,
+          "RHYTHM 01": 6,
+          "RHYTHM 02": 7,
+          "RHYTHM 03": 8,
+          "TS808 09": 9,
+          "BOOSTED808 10": 10
+        }
+      }
+    ]
+  },
+  "brit410": {
+    "busca": "JVM410",
+    "tons": [
+      {
+        "id": 67714,
+        "titulo": "Marshall JVM410H FULL Pack",
+        "criador": "ampspedalspickups",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 10140,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal Limpo no modo laranja, oito degraus de ganho espalhados pelo botão",
+        "mapa": {
+          "APP-JVM-CLEAN-Orng-I": 1.25,
+          "APP-JVM-CLEAN-Orng-II": 2.5,
+          "APP-JVM-CLEAN-Orng-III": 3.75,
+          "APP-JVM-CLEAN-Orng-IV": 5.0,
+          "APP-JVM-CLEAN-Orng-V": 6.25,
+          "APP-JVM-CLEAN-Orng-VI": 7.5,
+          "APP-JVM-CLEAN-Orng-VII": 8.75,
+          "APP-JVM-CLEAN-Orng-VIII": 10.0
+        }
+      },
+      {
+        "id": 67714,
+        "titulo": "Marshall JVM410H FULL Pack",
+        "criador": "ampspedalspickups",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 10140,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal Crunch no modo vermelho, oito degraus de ganho",
+        "mapa": {
+          "APP-JVM-CRUNCH-Red-I": 1.25,
+          "APP-JVM-CRUNCH-Red-II": 2.5,
+          "APP-JVM-CRUNCH-Red-III": 3.75,
+          "APP-JVM-CRUNCH-Red-IV": 5.0,
+          "APP-JVM-CRUNCH-Red-V": 6.25,
+          "APP-JVM-CRUNCH-Red-VI": 7.5,
+          "APP-JVM-CRUNCH-Red-VII": 8.75,
+          "APP-JVM-CRUNCH-Red-VIII": 10.0
+        }
+      },
+      {
+        "id": 67714,
+        "titulo": "Marshall JVM410H FULL Pack",
+        "criador": "ampspedalspickups",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 10140,
+        "pacote": "Canal 3 Overdrive 1",
+        "nota": "canal Overdrive 1 no modo vermelho, oito degraus de ganho",
+        "mapa": {
+          "APP-JVM-OD1-Red-I": 1.25,
+          "APP-JVM-OD1-Red-II": 2.5,
+          "APP-JVM-OD1-Red-III": 3.75,
+          "APP-JVM-OD1-Red-IV": 5.0,
+          "APP-JVM-OD1-Red-V": 6.25,
+          "APP-JVM-OD1-Red-VI": 7.5,
+          "APP-JVM-OD1-Red-VII": 8.75,
+          "APP-JVM-OD1-Red-VIII": 10.0
+        }
+      },
+      {
+        "id": 67714,
+        "titulo": "Marshall JVM410H FULL Pack",
+        "criador": "ampspedalspickups",
+        "tipo": "amp",
+        "capturas": 7,
+        "downloads": 10140,
+        "pacote": "Canal 3 Overdrive 2",
+        "nota": "canal Overdrive 2 no modo vermelho, sete degraus de ganho",
+        "mapa": {
+          "APP-JVM-OD2-Red-I": 1.43,
+          "APP-JVM-OD2-Red-II": 2.86,
+          "APP-JVM-OD2-Red-III": 4.29,
+          "APP-JVM-OD2-Red-IV": 5.71,
+          "APP-JVM-OD2-Red-V": 7.14,
+          "APP-JVM-OD2-Red-VI": 8.57,
+          "APP-JVM-OD2-Red-VII": 10.0
+        }
+      }
+    ]
+  },
+  "brit2000": {
+    "busca": "JCM2000",
+    "tons": [
+      {
+        "id": 1770,
+        "titulo": "Marshall JCM2000 DSL50 Clean Channel Essentials",
+        "criador": "cosmiccrucible",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 952,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo de um DSL50: limpo, um pouco empurrado e empurrado",
+        "mapa": {
+          "-Clean-CleanFlat_": 2,
+          "-Clean-SlightlyPushed_": 4,
+          "-Clean-Pushed_": 6
+        }
+      },
+      {
+        "id": 5769,
+        "titulo": "Marshall JCM2000 TSL100",
+        "criador": "rock2112",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 2472,
+        "pacote": "Canal 1 Limpo (TSL100)",
+        "serie": [
+          "Clean - G"
+        ],
+        "posicao": "- G(\\d+(?:\\.\\d+)?)",
+        "nota": "canal limpo de um TSL100, ganho 3,5"
+      },
+      {
+        "id": 5769,
+        "titulo": "Marshall JCM2000 TSL100",
+        "criador": "rock2112",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 2472,
+        "pacote": "Canal 2 Crunch",
+        "serie": [
+          "Crunch - G"
+        ],
+        "posicao": "- G(\\d+(?:\\.\\d+)?)",
+        "nota": "canal Crunch de um TSL100: ganho 2, 6 e 9"
+      },
+      {
+        "id": 5769,
+        "titulo": "Marshall JCM2000 TSL100",
+        "criador": "rock2112",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 2472,
+        "pacote": "Canal 3 Solo",
+        "serie": [
+          "Lead - G"
+        ],
+        "posicao": "- G(\\d+(?:\\.\\d+)?)",
+        "nota": "canal Lead de um TSL100: ganho 7 e 9"
+      }
+    ]
+  },
+  "britds20": {
+    "busca": "DSL",
+    "tons": [
+      {
+        "id": 53264,
+        "titulo": "Marshall DSL40CR Full Rig 16-Pack (EQ-Neutral)",
+        "criador": "jtmulcahey",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 928,
+        "pacote": "Canal 1 Limpo",
+        "serie": [
+          "Clean - Gain"
+        ],
+        "posicao": "- Gain (\\d+(?:\\.\\d+)?),",
+        "nota": "DSL40CR, canal Classic no modo limpo: ganho 1,5, 4, 7,5 e 10 (já com a caixa)"
+      },
+      {
+        "id": 53264,
+        "titulo": "Marshall DSL40CR Full Rig 16-Pack (EQ-Neutral)",
+        "criador": "jtmulcahey",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 928,
+        "pacote": "Canal 2 Crunch",
+        "serie": [
+          "Crunch - Gain"
+        ],
+        "posicao": "- Gain (\\d+(?:\\.\\d+)?),",
+        "nota": "canal Classic no modo Crunch: ganho 1,5, 3,5, 6,5 e 10 (já com a caixa)"
+      },
+      {
+        "id": 53264,
+        "titulo": "Marshall DSL40CR Full Rig 16-Pack (EQ-Neutral)",
+        "criador": "jtmulcahey",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 928,
+        "pacote": "Canal 3 Ultra",
+        "serie": [
+          "OD1 - Gain"
+        ],
+        "posicao": "- Gain (\\d+(?:\\.\\d+)?),",
+        "nota": "canal Ultra no modo 1: ganho 1,5, 4, 7 e 10 (já com a caixa)"
+      },
+      {
+        "id": 53264,
+        "titulo": "Marshall DSL40CR Full Rig 16-Pack (EQ-Neutral)",
+        "criador": "jtmulcahey",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 928,
+        "pacote": "Canal 3 Ultra 2",
+        "serie": [
+          "OD2 - Gain"
+        ],
+        "posicao": "- Gain (\\d+(?:\\.\\d+)?),",
+        "nota": "canal Ultra no modo 2: ganho 1, 4, 7 e 10 (já com a caixa)"
+      }
+    ]
+  },
+  "britrack1": {
+    "busca": "JMP-1",
+    "tons": [
+      {
+        "id": 45918,
+        "titulo": "MARSHALL JMP-1",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 7122,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo: limpo e começando a sujar",
+        "mapa": {
+          "JMP CLEAN": 3,
+          "JMP CRUNCH BREAKUP": 7
+        }
+      },
+      {
+        "id": 45918,
+        "titulo": "MARSHALL JMP-1",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 7122,
+        "pacote": "Canal 2 Overdrive",
+        "nota": "canal Overdrive: três bases subindo de ganho e o solo cremoso",
+        "mapa": {
+          "JMP RHYTHM 1": 4,
+          "JMP RHYTHM 2": 6,
+          "JMP RHYTHM 3": 8,
+          "JMP LEAD CREAMY": 10
+        }
+      }
+    ]
+  },
+  "silverdeluxe": {
+    "busca": "Deluxe Reverb",
+    "tons": [
+      {
+        "id": 15222,
+        "titulo": "1966 Fender Deluxe Reverb",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 1463,
+        "serie": [
+          "66 DR - ",
+          "Norm - V"
+        ],
+        "posicao": " - V(\\d+(?:\\.\\d+)?) T",
+        "nota": "Deluxe Reverb 1966, canal Normal: volume 3, 4, 6, 8 e 10",
+        "padrao": true
+      },
+      {
+        "id": 755,
+        "titulo": "Fender Deluxe Reverb",
+        "criador": "wjhemenway",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 14176,
+        "posicao": "FDR-(\\d+)V",
+        "nota": "volume 3, 5 e 10"
+      },
+      {
+        "id": 51649,
+        "titulo": "Deluxe Reverb '65 Reissue Clean",
+        "criador": "gindabestari",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 100802,
+        "nota": "a mais curtida (2092 favoritos): um ajuste limpo, já com a caixa e microfones",
+        "mapa": {
+          "NEW VERSION | Fender DRRI | Clean | SM57 + Royer R-121 + Room": 3
+        }
+      }
+    ]
+  },
+  "silversuper": {
+    "busca": "Super Reverb",
+    "tons": [
+      {
+        "id": 68651,
+        "titulo": "Fender '65 Super Reverb Reissue - Normal Channel",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 6,
+        "downloads": 5591,
+        "serie": [
+          "BFSR Nrm"
+        ],
+        "nota": "canal Normal: volume 5 a 10, agudos no 5",
+        "mapa": {
+          "V-5 T-5 B-4 SRL": 5,
+          "V-6 T-5 B-4 SRL": 6,
+          "V-7 T-5 B-2 SRL": 7,
+          "V-8 T-5 B-2 SRL": 8,
+          "V-9 T-5 B-2 SRL": 9,
+          "V-10 T-5 B-2 SRL": 10
+        },
+        "padrao": true
+      },
+      {
+        "id": 57914,
+        "titulo": "1964 Fender Super Reverb",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 3110,
+        "nota": "Super Reverb 1964, canal Normal: volume 3, 4, 5 e 6",
+        "mapa": {
+          "Norm, V3 T6": 3,
+          "Norm, V4 T6": 4,
+          "Norm, V5 T6": 5,
+          "Norm, V6 T6": 6
+        }
+      },
+      {
+        "id": 19,
+        "titulo": "Fender Super Reverb 1977",
+        "criador": "tone3000",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 186878,
+        "nota": "a mais curtida (2929 favoritos): volume 3, já com a caixa",
+        "mapa": {
+          "sm57 and AKG 414": 3
+        }
+      }
+    ]
+  },
+  "silverprince": {
+    "busca": "Princeton",
+    "tons": [
+      {
+        "id": 46872,
+        "titulo": "1964 Fender Princeton",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 1853,
+        "serie": [
+          ", Tone 4"
+        ],
+        "posicao": "Vol (\\d+),",
+        "nota": "Princeton 1964: volume 4, 7 e 10",
+        "padrao": true
+      },
+      {
+        "id": 42319,
+        "titulo": "65 Fender Princeton with Various Mics",
+        "criador": "tone3000",
+        "tipo": "amp-cab",
+        "capturas": 3,
+        "downloads": 10885,
+        "nota": "Princeton 1965: volume 3, 5 e 7, já com a caixa",
+        "mapa": {
+          "Clean 3 SM57": 3,
+          "EOB Vol 5 SM57": 5,
+          "Crunch Vol 7 SM57": 7
+        }
+      },
+      {
+        "id": 32514,
+        "titulo": "1964 Fender Princeton \"Tuxedo\"",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1728,
+        "nota": "Princeton 1964: volume 4, 5,5, 7 e 10",
+        "mapa": {
+          "Clean - Vol 4, Tone 4": 4,
+          "All on 5.5": 5.5,
+          "Sweet Spot - Vol 7, Tone 4": 7,
+          "Cranked - Vol 10, Tone 4": 10
+        }
+      }
+    ]
+  },
+  "tweed57": {
+    "busca": "Tweed Deluxe",
+    "tons": [
+      {
+        "id": 4976,
+        "titulo": "DIY Tweed Deluxe 5E3 Head (11.5dBu)",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 981,
+        "serie": [
+          "In1 V1-",
+          " V2-0 T-6"
+        ],
+        "posicao": "V1-(\\d+) ",
+        "nota": "réplica do circuito 5E3: volume 2, 5, 8 e 10 na entrada 1, tonalidade no 6",
+        "padrao": true
+      },
+      {
+        "id": 54580,
+        "titulo": "1960 Fender Tweed Deluxe 5E3",
+        "criador": "tone3000",
+        "tipo": "amp-cab",
+        "capturas": 3,
+        "downloads": 10745,
+        "nota": "1960 original: três volumes subindo (2, 3 e 11 no botão dele, que vai até 12), já com a caixa",
+        "mapa": {
+          "SM57 CAP EDGE - T 4, I 2": 2,
+          "SM57 CAP EDGE - T 5, I 3": 3,
+          "SM57 CAP EDGE - T 6, I 11": 9
+        }
+      },
+      {
+        "id": 30585,
+        "titulo": "Fender 57 Custom Deluxe",
+        "criador": "heimopietilainen",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 3165,
+        "nota": "Fender 57 Custom Deluxe: limpo, crunch e saturado na entrada 1",
+        "mapa": {
+          "_clean_in1_": 3,
+          "_crunch_in1_": 6,
+          "_od_in1_": 9
+        }
+      }
+    ]
+  },
+  "hotrod40": {
+    "busca": "Hot Rod Deluxe",
+    "tons": [
+      {
+        "id": 5852,
+        "titulo": "Fender Hot Rod Deluxe III - Normal Ch V2",
+        "criador": "kosmicaudio",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 831,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal Normal, entrada 1: volume 2 a 12 do original (o botão dele vai até 12)",
+        "mapa": {
+          "Input1_V3": 2.5,
+          "Input1_V4": 3.3,
+          "Input1_V5": 4.2,
+          "Input1_V6": 5.0,
+          "Input1_V8": 6.7,
+          "Input1_V10": 8.3,
+          "Input1_V12": 10.0,
+          "Input1_V2_Bright_Off": 1.7
+        }
+      },
+      {
+        "id": 5514,
+        "titulo": "Fender Hot Rod Deluxe III - Drive Ch",
+        "criador": "kosmicaudio",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 901,
+        "pacote": "Canal 2 Drive",
+        "nota": "canal Drive: drive 3 a 12 do original (o botão dele vai até 12)",
+        "mapa": {
+          "Drive_Ch_D3": 2.5,
+          "Drive_Ch_D4": 3.3,
+          "Drive_Ch_D5": 4.2,
+          "Drive_Ch_D6": 5.0,
+          "Drive_Ch_D7": 5.8,
+          "Drive_Ch_D8": 6.7,
+          "Drive_Ch_D10": 8.3,
+          "Drive_Ch_D12": 10.0
+        }
+      }
+    ]
+  },
+  "champion5": {
+    "busca": "Champ",
+    "tons": [
+      {
+        "id": 5101,
+        "titulo": "DIY Tweed Champ 5F1 Head (11.5dBu)",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 9,
+        "downloads": 649,
+        "serie": [
+          "5F1 Hi ",
+          "Cap-25uF"
+        ],
+        "posicao": "V-(\\d+) ",
+        "nota": "réplica do circuito 5F1, entrada alta: volume 2 a 10"
+      },
+      {
+        "id": 30583,
+        "titulo": "Fender 57 Custom Champ",
+        "criador": "heimopietilainen",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 1216,
+        "nota": "Fender 57 Custom Champ: limpo, crunch e saturado na entrada 1",
+        "mapa": {
+          "_clean_in1_": 3,
+          "_crunch_in1_": 6,
+          "_od_in1_": 9
+        }
+      },
+      {
+        "id": 29960,
+        "titulo": "Fender Vibro Champ updated",
+        "criador": "thelamehorse",
+        "tipo": "amp",
+        "capturas": 6,
+        "downloads": 886,
+        "nota": "Vibro Champ: volume 3, 5, 7, 8, 9 e 10",
+        "mapa": {
+          "CHAMP V3 T6 B4": 3,
+          "CHAMP V5 T7 B5": 5,
+          "CHAMP V7 T7 B5": 7,
+          "CHAMP V8 T9 B6": 8,
+          "CHAMP V9 T7 B6": 9,
+          "CHAMP V10 T7 B5": 10
+        }
+      }
+    ]
+  },
+  "mark2plus": {
+    "busca": "IIC+",
+    "tons": [
+      {
+        "id": 41228,
+        "titulo": "Mesa Boogie Mark IIC+",
+        "criador": "siamsiamguite",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 16970,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo do cabeçote",
+        "mapa": {
+          "Mesa Boogie Mark IIC+ Clean": 3
+        }
+      },
+      {
+        "id": 2561,
+        "titulo": "Mesa Boogie Mark IIC+ Essentials Pack",
+        "criador": "dogusaltin",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 6301,
+        "pacote": "Canal 1 Limpo (Essentials)",
+        "nota": "canal limpo",
+        "mapa": {
+          "Yummy Clean": 3
+        }
+      },
+      {
+        "id": 41228,
+        "titulo": "Mesa Boogie Mark IIC+",
+        "criador": "siamsiamguite",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 16970,
+        "pacote": "Canal 2 Solo",
+        "nota": "canal de solo do cabeçote: rock, ganho gordo e solo",
+        "mapa": {
+          "Mesa Boogie Mark IIC+ Rock": 5,
+          "Mesa Boogie Mark IIC+ Fat Gain": 7,
+          "Mesa Boogie Mark IIC+ Solo": 9
+        }
+      },
+      {
+        "id": 2561,
+        "titulo": "Mesa Boogie Mark IIC+ Essentials Pack",
+        "criador": "dogusaltin",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 6301,
+        "pacote": "Canal 2 Solo (Essentials)",
+        "nota": "canal de solo: três bases e dois solos",
+        "mapa": {
+          "Tight Rhythm": 4,
+          "Phat Rhythm": 5,
+          "Hetfield Rhythm": 6,
+          "Fast Lead": 8,
+          "Creamy Lead": 10
+        }
+      }
+    ]
+  },
+  "mark3": {
+    "busca": "Mark III",
+    "tons": [
+      {
+        "id": 66768,
+        "titulo": "Mesa/Boogie Mark III Green Stripe Non-Simulclass",
+        "criador": "ruangsonmusic",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 678,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Mark III faixa verde, canal limpo",
+        "mapa": {
+          "MARK III CLEAN": 3
+        }
+      },
+      {
+        "id": 66768,
+        "titulo": "Mesa/Boogie Mark III Green Stripe Non-Simulclass",
+        "criador": "ruangsonmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 678,
+        "pacote": "Canal 2 Crunch",
+        "nota": "Mark III faixa verde, canal Crunch: crunch, base antiga e base pesada",
+        "mapa": {
+          "MARK III CRUNCH": 4,
+          "MARK III OLD SCHOOL RHY": 6,
+          "MARK III MONORHYTHMIA": 8
+        }
+      },
+      {
+        "id": 66768,
+        "titulo": "Mesa/Boogie Mark III Green Stripe Non-Simulclass",
+        "criador": "ruangsonmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 678,
+        "pacote": "Canal 3 Solo",
+        "nota": "Mark III faixa verde, canal de solo: solo, muito ganho e solo gritado",
+        "mapa": {
+          "MARK III LEAD": 6,
+          "MARK III JP HI GAIN": 8,
+          "MARK III SCREAM LEAD": 10
+        }
+      },
+      {
+        "id": 38962,
+        "titulo": "Mesa Boogie Mark III 1986 purple stripe Lead channel",
+        "criador": "randohm",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 608,
+        "pacote": "Canal 3 Solo (faixa roxa)",
+        "nota": "Mark III faixa roxa, canal de solo: empurrado e no máximo",
+        "mapa": {
+          "MkIII Lead lomed pushed": 6,
+          "MkIII Lead lomed cranked": 9
+        }
+      }
+    ]
+  },
+  "mark4": {
+    "busca": "Mark IV",
+    "tons": [
+      {
+        "id": 6404,
+        "titulo": "Mesa Boogie Mark IV Clean [Hyper Accuracy]",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 4563,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo: limpo, Fender, Fender empurrado e no limite de sujar",
+        "mapa": {
+          "MKIV_01 ": 2,
+          "MKIV_07 ": 4,
+          "MKIV_08 ": 6,
+          "MKIV_11 ": 8
+        }
+      },
+      {
+        "id": 6405,
+        "titulo": "Mesa Boogie Mark IV Rhythm [Hyper Accuracy]",
+        "criador": "slamminmofo",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 18272,
+        "pacote": "Canal 2 Ritmo",
+        "nota": "canal de solo com menos ganho: crunch e três bases subindo (já com a caixa)",
+        "mapa": {
+          "MKIV_34 ": 3,
+          "MKIV_28 ": 5,
+          "MKIV_29 ": 7,
+          "MKIV_30 ": 9
+        }
+      },
+      {
+        "id": 6406,
+        "titulo": "Mesa Boogie Mark IV Lead [Hyper Accuracy]",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 7421,
+        "pacote": "Canal 3 Solo",
+        "nota": "canal de solo: os quatro ajustes de solo do Petrucci",
+        "mapa": {
+          "MKIV_44 ": 4,
+          "MKIV_45 ": 6,
+          "MKIV_46 ": 8,
+          "MKIV_47 ": 10
+        }
+      }
+    ]
+  },
+  "markjp": {
+    "busca": "JP-2C",
+    "tons": [
+      {
+        "id": 1686,
+        "titulo": "Mesa Boogie JP-2C Pack!",
+        "criador": "emilrohbe",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 29230,
+        "pacote": "Canal 1 Limpo",
+        "serie": [
+          "Clean CH1 G"
+        ],
+        "posicao": "CH1 G(\\d+)",
+        "nota": "canal 1: ganho 6 e 10"
+      },
+      {
+        "id": 1066,
+        "titulo": "Paul Jacovino - Mesa/Boogie JP-2C",
+        "criador": "pauljacovino",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 5586,
+        "pacote": "Canal 1 Limpo (Jacovino)",
+        "nota": "canal 1 (verde)",
+        "mapa": {
+          "JP2C - JP GREEN": 5
+        }
+      },
+      {
+        "id": 1686,
+        "titulo": "Mesa Boogie JP-2C Pack!",
+        "criador": "emilrohbe",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 29230,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 2 no ganho 8",
+        "mapa": {
+          "JP RHY CH2 G8": 8
+        }
+      },
+      {
+        "id": 1066,
+        "titulo": "Paul Jacovino - Mesa/Boogie JP-2C",
+        "criador": "pauljacovino",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 5586,
+        "pacote": "Canal 2 Crunch (Jacovino)",
+        "nota": "canal 2 (amarelo), sem e com a chave Shred",
+        "mapa": {
+          "JP2C - JP YELLOW": 6,
+          "JP2C - JP YELLOW SHRED": 8
+        }
+      },
+      {
+        "id": 1686,
+        "titulo": "Mesa Boogie JP-2C Pack!",
+        "criador": "emilrohbe",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 29230,
+        "pacote": "Canal 3 Solo",
+        "serie": [
+          "T7 M4 B2 P4 - Emil"
+        ],
+        "posicao": "CH3 G(\\d+)",
+        "nota": "canal 3: ganho 6, 8 e 10"
+      },
+      {
+        "id": 1066,
+        "titulo": "Paul Jacovino - Mesa/Boogie JP-2C",
+        "criador": "pauljacovino",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 5586,
+        "pacote": "Canal 3 Solo (Jacovino)",
+        "nota": "canal 3 (vermelho), sem e com a chave Shred",
+        "mapa": {
+          "JP2C - JP RED": 6,
+          "JP2C - JP RED SHRED": 8
+        }
+      }
+    ]
+  },
+  "badland100": {
+    "busca": "Badlander",
+    "tons": [
+      {
+        "id": 6298,
+        "titulo": "Mesa Boogie Badlander Rectifier 100W EL34 (SignalArt reamp)",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 78937,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal 1 no modo limpo, 100 W, tudo ao meio-dia",
+        "mapa": {
+          "[AMP] Mes.BADLND-S 100W BOLD CLEAN Noon #01": 5
+        }
+      },
+      {
+        "id": 6298,
+        "titulo": "Mesa Boogie Badlander Rectifier 100W EL34 (SignalArt reamp)",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 78937,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 1 no modo Crunch, 100 W, tudo ao meio-dia",
+        "mapa": {
+          "[AMP] Mes.BADLND-S 100W BOLD CRNCH Noon #03": 5
+        }
+      },
+      {
+        "id": 6298,
+        "titulo": "Mesa Boogie Badlander Rectifier 100W EL34 (SignalArt reamp)",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 78937,
+        "pacote": "Canal 3 Crush",
+        "nota": "canal 2 no modo Crush, 100 W, tudo ao meio-dia",
+        "mapa": {
+          "[AMP] Mes.BADLND-S 100W BOLD CRUSH Noon #05": 5
+        }
+      }
+    ]
+  },
+  "lonestar100": {
+    "busca": "Lonestar",
+    "tons": [
+      {
+        "id": 67469,
+        "titulo": "MESA BOOGIE Lone Star (combo 2x12)",
+        "criador": "ljedmitry",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 1737,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo, já com a caixa",
+        "mapa": {
+          "(Clean) + SHURE SM57": 4
+        },
+        "padrao": true
+      },
+      {
+        "id": 28363,
+        "titulo": "Mesa LoneStar Classic",
+        "criador": "studioampcaptures",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 3646,
+        "pacote": "Canal 1 Limpo (Classic)",
+        "nota": "canal 1 limpo, já com a caixa",
+        "mapa": {
+          "Channel 1 Clean DV77": 4
+        }
+      },
+      {
+        "id": 50635,
+        "titulo": "Mesa Boogie LoneStar Classic",
+        "criador": "amalgamaudio",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 10600,
+        "pacote": "Canal 2 Drive",
+        "nota": "a mais curtida (407 favoritos): canal Drive de um Lone Star Classic, já com a caixa"
+      },
+      {
+        "id": 67469,
+        "titulo": "MESA BOOGIE Lone Star (combo 2x12)",
+        "criador": "ljedmitry",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 1737,
+        "pacote": "Canal 2 Drive (combo)",
+        "nota": "canal Drive, já com a caixa",
+        "mapa": {
+          "(Drive) + SHURE SM57": 6
+        }
+      },
+      {
+        "id": 28363,
+        "titulo": "Mesa LoneStar Classic",
+        "criador": "studioampcaptures",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 3646,
+        "pacote": "Canal 2 Drive (Classic)",
+        "nota": "canal 2 Drive no 4, já com a caixa",
+        "mapa": {
+          "Channel 2 Drive 4": 4
+        }
+      }
+    ]
+  },
+  "block5150iii": {
+    "busca": "5150 III",
+    "tons": [
+      {
+        "id": 26921,
+        "titulo": "Really Inspired Pitches - 5150iii 50w",
+        "criador": "helgab",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 4425,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal 1 (verde), limpo e crunch, sem pedais",
+        "mapa": {
+          "ch1 basetone clean": 3,
+          "ch1  basetone crunch": 6
+        }
+      },
+      {
+        "id": 26921,
+        "titulo": "Really Inspired Pitches - 5150iii 50w",
+        "criador": "helgab",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 4425,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 2 (azul), crunch e base pesada, sem pedais",
+        "mapa": {
+          "ch2 basetone crunch": 5,
+          "ch2 basetone chug": 7
+        }
+      },
+      {
+        "id": 26921,
+        "titulo": "Really Inspired Pitches - 5150iii 50w",
+        "criador": "helgab",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 4425,
+        "pacote": "Canal 3 Solo",
+        "nota": "canal 3 (vermelho), crunch e base pesada, sem pedais",
+        "mapa": {
+          "ch3 basetone crunch": 5,
+          "ch3 basetone chug": 7
+        },
+        "padrao": true
+      },
+      {
+        "id": 28245,
+        "titulo": "APP-EVH-5150III-Stealth-100w",
+        "criador": "ampspedalspickups",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 12221,
+        "pacote": "Canal 3 Solo (Stealth)",
+        "nota": "5150 III Stealth, canal vermelho com tudo ao meio-dia",
+        "mapa": {
+          "APP-EVH-Stealth100-Noon": 5
+        }
+      }
+    ]
+  },
+  "topboost15": {
+    "busca": "AC15",
+    "tons": [
+      {
+        "id": 1080,
+        "titulo": "Vox AC15",
+        "criador": "mattgoings",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 24890,
+        "pacote": "Canal 1 Normal",
+        "nota": "canal Normal: limpo cristalino, no limite de sujar, crunch e saturado",
+        "mapa": {
+          "Crystal Clean Normal": 2,
+          "Edge of Breakup Normal": 4,
+          "Crunch Normal": 6,
+          "Overdriven Normal": 8
+        }
+      },
+      {
+        "id": 31553,
+        "titulo": "Vox AC15C1 Normal Channel - 11.5dBu - TTSV10 Input",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 8,
+        "downloads": 1202,
+        "pacote": "Canal 1 Normal (varredura)",
+        "serie": [
+          "Nrm V-",
+          " C-5 TTSV10 SRL"
+        ],
+        "posicao": "Nrm V-(\\d+) ",
+        "nota": "canal Normal: volume 2 a 10, corte no 5"
+      },
+      {
+        "id": 1080,
+        "titulo": "Vox AC15",
+        "criador": "mattgoings",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 24890,
+        "pacote": "Canal 2 Top Boost",
+        "nota": "canal Top Boost: limpo cristalino, no limite de sujar, crunch e saturado",
+        "mapa": {
+          "Crystal Clean TB": 2,
+          "Edge of Breakup TB": 4,
+          "Crunch TB": 6,
+          "Overdriven TB": 8
+        }
+      },
+      {
+        "id": 37813,
+        "titulo": "Vox AC15C1 Top Boost Channel",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1178,
+        "pacote": "Canal 2 Top Boost (varredura)",
+        "serie": [
+          "T-5 B-5 C-5 TTSV10 SRL"
+        ],
+        "posicao": "TB V-(\\d+) ",
+        "nota": "canal Top Boost: volume 2, 3, 5 e 8, graves e agudos no 5"
+      }
+    ]
+  },
+  "citrus50": {
+    "busca": "OR50",
+    "tons": [
+      {
+        "id": 29158,
+        "titulo": "Orange OR50 updated",
+        "criador": "thelamehorse",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 5686,
+        "nota": "ganho 4, 6, 8, 9 e 10 (cada um com a tonalidade que o autor achou melhor)",
+        "mapa": {
+          "G4 CHIME CRUNCH": 4,
+          "G6 CRUNCH": 6,
+          "G8 DOOM CHUNK": 8,
+          "G9 CLEAR DIST": 9,
+          "G10 FULL GAIN": 10
+        }
+      }
+    ]
+  },
+  "citrus30": {
+    "busca": "AD30",
+    "tons": [
+      {
+        "id": 2627,
+        "titulo": "Orange AD30 (w/ custom IR)",
+        "criador": "jakegideon",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 2678,
+        "pacote": "Canal 1 Crunch",
+        "nota": "canal 1: quatro degraus, do mais limpo ao mais sujo",
+        "mapa": {
+          "10 Orange AD30 Ch1": 2,
+          "11 Orange AD30 Ch1": 4,
+          "12 Orange AD30 Ch1": 6,
+          "13 Orange AD30 Ch1": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 29044,
+        "titulo": "Orange AD30HTC",
+        "criador": "mas",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 2126,
+        "pacote": "Canal 1 Crunch (HTC)",
+        "nota": "canal 1: no limite, crunch e saturado",
+        "mapa": {
+          "_One_Break": 3,
+          "_One_Crunch": 6,
+          "_One_Drive": 9
+        }
+      },
+      {
+        "id": 2627,
+        "titulo": "Orange AD30 (w/ custom IR)",
+        "criador": "jakegideon",
+        "tipo": "amp",
+        "capturas": 9,
+        "downloads": 2678,
+        "pacote": "Canal 2 Drive",
+        "serie": [
+          "AD30 Ch2"
+        ],
+        "posicao": "^(\\d+) Orange",
+        "nota": "canal 2: nove degraus, do mais limpo ao mais sujo",
+        "padrao": true
+      },
+      {
+        "id": 29044,
+        "titulo": "Orange AD30HTC",
+        "criador": "mas",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 2126,
+        "pacote": "Canal 2 Drive (HTC)",
+        "nota": "canal 2: no limite, crunch e saturado",
+        "mapa": {
+          "_ Two_Break": 3,
+          "_ Two_Crunch": 6,
+          "_ Two_Drive": 9
+        }
+      }
+    ]
+  },
+  "blackcountry100": {
+    "busca": "Supergroup",
+    "tons": [
+      {
+        "id": 54840,
+        "titulo": "Laney LA100BL pre Supergroup 1969",
+        "criador": "amalgamaudio",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 9094,
+        "nota": "a única captura do Supergroup na TONE3000 (um LA100BL de 1969), já com a caixa; toca no botão todo"
+      }
+    ]
+  },
+  "iron120": {
+    "busca": "Ironheart",
+    "tons": [
+      {
+        "id": 41748,
+        "titulo": "Beji's Laney IronHeart IRT120 Pack",
+        "criador": "bejivgm",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1691,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo com tudo ao meio-dia",
+        "mapa": {
+          "Clean Channel": 5,
+          "Clean Channel - Boosted": -1
+        }
+      },
+      {
+        "id": 41513,
+        "titulo": "LANEY Ironheart BCC-IRT120H",
+        "criador": "ripper",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 592,
+        "pacote": "Canal 1 Limpo (BCC)",
+        "nota": "canal limpo",
+        "mapa": {
+          "CH Clean": 5
+        }
+      },
+      {
+        "id": 41748,
+        "titulo": "Beji's Laney IronHeart IRT120 Pack",
+        "criador": "bejivgm",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1691,
+        "pacote": "Canal 2 Ritmo",
+        "nota": "canal Rhythm com tudo ao meio-dia",
+        "mapa": {
+          "Rhythm Channel": 5,
+          "Rhythm Channel - Boosted": -1
+        },
+        "padrao": true
+      },
+      {
+        "id": 57311,
+        "titulo": "Laney Ironheart IRT60",
+        "criador": "frankyfire",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1197,
+        "pacote": "Canal 2 Ritmo (IRT60)",
+        "serie": [
+          "Rhythm PWR | B1.1p M2 T0.8"
+        ],
+        "posicao": "\\| G(\\d+(?:\\.\\d+)?) ",
+        "nota": "IRT60, canal Rhythm: ganho 5 e 7,2"
+      },
+      {
+        "id": 41748,
+        "titulo": "Beji's Laney IronHeart IRT120 Pack",
+        "criador": "bejivgm",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1691,
+        "pacote": "Canal 3 Solo",
+        "nota": "canal Lead com tudo ao meio-dia",
+        "mapa": {
+          "Lead Channel": 5,
+          "Lead Channel - Boosted": -1
+        }
+      }
+    ]
+  },
+  "fire100": {
+    "busca": "Fireball",
+    "tons": [
+      {
+        "id": 45397,
+        "titulo": "ENGL Fireball 100",
+        "criador": "peterjkrohn",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1729,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo: ganho ao meio-dia e no máximo",
+        "mapa": {
+          "clean gain 12 o'clock": 5,
+          "clean full gain": 10
+        }
+      },
+      {
+        "id": 45397,
+        "titulo": "ENGL Fireball 100",
+        "criador": "peterjkrohn",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1729,
+        "pacote": "Canal 2 Solo",
+        "nota": "canal de solo: ganho às 9 e às 11 horas",
+        "mapa": {
+          "hi-gain 9 o'clock": 2,
+          "hi-gain 11 o'clock": 4,
+          "11 o'clock mid boost": -1
+        },
+        "padrao": true
+      },
+      {
+        "id": 2376,
+        "titulo": "ENGL Fireball 100 + Marshall 1960a",
+        "criador": "ireignmani",
+        "tipo": "amp-cab",
+        "capturas": 3,
+        "downloads": 2081,
+        "pacote": "Canal 2 Solo (três ganhos)",
+        "nota": "canal de solo em três ganhos: baixo, médio e alto (já com a caixa)",
+        "mapa": {
+          "FULL RIG_Low": 3,
+          "FULL RIG_Mid": 6,
+          "FULL RIG_High": 9
+        }
+      }
+    ]
+  },
+  "feral120": {
+    "busca": "Savage",
+    "tons": [
+      {
+        "id": 1816,
+        "titulo": "Engl Savage 120 mk I",
+        "criador": "petrc",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1996,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo",
+        "mapa": {
+          "Savage 120 - Clean": 3
+        }
+      },
+      {
+        "id": 53738,
+        "titulo": "ENGL SAVAGE 120 MK1",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 5717,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 1 no modo Crunch, três ganhos",
+        "mapa": {
+          "OR CRUNCH 1": 3,
+          "OR CRUNCH 2": 6,
+          "OR CRUNCH 3": 9
+        }
+      },
+      {
+        "id": 53738,
+        "titulo": "ENGL SAVAGE 120 MK1",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 5717,
+        "pacote": "Canal 3 Solo",
+        "nota": "canal 2 em três ganhos para base",
+        "mapa": {
+          "RED RHYTHM 1": 4,
+          "RED RHYTHM 2": 7,
+          "RED RHYTHM 3": 10
+        }
+      },
+      {
+        "id": 1816,
+        "titulo": "Engl Savage 120 mk I",
+        "criador": "petrc",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1996,
+        "pacote": "Canal 3 Solo (mk I)",
+        "nota": "canal de solo",
+        "mapa": {
+          "Savage 120 - Lead": 8
+        }
+      }
+    ]
+  },
+  "steel20": {
+    "busca": "Ironball",
+    "tons": [
+      {
+        "id": 29435,
+        "titulo": "ENGL Ironball Lead Drewhast",
+        "criador": "drewhast",
+        "tipo": "amp",
+        "capturas": 10,
+        "downloads": 496,
+        "posicao": "Gain (\\d+)",
+        "nota": "canal Lead: ganho 1 a 10, todas as posições",
+        "padrao": true
+      },
+      {
+        "id": 30522,
+        "titulo": "ENGL Ironball [Hyper Accuracy+]",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 13545,
+        "nota": "canal Lead: base equilibrada e solo com médios (a mais baixada)",
+        "mapa": {
+          "LEAD_BALANCED_RHYTHM_S": 5,
+          "LEAD_MIDS_SOLO_S": 8
+        }
+      }
+    ]
+  },
+  "vier100": {
+    "busca": "VH4",
+    "tons": [
+      {
+        "id": 57838,
+        "titulo": "Diezel - VH4 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3518,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal 1 limpo",
+        "mapa": {
+          "(Ch 1) - CLN bal": 3
+        }
+      },
+      {
+        "id": 64455,
+        "titulo": "Diezel VH4",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1734,
+        "pacote": "Canal 1 Limpo (no limite)",
+        "nota": "canal 1 começando a sujar",
+        "mapa": {
+          "CH1 Breakup - DI": 5
+        }
+      },
+      {
+        "id": 53749,
+        "titulo": "DIEZEL VH4",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 9158,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 2 em três ganhos",
+        "mapa": {
+          "CH 2 Crunch 1": 3,
+          "CH 2 Crunch 2": 6,
+          "CH 2 Crunch 3": 9
+        }
+      },
+      {
+        "id": 57838,
+        "titulo": "Diezel - VH4 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 3518,
+        "pacote": "Canal 2 Crunch (kenazmusic)",
+        "nota": "canal 2: no limite, pouco ganho e ganho médio",
+        "mapa": {
+          "(Ch 2) - EOB bal": 3,
+          "(Ch 2) - LG bal": 6,
+          "(Ch 2) - MG bal": 9
+        }
+      },
+      {
+        "id": 53749,
+        "titulo": "DIEZEL VH4",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 9158,
+        "pacote": "Canal 3 Pesado",
+        "nota": "canal 4 em três ganhos para base",
+        "mapa": {
+          "CH 4 Rhythm 1": 3,
+          "CH 4 Rhythm 2": 6,
+          "CH 4 Rhythm 3": 9
+        }
+      },
+      {
+        "id": 57838,
+        "titulo": "Diezel - VH4 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3518,
+        "pacote": "Canal 3 Pesado (canal 3)",
+        "nota": "canal 3, muito ganho",
+        "mapa": {
+          "(Ch 3) - HG bal": 8
+        }
+      }
+    ]
+  },
+  "herb180": {
+    "busca": "Herbert",
+    "tons": [
+      {
+        "id": 57816,
+        "titulo": "Diezel - Herbert MK3 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1869,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal 1 limpo",
+        "mapa": {
+          "(Ch 1) CLN bal": 3
+        }
+      },
+      {
+        "id": 57816,
+        "titulo": "Diezel - Herbert MK3 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1869,
+        "pacote": "Canal 2 Crunch",
+        "nota": "canal 2: no limite, pouco ganho, ganho médio e muito ganho",
+        "mapa": {
+          "(Ch 2-) EOB bal": 3,
+          "(Ch 2-) - LG bal": 5,
+          "(Ch 2-) - MG bal": 7,
+          "(Ch 2+) HG bal": 9
+        },
+        "padrao": true
+      },
+      {
+        "id": 481,
+        "titulo": "Diezel Herbert Collection",
+        "criador": "servusjon",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1292,
+        "pacote": "Canal 2 Crunch (Collection)",
+        "nota": "canal 2: crunch e muito ganho",
+        "mapa": {
+          "Herbert ch2- crunch": 5,
+          "Herbert ch2+ higain": 8
+        }
+      },
+      {
+        "id": 57816,
+        "titulo": "Diezel - Herbert MK3 [18dBu]",
+        "criador": "kenazmusic",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1869,
+        "pacote": "Canal 3 Solo",
+        "nota": "canal 3, muito ganho",
+        "mapa": {
+          "(Ch 3) HG bal": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 481,
+        "titulo": "Diezel Herbert Collection",
+        "criador": "servusjon",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 1292,
+        "pacote": "Canal 3 Solo (Collection)",
+        "nota": "canal 3, muito ganho",
+        "mapa": {
+          "Herbert ch3 higain": 8
+        }
+      }
+    ]
+  },
+  "bliss100": {
+    "busca": "Ecstasy",
+    "tons": [
+      {
+        "id": 68715,
+        "titulo": "Bogner Ecstasy 101B — Archive",
+        "criador": "kenjisuzuki",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 8068,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal verde (limpo), já com a caixa",
+        "mapa": {
+          "SC-XTC-101B-Green-Normal": 3
+        }
+      },
+      {
+        "id": 15223,
+        "titulo": "2003 Bogner Ecstasy 101B",
+        "criador": "maestrodimusica",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3826,
+        "pacote": "Canal 1 Limpo (2003)",
+        "nota": "canal limpo básico",
+        "mapa": {
+          "Bogner Ecstasy - Basic Clean": 3
+        }
+      },
+      {
+        "id": 6510,
+        "titulo": "Bogner Ecstasy 101B",
+        "criador": "jccobb2",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3662,
+        "pacote": "Canal 2 Azul",
+        "nota": "canal azul",
+        "mapa": {
+          "Blue Channel": 5,
+          "Blue Channel Boosted": -1
+        }
+      },
+      {
+        "id": 45482,
+        "titulo": "BOGNER ECSTASY 101B RED CHANNEL",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 3666,
+        "pacote": "Canal 3 Vermelho",
+        "nota": "canal vermelho: três crunches e uma base, na ordem do autor",
+        "mapa": {
+          "101B CRUNCH #1": 3,
+          "101B CRUNCH #2": 5,
+          "101B CRUNCH #3": 7,
+          "101B RHYTHM #1": 9
+        }
+      },
+      {
+        "id": 6510,
+        "titulo": "Bogner Ecstasy 101B",
+        "criador": "jccobb2",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3662,
+        "pacote": "Canal 3 Vermelho (101B)",
+        "nota": "canal vermelho",
+        "mapa": {
+          "Red Channel": 6,
+          "Red Channel Boosted": -1
+        }
+      }
+    ]
+  },
+  "goddess80": {
+    "busca": "Shiva",
+    "tons": [
+      {
+        "id": 2313,
+        "titulo": "Bogner Shiva",
+        "criador": "akka5",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 1191,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal 1, já com a caixa"
+      },
+      {
+        "id": 26875,
+        "titulo": "Bogner Shiva EL34",
+        "criador": "akka5",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1569,
+        "pacote": "Canal 2 Solo",
+        "nota": "canal 2, sem e com o reforço interno",
+        "mapa": {
+          "shiva ch2-b": 5,
+          "shiva ch2 +b": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 2315,
+        "titulo": "Bogner Shiva",
+        "criador": "akka5",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 2357,
+        "pacote": "Canal 2 Solo (com caixa)",
+        "nota": "canal 2 com o reforço interno, já com a caixa"
+      }
+    ]
+  },
+  "dirty40": {
+    "busca": "Dirty Shirley",
+    "tons": [
+      {
+        "id": 692,
+        "titulo": "Dirty Shirley Mini 20W Tube Head",
+        "criador": "saschas",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 3477,
+        "nota": "Dirty Shirley Mini: ganho 4, 6 e 8",
+        "mapa": {
+          "crunch_G4": 4,
+          "crunch_G6": 6,
+          "crunch_G8": 8,
+          "crunch_G4_BuxBoostTight": -1,
+          "crunch_G6_PreQ": -1
+        }
+      },
+      {
+        "id": 42204,
+        "titulo": "Friedman Dirty Shirley 40",
+        "criador": "soeke6000",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 636,
+        "nota": "Dirty Shirley 40, um ajuste, já com a caixa",
+        "mapa": {
+          "DS 40 Palmer 212 V30 M160": 5
+        }
+      }
+    ]
+  },
+  "special100": {
+    "busca": "Dumble",
+    "tons": [
+      {
+        "id": 30435,
+        "titulo": "Dumble ODS #102 Ford Hyper Accuracy+",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 43013,
+        "pacote": "Canal 1 Limpo",
+        "nota": "canal limpo: do mais limpo ao mais sujo, pelos nomes do autor",
+        "mapa": {
+          "_CLN_KLEAN_S": 2,
+          "_CLN_MAIN_S": 4,
+          "_CLN_GRITTY_S": 6,
+          "_CLN_PAB_CRUNCHY_S": 8
+        }
+      },
+      {
+        "id": 94,
+        "titulo": "Dumble Overdrive Special",
+        "criador": "spitfine",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 10950,
+        "pacote": "Canal 1 Limpo (Spitfine)",
+        "nota": "canal limpo (a segunda mais curtida)",
+        "mapa": {
+          "Dumble_Clean": 4
+        }
+      },
+      {
+        "id": 30435,
+        "titulo": "Dumble ODS #102 Ford Hyper Accuracy+",
+        "criador": "slamminmofo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 43013,
+        "pacote": "Canal 2 Overdrive",
+        "nota": "canal Overdrive: pouco ganho, o principal, mais ganho e muito ganho",
+        "mapa": {
+          "_OD_THICK_LOGAIN_S": 3,
+          "_OD_MAIN_S": 5,
+          "_OD_PAB_MAIN_GAINY_S": 7,
+          "_OD_PAB_HIGAIN_S": 9
+        }
+      },
+      {
+        "id": 94,
+        "titulo": "Dumble Overdrive Special",
+        "criador": "spitfine",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 10950,
+        "pacote": "Canal 2 Overdrive (Spitfine)",
+        "nota": "canal Overdrive",
+        "mapa": {
+          "Dumble_Overdrive": 7
+        }
+      }
+    ]
+  },
+  "doublestone50": {
+    "busca": "Two-Rock",
+    "tons": [
+      {
+        "id": 5599,
+        "titulo": "Two Rock Studio Signature (DI) A1 Conversion",
+        "criador": "danielnguyen",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 1952,
+        "nota": "Two-Rock Studio Signature (o Classic Reverb não está na TONE3000): ganho 3, 5 e 8",
+        "mapa": {
+          "TRSS G3 T5M5B5 O7 P4 Trad": 3,
+          "TRSS G5 T5M5B5 O7 P4 Trad": 5,
+          "TRSS G8 T5M5B5 O7 P4 Trad": 8
+        },
+        "padrao": true
+      },
+      {
+        "id": 4658,
+        "titulo": "Two-Rock SSS Clean BAL DI",
+        "criador": "amalgamaudio",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 9527,
+        "nota": "Two-Rock Silver Sterling, um ajuste limpo"
+      }
+    ]
+  },
+  "blackcat30": {
+    "busca": "Bad Cat",
+    "tons": [
+      {
+        "id": 33480,
+        "titulo": "Bad Cat Lynx V2",
+        "criador": "steve2010",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 649,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Bad Cat Lynx (o Hot Cat não está na TONE3000), canal 1 baixo e alto",
+        "mapa": {
+          "Ch1 Low": 3,
+          "Ch1 High": 6
+        }
+      },
+      {
+        "id": 42437,
+        "titulo": "Bad Cat Lynx X Drive Channel",
+        "criador": "davewmacfarlane",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 506,
+        "pacote": "Canal 2 Drive",
+        "posicao": "Channel G(\\d+) ",
+        "nota": "Bad Cat Lynx X, canal Drive: ganho 2, 4, 5 e 7",
+        "padrao": true
+      },
+      {
+        "id": 33480,
+        "titulo": "Bad Cat Lynx V2",
+        "criador": "steve2010",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 649,
+        "pacote": "Canal 2 Drive (Lynx)",
+        "nota": "Bad Cat Lynx, canal 2 baixo e alto",
+        "mapa": {
+          "CH2low": 5,
+          "Ch2 High": 8
+        }
+      }
+    ]
+  },
+  "hi103": {
+    "busca": "Hiwatt",
+    "tons": [
+      {
+        "id": 6233,
+        "titulo": "Hiwatt Custom 100 DR 103 1974",
+        "criador": "daweed",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 13552,
+        "nota": "DR103 1974: volume 3 (entrada brilhante), 5, 8 e no máximo",
+        "mapa": {
+          "DR 103 VOL3 Bright": 3,
+          "DR 103 VOL5": 5,
+          "DR 103 VOL8": 8,
+          "DR 103 Crancked": 10
+        }
+      }
+    ]
+  },
+  "darkstar20": {
+    "busca": "Blackstar",
+    "tons": [
+      {
+        "id": 46997,
+        "titulo": "AP Blackstar HT STAGE 100 MKIII",
+        "criador": "antoniopizzulo",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 847,
+        "pacote": "Canal 1 Limpo",
+        "nota": "HT Stage 100, canal limpo",
+        "mapa": {
+          "Clean - voice off": 3
+        }
+      },
+      {
+        "id": 46997,
+        "titulo": "AP Blackstar HT STAGE 100 MKIII",
+        "criador": "antoniopizzulo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 847,
+        "pacote": "Canal 2 Overdrive 1",
+        "nota": "HT Stage 100, canal 1 de saturação: ganho às 9 horas, ao meio-dia, às 3 horas e no máximo",
+        "mapa": {
+          "OD1 - ISF 5 voice off A": 2,
+          "OD1 - ISF 5 voice off B": 5,
+          "OD1 - ISF 5 voice off C": 8,
+          "OD1 - ISF 5 voice off D": 10
+        }
+      },
+      {
+        "id": 47267,
+        "titulo": "Blackstar HT5",
+        "criador": "thesilentking",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 573,
+        "pacote": "Canal 2 Overdrive 1 (HT5)",
+        "serie": [
+          "HT5 ISF 5 Gain"
+        ],
+        "posicao": "Gain (\\d+)_",
+        "nota": "HT5: ganho 2, 5 e 8"
+      },
+      {
+        "id": 46997,
+        "titulo": "AP Blackstar HT STAGE 100 MKIII",
+        "criador": "antoniopizzulo",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 847,
+        "pacote": "Canal 3 Overdrive 2",
+        "nota": "HT Stage 100, canal 2 de saturação: ganho às 9 horas, ao meio-dia, às 3 horas e no máximo",
+        "mapa": {
+          "OD2 - ISF 5 voice off A": 2,
+          "OD2 - ISF 5 voice off B": 5,
+          "OD2 - ISF 5 voice off C": 8,
+          "OD2 - ISF 5 voice off D": 10
+        },
+        "padrao": true
+      },
+      {
+        "id": 53871,
+        "titulo": "Blackstar Series One 100 MK II Head",
+        "criador": "blackstaramps",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 6897,
+        "pacote": "Canal 3 Overdrive 2 (Series One)",
+        "nota": "Series One 100 (a mais curtida), canal 2 de saturação no ganho 7",
+        "mapa": {
+          "OD2 G7 V7": 7
+        }
+      }
+    ]
+  },
+  "tri100": {
+    "busca": "TriAmp",
+    "tons": [
+      {
+        "id": 5139,
+        "titulo": "Hughes and Kettner TriAmp MK II",
+        "criador": "damyfx",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 1608,
+        "nota": "a única captura do TriAmp na TONE3000, já com a caixa; toca no botão todo"
+      }
+    ]
+  },
+  "gen120": {
+    "busca": "Generator",
+    "tons": [
+      {
+        "id": 66606,
+        "titulo": "REVV GENERATOR 120 (PURPLE) MKII",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 3859,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Generator 120 mk II: dois limpos, na ordem do autor",
+        "mapa": {
+          "CLEAN 1": 3,
+          "CLEAN 2": 6
+        }
+      },
+      {
+        "id": 66606,
+        "titulo": "REVV GENERATOR 120 (PURPLE) MKII",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 3859,
+        "pacote": "Canal 2 Crunch",
+        "nota": "Generator 120 mk II: três crunches, na ordem do autor",
+        "mapa": {
+          "CRUNCH 1": 3,
+          "CRUNCH 2": 6,
+          "CRUNCH 3": 9
+        },
+        "padrao": true
+      },
+      {
+        "id": 66458,
+        "titulo": "REVV GENERATOR 120 (RED) MKIII",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 4311,
+        "pacote": "Canal 2 Crunch (vermelho)",
+        "nota": "Generator 120 mk III, canal vermelho: três crunches",
+        "mapa": {
+          "RED - CRUNCH 1": 3,
+          "RED - CRUNCH 2": 6,
+          "RED - CRUNCH 3": 9
+        }
+      },
+      {
+        "id": 66458,
+        "titulo": "REVV GENERATOR 120 (RED) MKIII",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 4311,
+        "pacote": "Canal 3 Pesado",
+        "nota": "Generator 120 mk III, canal vermelho: cinco bases, na ordem do autor",
+        "mapa": {
+          "RED - RHYTHM 1": 2,
+          "RED - RHYTHM 2": 4,
+          "RED - RHYTHM 3": 6,
+          "RED - RHYTHM 4": 8,
+          "RED - RHYTHM 5": 10
+        }
+      },
+      {
+        "id": 66606,
+        "titulo": "REVV GENERATOR 120 (PURPLE) MKII",
+        "criador": "deathblossomaudio",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 3859,
+        "pacote": "Canal 3 Pesado (mk II)",
+        "nota": "Generator 120 mk II: quatro bases, na ordem do autor",
+        "mapa": {
+          "RHYTHM 1": 3,
+          "RHYTHM 2": 5,
+          "RHYTHM 3": 7,
+          "RHYTHM 4": 9
+        }
+      }
+    ]
+  },
+  "nova100": {
+    "busca": "Natas",
+    "tons": [
+      {
+        "id": 40891,
+        "titulo": "Fortin NATAS Preamp Pedal",
+        "criador": "modernroyaljams",
+        "tipo": "pedal",
+        "capturas": 1,
+        "downloads": 454,
+        "nota": "o cabeçote Natas não está na TONE3000; esta é a versão em pedal do pré-amplificador dele, uma captura que toca no botão todo"
+      }
+    ]
+  },
+  "emperor20": {
+    "busca": "Tone King",
+    "tons": [
+      {
+        "id": 5713,
+        "titulo": "Tone King Imperial MKII A1 Conversion",
+        "criador": "danielnguyen",
+        "tipo": "amp",
+        "capturas": 5,
+        "downloads": 980,
+        "pacote": "Canal 1 Ritmo",
+        "serie": [
+          "Rhythm V",
+          " T6 B4"
+        ],
+        "posicao": "Rhythm V(\\d+(?:\\.\\d+)?) ",
+        "nota": "canal Rhythm: volume 2, 3, 4,5, 6 e 8",
+        "padrao": true
+      },
+      {
+        "id": 50670,
+        "titulo": "Tone King Imperial Preamp",
+        "criador": "alexanderperfilyev",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 566,
+        "pacote": "Canal 1 Ritmo (pré-amplificador)",
+        "serie": [
+          "Imperial Clean G"
+        ],
+        "posicao": "Clean G(\\d+)",
+        "nota": "só o pré-amplificador, canal limpo: ganho 3, 5, 7 e 9"
+      },
+      {
+        "id": 1849,
+        "titulo": "Tone King Imperial RH Crunch BAL DI",
+        "criador": "amalgamaudio",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 4259,
+        "pacote": "Canal 1 Ritmo (crunch)",
+        "nota": "a mais curtida (236 favoritos): canal Rhythm com crunch"
+      },
+      {
+        "id": 5713,
+        "titulo": "Tone King Imperial MKII A1 Conversion",
+        "criador": "danielnguyen",
+        "tipo": "amp",
+        "capturas": 3,
+        "downloads": 980,
+        "pacote": "Canal 2 Solo",
+        "serie": [
+          "Lead V",
+          " T4 M4"
+        ],
+        "posicao": "Lead V(\\d+) ",
+        "nota": "canal Lead: volume 2, 4 e 8"
+      },
+      {
+        "id": 50670,
+        "titulo": "Tone King Imperial Preamp",
+        "criador": "alexanderperfilyev",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 566,
+        "pacote": "Canal 2 Solo (pré-amplificador)",
+        "serie": [
+          "Imperial Lead G"
+        ],
+        "posicao": "Lead G(\\d+)",
+        "nota": "só o pré-amplificador, canal Lead: ganho 3, 5, 7 e 9"
+      }
+    ]
+  },
+  "rg100": {
+    "busca": "RG100",
+    "tons": [
+      {
+        "id": 41209,
+        "titulo": "Randall RG100ES 100W (1987)",
+        "criador": "ripper",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 3552,
+        "pacote": "Canal 1 Limpo",
+        "nota": "RG100ES 1987, canal limpo",
+        "mapa": {
+          "(1987) CH Clean": 4
+        }
+      },
+      {
+        "id": 41209,
+        "titulo": "Randall RG100ES 100W (1987)",
+        "criador": "ripper",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 3552,
+        "pacote": "Canal 2 Solo",
+        "nota": "RG100ES 1987, canal de solo: ganho normal e 8,5",
+        "mapa": {
+          "(1987) CH Crunch": 5,
+          "(1987) CH Crunch Gain 8.5": 8.5,
+          "(1987) CH Crunch Sustain Engaged": -1
+        }
+      },
+      {
+        "id": 41209,
+        "titulo": "Randall RG100ES 100W (1987)",
+        "criador": "ripper",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 3552,
+        "pacote": "Canal 2 Solo (Sustain)",
+        "nota": "RG100ES 1987, canal de solo com a chave Sustain: ganho normal e 8,5",
+        "mapa": {
+          "CH Crunch Sustain Engaged": 5,
+          "CH Crunch Sustain Engaged Gain 8.5": 8.5
+        }
+      },
+      {
+        "id": 40842,
+        "titulo": "Randall RG100ES 100W (1985)",
+        "criador": "ripper",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 1430,
+        "pacote": "Canal 2 Solo (1985)",
+        "nota": "RG100ES 1985, canal de solo: ganho normal e 8,5",
+        "mapa": {
+          "(1985) CH Crunch": 5,
+          "(1985) CH Crunch Gain 8.5": 8.5,
+          "(1985) CH Crunch Sustain Engaged": -1
+        }
+      }
+    ]
+  },
+  "arch100": {
+    "busca": "Archon",
+    "tons": [
+      {
+        "id": 30381,
+        "titulo": "PRS Archon CLASSIC 50",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 24828,
+        "pacote": "Canal 1 Limpo",
+        "nota": "Archon Classic 50, canal limpo com tudo ao meio-dia (a mais baixada)",
+        "mapa": {
+          "[AMP] PRS.ARC50C-CLEAN Noon #01": 5
+        }
+      },
+      {
+        "id": 5246,
+        "titulo": "PRS Archon (MKI/2018) 50W, Lead + Clean",
+        "criador": "abandonedtech",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 742,
+        "pacote": "Canal 1 Limpo (50 W)",
+        "nota": "canal limpo, ganho 3",
+        "mapa": {
+          "Archon Clean 1 (": 3
+        }
+      },
+      {
+        "id": 4642,
+        "titulo": "PRS Archon 100 Gain",
+        "criador": "allanqa",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1166,
+        "pacote": "Canal 2 Solo",
+        "nota": "Archon 100, canal de solo: quatro níveis de ganho, modo brilhante",
+        "mapa": {
+          "gain level 1 bright": 2.5,
+          "gain level 2 bright": 5,
+          "gain level 3 bright": 7.5,
+          "gain level 4 bright": 10
+        },
+        "padrao": true
+      },
+      {
+        "id": 30381,
+        "titulo": "PRS Archon CLASSIC 50",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 24828,
+        "pacote": "Canal 2 Solo (Classic)",
+        "nota": "Archon Classic 50, canal de solo com tudo ao meio-dia",
+        "mapa": {
+          "[AMP] PRS.ARC50C-LEAD Noon #03": 5
+        }
+      },
+      {
+        "id": 5246,
+        "titulo": "PRS Archon (MKI/2018) 50W, Lead + Clean",
+        "criador": "abandonedtech",
+        "tipo": "amp",
+        "capturas": 2,
+        "downloads": 742,
+        "pacote": "Canal 2 Solo (50 W)",
+        "nota": "canal de solo, ganho 5 e 7",
+        "mapa": {
+          "Archon Lead 2 (": 5,
+          "Archon Lead 3 (": 7
+        }
+      }
+    ]
+  },
+  "kraken50": {
+    "busca": "Kraken",
+    "tons": [
+      {
+        "id": 47732,
+        "titulo": "VICTORY KRAKEN CHANEL 1",
+        "criador": "szabobence1998bs",
+        "tipo": "amp",
+        "capturas": 6,
+        "downloads": 507,
+        "pacote": "Canal 1 Crunch",
+        "serie": [
+          "EUNA --"
+        ],
+        "posicao": "G(\\d+) EUNA",
+        "nota": "canal 1: ganho 3 a 8"
+      },
+      {
+        "id": 35323,
+        "titulo": "Victory Kraken - High-Gain",
+        "criador": "nicolasc2000",
+        "tipo": "amp",
+        "capturas": 6,
+        "downloads": 2331,
+        "pacote": "Canal 2 Pesado",
+        "nota": "canal de muito ganho: seis degraus, do menos ao mais ganho (a mais baixada)",
+        "mapa": {
+          "Kraken-1": 1,
+          "Kraken-2": 2.8,
+          "Kraken-3": 4.6,
+          "Kraken-4": 6.4,
+          "Kraken-5": 8.2,
+          "Kraken-6": 10
+        }
+      },
+      {
+        "id": 47749,
+        "titulo": "VICTORY KRAKEN CHANEL 2",
+        "criador": "szabobence1998bs",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 472,
+        "pacote": "Canal 2 Pesado (ganho 3 a 6)",
+        "posicao": "KRAKEN G(\\d+)",
+        "nota": "canal 2: ganho 3 a 6"
+      }
+    ]
+  },
+  "magick25": {
+    "busca": "Black Magick",
+    "tons": [
+      {
+        "id": 64590,
+        "titulo": "Supro Black Magick - Amp Head",
+        "criador": "outmodedelectronics",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 695,
+        "serie": [
+          "In1-2 V1-",
+          "V2-0 T-5 SRL"
+        ],
+        "posicao": "V1-(\\d+) ",
+        "nota": "Black Magick, entradas ligadas: volume 5, 7, 8 e 10, tonalidade no 5",
+        "padrao": true
+      },
+      {
+        "id": 53368,
+        "titulo": "Supro Black Magick Full Rigs",
+        "criador": "outmodedelectronics",
+        "tipo": "amp-cab",
+        "capturas": 4,
+        "downloads": 2699,
+        "serie": [
+          "In1-2 V1-",
+          "V2-0 T-5 P12Q M201a"
+        ],
+        "posicao": "V1-(\\d+) ",
+        "nota": "Black Magick, o mesmo ajuste já com a caixa: volume 5, 7, 8 e 10"
+      }
+    ]
+  },
+  "deliver120": {
+    "busca": "Deliverance",
+    "tons": [
+      {
+        "id": 6231,
+        "titulo": "VHT Deliverance 60 - 2005",
+        "criador": "paulbradshawguitar",
+        "tipo": "amp",
+        "capturas": 4,
+        "downloads": 1051,
+        "nota": "Deliverance 60: os dois ganhos subindo juntos (4 e 6, 4 e 10, 6 e 10, 10 e 10)",
+        "mapa": {
+          "2005 - G1-4-G2-6": 3,
+          "2005 - G1-4-G2-10": 5,
+          "2005 - G1-6-G2-10": 7,
+          "2005 - G1-10-G2-10": 10,
+          "G1-4-G2-6 +Lichtlaerm": -1,
+          "G1-4-G2-10 +Lichtlaerm": -1,
+          "G1-6-G2-10 +Lichtlaerm": -1,
+          "G1-10-G2-10 +Lichtlaerm": -1
+        }
+      },
+      {
+        "id": 6179,
+        "titulo": "VHT Deliverance 60",
+        "criador": "paulbradshawguitar",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 357,
+        "nota": "Deliverance 60 no modo de muito ganho"
+      }
+    ]
+  },
+  "ash500": {
+    "busca": "Ashdown",
+    "tons": [
+      {
+        "id": 1597,
+        "titulo": "Ashdown Abm 500 No Speaker",
+        "criador": "colorzh",
+        "tipo": "amp",
+        "capturas": 1,
+        "downloads": 600,
+        "nota": "ABM 500 sem caixa, uma captura que toca no botão todo"
+      },
+      {
+        "id": 65116,
+        "titulo": "Ashdown Abm 500 evo2",
+        "criador": "laciborbly24",
+        "tipo": "amp-cab",
+        "capturas": 1,
+        "downloads": 405,
+        "nota": "ABM 500 Evo II, só o cabeçote, limpo",
+        "mapa": {
+          "Clean only the amp head": 5
+        }
+      }
+    ]
   }
 }
