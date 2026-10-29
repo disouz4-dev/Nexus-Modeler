@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T22:48:36Z",
+ "gerado": "2026-10-29T22:52:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6544,8 +6544,8 @@
   },
   "vier100": {
    "nome": "Vier 100",
-   "hash": "bf763cdce31c2d82",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "066a9cc967932403",
+   "data": "2026-10-29T22:52:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vier100_botao_agudo.png",
@@ -6560,24 +6560,24 @@
     "vier100_mapa.json"
    ],
    "sha256": {
-    "vier100_botao_agudo.png": "cfea04106b716269270c8ca58666f22d101614418b42ae2679da3bf6ac1f8104",
-    "vier100_botao_ganho.png": "7f49c8b66c5055b08b5b9ccc2abbe61e7131c181944dea005f99364bb740bffb",
-    "vier100_botao_grave.png": "596fb834b650121313fbba832d4f2b40c4c9c1e6e65135e79c0741c2ec5be75e",
-    "vier100_botao_medio.png": "dff3b5cff354429d5856c1e0ca667a1e7e90855a78a8f2d302bbcfee30135872",
-    "vier100_botao_presenca.png": "58a0e612577658eacdcc624bee0b7c815b53c95bb1c3af518fed05e6669f60d5",
-    "vier100_botao_volume.png": "42a129e0af1521026ecaedff0a38cf5fe5593d9f662e417ff51a69ea5b2a34bf",
-    "vier100_frente.jpg": "e92f8891e5928feea0974aa7d85b0a380b339133ab45746cd14a5c48473e307c",
-    "vier100_frente_alfa.png": "d50dc58cd8d9a7aa0a5e727214e96ae4db0a6cd67590c5521a36c604ae488cc8",
-    "vier100_manifesto.json": "742b057a3ebe50df7bf1a41fdf65d6ca7faa4b007ae61dd94c8a79a8399eee20",
-    "vier100_mapa.json": "64fe7f896c2022f1b6f5204bf6aba2bb331d68109c8b1911ae0259ef031c5ca8"
+    "vier100_botao_agudo.png": "ec6122ab9efab93df2a0d753af43347f8680fe245f3e1e8197adff80616a33ed",
+    "vier100_botao_ganho.png": "a2ae798e160d4fb96940bb9c682d6a631f3b9fe9c107441fb6c66cbda4915b47",
+    "vier100_botao_grave.png": "29cd36f7127e1397cd709ed969e290af1b8e594cfcb7455f93f73d669f00a582",
+    "vier100_botao_medio.png": "034c7e47c666a06be07f08d10d976be1b58dcd1bef53ef2becf4e247bf7881d4",
+    "vier100_botao_presenca.png": "f0c1816adc7c45c6de950426ddf60ffd06542349881c7ae5a384fddbabb6440b",
+    "vier100_botao_volume.png": "11c863b1977455c01e3581db7051e9f2f239dcda0b65d8dcd8e775cf802ba86c",
+    "vier100_frente.jpg": "7d77ab833b8b7652d669956ee3468742266829ab78740f09795066a979e2b890",
+    "vier100_frente_alfa.png": "5976b8b57225232254dc22fd68163853003d8d5b0ca3be4e6cfcd5b7718434fb",
+    "vier100_manifesto.json": "4d96b84d62e63c78d1eb62b6bc32e69a4052a52d78b0c1d67ce2b6956c65deea",
+    "vier100_mapa.json": "2fe85af307f78d9c37f6fc152a6d6904011240934aaf1a1d0a66550582743649"
    },
-   "tamanho": 1815844,
+   "tamanho": 833438,
    "tipo": "cabecote",
    "inspiracao": "Diezel VH4",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
