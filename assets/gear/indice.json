@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T21:17:07Z",
+ "gerado": "2026-10-29T21:17:14Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3369,8 +3369,8 @@
   },
   "jet_5150": {
    "nome": "Jet 5150",
-   "hash": "35d316c097b5c835",
-   "data": "2026-10-29T17:12:42Z",
+   "hash": "f1d3405f9994751f",
+   "data": "2026-10-29T21:17:14Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jet_5150_botao_ganho.png",
@@ -3382,21 +3382,21 @@
     "jet_5150_mapa.json"
    ],
    "sha256": {
-    "jet_5150_botao_ganho.png": "4f425fb207aa3749e089dd7b628e64b151611c878ec5f23cbbc3fd736b98fba2",
-    "jet_5150_botao_nivel.png": "8f23e72fff1416df51d4fa9cb14c9f766d9d5c22bd031dd530a0ca1f48b3dcd7",
-    "jet_5150_botao_tom.png": "c5aee9737a14339a87875a848f7c3b58a7373936002c65bd9f2cd8c9ca38d993",
-    "jet_5150_frente.jpg": "0e4ef3aafc5581169f4eb76edc8b42f7e4688318830a68bfa72e9e527dc4c638",
-    "jet_5150_frente_alfa.png": "f9299dfdd059c1c48e88a2eb945070ebf8166cd6200d2635386459e07bdb323c",
-    "jet_5150_manifesto.json": "c3583294aedb65e9446e2eef98f3c97be2bb85de9b71d8e7341991493a46e7bd",
-    "jet_5150_mapa.json": "1255a9320dda06e10bef2de76578346278cf0e657d106c579e1118ea53f0f384"
+    "jet_5150_botao_ganho.png": "ba5544e5cdfa147ab585dba9cb9ce00c2e9035ead66fd4b68bc1c6091df4a1cf",
+    "jet_5150_botao_nivel.png": "08a4cf823d61316fa97931ef7dbe5b8588a7fc561c5d4c67e079246ca8835793",
+    "jet_5150_botao_tom.png": "e7e880e53ed0e431a70a3bb5e2773976630ace944a4f59a29686b64a3ba8c44a",
+    "jet_5150_frente.jpg": "a20d9cf46ee4dba80f32109b7578a9bcfe14490ec6d90b84a8e63b1d21202eaa",
+    "jet_5150_frente_alfa.png": "2f6bc2b8096b17519872c634326f882b994e5f98903abd74b79d0056c6ae1e8c",
+    "jet_5150_manifesto.json": "b186da07037ae6d88d5d83b8197b4ea362492aea480ba3b609682f9782124f1f",
+    "jet_5150_mapa.json": "04b0de4f22a6ddb2874c55ab4ead4e398bc8d71303440901ddbc53152ff77ab6"
    },
-   "tamanho": 184006,
+   "tamanho": 178294,
    "tipo": "pedal",
    "inspiracao": "EVH 5150 Overdrive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
