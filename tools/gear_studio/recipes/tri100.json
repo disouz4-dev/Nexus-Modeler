@@ -553,7 +553,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.481,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O TriAmp não tem presença no canal: a presença do Nexus é o PRESENCE do MASTER (que existe no original)."
 }

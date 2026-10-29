@@ -304,7 +304,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.417,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "A grade do original tem as listras EVH em barras por cima; aqui ficou só a grade perfurada preta."
 }

@@ -296,7 +296,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.307,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "A presença do Nexus ficou no REVERB/ATTACK; o MASTER do original ficou fixo e o volume do Nexus é o VOLUME."
 }

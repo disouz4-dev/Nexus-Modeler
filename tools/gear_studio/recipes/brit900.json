@@ -220,7 +220,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.49,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "Os LEDs de canal A e B entre o GAIN e a entrada são para a tela; no JCM900 a troca é pelo pedal."
 }

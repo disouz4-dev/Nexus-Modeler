@@ -235,7 +235,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 1.315,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O BA-210 não tem presença: ficou num botão pequeno depois do AUX LEVEL."
 }

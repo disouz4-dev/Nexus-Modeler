@@ -168,7 +168,7 @@ def _quadro(fmt, W, H, D, painel):
     if fmt == "rack":
         top += D * 0.18  # o tampo do rack aparece por cima da frente
     prop = (H + top + 0.03) * 1.05 / (W * 1.10)
-    elev = 10.0
+    elev = 0.0  # tudo de frente, sem ângulo (pedido do Diego)
     if painel.get("posicao") == "topo":
         # Painel no tampo (Vox, tweed): câmera mais alta para os botões aparecerem.
         elev = 34.0

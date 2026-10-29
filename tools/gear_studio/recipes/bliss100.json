@@ -280,7 +280,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.469,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "Confiança baixa nas medidas (largura estimada) e na posição exata das minichaves do Ecstasy."
 }

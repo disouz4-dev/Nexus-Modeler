@@ -210,7 +210,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.484,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Super Bass não tem master: o ganho do Nexus é o VOLUME 1 e o volume o VOLUME 2."
 }

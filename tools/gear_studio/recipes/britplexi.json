@@ -212,7 +212,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.484,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O 1959 não tem master: o ganho do Nexus é o VOLUME I e o volume é o VOLUME II."
 }

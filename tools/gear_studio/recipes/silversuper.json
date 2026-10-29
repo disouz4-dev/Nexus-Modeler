@@ -266,7 +266,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 1.05,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Super Reverb não tem presença nem master: a presença ficou no INTENSITY e o volume de saída no VOLUME do canal Normal."
 }

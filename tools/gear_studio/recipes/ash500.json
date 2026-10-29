@@ -254,7 +254,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.411,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "Os quatro deslizantes do EQ ficaram desenhados fixos. A presença do Nexus é o COMPRESSION."
 }

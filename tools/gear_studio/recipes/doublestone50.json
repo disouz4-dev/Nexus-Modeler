@@ -227,7 +227,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.683,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "A presença do Nexus ficou no CONTOUR (o Two-Rock não tem PRESENCE na frente)."
 }

@@ -265,7 +265,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.589,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "Medidas de loja (o site da PRS bloqueou). O ganho do Nexus é o VOLUME do canal Lead (no Archon é o ganho do canal)."
 }

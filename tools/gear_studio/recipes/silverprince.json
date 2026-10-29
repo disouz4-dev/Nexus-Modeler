@@ -231,7 +231,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.9,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Princeton Reverb não tem médio, presença nem master: a presença ficou no INTENSITY e médio e volume em dois botões pequenos."
 }

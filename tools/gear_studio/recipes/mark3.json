@@ -315,7 +315,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.612,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O PRESENCE do Mark III fica atrás: aqui é um botão pequeno depois do REVERB. Os três LEDs de canal são para a tela."
 }

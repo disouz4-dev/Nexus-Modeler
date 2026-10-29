@@ -328,7 +328,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.59,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O AD30 não tem presença: ficou num botão pequeno à direita, perto da entrada. Os LEDs de canal não existem no original."
 }

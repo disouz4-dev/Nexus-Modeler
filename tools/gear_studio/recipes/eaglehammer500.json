@@ -201,7 +201,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.493,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Tone Hammer não tem presença: ficou num botão pequeno ao lado do TREBLE. O DRIVE do original ficou fixo (o ganho do Nexus é o GAIN)."
 }

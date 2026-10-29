@@ -139,7 +139,7 @@ FICHAS["topboost15"] = dict(
     fachada={"tipo": "losangos", "cor": [0.17, 0.035, 0.03], "linha": [0.55, 0.52, 0.36], "passo_mm": 46.0,
              "friso": [0.85, 0.84, 0.8], "faixa": {"altura_rel": 0.27, "friso": [0.75, 0.55, 0.2]}},
     logo={"lado_rel": -0.3, "altura_rel": 0.5, "altura_m": 0.018},
-    painel=dict(posicao="topo", altura_m=0.075, largura_m=0.52, cor=rgb(0.01, 0.01, 0.01), material="pintado",
+    painel=dict(posicao="cima", altura_m=0.075, largura_m=0.52, cor=rgb(0.01, 0.01, 0.01), material="pintado",
                 texto_cor=OURO_VOX),
     estilos={"padrao": VOX_BICO},
     cantos="preto",

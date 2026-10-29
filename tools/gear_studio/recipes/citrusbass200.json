@@ -272,7 +272,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.59,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O AD200 não tem presença: ficou num botão pequeno entre o GAIN e as entradas."
 }

@@ -224,7 +224,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.562,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Imperial não tem presença: a presença do Nexus é o TREBLE do canal Rhythm; o grave é o BASS do Rhythm; o ganho, o agudo e o médio são VOLUME, TONE e MID-BITE do Lead."
 }

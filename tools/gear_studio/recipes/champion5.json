@@ -52,7 +52,7 @@
   "painel": {
     "marca": "NEXUS MODELER",
     "modelo": "CHAMPION 5",
-    "posicao": "topo",
+    "posicao": "cima",
     "altura_m": 0.06,
     "largura_m": 0.29,
     "cor": [
@@ -192,9 +192,9 @@
   "alca": "couro",
   "aba_m": 0.02,
   "quadro": {
-    "largura_rel": 1.24,
-    "proporcao": 1.076,
-    "elevacao": 34.0
+    "largura_rel": 1.1,
+    "proporcao": 1.08,
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Champ só tem VOLUME: agudo, médio, grave, presença e o volume de saída do Nexus ficaram em cinco botões pequenos."
 }

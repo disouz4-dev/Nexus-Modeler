@@ -210,7 +210,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.481,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O JTM45 não tem master: o ganho do Nexus é o LOUDNESS 1 (HIGH TREBLE) e o volume o LOUDNESS 2 (NORMAL)."
 }

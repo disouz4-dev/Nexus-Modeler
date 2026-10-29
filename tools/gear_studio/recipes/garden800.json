@@ -270,7 +270,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.376,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "Profundidade do WT-800 não encontrada (usei 330 mm)."
 }

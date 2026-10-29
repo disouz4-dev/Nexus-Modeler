@@ -239,7 +239,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.496,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O SLO-100 não tem LED de canal: os dois LEDs sobre as minichaves são para a tela mostrar Normal e Overdrive."
 }

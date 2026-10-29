@@ -241,7 +241,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.611,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O DSL20 tem dois LEDs na tecla CHANNEL; o terceiro, embaixo, é para a tela mostrar os três canais."
 }

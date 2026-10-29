@@ -67,7 +67,7 @@
   "painel": {
     "marca": "NEXUS MODELER",
     "modelo": "TOP BOOST 15",
-    "posicao": "topo",
+    "posicao": "cima",
     "altura_m": 0.075,
     "largura_m": 0.52,
     "cor": [
@@ -316,9 +316,9 @@
   ],
   "cantos": "preto",
   "quadro": {
-    "largura_rel": 1.24,
-    "proporcao": 0.832,
-    "elevacao": 34.0
+    "largura_rel": 1.1,
+    "proporcao": 0.834,
+    "elevacao": 0.0
   },
   "notas_modelagem": "O AC15 não tem botão de médio: o médio do Nexus ficou no VOLUME do canal Normal; a presença é o TONE CUT (no original corta agudo no power). Os dois LEDs de canal sobre as entradas não existem no original: são para a tela mostrar o canal ativo."
 }

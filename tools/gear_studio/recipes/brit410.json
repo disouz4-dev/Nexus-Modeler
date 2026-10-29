@@ -407,7 +407,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.49,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "As teclas do JVM acendem na cor do modo; aqui três LEDs entre elas mostram o canal ativo na tela (Limpo, Crunch, Overdrive)."
 }

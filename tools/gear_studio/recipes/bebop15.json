@@ -47,7 +47,7 @@
   "painel": {
     "marca": "NEXUS MODELER",
     "modelo": "BEBOP 15",
-    "posicao": "topo",
+    "posicao": "cima",
     "altura_m": 0.065,
     "largura_m": 0.38,
     "cor": [
@@ -188,9 +188,9 @@
   ],
   "cantos": "preto",
   "quadro": {
-    "largura_rel": 1.24,
-    "proporcao": 1.184,
-    "elevacao": 34.0
+    "largura_rel": 1.1,
+    "proporcao": 1.186,
+    "elevacao": 0.0
   },
   "notas_modelagem": "Medidas de anúncio (sem fonte do fabricante). A presença do Nexus é o CONTOUR."
 }

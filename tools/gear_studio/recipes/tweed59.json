@@ -52,7 +52,7 @@
   "painel": {
     "marca": "NEXUS MODELER",
     "modelo": "TWEED 59",
-    "posicao": "topo",
+    "posicao": "cima",
     "altura_m": 0.07,
     "largura_m": 0.5,
     "cor": [
@@ -191,9 +191,9 @@
   "cantos": "nenhum",
   "aba_m": 0.024,
   "quadro": {
-    "largura_rel": 1.24,
-    "proporcao": 0.976,
-    "elevacao": 34.0
+    "largura_rel": 1.1,
+    "proporcao": 1.02,
+    "elevacao": 0.0
   },
   "notas_modelagem": "Bassman sem master: o ganho é o VOLUME BRIGHT e o volume o VOLUME NORMAL."
 }

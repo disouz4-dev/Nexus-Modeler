@@ -221,7 +221,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.434,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O 360 não tem médio nem presença: o médio ficou no VARIAMP (balanço) e a presença num botão pequeno; o ganho é o FUZZ GAIN."
 }

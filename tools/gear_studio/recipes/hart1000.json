@@ -271,7 +271,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.39,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O LH1000 não tem master nem presença: o volume do Nexus ficou no BALANCE e a presença num botão pequeno."
 }

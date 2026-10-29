@@ -261,7 +261,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.487,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Bassman não tem médio, presença nem master: o volume do Nexus é o VOLUME do canal Normal; médio e presença em botões pequenos."
 }

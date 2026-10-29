@@ -253,7 +253,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.564,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O EQ de seis deslizantes ficou desenhado fixo; grave e médio do Nexus são dois botões pequenos ao lado do BLEND, o agudo é o TONE e a presença o BLEND."
 }

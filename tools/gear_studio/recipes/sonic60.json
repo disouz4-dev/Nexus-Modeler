@@ -253,7 +253,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.429,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Super-Sonic não tem presença: a presença do Nexus ficou no REVERB (o volume é o VOLUME do canal Burn)."
 }

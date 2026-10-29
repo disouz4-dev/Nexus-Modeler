@@ -276,7 +276,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.519,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Badlander tem LED só nos canais 1 e 2; o terceiro LED é para a tela (Limpo, Crunch, Crush)."
 }

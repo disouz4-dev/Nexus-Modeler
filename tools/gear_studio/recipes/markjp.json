@@ -416,7 +416,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.612,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O segundo EQ gráfico fica desenhado fixo (o Nexus tem um EQ só)."
 }

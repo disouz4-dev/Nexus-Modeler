@@ -52,7 +52,7 @@
   "painel": {
     "marca": "NEXUS MODELER",
     "modelo": "TWEED 57",
-    "posicao": "topo",
+    "posicao": "cima",
     "altura_m": 0.065,
     "largura_m": 0.42,
     "cor": [
@@ -217,9 +217,9 @@
   "cantos": "nenhum",
   "aba_m": 0.024,
   "quadro": {
-    "largura_rel": 1.24,
-    "proporcao": 0.921,
-    "elevacao": 34.0
+    "largura_rel": 1.1,
+    "proporcao": 0.93,
+    "elevacao": 0.0
   },
   "notas_modelagem": "O 5E3 só tem TONE e dois VOLUMEs: grave, médio e presença do Nexus ficaram em três botões pequenos no painel."
 }

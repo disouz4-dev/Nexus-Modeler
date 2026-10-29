@@ -290,7 +290,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.612,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O PRESENCE do IIC+ fica atrás: aqui é um botão pequeno ao lado do LEAD MASTER. Os LEDs de canal não existem no original."
 }

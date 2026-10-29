@@ -273,7 +273,7 @@
   "quadro": {
     "largura_rel": 1.1,
     "proporcao": 0.816,
-    "elevacao": 10.0
+    "elevacao": 0.0
   },
   "notas_modelagem": "O Twin não tem presença nem master: a presença ficou no INTENSITY (vibrato) e o volume de saída no VOLUME do canal Vibrato; o ganho é o VOLUME do canal Normal."
 }
