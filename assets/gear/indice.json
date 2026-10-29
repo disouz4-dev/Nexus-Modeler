@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:38:49Z",
+ "gerado": "2026-10-29T18:40:57Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2561,8 +2561,8 @@
   },
   "glass500": {
    "nome": "Glass 500",
-   "hash": "f5a6618abf8767d3",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "c2f069ed2940fd6c",
+   "data": "2026-10-29T18:40:57Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "glass500_botao_agudo.png",
@@ -2577,24 +2577,24 @@
     "glass500_mapa.json"
    ],
    "sha256": {
-    "glass500_botao_agudo.png": "726ddf61a3802f04f8a2f8e45704312edebd9bff418ecd667a8ffa4168bf2127",
-    "glass500_botao_ganho.png": "fd8b3cfabbb7e3c9978c59b12f76897ffb363334836862204abd87904cd4283a",
-    "glass500_botao_grave.png": "9be7a2e15ee5ecc2553a82c6527f8f73f9fbaeffc368f411235f27d9193fa2dd",
-    "glass500_botao_medio.png": "2dd4a260e754a90b9950e35ab365a75f1b7383649a97a9b96003038b3a54f867",
-    "glass500_botao_presenca.png": "b3e00e5896c3a55ab3cc89c355cb274a43825e9ded84a7399b944ad0b60822f0",
-    "glass500_botao_volume.png": "91d259ffceb72f28e5ecf142d4ea5594ed6234b248eb987c06454ba3f2478218",
-    "glass500_frente.jpg": "7157814fc5d85afd83a5d6e775340ed09605aed8991ac250d03d34f8c528a254",
-    "glass500_frente_alfa.png": "a0014578904eabbecadddae4e55333b63d3f5a1cced0c887f21bbcb1d41ae351",
-    "glass500_manifesto.json": "5186833a17a0bf3eed7c8f2dc1ffd806fe87ec72f2078cc8be9839f6d8b60200",
-    "glass500_mapa.json": "e08d2c5c80d6f1923abcd64d452dd4bef4c3696bf24a4e1f514abe60b8eb446c"
+    "glass500_botao_agudo.png": "dc580b965fa7876c5c078ec1aca81d9382040dee9590de945eea538d9efa7f52",
+    "glass500_botao_ganho.png": "7b9e640205e0f82e82647d463dd5699de68d2c0d4a3125a0d7bd13bb188ee9c9",
+    "glass500_botao_grave.png": "3517d7e6e4a169eded146e3fe69bc211de8d44b81c4fa7e6b5393b192397b1a7",
+    "glass500_botao_medio.png": "e358048d04f40c5bbbc6aef91ec73e9225915c375757713265f5a5f23677ec73",
+    "glass500_botao_presenca.png": "1e82809dbe6917c8218a14985e99e4236c46a9a4cf919bdd4231c3cfda1e1cff",
+    "glass500_botao_volume.png": "be83a30764068954dacd4410a366f6246db655961bb509c6c94569dc28a62a9a",
+    "glass500_frente.jpg": "63580dd730443cc2176465dc5129d43628e81704e142e6ce18127bafe9620b55",
+    "glass500_frente_alfa.png": "76cd9cf84dd5130e506b2db5796bb1f8bd5136e9dd7763ef25d3dbf05a1d33b7",
+    "glass500_manifesto.json": "f9280abc59b1739c0f9d1ad2e9c881d86b75b5d483a992e06b05a9a0bbaf0156",
+    "glass500_mapa.json": "bf86b5d0d8914132dadabbd8eb88620bd59e8ca0f096e3a75eb1df4b19aa897e"
    },
-   "tamanho": 1590494,
+   "tamanho": 849681,
    "tipo": "cabecote",
    "inspiracao": "Darkglass Microtubes 500",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
