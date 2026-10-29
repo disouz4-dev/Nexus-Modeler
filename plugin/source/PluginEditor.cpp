@@ -686,38 +686,60 @@ std::vector<NexusEditor::BoardView::Slot> NexusEditor::BoardView::layoutSlots() 
                        .withTrimmedTop(mBoardImage.getHeight() * 0.13f)
                        .withTrimmedBottom(mBoardImage.getHeight() * 0.04f);
   const float gap = inner.getWidth() * 0.02f;
-  // Até quatro pedais, uma fileira; mais que isso, duas (como numa pedaleira
-  // de verdade): a de trás com o começo do som, a da frente com o resto.
-  const size_t rows = pedals.size() > 4 ? 2 : 1;
-  const size_t perRow = (pedals.size() + rows - 1) / rows;
-  const float rowGap = rows > 1 ? mBoardImage.getHeight() * 0.10f : 0.0f; // espaço dos cabos da fileira da frente
-  const float rowH = (inner.getHeight() - rowGap) / static_cast<float>(rows);
   auto bodyOf = [this](int p) {
     const auto* art = mEditor.pedalArt(p);
     return art != nullptr && !art->body.isEmpty() ? art->body : juce::Rectangle<float>(0.0f, 0.0f, 360.0f, 600.0f);
   };
-  // Mesma altura para todos: a da fileira mais larga, se não couber inteira.
-  float h = rowH;
-  for (size_t r = 0; r < rows; ++r)
-  {
-    float aspect = 0.0f; // soma das larguras com altura 1
-    size_t n = 0;
-    for (size_t i = r * perRow; i < std::min(pedals.size(), (r + 1) * perRow); ++i, ++n)
-      aspect += bodyOf(pedals[i]).getWidth() / bodyOf(pedals[i]).getHeight();
-    h = std::min(h, (inner.getWidth() - gap * static_cast<float>(n - 1)) / aspect);
-  }
+  // Comprimento de verdade (mm): um pedal pequeno fica menor que um grande,
+  // como numa pedaleira de verdade. Sem a medida, o tamanho de um pedal comum.
+  auto lengthOf = [this](int p) {
+    const auto* art = mEditor.pedalArt(p);
+    return art != nullptr && art->sizeMm.y > 0.0f ? art->sizeMm.y : 125.0f;
+  };
+  // Largura na tela de cada milímetro de comprimento (a arte manda na proporção).
+  auto widthPerMm = [&](int p) { return bodyOf(p).getWidth() / bodyOf(p).getHeight() * lengthOf(p); };
+  // Pixels por milímetro com tantas fileiras: a mesma escala para todos, a
+  // maior em que o pedal mais comprido cabe na altura e a fileira mais larga
+  // cabe na largura. A de trás leva o começo do som, a da frente o resto.
+  auto scaleFor = [&](size_t rows) {
+    const size_t perRow = (pedals.size() + rows - 1) / rows;
+    const float rowGap = rows > 1 ? mBoardImage.getHeight() * 0.10f : 0.0f; // espaço dos cabos da fileira da frente
+    const float rowH = (inner.getHeight() - rowGap) / static_cast<float>(rows);
+    float scale = std::numeric_limits<float>::max();
+    for (size_t r = 0; r < rows; ++r)
+    {
+      float width = 0.0f, longest = 0.0f;
+      size_t n = 0;
+      for (size_t i = r * perRow; i < std::min(pedals.size(), (r + 1) * perRow); ++i, ++n)
+      {
+        width += widthPerMm(pedals[i]);
+        longest = std::max(longest, lengthOf(pedals[i]));
+      }
+      if (n > 0)
+        scale = std::min({scale, rowH / longest, (inner.getWidth() - gap * static_cast<float>(n - 1)) / width});
+    }
+    return scale;
+  };
+  // Uma fileira enquanto der; a segunda só entra quando, na fileira única, os
+  // pedais já ficariam menores do que divididos em duas.
+  const size_t rows = pedals.size() > 1 && scaleFor(2) > scaleFor(1) ? 2 : 1;
+  const size_t perRow = (pedals.size() + rows - 1) / rows;
+  const float rowGap = rows > 1 ? mBoardImage.getHeight() * 0.10f : 0.0f;
+  const float rowH = (inner.getHeight() - rowGap) / static_cast<float>(rows);
+  const float scale = scaleFor(rows);
   for (size_t r = 0; r < rows; ++r)
   {
     const size_t first = r * perRow, last = std::min(pedals.size(), (r + 1) * perRow);
     float width = gap * static_cast<float>(last - first - 1);
     for (size_t i = first; i < last; ++i)
-      width += bodyOf(pedals[i]).getWidth() / bodyOf(pedals[i]).getHeight() * h;
+      width += widthPerMm(pedals[i]) * scale;
     const float cy = inner.getY() + rowH * 0.5f + static_cast<float>(r) * (rowH + rowGap);
     float x = inner.getCentreX() - width * 0.5f;
     for (size_t i = first; i < last; ++i)
     {
       const auto* art = mEditor.pedalArt(pedals[i]);
       const auto b = bodyOf(pedals[i]);
+      const float h = lengthOf(pedals[i]) * scale;
       const float k = h / b.getHeight();
       const juce::Rectangle<float> body(x, cy - h * 0.5f, b.getWidth() * k, h);
       const auto image = art != nullptr ? juce::Rectangle<float>(body.getX() - b.getX() * k, body.getY() - b.getY() * k,
@@ -1704,6 +1726,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       select({Kind::amp, 0});
     });
   addAndMakeVisible(*mPresets);
+  mMk300 = std::make_unique<nexus::ui::Mk300Export>(*this);
+  mPresets->onExport = [this] { exportMk300(); };
   addChildComponent(mUpdate);
   mUpdate.onLayoutChange = [this] { resized(); };
   // Depois da janela aparecer: pergunta se manda o relatório de travamento.
@@ -2407,6 +2431,35 @@ void NexusEditor::openIrCatalog(int rig)
                       nexus::ui::CapturePanel::Gear::cab);
   mCapturePanel->setVisible(true);
   mCapturePanel->toFront(true);
+}
+
+// Exportar para a MK-300: o que toca agora no lado ativo (a captura do
+// cabeçote na posição do ganho, o IR da caixa) e os pedais de captura da cadeia.
+void NexusEditor::exportMk300()
+{
+  using Item = nexus::ui::Mk300Export::Item;
+  std::vector<Item> items;
+  const int rig = mProcessor.activeRig();
+  const int amp = mProcessor.audibleSlot(rig);
+  if (mProcessor.slotLoaded(amp))
+  {
+    const auto file = mProcessor.captureFileNear(amp);
+    if (file.existsAsFile())
+      items.push_back({Item::Kind::amp, TRANS(juce::String::fromUTF8("Cabeçote")) + ": " + mProcessor.packName(amp), file});
+  }
+  if (mProcessor.irLoaded(rig) && !mProcessor.packIncludesCab(rig) && mProcessor.irFile(rig).existsAsFile())
+    items.push_back({Item::Kind::ir, TRANS("Caixa (IR)") + ": " + mProcessor.irName(rig), mProcessor.irFile(rig)});
+  const auto layout = mProcessor.layout();
+  for (int i = 0; i < NexusProcessor::kPedals; ++i)
+  {
+    const int look = mProcessor.pedalLook(i);
+    if (!layout.uses(i) || NexusProcessor::isNativeLook(look) || !mProcessor.slotLoaded(NexusProcessor::pedalSlot(i)))
+      continue;
+    const auto file = mProcessor.captureFileNear(NexusProcessor::pedalSlot(i));
+    if (file.existsAsFile())
+      items.push_back({Item::Kind::pedal, TRANS("Pedal") + ": " + juce::String::fromUTF8(kPedalInfo[look].name), file});
+  }
+  mMk300->start(std::move(items));
 }
 
 void NexusEditor::chooseIr(int rig)

@@ -25,6 +25,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    74,
+    120
+  ],
   "rotulos": [
     {
       "texto": "DROP",

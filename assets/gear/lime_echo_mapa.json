@@ -62,6 +62,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    150,
+    105
+  ],
   "rotulos": [
     {
       "texto": "MODO",

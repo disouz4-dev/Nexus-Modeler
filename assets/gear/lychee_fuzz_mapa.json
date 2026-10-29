@@ -35,6 +35,10 @@
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    94,
+    120
+  ],
   "rotulos": [
     {
       "texto": "VOLUME",

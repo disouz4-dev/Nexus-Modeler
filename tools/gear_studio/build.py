@@ -192,6 +192,9 @@ def main():
               "posicoes": frames, "botoes": [],
               # Canais do amplificador original (nome de cada um), se houver.
               "canais": [c["nome"] for c in rec.get("canais", [])]}
+    # Pedais: tamanho de verdade (a pedaleira da tela põe um do lado do outro em escala).
+    if "comprimento" in rec.get("medidas_m", {}):
+        layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["comprimento"] * 1000)]
     boxes = []
     for c in controls:
         b = knob_box(scene, cam, c)

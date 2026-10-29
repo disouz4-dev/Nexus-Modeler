@@ -65,6 +65,8 @@ struct GearArt
   juce::Rectangle<float> display;
   // Onde a peça de fato está na imagem (sem a folga transparente em volta).
   juce::Rectangle<float> body;
+  // Pedais: largura e comprimento de verdade, em milímetros (0 = não se sabe).
+  juce::Point<float> sizeMm;
   // Amplificadores de vários canais: um LED por canal, na ordem dos canais.
   std::vector<std::pair<juce::Point<float>, float>> channelLeds;
 

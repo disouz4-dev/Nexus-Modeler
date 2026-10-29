@@ -5,11 +5,11 @@
   "inspiracao": "delay de vários modos verde, com visor (no espírito do Line 6 DL4, com desenho próprio)",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.2,
-    "comprimento": 0.13,
-    "altura": 0.055
+    "largura": 0.15,
+    "comprimento": 0.105,
+    "altura": 0.05
   },
-  "chanfro_m": 0.004,
+  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
       0.045,
@@ -111,7 +111,7 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa de delay de mesa grande: 200 x 130 x 55 mm",
+  "medidas_fonte": "caixa de delay compacta, menor que um DL4 de verdade: 150 x 105 x 50 mm",
   "visor": {
     "pos": [
       -0.7,
