@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:29:58Z",
+ "gerado": "2026-10-29T23:40:12Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3540,8 +3540,8 @@
   },
   "littletube": {
    "nome": "Little Tube",
-   "hash": "25791860e0275446",
-   "data": "2026-10-29T19:07:51Z",
+   "hash": "6362b45abff826a0",
+   "data": "2026-10-29T23:40:12Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "littletube_botao_agudo.png",
@@ -3556,24 +3556,24 @@
     "littletube_mapa.json"
    ],
    "sha256": {
-    "littletube_botao_agudo.png": "f5d2852bfb043713af628a382d5b85c5164ebc3a8f862703d47a587047b3b032",
-    "littletube_botao_ganho.png": "a4b4d8f2c3f3e4f1fd4253857370093c15a5bae89e0a467849c9ba27cce3e719",
-    "littletube_botao_grave.png": "82f3b032448e9d9bfe6ebae0550e5b6d76ee519cb3622c5f78f24b906f5ecdfc",
-    "littletube_botao_medio.png": "60eb4c2c726dc0ca2d561529a4cee15450d83db76666026148df6517fb98de9a",
-    "littletube_botao_presenca.png": "4752283d9ec7bda33cd08e96d05b46fd4e5c7968290f6b5c87c0efc57622dbff",
-    "littletube_botao_volume.png": "bc4e81214862c3b496cb41fc683d4c02385fd1e561606abc0a43eda3e1c816f9",
-    "littletube_frente.jpg": "de60975ef7fc04085655d367f5ade78e70f711bad8e3d4f2da03a454a5c40210",
-    "littletube_frente_alfa.png": "61b1e2ebf30a796466eaa98eb00563554a8be2743c3b29ca2ddbe21db6c0607a",
-    "littletube_manifesto.json": "fcbfbe91755aabaccf540261cb1ae6d325ee1c62f3dbb112951d37afb63be890",
+    "littletube_botao_agudo.png": "53c852b041e6c4e6cc303c6af751edcb1610e65d0df8e60f4b7c13e589228221",
+    "littletube_botao_ganho.png": "745ac109f9912e9d7115095cb90f254925897fd9113122da3d4b7998a9fb72ea",
+    "littletube_botao_grave.png": "74b2e6fa48da798e42c44b329ba77f24bb385bb6b4a96f168cca492973ba55b1",
+    "littletube_botao_medio.png": "4d627bf69efaff14ffab422d03e23c0f7abf0db9b466dffb0abc9a8a54e30f41",
+    "littletube_botao_presenca.png": "177e5fd7f147c4fd19290c1cd9f152c443cd836931aa667df76db290eefa4d66",
+    "littletube_botao_volume.png": "660492313605df2435360ad7032a28bc205371dd5e69cc63565cacc625ff921b",
+    "littletube_frente.jpg": "ac0ac6bffb41a4fde66575ab2a9235f540fa3af5b2011f3c9c96f24a18ea798a",
+    "littletube_frente_alfa.png": "dbff4243847aeaab997316b6ddd6246191d427492ea4b297030adb839946c05d",
+    "littletube_manifesto.json": "2e6aca252c0556f45ea4f55cc858e519e190fdf93ad149bffc467ccb5ec2195b",
     "littletube_mapa.json": "8872ffff50ccf8876673c117b10d4e0e2e5fa9ca21b5e80ea0804c6afa40ba3e"
    },
-   "tamanho": 702001,
+   "tamanho": 699573,
    "tipo": "cabecote",
    "inspiracao": "Markbass Little Mark Tube",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
