@@ -121,6 +121,8 @@ countries: tr
 "Efeito do Nexus" = "Nexus efekti"
 "Em alta" = "Trend"
 "Pesquisar (nome ou original)" = "Ara (ad veya orijinal)"
+"Ligado" = "Açık"
+"Bypass" = "Bypass"
 "Nada encontrado." = "Hiçbir şey bulunamadı."
 "Em breve" = "Yakında"
 "Entrada na TONE3000 cancelada." = "TONE3000 girişi iptal edildi."

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <optional>
+
 #include <juce_audio_processors/juce_audio_processors.h>
 
 #include <array>
@@ -60,6 +62,8 @@ public:
   void paintOverChildren(juce::Graphics&) override;
   void resized() override;
   void select(Selection s);
+  // Pedal isolado na pedaleira, grande (-1 = a pedaleira toda).
+  void setPedalFocus(int pedal);
   Selection selection() const { return mSel; }
   nexus::ui::AudioPanel* audioPanel() { return mAudioPanel.get(); }
   // Abre a janela das capturas da peça escolhida (o mesmo que "abrir pacote").
@@ -81,9 +85,12 @@ private:
     void paint(juce::Graphics&) override;
     void paintOverChildren(juce::Graphics&) override;
     void resized() override;
+    void mouseDown(const juce::MouseEvent&) override;
     void mouseUp(const juce::MouseEvent&) override;
     void mouseMove(const juce::MouseEvent&) override;
     std::function<void(const juce::String&, juce::Component&)> onMidiMenu;
+    // Clique no corpo do pedal (quantos cliques).
+    std::function<void(int)> onBodyClick;
     // Relógio da tela: atualiza o BPM mostrado no TAP.
     void tick() { refreshTempo(); }
     // Pedaleira: o pedal escolhido é desenhado neste retângulo (a imagem
@@ -142,12 +149,29 @@ private:
     void resized() override;
     void mouseUp(const juce::MouseEvent&) override;
     void mouseMove(const juce::MouseEvent&) override;
+    bool hitTest(int x, int y) override;
     // Onde fica a imagem do pedal (vazio se não está na cadeia).
     juce::Rectangle<float> imageOf(int pedal) const;
     // Relógio da tela: redesenha só se algo mudou (pedais, LEDs, botões).
     void tick();
+    // Pedal isolado (dois cliques): só ele, grande; -1 = a pedaleira toda.
+    // O pedal cresce num zoom curto até ocupar o palco, por cima do título.
+    void setFocus(int pedal);
+    int focus() const { return mFocus; }
 
   private:
+    juce::Rectangle<float> backArea() const;
+    // Onde a pedaleira pode aparecer (sem a faixa de cima nem a do título).
+    juce::Rectangle<float> stageArea() const;
+    // Aproxima a pedaleira até os pedais ocuparem o palco.
+    void updateCamera();
+    // Quanto do zoom já aconteceu (0 = na pedaleira, 1 = isolado), suavizado.
+    float zoom() const;
+    bool zooming() const;
+    int mFocus = -1;
+    int mZoomPedal = -1; // o pedal do zoom (fica até o zoom de volta terminar)
+    float mZoomFrom = 0.0f;
+    double mZoomStart = 0.0;
     struct Slot
     {
       int pedal;
@@ -156,6 +180,8 @@ private:
       float scale;
     };
     std::vector<Slot> layoutSlots() const;
+    // O pedal do zoom: entre o lugar dele na pedaleira e o palco inteiro.
+    std::optional<Slot> zoomedSlot() const;
     const Slot* slotAt(juce::Point<float> p) const;
     bool overFootswitch(const Slot& s, juce::Point<float> p) const;
     juce::String signature() const;
@@ -163,7 +189,9 @@ private:
     NexusEditor& mEditor;
     nexus::ui::GearArt mBoard;
     juce::Rectangle<float> mBoardImage;
+    juce::Rectangle<float> mBoardFit; // a pedaleira inteira cabendo no palco, antes da aproximação
     std::vector<Slot> mSlots;
+    std::optional<Slot> mZoomSlot;
     juce::String mSignature;
   };
 
@@ -306,6 +334,10 @@ private:
   void showLanguageMenu();
   void retranslate();
   void showMidiMenu(const juce::String& paramId, juce::Component& target);
+  // Hora em que a pedaleira escolheu um pedal (o clique duplo começa nela e
+  // termina no pedal).
+  juce::uint32 mPedalChosenAt = 0;
+  bool keyPressed(const juce::KeyPress&) override;
   // Coluna de equipamentos: lista, aba e peça marcada.
   void refreshBrowser();
   void pickGear(const nexus::ui::GearItem& item);

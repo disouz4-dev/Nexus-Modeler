@@ -121,6 +121,8 @@ countries: us gb au ca
 "Efeito do Nexus" = "Nexus effect"
 "Em alta" = "Trending"
 "Pesquisar (nome ou original)" = "Search (name or original)"
+"Ligado" = "On"
+"Bypass" = "Bypass"
 "Nada encontrado." = "Nothing found."
 "Em breve" = "Coming soon"
 "Entrada na TONE3000 cancelada." = "TONE3000 sign-in canceled."

@@ -139,6 +139,20 @@ void EqStage::setParam(const juce::String& id, float plain)
   p.setValueNotifyingHost(p.convertTo0to1(plain));
 }
 
+bool EqStage::eqOn() const
+{
+  return value("eq_ligado") > 0.5f;
+}
+
+void EqStage::toggleBypass()
+{
+  auto& p = param("eq_ligado");
+  p.beginChangeGesture();
+  p.setValueNotifyingHost(eqOn() ? 0.0f : 1.0f);
+  p.endChangeGesture();
+  repaint();
+}
+
 bool EqStage::bandOn(int band) const
 {
   return value(NexusProcessor::eqParam(band, "ligado")) > 0.5f;
@@ -167,6 +181,7 @@ void EqStage::resized()
 {
   auto r = getLocalBounds().toFloat().reduced(36.0f, 18.0f);
   mStrip = r.removeFromBottom(108.0f);
+  mBypass = mStrip.withTrimmedLeft(mStrip.getWidth() - 200.0f).reduced(24.0f, 0.0f).withSizeKeepingCentre(152.0f, 40.0f);
   r.removeFromBottom(12.0f);
   mCurveArea = r.reduced(10.0f, 8.0f);
   select(mSelected); // reposiciona os botões da faixa
@@ -323,7 +338,7 @@ void EqStage::paintCurve(juce::Graphics& g)
                juce::Justification::centredRight);
   }
   const auto bands = readBands(mParams);
-  const bool eqOn = value("eq_ligado") > 0.5f;
+  const bool on = eqOn();
   const int steps = juce::jmax(80, static_cast<int>(a.getWidth() / 2.5f));
   auto curveOf = [&](int only, juce::Path& line, juce::Path& area) {
     for (int i = 0; i <= steps; ++i)
@@ -352,9 +367,9 @@ void EqStage::paintCurve(juce::Graphics& g)
   }
   juce::Path line, area;
   curveOf(-1, line, area);
-  g.setColour((eqOn ? colour::accent : colour::faint).withAlpha(0.10f));
+  g.setColour((on ? colour::accent : colour::faint).withAlpha(0.10f));
   g.fillPath(area);
-  g.setColour(eqOn ? colour::accent : colour::faint);
+  g.setColour(on ? colour::accent : colour::faint);
   g.strokePath(line, juce::PathStrokeType(2.0f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
   // Pontos das faixas, com o número.
   for (int i = 0; i < kBands; ++i)
@@ -366,7 +381,8 @@ void EqStage::paintCurve(juce::Graphics& g)
     const float r = hot ? 10.0f : 8.5f;
     g.setColour(juce::Colours::black.withAlpha(0.55f));
     g.fillEllipse(p.x - r - 1.5f, p.y - r - 1.0f, 2.0f * r + 3.0f, 2.0f * r + 3.0f);
-    g.setColour(bandColour(i));
+    // Em bypass, os pontos ficam apagados como a curva.
+    g.setColour(bandColour(i).withMultipliedAlpha(on ? 1.0f : 0.4f));
     g.fillEllipse(p.x - r, p.y - r, 2.0f * r, 2.0f * r);
     if (i == mSelected)
     {
@@ -377,6 +393,10 @@ void EqStage::paintCurve(juce::Graphics& g)
     g.setFont(Fonts::get().ui(10.5f).boldened());
     g.drawText(juce::String(i + 1), juce::Rectangle<float>(p.x - r, p.y - r, 2.0f * r, 2.0f * r), juce::Justification::centred);
   }
+  // Frequência do ponto debaixo do mouse, do que está sendo arrastado ou do escolhido.
+  const int tag = mDrag >= 0 ? mDrag : mHover >= 0 ? mHover : mSelected;
+  if (tag >= 0 && bands[static_cast<size_t>(tag)].on)
+    paintTag(g, tag);
   bool any = false;
   for (const auto& b : bands)
     any = any || b.on;
@@ -388,6 +408,55 @@ void EqStage::paintCurve(juce::Graphics& g)
   }
 }
 
+// Etiqueta em cima do ponto: frequência e, nas faixas com ganho, o ganho.
+void EqStage::paintTag(juce::Graphics& g, int band)
+{
+  auto text = formatFreq(value(NexusProcessor::eqParam(band, "freq")));
+  if (hasGain(band))
+    text << "   " << formatDb(value(NexusProcessor::eqParam(band, "ganho")));
+  const auto font = Fonts::get().ui(12.0f).boldened();
+  const float w = juce::GlyphArrangement::getStringWidth(font, text) + 20.0f, h = 22.0f;
+  const auto p = bandPoint(band);
+  // Em cima do ponto; perto do topo, embaixo. Nunca sai da área da curva.
+  float y = p.y - 18.0f - h;
+  if (y < mCurveArea.getY())
+    y = p.y + 18.0f;
+  const float x = juce::jlimit(mCurveArea.getX(), mCurveArea.getRight() - w, p.x - w * 0.5f);
+  const juce::Rectangle<float> box(x, y, w, h);
+  g.setColour(juce::Colours::black.withAlpha(0.5f));
+  g.fillRoundedRectangle(box.translated(0.0f, 1.5f), h * 0.5f);
+  g.setColour(juce::Colour(0xf0101216));
+  g.fillRoundedRectangle(box, h * 0.5f);
+  g.setColour(bandColour(band).withAlpha(0.8f));
+  g.drawRoundedRectangle(box.reduced(0.5f), h * 0.5f, 1.2f);
+  g.setColour(colour::text);
+  g.setFont(font);
+  g.drawText(text, box, juce::Justification::centred, false);
+}
+
+// Bypass do equalizador inteiro: o som passa intacto, as faixas ficam guardadas.
+void EqStage::paintBypass(juce::Graphics& g)
+{
+  const bool on = eqOn();
+  const auto b = mBypass;
+  const auto tint = on ? colour::accent : colour::danger;
+  g.setColour(tint.withAlpha(mBypassHover ? 0.20f : 0.12f));
+  g.fillRoundedRectangle(b, b.getHeight() * 0.5f);
+  g.setColour(tint.withAlpha(mBypassHover ? 0.9f : 0.6f));
+  g.drawRoundedRectangle(b.reduced(0.5f), b.getHeight() * 0.5f, 1.2f);
+  // Símbolo de liga/desliga.
+  auto icon = b.withWidth(b.getHeight()).reduced(12.0f).translated(6.0f, 0.0f);
+  juce::Path power;
+  power.addCentredArc(icon.getCentreX(), icon.getCentreY(), icon.getWidth() * 0.5f, icon.getHeight() * 0.5f, 0.0f, 0.65f,
+                      juce::MathConstants<float>::twoPi - 0.65f, true);
+  power.startNewSubPath(icon.getCentreX(), icon.getY() - 1.5f);
+  power.lineTo(icon.getCentreX(), icon.getCentreY());
+  g.setColour(tint);
+  g.strokePath(power, juce::PathStrokeType(1.8f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
+  drawCaps(g, on ? tr("Ligado") : tr("Bypass"), b.withTrimmedLeft(b.getHeight() + 2.0f).withTrimmedRight(14.0f), 11.0f,
+           juce::Justification::centredLeft, on ? colour::text : tint);
+}
+
 void EqStage::paintStrip(juce::Graphics& g)
 {
   const auto s = mStrip;
@@ -395,6 +464,7 @@ void EqStage::paintStrip(juce::Graphics& g)
   g.fillRoundedRectangle(s, 10.0f);
   g.setColour(colour::boxBorder.withAlpha(0.5f));
   g.drawRoundedRectangle(s.reduced(0.5f), 10.0f, 1.0f);
+  paintBypass(g);
   auto left = s.reduced(20.0f, 16.0f).removeFromLeft(270.0f);
   int count = 0;
   for (int i = 0; i < kBands; ++i)
@@ -444,6 +514,14 @@ void EqStage::timerCallback()
 
 void EqStage::mouseMove(const juce::MouseEvent& e)
 {
+  if (const bool over = mBypass.contains(e.position); over != mBypassHover)
+  {
+    mBypassHover = over;
+    setMouseCursor(over ? juce::MouseCursor::PointingHandCursor : juce::MouseCursor::NormalCursor);
+    repaint(mBypass.expanded(2.0f).toNearestInt());
+  }
+  if (mBypassHover)
+    return;
   const int b = bandAt(e.position);
   if (b != mHover)
   {
@@ -456,11 +534,17 @@ void EqStage::mouseMove(const juce::MouseEvent& e)
 void EqStage::mouseExit(const juce::MouseEvent&)
 {
   mHover = -1;
+  mBypassHover = false;
   repaint();
 }
 
 void EqStage::mouseDown(const juce::MouseEvent& e)
 {
+  if (mBypass.contains(e.position))
+  {
+    toggleBypass();
+    return;
+  }
   const int b = bandAt(e.position);
   if (b < 0)
     return;

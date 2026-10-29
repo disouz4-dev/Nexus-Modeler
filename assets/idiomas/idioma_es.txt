@@ -121,6 +121,8 @@ countries: es mx ar co cl
 "Efeito do Nexus" = "Efecto de Nexus"
 "Em alta" = "Tendencias"
 "Pesquisar (nome ou original)" = "Buscar (nombre u original)"
+"Ligado" = "Encendido"
+"Bypass" = "Bypass"
 "Nada encontrado." = "No se encontró nada."
 "Em breve" = "Próximamente"
 "Entrada na TONE3000 cancelada." = "Inicio de sesión en TONE3000 cancelado."

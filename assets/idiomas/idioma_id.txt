@@ -121,6 +121,8 @@ countries: id
 "Efeito do Nexus" = "Efek Nexus"
 "Em alta" = "Sedang tren"
 "Pesquisar (nome ou original)" = "Cari (nama atau aslinya)"
+"Ligado" = "Aktif"
+"Bypass" = "Bypass"
 "Nada encontrado." = "Tidak ada yang ditemukan."
 "Em breve" = "Segera hadir"
 "Entrada na TONE3000 cancelada." = "Masuk ke TONE3000 dibatalkan."

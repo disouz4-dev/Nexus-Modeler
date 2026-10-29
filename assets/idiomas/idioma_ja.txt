@@ -121,6 +121,8 @@ countries: jp
 "Efeito do Nexus" = "Nexus エフェクト"
 "Em alta" = "トレンド"
 "Pesquisar (nome ou original)" = "検索（名前または元機種）"
+"Ligado" = "オン"
+"Bypass" = "バイパス"
 "Nada encontrado." = "見つかりませんでした。"
 "Em breve" = "近日公開"
 "Entrada na TONE3000 cancelada." = "TONE3000 へのログインをキャンセルしました。"

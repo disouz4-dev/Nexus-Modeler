@@ -121,6 +121,8 @@ countries: in
 "Efeito do Nexus" = "Nexus इफ़ेक्ट"
 "Em alta" = "ट्रेंडिंग"
 "Pesquisar (nome ou original)" = "खोजें (नाम या मूल)"
+"Ligado" = "चालू"
+"Bypass" = "बायपास"
 "Nada encontrado." = "कुछ नहीं मिला।"
 "Em breve" = "जल्द आ रहा है"
 "Entrada na TONE3000 cancelada." = "TONE3000 में साइन इन रद्द हुआ।"
