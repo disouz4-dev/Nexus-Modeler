@@ -305,7 +305,8 @@ int main(int argc, char** argv)
 
   // 1. Cabeçote: o IR tem de mudar o som.
   {
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>(); // no heap: o processador tem ~200 KB e a pilha do Windows, 1 MB
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
@@ -329,7 +330,8 @@ int main(int argc, char** argv)
 
   // 2. Full rig: a caixa fica trancada, o IR não toca.
   {
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadIrAsync(0, ir);
@@ -440,7 +442,8 @@ int main(int argc, char** argv)
   // 4. Cabeçote de canais: só os canais 1 e 3 têm pacote.
   {
     std::printf("\nCanais do cabeçote\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     setParam(p, "caixa", 0.0f);
@@ -505,7 +508,8 @@ int main(int argc, char** argv)
   // 5. MIDI.
   {
     std::printf("\nMIDI\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     juce::AudioBuffer<float> buffer(2, 128);
@@ -591,7 +595,8 @@ int main(int argc, char** argv)
 
     juce::MemoryBlock state;
     p.getStateInformation(state);
-    NexusProcessor q;
+    auto qBox = std::make_unique<NexusProcessor>();
+    auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
     report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22 && q.midi().ccFor("p2_ligado") == 132
              && q.midi().ccFor("p3_ligado") == 316,
@@ -643,7 +648,8 @@ int main(int argc, char** argv)
 
     // Primeira abertura: só o Brit 800 com a caixa dele, sem pedais.
     {
-      NexusProcessor fresh;
+      auto freshBox = std::make_unique<NexusProcessor>();
+      auto& fresh = *freshBox;
       const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
       const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
       report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: Brit 800 e a caixa dele, sem pedais",
@@ -657,7 +663,8 @@ int main(int argc, char** argv)
     // A cadeia volta igual ao reabrir o projeto.
     juce::MemoryBlock state;
     pBetween->getStateInformation(state);
-    NexusProcessor q;
+    auto qBox = std::make_unique<NexusProcessor>();
+    auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
     report(q.layout().loop[0] == std::vector<int>{0} && q.layout().pre.empty(), "A ordem da cadeia volta ao abrir o projeto",
            juce::String::fromUTF8(q.layout().loop[0].size() == 1 ? "pedal entre cabeçote e caixa" : "ordem perdida"));
@@ -935,7 +942,8 @@ int main(int argc, char** argv)
   // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
   {
     std::printf("\nPresets\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
     p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
@@ -948,7 +956,9 @@ int main(int argc, char** argv)
     juce::MemoryBlock withPack;
     p.getStateInformation(withPack);
 
-    NexusProcessor empty;
+    auto emptyBox = std::make_unique<NexusProcessor>();
+
+    auto& empty = *emptyBox;
     juce::MemoryBlock withoutPack;
     empty.getStateInformation(withoutPack);
     p.setStateInformation(withoutPack.getData(), static_cast<int>(withoutPack.getSize()));
@@ -1096,7 +1106,8 @@ int main(int argc, char** argv)
   // 12. Testar o som: a gravação entra no lugar da guitarra; gravar a própria guitarra.
   {
     std::printf("\nTestar o som\n");
-    NexusProcessor p;
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 44100.0, 128);
     p.prepareToPlay(44100.0, 128);
     auto& test = p.testSource();
