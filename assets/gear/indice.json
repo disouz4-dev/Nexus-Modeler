@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:01:52Z",
+ "gerado": "2026-10-29T18:01:58Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2345,8 +2345,8 @@
   },
   "fliptop18": {
    "nome": "Fliptop 18",
-   "hash": "610ee242eba58c23",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "59b2b814cd865b70",
+   "data": "2026-10-29T18:01:58Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop18_botao_agudo.png",
@@ -2361,24 +2361,24 @@
     "fliptop18_mapa.json"
    ],
    "sha256": {
-    "fliptop18_botao_agudo.png": "bf16363a15dadb8535eac2271d87955fdb5df03a66c6605e1c27fac323a33578",
-    "fliptop18_botao_ganho.png": "bbd488daea78194eaa8fe980e8130d1bfd7edaf2f9ca0ba0fca2960bfa8b5ab4",
-    "fliptop18_botao_grave.png": "c29d756bc24e5085b4ee0a66335bf8cece0f09a92a469fa3c258e5dce4642e67",
-    "fliptop18_botao_medio.png": "e07c21bf858932123b5300880f861c026cc75333f5bd620fb592ff66343e3a3a",
-    "fliptop18_botao_presenca.png": "78a7fec3ad87a0aa00e1a9aacc3e8f004e071807dd498e566215ca744d2220cf",
-    "fliptop18_botao_volume.png": "89b23a1e7da15ce78bb8544b899fca1af009df7ecf06038abb84ba76d9bb34ea",
-    "fliptop18_frente.jpg": "5a9a4cac316a7574b507c8566de5f9024938cf967b9b1d62a7f73a666ef1afbd",
-    "fliptop18_frente_alfa.png": "c2f733818b5e08c019efaf34e92fa79556afd7444f0ce75a01d41790c93fd392",
-    "fliptop18_manifesto.json": "3c3d07654d34acf836f8b5a7ff025ced1df43dfda5484a0f2be2ccc8542a2d8b",
-    "fliptop18_mapa.json": "7c4356919de469101de7fd6b63762370fc3f355ca6835bdce58ca44751cce6ef"
+    "fliptop18_botao_agudo.png": "6f4ab6714f740c1aefaf90da57fa3d73c7dda74dcf60401d62f167ee8f4015ca",
+    "fliptop18_botao_ganho.png": "da376b40880f93c831eff3190580fb295d96829aabc8abe69bf0bd4d07b411b4",
+    "fliptop18_botao_grave.png": "97f2cb49d9100dbc9e7555cfb13ac4028182a8cdb15d01cdef21c1aad812e945",
+    "fliptop18_botao_medio.png": "4b57dd98a88a539a55b155eab2543aeadfd193a9f230c093ca99e64e016eb33e",
+    "fliptop18_botao_presenca.png": "d7b037d9c7c9b7235437a03f12045980d340931fe68646993073850723c12ead",
+    "fliptop18_botao_volume.png": "eabef681eb70cba7c43fb2091348421be9efff2680009cbdf017c4601d111a34",
+    "fliptop18_frente.jpg": "34fb13408513d83596987d0f7d4b9cb0ebb8fe2b703bf5990279eca37d6adb39",
+    "fliptop18_frente_alfa.png": "8be86401d451c60cfad1843c8038b27341687d8f8076945480bdae01f12de871",
+    "fliptop18_manifesto.json": "c9b6dbde4dc6c434399f8172ff4d3d83e6b5ba772e471ff350eb80176da5fe74",
+    "fliptop18_mapa.json": "87609872503cd5a927e8898704293681221c53cc5c2ed30c6b607a4d853ce011"
    },
-   "tamanho": 1874524,
+   "tamanho": 2470042,
    "tipo": "cabecote",
    "inspiracao": "Ampeg B-18 Portaflex",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
