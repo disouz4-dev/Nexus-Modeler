@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:22:23Z",
+ "gerado": "2026-10-29T15:22:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1173,8 +1173,8 @@
   },
   "brit900": {
    "nome": "Brit 900",
-   "hash": "734298bbe5f6f441",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "f1c36581f6f7ba04",
+   "data": "2026-10-29T15:22:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit900_botao_agudo.png",
@@ -1189,24 +1189,24 @@
     "brit900_mapa.json"
    ],
    "sha256": {
-    "brit900_botao_agudo.png": "f809b7657a2150a882f7dea25d8828919849c4b96aa9fa1c405aa28fb06bf032",
-    "brit900_botao_ganho.png": "4f825e5718ec87fe6f9334b9b7b12b1070133e85ca517abb1e664a742b2c7d55",
-    "brit900_botao_grave.png": "db4eb79b997a26ee6352850fdf495a1f0a798b11abb411d86283c3b6795b9dea",
-    "brit900_botao_medio.png": "11447f41d88603ccb0bef3ccc70f80bed466ca05453ba110367128586b6caf83",
-    "brit900_botao_presenca.png": "433524eac42d5558032754c0b6221429f2e48f648f24c40a306a871c8721690a",
-    "brit900_botao_volume.png": "14210490c214fe4ada16fd1c6e60218a5b7911b0d76d3826ac968c6ac8b53e59",
-    "brit900_frente.jpg": "646ee6fc2465a3608157ac5929326d440515f3d06d535b0cf63cdf80cc9b6c0f",
-    "brit900_frente_alfa.png": "a3dfb1a16447375465e26788d3fc7f3d58d329c62fe32d926a7509a700701283",
-    "brit900_manifesto.json": "394a8d9ff0e169683e4e8274ef1fd18dceb5514bfa64b0b94b5a339dd37c76be",
-    "brit900_mapa.json": "bc41e63ff0837b8bd538d357d119e8bab4b13a9b2b0d5551ddf368a2bac6d774"
+    "brit900_botao_agudo.png": "85a1091a55d650df58c5ba5b428d9c0835424710b669f406b1e43eac9022ce4a",
+    "brit900_botao_ganho.png": "aa47cfc405524b1570260164d282516d2f6dbf30b0230a085b20f505e4ace9c5",
+    "brit900_botao_grave.png": "75defcc8d1624b22800034ca2c8f5fa30cd4d8e67a6aedd5497532747dd5c6a5",
+    "brit900_botao_medio.png": "ead5336259b6128409413c1e45a7a6528cb63309229f8e3320207be7f9333db2",
+    "brit900_botao_presenca.png": "82c272660efd38486fa7dd3455d87a7d2eb59798e048ffa1babbfed9eda330d0",
+    "brit900_botao_volume.png": "0bd62f95065796085cf17a76bbb97696be5ff0fda4226e62a5e70cf3fb347759",
+    "brit900_frente.jpg": "64a9b31d5c317aa839e8b2248bf5b548322e86f1eabe5aecae0ce458ad84fda3",
+    "brit900_frente_alfa.png": "f3b309e4679892c5aabadc665967f4b321ebf0a31d5d4bcf05f031ec8bf0b8e6",
+    "brit900_manifesto.json": "eb1841a914096e8276e86720010ce7d9c1da3afb6b1082f57ee4ed39e5e366c5",
+    "brit900_mapa.json": "39abd30cbe6b15cae34d734c0fb50ea803fe57d2a55d4293750e4d9a50236a2c"
    },
-   "tamanho": 2365498,
+   "tamanho": 1435758,
    "tipo": "cabecote",
    "inspiracao": "Marshall JCM900",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
