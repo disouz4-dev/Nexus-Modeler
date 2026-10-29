@@ -2,159 +2,6 @@
   "tipo": "cabecote",
   "nome": "Mark JP",
   "familia": "markjp",
-  "medidas_m": {
-    "largura": 0.67,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.01,
-      0.01,
-      0.01
-    ],
-    "cor_b": [
-      0.028,
-      0.028,
-      0.028
-    ],
-    "trama_mm": 2.2
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.55,
-    "lado_rel": 0.0,
-    "cor": [
-      0.86,
-      0.87,
-      0.89
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "pintado": true,
-    "cor": [
-      0.03,
-      0.03,
-      0.035
-    ],
-    "marca": "NEXUS MODELER",
-    "texto_cor": [
-      0.8,
-      0.8,
-      0.8
-    ],
-    "modelo": "MARK JP"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "deslizantes": [
-    {
-      "id": "eq80",
-      "rotulo": "80"
-    },
-    {
-      "id": "eq240",
-      "rotulo": "240"
-    },
-    {
-      "id": "eq750",
-      "rotulo": "750"
-    },
-    {
-      "id": "eq2200",
-      "rotulo": "2200"
-    },
-    {
-      "id": "eq6600",
-      "rotulo": "6600"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.014,
-      0.014,
-      0.014
-    ],
-    "tampa": [
-      0.02,
-      0.02,
-      0.021
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.85,
-      0.85,
-      0.85
-    ],
-    "cursor": [
-      0.018,
-      0.018,
-      0.018
-    ]
-  },
-  "disposicao": {
-    "liga_x": 0.03,
-    "modelo_x": 0.108,
-    "modelo_tamanho": 0.02,
-    "modelo_inclinacao": 0.0,
-    "modelo_z": 0.06,
-    "botoes_x0": 0.192,
-    "botoes_passo": 0.056,
-    "escala_raio": 0.0168,
-    "escala_numero": 0.0044,
-    "deslizantes_x0": 0.508,
-    "deslizantes_passo": 0.021,
-    "deslizantes_curso": 0.034,
-    "entradas_dir": 0.02,
-    "entradas_passo": 0.05,
-    "marca_dir": 0.04
-  },
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Limpo"
@@ -165,5 +12,411 @@
     {
       "nome": "Solo"
     }
-  ]
+  ],
+  "inspiracao": "Mesa/Boogie JP-2C: cabeçote curto de 476 × 235 × 276 mm em tolex preto Bronco com cantoneiras pretas, painel preto em cima com letras brancas e a tela preta embaixo: entrada, três blocos de canal lado a lado com GAIN, MASTER e PRESENCE em cima e TREBLE, MID e BASS embaixo, um LED e uma minichave cada (o canal 1 é o que toca), dois EQs gráficos de cinco deslizantes lado a lado, minichaves e as alavancas POWER e STANDBY, em botões pretos recartilhados com risco creme.",
+  "formato": "cabecote",
+  "medidas_m": {
+    "largura": 0.476,
+    "altura": 0.235,
+    "profundidade": 0.276
+  },
+  "couro": {
+    "cor": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "grao_mm": 3.6
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "cor_b": [
+      0.03,
+      0.03,
+      0.03
+    ],
+    "trama_mm": 2.4
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.012,
+    "altura_rel": 0.62,
+    "lado_rel": -0.28,
+    "cor": [
+      0.86,
+      0.87,
+      0.89
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "MARK JP",
+    "posicao": "cima",
+    "altura_m": 0.09,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.85
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "cromado",
+      "diametro_m": 0.015,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "traco": [
+        0.85,
+        0.8,
+        0.62
+      ],
+      "escala": "nenhuma",
+      "tampa": [
+        0.02,
+        0.02,
+        0.02
+      ]
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.03
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.07,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.07,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.10600000000000001,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.10600000000000001,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.14200000000000002,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.14200000000000002,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.16999999999999998,
+          "z": 0.88,
+          "rotulo": ""
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.16999999999999998,
+          "z": 0.5
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.215,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.215,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.251,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.251,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRES",
+          "x": 0.287,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.287,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.31499999999999995,
+          "z": 0.88,
+          "rotulo": ""
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.31499999999999995,
+          "z": 0.5
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.36,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.36,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.39599999999999996,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.39599999999999996,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRES",
+          "x": 0.432,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.432,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.45999999999999996,
+          "z": 0.88,
+          "rotulo": ""
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.45999999999999996,
+          "z": 0.5
+        }
+      ],
+      "letra_m": 0.0038,
+      "rotulo_pos": "cima"
+    },
+    {
+      "z": 0.5,
+      "x0": 0.515,
+      "x1": 0.665,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "id": "eq80",
+          "rotulo": "80"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq240",
+          "rotulo": "240"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq750",
+          "rotulo": "750"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq2200",
+          "rotulo": "2200"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq6600",
+          "rotulo": "6600"
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0042,
+      "curso_m": 0.034
+    },
+    {
+      "z": 0.5,
+      "x0": 0.685,
+      "x1": 0.835,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "80"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "240"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "750"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "2200"
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "6600"
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0042,
+      "curso_m": 0.034
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "minichave",
+          "rotulo": "SHRED",
+          "x": 0.86,
+          "z": 0.75
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "CH",
+          "x": 0.86,
+          "z": 0.3
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.91
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.955
+        }
+      ],
+      "letra_m": 0.0038,
+      "rotulo_pos": "baixo"
+    }
+  ],
+  "riscos": [
+    {
+      "x0": 0.198,
+      "z0": 0.06,
+      "x1": 0.198,
+      "z1": 0.94,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.343,
+      "z0": 0.06,
+      "x1": 0.343,
+      "z1": 0.94,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.495,
+      "z0": 0.06,
+      "x1": 0.495,
+      "z1": 0.94,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.845,
+      "z0": 0.06,
+      "x1": 0.845,
+      "z1": 0.94,
+      "esp_m": 0.0006
+    }
+  ],
+  "cantos": "preto",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.612,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "O segundo EQ gráfico fica desenhado fixo (o Nexus tem um EQ só)."
 }

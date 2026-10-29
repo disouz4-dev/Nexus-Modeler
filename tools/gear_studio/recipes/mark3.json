@@ -2,159 +2,6 @@
   "tipo": "cabecote",
   "nome": "Mark Three",
   "familia": "mark3",
-  "medidas_m": {
-    "largura": 0.67,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.01,
-      0.01,
-      0.01
-    ],
-    "cor_b": [
-      0.05,
-      0.05,
-      0.05
-    ],
-    "trama_mm": 2.2
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.55,
-    "lado_rel": 0.0,
-    "cor": [
-      0.86,
-      0.87,
-      0.89
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "pintado": true,
-    "cor": [
-      0.01,
-      0.01,
-      0.011
-    ],
-    "marca": "NEXUS MODELER",
-    "texto_cor": [
-      0.8,
-      0.8,
-      0.8
-    ],
-    "modelo": "MARK THREE"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "deslizantes": [
-    {
-      "id": "eq80",
-      "rotulo": "80"
-    },
-    {
-      "id": "eq240",
-      "rotulo": "240"
-    },
-    {
-      "id": "eq750",
-      "rotulo": "750"
-    },
-    {
-      "id": "eq2200",
-      "rotulo": "2200"
-    },
-    {
-      "id": "eq6600",
-      "rotulo": "6600"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.014,
-      0.014,
-      0.014
-    ],
-    "tampa": [
-      0.02,
-      0.02,
-      0.021
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.85,
-      0.85,
-      0.85
-    ],
-    "cursor": [
-      0.018,
-      0.018,
-      0.018
-    ]
-  },
-  "disposicao": {
-    "liga_x": 0.03,
-    "modelo_x": 0.108,
-    "modelo_tamanho": 0.02,
-    "modelo_inclinacao": 0.0,
-    "modelo_z": 0.06,
-    "botoes_x0": 0.192,
-    "botoes_passo": 0.056,
-    "escala_raio": 0.0168,
-    "escala_numero": 0.0044,
-    "deslizantes_x0": 0.508,
-    "deslizantes_passo": 0.021,
-    "deslizantes_curso": 0.034,
-    "entradas_dir": 0.02,
-    "entradas_passo": 0.05,
-    "marca_dir": 0.04
-  },
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Limpo"
@@ -165,5 +12,310 @@
     {
       "nome": "Solo"
     }
-  ]
+  ],
+  "inspiracao": "Mesa/Boogie Mark III: cabeçote curto de 476 × 235 × 264 mm em tolex preto, painel preto em cima com letras e moldura brancas e a tela preta embaixo: entradas INPUT e FOOT SW., oito botões pretos de saia numerada (VOLUME, TREBLE, BASS, MIDDLE, MASTER, LEAD DRIVE, LEAD MASTER, REVERB), o EQ gráfico de cinco deslizantes numa janela cinza, as alavancas EQ, FULL/HALF, STANDBY e POWER e a luz piloto azul.",
+  "formato": "cabecote",
+  "medidas_m": {
+    "largura": 0.476,
+    "altura": 0.235,
+    "profundidade": 0.262
+  },
+  "couro": {
+    "cor": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "grao_mm": 3.6
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "cor_b": [
+      0.03,
+      0.03,
+      0.03
+    ],
+    "trama_mm": 2.4
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.012,
+    "altura_rel": 0.62,
+    "lado_rel": -0.28,
+    "cor": [
+      0.86,
+      0.87,
+      0.89
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "MARK THREE",
+    "posicao": "cima",
+    "altura_m": 0.09,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "friso": [
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "saia_numerada",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "saia": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "numeros": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "traco": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "escala": "nenhuma",
+      "tampa": [
+        0.02,
+        0.02,
+        0.02
+      ]
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.04,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "FOOT SW.",
+          "x": 0.04,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.085
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.135
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.185
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.235
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.285
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "LEAD DRIVE",
+          "x": 0.335
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "LEAD MASTER",
+          "x": 0.385
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "x": 0.435
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.495,
+          "z": 0.3
+        }
+      ],
+      "letra_m": 0.0045,
+      "rotulo_pos": "baixo"
+    },
+    {
+      "z": 0.5,
+      "x0": 0.555,
+      "x1": 0.725,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "id": "eq80",
+          "rotulo": "80"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq240",
+          "rotulo": "240"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq750",
+          "rotulo": "750"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq2200",
+          "rotulo": "2200"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq6600",
+          "rotulo": "6600"
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0042,
+      "curso_m": 0.034
+    },
+    {
+      "z": 0.55,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "EQ",
+          "x": 0.765
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "FULL",
+          "x": 0.815
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.865
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.915
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.15,
+            0.35,
+            1.0
+          ],
+          "rotulo": null,
+          "x": 0.96,
+          "raio_m": 0.006
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.475,
+          "z": 0.78,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.5,
+          "z": 0.78,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.525,
+          "z": 0.78,
+          "rotulo": ""
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
+    }
+  ],
+  "riscos": [
+    {
+      "x0": 0.545,
+      "z0": 0.5,
+      "x1": 0.735,
+      "z1": 0.5,
+      "esp_m": 0.075,
+      "cor": [
+        0.62,
+        0.63,
+        0.65
+      ]
+    }
+  ],
+  "cantos": "cromo",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.612,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "O PRESENCE do Mark III fica atrás: aqui é um botão pequeno depois do REVERB. Os três LEDs de canal são para a tela."
 }

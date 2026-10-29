@@ -2,32 +2,28 @@
   "tipo": "cabecote",
   "nome": "Citrus 30",
   "familia": "citrus30",
+  "canais": [
+    {
+      "nome": "Crunch"
+    },
+    {
+      "nome": "Drive"
+    }
+  ],
+  "inspiracao": "Orange AD30 Twin Channel: cabeçote de 550 × 270 × 240 mm em tolex laranja com cantoneiras pretas; a frente inteira é uma placa branca embutida com os puxadores cromados, a marca e o nome em cima e a faixa laranja: chaves POWER, WARMDOWN/PLAY e de canal com a lâmpada âmbar, dez botões pretos em duas fileiras desencontradas (MASTER, TREBLE, MIDDLE, BASS e GAIN do canal 2 em cima, que é o que toca, e do canal 1 embaixo) e a entrada.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.26,
-    "profundidade": 0.22
+    "largura": 0.55,
+    "altura": 0.27,
+    "profundidade": 0.24
   },
   "couro": {
     "cor": [
-      0.78,
-      0.28,
-      0.02
+      0.8,
+      0.22,
+      0.01
     ],
-    "grao_mm": 2.2
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.32,
-      0.27,
-      0.19
-    ],
-    "cor_b": [
-      0.74,
-      0.67,
-      0.53
-    ],
-    "trama_mm": 5.0
+    "grao_mm": 1.8
   },
   "logo": {
     "tipo": "marca",
@@ -42,78 +38,297 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "CITRUS 30",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.9,
-      0.9,
-      0.87
+      0.84,
+      0.84,
+      0.82
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
-    ]
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
       0.012,
       0.012,
       0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
+  "estilos": {
+    "padrao": {
+      "forma": "cromado",
+      "diametro_m": 0.022,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    },
+    "peq": {
+      "forma": "cromado",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
   },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "fileiras": [
     {
-      "nome": "Crunch"
+      "z": 0.72,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "puxador",
+          "x": 0.025,
+          "altura_m": 0.12
+        },
+        {
+          "tipo": "puxador",
+          "x": 0.975,
+          "altura_m": 0.12
+        },
+        {
+          "tipo": "logo",
+          "altura_m": 0.017,
+          "x": 0.4,
+          "z": 0.72
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.013,
+          "x": 0.8,
+          "z": 0.72,
+          "texto": "CITRUS 30"
+        }
+      ]
     },
     {
-      "nome": "Drive"
+      "z": 0.46,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "texto",
+          "rotulo": "MASTER",
+          "x": 0.3
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TREBLE",
+          "x": 0.42
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "MIDDLE",
+          "x": 0.54
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "BASS",
+          "x": 0.66
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "GAIN",
+          "x": 0.78
+        }
+      ],
+      "letra_m": 0.0058
+    },
+    {
+      "z": 0.3,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": null,
+          "x": 0.07,
+          "z": 0.3
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": null,
+          "x": 0.115,
+          "z": 0.3
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.95,
+            0.5,
+            0.05
+          ],
+          "rotulo": null,
+          "x": 0.16,
+          "z": 0.3,
+          "raio_m": 0.006
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": null,
+          "x": 0.205,
+          "z": 0.3
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.205,
+          "z": 0.12,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.205,
+          "z": 0.21,
+          "rotulo": ""
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "",
+          "x": 0.3
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.42
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.54
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "",
+          "x": 0.78
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.36,
+          "z": 0.12
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.48,
+          "z": 0.12
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.6,
+          "z": 0.12
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.72,
+          "z": 0.12
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.84,
+          "z": 0.12
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.86,
+          "z": 0.32
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.93,
+          "z": 0.2
+        }
+      ],
+      "letra_m": 0.004
     }
-  ]
+  ],
+  "riscos": [
+    {
+      "x0": 0.05,
+      "z0": 0.46,
+      "x1": 0.95,
+      "z1": 0.46,
+      "esp_m": 0.022,
+      "cor": [
+        0.85,
+        0.27,
+        0.01
+      ]
+    }
+  ],
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.59,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "O AD30 não tem presença: ficou num botão pequeno à direita, perto da entrada. Os LEDs de canal não existem no original."
 }

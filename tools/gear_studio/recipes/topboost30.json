@@ -2,44 +2,51 @@
   "tipo": "cabecote",
   "nome": "Top Boost 30",
   "familia": "top_boost_30",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Vox AC30CH: cabeçote de 705 × 284 × 266 mm em vinil preto com cantoneiras pretas, tela vinho com losangos e friso creme cobrindo a frente, com a marca à esquerda, e o painel vinho no TAMPO, virado para trás, com letras e molduras prateadas: quatro entradas (NORMAL e TOP BOOST), dez botões pretos bico-de-galinha (NORMAL VOLUME, TOP BOOST VOLUME, TREBLE, BASS, REVERB TONE e LEVEL, TREMOLO SPEED e DEPTH, TONE CUT e MASTER VOLUME) e as alavancas STANDBY e POWER com os LEDs à direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.705,
+    "altura": 0.284,
+    "profundidade": 0.266
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.008,
+      0.008,
+      0.008
     ],
-    "grao_mm": 2.4
+    "grao_mm": 1.6
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.12,
-      0.07,
-      0.04
+    "tipo": "losangos",
+    "cor": [
+      0.17,
+      0.035,
+      0.03
     ],
-    "cor_b": [
-      0.42,
-      0.27,
-      0.15
+    "linha": [
+      0.55,
+      0.52,
+      0.36
     ],
-    "trama_mm": 3.4,
+    "passo_mm": 46.0,
     "friso": [
       0.85,
-      0.83,
-      0.78
+      0.84,
+      0.8
     ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
+    "altura_m": 0.018,
+    "altura_rel": 0.78,
+    "lado_rel": -0.3,
     "cor": [
       0.9,
       0.9,
@@ -47,75 +54,281 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "TOP BOOST 30",
-    "pintado": false,
+    "posicao": "topo",
+    "altura_m": 0.075,
+    "largura_m": 0.6,
     "cor": [
-      0.62,
-      0.3,
-      0.14
-    ],
-    "texto_cor": [
-      0.05,
+      0.22,
       0.03,
-      0.02
+      0.035
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.8,
+      0.8,
+      0.82
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "chicken",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.035,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.035,
+          "z": 0.25
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.08,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.08,
+          "z": 0.25
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "VOLUME",
+          "x": 0.14
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.2
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.26
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.32
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TONE",
+          "x": 0.39
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEVEL",
+          "x": 0.45
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SPEED",
+          "x": 0.52
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DEPTH",
+          "x": 0.58
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "TONE CUT",
+          "x": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.72
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.1,
+            0.8,
+            0.1
+          ],
+          "aceso": true,
+          "x": 0.8,
+          "z": 0.85
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.8
+        },
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": true,
+          "x": 0.87,
+          "z": 0.85
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.87
+        }
+      ],
+      "letra_m": 0.0052,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.92,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "texto",
+          "rotulo": "NORMAL",
+          "x": 0.14
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TOP BOOST",
+          "x": 0.26
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "REVERB",
+          "x": 0.42
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TREMOLO",
+          "x": 0.55
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "MASTER",
+          "x": 0.69
+        }
+      ],
+      "letra_m": 0.0052
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.72,
-      0.64,
-      0.48
-    ],
-    "tampa": [
-      0.78,
-      0.7,
-      0.53
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.05,
-      0.05,
-      0.05
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.11,
+      "z0": 0.06,
+      "x1": 0.11,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
+    },
+    {
+      "x0": 0.17,
+      "z0": 0.06,
+      "x1": 0.17,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
+    },
+    {
+      "x0": 0.355,
+      "z0": 0.06,
+      "x1": 0.355,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
+    },
+    {
+      "x0": 0.485,
+      "z0": 0.06,
+      "x1": 0.485,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
+    },
+    {
+      "x0": 0.62,
+      "z0": 0.06,
+      "x1": 0.62,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
+    },
+    {
+      "x0": 0.755,
+      "z0": 0.06,
+      "x1": 0.755,
+      "z1": 0.94,
+      "esp_m": 0.0006,
+      "cor": [
+        0.75,
+        0.75,
+        0.77
+      ]
     }
-  ]
+  ],
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.24,
+    "proporcao": 0.539,
+    "elevacao": 34.0
+  },
+  "notas_modelagem": "O AC30 não tem médio: o médio do Nexus ficou no NORMAL VOLUME; a presença é o TONE CUT."
 }
