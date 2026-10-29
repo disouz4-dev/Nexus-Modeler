@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T17:00:24Z",
+ "gerado": "2026-10-29T17:04:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -249,8 +249,8 @@
   },
   "arch100": {
    "nome": "Arch 100",
-   "hash": "4163abadd3feb2c5",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "8ecb97da3bf77fe8",
+   "data": "2026-10-29T17:04:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "arch100_botao_agudo.png",
@@ -265,24 +265,24 @@
     "arch100_mapa.json"
    ],
    "sha256": {
-    "arch100_botao_agudo.png": "1c1ab92c44ee8d2c8f24d769c8a83b8c3faa598918092c8910942c1bc02b140d",
-    "arch100_botao_ganho.png": "d6155970953158324355556241165ac005fa4b78b8077b953ed96727da97a77e",
-    "arch100_botao_grave.png": "c254a9eb99f114a34e908f72e0ba6af6eb9a66e880cc5c39292d35f17aef632f",
-    "arch100_botao_medio.png": "3d8df97fa133579136b22304434df0c1d0436a08034cd4027945dd83b65c48bc",
-    "arch100_botao_presenca.png": "6b139c0a386a1544031cc6e806e4ed2fee809043fad210badcac4529e246e209",
-    "arch100_botao_volume.png": "93bbb3c1893552aee7eb52416d3c6f8e15cb3d0fefbf89e39adcec83a5b27592",
-    "arch100_frente.jpg": "c481d3249bd20f2c9c19db0b2c859f47045230522d9a23d458a516682607dd23",
-    "arch100_frente_alfa.png": "15121de40782648af5729a5107bbb05ae8a600d65d9c3155b2d2c5f5b3b92457",
-    "arch100_manifesto.json": "ea84a24ac07b814fd86d3f9b577fec4d0a0e689413a6ab9ac354d473ed2f7bfd",
-    "arch100_mapa.json": "d687fb350d00809efc3f9c64b9afb0b9cefa050ab29214ed9d0e507bd850b992"
+    "arch100_botao_agudo.png": "7894fc26563fbc35622d71bb21c08241877c0623904d73747b6e9782cca99837",
+    "arch100_botao_ganho.png": "bd887070ec89fbbbe357974c8a22bd19a569ccfaf08c2e0d73742492ad2cc35b",
+    "arch100_botao_grave.png": "9891d19f5ff2bfff72bc43f7e16a55b912fa53944be11251fd6b76db28ce6aaf",
+    "arch100_botao_medio.png": "bfafd2882542a5e1ddd6abaaa2ce4d51271081a5f52390bc2a9b2bd9d24e55b3",
+    "arch100_botao_presenca.png": "50daacb885f5fd582bafac38df3bfaf7dff94efb3241577035beff41442bf124",
+    "arch100_botao_volume.png": "fc2cfe83a6dad5605cc9696df1f40bc14f4b4a92b1184245b0d00a065a6173ec",
+    "arch100_frente.jpg": "96f7af5d3480b9840c83fd61327cad17f206c3a3dda6197af764522d715ba5ba",
+    "arch100_frente_alfa.png": "70f5b8d5297a04808f5eb3cada42c9bfa0b8bc0db177b66ca8aec7344db06857",
+    "arch100_manifesto.json": "78a5e23e38594d0ccc6bb4416aac523d6a33961be4feed288020756add313f4d",
+    "arch100_mapa.json": "5d84655cf7d7749143df72aac42f78b522f87aa51bf44b237d4aec11b9e004cb"
    },
-   "tamanho": 1801636,
+   "tamanho": 778251,
    "tipo": "cabecote",
    "inspiracao": "PRS Archon",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
