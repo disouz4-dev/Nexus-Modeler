@@ -2,48 +2,41 @@
   "tipo": "pedal",
   "nome": "Olive Drive",
   "familia": "olive_drive",
-  "inspiracao": "verde-claro com letras brancas, caixa clássica de pedal grande e chato (estilo Ibanez TS808 Tube Screamer)",
+  "inspiracao": "Caixa Tube Screamer verde-médio azulado (74 x 124 x 53 mm), letras brancas e filete branco em volta do painel; botões pretos DRIVE (OVERDRIVE), TOM (pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto entre o TOM e o NÍVEL; nome em branco, sem moldura, e a placa de metal pequena de pisar direto na caixa. Tema: ramo de azeitonas, azeitonas tom sobre tom. Original: Ibanez TS808 Tube Screamer.",
   "formato": "classico",
   "medidas_m": {
     "largura": 0.074,
     "comprimento": 0.124,
     "altura": 0.053
   },
-  "chanfro_m": 0.0065,
   "pintura": {
     "cor": [
-      0.13,
-      0.42,
-      0.16
+      0.009,
+      0.3297,
+      0.1062
     ],
-    "metalico": 0.5,
+    "metalico": 0.2,
     "aspereza": 0.3
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "OLIVE DRIVE",
-  "tipo_texto": "OVERDRIVE",
-  "etiqueta_y": 0.06,
   "botao_estilo": {
     "diametro_m": 0.019,
     "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -73,20 +66,67 @@
       ]
     }
   ],
-  "led": [
-    0.0,
-    0.8
-  ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
   "estampa": {
     "svg": "estampas/olive_drive.svg"
   },
-  "logo": {
-    "svg": "estampas/olive_drive_logo.svg"
-  }
+  "medidas_fonte": "Ibanez TS808: aprox. 74 x 124 x 53 mm",
+  "quadro": {
+    "largura_rel": 2.09,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.0065,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "tipo_texto": "OVERDRIVE PRO",
+  "etiqueta_y": 0.08,
+  "etiqueta_estilo": "nenhuma",
+  "pisante": {
+    "estilo": "placa_pequena"
+  },
+  "pisante_ang": 0.0,
+  "led": [
+    0.3,
+    0.8
+  ],
+  "rotulo_embaixo": true,
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.0645,
+        0.1145
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "raio_m": 0.002,
+      "fundo": true
+    },
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.0629,
+        0.1129
+      ],
+      "cor": [
+        0.009,
+        0.3297,
+        0.1062
+      ],
+      "raio_m": 0.0015,
+      "fundo": true
+    }
+  ]
 }
