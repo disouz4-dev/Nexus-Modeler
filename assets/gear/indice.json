@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T19:18:32Z",
+ "gerado": "2026-10-29T19:22:40Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1823,8 +1823,8 @@
   },
   "comet_wah": {
    "nome": "Comet Wah",
-   "hash": "0eab9f682bb8c390",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "e6983b3a2d686ad3",
+   "data": "2026-10-29T19:22:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "comet_wah_botao_a.png",
@@ -1836,21 +1836,21 @@
     "comet_wah_mapa.json"
    ],
    "sha256": {
-    "comet_wah_botao_a.png": "b673f3120d751820c6fe2727bfe4e0519f21e9fc1bb4f9667dc855a9edcc80ef",
-    "comet_wah_botao_b.png": "ba1d744cf450d4864df26661a81874ef031557946d974ded6f5b8e8f7b83880f",
-    "comet_wah_botao_c.png": "0aedc36cb6a6cdccba9663d646ff9fa899f14a98b27762607b42f1cf4d41bc19",
-    "comet_wah_frente.jpg": "dcb9d79723a8f25f9d6aa1fa06fa1c0c4fe056005ff866253b7bb30a07a644d6",
-    "comet_wah_frente_alfa.png": "313783e9a73c80e9d2d9bbaa5ce1345fb60767bbfef592532c43887f1b399349",
-    "comet_wah_manifesto.json": "bd15997220372b9475858654c282e109f684abf7af4aa9cc181136cd6e6d2360",
-    "comet_wah_mapa.json": "151749966c7e144dfb32aae02e172bb817757a85df55f7e3f838c9114c40fca5"
+    "comet_wah_botao_a.png": "a7e1f4b68a38e0291160b0316b504a9f3e176a53fb2e2b6ac75031a571c5a5e7",
+    "comet_wah_botao_b.png": "32fb6bcb127f43567cffc746ae5dee806790ba00878e098b5cff0423dd6c316d",
+    "comet_wah_botao_c.png": "6342ffcb7de821ed6a1c40cd0ff46431e11d014db6d53eb6a2bebe9f48618ff6",
+    "comet_wah_frente.jpg": "5fd94cd8026e5933d3520ee3665781375399c200c97bd73661b7e83b834b901f",
+    "comet_wah_frente_alfa.png": "c9a910e4d5ead734462ac1c79938b288f965db69a7362b107578b30713ed75e8",
+    "comet_wah_manifesto.json": "94ffb5718be406e5672a03839cfad423d6b5e86e4ab909ed97d2ce1f5e025f86",
+    "comet_wah_mapa.json": "512acd0b9bdfda2065cb49fdec69764ab6408ba16ceafa06abe847ffad27760e"
    },
-   "tamanho": 194936,
+   "tamanho": 76997,
    "tipo": "pedal",
    "inspiracao": "Dunlop Cry Baby",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "wah",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
