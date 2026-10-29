@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T17:14:40Z",
+ "gerado": "2026-10-29T17:14:45Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3618,8 +3618,8 @@
   },
   "magick25": {
    "nome": "Magick 25",
-   "hash": "67bdbc6904a0f0b0",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "fb259dd26fc994f5",
+   "data": "2026-10-29T17:14:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magick25_botao_agudo.png",
@@ -3634,24 +3634,24 @@
     "magick25_mapa.json"
    ],
    "sha256": {
-    "magick25_botao_agudo.png": "6205b0a30d685876740f1d10027fc37888215ef7077615c1ede0656ac624bf4f",
-    "magick25_botao_ganho.png": "4be95e501cbcc6ad6bca02edb86e29800628f04208fd68f44d80d77f1fbee736",
-    "magick25_botao_grave.png": "ecc4f53f5f1bcc3b17715d7d13379f88dc3fc9b50358705c1098dd1d262d0a8a",
-    "magick25_botao_medio.png": "9a04af6d14c640cce722eeb3f95eb6b4ccedb4092576fcb50ad59026cb1f1970",
-    "magick25_botao_presenca.png": "87a3a73076c940294409d625786c5649d3c0b54f3b719c58d52d81efeff2be39",
-    "magick25_botao_volume.png": "e48bea00c8c2aea35fff89aaf31703a78cb88e3192aa35cf220083ee3a7708d2",
-    "magick25_frente.jpg": "5f9a15ef8484c816aecfc4a6045f744158b48602d1392ca4e15a3b4fe1de7e10",
-    "magick25_frente_alfa.png": "d8f0e373a63d60687d1d90f85e91fee1d6421d6d65d97359a557246c4674e075",
-    "magick25_manifesto.json": "746b649d26f6703d920573c2a3d74e194d5e4928dd71c3cb24576312d8f1c1d0",
-    "magick25_mapa.json": "da92b8ff93cf6bd7a40fde2414190613aad86d61840576fe80f5513f0f527c68"
+    "magick25_botao_agudo.png": "a7d47e5f56cf78462e124450d16e2d989ce26a7c3f566c18fece005dfd60a6b7",
+    "magick25_botao_ganho.png": "213f7f08039348b0c40b9daae2e1bed69d7e4a58dac1b7cf5acfc6e8390054a3",
+    "magick25_botao_grave.png": "8d827bb9181c84b22f7d53a32998e41278df543e4ae8baf9b9c798dbdb813bfd",
+    "magick25_botao_medio.png": "865d48d4b5c97aae398224c9afc671e5265e4271bd15cc124c7cec9564b01629",
+    "magick25_botao_presenca.png": "17c4311fbb4ef7627eb40cc39cc0f0f8686c812bf6fc9c0b04edb959ea81728b",
+    "magick25_botao_volume.png": "347743075eff7f5907509550babcde8fe86fe5c5cc7854cafb595b8380e9a93c",
+    "magick25_frente.jpg": "a99a57e4fe200da32289a51e75529c44e0f75d6b879f5a980386ee7c737f9d6c",
+    "magick25_frente_alfa.png": "6018606b36ef154936f6314a636c9504a57f4d1d69ae7cd3ca49f0a09ecd058e",
+    "magick25_manifesto.json": "eb841c4d145e504e7a8b4d09696c761ebd59b0bb1ca7d53e3d81d4605eceb4b8",
+    "magick25_mapa.json": "d67d3003d36057e4d25efee473c046f6c47c5b374f19fa247224dde28aaafaf8"
    },
-   "tamanho": 1709518,
+   "tamanho": 1340957,
    "tipo": "cabecote",
    "inspiracao": "Supro Black Magick",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
