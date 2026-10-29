@@ -2,159 +2,6 @@
   "tipo": "cabecote",
   "nome": "Mark Five",
   "familia": "mark_five",
-  "medidas_m": {
-    "largura": 0.67,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.01,
-      0.01,
-      0.01
-    ],
-    "cor_b": [
-      0.028,
-      0.028,
-      0.028
-    ],
-    "trama_mm": 2.2
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.55,
-    "lado_rel": 0.0,
-    "cor": [
-      0.86,
-      0.87,
-      0.89
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "pintado": true,
-    "cor": [
-      0.01,
-      0.01,
-      0.011
-    ],
-    "marca": "NEXUS MODELER",
-    "texto_cor": [
-      0.8,
-      0.8,
-      0.8
-    ],
-    "modelo": "MARK FIVE"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "deslizantes": [
-    {
-      "id": "eq80",
-      "rotulo": "80"
-    },
-    {
-      "id": "eq240",
-      "rotulo": "240"
-    },
-    {
-      "id": "eq750",
-      "rotulo": "750"
-    },
-    {
-      "id": "eq2200",
-      "rotulo": "2200"
-    },
-    {
-      "id": "eq6600",
-      "rotulo": "6600"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.014,
-      0.014,
-      0.014
-    ],
-    "tampa": [
-      0.02,
-      0.02,
-      0.021
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.85,
-      0.85,
-      0.85
-    ],
-    "cursor": [
-      0.018,
-      0.018,
-      0.018
-    ]
-  },
-  "disposicao": {
-    "liga_x": 0.03,
-    "modelo_x": 0.108,
-    "modelo_tamanho": 0.02,
-    "modelo_inclinacao": 0.0,
-    "modelo_z": 0.06,
-    "botoes_x0": 0.192,
-    "botoes_passo": 0.056,
-    "escala_raio": 0.0168,
-    "escala_numero": 0.0044,
-    "deslizantes_x0": 0.508,
-    "deslizantes_passo": 0.021,
-    "deslizantes_curso": 0.034,
-    "entradas_dir": 0.02,
-    "entradas_passo": 0.05,
-    "marca_dir": 0.04
-  },
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Limpo"
@@ -165,5 +12,504 @@
     {
       "nome": "Lead"
     }
-  ]
+  ],
+  "inspiracao": "Mesa/Boogie Mark V: cabeçote de 578 × 254 × 298 mm em tolex preto, painel preto recuado na faixa de CIMA com letras brancas e a tela preta de trama embaixo (marca à esquerda, como a plaqueta Boogie); entrada à esquerda, três canais com GAIN, MASTER, PRESENCE em cima e TREBLE, MID, BASS embaixo e três minichaves cada (o canal 1 é o que toca), EQ gráfico de cinco deslizantes, coluna de REVERB, OUTPUT e SOLO e as alavancas STANDBY e POWER à direita.",
+  "formato": "cabecote",
+  "medidas_m": {
+    "largura": 0.578,
+    "altura": 0.254,
+    "profundidade": 0.298
+  },
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 2.6
+  },
+  "fachada": {
+    "tipo": "tela",
+    "cor_a": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "cor_b": [
+      0.03,
+      0.03,
+      0.03
+    ],
+    "trama_mm": 2.4
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.014,
+    "altura_rel": 0.62,
+    "lado_rel": -0.3,
+    "cor": [
+      0.86,
+      0.87,
+      0.89
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "MARK FIVE",
+    "posicao": "cima",
+    "altura_m": 0.088,
+    "cor": [
+      0.01,
+      0.01,
+      0.011
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.85,
+      0.85,
+      0.85
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "traco": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "escala": "nenhuma",
+      "tampa": [
+        0.02,
+        0.02,
+        0.02
+      ]
+    },
+    "peq": {
+      "forma": "liso",
+      "diametro_m": 0.015,
+      "corpo": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "traco": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "escala": "nenhuma",
+      "tampa": [
+        0.02,
+        0.02,
+        0.02
+      ]
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.025,
+          "z": 0.45,
+          "rotulo_pos": "baixo"
+        }
+      ],
+      "letra_m": 0.0052
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.095,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.137,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.179,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.095,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.137,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.179,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.055,
+          "z": 0.74
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.055,
+          "z": 0.47
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.055,
+          "z": 0.2
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.137,
+          "z": 0.93,
+          "rotulo": ""
+        }
+      ],
+      "letra_m": 0.0048
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.285,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.32699999999999996,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRESENCE",
+          "x": 0.369,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.285,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.32699999999999996,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.369,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.245,
+          "z": 0.74
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.245,
+          "z": 0.47
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.245,
+          "z": 0.2
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.32699999999999996,
+          "z": 0.93,
+          "rotulo": ""
+        }
+      ],
+      "letra_m": 0.0048
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.475,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.517,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "PRESENCE",
+          "x": 0.5589999999999999,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.475,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.517,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.5589999999999999,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.435,
+          "z": 0.74
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.435,
+          "z": 0.47
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": null,
+          "x": 0.435,
+          "z": 0.2
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.517,
+          "z": 0.93,
+          "rotulo": ""
+        }
+      ],
+      "letra_m": 0.0048
+    },
+    {
+      "z": 0.5,
+      "x0": 0.64,
+      "x1": 0.8,
+      "itens": [
+        {
+          "tipo": "deslizante",
+          "id": "eq80",
+          "rotulo": "80"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq240",
+          "rotulo": "240"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq750",
+          "rotulo": "750"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq2200",
+          "rotulo": "2200"
+        },
+        {
+          "tipo": "deslizante",
+          "id": "eq6600",
+          "rotulo": "6600"
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0045,
+      "curso_m": 0.04
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "REVERB",
+          "estilo": "peq",
+          "x": 0.835,
+          "z": 0.8
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.835,
+          "z": 0.5
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "estilo": "peq",
+          "x": 0.835,
+          "z": 0.2
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "OUTPUT",
+          "estilo": "peq",
+          "x": 0.875,
+          "z": 0.68
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SOLO",
+          "estilo": "peq",
+          "x": 0.875,
+          "z": 0.28,
+          "rotulo_pos": "baixo"
+        }
+      ],
+      "letra_m": 0.0045
+    },
+    {
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.915,
+          "z": 0.55,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.955,
+          "z": 0.55,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.0095,
+          "x": 0.935,
+          "z": 0.15,
+          "fonte": "mesa",
+          "texto": "MARK FIVE"
+        }
+      ],
+      "letra_m": 0.0045
+    }
+  ],
+  "riscos": [
+    {
+      "x0": 0.235,
+      "z0": 0.08,
+      "x1": 0.235,
+      "z1": 0.92,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.425,
+      "z0": 0.08,
+      "x1": 0.425,
+      "z1": 0.92,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.62,
+      "z0": 0.08,
+      "x1": 0.62,
+      "z1": 0.92,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.815,
+      "z0": 0.08,
+      "x1": 0.815,
+      "z1": 0.92,
+      "esp_m": 0.0006
+    }
+  ],
+  "cantos": "nenhum",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.535,
+    "elevacao": 10.0
+  }
 }

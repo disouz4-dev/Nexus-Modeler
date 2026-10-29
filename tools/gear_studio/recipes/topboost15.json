@@ -2,117 +2,6 @@
   "tipo": "cabecote",
   "nome": "Top Boost 15",
   "familia": "topboost15",
-  "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
-  },
-  "couro": {
-    "cor": [
-      0.005,
-      0.005,
-      0.005
-    ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.12,
-      0.07,
-      0.04
-    ],
-    "cor_b": [
-      0.42,
-      0.27,
-      0.15
-    ],
-    "trama_mm": 3.4,
-    "friso": [
-      0.85,
-      0.83,
-      0.78
-    ]
-  },
-  "logo": {
-    "tipo": "marca",
-    "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
-    "lado_rel": 0.0,
-    "cor": [
-      0.9,
-      0.9,
-      0.9
-    ]
-  },
-  "painel": {
-    "altura_m": 0.088,
-    "marca": "NEXUS MODELER",
-    "modelo": "TOP BOOST 15",
-    "pintado": false,
-    "cor": [
-      0.62,
-      0.3,
-      0.14
-    ],
-    "texto_cor": [
-      0.05,
-      0.03,
-      0.02
-    ]
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.72,
-      0.64,
-      0.48
-    ],
-    "tampa": [
-      0.78,
-      0.7,
-      0.53
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.05,
-      0.05,
-      0.05
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
   "canais": [
     {
       "nome": "Normal"
@@ -120,5 +9,316 @@
     {
       "nome": "Top Boost"
     }
-  ]
+  ],
+  "inspiracao": "Vox AC15 C1: combo 1×12 de 602 × 456 × 265 mm em vinil preto, tela vinho com losangos de fios claros e friso branco, faixa preta com a marca dourada e filete dourado acima da tela; painel preto com filetes e letras dourados no TAMPO, com LED, chaves POWER e STANDBY, botões bico-de-galinha pretos agrupados (MASTER: VOLUME e TONE CUT; TREMOLO: SPEED e DEPTH; REVERB; TOP BOOST: TREBLE e BASS; VOLUMEs dos canais) e as entradas NORMAL e TOP BOOST à direita.",
+  "formato": "combo",
+  "medidas_m": {
+    "largura": 0.602,
+    "altura": 0.456,
+    "profundidade": 0.265
+  },
+  "couro": {
+    "cor": [
+      0.008,
+      0.008,
+      0.008
+    ],
+    "grao_mm": 1.6
+  },
+  "fachada": {
+    "tipo": "losangos",
+    "cor": [
+      0.17,
+      0.035,
+      0.03
+    ],
+    "linha": [
+      0.55,
+      0.52,
+      0.36
+    ],
+    "passo_mm": 46.0,
+    "friso": [
+      0.85,
+      0.84,
+      0.8
+    ],
+    "faixa": {
+      "altura_rel": 0.27,
+      "friso": [
+        0.75,
+        0.55,
+        0.2
+      ]
+    }
+  },
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "altura_m": 0.018,
+    "altura_rel": 0.5,
+    "lado_rel": -0.3,
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "TOP BOOST 15",
+    "posicao": "topo",
+    "altura_m": 0.075,
+    "largura_m": 0.52,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ],
+    "material": "pintado",
+    "texto_cor": [
+      0.62,
+      0.45,
+      0.16
+    ]
+  },
+  "estilos": {
+    "padrao": {
+      "forma": "chicken",
+      "diametro_m": 0.02,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.85,
+        0.75,
+        0.45
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
+    {
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "led",
+          "rotulo": null,
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": true,
+          "x": 0.03
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.07
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.115
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.175
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "TONE CUT",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SPEED",
+          "x": 0.32
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DEPTH",
+          "x": 0.385
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "LEVEL",
+          "x": 0.46
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.54
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.605
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.67
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "VOLUME",
+          "x": 0.75
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "NORMAL",
+          "x": 0.85
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "TOP BOOST",
+          "x": 0.93
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.85,
+          "z": 0.9,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.93,
+          "z": 0.9,
+          "rotulo": ""
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0052
+    },
+    {
+      "z": 0.9,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "texto",
+          "rotulo": "MASTER",
+          "x": 0.21
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TREMOLO",
+          "x": 0.352
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "REVERB",
+          "x": 0.46
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "TOP BOOST",
+          "x": 0.605
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "NORMAL",
+          "x": 0.75
+        }
+      ],
+      "letra_m": 0.0052
+    }
+  ],
+  "riscos": [
+    {
+      "x0": 0.145,
+      "z0": 0.05,
+      "x1": 0.145,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.282,
+      "z0": 0.05,
+      "x1": 0.282,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.425,
+      "z0": 0.05,
+      "x1": 0.425,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.5,
+      "z0": 0.05,
+      "x1": 0.5,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.71,
+      "z0": 0.05,
+      "x1": 0.71,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    },
+    {
+      "x0": 0.79,
+      "z0": 0.05,
+      "x1": 0.79,
+      "z1": 0.95,
+      "esp_m": 0.0006,
+      "cor": [
+        0.62,
+        0.45,
+        0.16
+      ]
+    }
+  ],
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.921,
+    "elevacao": 34.0
+  },
+  "notas_modelagem": "O AC15 não tem botão de médio: o médio do Nexus ficou no VOLUME do canal Normal; a presença é o TONE CUT (no original corta agudo no power). Os dois LEDs de canal sobre as entradas não existem no original: são para a tela mostrar o canal ativo."
 }

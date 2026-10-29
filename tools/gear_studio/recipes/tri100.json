@@ -2,34 +2,45 @@
   "tipo": "cabecote",
   "nome": "Tri 100",
   "familia": "tri100",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Hughes & Kettner TriAmp Mark 3: cabeçote de 740 × 303 × 254 mm em tolex preto com cantoneiras pretas e alça cromada, frente aberta de vidro escuro mostrando as válvulas acesas e uma linha de luz azul, a marca no meio, e painel de acrílico preto brilhante embaixo com 33 botões cromados de anel azul: MASTER (VOLUME, PRESENCE, RESONANCE) e os três amplificadores AMP 3, AMP 2 e AMP 1 em duas fileiras (A e B) de MASTER, TREBLE, MID, BASS e GAIN (a fileira A do AMP 1 é a que toca), teclas azuis de canal, chaves POWER e STANDBY, STOMP BOOST e a entrada à direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.74,
+    "altura": 0.303,
+    "profundidade": 0.254
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "grade",
+    "tipo": "vidro",
     "cor": [
-      0.03,
-      0.03,
-      0.033
+      0.3,
+      0.3,
+      0.34
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.2
+    "valvulas": 8,
+    "neon": [
+      0.1,
+      0.3,
+      1.0
+    ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.026,
+    "altura_rel": 0.6,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -38,75 +49,511 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "TRI 100",
-    "pintado": false,
+    "posicao": "baixo",
+    "altura_m": 0.075,
     "cor": [
-      0.74,
-      0.75,
-      0.78
+      0.004,
+      0.004,
+      0.005
+    ],
+    "material": "acrilico",
+    "luz": [
+      0.25,
+      0.45,
+      1.0
     ],
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
+      0.75,
+      0.82,
+      1.0
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "cromado",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.85,
+        0.86,
+        0.88
+      ],
+      "traco": [
+        0.05,
+        0.05,
+        0.06
+      ],
+      "escala": "nenhuma",
+      "metal": true,
+      "anel": [
+        0.05,
+        0.25,
+        1.0
+      ],
+      "tampa": [
+        0.9,
+        0.9,
+        0.92
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.27,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.31,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.35000000000000003,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.39,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.43000000000000005,
+          "z": 0.66
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHANNEL",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.47000000000000003,
+          "z": 0.66,
+          "tamanho_m": 0.008
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.27,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.31,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.35000000000000003,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.39,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.43000000000000005,
+          "z": 0.26
+        },
+        {
+          "tipo": "push",
+          "rotulo": "3B",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": false,
+          "x": 0.47000000000000003,
+          "z": 0.26,
+          "tamanho_m": 0.008
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.51,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.55,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID",
+          "x": 0.59,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.63,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.67,
+          "z": 0.66
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHANNEL",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.71,
+          "z": 0.66,
+          "tamanho_m": 0.008
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.51,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.55,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.59,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.63,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.67,
+          "z": 0.26
+        },
+        {
+          "tipo": "push",
+          "rotulo": "2B",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": false,
+          "x": 0.71,
+          "z": 0.26,
+          "tamanho_m": 0.008
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.745,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.785,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.825,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.865,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.905,
+          "z": 0.66
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHANNEL",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.9450000000000001,
+          "z": 0.66,
+          "tamanho_m": 0.008
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.745,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.785,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.825,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.865,
+          "z": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "",
+          "x": 0.905,
+          "z": 0.26
+        },
+        {
+          "tipo": "push",
+          "rotulo": "1B",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": false,
+          "x": 0.9450000000000001,
+          "z": 0.26,
+          "tamanho_m": 0.008
+        }
+      ],
+      "letra_m": 0.0045
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "led",
+          "rotulo": "ON",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.03,
+          "z": 0.7
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.03,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MIDI LEARN",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.075,
+          "z": 0.66
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.075,
+          "z": 0.25,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.125,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.165,
+          "z": 0.66
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RESONANCE",
+          "x": 0.205,
+          "z": 0.66
+        },
+        {
+          "tipo": "push",
+          "rotulo": "NOISE GATE",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.125,
+          "z": 0.26,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "FX LOOP",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.16,
+          "z": 0.26,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "1/2",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.195,
+          "z": 0.26,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "3/4",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.22,
+          "z": 0.26,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "5/6",
+          "cor": [
+            0.25,
+            0.45,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.245,
+          "z": 0.26,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "led",
+          "rotulo": "STOMP BOOST",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": true,
+          "x": 0.975,
+          "z": 0.66
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.975,
+          "z": 0.28,
+          "rotulo_pos": "baixo"
+        }
+      ],
+      "letra_m": 0.0045
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
+  "cantos": "preto",
+  "alca": "cromo",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.481,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "notas_modelagem": "O TriAmp não tem presença no canal: a presença do Nexus é o PRESENCE do MASTER (que existe no original)."
 }

@@ -2,10 +2,17 @@
   "tipo": "cabecote",
   "nome": "Brit 800",
   "familia": "brit_800",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Marshall JCM800 2203: cabeçote de 740 × 315 × 210 mm em tolex preto com cantoneiras pretas, tela de pano preta de trama fina com friso branco e a marca no meio; painel dourado escovado embaixo com as chaves POWER (vermelha, acesa) e STANDBY à esquerda, o nome BRIT 800 inclinado e seis botões pretos de tampa dourada na ordem do original: PRESENÇA, GRAVE, MÉDIO, AGUDO, MASTER e PRE-AMP (o ganho na ponta direita), com as entradas HIGH e LOW uma em cima da outra.",
+  "formato": "cabecote",
   "medidas_m": {
     "largura": 0.74,
-    "altura": 0.285,
-    "profundidade": 0.22
+    "altura": 0.315,
+    "profundidade": 0.21
   },
   "couro": {
     "cor": [
@@ -16,16 +23,22 @@
     "grao_mm": 2.6
   },
   "fachada": {
-    "cor": [
-      0.008,
-      0.008,
-      0.008
+    "tipo": "tela",
+    "cor_a": [
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 1.2,
+    "cor_b": [
+      0.03,
+      0.03,
+      0.03
+    ],
+    "trama_mm": 1.4,
     "friso": [
-      0.8,
-      0.78,
-      0.72
+      0.86,
+      0.85,
+      0.82
     ]
   },
   "logo": {
@@ -41,69 +54,173 @@
     ]
   },
   "painel": {
+    "marca": "NEXUS MODELER",
+    "modelo": "BRIT 800",
+    "posicao": "baixo",
     "altura_m": 0.088,
     "cor": [
       0.5,
       0.34,
       0.14
     ],
-    "marca": "NEXUS MODELER",
     "texto_cor": [
       0.015,
       0.012,
       0.01
-    ],
-    "modelo": "BRIT 800"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.031,
-    "corpo": [
-      0.018,
-      0.018,
-      0.018
-    ],
-    "tampa": [
-      0.56,
-      0.39,
-      0.17
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ALTO",
-    "BAIXO"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.026,
+      "corpo": [
+        0.018,
+        0.018,
+        0.018
+      ],
+      "tampa": [
+        0.56,
+        0.39,
+        0.17
+      ]
     }
-  ]
+  },
+  "fileiras": [
+    {
+      "z": 0.42,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.85,
+            0.015,
+            0.008
+          ],
+          "aceso": true,
+          "x": 0.045,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "STANDBY",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.095,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.026,
+          "x": 0.215,
+          "z": 0.56,
+          "inclinacao": 0.0,
+          "texto": "BRIT 800"
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "LEAD SERIES",
+          "x": 0.215,
+          "z": 0.27,
+          "letra_m": 0.0085
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "GRAVE",
+          "x": 0.515
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MÉDIO",
+          "x": 0.59
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "AGUDO",
+          "x": 0.665
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.74
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "PRE-AMP",
+          "x": 0.815
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.875,
+          "z": 0.66
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.875,
+          "z": 0.28
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "HIGH",
+          "x": 0.91,
+          "z": 0.66,
+          "letra_m": 0.006
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "LOW",
+          "x": 0.91,
+          "z": 0.28,
+          "letra_m": 0.006
+        },
+        {
+          "tipo": "marca",
+          "x": 0.955,
+          "z": 0.47,
+          "tamanho_m": 0.0055
+        }
+      ]
+    }
+  ],
+  "riscos": [
+    {
+      "x0": 0.44,
+      "z0": 0.1,
+      "x1": 0.665,
+      "z1": 0.1,
+      "esp_m": 0.0006
+    },
+    {
+      "x0": 0.74,
+      "z0": 0.1,
+      "x1": 0.815,
+      "z1": 0.1,
+      "esp_m": 0.0006
+    }
+  ],
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.497,
+    "elevacao": 10.0
+  }
 }

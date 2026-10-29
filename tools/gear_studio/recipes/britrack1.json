@@ -2,37 +2,29 @@
   "tipo": "cabecote",
   "nome": "Brit Rack 1",
   "familia": "britrack1",
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "Overdrive"
+    }
+  ],
+  "inspiracao": "Marshall JMP-1: pré-amplificador de rack 1U (483 × 44 × 260 mm) com frente dourada escovada e orelhas com rasgos; entradas INPUT e PHONES e o OUTPUT LEVEL à esquerda, janela preta no meio com o nome, os visores PATCH e DATA, as teclas PATCH e STORE e o botão DATA, duas fileiras de teclas redondas pretas (VOLUME, GAIN, BASS, MIDDLE, TREBLE, PRESENCE, EFFECT / OD 1, OD 2, BASS SHIFT, CLEAN 1, CLEAN 2, STEP, CHANNEL) e a tecla POWER à direita. Os seis botões que tocam ficam na fileira de cima, no lugar das teclas.",
+  "formato": "rack",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.483,
+    "altura": 0.044,
+    "profundidade": 0.26
   },
+  "rack_u": 1,
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.03,
+      0.03,
+      0.03
     ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.08,
-      0.07,
-      0.06
-    ],
-    "cor_b": [
-      0.6,
-      0.56,
-      0.48
-    ],
-    "trama_mm": 2.4,
-    "friso": [
-      0.88,
-      0.86,
-      0.8
-    ]
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -47,72 +39,346 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BRIT RACK 1",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.012,
-      0.012,
-      0.013
+      0.5,
+      0.34,
+      0.14
     ],
     "texto_cor": [
-      0.85,
-      0.85,
-      0.85
+      0.015,
+      0.012,
+      0.01
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    },
+    "data": {
+      "forma": "liso",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.04
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "PHONES",
+          "x": 0.09
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "OUTPUT LEVEL",
+          "estilo": "data",
+          "x": 0.15
+        },
+        {
+          "tipo": "logo",
+          "altura_m": 0.0055,
+          "x": 0.29,
+          "z": 0.62
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "VALVE MIDI PRE-AMP",
+          "x": 0.29,
+          "z": 0.28,
+          "letra_m": 0.0034
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "PATCH",
+          "x": 0.39,
+          "z": 0.82,
+          "letra_m": 0.0034
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "DATA",
+          "x": 0.45,
+          "z": 0.82,
+          "letra_m": 0.0034
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.505,
+          "z": 0.62,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.505,
+          "z": 0.3,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DATA",
+          "estilo": "data",
+          "x": 0.55,
+          "z": 0.45
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.68,
+      "x0": 0.6,
+      "x1": 0.93,
+      "itens": [
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE"
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        }
+      ],
+      "letra_m": 0.0032
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
+      "z": 0.25,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "led_canal",
+          "x": 0.765,
+          "rotulo": "CLEAN 1"
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.6236,
+          "rotulo": "OD 1"
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0032
     },
     {
-      "id": "agudo",
-      "rotulo": "AGUDO"
+      "z": 0.25,
+      "x0": 0.6,
+      "x1": 0.93,
+      "itens": [
+        {
+          "tipo": "espaco",
+          "peso": 1.0
+        },
+        {
+          "tipo": "push",
+          "rotulo": "OD 2",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "push",
+          "rotulo": "BASS SHIFT",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "espaco",
+          "peso": 1.0
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CLEAN 2",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "push",
+          "rotulo": "STEP",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHANNEL",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "tamanho_m": 0.0075
+        }
+      ],
+      "rotulo_pos": "baixo",
+      "letra_m": 0.0032
     },
     {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": "POWER",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.965,
+          "rotulo_pos": "cima",
+          "tamanho_m": 0.009
+        }
+      ],
+      "letra_m": 0.0034
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.03,
-    "corpo": [
-      0.018,
-      0.018,
-      0.018
-    ],
-    "tampa": [
-      0.56,
-      0.39,
-      0.17
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Limpo"
+      "x0": 0.22,
+      "z0": 0.5,
+      "x1": 0.58,
+      "z1": 0.5,
+      "esp_m": 0.034,
+      "cor": [
+        0.01,
+        0.01,
+        0.01
+      ]
     },
     {
-      "nome": "Overdrive"
+      "x0": 0.37,
+      "z0": 0.48,
+      "x1": 0.41,
+      "z1": 0.48,
+      "esp_m": 0.016,
+      "cor": [
+        0.9,
+        0.03,
+        0.01
+      ],
+      "luz": 1.5
+    },
+    {
+      "x0": 0.43,
+      "z0": 0.48,
+      "x1": 0.47,
+      "z1": 0.48,
+      "esp_m": 0.016,
+      "cor": [
+        0.9,
+        0.03,
+        0.01
+      ],
+      "luz": 1.5
     }
-  ]
+  ],
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.17,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "Os botões que tocam ficam no lugar das teclas de cima do JMP-1 (que no original escolhem o parâmetro do botão DATA). Os LEDs de canal são as teclas CLEAN 1 (Limpo) e OD 1 (Overdrive)."
 }
