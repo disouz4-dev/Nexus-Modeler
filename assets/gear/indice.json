@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T16:25:17Z",
+ "gerado": "2026-10-29T16:27:25Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4332,8 +4332,8 @@
   },
   "moonstone_fuzz": {
    "nome": "Moonstone Fuzz",
-   "hash": "4e12a49626f1d5a2",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "32735a087cdd6203",
+   "data": "2026-10-29T16:27:25Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "moonstone_fuzz_botao_ganho.png",
@@ -4345,21 +4345,21 @@
     "moonstone_fuzz_mapa.json"
    ],
    "sha256": {
-    "moonstone_fuzz_botao_ganho.png": "fd494fdc94f9bef68cc47a4ceac76da7485bb53cb0f740b2b64cbebd30e77672",
-    "moonstone_fuzz_botao_nivel.png": "896a2a9e85d4ce1600b8e75fd0accb399d39e8557799a064d356f9f687cb9bc1",
-    "moonstone_fuzz_botao_tom.png": "20da7c548fa27e624f7ea480432b4d12a1a745932900dba0c029425c02547cd5",
-    "moonstone_fuzz_frente.jpg": "0f32785f6d87ff7073ce9ab0daf1ccecabaa0ddea9f921f5e7a12b1cb48adec5",
-    "moonstone_fuzz_frente_alfa.png": "c7fd3572e9bcbf10553077780d69bce5d37b08631ca0623276c139b546cb6091",
-    "moonstone_fuzz_manifesto.json": "a51829f955121e3aedc5767556df7a09889d9412577b20b2df088f9ddb9f875c",
-    "moonstone_fuzz_mapa.json": "43b44d3829830a8041d9efede02d943e2cf93ec61382f81cc62f717c065c74aa"
+    "moonstone_fuzz_botao_ganho.png": "4ec8198778e5cdf4c618b3754026a587dda9f8f865d262076e7942dc715db495",
+    "moonstone_fuzz_botao_nivel.png": "e88c75a5eb8a5313db5bf68b5bff3963feb84009d465c6db6113d963f8994cf8",
+    "moonstone_fuzz_botao_tom.png": "38c557fde89e4a45e6c5abac552f93a4280a73bfb4db608380e120e5d6f27a61",
+    "moonstone_fuzz_frente.jpg": "bc673e454d395779511f260ceb7498957a9e7c51ec3b0ba88f941338f9d52fe8",
+    "moonstone_fuzz_frente_alfa.png": "de40307e7b8a3c1a2f21a61b2a003252e0404dc01abd20221026407107df3974",
+    "moonstone_fuzz_manifesto.json": "4eb3db7c837d41cab010acc01fecaadd0aa814ae803d016b1601f5190ac2928b",
+    "moonstone_fuzz_mapa.json": "4b04fe9eccacccf9db3d8a8eeff0dcdaf21572c194ee264619f3de39a1f9c9f7"
    },
-   "tamanho": 175563,
+   "tamanho": 400052,
    "tipo": "pedal",
    "inspiracao": "EarthQuaker Hizumitas",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
