@@ -2,60 +2,60 @@
   "nome": "Bassline 100",
   "familia": "bassline100",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1168,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 835,
-      "y": 724,
-      "tamanho": 119,
+      "x": 451,
+      "y": 295,
+      "tamanho": 114,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "grave",
-      "x": 1025,
-      "y": 724,
-      "tamanho": 119,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 1215,
-      "y": 724,
-      "tamanho": 119,
-      "arquivo": "botao_medio.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "agudo",
-      "x": 1404,
-      "y": 724,
-      "tamanho": 119,
+      "x": 573,
+      "y": 295,
+      "tamanho": 113,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1594,
-      "y": 724,
-      "tamanho": 119,
-      "arquivo": "botao_presenca.png",
+      "id": "grave",
+      "x": 696,
+      "y": 296,
+      "tamanho": 112,
+      "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1783,
-      "y": 724,
-      "tamanho": 119,
+      "x": 1114,
+      "y": 297,
+      "tamanho": 110,
       "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1509,
+      "y": 288,
+      "tamanho": 53,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1509,
+      "y": 388,
+      "tamanho": 53,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -65,75 +65,147 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "1",
+      "x": 258.1,
+      "y": 398.6,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "2",
+      "x": 339.1,
+      "y": 398.6,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
-      "espaco": 1.0
-    },
-    {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "DEEP",
+      "x": 410.0,
+      "y": 399.1,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "x": 511.3,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#f1f1f1",
+      "texto": "TREBLE",
+      "x": 632.8,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 754.4,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS INSTRUMENT",
+      "x": 531.6,
+      "y": 452.3,
+      "altura": 18.41,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "1",
+      "x": 916.4,
+      "y": 398.6,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "2",
+      "x": 997.4,
+      "y": 398.6,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BRIGHT",
+      "x": 1068.3,
+      "y": 399.1,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1169.6,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1291.2,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1412.7,
+      "y": 414.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 1179.7,
+      "y": 452.3,
+      "altura": 18.41,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 1534.2,
+      "y": 350.8,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1534.2,
+      "y": 449.9,
+      "altura": 17.0,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
       "espaco": 1.0
     }
   ]

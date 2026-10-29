@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:38:42Z",
+ "gerado": "2026-10-29T18:38:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -471,8 +471,8 @@
   },
   "bassline100": {
    "nome": "Bassline 100",
-   "hash": "e5cb8ca6798f4ab6",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "ba19ae6e3517857f",
+   "data": "2026-10-29T18:38:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bassline100_botao_agudo.png",
@@ -487,24 +487,24 @@
     "bassline100_mapa.json"
    ],
    "sha256": {
-    "bassline100_botao_agudo.png": "d18e7be83fe48bd7458e52eafb03f30b21e3e13574db7715e42febce8b2f3d80",
-    "bassline100_botao_ganho.png": "d1d1873486c97f9a1a110e4d26a8c5ddfcd1d628b91a38d850bb73c1c7c5a433",
-    "bassline100_botao_grave.png": "028019a003e639a7b9f29a6cbd335468c305451b35f8c02c415552a013492540",
-    "bassline100_botao_medio.png": "6fa898563e7d6f252075c9e29ffb34607b0e8d4aaac5221ba5e7fcb4e91ebf3d",
-    "bassline100_botao_presenca.png": "acaacedc8348907f1ab58af1be6d9cfd904618897fd5d10f4942cac5dc9284ef",
-    "bassline100_botao_volume.png": "12da882d9e71bd490cf3816a406385d83deaac475c78b1eb22674f300545fb71",
-    "bassline100_frente.jpg": "2841d5506841eeffffaa8bd8711fb1781e917557fdc3fa32a002c0620dcb3bed",
-    "bassline100_frente_alfa.png": "0b3cf69aef27c1d6180da544eb9f08a1301a700e1992a5835d462e924d2b997d",
-    "bassline100_manifesto.json": "984789ba064ffb26e405479c0a7bc9f4c8337505e243747a5c85c592a84a1f68",
-    "bassline100_mapa.json": "06bec2d8b287c02cde4fb8b274e2c5bb9e612fc3798d28d0e4a8ab08e52110a5"
+    "bassline100_botao_agudo.png": "046387213cf31828497492992c93cf77f9d4978ba52c39f857b687222a5e59bd",
+    "bassline100_botao_ganho.png": "1ea96eba37e828b1c6a9381d5c88836e6662413253689b761e049ed80c5583cc",
+    "bassline100_botao_grave.png": "f93d98ebae0e8533935d59abd678693a1a94d26bc09988e334d3e5d3e2675f1e",
+    "bassline100_botao_medio.png": "cbf7f164de2ac75032f365b4e6854ce60f519a7cfebcd5aa3543664fe550d21e",
+    "bassline100_botao_presenca.png": "90308776f1ce8d08e40a0b82e578432b2dacc4cc2de11363ca10a020993a595a",
+    "bassline100_botao_volume.png": "cfebf075c523de770c2be186d20e613a477e7918c9932792ff1c473c11e09ad4",
+    "bassline100_frente.jpg": "b67a92efa0c07217d3962a26e4eca240c7b5ea54ea4707b84e914980053089eb",
+    "bassline100_frente_alfa.png": "4ee80bdb8b8911dbc09981d7ff6570a3be70b5963e4c828ce743183d3317cb67",
+    "bassline100_manifesto.json": "42c532595b338f87fd0fa6c3e9ffca47e83f50eddd9fa084cedfe84861574c38",
+    "bassline100_mapa.json": "dc3f79cb50437222da2b5e3a5c906848bfa4f1b3f9c491e1e68bf81af0780a2c"
    },
-   "tamanho": 1653265,
+   "tamanho": 1116611,
    "tipo": "cabecote",
    "inspiracao": "Fender Bassman silverface (50 e 100T)",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
