@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:22:08Z",
+ "gerado": "2026-10-29T15:22:13Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1212,8 +1212,8 @@
   },
   "britbass": {
    "nome": "Brit Bass",
-   "hash": "c9e219c2c5178a6c",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "97751b7a8f5b11d2",
+   "data": "2026-10-29T15:22:13Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britbass_botao_agudo.png",
@@ -1228,24 +1228,24 @@
     "britbass_mapa.json"
    ],
    "sha256": {
-    "britbass_botao_agudo.png": "e629e4d8332d54c115e0bafa07dc6675e40a9a95701079e4f42d8014bb0f5657",
-    "britbass_botao_ganho.png": "e6e5ed4b29102a1506dcd9ad2a8fb6182bb65b157b61b6d82bfae221090d55c6",
-    "britbass_botao_grave.png": "c828504b9f1679396215d3407b973329ae6d7ebd02119976441f9978321cd10a",
-    "britbass_botao_medio.png": "aecebb2bc9e6191be61e4cd9ef7459e65a175fdc68969f1eb6a63846d2c58dea",
-    "britbass_botao_presenca.png": "980f0d47a6aee81511d919c1fa8379abfb649c0ec9b7ff472c1378c5136d63f6",
-    "britbass_botao_volume.png": "b8d981c8bb5dcc87396f5dad6e22834c6da751c4b597f17064e6479766c2662b",
-    "britbass_frente.jpg": "6ba6b86a0db1a05c03cd3a0e5e6e9fd00aafaedb6bcbd676cae51846bd87c759",
-    "britbass_frente_alfa.png": "042bc781e6f2fcf4cbd8747a642eebaaa57635e46235ddccda920f74b63202c6",
-    "britbass_manifesto.json": "741b30ce5734668efa1a822a472927306a611275c4ed96612990f2782b783f55",
-    "britbass_mapa.json": "257f80432e32a47ba92d033642d405e0321ddfadee74d5651d97d947d6dea91d"
+    "britbass_botao_agudo.png": "0294597fb3462add97f740376d6ad97f72162fbc231e7f6ef5bea1c4ca3e6921",
+    "britbass_botao_ganho.png": "e7a66b7f2b70ce2ea5e65d24b8ead97cb1dca7c1320248b0973335ddca7ed741",
+    "britbass_botao_grave.png": "a0e9ed6d0e5250ec7ee20b8a98563e07f7b36297d33ae040bb85d54dada82494",
+    "britbass_botao_medio.png": "48268b0c241d70a06e3c73265b3e3a23a254dd1539143aed6c588d56c26aa348",
+    "britbass_botao_presenca.png": "ee8c9466db0002f60356ca40442ac23961544a3738acdd2963d253efe2bf8edc",
+    "britbass_botao_volume.png": "eeb6aeca6f4d7bb5ccb2cec5ecb34def56257ad2abe5d00f95da0f554c4602fd",
+    "britbass_frente.jpg": "ccb1573baeaf4753292bf1f7d4f215456dc7cf90910529cb4ffcfeadfd28a6ac",
+    "britbass_frente_alfa.png": "d3849364328d25be7c1d2abb68961f9a45932a7a0cd1cac3f70d9838538fc4a8",
+    "britbass_manifesto.json": "e6323ec69cfb3e51241a3e6fd0bc29fc15a60cb3e1710246d5f0a1fc2c6de8e1",
+    "britbass_mapa.json": "b8f546d0098046684d5d34d2598fcab3e83ee4dec6fb632af059910d8336ae06"
    },
-   "tamanho": 2425766,
+   "tamanho": 1520823,
    "tipo": "cabecote",
    "inspiracao": "Marshall Super Bass",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
