@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:55:21Z",
+ "gerado": "2026-10-29T18:57:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6439,8 +6439,8 @@
   },
   "vault4pro": {
    "nome": "Vault 4 Pro",
-   "hash": "6585e0bd52a640f6",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "4aff5ce16017af5f",
+   "data": "2026-10-29T18:57:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault4pro_botao_agudo.png",
@@ -6455,24 +6455,24 @@
     "vault4pro_mapa.json"
    ],
    "sha256": {
-    "vault4pro_botao_agudo.png": "46adce694ea47b17eab37b224b6694338e20b31d81994f87ad44d6dfc7dad5bc",
-    "vault4pro_botao_ganho.png": "c37ab5dd37e60a51e9c760ed3a7b302c35539b3d9d3767fb310674282ba4b03c",
-    "vault4pro_botao_grave.png": "54287064af40e4d8336072b14d0b6f85d9e303f2c70a4507fd02f47c020cbb88",
-    "vault4pro_botao_medio.png": "f6cdc15b0bad7d9369b96c111193ed8ebce7981b51095d506e548bcf405cc929",
-    "vault4pro_botao_presenca.png": "283af75c3661dd07601cf992076419db0a45848f4561f9f882c69e1bc81c6edb",
-    "vault4pro_botao_volume.png": "538d608ee1a151d4276e906cce9e8b91fb02478f4ed484b3fce2d2c3d8ec5565",
-    "vault4pro_frente.jpg": "1272eb4dd88fde93cd14219de1e135d23724e4ed4b7cea5c45a0129edd8f15cc",
-    "vault4pro_frente_alfa.png": "df2d9c4eae0fa25cf09c8c646e0e132c205da09dd8251ae7d0208b8f8ab6bf8b",
-    "vault4pro_manifesto.json": "d7e84569e8a260a54e42ef2b201cea50a454d20ffcf5df3a4f66a5f0215662d3",
-    "vault4pro_mapa.json": "3f575e46617dcb30ab08a4d4e0d00f6da5dfe2e27e1b2696744224094b85e44f"
+    "vault4pro_botao_agudo.png": "c9c939eb7fe7d86ad1d26b56ecbdf61a64a3b50e3264e1b828014627adc1746a",
+    "vault4pro_botao_ganho.png": "8612c3cd0795b755914dd3d8fd739581f266065326abcc5360db7b8ac6d5f3cf",
+    "vault4pro_botao_grave.png": "2a4379433aad643fcfa627976d06a31e12cc3a0be06c78d97a8d9f18582fee90",
+    "vault4pro_botao_medio.png": "e65a5f615ba21ae4031cd8976734c023f469afbe991ece59dfa93187a8503eda",
+    "vault4pro_botao_presenca.png": "94f1dc8374138852e4c35f495c0691b20ea8e02bf3e12a5d6473872c51f4fa13",
+    "vault4pro_botao_volume.png": "387f01df2f348f4084c7b0ad77bd64e3a29b329ede219c38a821f359ff5c559c",
+    "vault4pro_frente.jpg": "ebef1ac08d01e21f9aa60e06bdc93bb29d204c9819deca70d9fd5ea4f6f29b80",
+    "vault4pro_frente_alfa.png": "256f66bd21a3cb3ac02264318f091ca25c0af6482a9546b7a5a214b810efb937",
+    "vault4pro_manifesto.json": "cd691819a5781d782da8abf5c341af893f9f1f973fb71161f8843c78e0bf5010",
+    "vault4pro_mapa.json": "e80ef833ea85adeb7924fc3225d615220fac0186793e249ce5c4b84bcdcdcb65"
    },
-   "tamanho": 1586306,
+   "tamanho": 414684,
    "tipo": "cabecote",
    "inspiracao": "Ampeg SVT-4 Pro",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
