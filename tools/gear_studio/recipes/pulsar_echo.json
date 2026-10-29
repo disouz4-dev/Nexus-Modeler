@@ -2,93 +2,169 @@
   "tipo": "pedal",
   "nome": "Pulsar Echo",
   "familia": "pulsar_echo",
-  "inspiracao": "delay analógico de caixa prateada larga (estilo Memory Man)",
+  "inspiracao": "Caixa deitada (146 x 121 x 50 mm) dividida na diagonal: prateada em cima à esquerda, preta embaixo à direita; botões pretos MISTURA, NÍVEL (fixo), REPETIÇÕES, CHORUS (fixo), PROFUNDIDADE (fixo) e TEMPO em fila no alto, LED de sobrecarga e LED de ligado, pisante; letras pretas no prateado e brancas no preto. Tema: pulsar prateado com os anéis de onda. Original: Electro-Harmonix Deluxe Memory Man.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.146,
+    "comprimento": 0.121,
+    "altura": 0.05
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0078,
-      0.0055,
-      0.0582
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.35,
-    "aspereza": 0.26
+    "metalico": 0.2,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.6941,
-    0.6524,
-    1.0
-  ],
-  "texto_cor2": [
-    0.6941,
-    0.6524,
-    1.0
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "PULSAR ECHO",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.016,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
-      "id": "a",
-      "rotulo": "TEMPO",
+      "id": "c",
+      "rotulo": "MISTURA",
       "pos": [
-        -0.58,
-        0.55
+        -0.75,
+        0.68
+      ]
+    },
+    {
+      "id": "fixo_nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
+        -0.45,
+        0.68
       ],
-      "escala": 1.1
+      "fixo": true
     },
     {
       "id": "b",
       "rotulo": "REPETIÇÕES",
       "pos": [
-        0.0,
-        0.55
-      ],
-      "escala": 1.1
+        -0.15,
+        0.68
+      ]
     },
     {
-      "id": "c",
-      "rotulo": "MISTURA",
+      "id": "fixo_chorus",
+      "rotulo": "CHORUS",
       "pos": [
-        0.58,
-        0.55
+        0.15,
+        0.68
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_prof",
+      "rotulo": "PROFUNDIDADE",
+      "pos": [
+        0.45,
+        0.68
+      ],
+      "fixo": true
+    },
+    {
+      "id": "a",
+      "rotulo": "TEMPO",
+      "pos": [
+        0.75,
+        0.68
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
+  "medidas_fonte": "146 x 121 x 64 mm (EHX: 5,75 x 4,75 x 2,5 pol.)",
   "estampa": {
     "svg": "estampas/pulsar_echo.svg"
-  }
+  },
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.99,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": 0.0,
+  "logo_m": 0.012,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0032,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "led": [
+    0.3,
+    -0.36
+  ],
+  "pisante": {
+    "pos": [
+      0.3,
+      -0.62
+    ]
+  },
+  "logo_x": 0.5,
+  "paineis": [
+    {
+      "pontos": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0.42
+        ],
+        [
+          -1,
+          -0.62
+        ]
+      ],
+      "cor": [
+        0.5732,
+        0.586,
+        0.5989
+      ],
+      "metal": true
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "led",
+      "pos": [
+        -0.62,
+        0.36
+      ],
+      "rotulo": "SOBRECARGA",
+      "rotulo_m": 0.0026,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    }
+  ]
 }

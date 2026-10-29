@@ -2,92 +2,193 @@
   "tipo": "pedal",
   "nome": "Blackcurrant Bass",
   "familia": "blackcurrant_bass",
-  "inspiracao": "preto com letras brancas, caixa média com vários botões de equalização (estilo Darkglass B7K)",
+  "inspiracao": "Caixa deitada (125 x 96 x 40 mm) de tampo preto e laterais prateadas, letras brancas; oito botões pretos em duas fileiras: VOLUME (MASTER, fixo), MISTURA (fixo), NÍVEL e DRIVE em cima, GRAVE, MÉDIO GRAVE e MÉDIO AGUDO (fixos) e AGUDO embaixo; minichaves ATTACK, GRUNT e as das frequências entre eles, LED e dois pisantes (DISTORÇÃO e BYPASS). Tema: cacho de groselha-preta. Original: Darkglass Microtubes B7K Ultra.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.125,
+    "comprimento": 0.096,
+    "altura": 0.04
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0063,
-      0.0002,
-      0.0094
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "BLACKCURRANT BASS",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.017,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
+      "id": "fixo_master",
+      "rotulo": "VOLUME",
+      "pos": [
+        -0.69,
+        0.66
+      ],
+      "fixo": true
+    },
+    {
+      "id": "fixo_blend",
+      "rotulo": "MISTURA",
+      "pos": [
+        -0.23,
+        0.66
+      ],
+      "fixo": true
+    },
+    {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.23,
+        0.66
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.0,
-        0.55
+        0.69,
+        0.66
+      ]
+    },
+    {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        -0.69,
+        0.08
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_lomid",
+      "rotulo": "MÉDIO GRAVE",
+      "pos": [
+        -0.23,
+        0.08
+      ],
+      "fixo": true
+    },
+    {
+      "id": "fixo_himid",
+      "rotulo": "MÉDIO AGUDO",
+      "pos": [
+        0.23,
+        0.08
+      ],
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.69,
+        0.08
+      ]
     }
+  ],
+  "estampa": {
+    "svg": "estampas/blackcurrant_bass.svg"
+  },
+  "medidas_fonte": "125 x 96 x 57 mm (Darkglass, ficha oficial)",
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.92,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.005,
+  "logo_y": -0.86,
+  "logo_m": 0.0065,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0034,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "led": [
     0.0,
-    0.84
+    -0.42
   ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
+  "pintura_lados": {
+    "cor": [
+      0.6941,
+      0.7083,
+      0.7227
+    ],
+    "cromo": true
   },
-  "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/blackcurrant_bass.svg"
-  }
+  "pisante": {
+    "pos": [
+      0.66,
+      -0.66
+    ]
+  },
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        -0.46,
+        0.42
+      ],
+      "rotulo": "ATAQUE",
+      "rotulo_m": 0.0026
+    },
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.46,
+        0.42
+      ],
+      "rotulo": "GRUNT",
+      "rotulo_m": 0.0026
+    },
+    {
+      "tipo": "minichave",
+      "pos": [
+        -0.46,
+        -0.12
+      ]
+    },
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.46,
+        -0.12
+      ]
+    },
+    {
+      "tipo": "pisante",
+      "pos": [
+        -0.66,
+        -0.66
+      ],
+      "rotulo": "DISTORÇÃO",
+      "rotulo_m": 0.003
+    }
+  ]
 }

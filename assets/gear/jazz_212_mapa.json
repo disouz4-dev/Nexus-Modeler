@@ -1,17 +1,19 @@
 {
   "nome": "Jazz 2x12",
   "familia": "jazz_212",
-  "largura": 1600,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2265,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
     760,
-    500
+    622
   ],
   "falantes": {
     "linhas": 1,
     "colunas": 2,
     "polegadas": 12
-  }
+  },
+  "rotulos": []
 }

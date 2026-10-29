@@ -2,92 +2,107 @@
   "tipo": "pedal",
   "nome": "Opal Drive",
   "familia": "opal_drive",
-  "inspiracao": "branco com letras pretas, caixa pequena e simples (estilo Fulltone OCD)",
+  "inspiracao": "Caixa creme, branco-marfim (64 x 112 x 38 mm), letras pretas; botões creme \"cabeça de galinha\" VOLUME, DRIVE e TOM em fila, minichave HP/LP no meio, LED transparente e pisante; o nome grande no meio. Tema: opala branca com reflexos coloridos. Original: Fulltone OCD.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.064,
+    "comprimento": 0.112,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.1726,
-      0.3494,
-      0.0154
+      0.8592,
+      0.7969,
+      0.6388
     ],
     "metalico": 0.0,
-    "aspereza": 0.26
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "OPAL DRIVE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.016,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.6524,
+      0.5605,
+      0.3787
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
-    ]
+      0.0037,
+      0.0037,
+      0.0037
+    ],
+    "forma": "galinha"
   },
   "botoes": [
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.62,
+        0.62
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.62
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.62,
+        0.62
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/opal_drive.svg"
+  },
+  "medidas_fonte": "aprox. 64 x 112 mm (fulltone.com fora do ar)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.19,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.06,
+  "logo_m": 0.012,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/opal_drive.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "led_cor": [
+    0.259,
+    0.259,
+    0.2508
+  ],
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.0,
+        0.32
+      ],
+      "rotulo": "AGUDO"
+    }
+  ]
 }

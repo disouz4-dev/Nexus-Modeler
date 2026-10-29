@@ -2,83 +2,249 @@
   "tipo": "pedal",
   "nome": "Topaz 250",
   "familia": "topaz_250",
-  "inspiracao": "amarelo com letras pretas, caixa média de metal (estilo DOD Overdrive Preamp 250)",
+  "inspiracao": "Caixa amarela (67 x 119 x 40 mm), letras pretas; botões pretos GANHO e NÍVEL no alto, LED azul entre eles, listras pretas verticais embaixo, atrás do pisante. Tema: topázio amarelo lapidado, facetas tom sobre tom. Original: DOD Overdrive Preamp 250.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.067,
+    "comprimento": 0.119,
+    "altura": 0.04
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.6121,
-      0.0132,
-      0.0039
+      0.8913,
+      0.6388,
+      0.0078
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "TOPAZ 250",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.018,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
+    ],
+    "com_tampa": true,
+    "tampa": [
+      0.586,
+      0.586,
+      0.586
     ]
   },
   "botoes": [
     {
-      "id": "nivel",
-      "rotulo": "NÍVEL",
-      "pos": [
-        -0.45,
-        0.55
-      ],
-      "escala": 1.1
-    },
-    {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.45,
-        0.55
+        -0.5,
+        0.7
       ],
-      "escala": 1.1
+      "rotulo_pos": "cima"
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
+        0.5,
+        0.7
+      ],
+      "rotulo_pos": "cima"
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/topaz_250.svg"
+  },
+  "medidas_fonte": "67 x 119 x 57 mm com botões (DOD, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.22,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": 0.05,
+  "logo_m": 0.011,
+  "pisante_y": -0.66,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/topaz_250.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    0.7
+  ],
+  "led_cor": [
+    0.0008,
+    0.009,
+    0.145
+  ],
+  "transformacao": "Standard",
+  "paineis": [
+    {
+      "pos": [
+        -0.86,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        -0.74,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        -0.62,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        -0.5,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        -0.38,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.38,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.5,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.62,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.74,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.86,
+        -0.66
+      ],
+      "tam_m": [
+        0.0022,
+        0.03
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    }
+  ]
 }

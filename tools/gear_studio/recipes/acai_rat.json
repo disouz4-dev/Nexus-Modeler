@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Açaí Rat",
   "familia": "acai_rat",
-  "inspiracao": "distorção de caixa preta com letras brancas (estilo ProCo RAT)",
+  "inspiracao": "Caixa preta (79 x 103 x 55 mm; o original é em cunha, aqui o tampo fica reto, visto de cima), letras brancas; botões pretos DISTORÇÃO, FILTRO e VOLUME em fila no alto, com os nomes em caixinhas, o nome grande no meio, LED vermelho e pisante. Tema: cacho de açaí roxo-escuro, listras tom sobre tom. Original: ProCo RAT.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.07,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.079,
+    "comprimento": 0.103,
+    "altura": 0.055
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.021,
-      0.0012,
-      0.0189
+      0.0046,
+      0.0046,
+      0.0046
     ],
-    "metalico": 0.15,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
     0.8913,
-    0.7969,
-    0.8751
-  ],
-  "texto_cor2": [
-    0.8913,
-    0.7969,
-    0.8751
+    0.8751,
+    0.8277
   ],
   "modelo": "AÇAÍ RAT",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.017,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,10 +44,9 @@
       "id": "ganho",
       "rotulo": "DISTORÇÃO",
       "pos": [
-        -0.58,
+        -0.6,
         0.6
-      ],
-      "escala": 1.0
+      ]
     },
     {
       "id": "tom",
@@ -64,31 +54,169 @@
       "pos": [
         0.0,
         0.6
-      ],
-      "escala": 1.0
+      ]
     },
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.58,
+        0.6,
         0.6
-      ],
-      "escala": 1.0
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "aprox. 79 x 103 x 73 mm com botões (medida de loja)",
+  "estampa": {
+    "svg": "estampas/acai_rat.svg"
+  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa estilo RAT: 70 x 120 x 42 mm",
-  "estampa": {
-    "svg": "estampas/acai_rat.svg"
-  }
+  "chanfro_m": 0.004,
+  "rotulo_m": 0.0034,
+  "rotulo_embaixo": false,
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "pisante_y": -0.64,
+  "logo_y": 0.05,
+  "logo_m": 0.017,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "paineis": [
+    {
+      "pos": [
+        -0.6,
+        0.88
+      ],
+      "tam_m": [
+        0.023,
+        0.0075
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "raio_m": 0.0004
+    },
+    {
+      "pos": [
+        0.0,
+        0.88
+      ],
+      "tam_m": [
+        0.023,
+        0.0075
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "raio_m": 0.0004
+    },
+    {
+      "pos": [
+        0.6,
+        0.88
+      ],
+      "tam_m": [
+        0.023,
+        0.0075
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "raio_m": 0.0004
+    },
+    {
+      "pos": [
+        -0.6,
+        0.88
+      ],
+      "tam_m": [
+        0.0216,
+        0.0061
+      ],
+      "cor": [
+        0.0046,
+        0.0046,
+        0.0046
+      ],
+      "raio_m": 0.0003
+    },
+    {
+      "pos": [
+        0.0,
+        0.88
+      ],
+      "tam_m": [
+        0.0216,
+        0.0061
+      ],
+      "cor": [
+        0.0046,
+        0.0046,
+        0.0046
+      ],
+      "raio_m": 0.0003
+    },
+    {
+      "pos": [
+        0.6,
+        0.88
+      ],
+      "tam_m": [
+        0.0216,
+        0.0061
+      ],
+      "cor": [
+        0.0046,
+        0.0046,
+        0.0046
+      ],
+      "raio_m": 0.0003
+    },
+    {
+      "pos": [
+        0.0,
+        0.05
+      ],
+      "tam_m": [
+        0.06,
+        0.022
+      ],
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "raio_m": 0.0006
+    },
+    {
+      "pos": [
+        0.0,
+        0.05
+      ],
+      "tam_m": [
+        0.0584,
+        0.0204
+      ],
+      "cor": [
+        0.0046,
+        0.0046,
+        0.0046
+      ],
+      "raio_m": 0.0005
+    }
+  ]
 }

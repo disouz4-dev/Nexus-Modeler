@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Pearl Fuzz",
   "familia": "pearl_fuzz",
-  "inspiracao": "fuzz de caixa larga de alumínio com letras vermelhas (estilo Big Muff Pi)",
+  "inspiracao": "Caixa grande (140 x 175 x 50 mm) de laterais pretas, tampo de aço escovado prateado na parte de cima e preto na de baixo; botões pretos VOLUME, TOM e SUSTAIN numa moldura preta, LED vermelho entre o VOLUME e o TOM, o nome grande em vermelho e o pisante na parte preta; letras pretas. Tema: pérola branca. Original: Electro-Harmonix Big Muff Pi.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.14,
+    "comprimento": 0.175,
+    "altura": 0.05
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.586,
-      0.0356,
-      0.0738
+      0.548,
+      0.5605,
+      0.5732
     ],
-    "metalico": 0.35,
-    "aspereza": 0.26
+    "metalico": 0.85,
+    "aspereza": 0.32
   },
   "texto_cor": [
-    0.924,
-    0.8751,
-    0.7667
-  ],
-  "texto_cor2": [
-    0.924,
-    0.8751,
-    0.7667
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "PEARL FUZZ",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.022,
+    "altura_m": 0.016,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,42 +44,108 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.55,
+        0.66
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.66
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "SUSTAIN",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.55,
+        0.66
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "140 x 175 x 75 mm com botões (EHX: 5,5 x 6,88 x 2,95 pol.)",
+  "estampa": {
+    "svg": "estampas/pearl_fuzz.svg"
+  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
-  "estampa": {
-    "svg": "estampas/pearl_fuzz.svg"
-  }
+  "pintura_lados": {
+    "cor": [
+      0.0037,
+      0.0037,
+      0.0037
+    ]
+  },
+  "chanfro_m": 0.004,
+  "rotulo_embaixo": false,
+  "rotulo_m": 0.0055,
+  "led": [
+    -0.28,
+    0.66
+  ],
+  "pisante_y": -0.62,
+  "logo_y": 0.12,
+  "logo_m": 0.022,
+  "texto_cor2": [
+    0.586,
+    0.009,
+    0.0119
+  ],
+  "tipo_texto": "",
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        -0.58
+      ],
+      "tam_m": [
+        0.132,
+        0.068
+      ],
+      "cor": [
+        0.0029,
+        0.0029,
+        0.0029
+      ],
+      "raio_m": 0.001
+    },
+    {
+      "pos": [
+        0.0,
+        0.64
+      ],
+      "tam_m": [
+        0.13,
+        0.05
+      ],
+      "cor": [
+        0.0029,
+        0.0029,
+        0.0029
+      ],
+      "raio_m": 0.002
+    },
+    {
+      "pos": [
+        0.0,
+        0.64
+      ],
+      "tam_m": [
+        0.127,
+        0.047
+      ],
+      "cor": [
+        0.548,
+        0.5605,
+        0.5732
+      ],
+      "metal": true,
+      "raio_m": 0.0018
+    }
+  ]
 }

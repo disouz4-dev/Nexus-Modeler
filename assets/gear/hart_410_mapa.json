@@ -1,8 +1,10 @@
 {
   "nome": "Hart 4x10",
   "familia": "hart_410",
-  "largura": 1362,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2683,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "rotulos": []
 }

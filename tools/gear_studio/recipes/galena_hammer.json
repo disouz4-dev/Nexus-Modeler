@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Galena Hammer",
   "familia": "galena_hammer",
-  "inspiracao": "preto com letras douradas, caixa média (estilo Aguilar Tone Hammer)",
+  "inspiracao": "Caixa deitada prateada (140 x 102 x 38 mm), letras pretas com etiquetas vermelhas de DRIVE; GANHO, AGUDO, GRAVE (fixo) e VOLUME na fileira de cima, FREQUÊNCIA e MÉDIO (fixos) embaixo, DRIVE e MISTURA pequenos (fixos), dois pisantes (ENGAGE e DRIVE) com LED azul e amarelo. Tema: cubos de galena cinza-chumbo. Original: Aguilar Tone Hammer.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.14,
+    "comprimento": 0.102,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0993,
-      0.0358,
-      0.0094
+      0.586,
+      0.5989,
+      0.6121
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.8,
+    "aspereza": 0.3
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "GALENA HAMMER",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.017,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,164 @@
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.72,
+        0.6
+      ]
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.0,
-        0.55
+        -0.24,
+        0.6
+      ]
+    },
+    {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        0.24,
+        0.6
       ],
-      "escala": 1.1
+      "fixo": true
     },
     {
       "id": "nivel",
-      "rotulo": "NÍVEL",
+      "rotulo": "VOLUME",
       "pos": [
-        0.58,
-        0.55
+        0.72,
+        0.6
+      ]
+    },
+    {
+      "id": "fixo_freq",
+      "rotulo": "FREQUÊNCIA",
+      "pos": [
+        -0.24,
+        0.02
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_medio",
+      "rotulo": "MÉDIO",
+      "pos": [
+        0.24,
+        0.02
+      ],
+      "fixo": true
+    },
+    {
+      "id": "fixo_drive",
+      "rotulo": "DRIVE",
+      "pos": [
+        -0.48,
+        0.86
+      ],
+      "fixo": true,
+      "escala": 0.5,
+      "rotulo_pos": "cima",
+      "rotulo_m": 0.0026
+    },
+    {
+      "id": "fixo_mix",
+      "rotulo": "MISTURA",
+      "pos": [
+        0.48,
+        0.86
+      ],
+      "fixo": true,
+      "escala": 0.5,
+      "rotulo_pos": "cima",
+      "rotulo_m": 0.0026
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
   "estampa": {
     "svg": "estampas/galena_hammer.svg"
-  }
+  },
+  "medidas_fonte": "140 x 102 x 38 mm (Aguilar, ficha oficial)",
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.87,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": -0.68,
+  "logo_m": 0.0075,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0034,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    -0.62,
+    -0.42
+  ],
+  "led_cor": [
+    0.0008,
+    0.009,
+    0.145
+  ],
+  "pisante": {
+    "pos": [
+      -0.62,
+      -0.68
+    ]
+  },
+  "pecas": [
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.62,
+        -0.68
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.62,
+        -0.42
+      ],
+      "cor": [
+        0.145,
+        0.0824,
+        0.0
+      ]
+    },
+    {
+      "tipo": "placa",
+      "pos": [
+        -0.48,
+        0.74
+      ],
+      "tam_m": [
+        0.012,
+        0.004
+      ],
+      "cor": [
+        0.586,
+        0.009,
+        0.0119
+      ]
+    },
+    {
+      "tipo": "placa",
+      "pos": [
+        0.62,
+        -0.88
+      ],
+      "tam_m": [
+        0.014,
+        0.0045
+      ],
+      "cor": [
+        0.586,
+        0.009,
+        0.0119
+      ]
+    }
+  ]
 }

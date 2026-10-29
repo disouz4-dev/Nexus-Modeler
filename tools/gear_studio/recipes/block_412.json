@@ -51,10 +51,5 @@
     "texto": "5150",
     "altura_m": 0.055,
     "margem_m": 0.05
-  },
-  "falantes": {
-    "linhas": 2,
-    "colunas": 2,
-    "polegadas": 12
   }
 }

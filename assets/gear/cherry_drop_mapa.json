@@ -7,62 +7,65 @@
   "botoes": [
     {
       "id": "a",
-      "x": 150,
-      "y": 274,
-      "tamanho": 98,
+      "x": 139,
+      "y": 73,
+      "tamanho": 124,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 352,
-      "y": 274,
-      "tamanho": 98,
+      "x": 114,
+      "y": 618,
+      "tamanho": 67,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    73,
+    120
+  ],
   "rotulos": [
     {
       "texto": "DROP",
-      "x": 201.9,
-      "y": 394.4,
-      "altura": 18.02,
+      "x": 203.7,
+      "y": 219.9,
+      "altura": 21.11,
       "achatamento": 1.0,
-      "cor": "#f9f9f7",
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 398.1,
-      "y": 394.4,
-      "altura": 18.02,
+      "x": 149.8,
+      "y": 701.3,
+      "altura": 13.72,
       "achatamento": 1.0,
-      "cor": "#f9f9f7",
+      "cor": "#f2f0eb",
       "espaco": 1.15
+    },
+    {
+      "texto": "MOMENTÂNEO",
+      "x": 405.9,
+      "y": 185.6,
+      "altura": 16.89,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 592.5,
-    "raio": 66.0
+    "x": 324.0,
+    "y": 578.5,
+    "raio": 65.5
   },
   "led": {
-    "x": 300.0,
-    "y": 381.4,
-    "raio": 16.5
-  },
-  "visor": {
-    "x": 174.0,
-    "y": 119.7,
-    "w": 251.9,
-    "h": 127.7
-  },
-  "medidas_mm": [
-    74,
-    120
-  ]
+    "x": 396.8,
+    "y": 572.2,
+    "raio": 16.4
+  }
 }

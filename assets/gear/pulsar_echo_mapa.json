@@ -2,79 +2,115 @@
   "nome": "Pulsar Echo",
   "familia": "pulsar_echo",
   "largura": 600,
-  "altura": 750,
+  "altura": 594,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "a",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_a.png",
+      "id": "c",
+      "x": 82,
+      "y": 124,
+      "tamanho": 68,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 230,
+      "y": 125,
+      "tamanho": 66,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "c",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_c.png",
+      "id": "a",
+      "x": 450,
+      "y": 124,
+      "tamanho": 68,
+      "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    146,
+    121
   ],
   "rotulos": [
     {
-      "texto": "TEMPO",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "MISTURA",
+      "x": 118.8,
+      "y": 205.5,
+      "altura": 10.59,
       "achatamento": 1.0,
-      "cor": "#d9d3ff",
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 191.3,
+      "y": 205.5,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "REPETIÇÕES",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 263.8,
+      "y": 205.5,
+      "altura": 10.59,
       "achatamento": 1.0,
-      "cor": "#d9d3ff",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "MISTURA",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "CHORUS",
+      "x": 336.2,
+      "y": 205.5,
+      "altura": 10.59,
       "achatamento": 1.0,
-      "cor": "#d9d3ff",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 408.7,
+      "y": 205.5,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TEMPO",
+      "x": 481.2,
+      "y": 205.5,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SOBRECARGA",
+      "x": 150.2,
+      "y": 203.4,
+      "altura": 8.61,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "x": 374.5,
+    "y": 424.5,
+    "raio": 41.0
   },
   "led": {
-    "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "x": 372.8,
+    "y": 369.4,
+    "raio": 10.3
   }
 }

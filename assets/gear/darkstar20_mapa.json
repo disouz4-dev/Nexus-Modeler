@@ -2,60 +2,60 @@
   "nome": "Dark Star 20",
   "familia": "darkstar20",
   "largura": 2400,
-  "altura": 1056,
+  "altura": 1540,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "ganho",
-      "x": 837,
-      "y": 726,
-      "tamanho": 115,
-      "arquivo": "botao_ganho.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "grave",
-      "x": 1027,
-      "y": 726,
-      "tamanho": 115,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 1217,
-      "y": 726,
-      "tamanho": 115,
-      "arquivo": "botao_medio.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "agudo",
-      "x": 1406,
-      "y": 726,
-      "tamanho": 115,
-      "arquivo": "botao_agudo.png",
+      "id": "volume",
+      "x": 456,
+      "y": 1068,
+      "tamanho": 95,
+      "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1596,
-      "y": 726,
-      "tamanho": 115,
+      "x": 696,
+      "y": 1070,
+      "tamanho": 92,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1785,
-      "y": 726,
-      "tamanho": 115,
-      "arquivo": "botao_volume.png",
+      "id": "agudo",
+      "x": 816,
+      "y": 1070,
+      "tamanho": 91,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 935,
+      "y": 1070,
+      "tamanho": 91,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1055,
+      "y": 1070,
+      "tamanho": 91,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1294,
+      "y": 1070,
+      "tamanho": 91,
+      "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -67,120 +67,165 @@
   ],
   "rotulos": [
     {
-      "texto": "LIGA",
-      "x": 292.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "POWER",
+      "x": 289.7,
+      "y": 1185.1,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "GANHO",
-      "x": 895.5,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "20W/2W",
+      "x": 388.7,
+      "y": 1172.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "GRAVE",
-      "x": 1084.6,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "MASTER",
+      "x": 507.4,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "MÉDIO",
-      "x": 1273.8,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "REVERB",
+      "x": 626.1,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "AGUDO",
-      "x": 1463.0,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "ISF",
+      "x": 744.9,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "PRESENÇA",
-      "x": 1652.2,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "TREBLE",
+      "x": 863.6,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "VOLUME",
-      "x": 1841.4,
-      "y": 667.7,
-      "altura": 34.45,
-      "achatamento": 0.982,
-      "cor": "#f1f1f1",
+      "texto": "MIDDLE",
+      "x": 982.3,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "ENTRADA",
-      "x": 1943.6,
-      "y": 835.7,
-      "altura": 26.01,
-      "achatamento": 0.976,
-      "cor": "#f1f1f1",
+      "texto": "BASS",
+      "x": 1101.1,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "LIMPO",
-      "x": 415.3,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#f1f1f1",
+      "texto": "OD VOLUME",
+      "x": 1219.8,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "OVERDRIVE 1",
-      "x": 488.9,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#f1f1f1",
+      "texto": "OD GAIN",
+      "x": 1338.5,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     },
     {
-      "texto": "OVERDRIVE 2",
-      "x": 562.5,
-      "y": 781.9,
-      "altura": 20.84,
-      "achatamento": 0.978,
-      "cor": "#f1f1f1",
+      "texto": "VOICE",
+      "x": 1437.5,
+      "y": 1160.9,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD",
+      "x": 1506.7,
+      "y": 1160.9,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN TONE",
+      "x": 1635.3,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN VOL",
+      "x": 1754.1,
+      "y": 1192.0,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOICE",
+      "x": 1853.0,
+      "y": 1160.9,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 2031.1,
+      "y": 1171.3,
+      "altura": 20.71,
+      "achatamento": 1.0,
+      "cor": "#ededed",
       "espaco": 1.0
     }
   ],
   "leds_canais": [
     {
-      "x": 414.7,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 1438.1,
+      "y": 958.7,
+      "raio": 13.8
     },
     {
-      "x": 488.3,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 1507.6,
+      "y": 958.7,
+      "raio": 13.8
     },
     {
-      "x": 561.9,
-      "y": 815.6,
-      "raio": 9.2
+      "x": 1577.0,
+      "y": 958.7,
+      "raio": 13.8
     }
   ]
 }

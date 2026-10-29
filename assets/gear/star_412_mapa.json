@@ -1,8 +1,19 @@
 {
   "nome": "Star 4x12",
   "familia": "star_412",
-  "largura": 1439,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2719,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    756,
+    751
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
 }

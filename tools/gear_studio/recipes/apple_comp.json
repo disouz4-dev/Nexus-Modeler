@@ -2,93 +2,94 @@
   "tipo": "pedal",
   "nome": "Apple Comp",
   "familia": "apple_comp",
-  "inspiracao": "compressor de caixinha vermelha (estilo Dyna Comp)",
+  "inspiracao": "Caixa MXR vermelha com pintura enrugada (62 x 111 x 32 mm), letras pretas; botões pretos SAÍDA e SENSIBILIDADE no alto, LED vermelho acima do pisante; o ATAQUE, que o original não tem, fica pequeno no canto de baixo. Tema: maçã vermelha, raios tom sobre tom. Original: MXR Dyna Comp.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.064,
-    "comprimento": 0.112,
-    "altura": 0.034
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.6,
-      0.03,
-      0.04
+      0.6524,
+      0.0104,
+      0.0189
     ],
     "metalico": 0.0,
-    "aspereza": 0.3
+    "aspereza": 0.28,
+    "textura": "enrugado"
   },
   "texto_cor": [
-    0.95,
-    0.95,
-    0.92
-  ],
-  "texto_cor2": [
-    0.95,
-    0.95,
-    0.92
+    0.0037,
+    0.0037,
+    0.0037
   ],
   "modelo": "APPLE COMP",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.0125,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
       "id": "a",
-      "rotulo": "NÍVEL",
+      "rotulo": "SAÍDA",
       "pos": [
-        -0.62,
-        0.84
-      ],
-      "escala": 0.78
+        -0.45,
+        0.66
+      ]
     },
     {
       "id": "b",
-      "rotulo": "COMPRESSÃO",
+      "rotulo": "SENSIBILIDADE",
       "pos": [
-        0.0,
-        0.5
-      ],
-      "escala": 1.45
+        0.45,
+        0.66
+      ]
     },
     {
       "id": "c",
       "rotulo": "ATAQUE",
       "pos": [
-        0.62,
-        0.84
+        0.72,
+        -0.5
       ],
-      "escala": 0.78
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
+  "estampa": {
+    "svg": "estampas/apple_comp.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa 1590B (MXR): 64 x 112 x 31 mm",
-  "estampa": {
-    "svg": "estampas/apple_comp.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ]
 }

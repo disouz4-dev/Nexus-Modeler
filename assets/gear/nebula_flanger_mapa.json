@@ -6,75 +6,84 @@
   "posicoes": 101,
   "botoes": [
     {
-      "id": "a",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_a.png",
+      "id": "c",
+      "x": 142,
+      "y": 156,
+      "tamanho": 83,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 258,
+      "y": 156,
+      "tamanho": 83,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "c",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_c.png",
+      "id": "a",
+      "x": 374,
+      "y": 156,
+      "tamanho": 83,
+      "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    110,
+    140
+  ],
   "rotulos": [
     {
-      "texto": "VELOCIDADE",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "COR",
+      "x": 186.2,
+      "y": 253.8,
+      "altura": 17.12,
       "achatamento": 1.0,
-      "cor": "#ffd3ef",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "PROFUNDIDADE",
+      "texto": "FAIXA",
       "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "y": 253.8,
+      "altura": 17.12,
       "achatamento": 1.0,
-      "cor": "#ffd3ef",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
-      "texto": "REALIMENTAÇÃO",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "texto": "VELOCIDADE",
+      "x": 413.8,
+      "y": 253.8,
+      "altura": 17.12,
       "achatamento": 1.0,
-      "cor": "#ffd3ef",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "FILTRO",
+      "x": 300.0,
+      "y": 264.8,
+      "altura": 13.7,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 533.5,
+    "raio": 44.0
   },
   "led": {
-    "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
-  },
-  "medidas_mm": [
-    94,
-    120
-  ]
+    "x": 382.6,
+    "y": 500.2,
+    "raio": 11.1
+  }
 }

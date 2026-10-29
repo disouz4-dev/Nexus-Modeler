@@ -1,33 +1,33 @@
 {
   "nome": "Jet 5150",
-  "familia": "jet_5150",
+  "familia": "strawberry_5150",
   "largura": 600,
-  "altura": 750,
+  "altura": 540,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 116,
+      "y": 120,
+      "tamanho": 72,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 339,
+      "y": 120,
+      "tamanho": 70,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 412,
+      "y": 120,
+      "tamanho": 72,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -36,46 +36,82 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    122,
+    91
   ],
   "rotulos": [
     {
       "texto": "SAÍDA",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 155.3,
+      "y": 208.9,
+      "altura": 12.65,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 227.7,
+      "y": 208.9,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 300.0,
+      "y": 208.9,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "AGUDO",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 372.4,
+      "y": 208.9,
+      "altura": 12.65,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "GANHO",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 444.7,
+      "y": 208.9,
+      "altura": 12.65,
       "achatamento": 1.0,
-      "cor": "#f7f7f5",
+      "cor": "#f2f0eb",
       "espaco": 1.15
+    },
+    {
+      "texto": "GATE",
+      "x": 92.6,
+      "y": 255.0,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REFORÇO",
+      "x": 507.4,
+      "y": 182.4,
+      "altura": 10.28,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 381.5,
+    "raio": 49.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "y": 324.2,
+    "raio": 12.3
   }
 }

@@ -2,83 +2,214 @@
   "tipo": "pedal",
   "nome": "Hematite Rock",
   "familia": "hematite_rock",
-  "inspiracao": "preto com o nome em letras prateadas, caixa pequena de metal (estilo Rockman X100)",
+  "inspiracao": "Caixa MXR preta (62 x 111 x 32 mm) com painel azul-celeste no alto; no painel, os deslizantes VOLUME e GANHO, à esquerda o botão MODO com os 4 LEDs (vermelho, amarelo, verde e azul) e à direita o botão CHORUS com LED; LED vermelho acima do pisante; letras brancas e o nome em azul-celeste. Tema: hematita (bolhas de metal cinza brilhante). Original: MXR Rockman X100.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.8324,
-      0.6121,
-      0.029
+      0.0041,
+      0.0041,
+      0.005
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "HEMATITE ROCK",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
+    ],
+    "cursor": [
+      0.8122,
+      0.8122,
+      0.8122
     ]
   },
   "botoes": [
     {
-      "id": "ganho",
-      "rotulo": "MODO",
-      "pos": [
-        -0.45,
-        0.55
-      ],
-      "escala": 1.1
-    },
-    {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.45,
-        0.55
+        -0.12,
+        0.62
       ],
-      "escala": 1.1
+      "tipo": "deslizante",
+      "curso_m": 0.018,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "rotulo_pos": "cima"
+    },
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        0.12,
+        0.62
+      ],
+      "tipo": "deslizante",
+      "curso_m": 0.018,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "rotulo_pos": "cima"
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/hematite_rock.svg"
+  },
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/hematite_rock.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0189,
+    0.4647,
+    0.8122
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.6
+      ],
+      "tam_m": [
+        0.054,
+        0.04
+      ],
+      "cor": [
+        0.0189,
+        0.4313,
+        0.7969
+      ],
+      "raio_m": 0.0015
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "led",
+      "pos": [
+        -0.66,
+        0.84
+      ],
+      "cor": [
+        0.145,
+        0.0008,
+        0.0003
+      ],
+      "raio_m": 0.0016
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.66,
+        0.76
+      ],
+      "cor": [
+        0.145,
+        0.0824,
+        0.0
+      ],
+      "raio_m": 0.0016
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.66,
+        0.68
+      ],
+      "cor": [
+        0.0008,
+        0.0658,
+        0.0029
+      ],
+      "raio_m": 0.0016
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.66,
+        0.6
+      ],
+      "cor": [
+        0.0008,
+        0.0066,
+        0.145
+      ],
+      "raio_m": 0.0016
+    },
+    {
+      "tipo": "apertar",
+      "pos": [
+        -0.66,
+        0.46
+      ],
+      "diam_m": 0.0045,
+      "rotulo": "MODO",
+      "rotulo_pos": "baixo",
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.66,
+        0.62
+      ],
+      "raio_m": 0.0018
+    },
+    {
+      "tipo": "apertar",
+      "pos": [
+        0.66,
+        0.46
+      ],
+      "diam_m": 0.0045,
+      "rotulo": "CHORUS",
+      "rotulo_pos": "baixo",
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    }
+  ]
 }

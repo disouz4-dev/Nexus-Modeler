@@ -7,74 +7,92 @@
   "botoes": [
     {
       "id": "a",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 162,
+      "y": 120,
+      "tamanho": 100,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "b",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_b.png",
+      "id": "c",
+      "x": 271,
+      "y": 176,
+      "tamanho": 58,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "c",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_c.png",
+      "id": "b",
+      "x": 338,
+      "y": 120,
+      "tamanho": 100,
+      "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
   "rotulos": [
     {
       "texto": "VELOCIDADE",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 214.1,
+      "y": 241.2,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#e1eeff",
-      "espaco": 1.15
-    },
-    {
-      "texto": "PROFUNDIDADE",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
-      "achatamento": 1.0,
-      "cor": "#e1eeff",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 300.0,
+      "y": 256.2,
+      "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#e1eeff",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 385.9,
+      "y": 241.2,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 196.9,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 403.1,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 503.0,
+    "raio": 152.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
-  },
-  "medidas_mm": [
-    94,
-    120
-  ]
+    "y": 100.5,
+    "raio": 14.7
+  }
 }

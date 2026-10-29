@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Jet 5150",
   "familia": "jet_5150",
-  "inspiracao": "preto com listras brancas, caixa média de metal (estilo EVH 5150 Overdrive)",
+  "inspiracao": "Caixa deitada cinza-escuro escovado com listras pretas (122 x 91 x 40 mm), letras brancas; botões pretos SAÍDA, GRAVE e MÉDIO (fixos), AGUDO e GANHO em fila, o GATE pequeno à esquerda (fixo) e o botão de apertar REFORÇO com LED à direita; LED e pisante. Tema: azeviche preto lapidado, listras pretas. Original: EVH 5150 Overdrive.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.122,
+    "comprimento": 0.091,
+    "altura": 0.04
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.6121,
-      0.0021,
-      0.0063
+      0.0385,
+      0.0415,
+      0.0478
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.6,
+    "aspereza": 0.35
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "JET 5150",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0145,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,97 @@
       "id": "nivel",
       "rotulo": "SAÍDA",
       "pos": [
-        -0.58,
-        0.55
+        -0.6,
+        0.62
+      ]
+    },
+    {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        -0.3,
+        0.62
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_medio",
+      "rotulo": "MÉDIO",
+      "pos": [
+        0.0,
+        0.62
+      ],
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.3,
+        0.62
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.58,
-        0.55
+        0.6,
+        0.62
+      ]
+    },
+    {
+      "id": "fixo_gate",
+      "rotulo": "GATE",
+      "pos": [
+        -0.86,
+        0.3
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.6
     }
+  ],
+  "estampa": {
+    "svg": "estampas/jet_5150.svg"
+  },
+  "medidas_fonte": "122 x 91 x 52 mm (Thomann; a Dunlop não publica)",
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.9,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": -0.88,
+  "logo_m": 0.0065,
+  "pisante_y": -0.6,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0032,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "led": [
     0.0,
-    0.84
+    -0.3
   ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/jet_5150.svg"
-  }
+  "pecas": [
+    {
+      "tipo": "apertar",
+      "pos": [
+        0.86,
+        0.3
+      ],
+      "diam_m": 0.006,
+      "rotulo": "REFORÇO",
+      "rotulo_m": 0.0026
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.86,
+        0.6
+      ],
+      "raio_m": 0.0022
+    }
+  ]
 }

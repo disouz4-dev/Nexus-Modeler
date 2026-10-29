@@ -2,92 +2,120 @@
   "tipo": "pedal",
   "nome": "Mercury Bender",
   "familia": "mercury_bender",
-  "inspiracao": "cinza martelado com letras pretas, caixa em cunha mais alta atrás (estilo Tone Bender)",
+  "inspiracao": "Caixa fundida cinza martelada (95 x 150 x 60 mm; o original é em cunha, aqui o tampo fica reto, visto de cima); placa preta no alto com os botões pretos ATAQUE e NÍVEL e o nome em letras brancas, pisante pequeno na frente; sem LED; o TOM, que o original não tem, fica pequeno ao lado do pisante. Tema: o planeta Mercúrio cinza com crateras. Original: Sola Sound Tone Bender (MK I).",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.095,
+    "comprimento": 0.15,
+    "altura": 0.06
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0815,
-      0.0094,
-      0.0474
+      0.2674,
+      0.2758,
+      0.2845
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.4,
+    "aspereza": 0.28,
+    "textura": "martelado"
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "MERCURY BENDER",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.017,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
       "id": "ganho",
-      "rotulo": "FUZZ",
+      "rotulo": "ATAQUE",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.38,
+        0.62
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL",
+      "pos": [
+        0.38,
+        0.62
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.0,
-        0.55
+        0.62,
+        -0.72
       ],
-      "escala": 1.1
-    },
-    {
-      "id": "nivel",
-      "rotulo": "VOLUME",
-      "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+      "escala": 0.5,
+      "rotulo_m": 0.0026,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/mercury_bender.svg"
+  },
+  "medidas_fonte": "sem ficha do fabricante; medida estimada pelas fotos",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": 0.38,
+  "logo_m": 0.0075,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/mercury_bender.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.72
+    ]
+  },
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.58
+      ],
+      "tam_m": [
+        0.07,
+        0.05
+      ],
+      "cor": [
+        0.0029,
+        0.0029,
+        0.0029
+      ],
+      "raio_m": 0.002
+    }
+  ]
 }

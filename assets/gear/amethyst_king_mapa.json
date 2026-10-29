@@ -1,24 +1,24 @@
 {
   "nome": "Amethyst King",
-  "familia": "amethyst_king",
+  "familia": "pineapple_king",
   "largura": 600,
-  "altura": 750,
+  "altura": 564,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 68,
+      "y": 122,
+      "tamanho": 81,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 167,
+      "y": 123,
+      "tamanho": 78,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 114,
+      "y": 232,
+      "tamanho": 68,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,46 +36,73 @@
   ],
   "canais": [],
   "medidas_mm": [
-    94,
-    120
+    121,
+    95
   ],
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 112.2,
+      "y": 218.6,
+      "altura": 14.32,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#d9b149",
       "espaco": 1.15
     },
     {
       "texto": "DRIVE",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 208.6,
+      "y": 218.6,
+      "altura": 14.32,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 391.4,
+      "y": 218.6,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 487.8,
+      "y": 218.6,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 150.8,
+      "y": 315.8,
+      "altura": 14.32,
       "achatamento": 1.0,
-      "cor": "#212121",
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 449.2,
+      "y": 315.8,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "x": 135.5,
+    "y": 411.0,
+    "raio": 49.5
   },
   "led": {
-    "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "x": 203.2,
+    "y": 361.8,
+    "raio": 12.4
   }
 }

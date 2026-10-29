@@ -2,59 +2,51 @@
   "tipo": "pedal",
   "nome": "Magnetite Boost",
   "familia": "magnetite_boost",
-  "inspiracao": "prateado (alumínio escovado) com um botão preto, caixa mini (o original só tem um botão) (estilo Xotic EP Booster)",
+  "inspiracao": "Caixa mini (38 x 89 x 38 mm) de tampo preto e laterais cromadas, letras prateadas; um botão transparente grande REFORÇO no alto, LED azul e pisante; o VOLUME, que o original não tem, fica pequeno à direita do LED. Tema: cristal de magnetita (octaedro cinza-chumbo). Original: Xotic EP Booster.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.038,
+    "comprimento": 0.089,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.7549,
-      0.5468,
-      0.2793
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
+    0.586,
+    0.5989,
+    0.6121
   ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "modelo": "MAGNETITE BOOST",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "MAGNETITE",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.018,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.6941,
+      0.7227,
+      0.7519
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
-    ]
+      0.0104,
+      0.0104,
+      0.0104
+    ],
+    "material": "transparente"
   },
   "botoes": [
     {
       "id": "ganho",
       "rotulo": "REFORÇO",
       "pos": [
-        -0.45,
-        0.55
+        0.0,
+        0.58
       ],
       "escala": 1.1
     },
@@ -62,23 +54,49 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.45,
-        0.55
+        0.62,
+        0.2
       ],
-      "escala": 1.1
+      "escala": 0.4,
+      "rotulo_pos": "nenhum"
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/magnetite_boost.svg"
+  },
+  "medidas_fonte": "38 x 89 x 38 mm (Xotic, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.93,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.08,
+  "logo_m": 0.0058,
+  "pisante_y": -0.6,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/magnetite_boost.svg"
-  }
+  "rotulo_m": 0.0034,
+  "texto_cor2": [
+    0.586,
+    0.5989,
+    0.6121
+  ],
+  "led": [
+    0.0,
+    0.18
+  ],
+  "led_cor": [
+    0.0008,
+    0.009,
+    0.145
+  ],
+  "pintura_lados": {
+    "cor": [
+      0.7519,
+      0.7667,
+      0.7818
+    ],
+    "cromo": true
+  },
+  "tampo_margem_m": 0.0028
 }

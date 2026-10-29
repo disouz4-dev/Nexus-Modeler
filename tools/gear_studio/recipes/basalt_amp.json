@@ -2,50 +2,42 @@
   "tipo": "pedal",
   "nome": "Basalt Amp",
   "familia": "basalt_amp",
-  "inspiracao": "preto e cinza com letras brancas, caixa média com chaves de ajuste (estilo Tech 21 SansAmp)",
+  "inspiracao": "Caixa preta com pintura salpicada (95 x 121 x 51 mm), letras amarelas; botões pretos com traço amarelo NÍVEL, ALTO, BAIXO (fixo) e DRIVE em fila no alto, três chaves deslizantes de 3 posições (MIC, MOD, AMP) no meio, LED vermelho à direita e pisante. Tema: colunas de basalto cinza-escuro vistas de cima. Original: Tech 21 SansAmp GT2.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.095,
+    "comprimento": 0.121,
+    "altura": 0.051
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.119,
-      0.0358,
-      0.0063
+      0.0078,
+      0.0078,
+      0.0078
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28,
+    "textura": "martelado"
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.586,
+    0.009
   ],
   "modelo": "BASALT AMP",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.016,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.586,
+      0.009
     ]
   },
   "botoes": [
@@ -53,41 +45,87 @@
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.69,
+        0.74
+      ]
     },
     {
       "id": "tom",
-      "rotulo": "AGUDO",
+      "rotulo": "ALTO",
       "pos": [
-        0.0,
-        0.55
+        -0.23,
+        0.74
+      ]
+    },
+    {
+      "id": "fixo_baixo",
+      "rotulo": "BAIXO",
+      "pos": [
+        0.23,
+        0.74
       ],
-      "escala": 1.1
+      "fixo": true
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.69,
+        0.74
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/basalt_amp.svg"
+  },
+  "medidas_fonte": "95 x 121 x 51 mm (Tech 21, ficha oficial)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/basalt_amp.svg"
-  }
+  "chanfro_m": 0.004,
+  "logo_y": -0.84,
+  "logo_m": 0.011,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": false,
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.8913,
+    0.586,
+    0.009
+  ],
+  "led": [
+    0.72,
+    0.3
+  ],
+  "pecas": [
+    {
+      "tipo": "chave_deslizante",
+      "pos": [
+        -0.55,
+        0.3
+      ],
+      "rotulo": "MIC",
+      "rotulo_pos": "cima"
+    },
+    {
+      "tipo": "chave_deslizante",
+      "pos": [
+        -0.15,
+        0.3
+      ],
+      "rotulo": "MOD",
+      "rotulo_pos": "cima"
+    },
+    {
+      "tipo": "chave_deslizante",
+      "pos": [
+        0.25,
+        0.3
+      ],
+      "rotulo": "AMP",
+      "rotulo_pos": "cima"
+    }
+  ]
 }

@@ -2,14 +2,14 @@
   "nome": "Snow Pear Treble",
   "familia": "snowpear_treble",
   "largura": 600,
-  "altura": 750,
+  "altura": 510,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 228,
-      "y": 125,
-      "tamanho": 144,
+      "x": 384,
+      "y": 152,
+      "tamanho": 114,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,9 +17,9 @@
     },
     {
       "id": "nivel",
-      "x": 368,
-      "y": 38,
-      "tamanho": 86,
+      "x": 488,
+      "y": 318,
+      "tamanho": 58,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -27,37 +27,41 @@
   ],
   "canais": [],
   "medidas_mm": [
-    64,
-    112
+    110,
+    65
   ],
   "rotulos": [
     {
       "texto": "REFORÇO",
-      "x": 300.0,
-      "y": 297.0,
-      "altura": 20.87,
+      "x": 436.7,
+      "y": 283.0,
+      "altura": 18.07,
       "achatamento": 1.0,
-      "cor": "#303030",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "VOLUME",
-      "x": 408.0,
-      "y": 152.3,
-      "altura": 20.87,
+      "x": 513.7,
+      "y": 392.4,
+      "altura": 11.75,
       "achatamento": 1.0,
-      "cor": "#303030",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "LIGA",
+      "x": 150.9,
+      "y": 172.6,
+      "altura": 14.46,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 614.0,
-    "raio": 77.0
-  },
-  "led": {
-    "x": 300.0,
-    "y": 84.6,
-    "raio": 19.1
+    "x": 150.0,
+    "y": 210.5,
+    "raio": 32.0
   }
 }
