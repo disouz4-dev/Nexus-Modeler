@@ -108,6 +108,58 @@ def mat_diamond_cloth(name, base, line, pitch_mm=38.0, weave_mm=1.6):
     return mat
 
 
+def mat_tweed(name, color, pitch_mm=3.0):
+    """Tweed laqueado: sarja diagonal em dois tons, com verniz amarelado."""
+    mat, nodes, links, bsdf = st._principled(name)
+    coords = st._object_coords(nodes)
+    m = st._math
+    s = 1000.0 / pitch_mm
+    sep = nodes.new("ShaderNodeSeparateXYZ")
+    links.new(coords, sep.inputs[0])
+    diag = m(nodes, links, "MULTIPLY", m(nodes, links, "ADD", sep.outputs["X"], sep.outputs["Z"]), s)
+    cross = m(nodes, links, "MULTIPLY", m(nodes, links, "SUBTRACT", sep.outputs["X"], sep.outputs["Z"]), s * 3.0)
+    band = m(nodes, links, "ABSOLUTE", m(nodes, links, "SUBTRACT", m(nodes, links, "FRACT", diag), 0.5))
+    fine = m(nodes, links, "ABSOLUTE", m(nodes, links, "SUBTRACT", m(nodes, links, "FRACT", cross), 0.5))
+    tone = m(nodes, links, "MINIMUM", m(nodes, links, "ADD", m(nodes, links, "MULTIPLY", band, 1.6), m(nodes, links, "MULTIPLY", fine, 0.5)), 1.0)
+    mix = nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    mix.inputs[6].default_value = (*[c * 0.45 for c in color], 1)
+    mix.inputs[7].default_value = (*color, 1)
+    links.new(tone, mix.inputs[0])
+    links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    bump = nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.5
+    bump.inputs["Distance"].default_value = 0.0004
+    links.new(tone, bump.inputs["Height"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    bsdf.inputs["Roughness"].default_value = 0.45
+    bsdf.inputs["Coat Weight"].default_value = 0.5
+    bsdf.inputs["Coat Roughness"].default_value = 0.2
+    return mat
+
+
+def mat_striped_cloth(name, base, stripe, pitch_mm=9.0, weave_mm=1.6):
+    """Tela de pano com listras horizontais (a marrom e dourada dos tweed)."""
+    mat = st.mat_grille_cloth(name, base, [c * 0.75 for c in base], weave_mm)
+    nodes, links = mat.node_tree.nodes, mat.node_tree.links
+    bsdf = nodes["Principled BSDF"]
+    coords = st._object_coords(nodes)
+    m = st._math
+    sep = nodes.new("ShaderNodeSeparateXYZ")
+    links.new(coords, sep.inputs[0])
+    z = m(nodes, links, "MULTIPLY", sep.outputs["Z"], 1000.0 / pitch_mm)
+    line = m(nodes, links, "MINIMUM", m(nodes, links, "MAXIMUM", m(nodes, links, "DIVIDE",
+             m(nodes, links, "SUBTRACT", m(nodes, links, "ABSOLUTE", m(nodes, links, "SUBTRACT", m(nodes, links, "FRACT", z), 0.5)), 0.3), 0.05), 0.0), 1.0)
+    old = bsdf.inputs["Base Color"].links[0].from_socket
+    mix = nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    links.new(line, mix.inputs[0])
+    links.new(old, mix.inputs[6])
+    mix.inputs[7].default_value = (*stripe, 1)
+    links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    return mat
+
+
 def mat_glass(name, tint=(0.02, 0.02, 0.025), rough=0.04):
     mat, _, _, bsdf = st._principled(name)
     bsdf.inputs["Base Color"].default_value = (*tint, 1)
@@ -579,6 +631,8 @@ def _fascia_mat(fa, name="fachada"):
     if kind in ("grade", "losango"):
         return st.mat_perforated(name, fa["cor"], fa.get("furo_mm", 3.2), fa.get("passo_mm", 4.8),
                                  shape="losango" if kind == "losango" else fa.get("furo", "redondo"))
+    if kind == "listras":
+        return mat_striped_cloth(name, fa["cor"], fa.get("linha", (0.6, 0.45, 0.15)), fa.get("passo_mm", 9.0))
     if kind == "losangos":
         return mat_diamond_cloth(name, fa["cor"], fa.get("linha", (0.55, 0.5, 0.32)), fa.get("passo_mm", 38.0))
     if kind == "garras":
@@ -601,6 +655,7 @@ def build(rec, fonts):
     shell_metal = rec.get("couro", {}).get("metal") or fmt in ("rack",)
     mats = {
         "tolex": (st.mat_plastic("caixa", rec["couro"]["cor"], rough=rec["couro"].get("aspereza", 0.45), coat=0.2) if shell_metal
+                  else mat_tweed("couro", rec["couro"]["cor"], rec["couro"].get("grao_mm", 3.0)) if rec["couro"].get("tweed")
                   else st.mat_leather("couro", rec["couro"]["cor"], rec["couro"]["grao_mm"])),
         "piping": st.mat_plastic("friso", fa.get("friso") or (0.8, 0.78, 0.72), rough=0.32, coat=0.4),
         "panel": {"pintado": lambda: st.mat_plastic("painel", pn["cor"], rough=0.48, coat=0.15),
@@ -672,7 +727,8 @@ def build(rec, fonts):
             panel_z0, fz0, fz1 = H - t - ph, t, H - t - ph - gap
         else:
             panel_z0, fz0, fz1 = t, t, H - t
-        panel_x0, panel_w, panel_h = -inner_w / 2, inner_w, ph
+        panel_w = min(inner_w, pn.get("largura_m", inner_w))
+        panel_x0, panel_h = -panel_w / 2, ph
         st.box("fundo_frente", (inner_w, 0.004, inner_h), (0, front + inset, H / 2),
                material=mats["tolex"] if fa.get("tipo") in (None, "tolex") else st.mat_paint("fundo", (0.004, 0.004, 0.004)))
         fascia = None
@@ -819,6 +875,6 @@ def build(rec, fonts):
     target = (0, front, H * 0.52)
     if lying:
         # Vista de cima e da frente: mira no meio do volume para caber o tampo.
-        target = (0, 0.0, H * 0.5)
+        target = (0, -D * 0.22, H * 0.6)
     return {"controls": p.controls, "size": (W, D, H), "front": front, "channel_leds": p.channel_leds,
             "target": target}

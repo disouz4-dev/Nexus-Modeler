@@ -316,8 +316,8 @@
   ],
   "cantos": "preto",
   "quadro": {
-    "largura_rel": 1.1,
-    "proporcao": 0.921,
+    "largura_rel": 1.24,
+    "proporcao": 0.832,
     "elevacao": 34.0
   },
   "notas_modelagem": "O AC15 não tem botão de médio: o médio do Nexus ficou no VOLUME do canal Normal; a presença é o TONE CUT (no original corta agudo no power). Os dois LEDs de canal sobre as entradas não existem no original: são para a tela mostrar o canal ativo."

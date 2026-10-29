@@ -2,36 +2,38 @@
   "tipo": "cabecote",
   "nome": "Brit 45",
   "familia": "brit45",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Marshall JTM45: cabeçote de 665 × 265 × 205 mm todo em tolex preto, sem tela, com friso dourado e a marca no meio, e o painel pequeno de plexi dourado embutido embaixo com letras pretas: chaves de alavanca MAINS e STANDBY, luz INDICATOR vermelha quadrada, o nome BRIT 45, seis botões pretos de tampa dourada (PRESENCE, BASS, MIDDLE, TREBLE, HIGH TREBLE e NORMAL) e as quatro entradas à direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.665,
+    "altura": 0.265,
+    "profundidade": 0.205
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.3,
-      0.27,
-      0.2
+    "tipo": "tolex",
+    "cor": [
+      0.006,
+      0.006,
+      0.006
     ],
-    "cor_b": [
-      0.7,
-      0.64,
-      0.5
-    ],
-    "trama_mm": 2.4,
+    "grao_mm": 2.6,
     "friso": [
-      0.88,
-      0.86,
-      0.8
+      0.72,
+      0.52,
+      0.2
     ]
   },
   "logo": {
@@ -47,69 +49,168 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BRIT 45",
-    "pintado": true,
+    "posicao": "baixo",
+    "altura_m": 0.08,
+    "largura_m": 0.56,
     "cor": [
-      0.72,
       0.55,
-      0.2
+      0.38,
+      0.14
     ],
+    "material": "acrilico",
     "texto_cor": [
-      0.02,
       0.015,
+      0.012,
       0.01
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.024,
+      "corpo": [
+        0.018,
+        0.018,
+        0.018
+      ],
+      "tampa": [
+        0.56,
+        0.39,
+        0.17
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.42,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "alavanca",
+          "rotulo": "MAINS",
+          "x": 0.06,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.115,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "push",
+          "rotulo": "INDICATOR",
+          "cor": [
+            0.9,
+            0.06,
+            0.02
+          ],
+          "aceso": true,
+          "x": 0.17,
+          "tamanho_m": 0.011,
+          "rotulo_pos": "baixo"
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.017,
+          "x": 0.29,
+          "z": 0.58,
+          "texto": "BRIT 45"
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "MK II",
+          "x": 0.29,
+          "z": 0.28,
+          "letra_m": 0.0065
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.41
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.48
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.55
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.62
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "HIGH TREBLE",
+          "x": 0.69
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "NORMAL",
+          "x": 0.76
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.83,
+          "z": 0.68
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.83,
+          "z": 0.26
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.9,
+          "z": 0.68
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.9,
+          "z": 0.26
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "I",
+          "x": 0.83,
+          "z": 0.95,
+          "letra_m": 0.006
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "II",
+          "x": 0.9,
+          "z": 0.95,
+          "letra_m": 0.006
+        }
+      ],
+      "letra_m": 0.0068,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.03,
-    "corpo": [
-      0.018,
-      0.018,
-      0.018
-    ],
-    "tampa": [
-      0.56,
-      0.39,
-      0.17
-    ]
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.481,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "notas_modelagem": "O JTM45 não tem master: o ganho do Nexus é o LOUDNESS 1 (HIGH TREBLE) e o volume o LOUDNESS 2 (NORMAL)."
 }

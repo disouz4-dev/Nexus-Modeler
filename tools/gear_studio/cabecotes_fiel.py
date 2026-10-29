@@ -165,7 +165,8 @@ def quadro(fmt, W, H, D, painel):
         # Painel no tampo (Vox, tweed): câmera mais alta para os botões aparecerem.
         elev = 34.0
         e = math.radians(elev)
-        prop = (H * math.cos(e) + D * math.sin(e) + 0.06) * 1.04 / (W * 1.10)
+        prop = (H * math.cos(e) + D * math.sin(e) + 0.06) * 1.06 / (W * 1.24)
+        return {"largura_rel": 1.24, "proporcao": round(prop, 3), "elevacao": elev}
     return {"largura_rel": 1.10, "proporcao": round(max(0.16, prop), 3), "elevacao": elev}
 
 

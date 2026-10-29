@@ -2,36 +2,49 @@
   "tipo": "cabecote",
   "nome": "Brit 410",
   "familia": "brit410",
+  "canais": [
+    {
+      "nome": "Limpo"
+    },
+    {
+      "nome": "Crunch"
+    },
+    {
+      "nome": "Overdrive"
+    }
+  ],
+  "inspiracao": "Marshall JVM410: cabeçote de 740 × 310 × 215 mm em tolex preto, tela de pano preta com friso branco e a marca no meio, painel dourado escovado com letras pretas: gangorras POWER (vermelha) e STANDBY à esquerda, o nome BRIT 410, 28 botões de tampa dourada em duas fileiras de 14 (MASTER 2, MASTER 1, RESONANCE, PRESENCE, os REVERBs e VOLUME, BASS, MIDDLE, TREBLE e GAIN dos canais OD1, CLEAN, OD2 e CRUNCH; o OD1 é o que toca), oito teclas quadradas pretas iluminadas e a entrada na ponta direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.74,
+    "altura": 0.31,
+    "profundidade": 0.215
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
     "tipo": "tela",
     "cor_a": [
-      0.08,
-      0.07,
-      0.06
+      0.006,
+      0.006,
+      0.006
     ],
     "cor_b": [
-      0.6,
-      0.56,
-      0.48
+      0.03,
+      0.03,
+      0.03
     ],
-    "trama_mm": 2.4,
+    "trama_mm": 1.4,
     "friso": [
-      0.88,
       0.86,
-      0.8
+      0.85,
+      0.82
     ]
   },
   "logo": {
@@ -47,75 +60,354 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BRIT 410",
-    "pintado": true,
+    "posicao": "baixo",
+    "altura_m": 0.1,
     "cor": [
-      0.62,
-      0.46,
-      0.16
+      0.5,
+      0.34,
+      0.14
     ],
     "texto_cor": [
-      0.02,
       0.015,
+      0.012,
       0.01
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.018,
+      "corpo": [
+        0.018,
+        0.018,
+        0.018
+      ],
+      "tampa": [
+        0.56,
+        0.39,
+        0.17
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.85,
+            0.015,
+            0.008
+          ],
+          "aceso": true,
+          "x": 0.03,
+          "z": 0.62
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "STANDBY",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.03,
+          "z": 0.22
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.012,
+          "x": 0.095,
+          "z": 0.5,
+          "texto": "BRIT 410"
+        }
+      ],
+      "letra_m": 0.0045,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
+      "z": 0.73,
+      "x0": 0.16,
+      "x1": 0.86,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER 2"
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER 1"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RVB OD1"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RVB CLEAN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN"
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "medio",
-      "rotulo": "MÉDIO"
+      "z": 0.25,
+      "x0": 0.16,
+      "x1": 0.86,
+      "itens": [
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RESONANCE"
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RVB OD2"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RVB CRUNCH"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE"
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN"
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     },
     {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": "FX LOOP",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.885,
+          "z": 0.8,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MASTER",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.915,
+          "z": 0.8,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CLEAN",
+          "cor": [
+            0.1,
+            0.8,
+            0.1
+          ],
+          "aceso": true,
+          "x": 0.885,
+          "z": 0.45,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CRUNCH",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.915,
+          "z": 0.45,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "push",
+          "rotulo": "OD1",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.885,
+          "z": 0.12,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "push",
+          "rotulo": "OD2",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.915,
+          "z": 0.12,
+          "tamanho_m": 0.0085
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.9,
+          "z": 0.62,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.93,
+          "z": 0.62,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.9,
+          "z": 0.3,
+          "rotulo": ""
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.965,
+          "z": 0.5
+        }
+      ],
+      "letra_m": 0.0038,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.03,
-    "corpo": [
-      0.018,
-      0.018,
-      0.018
-    ],
-    "tampa": [
-      0.56,
-      0.39,
-      0.17
-    ]
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.49,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Limpo"
-    },
-    {
-      "nome": "Crunch"
-    },
-    {
-      "nome": "Overdrive"
-    }
-  ]
+  "notas_modelagem": "As teclas do JVM acendem na cor do modo; aqui três LEDs entre elas mostram o canal ativo na tela (Limpo, Crunch, Overdrive)."
 }
