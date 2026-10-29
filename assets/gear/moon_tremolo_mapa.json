@@ -1,5 +1,5 @@
 {
-  "nome": "Moon Tremolo",
+  "nome": "Turquoise Tremolo",
   "familia": "moon_tremolo",
   "largura": 600,
   "altura": 750,
@@ -7,74 +7,92 @@
   "botoes": [
     {
       "id": "a",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 144,
+      "y": 114,
+      "tamanho": 101,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "b",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_b.png",
+      "id": "c",
+      "x": 250,
+      "y": 151,
+      "tamanho": 100,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "c",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
-      "arquivo": "botao_c.png",
+      "id": "b",
+      "x": 356,
+      "y": 114,
+      "tamanho": 101,
+      "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
   "rotulos": [
     {
       "texto": "VELOCIDADE",
-      "x": 186.9,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 196.9,
+      "y": 235.1,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#e7e5dd",
-      "espaco": 1.15
-    },
-    {
-      "texto": "PROFUNDIDADE",
-      "x": 300.0,
-      "y": 291.8,
-      "altura": 14.1,
-      "achatamento": 1.0,
-      "cor": "#e7e5dd",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "FORMA",
-      "x": 413.1,
-      "y": 291.8,
-      "altura": 14.1,
+      "x": 300.0,
+      "y": 271.5,
+      "altura": 19.77,
       "achatamento": 1.0,
-      "cor": "#e7e5dd",
+      "cor": "#0c0c0c",
       "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 403.1,
+      "y": 235.1,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 196.9,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 403.1,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 503.0,
+    "raio": 152.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
-  },
-  "medidas_mm": [
-    94,
-    120
-  ]
+    "y": 100.5,
+    "raio": 14.7
+  }
 }
