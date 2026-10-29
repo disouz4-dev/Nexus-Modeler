@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:23:33Z",
+ "gerado": "2026-10-29T15:23:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3858,8 +3858,8 @@
   },
   "mark4": {
    "nome": "Mark Four",
-   "hash": "418e3619cad1033c",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "f8fc46d2c87b2241",
+   "data": "2026-10-29T15:23:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark4_botao_agudo.png",
@@ -3879,29 +3879,29 @@
     "mark4_mapa.json"
    ],
    "sha256": {
-    "mark4_botao_agudo.png": "675d90812105322c8b1d76392f660ff1002dc54845143a3bbe2079e14a00fbef",
-    "mark4_botao_eq2200.png": "305d9ddb98076214bfa18c0108df13955e40c6e4d014b6c546ab57e5cf37bb58",
-    "mark4_botao_eq240.png": "3ed630ecc51eb51a8aecd5a354b2053b46a2b6d8f2f07a491b6b43e7c9cafcd5",
-    "mark4_botao_eq6600.png": "c2c99406e9e2acf631dbd939874676712cc222c7b26cb0d1a7e2566547b5bd33",
-    "mark4_botao_eq750.png": "fb6fa9d3ef66b77b4a2d2f718adf59dd8a834ac603a4d2f2d319921a728f5f03",
-    "mark4_botao_eq80.png": "e26db87edc95f7ce2aed207580666d6ac01ebf5b9315178c2268d9c6c2f20b17",
-    "mark4_botao_ganho.png": "353edd07a2a7ffcf91ce98b3d264218a2188c1970732a598877bdb51bf8d5627",
-    "mark4_botao_grave.png": "dec423922e4b7987a51df4b4c308761498591d961a2831cb68625a27d352ec99",
-    "mark4_botao_medio.png": "8ba2043487800e1fd9744f0d38efcc3a779ec37d6b40f627abaee6c3f5e99c72",
-    "mark4_botao_presenca.png": "8252a232ee078557befeb0efa2b4c95791338fad6abd84793f4ee78f3fe35b11",
-    "mark4_botao_volume.png": "05b9126d741b3e57714397b4b73158206172fc8ec613eba62c8a2ea76d7eff93",
-    "mark4_frente.jpg": "8415c0d6ef446b941b3dc2a2d4f59577dae2290504fdae15fee964358e37cbeb",
-    "mark4_frente_alfa.png": "073b0d38d131772c927f199c789fef5a8387f89fd656ec3207015af7620da9ab",
-    "mark4_manifesto.json": "9c2f6061482662bcc628263a62964e39dbca58f0bc5e284b02f786325e0071cd",
-    "mark4_mapa.json": "91caabfc752062b8ef3437f5b92a289fc5049799f42fd87fbb85f8630bbe3999"
+    "mark4_botao_agudo.png": "e576f13d90d98a46d4aa840df31a548b6d9d557dcc5c12e1b6876a6c5d62e0e6",
+    "mark4_botao_eq2200.png": "f93fb0eadd2a6da43a87195148dbf81031738171931d0531eb5832ca24ecec7a",
+    "mark4_botao_eq240.png": "c4fb2a38b89bdc9ed39ca3c2ba672339ce9603d04cec98a9c1977f4ebda595ed",
+    "mark4_botao_eq6600.png": "65d0ef9d11aee2f799cb1da02688aecbcd1e12d26216b3b46139d6e1402116dc",
+    "mark4_botao_eq750.png": "a98407a82c8ad16e926f44cac718372cc83ff109b9133a2893d6e3bef76f33a0",
+    "mark4_botao_eq80.png": "83d1d04fc84c58f5e4883dbc6c75861df2cc02e6e853afe0a95c78da5b4e70e8",
+    "mark4_botao_ganho.png": "af5d10e5082a3dc352f9ea94eeb1c64c5b79336f08a8f0494d819061ff6978fc",
+    "mark4_botao_grave.png": "5f5049bf286225b2e1a1de65e404f086e847912092cac5249855d6b62744d51f",
+    "mark4_botao_medio.png": "bf3a507dc33d291bfbdd41301afaded60be7decd60eceda542831ba0e86adfcc",
+    "mark4_botao_presenca.png": "05ebba0569f4cb054b093019f5be1c8218f2c7e4faca1b4fd8df6947111541e8",
+    "mark4_botao_volume.png": "a52c6ae225e18e82911c32637fe26b27799f9ae1cd89a84fabeb0f7191faff23",
+    "mark4_frente.jpg": "49412806335727cc10403f20b52d957cc96994d7d166b73f0ebc034f3dcdc60d",
+    "mark4_frente_alfa.png": "6ca89dabf7f3e95ba417b9f6abfbb7e4860d21f31532a6e82b089f43462646de",
+    "mark4_manifesto.json": "43e1fe5cb92a2d32d32d9a8267a181ff31355082672971934969a9718917b8e3",
+    "mark4_mapa.json": "8accdaa9185e8fcfaa0ce0c8ea768e09f294160941e12a22bc13180e59a61fb1"
    },
-   "tamanho": 2049097,
+   "tamanho": 1308281,
    "tipo": "cabecote",
    "inspiracao": "Mesa Boogie Mark IV",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
