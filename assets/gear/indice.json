@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:18:31Z",
+ "gerado": "2026-10-29T15:18:35Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -897,8 +897,8 @@
   },
   "blue_212": {
    "nome": "Blue 2x12",
-   "hash": "601407696590993f",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "321cde154f1ed0c4",
+   "data": "2026-10-29T15:18:35Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blue_212_frente.jpg",
@@ -907,18 +907,18 @@
     "blue_212_mapa.json"
    ],
    "sha256": {
-    "blue_212_frente.jpg": "701462841a8d5d2450f1d8aa1b144e397cc222b506f6ac8483bd93f9e2e3eb0c",
-    "blue_212_frente_alfa.png": "6c35ea7674e695c6835d0ce6841af9112cef395f3fc78ecb51b9c80579cc2b49",
-    "blue_212_manifesto.json": "67659e7319117b080caab99aae01a2b56cb5dcd16a351a9b4a1fb852341fc4d3",
-    "blue_212_mapa.json": "712459fa21fa66dcd3f09b92b24c9a7e8708750035d79ec5ea0275e41800a51d"
+    "blue_212_frente.jpg": "b83f557fe826098be25bbfceb3284ce59cb436f9cae7366c5cd2638599d56026",
+    "blue_212_frente_alfa.png": "e563a0f04733b52f427cf2f798c501f8076fca65a0df3af7d73aa877c0b19647",
+    "blue_212_manifesto.json": "46fb10ac9b78baf0d6afe2cf142c67151c23fc8faea8c6ac07a67592155cdf04",
+    "blue_212_mapa.json": "3e8cab22ec8f9748b0bfb18c3668abe637c86d3594fd77086b027e77e55bccf2"
    },
-   "tamanho": 720454,
+   "tamanho": 1061932,
    "tipo": "caixa",
    "inspiracao": "Vox AC30 2x12",
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
