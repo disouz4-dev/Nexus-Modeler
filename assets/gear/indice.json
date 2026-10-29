@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T18:26:28Z",
+ "gerado": "2026-10-29T18:26:33Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5577,8 +5577,8 @@
   },
   "solart": {
    "nome": "Solar T",
-   "hash": "dd98852674ba85ef",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "a504678ac5175057",
+   "data": "2026-10-29T18:26:33Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solart_botao_agudo.png",
@@ -5593,24 +5593,24 @@
     "solart_mapa.json"
    ],
    "sha256": {
-    "solart_botao_agudo.png": "df1eef383a08f138dd4e66371fce8b523b58dd8a7b1281c1ed1f4f036175131a",
-    "solart_botao_ganho.png": "08a2a27cbae27576ca45ac362789553f97f1584656e7e15bffb6ebfe0634e4e2",
-    "solart_botao_grave.png": "fee950c188ab8dbe7ffeb5604f26fd010b12f043d63c926d407db2800ef05e12",
-    "solart_botao_medio.png": "7bb75bf83179abb5d857395655eedffd22008c4338117aa1005c5589165c8f07",
-    "solart_botao_presenca.png": "94b2bd2d1c349df964303745e0b7ddc7bbf49bb145354839ba0402cfc9164c0f",
-    "solart_botao_volume.png": "becc103884b690b76cd31b58e34a5d535d549800e9fa09d57e86ff3b874c72ad",
-    "solart_frente.jpg": "4d37e2dd42a8b3432a9d13209997a05245917252445e1b87752a3afc4d62430c",
-    "solart_frente_alfa.png": "4c757624423a91458ef4cc35ec7878cfa5ab5f86ccaa1c8ad3f796ea25511b79",
-    "solart_manifesto.json": "596de09b8ccba4af75b86a02d7f053fd87d0535e56d92e04af4e7e78b26a2ab6",
-    "solart_mapa.json": "ea51e5dae7541f5b02d7ec124906e3d937115a057bdbd76e7f21833d02d8669f"
+    "solart_botao_agudo.png": "087d7ec7c67be6890ed6e7b21934d74f6fe7a0360acf2620c439171f33200c2f",
+    "solart_botao_ganho.png": "6a4c708283b076688133a48d495425b5b7793957ff62a7b0b7311a4839dfaa67",
+    "solart_botao_grave.png": "d5d6935e858fb40e63b9fac84f8d6f917f8d18c3de385a389b41949f79667669",
+    "solart_botao_medio.png": "b01e4042f13adf4ed779ea80470de6d659ee1a883fbcc70f0a89a8918f713026",
+    "solart_botao_presenca.png": "644b79bc5cf9abd6e195a582752f6a4f19dd394e08c74efe9c8b91ea9c9522f5",
+    "solart_botao_volume.png": "ef6cc860a367d5fddce8737a5097e478253f29dea790e2af6bf443073b221d82",
+    "solart_frente.jpg": "ebb3d53b4fea0b047420d1a074577d3219d8e828cda8a1abdcc3a4e336faf3b6",
+    "solart_frente_alfa.png": "04a93825caca7c411afa27c65c56d3d3e315df0f2d74d57d5674cab992457a8a",
+    "solart_manifesto.json": "6a6955e5b91f3ad0766edb92e58a8df813d79bc4f74fece43ee604b3fac3d718",
+    "solart_mapa.json": "f868809535ddd96f7c63151ea5b78dcfb0af5f567d714f1a56d18c2844e888be"
    },
-   "tamanho": 1792560,
+   "tamanho": 775124,
    "tipo": "cabecote",
    "inspiracao": "Sunn Model T",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
