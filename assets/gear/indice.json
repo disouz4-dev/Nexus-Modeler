@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T22:17:43Z",
+ "gerado": "2026-10-29T22:17:48Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3934,8 +3934,8 @@
   },
   "mark5": {
    "nome": "Mark Five",
-   "hash": "caa69cb74d240d84",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "fb0a00ea581440b3",
+   "data": "2026-10-29T22:17:48Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark5_botao_agudo.png",
@@ -3955,29 +3955,29 @@
     "mark5_mapa.json"
    ],
    "sha256": {
-    "mark5_botao_agudo.png": "67072b83bdada205c025c2bf447cdf96623c8f478ec07b2151105cf9185aae5a",
-    "mark5_botao_eq2200.png": "b9eedfe1b725409f33bcde8543e8a065dab0f7596376eea3dc813a3af63da5a1",
-    "mark5_botao_eq240.png": "2aac792289cec6df65545a338a044a1f675fc3fd87a6713212baee6d862d6960",
-    "mark5_botao_eq6600.png": "046dd290efe6e0e6cd3390cd2d5ce18e2b17dd83266f746c81dc678daadc54f4",
-    "mark5_botao_eq750.png": "7d9a4ef6db8fc4aab1746010a7b50c400558d069c84bd7322ee0251610d2b5f8",
-    "mark5_botao_eq80.png": "2a1b78b276f217704d00678c0a777b657d1545b1e9fe1dc4ca27cf634c081828",
-    "mark5_botao_ganho.png": "0c33dadbe570e43f0cb115cbf3728d07da98e0c1248fad8f6d47af987cd8e985",
-    "mark5_botao_grave.png": "7764964b062888507197da903a32f6d4fbf189a2d51e092b848947177e8b6818",
-    "mark5_botao_medio.png": "336e015d88f0176fbfed6b1e420d965b17e1f2dccae31017602b44dc1ee4d489",
-    "mark5_botao_presenca.png": "57c97e8b7c22399169fc50baba7f0a90839551ae8d78eb6ae70817467e31d329",
-    "mark5_botao_volume.png": "f62b54178f28e10884139eb5cc75216f3a1ede62d2d650871bf2e5e82f6b912f",
-    "mark5_frente.jpg": "82d042b8f2b10a05a6b2d1413f13e5d8057c79436fec3eff863ee65969e195e8",
-    "mark5_frente_alfa.png": "b93eec77c462a882ac8879f66461edede247564288dcffab53d19e01c55ed980",
-    "mark5_manifesto.json": "406ea71741e801a0a74d2ff5ac7d6830d22616948bb481e3d36dd464f322f279",
-    "mark5_mapa.json": "97c3ee6749738804dff5921d3811b99127f0a3d570bc5c12a2f565b2f5ddacfe"
+    "mark5_botao_agudo.png": "10e6f6d795458bb090d4569e101238038e1a4b453fc837b6464d48a5ff5f12b8",
+    "mark5_botao_eq2200.png": "1099633a4686ad0f2d421d09d14fd9a6f890930e6a6d80f44731e1981b4c683e",
+    "mark5_botao_eq240.png": "60ae7b95ff3b4cac389658809395ae0a3f9fa2aa9ba083317aebd6c0ab7bff18",
+    "mark5_botao_eq6600.png": "ddc4c4fe6a0170ffd1578adec7db8e7afc33feee56e57c526da54ba63166b19a",
+    "mark5_botao_eq750.png": "e4a2bc0cdec665138ce8684a5a64ea4ae75e4ce6a233a8ec5981ad4bb68c06a8",
+    "mark5_botao_eq80.png": "30d9fe3ea4324b22b1c1ac5dd8f987ac4c6f6430e08e07bc78474c08627ca547",
+    "mark5_botao_ganho.png": "6c86c9b8a08fae9624b8e3a5d1950e2906352198f284e0aff07268819c58de39",
+    "mark5_botao_grave.png": "c129602e5aaec53d167b1bd617d469e5a65debeffaa1a6c7ef408fc413baf72e",
+    "mark5_botao_medio.png": "f67df090888088471a74490c17bcf0640df5c4047e993821bafffc3981762fdf",
+    "mark5_botao_presenca.png": "95837014c119195e898d00f808c8458154384343548658ef6350ea5efd74069c",
+    "mark5_botao_volume.png": "58935c0cbd92c1a623e28186f1ac626a1f0c8ded49abf2201615580491c1d1bd",
+    "mark5_frente.jpg": "99ba520077498c8076f30e391f5c1bcb055f567bba44080a536e12b8e06efbb0",
+    "mark5_frente_alfa.png": "bd8dad1c28053d41dfb2940c845cbbde6873e90c8811930a7cea27d27f0fed1a",
+    "mark5_manifesto.json": "3898f04f31a207da8fba62e1f968d6929d1f374b4d45b1044f143489d73da30d",
+    "mark5_mapa.json": "89e511d13f9daa75fa046f77ae40af03d9719a1f25d911bca8cfa76111e61019"
    },
-   "tamanho": 2054099,
+   "tamanho": 1028491,
    "tipo": "cabecote",
    "inspiracao": "Mark V",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
