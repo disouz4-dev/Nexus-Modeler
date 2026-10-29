@@ -2,50 +2,41 @@
   "tipo": "pedal",
   "nome": "Amethyst King",
   "familia": "amethyst_king",
-  "inspiracao": "creme com letras pretas, caixa larga com dois pedais lado a lado (estilo Analogman King of Tone)",
+  "inspiracao": "Caixa deitada roxo-vinho (121 x 95 x 38 mm), letras douradas; dois lados de overdrive: VOLUME e DRIVE em cima e TOM embaixo em cada lado (o lado direito é fixo), LED amarelo à esquerda e vermelho à direita, dois pisantes. Tema: drusa de ametista roxa no lugar da rosa dos ventos, pontos dourados tom sobre tom. Original: Analogman King of Tone.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.121,
+    "comprimento": 0.095,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.8524,
-      0.5468,
-      0.0358
+      0.1011,
+      0.0135,
+      0.0619
     ],
-    "metalico": 0.1,
-    "aspereza": 0.26
+    "metalico": 0.25,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.6941,
+    0.4423,
+    0.0658
   ],
   "modelo": "AMETHYST KING",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.016,
+    "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,105 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.78,
+        0.62
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.0,
-        0.55
+        -0.38,
+        0.62
+      ]
+    },
+    {
+      "id": "fixo_vol2",
+      "rotulo": "VOLUME",
+      "pos": [
+        0.38,
+        0.62
       ],
-      "escala": 1.1
+      "fixo": true
+    },
+    {
+      "id": "fixo_drive2",
+      "rotulo": "DRIVE",
+      "pos": [
+        0.78,
+        0.62
+      ],
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.58,
-        0.55
+        -0.62,
+        0.08
       ],
-      "escala": 1.1
+      "escala": 0.85
+    },
+    {
+      "id": "fixo_tom2",
+      "rotulo": "TOM",
+      "pos": [
+        0.62,
+        0.08
+      ],
+      "fixo": true,
+      "escala": 0.85
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
   "estampa": {
     "svg": "estampas/amethyst_king.svg"
-  }
+  },
+  "medidas_fonte": "121 x 95 x 38 mm (Analogman, ficha oficial)",
+  "quadro": {
+    "largura_rel": 1.3,
+    "proporcao": 0.94,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0068,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0036,
+  "texto_cor2": [
+    0.6941,
+    0.4423,
+    0.0658
+  ],
+  "led": [
+    -0.4,
+    -0.42
+  ],
+  "led_cor": [
+    0.145,
+    0.0824,
+    0.0
+  ],
+  "pisante": {
+    "pos": [
+      -0.66,
+      -0.66
+    ]
+  },
+  "pecas": [
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.66,
+        -0.66
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.4,
+        -0.42
+      ]
+    }
+  ]
 }

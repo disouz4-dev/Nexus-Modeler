@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T21:12:51Z",
+ "gerado": "2026-10-29T21:17:01Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -142,8 +142,8 @@
   },
   "amethyst_king": {
    "nome": "Amethyst King",
-   "hash": "32af8c3d92d74410",
-   "data": "2026-10-29T17:12:42Z",
+   "hash": "236161eb147f2f3a",
+   "data": "2026-10-29T21:17:01Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amethyst_king_botao_ganho.png",
@@ -155,21 +155,21 @@
     "amethyst_king_mapa.json"
    ],
    "sha256": {
-    "amethyst_king_botao_ganho.png": "22c138e71c5867eca548a885d2b3bc3d9e25f33820c966146baa0a0a88896246",
-    "amethyst_king_botao_nivel.png": "a013873a08dfb004beeffa8280633c326bb46342daccbe44daa5b4630249bddd",
-    "amethyst_king_botao_tom.png": "df10fb009a509c23a395596ba9db7002f14a87bbe933e7cb910a5e33a05df834",
-    "amethyst_king_frente.jpg": "00b0ab00532bf93d0c48c18efd8d311afe34d6d55cd51be7b59119a45381ff05",
-    "amethyst_king_frente_alfa.png": "f07e452950590f4cb4cd3e55c7c96c522a8e1f189572d9afb350c74bedf5eb95",
-    "amethyst_king_manifesto.json": "23a9d50317694132be1edf71c9c5e36b16d42e92fe17840ccbc42b40ed844e3b",
-    "amethyst_king_mapa.json": "8308067fab284b90481d423e75d01708f7e4210ea5586d911bd28207d953686c"
+    "amethyst_king_botao_ganho.png": "4c9da336c52d35294f41741206e1389e945389445bb7244f2e6ad33f84a3fae3",
+    "amethyst_king_botao_nivel.png": "84c9b7a52974393a61a04c66b02f754a0ec08ba40bd3bd7a0b7b651068abea28",
+    "amethyst_king_botao_tom.png": "d7be98a5ae3fc768a1c4548ad501b5c830a42a9648cfa3fd29d76e516d819a49",
+    "amethyst_king_frente.jpg": "425efe7bd521697476863115f81430ac7bd0500f5d6d93d2cac12af6378c65f3",
+    "amethyst_king_frente_alfa.png": "a56b588c7f250f44095e36da93fcdf9a6dfae0c801ae2ce2e49ce0e671cb5219",
+    "amethyst_king_manifesto.json": "c320c7e20c41e9c71fcf8dea5ca86c022034771483916f63b96490c29f2f1547",
+    "amethyst_king_mapa.json": "942c472b6fc548fe2f08e76cfc2a8c1367e5d2f3715bb5d70a4d5f4cc464e7a0"
    },
-   "tamanho": 199194,
+   "tamanho": 243394,
    "tipo": "pedal",
    "inspiracao": "Analogman King of Tone",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
