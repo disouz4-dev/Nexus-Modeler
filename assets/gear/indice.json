@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T17:16:51Z",
+ "gerado": "2026-10-29T17:25:00Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5309,8 +5309,8 @@
   },
   "silverprince": {
    "nome": "Silver Prince",
-   "hash": "813e947571f89e4a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "cc8d78cf5f704174",
+   "data": "2026-10-29T17:25:00Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silverprince_botao_agudo.png",
@@ -5325,24 +5325,24 @@
     "silverprince_mapa.json"
    ],
    "sha256": {
-    "silverprince_botao_agudo.png": "5f3dbb2af849fff42983ecea8b204655d7d9f2ec62ce826dd1ac2ad5eb68aa8b",
-    "silverprince_botao_ganho.png": "c65b6e236aad4bcf754501d3db513fac12073d857928874b7bd42009bdd4144e",
-    "silverprince_botao_grave.png": "b3d160585a3d2ade8ec6da595c8326aac78a88db44065ecebc52ca85b302515d",
-    "silverprince_botao_medio.png": "12525aabd48866b73f573b0d0e9974610894e8e37c4ae31ac76740b9e7c2ebe1",
-    "silverprince_botao_presenca.png": "34bfb982391d99e770c94da5ff4c09a276336fdd9756c3e30dde881e9ba58930",
-    "silverprince_botao_volume.png": "629da15f16ae90192192ba79af38d78f1ec9bc6341e35a8d3b304159b601246f",
-    "silverprince_frente.jpg": "db31262b6a2ca8e3c0612ab47d370f48ed5f4d1bd962f0ddeebfe65a50f6ca9a",
-    "silverprince_frente_alfa.png": "c945f134b23b93ec76282beff4c92bc3c3db4f1383cee5da2d95523764c2b53a",
-    "silverprince_manifesto.json": "8dc4dc085629467f876e8f80b96413221999dfd85e1cd4e145c59f76876df47b",
-    "silverprince_mapa.json": "4463d758a1d813b03752c71c41f3e190b62ff017e37188a8a6c88f7c53369458"
+    "silverprince_botao_agudo.png": "a86584a8634250585b61cde7b42d286c696802cb4612094f0a3374075fa215fd",
+    "silverprince_botao_ganho.png": "f45b30d02ac375bdca32a14e8b1411415de9ba77b2deac45fb60108c85c37413",
+    "silverprince_botao_grave.png": "0cc3a36f619108b972360fbbb18a363559bcc917dfe40b801a56b88d2fc706b3",
+    "silverprince_botao_medio.png": "a52dd674f7c49e9d866991866e63c48d4363b64f9d0b4140a6719cbe83f236e8",
+    "silverprince_botao_presenca.png": "f698de4787e27c580cc468952c4dd6018a4301bef25448de147af728d6a8e39a",
+    "silverprince_botao_volume.png": "552cf42cc1f330e8d6bcab5dc2c52752ca209784cd94c826bd737a4b9ef6e0b7",
+    "silverprince_frente.jpg": "a50c1ac5706eae12fc4a68b9b13e5172d750f92866a935109827fa22c6fd9a99",
+    "silverprince_frente_alfa.png": "5d350d4fcebed650920ac04c5c31b09341bcc238a85e409c6239d72972f11d8b",
+    "silverprince_manifesto.json": "3fdd6359ecb8bfa85715138e15b27dd64d867f057a8e831f6e28550c2f83ddba",
+    "silverprince_mapa.json": "acb19c13cdd45c5809ea8060ad401e8692d69cb87dbc8818e7afd6deee54fbc9"
    },
-   "tamanho": 1689573,
+   "tamanho": 1618674,
    "tipo": "cabecote",
    "inspiracao": "Fender Princeton Reverb",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
