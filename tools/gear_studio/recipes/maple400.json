@@ -2,42 +2,40 @@
   "tipo": "cabecote",
   "nome": "Maple 400",
   "familia": "maple400",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Traynor YBA-200: cabeçote de 570 × 240 × 290 mm em tolex preto com cantos cromados, painel preto na faixa de cima com letras brancas e a grade de metal preta perfurada embaixo com a marca: entradas 0 dB e -6 dB, MUTE com LED, BRIGHT, GAIN, TREBLE, MID, RANGE, BASS, SCOOP, RESONANCE e MASTER em botões pretos, as conexões, a lâmpada âmbar e as alavancas STANDBY e POWER.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.72,
-    "altura": 0.3,
-    "profundidade": 0.36
+    "largura": 0.57,
+    "altura": 0.24,
+    "profundidade": 0.29
   },
   "couro": {
     "cor": [
       0.006,
       0.006,
-      0.007
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.05,
-      0.05,
-      0.055
+    "tipo": "grade",
+    "cor": [
+      0.02,
+      0.02,
+      0.022
     ],
-    "cor_b": [
-      0.62,
-      0.63,
-      0.66
-    ],
-    "trama_mm": 2.4,
-    "friso": [
-      0.85,
-      0.85,
-      0.86
-    ]
+    "furo_mm": 3.6,
+    "passo_mm": 5.0
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
+    "altura_m": 0.02,
     "altura_rel": 0.5,
     "lado_rel": 0.0,
     "cor": [
@@ -47,76 +45,166 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "MAPLE 400",
-    "pintado": true,
+    "posicao": "cima",
+    "altura_m": 0.075,
     "cor": [
-      0.02,
-      0.02,
-      0.02
+      0.012,
+      0.012,
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
       0.85,
       0.85,
       0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "0 dB",
+          "x": 0.035
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "-6 dB",
+          "x": 0.075
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MUTE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.11,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRIGHT",
+          "x": 0.145
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.2
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.26
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.32
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "RANGE",
+          "x": 0.38
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SCOOP",
+          "x": 0.5
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "RESONANCE",
+          "x": 0.56
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.62
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "PRE OUT",
+          "x": 0.68
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "AMP IN",
+          "x": 0.72
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "LINE",
+          "x": 0.76
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.95,
+            0.5,
+            0.05
+          ],
+          "rotulo": null,
+          "x": 0.82,
+          "raio_m": 0.006
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.88
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.94
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.02,
-      0.02,
-      0.02
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.519,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo valvulado canadense dos anos 70 (estilo Traynor YBA-200): couro preto, tela prateada, painel preto"
+  "notas_modelagem": "A presença do Nexus ficou no RESONANCE."
 }

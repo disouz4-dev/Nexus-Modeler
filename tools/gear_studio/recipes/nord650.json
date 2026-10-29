@@ -2,34 +2,53 @@
   "tipo": "cabecote",
   "nome": "Nord 650",
   "familia": "nord650",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "EBS Classic 500: cabeçote de 490 × 215 × 300 mm em tolex preto com cantos cromados e alça de couro, faixa preta lisa no alto com a marca, tela de pano cinza-escura no meio e a faixa preta de painel embaixo com letras brancas: entrada, GAIN com a tecla CHARACTER e o LED PEAK, BASS, LOW MID e a frequência, HIGH MID e a frequência, TREBLE, DRIVE e VOLUME em botões pretos, as alavancas STANDBY e POWER e a lâmpada vermelha grande.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.49,
+    "altura": 0.215,
+    "profundidade": 0.3
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
-      0.04,
-      0.04,
-      0.045
+    "tipo": "tela",
+    "cor_a": [
+      0.05,
+      0.05,
+      0.055
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.5
+    "cor_b": [
+      0.1,
+      0.1,
+      0.11
+    ],
+    "trama_mm": 1.8,
+    "faixa": {
+      "altura_rel": 0.35,
+      "cor": [
+        0.008,
+        0.008,
+        0.009
+      ],
+      "lisa": true
+    }
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
+    "altura_m": 0.016,
     "altura_rel": 0.5,
     "lado_rel": 0.0,
     "cor": [
@@ -39,76 +58,171 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "NORD 650",
-    "pintado": true,
+    "posicao": "baixo",
+    "altura_m": 0.07,
     "cor": [
-      0.09,
-      0.09,
-      0.1
+      0.012,
+      0.012,
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.95,
-      0.95,
-      0.95
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
     },
+    "peq": {
+      "forma": "liso",
+      "diametro_m": 0.012,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.04
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.1
+        },
+        {
+          "tipo": "push",
+          "rotulo": "CHAR.",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.145,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.2
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "LOW MID",
+          "x": 0.26
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "FREQ",
+          "estilo": "peq",
+          "x": 0.31
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "HIGH MID",
+          "x": 0.36
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "FREQ",
+          "estilo": "peq",
+          "x": 0.41
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.46
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DRIVE",
+          "x": 0.53
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.6
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.01,
+          "x": 0.7,
+          "z": 0.5,
+          "texto": "NORD 650"
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.79
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.85
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.93,
+          "raio_m": 0.008
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.555,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo de transistor sueco (estilo EBS Classic 500 / Reidmar): preto, painel cinza-escuro, letras brancas"
+  "notas_modelagem": "A presença do Nexus ficou no HIGH MID."
 }

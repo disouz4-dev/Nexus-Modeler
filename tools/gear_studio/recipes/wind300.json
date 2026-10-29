@@ -2,37 +2,25 @@
   "tipo": "cabecote",
   "nome": "Wind 300",
   "familia": "wind300",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Peavey Mark III Bass: cabeçote baixo de cerca de 600 × 200 × 280 mm em tolex preto com cantos cromados e a frente toda de painel preto com letras brancas: entradas dos dois canais e a AUTOMIX, canal 1 (VOLUME, BASS, TREBLE com BRIGHT), canal 2 (VOLUME, BASS, MID, TREBLE; o que toca), COMPRESSOR, MASTER, as chaves e a lâmpada vermelha, em botões de tampa cromada.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.6,
+    "altura": 0.2,
+    "profundidade": 0.28
   },
   "couro": {
     "cor": [
       0.006,
       0.006,
-      0.007
+      0.006
     ],
-    "grao_mm": 2.0
-  },
-  "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.08,
-      0.08,
-      0.09
-    ],
-    "cor_b": [
-      0.5,
-      0.5,
-      0.52
-    ],
-    "trama_mm": 2.8,
-    "friso": [
-      0.85,
-      0.85,
-      0.86
-    ]
+    "grao_mm": 2.6
   },
   "logo": {
     "tipo": "marca",
@@ -47,76 +35,176 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "WIND 300",
-    "pintado": false,
+    "posicao": "inteiro",
     "cor": [
-      0.74,
-      0.75,
-      0.77
+      0.012,
+      0.012,
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.03
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "marshall",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.78,
+        0.78,
+        0.8
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.62,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "logo",
+          "altura_m": 0.016,
+          "x": 0.5,
+          "z": 0.88
+        }
+      ]
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.42,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.04,
+          "z": 0.6
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.04,
+          "z": 0.25
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.1
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.16
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.22
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRIGHT",
+          "x": 0.265
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "1",
+          "x": 0.31,
+          "z": 0.6
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "2",
+          "x": 0.31,
+          "z": 0.25
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "VOLUME",
+          "x": 0.37
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.43
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.49
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.55
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "AUTOMIX",
+          "x": 0.61
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "COMPRESSOR",
+          "x": 0.68
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.75
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "PUNCH",
+          "x": 0.8
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.86,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "POWER",
+          "x": 0.93
+        }
+      ],
+      "letra_m": 0.0048,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "cromo",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.43,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo de transistor dos anos 70 (estilo Peavey Mark III / Century): couro preto, tela cinza, painel prateado"
+  "notas_modelagem": "Confiança baixa: o Mark III de baixo não tem medidas nem painel confirmados do fabricante; feito pela foto de época. A presença do Nexus ficou no COMPRESSOR."
 }

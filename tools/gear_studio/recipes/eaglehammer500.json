@@ -2,29 +2,25 @@
   "tipo": "cabecote",
   "nome": "Eagle Hammer 500",
   "familia": "eaglehammer500",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Aguilar Tone Hammer 500: caixinha de metal de 273 × 76 × 216 mm de base preta e painel prata com moldura arredondada e letras pretas: entrada com a tecla -10 dB, botões pretos em duas fileiras desencontradas (GAIN, MID LEVEL e BASS em cima; DRIVE, MID FREQ e TREBLE embaixo), o VOLUME separado à direita, a saída D.I. com as teclas POST/PRE e LIFT, MUTE e os LEDs STATUS e OPERATE.",
+  "formato": "caixinha",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.273,
+    "altura": 0.076,
+    "profundidade": 0.216
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.02,
+      0.02,
+      0.022
     ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
-      0.03,
-      0.03,
-      0.033
-    ],
-    "furo_mm": 2.5,
-    "passo_mm": 3.6
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +35,173 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "EAGLE HAMMER 500",
-    "pintado": false,
+    "posicao": "inteiro",
     "cor": [
-      0.7,
-      0.71,
-      0.73
+      0.66,
+      0.67,
+      0.68
     ],
     "texto_cor": [
-      0.02,
-      0.02,
-      0.03
+      0.012,
+      0.012,
+      0.012
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.013,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.008,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.7,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.06
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.2
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.36
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.52
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.72
+        },
+        {
+          "tipo": "led",
+          "rotulo": "STATUS",
+          "cor": [
+            0.1,
+            0.3,
+            1.0
+          ],
+          "aceso": true,
+          "x": 0.88,
+          "z": 0.75
+        }
+      ],
+      "letra_m": 0.0028,
+      "rotulo_pos": "cima"
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.28,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": "-10dB",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.06,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DRIVE",
+          "x": 0.28
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "FREQ",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.6
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENÇA",
+          "estilo": "extra",
+          "x": 0.68
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MUTE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.8,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "D.I.",
+          "x": 0.9
+        }
+      ],
+      "letra_m": 0.0028,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "alca": "nenhuma",
+  "parafusos_painel": false,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.493,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo leve de 500 W (estilo Aguilar Tone Hammer 500): preto, painel prateado, letras pretas"
+  "notas_modelagem": "O Tone Hammer não tem presença: ficou num botão pequeno ao lado do TREBLE. O DRIVE do original ficou fixo (o ganho do Nexus é o GAIN)."
 }

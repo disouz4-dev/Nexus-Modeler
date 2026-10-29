@@ -2,29 +2,25 @@
   "tipo": "cabecote",
   "nome": "Ash 500",
   "familia": "ash500",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Ashdown ABM EVO III: cabeçote baixo e compacto de 474 × 134 × 315 mm em tolex preto, sem grade: a frente inteira é o painel cinza-azulado com letras claras e o VU de fundo âmbar aceso à esquerda; entrada com chave passivo/ativo, INPUT, BASS, dois deslizantes, MIDDLE, dois deslizantes, TREBLE e OUTPUT em cima, VALVE DRIVE, COMPRESSION e SUB HARMONICS embaixo, as teclas de liga dos efeitos e a saída D.I.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.474,
+    "altura": 0.134,
+    "profundidade": 0.315
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
-      0.05,
-      0.05,
-      0.055
-    ],
-    "furo_mm": 4.0,
-    "passo_mm": 6.0
+    "grao_mm": 2.6
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +35,226 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "ASH 500",
-    "pintado": false,
+    "posicao": "inteiro",
     "cor": [
-      0.74,
-      0.75,
-      0.77
+      0.32,
+      0.38,
+      0.44
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.03
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
+      "z": 0.68,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "vu",
+          "rotulo": null,
+          "x": 0.1,
+          "largura_m": 0.06,
+          "altura_m": 0.042
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.21
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "INPUT",
+          "x": 0.27
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.35
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "180",
+          "x": 0.4
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "340",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.5
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "1K",
+          "x": 0.55
+        },
+        {
+          "tipo": "deslizante",
+          "fixo": true,
+          "rotulo": "3K",
+          "x": 0.59
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.65
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "OUTPUT",
+          "x": 0.85
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "baixo",
+      "curso_m": 0.026
     },
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.22,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "logo",
+          "altura_m": 0.008,
+          "x": 0.1,
+          "z": 0.2,
+          "escuro": false
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DRIVE",
+          "x": 0.35
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "COMP",
+          "x": 0.5
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "SUB",
+          "x": 0.65
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.4,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.55,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "push",
+          "rotulo": null,
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.7,
+          "tamanho_m": 0.006
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "D.I.",
+          "x": 0.8
+        },
+        {
+          "tipo": "push",
+          "rotulo": "MUTE",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.86,
+          "tamanho_m": 0.006
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
+  "cantos": "preto",
+  "alca": "couro",
+  "aba_m": 0.012,
+  "recuo_frente_m": 0.02,
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.411,
+    "elevacao": 10.0
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ],
-  "inspiracao": "cabeçote de baixo de transistor (estilo Hartke LH1000): preto com painel de alumínio"
+  "notas_modelagem": "Os quatro deslizantes do EQ ficaram desenhados fixos. A presença do Nexus é o COMPRESSION."
 }

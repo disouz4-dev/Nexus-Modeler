@@ -2,29 +2,26 @@
   "tipo": "cabecote",
   "nome": "Bass Box V",
   "familia": "bassboxv",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Behringer Bass V-Amp Pro: rack 2U (483 × 89 × 135 mm) de painel prata com desenhos e letras pretos: tecla POWER quadrada à esquerda, GAIN, VOLUME, BASS, MID e TREBLE, o seletor AMPS no alto, o visor de LED vermelho de dois dígitos no centro com as teclas A a E, TUNER, BANK e TAP, REVERB e EFFECTS, MASTER, a chave LINE IN, a entrada e o fone à direita.",
+  "formato": "rack",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.483,
+    "altura": 0.089,
+    "profundidade": 0.135
   },
+  "rack_u": 2,
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.03,
+      0.03,
+      0.032
     ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
-      0.02,
-      0.02,
-      0.022
-    ],
-    "furo_mm": 2.0,
-    "passo_mm": 3.2
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -39,76 +36,267 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "BASS BOX V",
-    "pintado": true,
+    "posicao": "inteiro",
     "cor": [
-      0.62,
-      0.5,
-      0.22
+      0.66,
+      0.67,
+      0.68
     ],
     "texto_cor": [
-      0.03,
-      0.03,
-      0.03
+      0.012,
+      0.012,
+      0.012
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
+  "estilos": {
+    "padrao": {
+      "forma": "liso",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
     },
+    "extra": {
+      "forma": "liso",
+      "diametro_m": 0.011,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "nenhuma"
+    }
+  },
+  "fileiras": [
     {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.5,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "push",
+          "rotulo": "POWER",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.04,
+          "tamanho_m": 0.01
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.1
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "VOLUME",
+          "x": 0.16
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.22
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID",
+          "x": 0.28
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.34
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "AMPS",
+          "x": 0.41,
+          "z": 0.72
+        },
+        {
+          "tipo": "push",
+          "rotulo": "A",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.4,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "B",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.43,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "C",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.46,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "D",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.49,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "E",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.52,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "TUNER",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.58,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "push",
+          "rotulo": "TAP",
+          "cor": [
+            0.02,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.62,
+          "z": 0.2,
+          "tamanho_m": 0.005
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "REVERB",
+          "x": 0.67
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "EFFECTS",
+          "x": 0.73
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER",
+          "x": 0.79
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "LINE IN",
+          "x": 0.84
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.89
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "PHONES",
+          "x": 0.94
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.45,
+      "z0": 0.65,
+      "x1": 0.55,
+      "z1": 0.65,
+      "esp_m": 0.026,
+      "cor": [
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    {
+      "x0": 0.47,
+      "z0": 0.65,
+      "x1": 0.53,
+      "z1": 0.65,
+      "esp_m": 0.016,
+      "cor": [
+        0.9,
+        0.03,
+        0.01
+      ],
+      "luz": 1.5
     }
   ],
-  "inspiracao": "simulador de cabeçotes de baixo em caixa de mesa (estilo Behringer Bass V-Amp Pro): painel dourado, letras pretas"
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.307,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "A presença do Nexus ficou no REVERB/ATTACK; o MASTER do original ficou fixo e o volume do Nexus é o VOLUME."
 }

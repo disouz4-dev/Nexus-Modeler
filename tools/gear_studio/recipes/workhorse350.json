@@ -2,29 +2,26 @@
   "tipo": "cabecote",
   "nome": "Workhorse 350",
   "familia": "workhorse350",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "SWR Bass 350: rack 2U (483 × 89 × 257 mm) de chapa preta com seções bordô, letras brancas e alças tubulares: entradas PASSIVE/ACTIVE e ACTIVE, oito botões pretos serrilhados (GAIN, AURAL ENHANCER, BASS, MID-RANGE LEVEL e FREQUENCY, TREBLE, EFFECTS BLEND, MASTER VOLUME), os LEDs CLIP e LIMITER, a placa com o selo e as gangorras INTERNAL FAN e POWER.",
+  "formato": "rack",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.483,
+    "altura": 0.089,
+    "profundidade": 0.257
   },
+  "rack_u": 2,
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.02,
+      0.02,
+      0.022
     ],
-    "grao_mm": 2.4
-  },
-  "fachada": {
-    "tipo": "grade",
-    "furo": "redondo",
-    "cor": [
-      0.06,
-      0.06,
-      0.065
-    ],
-    "furo_mm": 4.0,
-    "passo_mm": 5.5
+    "metal": true
   },
   "logo": {
     "tipo": "marca",
@@ -39,77 +36,195 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "WORKHORSE 350",
-    "pintado": false,
+    "posicao": "inteiro",
     "cor": [
-      0.74,
-      0.75,
-      0.77
+      0.012,
+      0.012,
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.03
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "cromado",
+      "diametro_m": 0.017,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos",
+      "tampa": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "PASSIVE",
+          "x": 0.06
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": "ACTIVE",
+          "x": 0.11
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.18
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "ENHANCER",
+          "x": 0.24
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.3
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MID LEVEL",
+          "x": 0.36
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MID FREQ",
+          "x": 0.42
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.48
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BLEND",
+          "x": 0.54
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.6
+        },
+        {
+          "tipo": "led",
+          "rotulo": "CLIP",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.65,
+          "z": 0.75
+        },
+        {
+          "tipo": "led",
+          "rotulo": "LIMIT",
+          "cor": [
+            0.95,
+            0.75,
+            0.05
+          ],
+          "aceso": false,
+          "x": 0.65,
+          "z": 0.3
+        },
+        {
+          "tipo": "logo",
+          "altura_m": 0.006,
+          "x": 0.75,
+          "z": 0.5
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "FAN",
+          "cor": [
+            0.012,
+            0.012,
+            0.012
+          ],
+          "aceso": false,
+          "x": 0.86
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.85,
+            0.015,
+            0.008
+          ],
+          "aceso": true,
+          "x": 0.92
+        }
+      ],
+      "letra_m": 0.0036,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.025,
-    "corpo": [
-      0.015,
-      0.015,
-      0.015
-    ],
-    "tampa": [
-      0.75,
-      0.76,
-      0.78
-    ],
-    "tampa_plastico": false,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "riscos": [
     {
-      "nome": "Normal"
+      "x0": 0.03,
+      "z0": 0.5,
+      "x1": 0.14,
+      "z1": 0.5,
+      "esp_m": 0.065,
+      "cor": [
+        0.28,
+        0.03,
+        0.035
+      ]
+    },
+    {
+      "x0": 0.69,
+      "z0": 0.5,
+      "x1": 0.81,
+      "z1": 0.5,
+      "esp_m": 0.065,
+      "cor": [
+        0.28,
+        0.03,
+        0.035
+      ]
     }
   ],
-  "cantos": "cromo",
-  "inspiracao": "cabeçote de baixo (estilo SWR Bass 350): preto com grade de metal e painel prateado"
+  "alca": "rack",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.35,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "Feito como o Bass 350 de 1994–99 (seções bordô)."
 }
