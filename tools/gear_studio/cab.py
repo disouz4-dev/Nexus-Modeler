@@ -513,19 +513,23 @@ def build(rec, fonts):
     lfont = fonts[lg.get("fonte", "script")]
     placa = lg.get("placa")
     if lg.get("tipo") == "marca":
+        h = lg["altura_m"]
         if placa:
-            pw = placa.get("largura_m", lg["altura_m"] * 6.6)
-            phh = placa.get("altura_m", lg["altura_m"] * 2.3)
-            pmat = (st.mat_brushed("placa", placa["cor"], rough=placa.get("aspereza", 0.25)) if placa.get("metal")
-                    else st.mat_plastic("placa", placa["cor"], rough=0.3, coat=0.6))
-            st.box("placa", (pw, 0.004, phh), (lx, ly + 0.003, lz), bevel=0.0015, material=pmat)
-            if placa.get("borda"):
-                st.rounded_rect_curve("placa_borda", pw - 0.008, phh - 0.008, 0.003, 0.0012, (lx, ly + 0.0008, lz),
-                                      st.mat_metal("placa_borda", placa["borda"], rough=0.2))
             tone = placa["cor"]
             ly -= 0.0005
-        brand_plate.build((lx, lz), lg["altura_m"], ly, fonts, lg.get("modeler", True), satin=True,
-                          dark=lg.get("escuro", brand_plate.is_light(tone)))
+        bw = brand_plate.build((lx, lz), h, ly, fonts, lg.get("modeler", True), satin=True,
+                               dark=lg.get("escuro", brand_plate.is_light(tone)))
+        if placa:
+            # Plaqueta atrás da marca, do tamanho dela (triângulo em cima, MODELER embaixo).
+            pw = placa.get("largura_m", bw + 0.9 * h)
+            phh = placa.get("altura_m", 2.45 * h)
+            pz = lz - 0.2 * h
+            pmat = (st.mat_brushed("placa", placa["cor"], rough=placa.get("aspereza", 0.3)) if placa.get("metal")
+                    else st.mat_plastic("placa", placa["cor"], rough=0.35, coat=0.5))
+            st.box("placa", (pw, 0.004, phh), (lx, ly + 0.0035, pz), bevel=0.0015, material=pmat)
+            if placa.get("borda"):
+                st.rounded_rect_curve("placa_borda", pw - 0.008, phh - 0.008, 0.003, 0.0012, (lx, ly + 0.0013, pz),
+                                      st.mat_metal("placa_borda", placa["borda"], rough=0.2))
         lg = dict(lg, sublinhado=None, contorno=False, texto="")
     if lg.get("contorno", True):
         st.text("logo_contorno", lg["texto"], lfont, lg["altura_m"], (lx, cloth_front - 0.003, lz),

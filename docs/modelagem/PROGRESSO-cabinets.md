@@ -13,7 +13,7 @@ As 27 caixas com veredito "trocar" em `docs/modelagem/verificado_caixas.json`.
 ## Etapas
 
 - [x] 1. Recursos novos no `cab.py` (com prévias no lab2)
-- [ ] 2a. Lote 1: brit412, mark5_412, block_412, sl_412, be_412, citrus_412, star_412
+- [x] 2a. Lote 1: brit412, mark5_412, block_412, sl_412, be_412, citrus_412, star_412
 - [ ] 2b. Lote 2: blue_212, twin_212, tweed_410, match_212, silver_112, mark_112, jazz_212
 - [ ] 2c. Lote 3: power_412, uber_412, country_412, vier_412, hi_412, rg_412, glass_412
 - [ ] 2d. Lote 4: vault_810, granite_410, hart_410, glass_410, bassline_215, solar_215
@@ -51,3 +51,5 @@ Todos opcionais; sem eles a receita sai igual ao gerador antigo (conferido com b
 ## Registro
 
 - 29/10: etapa 1 (recursos novos no cab.py).
+- 29/10: lote 1 nas receitas, prévias conferidas com as fotos; render final pedido na fila.
+  Plaqueta atrás da marca passou a ter o tamanho da marca (cab.py).

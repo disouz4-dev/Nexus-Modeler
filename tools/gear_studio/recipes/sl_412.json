@@ -1,9 +1,12 @@
 {
   "tipo": "caixa",
+  "nome": "SL 4x12",
+  "familia": "sl_412",
+  "inspiracao": "caixa 4x12 inclinada (estilo Soldano 4x12 slant): tolex preto, tela preta, sem friso e sem cantoneiras, logo prateado no centro; 711 x 730 x 356 mm",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
-    "profundidade": 0.36
+    "largura": 0.711,
+    "altura": 0.73,
+    "profundidade": 0.356
   },
   "aba_m": 0.03,
   "couro": {
@@ -18,7 +21,7 @@
     "tipo": "marca",
     "texto": "NEXUS",
     "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_rel": 0.05,
     "cor": [
       0.9,
       0.9,
@@ -27,25 +30,34 @@
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.169,
     "elevacao": 8.0
   },
-  "nome": "SL 4x12",
-  "familia": "sl_412",
-  "inspiracao": "caixa 4x12 do SL 100 (estilo Soldano 4x12)",
   "tela": {
     "cor_a": [
-      0.006,
-      0.006,
-      0.006
+      0.005,
+      0.005,
+      0.005
     ],
     "cor_b": [
-      0.04,
-      0.04,
-      0.04
+      0.035,
+      0.035,
+      0.035
     ],
-    "trama_mm": 2.6
+    "trama_mm": 2.4
   },
   "friso": null,
-  "cantos": "cromo"
+  "cantos": "nenhum",
+  "inclinada": {
+    "recuo_m": 0.1,
+    "inicio_rel": 0.5
+  },
+  "pes": {
+    "altura_m": 0.012
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

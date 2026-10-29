@@ -1,28 +1,41 @@
 {
   "tipo": "caixa",
+  "nome": "Star 4x12",
+  "familia": "star_412",
+  "inspiracao": "caixa 4x12 reta (estilo Blackstar HTV-412B): tolex preto, tela cinza-escura em trama fina, sem friso e sem cantoneiras, plaqueta pequena no centro; 756 x 751 x 358 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.03,
+    "altura_rel": 0.0,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "placa": {
+      "cor": [
+        0.02,
+        0.02,
+        0.022
+      ],
+      "borda": [
+        0.7,
+        0.7,
+        0.72
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.1118,
+    "proporcao": 1.133,
     "elevacao": 8.0
   },
-  "nome": "Star 4x12",
-  "familia": "star_412",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
-    "profundidade": 0.36
+    "largura": 0.756,
+    "altura": 0.751,
+    "profundidade": 0.358
   },
   "couro": {
     "cor": [
@@ -34,20 +47,25 @@
   },
   "tela": {
     "cor_a": [
-      0.008,
-      0.008,
-      0.008
+      0.02,
+      0.02,
+      0.021
     ],
     "cor_b": [
-      0.07,
-      0.07,
-      0.075
+      0.075,
+      0.075,
+      0.08
     ],
-    "trama_mm": 1.8
+    "trama_mm": 1.5
   },
-  "friso": [
-    0.75,
-    0.75,
-    0.78
-  ]
+  "friso": null,
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.012
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

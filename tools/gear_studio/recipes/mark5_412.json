@@ -2,11 +2,11 @@
   "tipo": "caixa",
   "nome": "Mark 4x12",
   "familia": "mark_412",
-  "inspiracao": "caixa 4x12 reta de alto ganho que acompanha o Mark Five (estilo Mesa 4x12 Recto Standard)",
+  "inspiracao": "caixa 4x12 reta e alta (estilo Mesa/Boogie Rectifier Standard 4x12): tolex preto, tela de juta preta trançada, sem friso, cantoneiras pretas pequenas, plaqueta prateada no centro; 765 x 835 x 362 mm",
   "medidas_m": {
-    "largura": 0.74,
-    "altura": 0.76,
-    "profundidade": 0.37
+    "largura": 0.765,
+    "altura": 0.835,
+    "profundidade": 0.362
   },
   "aba_m": 0.03,
   "couro": {
@@ -19,32 +19,55 @@
   },
   "tela": {
     "cor_a": [
-      0.008,
-      0.008,
-      0.008
+      0.007,
+      0.007,
+      0.007
     ],
     "cor_b": [
-      0.03,
-      0.03,
-      0.03
+      0.04,
+      0.038,
+      0.035
     ],
-    "trama_mm": 2.6
+    "trama_mm": 3.2
   },
   "friso": null,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.04,
+    "altura_rel": 0.0,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "placa": {
+      "cor": [
+        0.75,
+        0.76,
+        0.78
+      ],
+      "metal": true,
+      "borda": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.239,
     "elevacao": 8.0
+  },
+  "cantos": "preto",
+  "cantos_m": 0.04,
+  "pes": {
+    "altura_m": 0.014
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
   }
 }

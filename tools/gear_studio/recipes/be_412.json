@@ -1,9 +1,12 @@
 {
   "tipo": "caixa",
+  "nome": "BE 4x12",
+  "familia": "be_412",
+  "inspiracao": "caixa 4x12 reta (estilo Friedman 412): tolex preto, tela preta, friso dourado fino em volta da tela, sem cantoneiras, plaqueta dourada no centro; 762 x 762 x 356 mm",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
-    "profundidade": 0.36
+    "largura": 0.762,
+    "altura": 0.762,
+    "profundidade": 0.356
   },
   "aba_m": 0.03,
   "couro": {
@@ -17,38 +20,59 @@
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
+    "altura_m": 0.038,
+    "altura_rel": -0.06,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "placa": {
+      "cor": [
+        0.8,
+        0.6,
+        0.26
+      ],
+      "metal": true,
+      "borda": [
+        0.05,
+        0.04,
+        0.02
+      ]
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
+    "proporcao": 1.14,
     "elevacao": 8.0
   },
-  "nome": "BE 4x12",
-  "familia": "be_412",
-  "inspiracao": "caixa 4x12 do BE 100 (estilo Friedman 4x12)",
   "tela": {
     "cor_a": [
-      0.05,
-      0.035,
-      0.02
+      0.006,
+      0.006,
+      0.006
     ],
     "cor_b": [
-      0.42,
-      0.34,
-      0.22
+      0.045,
+      0.045,
+      0.045
     ],
-    "trama_mm": 4.5
+    "trama_mm": 2.2
   },
   "friso": [
     0.78,
-    0.6,
-    0.22
-  ]
+    0.56,
+    0.2
+  ],
+  "friso_metal": true,
+  "friso_m": 0.002,
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.014
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }
