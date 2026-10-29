@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T17:35:17Z",
+ "gerado": "2026-10-29T17:35:24Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3303,8 +3303,8 @@
   },
   "jazz120": {
    "nome": "Jazz 120",
-   "hash": "edc2a0673d29ebe3",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "ff6e4d459209f10b",
+   "data": "2026-10-29T17:35:24Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jazz120_botao_agudo.png",
@@ -3319,24 +3319,24 @@
     "jazz120_mapa.json"
    ],
    "sha256": {
-    "jazz120_botao_agudo.png": "de4732a76dde102f356c946c58ddd1e1ecf46801859dc1b56420ae2b15053326",
-    "jazz120_botao_ganho.png": "7e3619918b376ef1e13d63438316b810e5906ebaa16a3a7bcc60f8689a5caac3",
-    "jazz120_botao_grave.png": "02d38d4682348359de9b1142134a7731ea329d3d13b0390c813742e465cde7a4",
-    "jazz120_botao_medio.png": "05774b9429ed0823b8b33ec14fee672ed0ceb3fa34c42667abe3bdaddbe71833",
-    "jazz120_botao_presenca.png": "a57319b056823b9938ed9d5bfddcfa928051fba279a39d6557dad44b904cd07a",
-    "jazz120_botao_volume.png": "2da1293917d82497958d295e8e8aa4e71385f5e4e2964dba757ea427018b3b62",
-    "jazz120_frente.jpg": "054fbc5bd8983050e03ea35a42febf7887f81e278c591c90dd856ffaac36fa64",
-    "jazz120_frente_alfa.png": "1f8c17ae588965908d14e59f069eef63a896b0055dce2eee8cbdd3bbfedbf94b",
-    "jazz120_manifesto.json": "9b8c9bcc2a02961116f0651c83c18fb92ac7730179f5b36a868a1290e6e06db3",
-    "jazz120_mapa.json": "ed6feb8a03a54df8357bfd89482356b2feb196947df7778652dac5bfa19fcc09"
+    "jazz120_botao_agudo.png": "bcdedf183419cebba515a65b707f6c3c5b73a2054c490c64cb14fbf738f2cc8a",
+    "jazz120_botao_ganho.png": "88dae3b0626977ea1eace80aff92a5c076b911456bd5cad9dc187d2dbc8587c4",
+    "jazz120_botao_grave.png": "83ed04d69498fd5abf85260c5c7eef603bed1c512de091885edefafd009f746f",
+    "jazz120_botao_medio.png": "c09ed02ecc1e88723098eedfb610dbb93ece532018d1a8ba78a6592bb88f36e2",
+    "jazz120_botao_presenca.png": "443eaf3b5ad2735c2e1fecb126a70dede9b4aef30a638969ba6884463fe70d02",
+    "jazz120_botao_volume.png": "527427036f8fb268d20a036009f5bc61563bf87001a442595b7a089f2caa17c9",
+    "jazz120_frente.jpg": "f8ba418457767b59d684cbc3a4ed14fa6f05140b551cca1e51a90dd3e2bf6e25",
+    "jazz120_frente_alfa.png": "a02fa7329bb3389beddd678cc905135b3daeb00059a80590b6c02d6286d2f375",
+    "jazz120_manifesto.json": "a273c777dc2886085a244c87d2e078bd16f2d740b229c7545519621cd4430730",
+    "jazz120_mapa.json": "a23cf26a4c0e6e7435d0952788769cac1f6732b53e2c32ba8cc24f4e1805358b"
    },
-   "tamanho": 1859395,
+   "tamanho": 1776356,
    "tipo": "cabecote",
    "inspiracao": "JC-120",
    "categoria": "Limpos de transistor",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
