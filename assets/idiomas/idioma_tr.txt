@@ -117,6 +117,8 @@ countries: tr
 "Drive e distorção" = "Drive ve distorsiyon"
 "Efeito do Nexus" = "Nexus efekti"
 "Em alta" = "Trend"
+"Pesquisar (nome ou original)" = "Ara (ad veya orijinal)"
+"Nada encontrado." = "Hiçbir şey bulunamadı."
 "Em breve" = "Yakında"
 "Entrada na TONE3000 cancelada." = "TONE3000 girişi iptal edildi."
 "Entrar com a TONE3000" = "TONE3000 ile giriş yap"

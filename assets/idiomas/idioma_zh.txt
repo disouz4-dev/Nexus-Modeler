@@ -117,6 +117,8 @@ countries: cn sg
 "Drive e distorção" = "驱动与失真"
 "Efeito do Nexus" = "Nexus 效果"
 "Em alta" = "热门"
+"Pesquisar (nome ou original)" = "搜索（名称或原型）"
+"Nada encontrado." = "未找到结果。"
 "Em breve" = "即将推出"
 "Entrada na TONE3000 cancelada." = "已取消登录 TONE3000。"
 "Entrar com a TONE3000" = "使用 TONE3000 登录"

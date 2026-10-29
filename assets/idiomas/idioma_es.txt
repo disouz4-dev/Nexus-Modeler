@@ -117,6 +117,8 @@ countries: es mx ar co cl
 "Drive e distorção" = "Drive y distorsión"
 "Efeito do Nexus" = "Efecto de Nexus"
 "Em alta" = "Tendencias"
+"Pesquisar (nome ou original)" = "Buscar (nombre u original)"
+"Nada encontrado." = "No se encontró nada."
 "Em breve" = "Próximamente"
 "Entrada na TONE3000 cancelada." = "Inicio de sesión en TONE3000 cancelado."
 "Entrar com a TONE3000" = "Iniciar sesión con TONE3000"

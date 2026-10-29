@@ -117,6 +117,8 @@ countries: jp
 "Drive e distorção" = "ドライブ＆ディストーション"
 "Efeito do Nexus" = "Nexus エフェクト"
 "Em alta" = "トレンド"
+"Pesquisar (nome ou original)" = "検索（名前または元機種）"
+"Nada encontrado." = "見つかりませんでした。"
 "Em breve" = "近日公開"
 "Entrada na TONE3000 cancelada." = "TONE3000 へのログインをキャンセルしました。"
 "Entrar com a TONE3000" = "TONE3000 でログイン"

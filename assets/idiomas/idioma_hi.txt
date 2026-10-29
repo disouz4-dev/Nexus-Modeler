@@ -117,6 +117,8 @@ countries: in
 "Drive e distorção" = "ड्राइव और डिस्टॉर्शन"
 "Efeito do Nexus" = "Nexus इफ़ेक्ट"
 "Em alta" = "ट्रेंडिंग"
+"Pesquisar (nome ou original)" = "खोजें (नाम या मूल)"
+"Nada encontrado." = "कुछ नहीं मिला।"
 "Em breve" = "जल्द आ रहा है"
 "Entrada na TONE3000 cancelada." = "TONE3000 में साइन इन रद्द हुआ।"
 "Entrar com a TONE3000" = "TONE3000 से साइन इन करें"

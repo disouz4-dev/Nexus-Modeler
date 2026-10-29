@@ -117,6 +117,8 @@ countries: ru
 "Drive e distorção" = "Драйв и дисторшн"
 "Efeito do Nexus" = "Эффект Nexus"
 "Em alta" = "В тренде"
+"Pesquisar (nome ou original)" = "Поиск (название или оригинал)"
+"Nada encontrado." = "Ничего не найдено."
 "Em breve" = "Скоро"
 "Entrada na TONE3000 cancelada." = "Вход в TONE3000 отменён."
 "Entrar com a TONE3000" = "Войти через TONE3000"

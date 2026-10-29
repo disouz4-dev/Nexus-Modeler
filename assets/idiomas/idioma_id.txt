@@ -117,6 +117,8 @@ countries: id
 "Drive e distorção" = "Drive dan distorsi"
 "Efeito do Nexus" = "Efek Nexus"
 "Em alta" = "Sedang tren"
+"Pesquisar (nome ou original)" = "Cari (nama atau aslinya)"
+"Nada encontrado." = "Tidak ada yang ditemukan."
 "Em breve" = "Segera hadir"
 "Entrada na TONE3000 cancelada." = "Masuk ke TONE3000 dibatalkan."
 "Entrar com a TONE3000" = "Masuk dengan TONE3000"

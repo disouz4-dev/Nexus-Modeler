@@ -117,6 +117,8 @@ countries: kr
 "Drive e distorção" = "드라이브 & 디스토션"
 "Efeito do Nexus" = "Nexus 이펙트"
 "Em alta" = "인기"
+"Pesquisar (nome ou original)" = "검색 (이름 또는 원본)"
+"Nada encontrado." = "검색 결과가 없습니다."
 "Em breve" = "출시 예정"
 "Entrada na TONE3000 cancelada." = "TONE3000 로그인이 취소되었습니다."
 "Entrar com a TONE3000" = "TONE3000으로 로그인"

@@ -117,6 +117,8 @@ countries: us gb au ca
 "Drive e distorção" = "Drive and distortion"
 "Efeito do Nexus" = "Nexus effect"
 "Em alta" = "Trending"
+"Pesquisar (nome ou original)" = "Search (name or original)"
+"Nada encontrado." = "Nothing found."
 "Em breve" = "Coming soon"
 "Entrada na TONE3000 cancelada." = "TONE3000 sign-in canceled."
 "Entrar com a TONE3000" = "Sign in with TONE3000"
