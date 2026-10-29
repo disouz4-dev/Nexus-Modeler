@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:17:49Z",
+ "gerado": "2026-10-29T15:18:02Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5426,8 +5426,8 @@
   },
   "sl100": {
    "nome": "SL 100",
-   "hash": "ec0cd68041de0834",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "3df7f7eec170b6c6",
+   "data": "2026-10-29T15:18:02Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl100_botao_agudo.png",
@@ -5442,24 +5442,24 @@
     "sl100_mapa.json"
    ],
    "sha256": {
-    "sl100_botao_agudo.png": "417496a8c3bc77f6abc13662933286b4d539f71d4eca9435a96c2d493bf81f74",
-    "sl100_botao_ganho.png": "cd869988378a711846ed63b604e189eee95bcaaed9cd352ed22995a4a0a3f4db",
-    "sl100_botao_grave.png": "c2472044fc75d05e449c7908186a50a5bf3ae4eaf94db08d0cf6c882f5bfa274",
-    "sl100_botao_medio.png": "e3fd70367952467edb121a11290469f2f88286a0a2dca6f8bd76c51eeb89c81b",
-    "sl100_botao_presenca.png": "2d699ea09c09cdf2c92aca1a29a021e09c83b6c768a59fd4bbae64fcdacca5b0",
-    "sl100_botao_volume.png": "451b74204fd8ef7a1184969e380d9c9d0d388ba5255d4ddb182e4e06bacd01ae",
-    "sl100_frente.jpg": "8ce43b72793af9f07c56c4219c20c0dfdd67c67610175f239b6ab0be28041774",
-    "sl100_frente_alfa.png": "920bf6c9d24fb6aff22c570e8c13938c2f1b3310313e94206b57b91a02e58016",
-    "sl100_manifesto.json": "beeaa61e84239f41ab650d3f770a36e0d3c0734e0d99b7fdddf78a83a59ffce6",
-    "sl100_mapa.json": "e4272ae46cbe0817d49bcf857624f0a40d45c53c0e58f5ab85789e87fb2205c9"
+    "sl100_botao_agudo.png": "01da9e0cef62d2e13116cfded44eca869a35264c41d02fddac4d5663dd5444cd",
+    "sl100_botao_ganho.png": "97fb77b8f6314cdc35ec4621615aa1e3edf570459343f27c094e71f8c13c0442",
+    "sl100_botao_grave.png": "860e926fd83cdac787b1a11be274590a1e0973222a102849407ce3d35f4c4c78",
+    "sl100_botao_medio.png": "6f4200ea33cd639b300fb742729bdb06c74c5cf86111587a72717693aa899d1c",
+    "sl100_botao_presenca.png": "54d8fb32d8056cdb7e0dfc3abbe15a9ec098a4129d4502de293c82d438090cb9",
+    "sl100_botao_volume.png": "91792fb0d4e91616d9f31a838df146335353e4bbe8a0a37abf26a82046c68735",
+    "sl100_frente.jpg": "aded58a500611aa944d312713b9601c9106738bd575ac7758fb1520ab296ab35",
+    "sl100_frente_alfa.png": "0443685e4229eb9e6c4855ff3065e8ab0df00f0d2d253da467086b24eda5f1d2",
+    "sl100_manifesto.json": "bd3d3df4addfa1eb8a47557512ff98bb6cac7cbfce4566f4dcc610be39f26bc6",
+    "sl100_mapa.json": "c16bb2e9bee3c578e4d8de814b93a2c883e9cf79f630b47ef9e438b14588e71a"
    },
-   "tamanho": 1074529,
+   "tamanho": 778181,
    "tipo": "cabecote",
    "inspiracao": "SLO-100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
