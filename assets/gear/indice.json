@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:24:17Z",
+ "gerado": "2026-10-29T15:24:24Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4010,8 +4010,8 @@
   },
   "markjp": {
    "nome": "Mark JP",
-   "hash": "8022d834fc64226a",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "9754a946ce36b24a",
+   "data": "2026-10-29T15:24:24Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "markjp_botao_agudo.png",
@@ -4031,29 +4031,29 @@
     "markjp_mapa.json"
    ],
    "sha256": {
-    "markjp_botao_agudo.png": "2a2a2529493665bdb8f1e37fe57e2bf1d38ef656e245c93314272f3436903c0e",
-    "markjp_botao_eq2200.png": "edf28de53095eb3be47fac4df99430a03c41f678c69830e1dbbf0c790b68e56d",
-    "markjp_botao_eq240.png": "b8a27edcac7bbe30f410fde26d84ef50bfeccc801cd2f889397554d9efce915f",
-    "markjp_botao_eq6600.png": "64855eced4b873aa893e2dee171500d3b66af3e3cad4119ec07e9284d215d526",
-    "markjp_botao_eq750.png": "1c666499773e5573667eedbce5294d3a540b4ccdd76ccc9d2b354c4d30c32221",
-    "markjp_botao_eq80.png": "ae8ea7532c40b2ff09d2ac8d2709198d7d3b556cb0f7639ea850cdaef51adfd4",
-    "markjp_botao_ganho.png": "c011fe3992295927f8126d45777cfd2a4718a94079115b26198d759c2c981aa0",
-    "markjp_botao_grave.png": "0ffaafdbed5a2b650441074cd3f95406de6ce2579439e880c324a6bdcaf386d3",
-    "markjp_botao_medio.png": "620d1e27c11f0a90f42d73fc9b49559aa453326e4ad107cb6fd0429697d180e5",
-    "markjp_botao_presenca.png": "1b73832632e0b6680c13e2b2dcaa9d63b8fb575a0f8cd2d57b7235c259fac0e0",
-    "markjp_botao_volume.png": "999db1116e6cbcaa9665b611ff5247503c4b1d2c3c8c84a9ea78a1af9e47c4c6",
-    "markjp_frente.jpg": "0ba2e7262d94705f525d6c06f2a0c704042c1a592c2a138d8865af9807a17c19",
-    "markjp_frente_alfa.png": "7ee66708ed463469734e3fb2363684188567508e140eab7bf5be3346eac1e693",
-    "markjp_manifesto.json": "bf7efcbcc35bb26ecb59775b105915638d5c9e9907fa60141e498a3123a36c36",
-    "markjp_mapa.json": "5ea66b2a8ba45bbbc83b490644986e934debbfdcca29ba2da179df079a747b69"
+    "markjp_botao_agudo.png": "5ffb2adf7452839eeae8c7fb7e5631c9179f41aec6a55d3a20d9e0c136fd2af4",
+    "markjp_botao_eq2200.png": "e3d1acb750660cd67d63919dd5522960d38770623095941c009bf9391c1146d1",
+    "markjp_botao_eq240.png": "b048b5ed53b1ee057dc250d7657a99cc497558613a3d8074ba427f4f45be52fb",
+    "markjp_botao_eq6600.png": "550eb83838b09592ea9fd8ffabd0ce278ae22a55cdfa5f6d8655fb2bc9787f78",
+    "markjp_botao_eq750.png": "56bf9924bb7db5b7a278750d6716988bcefc1a8905b110661a9e0d1d335b6794",
+    "markjp_botao_eq80.png": "0e42067d52bebf6c8d645efb9cc841dba0d6e058d84adeb174887a17bc5f5a72",
+    "markjp_botao_ganho.png": "c674d4bc04b900755d0caef1cb5e43432dac98e892a725e17cc80030eb0cd3ab",
+    "markjp_botao_grave.png": "9026476b5197d9d9b3f10f20a7174d3d241164087f9b940fe81f15b53d27a7fb",
+    "markjp_botao_medio.png": "9c059216b619e44cd169a32eb4ea2e2d27a82bf66b4a32cfa01e0a5635e04543",
+    "markjp_botao_presenca.png": "b92f745e72f3e7751df8f98bbc62f81972030baac100aeea589ef459e1c27e03",
+    "markjp_botao_volume.png": "211d39cb2b4e4ec640ea80d3ddfcd8b0d308e36805b1c19e17188524afd8f0c8",
+    "markjp_frente.jpg": "adf5b6def4b91e24dc55db69aa5cb4aeb815f6fc72aa9ae47b2ad67bdc290a9f",
+    "markjp_frente_alfa.png": "da16926d6ff9acdaeced604636ce14ead0339ddb33d9ccec17d16b2a2cc7d5d1",
+    "markjp_manifesto.json": "452821474f3f624a2cbee9b9b6da0a8d79888024d73a9e8e788a729b93295026",
+    "markjp_mapa.json": "d25c1a78e85e4a38c272a33eb39a754fdeed5cbb949469715fc1e695c247924f"
    },
-   "tamanho": 2005340,
+   "tamanho": 1487982,
    "tipo": "cabecote",
    "inspiracao": "Mesa Boogie JP-2C",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
