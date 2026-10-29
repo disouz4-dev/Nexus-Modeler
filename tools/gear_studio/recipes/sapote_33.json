@@ -2,59 +2,50 @@
   "tipo": "pedal",
   "nome": "Sapote 33",
   "familia": "sapote_33",
-  "inspiracao": "preto com o número 33 em vermelho, caixa pequena (estilo Fortin 33)",
+  "inspiracao": "Caixa estreita preta fosca (60 x 112 x 27 mm) com o 33 grande em preto brilhante, um botão preto NÍVEL no alto, LED no meio e pisante; o GANHO, que o original não tem, fica pequeno no canto de baixo. Tema: sapota-preta aberta, em tons quase pretos. Original: Fortin 33.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.06,
+    "comprimento": 0.112,
+    "altura": 0.027
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.7931,
-      0.119,
-      0.0039
+      0.0029,
+      0.0029,
+      0.0029
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.75
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.021,
+    0.021,
+    0.0231
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "SAPOTE 33",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "SAPOTE",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.015,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
       "id": "nivel",
-      "rotulo": "VOLUME",
+      "rotulo": "NÍVEL",
       "pos": [
-        -0.45,
-        0.55
+        0.0,
+        0.7
       ],
       "escala": 1.1
     },
@@ -62,23 +53,51 @@
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.45,
-        0.55
+        0.7,
+        -0.5
       ],
-      "escala": 1.1
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/sapote_33.svg"
+  },
+  "medidas_fonte": "112 x 60 x 27 mm (Fortin, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.33,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.9,
+  "logo_m": 0.006,
+  "pisante_y": -0.66,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/sapote_33.svg"
-  }
+  "rotulo_m": 0.0036,
+  "texto_cor2": [
+    0.0385,
+    0.0385,
+    0.0415
+  ],
+  "led": [
+    0.0,
+    0.42
+  ],
+  "textos": [
+    {
+      "texto": "33",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": 0.034,
+      "cor": [
+        0.0002,
+        0.0002,
+        0.0002
+      ],
+      "grossura": 0.0004
+    }
+  ]
 }
