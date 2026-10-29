@@ -2,52 +2,41 @@
   "tipo": "pedal",
   "nome": "Galaxy Mod",
   "familia": "galaxy_mod",
-  "inspiracao": "modulação de vários modos roxa, com visor (no espírito do Line 6 MM4, com desenho próprio)",
+  "inspiracao": "Caixa grande azul-violeta metálico (250 x 152 x 64 mm) com o painel prateado escovado no alto, letras pretas no painel e brancas no corpo; seletor de modelo grande à esquerda e VELOCIDADE, PROFUNDIDADE, AJUSTE (TWEAK), TWEEZ e MISTURA em fila no painel, quatro pisantes de metal (A, B, C e TAP) com um LED vermelho em cima de cada; sem visor. Tema: galáxia espiral azul-violeta. Original: Line 6 MM4 Modulation Modeler.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.2,
-    "comprimento": 0.13,
-    "altura": 0.055
+    "largura": 0.25,
+    "comprimento": 0.152,
+    "altura": 0.064
   },
-  "chanfro_m": 0.004,
   "pintura": {
     "cor": [
-      0.0189,
-      0.0017,
-      0.0582
+      0.0385,
+      0.0385,
+      0.3993
     ],
-    "metalico": 0.35,
-    "aspereza": 0.24
+    "metalico": 0.6,
+    "aspereza": 0.26
   },
   "texto_cor": [
     0.8913,
-    0.8592,
-    1.0
-  ],
-  "texto_cor2": [
-    0.8913,
-    0.8592,
-    1.0
+    0.8751,
+    0.8277
   ],
   "modelo": "GALAXY MOD",
-  "logo_x": 0.48,
-  "logo_y": 0.7,
-  "logo_m": 0.012,
-  "tipo_texto": "MODULATION",
-  "pisante_y": -0.6,
-  "rotulo_m": 0.003,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.019,
+    "altura_m": 0.015,
+    "saia": false,
     "corpo": [
-      0.015,
-      0.015,
-      0.015
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -55,72 +44,174 @@
       "id": "modo",
       "rotulo": "MODO",
       "pos": [
-        -0.3,
-        0.62
+        -0.74,
+        0.5
       ],
-      "escala": 1.4
+      "escala": 1.5,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     },
     {
       "id": "a",
       "rotulo": "VELOCIDADE",
       "pos": [
-        -0.72,
-        0.06
+        -0.42,
+        0.5
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     },
     {
       "id": "b",
       "rotulo": "PROFUNDIDADE",
       "pos": [
-        -0.36,
-        0.06
+        -0.18,
+        0.5
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     },
     {
       "id": "d",
       "rotulo": "AJUSTE",
       "pos": [
-        0.0,
-        0.06
+        0.06,
+        0.5
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     },
     {
       "id": "tom",
-      "rotulo": "TOM",
+      "rotulo": "TWEEZ",
       "pos": [
-        0.36,
-        0.06
+        0.3,
+        0.5
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     },
     {
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        0.72,
-        0.06
+        0.54,
+        0.5
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     }
   ],
-  "led": [
-    0.0,
-    -0.32
-  ],
+  "medidas_fonte": "aprox. 250 x 152 x 64 mm (medida de lojas; a Line 6 não publica)",
+  "estampa": {
+    "svg": "estampas/galaxy_mod.svg"
+  },
   "quadro": {
     "largura_rel": 1.3,
     "proporcao": 0.85,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa de modulação de mesa grande: 200 x 130 x 55 mm",
-  "visor": {
+  "led": [
+    -0.72,
+    -0.36
+  ],
+  "pisante": {
     "pos": [
-      -0.7,
-      0.62
-    ],
-    "largura_rel": 0.22,
-    "altura_rel": 0.22
+      -0.72,
+      -0.62
+    ]
   },
-  "estampa": {
-    "svg": "estampas/galaxy_mod.svg"
-  }
+  "logo_x": 0.78,
+  "logo_y": 0.5,
+  "logo_m": 0.0085,
+  "tipo_texto": "",
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.5
+      ],
+      "tam_m": [
+        0.236,
+        0.056
+      ],
+      "cor": [
+        0.5605,
+        0.5732,
+        0.586
+      ],
+      "metal": true,
+      "raio_m": 0.002
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "pisante",
+      "pos": [
+        -0.24,
+        -0.62
+      ]
+    },
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.24,
+        -0.62
+      ]
+    },
+    {
+      "tipo": "pisante",
+      "pos": [
+        0.72,
+        -0.62
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.24,
+        -0.36
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.24,
+        -0.36
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.72,
+        -0.36
+      ]
+    }
+  ],
+  "chanfro_m": 0.006,
+  "rotulo_m": 0.0038,
+  "rotulo_embaixo": true
 }
