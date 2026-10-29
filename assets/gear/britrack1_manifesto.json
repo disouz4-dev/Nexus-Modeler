@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "britrack1",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Brit Rack 1",
+  "inspiracao": "Marshall JMP-1",
+  "categoria": "Britânicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 43,
+  "signature": null,
+  "caixa_padrao": "brit412"
+}

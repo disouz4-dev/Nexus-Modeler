@@ -16,6 +16,7 @@ struct GearKnobArt
   // Posições empilhadas de cima para baixo. Só abre na primeira vez que o
   // botão aparece (abrir todas atrasaria a abertura do programa).
   juce::String stripResource;
+  juce::File folder; // pasta da peça no disco (o arquivo dela vale antes do embutido)
   mutable juce::Image strip;
   int frames = 1;
   int size = 0;
@@ -87,7 +88,11 @@ struct GearArt
     return nullptr;
   }
 
-  // Carrega "<prefixo>_frente.png", "<prefixo>_mapa.json" e as tiras dos botões.
+  // Carrega "<prefixo>_frente.png", "<prefixo>_mapa.json" e as tiras dos
+  // botões: da pasta Equipamentos/<prefixo> (peça baixada ou arte refeita) e,
+  // o que não estiver lá, de dentro do programa.
   static GearArt load(const juce::String& prefix);
+  // O mesmo, lendo primeiro de uma pasta dada (pacote ainda não instalado).
+  static GearArt loadFolder(const juce::File& folder, const juce::String& prefix);
 };
 } // namespace nexus::ui

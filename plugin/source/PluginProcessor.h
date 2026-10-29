@@ -10,6 +10,7 @@
 #include "ChainLayout.h"
 #include "fx/PitchDrop.h"
 #include "MidiMap.h"
+#include "gear/GearCatalog.h"
 #include "TestSource.h"
 #include "studio/Player.h"
 #include "nexus/UniversalEq.h"
@@ -82,31 +83,25 @@ public:
     multiMod, // modulação de vários modos
     triple    // três delays em série
   };
+  // Quantos visuais de fábrica cada parâmetro de escolha tem. Os parâmetros
+  // estão congelados (mesmas opções, mesma ordem, para os presets e as
+  // automações antigas): equipamento novo entra só pelo id no estado. O que
+  // cada um é (nome, motor, caixa...) está na ficha de cada peça
+  // (assets/gear/<id>_manifesto.json), lida pelo catálogo (gear/GearCatalog).
   static constexpr int kPedalLooks = 63;
-  static constexpr PedalKind kPedalKinds[kPedalLooks] = {
-    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Lemon, Orange, Banana, Gold
-    PedalKind::chorus,  PedalKind::delay,   PedalKind::reverb,  PedalKind::gate,    // Neptune, Coconut, Grape, Pear
-    PedalKind::drop,                                                                 // Cherry Drop
-    PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Mars, Nebula, Moon, Eclipse
-    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
-    PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
-    PedalKind::sky,     PedalKind::echo,    PedalKind::multiMod,                     // Juniper Sky, Lime Echo, Galaxy Mod
-    PedalKind::triple,                                                              // Blueberry Chain
-    // Os 34 drives da seleção da TONE3000 (Olive Drive ... Graviola Bass DI), todos de
-    // captura; o Acerola EQ é o equalizador gráfico do Nexus.
-    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::geq,
-    PedalKind::wah, PedalKind::rotary, PedalKind::analogdelay, PedalKind::octave, PedalKind::comp}; // Comet, Saturn, Pulsar, Jupiter, Apple
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   // Semitons do Cherry Drop pelo botão A (0 a 10): 5 (meio-dia) = 0, 0 = -12, 10 = +12.
   static int dropSemitones(float knobA) { return juce::jlimit(-12, 12, juce::roundToInt((knobA - 5.0f) / 5.0f * 12.0f)); }
   static constexpr int kGateLook = 7;
-  static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
+  // Motor do visual (de fábrica ou baixado), pela ficha. Serve no áudio.
+  static_assert(nexus::gear::kPedalEngineCount == static_cast<int>(PedalKind::triple) + 1, "motores fora da ordem do catálogo");
+  static PedalKind pedalKind(int look) { return static_cast<PedalKind>(nexus::gear::GearCatalog::instance().pedalEngineAt(look)); }
   // Cabeçotes: o visual (e as capturas recomendadas) de cada lado.
   static constexpr int kAmpLooks = 94;
   static constexpr int kMarkFive = 1;
   // Cabeçotes com o equalizador gráfico de 5 faixas: Mark Five, Mark Two Plus,
   // Mark Three, Mark Four e Mark JP.
-  static bool hasGraphicEq(int look) { return look == kMarkFive || look == 50 || look == 51 || look == 52 || look == 53; }
+  static bool hasGraphicEq(int look) { return nexus::gear::GearCatalog::instance().graphicEqAt(look); }
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
@@ -203,10 +198,25 @@ public:
   bool channelLoaded(int rig, int channel) const { return slotLoaded(ampSlot(rig, channel)); }
   // Canal que toca agora no cabeçote (ou o escolhido, se nenhum tocou ainda).
   int audibleSlot(int rig) const;
-  int pedalLook(int pedal) const { return juce::roundToInt(mPedals[static_cast<size_t>(pedal)].visual->load()); }
-  int ampLook(int rig) const { return juce::roundToInt(mRigs[static_cast<size_t>(rig)].look->load()); }
+  // Peça em cada posição: o número dela no catálogo do tipo (o mesmo do
+  // parâmetro nas de fábrica; depois delas, as baixadas).
+  int pedalLook(int pedal) const { return resolveLook(mPedals[static_cast<size_t>(pedal)].visual->load(), mPedalChoice[static_cast<size_t>(pedal)].load()); }
+  int ampLook(int rig) const { return resolveLook(mRigs[static_cast<size_t>(rig)].look->load(), mAmpChoice[static_cast<size_t>(rig)].load()); }
   static constexpr int kCabLooks = 29;
-  int cabLook(int rig) const { return juce::roundToInt(params.getRawParameterValue(ampParam(rig, "gabinete"))->load()); }
+  int cabLook(int rig) const { return resolveLook(params.getRawParameterValue(ampParam(rig, "gabinete"))->load(), mCabChoice[static_cast<size_t>(rig)].load()); }
+  // Escolhe a peça de uma posição pelo número do catálogo. De fábrica: muda o
+  // parâmetro (como sempre). Baixada: guarda a escolha e deixa o parâmetro no
+  // de fábrica do mesmo motor (programa de gravação velho toca algo parecido).
+  void choosePedal(int pedal, int look) { choose(nexus::gear::Kind::pedal, pedal, look); }
+  void chooseAmp(int rig, int look) { choose(nexus::gear::Kind::amp, rig, look); }
+  void chooseCab(int rig, int look) { choose(nexus::gear::Kind::cab, rig, look); }
+  // Id em texto da peça na posição (o que vai no preset). Se o preset pediu
+  // uma peça que não está instalada, é o id dela.
+  juce::String gearId(nexus::gear::Kind kind, int position) const;
+  // Id pedido pelo preset que não está instalado (vazio: está tudo certo).
+  juce::String missingGear(nexus::gear::Kind kind, int position) const;
+  // Equipamento novo instalado: as posições que esperavam por ele passam a usá-lo.
+  void gearInstalled();
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
   juce::String statusText(int slot) const;
   juce::String packName(int slot) const;
@@ -322,6 +332,29 @@ private:
     std::atomic<bool> loaded{false};
     std::atomic<float>* mode = nullptr;
   };
+
+  // Escolha de peça que não é de fábrica: (número no catálogo << 8) | valor
+  // do parâmetro naquela hora; -1 = vale o parâmetro. Se o programa de
+  // gravação mexer no parâmetro, a escolha cai e volta a valer o de fábrica.
+  static int resolveLook(float param, int choice)
+  {
+    const int p = juce::roundToInt(param);
+    return choice >= 0 && (choice & 0xff) == p ? choice >> 8 : p;
+  }
+  void choose(nexus::gear::Kind kind, int position, int look);
+  juce::RangedAudioParameter* choiceParam(nexus::gear::Kind kind, int position) const;
+  std::atomic<int>& choiceOf(nexus::gear::Kind kind, int position);
+  // Lê os ids do estado (preset novo) ou deixa os índices (preset antigo).
+  void restoreGearIds(const juce::ValueTree& state);
+  void applyGearId(nexus::gear::Kind kind, int position, const juce::String& id);
+  static juce::String gearIdKey(nexus::gear::Kind kind, int position);
+  std::array<std::atomic<int>, kPedals> mPedalChoice;
+  std::array<std::atomic<int>, kRigs> mAmpChoice, mCabChoice;
+  // Peça pedida pelo preset e não instalada: pedal passa o som direto;
+  // cabeçote e caixa seguem com o pacote e o IR salvos.
+  std::array<std::atomic<bool>, kPedals> mPedalMissing;
+  mutable juce::CriticalSection mMissingLock;
+  std::array<juce::StringArray, 3> mMissing; // por tipo, um id por posição
 
   static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
   void timerCallback() override;

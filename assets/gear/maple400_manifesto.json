@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "maple400",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Maple 400",
+  "inspiracao": "Traynor YBA-200",
+  "categoria": "Baixo",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 86,
+  "signature": null,
+  "caixa_padrao": "fliptop_115"
+}

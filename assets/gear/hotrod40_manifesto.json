@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "hotrod40",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Hot Rod 40",
+  "inspiracao": "Fender Hot Rod Deluxe",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 48,
+  "signature": null,
+  "caixa_padrao": "silver_112"
+}

@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "acoustica360",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Acoustica 360",
+  "inspiracao": "Acoustic 360",
+  "categoria": "Baixo",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 33,
+  "signature": null,
+  "caixa_padrao": "vault_810"
+}

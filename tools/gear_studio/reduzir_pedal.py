@@ -23,8 +23,13 @@ DEGRAUS = {"ganho": 11, "modo": 11}  # botões em degraus: quantos quadros ficam
 def main():
     pedal = sys.argv[1]
     escala = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
-    origem = os.path.join(RAIZ, "build", "gear", pedal)
-    destino = os.path.join(RAIZ, "assets", "gear", pedal + "_")
+    reduzir(pedal, escala, os.path.join(RAIZ, "build", "gear", pedal), os.path.join(RAIZ, "assets", "gear"))
+
+
+def reduzir(pedal, escala, origem, pasta_destino):
+    """Lê o render de <origem> (frente.png, botao_<id>.png, mapa.json) e grava
+    <pasta_destino>/<pedal>_* (também usado por montar_equipamento.py)."""
+    destino = os.path.join(pasta_destino, pedal + "_")
     mapa = json.load(open(os.path.join(origem, "mapa.json"), encoding="utf-8"))
     s = lambda v: round(v * escala, 1)
 

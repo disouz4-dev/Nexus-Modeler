@@ -367,13 +367,27 @@ void GearBrowser::retranslate()
   resized();
 }
 
+void GearBrowser::setAccessory(juce::Component* c)
+{
+  mAccessory = c;
+  if (c != nullptr)
+    addChildComponent(c);
+  resized();
+}
+
 void GearBrowser::resized()
 {
   auto r = getLocalBounds();
   r.removeFromTop(16);
   mTabs.setBounds(r.removeFromTop(32).reduced(kPad, 0));
   r.removeFromTop(8);
-  mSearch.setBounds(r.removeFromTop(30).reduced(kPad, 0));
+  auto searchRow = r.removeFromTop(30).reduced(kPad, 0);
+  if (mAccessory != nullptr && mAccessory->isVisible())
+  {
+    mAccessory->setBounds(searchRow.removeFromRight(30));
+    searchRow.removeFromRight(6);
+  }
+  mSearch.setBounds(searchRow);
   r.removeFromTop(6);
   r.removeFromBottom(44); // dica embaixo
   mViewport.setBounds(r);

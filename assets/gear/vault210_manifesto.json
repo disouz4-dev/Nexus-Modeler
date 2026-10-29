@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "vault210",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Vault 210",
+  "inspiracao": "Ampeg BA-210",
+  "categoria": "Baixo",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 93,
+  "signature": null,
+  "caixa_padrao": "granite_410"
+}

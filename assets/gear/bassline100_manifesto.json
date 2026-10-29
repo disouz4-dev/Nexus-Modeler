@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "bassline100",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Bassline 100",
+  "inspiracao": "Fender Bassman silverface (50 e 100T)",
+  "categoria": "Baixo",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 28,
+  "signature": null,
+  "caixa_padrao": "bassline_215"
+}
