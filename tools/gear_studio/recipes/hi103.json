@@ -2,38 +2,46 @@
   "tipo": "cabecote",
   "nome": "Hi 103",
   "familia": "hi103",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Hiwatt DR103: cabeçote de 631 × 280 × 280 mm em tolex preto, sem tela: a frente é do mesmo tolex com friso branco em volta e outro no meio, a marca em cima; painel preto rebaixado embaixo com letras brancas: quatro entradas NORMAL e BRIGHT à esquerda, sete botões pretos de ponteiro branco (NORMAL VOL, BRIGHT VOL, BASS, TREBLE, MIDDLE, PRESENCE, MASTER VOL), a luz piloto vermelha e as alavancas STANDBY e MAINS.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.631,
+    "altura": 0.28,
+    "profundidade": 0.28
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "tela",
-    "cor_a": [
-      0.32,
-      0.32,
-      0.31
+    "tipo": "tolex",
+    "cor": [
+      0.006,
+      0.006,
+      0.006
     ],
-    "cor_b": [
-      0.62,
-      0.61,
-      0.58
+    "grao_mm": 2.6,
+    "friso": [
+      0.86,
+      0.85,
+      0.82
     ],
-    "trama_mm": 1.6
+    "friso_meio": 0.42
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.5,
+    "altura_m": 0.02,
+    "altura_rel": 0.72,
     "lado_rel": 0.0,
     "cor": [
       0.9,
@@ -42,75 +50,153 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "HI 103",
-    "pintado": true,
+    "posicao": "baixo",
+    "altura_m": 0.08,
     "cor": [
       0.012,
       0.012,
-      0.012
+      0.013
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.92,
-      0.92,
-      0.92
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "botoes": [
+  "estilos": {
+    "padrao": {
+      "forma": "pointer",
+      "diametro_m": 0.019,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
+  },
+  "fileiras": [
     {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.04,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.04,
+          "z": 0.25
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.09,
+          "z": 0.7
+        },
+        {
+          "tipo": "entrada",
+          "rotulo": null,
+          "x": 0.09,
+          "z": 0.25
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "NORMAL",
+          "x": 0.04,
+          "z": 0.95
+        },
+        {
+          "tipo": "texto",
+          "rotulo": "BRIGHT",
+          "x": 0.09,
+          "z": 0.95
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "NORMAL VOL",
+          "x": 0.17
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BRIGHT VOL",
+          "x": 0.26
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.35
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.44
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.53
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.62
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER VOL",
+          "x": 0.71
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.79,
+          "raio_m": 0.0065
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "STANDBY",
+          "x": 0.86
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "MAINS",
+          "x": 0.92
+        }
+      ],
+      "letra_m": 0.0052,
+      "rotulo_pos": "baixo"
     }
   ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
-    ]
-  },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Normal"
-    }
-  ]
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.529,
+    "elevacao": 10.0
+  }
 }

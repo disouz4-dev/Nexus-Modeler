@@ -2,34 +2,45 @@
   "tipo": "cabecote",
   "nome": "Nova 100",
   "familia": "nova100",
+  "canais": [
+    {
+      "nome": "Normal"
+    }
+  ],
+  "inspiracao": "Fortin Natas: cabeçote de cerca de 700 × 270 × 260 mm em tolex preto, grade de metal preta de venezianas com as válvulas e a marca no meio, e painel vermelho anodizado embaixo com letras brancas: entrada, canal 1 (GIRTH, GRIND, GAIN, minichave KILL, VOLUME, BASS, MIDDLE, TREBLE; o que toca), canal 2 (GAIN, BRIGHT, VOLUME, BASS, MIDDLE, TREBLE), DEPTH, PRESENCE e MASTER em botões pretos de ponteiro e as gangorras vermelhas STANDBY e POWER.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.67,
-    "altura": 0.285,
-    "profundidade": 0.24
+    "largura": 0.7,
+    "altura": 0.27,
+    "profundidade": 0.26
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.006,
+      0.006,
+      0.006
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.6
   },
   "fachada": {
-    "tipo": "grade",
+    "tipo": "barras",
     "cor": [
-      0.025,
-      0.025,
-      0.027
+      0.015,
+      0.015,
+      0.016
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.0
+    "barras": 6,
+    "luz": [
+      1.0,
+      0.35,
+      0.06
+    ]
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
-    "altura_rel": 0.62,
+    "altura_m": 0.024,
+    "altura_rel": 0.5,
     "lado_rel": 0.0,
     "cor": [
       0.88,
@@ -38,84 +49,194 @@
     ]
   },
   "painel": {
-    "altura_m": 0.07,
-    "pintado": true,
+    "marca": "NEXUS MODELER",
+    "modelo": "NOVA 100",
+    "posicao": "baixo",
+    "altura_m": 0.085,
     "cor": [
-      0.02,
+      0.45,
       0.02,
       0.02
     ],
+    "material": "escovado",
     "texto_cor": [
-      0.8,
-      0.8,
-      0.8
-    ],
-    "modelo": "NOVA 100",
-    "marca": "NEXUS MODELER"
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.024,
-    "corpo": [
-      0.01,
-      0.01,
-      0.01
-    ],
-    "tampa": [
-      0.012,
-      0.012,
-      0.012
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.95,
-      0.95,
-      0.95
+      0.85,
+      0.85,
+      0.85
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
+  "estilos": {
+    "padrao": {
+      "forma": "pointer",
+      "diametro_m": 0.018,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
+    }
   },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
+  "fileiras": [
     {
-      "nome": "Normal"
+      "z": 0.45,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.03
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GIRTH",
+          "x": 0.075
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GRIND",
+          "x": 0.118
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN",
+          "x": 0.161
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "KILL",
+          "x": 0.195
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.229
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.272
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.315
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.358
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN",
+          "x": 0.42
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "BRIGHT",
+          "x": 0.454
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "VOLUME",
+          "x": 0.488
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "BASS",
+          "x": 0.531
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MIDDLE",
+          "x": 0.574
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "TREBLE",
+          "x": 0.617
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "DEPTH",
+          "x": 0.68
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.723
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER",
+          "x": 0.766
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "CH",
+          "x": 0.81
+        },
+        {
+          "tipo": "modelo",
+          "tamanho_m": 0.01,
+          "x": 0.86,
+          "z": 0.5,
+          "texto": "NOVA 100"
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "STANDBY",
+          "cor": [
+            0.85,
+            0.02,
+            0.02
+          ],
+          "aceso": false,
+          "x": 0.915
+        },
+        {
+          "tipo": "basculante",
+          "rotulo": "POWER",
+          "cor": [
+            0.85,
+            0.015,
+            0.008
+          ],
+          "aceso": true,
+          "x": 0.96
+        }
+      ],
+      "letra_m": 0.0045,
+      "rotulo_pos": "baixo"
     }
   ],
-  "leds_canais_x": 0.078,
-  "leds_canais_passo": 0.03,
-  "leds_canais_z": 0.026,
-  "disposicao": {
-    "modelo_x": 0.108,
-    "modelo_z": 0.06,
-    "modelo_tamanho": 0.019,
-    "modelo_inclinacao": 0.0
-  }
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.464,
+    "elevacao": 10.0
+  },
+  "notas_modelagem": "Medidas estimadas pela foto (a Fortin não publica)."
 }

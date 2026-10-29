@@ -2,33 +2,47 @@
   "tipo": "cabecote",
   "nome": "Kraken 50",
   "familia": "kraken50",
+  "canais": [
+    {
+      "nome": "Crunch"
+    },
+    {
+      "nome": "Pesado"
+    }
+  ],
+  "inspiracao": "Victory Kraken (cabeçote compacto): 350 × 220 × 220 mm em tolex grafite com cantoneiras pretas, tela preta com a marca e o painel de metal azul-ardósia embaixo com letras pretas: entrada, minichave CLEAN/GAIN I, oito botões pretos de ponteiro (CLEAN/GAIN I, GAIN II, BASS, MIDDLE, TREBLE, MASTER I, MASTER II, PRESENCE), a lâmpada piloto e a chave HIGH/PREHEAT/LOW à direita.",
+  "formato": "cabecote",
   "medidas_m": {
-    "largura": 0.7,
-    "altura": 0.27,
-    "profundidade": 0.24
+    "largura": 0.35,
+    "altura": 0.22,
+    "profundidade": 0.22
   },
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.03,
+      0.03,
+      0.032
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.0
   },
   "fachada": {
-    "tipo": "grade",
-    "cor": [
-      0.03,
-      0.03,
-      0.033
+    "tipo": "tela",
+    "cor_a": [
+      0.008,
+      0.008,
+      0.008
     ],
-    "furo_mm": 3.0,
-    "passo_mm": 4.2
+    "cor_b": [
+      0.03,
+      0.03,
+      0.03
+    ],
+    "trama_mm": 1.8
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.03,
+    "altura_m": 0.014,
     "altura_rel": 0.5,
     "lado_rel": 0.0,
     "cor": [
@@ -38,78 +52,140 @@
     ]
   },
   "painel": {
-    "altura_m": 0.088,
     "marca": "NEXUS MODELER",
     "modelo": "KRAKEN 50",
-    "pintado": false,
+    "posicao": "baixo",
+    "altura_m": 0.07,
     "cor": [
-      0.55,
-      0.56,
-      0.6
+      0.2,
+      0.25,
+      0.3
     ],
+    "material": "pintado",
     "texto_cor": [
-      0.02,
-      0.02,
-      0.02
-    ]
-  },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "GANHO"
-    },
-    {
-      "id": "grave",
-      "rotulo": "GRAVE"
-    },
-    {
-      "id": "medio",
-      "rotulo": "MÉDIO"
-    },
-    {
-      "id": "agudo",
-      "rotulo": "AGUDO"
-    },
-    {
-      "id": "presenca",
-      "rotulo": "PRESENÇA"
-    },
-    {
-      "id": "volume",
-      "rotulo": "VOLUME"
-    }
-  ],
-  "botao_estilo": {
-    "diametro_m": 0.026,
-    "corpo": [
       0.012,
       0.012,
       0.012
-    ],
-    "tampa": [
-      0.014,
-      0.014,
-      0.015
-    ],
-    "tampa_plastico": true,
-    "traco": [
-      0.92,
-      0.92,
-      0.92
     ]
   },
-  "chave_liga": {
-    "rotulo": "LIGA"
-  },
-  "entradas": [
-    "ENTRADA"
-  ],
-  "canais": [
-    {
-      "nome": "Crunch"
-    },
-    {
-      "nome": "Pesado"
+  "estilos": {
+    "padrao": {
+      "forma": "pointer",
+      "diametro_m": 0.016,
+      "corpo": [
+        0.015,
+        0.015,
+        0.015
+      ],
+      "traco": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "escala": "tracos"
     }
-  ]
+  },
+  "fileiras": [
+    {
+      "z": 0.42,
+      "x0": 0.0,
+      "x1": 1.0,
+      "itens": [
+        {
+          "tipo": "entrada",
+          "rotulo": "INPUT",
+          "x": 0.05
+        },
+        {
+          "tipo": "minichave",
+          "rotulo": "CLEAN/GAIN",
+          "x": 0.11
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.11,
+          "z": 0.9,
+          "rotulo": ""
+        },
+        {
+          "tipo": "led_canal",
+          "x": 0.14,
+          "z": 0.9,
+          "rotulo": ""
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "GAIN I",
+          "x": 0.18
+        },
+        {
+          "tipo": "botao",
+          "id": "ganho",
+          "rotulo": "GAIN II",
+          "x": 0.26
+        },
+        {
+          "tipo": "botao",
+          "id": "grave",
+          "rotulo": "BASS",
+          "x": 0.34
+        },
+        {
+          "tipo": "botao",
+          "id": "medio",
+          "rotulo": "MIDDLE",
+          "x": 0.42
+        },
+        {
+          "tipo": "botao",
+          "id": "agudo",
+          "rotulo": "TREBLE",
+          "x": 0.5
+        },
+        {
+          "tipo": "botao",
+          "fixo": true,
+          "rotulo": "MASTER I",
+          "x": 0.58
+        },
+        {
+          "tipo": "botao",
+          "id": "volume",
+          "rotulo": "MASTER II",
+          "x": 0.66
+        },
+        {
+          "tipo": "botao",
+          "id": "presenca",
+          "rotulo": "PRESENCE",
+          "x": 0.74
+        },
+        {
+          "tipo": "joia",
+          "cor": [
+            0.9,
+            0.05,
+            0.02
+          ],
+          "rotulo": null,
+          "x": 0.82,
+          "raio_m": 0.0055
+        },
+        {
+          "tipo": "alavanca",
+          "rotulo": "HIGH/LOW",
+          "x": 0.9
+        }
+      ],
+      "letra_m": 0.0042,
+      "rotulo_pos": "baixo"
+    }
+  ],
+  "cantos": "preto",
+  "quadro": {
+    "largura_rel": 1.1,
+    "proporcao": 0.791,
+    "elevacao": 10.0
+  }
 }

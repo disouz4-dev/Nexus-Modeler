@@ -748,13 +748,22 @@ def build(rec, fonts):
             band = fa.get("faixa")
             if band:
                 # Faixa de vinil em cima da tela (Vox): o logo vai nela.
+                # Com "posicao": "baixo" a faixa fica entre a tela e o painel
+                # (madeira do Archon, tolex do Supro).
                 bh = fh * band.get("altura_rel", 0.25)
-                st.box("faixa_logo", (inner_w, 0.006, bh), (0, fy + 0.003, fz1 - bh / 2), bevel=0.002,
-                       material=st.mat_leather("faixa", band.get("cor", rec["couro"]["cor"]), 1.4, rough=0.4, strength=0.4))
+                low = band.get("posicao") == "baixo"
+                bz = fz0 + bh / 2 if low else fz1 - bh / 2
+                bmat = (st.mat_plastic("faixa", band["cor"], rough=0.45, coat=0.2) if band.get("lisa")
+                        else st.mat_leather("faixa", band.get("cor", rec["couro"]["cor"]), 1.4, rough=0.4, strength=0.4))
+                st.box("faixa_logo", (inner_w, 0.006, bh), (0, fy + 0.003, bz), bevel=0.002, material=bmat)
                 if band.get("friso"):
-                    st.cylinder("faixa_friso", 0.0018, inner_w - 0.004, (0, fy - 0.0004, fz1 - bh), axis="X",
+                    st.cylinder("faixa_friso", 0.0018, inner_w - 0.004, (0, fy - 0.0004, fz0 + bh if low else fz1 - bh), axis="X",
                                 material=st.mat_metal("faixa_friso", band["friso"], rough=0.2))
-                fz1 -= bh
+                band_z0 = fz0 if low else fz1 - bh
+                if low:
+                    fz0 += bh
+                else:
+                    fz1 -= bh
                 fh = fz1 - fz0
             st.box("fachada", (inner_w, 0.006, fh), (0, fy + 0.003, fz0 + fh / 2), bevel=0.002, material=fm)
             if fa.get("tipo") == "barras":
@@ -805,9 +814,12 @@ def build(rec, fonts):
                     st.box(f"janela_fenda_{k}", (0.0045, 0.003, jh * 0.86), (-jw / 2 + (k + 0.5) * jw / n, fy - 0.0022, jz),
                            bevel=0.001, material=mats["chrome"])
             lg = rec.get("logo", {})
-            if band:
-                fz0, fh = fz1, fz1 + bh - fz1
-                fh = bh
+            if band and band.get("logo", True):
+                fz0, fh = band_z0, bh
+            if fa.get("friso_meio"):
+                # Friso horizontal no meio da frente (Hiwatt).
+                st.cylinder("friso_meio", 0.0024, inner_w - 0.006, (0, fy - 0.0006, fz0 + fh * fa["friso_meio"]), axis="X",
+                            material=mats["piping"])
             if lg:
                 lz = fz0 + fh * lg.get("altura_rel", 0.5)
                 lx = inner_w * lg.get("lado_rel", 0.0)
