@@ -1,51 +1,42 @@
 {
   "tipo": "pedal",
-  "nome": "Pomegranate Mud",
+  "nome": "Heliodor Mud",
   "familia": "pomegranate_mud",
-  "inspiracao": "overdrive de caixa média vinho com brilho metálico (estilo T-Rex Mudhoney)",
+  "inspiracao": "Caixa amarelo-gema (100 x 120 x 40 mm), letras pretas; botões pretos GANHO, TOM (no meio, mais baixo) e NÍVEL, botão de apertar REFORÇO pequeno entre o GANHO e o NÍVEL, LED pequeno no alto e pisante embaixo à direita. Tema: cristal de heliodoro amarelo (berilo), pontos tom sobre tom. Original: T-Rex Mudhoney.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.07,
+    "largura": 0.1,
     "comprimento": 0.12,
     "altura": 0.04
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.38,
-      0.03,
-      0.05
+      0.8913,
+      0.4647,
+      0.009
     ],
-    "metalico": 0.55,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.92,
-    0.9,
-    0.86
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "texto_cor2": [
-    0.92,
-    0.9,
-    0.86
-  ],
-  "modelo": "POMEGRANATE MUD",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "HELIODOR MUD",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.019,
+    "altura_m": 0.015,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -54,41 +45,67 @@
       "rotulo": "GANHO",
       "pos": [
         -0.58,
-        0.6
-      ],
-      "escala": 1.0
+        0.62
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.6
-      ],
-      "escala": 1.0
+        0.42
+      ]
     },
     {
       "id": "nivel",
-      "rotulo": "VOLUME",
+      "rotulo": "NÍVEL",
       "pos": [
         0.58,
-        0.6
-      ],
-      "escala": 1.0
+        0.62
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "100 x 120 x 55 mm com botões (T-Rex, ficha oficial)",
+  "estampa": {
+    "svg": "estampas/pomegranate_mud.svg"
+  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.84,
+  "logo_m": 0.009,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa média: 70 x 120 x 40 mm",
-  "estampa": {
-    "svg": "estampas/pomegranate_mud.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    0.9
+  ],
+  "pisante": {
+    "pos": [
+      0.5,
+      -0.56
+    ]
+  },
+  "transformacao": "Standard",
+  "pecas": [
+    {
+      "tipo": "apertar",
+      "pos": [
+        0.0,
+        0.7
+      ],
+      "diam_m": 0.006,
+      "rotulo": "REFORÇO",
+      "rotulo_pos": "cima"
+    }
+  ]
 }

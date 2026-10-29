@@ -2,48 +2,41 @@
   "tipo": "pedal",
   "nome": "Pistachio Drive",
   "familia": "pistachio_drive",
-  "inspiracao": "verde-escuro com letras brancas, mesma caixa do overdrive verde japonês (estilo Maxon OD808)",
-  "formato": "classico",
+  "inspiracao": "Caixa retangular verde (70 x 113 x 38 mm, 56 com os botões), letras brancas; botões pretos DRIVE e NÍVEL (BALANCE) no alto e TOM pequeno no meio, mais baixo; LED vermelho no alto, no meio; pisante redondo grande de metal e o nome grande embaixo. Tema: pistaches abertos, pontos tom sobre tom. Original: Maxon OD808.",
+  "formato": "padrao",
   "medidas_m": {
-    "largura": 0.074,
-    "comprimento": 0.124,
-    "altura": 0.053
+    "largura": 0.07,
+    "comprimento": 0.113,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0065,
   "pintura": {
     "cor": [
-      0.04,
-      0.2,
-      0.08
+      0.009,
+      0.3297,
+      0.0446
     ],
-    "metalico": 0.5,
-    "aspereza": 0.3
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.8913,
+    0.8751,
+    0.8277
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "PISTACHIO DRIVE",
-  "tipo_texto": "OVERDRIVE",
-  "etiqueta_y": 0.06,
+  "modelo": "PISTACHIO",
   "botao_estilo": {
     "diametro_m": 0.019,
     "altura_m": 0.014,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -51,8 +44,8 @@
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        -0.5,
-        0.66
+        -0.48,
+        0.72
       ]
     },
     {
@@ -60,33 +53,49 @@
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.44
+        0.5
       ],
-      "escala": 0.72
+      "escala": 0.6
     },
     {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        0.5,
-        0.66
+        0.48,
+        0.72
       ]
     }
   ],
-  "led": [
-    0.0,
-    0.8
-  ],
-  "quadro": {
-    "largura_rel": 2.0,
-    "proporcao": 1.25,
-    "elevacao": 90.0
-  },
-  "rotulo_embaixo": true,
   "estampa": {
     "svg": "estampas/pistachio_drive.svg"
   },
-  "logo": {
-    "svg": "estampas/pistachio_drive_logo.svg"
-  }
+  "medidas_fonte": "70 x 113 x 56 mm com botões (Maxon, ficha oficial)",
+  "quadro": {
+    "largura_rel": 2.02,
+    "proporcao": 1.25,
+    "elevacao": 90.0
+  },
+  "chanfro_m": 0.004,
+  "logo_y": -0.8,
+  "logo_m": 0.013,
+  "pisante_y": -0.62,
+  "rotulo_embaixo": true,
+  "rotulo_m": 0.0042,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "led": [
+    0.0,
+    0.88
+  ],
+  "pisante": {
+    "estilo": "redondo",
+    "pos": [
+      0.0,
+      -0.36
+    ]
+  },
+  "tipo_texto": ""
 }

@@ -2,50 +2,42 @@
   "tipo": "pedal",
   "nome": "Comet Wah",
   "familia": "comet_wah",
-  "inspiracao": "wah de caixa preta com tampa de pisar (estilo Cry Baby)",
-  "formato": "padrao",
+  "inspiracao": "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido com borracha frisada, o nome na ponta; chave liga/desliga embaixo da ponta, sem LED e sem botões no tampo; os três ajustes (PEDAL, FAIXA, NÍVEL), que o original não tem, ficam pequenos na faixa lisa atrás do basculante. Tema: cometa branco-azulado na ponta do pedal. Original: Dunlop Cry Baby.",
+  "formato": "wah",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.102,
+    "comprimento": 0.254,
+    "altura": 0.064
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0023,
-      0.0041,
-      0.0104
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28,
+    "textura": "enrugado"
   },
   "texto_cor": [
-    0.5295,
-    0.7818,
-    1.0
-  ],
-  "texto_cor2": [
-    0.5295,
-    0.7818,
-    1.0
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "COMET WAH",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,42 +45,50 @@
       "id": "a",
       "rotulo": "PEDAL",
       "pos": [
-        -0.58,
-        0.55
+        -0.5,
+        0.915
       ],
-      "escala": 1.1
+      "escala": 0.5,
+      "rotulo_pos": "nenhum"
     },
     {
       "id": "b",
       "rotulo": "FAIXA",
       "pos": [
         0.0,
-        0.55
+        0.915
       ],
-      "escala": 1.1
+      "escala": 0.5,
+      "rotulo_pos": "nenhum"
     },
     {
       "id": "c",
       "rotulo": "NÍVEL",
       "pos": [
-        0.58,
-        0.55
+        0.5,
+        0.915
       ],
-      "escala": 1.1
+      "escala": 0.5,
+      "rotulo_pos": "nenhum"
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "aprox. 102 x 254 x 64 mm (zZounds; a Dunlop não publica)",
+  "estampa": {
+    "svg": "estampas/comet_wah.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 3.11,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
-  "estampa": {
-    "svg": "estampas/comet_wah.svg"
-  }
+  "base_m": 0.032,
+  "talao_m": 0.022,
+  "borracha_rel": 0.66,
+  "inclinacao": 5.0,
+  "logo_m": 0.012,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ]
 }

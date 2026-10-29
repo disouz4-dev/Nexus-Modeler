@@ -386,7 +386,167 @@ def lote_b():
                    (-0.86, -0.74, -0.62, -0.5, -0.38, 0.38, 0.5, 0.62, 0.74, 0.86)])
 
 
-LOTES = {"a": lote_a, "b": lote_b}
+def lote_c():
+    ts = estilo(diam=0.019, alt=0.014, tampa=None)
+    trio = lambda r=True: [k("ganho", "DRIVE", (-0.5, 0.66)), k("tom", "TOM", (0.0, 0.44), escala=0.72), k("nivel", "NÍVEL", (0.5, 0.66))]
+    novo("lemon_drive", "Greengage Drive", "GREENGAGE DRIVE",
+         "Caixa Tube Screamer verde-claro amarelado (74 x 124 x 53 mm), rótulos cinza-claro; botões pretos DRIVE, TOM "
+         "(pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto, no meio; placa prateada do nome com letras pretas e, "
+         "na frente, moldura preta com a placa de metal frisada de pisar. Tema: ameixa-rainha-cláudia verde-amarelada, "
+         "fatias tom sobre tom. Original: Ibanez TS9 Tube Screamer.", "Ibanez TS9: aprox. 74 x 124 x 53 mm (sem ficha oficial)",
+         74, 124, 53, "#7EC04A", "#E2E6DC", trio(), ts, formato="classico", metalico=0.35, aspereza=0.3,
+         chanfro_m=0.0065, texto_cor2=lin("#141414"), tipo_texto="OVERDRIVE", etiqueta_y=0.06, etiqueta_estilo="placa_prata",
+         pisante={"estilo": "placa_moldura"}, led=[0.0, 0.8], rotulo_embaixo=True)
+    novo("olive_drive", "Olive Drive", "OLIVE DRIVE",
+         "Caixa Tube Screamer verde-médio azulado (74 x 124 x 53 mm), letras brancas e filete branco em volta do painel; "
+         "botões pretos DRIVE (OVERDRIVE), TOM (pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto entre o TOM e o "
+         "NÍVEL; nome em branco, sem moldura, e a placa de metal pequena de pisar direto na caixa. Tema: ramo de azeitonas, "
+         "azeitonas tom sobre tom. Original: Ibanez TS808 Tube Screamer.", "Ibanez TS808: aprox. 74 x 124 x 53 mm",
+         74, 124, 53, "#1E9A5C", BRANCO, trio(), ts, formato="classico", metalico=0.2, aspereza=0.3, chanfro_m=0.0065,
+         texto_cor2=lin(BRANCO), tipo_texto="OVERDRIVE PRO", etiqueta_y=0.08, etiqueta_estilo="nenhuma",
+         pisante={"estilo": "placa_pequena"}, led=[0.3, 0.8], rotulo_embaixo=True,
+         paineis=[{"pos": [0.0, 0.0], "tam_m": [0.0645, 0.1145], "cor": lin(BRANCO), "raio_m": 0.002, "fundo": True},
+                  {"pos": [0.0, 0.0], "tam_m": [0.0629, 0.1129], "cor": lin("#1E9A5C"), "raio_m": 0.0015, "fundo": True}])
+    caixa("pistachio_drive", "Pistachio Drive", "PISTACHIO",
+          "Caixa retangular verde (70 x 113 x 38 mm, 56 com os botões), letras brancas; botões pretos DRIVE e NÍVEL (BALANCE) "
+          "no alto e TOM pequeno no meio, mais baixo; LED vermelho no alto, no meio; pisante redondo grande de metal e o nome "
+          "grande embaixo. Tema: pistaches abertos, pontos tom sobre tom. Original: Maxon OD808.",
+          "70 x 113 x 56 mm com botões (Maxon, ficha oficial)", (70, 113, 38), "#1E9A3E", BRANCO,
+          [k("ganho", "DRIVE", (-0.48, 0.72)), k("tom", "TOM", (0.0, 0.5), escala=0.6), k("nivel", "NÍVEL", (0.48, 0.72))],
+          estilo(diam=0.019, alt=0.014), led=[0.0, 0.88], pisante={"estilo": "redondo", "pos": [0.0, -0.36]},
+          logo_y=-0.8, logo_m=0.013, tipo_texto="", rotulo_m=0.0042)
+    caixa("gold_centaur", "Gold Centaur", "GOLD CENTAUR",
+          "Caixa deitada dourada fosca, cor de bronze (120 x 95 x 40 mm), letras pretas; botões grandes cor de sangue de boi "
+          "GANHO, AGUDO e SAÍDA em fila, LED vermelho à esquerda do GANHO, pisante pequeno no canto de baixo à direita, GOLD "
+          "embaixo à esquerda e CENTAUR à direita. Tema: coroa de louros dourada. Original: Klon Centaur.",
+          "aprox. 120 x 95 x 40 mm (medida de loja; a Klon não publica)", (120, 95, 40), "#C49A48", PRETO,
+          [k("ganho", "GANHO", (-0.55, 0.5)), k("tom", "AGUDO", (0.0, 0.5)), k("nivel", "SAÍDA", (0.55, 0.5))],
+          estilo(diam=0.021, alt=0.016, corpo="#4A1612", traco="#E8D8C0"), led=[-0.84, 0.5], metalico=0.55, aspereza=0.5,
+          pisante={"estilo": "pequeno", "pos": [0.5, -0.36]}, modelo_oculto=True, rotulo_m=0.0045,
+          textos=[{"texto": "GOLD", "pos": [-0.6, -0.78], "tam_m": 0.0062, "cor": lin(PRETO), "espaco": 1.6},
+                  {"texto": "CENTAUR", "pos": [0.6, -0.78], "tam_m": 0.0062, "cor": lin(PRETO), "espaco": 1.4}])
+    caixa("cherry_drop", "Cherry Drop", "CHERRY DROP",
+          "Caixa vermelha (73 x 120 x 44 mm) com faixa diagonal prateada, letras brancas e pretas; um botão preto DROP no alto à "
+          "esquerda, chave de alavanca à direita, fileira de 9 LEDs da afinação no meio e LED vermelho ao lado do pisante, sem "
+          "tela; a MISTURA, que o original não tem, fica pequena no canto. Tema: cerejas, pontos tom sobre tom. Original: "
+          "DigiTech Drop.", "73 x 120 x 44 mm (DigiTech, ficha oficial)", (73, 120, 44), "#D42428", BRANCO,
+          [k("a", "DROP", (-0.5, 0.74)), k("b", "MISTURA", (-0.78, -0.86), escala=0.5, rotulo_m=0.0026)],
+          estilo(diam=0.019, alt=0.014), led=[0.5, -0.62], pisante={"pos": [0.12, -0.62]}, logo_y=-0.25, logo_m=0.012,
+          nome_cor="#F2F2F2",
+          paineis=[{"pontos": [[-1, 0.1], [-1, 0.36], [1, -0.06], [1, -0.32]], "cor": lin("#C8CACC"), "metal": True}],
+          pecas=[{"tipo": "minichave", "pos": [0.55, 0.74], "rotulo": "MOMENTÂNEO", "rotulo_pos": "baixo"},
+                 {"tipo": "leds", "pos": [0.0, 0.38], "n": 9, "passo_m": 0.0068, "raio_m": 0.0019}])
+    novo("acai_rat", "Açaí Rat", "AÇAÍ RAT",
+         "Caixa preta em cunha, mais alta atrás (79 x 103 mm, 55 mm atrás e 30 na frente), letras brancas; botões pretos "
+         "DISTORÇÃO, FILTRO e VOLUME em fila no alto, com os nomes em caixinhas, o nome grande no meio, LED vermelho e pisante. "
+         "Tema: cacho de açaí roxo-escuro, listras tom sobre tom. Original: ProCo RAT.",
+         "aprox. 79 x 103 x 73 mm com botões (medida de loja)", 79, 103, 55, "#161616", BRANCO,
+         [k("ganho", "DISTORÇÃO", (-0.6, 0.6)), k("tom", "FILTRO", (0.0, 0.6)), k("nivel", "VOLUME", (0.6, 0.6))],
+         estilo(diam=0.017, alt=0.014), cunha={"frente_m": 0.030}, chanfro_m=0.004, rotulo_m=0.0034,
+         rotulo_embaixo=False, led=[0.0, -0.36], pisante_y=-0.64, logo_y=0.05, logo_m=0.017, texto_cor2=lin(BRANCO),
+         paineis=[{"pos": [x, 0.88], "tam_m": [0.023, 0.0075], "cor": lin(BRANCO), "raio_m": 0.0004} for x in (-0.6, 0.0, 0.6)] +
+                 [{"pos": [x, 0.88], "tam_m": [0.0216, 0.0061], "cor": lin("#161616"), "raio_m": 0.0003} for x in (-0.6, 0.0, 0.6)] +
+                 [{"pos": [0.0, 0.05], "tam_m": [0.06, 0.022], "cor": lin(BRANCO), "raio_m": 0.0006},
+                  {"pos": [0.0, 0.05], "tam_m": [0.0584, 0.0204], "cor": lin("#161616"), "raio_m": 0.0005}])
+    caixa("snowpear_treble", "Snow Pear Treble", "SNOW PEAR TREBLE",
+          "Caixa deitada de chapa cinza, em cunha (110 x 65 mm, 60 mm atrás e 35 na frente), feita para ficar em cima do "
+          "amplificador; um botão preto REFORÇO à direita e a chave de alavanca liga/desliga à esquerda (sem pisante, sem LED); o "
+          "VOLUME, que o original não tem, fica pequeno no canto. Tema: pera-da-neve cinza-esbranquiçada, pontos tom sobre tom. "
+          "Original: Dallas Rangemaster Treble Booster.", "sem ficha do fabricante; medida estimada pelas fotos",
+          (110, 65, 60), "#B4B6B8", PRETO,
+          [k("ganho", "REFORÇO", (0.55, 0.3), escala=1.1), k("nivel", "VOLUME", (0.86, -0.62), escala=0.5, rotulo_m=0.0026)],
+          estilo(diam=0.019, alt=0.015), cunha={"frente_m": 0.035}, metalico=0.25, aspereza=0.4,
+          pisante={"estilo": "nenhum", "pos": [-0.6, 0.3], "raio_m": 0.007}, logo_y=-0.55, logo_m=0.008,
+          pecas=[{"tipo": "minichave", "pos": [-0.6, 0.3], "rotulo": "LIGA"}])
+    caixa("cherry_fuzz", "Cherry Fuzz", "Cherry Fuzz",
+          "Caixa redonda vermelha com pintura martelada (150 mm de diâmetro, 55 de altura), letras brancas; botões pretos "
+          "VOLUME e FUZZ na borda de trás, o nome em letra cursiva no meio e, na frente, a placa preta triangular com frisos e o "
+          "pisante pequeno no meio dela; sem LED. Tema: par de cerejas vermelhas. Original: Dunlop Fuzz Face.",
+          "aprox. 150 mm de diâmetro x 55 mm (estimativa; a Dunlop não publica)", (150, 150, 55), "#C81E28", BRANCO,
+          [k("nivel", "VOLUME", (-0.42, 0.56)), k("ganho", "FUZZ", (0.42, 0.56))], estilo(diam=0.019, alt=0.014),
+          formato="redondo", textura="martelado", chanfro=0.012, logo_script=True, logo_y=0.2, logo_m=0.026,
+          pisante={"estilo": "pequeno", "pos": [0.0, -0.5]},
+          pecas=[{"tipo": "placa", "forma": "triangulo", "pos": [0.0, -0.46], "tam_m": [0.09, 0.06], "cor": lin("#0E0E0E"),
+                  "frisos": True}])
+    caixa("fig_bender", "Mercury Bender", "MERCURY BENDER",
+          "Caixa fundida cinza martelada em cunha, mais alta atrás (95 x 150 mm, 60 mm atrás e 30 na frente); placa preta no "
+          "alto com os botões pretos ATAQUE e NÍVEL e o nome em letras brancas, pisante pequeno na frente; sem LED; o TOM, que o "
+          "original não tem, fica pequeno ao lado do pisante. Tema: o planeta Mercúrio cinza com crateras. Original: Sola Sound "
+          "Tone Bender (MK I).", "sem ficha do fabricante; medida estimada pelas fotos", (95, 150, 60), "#8C8E90", BRANCO,
+          [k("ganho", "ATAQUE", (-0.38, 0.62)), k("nivel", "NÍVEL", (0.38, 0.62)),
+           k("tom", "TOM", (0.62, -0.72), escala=0.5, rotulo_m=0.0026, rotulo_cor=lin(PRETO))],
+          estilo(diam=0.017, alt=0.014), cunha={"frente_m": 0.030}, textura="martelado", metalico=0.4,
+          pisante={"estilo": "pequeno", "pos": [0.0, -0.72]}, logo_y=0.38, logo_m=0.0075,
+          paineis=[{"pos": [0.0, 0.58], "tam_m": [0.07, 0.05], "cor": lin("#121212"), "raio_m": 0.002}])
+    caixa("kiwi_drive", "Opal Drive", "OPAL DRIVE",
+          "Caixa creme, branco-marfim (64 x 112 x 38 mm), letras pretas; botões creme \"cabeça de galinha\" VOLUME, DRIVE e TOM "
+          "em fila, minichave HP/LP no meio, LED transparente e pisante; o nome grande no meio. Tema: opala branca com reflexos "
+          "coloridos. Original: Fulltone OCD.", "aprox. 64 x 112 mm (fulltone.com fora do ar)", (64, 112, 38), "#EEE6D0", PRETO,
+          [k("nivel", "VOLUME", (-0.62, 0.62)), k("ganho", "DRIVE", (0.0, 0.62)), k("tom", "TOM", (0.62, 0.62))],
+          estilo(diam=0.016, alt=0.014, corpo="#D2C4A4", traco="#141414", forma="galinha"), led=[0.0, -0.36],
+          led_cor=lin("#8A8A88"), logo_y=-0.06, logo_m=0.012,
+          pecas=[{"tipo": "minichave", "pos": [0.0, 0.32], "rotulo": "AGUDO"}])
+    novo("comet_wah", "Comet Wah", "COMET WAH",
+         "Pedal de wah preto texturizado (102 x 254 x 64 mm): base fundida e pedal basculante comprido com borracha frisada, o "
+         "nome na ponta; chave liga/desliga embaixo da ponta, sem LED e sem botões no tampo; os três ajustes (PEDAL, FAIXA, "
+         "NÍVEL), que o original não tem, ficam pequenos na faixa lisa atrás do basculante. Tema: cometa branco-azulado na "
+         "ponta do pedal. Original: Dunlop Cry Baby.", "aprox. 102 x 254 x 64 mm (zZounds; a Dunlop não publica)",
+         102, 254, 64, "#141414", BRANCO,
+         [k("a", "PEDAL", (-0.5, 0.915), escala=0.5, rotulo_pos="nenhum"), k("b", "FAIXA", (0.0, 0.915), escala=0.5,
+          rotulo_pos="nenhum"), k("c", "NÍVEL", (0.5, 0.915), escala=0.5, rotulo_pos="nenhum")],
+         estilo(), formato="wah", textura="enrugado", base_m=0.032, talao_m=0.022, borracha_rel=0.66, inclinacao=5.0,
+         logo_m=0.012, texto_cor2=lin(BRANCO))
+    caixa("pomegranate_mud", "Heliodor Mud", "HELIODOR MUD",
+          "Caixa amarelo-gema (100 x 120 x 40 mm), letras pretas; botões pretos GANHO, TOM (no meio, mais baixo) e NÍVEL, botão "
+          "de apertar REFORÇO pequeno entre o GANHO e o NÍVEL, LED pequeno no alto e pisante embaixo à direita. Tema: cristal de "
+          "heliodoro amarelo (berilo), pontos tom sobre tom. Original: T-Rex Mudhoney.", "100 x 120 x 55 mm com botões (T-Rex, ficha "
+          "oficial)", (100, 120, 40), "#F2B41E", PRETO,
+          [k("ganho", "GANHO", (-0.58, 0.62)), k("tom", "TOM", (0.0, 0.42)), k("nivel", "NÍVEL", (0.58, 0.62))],
+          estilo(diam=0.019, alt=0.015), led=[0.0, 0.9], pisante={"pos": [0.5, -0.56]}, logo_y=-0.84, logo_m=0.009,
+          transformacao="Standard",
+          pecas=[{"tipo": "apertar", "pos": [0.0, 0.7], "diam_m": 0.006, "rotulo": "REFORÇO", "rotulo_pos": "cima"}])
+    novo("lychee_fuzz", "Pearl Fuzz", "PEARL FUZZ",
+         "Caixa grande (140 x 175 x 50 mm) de laterais pretas, tampo de aço escovado prateado na parte de cima e preto na de "
+         "baixo; botões pretos VOLUME, TOM e SUSTAIN numa moldura preta, LED vermelho entre o VOLUME e o TOM, o nome grande em "
+         "vermelho e o pisante na parte preta; letras pretas. Tema: pérola branca. Original: Electro-Harmonix Big Muff Pi.",
+         "140 x 175 x 75 mm com botões (EHX: 5,5 x 6,88 x 2,95 pol.)", 140, 175, 50, "#C2C4C6", PRETO,
+         [k("nivel", "VOLUME", (-0.55, 0.66)), k("tom", "TOM", (0.0, 0.66)), k("ganho", "SUSTAIN", (0.55, 0.66))],
+         estilo(diam=0.022, alt=0.016), metalico=0.85, aspereza=0.32, pintura_lados={"cor": lin("#141414")},
+         chanfro_m=0.004, rotulo_embaixo=False, rotulo_m=0.0055, led=[-0.28, 0.66], pisante_y=-0.62, logo_y=0.12,
+         logo_m=0.022, texto_cor2=lin("#C81E22"), tipo_texto="",
+         paineis=[{"pos": [0.0, -0.58], "tam_m": [0.132, 0.068], "cor": lin("#121212"), "raio_m": 0.001},
+                  {"pos": [0.0, 0.64], "tam_m": [0.13, 0.05], "cor": lin("#121212"), "raio_m": 0.002},
+                  {"pos": [0.0, 0.64], "tam_m": [0.127, 0.047], "cor": lin("#C2C4C6"), "metal": True, "raio_m": 0.0018}])
+    novo("nebula_flanger", "Nebula Flanger", "NEBULA FLANGER",
+         "Caixa grande de alumínio prateado escovado (110 x 140 x 57 mm), no feitio clássico, letras pretas e o nome grande em "
+         "letra cursiva; botões pretos COR, FAIXA e VELOCIDADE em fila no alto, minichave FILTER MATRIX no meio, LED vermelho e "
+         "pisante. Tema: nebulosa prateada com estrelas novas. Original: Electro-Harmonix Electric Mistress (clássico).",
+         "caixa clássica grande, aprox. 110 x 140 x 57 mm (estimativa pela caixa EHX antiga)", 110, 140, 57, "#C6C8CA", PRETO,
+         [k("c", "COR", (-0.58, 0.7)), k("b", "FAIXA", (0.0, 0.7)), k("a", "VELOCIDADE", (0.58, 0.7))],
+         estilo(diam=0.019, alt=0.015), metalico=0.9, aspereza=0.3, chanfro_m=0.004, rotulo_m=0.0048, rotulo_embaixo=True,
+         led=[0.42, -0.5], pisante_y=-0.62, logo_script=True, logo_y=0.02, logo_m=0.024, texto_cor2=lin(PRETO), tipo_texto="",
+         pecas=[{"tipo": "minichave", "pos": [0.0, 0.32], "rotulo": "FILTRO"}])
+    caixa("elderberry_war", "Howlite War", "HOWLITE WAR",
+          "Caixa de alumínio branco-prateado (120 x 149 x 45 mm) com grafismos pretos de spray, letras pretas; botões pretos "
+          "grandes FUZZ (esq.) e TOM (dir.) com o VOLUME pequeno entre eles, LED vermelho e pisante. Tema: howlita branca com "
+          "veios cinza, raios pretos tom sobre tom. Original: Death By Audio Fuzz War.",
+          "149 x 120 x 64 mm com peças (DBA, ficha oficial)", (120, 149, 45), "#ECECE8", PRETO,
+          [k("ganho", "FUZZ", (-0.45, 0.5), escala=1.25), k("nivel", "VOLUME", (0.0, 0.76), escala=0.7),
+           k("tom", "TOM", (0.45, 0.5), escala=1.25)], estilo(diam=0.022, alt=0.016), led=[0.3, -0.62],
+          pisante_y=-0.62, logo_y=-0.08, logo_m=0.016, metalico=0.3)
+    caixa("tamarind_amp", "Basalt Amp", "BASALT AMP",
+          "Caixa preta com pintura salpicada (95 x 121 x 51 mm), letras amarelas; botões pretos com traço amarelo NÍVEL, ALTO, "
+          "BAIXO (fixo) e DRIVE em fila no alto, três chaves deslizantes de 3 posições (MIC, MOD, AMP) no meio, LED vermelho à "
+          "direita e pisante. Tema: colunas de basalto cinza-escuro vistas de cima. Original: Tech 21 SansAmp GT2.",
+          "95 x 121 x 51 mm (Tech 21, ficha oficial)", (95, 121, 51), "#1C1C1C", "#F2C81E",
+          [k("nivel", "NÍVEL", (-0.69, 0.74)), k("tom", "ALTO", (-0.23, 0.74)), fixo("baixo", "BAIXO", (0.23, 0.74)),
+           k("ganho", "DRIVE", (0.69, 0.74))], estilo(diam=0.016, alt=0.013, traco="#F2C81E"), led=[0.72, 0.3],
+          textura="martelado", rotulo_embaixo=False, logo_y=-0.84, logo_m=0.011, nome_cor="#F2C81E",
+          pecas=[{"tipo": "chave_deslizante", "pos": [x, 0.3], "rotulo": r, "rotulo_pos": "cima"} for x, r in
+                 ((-0.55, "MIC"), (-0.15, "MOD"), (0.25, "AMP"))])
+
+
+LOTES = {"a": lote_a, "b": lote_b, "c": lote_c}
 if __name__ == "__main__":
     for a in sys.argv[1:]:
         if a == "acerola_eq":

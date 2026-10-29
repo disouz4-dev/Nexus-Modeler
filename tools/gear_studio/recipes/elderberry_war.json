@@ -1,93 +1,95 @@
 {
   "tipo": "pedal",
-  "nome": "Elderberry War",
+  "nome": "Howlite War",
   "familia": "elderberry_war",
-  "inspiracao": "branco com desenho preto, caixa média (estilo Death By Audio Fuzz War)",
+  "inspiracao": "Caixa de alumínio branco-prateado (120 x 149 x 45 mm) com grafismos pretos de spray, letras pretas; botões pretos grandes FUZZ (esq.) e TOM (dir.) com o VOLUME pequeno entre eles, LED vermelho e pisante. Tema: howlita branca com veios cinza, raios pretos tom sobre tom. Original: Death By Audio Fuzz War.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.12,
+    "comprimento": 0.149,
+    "altura": 0.045
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0154,
-      0.0014,
-      0.029
+      0.8434,
+      0.8434,
+      0.8122
     ],
-    "metalico": 0.0,
-    "aspereza": 0.26
+    "metalico": 0.3,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "ELDERBERRY WAR",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "HOWLITE WAR",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.022,
+    "altura_m": 0.016,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
+      "id": "ganho",
+      "rotulo": "FUZZ",
+      "pos": [
+        -0.45,
+        0.5
+      ],
+      "escala": 1.25
+    },
+    {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
+        0.0,
+        0.76
       ],
-      "escala": 1.1
+      "escala": 0.7
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.0,
-        0.55
+        0.45,
+        0.5
       ],
-      "escala": 1.1
-    },
-    {
-      "id": "ganho",
-      "rotulo": "FUZZ",
-      "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+      "escala": 1.25
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/elderberry_war.svg"
+  },
+  "medidas_fonte": "149 x 120 x 64 mm com peças (DBA, ficha oficial)",
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.08,
+  "logo_m": 0.016,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/elderberry_war.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.3,
+    -0.62
+  ]
 }

@@ -37,7 +37,7 @@ e rodar com esse python.
         apple_comp, starfruit_rock, cranberry_wylde, guava_precision, honeydew_drive,
         peach_glory, raspberry_drive, gooseberry_g3, nectarine_od, mangosteen_fuzz,
         grapefruit_drive, pitanga_250)
-  - [ ] Lote C: clássicos e formatos especiais (lemon_drive, olive_drive,
+  - [x] Lote C: clássicos e formatos especiais (lemon_drive, olive_drive,
         pistachio_drive, gold_centaur, cherry_drop, acai_rat, snowpear_treble,
         cherry_fuzz, fig_bender, kiwi_drive, comet_wah, pomegranate_mud,
         lychee_fuzz, nebula_flanger, elderberry_war, tamarind_amp)
@@ -59,6 +59,14 @@ Ficam funcionando, pequenos e no canto mais discreto. O dono decide depois.
 - pear_gate (Smart Gate: 1 botão): ATAQUE (`b`) e RELEASE (`c`) pequenos nos cantos, ao lado do pisante.
 - mars_phaser (Phase 90: 1 botão): PROFUNDIDADE (`b`) e INTENSIDADE (`c`) pequenos ao lado do pisante.
 - apple_comp (Dyna Comp: 2 botões): ATAQUE (`c`) pequeno à direita do pisante.
+- cherry_drop (Drop: 1 botão): MISTURA (`b`) pequena no canto de baixo à esquerda.
+- snowpear_treble (Rangemaster: 1 botão, sem pisante): VOLUME (`nivel`) pequeno no canto; o clique de
+  liga/desliga fica na chave de alavanca.
+- fig_bender (Tone Bender: 2 botões): TOM (`tom`) pequeno ao lado do pisante.
+- comet_wah (Cry Baby: nenhum botão): PEDAL, FAIXA e NÍVEL (`a`, `b`, `c`) pequenos, sem rótulo, na faixa
+  lisa atrás do basculante. O clique de liga/desliga fica na ponta do basculante.
+- nebula_flanger: Electric Mistress clássico prateado e grande (decisão do dono); a medida
+  (110 x 140 x 57) é estimada, a EHX não publica a da caixa antiga.
 - starfruit_rock: os dois controles viraram deslizantes (como no Rockman X100), com os mesmos ids.
 
 Botões, chaves e pisantes que o original tem a mais entram como peças fixas

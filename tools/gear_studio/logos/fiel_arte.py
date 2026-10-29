@@ -572,7 +572,7 @@ def compose(pid, rec, spec):
     pat = spec.get("pattern", ("dots", 3.2, 0.9))
     kind = pat[0]
     if kind == "scatter":
-        motif = pat[1]() if callable(pat[1]) else A.FRUTAS[pat[1]]()
+        motif = pat[1]() if callable(pat[1]) else (pat[1] if isinstance(pat[1], list) else A.FRUTAS[pat[1]]())
         shapes += A.pattern_scatter(area, motif, pat[2], tn, pat[3], seed=len(pid))
     elif kind == "rays":
         shapes += A.pattern_rays(area, tn, ecx, ecy, pat[1] if len(pat) > 1 else 28)
@@ -678,6 +678,27 @@ TEMAS.update({
                          tone="#9A84D2", halo="#6A3EB0", halo_w=1.8),
     "grapefruit_drive": F(lambda: brilhante("#8EAC3A"), pattern=("rings", 3.0, 0.5), tone="#7A9230"),
     "pitanga_250": F(lambda: brilhante("#F0A81E"), pattern=("facets", 8)),
+})
+TEMAS.update({
+    # Lote C: clássicos e formatos especiais
+    "lemon_drive": F(greengage, pattern=("scatter", A.slice_icon(), 9, 15)),
+    "olive_drive": F("olive", pattern=("scatter", "olive", 9, 15)),
+    "pistachio_drive": F("pistachio", pattern=("dots", 3.2, 1.0)),
+    "gold_centaur": F(lambda: A.gold_laurel("#2A1E0E", "#B8892E"), pattern=("dots", 3.0, 0.8), halo=False),
+    "cherry_drop": F("cherries", pattern=("dots", 3.0, 0.9)),
+    "acai_rat": F("acai", pattern=("stripes", 1.6, 3.0, 30)),
+    "snowpear_treble": F("snow_pear", pattern=("dots", 3.2, 1.0)),
+    "cherry_fuzz": F("cherries", pattern=("none",), dx=0),
+    "fig_bender": F(mercurio, pattern=("dots", 3.0, 0.8), halo=False),
+    "kiwi_drive": F(lambda: cabochao("#F4F0EA", "brilho", "#7AD8C8", "#F2A0C8"), pattern=("dots", 3.0, 0.9),
+                    halo="#3A3A3A", halo_w=1.4),
+    "comet_wah": F(cometa_branco, pattern=("stars", "#FFFFFF", 14), halo=False, ang=-24),
+    "pomegranate_mud": F(lambda: cristais("#F2C21E", 5, 1.0, "#6A5A3A"), pattern=("dots", 3.2, 1.0)),
+    "lychee_fuzz": F(lambda: cabochao("#F4F0EA", "perola", "#B8AFA0"), pattern=("none",), halo="#141414", halo_w=1.6),
+    "nebula_flanger": F(nebulosa_prata, pattern=("stars", "#6A7078", 26), halo=False),
+    "elderberry_war": F(lambda: cabochao("#F2F2EE", "veios", "#6A6A6A"), pattern=("rays", 22), tone="#2A2A2A",
+                        halo="#141414", halo_w=1.8),
+    "tamarind_amp": F(lambda: colunas("#4A4C50"), pattern=("dots", 3.2, 0.8), tone="#2E2E2E", halo="#F2C81E", halo_w=1.2),
 })
 for _k, _v in TEMAS.items():
     if _v.get("pattern", ("",))[0] == "stars" and _v["pattern"][1] is None:
