@@ -2,14 +2,14 @@
   "nome": "Gold Centaur",
   "familia": "gold_centaur",
   "largura": 600,
-  "altura": 630,
+  "altura": 570,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 134,
-      "y": 112,
-      "tamanho": 92,
+      "x": 112,
+      "y": 135,
+      "tamanho": 102,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,65 +17,65 @@
     },
     {
       "id": "tom",
-      "x": 254,
-      "y": 112,
-      "tamanho": 92,
+      "x": 250,
+      "y": 136,
+      "tamanho": 100,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 374,
-      "y": 112,
-      "tamanho": 92,
+      "x": 386,
+      "y": 135,
+      "tamanho": 102,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [],
+  "medidas_mm": [
+    120,
+    95
+  ],
   "rotulos": [
     {
       "texto": "GANHO",
-      "x": 183.0,
-      "y": 223.8,
-      "altura": 23.11,
+      "x": 167.3,
+      "y": 253.8,
+      "altura": 18.1,
       "achatamento": 1.0,
-      "cor": "#12100d",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "AGUDO",
       "x": 300.0,
-      "y": 223.8,
-      "altura": 23.11,
+      "y": 253.8,
+      "altura": 18.1,
       "achatamento": 1.0,
-      "cor": "#12100d",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "SAÍDA",
-      "x": 417.0,
-      "y": 223.8,
-      "altura": 23.11,
+      "x": 432.7,
+      "y": 253.8,
+      "altura": 18.1,
       "achatamento": 1.0,
-      "cor": "#12100d",
+      "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 498.0,
-    "raio": 55.5
+    "x": 425.0,
+    "y": 356.0,
+    "raio": 28.5
   },
   "led": {
-    "x": 300.0,
-    "y": 91.7,
-    "raio": 13.8
-  },
-  "medidas_mm": [
-    94,
-    119
-  ]
+    "x": 96.3,
+    "y": 189.0,
+    "raio": 12.6
+  }
 }
