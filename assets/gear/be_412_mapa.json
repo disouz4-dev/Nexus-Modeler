@@ -1,17 +1,19 @@
 {
   "nome": "BE 4x12",
   "familia": "be_412",
-  "largura": 1600,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2735,
   "posicoes": 101,
   "botoes": [],
+  "canais": [],
   "medidas_mm": [
-    760,
-    760
+    762,
+    762
   ],
   "falantes": {
     "linhas": 2,
     "colunas": 2,
     "polegadas": 12
-  }
+  },
+  "rotulos": []
 }
