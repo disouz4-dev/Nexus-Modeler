@@ -409,6 +409,8 @@ def geometry(rec):
         g["obst"].append(tb)
         g["clear"].append(tb)
     for p in rec.get("paineis", []):
+        if p.get("fundo"):
+            continue  # painel de fundo (moldura): a arte vai por cima
         if "pontos" in p:
             sh = A.poly([(sx(u), sy(v)) for u, v in p["pontos"]])
         else:
@@ -564,6 +566,9 @@ def compose(pid, rec, spec):
     ecx, ecy, er = c if c else (W / 2, H / 2, 10)
     if "at" in spec:
         ecx, ecy, er = spec["at"]
+    if "centro" in spec:
+        # padrão em volta de um ponto marcado (o alvo do Wylde em volta do LED)
+        ecx, ecy = spec["centro"]
     pat = spec.get("pattern", ("dots", 3.2, 0.9))
     kind = pat[0]
     if kind == "scatter":
@@ -655,6 +660,25 @@ TEMAS = {
     "jupiter_octave": F(jupiter, pattern=("stars", None, 24), halo=False),
     "acerola_eq": F(lambda: laminas("#EEE8D8"), pattern=("facets", 9), halo="#5E584C", halo_w=1.6),
 }
+TEMAS.update({
+    # Lote B: MXR e caixas estreitas
+    "pear_gate": F(lambda: cubos("#B4B0A2"), pattern=("facets", 8)),
+    "mars_phaser": F(marte, pattern=("dots", 3.0, 0.8), halo=False),
+    "quince_plus": F("quince", pattern=("rays", 26)),
+    "apple_comp": F("apple", pattern=("rays", 26)),
+    "starfruit_rock": F(lambda: botrioide("#5E626A"), pattern=("dots", 3.0, 0.8)),
+    "cranberry_wylde": dict(pattern=("rings", 5.0, 2.2), tone="#141414", centro=(31.0, 45.5)),
+    "guava_precision": F(lambda: brilhante("#33363D"), pattern=("facets", 8), halo="#3A8EE8", halo_w=1.4),
+    "honeydew_drive": F("honeydew", pattern=("stripes", 2.0, 3.2, 30)),
+    "peach_glory": F(lambda: ambar("#E2A02E"), pattern=("dots", 3.2, 0.9)),
+    "raspberry_drive": F("raspberry", pattern=("scatter", "raspberry", 7, 12)),
+    "gooseberry_g3": F(lambda: cabochao("#7A3AC0", "espiral", "#C8A0F0", "#4A1A80"), pattern=("facets", 8)),
+    "nectarine_od": F(jamun, pattern=("dots", 3.0, 0.8), halo="#E8D9A8", halo_w=1.6),
+    "mangosteen_fuzz": F(lambda: cabochao("#EEF0F4", "brilho", "#9AB8F0", "#C8D8F8"), pattern=("dots", 3.0, 0.9),
+                         tone="#9A84D2", halo="#6A3EB0", halo_w=1.8),
+    "grapefruit_drive": F(lambda: brilhante("#8EAC3A"), pattern=("rings", 3.0, 0.5), tone="#7A9230"),
+    "pitanga_250": F(lambda: brilhante("#F0A81E"), pattern=("facets", 8)),
+})
 for _k, _v in TEMAS.items():
     if _v.get("pattern", ("",))[0] == "stars" and _v["pattern"][1] is None:
         _v["pattern"] = ("stars", "#FFFFFF", _v["pattern"][2])

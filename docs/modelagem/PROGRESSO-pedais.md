@@ -33,7 +33,7 @@ e rodar com esse python.
         coconut_delay, grape_reverb, moon_tremolo, jabuticaba_buzzsaw,
         avocado_metal, blueberry_blues, apricot_overdrive, clementine_turbo,
         jupiter_octave, acerola_eq)
-  - [ ] Lote B: MXR e caixas estreitas (pear_gate, mars_phaser, quince_plus,
+  - [x] Lote B: MXR e caixas estreitas (pear_gate, mars_phaser, quince_plus,
         apple_comp, starfruit_rock, cranberry_wylde, guava_precision, honeydew_drive,
         peach_glory, raspberry_drive, gooseberry_g3, nectarine_od, mangosteen_fuzz,
         grapefruit_drive, pitanga_250)
@@ -56,6 +56,10 @@ Ficam funcionando, pequenos e no canto mais discreto. O dono decide depois.
 
 - neptune_chorus (Boss CE-2 tem só VELOCIDADE e PROFUNDIDADE): o MISTURA (`c`) ficou
   pequeno, no meio, mais baixo.
+- pear_gate (Smart Gate: 1 botão): ATAQUE (`b`) e RELEASE (`c`) pequenos nos cantos, ao lado do pisante.
+- mars_phaser (Phase 90: 1 botão): PROFUNDIDADE (`b`) e INTENSIDADE (`c`) pequenos ao lado do pisante.
+- apple_comp (Dyna Comp: 2 botões): ATAQUE (`c`) pequeno à direita do pisante.
+- starfruit_rock: os dois controles viraram deslizantes (como no Rockman X100), com os mesmos ids.
 
 Botões, chaves e pisantes que o original tem a mais entram como peças fixas
 (`"fixo": true` ou `"pecas"`): coconut_delay e grape_reverb (seletor MODO),

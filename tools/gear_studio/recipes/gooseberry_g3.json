@@ -1,93 +1,133 @@
 {
   "tipo": "pedal",
-  "nome": "Gooseberry G3",
+  "nome": "Charoite G3",
   "familia": "gooseberry_g3",
-  "inspiracao": "roxo com letras brancas, caixa média (estilo Revv G3)",
+  "inspiracao": "Caixa roxa (70 x 119 x 32 mm), letras brancas, entradas no alto; GRAVE e MÉDIO (fixos) e AGUDO na fileira de cima, VOLUME e GANHO embaixo com a minichave AGRESSÃO entre eles, LED acima do pisante. Tema: charoíta roxa com redemoinhos lilás, facetas tom sobre tom. Original: Revv G3.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.07,
+    "comprimento": 0.119,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.3017,
-      0.5156,
-      0.0815
+      0.145,
+      0.021,
+      0.4423
     ],
     "metalico": 0.3,
-    "aspereza": 0.26
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
+    0.8913,
+    0.8751,
+    0.8277
   ],
-  "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
-  ],
-  "modelo": "GOOSEBERRY G3",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "CHAROITE G3",
   "botao_estilo": {
-    "diametro_m": 0.0135,
+    "diametro_m": 0.014,
     "altura_m": 0.012,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
+    ],
+    "com_tampa": true,
+    "tampa": [
+      0.586,
+      0.586,
+      0.6121
     ]
   },
   "botoes": [
     {
-      "id": "nivel",
-      "rotulo": "VOLUME",
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
       "pos": [
         -0.58,
-        0.55
+        0.76
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.8
     },
     {
-      "id": "ganho",
-      "rotulo": "GANHO",
+      "id": "fixo_medio",
+      "rotulo": "MÉDIO",
       "pos": [
         0.0,
-        0.55
+        0.76
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.8
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
         0.58,
-        0.55
+        0.76
       ],
-      "escala": 1.1
+      "escala": 0.8
+    },
+    {
+      "id": "nivel",
+      "rotulo": "VOLUME",
+      "pos": [
+        -0.58,
+        0.4
+      ],
+      "escala": 0.8
+    },
+    {
+      "id": "ganho",
+      "rotulo": "GANHO",
+      "pos": [
+        0.58,
+        0.4
+      ],
+      "escala": 0.8
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/gooseberry_g3.svg"
+  },
+  "medidas_fonte": "70 x 119 x 32 mm (Revv, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.12,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/gooseberry_g3.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.8913,
+    0.8751,
+    0.8277
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "jacks_topo": true,
+  "pecas": [
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.0,
+        0.42
+      ],
+      "rotulo": "AGRESSÃO",
+      "rotulo_pos": "baixo"
+    }
+  ]
 }

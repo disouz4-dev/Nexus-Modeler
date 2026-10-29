@@ -215,7 +215,178 @@ def acerola():
          paineis=[{"pos": [0.0, 0.64], "tam_m": [0.0655, 0.044], "cor": lin("#111112"), "raio_m": 0.0015}])
 
 
-LOTES = {"a": lote_a}
+# ------------------------------------------------------------------ caixas retangulares (MXR, boutique)
+def caixa(pid, nome, modelo, insp, fonte, dims, cor, letras, botoes, botao, logo_y=-0.86, logo_m=0.0085, pisante_y=-0.62,
+          led=None, chanfro=0.004, **kw):
+    W, L, H = dims
+    extra = {"chanfro_m": chanfro, "logo_y": logo_y, "logo_m": logo_m, "pisante_y": pisante_y, "rotulo_embaixo": True,
+             "rotulo_m": kw.pop("rotulo_m", 0.0040), "texto_cor2": lin(kw.pop("nome_cor", letras))}
+    if led:
+        extra["led"] = list(led)
+    extra.update(kw)
+    novo(pid, nome, modelo, insp, fonte, W, L, H, cor, letras, botoes, botao, **extra)
+
+
+def moldura(W, L, cor_borda, cor_meio, margem=0.0035, fio=0.0012, raio=0.002):
+    """Contorno pintado em volta do painel: chapa da cor da borda e outra, menor, da cor do meio."""
+    w, l = W / 1000 - 2 * margem, L / 1000 - 2 * margem
+    return [{"pos": [0.0, 0.0], "tam_m": [w, l], "cor": lin(cor_borda), "raio_m": raio, "fundo": True},
+            {"pos": [0.0, 0.0], "tam_m": [w - 2 * fio, l - 2 * fio], "cor": lin(cor_meio), "raio_m": raio * 0.6, "fundo": True}]
+
+
+MXR = (62, 111, 32)
+MXR_FONTE = "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)"
+
+
+def lote_b():
+    mxr_botao = estilo(diam=0.0165, alt=0.0125)
+    pequeno = dict(escala=0.5, rotulo_m=0.0026)
+    caixa("pear_gate", "Marcasite Gate", "MARCASITE GATE",
+          "Caixa MXR prateada, cinza-claro metálico (62 x 111 x 32 mm), letras pretas e contorno preto em volta do painel; "
+          "um botão preto grande SENSIBILIDADE (TRIGGER LEVEL), botão de apertar da faixa alta à esquerda no alto, chave de "
+          "3 posições de corte de ruído à direita, LED amarelo do gate e LED vermelho acima do pisante; ATAQUE e RELEASE, que o "
+          "original não tem, ficam pequenos nos cantos de baixo. Tema: cristais de marcassita (cubos prateados) e facetas "
+          "tom sobre tom. Original: MXR Smart Gate.", MXR_FONTE, MXR, "#BFC2C4", PRETO,
+          [k("a", "SENSIBILIDADE", (0.0, 0.6), escala=1.15), k("b", "ATAQUE", (-0.72, -0.5), **pequeno),
+           k("c", "RELEASE", (0.72, -0.5), **pequeno)], mxr_botao, led=[0.0, -0.36], metalico=0.6, logo_y=-0.86,
+          logo_m=0.0075, pisante_y=-0.6,
+          paineis=moldura(62, 111, PRETO, "#BFC2C4"),
+          pecas=[{"tipo": "apertar", "pos": [-0.62, 0.88], "diam_m": 0.005, "rotulo": "ALTO", "rotulo_pos": "baixo"},
+                 {"tipo": "minichave", "pos": [0.68, 0.62]}, {"tipo": "led", "pos": [0.62, 0.9], "cor": lin("#6A5200")}])
+    caixa("mars_phaser", "Mars Phaser", "MARS PHASER",
+          "Caixa MXR laranja vivo com pintura enrugada (62 x 111 x 32 mm), letras pretas; um botão preto grande VELOCIDADE "
+          "(SPEED) no alto, LED vermelho acima do pisante; PROFUNDIDADE e INTENSIDADE, que o original não tem, ficam pequenas nos "
+          "cantos de baixo. Tema: o planeta Marte com dunas, pontos tom sobre tom. Original: MXR Phase 90.", MXR_FONTE, MXR,
+          "#F07418", PRETO,
+          [k("a", "VELOCIDADE", (0.0, 0.6), escala=1.15), k("b", "PROFUNDIDADE", (-0.72, -0.5), **pequeno),
+           k("c", "INTENSIDADE", (0.72, -0.5), **pequeno)], mxr_botao, led=[0.0, -0.36], textura="enrugado", logo_y=-0.86,
+          logo_m=0.0075, pisante_y=-0.6)
+    caixa("quince_plus", "Quince Plus", "QUINCE PLUS",
+          "Caixa MXR amarela com pintura enrugada (62 x 111 x 32 mm), letras pretas; botões pretos SAÍDA e DISTORÇÃO no alto, "
+          "LED vermelho acima do pisante. Tema: marmelo amarelo, raios tom sobre tom. Original: MXR Distortion+.", MXR_FONTE,
+          MXR, "#F2D02A", PRETO, [k("nivel", "SAÍDA", (-0.45, 0.66)), k("ganho", "DISTORÇÃO", (0.45, 0.66))], mxr_botao,
+          led=[0.0, -0.36], textura="enrugado", transformacao="Standard")
+    caixa("apple_comp", "Apple Comp", "APPLE COMP",
+          "Caixa MXR vermelha com pintura enrugada (62 x 111 x 32 mm), letras pretas; botões pretos SAÍDA e SENSIBILIDADE no "
+          "alto, LED vermelho acima do pisante; o ATAQUE, que o original não tem, fica pequeno no canto de baixo. Tema: maçã "
+          "vermelha, raios tom sobre tom. Original: MXR Dyna Comp.", MXR_FONTE, MXR, "#D2202A", PRETO,
+          [k("a", "SAÍDA", (-0.45, 0.66)), k("b", "SENSIBILIDADE", (0.45, 0.66)), k("c", "ATAQUE", (0.72, -0.5), **pequeno)],
+          mxr_botao, led=[0.0, -0.36], textura="enrugado")
+    caixa("starfruit_rock", "Hematite Rock", "HEMATITE ROCK",
+          "Caixa MXR preta (62 x 111 x 32 mm) com painel azul-celeste no alto; no painel, os deslizantes VOLUME e GANHO, à "
+          "esquerda o botão MODO com os 4 LEDs (vermelho, amarelo, verde e azul) e à direita o botão CHORUS com LED; LED "
+          "vermelho acima do pisante; letras brancas e o nome em azul-celeste. Tema: hematita (bolhas de metal cinza "
+          "brilhante). Original: MXR Rockman X100.", MXR_FONTE, MXR, "#151517", BRANCO,
+          [k("nivel", "VOLUME", (-0.12, 0.62), tipo="deslizante", curso_m=0.018, rotulo_cor=lin(PRETO), rotulo_pos="cima"),
+           k("ganho", "GANHO", (0.12, 0.62), tipo="deslizante", curso_m=0.018, rotulo_cor=lin(PRETO), rotulo_pos="cima")],
+          estilo(cursor="#E8E8E8"), led=[0.0, -0.36], nome_cor="#2AB4E8",
+          paineis=[{"pos": [0.0, 0.6], "tam_m": [0.054, 0.04], "cor": lin("#2AAEE6"), "raio_m": 0.0015}],
+          pecas=[{"tipo": "led", "pos": [-0.66, 0.84], "cor": lin("#6A0A06"), "raio_m": 0.0016},
+                 {"tipo": "led", "pos": [-0.66, 0.76], "cor": lin("#6A5200"), "raio_m": 0.0016},
+                 {"tipo": "led", "pos": [-0.66, 0.68], "cor": lin("#0A4A12"), "raio_m": 0.0016},
+                 {"tipo": "led", "pos": [-0.66, 0.60], "cor": lin("#0A1A6A"), "raio_m": 0.0016},
+                 {"tipo": "apertar", "pos": [-0.66, 0.46], "diam_m": 0.0045, "rotulo": "MODO", "rotulo_pos": "baixo",
+                  "rotulo_cor": lin(PRETO)},
+                 {"tipo": "led", "pos": [0.66, 0.62], "raio_m": 0.0018},
+                 {"tipo": "apertar", "pos": [0.66, 0.46], "diam_m": 0.0045, "rotulo": "CHORUS", "rotulo_pos": "baixo",
+                  "rotulo_cor": lin(PRETO)}])
+    caixa("cranberry_wylde", "Agate Wylde", "AGATE WYLDE",
+          "Caixa MXR prateada, cinza-azulada (62 x 111 x 32 mm), com o alvo de anéis pretos pintado no tampo e o LED vermelho "
+          "no centro dele; botões transparentes SAÍDA (esq.), TOM (no alto, no meio) e GANHO (dir.); letras creme. Tema: os "
+          "anéis do alvo desenhados como as faixas de uma ágata cinza. Original: MXR Wylde Overdrive.", MXR_FONTE, MXR,
+          "#AEB4BA", "#F2ECD8",
+          [k("nivel", "SAÍDA", (-0.6, 0.5)), k("tom", "TOM", (0.0, 0.78)), k("ganho", "GANHO", (0.6, 0.5))],
+          estilo(diam=0.014, alt=0.012, corpo="#D8DCE0", traco="#202020", material="transparente"), led=[0.0, 0.18],
+          metalico=0.5, nome_cor=PRETO)
+    caixa("guava_precision", "Spinel Precision", "SPINEL PRECISION",
+          "Caixa estreita preta com brilho (purpurina cinza-chumbo), 60 x 112 x 32 mm, letras azuis; botões pretos VOLUME e "
+          "DRIVE grandes no alto, AGUDO (BRIGHT, fixo) e ATAQUE menores embaixo deles, o ajuste pequeno do GATE no meio com o LED "
+          "azul do gate e o LED azul de ligado acima do pisante. Tema: espinélio negro lapidado, facetas tom sobre tom. "
+          "Original: Horizon Devices Precision Drive.", "aprox. 60 x 112 mm, caixa 1590B (o fabricante não publica)",
+          (60, 112, 32), "#24272C", "#3A8EE8",
+          [k("nivel", "VOLUME", (-0.5, 0.74)), k("ganho", "DRIVE", (0.5, 0.74)), fixo("brilho", "AGUDO", (-0.62, 0.42), escala=0.62),
+           k("tom", "ATAQUE", (0.62, 0.42), escala=0.62)],
+          estilo(diam=0.015, alt=0.012), led=[0.0, -0.36], led_cor=lin("#0A1E6A"), textura="purpurina", metalico=0.4,
+          pecas=[{"tipo": "trimpot", "pos": [0.0, 0.5], "rotulo": "GATE"}, {"tipo": "led", "pos": [0.0, 0.3], "cor": lin("#0A1E6A")}])
+    caixa("honeydew_drive", "Honeydew Drive", "HONEYDEW DRIVE",
+          "Caixa estreita verde-água claro (o lote Surf Green), 60 x 112 x 32 mm, letras azul-marinho; botões pretos VOLUME e "
+          "GANHO no alto, GRAVE (fixo) e AGUDO embaixo, minichave de clipagem no meio, LED acima do pisante. Tema: melão "
+          "honeydew verde-claro, listras tom sobre tom. Original: Paul Cochrane Timmy.",
+          "aprox. 60 x 112 mm, caixa 1590B (sem página oficial)", (60, 112, 32), "#8CCDB0", "#1A2A5A",
+          [k("nivel", "VOLUME", (-0.52, 0.74)), k("ganho", "GANHO", (0.52, 0.74)), fixo("grave", "GRAVE", (-0.52, 0.36), escala=0.8),
+           k("tom", "AGUDO", (0.52, 0.36), escala=0.8)],
+          estilo(diam=0.015, alt=0.012), led=[0.0, -0.36], pecas=[{"tipo": "minichave", "pos": [0.0, 0.56]}])
+    caixa("peach_glory", "Amber Glory", "AMBER GLORY",
+          "Caixa dourada envelhecida, latão escovado (66 x 122 x 41 mm), letras pretas; botões brancos VOLUME e DRIVE no alto e "
+          "TOM embaixo à direita, minichave GANHO à esquerda, LED azul ao lado do pisante. Tema: âmbar dourado com uma folha "
+          "presa, pontos tom sobre tom. Original: JHS Morning Glory.", "66 x 122 x 41 mm (JHS, ficha oficial)", (66, 122, 41),
+          "#B49A54", PRETO,
+          [k("nivel", "VOLUME", (-0.5, 0.74)), k("ganho", "DRIVE", (0.5, 0.74)), k("tom", "TOM", (0.5, 0.4))],
+          estilo(diam=0.016, alt=0.013, corpo="#F2F0EA", traco="#141414"), led=[0.62, -0.74], led_cor=lin("#0A1E6A"),
+          metalico=0.55, aspereza=0.4, pisante_y=-0.74, logo_y=-0.42,
+          pecas=[{"tipo": "minichave", "pos": [-0.5, 0.42], "rotulo": "GANHO", "rotulo_pos": "baixo"}])
+    caixa("raspberry_drive", "Raspberry Drive", "RASPBERRY DRIVE",
+          "Caixa estreita vermelha (56 x 122 x 41 mm), letras pretas; botões pretos VOLUME e DRIVE no alto com a minichave de 3 "
+          "posições entre eles, TOM (EQ), AR (fixo) e REFORÇO (fixo) menores na segunda fileira, dois pisantes (drive e "
+          "reforço) com um LED vermelho cada. Tema: framboesa no lugar do @ do meio, framboesas tom sobre tom. Original: JHS "
+          "Andy Timmons (AT).", "56 x 122 x 41 mm (JHS, ficha oficial)", (56, 122, 41), "#D21E26", PRETO,
+          [k("nivel", "VOLUME", (-0.56, 0.76), escala=0.9), k("ganho", "DRIVE", (0.56, 0.76), escala=0.9),
+           k("tom", "TOM", (-0.62, 0.42), escala=0.72), fixo("ar", "AR", (0.0, 0.42), escala=0.72),
+           fixo("reforco", "REFORÇO", (0.62, 0.42), escala=0.72)],
+          estilo(diam=0.015, alt=0.012), led=[-0.5, -0.55], logo_y=-0.98, logo_m=0.0001, pisante={"pos": [-0.5, -0.76]},
+          modelo_oculto=True,
+          pecas=[{"tipo": "minichave", "pos": [0.0, 0.8]}, {"tipo": "pisante", "pos": [0.5, -0.76]},
+                 {"tipo": "led", "pos": [0.5, -0.55]}])
+    caixa("gooseberry_g3", "Charoite G3", "CHAROITE G3",
+          "Caixa roxa (70 x 119 x 32 mm), letras brancas, entradas no alto; GRAVE e MÉDIO (fixos) e AGUDO na fileira de cima, "
+          "VOLUME e GANHO embaixo com a minichave AGRESSÃO entre eles, LED acima do pisante. Tema: charoíta roxa com redemoinhos "
+          "lilás, facetas tom sobre tom. Original: Revv G3.", "70 x 119 x 32 mm (Revv, ficha oficial)", (70, 119, 32),
+          "#6A2CB0", BRANCO,
+          [fixo("grave", "GRAVE", (-0.58, 0.76), escala=0.8), fixo("medio", "MÉDIO", (0.0, 0.76), escala=0.8),
+           k("tom", "AGUDO", (0.58, 0.76), escala=0.8), k("nivel", "VOLUME", (-0.58, 0.4), escala=0.8),
+           k("ganho", "GANHO", (0.58, 0.4), escala=0.8)],
+          estilo(diam=0.014, alt=0.012, tampa="#C8C8CC"), led=[0.0, -0.36], jacks_topo=True, metalico=0.3,
+          pecas=[{"tipo": "minichave", "pos": [0.0, 0.42], "rotulo": "AGRESSÃO", "rotulo_pos": "baixo"}])
+    caixa("nectarine_od", "Jamun OD", "JAMUN OD",
+          "Caixa estreita preta (64 x 112 x 38 mm) com filete creme na borda e a faixa creme do nome, letras creme; botões "
+          "pretos em duas fileiras: GRAVE (fixo), AGUDO e PRESENÇA (fixo) em cima, VOLUME, GANHO e TIGHT (fixo) embaixo; LED "
+          "acima do pisante. Tema: jamelão (frutinhas roxo-escuras) e pontos tom sobre tom. Original: Friedman BE-OD.",
+          "aprox. 64 x 112 mm (o fabricante não publica)", (64, 112, 38), "#141414", "#E8D9A8",
+          [fixo("grave", "GRAVE", (-0.6, 0.8), escala=0.85), k("tom", "AGUDO", (0.0, 0.8), escala=0.85),
+           fixo("presenca", "PRESENÇA", (0.6, 0.8), escala=0.85), k("nivel", "VOLUME", (-0.6, 0.44), escala=0.85),
+           k("ganho", "GANHO", (0.0, 0.44), escala=0.85), fixo("tight", "TIGHT", (0.6, 0.44), escala=0.85)],
+          estilo(diam=0.015, alt=0.013), led=[0.0, -0.38], nome_cor=PRETO, logo_y=0.02, logo_m=0.0095,
+          paineis=moldura(64, 112, "#E8D9A8", "#141414", fio=0.0010) +
+          [{"pos": [0.0, 0.02], "tam_m": [0.05, 0.013], "cor": lin("#E8D9A8"), "raio_m": 0.001}])
+    caixa("mangosteen_fuzz", "Moonstone Fuzz", "MOONSTONE FUZZ",
+          "Caixa de alumínio prateado escovado (64 x 121 x 38 mm), letras e desenho roxos, entradas no alto; botões pretos "
+          "VOLUME (esq.), SUSTAIN (no alto, no meio) e TOM (dir.), LED acima do pisante. Tema: pedra-da-lua branca com brilho "
+          "azul, desenhada em roxo. Original: EarthQuaker Devices Hizumitas.", "64 x 121 x 57 mm com botões (EarthQuaker, ficha "
+          "oficial)", (64, 121, 38), "#C8CBD0", "#6A3EB0",
+          [k("nivel", "VOLUME", (-0.6, 0.52)), k("ganho", "SUSTAIN", (0.0, 0.76)), k("tom", "TOM", (0.6, 0.52))],
+          estilo(diam=0.015, alt=0.013), led=[0.0, -0.4], metalico=0.85, aspereza=0.35, jacks_topo=True, logo_y=-0.9)
+    caixa("grapefruit_drive", "Peridot Drive", "PERIDOT DRIVE",
+          "Caixa verde-oliva (64 x 121 x 38 mm) com painel amarelo-mostarda no alto, entradas no alto; no painel, botões pretos "
+          "NÍVEL, TOM (no meio, mais baixo) e GANHO e a minichave MODO 1|2|3 no meio, letras verdes; LED acima do pisante. "
+          "Tema: peridoto lapidado verde-oliva, círculos tom sobre tom. Original: EarthQuaker Devices Plumes.",
+          "64 x 121 x 57 mm com botões (EarthQuaker, ficha oficial)", (64, 121, 38), "#5C7828", "#D8B42E",
+          [k("nivel", "NÍVEL", (-0.62, 0.62), rotulo_cor=lin("#3E5418")), k("tom", "TOM", (0.0, 0.42), rotulo_cor=lin("#3E5418")),
+           k("ganho", "GANHO", (0.62, 0.62), rotulo_cor=lin("#3E5418"))],
+          estilo(diam=0.015, alt=0.013), led=[-0.5, -0.66], jacks_topo=True, logo_y=-0.9,
+          paineis=[{"pos": [0.0, 0.6], "tam_m": [0.058, 0.046], "cor": lin("#D8B42E"), "raio_m": 0.002}],
+          pecas=[{"tipo": "minichave", "pos": [0.0, 0.76], "rotulo": "MODO", "rotulo_cor": lin("#3E5418")}])
+    caixa("pitanga_250", "Topaz 250", "TOPAZ 250",
+          "Caixa amarela (67 x 119 x 40 mm), letras pretas; botões pretos GANHO e NÍVEL no alto, LED azul entre eles, listras "
+          "pretas verticais embaixo, atrás do pisante. Tema: topázio amarelo lapidado, facetas tom sobre tom. Original: DOD "
+          "Overdrive Preamp 250.", "67 x 119 x 57 mm com botões (DOD, ficha oficial)", (67, 119, 40), "#F2D01C", PRETO,
+          [k("ganho", "GANHO", (-0.5, 0.7), rotulo_pos="cima"), k("nivel", "NÍVEL", (0.5, 0.7), rotulo_pos="cima")],
+          estilo(diam=0.018, alt=0.014, tampa="#C8C8C8"), led=[0.0, 0.7], led_cor=lin("#0A1E6A"), transformacao="Standard",
+          logo_y=0.05, logo_m=0.011, pisante_y=-0.66,
+          paineis=[{"pos": [x, -0.66], "tam_m": [0.0022, 0.03], "cor": lin(PRETO)} for x in
+                   (-0.86, -0.74, -0.62, -0.5, -0.38, 0.38, 0.5, 0.62, 0.74, 0.86)])
+
+
+LOTES = {"a": lote_a, "b": lote_b}
 if __name__ == "__main__":
     for a in sys.argv[1:]:
         if a == "acerola_eq":

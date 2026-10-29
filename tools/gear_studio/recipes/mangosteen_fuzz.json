@@ -1,51 +1,42 @@
 {
   "tipo": "pedal",
-  "nome": "Mangosteen Fuzz",
+  "nome": "Moonstone Fuzz",
   "familia": "mangosteen_fuzz",
-  "inspiracao": "preto com desenho colorido e letras japonesas, caixa média (estilo EarthQuaker Hizumitas)",
+  "inspiracao": "Caixa de alumínio prateado escovado (64 x 121 x 38 mm), letras e desenho roxos, entradas no alto; botões pretos VOLUME (esq.), SUSTAIN (no alto, no meio) e TOM (dir.), LED acima do pisante. Tema: pedra-da-lua branca com brilho azul, desenhada em roxo. Original: EarthQuaker Devices Hizumitas.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.064,
+    "comprimento": 0.121,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0707,
-      0.0014,
-      0.0474
+      0.586,
+      0.6055,
+      0.6388
     ],
-    "metalico": 0.2,
-    "aspereza": 0.26
+    "metalico": 0.85,
+    "aspereza": 0.35
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.145,
+    0.0446,
+    0.4423
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "MANGOSTEEN FUZZ",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "MOONSTONE FUZZ",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.015,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -53,41 +44,50 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
-      ],
-      "escala": 1.1
+        -0.6,
+        0.52
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "SUSTAIN",
       "pos": [
         0.0,
-        0.55
-      ],
-      "escala": 1.1
+        0.76
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.58,
-        0.55
-      ],
-      "escala": 1.1
+        0.6,
+        0.52
+      ]
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/mangosteen_fuzz.svg"
+  },
+  "medidas_fonte": "64 x 121 x 57 mm com botões (EarthQuaker, ficha oficial)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.36,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.9,
+  "logo_m": 0.0085,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/mangosteen_fuzz.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.145,
+    0.0446,
+    0.4423
+  ],
+  "led": [
+    0.0,
+    -0.4
+  ],
+  "jacks_topo": true
 }

@@ -1,51 +1,42 @@
 {
   "tipo": "pedal",
-  "nome": "Pear Gate",
+  "nome": "Marcasite Gate",
   "familia": "pear_gate",
-  "inspiracao": "noise gate de caixinha branca de três botões (estilo MXR)",
+  "inspiracao": "Caixa MXR prateada, cinza-claro metálico (62 x 111 x 32 mm), letras pretas e contorno preto em volta do painel; um botão preto grande SENSIBILIDADE (TRIGGER LEVEL), botão de apertar da faixa alta à esquerda no alto, chave de 3 posições de corte de ruído à direita, LED amarelo do gate e LED vermelho acima do pisante; ATAQUE e RELEASE, que o original não tem, ficam pequenos nos cantos de baixo. Tema: cristais de marcassita (cubos prateados) e facetas tom sobre tom. Original: MXR Smart Gate.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.064,
-    "comprimento": 0.112,
-    "altura": 0.034
+    "largura": 0.062,
+    "comprimento": 0.111,
+    "altura": 0.032
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.6941,
-      0.7519,
-      0.212
+      0.5295,
+      0.548,
+      0.5605
     ],
-    "metalico": 0.0,
-    "aspereza": 0.3
+    "metalico": 0.6,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.009,
-    0.0135,
-    0.0023
+    0.0037,
+    0.0037,
+    0.0037
   ],
-  "texto_cor2": [
-    0.009,
-    0.0135,
-    0.0023
-  ],
-  "modelo": "PEAR GATE",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "MARCASITE GATE",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.0125,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
@@ -54,41 +45,120 @@
       "rotulo": "SENSIBILIDADE",
       "pos": [
         0.0,
-        0.5
+        0.6
       ],
-      "escala": 1.45
+      "escala": 1.15
     },
     {
       "id": "b",
       "rotulo": "ATAQUE",
       "pos": [
-        -0.62,
-        0.84
+        -0.72,
+        -0.5
       ],
-      "escala": 0.78
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     },
     {
       "id": "c",
       "rotulo": "RELEASE",
       "pos": [
-        0.62,
-        0.84
+        0.72,
+        -0.5
       ],
-      "escala": 0.78
+      "escala": 0.5,
+      "rotulo_m": 0.0026
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
+  "estampa": {
+    "svg": "estampas/pear_gate.svg"
+  },
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.24,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": -0.86,
+  "logo_m": 0.0075,
+  "pisante_y": -0.6,
   "rotulo_embaixo": true,
-  "medidas_fonte": "caixa 1590B (MXR): 64 x 112 x 31 mm",
-  "estampa": {
-    "svg": "estampas/pear_gate.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.055,
+        0.104
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "raio_m": 0.002,
+      "fundo": true
+    },
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.0526,
+        0.1016
+      ],
+      "cor": [
+        0.5295,
+        0.548,
+        0.5605
+      ],
+      "raio_m": 0.0012,
+      "fundo": true
+    }
+  ],
+  "pecas": [
+    {
+      "tipo": "apertar",
+      "pos": [
+        -0.62,
+        0.88
+      ],
+      "diam_m": 0.005,
+      "rotulo": "ALTO",
+      "rotulo_pos": "baixo"
+    },
+    {
+      "tipo": "minichave",
+      "pos": [
+        0.68,
+        0.62
+      ]
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        0.62,
+        0.9
+      ],
+      "cor": [
+        0.145,
+        0.0824,
+        0.0
+      ]
+    }
+  ]
 }

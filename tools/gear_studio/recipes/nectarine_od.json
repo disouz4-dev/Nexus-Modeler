@@ -1,93 +1,177 @@
 {
   "tipo": "pedal",
-  "nome": "Nectarine OD",
+  "nome": "Jamun OD",
   "familia": "nectarine_od",
-  "inspiracao": "preto com letras brancas e detalhes dourados, caixa média (estilo Friedman BE-OD)",
+  "inspiracao": "Caixa estreita preta (64 x 112 x 38 mm) com filete creme na borda e a faixa creme do nome, letras creme; botões pretos em duas fileiras: GRAVE (fixo), AGUDO e PRESENÇA (fixo) em cima, VOLUME, GANHO e TIGHT (fixo) embaixo; LED acima do pisante. Tema: jamelão (frutinhas roxo-escuras) e pontos tom sobre tom. Original: Friedman BE-OD.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.094,
-    "comprimento": 0.12,
-    "altura": 0.042
+    "largura": 0.064,
+    "comprimento": 0.112,
+    "altura": 0.038
   },
-  "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.7931,
-      0.0932,
-      0.029
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.0,
+    "aspereza": 0.28
   },
   "texto_cor": [
-    0.93,
-    0.93,
-    0.91
+    0.8122,
+    0.7012,
+    0.3993
   ],
-  "texto_cor2": [
-    0.93,
-    0.93,
-    0.91
-  ],
-  "modelo": "NECTARINE OD",
-  "logo_y": -0.367,
-  "tipo_texto": "",
-  "pisante_y": -0.667,
-  "rotulo_m": 0.0034,
+  "modelo": "JAMUN OD",
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.015,
+    "altura_m": 0.013,
+    "saia": false,
     "corpo": [
-      0.012,
-      0.012,
-      0.012
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
+      "id": "fixo_grave",
+      "rotulo": "GRAVE",
+      "pos": [
+        -0.6,
+        0.8
+      ],
+      "fixo": true,
+      "escala": 0.85
+    },
+    {
+      "id": "tom",
+      "rotulo": "AGUDO",
+      "pos": [
+        0.0,
+        0.8
+      ],
+      "escala": 0.85
+    },
+    {
+      "id": "fixo_presenca",
+      "rotulo": "PRESENÇA",
+      "pos": [
+        0.6,
+        0.8
+      ],
+      "fixo": true,
+      "escala": 0.85
+    },
+    {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.55
+        -0.6,
+        0.44
       ],
-      "escala": 1.1
+      "escala": 0.85
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
         0.0,
-        0.55
+        0.44
       ],
-      "escala": 1.1
+      "escala": 0.85
     },
     {
-      "id": "tom",
-      "rotulo": "AGUDO",
+      "id": "fixo_tight",
+      "rotulo": "TIGHT",
       "pos": [
-        0.58,
-        0.55
+        0.6,
+        0.44
       ],
-      "escala": 1.1
+      "fixo": true,
+      "escala": 0.85
     }
   ],
-  "led": [
-    0.0,
-    0.84
-  ],
+  "estampa": {
+    "svg": "estampas/nectarine_od.svg"
+  },
+  "medidas_fonte": "aprox. 64 x 112 mm (o fabricante não publica)",
   "quadro": {
-    "largura_rel": 2.0,
+    "largura_rel": 2.19,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
+  "chanfro_m": 0.004,
+  "logo_y": 0.02,
+  "logo_m": 0.0095,
+  "pisante_y": -0.62,
   "rotulo_embaixo": true,
-  "estampa": {
-    "svg": "estampas/nectarine_od.svg"
-  }
+  "rotulo_m": 0.004,
+  "texto_cor2": [
+    0.0037,
+    0.0037,
+    0.0037
+  ],
+  "led": [
+    0.0,
+    -0.38
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.057,
+        0.105
+      ],
+      "cor": [
+        0.8122,
+        0.7012,
+        0.3993
+      ],
+      "raio_m": 0.002,
+      "fundo": true
+    },
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.055,
+        0.103
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "raio_m": 0.0012,
+      "fundo": true
+    },
+    {
+      "pos": [
+        0.0,
+        0.02
+      ],
+      "tam_m": [
+        0.05,
+        0.013
+      ],
+      "cor": [
+        0.8122,
+        0.7012,
+        0.3993
+      ],
+      "raio_m": 0.001
+    }
+  ]
 }
