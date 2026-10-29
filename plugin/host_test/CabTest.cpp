@@ -580,14 +580,23 @@ int main(int argc, char** argv)
     }
 
     // Tap tempo: quatro toques a cada 0,5 s = 120 BPM; um toque pisado pela pedaleira também conta.
+    // O sleep atrasa em máquina carregada (a do GitHub chega a 570 ms), então o
+    // andamento esperado sai do intervalo medido entre o primeiro e o último toque.
+    double firstTap = 0.0, lastTap = 0.0;
     for (int t = 0; t < 4; ++t)
     {
       auto* tapParam = p.params.getParameter("tap");
+      lastTap = juce::Time::getMillisecondCounterHiRes();
+      if (t == 0)
+        firstTap = lastTap;
       tapParam->setValueNotifyingHost(tapParam->getValue() > 0.5f ? 0.0f : 1.0f);
-      juce::Thread::sleep(500);
+      if (t < 3)
+        juce::Thread::sleep(500);
     }
-    report(std::abs(p.tempoBpm() - 120.0) < 3.0, "Tap tempo: quatro toques a cada meio segundo dão 120 BPM",
-           juce::String(p.tempoBpm(), 1) + " BPM");
+    const double expectedBpm = 60000.0 / ((lastTap - firstTap) / 3.0);
+    report(std::abs(p.tempoBpm() - expectedBpm) < 3.0 && std::abs(expectedBpm - 120.0) < 25.0,
+           "Tap tempo: quatro toques a cada meio segundo dão 120 BPM",
+           juce::String(p.tempoBpm(), 1) + " BPM (toques medidos: " + juce::String(expectedBpm, 1) + " BPM)");
     report(std::abs(NexusProcessor::divisionBeats(NexusProcessor::divisionFor(5.0f)) * 60.0 / 120.0 - 1.0 / 3.0) < 1e-6
              && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(0.0f))) == "1/1"
              && juce::String(NexusProcessor::divisionName(NexusProcessor::divisionFor(10.0f))) == "1/32",
