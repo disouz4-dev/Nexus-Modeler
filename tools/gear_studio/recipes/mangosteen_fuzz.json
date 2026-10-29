@@ -12,27 +12,27 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.03,
-      0.02,
-      0.04
+      0.0707,
+      0.0014,
+      0.0474
     ],
     "metalico": 0.2,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.9,
-    0.5,
-    0.75
+    0.93,
+    0.93,
+    0.91
   ],
   "texto_cor2": [
-    0.9,
-    0.5,
-    0.75
+    0.93,
+    0.93,
+    0.91
   ],
   "modelo": "MANGOSTEEN FUZZ",
-  "logo_y": -0.12,
-  "tipo_texto": "FUZZ",
-  "pisante_y": -0.6,
+  "logo_y": -0.367,
+  "tipo_texto": "",
+  "pisante_y": -0.667,
   "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
@@ -79,12 +79,15 @@
   ],
   "led": [
     0.0,
-    0.08
+    0.84
   ],
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "estampa": {
+    "svg": "estampas/mangosteen_fuzz.svg"
+  }
 }

@@ -93,6 +93,67 @@ const char* nomeDe(Type t)
     default: return "?";
   }
 }
+
+// Equalizador gráfico (Acerola EQ): o tom de hz passa com os botões e o nível
+// dados; devolve o ganho em dB do tom depois que tudo assentou.
+double ganhoEq(const nexus::NativePedal::Knobs& k, double nivel, double hz)
+{
+  nexus::NativePedal p;
+  p.prepare(kRate, kBlock);
+  std::vector<double> x(static_cast<size_t>(1.0 * kRate));
+  for (size_t i = 0; i < x.size(); ++i)
+    x[i] = 0.1 * std::sin(2.0 * kPi * hz * static_cast<double>(i) / kRate);
+  for (size_t i = 0; i < x.size(); i += kBlock)
+    p.process(Type::geq, true, x.data() + i, static_cast<int>(std::min<size_t>(kBlock, x.size() - i)), k, nivel);
+  const size_t from = static_cast<size_t>(0.5 * kRate);
+  return 20.0 * std::log10(energia(x, from, x.size(), hz) / 0.1);
+}
+
+void testaEq()
+{
+  std::printf("geq\n");
+  const nexus::NativePedal::Knobs plano{0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+  // 1. Tudo no meio: o som passa intacto (guitarra entra e sai igual).
+  {
+    nexus::NativePedal p;
+    p.prepare(kRate, kBlock);
+    const auto seco = guitarra(2.0, 0.5);
+    auto x = seco;
+    for (size_t i = 0; i < x.size(); i += kBlock)
+      p.process(Type::geq, true, x.data() + i, static_cast<int>(std::min<size_t>(kBlock, x.size() - i)), plano, 0.5);
+    double dif = 0.0;
+    for (size_t i = 0; i < x.size(); ++i)
+      dif = std::max(dif, std::abs(x[i] - seco[i]));
+    confere(dif < 1e-9, "tudo no meio: transparente (maior diferenca)", "%g", dif);
+  }
+  // 2. 800 Hz no máximo (+15 dB): o tom de 800 Hz sobe ~15 dB; 100 Hz e
+  // 6,4 kHz quase não mudam.
+  auto k800 = plano;
+  k800[3] = 1.0;
+  const double g800 = ganhoEq(k800, 0.5, 800.0);
+  confere(std::abs(g800 - 15.0) < 0.5, "800 Hz em +15 dB: ganho em 800 Hz (dB)", "%.2f", g800);
+  const double g100 = ganhoEq(k800, 0.5, 100.0);
+  confere(std::abs(g100) < 1.0, "800 Hz em +15 dB: ganho em 100 Hz (dB)", "%.2f", g100);
+  const double g6k = ganhoEq(k800, 0.5, 6400.0);
+  confere(std::abs(g6k) < 1.0, "800 Hz em +15 dB: ganho em 6,4 kHz (dB)", "%.2f", g6k);
+  // Corte também: 800 Hz no mínimo tira ~15 dB.
+  auto k800c = plano;
+  k800c[3] = 0.0;
+  const double c800 = ganhoEq(k800c, 0.5, 800.0);
+  confere(std::abs(c800 + 15.0) < 0.5, "800 Hz em -15 dB: ganho em 800 Hz (dB)", "%.2f", c800);
+  // 3. Prateleira de 6,4 kHz: reforça o agudo e deixa o grave.
+  auto kAgudo = plano;
+  kAgudo[6] = 1.0;
+  const double a10k = ganhoEq(kAgudo, 0.5, 12000.0);
+  confere(a10k > 13.0 && a10k < 15.5, "6,4 kHz em +15 dB: ganho em 12 kHz (dB)", "%.2f", a10k);
+  const double a100 = ganhoEq(kAgudo, 0.5, 100.0);
+  confere(std::abs(a100) < 0.5, "6,4 kHz em +15 dB: ganho em 100 Hz (dB)", "%.2f", a100);
+  // 4. Nível: +15 dB e -15 dB com as faixas planas.
+  const double nMais = ganhoEq(plano, 1.0, 1000.0);
+  confere(std::abs(nMais - 15.0) < 0.1, "nivel no maximo: ganho (dB)", "%.2f", nMais);
+  const double nMenos = ganhoEq(plano, 0.0, 1000.0);
+  confere(std::abs(nMenos + 15.0) < 0.1, "nivel no minimo: ganho (dB)", "%.2f", nMenos);
+}
 } // namespace
 
 int main()
@@ -313,6 +374,7 @@ int main()
       confere(hi / lo > 1.4, "corneta: balanco de volume (dB)", "%.1f", 20.0 * std::log10(hi / lo));
     }
   }
+  testaEq();
   std::printf(gFalhas == 0 ? "\ntudo certo\n" : "\n%d falha(s)\n", gFalhas);
   return gFalhas == 0 ? 0 : 1;
 }

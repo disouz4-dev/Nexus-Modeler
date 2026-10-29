@@ -81,7 +81,11 @@
   "rotulo_embaixo": true,
   "led_no_basculante": true,
   "medidas_fonte": "BOSS SD-1: 73 x 129 x 59 mm",
-  "modelo_m": 0.0058,
+  "modelo_m": 0.0085,
   "modelo_x": 0.12,
-  "transformacao": "Standard"
+  "transformacao": "Standard",
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/banana_overdrive.svg"
+  }
 }

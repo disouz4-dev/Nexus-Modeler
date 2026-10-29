@@ -32,9 +32,9 @@
   "modelo": "Gold Centaur",
   "logo_script": true,
   "logo_m": 0.019,
-  "logo_y": -0.12,
+  "logo_y": -0.367,
   "tipo_texto": "",
-  "pisante_y": -0.58,
+  "pisante_y": -0.667,
   "botao_estilo": {
     "diametro_m": 0.017,
     "altura_m": 0.013,
@@ -83,7 +83,7 @@
   ],
   "led": [
     0.0,
-    0.14
+    0.84
   ],
   "quadro": {
     "largura_rel": 1.6,
@@ -91,5 +91,8 @@
     "elevacao": 90.0
   },
   "rotulo_embaixo": true,
-  "medidas_fonte": "formato Klon: 94 x 119 x 51 mm (4,7 x 3,7 pol.)"
+  "medidas_fonte": "formato Klon: 94 x 119 x 51 mm (4,7 x 3,7 pol.)",
+  "estampa": {
+    "svg": "estampas/gold_centaur.svg"
+  }
 }

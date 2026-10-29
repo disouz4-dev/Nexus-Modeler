@@ -47,7 +47,7 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 
 | Nome no Nexus | Inspirado em | Tipo | Situação |
 |---|---|---|---|
-| Blueberry Chorus | Boss CE-2 | chorus | pronto |
+| Neptune Chorus | Boss CE-2 | chorus | pronto |
 | Coconut Delay | Boss DD-3 | delay | pronto |
 | Grape Reverb | Boss RV-6 | reverb | pronto |
 | Peach Phaser | MXR Phase 90 | phaser | planejado |
@@ -55,7 +55,8 @@ Modulação, tempo e utilidades não se capturam bem; o Nexus gera o som.
 | Melon Tremolo | Boss TR-2 | tremolo | planejado |
 | Apple Comp | MXR Dyna Comp | compressor | planejado |
 | Pear Gate | MXR Smart Gate (caixinha branca) | redutor de ruído: sensibilidade, ataque e release | pronto |
-| Mango Wah | Dunlop Cry Baby | wah | planejado |
+| Comet Wah | Dunlop Cry Baby | wah | planejado |
+| Acerola EQ | Boss GE-7 | equalizador gráfico: 7 faixas (100 Hz a 6,4 kHz, cada uma de -15 a +15 dB) e nível | pronto |
 
 ## Caixas
 
@@ -162,17 +163,17 @@ Escolhidas pelo uso na TONE3000 e pela fama do original. Para algo mais específ
 | Lychee Bass Fuzz | Electro-Harmonix Bass Big Muff |
 | Cupuaçu Hammer | Aguilar Tone Hammer |
 | Graviola Bass DI | MXR M80 Bass DI |
-| Acerola EQ | Boss GE-7 Equalizer |
 
 ### Pedais nativos
 
 | Nome no Nexus | Inspirado em |
 |---|---|
-| Mango Wah | Dunlop Cry Baby |
-| Watermelon Rotary | Leslie (caixa rotativa) |
-| Maracujá Echo | Electro-Harmonix Memory Man |
-| Rambutan Octave | Boss OC-2 |
+| Comet Wah | Dunlop Cry Baby |
+| Saturn Rotary | Leslie (caixa rotativa) |
+| Pulsar Echo | Electro-Harmonix Memory Man |
+| Jupiter Octave | Boss OC-2 |
 | Apple Comp | MXR Dyna Comp |
+| Acerola EQ | Boss GE-7 (equalizador gráfico de 7 faixas, de 100 Hz a 6,4 kHz, cada uma de -15 a +15 dB, e o nível) |
 
 ### Caixas
 

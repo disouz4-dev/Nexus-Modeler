@@ -20,11 +20,11 @@ constexpr int kPathHeight = 176;
 constexpr int kTitleHeight = 112;
 
 const char* const kPedalPrefixes[NexusEditor::kPedalLooks] = {"lemon_drive", "orange_drive", "banana_overdrive", "gold_centaur",
-                                                               "blueberry_chorus", "coconut_delay", "grape_reverb", "pear_gate",
-                                                               "cherry_drop", "tangerine_phaser", "dragonfruit_flanger", "kiwi_tremolo",
-                                                               "blackberry_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
+                                                               "neptune_chorus", "coconut_delay", "grape_reverb", "pear_gate",
+                                                               "cherry_drop", "mars_phaser", "nebula_flanger", "moon_tremolo",
+                                                               "eclipse_vibe", "acai_rat", "jabuticaba_buzzsaw", "lychee_fuzz",
                                                                "avocado_metal", "pomegranate_mud", "snowpear_treble",
-                                                               "olive_drive", "pistachio_drive", "blueberry_blues", "apricot_overdrive", "clementine_turbo", "cherry_fuzz", "fig_bender", "kiwi_drive", "quince_plus", "starfruit_rock", "tamarind_amp", "blackcurrant_bass", "mulberry_omega", "guava_precision", "peach_glory", "raspberry_drive", "honeydew_drive", "pineapple_king", "cashew_boost", "papaya_grind", "persimmon_33", "strawberry_5150", "gooseberry_g3", "nectarine_od", "cranberry_wylde", "kumquat_klone", "elderberry_war", "mangosteen_fuzz", "grapefruit_drive", "jackfruit_monkey", "pitanga_250", "lychee_bassfuzz", "cupuacu_hammer", "graviola_bassdi", "acerola_eq", "mango_wah", "watermelon_rotary", "maracuja_echo", "rambutan_octave", "apple_comp"};
+                                                               "olive_drive", "pistachio_drive", "blueberry_blues", "apricot_overdrive", "clementine_turbo", "cherry_fuzz", "fig_bender", "kiwi_drive", "quince_plus", "starfruit_rock", "tamarind_amp", "blackcurrant_bass", "mulberry_omega", "guava_precision", "peach_glory", "raspberry_drive", "honeydew_drive", "pineapple_king", "cashew_boost", "papaya_grind", "persimmon_33", "strawberry_5150", "gooseberry_g3", "nectarine_od", "cranberry_wylde", "kumquat_klone", "elderberry_war", "mangosteen_fuzz", "grapefruit_drive", "jackfruit_monkey", "pitanga_250", "lychee_bassfuzz", "cupuacu_hammer", "graviola_bassdi", "acerola_eq", "comet_wah", "saturn_rotary", "pulsar_echo", "jupiter_octave", "apple_comp"};
 // Cabeçotes, na ordem do parâmetro "cabecote".
 const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5", "block5150", "recto_dual", "sl100", "be100",
                                                              "topboost30", "match30", "tiny15", "rocker50", "recto_triple", "power100", "uber100", "sonic60", "silvertwin", "tweed59", "britplexi", "britjubilee", "jazz120", "vault300",
@@ -163,6 +163,13 @@ juce::String nativeKnobLabel(int look, const juce::String& id)
   static const char* const flanger[3] = {"Velocidade", "Profundidade", "Realimentação"};
   static const char* const tremolo[3] = {"Velocidade", "Profundidade", "Forma"};
   static const char* const vibe[3] = {"Velocidade", "Intensidade", "Mistura"};
+  // Equalizador gráfico: "a" a "g" são as sete faixas, do grave ao agudo.
+  if (NexusProcessor::pedalKind(look) == K::geq)
+  {
+    static const char* const bands[7] = {"100 Hz", "200 Hz", "400 Hz", "800 Hz", "1,6 kHz", "3,2 kHz", "6,4 kHz"};
+    const int band = id.length() == 1 ? id[0] - 'a' : -1;
+    return band >= 0 && band < 7 ? juce::String(bands[band]) : juce::String();
+  }
   switch (NexusProcessor::pedalKind(look))
   {
     case K::delay: names = delay; break;
@@ -289,7 +296,7 @@ void NexusEditor::GearStage::setTarget(int index, const GearArt* art, bool rebui
         // No pedal, o botão que troca as capturas é o drive; nos efeitos do
         // Nexus, os botões "a", "b" e "c" mudam de nome conforme o efeito.
         auto label = mKind == Kind::pedal && k.id == "ganho" ? juce::String("Drive") : knobLabel(k.id);
-        if (mKind == Kind::pedal && (k.id == "a" || k.id == "b" || k.id == "c"))
+        if (mKind == Kind::pedal && (k.id == "a" || k.id == "b" || k.id == "c" || k.id == "d" || k.id == "e" || k.id == "f" || k.id == "g"))
           label = nativeKnobLabel(mProcessor.pedalLook(index), k.id);
         auto knob = std::make_unique<FilmKnob>(*param, k, label);
         knob->onChange = [this] { repaint(); };
@@ -1376,15 +1383,15 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Orange Drive", "DS-1", "Drive e distorção", "Captura da TONE3000"},
   {"Banana Overdrive", "SD-1", "Drive e distorção", "Captura da TONE3000"},
   {"Gold Centaur", "Klon Centaur", "Drive e distorção", "Captura da TONE3000"},
-  {"Blueberry Chorus", "CE-2", "Modulação", "Efeito do Nexus"},
+  {"Neptune Chorus", "CE-2", "Modulação", "Efeito do Nexus"},
   {"Coconut Delay", "DD-3", "Delay", "Efeito do Nexus"},
   {"Grape Reverb", "RV-6", "Reverb", "Efeito do Nexus"},
   {"Pear Gate", "MXR Smart Gate", "Utilidades", "Efeito do Nexus"},
   {"Cherry Drop", "DigiTech Drop", "Afinação", "Efeito do Nexus"},
-  {"Tangerine Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
-  {"Dragonfruit Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
-  {"Kiwi Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
-  {"Blackberry Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
+  {"Mars Phaser", "MXR Phase 90", "Modulação", "Efeito do Nexus"},
+  {"Nebula Flanger", "Electric Mistress", "Modulação", "Efeito do Nexus"},
+  {"Moon Tremolo", "TR-2", "Modulação", "Efeito do Nexus"},
+  {"Eclipse Vibe", "Uni-Vibe", "Modulação", "Efeito do Nexus"},
   {"Açaí Rat", "ProCo RAT", "Drive e distorção", "Captura da TONE3000"},
   {"Jabuticaba Buzzsaw", "HM-2", "Drive e distorção", "Captura da TONE3000"},
   {"Lychee Fuzz", "Big Muff", "Drive e distorção", "Captura da TONE3000"},
@@ -1425,11 +1432,11 @@ const PedalInfo kPedalInfo[NexusEditor::kPedalLooks] = {
   {"Lychee Bass Fuzz", "Electro-Harmonix Bass Big Muff", "Drive e distorção", "Captura da TONE3000"},
   {"Cupuaçu Hammer", "Aguilar Tone Hammer", "Drive e distorção", "Captura da TONE3000"},
   {"Graviola Bass DI", "MXR M80 Bass DI", "Drive e distorção", "Captura da TONE3000"},
-  {"Acerola EQ", "Boss GE-7 Equalizer", "Utilidades", "Captura da TONE3000"},
-  {"Mango Wah", "Dunlop Cry Baby", "Modulação", "Efeito do Nexus"},
-  {"Watermelon Rotary", "Leslie (caixa rotativa)", "Modulação", "Efeito do Nexus"},
-  {"Maracujá Echo", "Electro-Harmonix Memory Man", "Delay", "Efeito do Nexus"},
-  {"Rambutan Octave", "Boss OC-2", "Afinação", "Efeito do Nexus"},
+  {"Acerola EQ", "Boss GE-7", "Utilidades", "Efeito do Nexus"},
+  {"Comet Wah", "Dunlop Cry Baby", "Modulação", "Efeito do Nexus"},
+  {"Saturn Rotary", "Leslie (caixa rotativa)", "Modulação", "Efeito do Nexus"},
+  {"Pulsar Echo", "Electro-Harmonix Memory Man", "Delay", "Efeito do Nexus"},
+  {"Jupiter Octave", "Boss OC-2", "Afinação", "Efeito do Nexus"},
   {"Apple Comp", "MXR Dyna Comp", "Utilidades", "Efeito do Nexus"},
 };
 

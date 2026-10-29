@@ -85,6 +85,10 @@
     0.015,
     0.015
   ],
-  "modelo_m": 0.0064,
-  "modelo_x": 0.12
+  "modelo_m": 0.0085,
+  "modelo_x": 0.12,
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/clementine_turbo.svg"
+  }
 }

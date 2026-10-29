@@ -2660,54 +2660,6 @@
       }
     ]
   },
-  "acerola_eq": {
-    "busca": "GE-7",
-    "tons": [
-      {
-        "id": 5007,
-        "titulo": "Boss GE-7 (Creative Uses of an EQ Pedal)",
-        "criador": "markswarbrick",
-        "tipo": "pedal",
-        "capturas": 1,
-        "downloads": 1514,
-        "serie": [],
-        "mapa": {
-          "(Mid Boost)": 5
-        },
-        "pacote": "Médios realçados",
-        "nota": "médios realçados",
-        "padrao": true
-      },
-      {
-        "id": 5007,
-        "titulo": "Boss GE-7 (Creative Uses of an EQ Pedal)",
-        "criador": "markswarbrick",
-        "tipo": "pedal",
-        "capturas": 1,
-        "downloads": 1514,
-        "serie": [],
-        "mapa": {
-          "(Boost of +8dB)": 5
-        },
-        "pacote": "Reforço plano",
-        "nota": "reforço de 8 decibéis com a curva plana"
-      },
-      {
-        "id": 5007,
-        "titulo": "Boss GE-7 (Creative Uses of an EQ Pedal)",
-        "criador": "markswarbrick",
-        "tipo": "pedal",
-        "capturas": 1,
-        "downloads": 1514,
-        "serie": [],
-        "mapa": {
-          "(Metal V use after OD": 5
-        },
-        "pacote": "Médios cavados",
-        "nota": "médios cavados para metal, para usar depois da distorção"
-      }
-    ]
-  },
   "silver_112": {
     "busca": "Deluxe Reverb",
     "tons": [

@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Acerola EQ",
   "familia": "acerola_eq",
-  "inspiracao": "branco com sete controles deslizantes e um de nível, caixa compacta com pedal basculante (estilo Boss GE-7 Equalizer)",
+  "inspiracao": "equalizador gráfico compacto de sete faixas (estilo GE-7)",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -12,17 +12,17 @@
   "basculante_rel": 0.6,
   "pintura": {
     "cor": [
-      0.88,
-      0.88,
-      0.86
+      0.6121,
+      0.0039,
+      0.0039
     ],
     "metalico": 0.0,
     "aspereza": 0.22
   },
   "texto_cor": [
-    0.015,
-    0.015,
-    0.015
+    0.93,
+    0.93,
+    0.91
   ],
   "modelo": "ACEROLA EQ",
   "tipo_texto": "EQUALIZER",
@@ -40,26 +40,14 @@
       0.95,
       0.95,
       0.92
+    ],
+    "cursor": [
+      0.012,
+      0.012,
+      0.012
     ]
   },
-  "botoes": [
-    {
-      "id": "ganho",
-      "rotulo": "EQUALIZAÇÃO",
-      "pos": [
-        -0.45,
-        0.7
-      ]
-    },
-    {
-      "id": "nivel",
-      "rotulo": "NÍVEL",
-      "pos": [
-        0.45,
-        0.7
-      ]
-    }
-  ],
+  "botoes": [],
   "led": [
     -0.72,
     0.06
@@ -73,10 +61,53 @@
   "rotulo_embaixo": true,
   "led_no_basculante": true,
   "texto_cor2": [
-    0.015,
-    0.015,
-    0.015
+    0.93,
+    0.93,
+    0.91
   ],
   "modelo_m": 0.0085,
-  "modelo_x": 0.12
+  "modelo_x": 0.12,
+  "borracha_rel": 0.36,
+  "estampa": {
+    "svg": "estampas/acerola_eq.svg"
+  },
+  "deslizantes": [
+    {
+      "id": "a",
+      "rotulo": "100"
+    },
+    {
+      "id": "b",
+      "rotulo": "200"
+    },
+    {
+      "id": "c",
+      "rotulo": "400"
+    },
+    {
+      "id": "d",
+      "rotulo": "800"
+    },
+    {
+      "id": "e",
+      "rotulo": "1,6K"
+    },
+    {
+      "id": "f",
+      "rotulo": "3,2K"
+    },
+    {
+      "id": "g",
+      "rotulo": "6,4K"
+    },
+    {
+      "id": "nivel",
+      "rotulo": "NÍVEL"
+    }
+  ],
+  "deslizantes_layout": {
+    "y": 0.62,
+    "curso": 0.02,
+    "margem": 0.0075
+  }
 }

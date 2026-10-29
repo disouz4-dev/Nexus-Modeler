@@ -702,6 +702,7 @@ void NativePedal::prepare(double sampleRate, int maxBlock)
   mAnalogDelay.prepare(sampleRate);
   mOctave.prepare(sampleRate);
   mComp.prepare(sampleRate);
+  mGeq.prepare(sampleRate);
   mIn.assign(static_cast<size_t>(maxBlock), 0.0);
   mWet.assign(static_cast<size_t>(maxBlock), 0.0);
   reset();
@@ -722,6 +723,8 @@ void NativePedal::reset()
   mAnalogDelay.reset();
   mOctave.reset();
   mComp.reset();
+  mGeq.reset();
+  mGeqLevelGain = std::pow(10.0, (mGeqLevel - 0.5) * 2.0 * kGeqMaxDb / 20.0);
   mGain = 0.0;
   mMix = 0.0;
   mTail = 0;
@@ -780,6 +783,39 @@ void NoiseGate::process(double* buffer, int n, double sensitivity, double attack
   }
 }
 
+void NativePedal::process(Type type, bool on, double* buffer, int n, const Knobs& knobs, double level)
+{
+  mGeqKnobs = knobs;
+  mGeqLevel = level;
+  process(type, on, buffer, n, knobs[0], knobs[1], knobs[2]);
+}
+
+void NativePedal::processGeq(double* buffer, int n)
+{
+  // Botão em 0,5 = 0 dB; 0 = -15 dB; 1 = +15 dB. O FreeEq anda devagar até
+  // o ganho pedido (sem chiado de degrau) e pula as faixas em 0 dB: tudo no
+  // meio, o som passa intacto.
+  auto toDb = [](double v) { return (std::clamp(v, 0.0, 1.0) - 0.5) * 2.0 * kGeqMaxDb; };
+  FreeEq::Bands bands{};
+  for (int i = 0; i < kGeqBands; ++i)
+  {
+    auto& b = bands[static_cast<size_t>(i)];
+    b.on = true;
+    b.type = i == kGeqBands - 1 ? FreeEq::Type::highShelf : FreeEq::Type::bell;
+    b.freq = kGeqFrequency[i];
+    b.gainDb = toDb(mGeqKnobs[static_cast<size_t>(i)]);
+    b.q = 1.4; // cerca de uma oitava de largura, como no GE-7
+  }
+  mGeq.set(bands);
+  mGeq.process(buffer, n);
+  const double target = std::pow(10.0, toDb(mGeqLevel) / 20.0);
+  for (int i = 0; i < n; ++i)
+  {
+    mGeqLevelGain = smooth(mGeqLevelGain, target, mRate);
+    buffer[i] *= mGeqLevelGain;
+  }
+}
+
 void NativePedal::process(Type type, bool on, double* buffer, int n, double a, double b, double c)
 {
   // Trocar de efeito no meio: começa limpo.
@@ -798,6 +834,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
     mAnalogDelay.reset();
     mOctave.reset();
     mComp.reset();
+    mGeq.reset();
     mLast = type;
   }
   if (on)
@@ -837,6 +874,7 @@ void NativePedal::process(Type type, bool on, double* buffer, int n, double a, d
       case Type::rotary: mRotary.process(mIn.data(), n, a, b, c); break;
       case Type::octave: mOctave.process(mIn.data(), n, a, b, c); break;
       case Type::comp: mComp.process(mIn.data(), n, a, b, c); break;
+      case Type::geq: processGeq(mIn.data(), n); break;
       default: mChorus.process(mIn.data(), n, a, b, c); break;
     }
     for (int i = 0; i < n; ++i)

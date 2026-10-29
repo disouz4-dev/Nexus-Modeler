@@ -82,5 +82,11 @@
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "estampa": {
+    "svg": "estampas/olive_drive.svg"
+  },
+  "logo": {
+    "svg": "estampas/olive_drive_logo.svg"
+  }
 }

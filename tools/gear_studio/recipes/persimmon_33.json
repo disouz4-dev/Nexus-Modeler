@@ -12,27 +12,27 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.015,
-      0.015,
-      0.015
+      0.7931,
+      0.119,
+      0.0039
     ],
     "metalico": 0.2,
     "aspereza": 0.26
   },
   "texto_cor": [
-    0.85,
-    0.08,
-    0.08
+    0.93,
+    0.93,
+    0.91
   ],
   "texto_cor2": [
-    0.85,
-    0.08,
-    0.08
+    0.93,
+    0.93,
+    0.91
   ],
   "modelo": "PERSIMMON 33",
-  "logo_y": -0.12,
-  "tipo_texto": "BOOST",
-  "pisante_y": -0.6,
+  "logo_y": -0.367,
+  "tipo_texto": "",
+  "pisante_y": -0.667,
   "rotulo_m": 0.0034,
   "botao_estilo": {
     "diametro_m": 0.0135,
@@ -70,12 +70,15 @@
   ],
   "led": [
     0.0,
-    0.08
+    0.84
   ],
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "estampa": {
+    "svg": "estampas/persimmon_33.svg"
+  }
 }

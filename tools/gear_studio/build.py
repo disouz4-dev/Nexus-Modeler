@@ -61,9 +61,11 @@ def slider_box(scene, cam, ctl):
     em qualquer posição) e a profundidade do cursor."""
     cx, cy, cz = ctl["center"]
     pts = []
+    along_y = ctl.get("eixo") == "y"  # no pedal o cursor corre no tampo (eixo Y)
     for dx in (-ctl["w"] / 2, ctl["w"] / 2):
-        for dz in (-ctl["h"] / 2, ctl["h"] / 2):
-            for dy in (-ctl["depth"] / 2, ctl["depth"] / 2):
+        for dh in (-ctl["h"] / 2, ctl["h"] / 2):
+            for dd in (-ctl["depth"] / 2, ctl["depth"] / 2):
+                dy, dz = (dh, dd) if along_y else (dd, dh)
                 pts.append(to_pixels(scene, cam, (cx + dx, cy + dy, cz + dz)))
     xs = [p[0] for p in pts]
     ys = [p[1] for p in pts]
@@ -133,7 +135,10 @@ def clean_shadow(path):
 
 def set_knobs(controls, value):
     for c in controls:
-        if c.get("tipo") == "deslizante":
+        if c.get("tipo") == "deslizante" and c.get("eixo") == "y":
+            x, _, z = c["pivot"].location
+            c["pivot"].location = (x, c["z0"] + (value - 0.5) * c["curso"], z)
+        elif c.get("tipo") == "deslizante":
             x, y, _ = c["pivot"].location
             c["pivot"].location = (x, y, c["z0"] + (value - 0.5) * c["curso"])
         else:
@@ -180,6 +185,8 @@ def main():
     controls = built["controls"]
     bpy.context.view_layer.update()  # câmera e peças no lugar antes de medir
     if not a.so_mapa:
+        # Guarda a cena para abrir e editar depois, com as fontes e imagens dentro do arquivo.
+        bpy.ops.file.pack_all()
         bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(a.saida), "cena.blend"))
         set_knobs(controls, 0.5)
         t0 = time.time()

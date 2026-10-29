@@ -75,7 +75,8 @@ public:
     rotary,
     analogdelay,
     octave,
-    comp
+    comp,
+    geq
   };
   static constexpr int kPedalLooks = 59;
   static constexpr PedalKind kPedalKinds[kPedalLooks] = {
@@ -85,9 +86,10 @@ public:
     PedalKind::phaser,  PedalKind::flanger, PedalKind::tremolo, PedalKind::vibe,    // Tangerine, Dragonfruit, Kiwi, Blackberry
     PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, // Açaí, Jabuticaba, Lychee, Avocado
     PedalKind::capture, PedalKind::capture,                                          // Pomegranate, Snow Pear
-    // Os 35 drives da seleção (Olive Drive ... Acerola EQ), todos de captura.
-    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture,
-    PedalKind::wah, PedalKind::rotary, PedalKind::analogdelay, PedalKind::octave, PedalKind::comp}; // Mango, Watermelon, Maracujá, Rambutan, Apple
+    // Os 34 drives da seleção (Olive Drive ... Graviola Bass DI), todos de
+    // captura; o Acerola EQ é o equalizador gráfico do Nexus.
+    PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::capture, PedalKind::geq,
+    PedalKind::wah, PedalKind::rotary, PedalKind::analogdelay, PedalKind::octave, PedalKind::comp}; // Comet, Saturn, Pulsar, Jupiter, Apple
   static constexpr int kDropLook = 8; // Cherry Drop (nativo, motor fx::PitchDrop)
   static constexpr int kGateLook = 7;
   static PedalKind pedalKind(int look) { return look >= 0 && look < kPedalLooks ? kPedalKinds[look] : PedalKind::capture; }
@@ -252,7 +254,7 @@ private:
     std::atomic<float>* on = nullptr;
     std::atomic<float>* lite = nullptr;
     std::atomic<float>* visual = nullptr;
-    std::array<std::atomic<float>*, 3> fx{}; // botões dos efeitos nativos
+    std::array<std::atomic<float>*, 7> fx{}; // botões dos efeitos nativos ("a" a "g")
     std::atomic<float>* sync = nullptr;     // velocidade presa ao andamento
     nexus::NativePedal native;
     std::unique_ptr<nexus::fx::PitchDrop> drop; // só o Cherry Drop usa

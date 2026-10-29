@@ -4,6 +4,8 @@
 #include <cmath>
 #include <vector>
 
+#include "nexus/UniversalEq.h"
+
 // Efeitos feitos pelo próprio Nexus (modulação, tempo e ambiente não se
 // capturam bem com NAM). Mono, em double, na taxa do motor. Os três botões
 // de cada pedal chegam de 0 a 1.
@@ -322,8 +324,14 @@ public:
     rotary,
     analogdelay,
     octave,
-    comp
+    comp,
+    geq
   };
+  // Equalizador gráfico (estilo GE-7): sete faixas e o nível.
+  static constexpr int kGeqBands = 7;
+  static constexpr double kGeqFrequency[kGeqBands] = {100.0, 200.0, 400.0, 800.0, 1600.0, 3200.0, 6400.0};
+  static constexpr double kGeqMaxDb = 15.0;
+  using Knobs = std::array<double, kGeqBands>;
   void prepare(double sampleRate, int maxBlock);
   void reset();
   // Andamento (tap tempo ou o da música): velocidade da modulação em Hz e
@@ -331,6 +339,9 @@ public:
   void setSync(double hz, double seconds);
   // on: pedal ligado; a, b, c: os três botões (0 a 1). Mexe no buffer no lugar.
   void process(Type type, bool on, double* buffer, int n, double a, double b, double c);
+  // Com todos os botões: knobs são "a" a "g" (0 a 1) e level é o nível (0 a
+  // 1, só o equalizador usa). Os outros efeitos usam só os três primeiros.
+  void process(Type type, bool on, double* buffer, int n, const Knobs& knobs, double level);
   // Ainda soando (ligado ou com rastro)? Quando não, não gasta processador.
   bool active() const { return mGain > 0.0 || mTail > 0; }
 
@@ -348,6 +359,13 @@ private:
   AnalogDelay mAnalogDelay;
   Octave mOctave;
   Compressor mComp;
+  // Equalizador gráfico: sinos de 100 Hz a 3,2 kHz e prateleira em 6,4 kHz,
+  // cada um de -15 a +15 dB (botão em 0,5 = 0 dB); o nível também.
+  void processGeq(double* buffer, int n);
+  FreeEq mGeq;
+  Knobs mGeqKnobs{0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+  double mGeqLevel = 0.5;     // pedido (0 a 1)
+  double mGeqLevelGain = 1.0; // em uso, suavizado
   std::vector<double> mIn, mWet;
   double mRate = 48000.0;
   double mGain = 0.0; // entrada do efeito: 0 desligado, 1 ligado (transição de 20 ms)
