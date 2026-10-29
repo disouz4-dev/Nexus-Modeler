@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:20:41Z",
+ "gerado": "2026-10-29T15:20:50Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4542,8 +4542,8 @@
   },
   "onyx_metal": {
    "nome": "Onyx Metal",
-   "hash": "d766febd31007636",
-   "data": "2026-10-29T15:17:16Z",
+   "hash": "753cfeac00cac634",
+   "data": "2026-10-29T15:20:50Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "onyx_metal_botao_ganho.png",
@@ -4555,21 +4555,21 @@
     "onyx_metal_mapa.json"
    ],
    "sha256": {
-    "onyx_metal_botao_ganho.png": "a2f509b8faec038973f9823f24230fdf757c5fbc618365c801634e1363a7796a",
-    "onyx_metal_botao_nivel.png": "874286d764aead08e9321e25523e672c7e5cadce70939a579a300bb0a38415d7",
-    "onyx_metal_botao_tom.png": "fc0ecb221d0d8e2d4f9f69baac2e5ca61c51fd258018278f501d917bd3b48836",
-    "onyx_metal_frente.jpg": "1766df8d501dc7b2327897789e249929dbbb22fc80a783c96b9a0940dfc13415",
-    "onyx_metal_frente_alfa.png": "aae6de69090d1a876665a68d4ef2ccea043cd6f85c687562ce4ab6de28fa9f0d",
-    "onyx_metal_manifesto.json": "c2758a0246c7b82679bb20b8360bfb1c86d0ef8fdb4ff48cc734277eda06035e",
-    "onyx_metal_mapa.json": "6b7318d8dab8d40bc82c5c04a418d2834d58cccb0169fb537f9ae4ecb3c722e0"
+    "onyx_metal_botao_ganho.png": "ab6c5ccaae4fec6d648bf92dacd67bdb0ef358a31ec915a259560aa78aebcf97",
+    "onyx_metal_botao_nivel.png": "6e42e28cc18d16abc6b7332066193ebe7ff46615bbe52bc42836b09373ff7352",
+    "onyx_metal_botao_tom.png": "6b558a5a7226918974cd91be83b1949dcf2554cec1d4578ba6c7a0c459a68134",
+    "onyx_metal_frente.jpg": "12a154cab4385c7e90838d9695d670150e7d503993376931daae1b277d49f7cc",
+    "onyx_metal_frente_alfa.png": "40b08a4c64e0e30ef0aae537106d9a1ee6b0319ad9285ba9b4cd73b3f77db373",
+    "onyx_metal_manifesto.json": "f660f083d9aab26a960521bfdb1eb1c917bde9b1020dcd8134a751de233f8ccb",
+    "onyx_metal_mapa.json": "e080cbc9e0274b4a3a2bf5a6d80f12ea92dcdd0156e28d87876e33888ad42427"
    },
-   "tamanho": 378570,
+   "tamanho": 261845,
    "tipo": "pedal",
    "inspiracao": "MT-2",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
