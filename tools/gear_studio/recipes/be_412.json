@@ -50,5 +50,10 @@
     0.78,
     0.6,
     0.22
-  ]
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

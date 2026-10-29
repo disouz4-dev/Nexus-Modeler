@@ -49,5 +49,10 @@
     "largura_rel": 1.12,
     "proporcao": 1.0,
     "elevacao": 8.0
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
   }
 }

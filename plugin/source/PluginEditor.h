@@ -19,6 +19,7 @@
 #include "ui/UpdateBadge.h"
 #include "ui/Controls.h"
 #include "ui/Gear.h"
+#include "ui/IrMic.h"
 
 // Tela do Nexus Modeler. De cima para baixo: barra com a marca e o motor;
 // o palco, com a peça escolhida renderizada em 3D sob um foco de luz (pedal
@@ -166,11 +167,13 @@ private:
     juce::String mSignature;
   };
 
-  // Caixa grande, com o seletor Desligada / Captura / IR próprio.
+  // Caixa grande, com o seletor Desligada / Captura / IR próprio. Com IR, os
+  // microfones que o nome do arquivo diz aparecem na frente do falante, na
+  // posição em que o IR foi gravado.
   class CabStage : public juce::Component
   {
   public:
-    CabStage(NexusProcessor& p, const nexus::ui::GearArt* arts);
+    CabStage(NexusProcessor& p, const nexus::ui::GearArt* arts, const nexus::ui::GearArt* micArts);
     void setRig(int rig) { mRig = rig; refresh(); }
     void paint(juce::Graphics&) override;
     void resized() override;
@@ -179,6 +182,8 @@ private:
   private:
     NexusProcessor& mProcessor;
     const nexus::ui::GearArt* mArts; // uma por visual de caixa (NexusProcessor::kCabLooks)
+    const nexus::ui::GearArt* mMicArts; // uma por tipo de microfone (nexus::ui::kMicKinds)
+    void paintMics(juce::Graphics& g);
     const nexus::ui::GearArt& art() const;
     nexus::ui::Segmented mModes{{"Desligada", "Captura", "IR"}};
     juce::Rectangle<float> mImage;
@@ -329,6 +334,7 @@ private:
   // Visual de cada cabeçote (Brit 800, Mark Five...), pelo parâmetro "cabecote".
   std::array<nexus::ui::GearArt, NexusProcessor::kAmpLooks> mAmpArts;
   std::array<nexus::ui::GearArt, NexusProcessor::kCabLooks> mCabArts;
+  std::array<nexus::ui::GearArt, nexus::ui::kMicKinds> mMicArts;
   juce::SharedResourcePointer<nexus::t3k::Connection> mT3k;
   std::set<juce::String> mFetching; // tons baixando (número + pacote)
   std::set<int> mFetchingSlots;     // espaços esperando a captura padrão

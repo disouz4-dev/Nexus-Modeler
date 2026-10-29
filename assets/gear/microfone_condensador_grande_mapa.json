@@ -1,0 +1,15 @@
+{
+  "nome": "condensador_grande",
+  "familia": "microfone",
+  "largura": 600,
+  "altura": 2040,
+  "posicoes": 1,
+  "botoes": [],
+  "canais": [],
+  "rotulos": [],
+  "ponta": [
+    300.0,
+    236.2
+  ],
+  "pixels_por_mm": 1.5397
+}

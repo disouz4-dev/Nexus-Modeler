@@ -66,6 +66,7 @@ set(NEXUS_UI_SOURCES
   source/ui/StudioView.cpp
   source/ui/EqStage.cpp
   source/ui/Tuner.cpp
+  source/ui/IrMic.cpp
   source/update/Updater.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)

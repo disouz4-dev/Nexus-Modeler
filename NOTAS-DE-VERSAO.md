@@ -100,6 +100,20 @@
 - Cabeçote ou caixa: a pedaleira some e aparece só a peça.
 - A cadeia de baixo mostra sempre os mesmos pedais, na mesma ordem.
 
+### Microfones na frente da caixa
+
+- Com IR próprio, a caixa mostra o microfone com que o IR foi gravado, em 3D,
+  na frente do falante e na posição da gravação (centro, borda da calota,
+  cone, borda ou a distância em polegadas), com uma etiqueta do modelo e do
+  tipo. Um IR que mistura dois microfones mostra os dois, lado a lado.
+- O arquivo de IR não guarda o microfone por dentro: o Nexus lê o nome do
+  arquivo (ex.: "Engl_MD421_Cone", "UL 4x12 M201 1.25in"). Quando o nome não
+  diz, a caixa aparece sozinha, como antes.
+- Cinco modelos de microfone, sem marca: dinâmico de bastão (estilo SM57),
+  dinâmico lateral (estilo MD421), condensador grande (estilo U87),
+  condensador de lápis (estilo KM184) e fita (estilo R121).
+- Os nomes dos tipos de microfone ainda aparecem só em português.
+
 ### Primeira abertura
 - A cadeia de sinal começa só com o Brit 800 e a caixa dele, sem pedais. Nas
   vezes seguintes, abre como a pessoa deixou.

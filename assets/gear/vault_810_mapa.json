@@ -4,5 +4,14 @@
   "largura": 800,
   "altura": 1600,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "medidas_mm": [
+    610,
+    1220
+  ],
+  "falantes": {
+    "linhas": 4,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }

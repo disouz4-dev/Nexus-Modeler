@@ -49,5 +49,10 @@
     0.85,
     0.85,
     0.86
-  ]
+  ],
+  "falantes": {
+    "linhas": 4,
+    "colunas": 2,
+    "polegadas": 10
+  }
 }

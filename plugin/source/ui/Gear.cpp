@@ -95,6 +95,15 @@ GearArt GearArt::load(const juce::String& prefix)
   art.name = map["nome"].toString();
   if (const auto* mm = map["medidas_mm"].getArray(); mm != nullptr && mm->size() == 2)
     art.sizeMm = {static_cast<float>((*mm)[0]), static_cast<float>((*mm)[1])};
+  if (const auto* tip = map["ponta"].getArray(); tip != nullptr && tip->size() == 2)
+    art.tip = {static_cast<float>((*tip)[0]), static_cast<float>((*tip)[1])};
+  art.pixelsPerMm = static_cast<float>(map["pixels_por_mm"]);
+  if (const auto speakers = map["falantes"]; speakers.isObject())
+  {
+    art.speakerRows = static_cast<int>(speakers["linhas"]);
+    art.speakerCols = static_cast<int>(speakers["colunas"]);
+    art.speakerInches = static_cast<float>(speakers["polegadas"]);
+  }
   const int frames = static_cast<int>(map["posicoes"]);
   if (const auto* knobs = map["botoes"].getArray())
     for (const auto& k : *knobs)

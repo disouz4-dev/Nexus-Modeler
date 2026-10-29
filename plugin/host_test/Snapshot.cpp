@@ -220,6 +220,22 @@ int main(int argc, char** argv)
       e->select({NexusEditor::Kind::pedal, 0});
     else if (stage == "caixa")
       e->select({NexusEditor::Kind::cab, 0});
+    else if (stage.startsWith("caixa_ir:"))
+    {
+      // "caixa_ir:<visual>:<arquivo do IR>": caixa com o IR próprio (os microfones do nome aparecem).
+      const auto rest = stage.fromFirstOccurrenceOf(":", false, false);
+      auto* cab = processor.params.getParameter(NexusProcessor::ampParam(0, "gabinete"));
+      cab->setValueNotifyingHost(cab->convertTo0to1(rest.upToFirstOccurrenceOf(":", false, false).getFloatValue()));
+      processor.params.getParameter(NexusProcessor::ampParam(0, "caixa"))->setValueNotifyingHost(1.0f);
+      processor.loadIrAsync(0, juce::File(rest.fromFirstOccurrenceOf(":", false, false)));
+      for (int t = 0; t < 3000 && !processor.irLoaded(0); ++t)
+      {
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(2);
+        buffer.clear();
+        processor.processBlock(buffer, midi);
+      }
+      e->select({NexusEditor::Kind::cab, 0});
+    }
     else if (stage == "caixa_mark" || stage.startsWith("caixa:"))
     {
       // Caixa pelo número do visual (caixa_mark é a 1).

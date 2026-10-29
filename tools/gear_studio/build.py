@@ -195,6 +195,12 @@ def main():
     # Pedais: tamanho de verdade (a pedaleira da tela põe um do lado do outro em escala).
     if "comprimento" in rec.get("medidas_m", {}):
         layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["comprimento"] * 1000)]
+    # Caixas: tamanho de verdade e a grade de falantes atrás da tela (a tela
+    # põe o microfone de cada IR na frente do falante certo).
+    if rec.get("tipo") == "caixa":
+        layout["medidas_mm"] = [round(rec["medidas_m"]["largura"] * 1000), round(rec["medidas_m"]["altura"] * 1000)]
+        if "falantes" in rec:
+            layout["falantes"] = rec["falantes"]
     boxes = []
     for c in controls:
         b = knob_box(scene, cam, c)

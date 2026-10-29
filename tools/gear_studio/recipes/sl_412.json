@@ -47,5 +47,10 @@
     "trama_mm": 2.6
   },
   "friso": null,
-  "cantos": "cromo"
+  "cantos": "cromo",
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

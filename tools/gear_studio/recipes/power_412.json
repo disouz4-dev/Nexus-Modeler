@@ -45,5 +45,10 @@
     ],
     "trama_mm": 2.2
   },
-  "friso": null
+  "friso": null,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
 }

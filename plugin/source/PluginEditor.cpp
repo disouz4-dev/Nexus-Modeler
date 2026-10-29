@@ -33,6 +33,9 @@ const char* const kAmpPrefixes[NexusProcessor::kAmpLooks] = {"brit800", "mark5",
 const char* const kCabPrefixes[NexusProcessor::kCabLooks] = {"brit412", "mark5_412", "block_412", "sl_412", "be_412",
                                                              "citrus_412", "blue_212", "twin_212", "tweed_410", "match_212", "power_412", "uber_412", "jazz_212", "vault_810",
                                                              "granite_410"};
+// Microfones, na ordem de nexus::ui::MicKind.
+const char* const kMicPrefixes[kMicKinds] = {"microfone_dinamico_bastao", "microfone_dinamico_lateral", "microfone_condensador_grande",
+                                              "microfone_condensador_lapis", "microfone_fita"};
 const int kCabOfAmp[NexusProcessor::kAmpLooks] = {0, 1, 2, 1, 3, 4, 6, 9, 5, 5, 1, 10, 11, 7, 7, 8, 0, 0, 12, 13, 14, 14, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
 struct CabInfo
 {
@@ -959,9 +962,10 @@ const GearArt& NexusEditor::cabArt(int rig) const
   return mCabArts[static_cast<size_t>(juce::jlimit(0, NexusProcessor::kCabLooks - 1, mProcessor.cabLook(rig)))];
 }
 
-NexusEditor::CabStage::CabStage(NexusProcessor& p, const GearArt* arts)
+NexusEditor::CabStage::CabStage(NexusProcessor& p, const GearArt* arts, const GearArt* micArts)
 : mProcessor(p)
 , mArts(arts)
+, mMicArts(micArts)
 {
   addAndMakeVisible(mModes);
   mModes.setFontSize(12.0f);
@@ -985,6 +989,67 @@ void NexusEditor::CabStage::paint(juce::Graphics& g)
   // cada desenho, não só quando o palco muda de tamanho.
   mImage = fitImage(art().front, mArea);
   drawGear(g, art().front, mImage, mDim ? 0.42f : 1.0f);
+  paintMics(g);
+}
+
+void NexusEditor::CabStage::paintMics(juce::Graphics& g)
+{
+  // Só com o IR próprio tocando: na captura full rig o microfone é o de quem
+  // capturou, e a caixa desligada não tem som.
+  if (mDim || mProcessor.packIncludesCab(mRig) || !mProcessor.irLoaded(mRig))
+    return;
+  const auto shots = micsOfIr(mProcessor.irName(mRig));
+  const auto& cab = art();
+  if (shots.empty() || cab.sizeMm.x <= 0.0f || cab.speakerRows <= 0 || cab.speakerCols <= 0)
+    return;
+
+  // Escala da caixa na tela e os falantes atrás da tela (dentro da aba de 3 cm).
+  const float k = mImage.getWidth() / static_cast<float>(cab.front.getWidth());
+  const auto body = (cab.body * k).translated(mImage.getX(), mImage.getY());
+  const float pxPerMm = body.getWidth() / cab.sizeMm.x;
+  const auto cloth = body.reduced(30.0f * pxPerMm);
+  const float radius = cab.speakerInches * 25.4f * 0.5f * pxPerMm;
+
+  for (size_t i = 0; i < shots.size(); ++i)
+  {
+    const auto& shot = shots[i];
+    const auto& mic = mMicArts[static_cast<int>(shot.kind)];
+    if (!mic.valid() || mic.pixelsPerMm <= 0.0f)
+      continue;
+    // Falante: o que o nome diz (de cima para baixo, da esquerda para a direita); sem isso, o de cima à esquerda.
+    const int speaker = std::max(0, shot.speaker);
+    const int col = std::min(speaker % 2, cab.speakerCols - 1);
+    const int row = std::min(speaker / 2, cab.speakerRows - 1);
+    const juce::Point<float> centre{cloth.getX() + cloth.getWidth() * (static_cast<float>(col) + 0.5f) / static_cast<float>(cab.speakerCols),
+                                    cloth.getY() + cloth.getHeight() * (static_cast<float>(row) + 0.5f) / static_cast<float>(cab.speakerRows)};
+    // Distância do centro, para o lado de fora da caixa; sem medida, a meio caminho da borda da calota.
+    const float offset = shot.inches >= 0.0f ? shot.inches * 25.4f * pxPerMm : (shot.fraction >= 0.0f ? shot.fraction : 0.35f) * radius;
+    const float side = col * 2 + 1 > cab.speakerCols ? 1.0f : -1.0f;
+    // Dois microfones no mesmo IR (mistura): lado a lado, como se grava.
+    const float spread = shots.size() > 1 ? (static_cast<float>(i) - 0.5f * static_cast<float>(shots.size() - 1)) * 120.0f * pxPerMm : 0.0f;
+    const auto tip = centre.translated(side * offset + spread, 0.0f);
+
+    const float km = pxPerMm / mic.pixelsPerMm;
+    const juce::Rectangle<float> image(tip.x - mic.tip.x * km, tip.y - mic.tip.y * km, static_cast<float>(mic.front.getWidth()) * km,
+                                       static_cast<float>(mic.front.getHeight()) * km);
+    {
+      // A haste do pedestal para no chão, onde a caixa se apoia.
+      juce::Graphics::ScopedSaveState state(g);
+      g.reduceClipRegion(getLocalBounds().withBottom(juce::roundToInt(body.getBottom())));
+      drawGear(g, mic.front, image);
+    }
+
+    // Nome do microfone e o tipo, ao lado da ponta.
+    auto text = shot.model.isNotEmpty() ? shot.model + juce::String::fromUTF8(" · ") + TRANS(micKindName(shot.kind)) : TRANS(micKindName(shot.kind));
+    const auto font = Fonts::get().ui(12.0f);
+    const float w = static_cast<float>(juce::GlyphArrangement::getStringWidthInt(font, text)) + 18.0f;
+    const juce::Rectangle<float> pill(tip.x - w * 0.5f, tip.y - 40.0f - static_cast<float>(i) * 26.0f, w, 22.0f);
+    g.setColour(juce::Colour(0xe00c0c0e));
+    g.fillRoundedRectangle(pill, 6.0f);
+    g.setColour(colour::text);
+    g.setFont(font);
+    g.drawText(text, pill, juce::Justification::centred);
+  }
 }
 
 void NexusEditor::CabStage::refresh()
@@ -1666,6 +1731,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       jobs.push_back([this, i] { mAmpArts[static_cast<size_t>(i)] = GearArt::load(kAmpPrefixes[i]); });
     for (int i = 0; i < NexusProcessor::kCabLooks; ++i)
       jobs.push_back([this, i] { mCabArts[static_cast<size_t>(i)] = GearArt::load(kCabPrefixes[i]); });
+    for (int i = 0; i < kMicKinds; ++i)
+      jobs.push_back([this, i] { mMicArts[static_cast<size_t>(i)] = GearArt::load(kMicPrefixes[i]); });
     for (int i = 0; i < kPedalLooks; ++i)
       jobs.push_back([this, i] { mPedalArts[static_cast<size_t>(i)] = GearArt::load(kPedalPrefixes[i]); });
     std::atomic<size_t> next{0};
@@ -1692,7 +1759,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
   mBoard = std::make_unique<BoardView>(*this);
   mPedalStage = std::make_unique<GearStage>(p, Kind::pedal);
   mAmpStage = std::make_unique<GearStage>(p, Kind::amp);
-  mCabStage = std::make_unique<CabStage>(p, mCabArts.data());
+  mCabStage = std::make_unique<CabStage>(p, mCabArts.data(), mMicArts.data());
   addChildComponent(*mBoard); // por baixo do pedal escolhido
   addChildComponent(*mPedalStage);
   addChildComponent(*mAmpStage);
