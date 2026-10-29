@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T23:11:27Z",
+ "gerado": "2026-10-29T23:17:40Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6649,8 +6649,8 @@
   },
   "workhorse350": {
    "nome": "Workhorse 350",
-   "hash": "fc1f9d42f875cecf",
-   "data": "2026-10-29T19:45:58Z",
+   "hash": "744e2e8fe3d717d2",
+   "data": "2026-10-29T23:17:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "workhorse350_botao_agudo.png",
@@ -6665,24 +6665,24 @@
     "workhorse350_mapa.json"
    ],
    "sha256": {
-    "workhorse350_botao_agudo.png": "a8e3e68bef5b6ab6a617db9d4c4577ec9c22dbd1dcf40ee7bf0cce107f163649",
-    "workhorse350_botao_ganho.png": "e712d2180bcbb44c1eaacfafb3f621c5ce6d2505f0d992284f5d154da5c7a3c3",
-    "workhorse350_botao_grave.png": "4c0ef40107e95e0d773ee0bdd9e1bfd5ea3a63e33ba38b3c3d39522eb386a9ba",
-    "workhorse350_botao_medio.png": "0091f7bb7b88cdc213e994a35c3942726dfc44188ef0be3e188e19dd8821a632",
-    "workhorse350_botao_presenca.png": "851ea494a26ccc6e66e3014544153985040118605924d06412a3bc769804f540",
-    "workhorse350_botao_volume.png": "f0715b7398ca6e1fd6ec408f42a1f417fd35df491d0154e9cd3ec9e7cbc9d374",
-    "workhorse350_frente.jpg": "49bf90efb3500ca553c435e16b041963bd82eef104fc96dbb22bfeb421c12239",
-    "workhorse350_frente_alfa.png": "a2e72a51cdc177461142cfa699415247b26a04fd6c23e59c0ed20318aa0d5211",
-    "workhorse350_manifesto.json": "2597e3d714fb50c35d5b21aa605b7f4309240255e3dc08ff99cb987c954f5e9e",
+    "workhorse350_botao_agudo.png": "a0c61a5e70b6b707c213329dce068c1b2ec716fb79e4a7e4d17ff9a1ef6bbe8a",
+    "workhorse350_botao_ganho.png": "5c7150c34c8edcb1907d0c1ab5f02f62f7d0e6eafcfe310bc53043edb67733a8",
+    "workhorse350_botao_grave.png": "b5abec0c57d65ad61065b13bcd92f22708f6607ec4ed29096e1e7fc91e0c8d71",
+    "workhorse350_botao_medio.png": "00807341379573c08a91a8eb97eee9428e5c941d415344b54f7c69e25997f411",
+    "workhorse350_botao_presenca.png": "7bed9e6687bacba979d8a2a87766e75d5ae557513166a8603ad6773950fba9c2",
+    "workhorse350_botao_volume.png": "3f3f649bd8d3a91d7972d2da441340ba1e9598ff52398b1dd052577bdbcf83a0",
+    "workhorse350_frente.jpg": "b1e4d459ad0c282592ff823213c84777c74a2ab65c92a7a3e69f676ee251233f",
+    "workhorse350_frente_alfa.png": "949f5c23cc375e48a8d5db0ff1ef662ee4bd20cf08c8dac8b7706cadd78cc14d",
+    "workhorse350_manifesto.json": "f98df0a7b00c0b670d29a6d5cc993c57143625a028f85431f88836cd25fec34a",
     "workhorse350_mapa.json": "cfd82ebc49b933c0c075adaaeae4eb3e0b6b058d64a232160f3ac24f17c692d8"
    },
-   "tamanho": 736251,
+   "tamanho": 735435,
    "tipo": "cabecote",
    "inspiracao": "SWR Bass 350",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   }
