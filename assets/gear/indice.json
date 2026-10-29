@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T15:23:42Z",
+ "gerado": "2026-10-29T15:23:47Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -327,8 +327,8 @@
   },
   "badland100": {
    "nome": "Badland 100",
-   "hash": "ddae8be6a9e72371",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "d5dce3a149f155d0",
+   "data": "2026-10-29T15:23:47Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "badland100_botao_agudo.png",
@@ -343,24 +343,24 @@
     "badland100_mapa.json"
    ],
    "sha256": {
-    "badland100_botao_agudo.png": "24bce4b7e882af7816d599d165b22c75a63ce6f155a318c06edd7795434063a1",
-    "badland100_botao_ganho.png": "56223d1991b2bc85e49aa1fa0e6ded3a3998c3ad9473930ed51ad0817cc23f49",
-    "badland100_botao_grave.png": "b6205baacddb5fcf7567017be3e8c189ed07b46f741a440a0b79d7d91cafbd84",
-    "badland100_botao_medio.png": "b63c035efedb614c0e73854da22f1234d814f634247beb3c7c442994db806432",
-    "badland100_botao_presenca.png": "ff239668644d0bf1dd9cb8df393d1e9355fa0ec970896b7c9378b01394f0385b",
-    "badland100_botao_volume.png": "d59ae3e1ce309fca04baa511922966f95b7ab9c68def88210859749956580d19",
-    "badland100_frente.jpg": "749bf50efb55d7088fea65af0f046e22b6faf083429c3b578076af4366ca8e84",
-    "badland100_frente_alfa.png": "0e59ea41e684c72b1cb720ea402836e371fb97af2f3ec94b6559264201673de4",
-    "badland100_manifesto.json": "aa1750e7b5a385e87b2aec350ca98f5620e01e176c6cb334f8df7a67cec09d62",
-    "badland100_mapa.json": "a5f13639d3224a4dc3208ee636f02e4b334f1ecd79faa48721f9721208cb0d89"
+    "badland100_botao_agudo.png": "d224850811f7246f8e5e6cf108e559f0b7c70cd7db62f19b9adcc67d1c1168f2",
+    "badland100_botao_ganho.png": "5769d48182335ee701fa6d91bd5145d5ad0fae7dd656cd0cacaa2eed74df49f0",
+    "badland100_botao_grave.png": "329fa01f29ebfa10397e844ee2be3ca47e303b8254621fce13c4e79c05c30018",
+    "badland100_botao_medio.png": "5ce488574b44144f354e463351e709925b64274e2f5fc2801081d0cbac827fa7",
+    "badland100_botao_presenca.png": "c0b2599336b40d766b0215c64811531710ecdf966d867d7d5b92d4fb28749b48",
+    "badland100_botao_volume.png": "023eb48c105cec19f4f91921d1d8e481cb702e9b761564b98b0de56f973d4848",
+    "badland100_frente.jpg": "f4d09dacaed3d9751de7be08897e89b019111e859366c73daa140020378fa83e",
+    "badland100_frente_alfa.png": "36a48af525e378ef7eb6a81a65bc8961d3a2f3a1d3a555eccc2b84ebf6f4e2a2",
+    "badland100_manifesto.json": "debaf38d17b90949def85e789a01fbab0cd40ff308c065054a219a3db48674c2",
+    "badland100_mapa.json": "d025db182c522deb460e96d4c9f967d3eafdc517f3fb528636a28cf2eda1b452"
    },
-   "tamanho": 1765869,
+   "tamanho": 1291686,
    "tipo": "cabecote",
    "inspiracao": "Mesa Boogie Badlander",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
