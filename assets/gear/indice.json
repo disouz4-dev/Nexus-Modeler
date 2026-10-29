@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T20:31:09Z",
+ "gerado": "2026-10-29T20:33:16Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6610,8 +6610,8 @@
   },
   "wind300": {
    "nome": "Wind 300",
-   "hash": "5027e2b4f841b91d",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "80b6ab537f7997a1",
+   "data": "2026-10-29T20:33:16Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "wind300_botao_agudo.png",
@@ -6626,24 +6626,24 @@
     "wind300_mapa.json"
    ],
    "sha256": {
-    "wind300_botao_agudo.png": "ba4eed95ee6e19204b26211dc40295b774d31dd2905390a9937b131b86522cef",
-    "wind300_botao_ganho.png": "87389853c6d5a00c814754f5ad4fef246977557517e33dfe1f3d2e0fe04bd5a1",
-    "wind300_botao_grave.png": "b1b9cf06acef3ad77a53d5ad28ddf405b6ff97c6946787bafc903d41d34dcefb",
-    "wind300_botao_medio.png": "6e402b2d85de8efc9c16ec527db9cd40d8b7030cbc812ff158c1e0ed1f60e688",
-    "wind300_botao_presenca.png": "256d71350019ede5ac02c0721bb8c32b754b32a48d3e866ab93cd2f405974554",
-    "wind300_botao_volume.png": "8dd1c9c573757a49bd3da3ff969f5788ef4ea17784fee6627ff83f0a97264745",
-    "wind300_frente.jpg": "db3d344d850555880c4d06e526f1d14138a17784ac2a20f3d7264eba0e3886e3",
-    "wind300_frente_alfa.png": "2ebe5c05f19da22167fe832b325437191470143b2e7aa2e0795e56bcc0b20f36",
-    "wind300_manifesto.json": "69a39250213bd51df5661aa3bb5ec2b179aa652225310968f25a0376f83efacc",
-    "wind300_mapa.json": "253891e12dfcf45838befa1841323efd6b60caa2e883c4d6a6ef965d2c1455d1"
+    "wind300_botao_agudo.png": "0c537b72dde0cf40e838ddf87698c99061ba4161c6017353cb8c3ecd6d077fc5",
+    "wind300_botao_ganho.png": "c188cc609e6a6df91dbf156005d93c7c2d4a36042665d13222c203aad9dc610e",
+    "wind300_botao_grave.png": "431fa7b92c022cb3605fd58a8b435b215300a5fd564d9cf1f00632cd98d68a46",
+    "wind300_botao_medio.png": "bc478300fdc15005d8280ea62207de5c26119f2006ae4f69dd022359eef917db",
+    "wind300_botao_presenca.png": "826d1bcca5eff7f8208fbe27e641338734643aa0ee8b66fd90e4bcb92592d0b0",
+    "wind300_botao_volume.png": "3edb0ad95ca00c9fdfde332324cc9e731b71eab64c0be43185ec2101bc20851e",
+    "wind300_frente.jpg": "d04b3a1a4e80c76b4e9cc8c6e447ddc9ce5bed6ea291619eb4a68b721a64af86",
+    "wind300_frente_alfa.png": "483ddc9841e7bf6bb6c12c6d2ed149e29211bff636fda4e4fbf9d95829e19f27",
+    "wind300_manifesto.json": "8d306e6123b08b349def4992d53506ef3d188ac5e734c5e524743dbf5a7825bb",
+    "wind300_mapa.json": "d69983142f47cd621e8da2245bd607fdae5e2d42de0ccc5fab65c9fed87cadd5"
    },
-   "tamanho": 1821703,
+   "tamanho": 1110967,
    "tipo": "cabecote",
    "inspiracao": "Peavey Mark III",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
