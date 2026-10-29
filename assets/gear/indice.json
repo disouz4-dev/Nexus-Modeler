@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-29T17:51:46Z",
+ "gerado": "2026-10-29T18:01:52Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6400,8 +6400,8 @@
   },
   "vault300": {
    "nome": "Vault 300",
-   "hash": "7a2774fb593e895e",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "e4129028a9fe433e",
+   "data": "2026-10-29T18:01:52Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault300_botao_agudo.png",
@@ -6416,24 +6416,24 @@
     "vault300_mapa.json"
    ],
    "sha256": {
-    "vault300_botao_agudo.png": "6fda8b8baa5b506c3ee24ccd405538e685e23916b5b395a13bc5eb1f55834761",
-    "vault300_botao_ganho.png": "3e7a2cbc67a7eaf709105654b90548ff264adac9fffece3e1d68d07812e942b9",
-    "vault300_botao_grave.png": "00e0c7876a2381aa900bf039eaf459d51fafd76dbcfd2cf7fa4c8ebf14638222",
-    "vault300_botao_medio.png": "4aa4f8102bed4599311c8c71c5d85e4ca2313e0cafd6e73e8824fb285b763249",
-    "vault300_botao_presenca.png": "550fa919fa73924643c905c3c22408a3b32e73a7e48cc9d5a76950b106244f2e",
-    "vault300_botao_volume.png": "4eb5373b3c76e9b7d5dbcc1109fb3e1c5b3e27b0c6eb599543d270479f19ff71",
-    "vault300_frente.jpg": "0d5739619d2a77c46313c87946d86ccc9022dce811b6f7852b1c28aed7660eec",
-    "vault300_frente_alfa.png": "ec343e153068cb632b6576293267b80060cc331861667bc29e1970cb5e8f3cec",
-    "vault300_manifesto.json": "e78b5cb6840f695caeb3cb303826f662a861f92f3f690ae656d1e664e95be788",
-    "vault300_mapa.json": "ade50e192c76974feb18d7b7fa12219ef698e8a0c180a466bf2ed53042c0b70c"
+    "vault300_botao_agudo.png": "d2bfc9f9b179546accc88a1cc29ade4678255c6dcd6ae3762a59c2c0a1f1981d",
+    "vault300_botao_ganho.png": "5343727a5ad7f98488501b63fb8e5f103bc6de9b56f4389e7b3c084c27c76286",
+    "vault300_botao_grave.png": "0fc5fed57edbda68b9b5f2c7f92d2230d91214a4687be98b1010d5484db51081",
+    "vault300_botao_medio.png": "cd834e3ae2336996cefeff0736833316263e371eb5ae810b66521b90e5528d77",
+    "vault300_botao_presenca.png": "55b5a2c46bc02ffe3582ad659ff5a3d45d17db6bcfb37f8067feb2d763db1b24",
+    "vault300_botao_volume.png": "62bc5a66635666ec3bb2a75c738f44f3172255754ab5ce865bb735a15315729b",
+    "vault300_frente.jpg": "d693532b85c1551d49423262689c1413ac3d481bcb4eca6b0ca28e3dbf70349a",
+    "vault300_frente_alfa.png": "3089117b25f97b59848ca6a2e92de96fd14f53488405a2e4d937a720b9a492be",
+    "vault300_manifesto.json": "3fd30b8ffeec7bc5ed17a365ac66fb834698b218d01d8bcf49c0b4496f1f05f6",
+    "vault300_mapa.json": "d1fb118f1fe7b81da2e52439f81dfdad3abadf03463c26e60991bef5f26342b4"
    },
-   "tamanho": 1946747,
+   "tamanho": 1042026,
    "tipo": "cabecote",
    "inspiracao": "Ampeg SVT",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
