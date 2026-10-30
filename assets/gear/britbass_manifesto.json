@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "britbass",
-  "versao": "1.0.3",
+  "versao": "1.0.4",
   "tipo": "cabecote",
   "nome": "Brit Bass",
   "inspiracao": "Marshall Super Bass",
@@ -15,5 +15,5 @@
   },
   "indice_de_fabrica": 36,
   "signature": null,
-  "caixa_padrao": "granite_410"
+  "caixa_padrao": "brit412"
 }
