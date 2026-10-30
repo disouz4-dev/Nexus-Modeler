@@ -2,59 +2,59 @@
   "nome": "Brit Plexi",
   "familia": "brit_plexi",
   "largura": 2400,
-  "altura": 1161,
+  "altura": 1034,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
-      "x": 938,
-      "y": 831,
-      "tamanho": 110,
+      "x": 931,
+      "y": 704,
+      "tamanho": 124,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1083,
-      "y": 831,
-      "tamanho": 110,
+      "x": 1076,
+      "y": 704,
+      "tamanho": 124,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1228,
-      "y": 831,
-      "tamanho": 110,
+      "x": 1221,
+      "y": 704,
+      "tamanho": 124,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1372,
-      "y": 831,
-      "tamanho": 110,
+      "x": 1365,
+      "y": 704,
+      "tamanho": 124,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1516,
-      "y": 831,
-      "tamanho": 111,
+      "x": 1509,
+      "y": 704,
+      "tamanho": 125,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1660,
-      "y": 830,
-      "tamanho": 112,
+      "x": 1652,
+      "y": 703,
+      "tamanho": 127,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,7 +67,7 @@
     {
       "texto": "MAINS",
       "x": 255.7,
-      "y": 940.3,
+      "y": 820.6,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -76,7 +76,7 @@
     {
       "texto": "STANDBY",
       "x": 358.3,
-      "y": 940.3,
+      "y": 820.6,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -85,7 +85,7 @@
     {
       "texto": "INDICATOR",
       "x": 461.0,
-      "y": 931.6,
+      "y": 811.9,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -94,7 +94,7 @@
     {
       "texto": "100 W",
       "x": 686.8,
-      "y": 926.6,
+      "y": 804.4,
       "altura": 21.93,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -103,7 +103,7 @@
     {
       "texto": "PRESENCE",
       "x": 994.7,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -112,7 +112,7 @@
     {
       "texto": "BASS",
       "x": 1138.4,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -121,7 +121,7 @@
     {
       "texto": "MIDDLE",
       "x": 1282.1,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -130,7 +130,7 @@
     {
       "texto": "TREBLE",
       "x": 1425.8,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -139,7 +139,7 @@
     {
       "texto": "VOLUME I",
       "x": 1569.5,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -148,7 +148,7 @@
     {
       "texto": "VOLUME II",
       "x": 1713.2,
-      "y": 988.8,
+      "y": 862.8,
       "altura": 24.86,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -157,7 +157,7 @@
     {
       "texto": "I",
       "x": 1877.4,
-      "y": 752.6,
+      "y": 640.6,
       "altura": 17.55,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -166,7 +166,7 @@
     {
       "texto": "II",
       "x": 2000.6,
-      "y": 752.6,
+      "y": 640.6,
       "altura": 17.55,
       "achatamento": 1.0,
       "cor": "#211d19",
