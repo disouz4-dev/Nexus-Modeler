@@ -1,0 +1,62 @@
+{
+  "nome": "Cabeçote de teste",
+  "largura": 240,
+  "altura": 106,
+  "posicoes": 2,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 30,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 66,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 102,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 138,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 174,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 210,
+      "y": 70,
+      "tamanho": 20,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ]
+}

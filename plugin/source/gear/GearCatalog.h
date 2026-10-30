@@ -19,9 +19,13 @@
 //  - as de fábrica ficam na posição antiga dos parâmetros de escolha
 //    (p<n>_visual, cabecote, gabinete), que estão congelados para os presets
 //    e automações antigos continuarem iguais ("indice_de_fabrica");
-//  - as outras (embutidas sem índice e baixadas) entram depois, na ordem em
-//    que aparecem. Equipamento baixado nunca entra nos parâmetros: o preset o
-//    guarda pelo id em texto (ver NexusProcessor::getStateInformation).
+//  - toda posição de fábrica existe sempre (assets/gear/posicoes_de_fabrica.json).
+//    A peça que saiu do programa (só entra no programa peça revisada) deixa a
+//    posição vaga; quando ela volta baixada, com o mesmo indice_de_fabrica na
+//    ficha, ocupa a vaga dela de novo;
+//  - as outras (embutidas sem índice e baixadas sem vaga) entram depois, na
+//    ordem em que aparecem, e não entram nos parâmetros: o preset as guarda
+//    pelo id em texto (ver NexusProcessor::getStateInformation).
 namespace nexus::gear
 {
 enum class Kind
@@ -64,6 +68,7 @@ struct GearEntry
   int builtInIndex = -1;      // posição nos parâmetros antigos (só fábrica)
   juce::File folder;          // pasta da peça baixada (vazia nas embutidas)
   int look = -1;              // posição no catálogo do tipo
+  bool vacant = false;        // posição de fábrica sem a peça (não instalada)
 
   // Bloco das capturas recomendadas da própria ficha (vazio: vale o
   // recomendadas.json embutido).
@@ -92,12 +97,17 @@ public:
   // Leitura em qualquer linha, inclusive a do áudio (sem trava).
   int count(Kind kind) const { return mCount[static_cast<size_t>(kind)].load(); }
   int pedalEngineAt(int look) const;
+  // A posição tem peça (falso: vaga de fábrica ou fora do catálogo).
+  bool presentAt(Kind kind, int look) const
+  {
+    return look >= 0 && look < count(kind) && mPresent[static_cast<size_t>(kind)][static_cast<size_t>(look)].load();
+  }
   bool graphicEqAt(int look) const;
 
-  // Linha principal.
+  // Linha principal. Todas as posições, vagas inclusive (vacant).
   std::vector<GearEntry> entries(Kind kind) const;
   std::optional<GearEntry> entry(Kind kind, int look) const;
-  // -1: não está instalado. Aceita o código antigo de uma peça que trocou de
+  // -1: não está instalado (vaga também). Aceita o código antigo de uma peça que trocou de
   // nome (preset salvo antes da troca).
   int find(Kind kind, const juce::String& id) const;
   juce::String idOf(Kind kind, int look) const;
@@ -130,12 +140,15 @@ private:
   GearCatalog();
   void loadEmbedded();
   void add(GearEntry e);
+  // Põe a peça na posição dela (vaga de fábrica ou nova no fim).
+  void place(GearEntry e, int look);
 
   mutable std::mutex mLock;
   std::array<std::vector<GearEntry>, 3> mEntries;
   std::array<std::atomic<int>, 3> mCount{};
   std::array<std::atomic<int>, kMaxLooks> mPedalEngine{};
   std::array<std::atomic<bool>, kMaxLooks> mGraphicEq{};
+  std::array<std::array<std::atomic<bool>, kMaxLooks>, 3> mPresent{};
   // Código antigo -> código atual, por tipo (assets/gear/codigos_antigos.json).
   std::array<juce::StringPairArray, 3> mRenamed;
 };

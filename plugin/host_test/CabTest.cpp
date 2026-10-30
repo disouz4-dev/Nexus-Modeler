@@ -134,7 +134,7 @@ void testScreen(NexusProcessor& p)
   for (auto* k : all)
     if (visibleIn(*k, *editor))
       knobs.push_back(k);
-  report(knobs.size() == 6, "Os 6 botões renderizados do Brit 800 estão na tela",
+  report(knobs.size() == 6, "Os 6 botões renderizados do cabeçote estão na tela",
          juce::String(static_cast<int>(knobs.size())) + juce::String::fromUTF8(" botões encontrados"));
   if (knobs.empty() || e == nullptr)
     return;
@@ -655,13 +655,13 @@ int main(int argc, char** argv)
     report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
 
-    // Primeira abertura: só o Brit 800 com a caixa dele, sem pedais.
+    // Primeira abertura: o cabeçote e a caixa da posição 0 (os de teste), sem pedais.
     {
       auto freshBox = std::make_unique<NexusProcessor>();
       auto& fresh = *freshBox;
       const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
       const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
-      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: Brit 800 e a caixa dele, sem pedais",
+      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: cabeçote e caixa da posição 0, sem pedais",
              juce::String(fresh.layout().count()) + " pedais, cabeçote " + juce::String(head) + ", caixa " + juce::String(cab));
     }
     // Cherry Drop: meio-dia não muda o tom; as pontas são -12 e +12.
@@ -1011,7 +1011,7 @@ int main(int argc, char** argv)
     const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
     report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
     int all = 0;
-    for (const auto* g : {"brit800", "greengage_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
+    for (const auto* g : {"brit800", "greengage_drive", "acai_rat", "pearl_fuzz", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }

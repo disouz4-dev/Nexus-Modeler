@@ -70,6 +70,7 @@ set(NEXUS_UI_SOURCES
   source/ui/IrMic.cpp
   source/update/Updater.cpp
   source/update/GearStore.cpp
+  source/update/NovaInstalacao.cpp
   source/report/Report.cpp
   source/tone3000/Tone3000.cpp)
 
@@ -323,9 +324,17 @@ if(NEXUS_BUILD_TOOLS)
            COMMAND nexus_host_test "$<GENEX_EVAL:$<TARGET_PROPERTY:NexusModeler_VST3,JUCE_PLUGIN_ARTEFACT_FILE>>" "${CMAKE_BINARY_DIR}/test_packs/ganho")
 endif()
 
-# Testes que abrem a tela: captura padrão desligada (não baixam nada da TONE3000).
+# Testes que tocam a cadeia inteira: captura padrão desligada (não baixam nada
+# da TONE3000), pastas de dados próprias (a troca da instalação nova nunca
+# mexe nos dados de quem roda o teste) e o cabeçote e a caixa de teste
+# (host_test/equipamentos), que a beta.3 não traz embutidos.
+set(NEXUS_TESTE_DADOS "${CMAKE_BINARY_DIR}/dados_de_teste")
+file(REMOVE_RECURSE "${NEXUS_TESTE_DADOS}")
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/host_test/equipamentos/" DESTINATION "${NEXUS_TESTE_DADOS}/Equipamentos"
+     PATTERN "LEIAME.md" EXCLUDE)
 foreach(teste caixa_e_full_rig plugin_aberto_no_programa)
   if(TEST ${teste})
-    set_tests_properties(${teste} PROPERTIES ENVIRONMENT "NEXUS_SEM_PADRAO=1")
+    set_tests_properties(${teste} PROPERTIES ENVIRONMENT
+      "NEXUS_SEM_PADRAO=1;NEXUS_EQUIPAMENTOS_PASTA=${NEXUS_TESTE_DADOS}/Equipamentos;NEXUS_DADOS_PASTA=${NEXUS_TESTE_DADOS}/Dados;NEXUS_DOCUMENTOS_PASTA=${NEXUS_TESTE_DADOS}/Documentos")
   endif()
 endforeach()

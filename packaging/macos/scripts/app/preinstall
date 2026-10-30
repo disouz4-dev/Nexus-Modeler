@@ -1,0 +1,8 @@
+#!/bin/bash
+# Antes de instalar: tira o Nexus Modeler.app antigo inteiro, para não sobrar nenhum
+# arquivo de uma versão anterior dentro do pacote (o instalador da Apple só
+# acrescenta e troca arquivos, não apaga os que a versão nova não tem).
+# $2 é a pasta de destino do componente.
+destino="${2:-}"
+[ -n "$destino" ] && rm -rf "$destino/Nexus Modeler.app"
+exit 0

@@ -36,6 +36,23 @@ juce::Rectangle<float> fitImage(const juce::Image& img, juce::Rectangle<float> a
   return juce::RectanglePlacement(juce::RectanglePlacement::centred).appliedTo(img.getBounds().toFloat(), area);
 }
 
+// Lugar de uma peça que não está aqui (coluna vazia ou peça não instalada):
+// contorno tracejado com o nome do que falta.
+void drawEmptyGear(juce::Graphics& g, juce::Rectangle<float> r, const juce::String& text)
+{
+  const auto box = r.reduced(r.getWidth() * 0.08f, r.getHeight() * 0.18f);
+  juce::Path outline;
+  outline.addRoundedRectangle(box, 6.0f);
+  juce::Path dashed;
+  const float dashes[] = {5.0f, 4.0f};
+  juce::PathStrokeType(1.2f).createDashedStroke(dashed, outline, dashes, 2);
+  g.setColour(colour::text.withAlpha(0.28f));
+  g.fillPath(dashed);
+  g.setColour(colour::text.withAlpha(0.5f));
+  g.setFont(Fonts::get().ui(11.0f));
+  g.drawFittedText(text, box.reduced(4.0f).toNearestInt(), juce::Justification::centred, 2);
+}
+
 void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> r, float alpha = 1.0f)
 {
   if (!img.isValid())
@@ -1473,6 +1490,8 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
       const bool on = proc.params.getRawParameterValue(NexusProcessor::pedalParam(c.index, "ligado"))->load() > 0.5f;
       if (art != nullptr)
         drawGear(g, art->front, fitImage(art->front, c.r)); // só o LED indica ligado
+      else
+        drawEmptyGear(g, c.r, {});
       if (art != nullptr && on && loaded && art->ledRadius > 0.0f)
       {
         const auto img = fitImage(art->front, c.r);
@@ -1482,12 +1501,16 @@ void NexusEditor::ChainView::paint(juce::Graphics& g)
       break;
     }
     case CardType::amp:
+      if (!mEditor.ampArt(c.index).valid())
+        drawEmptyGear(g, c.r, TRANS(juce::String::fromUTF8("Sem cabeçote")));
       drawGear(g, mEditor.ampArt(c.index).front, fitImage(mEditor.ampArt(c.index).front, c.r), layout.dual && activeRig != c.index ? 0.45f : 1.0f);
       break;
     case CardType::cab:
     {
       const bool cabOn = proc.packIncludesCab(c.index)
                          || (proc.params.getRawParameterValue(NexusProcessor::ampParam(c.index, "caixa"))->load() > 0.5f && proc.irLoaded(c.index));
+      if (!mEditor.cabArt(c.index).valid())
+        drawEmptyGear(g, c.r, TRANS("Sem caixa"));
       drawGear(g, mEditor.cabArt(c.index).front, fitImage(mEditor.cabArt(c.index).front, c.r),
                cabOn && !(layout.dual && activeRig != c.index) ? 1.0f : 0.4f);
       break;
@@ -1883,7 +1906,8 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       const auto list = GearCatalog::instance().entries(kind);
       arts.resize(list.size());
       for (size_t i = 0; i < list.size(); ++i)
-        jobs.push_back([&arts, i, id = list[i].id] { arts[i] = GearArt::load(id); });
+        if (!list[i].vacant)
+          jobs.push_back([&arts, i, id = list[i].id] { arts[i] = GearArt::load(id); });
     };
     queue(mAmpArts, G::Kind::amp);
     queue(mCabArts, G::Kind::cab);
@@ -2131,6 +2155,8 @@ void NexusEditor::refreshBrowser()
   {
     if (e.look >= static_cast<int>(mPedalArts.size()))
       break;
+    if (e.vacant)
+      continue; // peça que saiu do programa: volta pelo botão de equipamentos
     GearItem it;
     it.kind = GearItem::Kind::pedal;
     it.look = e.look;
@@ -2145,6 +2171,8 @@ void NexusEditor::refreshBrowser()
   {
     if (e.look >= static_cast<int>(mAmpArts.size()))
       break;
+    if (e.vacant)
+      continue; // peça que saiu do programa: volta pelo botão de equipamentos
     GearItem amp;
     amp.kind = GearItem::Kind::amp;
     amp.look = e.look;
@@ -2159,6 +2187,8 @@ void NexusEditor::refreshBrowser()
   {
     if (e.look >= static_cast<int>(mCabArts.size()))
       break;
+    if (e.vacant)
+      continue; // peça que saiu do programa: volta pelo botão de equipamentos
     GearItem cab;
     cab.kind = GearItem::Kind::cab;
     cab.look = e.look;
@@ -2175,13 +2205,15 @@ void NexusEditor::refreshBrowser()
 
 void NexusEditor::catalogChanged()
 {
-  // Equipamento novo instalado: a arte dele entra no fim de cada lista (as
-  // posições e a arte das que já estavam não mudam: a peça em uso troca só ao
-  // abrir de novo) e a lista se refaz.
+  // Equipamento novo instalado: a arte dele entra no fim de cada lista, ou na
+  // vaga de fábrica que ele ocupou de novo (as posições e a arte das que já
+  // estavam não mudam: a peça em uso troca só ao abrir de novo) e a lista se refaz.
   auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
     for (const auto& e : GearCatalog::instance().entries(kind))
       if (e.look >= static_cast<int>(arts.size()))
-        arts.push_back(GearArt::load(e.id));
+        arts.push_back(e.vacant ? GearArt() : GearArt::load(e.id));
+      else if (!e.vacant && !arts[static_cast<size_t>(e.look)].valid())
+        arts[static_cast<size_t>(e.look)] = GearArt::load(e.id);
   };
   grow(mPedalArts, G::Kind::pedal);
   grow(mAmpArts, G::Kind::amp);
@@ -2463,13 +2495,13 @@ void NexusEditor::ensureCab(int rig, bool swapping)
 {
   // swapping: a caixa acabou de trocar (cabeçote ou caixa novos): o IR da
   // caixa nova entra mesmo havendo outro carregado.
-  if (!defaultsEnabled() || mProcessor.packIncludesCab(rig)
+  if (!defaultsEnabled() || !mProcessor.gearPlays(G::Kind::cab, rig) || mProcessor.packIncludesCab(rig)
       || (!swapping && (mProcessor.irLoaded(rig) || mProcessor.irName(rig).isNotEmpty())))
     return;
   // Caixa sem lista própria de IRs usa a da Brit 4x12 (os IRs servem a qualquer cabeçote).
   int look = juce::jlimit(0, static_cast<int>(mCabArts.size()) - 1, mProcessor.cabLook(rig));
   auto def = nexus::t3k::defaultTone(gearIdOf(G::Kind::cab, look));
-  if (!def)
+  if (!def && GearCatalog::instance().presentAt(G::Kind::cab, 0))
   {
     look = 0;
     def = nexus::t3k::defaultTone(gearIdOf(G::Kind::cab, 0));
@@ -2522,6 +2554,9 @@ void NexusEditor::loadHeadChannels(int rig)
   // (Documentos/Nexus Modeler/<cabeçote>). Fica o que já estava aberto se for
   // desse cabeçote; canal sem pacote do cabeçote fica vazio (ao clicar, pede).
   const auto& art = ampArt(rig);
+  // Sem cabeçote instalado não há pasta dele: não abre nem pede pacote.
+  if (!mProcessor.gearPlays(G::Kind::amp, rig) || art.name.isEmpty())
+    return;
   const auto root = nexus::t3k::Connection::packsFolder(art.name);
   auto folders = root.findChildFiles(juce::File::findDirectories, false);
   folders.sort();
@@ -3087,13 +3122,25 @@ void NexusEditor::timerCallback()
     }
     mCabStage->refresh();
   }
-  // Preset pede uma peça que não está neste computador: o cartão diz qual é
-  // (o som segue: o pedal passa direto; cabeçote e caixa com o pacote e o IR salvos).
+  // Preset pede uma peça revisada que não está neste computador: o cartão
+  // diz qual é (o som passa direto por ela até a peça chegar).
   if (const auto missing = missingHere(); missing.isNotEmpty())
   {
     title = TRANS(juce::String::fromUTF8("%1 não está instalado")).replace("%1", missingName(missing));
     subtitle = TRANS(juce::String::fromUTF8("Este preset usa um equipamento que não está neste computador."));
     link = missingLink(missing);
+  }
+  // Lugar vazio (sessão nova, ou peça que não está entre as revisadas): sem
+  // nome nem cartão; as peças chegam pelo botão de equipamentos.
+  else if (const auto kind = mSel.kind == Kind::amp ? G::Kind::amp : mSel.kind == Kind::cab ? G::Kind::cab : G::Kind::pedal;
+           (mSel.kind == Kind::amp || mSel.kind == Kind::cab || mSel.kind == Kind::pedal) && !mProcessor.gearPlays(kind, mSel.index))
+  {
+    title = (mSel.kind == Kind::amp   ? TRANS(juce::String::fromUTF8("Sem cabeçote"))
+             : mSel.kind == Kind::cab ? TRANS("Sem caixa")
+                                      : TRANS("Sem pedal"))
+            + side;
+    subtitle = TRANS(juce::String::fromUTF8("As peças chegam pelo botão de equipamentos conforme forem revisadas."));
+    link = {};
   }
   if (title != mTitle || subtitle != mSubtitle)
   {
@@ -3126,15 +3173,17 @@ void NexusEditor::timerCallback()
 
 juce::String NexusEditor::missingHere() const
 {
+  juce::String id;
   switch (mSel.kind)
   {
-    case Kind::pedal: return mProcessor.missingGear(G::Kind::pedal, mSel.index);
-    case Kind::amp: return mProcessor.missingGear(G::Kind::amp, mSel.index);
-    case Kind::cab: return mProcessor.missingGear(G::Kind::cab, mSel.index);
+    case Kind::pedal: id = mProcessor.missingGear(G::Kind::pedal, mSel.index); break;
+    case Kind::amp: id = mProcessor.missingGear(G::Kind::amp, mSel.index); break;
+    case Kind::cab: id = mProcessor.missingGear(G::Kind::cab, mSel.index); break;
     case Kind::eq:
     case Kind::tuner: break;
   }
-  return {};
+  // Só peça do índice de equipamentos revisados tem cartão; o resto fica vazio.
+  return id.isNotEmpty() && mStore->remoteEntry(id).isObject() ? id : juce::String();
 }
 
 juce::String NexusEditor::missingName(const juce::String& id) const

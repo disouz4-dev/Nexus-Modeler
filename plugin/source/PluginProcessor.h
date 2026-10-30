@@ -214,7 +214,15 @@ public:
   // uma peça que não está instalada, é o id dela.
   juce::String gearId(nexus::gear::Kind kind, int position) const;
   // Id pedido pelo preset que não está instalado (vazio: está tudo certo).
+  // A tela só mostra o cartão se a peça estiver no índice de equipamentos
+  // revisados; senão o lugar fica vazio.
   juce::String missingGear(nexus::gear::Kind kind, int position) const;
+  // Posição deixada sem peça (sessão nova sem cabeçote e sem caixa, ou salva
+  // assim): salva em branco, e não pega sozinha a peça que chegar depois.
+  bool gearEmpty(nexus::gear::Kind kind, int position) const;
+  // A peça da posição está instalada e toca (falso: vazia ou não instalada).
+  // Serve no áudio.
+  bool gearPlays(nexus::gear::Kind kind, int position) const;
   // Equipamento novo instalado: as posições que esperavam por ele passam a usá-lo.
   void gearInstalled();
   bool slotLoaded(int slot) const { return mSlotLoaded[static_cast<size_t>(slot)].load(); }
@@ -342,17 +350,29 @@ private:
     return choice >= 0 && (choice & 0xff) == p ? choice >> 8 : p;
   }
   void choose(nexus::gear::Kind kind, int position, int look);
+  int lookAt(nexus::gear::Kind kind, int position) const;
+  int choiceIndex(nexus::gear::Kind kind, int position) const;
+  void setEmpty(nexus::gear::Kind kind, int position, bool empty);
   juce::RangedAudioParameter* choiceParam(nexus::gear::Kind kind, int position) const;
   std::atomic<int>& choiceOf(nexus::gear::Kind kind, int position);
+  const std::atomic<int>& choiceOf(nexus::gear::Kind kind, int position) const
+  {
+    return const_cast<NexusProcessor*>(this)->choiceOf(kind, position);
+  }
   // Lê os ids do estado (preset novo) ou deixa os índices (preset antigo).
   void restoreGearIds(const juce::ValueTree& state);
-  void applyGearId(nexus::gear::Kind kind, int position, const juce::String& id);
+  void applyGearId(nexus::gear::Kind kind, int position, const juce::var& id);
   static juce::String gearIdKey(nexus::gear::Kind kind, int position);
   std::array<std::atomic<int>, kPedals> mPedalChoice;
   std::array<std::atomic<int>, kRigs> mAmpChoice, mCabChoice;
   // Peça pedida pelo preset e não instalada: pedal passa o som direto;
   // cabeçote e caixa seguem com o pacote e o IR salvos.
-  std::array<std::atomic<bool>, kPedals> mPedalMissing;
+  static_assert(kRigs <= kPedals, "posições de cabeçote e caixa cabem nas listas por tipo");
+  // Por tipo e posição: o preset pediu peça não instalada (vale no áudio).
+  std::array<std::array<std::atomic<bool>, kPedals>, 3> mGearMissing;
+  // Por tipo e posição: o valor do parâmetro de escolha quando a posição
+  // ficou vazia (-1: não está vazia). Mudou o parâmetro, deixa de estar.
+  std::array<std::array<std::atomic<int>, kPedals>, 3> mEmptyAt;
   mutable juce::CriticalSection mMissingLock;
   std::array<juce::StringArray, 3> mMissing; // por tipo, um id por posição
 

@@ -97,9 +97,9 @@ componente() {
 }
 
 mkdir -p "$trabalho/pacotes"
-componente vst3 "$vst3" "/Library/Audio/Plug-Ins/VST3"
+componente vst3 "$vst3" "/Library/Audio/Plug-Ins/VST3" "$aqui/scripts/vst3"
 componente au "$au" "/Library/Audio/Plug-Ins/Components" "$aqui/scripts/au"
-componente app "$app" "/Applications"
+componente app "$app" "/Applications" "$aqui/scripts/app"
 
 # Componente sem arquivos: só o script que grava o idioma.
 pkgbuild --nopayload \
