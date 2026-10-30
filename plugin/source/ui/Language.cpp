@@ -3,6 +3,7 @@
 #include <juce_data_structures/juce_data_structures.h>
 
 #include "BinaryData.h"
+#include "../update/NovaInstalacao.h"
 
 namespace nexus::ui::language
 {
@@ -12,15 +13,7 @@ juce::String gCurrent = "pt-BR";
 
 juce::PropertiesFile& preferences()
 {
-  static juce::PropertiesFile file([] {
-    juce::PropertiesFile::Options o;
-    o.applicationName = "preferencias";
-    o.filenameSuffix = ".settings";
-    o.folderName = "Nexus Modeler";
-    o.osxLibrarySubFolder = "Application Support";
-    o.commonToAllUsers = false;
-    return o;
-  }());
+  static juce::PropertiesFile file(nexus::update::settingsFile("preferencias.settings"), juce::PropertiesFile::Options());
   return file;
 }
 } // namespace

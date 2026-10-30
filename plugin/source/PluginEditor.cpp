@@ -6,6 +6,7 @@
 
 #include "StandaloneLink.h"
 #include "report/Report.h"
+#include "update/NovaInstalacao.h"
 #include "ui/Brand.h"
 #include "ui/Language.h"
 #include "ui/Theme.h"
@@ -557,6 +558,9 @@ void NexusEditor::GearStage::paint(juce::Graphics& g)
 {
   if (mArt == nullptr || !mArt->valid())
   {
+    // Lugar vazio (sem cabeçote, sem pedal): o título embaixo já diz; o palco fica limpo.
+    if (mProcessor.gearEmpty(mKind == Kind::amp ? G::Kind::amp : G::Kind::pedal, mIndex))
+      return;
     drawCaps(g, TRANS(juce::String::fromUTF8("visual ainda não renderizado")), getLocalBounds().toFloat(), 12.0f,
              juce::Justification::centred, colour::faint);
     return;
@@ -844,8 +848,11 @@ bool NexusEditor::BoardView::zooming() const
 
 bool NexusEditor::BoardView::hitTest(int x, int y)
 {
-  // Fora do zoom, a faixa do título (embaixo) é do título.
-  return mFocus >= 0 || y < getHeight() - kTitleHeight;
+  // A faixa do título (embaixo) é do título, com o link de trocar o pacote;
+  // no zoom, só o pedal ampliado que desce por cima dela é da pedaleira.
+  if (y < getHeight() - kTitleHeight)
+    return true;
+  return mFocus >= 0 && mZoomSlot.has_value() && mZoomSlot->body.contains(juce::Point<float>(static_cast<float>(x), static_cast<float>(y)));
 }
 
 juce::Rectangle<float> NexusEditor::BoardView::imageOf(int pedal) const
@@ -1756,10 +1763,8 @@ void NexusEditor::ChainView::itemDropped(const SourceDetails& d)
   const int card = cardAt(at);
   if (card >= 0 && mCards[static_cast<size_t>(card)].type == CardType::pedal)
   {
-    const int pedal = mCards[static_cast<size_t>(card)].index;
-    mEditor.mProcessor.choosePedal(pedal, look);
-    mEditor.select({Kind::pedal, pedal});
-    mEditor.ensurePedal(pedal); // a captura do pedal novo entra sozinha
+    // A captura do pedal novo entra sozinha; a do antigo sai na hora.
+    mEditor.swapPedal(mCards[static_cast<size_t>(card)].index, look);
   }
   else if (const auto* drop = nearestDrop(at))
     mEditor.insertPedal(look, drop->list, drop->position);
@@ -2089,11 +2094,17 @@ NexusEditor::NexusEditor(NexusProcessor& p)
 
   setSize(kWidth, kHeight);
   select({Kind::amp, 0});
+  // Sessão começando do zero (sem cabeçote e sem pedal): a lista abre nos pedais.
+  if (mProcessor.gearEmpty(G::Kind::amp, 0) && mProcessor.layout().count() == 0)
+    mBrowser->setTab(GearItem::Kind::pedal);
   retranslate();
   // Depois que o estado salvo terminou de abrir as peças: completa as vazias.
   juce::Timer::callAfterDelay(1500, [safe = juce::Component::SafePointer<NexusEditor>(this)] {
     if (safe != nullptr)
+    {
       safe->ensureDefaults();
+      safe->noticeOldData();
+    }
   });
   GearCatalog::instance().addChangeListener(this);
   // Capturas recomendadas: as da ficha do equipamento baixado valem antes das embutidas.
@@ -2144,6 +2155,8 @@ void NexusEditor::insertPedal(int look, int list, int position)
     if (auto* param = mProcessor.params.getParameter(NexusProcessor::pedalParam(pedal, id)))
       param->setValueNotifyingHost(param->getDefaultValue());
   mProcessor.choosePedal(pedal, look);
+  mProcessor.clearPedalPack(pedal); // o lugar livre pode guardar o pacote de um pedal que saiu
+  mFollowedPedal[static_cast<size_t>(pedal)] = mProcessor.pedalLook(pedal);
   auto& dest = ChainView::list(layout, list);
   dest.insert(dest.begin() + juce::jlimit(0, static_cast<int>(dest.size()), position), pedal);
   mProcessor.setLayout(layout);
@@ -2208,6 +2221,73 @@ void NexusEditor::refreshBrowser()
   mBrowser->setItems(std::move(items));
 }
 
+void NexusEditor::noticeOldData()
+{
+  // Uma vez só, depois da instalação nova: onde ficaram as coisas das versões antigas.
+  const auto marker = nexus::update::dataRoot().getChildFile("instalacao.json");
+  auto info = juce::JSON::parse(marker);
+  const juce::File reserve(info["reserva"].toString());
+  if (!info.isObject() || static_cast<bool>(info["reserva_avisada"]) || info["reserva"].toString().isEmpty() || !reserve.isDirectory())
+    return;
+  info.getDynamicObject()->setProperty("reserva_avisada", true);
+  marker.replaceWithText(juce::JSON::toString(info));
+  auto options = juce::MessageBoxOptions()
+                   .withIconType(juce::MessageBoxIconType::InfoIcon)
+                   .withTitle("Nexus Modeler")
+                   .withMessage(TRANS(juce::String::fromUTF8("Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”.")))
+                   .withButton(TRANS("Abrir a pasta"))
+                   .withButton("OK")
+                   .withAssociatedComponent(this);
+  juce::AlertWindow::showAsync(options, [reserve](int button) {
+    if (button == 1)
+      reserve.getParentDirectory().revealToUser();
+  });
+}
+
+void NexusEditor::cabFollowsAmp(int rig)
+{
+  // A caixa acompanha o cabeçote (dá para trocar depois na lista de caixas;
+  // a troca à mão vale até o cabeçote mudar de novo). Uma fonte só: o
+  // caixa_padrao da ficha, que chega pelo botão de equipamentos.
+  mFollowedAmp[static_cast<size_t>(rig)] = mProcessor.ampLook(rig);
+  if (!mProcessor.gearPlays(G::Kind::amp, rig))
+    return;
+  const auto amp = GearCatalog::instance().entry(G::Kind::amp, mProcessor.ampLook(rig));
+  const int cab = amp ? GearCatalog::instance().find(G::Kind::cab, amp->cabId) : -1;
+  if (cab < 0)
+    return;
+  mProcessor.chooseCab(rig, cab);
+  ensureCab(rig, true);
+  mChain->rebuild();
+}
+
+void NexusEditor::followAmps()
+{
+  // Preset ou sessão aberta: o cabeçote e a caixa vêm juntos dele.
+  const bool fromState = mProcessor.stateLoads() != mFollowedStates;
+  const bool first = mFollowedStates < 0;
+  mFollowedStates = mProcessor.stateLoads();
+  // Pedal trocado por fora da tela (automação): o pacote do antigo sai e o do novo entra.
+  for (int pedal = 0; pedal < NexusProcessor::kPedals; ++pedal)
+    if (const int look = mProcessor.pedalLook(pedal); look != mFollowedPedal[static_cast<size_t>(pedal)])
+    {
+      mFollowedPedal[static_cast<size_t>(pedal)] = look;
+      if (!first && !fromState && mProcessor.layout().uses(pedal))
+      {
+        mProcessor.clearPedalPack(pedal);
+        ensurePedal(pedal);
+      }
+    }
+  for (int rig = 0; rig < NexusProcessor::kRigs; ++rig)
+    if (const int look = mProcessor.ampLook(rig); look != mFollowedAmp[static_cast<size_t>(rig)])
+    {
+      if (fromState || mFollowedAmp[static_cast<size_t>(rig)] < 0)
+        mFollowedAmp[static_cast<size_t>(rig)] = look;
+      else
+        cabFollowsAmp(rig);
+    }
+}
+
 bool NexusEditor::showsCabs()
 {
   const auto& catalog = GearCatalog::instance();
@@ -2241,6 +2321,10 @@ void NexusEditor::catalogChanged()
   grow(mAmpArts, G::Kind::amp);
   grow(mCabArts, G::Kind::cab);
   mProcessor.gearInstalled();
+  // Caixa que chegou pelo botão depois do cabeçote: entra no cabeçote que estava sem caixa.
+  for (int rig = 0; rig < NexusProcessor::kRigs; ++rig)
+    if (mProcessor.gearPlays(G::Kind::amp, rig) && mProcessor.gearEmpty(G::Kind::cab, rig))
+      cabFollowsAmp(rig);
   refreshBrowser();
   mChain->rebuild(); // a primeira caixa instalada ganha o cartão na cadeia
   select(mSel);
@@ -2254,9 +2338,7 @@ void NexusEditor::pickGear(const GearItem& item)
     if (mSel.kind == Kind::pedal)
     {
       // Troca o pedal escolhido por este.
-      mProcessor.choosePedal(mSel.index, item.look);
-      select(mSel);
-      ensurePedal(mSel.index);
+      swapPedal(mSel.index, item.look);
     }
     else
       insertPedal(item.look, 0, static_cast<int>(mProcessor.layout().pre.size()));
@@ -2267,12 +2349,8 @@ void NexusEditor::pickGear(const GearItem& item)
     // canal que estiverem na pasta dele.
     const int rig = mSel.kind == Kind::pedal ? 0 : mSel.index;
     mProcessor.chooseAmp(rig, item.look);
-    // A caixa acompanha o cabeçote (dá para trocar depois na lista de caixas).
-    if (const auto amp = GearCatalog::instance().entry(G::Kind::amp, item.look))
-      if (const int cab = GearCatalog::instance().find(G::Kind::cab, amp->cabId); cab >= 0)
-        mProcessor.chooseCab(rig, cab);
+    cabFollowsAmp(rig);
     loadHeadChannels(rig);
-    ensureCab(rig, true);
     select({Kind::amp, rig});
     break;
   }
@@ -2388,6 +2466,7 @@ int packChannel(const juce::File& folder)
 
 void NexusEditor::loadPackInto(Selection target, int channel, const juce::File& folder)
 {
+  nexus::report::log("captura", juce::String::fromUTF8("escolhida: ") + mPackGearName + " -> " + folder.getFileName());
   if (target.kind == Kind::pedal)
   {
     mProcessor.loadPedalPack(target.index, folder);
@@ -2478,6 +2557,19 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
                list.push_back(tone);
                (*tryList)(list, 0);
              });
+}
+
+void NexusEditor::swapPedal(int pedal, int look)
+{
+  // Outro pedal no mesmo lugar: o som do antigo sai na hora, mesmo que o
+  // pacote do novo ainda tenha de ser baixado (ou o novo seja um efeito do Nexus).
+  const bool other = mProcessor.pedalLook(pedal) != look;
+  mProcessor.choosePedal(pedal, look);
+  mFollowedPedal[static_cast<size_t>(pedal)] = mProcessor.pedalLook(pedal);
+  if (other)
+    mProcessor.clearPedalPack(pedal);
+  select({Kind::pedal, pedal});
+  ensurePedal(pedal);
 }
 
 void NexusEditor::ensurePedal(int pedal)
@@ -3072,6 +3164,8 @@ void NexusEditor::timerCallback()
     mMidiNotice.clear();
     repaint();
   }
+
+  followAmps();
 
   // Os mesmos pedais na pedaleira e na cadeia de baixo, na mesma ordem.
   if (const auto shown = mProcessor.layout().toValueTree().toXmlString(); shown != mShownLayout)

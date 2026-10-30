@@ -87,13 +87,14 @@ NexusProcessor::NexusProcessor()
   }
   for (auto& s : mSlots)
     s.status = juce::String::fromUTF8("Nenhum pacote.");
-  // Sessão nova: o que aponta para uma vaga de fábrica começa vazio (sem
-  // cabeçote e sem caixa até chegar uma peça revisada pelo botão).
+  // Sessão nova: sem cabeçote e sem caixa (a pessoa escolhe o cabeçote, e a
+  // caixa vem com ele); pedal que aponta para uma vaga de fábrica também
+  // começa vazio.
   for (size_t k = 0; k < 3; ++k)
   {
     const auto kind = static_cast<nexus::gear::Kind>(k);
     for (int p = 0; p < (kind == nexus::gear::Kind::pedal ? kPedals : kRigs); ++p)
-      if (!nexus::gear::GearCatalog::instance().presentAt(kind, lookAt(kind, p)))
+      if (kind != nexus::gear::Kind::pedal || !nexus::gear::GearCatalog::instance().presentAt(kind, lookAt(kind, p)))
         setEmpty(kind, p, true);
   }
   mLayoutUi = ChainLayout::fromValueTree({});
@@ -1175,6 +1176,9 @@ void NexusProcessor::loadSlot(int slotIndex, const juce::File& folder)
       }
       mIncludesCab[static_cast<size_t>(slotIndex)].store(pack.includesCab);
       mSlotLoaded[static_cast<size_t>(slotIndex)].store(true);
+      nexus::report::log("captura", (slotIndex < kPedals ? "pedal " + juce::String(slotIndex + 1) : juce::String::fromUTF8("cabeçote ") + juce::String((slotIndex - kPedals) / kChannels + 1)
+                                       + " canal " + juce::String((slotIndex - kPedals) % kChannels + 1))
+                                      + juce::String::fromUTF8(" carregou ") + folder.getFileName() + " (" + text + ")");
       delete s.pending.exchange(engine.release());
     }
     catch (const std::exception& e)
@@ -1294,6 +1298,7 @@ void NexusProcessor::getStateInformation(juce::MemoryBlock& destData)
 
 void NexusProcessor::setStateInformation(const void* data, int sizeInBytes)
 {
+  ++mStateLoads;
   if (auto xml = getXmlFromBinary(data, sizeInBytes))
   {
     auto state = juce::ValueTree::fromXml(*xml);
@@ -1424,7 +1429,7 @@ bool NexusProcessor::gearEmpty(nexus::gear::Kind kind, int position) const
 
 bool NexusProcessor::gearPlays(nexus::gear::Kind kind, int position) const
 {
-  return !mGearMissing[static_cast<size_t>(kind)][static_cast<size_t>(position)].load()
+  return !mGearMissing[static_cast<size_t>(kind)][static_cast<size_t>(position)].load() && !gearEmpty(kind, position)
          && nexus::gear::GearCatalog::instance().presentAt(kind, lookAt(kind, position));
 }
 

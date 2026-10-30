@@ -53,6 +53,24 @@ juce::File documentsRoot()
   return juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile("Nexus Modeler");
 }
 
+juce::File settingsFile(const juce::String& name)
+{
+  return dataRoot().getChildFile(name);
+}
+
+namespace
+{
+// Pasta de dados que só tem o que o instalador acabou de gravar (o idioma
+// escolhido nele): é de quem nunca teve o Nexus, não de versão antiga.
+bool onlyInstallerFiles(const juce::File& data)
+{
+  for (const auto& f : data.findChildFiles(juce::File::findFilesAndDirectories, false))
+    if (!f.getFileName().startsWithChar('.') && f.getFileName() != "preferencias.settings")
+      return false;
+  return true;
+}
+} // namespace
+
 juce::File startFresh()
 {
   const auto data = dataRoot();
@@ -74,9 +92,15 @@ juce::File startFresh()
   // Pasta de dados inteira (preferências, Equipamentos, Presets, índice,
   // registro, conta da TONE3000) e as preferências do programa independente,
   // que ficam ao lado dela.
-  aside(data, "Dados");
+  if (!onlyInstallerFiles(data))
+    aside(data, "Dados");
   for (const auto& f : data.getParentDirectory().findChildFiles(juce::File::findFiles, false, "Nexus Modeler.*"))
     aside(f, f.getFileName());
+#if JUCE_LINUX
+  // No Linux as versões antigas guardavam as preferências em ~/Nexus Modeler.
+  if (juce::SystemStats::getEnvironmentVariable("NEXUS_DADOS_PASTA", {}).isEmpty())
+    aside(juce::File::getSpecialLocation(juce::File::userHomeDirectory).getChildFile("Nexus Modeler"), "Preferencias");
+#endif
   // Capturas da TONE3000 baixadas (Documentos/Nexus Modeler/<equipamento>).
   const auto docs = documentsRoot();
   for (const auto& f : docs.findChildFiles(juce::File::findFilesAndDirectories, false))
@@ -89,12 +113,16 @@ juce::File startFresh()
   if (reserve != juce::File())
   {
     juce::PropertiesFile::Options o;
-    juce::PropertiesFile old(reserve.getChildFile("Dados").getChildFile("preferencias.settings"), o);
-    if (const auto language = old.getValue("idioma"); language.isNotEmpty())
+    for (const char* from : {"Dados", "Preferencias"})
     {
-      juce::PropertiesFile fresh(data.getChildFile("preferencias.settings"), o);
-      fresh.setValue("idioma", language);
-      fresh.saveIfNeeded();
+      juce::PropertiesFile old(reserve.getChildFile(from).getChildFile("preferencias.settings"), o);
+      if (const auto language = old.getValue("idioma"); language.isNotEmpty())
+      {
+        juce::PropertiesFile fresh(data.getChildFile("preferencias.settings"), o);
+        fresh.setValue("idioma", language);
+        fresh.saveIfNeeded();
+        break;
+      }
     }
   }
   auto* marker = new juce::DynamicObject();

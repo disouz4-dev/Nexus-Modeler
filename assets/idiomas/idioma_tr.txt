@@ -145,6 +145,8 @@ countries: tr
 "Motor A2 Lite neste pedal (usa menos processador)" = "Bu pedalda A2 Lite motoru (daha az işlemci kullanır)"
 "Mover para antes do cabeçote" = "Amfi kafasının önüne taşı"
 "Mover para depois da caixa" = "Kabinin arkasına taşı"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "Bu sürüm sıfırdan başlar. Eski sürümlerin presetleri, yakalamaları ve ekipmanları hiçbir şey silinmeden “Nexus Modeler (versões antigas)” klasöründe saklandı."
+"Abrir a pasta" = "Klasörü aç"
 "Mover para depois do cabeçote" = "Kafanın arkasına taşı"
 "Mover para o fim da cadeia" = "Zincirin sonuna taşı"
 "Mover para entre cabeçote e caixa" = "Kafa ile kabin arasına taşı"

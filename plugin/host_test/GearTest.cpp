@@ -32,6 +32,7 @@ static int setenv(const char* name, const char* value, int) { return _putenv_s(n
 #include "../source/PluginProcessor.h"
 #include "../source/tone3000/Tone3000.h"
 #include "../source/ui/Gear.h"
+#include "../source/ui/GearBrowser.h"
 #include "../source/update/NovaInstalacao.h"
 
 using nexus::gear::GearCatalog;
@@ -117,8 +118,8 @@ static void testCatalog(const juce::File& gear)
     check(vacant == c.count(kind) - embedded[static_cast<size_t>(kind)] && hidden == vacant,
           U("vagas de ") + nexus::gear::kindText(kind) + ": " + juce::String(vacant) + U(" (não instaladas, com o id guardado)"));
   }
-  check(embedded[static_cast<size_t>(Kind::cab)] == 0,
-        U("nenhuma caixa embutida (só peça revisada)"));
+  check(embedded[static_cast<size_t>(Kind::cab)] == NexusProcessor::kCabLooks,
+        U("as 29 caixas embutidas (abrem sem depender do botão de equipamentos)"));
   check(c.idOf(Kind::amp, 0) == "brit800" && c.entry(Kind::amp, 0)->name == "brit800",
         U("a vaga 0 de cabeçote guarda só o id do Brit 800 (nenhum nome antigo no programa)"));
   // Microfones voltam com as caixas, revisados: nenhum embutido; a pedaleira fica.
@@ -218,9 +219,9 @@ static void testState()
   same = same && b.ampLook(0) == 52 && b.cabLook(0) == 13 && b.ampLook(1) == 93 && b.cabLook(1) == 28;
   check(same, U("preset antigo (sem id) abre com os mesmos pedais, cabeçotes e caixas"));
   check(b.gearId(Kind::pedal, 1) == "cherry_drop" && b.gearId(Kind::amp, 0) == "mark4", U("preset antigo ganha o id pela tabela de fábrica"));
-  check(b.missingGear(Kind::amp, 0).isEmpty() && b.missingGear(Kind::cab, 1).isEmpty() && !b.gearPlays(Kind::amp, 0)
-          && !b.gearPlays(Kind::cab, 0) && !b.gearPlays(Kind::amp, 1) && !b.gearPlays(Kind::cab, 1),
-        U("cabeçote e caixa que saíram do programa: lugar vazio, sem cartão, e o som passa direto"));
+  check(b.missingGear(Kind::amp, 0).isEmpty() && b.missingGear(Kind::amp, 1).isEmpty() && !b.gearPlays(Kind::amp, 0)
+          && !b.gearPlays(Kind::amp, 1) && b.gearPlays(Kind::cab, 0) && b.gearPlays(Kind::cab, 1),
+        U("cabeçote que saiu do programa: lugar vazio, sem cartão; as caixas (embutidas) tocam"));
   check(std::isfinite(playRatio(b)), U("preset antigo com peças que saíram toca sem quebrar"));
   // O estado salvo pela versão antiga e o salvo de novo agora têm os mesmos parâmetros.
   const auto again = withoutIds(stateOf(b));
@@ -313,13 +314,28 @@ static void checkCabsOnScreen(bool expected, const juce::String& what)
         what + U(" (aba Caixas: ") + (tab ? "sim" : U("não")) + U(", cartões de caixa: ") + juce::String(cards) + ")");
 }
 
+// A aba Caixas só aparece com alguma caixa na lista (as caixas embutidas a
+// mostram; uma lista sem caixa não tem a aba).
+static void testBrowserTabs()
+{
+  nexus::ui::GearBrowser browser;
+  nexus::ui::GearItem pedal;
+  pedal.kind = nexus::ui::GearItem::Kind::pedal;
+  pedal.look = 0;
+  browser.setItems({pedal});
+  const bool without = !browser.hasCabs();
+  auto cab = pedal;
+  cab.kind = nexus::ui::GearItem::Kind::cab;
+  browser.setItems({pedal, cab});
+  check(without && browser.hasCabs(), U("lista sem caixa não tem a aba Caixas; com caixa, tem"));
+}
+
 static void testReturn()
 {
   // Sessão da beta.2 com o Mark Four e a caixa dele, e uma automação antiga.
   auto& catalog = GearCatalog::instance();
-  const int cabLook = catalog.entries(Kind::cab)[16].id == "mark_112" ? 16 : -1;
-  check(cabLook == 16 && catalog.find(Kind::amp, "mark4") < 0 && catalog.find(Kind::cab, "mark_112") < 0,
-        U("antes: Mark Four (vaga 52) e Mark 1x12 (vaga 16) não estão instalados"));
+  check(catalog.find(Kind::amp, "mark4") < 0 && catalog.find(Kind::cab, "mark_112") == 16,
+        U("antes: Mark Four (vaga 52) não está instalado; a Mark 1x12 (16) vem embutida"));
   auto aBox = std::make_unique<NexusProcessor>(); // no heap: a pilha do Windows tem 1 MB
   auto& a = *aBox;
   setParam(a, "cabecote", 52.0f);
@@ -328,8 +344,8 @@ static void testReturn()
   auto bBox = std::make_unique<NexusProcessor>();
   auto& b = *bBox;
   b.setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));
-  check(!b.gearPlays(Kind::amp, 0) && !b.gearPlays(Kind::cab, 0) && b.gearId(Kind::amp, 0) == "mark4",
-        U("a sessão abre sem as duas peças, guardando o id delas"));
+  check(!b.gearPlays(Kind::amp, 0) && b.gearPlays(Kind::cab, 0) && b.gearId(Kind::amp, 0) == "mark4",
+        U("a sessão abre sem o cabeçote, guardando o id dele, e com a caixa"));
   check(!nexus::t3k::defaultTone("mark4", 0) && !nexus::t3k::defaultTone("tiny15", 0),
         U("nenhuma recomendação de captura para cabeçote que saiu"));
 
@@ -353,22 +369,8 @@ static void testReturn()
   captures->setProperty("recomendadas", reviewed);
   manifest->setProperty("capturas", juce::var(captures));
   const auto amp = stagePiece("mark4", juce::JSON::toString(juce::var(manifest)));
-  const auto cab = stagePiece("mark_112", R"({"formato": 1, "id": "mark_112", "versao": "1.1.0", "tipo": "caixa", "nome": "Mark 1x12",
-    "versao_minima_do_programa": "0.2.0", "motor": "caixa", "indice_de_fabrica": 16})");
-  // Tela aberta antes de a caixa chegar: ela tem de aparecer sem reabrir.
-  auto openBox = std::make_unique<NexusProcessor>();
-  std::unique_ptr<juce::AudioProcessorEditor> open(openBox->createEditor());
-  auto* openEditor = dynamic_cast<NexusEditor*>(open.get());
   const auto e1 = catalog.installFolder(amp, "mark4", juce::var(new juce::DynamicObject()));
-  const auto e2 = catalog.installFolder(cab, "mark_112", juce::var(new juce::DynamicObject()));
-  check(e1.isEmpty() && e2.isEmpty(), U("as duas peças revisadas instalam pelo botão ") + e1 + e2);
-  checkCabsOnScreen(true, U("a primeira caixa revisada traz a aba Caixas e o cartão de volta"));
-  if (openEditor != nullptr)
-    openEditor->changeListenerCallback(nullptr); // o aviso de peça instalada
-  check(openEditor != nullptr && openEditor->browserHasCabTab() && openEditor->chainCabCards() == 1,
-        U("e na tela que já estava aberta a aba e o cartão aparecem sozinhos"));
-  open.reset();
-  openBox.reset();
+  check(e1.isEmpty(), U("o cabeçote revisado instala pelo botão ") + e1);
   check(catalog.find(Kind::amp, "mark4") == 52 && catalog.find(Kind::cab, "mark_112") == 16 && catalog.presentAt(Kind::amp, 52)
           && catalog.count(Kind::amp) == NexusProcessor::kAmpLooks && catalog.count(Kind::cab) == NexusProcessor::kCabLooks,
         U("voltam para a mesma posição de parâmetro (cabeçote 52, caixa 16), sem crescer o catálogo"));
@@ -390,6 +392,35 @@ static void testReturn()
   // Sessão nova continua vazia: a peça que voltou não entra sozinha.
   auto dBox = std::make_unique<NexusProcessor>();
   check(dBox->gearEmpty(Kind::amp, 0) && dBox->gearEmpty(Kind::cab, 0), U("sessão nova continua sem cabeçote (a vaga 0 segue vazia)"));
+}
+
+// Tela aberta: a tela confere o cabeçote a cada passo do relógio.
+static void pump(int ms) { juce::MessageManager::getInstance()->runDispatchLoopUntil(ms); }
+
+// O cabeçote puxa a caixa dele (caixa_padrao da ficha), venha a troca da
+// lista, da automação ou do MIDI; a caixa trocada à mão vale até o cabeçote
+// mudar; o preset traz a caixa salva nele.
+static void testCabFollowsAmp()
+{
+  auto pBox = std::make_unique<NexusProcessor>();
+  auto& p = *pBox;
+  std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+  pump(100);
+  check(!p.gearPlays(Kind::cab, 0), U("sessão nova sem cabeçote: nenhuma caixa entra sozinha"));
+  setParam(p, "cabecote", 52.0f); // automação escolhe o Mark Four
+  pump(200);
+  check(p.ampLook(0) == 52 && p.cabLook(0) == 16 && p.gearPlays(Kind::cab, 0), U("automação troca o cabeçote e a caixa dele vem junto (Mark 1x12)"));
+  p.chooseCab(0, 3);
+  pump(200);
+  check(p.cabLook(0) == 3, U("a caixa trocada à mão fica enquanto o cabeçote não muda"));
+  const auto preset = stateOf(p);
+  setParam(p, "cabecote", 50.0f);
+  pump(200);
+  const auto mark2 = GearCatalog::instance().entry(Kind::amp, 50);
+  check(mark2 && p.cabLook(0) == GearCatalog::instance().find(Kind::cab, mark2->cabId), U("outro cabeçote: a caixa dele substitui a escolhida à mão"));
+  p.setStateInformation(preset.getData(), static_cast<int>(preset.getSize()));
+  pump(200);
+  check(p.ampLook(0) == 52 && p.cabLook(0) == 3, U("abrir um preset traz o cabeçote e a caixa salvos nele"));
 }
 
 // Pacote montado por tools/gear_studio/montar_equipamento.py --pacote, com
@@ -441,7 +472,7 @@ static void testAmpWithoutCab()
   auto& catalog = GearCatalog::instance();
   const auto amp = stagePiece("tiny15", R"({"formato": 1, "id": "tiny15", "versao": "1.1.0", "tipo": "cabecote",
     "nome": "Tiny 15", "versao_minima_do_programa": "0.2.0", "motor": "captura", "capturas": {"origem": "tone3000"},
-    "indice_de_fabrica": 8, "caixa_padrao": "blue_212"})");
+    "indice_de_fabrica": 8, "caixa_padrao": "tiny_110"})");
   check(catalog.installFolder(amp, "tiny15", juce::var(new juce::DynamicObject())).isEmpty() && catalog.find(Kind::amp, "tiny15") == 8,
         U("cabeçote revisado instala sem a caixa dele"));
   const auto entry = catalog.entry(Kind::amp, 8);
@@ -457,6 +488,17 @@ static void testAmpWithoutCab()
   auto xml = juce::AudioProcessor::getXmlFromBinary(saved.getData(), static_cast<int>(saved.getSize()));
   check(xml->getStringAttribute("cabecote_id") == "tiny15" && xml->getStringAttribute("gabinete_id").isEmpty(),
         U("salva o cabeçote e a caixa em branco"));
+
+  // A caixa dele chega pelo botão com a tela aberta: entra sozinha no cabeçote que estava sem caixa.
+  std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+  pump(100);
+  const auto cab = stagePiece("tiny_110", R"({"formato": 1, "id": "tiny_110", "versao": "1.0.0", "tipo": "caixa", "nome": "Tiny 1x10",
+    "versao_minima_do_programa": "0.2.0", "motor": "caixa"})");
+  check(catalog.installFolder(cab, "tiny_110", juce::var(new juce::DynamicObject())).isEmpty(), U("a caixa dele instala pelo botão"));
+  if (auto* e = dynamic_cast<NexusEditor*>(editor.get()))
+    e->changeListenerCallback(nullptr); // o aviso de peça instalada
+  pump(100);
+  check(p.gearPlays(Kind::cab, 0) && p.gearId(Kind::cab, 0) == "tiny_110", U("a caixa que chegou depois entra no cabeçote que estava sem caixa"));
 }
 
 static void testFreshStart(const juce::File& temp)
@@ -503,6 +545,22 @@ static void testFreshStart(const juce::File& temp)
   data.getChildFile("Presets").getChildFile("Novo.nexuspreset").create();
   check(nexus::update::startFresh() == juce::File() && data.getChildFile("Presets").getChildFile("Novo.nexuspreset").existsAsFile(),
         U("só na primeira abertura: o que a versão nova criou fica"));
+
+  // Mac novo: só o idioma que o instalador gravou. Não é versão antiga: sem reserva.
+  const auto fresh = temp.getChildFile("Novo").getChildFile("Nexus Modeler");
+  fresh.createDirectory();
+  {
+    juce::PropertiesFile::Options o;
+    juce::PropertiesFile prefs(fresh.getChildFile("preferencias.settings"), o);
+    prefs.setValue("idioma", "en");
+  }
+  setenv("NEXUS_DADOS_PASTA", fresh.getFullPathName().toRawUTF8(), 1);
+  setenv("NEXUS_DOCUMENTOS_PASTA", temp.getChildFile("Novo").getChildFile("Documentos").getFullPathName().toRawUTF8(), 1);
+  const auto none = nexus::update::startFresh();
+  juce::PropertiesFile::Options o;
+  juce::PropertiesFile prefs(fresh.getChildFile("preferencias.settings"), o);
+  check(none == juce::File() && !fresh.getSiblingFile(U("Nexus Modeler (versões antigas)")).exists() && prefs.getValue("idioma") == "en",
+        U("computador que nunca teve o Nexus: sem reserva, e o idioma do instalador fica"));
 }
 
 int main(int argc, char** argv)
@@ -518,11 +576,16 @@ int main(int argc, char** argv)
   temp.deleteRecursively();
   temp.getChildFile("Equipamentos").createDirectory();
   setenv("NEXUS_EQUIPAMENTOS_PASTA", temp.getChildFile("Equipamentos").getFullPathName().toRawUTF8(), 1);
+  // Registro, preferências e capturas também numa pasta do teste: nada vai para os dados de verdade.
+  setenv("NEXUS_DADOS_PASTA", temp.getChildFile("Dados").getFullPathName().toRawUTF8(), 1);
+  setenv("NEXUS_DOCUMENTOS_PASTA", temp.getChildFile("Documentos").getFullPathName().toRawUTF8(), 1);
   gRepo = juce::File(U(argv[1])).getParentDirectory().getParentDirectory();
   testCatalog(juce::File(U(argv[1])));
   testState();
-  checkCabsOnScreen(false, U("sem caixa instalada a tela não mostra caixa"));
+  testBrowserTabs();
+  checkCabsOnScreen(true, U("com as caixas embutidas a tela mostra a aba Caixas e o cartão de caixa"));
   testReturn();
+  testCabFollowsAmp();
   testAmpWithoutCab();
   testFreshStart(temp);
   if (argc > 2)

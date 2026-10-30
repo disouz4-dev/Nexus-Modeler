@@ -145,6 +145,8 @@ countries: us gb au ca
 "Motor A2 Lite neste pedal (usa menos processador)" = "A2 Lite engine on this pedal (uses less CPU)"
 "Mover para antes do cabeçote" = "Move before the amp head"
 "Mover para depois da caixa" = "Move after the cabinet"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "This version starts fresh. Presets, captures and gear from older versions were kept, with nothing deleted, in the “Nexus Modeler (versões antigas)” folder."
+"Abrir a pasta" = "Open the folder"
 "Mover para depois do cabeçote" = "Move after the amp head"
 "Mover para o fim da cadeia" = "Move to the end of the chain"
 "Mover para entre cabeçote e caixa" = "Move between amp head and cabinet"

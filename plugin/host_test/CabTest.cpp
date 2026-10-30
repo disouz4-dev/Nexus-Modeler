@@ -13,7 +13,10 @@
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
 #include "../source/gear/GearCatalog.h"
+#include "../source/tone3000/Tone3000.h"
+#include "../source/ui/CapturePanel.h"
 #include "../source/ui/PackMapper.h"
+#include "../source/update/NovaInstalacao.h"
 #include "../source/report/Report.h"
 #include "../source/update/Updater.h"
 #include "nexus/Pack.h"
@@ -34,6 +37,18 @@ void setParam(NexusProcessor& p, const char* id, float plain)
 {
   auto* param = p.params.getParameter(id);
   param->setValueNotifyingHost(param->convertTo0to1(plain));
+}
+
+// Sessão nova começa sem cabeçote e sem caixa: o teste escolhe os de teste
+// (posição 0, host_test/equipamentos), como a pessoa faria na lista.
+std::unique_ptr<NexusProcessor> withRig()
+{
+  auto p = std::make_unique<NexusProcessor>(); // no heap: o processador tem ~200 KB e a pilha do Windows, 1 MB
+  p->chooseAmp(0, 0);
+  p->chooseCab(0, 0);
+  p->chooseAmp(1, 0);
+  p->chooseCab(1, 0);
+  return p;
 }
 
 // Toca o sinal de teste e devolve o canal esquerdo da saída.
@@ -306,7 +321,7 @@ int main(int argc, char** argv)
 
   // 1. Cabeçote: o IR tem de mudar o som.
   {
-    auto pBox = std::make_unique<NexusProcessor>(); // no heap: o processador tem ~200 KB e a pilha do Windows, 1 MB
+    auto pBox = withRig(); // no heap: o processador tem ~200 KB e a pilha do Windows, 1 MB
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -331,7 +346,7 @@ int main(int argc, char** argv)
 
   // 2. Full rig: a caixa fica trancada, o IR não toca.
   {
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -356,7 +371,7 @@ int main(int argc, char** argv)
   {
     std::printf("\nPedal\n");
     auto make = [&](bool withPedal, bool pedalOn) {
-      auto p = std::make_unique<NexusProcessor>();
+      auto p = withRig();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
       p->prepareToPlay(48000.0, 128);
       setParam(*p, "p1_ligado", pedalOn ? 1.0f : 0.0f);
@@ -443,7 +458,7 @@ int main(int argc, char** argv)
   // 4. Cabeçote de canais: só os canais 1 e 3 têm pacote.
   {
     std::printf("\nCanais do cabeçote\n");
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -509,7 +524,7 @@ int main(int argc, char** argv)
   // 5. MIDI.
   {
     std::printf("\nMIDI\n");
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -605,7 +620,7 @@ int main(int argc, char** argv)
 
     juce::MemoryBlock state;
     p.getStateInformation(state);
-    auto qBox = std::make_unique<NexusProcessor>();
+    auto qBox = withRig();
     auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
     report(q.midi().ccFor("p1_ligado") == 80 && q.midi().ccFor("ganho") == 22 && q.midi().ccFor("p2_ligado") == 132
@@ -618,7 +633,7 @@ int main(int argc, char** argv)
   {
     std::printf("\nCadeia de sinal\n");
     auto make = [&](const ChainLayout& layout) {
-      auto p = std::make_unique<NexusProcessor>();
+      auto p = withRig();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
       p->prepareToPlay(48000.0, 128);
       setParam(*p, "caixa", 0.0f);
@@ -656,14 +671,14 @@ int main(int argc, char** argv)
     report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
 
-    // Primeira abertura: o cabeçote e a caixa da posição 0 (os de teste), sem pedais.
+    // Primeira abertura: sem cabeçote, sem caixa e sem pedais (a caixa nunca
+    // entra sozinha, sem cabeçote), mesmo com peça instalada na posição 0.
     {
-      auto freshBox = std::make_unique<NexusProcessor>();
+      auto freshBox = std::unique_ptr<NexusProcessor>(new NexusProcessor());
       auto& fresh = *freshBox;
-      const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
-      const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
-      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: cabeçote e caixa da posição 0, sem pedais",
-             juce::String(fresh.layout().count()) + " pedais, cabeçote " + juce::String(head) + ", caixa " + juce::String(cab));
+      const bool amp = fresh.gearPlays(nexus::gear::Kind::amp, 0), cab = fresh.gearPlays(nexus::gear::Kind::cab, 0);
+      report(fresh.layout().count() == 0 && !amp && !cab, "Primeira abertura: sem cabeçote, sem caixa e sem pedais",
+             juce::String(fresh.layout().count()) + " pedais, cabeçote " + (amp ? "tocando" : "vazio") + ", caixa " + (cab ? "tocando" : "vazia"));
     }
     // Cherry Drop: meio-dia não muda o tom; as pontas são -12 e +12.
     report(NexusProcessor::dropSemitones(5.0f) == 0 && NexusProcessor::dropSemitones(0.0f) == -12 && NexusProcessor::dropSemitones(10.0f) == 12
@@ -673,7 +688,7 @@ int main(int argc, char** argv)
     // A cadeia volta igual ao reabrir o projeto.
     juce::MemoryBlock state;
     pBetween->getStateInformation(state);
-    auto qBox = std::make_unique<NexusProcessor>();
+    auto qBox = withRig();
     auto& q = *qBox;
     q.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
     report(q.layout().loop[0] == std::vector<int>{0} && q.layout().pre.empty(), "A ordem da cadeia volta ao abrir o projeto",
@@ -709,7 +724,7 @@ int main(int argc, char** argv)
   {
     std::printf("\nEfeitos do Nexus (chorus, delay, reverb)\n");
     auto make = [&](int look, bool on) {
-      auto p = std::make_unique<NexusProcessor>();
+      auto p = withRig();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
       p->prepareToPlay(48000.0, 128);
       setParam(*p, "p1_visual", static_cast<float>(look));
@@ -763,7 +778,7 @@ int main(int argc, char** argv)
   {
     std::printf("\nPedais de vários modos (Aquamarine Sky, Emerald Echo, Galaxy Mod)\n");
     auto make = [&](int look, int mode, bool on) {
-      auto p = std::make_unique<NexusProcessor>();
+      auto p = withRig();
       p->setPlayConfigDetails(2, 2, 48000.0, 128);
       p->prepareToPlay(48000.0, 128);
       setParam(*p, "p1_visual", static_cast<float>(look));
@@ -952,7 +967,7 @@ int main(int argc, char** argv)
   // 9. Presets: o estado salvo volta inteiro, inclusive "sem pacote".
   {
     std::printf("\nPresets\n");
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -966,7 +981,7 @@ int main(int argc, char** argv)
     juce::MemoryBlock withPack;
     p.getStateInformation(withPack);
 
-    auto emptyBox = std::make_unique<NexusProcessor>();
+    auto emptyBox = std::unique_ptr<NexusProcessor>(new NexusProcessor());
 
     auto& empty = *emptyBox;
     juce::MemoryBlock withoutPack;
@@ -1116,7 +1131,7 @@ int main(int argc, char** argv)
   // 12. Testar o som: a gravação entra no lugar da guitarra; gravar a própria guitarra.
   {
     std::printf("\nTestar o som\n");
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 44100.0, 128);
     p.prepareToPlay(44100.0, 128);
@@ -1361,7 +1376,7 @@ int main(int argc, char** argv)
     report(present == NexusProcessor::kAmpLooks, "As 94 posições de cabeçote tocam no teste",
            juce::String(present) + (firstError.isNotEmpty() ? juce::String::fromUTF8(" (primeiro erro: ") + firstError + ")" : juce::String()));
 
-    auto pBox = std::make_unique<NexusProcessor>();
+    auto pBox = withRig();
     auto& p = *pBox;
     p.setPlayConfigDetails(2, 2, 48000.0, 128);
     p.prepareToPlay(48000.0, 128);
@@ -1402,6 +1417,57 @@ int main(int argc, char** argv)
     }
     report(worst <= NexusProcessor::kAmpCeiling + 1e-4 && worst > 0.5f, "Tudo no máximo, em todas as posições: nada passa do teto (-1 dBFS)",
            juce::String::fromUTF8("maior pico ") + juce::String(worst, 3) + juce::String::fromUTF8(" na posição ") + juce::String(worstLook));
+  }
+
+  // 13. Trocar a captura de um pedal pelo painel de capturas: o pacote novo
+  // carrega, fica (a captura padrão não volta por cima) e entra no registro.
+  // A captura padrão fica ligada aqui, como no programa de verdade.
+  {
+    std::printf("\nTrocar a captura do pedal\n");
+#ifdef _WIN32
+    _putenv_s("NEXUS_SEM_PADRAO", "");
+#else
+    unsetenv("NEXUS_SEM_PADRAO");
+#endif
+    auto& catalog = nexus::gear::GearCatalog::instance();
+    const int look = catalog.find(nexus::gear::Kind::pedal, "greengage_drive");
+    auto pBox = withRig();
+    auto& p = *pBox;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    ChainLayout l;
+    l.pre = {0};
+    p.setLayout(l);
+    p.choosePedal(0, look);
+    // O pacote novo, onde o painel o deixa depois de baixar.
+    const auto chosen = nexus::t3k::Connection::packsFolder("Greengage Drive").getChildFile("Troca de teste");
+    chosen.deleteRecursively();
+    packs.getChildFile("ganho").copyDirectoryTo(chosen);
+    std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+    auto* e = dynamic_cast<NexusEditor*>(editor.get());
+    e->select({NexusEditor::Kind::pedal, 0});
+    e->showCaptures();
+    std::vector<nexus::ui::CapturePanel*> panels;
+    collect(*editor, panels);
+    if (!panels.empty() && panels.front()->onLoaded)
+      panels.front()->onLoaded(chosen);
+    // Tempo para o pacote carregar e para a tela completar as peças vazias.
+    const auto until = juce::Time::getMillisecondCounter() + 4000;
+    juce::AudioBuffer<float> buffer(2, 128);
+    juce::MidiBuffer midi;
+    while (juce::Time::getMillisecondCounter() < until)
+    {
+      buffer.clear();
+      p.processBlock(buffer, midi);
+      juce::MessageManager::getInstance()->runDispatchLoopUntil(5);
+    }
+    const auto slot = NexusProcessor::pedalSlot(0);
+    const bool stays = p.slotFolder(slot) == chosen && p.slotLoaded(slot);
+    report(!panels.empty() && stays && p.captureCount(slot) > 1, "A captura escolhida carrega e fica no pedal",
+           p.slotFolder(slot).getFileName() + " (" + juce::String(p.captureCount(slot)) + " capturas)");
+    const auto logged = nexus::update::dataRoot().getChildFile("registro.txt").loadFileAsString();
+    report(logged.contains("Troca de teste"), "A troca entra no registro", logged.fromLastOccurrenceOf("\n", false, false).trim().substring(0, 160));
+    chosen.deleteRecursively();
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

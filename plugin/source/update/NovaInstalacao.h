@@ -17,6 +17,10 @@ inline constexpr int kDataGeneration = 3;
 // a raiz nos testes).
 juce::File dataRoot();      // Application Support/Nexus Modeler (Mac)
 juce::File documentsRoot(); // Documentos/Nexus Modeler
+// Arquivo de preferências na pasta de dados (preferencias.settings,
+// tone3000.settings...). Todos os arquivos do Nexus saem destas raízes: os
+// testes trocam as duas e nunca tocam nos dados de quem roda o teste.
+juce::File settingsFile(const juce::String& name);
 
 // Faz a troca uma vez por computador (a primeira cópia do Nexus que abrir,
 // programa independente ou plugin). Devolve a pasta de reserva criada (vazia

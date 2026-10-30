@@ -2,6 +2,7 @@
 
 #include "Language.h"
 #include "Theme.h"
+#include "../update/NovaInstalacao.h"
 
 namespace nexus::ui
 {
@@ -18,12 +19,7 @@ PresetBar::PresetBar(std::function<juce::MemoryBlock()> getState, std::function<
 
 juce::File PresetBar::folder()
 {
-  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
-#if JUCE_MAC
-    .getChildFile("Application Support")
-#endif
-    .getChildFile("Nexus Modeler")
-    .getChildFile("Presets");
+  return nexus::update::dataRoot().getChildFile("Presets");
 }
 
 juce::Array<juce::File> PresetBar::list() const

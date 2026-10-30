@@ -145,6 +145,8 @@ countries: id
 "Motor A2 Lite neste pedal (usa menos processador)" = "Mesin A2 Lite di pedal ini (lebih hemat prosesor)"
 "Mover para antes do cabeçote" = "Pindah ke sebelum head ampli"
 "Mover para depois da caixa" = "Pindah ke setelah kabinet"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "Versi ini mulai dari awal. Preset, tangkapan, dan peralatan dari versi lama disimpan tanpa dihapus di folder “Nexus Modeler (versões antigas)”."
+"Abrir a pasta" = "Buka folder"
 "Mover para depois do cabeçote" = "Pindah ke setelah head"
 "Mover para o fim da cadeia" = "Pindah ke akhir rantai"
 "Mover para entre cabeçote e caixa" = "Pindah ke antara head dan kabinet"

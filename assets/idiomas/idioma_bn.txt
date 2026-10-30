@@ -145,6 +145,8 @@ countries: bd in
 "Motor A2 Lite neste pedal (usa menos processador)" = "এই প্যাডেলে A2 Lite ইঞ্জিন (কম প্রসেসর লাগে)"
 "Mover para antes do cabeçote" = "অ্যাম্প হেডের আগে সরান"
 "Mover para depois da caixa" = "ক্যাবিনেটের পরে সরান"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "এই সংস্করণ নতুন করে শুরু হয়। পুরোনো সংস্করণের প্রিসেট, ক্যাপচার ও সরঞ্জাম কিছু না মুছে “Nexus Modeler (versões antigas)” ফোল্ডারে রাখা হয়েছে।"
+"Abrir a pasta" = "ফোল্ডার খুলুন"
 "Mover para depois do cabeçote" = "হেডের পরে সরান"
 "Mover para o fim da cadeia" = "চেইনের শেষে সরান"
 "Mover para entre cabeçote e caixa" = "হেড ও ক্যাবিনেটের মাঝে সরান"

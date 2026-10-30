@@ -145,6 +145,8 @@ countries: de at ch
 "Motor A2 Lite neste pedal (usa menos processador)" = "A2-Lite-Engine für dieses Pedal (braucht weniger Prozessor)"
 "Mover para antes do cabeçote" = "Vor das Topteil verschieben"
 "Mover para depois da caixa" = "Hinter die Box verschieben"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "Diese Version beginnt neu. Presets, Captures und Geräte älterer Versionen wurden ohne Löschen im Ordner “Nexus Modeler (versões antigas)” aufbewahrt."
+"Abrir a pasta" = "Ordner öffnen"
 "Mover para depois do cabeçote" = "Hinter das Topteil verschieben"
 "Mover para o fim da cadeia" = "Ans Ende der Kette verschieben"
 "Mover para entre cabeçote e caixa" = "Zwischen Topteil und Box verschieben"

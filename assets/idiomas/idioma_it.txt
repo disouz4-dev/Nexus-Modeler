@@ -145,6 +145,8 @@ countries: it ch
 "Motor A2 Lite neste pedal (usa menos processador)" = "Motore A2 Lite su questo pedale (usa meno processore)"
 "Mover para antes do cabeçote" = "Sposta prima della testata"
 "Mover para depois da caixa" = "Sposta dopo la cassa"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "Questa versione riparte da zero. I preset, le catture e l'attrezzatura delle versioni precedenti sono stati conservati, senza cancellare nulla, nella cartella “Nexus Modeler (versões antigas)”."
+"Abrir a pasta" = "Apri la cartella"
 "Mover para depois do cabeçote" = "Sposta dopo la testata"
 "Mover para o fim da cadeia" = "Sposta alla fine della catena"
 "Mover para entre cabeçote e caixa" = "Sposta tra testata e cassa"

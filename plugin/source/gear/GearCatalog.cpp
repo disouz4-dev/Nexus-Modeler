@@ -1,6 +1,7 @@
 #include "GearCatalog.h"
 
 #include "BinaryData.h"
+#include "../update/NovaInstalacao.h"
 #include "../update/Updater.h"
 
 #include <algorithm>
@@ -107,12 +108,7 @@ juce::File GearCatalog::folder()
   const auto forced = juce::SystemStats::getEnvironmentVariable("NEXUS_EQUIPAMENTOS_PASTA", {});
   if (forced.isNotEmpty())
     return juce::File(forced);
-  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
-#if JUCE_MAC
-    .getChildFile("Application Support")
-#endif
-    .getChildFile("Nexus Modeler")
-    .getChildFile("Equipamentos");
+  return update::dataRoot().getChildFile("Equipamentos");
 }
 
 juce::String GearCatalog::unsupported(const juce::var& manifest)

@@ -145,6 +145,8 @@ countries: in
 "Motor A2 Lite neste pedal (usa menos processador)" = "इस पेडल पर A2 Lite इंजन (कम प्रोसेसर लेता है)"
 "Mover para antes do cabeçote" = "एम्प हेड से पहले ले जाएँ"
 "Mover para depois da caixa" = "कैबिनेट के बाद ले जाएँ"
+"Esta versão começa do zero. Os presets, as capturas e os equipamentos das versões antigas ficaram guardados, sem nada apagado, na pasta “Nexus Modeler (versões antigas)”." = "यह संस्करण नए सिरे से शुरू होता है। पुराने संस्करणों के प्रीसेट, कैप्चर और उपकरण बिना कुछ मिटाए “Nexus Modeler (versões antigas)” फ़ोल्डर में रखे गए हैं।"
+"Abrir a pasta" = "फ़ोल्डर खोलें"
 "Mover para depois do cabeçote" = "हेड के बाद ले जाएँ"
 "Mover para o fim da cadeia" = "चेन के अंत में ले जाएँ"
 "Mover para entre cabeçote e caixa" = "हेड और कैबिनेट के बीच ले जाएँ"
