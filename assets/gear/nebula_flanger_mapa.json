@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "c",
-      "x": 142,
-      "y": 156,
-      "tamanho": 83,
+      "x": 378,
+      "y": 147,
+      "tamanho": 95,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 258,
-      "y": 156,
-      "tamanho": 83,
+      "x": 252,
+      "y": 147,
+      "tamanho": 95,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "a",
-      "x": 374,
-      "y": 156,
-      "tamanho": 83,
+      "x": 124,
+      "y": 147,
+      "tamanho": 95,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -41,8 +41,8 @@
   "rotulos": [
     {
       "texto": "COR",
-      "x": 186.2,
-      "y": 253.8,
+      "x": 423.6,
+      "y": 256.6,
       "altura": 17.12,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -51,7 +51,7 @@
     {
       "texto": "FAIXA",
       "x": 300.0,
-      "y": 253.8,
+      "y": 256.6,
       "altura": 17.12,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -59,31 +59,22 @@
     },
     {
       "texto": "VELOCIDADE",
-      "x": 413.8,
-      "y": 253.8,
+      "x": 174.4,
+      "y": 256.6,
       "altura": 17.12,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
-    },
-    {
-      "texto": "FILTRO",
-      "x": 300.0,
-      "y": 264.8,
-      "altura": 13.7,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 533.5,
-    "raio": 44.0
+    "y": 521.0,
+    "raio": 30.0
   },
   "led": {
-    "x": 382.6,
-    "y": 500.2,
-    "raio": 11.1
+    "x": 378.6,
+    "y": 517.6,
+    "raio": 6.6
   }
 }

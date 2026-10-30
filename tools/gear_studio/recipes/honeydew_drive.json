@@ -11,32 +11,32 @@
   },
   "pintura": {
     "cor": [
-      0.2674,
-      0.6187,
-      0.4423
+      0.4647,
+      0.7667,
+      0.6121
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.25
   },
   "texto_cor": [
-    0.0066,
-    0.0189,
-    0.1011
+    0.9075,
+    0.9075,
+    0.8592
   ],
   "modelo": "HONEYDEW DRIVE",
   "botao_estilo": {
-    "diametro_m": 0.015,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.013,
     "saia": false,
     "corpo": [
+      0.9075,
+      0.9075,
+      0.8592
+    ],
+    "traco": [
       0.0037,
       0.0037,
       0.0037
-    ],
-    "traco": [
-      0.8913,
-      0.8913,
-      0.8434
     ]
   },
   "botoes": [
@@ -44,15 +44,15 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.52,
-        0.74
+        -0.5,
+        0.38
       ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.52,
+        0.5,
         0.74
       ]
     },
@@ -60,25 +60,20 @@
       "id": "fixo_grave",
       "rotulo": "GRAVE",
       "pos": [
-        -0.52,
-        0.36
+        -0.5,
+        0.74
       ],
-      "fixo": true,
-      "escala": 0.8
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.52,
-        0.36
-      ],
-      "escala": 0.8
+        0.5,
+        0.38
+      ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/honeydew_drive.svg"
-  },
   "medidas_fonte": "aprox. 60 x 112 mm, caixa 1590B (sem página oficial)",
   "quadro": {
     "largura_rel": 2.33,
@@ -92,21 +87,64 @@
   "rotulo_embaixo": true,
   "rotulo_m": 0.004,
   "texto_cor2": [
-    0.0066,
-    0.0189,
-    0.1011
+    0.9075,
+    0.9075,
+    0.8592
   ],
   "led": [
     0.0,
-    -0.36
+    0.42
   ],
   "pecas": [
     {
       "tipo": "minichave",
       "pos": [
         0.0,
-        0.56
+        0.66
       ]
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/honeydew_drive_tema.svg",
+    "tam_m": 0.0105,
+    "pos": [
+      0.0,
+      0.1
+    ]
+  },
+  "led_estilo": "aro_fino",
+  "led_raio_m": 0.0019,
+  "led_cor": [
+    0.009,
+    0.259,
+    0.0385
+  ],
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.7
+    ]
+  },
+  "jacks_y": -0.05,
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "Honeydew",
+      "pos": [
+        0.0,
+        -0.32
+      ],
+      "tam_m": 0.017,
+      "cor": [
+        0.9075,
+        0.9075,
+        0.8592
+      ],
+      "fonte": "script",
+      "largura_max": 1.6,
+      "espaco": 1.06
+    }
+  ],
+  "transformacao": "Standard"
 }

@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 161,
-      "y": 86,
-      "tamanho": 103,
+      "x": 148,
+      "y": 78,
+      "tamanho": 124,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 336,
-      "y": 86,
-      "tamanho": 103,
+      "x": 326,
+      "y": 78,
+      "tamanho": 124,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 338,
-      "y": 197,
-      "tamanho": 98,
+      "x": 330,
+      "y": 226,
+      "tamanho": 117,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,8 +42,8 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 214.9,
-      "y": 211.9,
+      "x": 213.2,
+      "y": 224.1,
       "altura": 20.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -52,7 +52,7 @@
     {
       "texto": "DRIVE",
       "x": 385.1,
-      "y": 211.9,
+      "y": 224.1,
       "altura": 20.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -61,7 +61,7 @@
     {
       "texto": "TOM",
       "x": 385.1,
-      "y": 318.8,
+      "y": 365.6,
       "altura": 20.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -69,8 +69,8 @@
     },
     {
       "texto": "GANHO",
-      "x": 214.9,
-      "y": 286.8,
+      "x": 213.2,
+      "y": 330.8,
       "altura": 16.5,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -79,12 +79,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 616.0,
-    "raio": 64.0
+    "y": 623.5,
+    "raio": 52.5
   },
   "led": {
-    "x": 406.0,
-    "y": 608.9,
-    "raio": 16.1
+    "x": 401.2,
+    "y": 619.2,
+    "raio": 16.8
   }
 }

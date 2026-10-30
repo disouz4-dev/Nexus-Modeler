@@ -3,7 +3,7 @@
   "nome": "Olive Drive",
   "familia": "olive_drive",
   "inspiracao": "Caixa Tube Screamer verde-médio azulado (74 x 124 x 53 mm), letras brancas e filete branco em volta do painel; botões pretos DRIVE (OVERDRIVE), TOM (pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto entre o TOM e o NÍVEL; nome em branco, sem moldura, e a placa de metal pequena de pisar direto na caixa. Tema: ramo de azeitonas, azeitonas tom sobre tom. Original: Ibanez TS808 Tube Screamer.",
-  "formato": "classico",
+  "formato": "padrao",
   "medidas_m": {
     "largura": 0.074,
     "comprimento": 0.124,
@@ -66,9 +66,6 @@
       ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/olive_drive.svg"
-  },
   "medidas_fonte": "Ibanez TS808: aprox. 74 x 124 x 53 mm",
   "quadro": {
     "largura_rel": 2.09,
@@ -81,52 +78,84 @@
     0.8751,
     0.8277
   ],
-  "tipo_texto": "OVERDRIVE PRO",
-  "etiqueta_y": 0.08,
-  "etiqueta_estilo": "nenhuma",
+  "tipo_texto": "OVERDRIVE",
   "pisante": {
-    "estilo": "placa_pequena"
+    "estilo": "nenhum",
+    "pos": [
+      0.0,
+      -0.44
+    ],
+    "raio_m": 0.012
   },
-  "pisante_ang": 0.0,
   "led": [
-    0.3,
-    0.8
+    0.2,
+    0.86
   ],
   "rotulo_embaixo": true,
   "paineis": [
     {
       "pos": [
         0.0,
-        0.0
+        -0.38
       ],
       "tam_m": [
-        0.0645,
-        0.1145
+        0.066,
+        0.069
       ],
       "cor": [
         0.8913,
         0.8751,
         0.8277
       ],
-      "raio_m": 0.002,
-      "fundo": true
+      "raio_m": 0.002
     },
     {
       "pos": [
         0.0,
-        0.0
+        -0.38
       ],
       "tam_m": [
-        0.0629,
-        0.1129
+        0.0644,
+        0.0674
       ],
       "cor": [
         0.009,
         0.3297,
         0.1062
       ],
-      "raio_m": 0.0015,
-      "fundo": true
+      "raio_m": 0.0016
     }
-  ]
+  ],
+  "logo_y": 0.09,
+  "logo_m": 0.0115,
+  "jacks_y": 0.0,
+  "pecas": [
+    {
+      "tipo": "placa",
+      "pos": [
+        0.0,
+        -0.44
+      ],
+      "tam_m": [
+        0.026,
+        0.023
+      ],
+      "cor": [
+        0.68,
+        0.68,
+        0.6524
+      ],
+      "metal": true,
+      "raio_m": 0.0015,
+      "espessura_m": 0.004
+    }
+  ],
+  "logo": {
+    "svg": "estampas/olive_drive_tema.svg",
+    "tam_m": 0.012,
+    "pos": [
+      0.0,
+      -0.83
+    ]
+  }
 }

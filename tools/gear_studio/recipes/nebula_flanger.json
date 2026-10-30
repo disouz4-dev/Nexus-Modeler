@@ -25,8 +25,8 @@
   ],
   "modelo": "NEBULA FLANGER",
   "botao_estilo": {
-    "diametro_m": 0.019,
-    "altura_m": 0.015,
+    "diametro_m": 0.022,
+    "altura_m": 0.016,
     "saia": false,
     "corpo": [
       0.0037,
@@ -44,8 +44,8 @@
       "id": "c",
       "rotulo": "COR",
       "pos": [
-        -0.58,
-        0.7
+        0.63,
+        0.71
       ]
     },
     {
@@ -53,22 +53,19 @@
       "rotulo": "FAIXA",
       "pos": [
         0.0,
-        0.7
+        0.71
       ]
     },
     {
       "id": "a",
       "rotulo": "VELOCIDADE",
       "pos": [
-        0.58,
-        0.7
+        -0.64,
+        0.71
       ]
     }
   ],
   "medidas_fonte": "caixa clássica grande, aprox. 110 x 140 x 57 mm (estimativa pela caixa EHX antiga)",
-  "estampa": {
-    "svg": "estampas/nebula_flanger.svg"
-  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
@@ -78,13 +75,9 @@
   "rotulo_m": 0.0048,
   "rotulo_embaixo": true,
   "led": [
-    0.42,
-    -0.5
+    0.4,
+    -0.57
   ],
-  "pisante_y": -0.62,
-  "logo_script": true,
-  "logo_y": 0.02,
-  "logo_m": 0.024,
   "texto_cor2": [
     0.0037,
     0.0037,
@@ -93,12 +86,132 @@
   "tipo_texto": "",
   "pecas": [
     {
-      "tipo": "minichave",
+      "tipo": "trimpot",
+      "pos": [
+        -0.93,
+        0.45
+      ]
+    },
+    {
+      "tipo": "trimpot",
+      "pos": [
+        -0.93,
+        -0.12
+      ]
+    },
+    {
+      "tipo": "trimpot",
+      "pos": [
+        0.93,
+        0.45
+      ]
+    },
+    {
+      "tipo": "trimpot",
+      "pos": [
+        0.93,
+        -0.12
+      ]
+    }
+  ],
+  "paineis": [
+    {
+      "pos": [
+        0,
+        0
+      ],
+      "tam_m": [
+        0.104,
+        0.134
+      ],
+      "cor": [
+        0.5732,
+        0.586,
+        0.5989
+      ],
+      "metal": true,
+      "raio_m": 0.002
+    },
+    {
+      "pos": [
+        0,
+        -0.525
+      ],
+      "tam_m": [
+        0.105,
+        0.0345
+      ],
+      "cor": [
+        0.0017,
+        0.0017,
+        0.0017
+      ],
+      "raio_m": 0.006
+    }
+  ],
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0016,
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.57
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "nebula",
       "pos": [
         0.0,
-        0.32
+        0.3
       ],
-      "rotulo": "FILTRO"
+      "tam_m": 0.03,
+      "cor": [
+        0.0037,
+        0.3112,
+        0.145
+      ],
+      "espaco": 1.0,
+      "largura_max": 1.85
+    },
+    {
+      "texto": "flanger",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": 0.03,
+      "cor": [
+        0.0037,
+        0.3112,
+        0.145
+      ],
+      "espaco": 1.0,
+      "largura_max": 1.85
+    },
+    {
+      "texto": "FLANGER/FILTRO",
+      "pos": [
+        0.0,
+        -0.2
+      ],
+      "tam_m": 0.0075,
+      "cor": [
+        0.0017,
+        0.0017,
+        0.0017
+      ],
+      "espaco": 1.05
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/nebula_flanger_tema.svg",
+    "tam_m": 0.017,
+    "pos": [
+      -0.5,
+      -0.52
+    ]
+  },
+  "jacks_topo": true
 }

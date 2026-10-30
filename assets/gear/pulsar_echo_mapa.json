@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "c",
-      "x": 82,
-      "y": 124,
-      "tamanho": 68,
+      "x": 60,
+      "y": 138,
+      "tamanho": 72,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 230,
-      "y": 125,
-      "tamanho": 66,
+      "x": 223,
+      "y": 140,
+      "tamanho": 69,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "a",
-      "x": 450,
-      "y": 124,
-      "tamanho": 68,
+      "x": 464,
+      "y": 138,
+      "tamanho": 72,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -41,8 +41,8 @@
   "rotulos": [
     {
       "texto": "MISTURA",
-      "x": 118.8,
-      "y": 205.5,
+      "x": 99.5,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -50,8 +50,8 @@
     },
     {
       "texto": "NÍVEL",
-      "x": 191.3,
-      "y": 205.5,
+      "x": 181.6,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -59,8 +59,8 @@
     },
     {
       "texto": "REPETIÇÕES",
-      "x": 263.8,
-      "y": 205.5,
+      "x": 258.9,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -68,8 +68,8 @@
     },
     {
       "texto": "CHORUS",
-      "x": 336.2,
-      "y": 205.5,
+      "x": 338.6,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -77,8 +77,8 @@
     },
     {
       "texto": "PROFUNDIDADE",
-      "x": 408.7,
-      "y": 205.5,
+      "x": 415.9,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -86,8 +86,8 @@
     },
     {
       "texto": "TEMPO",
-      "x": 481.2,
-      "y": 205.5,
+      "x": 495.7,
+      "y": 222.8,
       "altura": 10.59,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -95,22 +95,22 @@
     },
     {
       "texto": "SOBRECARGA",
-      "x": 150.2,
-      "y": 203.4,
+      "x": 181.6,
+      "y": 227.4,
       "altura": 8.61,
       "achatamento": 1.0,
-      "cor": "#0c0c0c",
+      "cor": "#e9e9e9",
       "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 374.5,
-    "y": 424.5,
-    "raio": 41.0
+    "x": 300.0,
+    "y": 439.5,
+    "raio": 28.0
   },
   "led": {
-    "x": 372.8,
-    "y": 369.4,
-    "raio": 10.3
+    "x": 329.1,
+    "y": 369.5,
+    "raio": 8.4
   }
 }

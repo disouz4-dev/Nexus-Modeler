@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 254,
-      "y": 106,
-      "tamanho": 145,
+      "x": 240,
+      "y": 110,
+      "tamanho": 150,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 99,
-      "altura": 290
+      "largura": 100,
+      "altura": 301
     },
     {
       "id": "ganho",
-      "x": 296,
-      "y": 106,
-      "tamanho": 145,
+      "x": 310,
+      "y": 110,
+      "tamanho": 150,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 99,
-      "altura": 290,
+      "largura": 100,
+      "altura": 301,
       "posicoes": 11
     }
   ],
@@ -39,49 +39,49 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 279.1,
-      "y": 267.0,
+      "x": 265.1,
+      "y": 276.1,
       "altura": 16.86,
       "achatamento": 1.0,
-      "cor": "#0c0c0c",
+      "cor": "#f0f0e9",
       "espaco": 1.05
     },
     {
       "texto": "GANHO",
-      "x": 320.9,
-      "y": 267.0,
+      "x": 334.9,
+      "y": 276.1,
       "altura": 16.86,
       "achatamento": 1.0,
-      "cor": "#0c0c0c",
+      "cor": "#f0f0e9",
       "espaco": 1.05
     },
     {
       "texto": "MODO",
-      "x": 185.0,
-      "y": 275.1,
+      "x": 189.3,
+      "y": 296.6,
       "altura": 17.99,
       "achatamento": 1.0,
-      "cor": "#0c0c0c",
+      "cor": "#f0f0e9",
       "espaco": 1.1
     },
     {
       "texto": "CHORUS",
-      "x": 415.0,
-      "y": 275.1,
+      "x": 408.1,
+      "y": 296.6,
       "altura": 17.99,
       "achatamento": 1.0,
-      "cor": "#0c0c0c",
+      "cor": "#f0f0e9",
       "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 576.0,
-    "raio": 70.0
+    "y": 501.5,
+    "raio": 47.0
   },
   "led": {
     "x": 300.0,
-    "y": 487.9,
-    "raio": 17.5
+    "y": 414.9,
+    "raio": 12.3
   }
 }

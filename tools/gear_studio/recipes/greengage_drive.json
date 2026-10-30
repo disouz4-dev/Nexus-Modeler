@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Greengage Drive",
   "familia": "greengage_drive",
-  "inspiracao": "Caixa Tube Screamer verde-claro amarelado (74 x 124 x 53 mm), rótulos cinza-claro; botões pretos DRIVE, TOM (pequeno, no meio, mais baixo) e NÍVEL, LED vermelho no alto, no meio; placa prateada do nome com letras pretas e, na frente, moldura preta com a placa de metal frisada de pisar. Tema: ameixa-rainha-cláudia verde-amarelada, fatias tom sobre tom. Original: Ibanez TS9 Tube Screamer.",
+  "inspiracao": "Caixa Tube Screamer verde vivo (74 x 124 x 53 mm); botões DRIVE, TOM (pequeno, no meio, mais baixo) e NÍVEL com saia preta e tampa prateada; LED vermelho pequeno no alto, no meio; moldura preta da metade para baixo com a placa clara do nome em cima e a placa de metal frisada de pisar embaixo; entradas na altura da moldura. Tema: ameixa-rainha-cláudia na placa, no lugar da logo; tampo liso. Original: Ibanez TS9 Tube Screamer.",
   "formato": "classico",
   "medidas_m": {
     "largura": 0.074,
@@ -11,11 +11,11 @@
   },
   "pintura": {
     "cor": [
-      0.212,
-      0.5356,
-      0.0658
+      0.022,
+      0.4591,
+      0.0582
     ],
-    "metalico": 0.35,
+    "metalico": 0.2,
     "aspereza": 0.3
   },
   "texto_cor": [
@@ -25,9 +25,9 @@
   ],
   "modelo": "GREENGAGE DRIVE",
   "botao_estilo": {
-    "diametro_m": 0.019,
-    "altura_m": 0.014,
-    "saia": false,
+    "diametro_m": 0.0155,
+    "altura_m": 0.013,
+    "saia": true,
     "corpo": [
       0.0037,
       0.0037,
@@ -37,6 +37,12 @@
       0.8913,
       0.8913,
       0.8434
+    ],
+    "com_tampa": true,
+    "tampa": [
+      0.586,
+      0.5989,
+      0.6121
     ]
   },
   "botoes": [
@@ -67,9 +73,9 @@
     }
   ],
   "medidas_fonte": "Ibanez TS9: aprox. 74 x 124 x 53 mm (sem ficha oficial)",
-  "estampa": {
-    "svg": "estampas/greengage_drive.svg"
-  },
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0019,
+  "jacks_y": 0.1,
   "quadro": {
     "largura_rel": 2.09,
     "proporcao": 1.25,
@@ -77,12 +83,12 @@
   },
   "chanfro_m": 0.0065,
   "texto_cor2": [
-    0.0037,
-    0.0037,
-    0.0037
+    0.0189,
+    0.0231,
+    0.0329
   ],
   "tipo_texto": "OVERDRIVE",
-  "etiqueta_y": 0.06,
+  "etiqueta_y": 0.01,
   "etiqueta_estilo": "placa_prata",
   "pisante": {
     "estilo": "placa_moldura"
@@ -90,7 +96,29 @@
   "pisante_ang": 0.0,
   "led": [
     0.0,
-    0.8
+    0.88
   ],
-  "rotulo_embaixo": true
+  "rotulo_embaixo": true,
+  "logo": {
+    "svg": "estampas/lemon_drive_tema.svg",
+    "tam_m": 0.0125
+  },
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        -0.39
+      ],
+      "tam_m": [
+        0.0636,
+        0.0696
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "raio_m": 0.003
+    }
+  ]
 }

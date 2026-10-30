@@ -11,17 +11,17 @@
   },
   "pintura": {
     "cor": [
-      0.0041,
-      0.0041,
-      0.005
+      0.0012,
+      0.0012,
+      0.0017
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.5
   },
   "texto_cor": [
-    0.8913,
-    0.8751,
-    0.8277
+    0.0,
+    0.3587,
+    0.8122
   ],
   "modelo": "HEMATITE ROCK",
   "botao_estilo": {
@@ -39,9 +39,9 @@
       0.8434
     ],
     "cursor": [
-      0.8122,
-      0.8122,
-      0.8122
+      0.0189,
+      0.0189,
+      0.021
     ]
   },
   "botoes": [
@@ -49,38 +49,33 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.12,
-        0.62
+        -0.2,
+        0.6
       ],
       "tipo": "deslizante",
-      "curso_m": 0.018,
+      "curso_m": 0.019,
       "rotulo_cor": [
-        0.0037,
-        0.0037,
-        0.0037
-      ],
-      "rotulo_pos": "cima"
+        0.8751,
+        0.8751,
+        0.8122
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.12,
-        0.62
+        0.2,
+        0.6
       ],
       "tipo": "deslizante",
-      "curso_m": 0.018,
+      "curso_m": 0.019,
       "rotulo_cor": [
-        0.0037,
-        0.0037,
-        0.0037
-      ],
-      "rotulo_pos": "cima"
+        0.8751,
+        0.8751,
+        0.8122
+      ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/hematite_rock.svg"
-  },
   "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
   "quadro": {
     "largura_rel": 2.24,
@@ -100,116 +95,212 @@
   ],
   "led": [
     0.0,
-    -0.36
+    -0.13
   ],
   "paineis": [
     {
       "pos": [
         0.0,
-        0.6
+        0.585
       ],
       "tam_m": [
-        0.054,
-        0.04
+        0.0525,
+        0.0365
       ],
       "cor": [
-        0.0189,
-        0.4313,
-        0.7969
+        0.0,
+        0.3587,
+        0.8122
       ],
-      "raio_m": 0.0015
+      "raio_m": 0.0022
+    },
+    {
+      "pos": [
+        0.0,
+        -0.755
+      ],
+      "tam_m": [
+        0.037,
+        0.0005
+      ],
+      "cor": [
+        0.0023,
+        0.3993,
+        0.8751
+      ]
     }
   ],
   "pecas": [
     {
       "tipo": "led",
       "pos": [
-        -0.66,
-        0.84
+        -0.64,
+        0.756
       ],
       "cor": [
         0.145,
         0.0008,
         0.0003
       ],
-      "raio_m": 0.0016
+      "raio_m": 0.0016,
+      "estilo": "aro_preto"
     },
     {
       "tipo": "led",
       "pos": [
-        -0.66,
-        0.76
+        -0.64,
+        0.676
       ],
       "cor": [
         0.145,
         0.0824,
         0.0
       ],
-      "raio_m": 0.0016
+      "raio_m": 0.0016,
+      "estilo": "aro_preto"
     },
     {
       "tipo": "led",
       "pos": [
-        -0.66,
-        0.68
+        -0.64,
+        0.596
       ],
       "cor": [
         0.0008,
         0.0658,
         0.0029
       ],
-      "raio_m": 0.0016
+      "raio_m": 0.0016,
+      "estilo": "aro_preto"
     },
     {
       "tipo": "led",
       "pos": [
-        -0.66,
-        0.6
+        -0.64,
+        0.516
       ],
       "cor": [
         0.0008,
-        0.0066,
+        0.0189,
         0.145
       ],
-      "raio_m": 0.0016
+      "raio_m": 0.0016,
+      "estilo": "aro_preto"
     },
     {
       "tipo": "apertar",
       "pos": [
-        -0.66,
-        0.46
+        -0.635,
+        0.4
       ],
-      "diam_m": 0.0045,
+      "diam_m": 0.0055,
+      "cor": [
+        0.68,
+        0.8592,
+        0.924
+      ],
       "rotulo": "MODO",
       "rotulo_pos": "baixo",
       "rotulo_cor": [
-        0.0037,
-        0.0037,
-        0.0037
+        0.8751,
+        0.8751,
+        0.8122
       ]
     },
     {
       "tipo": "led",
       "pos": [
-        0.66,
-        0.62
+        0.62,
+        0.6
       ],
-      "raio_m": 0.0018
+      "cor": [
+        0.145,
+        0.0008,
+        0.0003
+      ],
+      "raio_m": 0.0016,
+      "estilo": "aro_preto"
     },
     {
       "tipo": "apertar",
       "pos": [
-        0.66,
-        0.46
+        0.62,
+        0.4
       ],
-      "diam_m": 0.0045,
+      "diam_m": 0.0055,
+      "cor": [
+        0.68,
+        0.8592,
+        0.924
+      ],
       "rotulo": "CHORUS",
       "rotulo_pos": "baixo",
       "rotulo_cor": [
-        0.0037,
-        0.0037,
-        0.0037
+        0.8751,
+        0.8751,
+        0.8122
       ]
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/starfruit_rock_tema.svg",
+    "tam_m": 0.0125,
+    "pos": [
+      0.0,
+      0.08
+    ]
+  },
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0019,
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.39
+    ]
+  },
+  "jacks": {
+    "esq": [
+      0.06,
+      -0.65
+    ],
+    "dir": [
+      0.06
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "HEMATITE",
+      "pos": [
+        0.0,
+        -0.675
+      ],
+      "tam_m": 0.0092,
+      "cor": [
+        0.0023,
+        0.3993,
+        0.8751
+      ],
+      "fonte": "label",
+      "espaco": 1.05,
+      "largura_max": 1.2
+    },
+    {
+      "texto": "ROCK",
+      "pos": [
+        0.0,
+        -0.83
+      ],
+      "tam_m": 0.0068,
+      "cor": [
+        0.0023,
+        0.3993,
+        0.8751
+      ],
+      "fonte": "label",
+      "espaco": 1.1
+    }
+  ],
+  "transformacao": "Standard"
 }

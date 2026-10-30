@@ -16,12 +16,12 @@
       0.0037
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.62
   },
   "texto_cor": [
-    0.586,
-    0.5989,
-    0.6121
+    0.8913,
+    0.8913,
+    0.8913
   ],
   "modelo": "MAGNETITE",
   "botao_estilo": {
@@ -29,9 +29,9 @@
     "altura_m": 0.014,
     "saia": false,
     "corpo": [
-      0.6941,
-      0.7227,
-      0.7519
+      0.92,
+      0.93,
+      0.94
     ],
     "traco": [
       0.0104,
@@ -46,24 +46,21 @@
       "rotulo": "REFORÇO",
       "pos": [
         0.0,
-        0.58
+        0.44
       ],
-      "escala": 1.1
+      "escala": 0.85
     },
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        0.62,
-        0.2
+        0.64,
+        0.16
       ],
-      "escala": 0.4,
+      "escala": 0.34,
       "rotulo_pos": "nenhum"
     }
   ],
-  "estampa": {
-    "svg": "estampas/magnetite_boost.svg"
-  },
   "medidas_fonte": "38 x 89 x 38 mm (Xotic, ficha oficial)",
   "quadro": {
     "largura_rel": 2.93,
@@ -71,19 +68,19 @@
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": -0.08,
-  "logo_m": 0.0058,
+  "logo_y": -0.14,
+  "logo_m": 0.016,
   "pisante_y": -0.6,
   "rotulo_embaixo": true,
   "rotulo_m": 0.0034,
   "texto_cor2": [
-    0.586,
-    0.5989,
-    0.6121
+    0.8913,
+    0.8913,
+    0.8913
   ],
   "led": [
     0.0,
-    0.18
+    0.15
   ],
   "led_cor": [
     0.0008,
@@ -92,11 +89,74 @@
   ],
   "pintura_lados": {
     "cor": [
-      0.7519,
-      0.7667,
-      0.7818
+      0.6,
+      0.6145,
+      0.6308
     ],
-    "cromo": true
+    "cromo": true,
+    "aspereza": 0.32
   },
-  "tampo_margem_m": 0.0028
+  "tampo_margem_m": 0.0028,
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0016,
+  "logo_script": true,
+  "logo": {
+    "svg": "estampas/cashew_boost_tema.svg",
+    "tam_m": 0.006,
+    "pos": [
+      0.0,
+      -0.42
+    ]
+  },
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.74
+    ]
+  },
+  "jacks": {
+    "esq": [
+      -0.3
+    ],
+    "dir": [
+      0.12
+    ]
+  },
+  "paineis": [
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.0296,
+        0.0806
+      ],
+      "cor": [
+        0.4878,
+        0.4995,
+        0.5114
+      ],
+      "raio_m": 0.0025,
+      "fundo": true
+    },
+    {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": [
+        0.028,
+        0.079
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "raio_m": 0.0015,
+      "fundo": true
+    }
+  ]
 }

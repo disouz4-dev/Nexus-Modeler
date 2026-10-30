@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 68,
-      "y": 122,
-      "tamanho": 81,
+      "x": 62,
+      "y": 98,
+      "tamanho": 104,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 167,
-      "y": 123,
-      "tamanho": 78,
+      "x": 184,
+      "y": 99,
+      "tamanho": 101,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 114,
-      "y": 232,
-      "tamanho": 68,
+      "x": 133,
+      "y": 215,
+      "tamanho": 86,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,8 +42,8 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 112.2,
-      "y": 218.6,
+      "x": 119.5,
+      "y": 217.2,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -51,8 +51,8 @@
     },
     {
       "texto": "DRIVE",
-      "x": 208.6,
-      "y": 218.6,
+      "x": 237.4,
+      "y": 217.2,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -60,8 +60,8 @@
     },
     {
       "texto": "VOLUME",
-      "x": 391.4,
-      "y": 218.6,
+      "x": 360.1,
+      "y": 217.2,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -69,8 +69,8 @@
     },
     {
       "texto": "DRIVE",
-      "x": 487.8,
-      "y": 218.6,
+      "x": 482.9,
+      "y": 217.2,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -78,8 +78,8 @@
     },
     {
       "texto": "TOM",
-      "x": 150.8,
-      "y": 315.8,
+      "x": 179.7,
+      "y": 316.7,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -87,8 +87,8 @@
     },
     {
       "texto": "TOM",
-      "x": 449.2,
-      "y": 315.8,
+      "x": 422.8,
+      "y": 316.7,
       "altura": 14.32,
       "achatamento": 1.0,
       "cor": "#d9b149",
@@ -96,13 +96,13 @@
     }
   ],
   "pisante": {
-    "x": 135.5,
-    "y": 411.0,
-    "raio": 49.5
+    "x": 122.5,
+    "y": 415.5,
+    "raio": 40.5
   },
   "led": {
-    "x": 203.2,
-    "y": 361.8,
-    "raio": 12.4
+    "x": 229.8,
+    "y": 350.4,
+    "raio": 8.3
   }
 }

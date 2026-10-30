@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 142,
-      "y": 99,
-      "tamanho": 120,
+      "x": 138,
+      "y": 96,
+      "tamanho": 126,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 258,
-      "y": 189,
-      "tamanho": 86,
+      "x": 255,
+      "y": 186,
+      "tamanho": 90,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 338,
-      "y": 99,
-      "tamanho": 120,
+      "x": 336,
+      "y": 96,
+      "tamanho": 126,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -43,7 +43,7 @@
     {
       "texto": "DRIVE",
       "x": 204.8,
-      "y": 241.5,
+      "y": 243.7,
       "altura": 26.78,
       "achatamento": 1.0,
       "cor": "#e3e7dd",
@@ -52,7 +52,7 @@
     {
       "texto": "TOM",
       "x": 300.0,
-      "y": 298.1,
+      "y": 299.6,
       "altura": 26.78,
       "achatamento": 1.0,
       "cor": "#e3e7dd",
@@ -61,7 +61,7 @@
     {
       "texto": "NÍVEL",
       "x": 395.2,
-      "y": 241.5,
+      "y": 243.7,
       "altura": 26.78,
       "achatamento": 1.0,
       "cor": "#e3e7dd",
@@ -75,7 +75,7 @@
   },
   "led": {
     "x": 300.0,
-    "y": 118.3,
-    "raio": 16.1
+    "y": 92.8,
+    "raio": 11.3
   }
 }

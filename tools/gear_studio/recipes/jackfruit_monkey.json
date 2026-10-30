@@ -11,12 +11,12 @@
   },
   "pintura": {
     "cor": [
-      0.0231,
-      0.259,
-      0.0385
+      0.0385,
+      0.2674,
+      0.021
     ],
-    "metalico": 0.0,
-    "aspereza": 0.26
+    "metalico": 0.45,
+    "aspereza": 0.3
   },
   "texto_cor": [
     0.8913,
@@ -45,42 +45,39 @@
       "rotulo": "NÍVEL",
       "pos": [
         -0.69,
-        0.7
+        0.68
       ],
-      "escala": 0.85
+      "escala": 1.0
     },
     {
       "id": "fixo_grave",
       "rotulo": "GRAVE",
       "pos": [
         -0.23,
-        0.7
+        0.68
       ],
       "fixo": true,
-      "escala": 0.85
+      "escala": 1.0
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
         0.23,
-        0.7
+        0.68
       ],
-      "escala": 0.85
+      "escala": 1.0
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
         0.69,
-        0.7
+        0.68
       ],
-      "escala": 0.85
+      "escala": 1.0
     }
   ],
-  "estampa": {
-    "svg": "estampas/jackfruit_monkey.svg"
-  },
   "medidas_fonte": "79 x 125 x 54 mm (Bax Music; a DigiTech não publica)",
   "quadro": {
     "largura_rel": 2.0,
@@ -92,18 +89,33 @@
   "basculante_ang": 0.0,
   "borracha_rel": 0.62,
   "borracha_larg": 0.9,
-  "modelo_m": 0.0084,
+  "modelo_m": 0.0092,
   "modelo_x": 0.0,
   "tipo_texto": "",
   "rotulo_embaixo": true,
   "rotulo_m": 0.0036,
   "led": [
     0.0,
-    0.9
+    0.36
   ],
   "modelo_cor": [
     0.8913,
-    0.548,
-    0.009
-  ]
+    0.8434,
+    0.68
+  ],
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0022,
+  "logo": {
+    "svg": "estampas/jackfruit_monkey_tema.svg",
+    "tam_m": 0.011
+  },
+  "jacks": {
+    "esq": [
+      0.43,
+      0.07
+    ],
+    "dir": [
+      0.27
+    ]
+  }
 }

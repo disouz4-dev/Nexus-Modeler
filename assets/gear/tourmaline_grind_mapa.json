@@ -8,7 +8,7 @@
     {
       "id": "nivel",
       "x": 239,
-      "y": 103,
+      "y": 198,
       "tamanho": 122,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
@@ -17,8 +17,8 @@
     {
       "id": "ganho",
       "x": 154,
-      "y": 506,
-      "tamanho": 54,
+      "y": 508,
+      "tamanho": 50,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 392,
-      "y": 506,
-      "tamanho": 54,
+      "x": 397,
+      "y": 508,
+      "tamanho": 50,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -43,7 +43,7 @@
     {
       "texto": "NÍVEL",
       "x": 300.0,
-      "y": 250.4,
+      "y": 345.7,
       "altura": 19.98,
       "achatamento": 1.0,
       "cor": "#28282a",
@@ -51,8 +51,8 @@
     },
     {
       "texto": "GANHO",
-      "x": 183.5,
-      "y": 581.6,
+      "x": 180.2,
+      "y": 579.6,
       "altura": 14.43,
       "achatamento": 1.0,
       "cor": "#28282a",
@@ -60,8 +60,8 @@
     },
     {
       "texto": "AGUDO",
-      "x": 416.5,
-      "y": 581.6,
+      "x": 419.9,
+      "y": 579.6,
       "altura": 14.43,
       "achatamento": 1.0,
       "cor": "#28282a",
@@ -70,12 +70,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 588.0,
-    "raio": 69.0
+    "y": 549.5,
+    "raio": 46.0
   },
   "led": {
     "x": 300.0,
-    "y": 306.3,
-    "raio": 17.3
+    "y": 375.0,
+    "raio": 15.4
   }
 }

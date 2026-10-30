@@ -12,11 +12,11 @@
   "pintura": {
     "cor": [
       0.145,
-      0.021,
-      0.4423
+      0.0017,
+      0.3587
     ],
     "metalico": 0.3,
-    "aspereza": 0.28
+    "aspereza": 0.2
   },
   "texto_cor": [
     0.8913,
@@ -25,8 +25,8 @@
   ],
   "modelo": "CHAROITE G3",
   "botao_estilo": {
-    "diametro_m": 0.014,
-    "altura_m": 0.012,
+    "diametro_m": 0.0145,
+    "altura_m": 0.013,
     "saia": false,
     "corpo": [
       0.0037,
@@ -37,12 +37,6 @@
       0.8913,
       0.8913,
       0.8434
-    ],
-    "com_tampa": true,
-    "tampa": [
-      0.586,
-      0.586,
-      0.6121
     ]
   },
   "botoes": [
@@ -50,11 +44,10 @@
       "id": "fixo_grave",
       "rotulo": "GRAVE",
       "pos": [
-        -0.58,
+        -0.57,
         0.76
       ],
-      "fixo": true,
-      "escala": 0.8
+      "fixo": true
     },
     {
       "id": "fixo_medio",
@@ -63,40 +56,33 @@
         0.0,
         0.76
       ],
-      "fixo": true,
-      "escala": 0.8
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.58,
+        0.57,
         0.76
-      ],
-      "escala": 0.8
+      ]
     },
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.58,
-        0.4
-      ],
-      "escala": 0.8
+        -0.57,
+        0.29
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        0.58,
-        0.4
-      ],
-      "escala": 0.8
+        0.57,
+        0.29
+      ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/charoite_g3.svg"
-  },
   "medidas_fonte": "70 x 119 x 32 mm (Revv, ficha oficial)",
   "quadro": {
     "largura_rel": 2.12,
@@ -116,7 +102,7 @@
   ],
   "led": [
     0.0,
-    -0.36
+    -0.31
   ],
   "jacks_topo": true,
   "pecas": [
@@ -124,10 +110,54 @@
       "tipo": "minichave",
       "pos": [
         0.0,
-        0.42
+        0.28
       ],
       "rotulo": "AGRESSÃO",
       "rotulo_pos": "baixo"
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/gooseberry_g3_tema.svg",
+    "tam_m": 0.011,
+    "pos": [
+      0.0,
+      -0.46
+    ]
+  },
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0016,
+  "led_cor": [
+    0.009,
+    0.0415,
+    0.8122
+  ],
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.74
+    ],
+    "arruela": "branca"
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "CHAROITE",
+      "pos": [
+        0.0,
+        -0.15
+      ],
+      "tam_m": 0.012,
+      "cor": [
+        0.8913,
+        0.8751,
+        0.8277
+      ],
+      "fonte": "label",
+      "espaco": 1.9,
+      "largura_max": 1.5,
+      "grossura": 0.00015
+    }
+  ],
+  "transformacao": "Standard"
 }
