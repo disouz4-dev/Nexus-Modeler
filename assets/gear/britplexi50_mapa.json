@@ -1,0 +1,176 @@
+{
+  "nome": "Brit Plexi 50",
+  "familia": "britplexi50",
+  "largura": 2400,
+  "altura": 1144,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 977,
+      "y": 787,
+      "tamanho": 114,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1106,
+      "y": 787,
+      "tamanho": 114,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1235,
+      "y": 787,
+      "tamanho": 114,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1365,
+      "y": 787,
+      "tamanho": 114,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1493,
+      "y": 787,
+      "tamanho": 115,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1622,
+      "y": 786,
+      "tamanho": 116,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "MAINS",
+      "x": 392.9,
+      "y": 900.3,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 493.8,
+      "y": 900.3,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INDICATOR",
+      "x": 594.7,
+      "y": 890.4,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LEAD 50",
+      "x": 814.8,
+      "y": 879.2,
+      "altura": 21.29,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1034.9,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1163.3,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1291.7,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1420.1,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "HIGH TREBLE",
+      "x": 1548.5,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 1676.9,
+      "y": 950.5,
+      "altura": 22.27,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "I",
+      "x": 1805.3,
+      "y": 703.7,
+      "altura": 19.65,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "II",
+      "x": 1933.7,
+      "y": 703.7,
+      "altura": 19.65,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    }
+  ]
+}

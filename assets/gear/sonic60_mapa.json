@@ -1,0 +1,183 @@
+{
+  "nome": "Sonic 60",
+  "familia": "sonic_60",
+  "largura": 2400,
+  "altura": 1029,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 800,
+      "y": 274,
+      "tamanho": 105,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1046,
+      "y": 275,
+      "tamanho": 104,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1169,
+      "y": 275,
+      "tamanho": 104,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1291,
+      "y": 275,
+      "tamanho": 104,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1413,
+      "y": 274,
+      "tamanho": 105,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1556,
+      "y": 274,
+      "tamanho": 106,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "INPUT",
+      "x": 244.2,
+      "y": 373.1,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 356.1,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 498.4,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 620.4,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VINTAGE / BURN",
+      "x": 732.3,
+      "y": 373.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN 1",
+      "x": 854.3,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN 2",
+      "x": 976.3,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1098.3,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1220.3,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1342.3,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1464.4,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "REVERB",
+      "x": 1606.7,
+      "y": 388.6,
+      "altura": 18.49,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 731.3,
+      "y": 251.9,
+      "raio": 10.1
+    }
+  ]
+}

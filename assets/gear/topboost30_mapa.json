@@ -1,0 +1,221 @@
+{
+  "nome": "Top Boost 30",
+  "familia": "top_boost_30",
+  "largura": 2400,
+  "altura": 1536,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "medio",
+      "x": 474,
+      "y": 152,
+      "tamanho": 106,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 586,
+      "y": 152,
+      "tamanho": 106,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 699,
+      "y": 153,
+      "tamanho": 105,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 812,
+      "y": 153,
+      "tamanho": 104,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1448,
+      "y": 154,
+      "tamanho": 103,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1559,
+      "y": 153,
+      "tamanho": 104,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 530.3,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 641.9,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 753.5,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 865.2,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TONE",
+      "x": 995.4,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LEVEL",
+      "x": 1107.0,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SPEED",
+      "x": 1237.2,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "DEPTH",
+      "x": 1348.8,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TONE CUT",
+      "x": 1497.6,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1609.3,
+      "y": 278.5,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 1758.1,
+      "y": 255.3,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 1888.3,
+      "y": 255.3,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 530.3,
+      "y": 95.8,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TOP BOOST",
+      "x": 753.5,
+      "y": 95.8,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "REVERB",
+      "x": 1051.2,
+      "y": 95.8,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREMOLO",
+      "x": 1293.0,
+      "y": 95.8,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1553.4,
+      "y": 95.8,
+      "altura": 16.12,
+      "achatamento": 1.0,
+      "cor": "#e7e7ea",
+      "espaco": 1.0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "formato": 1,
+  "id": "block5150iii",
+  "versao": "1.0.1",
+  "tipo": "cabecote",
+  "nome": "Block 5150 III",
+  "inspiracao": "EVH 5150 III",
+  "categoria": "Americanos de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 56,
+  "signature": null,
+  "caixa_padrao": "block_412"
+}

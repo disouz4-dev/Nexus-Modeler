@@ -1,0 +1,420 @@
+{
+  "nome": "Brit 410",
+  "familia": "brit410",
+  "largura": 2400,
+  "altura": 1176,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 612,
+      "y": 751,
+      "tamanho": 82,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1026,
+      "y": 752,
+      "tamanho": 79,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1129,
+      "y": 752,
+      "tamanho": 79,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1233,
+      "y": 752,
+      "tamanho": 79,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1336,
+      "y": 752,
+      "tamanho": 79,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 612,
+      "y": 892,
+      "tamanho": 82,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Crunch",
+    "Overdrive"
+  ],
+  "rotulos": [
+    {
+      "texto": "POWER",
+      "x": 235.2,
+      "y": 881.2,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 235.2,
+      "y": 998.1,
+      "altura": 13.16,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER 2",
+      "x": 553.4,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER 1",
+      "x": 656.0,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB OD1",
+      "x": 758.6,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB CLEAN",
+      "x": 861.3,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 963.9,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1066.6,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1169.2,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1271.8,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1374.5,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1477.1,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1579.8,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1682.4,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1785.1,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1887.7,
+      "y": 732.6,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RESONANCE",
+      "x": 553.4,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 656.0,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB OD2",
+      "x": 758.6,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RVB CRUNCH",
+      "x": 861.3,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 963.9,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1066.6,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1169.2,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1271.8,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1374.5,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1477.1,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1579.8,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1682.4,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1785.1,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1887.7,
+      "y": 988.5,
+      "altura": 12.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "FX LOOP",
+      "x": 1990.3,
+      "y": 801.1,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 2051.9,
+      "y": 801.1,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN",
+      "x": 1990.3,
+      "y": 903.4,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CRUNCH",
+      "x": 2051.9,
+      "y": 903.4,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD1",
+      "x": 1990.3,
+      "y": 999.9,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD2",
+      "x": 2051.9,
+      "y": 999.9,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 2154.6,
+      "y": 892.5,
+      "altura": 11.11,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 2022.6,
+      "y": 822.9,
+      "raio": 8.8
+    },
+    {
+      "x": 2084.3,
+      "y": 822.9,
+      "raio": 8.8
+    },
+    {
+      "x": 2022.6,
+      "y": 916.7,
+      "raio": 8.8
+    }
+  ]
+}
