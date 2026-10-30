@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 88,
-      "y": 118,
-      "tamanho": 74,
+      "x": 86,
+      "y": 114,
+      "tamanho": 76,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 206,
-      "y": 119,
-      "tamanho": 70,
+      "x": 204,
+      "y": 116,
+      "tamanho": 73,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 439,
-      "y": 118,
-      "tamanho": 74,
+      "x": 438,
+      "y": 114,
+      "tamanho": 76,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -43,7 +43,7 @@
     {
       "texto": "GANHO",
       "x": 127.7,
-      "y": 204.2,
+      "y": 203.3,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -52,7 +52,7 @@
     {
       "texto": "AGUDO",
       "x": 242.6,
-      "y": 204.2,
+      "y": 203.3,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -61,7 +61,7 @@
     {
       "texto": "GRAVE",
       "x": 357.4,
-      "y": 204.2,
+      "y": 203.3,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -70,7 +70,7 @@
     {
       "texto": "VOLUME",
       "x": 472.3,
-      "y": 204.2,
+      "y": 203.3,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -79,7 +79,7 @@
     {
       "texto": "FREQUÊNCIA",
       "x": 242.6,
-      "y": 305.4,
+      "y": 307.9,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -88,7 +88,7 @@
     {
       "texto": "MÉDIO",
       "x": 357.4,
-      "y": 305.4,
+      "y": 307.9,
       "altura": 11.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -96,8 +96,8 @@
     },
     {
       "texto": "DRIVE",
-      "x": 185.2,
-      "y": 77.8,
+      "x": 187.6,
+      "y": 84.3,
       "altura": 8.89,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -105,8 +105,8 @@
     },
     {
       "texto": "MISTURA",
-      "x": 414.9,
-      "y": 77.8,
+      "x": 410.1,
+      "y": 84.3,
       "altura": 8.89,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -114,13 +114,13 @@
     }
   ],
   "pisante": {
-    "x": 147.5,
-    "y": 383.0,
-    "raio": 42.0
+    "x": 169.0,
+    "y": 392.5,
+    "raio": 29.0
   },
   "led": {
-    "x": 151.1,
-    "y": 334.5,
-    "raio": 10.7
+    "x": 184.6,
+    "y": 203.2,
+    "raio": 6.2
   }
 }

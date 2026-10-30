@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:43:27Z",
+ "gerado": "2026-10-30T11:47:36Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2450,8 +2450,8 @@
   },
   "galena_hammer": {
    "nome": "Galena Hammer",
-   "hash": "47e86ebf4c3e7e40",
-   "data": "2026-10-29T21:23:26Z",
+   "hash": "a3a56614fda4e26e",
+   "data": "2026-10-30T11:47:36Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galena_hammer_botao_ganho.png",
@@ -2463,21 +2463,21 @@
     "galena_hammer_mapa.json"
    ],
    "sha256": {
-    "galena_hammer_botao_ganho.png": "9e8c44dcc07a307d7b3969dd29f46a9c62bcf79c748c3e74400993a74bb89a11",
-    "galena_hammer_botao_nivel.png": "81ee92a2e32ce3c340b86b89d827de4dce6333a74c672385c745aa7358d1b725",
-    "galena_hammer_botao_tom.png": "dd4af281cbc47ef0fb4fd6f513f4e49ceb67053511faeb871fb1a1650b840e71",
-    "galena_hammer_frente.jpg": "582b39ae0575daaa12186294588e908f445f3c431faa110c689e6b7b2ae10a00",
-    "galena_hammer_frente_alfa.png": "e94f5a5d280fcde80d4cd53e72791a7291e892c213c4d0db86474b04ae374441",
-    "galena_hammer_manifesto.json": "875dd8cf79c93e6a628845c69192e7ee2cd68bcb92298c2a207d02cd677465f3",
-    "galena_hammer_mapa.json": "c8348526d58ad622b81708c0989d92e746fb007880cf3fee02f671afc77433b9"
+    "galena_hammer_botao_ganho.png": "1a66909a1fab8d6152925cea94d113f47a518fc406f88584a8a049b8ec5e4c11",
+    "galena_hammer_botao_nivel.png": "ab91cab403a1e9c583d430fb2353a957c529822bd6d68817c0a58b041b9693e8",
+    "galena_hammer_botao_tom.png": "e121b5b8244517918f5b58b63628c3d5cdc8967dc35f0d548ad34d327301b0fb",
+    "galena_hammer_frente.jpg": "ecb8f5a6a60cde67dd2a4bd89eee03d4af7c3bfe0c8ac98c13f5ca09747633ae",
+    "galena_hammer_frente_alfa.png": "974c29428571c20f8ef1b62d6af1e219f4c6339efec1bdcd40392a963d6fc571",
+    "galena_hammer_manifesto.json": "5b59bf2e0932a3618c24da413b7d44440f9e0e3873501f30102c5d85d0573904",
+    "galena_hammer_mapa.json": "d955bd92e6f4a1f301b3ba136cfe7f83f188e101a428307d70b1b01cab63a87e"
    },
-   "tamanho": 174010,
+   "tamanho": 173680,
    "tipo": "pedal",
    "inspiracao": "Aguilar Tone Hammer",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
