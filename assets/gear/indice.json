@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:02:34Z",
+ "gerado": "2026-10-30T12:04:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2150,8 +2150,8 @@
   },
   "emerald_echo": {
    "nome": "Emerald Echo",
-   "hash": "f252a93425a3bf1d",
-   "data": "2026-10-30T08:05:31Z",
+   "hash": "cfa46ed6311efdbd",
+   "data": "2026-10-30T12:04:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emerald_echo_botao_a.png",
@@ -2166,24 +2166,24 @@
     "emerald_echo_mapa.json"
    ],
    "sha256": {
-    "emerald_echo_botao_a.png": "e3077df5f8df20862f49496dc7bd9745c10a378fc796b6fff9bd41c015df57b5",
-    "emerald_echo_botao_b.png": "15b636c24a8266338e0515e3d4355835b9385d003f52089f08a8c3bde278b05f",
-    "emerald_echo_botao_c.png": "6ad83a671a3b5d0066b23f226cbd74e8a2bc0adc525dd1a02b20804fd2ef24c3",
-    "emerald_echo_botao_d.png": "2d0feefc61c1846fae619f216985143b3bd12b49a64fed964ef0f343ebcbb822",
-    "emerald_echo_botao_modo.png": "72779e1d5ff4b6ad80909b7719f4736a6efd502b8bedbf4e77f75c835ed9314d",
-    "emerald_echo_botao_tom.png": "b6b0089c06236a1953f6e2cf5976b79610495e879a26fba577a7c22490ffbadc",
-    "emerald_echo_frente.jpg": "5ae8dd8b78ec78875284eb32f563f9dc17b5d4375c9da964edbbe36fd0eedd33",
-    "emerald_echo_frente_alfa.png": "5d0822a722fe0f3e38cb8d5e8e0a1bfe1b1d68dca54a4dd4faee87d2a91d2ade",
-    "emerald_echo_manifesto.json": "a916d3b66313b31e2bcb2c36dba542a119c546a91c8a16a658d6fb77cf1e71f4",
-    "emerald_echo_mapa.json": "c434a46f8aca23c71b45d5a2eea3594eacb95ca9f7a78bd8478d9586a5d58c0c"
+    "emerald_echo_botao_a.png": "e4aa01f9267e0751a68f31094558a84679b711149b6bcbd62a530ad4304cf0da",
+    "emerald_echo_botao_b.png": "20dac12bb61116c53e65b52af62fecd522a8045187edfa0019eae3e3b8ee6d97",
+    "emerald_echo_botao_c.png": "2d7bfba919243d6d5821e6a5cf104ccc2dcc4bacbecf380a23f047f4c6edfcf4",
+    "emerald_echo_botao_d.png": "5b1ed7d1f576017da78ff273ef4611cf7089cdab4c7d3793e4431091fe9ab47f",
+    "emerald_echo_botao_modo.png": "04ab05e263633d8ff664bd294bab70a2c99c804c0036ee66308a9054aa91e7f1",
+    "emerald_echo_botao_tom.png": "f57d59e1c20674166030a5f77946aaf4c7ee64a6345635fefe66342f63114224",
+    "emerald_echo_frente.jpg": "4342caeef9b9c2ae22f967ca85f6f0892f660b2bc2821e552efd93b4d8b043bb",
+    "emerald_echo_frente_alfa.png": "910bda5e0fbf9ec24e42c3bf342c54c200fde6f665e2290601ce32f95bd23098",
+    "emerald_echo_manifesto.json": "6f5c6bebe87d706b2fe98ac8252b4b36b31a63621dfb244927aebe9c782172f9",
+    "emerald_echo_mapa.json": "072be6e7700217f74489569960ca844aa6eef0b61901c32b932c022c1c318281"
    },
-   "tamanho": 146142,
+   "tamanho": 269577,
    "tipo": "pedal",
    "inspiracao": "Line 6 DL4",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_modos",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
