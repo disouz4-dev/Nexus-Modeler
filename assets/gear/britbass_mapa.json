@@ -2,59 +2,59 @@
   "nome": "Brit Bass",
   "familia": "britbass",
   "largura": 2400,
-  "altura": 1161,
+  "altura": 981,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
-      "x": 984,
-      "y": 841,
-      "tamanho": 103,
+      "x": 980,
+      "y": 658,
+      "tamanho": 111,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1112,
-      "y": 841,
-      "tamanho": 103,
+      "x": 1108,
+      "y": 658,
+      "tamanho": 111,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1240,
-      "y": 841,
-      "tamanho": 103,
+      "x": 1236,
+      "y": 658,
+      "tamanho": 111,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1367,
-      "y": 841,
-      "tamanho": 103,
+      "x": 1363,
+      "y": 658,
+      "tamanho": 111,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1495,
-      "y": 841,
-      "tamanho": 103,
+      "x": 1490,
+      "y": 658,
+      "tamanho": 112,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1622,
-      "y": 840,
-      "tamanho": 104,
+      "x": 1617,
+      "y": 657,
+      "tamanho": 113,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,8 +67,8 @@
     {
       "texto": "MAINS",
       "x": 402.3,
-      "y": 942.0,
-      "altura": 19.88,
+      "y": 766.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "STANDBY",
       "x": 502.0,
-      "y": 942.0,
-      "altura": 19.88,
+      "y": 766.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "INDICATOR",
       "x": 601.7,
-      "y": 933.2,
-      "altura": 19.88,
+      "y": 758.2,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -94,7 +94,7 @@
     {
       "texto": "SUPER BASS 100",
       "x": 819.3,
-      "y": 923.2,
+      "y": 745.0,
       "altura": 19.01,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -103,8 +103,8 @@
     {
       "texto": "PRESENCE",
       "x": 1036.8,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "BASS",
       "x": 1163.7,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "MIDDLE",
       "x": 1290.7,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "TREBLE",
       "x": 1417.6,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "VOLUME 1",
       "x": 1544.5,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -148,8 +148,8 @@
     {
       "texto": "VOLUME 2",
       "x": 1671.4,
-      "y": 986.9,
-      "altura": 19.88,
+      "y": 802.9,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -157,7 +157,7 @@
     {
       "texto": "I",
       "x": 1798.3,
-      "y": 766.5,
+      "y": 588.3,
       "altura": 17.55,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -166,7 +166,7 @@
     {
       "texto": "II",
       "x": 1925.2,
-      "y": 766.5,
+      "y": 588.3,
       "altura": 17.55,
       "achatamento": 1.0,
       "cor": "#211d19",
