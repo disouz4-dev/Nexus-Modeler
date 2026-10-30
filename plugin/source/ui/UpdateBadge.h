@@ -41,6 +41,7 @@ private:
   void ask();
   void showReleaseNotes();
   void showWhatsNew();
+  void whatsNewWhenShowing(int tries);
   juce::String text() const;
 
   juce::SharedResourcePointer<nexus::update::Updater> mUpdater;
