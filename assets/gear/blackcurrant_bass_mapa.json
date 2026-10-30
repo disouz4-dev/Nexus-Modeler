@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 317,
-      "y": 111,
-      "tamanho": 80,
+      "x": 314,
+      "y": 104,
+      "tamanho": 87,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 429,
-      "y": 110,
-      "tamanho": 82,
+      "x": 424,
+      "y": 102,
+      "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 429,
-      "y": 220,
-      "tamanho": 82,
+      "x": 424,
+      "y": 208,
+      "tamanho": 88,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,8 +42,8 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 133.8,
-      "y": 207.8,
+      "x": 131.4,
+      "y": 207.1,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -51,8 +51,8 @@
     },
     {
       "texto": "MISTURA",
-      "x": 244.6,
-      "y": 207.8,
+      "x": 239.8,
+      "y": 207.1,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -61,7 +61,7 @@
     {
       "texto": "NÍVEL",
       "x": 355.4,
-      "y": 207.8,
+      "y": 207.1,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -69,8 +69,8 @@
     },
     {
       "texto": "DRIVE",
-      "x": 466.2,
-      "y": 207.8,
+      "x": 463.8,
+      "y": 207.1,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -78,8 +78,8 @@
     },
     {
       "texto": "GRAVE",
-      "x": 133.8,
-      "y": 315.1,
+      "x": 131.4,
+      "y": 310.6,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -87,8 +87,8 @@
     },
     {
       "texto": "MÉDIO GRAVE",
-      "x": 244.6,
-      "y": 315.1,
+      "x": 239.8,
+      "y": 310.6,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -97,7 +97,7 @@
     {
       "texto": "MÉDIO AGUDO",
       "x": 355.4,
-      "y": 315.1,
+      "y": 310.6,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -105,8 +105,8 @@
     },
     {
       "texto": "AGUDO",
-      "x": 466.2,
-      "y": 315.1,
+      "x": 463.8,
+      "y": 310.6,
       "altura": 13.11,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -114,8 +114,8 @@
     },
     {
       "texto": "ATAQUE",
-      "x": 189.2,
-      "y": 165.6,
+      "x": 186.8,
+      "y": 187.8,
       "altura": 10.02,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -123,8 +123,8 @@
     },
     {
       "texto": "GRUNT",
-      "x": 410.8,
-      "y": 165.6,
+      "x": 408.4,
+      "y": 187.8,
       "altura": 10.02,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -132,8 +132,8 @@
     },
     {
       "texto": "DISTORÇÃO",
-      "x": 141.0,
-      "y": 398.1,
+      "x": 138.6,
+      "y": 409.2,
       "altura": 11.56,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -141,13 +141,13 @@
     }
   ],
   "pisante": {
-    "x": 464.5,
-    "y": 402.0,
-    "raio": 48.0
+    "x": 462.0,
+    "y": 414.0,
+    "raio": 32.5
   },
   "led": {
-    "x": 300.0,
-    "y": 354.1,
-    "raio": 12.0
+    "x": 137.8,
+    "y": 353.8,
+    "raio": 7.2
   }
 }

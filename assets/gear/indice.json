@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:32:44Z",
+ "gerado": "2026-10-30T11:32:52Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -720,8 +720,8 @@
   },
   "blackcurrant_bass": {
    "nome": "Blackcurrant Bass",
-   "hash": "bd0cc36339556705",
-   "data": "2026-10-29T21:08:29Z",
+   "hash": "660adaee270e719d",
+   "data": "2026-10-30T11:32:52Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcurrant_bass_botao_ganho.png",
@@ -733,21 +733,21 @@
     "blackcurrant_bass_mapa.json"
    ],
    "sha256": {
-    "blackcurrant_bass_botao_ganho.png": "838f2ee59025cdac58bdc1fa2af9acf663d4f4d40d8ad8a49748e8d2473dd5c6",
-    "blackcurrant_bass_botao_nivel.png": "fcb8832f5bf9a71b24770e387bfc1140b1727c033705361c750d5dbc495ff266",
-    "blackcurrant_bass_botao_tom.png": "ef5bf6ba1e9c1368d823981b63e97b6f345da9e4ff93ed529133ad49b744dcd6",
-    "blackcurrant_bass_frente.jpg": "253d62f46caa4cb3a470cc28365abb6f7c4c08283ee71b017a3060ab0c180838",
-    "blackcurrant_bass_frente_alfa.png": "e1824a552f67d3b23c4546e7bbe339752d01b12984f89d7c30d81ea0ca620567",
-    "blackcurrant_bass_manifesto.json": "be44021a8731811dbe15bb4387467e138a4455dd3771a884ffb55dbd4c8a0bb4",
-    "blackcurrant_bass_mapa.json": "f73a36d99463df17d2cc529dd1827b99f3b5b741f9a685c9cb7f36c9ef9d70a3"
+    "blackcurrant_bass_botao_ganho.png": "c5b190648e95e6c519e4d9498f08ace8a897d1d505789cc6b29207406bbcb947",
+    "blackcurrant_bass_botao_nivel.png": "955bb6b2299aa9b737f15838ab26bd80e56868cb51381c8e4d6e445469670422",
+    "blackcurrant_bass_botao_tom.png": "e896efcaef44515e5419c90f66540741a11924cbdff85f7601ff992a0551f1ae",
+    "blackcurrant_bass_frente.jpg": "38b055056cce8b6c334ecfb62f9a8c057cc0686e917d4df4d8a9d144de5376c0",
+    "blackcurrant_bass_frente_alfa.png": "7a313704e4ec3e4a1dca359c291ad35c9281fb41d1d56b4e0b9f1249db9b0f7a",
+    "blackcurrant_bass_manifesto.json": "39a70609df843b7176ce222cc082fe246f42657bd3ecae0498241f4bb0085c99",
+    "blackcurrant_bass_mapa.json": "64bdfef924623d9434849f8da05637753b052d798849cfc647f7a12a6d99acfe"
    },
-   "tamanho": 219048,
+   "tamanho": 253652,
    "tipo": "pedal",
    "inspiracao": "Darkglass B7K",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
