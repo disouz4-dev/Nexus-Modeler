@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:40:46Z",
+ "gerado": "2026-10-30T16:51:03Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3760,8 +3760,8 @@
   },
   "mark2plus": {
    "nome": "Mark Two Plus",
-   "hash": "50bb552293ac8166",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "04f840eb66dda0e2",
+   "data": "2026-10-30T16:51:03Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark2plus_botao_agudo.png",
@@ -3781,29 +3781,29 @@
     "mark2plus_mapa.json"
    ],
    "sha256": {
-    "mark2plus_botao_agudo.png": "c9fcf8fc878ef0aa6e577fcc4ecd87c9aebc72ce19922b481b5ee2e9c1b9ae7a",
-    "mark2plus_botao_eq2200.png": "5a7752ecd07edb025364ccffa5ca04b76cf843047fbe97f3b1d0ef48f94499d8",
-    "mark2plus_botao_eq240.png": "fec160d375e9c2291c9f9809e7e84b2bb6d866b50bb5017a13108ac990ca15eb",
-    "mark2plus_botao_eq6600.png": "6190c7d44760de656a5654c0165128c9dca00b81442b34668dfdee03fcdce685",
-    "mark2plus_botao_eq750.png": "a6e12396713b496fcc1f73a6014e56a73d075522211a81b97eefcea447377a73",
-    "mark2plus_botao_eq80.png": "1b5b9ddcd3c993b756fe9eaa7f5ee72a7269ab8e9bbd253b0fd0d7b42d9ec257",
-    "mark2plus_botao_ganho.png": "21445481c18dc9f3cf062381cb289aae38e6241ae9b28c6d30eac427e18dfd9b",
-    "mark2plus_botao_grave.png": "7c5c2c80b11758bbc41d95f8544e78965c50f68a0d3903c60de2f41978d2737b",
-    "mark2plus_botao_medio.png": "bff2e5fc6c4abb09b039ff32dcc88ce7744705859d1d1d4ba507dd1be04733b7",
-    "mark2plus_botao_presenca.png": "5b773c14d4004246ee68f2475364b3321138e65bd919aea0cc016c688366105f",
-    "mark2plus_botao_volume.png": "23f81c012cfb4db133780e2b9961a6cb78e201ba15dba5f29f4731ccbfb86703",
-    "mark2plus_frente.jpg": "3c451bb4884f713cbbc69f57bc5d1dafba48e5a0729597ad28ee08d73d092a9a",
-    "mark2plus_frente_alfa.png": "e451d46917f47ec58c879328538d47f7e337d1af2180f387edf28066b61d2f0f",
-    "mark2plus_manifesto.json": "f1370a87ac43473fc5aa2e641bbc348812dbe7f93369892c82679640f153a794",
-    "mark2plus_mapa.json": "3341cf1600ad383d43af5a4da82e0437624f5d6a16ec73de64c0a08cba92a6c0"
+    "mark2plus_botao_agudo.png": "0d853e3a8cb3d1c35170749b83dfcf1b8e6f6c47208bf34acbc88065a2ca0c16",
+    "mark2plus_botao_eq2200.png": "fe4a9135362fca88047d98241724290d7fd1a846165cbbd9239dc202ce1df8c1",
+    "mark2plus_botao_eq240.png": "a0d6e844e789fa3c5f8199dc5d398df48b7be6ccade6e216a6b2bf4e8bdc0623",
+    "mark2plus_botao_eq6600.png": "314b277cdd7be8a2d626bc04ccd21116edcb2d9b406b4284c423b93b8ee95aff",
+    "mark2plus_botao_eq750.png": "7e05ef7f6768cafaceb8cd9714dd2272eda340390d190b11bd731de19118eca9",
+    "mark2plus_botao_eq80.png": "6ce247120612e6bdfa9d793aeff533115bc28eb9ebd0d3192d18e1793a1a4196",
+    "mark2plus_botao_ganho.png": "111019e1e8928fbcb8e710f3707d90391f49dca9c104cae846196a4d78bf4c2e",
+    "mark2plus_botao_grave.png": "463e26da8e1fe52d867cedec9288544dfab6abf9cbd0884d74b8a75cc017f2c8",
+    "mark2plus_botao_medio.png": "b672630067c1349a34e1319025c5d5b4a82825f00e767c631e0aec250f9804b0",
+    "mark2plus_botao_presenca.png": "c76c4990c9679ca244e3c29c06a37c6a9e6b479624c30916093894186917b8fb",
+    "mark2plus_botao_volume.png": "de56864e1d77585dd2535804f5f65f2ae3d49b13ea8c374f91e44cd4abe7cb74",
+    "mark2plus_frente.jpg": "544391e79709de6c98c7a756c0502b804b6b6e7aad83d998d8d7a8417a185c4b",
+    "mark2plus_frente_alfa.png": "017b2d88630fae8b4e9306dc0c286cb3381eb77caaf9f995931766255103c906",
+    "mark2plus_manifesto.json": "e71bac1dd1f8786e321086836fb1af25cc8f00527777adb741e30f7d68075b0d",
+    "mark2plus_mapa.json": "85b0adea8cafcd4c4a4dce5d6a805247982898e9f20f98f249cf3e58835f41fe"
    },
-   "tamanho": 1652441,
+   "tamanho": 1975511,
    "tipo": "cabecote",
    "inspiracao": "Mesa Boogie Mark IIC+",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
