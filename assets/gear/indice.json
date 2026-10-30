@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T17:57:07Z",
+ "gerado": "2026-10-30T18:01:15Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1407,8 +1407,8 @@
   },
   "britrack1": {
    "nome": "Brit Rack 1",
-   "hash": "78beeb56b2ae2d1a",
-   "data": "2026-10-30T09:20:48Z",
+   "hash": "7a6deb78bdc52f1f",
+   "data": "2026-10-30T18:01:15Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britrack1_botao_agudo.png",
@@ -1423,24 +1423,24 @@
     "britrack1_mapa.json"
    ],
    "sha256": {
-    "britrack1_botao_agudo.png": "6e98a1f3322aaf4ffc37ada5f91f2ae239d66808660f94415d7516ead8f07542",
-    "britrack1_botao_ganho.png": "d1a00ece972cf71481465e8c6691019cea74cb718fc536b2dbad41b8de03de2e",
-    "britrack1_botao_grave.png": "87b6621a295d89f64caa5dbd8af1f5ef1338e73461d042cf813b22faf0283f1f",
-    "britrack1_botao_medio.png": "38f5e2e9b856e2acc936cde197b2f1e40a23be3105d59b23ea3a2d09f274a879",
-    "britrack1_botao_presenca.png": "d4a58944aa830ba2a42c486840d601ed53d2b59ade6a7fd7be6c35b263bfa8a2",
-    "britrack1_botao_volume.png": "21d5e3760c43966460c3b31743859d30ce85d8757e5be60a98fdfdc3a763be87",
-    "britrack1_frente.jpg": "9d5b21f2ae120b98455a26651de1aa45e823637bc82f2a121bdce6405b49475c",
-    "britrack1_frente_alfa.png": "fd8f2ba65b79f73d8aee046f770711c8f811ac35e15900986abc8d40dc01fc57",
-    "britrack1_manifesto.json": "2c521ced41bcaa5f34fccedae23a226e716d6c52ee26072a65797e9e899e30b1",
-    "britrack1_mapa.json": "1e19e6ff540fa906baf91dd2edc726bf248b2dd921295d4850ffdef42431a266"
+    "britrack1_botao_agudo.png": "f6edde0757e6f1b83307112d66b2f52b4bab4c1484cc65b4380edc8b9acf1275",
+    "britrack1_botao_ganho.png": "150bf1828616aefb8afdad1d4040bda2674d57ebd8ad39e7674ddc2720d49661",
+    "britrack1_botao_grave.png": "428d86b5caf45e0dfec46ec4c54e19efd4aae8054c972410decbe1a5a01e4351",
+    "britrack1_botao_medio.png": "ba2c23677708c8499497b175cd2d45021e5bdb57e95329bd61e9e2fd3d02c3a5",
+    "britrack1_botao_presenca.png": "b58003be80729ebbd45f30b86e6f15cf1c2b177a94d70d99e89fbd2dd69457b4",
+    "britrack1_botao_volume.png": "8d18a9a41bd8f968bb142c8a0ea53048add5bc7b977f77a71fe93c7b83c64827",
+    "britrack1_frente.jpg": "30df55c4f5c3dc56212f637da3bf39ebcd4fdd43cc60d616da6ff64661cd3376",
+    "britrack1_frente_alfa.png": "66467fd3b91873af9d542a3a5f196d374d1d7ec43046c43d94574d6daae6d051",
+    "britrack1_manifesto.json": "bfb613d81773fb8ccce5581b8170ef10c7b60396ad76a5c2259b3e5186fe45cf",
+    "britrack1_mapa.json": "c789c9c114b795ec122973fb9a273b696ca9f1c2b47fc7a0e5f78f8d26570ab9"
    },
-   "tamanho": 365226,
+   "tamanho": 199088,
    "tipo": "cabecote",
    "inspiracao": "Marshall JMP-1",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },

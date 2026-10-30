@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 1397,
-      "y": 247,
-      "tamanho": 82,
+      "x": 1507,
+      "y": 263,
+      "tamanho": 51,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1487,
-      "y": 247,
-      "tamanho": 83,
+      "x": 1572,
+      "y": 262,
+      "tamanho": 52,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1577,
-      "y": 246,
-      "tamanho": 84,
+      "x": 1637,
+      "y": 262,
+      "tamanho": 53,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1668,
-      "y": 246,
-      "tamanho": 85,
+      "x": 1699,
+      "y": 262,
+      "tamanho": 53,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1758,
-      "y": 245,
-      "tamanho": 86,
+      "x": 1762,
+      "y": 261,
+      "tamanho": 54,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1848,
-      "y": 245,
-      "tamanho": 87,
+      "x": 1823,
+      "y": 261,
+      "tamanho": 55,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,7 +67,7 @@
   "rotulos": [
     {
       "texto": "INPUT",
-      "x": 319.9,
+      "x": 360.1,
       "y": 266.6,
       "altura": 23.59,
       "achatamento": 1.0,
@@ -76,7 +76,7 @@
     },
     {
       "texto": "PHONES",
-      "x": 415.6,
+      "x": 455.7,
       "y": 266.6,
       "altura": 23.59,
       "achatamento": 1.0,
@@ -84,18 +84,18 @@
       "espaco": 1.0
     },
     {
-      "texto": "OUTPUT LEVEL",
-      "x": 530.4,
-      "y": 255.6,
-      "altura": 20.65,
+      "texto": "PATCH",
+      "x": 978.1,
+      "y": 265.3,
+      "altura": 15.38,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "VALVE MIDI PRE-AMP",
-      "x": 798.2,
-      "y": 354.3,
+      "texto": "DATA",
+      "x": 1102.4,
+      "y": 265.3,
       "altura": 15.38,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -103,26 +103,35 @@
     },
     {
       "texto": "PATCH",
-      "x": 989.5,
-      "y": 265.3,
-      "altura": 15.38,
+      "x": 1221.0,
+      "y": 246.7,
+      "altura": 23.59,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STORE",
+      "x": 1221.0,
+      "y": 309.3,
+      "altura": 23.59,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OUTPUT LEVEL",
+      "x": 564.8,
+      "y": 290.3,
+      "altura": 19.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "DATA",
-      "x": 1104.3,
-      "y": 265.3,
-      "altura": 15.38,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "DATA",
-      "x": 1295.7,
-      "y": 252.9,
+      "x": 1372.2,
+      "y": 286.7,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -130,17 +139,17 @@
     },
     {
       "texto": "VOLUME",
-      "x": 1436.4,
-      "y": 233.7,
-      "altura": 23.59,
+      "x": 1531.0,
+      "y": 249.0,
+      "altura": 23.41,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 1526.6,
-      "y": 233.7,
+      "x": 1596.0,
+      "y": 248.8,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -148,8 +157,8 @@
     },
     {
       "texto": "BASS",
-      "x": 1616.8,
-      "y": 233.7,
+      "x": 1661.1,
+      "y": 248.8,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -157,44 +166,44 @@
     },
     {
       "texto": "MIDDLE",
-      "x": 1707.0,
-      "y": 233.7,
-      "altura": 23.59,
+      "x": 1722.3,
+      "y": 250.2,
+      "altura": 22.03,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 1797.2,
-      "y": 233.7,
-      "altura": 23.59,
+      "x": 1785.5,
+      "y": 250.2,
+      "altura": 22.03,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "PRESENCE",
-      "x": 1887.4,
-      "y": 233.7,
-      "altura": 23.59,
+      "x": 1846.7,
+      "y": 255.2,
+      "altura": 16.52,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "CLEAN 1",
-      "x": 1707.0,
-      "y": 399.5,
-      "altura": 23.59,
+      "texto": "EFFECT",
+      "x": 1909.8,
+      "y": 249.6,
+      "altura": 22.72,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "OD 1",
-      "x": 1436.5,
-      "y": 399.5,
+      "x": 1531.0,
+      "y": 389.6,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -202,8 +211,8 @@
     },
     {
       "texto": "OD 2",
-      "x": 1526.6,
-      "y": 411.0,
+      "x": 1596.0,
+      "y": 388.9,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -211,26 +220,35 @@
     },
     {
       "texto": "BASS SHIFT",
-      "x": 1616.8,
-      "y": 407.3,
-      "altura": 19.47,
+      "x": 1661.1,
+      "y": 380.7,
+      "altura": 14.47,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CLEAN 1",
+      "x": 1722.3,
+      "y": 385.3,
+      "altura": 18.88,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "CLEAN 2",
-      "x": 1797.2,
-      "y": 411.0,
-      "altura": 23.59,
+      "x": 1785.5,
+      "y": 384.6,
+      "altura": 18.88,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "STEP",
-      "x": 1887.4,
-      "y": 411.0,
+      "texto": "MAP",
+      "x": 1846.7,
+      "y": 388.9,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -238,17 +256,17 @@
     },
     {
       "texto": "CHANNEL",
-      "x": 1977.6,
-      "y": 411.0,
-      "altura": 23.59,
+      "x": 1909.8,
+      "y": 385.2,
+      "altura": 19.47,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
       "texto": "POWER",
-      "x": 2089.7,
-      "y": 271.1,
+      "x": 2043.7,
+      "y": 268.6,
       "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -257,13 +275,13 @@
   ],
   "leds_canais": [
     {
-      "x": 1708.4,
-      "y": 359.4,
+      "x": 1531.9,
+      "y": 349.4,
       "raio": 13.6
     },
     {
-      "x": 1437.1,
-      "y": 359.4,
+      "x": 1723.7,
+      "y": 349.4,
       "raio": 13.6
     }
   ]
