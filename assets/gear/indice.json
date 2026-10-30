@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:01:25Z",
+ "gerado": "2026-10-30T20:01:32Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6124,8 +6124,8 @@
   },
   "tweed57": {
    "nome": "Tweed 57",
-   "hash": "cbc32f09577cfe7b",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "a547ed74174f8ab2",
+   "data": "2026-10-30T20:01:32Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed57_botao_agudo.png",
@@ -6140,24 +6140,24 @@
     "tweed57_mapa.json"
    ],
    "sha256": {
-    "tweed57_botao_agudo.png": "31b7628b2f0723717f54bc4086a1ebbcd6a498ecee56a7fcbc4390f5c75416d9",
-    "tweed57_botao_ganho.png": "1988852ea25e7f7d75f6f32ecc52c64545f61593a36a49bc4918990005cb1941",
-    "tweed57_botao_grave.png": "58f0b9c5ff11fea185dac444d5c3e26b71e05328a16b1802ab1eca6e1cf3f638",
-    "tweed57_botao_medio.png": "e5ab600f8b6d4d10ab0da5cbafd60015d399fcffe57aff4cf24352a48f1160cc",
-    "tweed57_botao_presenca.png": "e481cdb3bfd8c86a4f4a3db18096fccab3e68421369837d9ee7f6ddbdfe71b5e",
-    "tweed57_botao_volume.png": "bb45f7d9c52aae3e22b7ec307c0e23ecd050a78e250a38a71143dbdacfa026d5",
-    "tweed57_frente.jpg": "6a74945968a9ecdf610decf3fb43bec79f13d54b47361ba58d3aa80e97fb2acd",
-    "tweed57_frente_alfa.png": "2c55fafafad83e706531c214b463a1c555b3dd6c8807aa6a357162637cc40454",
-    "tweed57_manifesto.json": "ffc72bec7ac7ebb3386cf4b6fb6fc909f8f0f33477907301b9351ffb621555fb",
-    "tweed57_mapa.json": "1f6283fa36ba6fda4d35af406200fe18b039ce7a28ce4cf27881b2482af09c52"
+    "tweed57_botao_agudo.png": "1384ca39f1b70a2318500377e0b496dfc2d33d59c56b21d183429e8dc1fd64f2",
+    "tweed57_botao_ganho.png": "1c6fab08faa8499c2f5cc5792dd6bd82e0db806566b66b9cac35ec66e407ad04",
+    "tweed57_botao_grave.png": "d2509269b94b8ac0f8ad4f11d9f864c9ef86216d1ba9642c6a1a8b2d7b82bfd0",
+    "tweed57_botao_medio.png": "a4a87e52d30f8fd1a9b1a5705db514378792b7fe3a5ed0f38abb11f22a4adbad",
+    "tweed57_botao_presenca.png": "fdf065f2ce107b8f345362acd3c42b7404b9eff9b4134df930b37eb453448c75",
+    "tweed57_botao_volume.png": "c0d294b2cd0a2bac4a90c9277c841b5f2634196879c347dc45ca5b05c43080c9",
+    "tweed57_frente.jpg": "e8985193713272d0e9a4c87bc114287273f2ba21a684f634abe25913ef79d8e4",
+    "tweed57_frente_alfa.png": "584dd6b7f7df8523ec3f157be31bde67e6851426a205f0a8ab71196b7aaca3d7",
+    "tweed57_manifesto.json": "57420e0a86cc599e9f95999a6ff48206913d71900d2e689c0ad9c361c8956f2f",
+    "tweed57_mapa.json": "671ef9f00078bbe9997ef6755e03528381190a064113dcd3080e15106ec74dcb"
    },
-   "tamanho": 1993826,
+   "tamanho": 2356399,
    "tipo": "cabecote",
    "inspiracao": "Fender Tweed Deluxe 5E3",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

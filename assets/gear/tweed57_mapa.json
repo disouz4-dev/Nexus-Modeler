@@ -2,7 +2,7 @@
   "nome": "Tweed 57",
   "familia": "tweed57",
   "largura": 2400,
-  "altura": 2726,
+  "altura": 2750,
   "posicoes": 101,
   "botoes": [
     {
@@ -34,27 +34,27 @@
     },
     {
       "id": "grave",
-      "x": 1225,
-      "y": 155,
-      "tamanho": 60,
+      "x": 1220,
+      "y": 150,
+      "tamanho": 70,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1315,
-      "y": 154,
-      "tamanho": 61,
+      "x": 1310,
+      "y": 149,
+      "tamanho": 71,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1406,
-      "y": 154,
-      "tamanho": 61,
+      "x": 1400,
+      "y": 149,
+      "tamanho": 72,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,8 +67,8 @@
     {
       "texto": "STANDBY",
       "x": 386.2,
-      "y": 330.7,
-      "altura": 22.39,
+      "y": 331.8,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "FUSE",
       "x": 476.6,
-      "y": 317.7,
-      "altura": 22.39,
+      "y": 318.9,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "ON",
       "x": 567.1,
-      "y": 330.7,
-      "altura": 22.39,
+      "y": 331.8,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -94,8 +94,8 @@
     {
       "texto": "TONE",
       "x": 802.1,
-      "y": 347.5,
-      "altura": 22.39,
+      "y": 348.6,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -103,8 +103,8 @@
     {
       "texto": "INST VOL",
       "x": 964.9,
-      "y": 347.5,
-      "altura": 22.39,
+      "y": 348.6,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "MIC VOL",
       "x": 1127.7,
-      "y": 347.5,
-      "altura": 22.39,
+      "y": 348.6,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "GRAVE",
       "x": 1254.3,
-      "y": 229.3,
-      "altura": 22.39,
+      "y": 235.1,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "MÉDIO",
       "x": 1344.7,
-      "y": 229.3,
-      "altura": 22.39,
+      "y": 235.1,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "PRESENÇA",
       "x": 1435.1,
-      "y": 229.3,
-      "altura": 22.39,
+      "y": 235.1,
+      "altura": 23.62,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
