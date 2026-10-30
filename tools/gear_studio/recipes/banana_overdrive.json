@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Banana Overdrive",
   "familia": "banana_overdrive",
-  "inspiracao": "Boss compacto amarelo (73 x 129 x 59 mm), letras pretas; botões pretos com saia e tampa prateada: NÍVEL, TOM (no meio, mais baixo) e DRIVE, LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: banana no basculante, listras amarelo-escuro tom sobre tom. Original: Boss SD-1 Super OverDrive.",
+  "inspiracao": "Boss compacto amarelo (73 x 129 x 59 mm), letras pretas; botões pretos com saia e tampa prateada: NÍVEL, TOM (no meio, mais baixo) e DRIVE, LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: banana no basculante, desenhado na borracha, no lugar da logo. Original: Boss SD-1 Super OverDrive.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -72,9 +72,7 @@
     }
   ],
   "medidas_fonte": "Boss SD-1 Super OverDrive: 73 x 129 x 59 mm (Boss, ficha oficial)",
-  "estampa": {
-    "svg": "estampas/banana_overdrive.svg"
-  },
+  "modelo_y": 0.33,
   "quadro": {
     "largura_rel": 2.21,
     "proporcao": 1.25,
@@ -83,10 +81,16 @@
   "base_rel": 0.68,
   "basculante_rel": 0.6,
   "basculante_ang": 0.0,
-  "borracha_rel": 0.36,
-  "modelo_m": 0.0084,
+  "borracha_rel": 0.5,
+  "borracha_larg": 0.86,
+  "modelo_m": 0.0125,
   "modelo_x": 0.0,
   "tipo_texto": "",
+  "logo": {
+    "svg": "estampas/banana_overdrive_tema.svg",
+    "tam_m": 0.016,
+    "lugar": "borracha"
+  },
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
   "disposicao": "boss",
@@ -131,5 +135,10 @@
       "rotulo_m": 0.0034
     }
   ],
-  "transformacao": "Standard"
+  "transformacao": "Standard",
+  "modelo_cor": [
+    0.0037,
+    0.0037,
+    0.0037
+  ]
 }
