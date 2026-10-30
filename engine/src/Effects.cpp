@@ -831,7 +831,18 @@ void NativePedal::processGeq(double* buffer, int n)
   }
   mGeq.set(bands);
   mGeq.process(buffer, n);
-  const double target = std::pow(10.0, toDb(mGeqLevel) / 20.0);
+  // Teto do ganho: o pico da curva (de 20 Hz a 20 kHz, a cada 1/12 de oitava)
+  // mais o nível não passa de kGeqMaxTotalDb. Só recalcula quando um botão muda.
+  if (mGeqKnobs != mGeqCapFor || mGeqLevel != mGeqCapLevel)
+  {
+    mGeqCapFor = mGeqKnobs;
+    mGeqCapLevel = mGeqLevel;
+    double peak = -1.0e9;
+    for (double f = 20.0; f <= 20000.0 && f < 0.45 * mRate; f *= std::pow(2.0, 1.0 / 12.0))
+      peak = std::max(peak, FreeEq::responseDb(bands, f, mRate));
+    mGeqCapDb = std::max(0.0, peak + toDb(mGeqLevel) - kGeqMaxTotalDb);
+  }
+  const double target = std::pow(10.0, (toDb(mGeqLevel) - mGeqCapDb) / 20.0);
   for (int i = 0; i < n; ++i)
   {
     mGeqLevelGain = smooth(mGeqLevelGain, target, mRate);
