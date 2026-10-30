@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T08:41:12Z",
+ "gerado": "2026-10-30T08:51:25Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -990,8 +990,8 @@
   },
   "brit2000": {
    "nome": "Brit 2000",
-   "hash": "c81ce4de07f249d0",
-   "data": "2026-10-30T01:50:24Z",
+   "hash": "349b0dc3a646710e",
+   "data": "2026-10-30T08:51:25Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit2000_botao_agudo.png",
@@ -1006,24 +1006,24 @@
     "brit2000_mapa.json"
    ],
    "sha256": {
-    "brit2000_botao_agudo.png": "2d2b30a93f8d8d52febe1fd2b0fc9bbe373c8a9a075c875d68c1dddac6da4e59",
-    "brit2000_botao_ganho.png": "5ff75069c85b4c528ae4cf06808d0bfebf2c2db2fcb72584f25e4d6a5071fda2",
-    "brit2000_botao_grave.png": "0dfaf2effad7c9f3da6ebfdaa6746943e383945f34829ba1bb12ce9552abc6b1",
-    "brit2000_botao_medio.png": "293c35ce115d398e2ea7889827bfbcc8811a6a07d0dabea711ebe8f6c19b7797",
-    "brit2000_botao_presenca.png": "27fe7aa99352c34cd10efc8daecf7716459816cb69bcfbd49af406bc12bc3ee3",
-    "brit2000_botao_volume.png": "7baef872a32da737e08c387fda5e5f8217d9b391b356d6c157bb759d069bc955",
-    "brit2000_frente.jpg": "af39d8ca0be324cb57ff0969d904a080c83bf2dc88223a96e139985fa4b0675c",
-    "brit2000_frente_alfa.png": "a582a4411e302ffbbbe3d05e24b42eaca76c8927b2e4a53a293b4885858560da",
-    "brit2000_manifesto.json": "44d6f92ec18d30ca2a2c6117254a0d58621ef79baccb2db4bbb18b09d9e4995d",
-    "brit2000_mapa.json": "11e7a7a656fa81ea242e61549a5de43c00efaf6420a9664c9171310f887f503f"
+    "brit2000_botao_agudo.png": "144ce7f3bedbb1846cc6f4b8ccbcb18649fc1f7613bb251deb7882017cfb5468",
+    "brit2000_botao_ganho.png": "371077c5fd0bce7db0e13e6482f6d45e697532cf575bcbc27ad5ad3d7201a672",
+    "brit2000_botao_grave.png": "251e0d16deb66b4e9ca69f794ae7393d0746ee796b8604d4cef87560f5d7aafa",
+    "brit2000_botao_medio.png": "8b2c5da0f7d28e5106a6e219bd12364be678e7273dc0f855ea5601d1049f5897",
+    "brit2000_botao_presenca.png": "bd28ff4e14da9dc1fe31c0a56b7d5332855488f578bd86652db08e83d3bca931",
+    "brit2000_botao_volume.png": "4c3b9da566c77d0d6c99bfd59597fde192596f5bc6efceb78c61c05a7b7bb7b7",
+    "brit2000_frente.jpg": "2f685cdaf0e65c540a06da8daaea97d19b72f0745f071dcd994717d38d434f5e",
+    "brit2000_frente_alfa.png": "9b309b0af2cc33a00e6582e8db7b930a8df6ef78627594561ba0834fff388ca9",
+    "brit2000_manifesto.json": "8cc2019397d5c6d6ae7d898397f2cd0d3a6f251b2bedd7a208b101d2b9e94cc4",
+    "brit2000_mapa.json": "e5877a21f0ccd94755b2158d9a77910d5f19872f34acf2eb09d713a34edf6e69"
    },
-   "tamanho": 1336448,
+   "tamanho": 1343475,
    "tipo": "cabecote",
    "inspiracao": "Marshall JCM2000 (DSL e TSL)",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
