@@ -10,7 +10,7 @@
 
 ### Só equipamento revisado
 - Ficam no programa apenas as peças modeladas e revisadas uma a uma contra
-  o original: os 63 pedais e 28 cabeçotes, além da pedaleira.
+  o original: os 63 pedais e 27 cabeçotes, além da pedaleira.
 - Os outros cabeçotes, as caixas e os microfones chegam pelo botão de
   equipamentos novos, sem precisar de versão nova do programa, à medida que
   cada peça for revisada.
