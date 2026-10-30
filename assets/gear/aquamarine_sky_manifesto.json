@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "aquamarine_sky",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Aquamarine Sky",
+  "inspiracao": "Strymon BigSky",
+  "categoria": "Reverb",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "reverb_modos",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 19,
+  "signature": null
+}

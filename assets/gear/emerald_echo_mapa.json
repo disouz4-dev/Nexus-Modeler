@@ -1,0 +1,135 @@
+{
+  "nome": "Emerald Echo",
+  "familia": "lime_echo",
+  "largura": 600,
+  "altura": 510,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "modo",
+      "x": 87,
+      "y": 148,
+      "tamanho": 68,
+      "arquivo": "botao_modo.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "a",
+      "x": 176,
+      "y": 159,
+      "tamanho": 46,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 234,
+      "y": 160,
+      "tamanho": 44,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "d",
+      "x": 292,
+      "y": 160,
+      "tamanho": 44,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 350,
+      "y": 160,
+      "tamanho": 44,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 408,
+      "y": 158,
+      "tamanho": 46,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    250,
+    152
+  ],
+  "rotulos": [
+    {
+      "texto": "MODO",
+      "x": 123.3,
+      "y": 220.2,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TEMPO",
+      "x": 199.7,
+      "y": 211.1,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REPETIÇÕES",
+      "x": 257.0,
+      "y": 211.1,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MODULAÇÃO",
+      "x": 314.4,
+      "y": 211.1,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TWEEZ",
+      "x": 371.6,
+      "y": 211.1,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 428.9,
+      "y": 211.1,
+      "altura": 7.26,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 125.5,
+    "y": 346.5,
+    "raio": 23.5
+  },
+  "led": {
+    "x": 127.7,
+    "y": 307.4,
+    "raio": 6.0
+  }
+}

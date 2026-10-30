@@ -1,0 +1,159 @@
+{
+  "nome": "Aquamarine Sky",
+  "familia": "aquamarine_sky",
+  "largura": 600,
+  "altura": 510,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "modo",
+      "x": 216,
+      "y": 124,
+      "tamanho": 60,
+      "arquivo": "botao_modo.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "a",
+      "x": 81,
+      "y": 220,
+      "tamanho": 50,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 160,
+      "y": 221,
+      "tamanho": 48,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "d",
+      "x": 238,
+      "y": 222,
+      "tamanho": 46,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 316,
+      "y": 222,
+      "tamanho": 46,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 392,
+      "y": 221,
+      "tamanho": 48,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 469,
+      "y": 220,
+      "tamanho": 50,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    171,
+    114
+  ],
+  "rotulos": [
+    {
+      "texto": "MODO",
+      "x": 247.3,
+      "y": 195.9,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DECAIMENTO",
+      "x": 108.3,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PRÉ-ATRASO",
+      "x": 185.0,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MODULAÇÃO",
+      "x": 261.6,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 338.4,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SHIMMER",
+      "x": 415.0,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 491.6,
+      "y": 279.8,
+      "altura": 8.4,
+      "achatamento": 1.0,
+      "cor": "#383f4b",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 353.0,
+    "raio": 34.5
+  },
+  "led": {
+    "x": 300.0,
+    "y": 306.3,
+    "raio": 8.7
+  },
+  "visor": {
+    "x": 83.8,
+    "y": 117.3,
+    "w": 115.3,
+    "h": 76.8
+  }
+}

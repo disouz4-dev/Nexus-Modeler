@@ -1,0 +1,108 @@
+{
+  "nome": "Jabuticaba Buzzsaw",
+  "familia": "jabuticaba_buzzsaw",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 132,
+      "y": 124,
+      "tamanho": 94,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 212,
+      "y": 124,
+      "tamanho": 94,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 381,
+      "y": 130,
+      "tamanho": 80,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 181.4,
+      "y": 237.9,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.15
+    },
+    {
+      "texto": "ALTO",
+      "x": 260.4,
+      "y": 237.9,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.15
+    },
+    {
+      "texto": "BAIXO",
+      "x": 339.6,
+      "y": 237.9,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DISTORÇÃO",
+      "x": 418.6,
+      "y": 232.2,
+      "altura": 19.77,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 196.9,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.1
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 403.1,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#f07b23",
+      "espaco": 1.1
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 503.0,
+    "raio": 152.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 100.5,
+    "raio": 14.7
+  }
+}

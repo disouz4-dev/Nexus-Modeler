@@ -1,0 +1,194 @@
+{
+  "nome": "Selenite EQ",
+  "familia": "acerola_eq",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 140,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 87,
+      "altura": 262
+    },
+    {
+      "id": "b",
+      "x": 178,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 86,
+      "altura": 262
+    },
+    {
+      "id": "c",
+      "x": 216,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 85,
+      "altura": 262
+    },
+    {
+      "id": "d",
+      "x": 253,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 84,
+      "altura": 262
+    },
+    {
+      "id": "e",
+      "x": 290,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_e.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 84,
+      "altura": 262
+    },
+    {
+      "id": "f",
+      "x": 328,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_f.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 84,
+      "altura": 262
+    },
+    {
+      "id": "g",
+      "x": 365,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_g.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 85,
+      "altura": 262
+    },
+    {
+      "id": "nivel",
+      "x": 416,
+      "y": 119,
+      "tamanho": 131,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 87,
+      "altura": 262
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [
+    {
+      "texto": "100",
+      "x": 163.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "200",
+      "x": 200.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "400",
+      "x": 237.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "800",
+      "x": 274.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "1,6K",
+      "x": 311.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "3,2K",
+      "x": 348.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "6,4K",
+      "x": 385.4,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 436.6,
+      "y": 263.0,
+      "altura": 14.12,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.05
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 503.0,
+    "raio": 152.0
+  },
+  "led": {
+    "x": 434.6,
+    "y": 91.3,
+    "raio": 14.7
+  }
+}

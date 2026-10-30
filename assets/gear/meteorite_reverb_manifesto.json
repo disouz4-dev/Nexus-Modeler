@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "meteorite_reverb",
+  "versao": "1.0.1",
+  "tipo": "pedal",
+  "nome": "Meteorite Reverb",
+  "inspiracao": "RV-6",
+  "categoria": "Reverb",
+  "fonte": "Efeito do Nexus",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "reverb",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 6,
+  "signature": null
+}
