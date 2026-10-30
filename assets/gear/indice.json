@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:25:36Z",
+ "gerado": "2026-10-30T12:29:54Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -109,8 +109,8 @@
   },
   "amber_glory": {
    "nome": "Amber Glory",
-   "hash": "7a910990a6bf76e5",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "67e1933ac7627b38",
+   "data": "2026-10-30T12:29:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amber_glory_botao_ganho.png",
@@ -122,21 +122,21 @@
     "amber_glory_mapa.json"
    ],
    "sha256": {
-    "amber_glory_botao_ganho.png": "11e8c186bb5b9dc4c21720f38a535a0db10dd88fe05e5bd1c0cb3c36ee3e59ec",
-    "amber_glory_botao_nivel.png": "7a137c2496d6be81456a89a8b98320589f400785ab64142140c2db42236ac57d",
-    "amber_glory_botao_tom.png": "ca7e02934900da477a04ae79dcd7f0f062ca905df6c922a9870cc45b90704590",
-    "amber_glory_frente.jpg": "71afc189293883b0e5717fbb46a1da1128d4d7fe856f9c9adf760b16c49abddc",
-    "amber_glory_frente_alfa.png": "0e0f35a2b6b511d9f934a33a076154a28a0573b55de11aa8a45a1b4f6bd71eaa",
-    "amber_glory_manifesto.json": "945d1bbb9a47f1173aabbc7cf28f0ed3e35936224d2d32f76163ac5d6f0e5df5",
-    "amber_glory_mapa.json": "78ce701923d8b721f05bb98b2c92aa9fd3193c6778aeb5c936db4df59ac8c9bf"
+    "amber_glory_botao_ganho.png": "5f685b532a98f70d4ffe3cbc38116314c36467392b186b361c9ead99183eda68",
+    "amber_glory_botao_nivel.png": "fc9571dd2d1aaa0053ef770ca39b41ae8b923f6683baf0e1995652ebc27137c3",
+    "amber_glory_botao_tom.png": "bc19f5b8c0208e71df05d0b25dce26f702ae1e7b698049ee20bb92828bd1dcb0",
+    "amber_glory_frente.jpg": "fc9a61da18c18e2bb13aa1d9c58d5a994833f61a884a6ed81b1b9e4140f4e9ca",
+    "amber_glory_frente_alfa.png": "5076b889d0988e5b3879d3684c2ffd4bda241573bcbb9241ec95f70cc9467692",
+    "amber_glory_manifesto.json": "f3dbf23975a1dd4ea0acd10f2a8a213bb0be0ae731dec780701faf42d5cf9d9a",
+    "amber_glory_mapa.json": "a2feb1f055478cc204dfc0e4f951004b2f42796cac80e95e3e78abcf1ce98d6a"
    },
-   "tamanho": 372459,
+   "tamanho": 397137,
    "tipo": "pedal",
    "inspiracao": "JHS Morning Glory",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
