@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T09:10:17Z",
+ "gerado": "2026-10-30T09:16:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1290,8 +1290,8 @@
   },
   "britjubilee": {
    "nome": "Brit Jubilee",
-   "hash": "e77dd3ec2d457124",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "3ee0064e5af30caf",
+   "data": "2026-10-30T09:16:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britjubilee_botao_agudo.png",
@@ -1306,24 +1306,24 @@
     "britjubilee_mapa.json"
    ],
    "sha256": {
-    "britjubilee_botao_agudo.png": "78d9eb19bc764a1210ee5154e63925934ed586dd165dacc43dc040296aa24450",
-    "britjubilee_botao_ganho.png": "e8aeb35f5c9aa41b5130539afb4a57df26f1386031c8cc6ace807893f1bdb518",
-    "britjubilee_botao_grave.png": "f13824befd3f2d313b4c8befea8dfcacfb81210707c9db5f7a62c946fe5cb95e",
-    "britjubilee_botao_medio.png": "bf26c6f9776b6cc64e34108a264f2dc066c23a40141a6c1068e89b30013c0fe5",
-    "britjubilee_botao_presenca.png": "2e974cdcb8a898c87ae16e696aca2f418f939fb0bf70da3bfbbcc48b0c057c6a",
-    "britjubilee_botao_volume.png": "54ee80f82ad1b163c2e31554825c7a658cb343098ec36ac7c8d9471c443c5db4",
-    "britjubilee_frente.jpg": "7c97033058860b80ecb184282c08b7c071d4a9f2a38ffd54a596c303838f5eda",
-    "britjubilee_frente_alfa.png": "ebe7194ce055b3ee354879d84adf68b531735eb9839f7fc53b90ce52ea6553db",
-    "britjubilee_manifesto.json": "13351abf07faf266960a5c37ea3dfd3accf4989d379ca032662382c289f87faf",
-    "britjubilee_mapa.json": "23a2dcd31bcc9f68224aeb9368835964a3ca6db74c46f9ab2e4bef985177f8f5"
+    "britjubilee_botao_agudo.png": "8b7a8843ceccfde5cbf2ea51985823c19143fa32eb1ca24bb4fd9896e54e22c0",
+    "britjubilee_botao_ganho.png": "bf1e9f432675d3a0629027d1e14e59feeffac2656dbf5814007c183175774e96",
+    "britjubilee_botao_grave.png": "7625de1419b3ecd89043c8ce77832f7df7143e93d8e61eca81369ac33631aa5b",
+    "britjubilee_botao_medio.png": "78e52be836befcbb7aaeaaac63f1921b43e49b77a7311ac2ae7a7ef621e467f2",
+    "britjubilee_botao_presenca.png": "62cce9cbaca1db83e6de2b5529f2bb0b626ed00d4134bceb69001ea15f0c9a8a",
+    "britjubilee_botao_volume.png": "20e32447ed2b202da8c93bf8f7517ed5db316e3c2cac5855e147c3997625cb80",
+    "britjubilee_frente.jpg": "acfd9e7bb2b012d82385def821fc82551e5b8e11921fba3b228beedc78cc2237",
+    "britjubilee_frente_alfa.png": "6076d7e723c578eaa388fe14a2b16e6ec4ef7492edd7344144a15a07e89ddb6b",
+    "britjubilee_manifesto.json": "31dae4a9e1c4c4d367801cfd84c5f4818c92d21eb0610fd8684561e6a49123fa",
+    "britjubilee_mapa.json": "8a2e8adb5fe07c99972930047367a62b328b1805fabd1ff365e005c58c9317c9"
    },
-   "tamanho": 1461312,
+   "tamanho": 1625006,
    "tipo": "cabecote",
    "inspiracao": "Silver Jubilee 2555",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
