@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "modo",
-      "x": 91,
-      "y": 206,
-      "tamanho": 66,
+      "x": 108,
+      "y": 196,
+      "tamanho": 61,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,8 +17,8 @@
     },
     {
       "id": "a",
-      "x": 284,
-      "y": 117,
+      "x": 315,
+      "y": 112,
       "tamanho": 53,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
@@ -26,8 +26,8 @@
     },
     {
       "id": "b",
-      "x": 366,
-      "y": 117,
+      "x": 383,
+      "y": 112,
       "tamanho": 53,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
@@ -35,8 +35,8 @@
     },
     {
       "id": "c",
-      "x": 448,
-      "y": 116,
+      "x": 450,
+      "y": 110,
       "tamanho": 54,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
@@ -44,27 +44,27 @@
     },
     {
       "id": "tom",
-      "x": 201,
-      "y": 210,
-      "tamanho": 52,
+      "x": 282,
+      "y": 203,
+      "tamanho": 50,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 284,
-      "y": 210,
-      "tamanho": 50,
+      "x": 350,
+      "y": 202,
+      "tamanho": 52,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 448,
-      "y": 208,
-      "tamanho": 54,
+      "x": 482,
+      "y": 200,
+      "tamanho": 56,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -78,8 +78,8 @@
   "rotulos": [
     {
       "texto": "TIPO",
-      "x": 127.2,
-      "y": 281.9,
+      "x": 141.7,
+      "y": 267.1,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -87,8 +87,8 @@
     },
     {
       "texto": "VALOR",
-      "x": 228.0,
-      "y": 181.8,
+      "x": 259.2,
+      "y": 176.3,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -96,8 +96,8 @@
     },
     {
       "texto": "DECAIMENTO",
-      "x": 309.6,
-      "y": 181.8,
+      "x": 340.8,
+      "y": 176.3,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -105,8 +105,8 @@
     },
     {
       "texto": "PRÉ-ATRASO",
-      "x": 391.2,
-      "y": 181.8,
+      "x": 408.0,
+      "y": 176.3,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -114,8 +114,8 @@
     },
     {
       "texto": "MISTURA",
-      "x": 472.8,
-      "y": 181.8,
+      "x": 475.1,
+      "y": 176.3,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -123,8 +123,8 @@
     },
     {
       "texto": "TOM",
-      "x": 228.0,
-      "y": 273.0,
+      "x": 307.2,
+      "y": 265.7,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -132,8 +132,8 @@
     },
     {
       "texto": "PARAM 1",
-      "x": 309.6,
-      "y": 273.0,
+      "x": 374.4,
+      "y": 265.7,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -141,8 +141,8 @@
     },
     {
       "texto": "PARAM 2",
-      "x": 391.2,
-      "y": 273.0,
+      "x": 441.6,
+      "y": 265.7,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -150,8 +150,8 @@
     },
     {
       "texto": "MODULAÇÃO",
-      "x": 472.8,
-      "y": 273.0,
+      "x": 506.4,
+      "y": 265.7,
       "altura": 10.66,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -160,7 +160,7 @@
     {
       "texto": "B",
       "x": 300.0,
-      "y": 393.4,
+      "y": 380.6,
       "altura": 8.53,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -168,19 +168,19 @@
     }
   ],
   "pisante": {
-    "x": 147.5,
-    "y": 396.5,
-    "raio": 34.5
+    "x": 105.5,
+    "y": 383.5,
+    "raio": 23.5
   },
   "led": {
-    "x": 150.7,
-    "y": 349.9,
-    "raio": 8.8
+    "x": 112.3,
+    "y": 333.4,
+    "raio": 5.5
   },
   "visor": {
-    "x": 78.7,
-    "y": 115.7,
-    "w": 96.2,
-    "h": 51.2
+    "x": 83.5,
+    "y": 131.2,
+    "w": 125.1,
+    "h": 23.8
   }
 }
