@@ -145,6 +145,8 @@ countries: fr ca be ch
 "Motor A2 Lite neste pedal (usa menos processador)" = "Moteur A2 Lite sur cette pédale (utilise moins de processeur)"
 "Mover para antes do cabeçote" = "Déplacer avant la tête d'ampli"
 "Mover para depois da caixa" = "Déplacer après le baffle"
+"Mover para depois do cabeçote" = "Déplacer après la tête"
+"Mover para o fim da cadeia" = "Déplacer en fin de chaîne"
 "Mover para entre cabeçote e caixa" = "Déplacer entre la tête et le baffle"
 "Nada em alta para este tipo agora." = "Rien de tendance pour ce type en ce moment."
 "Nenhum preset salvo ainda" = "Aucun preset enregistré pour l'instant"

@@ -1406,7 +1406,8 @@ void NexusEditor::ChainView::rebuild()
       addCard(CardType::pedal, loop[i], pw, ph, y);
     }
     addDrop(1 + rig, static_cast<int>(loop.size()), x - gap * 0.5f, y);
-    addCard(CardType::cab, rig, cw, cw, y);
+    if (showsCabs())
+      addCard(CardType::cab, rig, cw, cw, y);
     rowsEnd = std::max(rowsEnd, x);
     x = rx;
   }
@@ -1807,10 +1808,14 @@ void NexusEditor::ChainView::showCardMenu(int card)
   juce::PopupMenu menu;
   menu.addSectionHeader(TRANS("Pedal") + " " + juce::String(c.index + 1));
   menu.addItem(1, TRANS(juce::String::fromUTF8("Mover para antes do cabeçote")));
-  menu.addItem(2, TRANS(juce::String::fromUTF8("Mover para entre cabeçote e caixa")) + (layout.dual ? " (A)" : ""));
+  // Sem caixa instalada, os lugares contam pelo cabeçote e pelo fim da cadeia.
+  const bool cabs = showsCabs();
+  const auto afterAmp = cabs ? TRANS(juce::String::fromUTF8("Mover para entre cabeçote e caixa"))
+                             : TRANS(juce::String::fromUTF8("Mover para depois do cabeçote"));
+  menu.addItem(2, afterAmp + (layout.dual ? " (A)" : ""));
   if (layout.dual)
-    menu.addItem(3, TRANS(juce::String::fromUTF8("Mover para entre cabeçote e caixa")) + " (B)");
-  menu.addItem(4, TRANS("Mover para depois da caixa"));
+    menu.addItem(3, afterAmp + " (B)");
+  menu.addItem(4, cabs ? TRANS("Mover para depois da caixa") : TRANS("Mover para o fim da cadeia"));
   menu.addSeparator();
   const bool pedalLite = proc.params.getRawParameterValue(NexusProcessor::pedalParam(c.index, "lite"))->load() > 0.5f;
   menu.addItem(7, TRANS(juce::String::fromUTF8("Motor A2 Lite neste pedal (usa menos processador)")),
@@ -2203,6 +2208,23 @@ void NexusEditor::refreshBrowser()
   mBrowser->setItems(std::move(items));
 }
 
+bool NexusEditor::showsCabs()
+{
+  const auto& catalog = GearCatalog::instance();
+  for (int look = 0; look < catalog.count(G::Kind::cab); ++look)
+    if (catalog.presentAt(G::Kind::cab, look))
+      return true;
+  return false;
+}
+
+int NexusEditor::ChainView::cabCards() const
+{
+  return static_cast<int>(std::count_if(mCards.begin(), mCards.end(), [](const Card& c) { return c.type == CardType::cab; }));
+}
+
+int NexusEditor::chainCabCards() const { return mChain->cabCards(); }
+bool NexusEditor::browserHasCabTab() const { return mBrowser->hasCabs(); }
+
 void NexusEditor::catalogChanged()
 {
   // Equipamento novo instalado: a arte dele entra no fim de cada lista, ou na
@@ -2220,6 +2242,7 @@ void NexusEditor::catalogChanged()
   grow(mCabArts, G::Kind::cab);
   mProcessor.gearInstalled();
   refreshBrowser();
+  mChain->rebuild(); // a primeira caixa instalada ganha o cartão na cadeia
   select(mSel);
 }
 

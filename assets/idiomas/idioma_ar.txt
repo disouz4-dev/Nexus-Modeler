@@ -145,6 +145,8 @@ countries: sa eg ae ma
 "Motor A2 Lite neste pedal (usa menos processador)" = "محرك A2 Lite في هذه الدوّاسة (يستهلك معالجًا أقل)"
 "Mover para antes do cabeçote" = "نقل إلى ما قبل رأس المضخم"
 "Mover para depois da caixa" = "نقل إلى ما بعد الصندوق"
+"Mover para depois do cabeçote" = "نقل إلى ما بعد رأس المضخم"
+"Mover para o fim da cadeia" = "نقل إلى نهاية السلسلة"
 "Mover para entre cabeçote e caixa" = "نقل بين رأس المضخم والصندوق"
 "Nada em alta para este tipo agora." = "لا شيء رائج لهذا النوع حاليًا."
 "Nenhum preset salvo ainda" = "لا توجد إعدادات مسبقة محفوظة بعد"

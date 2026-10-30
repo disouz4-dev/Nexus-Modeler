@@ -145,6 +145,8 @@ countries: jp
 "Motor A2 Lite neste pedal (usa menos processador)" = "このペダルで A2 Lite エンジンを使用（CPU 負荷が少ない）"
 "Mover para antes do cabeçote" = "アンプヘッドの前へ移動"
 "Mover para depois da caixa" = "キャビネットの後へ移動"
+"Mover para depois do cabeçote" = "ヘッドの後へ移動"
+"Mover para o fim da cadeia" = "チェーンの最後へ移動"
 "Mover para entre cabeçote e caixa" = "ヘッドとキャビネットの間へ移動"
 "Nada em alta para este tipo agora." = "このタイプのトレンドは今ありません。"
 "Nenhum preset salvo ainda" = "保存されたプリセットはまだありません"

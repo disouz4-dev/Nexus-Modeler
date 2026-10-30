@@ -145,6 +145,8 @@ countries: us gb au ca
 "Motor A2 Lite neste pedal (usa menos processador)" = "A2 Lite engine on this pedal (uses less CPU)"
 "Mover para antes do cabeçote" = "Move before the amp head"
 "Mover para depois da caixa" = "Move after the cabinet"
+"Mover para depois do cabeçote" = "Move after the amp head"
+"Mover para o fim da cadeia" = "Move to the end of the chain"
 "Mover para entre cabeçote e caixa" = "Move between amp head and cabinet"
 "Nada em alta para este tipo agora." = "Nothing trending for this type right now."
 "Nenhum preset salvo ainda" = "No presets saved yet"

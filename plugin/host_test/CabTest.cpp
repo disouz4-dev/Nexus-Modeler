@@ -1327,7 +1327,10 @@ int main(int argc, char** argv)
     auto& catalog = nexus::gear::GearCatalog::instance();
     // Cada posição vaga ganha uma peça de teste (frente lisa), com o
     // equalizador gráfico onde a peça tinha (Mark Five, Mark 2+, 3, 4 e JP).
-    const auto staging = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile("nexus_teto");
+    // Montadas ao lado da pasta de equipamentos: instalar é renomear, e no
+    // Windows do CI a pasta temporária fica em outro disco.
+    const auto staging = nexus::gear::GearCatalog::folder().getSiblingFile("montando_teto");
+    juce::String firstError;
     for (const auto& e : catalog.entries(nexus::gear::Kind::amp))
     {
       if (!e.vacant)
@@ -1341,17 +1344,22 @@ int main(int argc, char** argv)
         "\"versao_minima_do_programa\": \"0.2.0\", \"motor\": \"captura\", \"indice_de_fabrica\": " + juce::String(e.look)
         + (graphic ? ", \"equalizador_grafico\": true" : "") + "}");
       dir.getChildFile(e.id + "_mapa.json").replaceWithText("{\"nome\": \"Teste\", \"largura\": 8, \"altura\": 8, \"botoes\": []}");
-      juce::Image front(juce::Image::ARGB, 8, 8, true);
-      juce::FileOutputStream out(dir.getChildFile(e.id + "_frente.png"));
-      juce::PNGImageFormat().writeImageToStream(front, out);
-      out.flush();
-      catalog.installFolder(dir, e.id, juce::var(new juce::DynamicObject()));
+      {
+        // Fecha a imagem antes de instalar: no Windows, arquivo aberto
+        // impede renomear a pasta.
+        juce::Image front(juce::Image::ARGB, 8, 8, true);
+        juce::FileOutputStream out(dir.getChildFile(e.id + "_frente.png"));
+        juce::PNGImageFormat().writeImageToStream(front, out);
+      }
+      if (const auto error = catalog.installFolder(dir, e.id, juce::var(new juce::DynamicObject())); error.isNotEmpty() && firstError.isEmpty())
+        firstError = e.id + ": " + error;
     }
     staging.deleteRecursively();
     int present = 0;
     for (int look = 0; look < NexusProcessor::kAmpLooks; ++look)
       present += catalog.presentAt(nexus::gear::Kind::amp, look) ? 1 : 0;
-    report(present == NexusProcessor::kAmpLooks, "As 94 posições de cabeçote tocam no teste", juce::String(present));
+    report(present == NexusProcessor::kAmpLooks, "As 94 posições de cabeçote tocam no teste",
+           juce::String(present) + (firstError.isNotEmpty() ? juce::String::fromUTF8(" (primeiro erro: ") + firstError + ")" : juce::String()));
 
     auto pBox = std::make_unique<NexusProcessor>();
     auto& p = *pBox;

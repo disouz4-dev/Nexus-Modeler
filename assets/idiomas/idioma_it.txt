@@ -145,6 +145,8 @@ countries: it ch
 "Motor A2 Lite neste pedal (usa menos processador)" = "Motore A2 Lite su questo pedale (usa meno processore)"
 "Mover para antes do cabeçote" = "Sposta prima della testata"
 "Mover para depois da caixa" = "Sposta dopo la cassa"
+"Mover para depois do cabeçote" = "Sposta dopo la testata"
+"Mover para o fim da cadeia" = "Sposta alla fine della catena"
 "Mover para entre cabeçote e caixa" = "Sposta tra testata e cassa"
 "Nada em alta para este tipo agora." = "Niente di tendenza per questo tipo ora."
 "Nenhum preset salvo ainda" = "Nessun preset salvato ancora"

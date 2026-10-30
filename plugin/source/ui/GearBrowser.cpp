@@ -303,7 +303,20 @@ juce::String GearBrowser::dragDescription(const GearItem& item)
 void GearBrowser::setItems(std::vector<GearItem> items)
 {
   mItems = std::move(items);
+  mHasCabs = std::any_of(mItems.begin(), mItems.end(), [](const GearItem& it) { return it.kind == GearItem::Kind::cab; });
+  if (!mHasCabs && mTab == GearItem::Kind::cab)
+    setTab(GearItem::Kind::amp);
+  updateTabs();
   resized();
+}
+
+void GearBrowser::updateTabs()
+{
+  juce::StringArray names{TRANS("Pedais"), TRANS(juce::String::fromUTF8("Cabeçotes"))};
+  if (mHasCabs)
+    names.add(TRANS("Caixas"));
+  mTabs.setItems(names);
+  mTabs.setSelected(static_cast<int>(mTab));
 }
 
 bool GearBrowser::matches(const GearItem& item) const
@@ -342,7 +355,7 @@ void GearBrowser::setTab(GearItem::Kind kind)
 {
   // A mesma aba (escolher ou soltar uma peça): a lista fica onde está. Outra
   // aba: volta ao ponto em que ela estava da última vez.
-  if (kind == mTab)
+  if (kind == mTab || (kind == GearItem::Kind::cab && !mHasCabs))
     return;
   mScroll[static_cast<size_t>(mTab)] = mViewport.getViewPositionY();
   mTab = kind;
@@ -362,7 +375,7 @@ void GearBrowser::setCurrent(GearItem::Kind kind, int look)
 
 void GearBrowser::retranslate()
 {
-  mTabs.setItems({TRANS("Pedais"), TRANS(juce::String::fromUTF8("Cabeçotes")), TRANS("Caixas")});
+  updateTabs();
   mSearch.setTextToShowWhenEmpty(TRANS("Pesquisar (nome ou original)"), colour::faint);
   resized();
 }

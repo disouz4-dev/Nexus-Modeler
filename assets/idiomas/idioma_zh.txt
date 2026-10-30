@@ -145,6 +145,8 @@ countries: cn sg
 "Motor A2 Lite neste pedal (usa menos processador)" = "此效果器使用 A2 Lite 引擎（更省处理器）"
 "Mover para antes do cabeçote" = "移到音箱头之前"
 "Mover para depois da caixa" = "移到箱体之后"
+"Mover para depois do cabeçote" = "移到音箱头之后"
+"Mover para o fim da cadeia" = "移到链路末尾"
 "Mover para entre cabeçote e caixa" = "移到音箱头与箱体之间"
 "Nada em alta para este tipo agora." = "此类型暂无热门。"
 "Nenhum preset salvo ainda" = "尚未保存预设"

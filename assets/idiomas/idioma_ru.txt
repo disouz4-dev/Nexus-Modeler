@@ -145,6 +145,8 @@ countries: ru
 "Motor A2 Lite neste pedal (usa menos processador)" = "Движок A2 Lite в этой педали (меньше нагрузка на процессор)"
 "Mover para antes do cabeçote" = "Переместить перед головой"
 "Mover para depois da caixa" = "Переместить после кабинета"
+"Mover para depois do cabeçote" = "Переместить после головы"
+"Mover para o fim da cadeia" = "Переместить в конец цепи"
 "Mover para entre cabeçote e caixa" = "Переместить между головой и кабинетом"
 "Nada em alta para este tipo agora." = "Сейчас в этом типе ничего в тренде."
 "Nenhum preset salvo ainda" = "Сохранённых пресетов пока нет"

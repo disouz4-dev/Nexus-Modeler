@@ -145,6 +145,8 @@ countries: in
 "Motor A2 Lite neste pedal (usa menos processador)" = "इस पेडल पर A2 Lite इंजन (कम प्रोसेसर लेता है)"
 "Mover para antes do cabeçote" = "एम्प हेड से पहले ले जाएँ"
 "Mover para depois da caixa" = "कैबिनेट के बाद ले जाएँ"
+"Mover para depois do cabeçote" = "हेड के बाद ले जाएँ"
+"Mover para o fim da cadeia" = "चेन के अंत में ले जाएँ"
 "Mover para entre cabeçote e caixa" = "हेड और कैबिनेट के बीच ले जाएँ"
 "Nada em alta para este tipo agora." = "इस प्रकार में अभी कुछ ट्रेंडिंग नहीं।"
 "Nenhum preset salvo ainda" = "अभी कोई प्रीसेट सेव नहीं"

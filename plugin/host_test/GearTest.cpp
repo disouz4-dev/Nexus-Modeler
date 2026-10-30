@@ -12,9 +12,11 @@
 //  3. a peça revisada volta pelo botão para a mesma posição (as automações
 //     antigas continuam valendo), com a caixa dela, o equalizador gráfico e as
 //     capturas recomendadas da ficha, e a sessão que tinha o id dela a toca;
-//  4. a primeira abertura da instalação nova guarda os dados das versões
+//  4. sem caixa instalada a tela não mostra caixa (aba, cartão, menu), e
+//     a primeira caixa que chega pelo botão traz tudo de volta;
+//  5. a primeira abertura da instalação nova guarda os dados das versões
 //     antigas numa reserva, sem apagar nada, e só faz isso uma vez;
-//  5. (com o pacote) um equipamento novo instala, aparece e vai num preset.
+//  6. (com o pacote) um equipamento novo instala, aparece e vai num preset.
 #include <array>
 #include <cmath>
 #include <cstdio>
@@ -26,6 +28,7 @@
 static int setenv(const char* name, const char* value, int) { return _putenv_s(name, value); }
 #endif
 
+#include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
 #include "../source/tone3000/Tone3000.h"
 #include "../source/ui/Gear.h"
@@ -297,6 +300,19 @@ static juce::File stagePiece(const juce::String& id, const juce::String& manifes
   return dir;
 }
 
+// Abre a tela e confere se ela mostra caixa: aba Caixas na lista e um
+// cartão de caixa na cadeia.
+static void checkCabsOnScreen(bool expected, const juce::String& what)
+{
+  auto pBox = std::make_unique<NexusProcessor>();
+  std::unique_ptr<juce::AudioProcessorEditor> editor(pBox->createEditor());
+  auto* e = dynamic_cast<NexusEditor*>(editor.get());
+  const bool tab = e != nullptr && e->browserHasCabTab();
+  const int cards = e != nullptr ? e->chainCabCards() : -1;
+  check(e != nullptr && NexusEditor::showsCabs() == expected && tab == expected && cards == (expected ? 1 : 0),
+        what + U(" (aba Caixas: ") + (tab ? "sim" : U("não")) + U(", cartões de caixa: ") + juce::String(cards) + ")");
+}
+
 static void testReturn()
 {
   // Sessão da beta.2 com o Mark Four e a caixa dele, e uma automação antiga.
@@ -339,9 +355,20 @@ static void testReturn()
   const auto amp = stagePiece("mark4", juce::JSON::toString(juce::var(manifest)));
   const auto cab = stagePiece("mark_112", R"({"formato": 1, "id": "mark_112", "versao": "1.1.0", "tipo": "caixa", "nome": "Mark 1x12",
     "versao_minima_do_programa": "0.2.0", "motor": "caixa", "indice_de_fabrica": 16})");
+  // Tela aberta antes de a caixa chegar: ela tem de aparecer sem reabrir.
+  auto openBox = std::make_unique<NexusProcessor>();
+  std::unique_ptr<juce::AudioProcessorEditor> open(openBox->createEditor());
+  auto* openEditor = dynamic_cast<NexusEditor*>(open.get());
   const auto e1 = catalog.installFolder(amp, "mark4", juce::var(new juce::DynamicObject()));
   const auto e2 = catalog.installFolder(cab, "mark_112", juce::var(new juce::DynamicObject()));
   check(e1.isEmpty() && e2.isEmpty(), U("as duas peças revisadas instalam pelo botão ") + e1 + e2);
+  checkCabsOnScreen(true, U("a primeira caixa revisada traz a aba Caixas e o cartão de volta"));
+  if (openEditor != nullptr)
+    openEditor->changeListenerCallback(nullptr); // o aviso de peça instalada
+  check(openEditor != nullptr && openEditor->browserHasCabTab() && openEditor->chainCabCards() == 1,
+        U("e na tela que já estava aberta a aba e o cartão aparecem sozinhos"));
+  open.reset();
+  openBox.reset();
   check(catalog.find(Kind::amp, "mark4") == 52 && catalog.find(Kind::cab, "mark_112") == 16 && catalog.presentAt(Kind::amp, 52)
           && catalog.count(Kind::amp) == NexusProcessor::kAmpLooks && catalog.count(Kind::cab) == NexusProcessor::kCabLooks,
         U("voltam para a mesma posição de parâmetro (cabeçote 52, caixa 16), sem crescer o catálogo"));
@@ -494,6 +521,7 @@ int main(int argc, char** argv)
   gRepo = juce::File(U(argv[1])).getParentDirectory().getParentDirectory();
   testCatalog(juce::File(U(argv[1])));
   testState();
+  checkCabsOnScreen(false, U("sem caixa instalada a tela não mostra caixa"));
   testReturn();
   testAmpWithoutCab();
   testFreshStart(temp);
