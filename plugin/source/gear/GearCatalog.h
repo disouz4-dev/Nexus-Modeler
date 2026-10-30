@@ -97,7 +97,9 @@ public:
   // Linha principal.
   std::vector<GearEntry> entries(Kind kind) const;
   std::optional<GearEntry> entry(Kind kind, int look) const;
-  int find(Kind kind, const juce::String& id) const; // -1: não está instalado
+  // -1: não está instalado. Aceita o código antigo de uma peça que trocou de
+  // nome (preset salvo antes da troca).
+  int find(Kind kind, const juce::String& id) const;
   juce::String idOf(Kind kind, int look) const;
   // Parâmetro de fábrica que fica no lugar de uma peça que não é de fábrica:
   // o primeiro de fábrica com o mesmo motor (programa de gravação velho ainda
@@ -134,5 +136,7 @@ private:
   std::array<std::atomic<int>, 3> mCount{};
   std::array<std::atomic<int>, kMaxLooks> mPedalEngine{};
   std::array<std::atomic<bool>, kMaxLooks> mGraphicEq{};
+  // Código antigo -> código atual, por tipo (assets/gear/codigos_antigos.json).
+  std::array<juce::StringPairArray, 3> mRenamed;
 };
 } // namespace nexus::gear
