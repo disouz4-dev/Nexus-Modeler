@@ -459,12 +459,46 @@
     "busca": "Super-Sonic",
     "tons": [
       {
-        "id": 31196,
-        "titulo": "Fender Super-Sonic 60 Head",
+        "id": 4960,
+        "titulo": "[500 Epochs] Fender Super-Sonic 60W Head mk.1 - Flat EQ - Complete Pack",
         "tipo": "amp",
-        "capturas": 33,
+        "capturas": 10,
+        "pacote": "Canal 1 Vintage",
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "canal Vintage (Vibrolux, limpo), volume de 1 a 10",
+        "mapa": {
+          "Vibrolux Ch T5 B5 V1": 1,
+          "Vibrolux Ch T5 B5 V2": 2,
+          "Vibrolux Ch T5 B5 V3": 3,
+          "Vibrolux Ch T5 B5 V4": 4,
+          "Vibrolux Ch T5 B5 V5": 5,
+          "Vibrolux Ch T5 B5 V6": 6,
+          "Vibrolux Ch T5 B5 V7": 7,
+          "Vibrolux Ch T5 B5 V8": 8,
+          "Vibrolux Ch T5 B5 V9": 9,
+          "Vibrolux Ch T5 B5 V10": 10
+        }
+      },
+      {
+        "id": 4960,
+        "titulo": "[500 Epochs] Fender Super-Sonic 60W Head mk.1 - Flat EQ - Complete Pack",
+        "tipo": "amp",
+        "capturas": 10,
+        "pacote": "Canal 2 Burn",
+        "padrao": true,
+        "nota": "canal Burn, ganho 2 de 1 a 10 (ganho 1 no máximo)",
+        "mapa": {
+          "Burn Ch EQ5 G10 G1 V5": 1,
+          "Burn Ch EQ5 G10 G2 V5": 2,
+          "Burn Ch EQ5 G10 G3 V5": 3,
+          "Burn Ch EQ5 G10 G4 V5": 4,
+          "Burn Ch EQ5 G10 G5 V5": 5,
+          "Burn Ch EQ5 G10 G6 V5": 6,
+          "Burn Ch EQ5 G10 G7 V5": 7,
+          "Burn Ch EQ5 G10 G8 V5": 8,
+          "Burn Ch EQ5 G10 G9 V5": 9,
+          "Burn Ch EQ5 G10 G10 V5": 10
+        }
       }
     ]
   },
