@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:48:55Z",
+ "gerado": "2026-10-30T19:51:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3435,8 +3435,8 @@
   },
   "kraken50": {
    "nome": "Kraken 50",
-   "hash": "415ae7dcb2919a07",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d73896bd79ae0861",
+   "data": "2026-10-30T19:51:04Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "kraken50_botao_agudo.png",
@@ -3451,24 +3451,24 @@
     "kraken50_mapa.json"
    ],
    "sha256": {
-    "kraken50_botao_agudo.png": "c7821c8e71d35e97b10d3b9fc8e59693a74c440858c7b6509b9436db553b36ec",
-    "kraken50_botao_ganho.png": "bada9260c9cacc6a384c39d1542ccc0a45d98425cac0cc87917e977e656968ee",
-    "kraken50_botao_grave.png": "fe4b226960a80d2ed744f604e6e1bf781a4b8bfba29bca55c68ffc1fb65e8fe6",
-    "kraken50_botao_medio.png": "7701c52dc0e3bee761ec28fdb427a6b8e50643119e4598cfdf80b448387a7e2a",
-    "kraken50_botao_presenca.png": "53f0c746c529fe224fa94ed4e28dc3635e9cc4c50a6ede47d5f23d7ad9d0dfc0",
-    "kraken50_botao_volume.png": "b099cd5f879418805d0eb4dd81a9ea64cce021653060f485fc408492ef235fea",
-    "kraken50_frente.jpg": "2edb70496266a26902c73fd84331e9a5f25fdd820a164c57931354e5bf869bba",
-    "kraken50_frente_alfa.png": "fe80abcf10e76d3cee93b9494e7944e67ca46806887f77a21959b9166b7923ca",
-    "kraken50_manifesto.json": "4c9ceeef3043361bd5c3b17beeb217674f13f782fa6800897e12f5ce949f4c53",
-    "kraken50_mapa.json": "0b5eb977de906f9d343f7c3845da1b7bca40779e5f3e6256329a6d119d22d87f"
+    "kraken50_botao_agudo.png": "e0f81b490fe5a2e593e3a184cc5065f42a6272356b27ab2b3c234f3db237e4a6",
+    "kraken50_botao_ganho.png": "8a6f255de5e586dabd5f006b47f55d34f64963aadacae17b08172260c27d69e8",
+    "kraken50_botao_grave.png": "025ec3361f89a708f28fa9c1350e75b62e9cf426bb060116c3cab1fa173ada08",
+    "kraken50_botao_medio.png": "1183a2c2276cc247c600454552ff322226fde5fea380a444cc5bf0d7220db10f",
+    "kraken50_botao_presenca.png": "f14f55989b074dabae253647225038db6bced207e64b773b6071f0b9089c6ec7",
+    "kraken50_botao_volume.png": "d2e627645547b97c4cfd561245a0a0fb091101fb53d2ed7507e71e0efb47ad40",
+    "kraken50_frente.jpg": "f1c25553ba6323e4ae9d657781ba45c286fc7196ade2de09f01fc42dd9cea957",
+    "kraken50_frente_alfa.png": "1d578dbfac6daea7c845823457e4e02542753af5aea8d5d1d75c3ace4ef5d266",
+    "kraken50_manifesto.json": "73f198378d0621772e40872744c6108a9edf77dabcad771e3895f24344eb75b9",
+    "kraken50_mapa.json": "e49d113e1f6c13c22939f875f7aaf18e044c65b7cf449ddc3d6be931f47d1cbb"
    },
-   "tamanho": 1103565,
+   "tamanho": 2006510,
    "tipo": "cabecote",
    "inspiracao": "Victory Kraken",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
