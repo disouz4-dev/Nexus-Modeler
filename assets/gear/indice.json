@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:42:31Z",
+ "gerado": "2026-10-30T12:46:45Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3270,8 +3270,8 @@
   },
   "jamun_od": {
    "nome": "Jamun OD",
-   "hash": "0ca187e6e610129b",
-   "data": "2026-10-30T10:16:36Z",
+   "hash": "4c1e251211b9434c",
+   "data": "2026-10-30T12:46:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jamun_od_botao_ganho.png",
@@ -3283,21 +3283,21 @@
     "jamun_od_mapa.json"
    ],
    "sha256": {
-    "jamun_od_botao_ganho.png": "0ff4740116cc4e2f5a16efc4bfa34d6f7679411e57cb2d942dde9b7203e1b491",
-    "jamun_od_botao_nivel.png": "48f883d32c85972c4aa52b4ba0ae6c8393a1d27be097e35b1a707bcedcbee7e6",
-    "jamun_od_botao_tom.png": "dd1cf648a4324d3ffd8ef571c30d526ccd893f9981458bb186bff9bc7b491b27",
-    "jamun_od_frente.jpg": "12b2e0f2e8955bf11b084a742c3fd6c05f395603cda6e809c132284b44b11001",
-    "jamun_od_frente_alfa.png": "4986b4380f439f05705886fa541d43249e1a779eff29b9a424395c9828fcadcf",
-    "jamun_od_manifesto.json": "ea75b95353a2f26c976806dfcb2553f564c683da58ba1b3eab2be2255bce8a8c",
+    "jamun_od_botao_ganho.png": "56a20ec62f63763a640448abac6f3a2f4752058e5e50fda5f97119243cf17d72",
+    "jamun_od_botao_nivel.png": "a31d92efe88eba8532522db6b060b37af83b67cb75a6f629aa0f8b6e8318baa9",
+    "jamun_od_botao_tom.png": "bf8ddb710d01fbcdafa7eb385cab2a09e9379c7da88c3f481393a7e49056843a",
+    "jamun_od_frente.jpg": "7a5ca480425ab1522da5d123a6fcd358a20296a90045ddd612f29100cd4c6318",
+    "jamun_od_frente_alfa.png": "6b1b4f526803a5dd4baf64aa438ae31dd9de9b6d474a329593a59205b2775f06",
+    "jamun_od_manifesto.json": "c56016d55d95e62d56ddc84a15e442fb1b5efcaab0568943d6de2d134e267c00",
     "jamun_od_mapa.json": "885d3c9b5f3b7fa98076b872240cc7606ae4be8dab565f22f215955a0e901ca3"
    },
-   "tamanho": 423919,
+   "tamanho": 423920,
    "tipo": "pedal",
    "inspiracao": "Friedman BE-OD",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
