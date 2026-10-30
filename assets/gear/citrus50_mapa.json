@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 633,
-      "y": 961,
-      "tamanho": 123,
+      "x": 629,
+      "y": 958,
+      "tamanho": 130,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 877,
-      "y": 962,
-      "tamanho": 121,
+      "x": 873,
+      "y": 959,
+      "tamanho": 127,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1116,
-      "y": 979,
-      "tamanho": 87,
+      "x": 1096,
+      "y": 959,
+      "tamanho": 127,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1278,
-      "y": 979,
-      "tamanho": 87,
+      "x": 1258,
+      "y": 959,
+      "tamanho": 127,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1439,
-      "y": 979,
-      "tamanho": 87,
+      "x": 1420,
+      "y": 959,
+      "tamanho": 127,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1664,
-      "y": 961,
-      "tamanho": 123,
+      "x": 1661,
+      "y": 958,
+      "tamanho": 130,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
