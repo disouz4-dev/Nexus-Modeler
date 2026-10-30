@@ -327,9 +327,37 @@
         "id": 52642,
         "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
         "tipo": "amp",
-        "capturas": 40,
+        "capturas": 1,
+        "pacote": "Canal 1 Limpo",
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "canal limpo (CLN), uma captura",
+        "mapa": {
+          "DIO-CLN Instant gratification - SM57": 5
+        }
+      },
+      {
+        "id": 52642,
+        "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Vintage",
+        "padrao": true,
+        "nota": "canal 2 no modo Vintage (VNT), uma captura",
+        "mapa": {
+          "DIO-VNT Chaosball - SM57": 5
+        }
+      },
+      {
+        "id": 52642,
+        "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 3 Moderno",
+        "padrao": true,
+        "nota": "canal 3 no modo Modern (MDN), uma captura",
+        "mapa": {
+          "DIO-MDN Gobsmacked - SM57": 5
+        }
       }
     ]
   },
