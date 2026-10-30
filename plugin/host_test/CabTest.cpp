@@ -12,6 +12,7 @@
 
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
+#include "../source/gear/GearCatalog.h"
 #include "../source/ui/PackMapper.h"
 #include "../source/report/Report.h"
 #include "../source/update/Updater.h"
@@ -134,7 +135,7 @@ void testScreen(NexusProcessor& p)
   for (auto* k : all)
     if (visibleIn(*k, *editor))
       knobs.push_back(k);
-  report(knobs.size() == 6, "Os 6 botões renderizados do Brit 800 estão na tela",
+  report(knobs.size() == 6, "Os 6 botões renderizados do cabeçote estão na tela",
          juce::String(static_cast<int>(knobs.size())) + juce::String::fromUTF8(" botões encontrados"));
   if (knobs.empty() || e == nullptr)
     return;
@@ -655,13 +656,13 @@ int main(int argc, char** argv)
     report(diffDb(oBefore, oBetween) > -20.0, "Pedal entre cabeçote e caixa soa diferente de antes",
            juce::String::fromUTF8("diferença: ") + juce::String(diffDb(oBefore, oBetween), 1) + " dB");
 
-    // Primeira abertura: só o Brit 800 com a caixa dele, sem pedais.
+    // Primeira abertura: o cabeçote e a caixa da posição 0 (os de teste), sem pedais.
     {
       auto freshBox = std::make_unique<NexusProcessor>();
       auto& fresh = *freshBox;
       const int head = juce::roundToInt(fresh.params.getRawParameterValue("cabecote")->load());
       const int cab = juce::roundToInt(fresh.params.getRawParameterValue("gabinete")->load());
-      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: Brit 800 e a caixa dele, sem pedais",
+      report(fresh.layout().count() == 0 && head == 0 && cab == 0, "Primeira abertura: cabeçote e caixa da posição 0, sem pedais",
              juce::String(fresh.layout().count()) + " pedais, cabeçote " + juce::String(head) + ", caixa " + juce::String(cab));
     }
     // Cherry Drop: meio-dia não muda o tom; as pontas são -12 e +12.
@@ -1011,7 +1012,7 @@ int main(int argc, char** argv)
     const auto zw = nexus::t3k::chooseCaptures(models({"ZW - LOW - G3", "ZW - LOW - G5", "ZW - LOW - G7", "ZW - HIGH - G4", "ZW - HIGH - G6"}), {});
     report(positions(zw) == "3.0 5.0 7.0", "Pacote com duas séries: fica a que tem mais posições", positions(zw));
     int all = 0;
-    for (const auto* g : {"brit800", "greengage_drive", "orange_drive", "banana_overdrive", "gold_centaur"})
+    for (const auto* g : {"brit800", "greengage_drive", "acai_rat", "pearl_fuzz", "gold_centaur"})
       all += static_cast<int>(nexus::t3k::recommended(g).size());
     report(all >= 12, "Cada equipamento tem recomendadas", juce::String(all) + " tons recomendados");
   }
@@ -1315,6 +1316,92 @@ int main(int argc, char** argv)
     report(saved, "Playlist fica gravada", {});
     player.close();
     folder.deleteRecursively();
+  }
+
+  // 12. Teto da saída do cabeçote: em todas as posições de cabeçote (os
+  // revisados entram por lote, cada um na sua), com ganho, equalizador,
+  // presença, volume e o equalizador gráfico no máximo, nada passa do teto;
+  // tudo no meio, o teto não age.
+  {
+    std::printf("\nTeto da saída do cabeçote (todas as posições)\n");
+    auto& catalog = nexus::gear::GearCatalog::instance();
+    // Cada posição vaga ganha uma peça de teste (frente lisa), com o
+    // equalizador gráfico onde a peça tinha (Mark Five, Mark 2+, 3, 4 e JP).
+    // Montadas ao lado da pasta de equipamentos: instalar é renomear, e no
+    // Windows do CI a pasta temporária fica em outro disco.
+    const auto staging = nexus::gear::GearCatalog::folder().getSiblingFile("montando_teto");
+    juce::String firstError;
+    for (const auto& e : catalog.entries(nexus::gear::Kind::amp))
+    {
+      if (!e.vacant)
+        continue;
+      const auto dir = staging.getChildFile(e.id);
+      dir.deleteRecursively();
+      dir.createDirectory();
+      const bool graphic = e.look == 1 || (e.look >= 50 && e.look <= 53);
+      dir.getChildFile(e.id + "_manifesto.json").replaceWithText(
+        "{\"formato\": 1, \"id\": \"" + e.id + "\", \"versao\": \"0.0.1\", \"tipo\": \"cabecote\", \"nome\": \"Teste\", "
+        "\"versao_minima_do_programa\": \"0.2.0\", \"motor\": \"captura\", \"indice_de_fabrica\": " + juce::String(e.look)
+        + (graphic ? ", \"equalizador_grafico\": true" : "") + "}");
+      dir.getChildFile(e.id + "_mapa.json").replaceWithText("{\"nome\": \"Teste\", \"largura\": 8, \"altura\": 8, \"botoes\": []}");
+      {
+        // Fecha a imagem antes de instalar: no Windows, arquivo aberto
+        // impede renomear a pasta.
+        juce::Image front(juce::Image::ARGB, 8, 8, true);
+        juce::FileOutputStream out(dir.getChildFile(e.id + "_frente.png"));
+        juce::PNGImageFormat().writeImageToStream(front, out);
+      }
+      if (const auto error = catalog.installFolder(dir, e.id, juce::var(new juce::DynamicObject())); error.isNotEmpty() && firstError.isEmpty())
+        firstError = e.id + ": " + error;
+    }
+    staging.deleteRecursively();
+    int present = 0;
+    for (int look = 0; look < NexusProcessor::kAmpLooks; ++look)
+      present += catalog.presentAt(nexus::gear::Kind::amp, look) ? 1 : 0;
+    report(present == NexusProcessor::kAmpLooks, "As 94 posições de cabeçote tocam no teste",
+           juce::String(present) + (firstError.isNotEmpty() ? juce::String::fromUTF8(" (primeiro erro: ") + firstError + ")" : juce::String()));
+
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
+    if (!waitPack(p))
+      report(false, "Pacote de teste carrega", juce::String::fromUTF8("não carregou em 2 minutos"));
+    setParam(p, "caixa", 0.0f);
+    std::vector<double> hot(signal.begin(), signal.begin() + static_cast<std::ptrdiff_t>(std::min<size_t>(signal.size(), 48000)));
+    for (auto& x : hot)
+      x *= 2.0; // guitarra de captação forte
+    auto peakOf = [](const std::vector<float>& v) {
+      float m = 0.0f;
+      for (float x : v)
+        m = std::max(m, std::abs(x));
+      return m;
+    };
+    // Tudo no meio: o teto não age (o som é o de sempre).
+    p.chooseAmp(0, 0);
+    settle(p, 50);
+    const float normal = peakOf(play(p, hot));
+    report(normal < NexusProcessor::kAmpCeiling, "Tudo no meio: abaixo do teto (o teto não mexe no som)", juce::String(normal, 3));
+    // Tudo no máximo, cada posição.
+    for (const char* id : {"ganho", "grave", "medio", "agudo", "presenca", "master"})
+      setParam(p, id, 10.0f);
+    for (const char* id : NexusProcessor::kGraphicIds)
+      setParam(p, id, 12.0f);
+    float worst = 0.0f;
+    int worstLook = -1;
+    for (int look = 0; look < NexusProcessor::kAmpLooks; ++look)
+    {
+      p.chooseAmp(0, look);
+      settle(p, 20);
+      if (const float peak = peakOf(play(p, hot)); peak > worst)
+      {
+        worst = peak;
+        worstLook = look;
+      }
+    }
+    report(worst <= NexusProcessor::kAmpCeiling + 1e-4 && worst > 0.5f, "Tudo no máximo, em todas as posições: nada passa do teto (-1 dBFS)",
+           juce::String::fromUTF8("maior pico ") + juce::String(worst, 3) + juce::String::fromUTF8(" na posição ") + juce::String(worstLook));
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

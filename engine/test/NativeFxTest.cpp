@@ -153,6 +153,14 @@ void testaEq()
   confere(std::abs(nMais - 15.0) < 0.1, "nivel no maximo: ganho (dB)", "%.2f", nMais);
   const double nMenos = ganhoEq(plano, 0.0, 1000.0);
   confere(std::abs(nMenos + 15.0) < 0.1, "nivel no minimo: ganho (dB)", "%.2f", nMenos);
+  // 5. Tudo no máximo (as 7 faixas e o nível): as faixas vizinhas se somam,
+  // mas o ganho total não passa de +15 dB em frequência nenhuma (antes chegava
+  // a +27 dB e estourava).
+  const nexus::NativePedal::Knobs maximo{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
+  double pior = -100.0;
+  for (double hz = 60.0; hz < 16000.0; hz *= std::pow(2.0, 1.0 / 3.0))
+    pior = std::max(pior, ganhoEq(maximo, 1.0, hz));
+  confere(pior < 15.5 && pior > 6.0, "tudo no maximo: maior ganho (dB), teto de +15", "%.2f", pior);
 }
 } // namespace
 

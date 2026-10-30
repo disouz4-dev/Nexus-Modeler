@@ -73,6 +73,12 @@ public:
   void showCaptures() { choosePack(); }
   // 0 = equipamento, 1 = estúdio.
   void setMode(int mode);
+  // Alguma caixa instalada. Sem nenhuma (a beta.3 começa assim), a tela não
+  // mostra caixa: nem aba na lista, nem cartão na cadeia, nem menu.
+  static bool showsCabs();
+  // Para o teste: cartões de caixa na cadeia e se a lista tem a aba Caixas.
+  int chainCabCards() const;
+  bool browserHasCabTab() const;
 
 
 private:
@@ -259,6 +265,7 @@ private:
     // Lista da cadeia: 0 = antes, 1 = entre (A), 2 = entre (B), 3 = depois.
     static std::vector<int>& list(ChainLayout& l, int which);
     nexus::ui::LevelFader& output() { return *mOutput; }
+    int cabCards() const;
 
   private:
     enum class CardType

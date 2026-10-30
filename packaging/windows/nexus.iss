@@ -208,6 +208,11 @@ Name: "{autodesktop}\Nexus Modeler"; Filename: "{app}\Nexus Modeler.exe"; Compon
 [Run]
 Filename: "{app}\Nexus Modeler.exe"; Description: "{cm:LaunchProgram,Nexus Modeler}"; Components: programa; Flags: nowait postinstall skipifsilent
 
+[InstallDelete]
+; Antes de copiar: a pasta do plugin antiga sai inteira, para não sobrar
+; nenhum arquivo de uma versão anterior.
+Type: filesandordirs; Name: "{autocf}\VST3\Nexus Modeler.vst3"
+
 [UninstallDelete]
 ; A pasta do plugin some inteira na desinstalação. As preferências do usuário
 ; (%APPDATA%\Nexus Modeler) ficam, para uma reinstalação lembrar o idioma.

@@ -326,6 +326,10 @@ public:
   static constexpr int kGeqBands = 7;
   static constexpr double kGeqFrequency[kGeqBands] = {100.0, 200.0, 400.0, 800.0, 1600.0, 3200.0, 6400.0};
   static constexpr double kGeqMaxDb = 15.0;
+  // Ganho mais alto da curva inteira (faixas somadas e o nível): com tudo no
+  // máximo, as faixas vizinhas se somam; o nível desce o que passar disto
+  // (nada estoura com tudo no máximo). Uma faixa só no máximo cabe inteira.
+  static constexpr double kGeqMaxTotalDb = 15.0;
   using Knobs = std::array<double, kGeqBands>;
   void prepare(double sampleRate, int maxBlock);
   void reset();
@@ -372,6 +376,9 @@ private:
   Knobs mGeqKnobs{0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
   double mGeqLevel = 0.5;     // pedido (0 a 1)
   double mGeqLevelGain = 1.0; // em uso, suavizado
+  Knobs mGeqCapFor{-1.0};     // botões e nível do último cálculo do teto
+  double mGeqCapLevel = -1.0;
+  double mGeqCapDb = 0.0;     // quanto o nível desce para caber no teto
   SkyReverb mSky;
   EchoDelay mEcho;
   MultiMod mMulti;

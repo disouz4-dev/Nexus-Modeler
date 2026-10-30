@@ -48,6 +48,9 @@ public:
   void setItems(std::vector<GearItem> items);
   void setTab(GearItem::Kind kind);
   GearItem::Kind tab() const { return mTab; }
+  // A aba Caixas só aparece com alguma caixa na lista (a beta.3 começa sem
+  // nenhuma; ela volta quando a primeira caixa revisada chega pelo botão).
+  bool hasCabs() const { return mHasCabs; }
   // Peça que a tela mostra agora (fica marcada na lista).
   void setCurrent(GearItem::Kind kind, int look);
   void retranslate();
@@ -66,6 +69,7 @@ private:
   class List;
   bool matches(const GearItem& item) const;
   void searchChanged();
+  void updateTabs();
 
   Segmented mTabs{{"Pedais", juce::String::fromUTF8("Cabeçotes"), "Caixas"}};
   juce::TextEditor mSearch;
@@ -79,5 +83,6 @@ private:
   juce::Component* mAccessory = nullptr;
   GearItem::Kind mCurrentKind = GearItem::Kind::amp;
   int mCurrentLook = -1;
+  bool mHasCabs = true;
 };
 } // namespace nexus::ui

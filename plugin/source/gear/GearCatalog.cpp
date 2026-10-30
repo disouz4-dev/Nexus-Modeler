@@ -170,32 +170,45 @@ GearCatalog::GearCatalog()
 
 void GearCatalog::loadEmbedded()
 {
-  // As de fábrica primeiro, na posição antiga; depois as embutidas sem índice.
+  // Primeiro todas as posições de fábrica, vagas; depois as fichas embutidas
+  // ocupam a delas; por fim as embutidas sem índice, no fim.
+  int size = 0;
+  if (const char* data = BinaryData::getNamedResource("posicoes_de_fabrica_json", size))
+  {
+    const auto positions = juce::JSON::parse(juce::String::fromUTF8(data, size));
+    for (const auto kind : {Kind::pedal, Kind::amp, Kind::cab})
+      if (const auto* list = positions[juce::Identifier(kindText(kind))].getArray())
+        for (const auto& p : *list)
+        {
+          GearEntry e;
+          e.id = p["id"].toString();
+          e.kind = kind;
+          e.name = e.id; // a vaga não guarda nome: nada antigo aparece
+          e.engine = p["motor"].toString();
+          e.engineCode = kind == Kind::pedal ? juce::jmax(0, pedalEngine(e.engine)) : 0;
+          e.builtInIndex = count(kind);
+          e.vacant = true;
+          add(std::move(e));
+        }
+  }
   std::vector<GearEntry> loose;
-  std::array<std::vector<GearEntry>, 3> fixed;
   for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
   {
     const juce::String name(BinaryData::namedResourceList[i]);
     if (!name.endsWith("_manifesto_json"))
       continue;
-    int size = 0;
     const char* data = BinaryData::getNamedResource(BinaryData::namedResourceList[i], size);
     auto e = parse(juce::JSON::parse(juce::String::fromUTF8(data, size)));
     if (!e)
       continue;
-    if (e->builtInIndex >= 0)
-      fixed[static_cast<size_t>(e->kind)].push_back(std::move(*e));
+    if (e->builtInIndex >= 0 && e->builtInIndex < count(e->kind))
+      place(std::move(*e), e->builtInIndex);
     else
-      loose.push_back(std::move(*e));
-  }
-  for (auto& list : fixed)
-  {
-    std::sort(list.begin(), list.end(), [](const GearEntry& a, const GearEntry& b) { return a.builtInIndex < b.builtInIndex; });
-    for (auto& e : list)
     {
-      // Índices de fábrica contínuos: a posição é o índice do parâmetro.
-      jassert(e.builtInIndex == count(e.kind));
-      add(std::move(e));
+      // Índice de fábrica fora da tabela: não vale como parâmetro.
+      jassert(e->builtInIndex < 0);
+      e->builtInIndex = -1;
+      loose.push_back(std::move(*e));
     }
   }
   std::sort(loose.begin(), loose.end(), [](const GearEntry& a, const GearEntry& b) { return a.id < b.id; });
@@ -204,7 +217,6 @@ void GearCatalog::loadEmbedded()
 
   // Peças que trocaram de código (os 34 pedais renomeados na 0.2.0): o preset
   // salvo antes da troca ainda acha a peça.
-  int size = 0;
   if (const char* data = BinaryData::getNamedResource("codigos_antigos_json", size))
   {
     const auto renamed = juce::JSON::parse(juce::String::fromUTF8(data, size));
@@ -218,16 +230,25 @@ void GearCatalog::loadEmbedded()
 void GearCatalog::add(GearEntry e)
 {
   const auto k = static_cast<size_t>(e.kind);
-  const int look = static_cast<int>(mEntries[k].size());
+  const int look = count(e.kind);
   if (look >= kMaxLooks)
     return;
+  mEntries[k].emplace_back();
+  place(std::move(e), look);
+  mCount[k].store(look + 1);
+}
+
+void GearCatalog::place(GearEntry e, int look)
+{
+  const auto k = static_cast<size_t>(e.kind);
+  const auto at = static_cast<size_t>(look);
   e.look = look;
   if (e.kind == Kind::pedal)
-    mPedalEngine[static_cast<size_t>(look)].store(e.engineCode);
+    mPedalEngine[at].store(e.engineCode);
   if (e.kind == Kind::amp)
-    mGraphicEq[static_cast<size_t>(look)].store(e.graphicEq);
-  mEntries[k].push_back(std::move(e));
-  mCount[k].store(look + 1);
+    mGraphicEq[at].store(e.graphicEq);
+  mPresent[k][at].store(!e.vacant);
+  mEntries[k][at] = std::move(e);
 }
 
 void GearCatalog::reload()
@@ -245,7 +266,6 @@ void GearCatalog::reload()
     if (!e || e->id != id)
       continue;
     e->origin = GearEntry::Origin::downloaded;
-    e->builtInIndex = -1; // baixado nunca entra nos parâmetros
     e->folder = dir;
     found.push_back(std::move(*e));
   }
@@ -256,15 +276,24 @@ void GearCatalog::reload()
     for (auto& e : found)
     {
       auto& list = mEntries[static_cast<size_t>(e.kind)];
-      auto same = std::find_if(list.begin(), list.end(), [&](const GearEntry& x) { return x.id == e.id; });
-      if (same == list.end())
-      {
-        add(std::move(e));
-        added = true;
-      }
+      auto same = std::find_if(list.begin(), list.end(), [&](const GearEntry& x) { return x.id == e.id && !x.vacant; });
       // Peça que já estava no catálogo (atualização de uma baixada, ou arte
       // nova de uma de fábrica): não troca no meio do uso; vale a partir da
       // próxima abertura. Nas de fábrica vale sempre a ficha embutida.
+      if (same != list.end())
+        continue;
+      // Peça que saiu do programa e voltou revisada: ocupa a vaga dela (o
+      // mesmo parâmetro de antes, para os presets e automações antigos).
+      const int at = e.builtInIndex;
+      if (at >= 0 && at < static_cast<int>(list.size()) && list[static_cast<size_t>(at)].vacant
+          && list[static_cast<size_t>(at)].id == e.id)
+        place(std::move(e), at);
+      else
+      {
+        e.builtInIndex = -1; // sem vaga: não entra nos parâmetros
+        add(std::move(e));
+      }
+      added = true;
     }
   }
   if (added)
@@ -426,7 +455,7 @@ int GearCatalog::find(Kind kind, const juce::String& id) const
   const auto& renamed = mRenamed[static_cast<size_t>(kind)];
   const auto current = renamed.containsKey(id) ? renamed[id] : id;
   for (const auto& e : mEntries[static_cast<size_t>(kind)])
-    if (e.id == current)
+    if (e.id == current && !e.vacant)
       return e.look;
   return -1;
 }

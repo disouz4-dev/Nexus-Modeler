@@ -16,6 +16,7 @@
 
 #include "StandaloneLink.h"
 #include "report/Report.h"
+#include "update/NovaInstalacao.h"
 
 #if JUCE_LINUX || JUCE_BSD
  #include <dlfcn.h>
@@ -104,6 +105,8 @@ class NexusStandaloneApp : public juce::JUCEApplication
 public:
   NexusStandaloneApp()
   {
+    // Antes de abrir as preferências: a versão antiga vai para a reserva.
+    nexus::update::startFresh();
     juce::PropertiesFile::Options options;
     options.applicationName = "Nexus Modeler";
     options.filenameSuffix = ".settings";

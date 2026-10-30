@@ -1,0 +1,98 @@
+{
+  "formato": 1,
+  "id": "brit800",
+  "versao": "0.0.1",
+  "tipo": "cabecote",
+  "nome": "Cabeçote de teste",
+  "inspiracao": "JCM800 2203",
+  "categoria": "Britânicos",
+  "fonte": "Teste",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "JCM800",
+      "tons": [
+        {
+          "id": 1071,
+          "titulo": "Marshall JCM 800 2203",
+          "criador": "arthm",
+          "tipo": "amp",
+          "capturas": 10,
+          "downloads": 63164,
+          "serie": [
+            "MV6"
+          ],
+          "posicao": "\\bG(\\d+(?:\\.\\d+)?)",
+          "nota": "ganho 1 a 10, master 6"
+        },
+        {
+          "id": 1869,
+          "titulo": "JCM800 Zakk Wylde Signature",
+          "criador": "arlingtonaudio",
+          "tipo": "amp",
+          "capturas": 19,
+          "downloads": 18609,
+          "serie": [
+            "LOW SENSITIVITY"
+          ],
+          "posicao": "- G(\\d+(?:\\.\\d+)?)",
+          "nota": "ganho 1 a 10 de meio em meio, entrada Low"
+        },
+        {
+          "id": 1869,
+          "titulo": "JCM800 Zakk Wylde Signature",
+          "criador": "arlingtonaudio",
+          "tipo": "amp",
+          "capturas": 19,
+          "downloads": 18609,
+          "serie": [
+            "HIGH SENSITIVITY"
+          ],
+          "posicao": "- G(\\d+(?:\\.\\d+)?)",
+          "nota": "ganho 1 a 10 de meio em meio, entrada High"
+        },
+        {
+          "id": 1577,
+          "titulo": "JCM800 2203 1985",
+          "criador": "timr",
+          "tipo": "amp",
+          "capturas": 5,
+          "downloads": 5583,
+          "serie": [
+            " Lo "
+          ],
+          "posicao": "\\bG(\\d+)",
+          "nota": "ganho 2 a 10, entrada Lo"
+        },
+        {
+          "id": 37987,
+          "titulo": "JCM800 2203 AMP",
+          "criador": "maxalbe",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 3486,
+          "serie": [],
+          "posicao": "- G(\\d+)",
+          "nota": "ganho 3, 5, 7 e 10"
+        },
+        {
+          "id": 80035,
+          "titulo": "98 Marshall JCM800 Modded",
+          "criador": "tonetonerson",
+          "tipo": "amp",
+          "capturas": 7,
+          "downloads": 3275,
+          "serie": [],
+          "posicao": "Gain (\\d+)",
+          "nota": "ganho 3 a 9"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 0,
+  "signature": null,
+  "caixa_padrao": "brit412"
+}
