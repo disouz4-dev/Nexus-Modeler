@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:44:45Z",
+ "gerado": "2026-10-30T14:54:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -208,8 +208,8 @@
   },
   "aquamarine_sky": {
    "nome": "Aquamarine Sky",
-   "hash": "1adbb3cc9f012559",
-   "data": "2026-10-29T17:12:42Z",
+   "hash": "153260793884cdab",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "aquamarine_sky_botao_a.png",
@@ -225,25 +225,25 @@
     "aquamarine_sky_mapa.json"
    ],
    "sha256": {
-    "aquamarine_sky_botao_a.png": "4a713fa09e2e9021ad64be3299804621de2ad5e1435f993998a2c56d4bfdaae4",
-    "aquamarine_sky_botao_b.png": "c94c95b1598c9d0706ed87e59686e860e217d224d23ad19b3014255f69bbac5b",
-    "aquamarine_sky_botao_c.png": "2020292b7c3d5391a3d4e33f367885f56af7bcf2822edea102792296ccd4300e",
-    "aquamarine_sky_botao_d.png": "ebae9efe7f4be4bddcae6dc148aeb6c600f908529accacdf051920cd77f557e8",
-    "aquamarine_sky_botao_modo.png": "791c089ccd27759c2582d6e3b62c9f17a57d5148ebf1bf823936d20fa85b5cb1",
-    "aquamarine_sky_botao_nivel.png": "34dba32dc050227051de9c502a7c5cff76dba792f74285375b5a7b10f54d51a1",
-    "aquamarine_sky_botao_tom.png": "ef0c3ed0ef6b96afe6bb51a46609885edb38435aab91d88e7adb5af701f91271",
-    "aquamarine_sky_frente.jpg": "3b1829323b4f7d36fe3546ee1b0de2055234f62afdfc5ba11c72f399dd97eb88",
-    "aquamarine_sky_frente_alfa.png": "5a569d1f1f994516142731b0f6fdcc01a06e2f8aaf5f0680539c5081b56b5305",
-    "aquamarine_sky_manifesto.json": "2ab842309568733852b29b872b1cfa8db6d9a9fc0f5a917de2f38f0b4fba32fc",
-    "aquamarine_sky_mapa.json": "04970d7103cc84f916db5b69c7dc19e51b810b265eaf84225876ee36d61cc9e4"
+    "aquamarine_sky_botao_a.png": "b6441a8fee281763a9e0e4e15ddffae6bc28fb0751ef7317ba7f811111c2eb96",
+    "aquamarine_sky_botao_b.png": "53944176df4ce71c777505e4f67e8cc73639a1afbfe44a4f941ee766301c539c",
+    "aquamarine_sky_botao_c.png": "23c284dfe31703f5d389112ca388d9d9f95d3076000e584d626d0c7f61fddfda",
+    "aquamarine_sky_botao_d.png": "4340e9eabcf83e7be46f690e9271143245b243d8ed159cf4e944f7417c4e3567",
+    "aquamarine_sky_botao_modo.png": "ff3e944a2a690912c470561990bf10f0963148685fece805dd027193e9ba142c",
+    "aquamarine_sky_botao_nivel.png": "568814b1ec1bf1f842e5036bef113766f1f4e525c2e7fc609cc90ee73949fa30",
+    "aquamarine_sky_botao_tom.png": "6f55be1020fc6bfdc5130474019a03a17aee3e109c443a484be59fd48c9ad5fd",
+    "aquamarine_sky_frente.jpg": "d58d5069de8c7e998a09e7840ee461aee006b7bc6425cc3ce2e6703295ae6560",
+    "aquamarine_sky_frente_alfa.png": "6cde2f1ae0f922264140e1541149c68c029b36ff33f722b40dfdbc48e8abc3cd",
+    "aquamarine_sky_manifesto.json": "8ebd4200a7d2e4477bacfb0226510d58b8780a99a0299dd027bae813723a0b03",
+    "aquamarine_sky_mapa.json": "0d22ae361c6c75fb75d69962cd8589836e3eec7a93d100f074425c0735ca7b97"
    },
-   "tamanho": 278590,
+   "tamanho": 301909,
    "tipo": "pedal",
    "inspiracao": "Strymon BigSky",
    "categoria": "Reverb",
    "fonte": "Efeito do Nexus",
    "motor": "reverb_modos",
-   "versao": "1.0.0",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -366,8 +366,8 @@
   },
   "banana_overdrive": {
    "nome": "Banana Overdrive",
-   "hash": "14be0b57a0c7f081",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "e09f8f84eeb5db31",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "banana_overdrive_botao_ganho.png",
@@ -379,21 +379,21 @@
     "banana_overdrive_mapa.json"
    ],
    "sha256": {
-    "banana_overdrive_botao_ganho.png": "b01d0aeedc4464199b3a165254f3c63066cf189b7763476db10448de61cd8c98",
-    "banana_overdrive_botao_nivel.png": "69f9a14e1e01ecbc0d3c24b056e878611beba64697a1616c536c385fde6f85b8",
-    "banana_overdrive_botao_tom.png": "b83e010c62b6ccf83b85ec24c5731ca1f745c054ae6b9e79b9032c3f3ebce123",
-    "banana_overdrive_frente.jpg": "78fd1dbfc42d0488b86b9f7af913a6ffa95e547d71c65f49f75d86aab912f1b5",
-    "banana_overdrive_frente_alfa.png": "84300be99d1809c9d457c86622c72032846060a7f06832792a555a0f7e14db0a",
-    "banana_overdrive_manifesto.json": "e7848f6a969fcedcfdce076299f583246512c6694b1fa5228ec846cc1839febf",
-    "banana_overdrive_mapa.json": "1caea09a913574edc4a80a92144e3b133c0832da34c75273d387329ce0013e7d"
+    "banana_overdrive_botao_ganho.png": "cc6085d90e85ebcc4914307b40ff642d0fb1ae321119f0a5d1b3846694754c59",
+    "banana_overdrive_botao_nivel.png": "eac1d17d6effae67e1bb844e63c2a6356574ac1b6bcee6563f23e9e0298ffab4",
+    "banana_overdrive_botao_tom.png": "8ad02c156523515e6b8a5d13dd98a4b9e7f8794b179e54c777991567e6444773",
+    "banana_overdrive_frente.jpg": "53ac35aa3a6fbbb8f3029780684052057df1f94f3ebc80fe328a2548134b5302",
+    "banana_overdrive_frente_alfa.png": "ccf9b654dd8df26c25cbf0261a642882d69c6bb95a2dea13c6e36788d3016a65",
+    "banana_overdrive_manifesto.json": "bcc40d3d2270f1d061747fab9207bf5cb4ae13d64d7d57524124c8ecf7eb1783",
+    "banana_overdrive_mapa.json": "8a30fddb802bb25a76cefbf89b5be3eabf9b576b6edbf564ffd37c97160a55de"
    },
-   "tamanho": 405520,
+   "tamanho": 398670,
    "tipo": "pedal",
    "inspiracao": "SD-1",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -924,8 +924,8 @@
   },
   "blueberry_blues": {
    "nome": "Blueberry Blues",
-   "hash": "ade0f00a7ad1ac44",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "4464486c05642b8e",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_blues_botao_ganho.png",
@@ -937,21 +937,21 @@
     "blueberry_blues_mapa.json"
    ],
    "sha256": {
-    "blueberry_blues_botao_ganho.png": "df7194ac9faf9d96d8fa9e9c4cf92d1533d25946eb538d69380d1c51fce337d2",
-    "blueberry_blues_botao_nivel.png": "71a054fc4536669bd8bc88ac0e9be17d7b77a2db8e804c61be799c290db0d7a7",
-    "blueberry_blues_botao_tom.png": "29ab1b38a5f4a10245e325a7d3e3c6412a465c262a38169994db310b02750cec",
-    "blueberry_blues_frente.jpg": "e445f4f86a074d8ecadcda95fe08be7fb9e3e95a33638654fe6012ed39f51bea",
-    "blueberry_blues_frente_alfa.png": "20b5a3290f5b299226ce675102bd79b82426613127f73482b6f57006114b1fcc",
-    "blueberry_blues_manifesto.json": "b4282eeff924732d5c3cf1109bdfb23e3f4013fedb55927d4469ef9f2bf22c9d",
-    "blueberry_blues_mapa.json": "2d19f69e4671cc0aaa86ad5e0c793c857836a6185abece34ce60c3a83bde4d15"
+    "blueberry_blues_botao_ganho.png": "3db14aa49591d5ecf92eb755a0a78df25f49915e7226111aa4845c050721de3b",
+    "blueberry_blues_botao_nivel.png": "beba34154f2a6d74c054190dd17512c53e729f5a3d1c39ca7355f2e4bc2cf822",
+    "blueberry_blues_botao_tom.png": "4776fd87d5bdd22e78ef1e79391dadb10bf2ca42078789fc0689695ad820858e",
+    "blueberry_blues_frente.jpg": "8889bfaaeb6e08ffef59760bc03341732ec0c6d18b4fcb9335e41b70240b4c65",
+    "blueberry_blues_frente_alfa.png": "eb4c5bf3aff54fd809d76b0310b0b93b2a1618c8e3fb474a5941ec1096df5253",
+    "blueberry_blues_manifesto.json": "a44868d036eec5508242165f00f0356d85c8627ffd571208b17b1ae9f59688c3",
+    "blueberry_blues_mapa.json": "40c384e506f0f7134799bfce52aa8fb479b0abdf2358eace2dac053d2b4ecd5c"
    },
-   "tamanho": 363661,
+   "tamanho": 353140,
    "tipo": "pedal",
    "inspiracao": "Boss BD-2 Blues Driver",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1580,8 +1580,8 @@
   },
   "citrine_overdrive": {
    "nome": "Citrine Overdrive",
-   "hash": "52764cd9767d9115",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "00c9fe2509b82dc5",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrine_overdrive_botao_ganho.png",
@@ -1593,21 +1593,21 @@
     "citrine_overdrive_mapa.json"
    ],
    "sha256": {
-    "citrine_overdrive_botao_ganho.png": "07ae67c26973bc9cea5420d8760aeb5f55438692d8c039e4c80b627aedf768d4",
-    "citrine_overdrive_botao_nivel.png": "aced5f5ada05762291885d660fd09b9d5f1368345b6f9dda88346e0c4829d86a",
-    "citrine_overdrive_botao_tom.png": "4702a4f141a21ba3756b49135fb6d2e4685aa1c5c11a9b10be00b017e6b04316",
-    "citrine_overdrive_frente.jpg": "9c1c133edda219f07078627ffd5fa3e01931bb5a33303ee297daf0eff2676d2d",
-    "citrine_overdrive_frente_alfa.png": "3bc8400f5132cde560693875cf539fc5d127fc97182ed67b3abe1847642b6309",
-    "citrine_overdrive_manifesto.json": "b64b6dc25ed35108fb138fd1168a15994bff2adbb05eb33c8b3caefa6fe76be5",
-    "citrine_overdrive_mapa.json": "d93d0d930fe8380f5f744ede55d672812c70863ad60d9a7f48a3413d10b3269a"
+    "citrine_overdrive_botao_ganho.png": "46d9199e6f9858111aee8fb45bfe0ef4092473cda175d2d7c35dd5790c3a8e29",
+    "citrine_overdrive_botao_nivel.png": "11253ba4ce0b07a66a18bd3cdea757672b2e7caa4c0b2c3be4ebc521f649351e",
+    "citrine_overdrive_botao_tom.png": "3afa10788f6c850812623fffc6797c234818808402f9ade1cab481c3d82e9a61",
+    "citrine_overdrive_frente.jpg": "4f5f67b7cf9b1cc8b6d00758cb143c58ab53dbbfd1f9b6348af604ea1abddc16",
+    "citrine_overdrive_frente_alfa.png": "3e4691781a4acfdea3e675ff0162f97ac168c360a9646ed30b4abd0de0dc3065",
+    "citrine_overdrive_manifesto.json": "b0aea1cbbae7f9abefdbd263144d41f4fdc408eba8988fa7a3fabe7414870ea0",
+    "citrine_overdrive_mapa.json": "87c39ad737edddff98bb134ebbf9808480f7a01125c477dfad798726d6f09d96"
    },
-   "tamanho": 393992,
+   "tamanho": 396364,
    "tipo": "pedal",
    "inspiracao": "Boss OD-3",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1757,8 +1757,8 @@
   },
   "clementine_turbo": {
    "nome": "Clementine Turbo",
-   "hash": "1b059ed20f9ab88c",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "9bfb8f213c0a258d",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "clementine_turbo_botao_ganho.png",
@@ -1770,28 +1770,28 @@
     "clementine_turbo_mapa.json"
    ],
    "sha256": {
-    "clementine_turbo_botao_ganho.png": "c7d5dbcf9e62a3c1e43f0e59511d2bf68b64c17e3d75cdf31a1f743a4496b399",
-    "clementine_turbo_botao_nivel.png": "bc3666ce9348b25b5b0d65caaab85f564fd8c8a3304e701aa6e1215a6a3b8fcd",
-    "clementine_turbo_botao_tom.png": "8c22d4e233352cb29b41d5840e112e0a39f36ac5e961c24bdb67b70884961444",
-    "clementine_turbo_frente.jpg": "5e8eb3de93e8bfc254ff67326e4204c0976a07c963c4693935c854e4b1ecd69d",
-    "clementine_turbo_frente_alfa.png": "b6a85f57fd73cf8e7bfacf0c0f9e4efc0cabd3e784e29f449e16da8b9abb320d",
-    "clementine_turbo_manifesto.json": "d4dd8daa5598228b818c5086ab9dae9e0f79aaa3362268dec6b2f2ac73253a6a",
-    "clementine_turbo_mapa.json": "5547a3b2a69753d969372200c3ab02113289e4ae101d5a3f901942799bea901b"
+    "clementine_turbo_botao_ganho.png": "2e92f5a94490d4c568a9be5d19cb03fc930aa9ed28f030bc9ecfa4df7c9b5bd5",
+    "clementine_turbo_botao_nivel.png": "d2b05a8df2c7386560fb07a4ec278ae3ad10b2f39422b3912d61f14342e0a1b7",
+    "clementine_turbo_botao_tom.png": "2e4090862edf71d27741889e25052e3bf474c919d71cbf594394b3b86abcab28",
+    "clementine_turbo_frente.jpg": "4a9798598ba5ae2217599e2f2fd80cc2e5f6f4ccb63fd7a91f0b19d537fed005",
+    "clementine_turbo_frente_alfa.png": "737d1e0678420c9b86d24f40bf1cec5d7bcf84f81309d51377d0f610da8cb180",
+    "clementine_turbo_manifesto.json": "9bfc98c395c353a584cc1a36eb25f64613dc22499d5c9550e791f56f28caabad",
+    "clementine_turbo_mapa.json": "866e40e514de6ec7941a713e2417f9a694034a75252a087ed63a12da7ff71c96"
    },
-   "tamanho": 301050,
+   "tamanho": 294899,
    "tipo": "pedal",
    "inspiracao": "Boss DS-2 Turbo Distortion",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "coconut_delay": {
    "nome": "Coconut Delay",
-   "hash": "fe694e398afa0f97",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "8c2c86e7c170a3f9",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "coconut_delay_botao_a.png",
@@ -1803,21 +1803,21 @@
     "coconut_delay_mapa.json"
    ],
    "sha256": {
-    "coconut_delay_botao_a.png": "90aa95f4022f35a7394f24e77524c483f6dcc0c40839081f88d1054da410b8e1",
-    "coconut_delay_botao_b.png": "496f8307c5303bade9db649d1a285ffb54d3182d6715239b8b26d114487abffc",
-    "coconut_delay_botao_c.png": "747efcad0a968e625346c61a5831c25c500f085688f18f0148593f2e82a9462c",
-    "coconut_delay_frente.jpg": "23fb4dac74a607ee517ff621110423ac8b375b772033dfc9c364d69f75cfe006",
-    "coconut_delay_frente_alfa.png": "c1d0bd79b45609cc6f298a4c16e0a218b8778ce401f5b48cd3b4c32f9b57c372",
-    "coconut_delay_manifesto.json": "a57ec94119868882d640a6a679125e76f9c242be7a5ebd87c2407a0118ff71d1",
-    "coconut_delay_mapa.json": "6a57ff39b03ce60b5d835452074cfafb142674f35b2d596d632cf0c674ca7853"
+    "coconut_delay_botao_a.png": "f1d065231980d7d12f6b8192ae874d660da5e135d45b6e5c4eac346ab9662058",
+    "coconut_delay_botao_b.png": "b7afb06c9c820c967fde228d6a822878065f65e4ba76c1216b06246c59a59496",
+    "coconut_delay_botao_c.png": "a55b4a586fa64e9c283adf261e1984f768c856fce248ebf951b003fbda792c51",
+    "coconut_delay_frente.jpg": "be0f15796ee4ab7e6adb108d976707a188d313e0f4e8f5cfd296f51efb06c6c9",
+    "coconut_delay_frente_alfa.png": "0dfbb8d60b1690929527cf8ad62038dfac636496ecf81f59107ddfd4946d5033",
+    "coconut_delay_manifesto.json": "f7ef61c62d0fba44836f30c075779d4fde90f8ac8b0e9ba20993848f838d4bf2",
+    "coconut_delay_mapa.json": "602d6ac28f949225f003b035f1c71588dce240adcf7c33a7a6f56df569b320cf"
    },
-   "tamanho": 395173,
+   "tamanho": 394451,
    "tipo": "pedal",
    "inspiracao": "DD-3",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2150,8 +2150,8 @@
   },
   "emerald_echo": {
    "nome": "Emerald Echo",
-   "hash": "cdd1376d02e00f2b",
-   "data": "2026-10-29T21:36:09Z",
+   "hash": "ac46487c8f347f78",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emerald_echo_botao_a.png",
@@ -2166,24 +2166,24 @@
     "emerald_echo_mapa.json"
    ],
    "sha256": {
-    "emerald_echo_botao_a.png": "4a3f059ad5616d641c3deba6cc66bc124980979dfc8612ae3f783b726dd24d1a",
-    "emerald_echo_botao_b.png": "f7964dfd1b9668243af493346a76754a9196026c5e3ab97b2656fbd71504cf15",
-    "emerald_echo_botao_c.png": "3a6f57b1351cb89440a17d1db457a1a9941507fd4b379b9d789c2ac1842ec9df",
-    "emerald_echo_botao_d.png": "9874619ad1e78d8efc9351dc103ed49461abf6af2d0d0c453869b603b2af1d2f",
-    "emerald_echo_botao_modo.png": "7023524c2dcd20577fa2fbef52a57fa0ffb4f816de77532d0d618edcd1217b66",
-    "emerald_echo_botao_tom.png": "d4ba017f85622bc92f8b0171033fdcceecbc40bc5e8aee35b223b7f80bd866de",
-    "emerald_echo_frente.jpg": "bc927620d486f8bf388e6d864c7c7b86262cf893be11610d457a9e505ab54d36",
-    "emerald_echo_frente_alfa.png": "3a6c01bbf2a5b4feb4f62138058088a183cde62f6b8bd318549a4f7046024b89",
-    "emerald_echo_manifesto.json": "49d9d106659a1cff2e7c127eccc857268fe9dc87e0df00739bad17ebc61e272b",
-    "emerald_echo_mapa.json": "22f5879a623babf34954d58a8e504b33cc3b79cc0466f4252cea6eb7dda72bdc"
+    "emerald_echo_botao_a.png": "489231dc95b708782a72fe91851575bacd7fc8e0739a74f54d991de0e48267b4",
+    "emerald_echo_botao_b.png": "c5bc17644b63ce6541e0cf160fe4077d72aa6893aad109a863c925e92cc746ac",
+    "emerald_echo_botao_c.png": "c07f806014de6b3a297b554561e851bef335e6782637346e356f08397f23d73a",
+    "emerald_echo_botao_d.png": "6ccb6a9f9bda17817369688b46140aa8b3902f9d0e3398aa3b1fadb108caa0d6",
+    "emerald_echo_botao_modo.png": "4e1c12f0d55d4c01f733261bfb72c23bc2a972572183aca2f469cd6f4978207f",
+    "emerald_echo_botao_tom.png": "9f22cf35c60d398fb701f23a7fea4375da0c00371c2bf2407122195dcdfce4f3",
+    "emerald_echo_frente.jpg": "2b360228e7bb931185946bf5036eb29afd43fa5ee94af4f54ba72e0ea031888d",
+    "emerald_echo_frente_alfa.png": "efac37000d49c748ac110806f39d623bb6ab8454cdfe2ac03c14211eae1cccf3",
+    "emerald_echo_manifesto.json": "9a55e721acb34403bde7d2b7094cda0317f4e846547a26e6823d9305643a463f",
+    "emerald_echo_mapa.json": "75a94994aafde67bc02973e209f326d9204cb330142ba038c5053bacc9e33146"
    },
-   "tamanho": 171304,
+   "tamanho": 260942,
    "tipo": "pedal",
    "inspiracao": "Line 6 DL4",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_modos",
-   "versao": "1.0.1",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2411,8 +2411,8 @@
   },
   "galaxy_mod": {
    "nome": "Galaxy Mod",
-   "hash": "5487fa20cc85f075",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "29e3526fb93dc8bb",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galaxy_mod_botao_a.png",
@@ -2427,24 +2427,24 @@
     "galaxy_mod_mapa.json"
    ],
    "sha256": {
-    "galaxy_mod_botao_a.png": "fa98ba71304bde6ec24e57cebf34797e30fa933aa11ad76b422fdcf87b0d946b",
-    "galaxy_mod_botao_b.png": "49bb84b4ff6c9cf481cecae0a0e3e06866d418b5c338a428de516a1994a47e2e",
-    "galaxy_mod_botao_c.png": "4a8e3fb0054f2d832e0defe760cb92de19a55537a6ffd12ef6d11b0295f9b652",
-    "galaxy_mod_botao_d.png": "74f704f6c0988dd2e3be0fd4ea4caaf4f4f63de57af1d47656af449ecaca5e48",
-    "galaxy_mod_botao_modo.png": "0b2f2b6bfdca7e3d0fcb7361bf4774cd5046fc62a9720a7abf40a9b3874db94e",
-    "galaxy_mod_botao_tom.png": "589b33f07af7e9c270facb461549b55bbfade53eb9bb39965710884796f1b305",
-    "galaxy_mod_frente.jpg": "07d80bf7cb042c8a01d5c4dbf3b34e6c26a497bfe4ea02ab049357b3602bb51b",
-    "galaxy_mod_frente_alfa.png": "49f9027d1ae23e69f689ae7781f1cd1266807810896e68f3acc149f67ccc247c",
-    "galaxy_mod_manifesto.json": "8af86d2b463bdad6ab86be2fc1abc41e9bb04dea59022777f93f8c8e8d318348",
-    "galaxy_mod_mapa.json": "0b4117673d97f420117cae5b6c1a155b462998fc827529e3ebf8621d343f2769"
+    "galaxy_mod_botao_a.png": "872f91c34250bc760c2754fabf0eba02adbb49af0ca973ebddcbb329bd2c153f",
+    "galaxy_mod_botao_b.png": "562821b9a92c0b71dbcde1199a6b27bd84c64db35419a2a9dff2c0c047b44ae5",
+    "galaxy_mod_botao_c.png": "f5120762ae2dea720a6232e134211920fdb62e3f424b133801e99f2aeaaf7063",
+    "galaxy_mod_botao_d.png": "473d0cbc12a7cb6960acc99a7470c03f0e5e82d8819f106355a0c8100976006b",
+    "galaxy_mod_botao_modo.png": "29083fe22fe9ba8b1739e24c22d2bf8ea20acc4d49f7ae71b4334a964399289e",
+    "galaxy_mod_botao_tom.png": "08c042a417cdab204d6184923cdf918cae329c04909a9c38f6845803bec212bb",
+    "galaxy_mod_frente.jpg": "8d768297d56dc1782223537d40008c24c70aa4ec22a1ddd9f2e3ce2c6480b2c6",
+    "galaxy_mod_frente_alfa.png": "03756e087aae8b1567becaaf2a40e579539f0f8c542b34f5e1a971cbc194510d",
+    "galaxy_mod_manifesto.json": "3db1657901c52adae2c1619cb3bcdd02b3967e2a3e89a9e85307e3507e2f49bb",
+    "galaxy_mod_mapa.json": "9051ced8ebf6de5cc343c50750f0ba1130db96b61cc2e45c839738fd5df013de"
    },
-   "tamanho": 133068,
+   "tamanho": 266884,
    "tipo": "pedal",
    "inspiracao": "Line 6 MM4",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "modulacao_modos",
-   "versao": "1.0.0",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3204,8 +3204,8 @@
   },
   "jabuticaba_buzzsaw": {
    "nome": "Jabuticaba Buzzsaw",
-   "hash": "f62836b534960541",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "52796b25b06525b3",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jabuticaba_buzzsaw_botao_ganho.png",
@@ -3217,21 +3217,21 @@
     "jabuticaba_buzzsaw_mapa.json"
    ],
    "sha256": {
-    "jabuticaba_buzzsaw_botao_ganho.png": "d6fbb12e0baef14c81e74fe49f3d7e56ef7bcf7fae43a092621af4d20fd82f11",
-    "jabuticaba_buzzsaw_botao_nivel.png": "3223076e12b068506bd884a8cd8cf900f0da48b034b586e33fdeadc23bb170fe",
-    "jabuticaba_buzzsaw_botao_tom.png": "afda837767a725bbabba800d2b299c49bec0fb9e70d6d038e0510862f9c7f36f",
-    "jabuticaba_buzzsaw_frente.jpg": "d2aa1441f62c8e5b42c31e95b81ff4cf7b081166eacf4751a4a4d57b9445d3ad",
-    "jabuticaba_buzzsaw_frente_alfa.png": "534c0a03b63aadbbc206e2006825972aafd3cd36546a3a18f3f7a2d71a217159",
-    "jabuticaba_buzzsaw_manifesto.json": "0626227cec91526e8f9f20bffc66b827f00d33986664e603dca492aad99fb4b7",
-    "jabuticaba_buzzsaw_mapa.json": "e0b85ae283d4dafa050af6446d84c1c04a938a3611a56d4bfb397bcb81b220cd"
+    "jabuticaba_buzzsaw_botao_ganho.png": "b5decbdeba91f342a782d565d46e5d5ae04e5268088ff96cd034573713fb0f98",
+    "jabuticaba_buzzsaw_botao_nivel.png": "d7697b44355142a329591b37ca3333e173ddea7503c190cfd18dee22c3a378f7",
+    "jabuticaba_buzzsaw_botao_tom.png": "558d2e32e5e1142cf7b57165cd33c41f4d1dfb5a352a94ced2ccb85c1501cd01",
+    "jabuticaba_buzzsaw_frente.jpg": "178f1972fd0706055d5d860433d18a08069808190ecccde51664aca312520021",
+    "jabuticaba_buzzsaw_frente_alfa.png": "17540efcc3ab155832f2cac0ec025bdb30538e80e81fb746722eb02152314354",
+    "jabuticaba_buzzsaw_manifesto.json": "7353b824d68ee9c846f3121a185bbaad8d04e2a6551b033595e8f11e8834f3bb",
+    "jabuticaba_buzzsaw_mapa.json": "dbde54b082b4fb107427cd062abce9afa6d53190eb96efc8a1c10709a37ea444"
    },
-   "tamanho": 314570,
+   "tamanho": 309749,
    "tipo": "pedal",
    "inspiracao": "HM-2",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3402,8 +3402,8 @@
   },
   "jupiter_octave": {
    "nome": "Jupiter Octave",
-   "hash": "4c0730223b845c42",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "8cb3e32a3ab56c37",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jupiter_octave_botao_a.png",
@@ -3415,21 +3415,21 @@
     "jupiter_octave_mapa.json"
    ],
    "sha256": {
-    "jupiter_octave_botao_a.png": "977c1c04f8ff6fcaa08b090b71b5c747f71e16ab606a5b5692cd2c74e64a7e00",
-    "jupiter_octave_botao_b.png": "be1af0eb045f29ac5840ff791cbf068dce1ffa41cd7ed64038f231abc8d58f4a",
-    "jupiter_octave_botao_c.png": "b0fd88cf9d0603614ca92a8326bb46bd489e1a63cba0d21a6956327665be5d5f",
-    "jupiter_octave_frente.jpg": "3031b6e19729a4511af3b307f4491e14f2b4de106e4b79604cfe5ce8ed937080",
-    "jupiter_octave_frente_alfa.png": "d33c1663f56bd992b082637477465ed6dbe003df08179c791ee469a566a1e6e6",
-    "jupiter_octave_manifesto.json": "e48fff0c45bd18a6f2a357abf6e07ccf49278f52d1906394c970bfab0a34ed75",
-    "jupiter_octave_mapa.json": "4064080d539470c1b075f328f0b5e7b038399c6d19666a25d74d11f095ca90c0"
+    "jupiter_octave_botao_a.png": "0d9418f36684c2aa8e637059864cd55cc6186acaa9c3e1c661c28b10cb2175e9",
+    "jupiter_octave_botao_b.png": "73a7f8811a312e5220f81e74e84a34bae656a8348636406b4cf2226adc051395",
+    "jupiter_octave_botao_c.png": "b256469f6940cbbd4c3e14b30370c1aba654f180d9ff4d55345cb6a9f47c76f0",
+    "jupiter_octave_frente.jpg": "0e8745d82295bbdc1863511369b22aa530c404c4d6722fe4bf262bf19ffdcd2f",
+    "jupiter_octave_frente_alfa.png": "ff4b5a5fb9a0ebb9b820f3e2048b4301e33de3d95731a8a949b6edb75a17c9c6",
+    "jupiter_octave_manifesto.json": "d9c753d8ebac24c240dfabf3ff712e658a01b5bf4871c8ea6e85133be66db0a5",
+    "jupiter_octave_mapa.json": "76d1e03c1c7963f6e115a78fe16031bc486ffbfc55593afc08bec714a7541cef"
    },
-   "tamanho": 479722,
+   "tamanho": 477361,
    "tipo": "pedal",
    "inspiracao": "Boss OC-2",
    "categoria": "Afinação",
    "fonte": "Efeito do Nexus",
    "motor": "oitava",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4224,8 +4224,8 @@
   },
   "meteorite_reverb": {
    "nome": "Meteorite Reverb",
-   "hash": "c0f6de2b716ff204",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "5472b967844fb492",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "meteorite_reverb_botao_a.png",
@@ -4237,21 +4237,21 @@
     "meteorite_reverb_mapa.json"
    ],
    "sha256": {
-    "meteorite_reverb_botao_a.png": "05e7173e736f669edcc9a7400e82537068e69faa224b04f439b4ec8cc404f28e",
-    "meteorite_reverb_botao_b.png": "56dde42bd396a1575d6e75965581f15617ab2050333d68d8748763ee75fb2602",
-    "meteorite_reverb_botao_c.png": "5697a16c7af0f457c55fb2814bc58a47d450c7762f80fc3e928dce6e2e8cb8ce",
-    "meteorite_reverb_frente.jpg": "f82a9f133153cc5d013627002c0a1c0a341cf78378fc81a513f2a3749b708d4f",
-    "meteorite_reverb_frente_alfa.png": "e1c9772d59c231568269e178ed596418bb499b1c25da5f5ab4a5cead017bc7e0",
-    "meteorite_reverb_manifesto.json": "0db58f0dade4761f950b70f7b60000078ba29b1b57fa33ba9946d5e04bf8ffc4",
-    "meteorite_reverb_mapa.json": "6b37a655fde6a6d50bea82623264af2a9e8a7302bea4a573e3f730d22be746e0"
+    "meteorite_reverb_botao_a.png": "11d0e096aa85ffd0e382fbd4721260025abd0b4a5303e75f63ef4b17183c1cfc",
+    "meteorite_reverb_botao_b.png": "f84d10c81de15ac9ac0166e97c2353f75cc2edd86145d16808bbf4511b519464",
+    "meteorite_reverb_botao_c.png": "ec816b2d5e2d7a3c233411276ce1263dd7ab3087f872cf089e466d1fd88422c7",
+    "meteorite_reverb_frente.jpg": "077cfc742a861533326ec8601bc6f3a3959642ee0e802a7034875985812695af",
+    "meteorite_reverb_frente_alfa.png": "bdac79c44da4eafa2d325d756d773c0a1d5ce2e8aa4e54c0f6bc529e4456721e",
+    "meteorite_reverb_manifesto.json": "0ee7d4a653a218892dccfc1df81bae866a9b88542bdd7515b92d90f367e406f5",
+    "meteorite_reverb_mapa.json": "d1a60b2809f49496c7402b6b1134e95d7fbf7b78ef7e57ec069886504a53a955"
    },
-   "tamanho": 411053,
+   "tamanho": 408834,
    "tipo": "pedal",
    "inspiracao": "RV-6",
    "categoria": "Reverb",
    "fonte": "Efeito do Nexus",
    "motor": "reverb",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4398,8 +4398,8 @@
   },
   "neptune_chorus": {
    "nome": "Neptune Chorus",
-   "hash": "936aa05160f082c7",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "adbb71b60b2db68d",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "neptune_chorus_botao_a.png",
@@ -4411,21 +4411,21 @@
     "neptune_chorus_mapa.json"
    ],
    "sha256": {
-    "neptune_chorus_botao_a.png": "d5accbcef8952f0d1112c6265cc65fae13f3b59e3693cfb746a05baf34b91727",
-    "neptune_chorus_botao_b.png": "14887663f72df26a9757b72816392076caf304575b886dd4877dd69c879178a5",
-    "neptune_chorus_botao_c.png": "b17128577ba6ef2ac0594b19fd918771b4e4041d972fe51f14ee78c87dcd1376",
-    "neptune_chorus_frente.jpg": "6a97fa7dd773e07e35217002fdf1cbd3ab304092dc9a631cca16b2dc6fc2e1bf",
-    "neptune_chorus_frente_alfa.png": "c34fb33816d8ce469feae879e2eed152d8d26d2f4d0bfa455547dabb03f98b12",
-    "neptune_chorus_manifesto.json": "e88a3036d166f03ce8bfc1439e9bd2310b0b51630db9800b8fd3230f4935c317",
-    "neptune_chorus_mapa.json": "8cfdef3178fbd086dc3f28eb5bc15d8de86687a3adaf29ba169c8963a4929622"
+    "neptune_chorus_botao_a.png": "094cf5ca1075d9742aa2bc2deae822ee64572cffce6ead0e1ab1ebcef965610e",
+    "neptune_chorus_botao_b.png": "2ec6c4654526bb8a4d83994f65bf3611fd7402e595c8f196f408392e32db7823",
+    "neptune_chorus_botao_c.png": "5de4d92ed42079eb0e9f889f6676235ecf684b642ce86b29a05a50b1934810e8",
+    "neptune_chorus_frente.jpg": "f988ae5b1c491c80b7f036505d81243318d56f77ebe2203bbc665056a6b33bd1",
+    "neptune_chorus_frente_alfa.png": "7f447faaec6874e2030954e8ef4fbb9dc88650b8669e38e07011b9e4e4b55a35",
+    "neptune_chorus_manifesto.json": "f850dce88e8839d9a37738ac49c81c5fd9bbfe4b39ce4aff0ff7d0d6a3bf7b85",
+    "neptune_chorus_mapa.json": "6a610cf7f4c40f4216c236ada1d1b578f6b62db2bb64546cf1c7418e99695d9f"
    },
-   "tamanho": 372771,
+   "tamanho": 370881,
    "tipo": "pedal",
    "inspiracao": "CE-2",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "chorus",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4542,8 +4542,8 @@
   },
   "onyx_metal": {
    "nome": "Onyx Metal",
-   "hash": "753cfeac00cac634",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "88617b29f0ddfb58",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "onyx_metal_botao_ganho.png",
@@ -4555,21 +4555,21 @@
     "onyx_metal_mapa.json"
    ],
    "sha256": {
-    "onyx_metal_botao_ganho.png": "ab6c5ccaae4fec6d648bf92dacd67bdb0ef358a31ec915a259560aa78aebcf97",
-    "onyx_metal_botao_nivel.png": "6e42e28cc18d16abc6b7332066193ebe7ff46615bbe52bc42836b09373ff7352",
-    "onyx_metal_botao_tom.png": "6b558a5a7226918974cd91be83b1949dcf2554cec1d4578ba6c7a0c459a68134",
-    "onyx_metal_frente.jpg": "12a154cab4385c7e90838d9695d670150e7d503993376931daae1b277d49f7cc",
-    "onyx_metal_frente_alfa.png": "40b08a4c64e0e30ef0aae537106d9a1ee6b0319ad9285ba9b4cd73b3f77db373",
-    "onyx_metal_manifesto.json": "f660f083d9aab26a960521bfdb1eb1c917bde9b1020dcd8134a751de233f8ccb",
-    "onyx_metal_mapa.json": "e080cbc9e0274b4a3a2bf5a6d80f12ea92dcdd0156e28d87876e33888ad42427"
+    "onyx_metal_botao_ganho.png": "1b1f3608700f8aa587caace119130b2482b87a135f116eeb523a50c385c5c53d",
+    "onyx_metal_botao_nivel.png": "d46397b38b4f53f01488896d64047b2994fe051ca55a4214c8406be733240219",
+    "onyx_metal_botao_tom.png": "d48f2c5cbb3c8a47bc92239280f4657f8beb9871407e4e330f79e38ff86c1e0f",
+    "onyx_metal_frente.jpg": "343b19b1bd42fdbf5564ead87cdf436c8f68f5fdc578e9860685ae987ffff85d",
+    "onyx_metal_frente_alfa.png": "30a104117b8837dfeceef3aefe463419f572bcd66902a61f0431d4721337304c",
+    "onyx_metal_manifesto.json": "dfa5b2caf5640bea28c73e7b3df80ff531b821c61aa7ab5187b7a44e3fc27bc0",
+    "onyx_metal_mapa.json": "3692aecb071b2bcd4ea56328f3c9bce9f8afedf779b8b01c83f3a8356c54295a"
    },
-   "tamanho": 261845,
+   "tamanho": 261729,
    "tipo": "pedal",
    "inspiracao": "MT-2",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4608,8 +4608,8 @@
   },
   "orange_drive": {
    "nome": "Orange Drive",
-   "hash": "c444b193ae31f579",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "36fb7e97a428ece4",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "orange_drive_botao_ganho.png",
@@ -4621,21 +4621,21 @@
     "orange_drive_mapa.json"
    ],
    "sha256": {
-    "orange_drive_botao_ganho.png": "57b9703acf87a334217b8050bde4d43b71534a4f31da37f1b8d43f959830d720",
-    "orange_drive_botao_nivel.png": "1f61093b6bdfb11006f6f5f450c2c04da99a6b5902dca36702621a3e6f8751df",
-    "orange_drive_botao_tom.png": "53615c4a4a83eec2b3bc5e075bc9abfa1bf7144288f40ed9d4f16addd3b5250c",
-    "orange_drive_frente.jpg": "ddc271b37e475dc9f030fe8df801fd6f6d64ab8a42099be3787e7e021dc684f1",
-    "orange_drive_frente_alfa.png": "762b0f693cdc63b0c1f6da5a0690730312b7f3923d337b1db782c845f2d4b407",
-    "orange_drive_manifesto.json": "82db395687f5ae9ad918d1e7fa6caf045e5ede7c5764d0b56ce750e4dc0d83fd",
-    "orange_drive_mapa.json": "05f7f1d588aef76493ee6169020a5b844dcf9735b9e69fce18214378c08e5eb5"
+    "orange_drive_botao_ganho.png": "7e7b7e4cf623216f206c8216a68f0510afad183cb0b2237534c6777d8b7d641b",
+    "orange_drive_botao_nivel.png": "518cccaa11f6fca845e008bac71d8cd3abe108a483d86d32c90073d9cc678bb0",
+    "orange_drive_botao_tom.png": "5449d2c2e558748201ba15684003a3e3e93c6371f669286ceb51b57636b682ff",
+    "orange_drive_frente.jpg": "5b618cbedefdc44f9ebc6b2d045f758dedd86ab0333586d91c7fd7c9d39b744c",
+    "orange_drive_frente_alfa.png": "d8d3268ae96b2ed880cdd30c6c14aef7df54b75f0e3af7ac9f4366a3ce5c1f9c",
+    "orange_drive_manifesto.json": "ef9edfe1447c4fd3055b74fdfb85d20a7835f261c2c604dbbb5b658ee410a7fb",
+    "orange_drive_mapa.json": "b2b334c1fffaae1006d4753a40550299eec0803d699258091c8869ea56efc59c"
    },
-   "tamanho": 353804,
+   "tamanho": 365494,
    "tipo": "pedal",
    "inspiracao": "DS-1",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5200,8 +5200,8 @@
   },
   "selenite_eq": {
    "nome": "Selenite EQ",
-   "hash": "d73b90f990e107ad",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d5b1bfbec872c7ae",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "selenite_eq_botao_a.png",
@@ -5218,26 +5218,26 @@
     "selenite_eq_mapa.json"
    ],
    "sha256": {
-    "selenite_eq_botao_a.png": "94468990f6b6dbbf5a5692dd5833477dcddac98857d43838b40903631d05d96a",
-    "selenite_eq_botao_b.png": "471f65e2e29f6f1ef63e6786ed76c91073828e8245660331acccbf37178f8525",
-    "selenite_eq_botao_c.png": "d38eae8fc8f1f608fa0c1361d4c01e197eb291f1b97e26a11b1c99451f357dda",
-    "selenite_eq_botao_d.png": "30054177bc7f5e1f857baf52f61775a5c1af0963c39ff1bcd841863281799d7f",
-    "selenite_eq_botao_e.png": "357766167b573f3425ad434d585a0139209b072da22d21f57e40ebf03e3e0ae3",
-    "selenite_eq_botao_f.png": "c974fee103b02ac2a6718d6f46cb88161d66ecfe0debce9e2682334d6a912468",
-    "selenite_eq_botao_g.png": "c04e7ed7f7022e81b0a79e4b33f58a24a813dfb99a7b79dfe7c4aa18a41f717d",
-    "selenite_eq_botao_nivel.png": "07ac61567ebb0188e0dd4db4c1f01f5fb935372eb83a4fcad5c267e96080cbe4",
-    "selenite_eq_frente.jpg": "62c0af6c9236e5d67ea5a16254b952fc74bc92e833ce2a1583d77a649df5e7dd",
-    "selenite_eq_frente_alfa.png": "47f9d1c2c81e6daab327555182d92a945601b91b1c6be46b0985cc0b5a569751",
-    "selenite_eq_manifesto.json": "7c999c42d5797e8f20732fc19db44b4e6a89495adf932ac086d576e28e81318e",
-    "selenite_eq_mapa.json": "ae6972294836b80527043aa091ded4e10c79ee369d4bb37026eaeff25e02c581"
+    "selenite_eq_botao_a.png": "d09a0b075c384759fbd53c570de4ada39d3e86e3bc6faa37e0f126cb39a26743",
+    "selenite_eq_botao_b.png": "6f40d21ac0a8ff78c68eaebf2e552ef915cbb2a7ee1e7b0992851a87e37fb073",
+    "selenite_eq_botao_c.png": "df3dda2442bf097d36d200bdb7b65445484d5fcac36cc517644177e96e9481e5",
+    "selenite_eq_botao_d.png": "ed8cf123ccc29bedf332769d6bde12c634e3f9df00f266e96ff04b40a848d2ff",
+    "selenite_eq_botao_e.png": "7f44c3271699f1908cccfe2ec37fab98a53c4e113fefc4db792a837f9ce81532",
+    "selenite_eq_botao_f.png": "1231589ffadeb65f94585e1f75a90aa7e8d024a87e0d84f8db0a3a0ca0e3f8d4",
+    "selenite_eq_botao_g.png": "6ae229a5a414c1f9d691d206e48bd76971fdc553777029053ef76bfdc5f6cd7f",
+    "selenite_eq_botao_nivel.png": "c5ef71bf347af349cff75180c13fbf53b67991593052cf9833148bbc81da63d1",
+    "selenite_eq_frente.jpg": "eed8bd1a79897a2f368482ef76d75515c7903a3001b91eb5a3e2b929e1740725",
+    "selenite_eq_frente_alfa.png": "fe6599b93785417b105221f72d4cd94f71e1a544a06800b162e265c5cb7175bd",
+    "selenite_eq_manifesto.json": "f10dc34d82854f7db41bf63cd48e5887cff59616e67b47edc15349c968cf1299",
+    "selenite_eq_mapa.json": "756bf9548a4dd3891625fa152da55eff824c0b96eb6352b5009ffa6c133b094b"
    },
-   "tamanho": 351370,
+   "tamanho": 454895,
    "tipo": "pedal",
    "inspiracao": "Boss GE-7",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "equalizador_grafico",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -6091,8 +6091,8 @@
   },
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",
-   "hash": "de5394c5cddfeaec",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d1ef0295517b4405",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "turquoise_tremolo_botao_a.png",
@@ -6104,21 +6104,21 @@
     "turquoise_tremolo_mapa.json"
    ],
    "sha256": {
-    "turquoise_tremolo_botao_a.png": "56d7a4f52ae40aff2cc08a4974a6668ddb3ae652c1ceaf76a978c60cb6a4645e",
-    "turquoise_tremolo_botao_b.png": "dbb3c4674923bcc0ed6f129cd07ca5af7b9793b41aca23ca2b0fb7568dd49d29",
-    "turquoise_tremolo_botao_c.png": "3690bfd706ead6c1ebacdb83f145ee6bec67bf68bf0e861ec4071d1cb5b4f5bc",
-    "turquoise_tremolo_frente.jpg": "176d389823c2958fb353c19c101a0f81d6c6851e264f60b71a690bf149a07d2f",
-    "turquoise_tremolo_frente_alfa.png": "e71374171eaf41328d33c4f3e71cf3994a2288c97f87aca86f61a3e911fb6bf8",
-    "turquoise_tremolo_manifesto.json": "70b84a7b4e34768c6461abff426f7664308360d05fddcf0b615b2a2f180a9afe",
-    "turquoise_tremolo_mapa.json": "c4e9a59e298629dce306867ab1b7c99f54ec98a2ef3823dd4b6d0326d7cf63a9"
+    "turquoise_tremolo_botao_a.png": "67968d44c68c5bcce915894d2ceb489431090153cc4a8eb10f99c9466a91e6ee",
+    "turquoise_tremolo_botao_b.png": "b5927fbab7f8cc311d31f4137a678178f29cb4b5f358cc9ad22807d8f7809ecf",
+    "turquoise_tremolo_botao_c.png": "966591107cd01b412eb9eba2c959385f9b9d4c95307a9e5562e158035ad030c9",
+    "turquoise_tremolo_frente.jpg": "b9d0366d810c5065e55a66a96e2ebea513dba078b1a1fac3ec42b21c28c6575b",
+    "turquoise_tremolo_frente_alfa.png": "e2c0ab4d66a632ce7e13a6beb448b5fc60bd4116fb995567e042f303dcced6a1",
+    "turquoise_tremolo_manifesto.json": "fd841f98c8d20c2f302f01cd4d189df680eaff0275a91a4f58bd11812820a453",
+    "turquoise_tremolo_mapa.json": "3470893152d625647a5abce0799d7dc1528803157f398d6302f75d727a47abe9"
    },
-   "tamanho": 490666,
+   "tamanho": 498777,
    "tipo": "pedal",
    "inspiracao": "TR-2",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "tremolo",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
