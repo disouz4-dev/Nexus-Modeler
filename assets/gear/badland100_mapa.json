@@ -7,17 +7,17 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 806,
-      "y": 732,
-      "tamanho": 105,
+      "x": 987,
+      "y": 769,
+      "tamanho": 103,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 976,
-      "y": 733,
+      "x": 1127,
+      "y": 769,
       "tamanho": 103,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
@@ -25,8 +25,8 @@
     },
     {
       "id": "grave",
-      "x": 1145,
-      "y": 733,
+      "x": 1268,
+      "y": 769,
       "tamanho": 103,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
@@ -34,27 +34,27 @@
     },
     {
       "id": "medio",
-      "x": 1315,
-      "y": 733,
-      "tamanho": 103,
+      "x": 1409,
+      "y": 768,
+      "tamanho": 104,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1483,
-      "y": 732,
-      "tamanho": 105,
+      "x": 1551,
+      "y": 767,
+      "tamanho": 106,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1651,
-      "y": 731,
-      "tamanho": 107,
+      "x": 1693,
+      "y": 766,
+      "tamanho": 108,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -68,171 +68,162 @@
   "rotulos": [
     {
       "texto": "BOLD",
-      "x": 262.1,
-      "y": 914.4,
-      "altura": 15.69,
+      "x": 482.0,
+      "y": 890.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "ON",
-      "x": 342.8,
-      "y": 914.4,
-      "altura": 15.69,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "100/50/20",
-      "x": 594.9,
-      "y": 997.9,
-      "altura": 15.69,
+      "x": 482.0,
+      "y": 1016.2,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "MASTER",
-      "x": 860.5,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1039.4,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "PRESENCE",
-      "x": 1028.6,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1179.1,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1196.6,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1318.9,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "MID",
-      "x": 1364.7,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1458.6,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 1532.8,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1601.5,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 1700.9,
-      "y": 707.3,
-      "altura": 15.69,
+      "x": 1742.9,
+      "y": 735.9,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "MASTER",
-      "x": 860.5,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1039.4,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "PRESENCE",
-      "x": 1028.6,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1179.1,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1196.6,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1318.9,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "MID",
-      "x": 1364.7,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1458.6,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 1532.8,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1601.5,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 1700.9,
-      "y": 1017.5,
-      "altura": 15.69,
+      "x": 1742.9,
+      "y": 1045.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "CH1",
-      "x": 1845.5,
-      "y": 829.8,
-      "altura": 15.69,
+      "x": 1818.4,
+      "y": 879.9,
+      "altura": 23.12,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "CH2",
-      "x": 1845.5,
-      "y": 971.0,
-      "altura": 15.69,
+      "x": 1818.4,
+      "y": 1000.1,
+      "altura": 23.12,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "INPUT",
-      "x": 2027.0,
-      "y": 903.2,
-      "altura": 15.69,
+      "x": 1930.8,
+      "y": 884.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "FTSW",
-      "x": 2127.8,
-      "y": 903.2,
-      "altura": 15.69,
+      "x": 1930.8,
+      "y": 1005.0,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -240,18 +231,18 @@
   ],
   "leds_canais": [
     {
-      "x": 1897.4,
-      "y": 783.8,
+      "x": 1851.9,
+      "y": 827.2,
       "raio": 11.2
     },
     {
-      "x": 1897.4,
-      "y": 925.3,
+      "x": 1851.9,
+      "y": 947.7,
       "raio": 11.2
     },
     {
-      "x": 1948.0,
-      "y": 857.9,
+      "x": 1851.9,
+      "y": 887.5,
       "raio": 11.2
     }
   ]

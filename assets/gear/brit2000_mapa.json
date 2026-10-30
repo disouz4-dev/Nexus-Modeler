@@ -2,13 +2,13 @@
   "nome": "Brit 2000",
   "familia": "brit2000",
   "largura": 2400,
-  "altura": 1123,
+  "altura": 1032,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
       "x": 644,
-      "y": 798,
+      "y": 719,
       "tamanho": 100,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
@@ -17,7 +17,7 @@
     {
       "id": "grave",
       "x": 748,
-      "y": 799,
+      "y": 720,
       "tamanho": 99,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
@@ -26,7 +26,7 @@
     {
       "id": "medio",
       "x": 851,
-      "y": 799,
+      "y": 720,
       "tamanho": 98,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
@@ -35,8 +35,8 @@
     {
       "id": "agudo",
       "x": 955,
-      "y": 799,
-      "tamanho": 98,
+      "y": 721,
+      "tamanho": 97,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -44,8 +44,8 @@
     {
       "id": "volume",
       "x": 1358,
-      "y": 799,
-      "tamanho": 98,
+      "y": 721,
+      "tamanho": 97,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -53,7 +53,7 @@
     {
       "id": "ganho",
       "x": 1522,
-      "y": 799,
+      "y": 720,
       "tamanho": 99,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
@@ -69,8 +69,8 @@
     {
       "texto": "POWER",
       "x": 244.8,
-      "y": 907.8,
-      "altura": 16.78,
+      "y": 835.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -78,16 +78,16 @@
     {
       "texto": "STANDBY",
       "x": 333.1,
-      "y": 907.8,
-      "altura": 16.78,
+      "y": 835.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
     },
     {
-      "texto": "DUAL SUPER LEAD",
+      "texto": "100 W",
       "x": 481.0,
-      "y": 882.1,
+      "y": 799.5,
       "altura": 15.91,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -96,8 +96,8 @@
     {
       "texto": "DEEP",
       "x": 614.6,
-      "y": 883.2,
-      "altura": 16.78,
+      "y": 810.7,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -105,8 +105,8 @@
     {
       "texto": "PRESENCE",
       "x": 696.7,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 850.9,
+      "altura": 22.18,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -114,8 +114,8 @@
     {
       "texto": "BASS",
       "x": 799.4,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -123,8 +123,8 @@
     {
       "texto": "MIDDLE",
       "x": 902.1,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -132,8 +132,8 @@
     {
       "texto": "TREBLE",
       "x": 1004.9,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -141,8 +141,8 @@
     {
       "texto": "TONE SHIFT",
       "x": 1087.0,
-      "y": 883.2,
-      "altura": 16.78,
+      "y": 805.6,
+      "altura": 17.74,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -150,8 +150,8 @@
     {
       "texto": "CLASSIC",
       "x": 1179.5,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -159,8 +159,8 @@
     {
       "texto": "ULTRA",
       "x": 1282.2,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -168,8 +168,8 @@
     {
       "texto": "VOLUME",
       "x": 1405.4,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 852.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -177,8 +177,8 @@
     {
       "texto": "LEAD 1/2",
       "x": 1487.6,
-      "y": 883.2,
-      "altura": 16.78,
+      "y": 809.6,
+      "altura": 22.18,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -186,8 +186,8 @@
     {
       "texto": "GAIN",
       "x": 1569.8,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 860.7,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -195,8 +195,8 @@
     {
       "texto": "CHANNEL",
       "x": 1662.2,
-      "y": 883.2,
-      "altura": 16.78,
+      "y": 810.7,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -204,8 +204,8 @@
     {
       "texto": "VOLUME",
       "x": 1764.9,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 860.7,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -213,7 +213,7 @@
     {
       "texto": "CLEAN/CRUNCH",
       "x": 1847.1,
-      "y": 883.2,
+      "y": 804.7,
       "altura": 16.78,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -222,8 +222,8 @@
     {
       "texto": "GAIN",
       "x": 1929.2,
-      "y": 937.4,
-      "altura": 16.78,
+      "y": 860.7,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -231,8 +231,8 @@
     {
       "texto": "INPUT",
       "x": 2042.2,
-      "y": 886.1,
-      "altura": 16.78,
+      "y": 813.6,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -240,7 +240,7 @@
     {
       "texto": "EQUALISATION",
       "x": 850.8,
-      "y": 716.6,
+      "y": 652.8,
       "altura": 15.04,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -249,7 +249,7 @@
     {
       "texto": "REVERB",
       "x": 1230.8,
-      "y": 716.6,
+      "y": 652.8,
       "altura": 15.04,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -258,7 +258,7 @@
     {
       "texto": "ULTRA GAIN",
       "x": 1487.6,
-      "y": 716.6,
+      "y": 652.8,
       "altura": 15.04,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -267,7 +267,7 @@
     {
       "texto": "CLASSIC GAIN",
       "x": 1847.1,
-      "y": 716.6,
+      "y": 652.8,
       "altura": 15.04,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -277,17 +277,17 @@
   "leds_canais": [
     {
       "x": 1663.0,
-      "y": 729.6,
+      "y": 664.4,
       "raio": 8.7
     },
     {
       "x": 1704.1,
-      "y": 729.6,
+      "y": 664.4,
       "raio": 8.7
     },
     {
       "x": 1621.8,
-      "y": 729.6,
+      "y": 664.4,
       "raio": 8.7
     }
   ]
