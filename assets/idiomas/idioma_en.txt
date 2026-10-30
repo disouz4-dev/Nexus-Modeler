@@ -397,6 +397,8 @@ countries: us gb au ca
 "RITMO" = "RHYTHM"
 "Solo" = "Lead"
 "SOLO" = "LEAD"
+"Sujo" = "Dirty"
+"Vintage" = "Vintage"
 "Moderno" = "Modern"
 "Padrão do sistema" = "System default"
 "LIMPO" = "CLEAN"

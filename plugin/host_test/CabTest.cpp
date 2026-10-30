@@ -9,6 +9,7 @@
 #include <cmath>
 #include <csignal>
 #include <cstdio>
+#include <typeinfo>
 
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
@@ -1468,6 +1469,114 @@ int main(int argc, char** argv)
     const auto logged = nexus::update::dataRoot().getChildFile("registro.txt").loadFileAsString();
     report(logged.contains("Troca de teste"), "A troca entra no registro", logged.fromLastOccurrenceOf("\n", false, false).trim().substring(0, 160));
     chosen.deleteRecursively();
+  }
+
+  // 14. O link de trocar o pacote abre em todos os pedais de captura, com a
+  // pedaleira inteira e com o pedal isolado (zoom): o clique no meio do link
+  // chega ao link, não à pedaleira.
+  {
+    std::printf("\nLink de trocar o pacote em todos os pedais\n");
+    auto pBox = withRig();
+    auto& p = *pBox;
+    ChainLayout l;
+    l.pre = {0};
+    p.setLayout(l);
+    std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+    editor->setVisible(true); // a busca do clique só olha componentes visíveis
+    auto* e = dynamic_cast<NexusEditor*>(editor.get());
+    juce::StringArray blocked;
+    int checked = 0;
+    for (int look = 0; look < NexusProcessor::kPedalLooks; ++look)
+    {
+      if (NexusProcessor::isNativeLook(look))
+        continue;
+      p.choosePedal(0, look);
+      for (const bool zoom : {false, true})
+      {
+        e->select({NexusEditor::Kind::pedal, 0});
+        e->setPedalFocus(zoom ? 0 : -1);
+        juce::MessageManager::getInstance()->runDispatchLoopUntil(5);
+        std::vector<nexus::ui::TextLink*> links;
+        collect(*editor, links);
+        nexus::ui::TextLink* link = nullptr;
+        for (auto* t : links)
+          if (visibleIn(*t, *editor) && t->onClick && t->getWidth() > 0 && t->findParentComponentOfClass<nexus::ui::CapturePanel>() == nullptr
+              && t->getParentComponent() == editor.get())
+            link = t;
+        ++checked;
+        const auto centre = editor->getLocalPoint(link, link != nullptr ? link->getLocalBounds().getCentre() : juce::Point<int>());
+        auto* hit = link != nullptr ? editor->getComponentAt(centre) : nullptr;
+        if (hit != link)
+          blocked.add(nexus::gear::GearCatalog::instance().idOf(nexus::gear::Kind::pedal, look) + (zoom ? " (zoom)" : "")
+                      + (blocked.isEmpty() ? juce::String(" [") + (link == nullptr ? juce::String("sem link") : hit == nullptr ? juce::String("nada") : juce::String(typeid(*hit).name()))
+                                               + " em " + centre.toString() + "]"
+                                           : juce::String()));
+      }
+    }
+    report(checked > 0 && blocked.isEmpty(), "O clique no link de trocar o pacote chega ao link (todos os pedais, com e sem zoom)",
+           juce::String(checked) + " casos; bloqueados: " + (blocked.isEmpty() ? juce::String("nenhum") : blocked.joinIntoString(", ").substring(0, 300)));
+  }
+
+  // 15. Drive de um pedal de captura passando de uma captura para a vizinha
+  // (botão em degraus, como na tela): sem salto e sem buraco no som.
+  {
+    std::printf("\nTroca de captura no drive do pedal\n");
+    auto pBox = withRig();
+    auto& p = *pBox;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    ChainLayout l;
+    l.pre = {0};
+    p.setLayout(l);
+    p.choosePedal(0, nexus::gear::GearCatalog::instance().find(nexus::gear::Kind::pedal, "greengage_drive"));
+    p.loadPedalPack(0, packs.getChildFile("ganho"));
+    for (int t = 0; t < 3000 && !p.slotLoaded(0); ++t)
+      settle(p, 2);
+    setParam(p, NexusProcessor::pedalParam(0, "drive").toRawUTF8(), 3.0f);
+    settle(p, 400);
+    // Seno contínuo: a troca não pode quebrar a onda.
+    std::vector<double> tone(static_cast<size_t>(48000 * 2));
+    for (size_t i = 0; i < tone.size(); ++i)
+      tone[i] = 0.3 * std::sin(2.0 * juce::MathConstants<double>::pi * 220.0 * static_cast<double>(i) / 48000.0);
+    std::vector<float> out;
+    juce::AudioBuffer<float> buffer(2, 128);
+    juce::MidiBuffer midi;
+    const size_t switchAt = 48000;
+    for (size_t start = 0; start + 128 <= tone.size(); start += 128)
+    {
+      if (start == switchAt)
+        setParam(p, NexusProcessor::pedalParam(0, "drive").toRawUTF8(), 4.0f);
+      for (int ch = 0; ch < 2; ++ch)
+        for (int i = 0; i < 128; ++i)
+          buffer.setSample(ch, i, static_cast<float>(tone[start + static_cast<size_t>(i)]));
+      p.processBlock(buffer, midi);
+      out.insert(out.end(), buffer.getReadPointer(0), buffer.getReadPointer(0) + 128);
+    }
+    // Salto: maior segunda diferença perto da troca contra a de cada captura tocando parada.
+    auto jump = [&](size_t from, size_t to) {
+      double m = 0.0;
+      for (size_t i = from + 2; i < to; ++i)
+        m = std::max(m, std::abs(static_cast<double>(out[i]) - 2.0 * out[i - 1] + out[i - 2]));
+      return m;
+    };
+    const double steady = std::max(jump(switchAt - 24000, switchAt - 4800), jump(switchAt + 24000, out.size()));
+    const double during = jump(switchAt, switchAt + 24000);
+    const double jumpDb = 20.0 * std::log10((during + 1e-12) / (steady + 1e-12));
+    // Buraco: menor nível em janelas de 5 ms na troca contra o nível parado.
+    auto rms = [&](size_t from, size_t n) {
+      double e = 0.0;
+      for (size_t i = from; i < from + n; ++i)
+        e += static_cast<double>(out[i]) * out[i];
+      return std::sqrt(e / static_cast<double>(n));
+    };
+    double lowest = 1e9;
+    for (size_t at = switchAt; at + 240 < switchAt + 24000; at += 240)
+      lowest = std::min(lowest, rms(at, 240));
+    const double level = std::min(rms(switchAt - 9600, 4800), rms(out.size() - 4800, 4800));
+    const double gapDb = 20.0 * std::log10((lowest + 1e-12) / (level + 1e-12));
+    report(p.slotLoaded(0) && jumpDb < 3.0, "Trocar de captura no drive não dá salto",
+           "salto na troca " + juce::String(jumpDb, 1) + " dB acima do som parado");
+    report(gapDb > -3.0, "Trocar de captura no drive não abre buraco", "menor nível na troca " + juce::String(gapDb, 1) + " dB");
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");

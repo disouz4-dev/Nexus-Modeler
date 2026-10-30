@@ -397,6 +397,8 @@ countries: cn sg
 "RITMO" = "节奏"
 "Solo" = "独奏"
 "SOLO" = "独奏"
+"Sujo" = "失真"
+"Vintage" = "复古"
 "Moderno" = "现代"
 "Padrão do sistema" = "系统默认"
 "LIMPO" = "清音"

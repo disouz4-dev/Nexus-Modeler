@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "recto_triple",
-  "versao": "1.0.5",
+  "versao": "1.0.6",
   "tipo": "cabecote",
   "nome": "Recto Triple",
   "inspiracao": "Triple Rectifier",
@@ -11,7 +11,48 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Triple Rectifier",
+      "tons": [
+        {
+          "id": 52642,
+          "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+          "tipo": "amp",
+          "capturas": 1,
+          "pacote": "Canal 1 Limpo",
+          "padrao": true,
+          "nota": "canal limpo (CLN), uma captura",
+          "mapa": {
+            "DIO-CLN Instant gratification - SM57": 5
+          }
+        },
+        {
+          "id": 52642,
+          "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+          "tipo": "amp",
+          "capturas": 1,
+          "pacote": "Canal 2 Vintage",
+          "padrao": true,
+          "nota": "canal 2 no modo Vintage (VNT), uma captura",
+          "mapa": {
+            "DIO-VNT Chaosball - SM57": 5
+          }
+        },
+        {
+          "id": 52642,
+          "titulo": "Mesa Boogie Triple Rectifier Multi-Watt",
+          "tipo": "amp",
+          "capturas": 1,
+          "pacote": "Canal 3 Moderno",
+          "padrao": true,
+          "nota": "canal 3 no modo Modern (MDN), uma captura",
+          "mapa": {
+            "DIO-MDN Gobsmacked - SM57": 5
+          }
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 10,
   "signature": null,

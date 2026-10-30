@@ -397,6 +397,8 @@ countries: it ch
 "RITMO" = "RITMICA"
 "Solo" = "Solista"
 "SOLO" = "SOLISTA"
+"Sujo" = "Sporco"
+"Vintage" = "Vintage"
 "Moderno" = "Moderno"
 "Padrão do sistema" = "Predefinito di sistema"
 "LIMPO" = "PULITO"

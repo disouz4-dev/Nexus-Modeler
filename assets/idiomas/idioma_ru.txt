@@ -397,6 +397,8 @@ countries: ru
 "RITMO" = "РИТМ"
 "Solo" = "Соло"
 "SOLO" = "СОЛО"
+"Sujo" = "Грязный"
+"Vintage" = "Винтаж"
 "Moderno" = "Модерн"
 "Padrão do sistema" = "Системное по умолчанию"
 "LIMPO" = "ЧИСТЫЙ"

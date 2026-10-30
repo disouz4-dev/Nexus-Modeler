@@ -397,6 +397,8 @@ countries: es mx ar co cl
 "RITMO" = "RITMO"
 "Solo" = "Solo"
 "SOLO" = "SOLO"
+"Sujo" = "Sucio"
+"Vintage" = "Vintage"
 "Moderno" = "Moderno"
 "Padrão do sistema" = "Predeterminado del sistema"
 "LIMPO" = "LIMPIO"

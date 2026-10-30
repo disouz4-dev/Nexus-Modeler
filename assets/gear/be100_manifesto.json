@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "be100",
-  "versao": "1.0.3",
+  "versao": "1.0.4",
   "tipo": "cabecote",
   "nome": "BE 100",
   "inspiracao": "BE-100",
@@ -11,7 +11,52 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "BE 100",
+      "tons": [
+        {
+          "id": 64322,
+          "titulo": "Friedman BE100 Deluxe",
+          "criador": "2dor",
+          "tipo": "amp",
+          "capturas": 2,
+          "pacote": "Canal 1 Limpo",
+          "padrao": true,
+          "nota": "canal limpo: limpo e rock",
+          "mapa": {
+            "BE100DLX-CLN Tender Clean": 3,
+            "BE100DLX-CLN Rock #01": 6
+          },
+          "serie": [
+            "[AMP]"
+          ]
+        },
+        {
+          "id": 72085,
+          "titulo": "FRIEDMAN BE-100 (GAIN STAGES)",
+          "tipo": "amp",
+          "capturas": 9,
+          "padrao": true,
+          "nota": "Canal BE com ganho de 1 a 9",
+          "mapa": {
+            "BE - GAIN 1": 1,
+            "BE - GAIN 2": 2,
+            "BE - GAIN 3": 3,
+            "BE - GAIN 4": 4,
+            "BE - GAIN 5": 5,
+            "BE - GAIN 6": 6,
+            "BE - GAIN 7": 7,
+            "BE - GAIN 8": 8,
+            "BE - GAIN 9": 9
+          },
+          "serie": [
+            "BE100 - BE - "
+          ],
+          "pacote": "Canal 2 BE"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 5,
   "signature": null,

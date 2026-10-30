@@ -397,6 +397,8 @@ countries: de at ch
 "RITMO" = "RHYTHMUS"
 "Solo" = "Lead"
 "SOLO" = "LEAD"
+"Sujo" = "Dreckig"
+"Vintage" = "Vintage"
 "Moderno" = "Modern"
 "Padrão do sistema" = "Systemstandard"
 "LIMPO" = "CLEAN"

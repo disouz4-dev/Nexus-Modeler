@@ -397,6 +397,8 @@ countries: jp
 "RITMO" = "リズム"
 "Solo" = "リード"
 "SOLO" = "リード"
+"Sujo" = "ダーティ"
+"Vintage" = "ヴィンテージ"
 "Moderno" = "モダン"
 "Padrão do sistema" = "システムの既定"
 "LIMPO" = "クリーン"

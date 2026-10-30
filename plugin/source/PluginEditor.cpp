@@ -64,9 +64,12 @@ void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> 
   g.setOpacity(1.0f);
 }
 
-// Rótulos do painel: caixas de texto transparentes por cima da imagem 3D,
-// traduzidas, na posição, tamanho e perspectiva anotados pelo gerador.
-void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float> image, float alpha = 1.0f)
+// Rótulos do painel: texto por cima da imagem 3D, traduzido, na posição e
+// perspectiva anotadas pelo gerador. minEm: letra mínima na tela (o cabeçote
+// e o pedal grandes usam 12 px na janela padrão; a janela maior ou menor
+// escala junto). A letra nunca encolhe para caber: a palavra longa quebra em
+// duas linhas. Contorno fino do tom oposto, para ler sobre qualquer painel.
+void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float> image, float alpha = 1.0f, float minEm = 0.0f)
 {
   if (!art.valid())
     return;
@@ -75,31 +78,46 @@ void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float
   {
     // O tamanho do Blender e o "em" do JUCE não medem igual: 0,74 deixa a
     // letra do tamanho que estava gravada no painel.
-    const float em = l.height * scale * 0.74f;
+    const float drawn = l.height * scale * 0.74f;
+    const float em = std::max(drawn, minEm);
     if (em < 2.0f)
       continue;
     const float kerning = language::allowsLetterSpacing() ? std::max(0.0f, l.spacing - 1.0f) + 0.02f : 0.0f;
-    auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
+    const auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
     const auto text = upper(TRANS(l.text));
-    const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale);
-    // Palavra longa (ou tradução maior) perto da borda: diminui a letra até
-    // caber dentro da peça, com uma folguinha da borda.
+    // Letra maior que a gravada cresce para baixo, a partir do topo do rótulo:
+    // o nome fica embaixo do botão, sem subir por cima dele.
+    const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale + 0.5f * (em - drawn));
+    // Não cabe até a borda da peça: duas linhas, quebradas no espaço mais perto do meio.
     const float left = image.getX() + art.body.getX() * scale, right = image.getX() + art.body.getRight() * scale;
     const float margin = art.body.getWidth() * scale * 0.05f;
     const float room = 2.0f * std::min(at.x - left - margin, right - margin - at.x);
-    if (const float width = juce::GlyphArrangement::getStringWidth(font, text); room > 0.0f && width > room)
-      font = Fonts::get().displayEm(em * room / width).withExtraKerningFactor(kerning);
-    // Texto desenhado direto (a fonte reserva do sistema cobre japonês, chinês,
-    // árabe...), achatado pela perspectiva e um pouco engrossado, como tinta
-    // de serigrafia.
-    juce::Graphics::ScopedSaveState save(g);
-    g.addTransform(juce::AffineTransform::scale(1.0f, l.squash, at.x, at.y));
-    g.setFont(font);
-    g.setColour(l.colour.withAlpha(0.9f * alpha));
-    const auto box = juce::Rectangle<float>(at.x - 400.0f, at.y - em, 800.0f, em * 2.0f);
-    const float d = std::max(0.25f, em * 0.018f);
-    for (const auto offset : {juce::Point<float>(-d, 0.0f), juce::Point<float>(d, 0.0f), juce::Point<float>(0.0f, 0.0f)})
-      g.drawText(text, box.translated(offset.x, offset.y), juce::Justification::centred, false);
+    juce::StringArray lines(text);
+    if (const float width = juce::GlyphArrangement::getStringWidth(font, text); room > 0.0f && width > room && text.containsChar(' '))
+    {
+      int cut = -1;
+      for (int i = 0; i < text.length(); ++i)
+        if (text[i] == ' ' && (cut < 0 || std::abs(i - text.length() / 2) < std::abs(cut - text.length() / 2)))
+          cut = i;
+      lines = juce::StringArray(text.substring(0, cut).trim(), text.substring(cut + 1).trim());
+    }
+    juce::Path shape;
+    const float lineHeight = em * 1.05f;
+    for (int i = 0; i < lines.size(); ++i)
+    {
+      juce::GlyphArrangement glyphs;
+      const float y = at.y + (static_cast<float>(i) - 0.5f * static_cast<float>(lines.size() - 1)) * lineHeight;
+      glyphs.addJustifiedText(font, lines[i], at.x - 400.0f, y + font.getAscent() * 0.5f - font.getDescent() * 0.5f, 800.0f,
+                              juce::Justification::horizontallyCentred);
+      glyphs.createPath(shape);
+    }
+    // Achatado pela perspectiva, como tinta de serigrafia no painel.
+    shape.applyTransform(juce::AffineTransform::scale(1.0f, l.squash, at.x, at.y));
+    const bool light = l.colour.getPerceivedBrightness() > 0.5f;
+    g.setColour((light ? juce::Colours::black : juce::Colours::white).withAlpha(0.75f * alpha));
+    g.strokePath(shape, juce::PathStrokeType(std::max(1.0f, em * 0.14f), juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
+    g.setColour(l.colour.withAlpha(alpha));
+    g.fillPath(shape);
   }
 }
 
@@ -517,11 +535,23 @@ void NexusEditor::GearStage::setArea(juce::Rectangle<float> area)
   repaint();
 }
 
+namespace
+{
+// O link de trocar o pacote fica embaixo do pedal grande e da pedaleira (o
+// pedal alto ou ampliado desce sobre o título); o clique em cima dele é dele.
+bool overChangeLink(const juce::Component& c, juce::Point<int> p, const juce::Component& link)
+{
+  return link.isVisible() && link.getParentComponent() == c.getParentComponent() && link.getBounds().contains(p + c.getPosition());
+}
+} // namespace
+
 bool NexusEditor::GearStage::hitTest(int x, int y)
 {
+  const juce::Point<int> p{x, y};
+  if (const auto* editor = findParentComponentOfClass<NexusEditor>(); editor != nullptr && overChangeLink(*this, p, editor->mChangeLink))
+    return false;
   if (mArea.isEmpty())
     return true;
-  const juce::Point<int> p{x, y};
   return mImage.contains(p.toFloat()) || (mSync.isVisible() && mSync.getBounds().contains(p)) || (mTap.isVisible() && mTap.getBounds().contains(p));
 }
 
@@ -567,7 +597,7 @@ void NexusEditor::GearStage::paint(juce::Graphics& g)
   }
   // Ligado ou desligado, o pedal tem a mesma luz: só o LED muda.
   drawGear(g, mArt->front, mImage);
-  drawGearLabels(g, *mArt, mImage);
+  drawGearLabels(g, *mArt, mImage, 1.0f, 12.0f);
 }
 
 void NexusEditor::GearStage::paintOverChildren(juce::Graphics& g)
@@ -848,6 +878,8 @@ bool NexusEditor::BoardView::zooming() const
 
 bool NexusEditor::BoardView::hitTest(int x, int y)
 {
+  if (overChangeLink(*this, {x, y}, mEditor.mChangeLink))
+    return false;
   // A faixa do título (embaixo) é do título, com o link de trocar o pacote;
   // no zoom, só o pedal ampliado que desce por cima dela é da pedaleira.
   if (y < getHeight() - kTitleHeight)

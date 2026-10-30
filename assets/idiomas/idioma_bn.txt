@@ -397,6 +397,8 @@ countries: bd in
 "RITMO" = "রিদম"
 "Solo" = "লিড"
 "SOLO" = "লিড"
+"Sujo" = "ডার্টি"
+"Vintage" = "ভিন্টেজ"
 "Moderno" = "মডার্ন"
 "Padrão do sistema" = "সিস্টেম ডিফল্ট"
 "LIMPO" = "ক্লিন"

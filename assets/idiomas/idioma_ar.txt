@@ -397,6 +397,8 @@ countries: sa eg ae ma
 "RITMO" = "إيقاع"
 "Solo" = "منفرد"
 "SOLO" = "منفرد"
+"Sujo" = "مشوَّه"
+"Vintage" = "كلاسيكي"
 "Moderno" = "حديث"
 "Padrão do sistema" = "افتراضي النظام"
 "LIMPO" = "نظيف"

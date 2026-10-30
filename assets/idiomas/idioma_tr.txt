@@ -397,6 +397,8 @@ countries: tr
 "RITMO" = "RİTİM"
 "Solo" = "Solo"
 "SOLO" = "SOLO"
+"Sujo" = "Kirli"
+"Vintage" = "Vintage"
 "Moderno" = "Modern"
 "Padrão do sistema" = "Sistem varsayılanı"
 "LIMPO" = "TEMİZ"

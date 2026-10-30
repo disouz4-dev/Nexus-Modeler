@@ -397,6 +397,8 @@ countries: in
 "RITMO" = "रिदम"
 "Solo" = "लीड"
 "SOLO" = "लीड"
+"Sujo" = "डर्टी"
+"Vintage" = "विंटेज"
 "Moderno" = "मॉडर्न"
 "Padrão do sistema" = "सिस्टम डिफ़ॉल्ट"
 "LIMPO" = "क्लीन"

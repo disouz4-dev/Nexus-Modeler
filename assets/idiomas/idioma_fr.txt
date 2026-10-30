@@ -397,6 +397,8 @@ countries: fr ca be ch
 "RITMO" = "RYTHMIQUE"
 "Solo" = "Solo"
 "SOLO" = "SOLO"
+"Sujo" = "Saturé"
+"Vintage" = "Vintage"
 "Moderno" = "Moderne"
 "Padrão do sistema" = "Par défaut du système"
 "LIMPO" = "CLAIR"

@@ -447,6 +447,8 @@ TABELA = [
     ("RITMO", "RHYTHM", "RITMO", "RYTHMIQUE", "RITMICA", "RHYTHMUS", "リズム", "节奏", "리듬", "रिदम", "إيقاع", "রিদম", "РИТМ", "RITME", "RİTİM"),
     ("Solo", "Lead", "Solo", "Solo", "Solista", "Lead", "リード", "独奏", "리드", "लीड", "منفرد", "লিড", "Соло", "Lead", "Solo"),
     ("SOLO", "LEAD", "SOLO", "SOLO", "SOLISTA", "LEAD", "リード", "独奏", "리드", "लीड", "منفرد", "লিড", "СОЛО", "LEAD", "SOLO"),
+    ("Sujo", "Dirty", "Sucio", "Saturé", "Sporco", "Dreckig", "ダーティ", "失真", "더티", "डर्टी", "مشوَّه", "ডার্টি", "Грязный", "Kotor", "Kirli"),
+    ("Vintage", "Vintage", "Vintage", "Vintage", "Vintage", "Vintage", "ヴィンテージ", "复古", "빈티지", "विंटेज", "كلاسيكي", "ভিন্টেজ", "Винтаж", "Vintage", "Vintage"),
     ("Moderno", "Modern", "Moderno", "Moderne", "Moderno", "Modern", "モダン", "现代", "모던", "मॉडर्न", "حديث", "মডার্ন", "Модерн", "Modern", "Modern"),
     ("Padrão do sistema", "System default", "Predeterminado del sistema", "Par défaut du système", "Predefinito di sistema", "Systemstandard", "システムの既定", "系统默认", "시스템 기본값", "सिस्टम डिफ़ॉल्ट", "افتراضي النظام", "সিস্টেম ডিফল্ট", "Системное по умолчанию", "Bawaan sistem", "Sistem varsayılanı"),
     ("LIMPO", "CLEAN", "LIMPIO", "CLAIR", "PULITO", "CLEAN", "クリーン", "清音", "클린", "क्लीन", "نظيف", "ক্লিন", "ЧИСТЫЙ", "CLEAN", "TEMİZ"),

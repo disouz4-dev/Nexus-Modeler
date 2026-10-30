@@ -397,6 +397,8 @@ countries: id
 "RITMO" = "RITME"
 "Solo" = "Lead"
 "SOLO" = "LEAD"
+"Sujo" = "Kotor"
+"Vintage" = "Vintage"
 "Moderno" = "Modern"
 "Padrão do sistema" = "Bawaan sistem"
 "LIMPO" = "CLEAN"

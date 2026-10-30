@@ -397,6 +397,8 @@ countries: kr
 "RITMO" = "리듬"
 "Solo" = "리드"
 "SOLO" = "리드"
+"Sujo" = "더티"
+"Vintage" = "빈티지"
 "Moderno" = "모던"
 "Padrão do sistema" = "시스템 기본값"
 "LIMPO" = "클린"
