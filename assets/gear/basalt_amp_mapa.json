@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 121,
-      "y": 146,
-      "tamanho": 82,
+      "x": 108,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 213,
-      "y": 146,
-      "tamanho": 82,
+      "x": 208,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 398,
-      "y": 146,
-      "tamanho": 82,
+      "x": 408,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -42,76 +42,76 @@
   "rotulos": [
     {
       "texto": "NÍVEL",
-      "x": 164.4,
-      "y": 133.9,
+      "x": 154.6,
+      "y": 170.9,
       "altura": 16.55,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.15
     },
     {
       "texto": "ALTO",
-      "x": 254.8,
-      "y": 133.9,
+      "x": 252.8,
+      "y": 170.9,
       "altura": 16.55,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.15
     },
     {
       "texto": "BAIXO",
-      "x": 345.2,
-      "y": 133.9,
+      "x": 351.1,
+      "y": 170.9,
       "altura": 16.55,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.15
     },
     {
       "texto": "DRIVE",
-      "x": 435.6,
-      "y": 133.9,
+      "x": 449.3,
+      "y": 170.9,
       "altura": 16.55,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.15
     },
     {
       "texto": "MIC",
-      "x": 191.9,
-      "y": 256.5,
+      "x": 156.6,
+      "y": 284.0,
       "altura": 13.23,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.1
     },
     {
       "texto": "MOD",
-      "x": 270.6,
-      "y": 256.5,
+      "x": 239.1,
+      "y": 284.0,
       "altura": 13.23,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.1
     },
     {
       "texto": "AMP",
-      "x": 349.1,
-      "y": 256.5,
+      "x": 323.6,
+      "y": 284.0,
       "altura": 13.23,
       "achatamento": 1.0,
-      "cor": "#f2c918",
+      "cor": "#ffe718",
       "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 534.5,
-    "raio": 51.0
+    "y": 475.5,
+    "raio": 35.0
   },
   "led": {
-    "x": 442.1,
-    "y": 299.6,
-    "raio": 12.8
+    "x": 424.4,
+    "y": 322.1,
+    "raio": 14.3
   }
 }

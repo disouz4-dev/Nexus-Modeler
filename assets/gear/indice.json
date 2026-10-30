@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:11:44Z",
+ "gerado": "2026-10-30T11:13:53Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -399,8 +399,8 @@
   },
   "basalt_amp": {
    "nome": "Basalt Amp",
-   "hash": "de3716037594a4df",
-   "data": "2026-10-29T19:39:40Z",
+   "hash": "13e56841bbb3db52",
+   "data": "2026-10-30T11:13:53Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "basalt_amp_botao_ganho.png",
@@ -412,21 +412,21 @@
     "basalt_amp_mapa.json"
    ],
    "sha256": {
-    "basalt_amp_botao_ganho.png": "bfc49d10b42cd2d5456311ce0980a1bf3340d8e05a940eba6e18511152ad7b6b",
-    "basalt_amp_botao_nivel.png": "7b472aa3a7dc663f2e4dcf79babe1fe7c40dcf47046c8db4365057980d5c9d71",
-    "basalt_amp_botao_tom.png": "f83fc34ef311196f5c4660e1bf3bbe5dbbe79fc1a7dd0a653532db504d50f6c4",
-    "basalt_amp_frente.jpg": "9cfbb6dd0b61c0921b59cde981c8a525720efc079665e74b3075d0e1249b1558",
-    "basalt_amp_frente_alfa.png": "cb338c5162fa1fffbc354355939f6c8a48446b58f4ddfb8c13829cb211ae0df4",
-    "basalt_amp_manifesto.json": "7713032355aef7462de839a6606fdc915ed335c6254a32e2f5a12cbc16c7c4f6",
-    "basalt_amp_mapa.json": "b0d627f65ed7ead80b1a80fe8b34bb1077fb5562f6ab411628c5b9d1f62056c1"
+    "basalt_amp_botao_ganho.png": "ed8a5008c55da7d88eedc2c35291fe7d48668c8b3e856dfc7b83f48947570c69",
+    "basalt_amp_botao_nivel.png": "501996bd47611ff8d884d5bb3bbc3e78f6f5c6566f25a041a2c6092f55302313",
+    "basalt_amp_botao_tom.png": "ab0f61188378bd2bf631eb27a984d3ff11ce5974838036e25cbcf08482bc488e",
+    "basalt_amp_frente.jpg": "c48c1976e38049897df383263c9be212a99f44b10ca597526c6263c8887dc87c",
+    "basalt_amp_frente_alfa.png": "96329993b0cb43703fe629e390184f497800b00d3f37afcb4a71a71a9ae1191e",
+    "basalt_amp_manifesto.json": "1bf331ad3ecafd53c89642484221cab46165ab598ac55dda87692370e765467c",
+    "basalt_amp_mapa.json": "4ed087437e45965c6d63e8bccb06c6e314c666759824c45dabe47accc5c95f4e"
    },
-   "tamanho": 261875,
+   "tamanho": 273912,
    "tipo": "pedal",
    "inspiracao": "Tech 21 SansAmp",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

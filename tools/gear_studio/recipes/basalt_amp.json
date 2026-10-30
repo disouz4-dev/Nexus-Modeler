@@ -11,23 +11,23 @@
   },
   "pintura": {
     "cor": [
-      0.0078,
-      0.0078,
-      0.0078
+      0.0037,
+      0.0037,
+      0.0037
     ],
-    "metalico": 0.0,
-    "aspereza": 0.28,
-    "textura": "martelado"
+    "metalico": 0.25,
+    "aspereza": 0.5,
+    "textura": "purpurina"
   },
   "texto_cor": [
-    0.8913,
-    0.586,
+    1.0,
+    0.7969,
     0.009
   ],
   "modelo": "BASALT AMP",
   "botao_estilo": {
-    "diametro_m": 0.016,
-    "altura_m": 0.013,
+    "diametro_m": 0.0175,
+    "altura_m": 0.014,
     "saia": false,
     "corpo": [
       0.0037,
@@ -35,8 +35,8 @@
       0.0037
     ],
     "traco": [
-      0.8913,
-      0.586,
+      1.0,
+      0.7969,
       0.009
     ]
   },
@@ -45,24 +45,24 @@
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.69,
-        0.74
+        -0.74,
+        0.58
       ]
     },
     {
       "id": "tom",
       "rotulo": "ALTO",
       "pos": [
-        -0.23,
-        0.74
+        -0.24,
+        0.58
       ]
     },
     {
       "id": "fixo_baixo",
       "rotulo": "BAIXO",
       "pos": [
-        0.23,
-        0.74
+        0.26,
+        0.58
       ],
       "fixo": true
     },
@@ -70,14 +70,11 @@
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.69,
-        0.74
+        0.76,
+        0.58
       ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/basalt_amp.svg"
-  },
   "medidas_fonte": "95 x 121 x 51 mm (Tech 21, ficha oficial)",
   "quadro": {
     "largura_rel": 2.0,
@@ -85,26 +82,23 @@
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": -0.84,
-  "logo_m": 0.011,
-  "pisante_y": -0.62,
   "rotulo_embaixo": false,
   "rotulo_m": 0.004,
   "texto_cor2": [
-    0.8913,
-    0.586,
+    1.0,
+    0.7969,
     0.009
   ],
   "led": [
-    0.72,
-    0.3
+    0.63,
+    0.21
   ],
   "pecas": [
     {
       "tipo": "chave_deslizante",
       "pos": [
-        -0.55,
-        0.3
+        -0.73,
+        0.19
       ],
       "rotulo": "MIC",
       "rotulo_pos": "cima"
@@ -112,8 +106,8 @@
     {
       "tipo": "chave_deslizante",
       "pos": [
-        -0.15,
-        0.3
+        -0.31,
+        0.19
       ],
       "rotulo": "MOD",
       "rotulo_pos": "cima"
@@ -121,11 +115,174 @@
     {
       "tipo": "chave_deslizante",
       "pos": [
-        0.25,
-        0.3
+        0.12,
+        0.19
       ],
       "rotulo": "AMP",
       "rotulo_pos": "cima"
     }
-  ]
+  ],
+  "paineis": [
+    {
+      "pontos": [
+        [
+          -0.8664,
+          0.4102
+        ],
+        [
+          -0.8147,
+          0.3695
+        ],
+        [
+          -0.8664,
+          0.3695
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    },
+    {
+      "pontos": [
+        [
+          0.6466,
+          0.4102
+        ],
+        [
+          0.6983,
+          0.3695
+        ],
+        [
+          0.6466,
+          0.3695
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    },
+    {
+      "pontos": [
+        [
+          -0.1595,
+          0.739
+        ],
+        [
+          -0.1164,
+          0.7051
+        ],
+        [
+          -0.1595,
+          0.7051
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    },
+    {
+      "pontos": [
+        [
+          -0.1078,
+          0.7119
+        ],
+        [
+          -0.0647,
+          0.678
+        ],
+        [
+          -0.1078,
+          0.678
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    },
+    {
+      "pontos": [
+        [
+          0.3491,
+          0.739
+        ],
+        [
+          0.3922,
+          0.7051
+        ],
+        [
+          0.3491,
+          0.7051
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    },
+    {
+      "pontos": [
+        [
+          0.4009,
+          0.7119
+        ],
+        [
+          0.444,
+          0.678
+        ],
+        [
+          0.4009,
+          0.678
+        ]
+      ],
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ]
+    }
+  ],
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.003,
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.39
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "BASALT AMP",
+      "pos": [
+        0.0,
+        -0.7
+      ],
+      "tam_m": 0.02,
+      "cor": [
+        1.0,
+        0.7969,
+        0.009
+      ],
+      "espaco": 1.2,
+      "largura_max": 1.85
+    }
+  ],
+  "logo": {
+    "svg": "estampas/tamarind_amp_tema.svg",
+    "tam_m": 0.0105,
+    "pos": [
+      0.0,
+      -0.88
+    ]
+  }
 }
