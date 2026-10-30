@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:51:20Z",
+ "gerado": "2026-10-30T14:55:30Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1549,8 +1549,8 @@
   },
   "cherry_fuzz": {
    "nome": "Cherry Fuzz",
-   "hash": "2cadbd9255c0a1c4",
-   "data": "2026-10-30T10:48:29Z",
+   "hash": "fa7dd0b9a9e8a566",
+   "data": "2026-10-30T14:55:30Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "cherry_fuzz_botao_ganho.png",
@@ -1561,20 +1561,20 @@
     "cherry_fuzz_mapa.json"
    ],
    "sha256": {
-    "cherry_fuzz_botao_ganho.png": "89967b689487a0ee4b9a77d8b83ba51984224a19145bdd6f521c54588f35afea",
-    "cherry_fuzz_botao_nivel.png": "35e7662ee447742589802e33e2fa16f82dee954cbb1b971415d33aa640f1414e",
-    "cherry_fuzz_frente.jpg": "59a86231cc0a9a1bfa3273e133884547ecb33c564ed212477d4c26159ead6e2a",
-    "cherry_fuzz_frente_alfa.png": "48a5c790dd337d1ef8f15533e0e5f5894678166b97604d377d0d8457943272c1",
-    "cherry_fuzz_manifesto.json": "56ff55ab0743fca38b056c4dfe794e57ae42d6f52272f141443c63fefa888655",
+    "cherry_fuzz_botao_ganho.png": "9d6bebab229cdd2d650ef35715dd683817cd545cf8d255875b8193cd65dfffa4",
+    "cherry_fuzz_botao_nivel.png": "f24f4080b43e9baafd7d23e7bcd4c39e4156b85ad4ffc79d60fd618f899c2645",
+    "cherry_fuzz_frente.jpg": "9f17ce1b31e15bf710c58e70afc4681d84cd42391dde46bb66e82cb314f9ac24",
+    "cherry_fuzz_frente_alfa.png": "c47ee7716771185de7241c0263c4d9df48b93a8494ac944cc27ce755fc0d5b74",
+    "cherry_fuzz_manifesto.json": "f27a5d1e11542eef89f5dc89b09f319e90b6f60cdae7c5f0fde49d06fbcc9cc2",
     "cherry_fuzz_mapa.json": "d90d6ba3601776eb06e754d501addc20045763936c005979c1b0e999f4c8c3fd"
    },
-   "tamanho": 132517,
+   "tamanho": 134329,
    "tipo": "pedal",
    "inspiracao": "Dunlop Fuzz Face",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
