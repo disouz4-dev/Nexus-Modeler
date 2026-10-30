@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:30:15Z",
+ "gerado": "2026-10-30T19:32:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2189,8 +2189,8 @@
   },
   "emperor20": {
    "nome": "Emperor 20",
-   "hash": "284d7af31962f650",
-   "data": "2026-10-30T13:09:34Z",
+   "hash": "7f0943fbd093a269",
+   "data": "2026-10-30T19:32:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emperor20_botao_agudo.png",
@@ -2205,24 +2205,24 @@
     "emperor20_mapa.json"
    ],
    "sha256": {
-    "emperor20_botao_agudo.png": "4587659bd1251d5c56aca4f77888e0a7c899cf47c22f8563bd4093af945b003e",
-    "emperor20_botao_ganho.png": "b4e0280b03c81cd430e80b9d4f1970d476cb01fa2e7f83a01f06b9cd6da00a6f",
-    "emperor20_botao_grave.png": "3036464a510028ab97ddb39161cb70f348f717d165ddde94e4311dfa76f03cbb",
-    "emperor20_botao_medio.png": "33175745cad0958b000c217d41d0bc87ed0e695bd4567811afaba24227a7111f",
-    "emperor20_botao_presenca.png": "f31710a6d05b88685c1af540b9e82f77d1569020053481b911b1b050ea805232",
-    "emperor20_botao_volume.png": "d668d25689c67543ff776fe48f2585fe8bcb9ab43ef99ad17bc85a1bf77a7666",
-    "emperor20_frente.jpg": "b83e868f29cf623465f0bd98e74870922cf09dd2000276fa344660744f9493df",
-    "emperor20_frente_alfa.png": "62bf4d155de480bff68920a29e067a954cbbfbd4298221a2249efc00dc94c017",
-    "emperor20_manifesto.json": "5ed7f1dac05f75de71681a658967688241edc5142f8e0de3fd128dbe391d4ad3",
-    "emperor20_mapa.json": "36da22635455f335c8e46d0609762ea5fb12a182518c84d56dab722708842b69"
+    "emperor20_botao_agudo.png": "cba7b15e589497fd74408ff7ab1c79a5ef5fec3e313dc9d5873e4233d25ee2f3",
+    "emperor20_botao_ganho.png": "86c6522965cd3a1ef96abb82fa5888ff0963ea391f2e20ccfe81beb40fabae89",
+    "emperor20_botao_grave.png": "3b2e1ae3e43021b48452b2f8f0d573544bfd0f33564898f892c3ebcb563616bf",
+    "emperor20_botao_medio.png": "5bd0954619d4f612a479a65b1adae98d05d8f3321fa1fc667f4b27457ea5b89f",
+    "emperor20_botao_presenca.png": "77cd004e62f7b545259b02afadce35c1852648c5d8f8b4bcc5365f6e8ff1b669",
+    "emperor20_botao_volume.png": "d3567508ba5dc7e0ef9d2dbbe1402d30a69f39e4d6d030e0865be64aa4eccbea",
+    "emperor20_frente.jpg": "dd768ed915b5f0a34320cda41a47438a16079445aae0e678e61c186cc5000a3f",
+    "emperor20_frente_alfa.png": "7a4412d9222ff173102628f491854138d7cea3a8fe354bf234a13c9dd12f8a4b",
+    "emperor20_manifesto.json": "67bf7f0308ba2522ba159fb205e9fa07462ee5c6f6283f2b30f4f66c36e74d9a",
+    "emperor20_mapa.json": "2df7f7c2a8666d719c40bb91d2b1427b5c7e78b7d5ca5aff769c2f47f62b3a15"
    },
-   "tamanho": 1449074,
+   "tamanho": 1004538,
    "tipo": "cabecote",
    "inspiracao": "Tone King Imperial",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
