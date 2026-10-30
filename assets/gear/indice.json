@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T08:07:39Z",
+ "gerado": "2026-10-30T08:13:54Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2117,8 +2117,8 @@
   },
   "eclipse_vibe": {
    "nome": "Eclipse Vibe",
-   "hash": "29f30525716f09ff",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "4d59148fbfbc07a0",
+   "data": "2026-10-30T08:13:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "eclipse_vibe_botao_a.png",
@@ -2130,21 +2130,21 @@
     "eclipse_vibe_mapa.json"
    ],
    "sha256": {
-    "eclipse_vibe_botao_a.png": "ad53472668917e293e09b52fb1e84e602154cc1958d8e07132719cc15ca8ae87",
-    "eclipse_vibe_botao_b.png": "9fe3941d2da76dfdd15937c8ddf60817b7f0a35df7e414a088f126599c694bb0",
-    "eclipse_vibe_botao_c.png": "27c244f00c24e1298fc02dc486a64ee09c3b76d067b47ba861d21e5fab541f0a",
-    "eclipse_vibe_frente.jpg": "e2717d9bfb8760ff1ef4e5850ac59604c328a865961c6a91df31043175f9ea13",
-    "eclipse_vibe_frente_alfa.png": "a24eb99904cbb93307cf1796f0a6e4ec820a88089f9e59c0b3f1586af2b712ed",
-    "eclipse_vibe_manifesto.json": "a09eda223b26ef9a3524ea047d996e47cd2b4aa55daeef608ca665807c8d3512",
-    "eclipse_vibe_mapa.json": "2a6eab8e74e52836093f00432179abd5ed73d9624f89d71ab3cb6569bf951051"
+    "eclipse_vibe_botao_a.png": "d6e27cd54e52e76d27524f8ff78770a733490f86a22f41ac2f7b427845bc8b28",
+    "eclipse_vibe_botao_b.png": "ce26d930ef8626341316b91d398865014ef5f3e574a961e447aad0cdf1450d9b",
+    "eclipse_vibe_botao_c.png": "9a1dc60b093fabc159a031b41e64e14a12acc781c0b7baecbc75a38e1b1d0d1f",
+    "eclipse_vibe_frente.jpg": "debd0535bfde773988486064299b7e03b7f617fc82d24b993703fbd553839935",
+    "eclipse_vibe_frente_alfa.png": "3139b6891b41a67fc6f92ef209258470e8d106981bece5232512090ea7f008a5",
+    "eclipse_vibe_manifesto.json": "439fd80dc01ab9689fa73282fa2f60abf4dbf465282aa2a496f3a6acc3d23c1e",
+    "eclipse_vibe_mapa.json": "4b9bda87d016a7d9abb4ba07443c853373ef0856ae275623104e78d5bb3e135c"
    },
-   "tamanho": 147968,
+   "tamanho": 409761,
    "tipo": "pedal",
    "inspiracao": "Uni-Vibe",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "vibe",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
