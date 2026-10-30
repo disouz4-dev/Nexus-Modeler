@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:25:37Z",
+ "gerado": "2026-10-30T20:36:12Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3142,8 +3142,8 @@
   },
   "recto_dual": {
    "nome": "Recto Dual",
-   "hash": "bc64979a9014f7b7",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "db88aaae3b5b54c7",
+   "data": "2026-10-30T20:36:12Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -3166,16 +3166,16 @@
     "recto_dual_botao_volume.png": "af6afb3d191cb2564e823ffc3a92c81388955bd51134b3b736233f36f9c78c41",
     "recto_dual_frente.jpg": "a0fed58203baf120a6f3f67564a096f7362ac3edf00fc24c5f196e53148770b2",
     "recto_dual_frente_alfa.png": "fb2f6808af1bb80a5b40e2ff3091d41290ffb805a0d30539e9118662ba6ca5f0",
-    "recto_dual_manifesto.json": "9f692d044fe9bbca6f839d6ae365a515921f3806f305eeac672345df69644525",
-    "recto_dual_mapa.json": "e6fc5e0aa8889937811700324e210a30e443f8a34639ab14b37fe7a982f95d04"
+    "recto_dual_manifesto.json": "a556c4d8faec478745c3f23f3763b37288ba91c01465a5bb4f5d93a28b202563",
+    "recto_dual_mapa.json": "49f273309be8a59af37745b1349a566763e2dde4ca0d7618c1a66165ba676d38"
    },
-   "tamanho": 1105882,
+   "tamanho": 1107494,
    "tipo": "cabecote",
    "inspiracao": "Dual Rectifier",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.5",
+   "versao": "1.0.6",
    "acesso": "gratuito",
    "fabrica": true
   },
