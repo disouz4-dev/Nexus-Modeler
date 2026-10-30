@@ -2,7 +2,7 @@
   "nome": "Hot Rod 40",
   "familia": "hotrod40",
   "largura": 2400,
-  "altura": 2534,
+  "altura": 2552,
   "posicoes": 101,
   "botoes": [
     {
@@ -68,8 +68,8 @@
     {
       "texto": "1",
       "x": 270.5,
-      "y": 278.3,
-      "altura": 16.48,
+      "y": 284.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -77,8 +77,8 @@
     {
       "texto": "2",
       "x": 339.7,
-      "y": 278.3,
-      "altura": 16.48,
+      "y": 284.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -86,8 +86,8 @@
     {
       "texto": "BRIGHT",
       "x": 408.9,
-      "y": 271.0,
-      "altura": 16.48,
+      "y": 277.4,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -95,8 +95,8 @@
     {
       "texto": "VOLUME",
       "x": 497.9,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -104,8 +104,8 @@
     {
       "texto": "MORE DRIVE",
       "x": 586.9,
-      "y": 271.0,
-      "altura": 16.48,
+      "y": 273.4,
+      "altura": 19.22,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -113,8 +113,8 @@
     {
       "texto": "DRIVE",
       "x": 675.9,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -122,8 +122,8 @@
     {
       "texto": "CHANNEL",
       "x": 764.9,
-      "y": 271.0,
-      "altura": 16.48,
+      "y": 277.4,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -131,8 +131,8 @@
     {
       "texto": "TREBLE",
       "x": 863.8,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -140,8 +140,8 @@
     {
       "texto": "BASS",
       "x": 972.6,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -149,8 +149,8 @@
     {
       "texto": "MIDDLE",
       "x": 1081.3,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -158,8 +158,8 @@
     {
       "texto": "MASTER",
       "x": 1190.1,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -167,8 +167,8 @@
     {
       "texto": "REVERB",
       "x": 1298.9,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -176,8 +176,8 @@
     {
       "texto": "PRESENCE",
       "x": 1407.7,
-      "y": 316.7,
-      "altura": 16.48,
+      "y": 323.2,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -185,8 +185,8 @@
     {
       "texto": "PRE OUT",
       "x": 1516.4,
-      "y": 278.3,
-      "altura": 16.48,
+      "y": 284.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -194,8 +194,8 @@
     {
       "texto": "PWR IN",
       "x": 1595.5,
-      "y": 278.3,
-      "altura": 16.48,
+      "y": 284.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -203,8 +203,8 @@
     {
       "texto": "FT SW",
       "x": 1674.7,
-      "y": 278.3,
-      "altura": 16.48,
+      "y": 284.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -212,8 +212,8 @@
     {
       "texto": "STANDBY",
       "x": 1912.0,
-      "y": 289.3,
-      "altura": 16.48,
+      "y": 295.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -221,8 +221,8 @@
     {
       "texto": "POWER",
       "x": 2030.7,
-      "y": 289.3,
-      "altura": 16.48,
+      "y": 295.7,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
