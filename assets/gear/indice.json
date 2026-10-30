@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:24:22Z",
+ "gerado": "2026-10-30T11:32:38Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5980,8 +5980,8 @@
   },
   "tourmaline_grind": {
    "nome": "Tourmaline Grind",
-   "hash": "e4bdd71944d0cbaa",
-   "data": "2026-10-29T21:12:51Z",
+   "hash": "05b70f402e46935a",
+   "data": "2026-10-30T11:32:38Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tourmaline_grind_botao_ganho.png",
@@ -5993,21 +5993,21 @@
     "tourmaline_grind_mapa.json"
    ],
    "sha256": {
-    "tourmaline_grind_botao_ganho.png": "3b1351b3d1bc962c530a19d99ceb94c899863ac683250631a75908c809605601",
-    "tourmaline_grind_botao_nivel.png": "cbdd39a35ffac12d10f55718575f0fe465a2f0e65ba1e454b908b80950d1ca56",
-    "tourmaline_grind_botao_tom.png": "5010b2ac8f9086387aa7c3d46982bb1d0152356a70149a2a078e99398cd45c38",
-    "tourmaline_grind_frente.jpg": "fc1873866fda7408ddefa3a24b69c924d3277d8cf375fc1d50e4d3c60b4e6fcd",
-    "tourmaline_grind_frente_alfa.png": "7ba75e87448efc75192d97d2fd4a99b0d28afb7e33c55a803f544492e1d0f45f",
-    "tourmaline_grind_manifesto.json": "22c876395e2d1c1158402200660681d7de2e5da6adfb666cae8257d4576a791d",
-    "tourmaline_grind_mapa.json": "9f1d2fb4b272ab28f2d9f3b514b296253eeb91c72711e25f06f832b8d53722ca"
+    "tourmaline_grind_botao_ganho.png": "dee126feedcdc1e24d9b09c27be75b2284d6c7fd27adb5b654c6e2c95f8c90e8",
+    "tourmaline_grind_botao_nivel.png": "50729f6da945ae751e16569843668e7abad3a963170b89e6dea67d43cdc0b8f1",
+    "tourmaline_grind_botao_tom.png": "570770bfcf2fa377d3d6ce05385f5e2ee650f60de4c1375f9357d902f3067271",
+    "tourmaline_grind_frente.jpg": "19c843c239dd2f4496fe9daf974b396ed7c15397068f7f2a889de51c5f16317a",
+    "tourmaline_grind_frente_alfa.png": "05fc4219e4a65487cf088bc86e670131458955249d4e84a97398f32c004d55b5",
+    "tourmaline_grind_manifesto.json": "1129ab8c5b94a0a72e755ec675bb8ab7866b3c94cccc0e9008b5d74ad3db7853",
+    "tourmaline_grind_mapa.json": "94bf88ae2a3adccb59f7718d2fe2b077baf2e19c8e05f4e24206581c6ad9b976"
    },
-   "tamanho": 245663,
+   "tamanho": 230235,
    "tipo": "pedal",
    "inspiracao": "Fortin Grind",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
