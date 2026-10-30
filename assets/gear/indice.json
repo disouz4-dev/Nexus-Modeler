@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:24:36Z",
+ "gerado": "2026-10-30T13:28:48Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3204,8 +3204,8 @@
   },
   "jabuticaba_buzzsaw": {
    "nome": "Jabuticaba Buzzsaw",
-   "hash": "f62836b534960541",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "52796b25b06525b3",
+   "data": "2026-10-30T13:28:48Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jabuticaba_buzzsaw_botao_ganho.png",
@@ -3217,21 +3217,21 @@
     "jabuticaba_buzzsaw_mapa.json"
    ],
    "sha256": {
-    "jabuticaba_buzzsaw_botao_ganho.png": "d6fbb12e0baef14c81e74fe49f3d7e56ef7bcf7fae43a092621af4d20fd82f11",
-    "jabuticaba_buzzsaw_botao_nivel.png": "3223076e12b068506bd884a8cd8cf900f0da48b034b586e33fdeadc23bb170fe",
-    "jabuticaba_buzzsaw_botao_tom.png": "afda837767a725bbabba800d2b299c49bec0fb9e70d6d038e0510862f9c7f36f",
-    "jabuticaba_buzzsaw_frente.jpg": "d2aa1441f62c8e5b42c31e95b81ff4cf7b081166eacf4751a4a4d57b9445d3ad",
-    "jabuticaba_buzzsaw_frente_alfa.png": "534c0a03b63aadbbc206e2006825972aafd3cd36546a3a18f3f7a2d71a217159",
-    "jabuticaba_buzzsaw_manifesto.json": "0626227cec91526e8f9f20bffc66b827f00d33986664e603dca492aad99fb4b7",
-    "jabuticaba_buzzsaw_mapa.json": "e0b85ae283d4dafa050af6446d84c1c04a938a3611a56d4bfb397bcb81b220cd"
+    "jabuticaba_buzzsaw_botao_ganho.png": "b5decbdeba91f342a782d565d46e5d5ae04e5268088ff96cd034573713fb0f98",
+    "jabuticaba_buzzsaw_botao_nivel.png": "d7697b44355142a329591b37ca3333e173ddea7503c190cfd18dee22c3a378f7",
+    "jabuticaba_buzzsaw_botao_tom.png": "558d2e32e5e1142cf7b57165cd33c41f4d1dfb5a352a94ced2ccb85c1501cd01",
+    "jabuticaba_buzzsaw_frente.jpg": "178f1972fd0706055d5d860433d18a08069808190ecccde51664aca312520021",
+    "jabuticaba_buzzsaw_frente_alfa.png": "17540efcc3ab155832f2cac0ec025bdb30538e80e81fb746722eb02152314354",
+    "jabuticaba_buzzsaw_manifesto.json": "7353b824d68ee9c846f3121a185bbaad8d04e2a6551b033595e8f11e8834f3bb",
+    "jabuticaba_buzzsaw_mapa.json": "dbde54b082b4fb107427cd062abce9afa6d53190eb96efc8a1c10709a37ea444"
    },
-   "tamanho": 314570,
+   "tamanho": 309749,
    "tipo": "pedal",
    "inspiracao": "HM-2",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
