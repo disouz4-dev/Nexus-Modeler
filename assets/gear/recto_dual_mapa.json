@@ -61,6 +61,7 @@
     }
   ],
   "canais": [
+    "Limpo",
     "Moderno"
   ],
   "rotulos": [
@@ -171,6 +172,18 @@
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 982.0,
+      "y": 799.0,
+      "raio": 11.5
+    },
+    {
+      "x": 982.0,
+      "y": 884.0,
+      "raio": 11.5
     }
   ]
 }
