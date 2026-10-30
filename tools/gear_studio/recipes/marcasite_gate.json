@@ -11,12 +11,13 @@
   },
   "pintura": {
     "cor": [
-      0.5295,
-      0.548,
-      0.5605
+      0.5605,
+      0.5732,
+      0.586
     ],
-    "metalico": 0.6,
-    "aspereza": 0.28
+    "metalico": 0.5,
+    "aspereza": 0.42,
+    "textura": "enrugado"
   },
   "texto_cor": [
     0.0037,
@@ -45,35 +46,32 @@
       "rotulo": "SENSIBILIDADE",
       "pos": [
         0.0,
-        0.6
+        0.64
       ],
-      "escala": 1.15
+      "escala": 1.12
     },
     {
       "id": "b",
       "rotulo": "ATAQUE",
       "pos": [
-        -0.72,
-        -0.5
+        -0.68,
+        -0.27
       ],
-      "escala": 0.5,
-      "rotulo_m": 0.0026
+      "escala": 0.42,
+      "rotulo_m": 0.0024
     },
     {
       "id": "c",
       "rotulo": "RELEASE",
       "pos": [
-        0.72,
-        -0.5
+        0.68,
+        -0.27
       ],
-      "escala": 0.5,
-      "rotulo_m": 0.0026
+      "escala": 0.42,
+      "rotulo_m": 0.0024
     }
   ],
   "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
-  "estampa": {
-    "svg": "estampas/marcasite_gate.svg"
-  },
   "quadro": {
     "largura_rel": 2.24,
     "proporcao": 1.25,
@@ -92,73 +90,162 @@
   ],
   "led": [
     0.0,
-    -0.36
+    -0.19
   ],
   "paineis": [
     {
       "pos": [
-        0.0,
-        0.0
+        -0.8895,
+        0.2676
       ],
       "tam_m": [
-        0.055,
-        0.104
+        0.00045,
+        0.0767
       ],
       "cor": [
         0.0037,
         0.0037,
         0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.8895,
+        0.2676
       ],
-      "raio_m": 0.002,
-      "fundo": true
+      "tam_m": [
+        0.00045,
+        0.0767
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     },
     {
       "pos": [
         0.0,
-        0.0
+        0.9545
       ],
       "tam_m": [
-        0.0526,
-        0.1016
+        0.0556,
+        0.00045
       ],
       "cor": [
-        0.5295,
-        0.548,
-        0.5605
+        0.0037,
+        0.0037,
+        0.0037
+      ]
+    },
+    {
+      "pos": [
+        0.0,
+        -0.4194
       ],
-      "raio_m": 0.0012,
-      "fundo": true
+      "tam_m": [
+        0.0556,
+        0.00045
+      ],
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     }
   ],
   "pecas": [
     {
       "tipo": "apertar",
       "pos": [
-        -0.62,
+        -0.53,
         0.88
       ],
-      "diam_m": 0.005,
-      "rotulo": "ALTO",
-      "rotulo_pos": "baixo"
-    },
-    {
-      "tipo": "minichave",
-      "pos": [
+      "diam_m": 0.0045,
+      "cor": [
         0.68,
-        0.62
+        0.8592,
+        0.7445
       ]
     },
     {
       "tipo": "led",
       "pos": [
-        0.62,
-        0.9
+        0.58,
+        0.88
       ],
       "cor": [
-        0.145,
-        0.0824,
-        0.0
-      ]
+        0.7969,
+        0.548,
+        0.0066
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.0015
+    },
+    {
+      "tipo": "chave_deslizante",
+      "pos": [
+        0.83,
+        0.6
+      ],
+      "vertical": true
+    }
+  ],
+  "logo": {
+    "svg": "estampas/pear_gate_tema.svg",
+    "tam_m": 0.0175,
+    "pos": [
+      0.0,
+      0.09
+    ]
+  },
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0019,
+  "led_cor": [
+    0.75,
+    0.75,
+    0.7
+  ],
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.43
+    ]
+  },
+  "jacks_y": 0.06,
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "marcasite",
+      "pos": [
+        0.255,
+        -0.79
+      ],
+      "tam_m": 0.0105,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "fonte": "ui",
+      "alinhar": "RIGHT"
+    },
+    {
+      "texto": "gate",
+      "pos": [
+        0.255,
+        -0.79
+      ],
+      "tam_m": 0.0105,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "fonte": "ui",
+      "alinhar": "LEFT",
+      "grossura": 0.00016
     }
   ]
 }

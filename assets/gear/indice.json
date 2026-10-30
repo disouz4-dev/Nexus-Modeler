@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T09:49:54Z",
+ "gerado": "2026-10-30T09:52:05Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3727,8 +3727,8 @@
   },
   "marcasite_gate": {
    "nome": "Marcasite Gate",
-   "hash": "dc79286933b25a05",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "8cd88c6b3b57c87f",
+   "data": "2026-10-30T09:52:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "marcasite_gate_botao_a.png",
@@ -3740,21 +3740,21 @@
     "marcasite_gate_mapa.json"
    ],
    "sha256": {
-    "marcasite_gate_botao_a.png": "3c7b8e7f27b14266b411ecdf41b922f426ad774c7567d0d52461c327afddc6a2",
-    "marcasite_gate_botao_b.png": "876daf943693aba965f619566d0b130f8d86e03d2af04606153437440d43f56d",
-    "marcasite_gate_botao_c.png": "ef609577bb2d86dd4fa99cc2fadf2db97cc10247ee3a65314c65df84f58bb1d6",
-    "marcasite_gate_frente.jpg": "8a2122ccbb0b6ed90806671c4fd0de2a2e6728e88a772f164ee0216b280cac29",
-    "marcasite_gate_frente_alfa.png": "3d99d94ca9c7e07688c72c795bbdd774d0e35f9d80b1aa21d8158b0fdb4db820",
-    "marcasite_gate_manifesto.json": "df7f3824179ae6117a24e527a7385cda8034e920a0a6188ddb5f1c925f1995e4",
-    "marcasite_gate_mapa.json": "8045a231461dd9971e503077309bd26dc19bce1c65437ca280e6244787b3538f"
+    "marcasite_gate_botao_a.png": "1fa3f2e220f9451cd11e6f396cc2d46188121c423ea84d8f5faa76f0821909fd",
+    "marcasite_gate_botao_b.png": "0852339492826e5e63d1c28934dba3ba0fd56b917361852c1f85a0db01be19ce",
+    "marcasite_gate_botao_c.png": "5e788c4e304543a400785c1b6fc9b41a204c576c40a898f07608a13b2ce143f5",
+    "marcasite_gate_frente.jpg": "82eb12668de86ffae3d5bc6972a2ff4766201bda29ec7eb1ee6c19e9a8bbe35c",
+    "marcasite_gate_frente_alfa.png": "5178b89d884196b3103d9b43a88053e51035ab82d501883cd7690314355e4ccb",
+    "marcasite_gate_manifesto.json": "bb1fed92fc7c4f9b24f16cb76131fabef6a8098722eb64b0fa13f63e1feaf42c",
+    "marcasite_gate_mapa.json": "c1e137d773203f59ac3c734f7e92b5f7219a71dd390f9dca6c27d44b7eb1abb8"
    },
-   "tamanho": 341101,
+   "tamanho": 327214,
    "tipo": "pedal",
    "inspiracao": "MXR Smart Gate",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "gate",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
