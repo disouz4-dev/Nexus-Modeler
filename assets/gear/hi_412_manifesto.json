@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "hi_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Hi 4x12",
   "inspiracao": "Hiwatt 4x12",
@@ -11,7 +11,33 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Hiwatt",
+      "tons": [
+        {
+          "id": 1684,
+          "titulo": "Hiwatt Cab 4x12 Fane 50 Purple Label",
+          "criador": "wendycabs",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 5427,
+          "nota": "Hiwatt 4x12 com Fane Purple Label, microfone SM57",
+          "ir_padrao": "Hiwatt 4x12 Fane PL 50 sm57",
+          "padrao": true
+        },
+        {
+          "id": 98603,
+          "titulo": "HIWATT MAXWATT 4X12 2000s",
+          "criador": "flavortownstudios",
+          "tipo": "cab",
+          "capturas": 5,
+          "downloads": 763,
+          "nota": "Hiwatt Maxwatt 4x12, cinco posições de microfone",
+          "ir_padrao": "HIWATT_MAXWATT_4X12_E906_CENTRE_LL"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 20,
   "signature": null

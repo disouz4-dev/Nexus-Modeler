@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "country_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Country 4x12",
   "inspiracao": "Laney 4x12",
@@ -11,7 +11,53 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Laney",
+      "tons": [
+        {
+          "id": 103787,
+          "titulo": "Laney 4x12 AOR Series A Cab G12M70",
+          "criador": "derkater",
+          "tipo": "cab",
+          "capturas": 4,
+          "downloads": 263,
+          "nota": "Laney 4x12 com G12M70, SM57 e 421",
+          "ir_padrao": "Laney 412 G12M70 SM57 421 1 Mic Center Dustcap",
+          "padrao": true
+        },
+        {
+          "id": 5487,
+          "titulo": "Laney LA 412 cabinet",
+          "criador": "louramos",
+          "tipo": "cab",
+          "capturas": 16,
+          "downloads": 1731,
+          "nota": "Laney LA 4x12, quatro microfones",
+          "ir_padrao": "IRON CAB 57-1"
+        },
+        {
+          "id": 76706,
+          "titulo": "Laney LX412",
+          "criador": "esetipoysuguitarra",
+          "tipo": "cab",
+          "capturas": 12,
+          "downloads": 1368,
+          "nota": "Laney LX412, três microfones",
+          "ir_padrao": "Laney LX412 Shure SM58 NG 0.0cm 0.0cm"
+        },
+        {
+          "id": 98315,
+          "titulo": "Laney Lead100 Supergroup 4X12 + ORIGINAL GOODMANS SPEAKERS",
+          "criador": "flavortownstudios",
+          "tipo": "cab",
+          "capturas": 5,
+          "downloads": 593,
+          "nota": "Laney Lead100 Supergroup com Goodmans originais",
+          "ir_padrao": "LANEY_LEAD100_GOODMANS_E906_CENTRE_LL"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 18,
   "signature": null

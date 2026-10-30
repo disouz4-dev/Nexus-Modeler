@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "fliptop_115",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "caixa",
   "nome": "Fliptop 1x15",
   "inspiracao": "Ampeg B-15 1x15",
@@ -11,7 +11,32 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "B15",
+      "tons": [
+        {
+          "id": 67574,
+          "titulo": "Ampeg B15N",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "capturas": 2,
+          "downloads": 8841,
+          "nota": "Ampeg B-15N, SM57 e R121 (e outra misturada com uma 4x10)",
+          "ir_padrao": "Ampeg B15N (SM57 + R121)",
+          "padrao": true
+        },
+        {
+          "id": 31188,
+          "titulo": "Mesa Boogie Subway 1x15",
+          "criador": "salamiexcerpt5j",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 1776,
+          "nota": "Mesa Subway 1x15 (outra caixa de baixo de 15 polegadas)"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 25,
   "signature": null

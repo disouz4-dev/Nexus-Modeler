@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "be_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "BE 4x12",
   "inspiracao": "Friedman 4x12",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Friedman",
+      "tons": [
+        {
+          "id": 64783,
+          "titulo": "Emil Rohbe - Friedman Jake E. Lee — IRs",
+          "tipo": "cab",
+          "capturas": 2,
+          "padrao": true,
+          "nota": "Caixa Friedman (poucos IRs dela na TONE3000)"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 4,
   "signature": null

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "tweed_410",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Tweed 4x10",
   "inspiracao": "Fender 4x10",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Super Reverb",
+      "tons": [
+        {
+          "id": 61705,
+          "titulo": "Fender '65 Super Reverb 4x10 Jensen P10R",
+          "tipo": "cab",
+          "capturas": 68,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 8,
   "signature": null

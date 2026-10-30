@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "citrus_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Citrus 4x12",
   "inspiracao": "Orange 4x12",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Orange 4x12",
+      "tons": [
+        {
+          "id": 90730,
+          "titulo": "Orange V30 4x12 - XR IR PACK",
+          "tipo": "cab",
+          "capturas": 4,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 5,
   "signature": null

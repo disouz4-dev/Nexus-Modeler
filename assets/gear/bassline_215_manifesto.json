@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "bassline_215",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Bassline 2x15",
   "inspiracao": "Fender Bassman 2x15",
@@ -11,7 +11,31 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "2x15",
+      "tons": [
+        {
+          "id": 60274,
+          "titulo": "1970 Fender Bassman 2x15 Cabinet Original CTS Speakers",
+          "criador": "maestrodimusica",
+          "tipo": "cab",
+          "capturas": 58,
+          "downloads": 14065,
+          "nota": "Bassman 2x15 de 1970, 58 posições de microfone",
+          "padrao": true
+        },
+        {
+          "id": 13131,
+          "titulo": "Fender Dual Showman 2x15",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 2420,
+          "nota": "Dual Showman 2x15"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 26,
   "signature": null

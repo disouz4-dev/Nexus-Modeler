@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "mark_112",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Mark 1x12",
   "inspiracao": "Mesa Boogie Mark 1x12",
@@ -11,7 +11,53 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Mark",
+      "tons": [
+        {
+          "id": 1685,
+          "titulo": "Mesa Boogie Mark IIC+",
+          "criador": "wendycabs",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 6190,
+          "nota": "combo Mark IIC+ 1x12 com Black Shadow, microfone SM57",
+          "ir_padrao": "Mesa MarkIIC MS12 blackShadow 44khz Sm57",
+          "padrao": true
+        },
+        {
+          "id": 74360,
+          "titulo": "Eminence MS-12 \"Black Shadow\" Mark III Combo",
+          "criador": "ruangsonmusic",
+          "tipo": "cab",
+          "capturas": 12,
+          "downloads": 595,
+          "nota": "combo Mark III 1x12 com Black Shadow MS-12, misturas e posições",
+          "ir_padrao": "MS-12 LEAD MIX"
+        },
+        {
+          "id": 64789,
+          "titulo": "Emil Rohbe - Mesa Boogie Mark IV Rev A — IRs",
+          "criador": "emilrohbe",
+          "tipo": "cab",
+          "capturas": 2,
+          "downloads": 262,
+          "nota": "Mark IV Rev A",
+          "ir_padrao": "Emil Rohbe YouTube IR"
+        },
+        {
+          "id": 96855,
+          "titulo": "Celestion Creamback M65 - Mesa Badlander 50 1x12 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "capturas": 31,
+          "downloads": 792,
+          "nota": "Mesa 1x12 (Badlander) com Creamback, 31 posições",
+          "ir_padrao": "G12M65 1x12 SM57 1.00in 0.0in"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 16,
   "signature": null

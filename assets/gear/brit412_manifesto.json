@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "brit412",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "caixa",
   "nome": "Brit 4x12",
   "inspiracao": "1960A 4x12",
@@ -11,7 +11,50 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "1960",
+      "tons": [
+        {
+          "id": 75087,
+          "titulo": "UK Greenback - Marshall 1960TV 4x12 M201",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "capturas": 72,
+          "downloads": 35658,
+          "nota": "Greenback, 72 posições de microfone; começa no SA73 a 1 pol do centro",
+          "ir_padrao": "M25 UR 1960TV 4x12 M201 1.00in 0.0in SA73"
+        },
+        {
+          "id": 90295,
+          "titulo": "Marshall JCM900 LEAD-1960 CAB",
+          "criador": "leocannarella",
+          "tipo": "cab",
+          "capturas": 3,
+          "downloads": 31686,
+          "nota": "SM57, e609 e a mistura dos dois",
+          "ir_padrao": "Marshall JCM900 LEAD-1960 BLENDED 3"
+        },
+        {
+          "id": 98754,
+          "titulo": "Marshall G12M Greenback 8-Ohm 4x12 - XR IR PACK",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "capturas": 4,
+          "downloads": 8051,
+          "nota": "Greenback G12M, quatro microfones"
+        },
+        {
+          "id": 104387,
+          "titulo": "Marshall JCM800 Lead 1960 4x12 G12T-75",
+          "criador": "tenfiftyfour",
+          "tipo": "cab",
+          "capturas": 11,
+          "downloads": 1565,
+          "nota": "G12T-75, a caixa do JCM800"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 0,
   "signature": null

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "star_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Star 4x12",
   "inspiracao": "Blackstar 4x12",
@@ -11,7 +11,41 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Blackstar",
+      "tons": [
+        {
+          "id": 1765,
+          "titulo": "Blackstar Blackfire 412 GUS G DUAL MIC MIXES",
+          "criador": "reynaldgrind",
+          "tipo": "cab",
+          "capturas": 60,
+          "downloads": 854,
+          "nota": "Blackstar Blackfire 4x12 com V30, misturas de dois microfones",
+          "ir_padrao": "BlS_GG_V30_SMD428B 0",
+          "padrao": true
+        },
+        {
+          "id": 97711,
+          "titulo": "Blackstar HT Stage 60 Celestion Seventy-80",
+          "criador": "samuelbednar",
+          "tipo": "cab",
+          "capturas": 6,
+          "downloads": 149,
+          "nota": "combo Blackstar HT Stage 60 (Seventy-80), microfone SM58"
+        },
+        {
+          "id": 28942,
+          "titulo": "Blackstar 1x12",
+          "criador": "returntozero",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 573,
+          "nota": "Blackstar 1x12, uma resposta"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 17,
   "signature": null
