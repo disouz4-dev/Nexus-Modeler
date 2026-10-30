@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T09:39:30Z",
+ "gerado": "2026-10-30T09:47:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1718,8 +1718,8 @@
   },
   "citrusbass200": {
    "nome": "Citrus Bass 200",
-   "hash": "673eca91e6c413fb",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "f0de4e64fb8b502c",
+   "data": "2026-10-30T09:47:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrusbass200_botao_agudo.png",
@@ -1734,24 +1734,24 @@
     "citrusbass200_mapa.json"
    ],
    "sha256": {
-    "citrusbass200_botao_agudo.png": "348f580a48494cd90987dd0af542f9cebd674867476b14f7ec1044963ce27ffe",
-    "citrusbass200_botao_ganho.png": "454f04a118e6214413fb376177ea57608bf85ddee17de35ecf4e3de9dd04a2b5",
-    "citrusbass200_botao_grave.png": "4d2d38c1ba281b724649f3a3d8d22a1f864b13d89b4c35ac193e3a752727bef9",
-    "citrusbass200_botao_medio.png": "7ce7599622b8027c6210ab2466d894b3468c811463ed2a3aa4914039d76ba743",
-    "citrusbass200_botao_presenca.png": "293f313e7cc265c41ac4714d635c58f15caebd966bc0401e6f66099ccf1d9227",
-    "citrusbass200_botao_volume.png": "3fc76f13a693b2dc8796a75b6a594435a5c1c3695052ee8d95d232b44b42c467",
-    "citrusbass200_frente.jpg": "6a157a02ea6614deca064dff860efc5aec6d9b300784d1cec14fbb6f1ad9d855",
-    "citrusbass200_frente_alfa.png": "89f1ea028b0fc114da22beddf6e39342abcd3fe12d243a296ea90336796709c6",
-    "citrusbass200_manifesto.json": "615b682314222ef417aac4c31a1247ee63d6441cb3e8e5518682f161826a3cde",
-    "citrusbass200_mapa.json": "125f1ccd0f3e2cce044f71f9932a9e8f17a4882cbfc227ec1c2a5223ed923efc"
+    "citrusbass200_botao_agudo.png": "6caf2fe014dc659066d38766ab85e7f2221a3984eaedc28d1bb43c5feddb70d5",
+    "citrusbass200_botao_ganho.png": "f47b3103cdb1f867403172dcbfecad664343e911bbe92a1fa54e38db12dda66b",
+    "citrusbass200_botao_grave.png": "3cc4bcff23094574146913670d84dc597cc376376d282ddcf3c846d7f51d9146",
+    "citrusbass200_botao_medio.png": "f425e47bd307457ab2baad8b036ca345c4b2213a478f5cc98345ef72ccc28abe",
+    "citrusbass200_botao_presenca.png": "319904d11200320a176d3fe1f9b9f799c5f6f5c15705cb82e8fc4a0abbe5f0e5",
+    "citrusbass200_botao_volume.png": "876be5d401274abe40e38496a41b20e30d7e0c5afd74d159a37eea4eec7821ff",
+    "citrusbass200_frente.jpg": "e52670a2867b6894b37c96f9bd7ef89d04efc14616d70cf70ec48b1ad4348e2e",
+    "citrusbass200_frente_alfa.png": "0d58c022583c6402c307478d8314bccca7d87c854c4d8df7f210e39e4d870243",
+    "citrusbass200_manifesto.json": "d169e393248d0f2bb96e9a6da476657ded4fca8b84397f559d13692d8734e299",
+    "citrusbass200_mapa.json": "8b3e0e0706849301114036971437d5adf8dd61815515a7df4b94d7863a60d316"
    },
-   "tamanho": 1256779,
+   "tamanho": 1714324,
    "tipo": "cabecote",
    "inspiracao": "Orange AD200",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
