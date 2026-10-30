@@ -43,18 +43,18 @@
     },
     {
       "id": "grave",
-      "x": 960,
-      "y": 617,
-      "tamanho": 93,
+      "x": 959,
+      "y": 616,
+      "tamanho": 96,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 960,
-      "y": 800,
-      "tamanho": 93,
+      "x": 959,
+      "y": 799,
+      "tamanho": 96,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -130,7 +130,7 @@
     {
       "texto": "GRAVE",
       "x": 1009.7,
-      "y": 726.8,
+      "y": 727.9,
       "altura": 28.09,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -139,7 +139,7 @@
     {
       "texto": "MÉDIO",
       "x": 1009.7,
-      "y": 907.0,
+      "y": 908.2,
       "altura": 28.09,
       "achatamento": 1.0,
       "cor": "#ededed",
