@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:17:57Z",
+ "gerado": "2026-10-30T07:20:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6478,8 +6478,8 @@
   },
   "vault_810": {
    "nome": "Vault 8x10",
-   "hash": "4d0208d7f1845c4d",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "992c634d87395b75",
+   "data": "2026-10-30T07:20:04Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault_810_frente.jpg",
@@ -6488,18 +6488,18 @@
     "vault_810_mapa.json"
    ],
    "sha256": {
-    "vault_810_frente.jpg": "1d956165146c6f6c1bb6f5359058cbd5ce57c4857bf68979a9c718648b0db43f",
-    "vault_810_frente_alfa.png": "a524b1a138dbdd20674bf84f972bfa17d98a21dc009435b275408a5d91e1bd85",
-    "vault_810_manifesto.json": "5f1551ebd1c5d64ec1f77ce374bfbffe7abf3fc70863a714052fe0d650c42fdb",
-    "vault_810_mapa.json": "798158065da7e1b4368c0fee2334b6776a191dc0f4cfc543be4a5f71c722cc04"
+    "vault_810_frente.jpg": "edf2cadb650a43fec52754e25466c857bcf340313c21c210cb067c5f9edb6418",
+    "vault_810_frente_alfa.png": "de8255ed2bd6975fe09b3c4271a8b8c72f5eb221d57894731c78ae64c0ccd78e",
+    "vault_810_manifesto.json": "b59e49d662d4084ac8878ca1c8bfef103d0f88bf7f551737ec9a402e7d010329",
+    "vault_810_mapa.json": "605cc787b365ef8fbeae42ba2df133995d9090981b5272ebe45e5f2dd2c30741"
    },
-   "tamanho": 2034087,
+   "tamanho": 1985463,
    "tipo": "caixa",
    "inspiracao": "Ampeg 8x10",
    "categoria": "8x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
