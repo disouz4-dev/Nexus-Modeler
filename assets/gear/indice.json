@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:24:01Z",
+ "gerado": "2026-10-30T19:26:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2522,8 +2522,8 @@
   },
   "gen120": {
    "nome": "Gen 120",
-   "hash": "b9d65ee5f7e1f34a",
-   "data": "2026-10-30T14:30:30Z",
+   "hash": "f93b2b65f8ce72c0",
+   "data": "2026-10-30T19:26:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "gen120_botao_agudo.png",
@@ -2538,24 +2538,24 @@
     "gen120_mapa.json"
    ],
    "sha256": {
-    "gen120_botao_agudo.png": "7b72371c02ae9b4e8917beb8a805028adcb4cabeefbd4d22aafd5cfd4b91fb3e",
-    "gen120_botao_ganho.png": "21ce9799c27192b7345c23e65219298509f0ec042bf6ecb7a7950d2d8d63876d",
-    "gen120_botao_grave.png": "7a8cdbe4934eaacb4c3e1435869c1ae8be9e26ff3143c0a4ac225064ffc48e80",
-    "gen120_botao_medio.png": "378b88e6997227818986c014ba8d30ecbb805c529b49f27d13a45553798bd876",
-    "gen120_botao_presenca.png": "1ca214417375bb3efd016b94ccbfa13755b35fcd9cbac7570acde94de31e8c91",
-    "gen120_botao_volume.png": "5c0c038adcfb1414241a28ea1464dcbbc2a593e839b715fb19a065fc4879eb69",
-    "gen120_frente.jpg": "94ad271009cf518b2f2eba04df8765a9f20387b8f51613e9ad37afd3f2e37fc7",
-    "gen120_frente_alfa.png": "416fcece299c832f20bd8bfb1fb6e79245de0517e3d1137bddcdb893e2ab4643",
-    "gen120_manifesto.json": "b92fd2d4419afeb482a147c7326d12c90ece15ccf9871be9696d17899fde8bc8",
-    "gen120_mapa.json": "ecb9e578bed723efb02fed05862707b535e0b1c0347f6b58067887ef8cc51fa9"
+    "gen120_botao_agudo.png": "2e41b0fecd36657881cc8137817ae3ac059a90a83fe0bc93ffe788d261c90ee3",
+    "gen120_botao_ganho.png": "3519942e63982246a05d3e5ce27ad79754d539beb08fdb81a5593cb81ad93dfd",
+    "gen120_botao_grave.png": "efe467f5437f56d4f6d417535602f5081dcda7c7eacc8135423bdcdb70f05928",
+    "gen120_botao_medio.png": "ff943d0e34fe8a0c6b79fa087ad6ed8f12183791981355360a5628ec4ba0cfce",
+    "gen120_botao_presenca.png": "2b796c53e7353121eb8cd89acc51fa65242e4e51389bd712c5cd0d539d24aa92",
+    "gen120_botao_volume.png": "62c4c3a2c8be8ce3e4e66941b5b225b4c416288f4d9fb99a3f3aaeb4c4485df8",
+    "gen120_frente.jpg": "7715df822b62b5fe3cb4060a6817e3a00a7a1bd07f9a5cd02c12c4d6814084a4",
+    "gen120_frente_alfa.png": "6e25662259ec7a0c7c1187aa5be154b71823fb8f11f4ab09bae71cdb15f59279",
+    "gen120_manifesto.json": "57d3f278b6fec20c81faecc5576f496eee0ef78184f28b1c94d2187fb5dadb80",
+    "gen120_mapa.json": "0acb064cf17a292150e33f524ca6a0947dad2923a27bd8770ef3c49c42dbdcd5"
    },
-   "tamanho": 865153,
+   "tamanho": 627542,
    "tipo": "cabecote",
    "inspiracao": "Revv Generator 120",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
