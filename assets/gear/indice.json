@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:09:34Z",
+ "gerado": "2026-10-30T13:11:46Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4608,8 +4608,8 @@
   },
   "orange_drive": {
    "nome": "Orange Drive",
-   "hash": "c444b193ae31f579",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "36fb7e97a428ece4",
+   "data": "2026-10-30T13:11:46Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "orange_drive_botao_ganho.png",
@@ -4621,21 +4621,21 @@
     "orange_drive_mapa.json"
    ],
    "sha256": {
-    "orange_drive_botao_ganho.png": "57b9703acf87a334217b8050bde4d43b71534a4f31da37f1b8d43f959830d720",
-    "orange_drive_botao_nivel.png": "1f61093b6bdfb11006f6f5f450c2c04da99a6b5902dca36702621a3e6f8751df",
-    "orange_drive_botao_tom.png": "53615c4a4a83eec2b3bc5e075bc9abfa1bf7144288f40ed9d4f16addd3b5250c",
-    "orange_drive_frente.jpg": "ddc271b37e475dc9f030fe8df801fd6f6d64ab8a42099be3787e7e021dc684f1",
-    "orange_drive_frente_alfa.png": "762b0f693cdc63b0c1f6da5a0690730312b7f3923d337b1db782c845f2d4b407",
-    "orange_drive_manifesto.json": "82db395687f5ae9ad918d1e7fa6caf045e5ede7c5764d0b56ce750e4dc0d83fd",
-    "orange_drive_mapa.json": "05f7f1d588aef76493ee6169020a5b844dcf9735b9e69fce18214378c08e5eb5"
+    "orange_drive_botao_ganho.png": "7e7b7e4cf623216f206c8216a68f0510afad183cb0b2237534c6777d8b7d641b",
+    "orange_drive_botao_nivel.png": "518cccaa11f6fca845e008bac71d8cd3abe108a483d86d32c90073d9cc678bb0",
+    "orange_drive_botao_tom.png": "5449d2c2e558748201ba15684003a3e3e93c6371f669286ceb51b57636b682ff",
+    "orange_drive_frente.jpg": "5b618cbedefdc44f9ebc6b2d045f758dedd86ab0333586d91c7fd7c9d39b744c",
+    "orange_drive_frente_alfa.png": "d8d3268ae96b2ed880cdd30c6c14aef7df54b75f0e3af7ac9f4366a3ce5c1f9c",
+    "orange_drive_manifesto.json": "ef9edfe1447c4fd3055b74fdfb85d20a7835f261c2c604dbbb5b658ee410a7fb",
+    "orange_drive_mapa.json": "b2b334c1fffaae1006d4753a40550299eec0803d699258091c8869ea56efc59c"
    },
-   "tamanho": 353804,
+   "tamanho": 365494,
    "tipo": "pedal",
    "inspiracao": "DS-1",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
