@@ -35,29 +35,6 @@ bool moveAside(const juce::File& item, const juce::File& to)
 }
 } // namespace
 
-juce::File dataRoot()
-{
-  if (const auto forced = juce::SystemStats::getEnvironmentVariable("NEXUS_DADOS_PASTA", {}); forced.isNotEmpty())
-    return juce::File(forced);
-  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
-#if JUCE_MAC
-    .getChildFile("Application Support")
-#endif
-    .getChildFile("Nexus Modeler");
-}
-
-juce::File documentsRoot()
-{
-  if (const auto forced = juce::SystemStats::getEnvironmentVariable("NEXUS_DOCUMENTOS_PASTA", {}); forced.isNotEmpty())
-    return juce::File(forced);
-  return juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile("Nexus Modeler");
-}
-
-juce::File settingsFile(const juce::String& name)
-{
-  return dataRoot().getChildFile(name);
-}
-
 namespace
 {
 // Pasta de dados que só tem o que o instalador acabou de gravar (o idioma

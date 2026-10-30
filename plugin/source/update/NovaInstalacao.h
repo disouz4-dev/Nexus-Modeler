@@ -15,12 +15,31 @@ inline constexpr int kDataGeneration = 3;
 
 // Pastas que o Nexus usa (NEXUS_DADOS_PASTA e NEXUS_DOCUMENTOS_PASTA trocam
 // a raiz nos testes).
-juce::File dataRoot();      // Application Support/Nexus Modeler (Mac)
-juce::File documentsRoot(); // Documentos/Nexus Modeler
-// Arquivo de preferências na pasta de dados (preferencias.settings,
-// tone3000.settings...). Todos os arquivos do Nexus saem destas raízes: os
-// testes trocam as duas e nunca tocam nos dados de quem roda o teste.
-juce::File settingsFile(const juce::String& name);
+// Todos os arquivos do Nexus saem destas raízes: os testes trocam as duas e
+// nunca tocam nos dados de quem roda o teste.
+// Application Support/Nexus Modeler (Mac), AppData/Roaming (Windows), ~/.config (Linux).
+inline juce::File dataRoot()
+{
+  if (const auto forced = juce::SystemStats::getEnvironmentVariable("NEXUS_DADOS_PASTA", {}); forced.isNotEmpty())
+    return juce::File(forced);
+  return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
+#if JUCE_MAC
+    .getChildFile("Application Support")
+#endif
+    .getChildFile("Nexus Modeler");
+}
+// Documentos/Nexus Modeler.
+inline juce::File documentsRoot()
+{
+  if (const auto forced = juce::SystemStats::getEnvironmentVariable("NEXUS_DOCUMENTOS_PASTA", {}); forced.isNotEmpty())
+    return juce::File(forced);
+  return juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile("Nexus Modeler");
+}
+// Arquivo de preferências na pasta de dados (preferencias.settings, tone3000.settings...).
+inline juce::File settingsFile(const juce::String& name)
+{
+  return dataRoot().getChildFile(name);
+}
 
 // Faz a troca uma vez por computador (a primeira cópia do Nexus que abrir,
 // programa independente ou plugin). Devolve a pasta de reserva criada (vazia
