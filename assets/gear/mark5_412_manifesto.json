@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "mark5_412",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "caixa",
   "nome": "Mark 4x12",
   "inspiracao": "Mesa 4x12",
@@ -11,7 +11,27 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Mesa",
+      "tons": [
+        {
+          "id": 1612,
+          "titulo": "Mesa OS 4x12 IR",
+          "tipo": "cab",
+          "capturas": 1,
+          "padrao": true,
+          "nota": "Mesa Oversized 4x12 (o IR de caixa mais curtido da TONE3000)"
+        },
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "tipo": "cab",
+          "capturas": 168,
+          "nota": "Mesa 4x12 com V30, 168 posições de microfone"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 1,
   "signature": null

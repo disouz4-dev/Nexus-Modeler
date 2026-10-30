@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "silver_112",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Silver 1x12",
   "inspiracao": "Fender Deluxe Reverb 1x12",
@@ -11,7 +11,43 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Deluxe Reverb",
+      "tons": [
+        {
+          "id": 27465,
+          "titulo": "Fender Deluxe Reverb Mix Ready",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "capturas": 4,
+          "downloads": 97722,
+          "nota": "Deluxe Reverb com alto-falante Oxford, pronto para mixar",
+          "ir_padrao": "DELUXE REVERB OXFORD - BIG",
+          "padrao": true
+        },
+        {
+          "id": 90763,
+          "titulo": "'66 Fender Deluxe Reverb - XR IR PACK",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "capturas": 3,
+          "downloads": 8026,
+          "nota": "Deluxe Reverb 1966 com Jensen C12N, três microfones",
+          "ir_padrao": "TF 66 DR 1X12 JENSN C12NA - 57 R121 70-30"
+        },
+        {
+          "id": 5855,
+          "titulo": "1966 Deluxe Reverb Cabinet Jensen P12Q",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "capturas": 35,
+          "downloads": 2683,
+          "nota": "Deluxe Reverb 1966 com Jensen P12Q, 35 posições de microfone",
+          "ir_padrao": "1966 Deluxe Reverb 1x12 Jensen P12Q - SM57 - Cone Edge"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 15,
   "signature": null

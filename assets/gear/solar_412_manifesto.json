@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "solar_412",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "caixa",
   "nome": "Solar 4x12",
   "inspiracao": "Sunn 4x12",
@@ -11,7 +11,32 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Sunn",
+      "tons": [
+        {
+          "id": 5645,
+          "titulo": "Sunn 4x12 with Celestion G12T-75 IR Collection",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "capturas": 84,
+          "downloads": 4213,
+          "nota": "Sunn 4x12 com G12T-75, 84 posições de microfone",
+          "ir_padrao": "Sunn 4x12 G12T-75 - SM57 1 - Cap Edge",
+          "padrao": true
+        },
+        {
+          "id": 45930,
+          "titulo": "DRONE DOOM ESSENTIALS - IR Pack",
+          "criador": "serjthedruid",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 1679,
+          "nota": "Sunn 4x12 pesada, com muito grave"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 24,
   "signature": null

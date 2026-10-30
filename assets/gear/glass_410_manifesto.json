@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "glass_410",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Glass 4x10",
   "inspiracao": "Darkglass 4x10",
@@ -11,7 +11,43 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Darkglass",
+      "tons": [
+        {
+          "id": 5565,
+          "titulo": "Darkglass ADAM Artist Сabs",
+          "criador": "mikhailkurochkin",
+          "tipo": "cab",
+          "capturas": 18,
+          "downloads": 5597,
+          "nota": "caixas Darkglass dos artistas, inclui a 4x10",
+          "ir_padrao": "Jon 410",
+          "padrao": true
+        },
+        {
+          "id": 102144,
+          "titulo": "Darkglass DG410C",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "capturas": 1,
+          "downloads": 36,
+          "nota": "Darkglass DG410C, Beta52 e U87",
+          "ir_padrao": "Darkglass DG410C (Beta52 A8 + U87 B5)"
+        },
+        {
+          "id": 80355,
+          "titulo": "Darkglass DG212NE Cab IR",
+          "criador": "thefoxking",
+          "tipo": "cab",
+          "capturas": 2,
+          "downloads": 1990,
+          "nota": "Darkglass 2x12 DG212NE",
+          "ir_padrao": "Darkglass DG212NE Beta52A"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 23,
   "signature": null

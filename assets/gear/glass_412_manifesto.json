@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "glass_412",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Glass 4x12",
   "inspiracao": "Darkglass 4x12",
@@ -11,7 +11,31 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Darkglass",
+      "tons": [
+        {
+          "id": 5566,
+          "titulo": "Darkglass Elite 4x12 Cab",
+          "criador": "mikhailkurochkin",
+          "tipo": "cab",
+          "capturas": 16,
+          "downloads": 2737,
+          "nota": "Darkglass 4x12, 16 posições",
+          "padrao": true
+        },
+        {
+          "id": 80355,
+          "titulo": "Darkglass DG212NE Cab IR",
+          "criador": "thefoxking",
+          "tipo": "cab",
+          "capturas": 2,
+          "downloads": 1990,
+          "nota": "a 2x12 da mesma linha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 28,
   "signature": null

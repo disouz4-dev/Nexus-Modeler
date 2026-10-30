@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "jazz_212",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Jazz 2x12",
   "inspiracao": "Roland JC 2x12",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Jazz Chorus",
+      "tons": [
+        {
+          "id": 74560,
+          "titulo": "1993 Roland Jazz Chorus-77 Cab IR",
+          "tipo": "cab",
+          "capturas": 24,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 12,
   "signature": null

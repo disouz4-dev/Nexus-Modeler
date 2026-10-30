@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "twin_212",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Twin 2x12",
   "inspiracao": "Fender Twin 2x12",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Twin Reverb",
+      "tons": [
+        {
+          "id": 33532,
+          "titulo": "Fender Twin Reverb",
+          "tipo": "cab",
+          "capturas": 3,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 7,
   "signature": null

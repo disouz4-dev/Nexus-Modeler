@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "blue_212",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Blue 2x12",
   "inspiracao": "Vox AC30 2x12",
@@ -11,7 +11,20 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "AC30",
+      "tons": [
+        {
+          "id": 27468,
+          "titulo": "Vox AC30 Mix Ready",
+          "tipo": "cab",
+          "capturas": 2,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 6,
   "signature": null

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "hart_410",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "caixa",
   "nome": "Hart 4x10",
   "inspiracao": "Hartke 4x10",
@@ -11,7 +11,43 @@
   "motor": "caixa",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Hartke",
+      "tons": [
+        {
+          "id": 66570,
+          "titulo": "Hartke HyDrive 410 Cab-IR",
+          "criador": "jorgeosoriobreton",
+          "tipo": "cab",
+          "capturas": 7,
+          "downloads": 1517,
+          "nota": "Hartke HyDrive 4x10, SM57, Beta52 e KSM44",
+          "ir_padrao": "Hartke HyDrive 410 > Beta52+SM57",
+          "padrao": true
+        },
+        {
+          "id": 90726,
+          "titulo": "Hartke 410TP",
+          "criador": "lavigiestudio",
+          "tipo": "cab",
+          "capturas": 5,
+          "downloads": 695,
+          "nota": "Hartke 4x10 TP",
+          "ir_padrao": "Hartke 410TP - Audix OM5 + AKG P2"
+        },
+        {
+          "id": 6574,
+          "titulo": "Hartke LH100+4x10 IRs",
+          "criador": "mikey",
+          "tipo": "cab",
+          "capturas": 22,
+          "downloads": 2160,
+          "nota": "Hartke 4x10 com o cabeçote LH1000, vários microfones",
+          "ir_padrao": "4_SM57_On"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 22,
   "signature": null
