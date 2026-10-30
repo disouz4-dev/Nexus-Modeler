@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 1406,
-      "y": 256,
-      "tamanho": 64,
+      "x": 1397,
+      "y": 247,
+      "tamanho": 82,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1496,
-      "y": 256,
-      "tamanho": 65,
+      "x": 1487,
+      "y": 247,
+      "tamanho": 83,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1586,
-      "y": 255,
-      "tamanho": 66,
+      "x": 1577,
+      "y": 246,
+      "tamanho": 84,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1676,
-      "y": 255,
-      "tamanho": 67,
+      "x": 1668,
+      "y": 246,
+      "tamanho": 85,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1767,
-      "y": 254,
-      "tamanho": 68,
+      "x": 1758,
+      "y": 245,
+      "tamanho": 86,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1857,
-      "y": 254,
-      "tamanho": 69,
+      "x": 1848,
+      "y": 245,
+      "tamanho": 87,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -68,8 +68,8 @@
     {
       "texto": "INPUT",
       "x": 319.9,
-      "y": 273.2,
-      "altura": 16.28,
+      "y": 266.6,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -77,8 +77,8 @@
     {
       "texto": "PHONES",
       "x": 415.6,
-      "y": 273.2,
-      "altura": 16.28,
+      "y": 266.6,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -86,8 +86,8 @@
     {
       "texto": "OUTPUT LEVEL",
       "x": 530.4,
-      "y": 275.4,
-      "altura": 16.28,
+      "y": 255.6,
+      "altura": 20.65,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -122,8 +122,8 @@
     {
       "texto": "DATA",
       "x": 1295.7,
-      "y": 275.4,
-      "altura": 16.28,
+      "y": 252.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -131,8 +131,8 @@
     {
       "texto": "VOLUME",
       "x": 1436.4,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -140,8 +140,8 @@
     {
       "texto": "GAIN",
       "x": 1526.6,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -149,8 +149,8 @@
     {
       "texto": "BASS",
       "x": 1616.8,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -158,8 +158,8 @@
     {
       "texto": "MIDDLE",
       "x": 1707.0,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -167,8 +167,8 @@
     {
       "texto": "TREBLE",
       "x": 1797.2,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -176,8 +176,8 @@
     {
       "texto": "PRESENCE",
       "x": 1887.4,
-      "y": 250.4,
-      "altura": 14.47,
+      "y": 233.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -185,8 +185,8 @@
     {
       "texto": "CLEAN 1",
       "x": 1707.0,
-      "y": 391.3,
-      "altura": 14.47,
+      "y": 399.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -194,8 +194,8 @@
     {
       "texto": "OD 1",
       "x": 1436.5,
-      "y": 391.3,
-      "altura": 14.47,
+      "y": 399.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -203,8 +203,8 @@
     {
       "texto": "OD 2",
       "x": 1526.6,
-      "y": 402.8,
-      "altura": 14.47,
+      "y": 411.0,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -212,8 +212,8 @@
     {
       "texto": "BASS SHIFT",
       "x": 1616.8,
-      "y": 402.8,
-      "altura": 14.47,
+      "y": 407.3,
+      "altura": 19.47,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -221,8 +221,8 @@
     {
       "texto": "CLEAN 2",
       "x": 1797.2,
-      "y": 402.8,
-      "altura": 14.47,
+      "y": 411.0,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -230,8 +230,8 @@
     {
       "texto": "STEP",
       "x": 1887.4,
-      "y": 402.8,
-      "altura": 14.47,
+      "y": 411.0,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -239,8 +239,8 @@
     {
       "texto": "CHANNEL",
       "x": 1977.6,
-      "y": 402.8,
-      "altura": 14.47,
+      "y": 411.0,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
@@ -248,8 +248,8 @@
     {
       "texto": "POWER",
       "x": 2089.7,
-      "y": 278.5,
-      "altura": 15.38,
+      "y": 271.1,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#211d19",
       "espaco": 1.0
