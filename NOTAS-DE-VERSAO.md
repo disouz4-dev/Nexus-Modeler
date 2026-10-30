@@ -1,5 +1,33 @@
 # Notas de versão
 
+## 0.2.0-beta.3
+
+### Instalação nova
+- A 0.2.0-beta.3 começa do zero. Na primeira abertura, as preferências,
+  os equipamentos baixados, os presets e as capturas das versões anteriores
+  vão para uma pasta de reserva ao lado da pasta do Nexus. Nada é apagado,
+  mas esta versão não lê mais esses arquivos.
+
+### Só equipamento revisado
+- Ficam no programa apenas as peças modeladas e revisadas uma a uma contra
+  o original: os 63 pedais e 28 cabeçotes, além da pedaleira.
+- Os outros cabeçotes, as caixas e os microfones chegam pelo botão de
+  equipamentos novos, sem precisar de versão nova do programa, à medida que
+  cada peça for revisada.
+- Enquanto não houver caixa instalada, a aba de caixas não aparece e o
+  cabeçote toca sem caixa.
+
+### Correções
+- Com ganho, equalizador e volume no máximo, o cabeçote não estoura mais:
+  a saída tem um teto que só age acima do limite.
+- Selenite EQ: com todas as faixas e o nível no máximo, o som não estoura
+  mais.
+- Captura padrão: o cabeçote abre na captura com várias posições de ganho
+  sempre que existir uma, em vez de ficar travado numa captura só.
+- Cherry Drop: o rótulo AFINAÇÃO aparece nos 15 idiomas.
+- Pedais compactos (Emerald Echo, Galaxy Mod e Aquamarine Sky) com um
+  pisante só.
+
 ## 0.2.0-beta.2
 
 ### Presets antigos
