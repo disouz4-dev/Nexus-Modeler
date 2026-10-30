@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:00:47Z",
+ "gerado": "2026-10-30T07:00:51Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3983,8 +3983,8 @@
   },
   "mark_112": {
    "nome": "Mark 1x12",
-   "hash": "54735dc78c0f04ca",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "2583c1b94f78ef15",
+   "data": "2026-10-30T07:00:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark_112_frente.jpg",
@@ -3993,18 +3993,18 @@
     "mark_112_mapa.json"
    ],
    "sha256": {
-    "mark_112_frente.jpg": "319009f4e33e83d74221a8f4b7f624b1f8d2a3638b71911a9a3331e237ecd719",
-    "mark_112_frente_alfa.png": "b067b2db9eaa93089bdd09ed03fb7e30d38a74876f65d534599f68b7573212c6",
-    "mark_112_manifesto.json": "76976dc6517c930dfb320f21a871df82106905f0b21c599257cce32f2b23306a",
-    "mark_112_mapa.json": "7088947cdc67569ad511a79be8ae6e6cdac5e61c0e3e5f79693e20903356a6c0"
+    "mark_112_frente.jpg": "5de9895e3c500df6dd0f4f816a84286d6715bdd2a1a6beeea8d82aee19b002d1",
+    "mark_112_frente_alfa.png": "a05e01f6bfc252656689167f4174f165f2b1df4e87b4aa863a0c2b75d8896ab4",
+    "mark_112_manifesto.json": "c7c81e58277882e592049380ee5124110a2a7a93b0f9844bb41fa79f5d27e4c6",
+    "mark_112_mapa.json": "9589e38aa9bcd823855b5a8c5d7dc6a94ffb9761c552b7a32fa7e363953b2f17"
    },
-   "tamanho": 713616,
+   "tamanho": 1154980,
    "tipo": "caixa",
    "inspiracao": "Mesa Boogie Mark 1x12",
    "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
