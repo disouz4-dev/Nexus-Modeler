@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:13:41Z",
+ "gerado": "2026-10-30T19:19:51Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -642,8 +642,8 @@
   },
   "blackcat30": {
    "nome": "Black Cat 30",
-   "hash": "c1d35e4448b683b8",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "28c29af51013f801",
+   "data": "2026-10-30T19:19:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcat30_botao_agudo.png",
@@ -658,24 +658,24 @@
     "blackcat30_mapa.json"
    ],
    "sha256": {
-    "blackcat30_botao_agudo.png": "4eb512e1141253ec266f9184c81b960f564b085ba50fb9c384bdea790ebba6a9",
-    "blackcat30_botao_ganho.png": "85cc0c8c28b857076b6b1632d1b22cb553b19a696b3cb4f41bbfbaa9723e6cd2",
-    "blackcat30_botao_grave.png": "687fcda866a76cd98737d4ec2c4b25184c8b1e973d7a9385d8f62b75a238f801",
-    "blackcat30_botao_medio.png": "94cfde6af4f149db7c30add578739a41afce90ba246ca5e716f72094b1551eaf",
-    "blackcat30_botao_presenca.png": "0614f0885866d5f6dabfc0bd295a41af22cba6ef4ceb82d94dc4349ff069009e",
-    "blackcat30_botao_volume.png": "25ba923143eb38af36d37782e8d6dc1578224614769da320c3c30b853bcf2a66",
-    "blackcat30_frente.jpg": "ee26a6b0002dff86ef3d2adb615e52cb1bedee1486d7ba58f445b764bf7edf5e",
-    "blackcat30_frente_alfa.png": "1685b2e7f8290d4b92b85f372cf7c6ec5c4ad947c6da1057a7bbf2cd715f3655",
-    "blackcat30_manifesto.json": "dabc6be9e6e2edef133af7df4d278bb18fa206ccf24ca0f5afa30e3988b49398",
-    "blackcat30_mapa.json": "a06a3b0ce0c5b10df951a5e43ac1075535f6f6d688243b3053a4eb8383532575"
+    "blackcat30_botao_agudo.png": "4183efa9a158061a913690dde293b0e4592d88f466e4e8b9f11c15fafab63451",
+    "blackcat30_botao_ganho.png": "766129d6aa5431a52ea2d16cb2132ccfb347b5f89b118fca69c6469c39832ccc",
+    "blackcat30_botao_grave.png": "16ec7cf0a65fa752db1368f04c87d100b1fdf978db1ec3b9ba08f97378bb606f",
+    "blackcat30_botao_medio.png": "d1b0896596db951398811065c75eb381147b783cc28d2b5cfebfe8fefaa3d524",
+    "blackcat30_botao_presenca.png": "44678184ef455bb0e5682883743bc570563d883797136650f4c0169012dd217b",
+    "blackcat30_botao_volume.png": "696c9992c228de5a9796a87f7f872c95d2768bd7d501cf02511fdebc4634f969",
+    "blackcat30_frente.jpg": "d535f90aa57c95994c5850c4794bd4458568bd467a80ab09ee65304047770af3",
+    "blackcat30_frente_alfa.png": "13d9c4a9575482129999207cabc9f71a1189b76a50c6932a78e9b7a204989cce",
+    "blackcat30_manifesto.json": "863bf6e0a62a61a782b28d68b3450b918c697eb286166497ee3f22891946a07f",
+    "blackcat30_mapa.json": "e51d8d2ecaf9693a1b2e4d190fe41211f6274beac67a9ec8c4c16f58d5d76269"
    },
-   "tamanho": 1265228,
+   "tamanho": 1227483,
    "tipo": "cabecote",
    "inspiracao": "Bad Cat Hot Cat",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
