@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "presenca",
-      "x": 548,
-      "y": 853,
-      "tamanho": 94,
+      "x": 540,
+      "y": 845,
+      "tamanho": 109,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 791,
-      "y": 854,
-      "tamanho": 92,
+      "x": 783,
+      "y": 846,
+      "tamanho": 107,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 912,
-      "y": 854,
-      "tamanho": 91,
+      "x": 904,
+      "y": 846,
+      "tamanho": 107,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1033,
-      "y": 854,
-      "tamanho": 91,
+      "x": 1025,
+      "y": 846,
+      "tamanho": 107,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1154,
-      "y": 854,
-      "tamanho": 91,
+      "x": 1146,
+      "y": 846,
+      "tamanho": 107,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1397,
-      "y": 854,
-      "tamanho": 91,
+      "x": 1389,
+      "y": 846,
+      "tamanho": 107,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,8 +67,8 @@
     {
       "texto": "SYSTEM VOL",
       "x": 356.8,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "THUMP",
       "x": 477.2,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "PRESENCE",
       "x": 597.7,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -94,8 +94,8 @@
     {
       "texto": "MASTER 2",
       "x": 718.2,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -103,8 +103,8 @@
     {
       "texto": "MASTER 1",
       "x": 838.6,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "TREBLE",
       "x": 959.1,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "MIDDLE",
       "x": 1079.5,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "BASS",
       "x": 1200.0,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "GAIN 2",
       "x": 1320.5,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -148,8 +148,8 @@
     {
       "texto": "GAIN 1",
       "x": 1440.9,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -157,8 +157,8 @@
     {
       "texto": "VOLUME",
       "x": 1561.4,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -166,8 +166,8 @@
     {
       "texto": "TREBLE",
       "x": 1681.8,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -175,8 +175,8 @@
     {
       "texto": "MIDDLE",
       "x": 1802.3,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -184,8 +184,8 @@
     {
       "texto": "BASS",
       "x": 1922.8,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -193,53 +193,53 @@
     {
       "texto": "GAIN",
       "x": 2043.2,
-      "y": 965.3,
-      "altura": 16.89,
+      "y": 978.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
     },
     {
       "texto": "FREQ",
-      "x": 467.1,
+      "x": 480.5,
       "y": 784.3,
-      "altura": 14.56,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
     },
     {
       "texto": "RESPONSE",
-      "x": 647.6,
+      "x": 670.9,
       "y": 784.3,
-      "altura": 14.56,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
     },
     {
       "texto": "VOICE",
-      "x": 1251.4,
+      "x": 1267.3,
       "y": 784.3,
-      "altura": 14.56,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
     },
     {
       "texto": "HBE-BE-CLN",
-      "x": 1477.1,
+      "x": 1505.3,
       "y": 784.3,
-      "altura": 14.56,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
     },
     {
       "texto": "BRIGHT",
-      "x": 1707.2,
+      "x": 1725.5,
       "y": 784.3,
-      "altura": 14.56,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0
@@ -247,8 +247,8 @@
     {
       "texto": "INPUT",
       "x": 2169.2,
-      "y": 938.2,
-      "altura": 16.89,
+      "y": 944.0,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#e1c481",
       "espaco": 1.0

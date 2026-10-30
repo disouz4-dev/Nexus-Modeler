@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:44:47Z",
+ "gerado": "2026-10-30T07:50:58Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -537,8 +537,8 @@
   },
   "be100": {
    "nome": "BE 100",
-   "hash": "14246da009e5f20c",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "6f6078dd677c65a6",
+   "data": "2026-10-30T07:50:58Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -553,24 +553,24 @@
     "be100_mapa.json"
    ],
    "sha256": {
-    "be100_botao_agudo.png": "c3080c09b3f3cc476047a132d7a359c689a57509241690082a39511a1fbafa84",
-    "be100_botao_ganho.png": "486596e99e0ecb2f6e66430fd8fb1134b64c80b77203cd39966452c2b8765f24",
-    "be100_botao_grave.png": "34bab59cfe93bc6bc97602a904e03e27f28cc6e3947c4952637c6b345e62130e",
-    "be100_botao_medio.png": "db1caa120567460f68e88b9ecbda2b366c8832095108f450b30ec44d9f054a7d",
-    "be100_botao_presenca.png": "3e3150e9028d1d427adcebda96d95dae8641beb08864dfa4433c80eb6c20213c",
-    "be100_botao_volume.png": "ed85d8adf5731cb6b60219719f3bc7d957d54a7f7484ed2b2e8057e194c6c2ea",
-    "be100_frente.jpg": "3c7afc5cc3fb7c35274ce8d25fc6c8045cbe31cce1f73afd3ca78062389865d8",
-    "be100_frente_alfa.png": "4ac3409007e2385cd180ee7c5f2f6706addf9e2677c9d641e34d433125f39030",
-    "be100_manifesto.json": "b9f2b63c85d485160d2b1937305c998c3b931a54ca5b934727e53cd1c9102071",
-    "be100_mapa.json": "296443ff45071b5886c2abb0a096bce4561acd314828cac6997e9487712fdb3c"
+    "be100_botao_agudo.png": "127e8788b01c41fb09f6ff0547e1b75b12fa57f297a3dbe2021e3ba8718d7475",
+    "be100_botao_ganho.png": "fb5b033fb1efe28d85640f523751ef92559b676e59f2a058396965c7151960ed",
+    "be100_botao_grave.png": "dd77365c43b1ac3fe9cad9920f1fb297c294f94cbaeec8a911f7f258782f1232",
+    "be100_botao_medio.png": "ac01012dfca9bf69adc9d62e7a18507ffe85cb0725c625050e342f0c6b7ca5a7",
+    "be100_botao_presenca.png": "268f199ae2b6c0b51afb6963014f9855ffcb8978c59ba4fc5f526f6441fc34ca",
+    "be100_botao_volume.png": "960bb325d9a1c5ee07a8b36c7dfe3536a56d9c8ea40989bdb0a3d84e9003bb33",
+    "be100_frente.jpg": "e8b25e985ad8dc179073051c2e920ba4b52b6bcc9611fe5a8aa764aa4218444e",
+    "be100_frente_alfa.png": "bd2bbff8a068383114f2f5b815d8c973ba2421f818f3d8c360e0d12b7f9ecea8",
+    "be100_manifesto.json": "1f1bd639dbd611f44d1476b145b2a6e0943dc4fe93befc670d4ce193e95f6593",
+    "be100_mapa.json": "79b64a1928bf47c6124939d4d013e7d7c08c301a29f9ec6c46976f7932755f8f"
    },
-   "tamanho": 1293737,
+   "tamanho": 1267322,
    "tipo": "cabecote",
    "inspiracao": "BE-100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
