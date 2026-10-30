@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:05:21Z",
+ "gerado": "2026-10-30T16:09:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5097,8 +5097,8 @@
   },
   "rocker50": {
    "nome": "Rocker 50",
-   "hash": "37362136b9efb842",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "3e6dba3a12bf4332",
+   "data": "2026-10-30T16:09:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rocker50_botao_agudo.png",
@@ -5113,24 +5113,24 @@
     "rocker50_mapa.json"
    ],
    "sha256": {
-    "rocker50_botao_agudo.png": "a51d3ecb785549875809445d3be5b49cb45b79765ba80ae892349ca5853a08d4",
-    "rocker50_botao_ganho.png": "4e637af5a74c69944e9c802b7fd2c31e9faf5fbbb5e643bf1c71e855c4d7a25d",
-    "rocker50_botao_grave.png": "06f6b8cdacfce8eaffbcc1a1d0db62f4b2b64a719d0e8b3cd38b33e12a941859",
-    "rocker50_botao_medio.png": "c5add843918a5395343b7425f3b2871e631d3d2330903848d15bf910579e8b58",
-    "rocker50_botao_presenca.png": "fbef8816dbd80701fa6b7d00d670a13f5d00be691c98d27d1ab0a8aa21f43ee9",
-    "rocker50_botao_volume.png": "6ab74dace92c1c2103354a7fe5540aad3a8feee4668eb68f9550eaf069e686e7",
-    "rocker50_frente.jpg": "44072a6a96ca69b5d8fa8b425c050dfe11baa9f67797e6afd4a06fa7083df97c",
-    "rocker50_frente_alfa.png": "9be515ff210566f98e079b7683672e7217c8876b5aa4b834a40b2e74d0d777ad",
-    "rocker50_manifesto.json": "ee02f76440f767612d99c1c3435d92fe9c5baaa8ddb23435ab300778bcf3cd8e",
-    "rocker50_mapa.json": "25209a062f8a05305c8534d6f119b5efdc2b3fd0dcce629943d668dcecfe0c10"
+    "rocker50_botao_agudo.png": "ee504c33efdc1265325c93347379cc3eee90ac5923bc00e4bca40d50525e028b",
+    "rocker50_botao_ganho.png": "f6a2fc1c678d618f2f13a8099dc25f2f8bb150f58df670e9a6f032fd44291237",
+    "rocker50_botao_grave.png": "a21549f1f7f3f3b744b36c26d8a80597402671dc067060e1a83fda00c2d074d1",
+    "rocker50_botao_medio.png": "f9697532797b4510269b99dafa8ccbbb3633c7cf7b07dace93c88757bd168d73",
+    "rocker50_botao_presenca.png": "4895087263f29435d3b4f7a8b9cb193fe0ad0d33cbd5d436a6c5b412702609a3",
+    "rocker50_botao_volume.png": "4edf52cff6fab52c4028aaf9e28d53d66f3a84c9063a9093ada8596a402ec3cc",
+    "rocker50_frente.jpg": "2747e491f2f6eb86d3d30687d25a6f34dee402819708e33e92316c64ffad1621",
+    "rocker50_frente_alfa.png": "8e259f8503ba2d1878ee7b8262be7d3ba0c667cc83441a7756ef9107d19fc572",
+    "rocker50_manifesto.json": "e37ee7c1a8ecc3f87d4d2b14d5e34487df67f69ee3497ea64b41dd8ccd374dce",
+    "rocker50_mapa.json": "a826cce10a4a1ad79a19a554280d24490361e90f8fb5904b88a246d917ce2a00"
    },
-   "tamanho": 1216717,
+   "tamanho": 1457195,
    "tipo": "cabecote",
    "inspiracao": "Rockerverb 50",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
