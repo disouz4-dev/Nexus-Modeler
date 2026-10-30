@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:51:04Z",
+ "gerado": "2026-10-30T19:55:14Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5348,8 +5348,8 @@
   },
   "silversuper": {
    "nome": "Silver Super",
-   "hash": "b2748b3d174eb1fa",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "97c141991a784abe",
+   "data": "2026-10-30T19:55:14Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silversuper_botao_agudo.png",
@@ -5364,24 +5364,24 @@
     "silversuper_mapa.json"
    ],
    "sha256": {
-    "silversuper_botao_agudo.png": "36de0a2c2d5daad79905be87c3f1114884c1e8451282c438369bf2a7e2d33fd5",
-    "silversuper_botao_ganho.png": "42095f9f6aeb02a87c0d3b3482858ec7a0d01e4daf856206376056715cefdf20",
-    "silversuper_botao_grave.png": "e8e89e6372c6ffd30ff3cac216bc576c9aaf76cc33467586b6bbd2cee0a753cd",
-    "silversuper_botao_medio.png": "2a27839b136bb2e58eef33b508d9b423a83073d02e8fbb5773fe143deae5c9da",
-    "silversuper_botao_presenca.png": "6441fc7a63374a8d017da456ad06d359fda9be9c93b13cc1ab8fb98726ad595f",
-    "silversuper_botao_volume.png": "1e1cf4931f7ca7e9f6182ebbb02e089a7cc8ab0bdc4aa8c22783546809f57b57",
-    "silversuper_frente.jpg": "641b66c615367b5cc7c51ca9f4f68b2180499f6e7bdfea6e14afa7bbb9f68b25",
-    "silversuper_frente_alfa.png": "a3d1586bf2a55d6868b2a1d30f8f8c3797914f60a7452bfc85e0030aaa973e7d",
-    "silversuper_manifesto.json": "76d51be28abeb38126ae355745b890b2f4ddfc30b031f91dff134063c06d513b",
-    "silversuper_mapa.json": "e52bcce8022a095773fae4ae283ad6835d2ec03f9290e39695c369ce6d1634c4"
+    "silversuper_botao_agudo.png": "ad9e8ec5ef3ce739e8940fb2e22cff88636372d8b90f13d85c34f3280fc7db6d",
+    "silversuper_botao_ganho.png": "a17befd396c570bb17447848f1256cdebd04fe60d7c9f65e2c25c6d74066e47d",
+    "silversuper_botao_grave.png": "7205378e1d0437ca586e57a3464c2ebd5b95ee19e68c9557a88b6f8aee8fc179",
+    "silversuper_botao_medio.png": "3bc515521dadeec80135e99e35580e2963f4fc052a318a3efb19aa6c4908b497",
+    "silversuper_botao_presenca.png": "134522ff35308fa62bf251c41705b5810a971fa54a57160aafaadd63e451b6fd",
+    "silversuper_botao_volume.png": "05fd505553a7ccac0487879d7d220ffdb620936298c898ee845d34b723fabba8",
+    "silversuper_frente.jpg": "03d2116e5ecd7225ac2cdeba9f16e0b6dbad2709fae40ce99568fa28ef6cbbf7",
+    "silversuper_frente_alfa.png": "956fe43ea958fd2cd78f1bf9e2f0cb9a39eef68c2319a50877bc9da41b3cb9e5",
+    "silversuper_manifesto.json": "6273d91e81bc91c3335c12465daaf343075f4332ab5a23a07e3d111201863213",
+    "silversuper_mapa.json": "5ed1cdcbf8a6a50228b80fcc1aa81e14ee5a036f9f4fbdde24b937f181dc7b21"
    },
-   "tamanho": 1873674,
+   "tamanho": 3118877,
    "tipo": "cabecote",
    "inspiracao": "Fender Super Reverb",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
