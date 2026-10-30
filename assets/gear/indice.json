@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:19:51Z",
+ "gerado": "2026-10-30T19:24:01Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -753,8 +753,8 @@
   },
   "bliss100": {
    "nome": "Bliss 100",
-   "hash": "eebb33a457fc64b8",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "86cd24e8fa92ee70",
+   "data": "2026-10-30T19:24:01Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bliss100_botao_agudo.png",
@@ -769,24 +769,24 @@
     "bliss100_mapa.json"
    ],
    "sha256": {
-    "bliss100_botao_agudo.png": "a0c869db2f5ec58aa4f201067261a59b1d2b3f8db091db8aeae9a1e0ece159ce",
-    "bliss100_botao_ganho.png": "1ea9667e6cc445aca2bcd95542978a082fa7cc1f25c161867be85d85e27de7c6",
-    "bliss100_botao_grave.png": "17dc6ca238111efe1e8f8c41eacf7458d7f4a32cd97ed75e00141aa29ce075c1",
-    "bliss100_botao_medio.png": "3d4f39fde4fc4d3734a835778bba8c569dcea1b3be95d5b669ccb8fa1822e5ed",
-    "bliss100_botao_presenca.png": "678c3f305c9074ee27795a6593bed6598cc2b4c1ee6e639b5d8ada0f3e9fef25",
-    "bliss100_botao_volume.png": "e6246f7b3d03f4267cdfead949d60fa20f3c089e01ee8aaf322d9d631fac3527",
-    "bliss100_frente.jpg": "e342008d9228d8fa570332c721540536cbd83b1e531c7b886954499072855610",
-    "bliss100_frente_alfa.png": "13a5fa20542b5dee48543d95219eb4ed50b4c3777012fbeaa40429ba85079bf9",
-    "bliss100_manifesto.json": "197a999dd76571d6262fb9823ac79002aa019e744d37b89198ed2d859d740fa7",
-    "bliss100_mapa.json": "e906a8d396f17a53ea3154e2df084c0edc34cdd71142e7f623b0bba347d61f5d"
+    "bliss100_botao_agudo.png": "942c427ba8102619b884bd2af8565d5e793e9e4838bc7d8249cda449b8e69d7b",
+    "bliss100_botao_ganho.png": "e2b6c5a22213d1de04a525402091c7c2439c79217c852c4bcfc29e1f16bcadae",
+    "bliss100_botao_grave.png": "d5669a1fe1ad75628789372b7755979aae32d6a7cc1250e4dc4f0b60921598f1",
+    "bliss100_botao_medio.png": "d6d2d9ab566c6a90b61b698dbcb24eec784630b73783bc3a50b6a67138be2695",
+    "bliss100_botao_presenca.png": "5076ac90ce759f4c8c224dca3457575c44d24f13bc347981b90e064928ca58f2",
+    "bliss100_botao_volume.png": "1f6a430a971d0676c6321670a91f35e8cdb435fc4949ade6871d5ae6b8f9ab87",
+    "bliss100_frente.jpg": "e15db51e69bad6568c5dc3fb2b7a101aca5870505eddc72a66d7d9c69ca925fa",
+    "bliss100_frente_alfa.png": "208f8dffb6b6b9c83709f1079a2c37bd9635873d0caae01ffd946c1fa841fc0f",
+    "bliss100_manifesto.json": "5100df86adb7c49345484efa5f42ba7329a418e79bd308ad341b972983938ba8",
+    "bliss100_mapa.json": "a4f3876d1457db566c03780bcce8a0257159474871fc4043344f1db7b6b16ce0"
    },
-   "tamanho": 759204,
+   "tamanho": 1196490,
    "tipo": "cabecote",
    "inspiracao": "Bogner Ecstasy",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
