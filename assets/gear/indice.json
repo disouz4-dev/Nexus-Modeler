@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T01:50:24Z",
+ "gerado": "2026-10-30T01:52:32Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1134,8 +1134,8 @@
   },
   "brit800": {
    "nome": "Brit 800",
-   "hash": "e7e8718090d6aa72",
-   "data": "2026-10-29T22:09:26Z",
+   "hash": "eb5307c10116ae14",
+   "data": "2026-10-30T01:52:32Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit800_botao_agudo.png",
@@ -1150,24 +1150,24 @@
     "brit800_mapa.json"
    ],
    "sha256": {
-    "brit800_botao_agudo.png": "287fdabcb1ca5df57f28bf39243d665d208a323b2513d7ca72abc5b371d7e5d8",
-    "brit800_botao_ganho.png": "2659b96b2f49a9b0c249ca42d2dfcfc4b5fc17e5cd8e06e64e23628dcffbb4ce",
-    "brit800_botao_grave.png": "5fe9d939624dd786a460764a9181399dd84b7dfaab156607ecede3748260688b",
-    "brit800_botao_medio.png": "cbd66c44a67522bfcf2072f62d95f60293fcd8542930abf0dc9e6d6be74bfa38",
-    "brit800_botao_presenca.png": "d02e9004a1838df22ac374bc96e70c2def8587b3aab691673486e993b5c68d8c",
-    "brit800_botao_volume.png": "d4c24f16746692c157a5a1b254228c72d43fe2a711cd6a5aac7a89182807b6cd",
-    "brit800_frente.jpg": "2ed46c65ed69fcc86eb2fea20355887bd5b8e23b2dced4226289c77a7a6b17c4",
-    "brit800_frente_alfa.png": "bfce00f6859a2368b08639dac7e27db5a5164753dcad0e5ba45264475752eb85",
-    "brit800_manifesto.json": "c4a8b14b2798cb0653fb91532b7664fb0239ba25f5f0c8d6590487f28f1c4a83",
-    "brit800_mapa.json": "ecf6e01d9385ccf71f35fdfe355ee1e905d4626f5641182a15dcf6dbdadded66"
+    "brit800_botao_agudo.png": "c9b8ae67076af7896e1609b69f74953eb7c3432dd4b65f5a27b1d85debe594c8",
+    "brit800_botao_ganho.png": "4f5aea0f0fcee9338a4d7047adc4a201eef910779b3d34ac9cf4278f0d1c0a6a",
+    "brit800_botao_grave.png": "4280d144ad7f61a3d855b904490e75bf25ab007a5a3c55ac77560edb79a79c26",
+    "brit800_botao_medio.png": "e683f9c0ccf77398631e06207cae7907964f4e96c9a57df9f96d9743f2d47fba",
+    "brit800_botao_presenca.png": "04be7dd9ec0e125b8f68871194499097bde10d26e836c4228258da2c623a6689",
+    "brit800_botao_volume.png": "9c50cb878b8b4ae1855fc3931146a75170cc5accae5b5e309c5b3bd635b9f91f",
+    "brit800_frente.jpg": "55b9e843f13e2969a1a8469424ce824344a294c4b3cd81d9a201099f5b715c0c",
+    "brit800_frente_alfa.png": "ead0281d238653fa1789b7bfaab027275d3a91d08347f9d7219d2b26637c4926",
+    "brit800_manifesto.json": "54759fcd0a82a72fea1778a917e5ea599a7ffd0fa685ca0b968f8f8626ffdc92",
+    "brit800_mapa.json": "b1a45346135dd8440614c6f8bc1beaa955381d160df1a4925e7513d75f8e6c27"
    },
-   "tamanho": 1565295,
+   "tamanho": 1565274,
    "tipo": "cabecote",
    "inspiracao": "JCM800 2203",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
