@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Selenite EQ",
   "familia": "selenite_eq",
-  "inspiracao": "Boss compacto branco-acinzentado (73 x 129 x 59 mm), letras pretas no corpo e brancas na faixa preta do alto, onde ficam os 8 deslizantes de pontas brancas (100 Hz a 6,4 kHz e NÍVEL); LED CHECK no alto, à direita, e pedal basculante com borracha frisada. Tema: cristais de selenita brancos em lâminas, facetas tom sobre tom. Original: Boss GE-7 Equalizer.",
+  "inspiracao": "Boss compacto off-white bege acinzentado (73 x 129 x 59 mm), letras pretas no corpo; faixa preta dos 8 deslizantes de pontas creme (100 Hz a 6,4 kHz e NÍVEL) com moldura creme fina em cima e dos lados e um fio branco antes do NÍVEL; LED pequeno sem aro dentro da faixa, no alto, entre o 6,4K e o NÍVEL; entradas logo abaixo da quebra; pedal basculante com borracha frisada. Tema: cristal de selenita na borracha, no lugar da logo. Original: Boss GE-7 Equalizer.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -11,9 +11,9 @@
   },
   "pintura": {
     "cor": [
-      0.6941,
-      0.6661,
-      0.586
+      0.68,
+      0.6456,
+      0.548
     ],
     "metalico": 0.0,
     "aspereza": 0.24
@@ -29,9 +29,9 @@
     "altura_m": 0.012,
     "saia": true,
     "corpo": [
-      0.0037,
-      0.0037,
-      0.0037
+      0.0008,
+      0.0008,
+      0.0008
     ],
     "traco": [
       0.8913,
@@ -39,15 +39,12 @@
       0.8434
     ],
     "cursor": [
-      0.8913,
-      0.8913,
-      0.8913
+      0.8277,
+      0.7742,
+      0.632
     ]
   },
   "botoes": [],
-  "estampa": {
-    "svg": "estampas/selenite_eq.svg"
-  },
   "medidas_fonte": "Boss GE-7 Equalizer: 73 x 129 x 59 mm (Boss, ficha oficial)",
   "quadro": {
     "largura_rel": 2.21,
@@ -57,15 +54,15 @@
   "base_rel": 0.68,
   "basculante_rel": 0.6,
   "basculante_ang": 0.0,
-  "borracha_rel": 0.36,
-  "modelo_m": 0.0084,
+  "borracha_rel": 0.5,
+  "modelo_m": 0.0125,
   "modelo_x": 0.0,
   "tipo_texto": "",
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
   "led": [
-    0.78,
-    0.93
+    0.646,
+    0.9
   ],
   "deslizantes": [
     {
@@ -102,31 +99,77 @@
     }
   ],
   "deslizantes_layout": {
-    "y": 0.62,
-    "curso": 0.02,
+    "y": 0.64,
+    "curso": 0.024,
     "margem": 0.0075,
     "rotulo_cor": [
       0.8913,
-      0.8751,
-      0.8277
+      0.8913,
+      0.8434
     ]
   },
   "paineis": [
     {
       "pos": [
         0.0,
-        0.64
+        0.655
       ],
       "tam_m": [
-        0.0655,
-        0.044
+        0.063,
+        0.0385
       ],
       "cor": [
         0.0026,
         0.0026,
         0.0029
       ],
-      "raio_m": 0.0015
+      "raio_m": 0.0012
+    },
+    {
+      "pos": [
+        0.646,
+        0.64
+      ],
+      "tam_m": [
+        0.0006,
+        0.026
+      ],
+      "cor": [
+        0.8913,
+        0.8913,
+        0.8434
+      ]
     }
-  ]
+  ],
+  "borracha_larg": 0.86,
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0016,
+  "jacks_y": 0.3,
+  "textos": [],
+  "pecas": [
+    {
+      "tipo": "rotulo",
+      "pos": [
+        -0.6,
+        0.27
+      ],
+      "rotulo": "SAÍDA",
+      "rotulo_m": 0.0034
+    },
+    {
+      "tipo": "rotulo",
+      "pos": [
+        0.6,
+        0.27
+      ],
+      "rotulo": "ENTRADA",
+      "rotulo_m": 0.0034
+    }
+  ],
+  "logo": {
+    "svg": "estampas/acerola_eq_tema.svg",
+    "tam_m": 0.016,
+    "lugar": "borracha"
+  },
+  "modelo_y": 0.33
 }
