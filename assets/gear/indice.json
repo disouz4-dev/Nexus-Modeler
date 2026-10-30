@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:01:32Z",
+ "gerado": "2026-10-30T20:07:43Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1446,8 +1446,8 @@
   },
   "champion5": {
    "nome": "Champion 5",
-   "hash": "8bd56e945fe89a68",
-   "data": "2026-10-30T09:29:01Z",
+   "hash": "d10bb3a4b83b308a",
+   "data": "2026-10-30T20:07:43Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "champion5_botao_agudo.png",
@@ -1462,24 +1462,24 @@
     "champion5_mapa.json"
    ],
    "sha256": {
-    "champion5_botao_agudo.png": "7c0e62869f1f86a064ab6aeccf8580224f1f9c626e5d691b464e10e7646582c8",
-    "champion5_botao_ganho.png": "6056cda0bc2754d62f35b9492a2865b031de2b3c7d70c1704a3965f57fdf5ced",
-    "champion5_botao_grave.png": "386ad7c121869433d7872f5fe5b980280d63ab27b33d705ffc29a09a26bd4ad2",
-    "champion5_botao_medio.png": "57ab40d1a4d012c54421e6dd5c27c41866068a1309a6fbec7219449e9ce696ae",
-    "champion5_botao_presenca.png": "016ea4c4cd4338650218e47fc13ccc6c40683266496aff0eaafed8d042f95da5",
-    "champion5_botao_volume.png": "dcbb6e4ea91572f59e24808a3ba7e627c7950c57eaabaee805710e367cb1b60b",
-    "champion5_frente.jpg": "c12125c296b573f1efaaf087d9fd55ab31f4f79890fc7a0a4f43c5ee961b192c",
-    "champion5_frente_alfa.png": "d7fc6371ffb4633a9ecea3bdadab48e2699a7015c6cfa16cd7ee5c5075e91d91",
-    "champion5_manifesto.json": "2057354c56d15b1c61ca285b622f6aead9fe8f3f24faccb2f62f7e73650e63b1",
-    "champion5_mapa.json": "67066e4a72079ed321dcecf6a372387f5f9e1604814a0e71152bc0f8d66991f5"
+    "champion5_botao_agudo.png": "96683b326abd55d4f57ed960c61df454a2df383f2459eb4bb784ff0a25a26624",
+    "champion5_botao_ganho.png": "0bee2b4769c9e917473a78e07147f475f8b0954d67361be647d4b26aa737e64f",
+    "champion5_botao_grave.png": "088d9b75811e9a5b29b8382aef0bf0dbef3f765654190da5bd205cf1e3f427bd",
+    "champion5_botao_medio.png": "35ef4b0d16baec1d9e5a7b4f2d5a5d6739f515ff867faa6e9c765b21d8c7b612",
+    "champion5_botao_presenca.png": "e08e2c839d9b395ebb6c014190eb973a77c3924cac48229dca426d687619a353",
+    "champion5_botao_volume.png": "480ac9f68318a36ea2e1437d5a7224c4c8e0a36ff99fcfba1e082025c50551a0",
+    "champion5_frente.jpg": "cd105a7abc376f153acd19db8304ec5616455e7beae04a29145355cdecfe8288",
+    "champion5_frente_alfa.png": "b44352dec4142c23da07dc07226a97dc2683529e03fe478a400681d956188b18",
+    "champion5_manifesto.json": "94db25e5abd032bec147b8278e57c98d3dceae31484249297ef27c6ae4b696a1",
+    "champion5_mapa.json": "546c56add61021dd655896914f0c65c86eae288a86832559115dc0669fbfaf13"
    },
-   "tamanho": 2565665,
+   "tamanho": 2607477,
    "tipo": "cabecote",
    "inspiracao": "Fender Champ",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
