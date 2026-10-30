@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Neptune Chorus",
   "familia": "neptune_chorus",
-  "inspiracao": "Boss compacto azul-turquesa claro (73 x 129 x 59 mm), letras pretas; botões pretos com saia: VELOCIDADE e PROFUNDIDADE (o MISTURA a mais fica pequeno, no meio, porque o CE-2 só tem dois), LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: o planeta Netuno azul-turquesa com faixas, num céu de estrelas brancas. Original: Boss CE-2 Chorus.",
+  "inspiracao": "Boss compacto azul-turquesa claro (73 x 129 x 59 mm), letras pretas; botões pretos com saia: VELOCIDADE e PROFUNDIDADE (o MISTURA a mais fica pequeno, no meio, porque o CE-2 só tem dois), LED CHECK no alto, no centro, e pedal basculante com borracha frisada. Tema: o planeta Netuno azul-turquesa com faixas, desenhado na borracha, no lugar da logo. Original: Boss CE-2 Chorus.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -68,9 +68,7 @@
     }
   ],
   "medidas_fonte": "Boss CE-2 Chorus: 73 x 129 x 59 mm (Boss, ficha oficial)",
-  "estampa": {
-    "svg": "estampas/neptune_chorus.svg"
-  },
+  "modelo_y": 0.33,
   "quadro": {
     "largura_rel": 2.21,
     "proporcao": 1.25,
@@ -79,10 +77,16 @@
   "base_rel": 0.68,
   "basculante_rel": 0.6,
   "basculante_ang": 0.0,
-  "borracha_rel": 0.36,
-  "modelo_m": 0.0084,
+  "borracha_rel": 0.5,
+  "borracha_larg": 0.86,
+  "modelo_m": 0.0125,
   "modelo_x": 0.0,
   "tipo_texto": "",
+  "logo": {
+    "svg": "estampas/neptune_chorus_tema.svg",
+    "tam_m": 0.016,
+    "lugar": "borracha"
+  },
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
   "disposicao": "boss",
@@ -126,5 +130,10 @@
       "rotulo": "ENTRADA",
       "rotulo_m": 0.0034
     }
+  ],
+  "modelo_cor": [
+    0.0037,
+    0.0037,
+    0.0037
   ]
 }
