@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:59:29Z",
+ "gerado": "2026-10-30T21:11:05Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -342,8 +342,8 @@
   },
   "be100": {
    "nome": "BE 100",
-   "hash": "86bb68f0b24166bd",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "7400447c15ae21d3",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -366,16 +366,16 @@
     "be100_botao_volume.png": "c6597ee5f4d18d25d5602d20e152b28f5d8a9901912e6d7cdb3f75e89964c175",
     "be100_frente.jpg": "b959da976dde07da3db5158171b992182c4fffdcf0a8e781c22f708879362d81",
     "be100_frente_alfa.png": "4f4d4824633bb9f9f5850b13b2e8d2fb0a6adeb7043c0266fb2cf08b8da8ba15",
-    "be100_manifesto.json": "74ed4e962bc6e987addf1274741e734abcb435b0b7bc3d88cb2550876f6da20f",
-    "be100_mapa.json": "14d90c8a7c50578d2095611221078b7034c3524e12a24d496417a08ffe39af63"
+    "be100_manifesto.json": "01b6325ff820d99162b380488db41b2289771bafa33494258428eb39fd207e27",
+    "be100_mapa.json": "11b1a8eda789eb9d6fde4e43411c58e58ab5efd6d58487e5c79737bbacebbace"
    },
-   "tamanho": 1415356,
+   "tamanho": 1416513,
    "tipo": "cabecote",
    "inspiracao": "BE-100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2946,8 +2946,8 @@
   },
   "power100": {
    "nome": "Power 100",
-   "hash": "9ac425167630f14a",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "c198263db435cdf2",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power100_botao_agudo.png",
@@ -2970,16 +2970,16 @@
     "power100_botao_volume.png": "40a2f40989b997808422df1125578eec82325dfb18eec9662ff2f7e2a2316010",
     "power100_frente.jpg": "5394b906f642c14f346eb8446fe316cc7749b548f381efeb576a41c26364bf1b",
     "power100_frente_alfa.png": "7c353ae5ac465094b227df25174a575493108fd9a4cb2c03e7e663f8da3cc1b0",
-    "power100_manifesto.json": "e5d260f75420e8b030f0eb94001d4684b6ed9679299bd13fbc697040ff07bab0",
-    "power100_mapa.json": "1f24e335d51b875f29a701fb4fba7905287de63a29d92dda1362995f12538077"
+    "power100_manifesto.json": "9fb29fca900daa9828039d1e6dee8e66a5b9e1063f72d3d41c252ef8ec104be8",
+    "power100_mapa.json": "4c466aab2d784b085e8191db688c1d0000931cf7675b37091e73909402a7003e"
    },
-   "tamanho": 1046839,
+   "tamanho": 1048061,
    "tipo": "cabecote",
    "inspiracao": "Powerball",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3181,8 +3181,8 @@
   },
   "recto_triple": {
    "nome": "Recto Triple",
-   "hash": "2e9231a41bc6ee8c",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "a66a7a63b8f52497",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_triple_botao_agudo.png",
@@ -3205,16 +3205,16 @@
     "recto_triple_botao_volume.png": "66c5fd97779a57e683da3ec0d0215cf9fb150e8e5df9ff30893fa063e4a3f21e",
     "recto_triple_frente.jpg": "17c3500aca3f1b96889b53d026aa78e5285b159f4400618012925476e1e89143",
     "recto_triple_frente_alfa.png": "c30ad1ee14f80c19e019dba8e919bbd029948b23f58e304db2c35154b1879857",
-    "recto_triple_manifesto.json": "158bdd053d9e65c2ca5f4ab51806e6691ceeca67157139533a6aa37495a25a16",
-    "recto_triple_mapa.json": "a57e5517faf2883f601713a83e709d0ae113bd4bca2c77e5c10a040ad0586e30"
+    "recto_triple_manifesto.json": "9d262be6b4f124f7a364d0bc6fcafe6569d64bc491a5acb0f8a502837133f55a",
+    "recto_triple_mapa.json": "8f4ac7b03f88990654ea370e02b0a649010a9c84789d696ed3449a20a38fc72e"
    },
-   "tamanho": 1106331,
+   "tamanho": 1107526,
    "tipo": "cabecote",
    "inspiracao": "Triple Rectifier",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.5",
+   "versao": "1.0.6",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3247,8 +3247,8 @@
   },
   "rocker50": {
    "nome": "Rocker 50",
-   "hash": "3e6dba3a12bf4332",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "f0679e93b6a12961",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rocker50_botao_agudo.png",
@@ -3271,16 +3271,16 @@
     "rocker50_botao_volume.png": "4edf52cff6fab52c4028aaf9e28d53d66f3a84c9063a9093ada8596a402ec3cc",
     "rocker50_frente.jpg": "2747e491f2f6eb86d3d30687d25a6f34dee402819708e33e92316c64ffad1621",
     "rocker50_frente_alfa.png": "8e259f8503ba2d1878ee7b8262be7d3ba0c667cc83441a7756ef9107d19fc572",
-    "rocker50_manifesto.json": "e37ee7c1a8ecc3f87d4d2b14d5e34487df67f69ee3497ea64b41dd8ccd374dce",
-    "rocker50_mapa.json": "a826cce10a4a1ad79a19a554280d24490361e90f8fb5904b88a246d917ce2a00"
+    "rocker50_manifesto.json": "fef258e34693b6af96e62250bc401ff0bb19fc0f2b2de00db47e5f4d430f540e",
+    "rocker50_mapa.json": "3c9b53a8706d05304857e417573eba321fb3923b7ff80b1dac6df5564b2d0d45"
    },
-   "tamanho": 1457195,
+   "tamanho": 1458065,
    "tipo": "cabecote",
    "inspiracao": "Rockerverb 50",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3571,8 +3571,8 @@
   },
   "sonic60": {
    "nome": "Sonic 60",
-   "hash": "05fb4edd2d46cee4",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "4a8b9f4eb67850f3",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sonic60_botao_agudo.png",
@@ -3595,16 +3595,16 @@
     "sonic60_botao_volume.png": "1273af5df53155d4537739ae69e3ea46afe7f50c88b7fe347d41db9090b1bc6c",
     "sonic60_frente.jpg": "2038114eb8e45f7bef7157afdcf6e9f23827a8e6ef9b837d07b0f8967ddad3ef",
     "sonic60_frente_alfa.png": "e01476d749ef2b1328fec5953ec72bf6d9ce3ad309772fe735d6f55db5012c50",
-    "sonic60_manifesto.json": "dad5a89aba552c41c13aa541f1119d8087baaac73a28a93bfa4cef8106ea94e9",
-    "sonic60_mapa.json": "b713e4f57dd5f91f8eafef6173a957c2110bbb0a47f47a8929c74c0319ef476c"
+    "sonic60_manifesto.json": "de9acc962497b89b5741de76f642d748e2bb94b50d48622428790c29756acaca",
+    "sonic60_mapa.json": "a4f3b23166a706cccb149b406c0547ebc7a8a810a0c39bef82143cea76bc085f"
    },
-   "tamanho": 993794,
+   "tamanho": 995394,
    "tipo": "cabecote",
    "inspiracao": "Super-Sonic",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3860,8 +3860,8 @@
   },
   "uber100": {
    "nome": "Uber 100",
-   "hash": "4271b10fcab7abc6",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "874618dbeb7c63af",
+   "data": "2026-10-30T21:11:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber100_botao_agudo.png",
@@ -3884,16 +3884,16 @@
     "uber100_botao_volume.png": "79bd726ff44c8d07c640257791763134e9bc130712263dde02735f24e3374628",
     "uber100_frente.jpg": "89322b01e230173e284bc0d85425bb768e60793bfd9d12c797f01d77f4671ad9",
     "uber100_frente_alfa.png": "b092c465d37c83606a9af32f1e3dfcf040ae72ef719777cdab27cd393de56db2",
-    "uber100_manifesto.json": "0e15908f5f090c3e97d1a9086b21da19d817370d41628c5bbbd8d8f85fa2ed86",
-    "uber100_mapa.json": "ce28a88a3d5566bb821be408dd9133dca5a4ce944d7426932fad63b3b26c7f7c"
+    "uber100_manifesto.json": "9fd49d11fee9ed6e41ada0a4f776ac0aeeccc4e3e7a031e92873f2ce90f8da74",
+    "uber100_mapa.json": "175b56b3b9e4edcc310ea6c650d28c797ae4568b715604a56fdd0ce4b33f5237"
    },
-   "tamanho": 791456,
+   "tamanho": 792355,
    "tipo": "cabecote",
    "inspiracao": "Uberschall",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
