@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Onyx Metal",
   "familia": "onyx_metal",
-  "inspiracao": "Boss compacto cinza-grafite quase preto (73 x 129 x 59 mm), letras brancas e o nome em laranja-avermelhado; botões pretos com saia: NÍVEL, AGUDO e MÉDIO duplos (concêntricos, o MÉDIO é fixo) e DISTORÇÃO, LED CHECK no alto, no centro, e pedal basculante com borracha frisada, faixa preta atrás dos botões. Tema: ônix preto polido com faixa branca, facetas tom sobre tom. Original: Boss MT-2 Metal Zone.",
+  "inspiracao": "Boss compacto cinza-grafite quase preto (73 x 129 x 59 mm), letras brancas e o nome em laranja-avermelhado; botões pretos com saia: NÍVEL, AGUDO e MÉDIO duplos (concêntricos, o MÉDIO é fixo) e DISTORÇÃO, LED CHECK no alto, no centro, e pedal basculante com borracha frisada, faixa preta atrás dos botões. Tema: ônix preto polido com faixa branca, desenhado na borracha, no lugar da logo. Original: Boss MT-2 Metal Zone.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -81,9 +81,7 @@
     }
   ],
   "medidas_fonte": "Boss MT-2 Metal Zone: 73 x 129 x 59 mm (Boss, ficha oficial)",
-  "estampa": {
-    "svg": "estampas/onyx_metal.svg"
-  },
+  "modelo_y": 0.33,
   "quadro": {
     "largura_rel": 2.21,
     "proporcao": 1.25,
@@ -92,10 +90,16 @@
   "base_rel": 0.68,
   "basculante_rel": 0.6,
   "basculante_ang": 0.0,
-  "borracha_rel": 0.36,
-  "modelo_m": 0.0084,
+  "borracha_rel": 0.5,
+  "borracha_larg": 0.86,
+  "modelo_m": 0.0125,
   "modelo_x": 0.0,
   "tipo_texto": "",
+  "logo": {
+    "svg": "estampas/avocado_metal_tema.svg",
+    "tam_m": 0.016,
+    "lugar": "borracha"
+  },
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
   "disposicao": "boss",
