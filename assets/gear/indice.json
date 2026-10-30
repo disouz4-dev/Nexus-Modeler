@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:11:28Z",
+ "gerado": "2026-10-30T07:13:34Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6202,8 +6202,8 @@
   },
   "tweed_410": {
    "nome": "Tweed 4x10",
-   "hash": "56b26652c336263a",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "456f6a9aef70dab2",
+   "data": "2026-10-30T07:13:34Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed_410_frente.jpg",
@@ -6212,18 +6212,18 @@
     "tweed_410_mapa.json"
    ],
    "sha256": {
-    "tweed_410_frente.jpg": "de764c06ef8e743e1a0d6fc1da52af9af1703b2178be957391c364b441a3ef90",
-    "tweed_410_frente_alfa.png": "9eefb4a7f689569890105d2cf9be1cc1b480c575dc7994bcba5f6ad8a4b6f0f0",
-    "tweed_410_manifesto.json": "e53c629107e68f05212945071d67d792c9a875423033ef1ff10164eed9500a1f",
+    "tweed_410_frente.jpg": "344b96c61e276390e9b847df9a2508d5aa0fc71a3aa2bd9439b4a0659c4f4fa8",
+    "tweed_410_frente_alfa.png": "6bda907ab9d4d5fb769cc3d50d114620f4287d2a7a2261e237c00d527400ab24",
+    "tweed_410_manifesto.json": "e9fb04435a9e8123450eda3164dc9d5d0ec76b07b93b0b7299f19f4cfc33723e",
     "tweed_410_mapa.json": "9a09bddd71e627f3ca3b9a4370d58a42375b2bc8622d123411bc2a3b27359c06"
    },
-   "tamanho": 1718506,
+   "tamanho": 1651960,
    "tipo": "caixa",
    "inspiracao": "Fender 4x10",
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
