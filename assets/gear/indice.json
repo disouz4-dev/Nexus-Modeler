@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:42:45Z",
+ "gerado": "2026-10-30T19:48:55Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5270,8 +5270,8 @@
   },
   "silverdeluxe": {
    "nome": "Silver Deluxe",
-   "hash": "49fa213c4efedabe",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "a7e6c28c28aefad8",
+   "data": "2026-10-30T19:48:55Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silverdeluxe_botao_agudo.png",
@@ -5286,24 +5286,24 @@
     "silverdeluxe_mapa.json"
    ],
    "sha256": {
-    "silverdeluxe_botao_agudo.png": "fd0437b289ab4112a2a93b97ec3a38fcf996a9ecbc7cf022b12f8296aca63800",
-    "silverdeluxe_botao_ganho.png": "458f11b4d27b55797a8d07ebf3ce46d77c0d4eb6ab9eaa0bbbd5e64e87f09db6",
-    "silverdeluxe_botao_grave.png": "8428e731dd6acdeda0c733927472db60e2f49907e560a3d3b39168599e400cff",
-    "silverdeluxe_botao_medio.png": "77bddd20a29d87cc882c056373093915ce64b6e541aa92d400b9cc4d6e850011",
-    "silverdeluxe_botao_presenca.png": "5be099cdb0b14a87fa5da61884f56dd542ff2b9eedab9a5dea8cee46b19ad912",
-    "silverdeluxe_botao_volume.png": "7c113090cd7293e3ced1273727a80bc5d2ce356211e1797137833a858393492f",
-    "silverdeluxe_frente.jpg": "c6e8c8791631645e314241f26ab1a8016ec6afe14c475c2ff91c73a3ef3dc1fc",
-    "silverdeluxe_frente_alfa.png": "2d07370c2c41e2f7ae6046ad63c03f580a918572372418aecd2996c9d6d1fdb0",
-    "silverdeluxe_manifesto.json": "378dec8a0e70cdbe6449e28c12faff206b349e907493d7aabbb70212a181b358",
-    "silverdeluxe_mapa.json": "10ed1397f4287524a20cfb42b087eb762c4715979b84eadf4056b956c94625ea"
+    "silverdeluxe_botao_agudo.png": "f08b719123dc6552c606cc6101f289e811b5f24ff989f0e680a2ecac2dda0c9e",
+    "silverdeluxe_botao_ganho.png": "a95cb8521a6e20775d0f1b8d8c4bef89e55801a7b7122eb406ed854f7dd10e39",
+    "silverdeluxe_botao_grave.png": "f3d674df5655fe0d8fb64878ab5a8921a8250ec6693e7118a95877a35318f5b9",
+    "silverdeluxe_botao_medio.png": "99dbf5e21ecea3dd2610a3a7ee2c1faf369d0c69813a0eaa6f8c22174cba3e79",
+    "silverdeluxe_botao_presenca.png": "caca767c103f3669f0e697aba6df03ed0c21689feb6bb472f8139909cccc4f1b",
+    "silverdeluxe_botao_volume.png": "09177d3a73b214de381c9469a3c62f17d6e77db9f15edf1a6c2cc366235cdcd7",
+    "silverdeluxe_frente.jpg": "6a9c7557d3270b975f99be1f590193325bd5b9f7512a6c1842a4a0f3aa9c19e0",
+    "silverdeluxe_frente_alfa.png": "274c7a3759156821723ddf965b01941cd9cadd3a930e931a31022a52d225d715",
+    "silverdeluxe_manifesto.json": "4cb6bec0db0d6c8415f6513488021a03e2aad8dc4b2b1b2e711d9e3eb8295318",
+    "silverdeluxe_mapa.json": "f1d8017cbcfba0a989df572e695208dada68cf67c0b919e278639c44de74e987"
    },
-   "tamanho": 1349098,
+   "tamanho": 2202076,
    "tipo": "cabecote",
    "inspiracao": "Fender Deluxe Reverb",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
