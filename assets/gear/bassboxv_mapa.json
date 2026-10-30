@@ -7,36 +7,36 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 383,
-      "y": 329,
-      "tamanho": 94,
+      "x": 376,
+      "y": 322,
+      "tamanho": 108,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 499,
-      "y": 330,
-      "tamanho": 93,
+      "x": 493,
+      "y": 323,
+      "tamanho": 106,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 615,
-      "y": 330,
-      "tamanho": 92,
+      "x": 609,
+      "y": 324,
+      "tamanho": 105,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 732,
-      "y": 331,
-      "tamanho": 90,
+      "x": 724,
+      "y": 324,
+      "tamanho": 104,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -52,9 +52,9 @@
     },
     {
       "id": "presenca",
-      "x": 1483,
-      "y": 332,
-      "tamanho": 89,
+      "x": 1476,
+      "y": 325,
+      "tamanho": 103,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,8 +67,8 @@
     {
       "texto": "POWER",
       "x": 319.9,
-      "y": 426.9,
-      "altura": 16.28,
+      "y": 433.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "GAIN",
       "x": 434.7,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "VOLUME",
       "x": 549.5,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -94,8 +94,8 @@
     {
       "texto": "BASS",
       "x": 664.3,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -103,8 +103,8 @@
     {
       "texto": "MID",
       "x": 779.1,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "TREBLE",
       "x": 893.9,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 456.1,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "AMPS",
       "x": 1027.8,
-      "y": 369.0,
-      "altura": 16.28,
+      "y": 375.6,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "A",
       "x": 1008.7,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "B",
       "x": 1066.1,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -148,8 +148,8 @@
     {
       "texto": "C",
       "x": 1123.5,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -157,8 +157,8 @@
     {
       "texto": "D",
       "x": 1180.9,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -166,8 +166,8 @@
     {
       "texto": "E",
       "x": 1238.3,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -175,8 +175,8 @@
     {
       "texto": "TUNER",
       "x": 1353.1,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -184,8 +184,8 @@
     {
       "texto": "TAP",
       "x": 1429.6,
-      "y": 525.3,
-      "altura": 16.28,
+      "y": 531.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -193,8 +193,8 @@
     {
       "texto": "REVERB",
       "x": 1525.3,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -202,8 +202,8 @@
     {
       "texto": "EFFECTS",
       "x": 1640.0,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -211,8 +211,8 @@
     {
       "texto": "MASTER",
       "x": 1754.8,
-      "y": 449.5,
-      "altura": 16.28,
+      "y": 462.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -220,8 +220,8 @@
     {
       "texto": "LINE IN",
       "x": 1850.5,
-      "y": 429.8,
-      "altura": 16.28,
+      "y": 436.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -229,8 +229,8 @@
     {
       "texto": "INPUT",
       "x": 1946.2,
-      "y": 429.1,
-      "altura": 16.28,
+      "y": 435.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -238,8 +238,8 @@
     {
       "texto": "PHONES",
       "x": 2041.8,
-      "y": 429.1,
-      "altura": 16.28,
+      "y": 435.7,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0

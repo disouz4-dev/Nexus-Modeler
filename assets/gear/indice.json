@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:42:37Z",
+ "gerado": "2026-10-30T07:42:41Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -432,8 +432,8 @@
   },
   "bassboxv": {
    "nome": "Bass Box V",
-   "hash": "6735d7a80da4f425",
-   "data": "2026-10-29T20:41:28Z",
+   "hash": "54756006324d01fa",
+   "data": "2026-10-30T07:42:41Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bassboxv_botao_agudo.png",
@@ -448,24 +448,24 @@
     "bassboxv_mapa.json"
    ],
    "sha256": {
-    "bassboxv_botao_agudo.png": "c63c4e042a40ec6b38f902ac5635b18ba717f41316acfe17a9285458e2235e53",
-    "bassboxv_botao_ganho.png": "a4cf56b6e33b13a8875dd675124068edea4f5889cb510f398cf9191ca1b40ab9",
-    "bassboxv_botao_grave.png": "0f1a9f5717662bc3a95b5029e41da5dc7f452e01e36a510740e041c4f715310a",
-    "bassboxv_botao_medio.png": "c061d667424dcab3a7a358826fe98d9cd656cf90c52598d331431b17afd9da20",
-    "bassboxv_botao_presenca.png": "164201420961b2b3cf5abacbf50b3e9b7b019103e9c34fe6ebb155dec0b9f4f6",
-    "bassboxv_botao_volume.png": "3ecc3ff1d075441735e3af8e2649b6be81310ecbf31892b53514c2d694c6c6d8",
-    "bassboxv_frente.jpg": "ef4a5d99f38874666f0df2deb9b9e9a56b346151d8b118e424771b0cb3c5b1a8",
-    "bassboxv_frente_alfa.png": "98cfdda7240c39cc94bc3eda6922c07efa75924ee0f76952e6e596e24f01ab8f",
-    "bassboxv_manifesto.json": "f2c2e3be3559b39c46af3b7dbcf6469aebd6f0ae78dd857bd7cde6d8356056f5",
-    "bassboxv_mapa.json": "8164c81260798f5e5d1d081c3279657ca6cf90bd288a3bb6de3ecb325a0be817"
+    "bassboxv_botao_agudo.png": "b091245a1f51e6f25cc34775d8387d21323161358fa01fabb46d0b00688ad9b6",
+    "bassboxv_botao_ganho.png": "7122d9875bcabb164896dde3c64a1acb916a9e355a789bf18c62d61d22dba9e9",
+    "bassboxv_botao_grave.png": "bd199b956e66eec192f05e652d960f6dc2bb053ca02ec9c0726c36da63994403",
+    "bassboxv_botao_medio.png": "37199bf79dc722d54bf767171d3f412848a19a12274b29f17ac1bd2eed98be4c",
+    "bassboxv_botao_presenca.png": "9d4feca8d391b0687df56d1c3c3dd16e1fc90fbd886c7fcb79d9364e73208d4b",
+    "bassboxv_botao_volume.png": "c4b2d3c2bc2a7e27f96d351f44e1e3b272dff4bab4ff70e1568f3e7a26857dc8",
+    "bassboxv_frente.jpg": "dfc58c3534c03f65962bb64808fcf1582083d35ea8e9baf1e6f95d918c4d474c",
+    "bassboxv_frente_alfa.png": "4879b6a32660445710e715a6271a4ba360e64a5b517b68fe936898e241c38be7",
+    "bassboxv_manifesto.json": "e0ea0b1f3b037cc2eed0b05819533bf6717bff23ffb6ac865d5cd7a79de21f17",
+    "bassboxv_mapa.json": "af146b42bb45c470d714adfb0a2663aa97d0ceec5dfcad3bcc58e8aa2254ade7"
    },
-   "tamanho": 413543,
+   "tamanho": 483680,
    "tipo": "cabecote",
    "inspiracao": "Behringer Bass V-Amp Pro",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
