@@ -407,6 +407,31 @@ static void testPackage(const juce::File& package)
   check(b.pedalLook(0) == look && b.gearId(Kind::pedal, 0) == id, U("preset com a peça nova abre com ela (") + b.gearId(Kind::pedal, 0) + ")");
 }
 
+// Beta.3 com cabeçotes revisados e nenhuma caixa: o cabeçote toca sem a
+// caixa que abriria junto, sem nome nem cartão de caixa.
+static void testAmpWithoutCab()
+{
+  auto& catalog = GearCatalog::instance();
+  const auto amp = stagePiece("topboost30", R"({"formato": 1, "id": "topboost30", "versao": "1.1.0", "tipo": "cabecote",
+    "nome": "Top Boost 30", "versao_minima_do_programa": "0.2.0", "motor": "captura", "capturas": {"origem": "tone3000"},
+    "indice_de_fabrica": 6, "caixa_padrao": "blue_212"})");
+  check(catalog.installFolder(amp, "topboost30", juce::var(new juce::DynamicObject())).isEmpty() && catalog.find(Kind::amp, "topboost30") == 6,
+        U("cabeçote revisado instala sem a caixa dele"));
+  const auto entry = catalog.entry(Kind::amp, 6);
+  check(entry && catalog.find(Kind::cab, entry->cabId) < 0, U("a caixa que abriria junto não está instalada"));
+  auto pBox = std::make_unique<NexusProcessor>(); // no heap: a pilha do Windows tem 1 MB
+  auto& p = *pBox;
+  p.chooseAmp(0, 6);
+  check(p.gearPlays(Kind::amp, 0) && !p.gearPlays(Kind::cab, 0) && p.missingGear(Kind::cab, 0).isEmpty() && p.gearEmpty(Kind::cab, 0),
+        U("o cabeçote toca e a caixa fica vazia, sem cartão"));
+  const double ratio = playRatio(p);
+  check(std::isfinite(ratio) && ratio > 0.0, U("toca sem caixa, sem quebrar (saída/entrada ") + juce::String(ratio, 2) + ")");
+  const auto saved = stateOf(p);
+  auto xml = juce::AudioProcessor::getXmlFromBinary(saved.getData(), static_cast<int>(saved.getSize()));
+  check(xml->getStringAttribute("cabecote_id") == "topboost30" && xml->getStringAttribute("gabinete_id").isEmpty(),
+        U("salva o cabeçote e a caixa em branco"));
+}
+
 static void testFreshStart(const juce::File& temp)
 {
   // Uma instalação antiga: dados, preferências do programa independente,
@@ -470,6 +495,7 @@ int main(int argc, char** argv)
   testCatalog(juce::File(U(argv[1])));
   testState();
   testReturn();
+  testAmpWithoutCab();
   testFreshStart(temp);
   if (argc > 2)
     testPackage(juce::File(U(argv[2])));
