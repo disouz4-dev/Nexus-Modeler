@@ -2,7 +2,7 @@
   "nome": "Champion 5",
   "familia": "champion5",
   "largura": 2400,
-  "altura": 3292,
+  "altura": 3333,
   "posicoes": 101,
   "botoes": [
     {
@@ -16,45 +16,45 @@
     },
     {
       "id": "agudo",
-      "x": 1164,
-      "y": 218,
-      "tamanho": 71,
+      "x": 1140,
+      "y": 193,
+      "tamanho": 121,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1314,
-      "y": 217,
-      "tamanho": 72,
+      "x": 1289,
+      "y": 193,
+      "tamanho": 121,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1461,
-      "y": 216,
-      "tamanho": 75,
+      "x": 1437,
+      "y": 191,
+      "tamanho": 124,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1239,
-      "y": 392,
-      "tamanho": 71,
+      "x": 1215,
+      "y": 368,
+      "tamanho": 120,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1388,
-      "y": 391,
-      "tamanho": 73,
+      "x": 1363,
+      "y": 366,
+      "tamanho": 123,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -76,7 +76,7 @@
     {
       "texto": "VOLUME",
       "x": 903.7,
-      "y": 569.5,
+      "y": 558.7,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -85,7 +85,7 @@
     {
       "texto": "AGUDO",
       "x": 1200.0,
-      "y": 307.1,
+      "y": 330.1,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -94,7 +94,7 @@
     {
       "texto": "MÉDIO",
       "x": 1348.1,
-      "y": 307.1,
+      "y": 330.1,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -103,7 +103,7 @@
     {
       "texto": "GRAVE",
       "x": 1496.3,
-      "y": 307.1,
+      "y": 330.1,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -112,7 +112,7 @@
     {
       "texto": "PRESENÇA",
       "x": 1274.1,
-      "y": 479.5,
+      "y": 502.5,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
@@ -121,7 +121,7 @@
     {
       "texto": "VOLUME",
       "x": 1422.2,
-      "y": 479.5,
+      "y": 502.5,
       "altura": 26.82,
       "achatamento": 1.0,
       "cor": "#211d19",
