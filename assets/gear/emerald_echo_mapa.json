@@ -2,14 +2,14 @@
   "nome": "Emerald Echo",
   "familia": "lime_echo",
   "largura": 600,
-  "altura": 510,
+  "altura": 600,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 87,
-      "y": 148,
-      "tamanho": 68,
+      "x": 82,
+      "y": 188,
+      "tamanho": 60,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,9 +17,9 @@
     },
     {
       "id": "a",
-      "x": 176,
-      "y": 159,
-      "tamanho": 46,
+      "x": 158,
+      "y": 190,
+      "tamanho": 58,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -27,35 +27,35 @@
     {
       "id": "b",
       "x": 234,
-      "y": 160,
-      "tamanho": 44,
+      "y": 190,
+      "tamanho": 56,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 292,
-      "y": 160,
-      "tamanho": 44,
+      "x": 310,
+      "y": 190,
+      "tamanho": 56,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 350,
-      "y": 160,
-      "tamanho": 44,
+      "x": 384,
+      "y": 190,
+      "tamanho": 58,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 408,
-      "y": 158,
-      "tamanho": 46,
+      "x": 458,
+      "y": 188,
+      "tamanho": 60,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -63,73 +63,73 @@
   ],
   "canais": [],
   "medidas_mm": [
-    250,
-    152
+    120,
+    115
   ],
   "rotulos": [
     {
       "texto": "MODO",
-      "x": 123.3,
-      "y": 220.2,
-      "altura": 7.26,
+      "x": 115.9,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TEMPO",
-      "x": 199.7,
-      "y": 211.1,
-      "altura": 7.26,
+      "x": 189.6,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "REPETIÇÕES",
-      "x": 257.0,
-      "y": 211.1,
-      "altura": 7.26,
+      "x": 263.2,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MODULAÇÃO",
-      "x": 314.4,
-      "y": 211.1,
-      "altura": 7.26,
+      "x": 336.8,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TWEEZ",
-      "x": 371.6,
-      "y": 211.1,
-      "altura": 7.26,
+      "x": 410.4,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 428.9,
-      "y": 211.1,
-      "altura": 7.26,
+      "x": 484.1,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 125.5,
-    "y": 346.5,
-    "raio": 23.5
+    "x": 300.0,
+    "y": 402.5,
+    "raio": 35.0
   },
   "led": {
-    "x": 127.7,
-    "y": 307.4,
-    "raio": 6.0
+    "x": 300.0,
+    "y": 304.7,
+    "raio": 7.5
   }
 }

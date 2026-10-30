@@ -2,133 +2,315 @@
   "tipo": "pedal",
   "nome": "Aquamarine Sky",
   "familia": "aquamarine_sky",
-  "inspiracao": "reverb grande de vários modos, azul-acinzentado metálico, com visor e shimmer (no espírito do Strymon BigSky, com desenho próprio)",
+  "inspiracao": "Caixa compacta de alumínio anodizado azul-celeste (120 x 115 x 50 mm) no jeito do BigSky em escala menor, letras brancas; visor verde no alto à esquerda, seletor TIPO grande embaixo dele, VALOR (fixo), DECAIMENTO, PRÉ-ATRASO e MISTURA na fileira de cima, TOM, PARAM 1, PARAM 2 (fixo) e MODULAÇÃO embaixo, nome em script no meio, um LED e um pisante de metal só, no meio (compacto com um pisante por decisão do Diego, 30/10). Tema: água-marinha lapidada azul-clara. Original: Strymon BigSky.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.171,
-    "comprimento": 0.114,
-    "altura": 0.048
+    "largura": 0.12,
+    "comprimento": 0.115,
+    "altura": 0.05
   },
-  "chanfro_m": 0.004,
   "pintura": {
     "cor": [
-      0.3,
-      0.38,
-      0.46
+      0.0037,
+      0.3889,
+      0.7667
     ],
-    "metalico": 0.6,
-    "aspereza": 0.24
+    "metalico": 0.3,
+    "aspereza": 0.3
   },
   "texto_cor": [
-    0.04,
-    0.05,
-    0.07
-  ],
-  "texto_cor2": [
-    0.04,
-    0.05,
-    0.07
+    0.8913,
+    0.8751,
+    0.8277
   ],
   "modelo": "AQUAMARINE SKY",
-  "logo_x": 0.5,
-  "logo_y": 0.7,
-  "logo_m": 0.012,
-  "tipo_texto": "REVERBERATOR",
-  "pisante_y": -0.6,
-  "rotulo_m": 0.003,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0105,
+    "altura_m": 0.011,
+    "saia": false,
     "corpo": [
-      0.02,
-      0.02,
-      0.025
+      0.0037,
+      0.0037,
+      0.0037
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.8913,
+      0.8913,
+      0.8434
     ]
   },
   "botoes": [
     {
       "id": "modo",
-      "rotulo": "MODO",
+      "rotulo": "TIPO",
       "pos": [
-        -0.22,
-        0.62
+        -0.62,
+        0.3
       ],
-      "escala": 1.3
+      "escala": 1.15
+    },
+    {
+      "id": "fixo_valor",
+      "rotulo": "VALOR",
+      "pos": [
+        -0.112,
+        0.7
+      ],
+      "fixo": true
     },
     {
       "id": "a",
       "rotulo": "DECAIMENTO",
       "pos": [
-        -0.8,
-        0.06
+        0.18,
+        0.7
       ]
     },
     {
       "id": "b",
       "rotulo": "PRÉ-ATRASO",
       "pos": [
-        -0.48,
-        0.06
-      ]
-    },
-    {
-      "id": "d",
-      "rotulo": "MODULAÇÃO",
-      "pos": [
-        -0.16,
-        0.06
-      ]
-    },
-    {
-      "id": "tom",
-      "rotulo": "TOM",
-      "pos": [
-        0.16,
-        0.06
-      ]
-    },
-    {
-      "id": "nivel",
-      "rotulo": "SHIMMER",
-      "pos": [
-        0.48,
-        0.06
+        0.421,
+        0.7
       ]
     },
     {
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        0.8,
-        0.06
+        0.662,
+        0.7
+      ]
+    },
+    {
+      "id": "tom",
+      "rotulo": "TOM",
+      "pos": [
+        0.06,
+        0.3
+      ]
+    },
+    {
+      "id": "nivel",
+      "rotulo": "PARAM 1",
+      "pos": [
+        0.301,
+        0.3
+      ]
+    },
+    {
+      "id": "fixo_param2",
+      "rotulo": "PARAM 2",
+      "pos": [
+        0.542,
+        0.3
+      ],
+      "fixo": true
+    },
+    {
+      "id": "d",
+      "rotulo": "MODULAÇÃO",
+      "pos": [
+        0.774,
+        0.3
       ]
     }
   ],
-  "led": [
-    0.0,
-    -0.32
-  ],
+  "medidas_fonte": "caixa compacta do Nexus, 120 x 115 x 50 mm (o BigSky tem 171,5 x 129,5 mm; compacto com um pisante por decisão do Diego, 30/10)",
   "quadro": {
     "largura_rel": 1.3,
-    "proporcao": 0.85,
+    "proporcao": 1.0,
     "elevacao": 90.0
   },
-  "rotulo_embaixo": true,
-  "medidas_fonte": "caixa de reverb de mesa grande: 171 x 114 x 48 mm",
   "visor": {
     "pos": [
-      -0.66,
-      0.62
+      -0.6,
+      0.72
     ],
-    "largura_rel": 0.24,
-    "altura_rel": 0.24
+    "largura_rel": 0.26,
+    "altura_rel": 0.055
   },
-  "estampa": {
-    "svg": "estampas/aquamarine_sky.svg"
-  }
+  "led": [
+    0.0,
+    -0.36
+  ],
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.62
+    ]
+  },
+  "logo_x": 0.0,
+  "logo_y": -0.12,
+  "logo_m": 0.0105,
+  "tipo_texto": "",
+  "pecas": [
+    {
+      "tipo": "led",
+      "pos": [
+        -0.544,
+        0.4665
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.4883,
+        0.3962
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.468,
+        0.3
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.4883,
+        0.2038
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.544,
+        0.1335
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.696,
+        0.1335
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.7517,
+        0.2038
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.772,
+        0.3
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.7517,
+        0.3962
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    },
+    {
+      "tipo": "led",
+      "pos": [
+        -0.696,
+        0.4665
+      ],
+      "cor": [
+        0.0008,
+        0.0385,
+        0.0029
+      ],
+      "estilo": "sem_aro",
+      "raio_m": 0.001
+    }
+  ],
+  "chanfro_m": 0.006,
+  "rotulo_m": 0.0026,
+  "rotulo_embaixo": true,
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0017,
+  "led_cor": [
+    0.0008,
+    0.0385,
+    0.0029
+  ],
+  "jacks_topo": true,
+  "logo_script": true,
+  "texto_cor2": [
+    0.8913,
+    0.8913,
+    0.8913
+  ],
+  "logo": {
+    "svg": "estampas/juniper_sky_tema.svg",
+    "tam_m": 0.009,
+    "pos": [
+      -0.2,
+      0.04
+    ]
+  },
+  "paineis": []
 }
