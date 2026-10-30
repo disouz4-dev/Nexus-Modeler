@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:38:42Z",
+ "gerado": "2026-10-30T14:38:47Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2726,8 +2726,8 @@
   },
   "granite800": {
    "nome": "Granite 800",
-   "hash": "603f60e07b841595",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "85fba2bec6148dc9",
+   "data": "2026-10-30T14:38:47Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "granite800_botao_agudo.png",
@@ -2742,24 +2742,24 @@
     "granite800_mapa.json"
    ],
    "sha256": {
-    "granite800_botao_agudo.png": "21e6c95620c89ce1e0807451be41934b73d1db707b7c24a23074aa9a5c2865cb",
-    "granite800_botao_ganho.png": "a19d8157d4fe8183ebef4c69aaacd0b7b8c2330c696dc5cda57f4a37d2d81933",
-    "granite800_botao_grave.png": "1948beda25040b4a8e381898d41626312ec818e2386857d2b942a4c36f45d5ca",
-    "granite800_botao_medio.png": "8e4b517aef1de02aa8a8c49b5e385b26f385dca5e259377c0bd01ecae8b57a9a",
-    "granite800_botao_presenca.png": "84953f8fa0f9a4ccd524cff7e07400f3aa2e24c5a04ed0faf9dd337c79333562",
-    "granite800_botao_volume.png": "98a78cf978219e9d0ebcabe823ef4357e93b9d7d3d543065f50f19c8494c2387",
-    "granite800_frente.jpg": "6a205c08b980e8a635266e3498266cd20548824e0c50a0cf0a3713e746ea3dd3",
-    "granite800_frente_alfa.png": "f7e73bb4463d6dd255112478498af0cab9846199d7d178911a0426d956679d7f",
-    "granite800_manifesto.json": "73208d86e62fd43aa81d897cd90c2bc23c776e41bc788466ba0caff5186281fe",
-    "granite800_mapa.json": "5159f0a323a28f0346fef747cc19b8ccd2757983199ce8085ebe221a4be1e6e5"
+    "granite800_botao_agudo.png": "45e16261421b5ac0b7286a191ebcef5685b50d9efb36928e5af42296eeb58545",
+    "granite800_botao_ganho.png": "d0b017d6ce11f4e42f817619226eb77d21943a1b8d2ee5a1a038c97979ed8783",
+    "granite800_botao_grave.png": "b18c573e6ff7b19d8e93ba2285d2438ff47468eb9e8360ca38942e953451b609",
+    "granite800_botao_medio.png": "aba470e58ac6c649a486e8d926c081f988b938d7a799b23e4650ad6188c91498",
+    "granite800_botao_presenca.png": "1cff6969ee87b79fcd98af900fec84f96c595bad9970ada9d7e83c04d8b98080",
+    "granite800_botao_volume.png": "bbeb20b913c8c0495735e5bb446c76b476549367626acdd65515f74814fe9abc",
+    "granite800_frente.jpg": "a46ec671faa4b89ab93e8188eb7de889e1b1fb2d86d4df80b340f806d0009822",
+    "granite800_frente_alfa.png": "a33aeb54e72e84fe2cca406a52d45563a626aee78f96439d58d859f7ae9ecd5e",
+    "granite800_manifesto.json": "69119bb059e0e0d72d12dc1bfa89942fb2644f57e4b89ae52e4aeaea80f68502",
+    "granite800_mapa.json": "b14b9eb7748310eed5ddffddfdf48de2a02fcc35c17504410bf1bbc3f9a401cf"
    },
-   "tamanho": 650812,
+   "tamanho": 921678,
    "tipo": "cabecote",
    "inspiracao": "Gallien-Krueger 800RB",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
