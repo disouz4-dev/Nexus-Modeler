@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "recto_dual",
-  "versao": "1.0.5",
+  "versao": "1.0.6",
   "tipo": "cabecote",
   "nome": "Recto Dual",
   "inspiracao": "Dual Rectifier",
@@ -11,7 +11,60 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Dual Rectifier",
+      "tons": [
+        {
+          "id": 4713,
+          "titulo": "Mesa Dual Rectifier EL34 Modern Red/Orange/Green",
+          "criador": "northernfox",
+          "tipo": "amp",
+          "capturas": 10,
+          "pacote": "Canal 1 Limpo",
+          "padrao": true,
+          "nota": "canal 1 (verde, limpo) do Dual Rectifier 3 canais EL34, ganho de 1 a 10",
+          "mapa": {
+            "Green G1": 1,
+            "Green G2": 2,
+            "Green G3": 3,
+            "Green G4": 4,
+            "Green G5": 5,
+            "Green G6": 6,
+            "Green G7": 7,
+            "Green G8": 8,
+            "Green G9": 9,
+            "Green G10": 10
+          },
+          "serie": [
+            "EL34 Green"
+          ]
+        },
+        {
+          "id": 70207,
+          "titulo": "MESA DUAL RECTIFIER (REV G 1998) - FULL GAIN PACK",
+          "tipo": "amp",
+          "capturas": 9,
+          "padrao": true,
+          "nota": "canal 2 (laranja, modo Modern) do Rev G 1998, ganho de 1 a 9",
+          "mapa": {
+            "GAIN 1": 1,
+            "GAIN 2": 2,
+            "GAIN 3": 3,
+            "GAIN 4": 4,
+            "GAIN 5": 5,
+            "GAIN 6": 6,
+            "GAIN 7": 7,
+            "GAIN 8": 8,
+            "GAIN 9": 9
+          },
+          "serie": [
+            "ORANGE - MODERN"
+          ],
+          "pacote": "Canal 2 Moderno"
+        }
+      ]
+    }
   },
   "indice_de_fabrica": 3,
   "signature": null,
