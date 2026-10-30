@@ -2,13 +2,13 @@
   "nome": "Jazz 120",
   "familia": "jazz_120",
   "largura": 2400,
-  "altura": 2085,
+  "altura": 1869,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
       "x": 401,
-      "y": 312,
+      "y": 288,
       "tamanho": 90,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
@@ -16,36 +16,36 @@
     },
     {
       "id": "volume",
-      "x": 814,
-      "y": 312,
-      "tamanho": 89,
+      "x": 815,
+      "y": 289,
+      "tamanho": 88,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 907,
-      "y": 312,
-      "tamanho": 89,
+      "x": 908,
+      "y": 289,
+      "tamanho": 88,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1000,
-      "y": 312,
-      "tamanho": 89,
+      "x": 1001,
+      "y": 289,
+      "tamanho": 88,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1093,
-      "y": 312,
-      "tamanho": 89,
+      "x": 1094,
+      "y": 289,
+      "tamanho": 88,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -53,8 +53,8 @@
     {
       "id": "ganho",
       "x": 1187,
-      "y": 312,
-      "tamanho": 89,
+      "y": 289,
+      "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,7 +67,7 @@
     {
       "texto": "HIGH",
       "x": 223.3,
-      "y": 269.4,
+      "y": 251.3,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -76,7 +76,7 @@
     {
       "texto": "LOW",
       "x": 223.3,
-      "y": 372.0,
+      "y": 341.0,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -85,7 +85,7 @@
     {
       "texto": "BRI",
       "x": 285.0,
-      "y": 314.6,
+      "y": 290.8,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -94,7 +94,7 @@
     {
       "texto": "VOLUME",
       "x": 357.0,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -103,7 +103,7 @@
     {
       "texto": "TREBLE",
       "x": 449.5,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -112,7 +112,7 @@
     {
       "texto": "MIDDLE",
       "x": 542.0,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -121,7 +121,7 @@
     {
       "texto": "BASS",
       "x": 634.5,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -130,7 +130,7 @@
     {
       "texto": "HIGH",
       "x": 727.1,
-      "y": 269.4,
+      "y": 251.3,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -139,7 +139,7 @@
     {
       "texto": "LOW",
       "x": 727.1,
-      "y": 372.0,
+      "y": 341.0,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -148,7 +148,7 @@
     {
       "texto": "BRI",
       "x": 788.8,
-      "y": 314.6,
+      "y": 290.8,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -157,7 +157,7 @@
     {
       "texto": "VOLUME",
       "x": 860.7,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -166,7 +166,7 @@
     {
       "texto": "TREBLE",
       "x": 953.3,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -175,7 +175,7 @@
     {
       "texto": "MIDDLE",
       "x": 1045.8,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -184,7 +184,7 @@
     {
       "texto": "BASS",
       "x": 1138.3,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -193,7 +193,7 @@
     {
       "texto": "DISTORTION",
       "x": 1230.8,
-      "y": 293.3,
+      "y": 269.5,
       "altura": 19.98,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -202,7 +202,7 @@
     {
       "texto": "REVERB",
       "x": 1323.4,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -211,7 +211,7 @@
     {
       "texto": "SPEED",
       "x": 1436.5,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -220,7 +220,7 @@
     {
       "texto": "DEPTH",
       "x": 1529.0,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -229,7 +229,7 @@
     {
       "texto": "VIB/CHO",
       "x": 1621.5,
-      "y": 290.2,
+      "y": 266.4,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -238,7 +238,7 @@
     {
       "texto": "POWER",
       "x": 2104.7,
-      "y": 306.5,
+      "y": 269.8,
       "altura": 23.38,
       "achatamento": 1.0,
       "cor": "#ededed",
