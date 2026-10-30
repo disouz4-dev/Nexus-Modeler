@@ -2256,6 +2256,9 @@ void NexusEditor::refreshBrowser()
 void NexusEditor::noticeOldData()
 {
   // Uma vez só, depois da instalação nova: onde ficaram as coisas das versões antigas.
+  // Tela fora da área de trabalho (fechada, ou nos testes): fica para a próxima abertura.
+  if (!isShowing())
+    return;
   const auto marker = nexus::update::dataRoot().getChildFile("instalacao.json");
   auto info = juce::JSON::parse(marker);
   const juce::File reserve(info["reserva"].toString());
