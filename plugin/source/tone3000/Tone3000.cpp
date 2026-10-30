@@ -172,6 +172,15 @@ bool usableFolder(const juce::File& folder)
   return folder.getNumberOfChildFiles(juce::File::findFiles, "*.wav") > 0;
 }
 
+int captureCount(const juce::File& folder)
+{
+  const auto pack = juce::JSON::parse(folder.getChildFile("pack.json"));
+  if (static_cast<bool>(pack["mapear"]))
+    return 0;
+  const auto* caps = pack["capturas"].getDynamicObject();
+  return caps == nullptr ? 0 : caps->getProperties().size();
+}
+
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName)
 {
   for (const auto& f : Connection::packsFolder(gearName).findChildFiles(juce::File::findDirectories, false))

@@ -379,6 +379,7 @@ countries: in
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "धन्यवाद! रिपोर्ट GitHub पर issue %1 बन गई है, हम वहीं इसे देखेंगे।"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "बताइए क्या हुआ और आप क्या कर रहे थे। Nexus साथ में संस्करण, सिस्टम और हाल की त्रुटियाँ भेजता है, बिना किसी निजी जानकारी के। खाते की ज़रूरत नहीं।"
 "Afinação" = "पिच"
+"AFINAÇÃO" = "पिच"
 "DROP" = "ड्रॉप"
 "Americanos boutique" = "अमेरिकी बुटीक"
 "Alemães de alto ganho" = "जर्मन हाई गेन"

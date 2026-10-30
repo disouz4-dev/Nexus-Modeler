@@ -2368,10 +2368,13 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
   mFetchingSlots.insert(slotKey);
   auto safe = juce::Component::SafePointer<NexusEditor>(this);
   const juce::String gearFilter(filter);
+  // A recomendada tem várias capturas: a da comunidade só entra se também
+  // tiver, senão o ganho (ou o drive) ficaria travado numa captura só.
+  const bool several = gearFilter != "cab" && (tone.fixedPositions.size() > 1 || tone.models > 1);
   // Baixa um tom; se ele não serve sozinho (sem a posição do botão nos nomes),
   // passa para o próximo; no fim, a recomendada.
   auto tryList = std::make_shared<std::function<void(std::vector<nexus::t3k::Tone>, size_t)>>();
-  *tryList = [safe, key, slotKey, land, gearFilter, gearName, tone, tryList](std::vector<nexus::t3k::Tone> list, size_t i) {
+  *tryList = [safe, key, slotKey, land, gearFilter, gearName, tone, several, tryList](std::vector<nexus::t3k::Tone> list, size_t i) {
     if (safe == nullptr)
       return;
     if (i >= list.size())
@@ -2383,22 +2386,26 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
     }
     auto candidate = list[i];
     candidate.firstIfUnnamed = true;
+    const bool last = i + 1 == list.size();
+    auto fits = [several, last](const juce::File& folder) { return last || !several || nexus::t3k::captureCount(folder) > 1; };
     auto accept = [safe, key, slotKey, land](const juce::File& folder) {
       safe->mFetching.erase(key);
       safe->mFetchingSlots.erase(slotKey);
       land(folder);
     };
-    if (const auto have = nexus::t3k::downloadedFolder(candidate, gearName); have.isDirectory())
+    if (const auto have = nexus::t3k::downloadedFolder(candidate, gearName); have.isDirectory() && fits(have))
       return accept(have); // downloadedFolder só devolve pasta que dá para tocar
     nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: ") + candidate.title + " " + candidate.packName + " ("
                                      + juce::String(candidate.favorites) + " favoritos)");
     safe->mT3k->download(candidate, gearFilter, gearName, [](juce::String) {},
-                         [safe, list, i, accept, tryList](juce::File folder, juce::String error) {
+                         [safe, list, i, accept, fits, tryList](juce::File folder, juce::String error) {
                            if (safe == nullptr)
                              return;
                            const bool usable = error.isEmpty() && folder.isDirectory() && nexus::t3k::usableFolder(folder);
-                           if (usable)
+                           if (usable && fits(folder))
                              return accept(folder);
+                           if (usable)
+                             error = juce::String::fromUTF8("(uma captura só)");
                            nexus::report::log("tone3000", juce::String::fromUTF8("captura padrão: não serviu ") + list[i].title + " " + error);
                            (*tryList)(list, i + 1);
                          });
@@ -2408,8 +2415,11 @@ void NexusEditor::fetchDefault(const nexus::t3k::Tone& tone, const char* filter,
   // A mais curtida da comunidade primeiro (até três), depois a recomendada.
   mT3k->list(nexus::t3k::Connection::List::mostLiked, gearFilter == "pedal" ? juce::String("pedal") : gearFilter == "cab" ? juce::String("cab")
                                                                                                   : juce::String("amp_amp-cab"),
-             searchWord, [tone, tryList](std::vector<nexus::t3k::Tone> found, juce::String) {
-               std::vector<nexus::t3k::Tone> list(found.begin(), found.begin() + static_cast<long>(std::min<size_t>(3, found.size())));
+             searchWord, [tone, several, tryList](std::vector<nexus::t3k::Tone> found, juce::String) {
+               std::vector<nexus::t3k::Tone> list;
+               for (const auto& t : found)
+                 if (list.size() < 3 && (!several || t.models > 1))
+                   list.push_back(t);
                list.push_back(tone);
                (*tryList)(list, 0);
              });
