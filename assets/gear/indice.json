@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:38:19Z",
+ "gerado": "2026-10-30T12:42:31Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4332,8 +4332,8 @@
   },
   "moonstone_fuzz": {
    "nome": "Moonstone Fuzz",
-   "hash": "ad5d35181466c4f4",
-   "data": "2026-10-30T10:18:47Z",
+   "hash": "a1611133677fffeb",
+   "data": "2026-10-30T12:42:31Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "moonstone_fuzz_botao_ganho.png",
@@ -4345,21 +4345,21 @@
     "moonstone_fuzz_mapa.json"
    ],
    "sha256": {
-    "moonstone_fuzz_botao_ganho.png": "b7fe9e8efd22518a3a35b2f2c363d3196c83209cb853f61324986a83f8fd069d",
-    "moonstone_fuzz_botao_nivel.png": "869627e4cb58d4a8a82dc3ee548fb216608c15d80496f6e49b01339833384e96",
-    "moonstone_fuzz_botao_tom.png": "fc2f2e08b1737242ab320dfac6823425543d9d34a0a14652c33cbb7745e940fb",
-    "moonstone_fuzz_frente.jpg": "3dea9df1580293aff6ecca816c7ede46c4b608c6495608b4bd768a7fa132b6d6",
-    "moonstone_fuzz_frente_alfa.png": "dab4cb41420d8abdbb774c63e80750111da60b23d785a6771accd8e2755789d4",
-    "moonstone_fuzz_manifesto.json": "a1d91b4a89e79f168241b23c29bbbd6f02cced2d69a8021af689fab6596d63e5",
+    "moonstone_fuzz_botao_ganho.png": "2af5a2d5ae255bf85790c185b76e1c9cce739ad77c6aa803de2a6bfa64efcffb",
+    "moonstone_fuzz_botao_nivel.png": "1862c34d7c54e4627fb6d4653994bcf18da1d24f976830618c72ba409f288ca7",
+    "moonstone_fuzz_botao_tom.png": "ee99fb74f60450411a10e5e987c0537533bd764333a70e727534918636ab199b",
+    "moonstone_fuzz_frente.jpg": "aa8b4b270793069d91e09ea887aae1d5011bc0b44e7cbc55b82e4083f69fe193",
+    "moonstone_fuzz_frente_alfa.png": "90e20b29a45551f7879c64dc30461182a33d2eb3512cc226952843494f5eec62",
+    "moonstone_fuzz_manifesto.json": "c5b1529d6b7595adaaccb542ba800adcbcd91b45b524350643d3d7cb2f34afc5",
     "moonstone_fuzz_mapa.json": "1acd2f1a5de66bf117736ac49f923e3feb1d732a08a5e2a95b4397be708a97d6"
    },
-   "tamanho": 419011,
+   "tamanho": 419016,
    "tipo": "pedal",
    "inspiracao": "EarthQuaker Hizumitas",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
