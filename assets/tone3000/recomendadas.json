@@ -258,6 +258,23 @@
     "busca": "BE 100",
     "tons": [
       {
+        "id": 64322,
+        "titulo": "Friedman BE100 Deluxe",
+        "criador": "2dor",
+        "tipo": "amp",
+        "capturas": 2,
+        "pacote": "Canal 1 Limpo",
+        "padrao": true,
+        "nota": "canal limpo: limpo e rock",
+        "mapa": {
+          "BE100DLX-CLN Tender Clean": 3,
+          "BE100DLX-CLN Rock #01": 6
+        },
+        "serie": [
+          "[AMP]"
+        ]
+      },
+      {
         "id": 72085,
         "titulo": "FRIEDMAN BE-100 (GAIN STAGES)",
         "tipo": "amp",
@@ -277,7 +294,8 @@
         },
         "serie": [
           "BE100 - BE - "
-        ]
+        ],
+        "pacote": "Canal 2 BE"
       }
     ]
   },
