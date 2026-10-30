@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "tom",
-      "x": 254,
-      "y": 72,
-      "tamanho": 92,
+      "x": 244,
+      "y": 70,
+      "tamanho": 112,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 146,
-      "y": 190,
-      "tamanho": 88,
+      "x": 131,
+      "y": 212,
+      "tamanho": 104,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 256,
-      "y": 190,
-      "tamanho": 88,
+      "x": 248,
+      "y": 212,
+      "tamanho": 104,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -42,67 +42,67 @@
   "rotulos": [
     {
       "texto": "GRAVE",
-      "x": 192.3,
-      "y": 190.3,
+      "x": 186.9,
+      "y": 207.4,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     },
     {
       "texto": "AGUDO",
       "x": 300.0,
-      "y": 190.3,
+      "y": 207.4,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     },
     {
       "texto": "PRESENÇA",
-      "x": 407.7,
-      "y": 190.3,
+      "x": 413.1,
+      "y": 207.4,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     },
     {
       "texto": "VOLUME",
-      "x": 192.3,
-      "y": 303.4,
+      "x": 186.9,
+      "y": 342.5,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     },
     {
       "texto": "GANHO",
       "x": 300.0,
-      "y": 303.4,
+      "y": 342.5,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     },
     {
       "texto": "TIGHT",
-      "x": 407.7,
-      "y": 303.4,
+      "x": 413.1,
+      "y": 342.5,
       "altura": 22.44,
       "achatamento": 1.0,
-      "cor": "#e9daa9",
+      "cor": "#e3cd8f",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 577.5,
-    "raio": 70.0
+    "y": 597.0,
+    "raio": 46.5
   },
   "led": {
     "x": 300.0,
-    "y": 495.1,
-    "raio": 17.5
+    "y": 479.3,
+    "raio": 10.2
   }
 }
