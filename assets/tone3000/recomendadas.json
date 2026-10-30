@@ -403,10 +403,42 @@
       {
         "id": 6213,
         "titulo": "ENGL Powerball II",
+        "criador": "markswarbrick",
         "tipo": "amp",
-        "capturas": 10,
+        "capturas": 1,
+        "pacote": "Canal 1 Limpo",
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "canal limpo",
+        "mapa": {
+          "ENGL Powerball II (Clean)": 5
+        }
+      },
+      {
+        "id": 6213,
+        "titulo": "ENGL Powerball II",
+        "criador": "markswarbrick",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Crunch",
+        "padrao": true,
+        "nota": "canal crunch",
+        "mapa": {
+          "ENGL Powerball II (Crunch)": 5
+        }
+      },
+      {
+        "id": 6213,
+        "titulo": "ENGL Powerball II",
+        "criador": "markswarbrick",
+        "tipo": "amp",
+        "capturas": 2,
+        "pacote": "Canal 3 Lead",
+        "padrao": true,
+        "nota": "canal de alto ganho: base e solo",
+        "mapa": {
+          "ENGL Powerball II (High Gain Rhythm)": 6,
+          "ENGL Powerball II (High Gain Lead)": 8
+        }
       }
     ]
   },
