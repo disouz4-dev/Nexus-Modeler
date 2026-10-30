@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T08:30:42Z",
+ "gerado": "2026-10-30T08:38:58Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4059,8 +4059,8 @@
   },
   "mars_phaser": {
    "nome": "Mars Phaser",
-   "hash": "fcf8797714ac25a8",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "1a571f76b98f7357",
+   "data": "2026-10-30T08:38:58Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mars_phaser_botao_a.png",
@@ -4072,21 +4072,21 @@
     "mars_phaser_mapa.json"
    ],
    "sha256": {
-    "mars_phaser_botao_a.png": "0c8e0930a18bfe68ec4c1c3afeb967bf615078cd8991f73e0c1c000b94188b98",
-    "mars_phaser_botao_b.png": "cbe8da6e5736e1678ff80f375efac476c35c05ae00e605417ef00c702dd67d09",
-    "mars_phaser_botao_c.png": "a1698f720b336e050a821523ba41db761ece50f2469566903c15a9fc07f30f2a",
-    "mars_phaser_frente.jpg": "0160da23edbd5f203b1f0342a8f57edd8c8748faca25bd8941733311fdefbe57",
-    "mars_phaser_frente_alfa.png": "486565905d500ec44a4c032be2abb7505c244302d4baf600d1313916a03ee974",
-    "mars_phaser_manifesto.json": "9aa5ef29c8cfa0839a7e02749607493855ef125b39ebdd8dbd98cdc6a1790c6d",
-    "mars_phaser_mapa.json": "b0a9ca155472f3ad92bb85d5c03b8457ad529bee0939f5fd1c2f191fbdd9dfec"
+    "mars_phaser_botao_a.png": "ac9dc9823ba6d819c0a0283896ae5d85bc71a0fc12cbe16b89dd037d283486a1",
+    "mars_phaser_botao_b.png": "f3e9352b8d3525d53b89b633136d97d4f779a4c3082030762b3740ecc1e67da4",
+    "mars_phaser_botao_c.png": "801a0154a69e4fa0054fa0daf29936fd6c5b2159d56ecca34f9b4c18c9eb5a39",
+    "mars_phaser_frente.jpg": "1a866fae8bc73ec39b2390c8257bcc1bf46e7d62ef5aace5708d7da197dc8bc4",
+    "mars_phaser_frente_alfa.png": "d13c9c78b8ca36c33def3d215193cc44fedf9dfc5179979127b5845b31f29649",
+    "mars_phaser_manifesto.json": "d09eb0a4558145065d5727b00bb72a455864c9e8701a5ad250d406ccdab5616e",
+    "mars_phaser_mapa.json": "99c8e777ab18ade91ca0c045f9ff4192d3ec2033fcc3319c3771c5338452add2"
    },
-   "tamanho": 397283,
+   "tamanho": 376984,
    "tipo": "pedal",
    "inspiracao": "MXR Phase 90",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "phaser",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
