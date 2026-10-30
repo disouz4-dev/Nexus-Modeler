@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T18:49:26Z",
+ "gerado": "2026-10-30T18:51:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -211,7 +211,7 @@
   "badland100": {
    "nome": "Badland 100",
    "hash": "cd8944901c1caa2f",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "badland100_botao_agudo.png",
@@ -316,7 +316,7 @@
   "be100": {
    "nome": "BE 100",
    "hash": "86bb68f0b24166bd",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -388,7 +388,7 @@
   "block5150iii": {
    "nome": "Block 5150 III",
    "hash": "2b802ae2741384aa",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block5150iii_botao_agudo.png",
@@ -493,7 +493,7 @@
   "brit2000": {
    "nome": "Brit 2000",
    "hash": "98aee55926c252c9",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit2000_botao_agudo.png",
@@ -532,7 +532,7 @@
   "brit410": {
    "nome": "Brit 410",
    "hash": "da693c4f21dd1a8b",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit410_botao_agudo.png",
@@ -571,7 +571,7 @@
   "brit45": {
    "nome": "Brit 45",
    "hash": "65f331abab4501f9",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit45_botao_agudo.png",
@@ -610,7 +610,7 @@
   "brit900": {
    "nome": "Brit 900",
    "hash": "0c42f89d4876137e",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit900_botao_agudo.png",
@@ -649,7 +649,7 @@
   "britbass": {
    "nome": "Brit Bass",
    "hash": "4fcba1a62ed0d2a6",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britbass_botao_agudo.png",
@@ -688,7 +688,7 @@
   "britds20": {
    "nome": "Brit DS 20",
    "hash": "7a9664dcb8a5d7cc",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britds20_botao_agudo.png",
@@ -727,7 +727,7 @@
   "britjubilee": {
    "nome": "Brit Jubilee",
    "hash": "f840b6d6d897b03c",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britjubilee_botao_agudo.png",
@@ -766,7 +766,7 @@
   "britplexi50": {
    "nome": "Brit Plexi 50",
    "hash": "5bf29fe348c79f88",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi50_botao_agudo.png",
@@ -805,7 +805,7 @@
   "britplexi": {
    "nome": "Brit Plexi",
    "hash": "45f2ff22204044ee",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi_botao_agudo.png",
@@ -972,7 +972,7 @@
   "citrus30": {
    "nome": "Citrus 30",
    "hash": "1ae421dff4ca919a",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus30_botao_agudo.png",
@@ -1011,7 +1011,7 @@
   "citrus50": {
    "nome": "Citrus 50",
    "hash": "ce2792c6aa68652c",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus50_botao_agudo.png",
@@ -1720,7 +1720,7 @@
   "lonestar100": {
    "nome": "Lone Star 100",
    "hash": "47946f3c9cbb46b0",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lonestar100_botao_agudo.png",
@@ -1823,7 +1823,7 @@
   "mark2plus": {
    "nome": "Mark Two Plus",
    "hash": "04f840eb66dda0e2",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark2plus_botao_agudo.png",
@@ -1872,7 +1872,7 @@
   "mark3": {
    "nome": "Mark Three",
    "hash": "812910322d7a6a49",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark3_botao_agudo.png",
@@ -1921,7 +1921,7 @@
   "markjp": {
    "nome": "Mark JP",
    "hash": "a7b2abd88da74b08",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "markjp_botao_agudo.png",
@@ -2003,7 +2003,7 @@
   "match30": {
    "nome": "Match 30",
    "hash": "cd1459f0832d3f89",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match30_botao_agudo.png",
@@ -2488,7 +2488,7 @@
   "power100": {
    "nome": "Power 100",
    "hash": "9ac425167630f14a",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power100_botao_agudo.png",
@@ -2657,7 +2657,7 @@
   "recto_dual": {
    "nome": "Recto Dual",
    "hash": "bc64979a9014f7b7",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -2696,7 +2696,7 @@
   "recto_triple": {
    "nome": "Recto Triple",
    "hash": "2e9231a41bc6ee8c",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_triple_botao_agudo.png",
@@ -2735,7 +2735,7 @@
   "rocker50": {
    "nome": "Rocker 50",
    "hash": "3e6dba3a12bf4332",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rocker50_botao_agudo.png",
@@ -2881,7 +2881,7 @@
   "sl100": {
    "nome": "SL 100",
    "hash": "a2fdf6da818e04da",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl100_botao_agudo.png",
@@ -2951,7 +2951,7 @@
   "sonic60": {
    "nome": "Sonic 60",
    "hash": "05fb4edd2d46cee4",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sonic60_botao_agudo.png",
@@ -3054,7 +3054,7 @@
   "topboost30": {
    "nome": "Top Boost 30",
    "hash": "2861560c44de6b42",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topboost30_botao_agudo.png",
@@ -3159,7 +3159,7 @@
   "uber100": {
    "nome": "Uber 100",
    "hash": "4271b10fcab7abc6",
-   "data": "2026-10-30T18:49:26Z",
+   "data": "2026-10-30T18:49:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber100_botao_agudo.png",
