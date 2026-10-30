@@ -37,7 +37,7 @@ Tudo isso toca capturas do
 [Neural Amp Modeler](https://github.com/sdatkinson/NeuralAmpModelerCore)
 (NAM A2 Full e A2 Lite).
 
-> **Estado atual: versão de teste publicada (0.2.0-beta.2).** Dá para
+> **Estado atual: versão de teste publicada (0.2.0-beta.3).** Dá para
 > baixar e testar nos três sistemas. Funcionam o motor de troca de capturas,
 > a tela 3D com 94 cabeçotes (de guitarra e de baixo), 29 caixas e 63
 > pedais, o afinador de rack no começo da cadeia, a cadeia com
@@ -277,7 +277,7 @@ https://disouz4-dev.github.io/Nexus-Modeler/#sistemas
 
 Os instaladores ficam na página de
 [lançamentos](https://github.com/disouz4-dev/Nexus-Modeler/releases/latest)
-(hoje, a versão de teste 0.2.0-beta.2). Depois de instalado, o Nexus
+(hoje, a versão de teste 0.2.0-beta.3). Depois de instalado, o Nexus
 avisa sozinho quando sai uma versão nova e instala com um clique.
 
 ### Windows
