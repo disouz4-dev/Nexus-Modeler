@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T18:01:21Z",
+ "gerado": "2026-10-30T18:03:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5902,8 +5902,8 @@
   },
   "topboost15": {
    "nome": "Top Boost 15",
-   "hash": "7f43d62a704b3ce3",
-   "data": "2026-10-29T22:19:59Z",
+   "hash": "4201f3fcc6774e40",
+   "data": "2026-10-30T18:03:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topboost15_botao_agudo.png",
@@ -5918,24 +5918,24 @@
     "topboost15_mapa.json"
    ],
    "sha256": {
-    "topboost15_botao_agudo.png": "3b6d144c7e610e4d2a07f9b92420d8cd7b079bcddc9e023491b56324558d98a0",
-    "topboost15_botao_ganho.png": "6fac413f54ba39f2a79e14c2c220539fcc8a240bf01cd7f269c50a8c7b3c5e4f",
-    "topboost15_botao_grave.png": "861ad2aead9cf51fed1c8ca64a5de5fb36768f11469a49f7469c144a07381ff3",
-    "topboost15_botao_medio.png": "49fa4ec9efb127e2684e8158c8249d73cb1f9b605a8fbe6f270b80efb90cabec",
-    "topboost15_botao_presenca.png": "74f2dc57419ef4b1b0f79af9f9f73931299996e8ba8dd0d1ae2fccbdb9fd5ca2",
-    "topboost15_botao_volume.png": "e7a8a07abf5498a0beaaaff0ec398b10ec4d1bd019d54c57e7bb0b27d3cd28e8",
-    "topboost15_frente.jpg": "ff71507683696b022e0207cd1eb2b48ec2a046bba721cb27135854d5bbe7818f",
-    "topboost15_frente_alfa.png": "984bec09eacdfd78978ab9100d024eff3bf92bcb430b6dc65e871524c111e2d1",
-    "topboost15_manifesto.json": "f840633c12f8fbb4959259708f9509921983b08f3c100e804676045ae7609b2f",
-    "topboost15_mapa.json": "5ac0bd93c0eacc93648bf6de556b69684d9a4c02e8fc0a518ee4afa90dcc0161"
+    "topboost15_botao_agudo.png": "05d0d2e9fe1b9231446442eb510d8ca63babd58e802eaac48723b4da59251418",
+    "topboost15_botao_ganho.png": "6f25a33287a5a8f9d1e4fcee99969df36bb1aa0c3d10a51f27967ed580bd0a3f",
+    "topboost15_botao_grave.png": "f6221118f3f2869b9e2ed2e21fa565a1b9a162f5a1407e8e7f05cb92175a7b90",
+    "topboost15_botao_medio.png": "738b3d070aeae87aa210679bd19b2784bf51e93b1b2bacb3cb2dca9de227c204",
+    "topboost15_botao_presenca.png": "37b7d121232b1fa13b4009c9414c49e728cf7bb43a4a287d14a36a19fd0e1378",
+    "topboost15_botao_volume.png": "2634872f9ad4aedbfae795a79ce0265a84a4e11445cb57eab1be9d1e793529bc",
+    "topboost15_frente.jpg": "af9f83b4d892f75b04d5657be9af014c63613762b4469e86f2d7cde169e4304a",
+    "topboost15_frente_alfa.png": "28676276aac06228f513e15fe82e36f3b7282d04c5e63d3edb5fe2f71ac4f952",
+    "topboost15_manifesto.json": "a938744ec7719d2e91a14339d90eff372dc5bc9bc91c70223bd3ab676215bfa6",
+    "topboost15_mapa.json": "86a3efb6c83dc67d8000fa9a012abb80c5d783b409075fe3eacb698cf48ba432"
    },
-   "tamanho": 1950257,
+   "tamanho": 2036402,
    "tipo": "cabecote",
    "inspiracao": "Vox AC15",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

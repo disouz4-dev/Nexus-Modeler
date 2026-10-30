@@ -2,59 +2,59 @@
   "nome": "Top Boost 15",
   "familia": "topboost15",
   "largura": 2400,
-  "altura": 2454,
+  "altura": 2466,
   "posicoes": 101,
   "botoes": [
     {
       "id": "volume",
-      "x": 521,
-      "y": 179,
-      "tamanho": 123,
+      "x": 640,
+      "y": 162,
+      "tamanho": 122,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 645,
-      "y": 179,
-      "tamanho": 122,
+      "x": 792,
+      "y": 163,
+      "tamanho": 120,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "agudo",
-      "x": 1217,
-      "y": 181,
-      "tamanho": 118,
-      "arquivo": "botao_agudo.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "grave",
-      "x": 1340,
-      "y": 181,
+      "x": 1372,
+      "y": 163,
       "tamanho": 119,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "ganho",
-      "x": 1463,
-      "y": 180,
+      "id": "agudo",
+      "x": 1516,
+      "y": 163,
       "tamanho": 120,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1663,
+      "y": 162,
+      "tamanho": 122,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1614,
-      "y": 180,
-      "tamanho": 121,
+      "x": 1809,
+      "y": 161,
+      "tamanho": 123,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,107 +67,107 @@
   "rotulos": [
     {
       "texto": "POWER",
-      "x": 387.9,
-      "y": 298.9,
-      "altura": 18.89,
+      "x": 370.9,
+      "y": 170.6,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "STANDBY",
-      "x": 472.9,
-      "y": 298.9,
-      "altura": 18.89,
+      "x": 480.4,
+      "y": 170.6,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 586.2,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 703.3,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "TONE CUT",
-      "x": 709.0,
-      "y": 326.1,
-      "altura": 18.89,
-      "achatamento": 1.0,
-      "cor": "#ceb36f",
-      "espaco": 1.0
-    },
-    {
-      "texto": "SPEED",
-      "x": 860.0,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 854.4,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "DEPTH",
-      "x": 982.8,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 988.5,
+      "y": 150.9,
+      "altura": 23.61,
+      "achatamento": 1.0,
+      "cor": "#ceb36f",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SPEED",
+      "x": 1139.6,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "LEVEL",
-      "x": 1124.5,
-      "y": 326.1,
-      "altura": 18.89,
-      "achatamento": 1.0,
-      "cor": "#ceb36f",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1275.5,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 1285.0,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1398.3,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 1430.4,
+      "y": 150.9,
+      "altura": 23.61,
+      "achatamento": 1.0,
+      "cor": "#ceb36f",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1574.0,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1521.1,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 1721.3,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1672.2,
-      "y": 326.1,
-      "altura": 18.89,
+      "x": 1866.7,
+      "y": 150.9,
+      "altura": 23.61,
       "achatamento": 1.0,
       "cor": "#ceb36f",
       "espaco": 1.0
     },
     {
       "texto": "NORMAL",
-      "x": 1861.0,
-      "y": 288.0,
+      "x": 2008.3,
+      "y": 127.4,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -175,8 +175,8 @@
     },
     {
       "texto": "TOP BOOST",
-      "x": 2012.1,
-      "y": 288.0,
+      "x": 2008.3,
+      "y": 321.2,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -184,8 +184,8 @@
     },
     {
       "texto": "MASTER",
-      "x": 652.3,
-      "y": 117.5,
+      "x": 775.1,
+      "y": 116.9,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -193,8 +193,8 @@
     },
     {
       "texto": "TREMOLO",
-      "x": 920.5,
-      "y": 117.5,
+      "x": 1069.7,
+      "y": 116.9,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -202,8 +202,8 @@
     },
     {
       "texto": "REVERB",
-      "x": 1124.5,
-      "y": 117.5,
+      "x": 1283.1,
+      "y": 116.9,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -211,8 +211,8 @@
     },
     {
       "texto": "TOP BOOST",
-      "x": 1398.3,
-      "y": 117.5,
+      "x": 1574.0,
+      "y": 116.9,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -220,8 +220,17 @@
     },
     {
       "texto": "NORMAL",
-      "x": 1672.2,
-      "y": 117.5,
+      "x": 1862.9,
+      "y": 116.9,
+      "altura": 18.89,
+      "achatamento": 1.0,
+      "cor": "#ceb36f",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 2012.1,
+      "y": 116.9,
       "altura": 18.89,
       "achatamento": 1.0,
       "cor": "#ceb36f",
@@ -230,14 +239,14 @@
   ],
   "leds_canais": [
     {
-      "x": 1862.5,
-      "y": 117.3,
-      "raio": 10.9
+      "x": 1966.6,
+      "y": 175.2,
+      "raio": 5.1
     },
     {
-      "x": 2013.9,
-      "y": 117.3,
-      "raio": 10.9
+      "x": 1966.6,
+      "y": 273.5,
+      "raio": 5.1
     }
   ]
 }
