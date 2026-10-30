@@ -379,6 +379,7 @@ countries: jp
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "ありがとうございます！レポートは GitHub の issue %1 になりました。そちらで対応します。"
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "何が起きたか、何をしていたかを書いてください。Nexus はバージョン、システム、最近のエラーを個人情報なしで送ります。アカウントは不要です。"
 "Afinação" = "ピッチ"
+"AFINAÇÃO" = "ピッチ"
 "DROP" = "ドロップ"
 "Americanos boutique" = "アメリカン・ブティック"
 "Alemães de alto ganho" = "ドイツ系ハイゲイン"

@@ -379,6 +379,7 @@ countries: kr
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "감사합니다! 보고서가 GitHub의 이슈 %1이 되었고, 거기서 처리하겠습니다."
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "무슨 일이 있었는지, 무엇을 하고 있었는지 알려 주세요. Nexus가 버전, 시스템, 최근 오류를 개인정보 없이 함께 보냅니다. 계정이 필요 없습니다."
 "Afinação" = "피치"
+"AFINAÇÃO" = "피치"
 "DROP" = "드롭"
 "Americanos boutique" = "아메리칸 부티크"
 "Alemães de alto ganho" = "독일 하이게인"

@@ -379,6 +379,7 @@ countries: es mx ar co cl
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "¡Gracias! El informe se convirtió en el issue %1 en GitHub y lo trataremos allí."
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "Cuenta qué pasó y qué estabas haciendo. Nexus envía la versión, el sistema y los últimos errores registrados, sin datos personales. No necesitas cuenta."
 "Afinação" = "Afinación"
+"AFINAÇÃO" = "AFINACIÓN"
 "DROP" = "DROP"
 "Americanos boutique" = "Boutique americanos"
 "Alemães de alto ganho" = "Alemanes de alta ganancia"

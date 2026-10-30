@@ -379,6 +379,7 @@ countries: tr
 "Obrigado! O relatório virou o issue %1 no GitHub, e vamos tratar por lá." = "Teşekkürler! Rapor GitHub'da %1 numaralı konu oldu, orada ilgileneceğiz."
 "Conte o que aconteceu e o que você estava fazendo. O Nexus envia junto a versão, o sistema e os últimos erros registrados, sem nenhum dado pessoal. Não precisa de conta." = "Ne olduğunu ve ne yaptığını anlat. Nexus sürümü, sistemi ve son hataları kişisel veri olmadan gönderir. Hesap gerekmez."
 "Afinação" = "Perde"
+"AFINAÇÃO" = "PERDE"
 "DROP" = "DROP"
 "Americanos boutique" = "Amerikan butik"
 "Alemães de alto ganho" = "Alman yüksek kazanç"

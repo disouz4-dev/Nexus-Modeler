@@ -65,6 +65,8 @@ std::optional<Tone> defaultTone(const juce::String& gearPrefix, int channel = -1
 // Pasta já baixada desse tom (Documentos/Nexus Modeler/<equipamento>), ou vazia.
 // Pasta de pacote que dá para tocar (capturas com posição ou algum IR).
 bool usableFolder(const juce::File& folder);
+// Quantas capturas com posição o pacote tem (0: nenhuma ou falta mapear).
+int captureCount(const juce::File& folder);
 juce::File downloadedFolder(const Tone& tone, const juce::String& gearName);
 juce::String filterWord(const juce::String& gearPrefix);
 
