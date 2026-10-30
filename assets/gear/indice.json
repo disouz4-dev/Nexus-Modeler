@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:37:23Z",
+ "gerado": "2026-10-30T13:37:32Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -924,8 +924,8 @@
   },
   "blueberry_blues": {
    "nome": "Blueberry Blues",
-   "hash": "ade0f00a7ad1ac44",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "4464486c05642b8e",
+   "data": "2026-10-30T13:37:32Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_blues_botao_ganho.png",
@@ -937,21 +937,21 @@
     "blueberry_blues_mapa.json"
    ],
    "sha256": {
-    "blueberry_blues_botao_ganho.png": "df7194ac9faf9d96d8fa9e9c4cf92d1533d25946eb538d69380d1c51fce337d2",
-    "blueberry_blues_botao_nivel.png": "71a054fc4536669bd8bc88ac0e9be17d7b77a2db8e804c61be799c290db0d7a7",
-    "blueberry_blues_botao_tom.png": "29ab1b38a5f4a10245e325a7d3e3c6412a465c262a38169994db310b02750cec",
-    "blueberry_blues_frente.jpg": "e445f4f86a074d8ecadcda95fe08be7fb9e3e95a33638654fe6012ed39f51bea",
-    "blueberry_blues_frente_alfa.png": "20b5a3290f5b299226ce675102bd79b82426613127f73482b6f57006114b1fcc",
-    "blueberry_blues_manifesto.json": "b4282eeff924732d5c3cf1109bdfb23e3f4013fedb55927d4469ef9f2bf22c9d",
-    "blueberry_blues_mapa.json": "2d19f69e4671cc0aaa86ad5e0c793c857836a6185abece34ce60c3a83bde4d15"
+    "blueberry_blues_botao_ganho.png": "3db14aa49591d5ecf92eb755a0a78df25f49915e7226111aa4845c050721de3b",
+    "blueberry_blues_botao_nivel.png": "beba34154f2a6d74c054190dd17512c53e729f5a3d1c39ca7355f2e4bc2cf822",
+    "blueberry_blues_botao_tom.png": "4776fd87d5bdd22e78ef1e79391dadb10bf2ca42078789fc0689695ad820858e",
+    "blueberry_blues_frente.jpg": "8889bfaaeb6e08ffef59760bc03341732ec0c6d18b4fcb9335e41b70240b4c65",
+    "blueberry_blues_frente_alfa.png": "eb4c5bf3aff54fd809d76b0310b0b93b2a1618c8e3fb474a5941ec1096df5253",
+    "blueberry_blues_manifesto.json": "a44868d036eec5508242165f00f0356d85c8627ffd571208b17b1ae9f59688c3",
+    "blueberry_blues_mapa.json": "40c384e506f0f7134799bfce52aa8fb479b0abdf2358eace2dac053d2b4ecd5c"
    },
-   "tamanho": 363661,
+   "tamanho": 353140,
    "tipo": "pedal",
    "inspiracao": "Boss BD-2 Blues Driver",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
