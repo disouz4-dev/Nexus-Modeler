@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 526,
-      "y": 361,
-      "tamanho": 80,
+      "x": 510,
+      "y": 345,
+      "tamanho": 111,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 649,
-      "y": 361,
-      "tamanho": 79,
+      "x": 633,
+      "y": 345,
+      "tamanho": 110,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 772,
-      "y": 362,
-      "tamanho": 78,
+      "x": 756,
+      "y": 346,
+      "tamanho": 109,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 895,
-      "y": 362,
-      "tamanho": 77,
+      "x": 880,
+      "y": 346,
+      "tamanho": 108,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1264,
-      "y": 363,
-      "tamanho": 76,
+      "x": 1250,
+      "y": 347,
+      "tamanho": 106,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1625,
-      "y": 293,
-      "tamanho": 51,
+      "x": 1586,
+      "y": 253,
+      "tamanho": 129,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,8 +67,8 @@
     {
       "texto": "HIGH",
       "x": 262.8,
-      "y": 443.3,
-      "altura": 15.72,
+      "y": 450.1,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "LOW",
       "x": 364.7,
-      "y": 443.3,
-      "altura": 15.72,
+      "y": 450.1,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "BRIGHT",
       "x": 446.2,
-      "y": 443.8,
-      "altura": 15.72,
+      "y": 450.6,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -94,8 +94,8 @@
     {
       "texto": "VOLUME",
       "x": 568.4,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -103,8 +103,8 @@
     {
       "texto": "TREBLE",
       "x": 690.7,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "BASS",
       "x": 812.9,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "VARIAMP",
       "x": 935.1,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "EFFECT",
       "x": 1057.4,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "ATTACK",
       "x": 1179.6,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -148,8 +148,8 @@
     {
       "texto": "FUZZ",
       "x": 1301.9,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -157,8 +157,8 @@
     {
       "texto": "TUNING",
       "x": 1424.1,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -166,8 +166,8 @@
     {
       "texto": "FINE",
       "x": 1546.3,
-      "y": 462.9,
-      "altura": 15.72,
+      "y": 483.9,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -175,8 +175,8 @@
     {
       "texto": "PRESENÇA",
       "x": 1648.2,
-      "y": 351.6,
-      "altura": 15.72,
+      "y": 394.4,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
