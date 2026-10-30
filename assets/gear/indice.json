@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:22:26Z",
+ "gerado": "2026-10-30T13:24:36Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4224,8 +4224,8 @@
   },
   "meteorite_reverb": {
    "nome": "Meteorite Reverb",
-   "hash": "c0f6de2b716ff204",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "5472b967844fb492",
+   "data": "2026-10-30T13:24:36Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "meteorite_reverb_botao_a.png",
@@ -4237,21 +4237,21 @@
     "meteorite_reverb_mapa.json"
    ],
    "sha256": {
-    "meteorite_reverb_botao_a.png": "05e7173e736f669edcc9a7400e82537068e69faa224b04f439b4ec8cc404f28e",
-    "meteorite_reverb_botao_b.png": "56dde42bd396a1575d6e75965581f15617ab2050333d68d8748763ee75fb2602",
-    "meteorite_reverb_botao_c.png": "5697a16c7af0f457c55fb2814bc58a47d450c7762f80fc3e928dce6e2e8cb8ce",
-    "meteorite_reverb_frente.jpg": "f82a9f133153cc5d013627002c0a1c0a341cf78378fc81a513f2a3749b708d4f",
-    "meteorite_reverb_frente_alfa.png": "e1c9772d59c231568269e178ed596418bb499b1c25da5f5ab4a5cead017bc7e0",
-    "meteorite_reverb_manifesto.json": "0db58f0dade4761f950b70f7b60000078ba29b1b57fa33ba9946d5e04bf8ffc4",
-    "meteorite_reverb_mapa.json": "6b37a655fde6a6d50bea82623264af2a9e8a7302bea4a573e3f730d22be746e0"
+    "meteorite_reverb_botao_a.png": "11d0e096aa85ffd0e382fbd4721260025abd0b4a5303e75f63ef4b17183c1cfc",
+    "meteorite_reverb_botao_b.png": "f84d10c81de15ac9ac0166e97c2353f75cc2edd86145d16808bbf4511b519464",
+    "meteorite_reverb_botao_c.png": "ec816b2d5e2d7a3c233411276ce1263dd7ab3087f872cf089e466d1fd88422c7",
+    "meteorite_reverb_frente.jpg": "077cfc742a861533326ec8601bc6f3a3959642ee0e802a7034875985812695af",
+    "meteorite_reverb_frente_alfa.png": "bdac79c44da4eafa2d325d756d773c0a1d5ce2e8aa4e54c0f6bc529e4456721e",
+    "meteorite_reverb_manifesto.json": "0ee7d4a653a218892dccfc1df81bae866a9b88542bdd7515b92d90f367e406f5",
+    "meteorite_reverb_mapa.json": "d1a60b2809f49496c7402b6b1134e95d7fbf7b78ef7e57ec069886504a53a955"
    },
-   "tamanho": 411053,
+   "tamanho": 408834,
    "tipo": "pedal",
    "inspiracao": "RV-6",
    "categoria": "Reverb",
    "fonte": "Efeito do Nexus",
    "motor": "reverb",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
