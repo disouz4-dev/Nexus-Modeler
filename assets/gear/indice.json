@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:39:41Z",
+ "gerado": "2026-10-30T13:46:12Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5200,8 +5200,8 @@
   },
   "selenite_eq": {
    "nome": "Selenite EQ",
-   "hash": "d73b90f990e107ad",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d5b1bfbec872c7ae",
+   "data": "2026-10-30T13:46:12Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "selenite_eq_botao_a.png",
@@ -5218,26 +5218,26 @@
     "selenite_eq_mapa.json"
    ],
    "sha256": {
-    "selenite_eq_botao_a.png": "94468990f6b6dbbf5a5692dd5833477dcddac98857d43838b40903631d05d96a",
-    "selenite_eq_botao_b.png": "471f65e2e29f6f1ef63e6786ed76c91073828e8245660331acccbf37178f8525",
-    "selenite_eq_botao_c.png": "d38eae8fc8f1f608fa0c1361d4c01e197eb291f1b97e26a11b1c99451f357dda",
-    "selenite_eq_botao_d.png": "30054177bc7f5e1f857baf52f61775a5c1af0963c39ff1bcd841863281799d7f",
-    "selenite_eq_botao_e.png": "357766167b573f3425ad434d585a0139209b072da22d21f57e40ebf03e3e0ae3",
-    "selenite_eq_botao_f.png": "c974fee103b02ac2a6718d6f46cb88161d66ecfe0debce9e2682334d6a912468",
-    "selenite_eq_botao_g.png": "c04e7ed7f7022e81b0a79e4b33f58a24a813dfb99a7b79dfe7c4aa18a41f717d",
-    "selenite_eq_botao_nivel.png": "07ac61567ebb0188e0dd4db4c1f01f5fb935372eb83a4fcad5c267e96080cbe4",
-    "selenite_eq_frente.jpg": "62c0af6c9236e5d67ea5a16254b952fc74bc92e833ce2a1583d77a649df5e7dd",
-    "selenite_eq_frente_alfa.png": "47f9d1c2c81e6daab327555182d92a945601b91b1c6be46b0985cc0b5a569751",
-    "selenite_eq_manifesto.json": "7c999c42d5797e8f20732fc19db44b4e6a89495adf932ac086d576e28e81318e",
-    "selenite_eq_mapa.json": "ae6972294836b80527043aa091ded4e10c79ee369d4bb37026eaeff25e02c581"
+    "selenite_eq_botao_a.png": "d09a0b075c384759fbd53c570de4ada39d3e86e3bc6faa37e0f126cb39a26743",
+    "selenite_eq_botao_b.png": "6f40d21ac0a8ff78c68eaebf2e552ef915cbb2a7ee1e7b0992851a87e37fb073",
+    "selenite_eq_botao_c.png": "df3dda2442bf097d36d200bdb7b65445484d5fcac36cc517644177e96e9481e5",
+    "selenite_eq_botao_d.png": "ed8cf123ccc29bedf332769d6bde12c634e3f9df00f266e96ff04b40a848d2ff",
+    "selenite_eq_botao_e.png": "7f44c3271699f1908cccfe2ec37fab98a53c4e113fefc4db792a837f9ce81532",
+    "selenite_eq_botao_f.png": "1231589ffadeb65f94585e1f75a90aa7e8d024a87e0d84f8db0a3a0ca0e3f8d4",
+    "selenite_eq_botao_g.png": "6ae229a5a414c1f9d691d206e48bd76971fdc553777029053ef76bfdc5f6cd7f",
+    "selenite_eq_botao_nivel.png": "c5ef71bf347af349cff75180c13fbf53b67991593052cf9833148bbc81da63d1",
+    "selenite_eq_frente.jpg": "eed8bd1a79897a2f368482ef76d75515c7903a3001b91eb5a3e2b929e1740725",
+    "selenite_eq_frente_alfa.png": "fe6599b93785417b105221f72d4cd94f71e1a544a06800b162e265c5cb7175bd",
+    "selenite_eq_manifesto.json": "f10dc34d82854f7db41bf63cd48e5887cff59616e67b47edc15349c968cf1299",
+    "selenite_eq_mapa.json": "756bf9548a4dd3891625fa152da55eff824c0b96eb6352b5009ffa6c133b094b"
    },
-   "tamanho": 351370,
+   "tamanho": 454895,
    "tipo": "pedal",
    "inspiracao": "Boss GE-7",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "equalizador_grafico",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
