@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T09:33:18Z",
+ "gerado": "2026-10-30T09:39:30Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2924,8 +2924,8 @@
   },
   "hematite_rock": {
    "nome": "Hematite Rock",
-   "hash": "496830b3f209c815",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "f6763912f8124b8c",
+   "data": "2026-10-30T09:39:30Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hematite_rock_botao_ganho.png",
@@ -2936,20 +2936,20 @@
     "hematite_rock_mapa.json"
    ],
    "sha256": {
-    "hematite_rock_botao_ganho.png": "82ba6591c141f75212df80fd77a81844776d769ce7f5be9224d7640fc280ac1d",
-    "hematite_rock_botao_nivel.png": "a4718db94fc9c9b2d91fe5d1a947113fd344f27da1cd287255fe0e8233b516ef",
-    "hematite_rock_frente.jpg": "f9175b1c306be8449b5fb7dfaa3cd89e7f3582fe9fd73f5f1a0f825d3f7e1a72",
-    "hematite_rock_frente_alfa.png": "920cabf23e01ebb2af6c0bf0ea6574765164b062a2951fd4e536455332ce3e6f",
-    "hematite_rock_manifesto.json": "f62bfae045b306cdcb45e4ec2d06d885eee9cfc9f9b3004b16956d9ec6d7ef83",
-    "hematite_rock_mapa.json": "cda0c813dd609168bfdea2c0919b46d06dde0630ee42be1eaf8c9f6cc2e1621b"
+    "hematite_rock_botao_ganho.png": "8b7b79bc199cdccb98c4285d05337587f4cba2473862528bf0f7c3b10fc07374",
+    "hematite_rock_botao_nivel.png": "98b1da3ab36a6bb5ab74ab88944213798e8b3df86876b32924d3fdec26b8cd19",
+    "hematite_rock_frente.jpg": "21fbda1882c74e13da215e6f2627db3c1c2833bda1888fcadd486ec6723905af",
+    "hematite_rock_frente_alfa.png": "a108b66499ed415e87bf116598d4f741a12b0a8bd77f49a6466faae3c93ed833",
+    "hematite_rock_manifesto.json": "c80cafe69039ff9e9669fdb890e1e173c999ef0794b9fee9ce195ce0d780f6d7",
+    "hematite_rock_mapa.json": "726e298515c3d52fd3a07278858d6b533cdd0a8a0144c42f5a54852e8d6c04b0"
    },
-   "tamanho": 158110,
+   "tamanho": 170903,
    "tipo": "pedal",
    "inspiracao": "Rockman X100",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
