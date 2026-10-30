@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:13:06Z",
+ "gerado": "2026-10-30T12:21:21Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3727,8 +3727,8 @@
   },
   "marcasite_gate": {
    "nome": "Marcasite Gate",
-   "hash": "8cd88c6b3b57c87f",
-   "data": "2026-10-30T09:52:05Z",
+   "hash": "c412c32e7b636914",
+   "data": "2026-10-30T12:21:21Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "marcasite_gate_botao_a.png",
@@ -3740,21 +3740,21 @@
     "marcasite_gate_mapa.json"
    ],
    "sha256": {
-    "marcasite_gate_botao_a.png": "1fa3f2e220f9451cd11e6f396cc2d46188121c423ea84d8f5faa76f0821909fd",
-    "marcasite_gate_botao_b.png": "0852339492826e5e63d1c28934dba3ba0fd56b917361852c1f85a0db01be19ce",
-    "marcasite_gate_botao_c.png": "5e788c4e304543a400785c1b6fc9b41a204c576c40a898f07608a13b2ce143f5",
-    "marcasite_gate_frente.jpg": "82eb12668de86ffae3d5bc6972a2ff4766201bda29ec7eb1ee6c19e9a8bbe35c",
-    "marcasite_gate_frente_alfa.png": "5178b89d884196b3103d9b43a88053e51035ab82d501883cd7690314355e4ccb",
-    "marcasite_gate_manifesto.json": "bb1fed92fc7c4f9b24f16cb76131fabef6a8098722eb64b0fa13f63e1feaf42c",
+    "marcasite_gate_botao_a.png": "1d17f615372b10d0c73fc0feee1c53ae6bb25e231cd38d68e3ea747024a42a2d",
+    "marcasite_gate_botao_b.png": "8e23b0216196c1d976882e6585f1f6bd1e119d7d849eff2838c5908a3ccd45b6",
+    "marcasite_gate_botao_c.png": "8b61b99633ebb27fc4b8bae16c4dcf5fee27b0f68b34a45b5a71c6ad120bcc3f",
+    "marcasite_gate_frente.jpg": "872df52e5aa8e9fbb82a2017ead15538a7664e2b52b7506a7ac7c56358271f0d",
+    "marcasite_gate_frente_alfa.png": "ddfdd22a7f1150a074afa3d57c83ba0cec171465ee2ecd56e929fbc4bf22e56b",
+    "marcasite_gate_manifesto.json": "d607134307a1d517c499e1d4f0bf169e982000d1d2e1e178e9da955de934e84d",
     "marcasite_gate_mapa.json": "c1e137d773203f59ac3c734f7e92b5f7219a71dd390f9dca6c27d44b7eb1abb8"
    },
-   "tamanho": 327214,
+   "tamanho": 327815,
    "tipo": "pedal",
    "inspiracao": "MXR Smart Gate",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "gate",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
