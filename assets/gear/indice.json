@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T06:52:22Z",
+ "gerado": "2026-10-30T06:56:31Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2765,8 +2765,8 @@
   },
   "granite_410": {
    "nome": "Granite 4x10",
-   "hash": "eca6f9610d0b7dd0",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "34f650081369fc7e",
+   "data": "2026-10-30T06:56:31Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "granite_410_frente.jpg",
@@ -2775,18 +2775,18 @@
     "granite_410_mapa.json"
    ],
    "sha256": {
-    "granite_410_frente.jpg": "02e38fef3536a63e37a567611624b796c60fa63e5f8cfb1bade8d7362632cf4b",
-    "granite_410_frente_alfa.png": "4e9ca283ab10e31516fe50fdeae8cf0a386bb327476bdeed46604af3af3724ce",
-    "granite_410_manifesto.json": "30f1ba13879b021131329b42f6c500716811bdd5de79bfa612d674e6045461a6",
-    "granite_410_mapa.json": "66c7da379b7d4bf9b02d7f8706e7bc4184dd6df5050be3c314c0b49153fb16aa"
+    "granite_410_frente.jpg": "a8f6f71c752a19a744f539997c4c26bd50a4c0975e869f96d3b4f6e232ffef3e",
+    "granite_410_frente_alfa.png": "9e0d6059cd045f58b334043a3ed8ea99fcf3110f3f50c83afbb18966c7ea78e5",
+    "granite_410_manifesto.json": "17a88bf1850ca0f1df336efb292264dfba145017c5954e432b5625d39af026b1",
+    "granite_410_mapa.json": "926bca802a8c67f48beb884c0177a5fbe6d2966528baea8c3aba8bbfa8b04fb7"
    },
-   "tamanho": 834899,
+   "tamanho": 1175508,
    "tipo": "caixa",
    "inspiracao": "Gallien-Krueger 4x10",
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
