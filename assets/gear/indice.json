@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:09:29Z",
+ "gerado": "2026-10-30T16:11:37Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4757,8 +4757,8 @@
   },
   "power100": {
    "nome": "Power 100",
-   "hash": "5fd5026da6c683e1",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "9ac425167630f14a",
+   "data": "2026-10-30T16:11:37Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power100_botao_agudo.png",
@@ -4773,24 +4773,24 @@
     "power100_mapa.json"
    ],
    "sha256": {
-    "power100_botao_agudo.png": "5445c252f867278581fa0105d9dffa653ce497590ea5f20bc91b455f15fa5dc1",
-    "power100_botao_ganho.png": "3b8728c0e98c30a86db95eaa0f3d1ffc5c77f979fa006c9f1e4b48d4d1a2723d",
-    "power100_botao_grave.png": "859e55010ebea11e7139d2612466be2211e9d260ac2bdafed3da2e357068f099",
-    "power100_botao_medio.png": "a4362247d0ef6143660e82dacdc8dade093e06fb02fa8b25457f64d25ea0a40f",
-    "power100_botao_presenca.png": "6df2ed29771e48e7f69a34aa1eca25de6361c55d4cff1c7d965641343a92c626",
-    "power100_botao_volume.png": "109e2c42aebeb35f8e51f10f830c1510e43e97e0ec2fd9041982c3eb41d25456",
-    "power100_frente.jpg": "9e7cd3b8a63bafac56f93e68a8197a4a33dee5662955fc3069eb9bbd320aee8d",
-    "power100_frente_alfa.png": "9159c6f6f2e1f55ee96e57ccca69148e80ee930b4c7ad7eea375a259050587e9",
-    "power100_manifesto.json": "c5387276b6d6274f5ebbd03682efe2595acd8d192f988d46cd8d0ed324a61f48",
-    "power100_mapa.json": "5b58c161e8cd14ea87e00c1437c9f63196e8cc310b7b062ac6c2cc8422506b66"
+    "power100_botao_agudo.png": "1561a09d10975707c5e0824297aefc58b22fe4755cc219eb6d5d2b476e15d442",
+    "power100_botao_ganho.png": "47019aefa900d6ffb22a29f3add7c6ca569edb0e8b7b3449e31188e25db5ebd7",
+    "power100_botao_grave.png": "1721289d67a6a6fc70b7a898adbdd176ae96a608893e805f3b94a2a3b447cffb",
+    "power100_botao_medio.png": "ea94e94c0fcc67e3848f8df61133776ec03dcf9eaaf35027ed1ecb70f7f0695c",
+    "power100_botao_presenca.png": "e0f00f282a1e26211e7f3798ec75467ddc9b7846f10d282dcd65366640e51eb9",
+    "power100_botao_volume.png": "40a2f40989b997808422df1125578eec82325dfb18eec9662ff2f7e2a2316010",
+    "power100_frente.jpg": "5394b906f642c14f346eb8446fe316cc7749b548f381efeb576a41c26364bf1b",
+    "power100_frente_alfa.png": "7c353ae5ac465094b227df25174a575493108fd9a4cb2c03e7e663f8da3cc1b0",
+    "power100_manifesto.json": "e5d260f75420e8b030f0eb94001d4684b6ed9679299bd13fbc697040ff07bab0",
+    "power100_mapa.json": "1f24e335d51b875f29a701fb4fba7905287de63a29d92dda1362995f12538077"
    },
-   "tamanho": 928190,
+   "tamanho": 1046839,
    "tipo": "cabecote",
    "inspiracao": "Powerball",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
