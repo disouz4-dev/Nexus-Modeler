@@ -8,17 +8,17 @@
     {
       "id": "nivel",
       "x": 150,
-      "y": 160,
-      "tamanho": 95,
+      "y": 218,
+      "tamanho": 101,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 250,
-      "y": 82,
-      "tamanho": 98,
+      "x": 248,
+      "y": 124,
+      "tamanho": 105,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 355,
-      "y": 160,
-      "tamanho": 95,
+      "x": 350,
+      "y": 218,
+      "tamanho": 101,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,40 +42,40 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 200.4,
-      "y": 279.2,
+      "x": 203.7,
+      "y": 342.8,
       "altura": 20.75,
       "achatamento": 1.0,
-      "cor": "#6a3cb1",
+      "cor": "#6a49b9",
       "espaco": 1.15
     },
     {
       "texto": "SUSTAIN",
       "x": 300.0,
-      "y": 203.9,
+      "y": 251.8,
       "altura": 20.75,
       "achatamento": 1.0,
-      "cor": "#6a3cb1",
+      "cor": "#6a49b9",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
-      "x": 399.6,
-      "y": 279.2,
+      "x": 397.9,
+      "y": 342.8,
       "altura": 20.75,
       "achatamento": 1.0,
-      "cor": "#6a3cb1",
+      "cor": "#6a49b9",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 576.5,
-    "raio": 64.5
+    "y": 552.5,
+    "raio": 43.0
   },
   "led": {
-    "x": 300.0,
-    "y": 501.2,
-    "raio": 16.1
+    "x": 201.3,
+    "y": 544.1,
+    "raio": 13.2
   }
 }
