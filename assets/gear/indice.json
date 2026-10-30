@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T02:09:18Z",
+ "gerado": "2026-10-30T02:13:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -792,8 +792,8 @@
   },
   "block5150": {
    "nome": "Block 5150",
-   "hash": "fbed2e3a703e2ae0",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "2de6ba6cf1c6f54f",
+   "data": "2026-10-30T02:13:26Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block5150_botao_agudo.png",
@@ -808,24 +808,24 @@
     "block5150_mapa.json"
    ],
    "sha256": {
-    "block5150_botao_agudo.png": "a70672e6f78939fc76e8d2168f4fff7f3747907ecc058790d08133ebe6e7a63b",
-    "block5150_botao_ganho.png": "28eab8e6d22a9c02144de128bf017a736bda13b136a572ee12c90a7d11e0ae29",
-    "block5150_botao_grave.png": "102ee706bcf660f906657bb870bf101d4f8b010049ffaeda85ccca41a44df604",
-    "block5150_botao_medio.png": "50dd98d15dadb4ee962604d49feb96622c82bae82364c30b8b1357980e9d536c",
-    "block5150_botao_presenca.png": "97ec948a3f6d07a7290f1224ac52b73646b280213b0a2a60e5e13544894bf667",
-    "block5150_botao_volume.png": "d54e383d62d13837a1e865c99cf6fd138698936d8f59f66c6f2f8ed8e5ab43a9",
-    "block5150_frente.jpg": "068582b996c49229fad604a2ba38dfc0564b00c95aaa145ba7feb218a50c4a77",
-    "block5150_frente_alfa.png": "7a3f99c3040da16fec39b37b327489cae319f11da3477b5cb46aa97312f7d15f",
-    "block5150_manifesto.json": "767c7740615d1aa7715183f139541acdeab16ad92c12299bc522cb8cf7e33045",
+    "block5150_botao_agudo.png": "ba814496a77dba6ce20887959028a21b26b0ccff2c55c03b927e9f2bea22ad8f",
+    "block5150_botao_ganho.png": "6c54f39d1d478ed20d463fc47fa68572234233b5f7894e475ec429755e4986ec",
+    "block5150_botao_grave.png": "bd03c11267e6ba0c874e73bae89f257a90d03994a21f4d762a37564917a210ad",
+    "block5150_botao_medio.png": "dadc1fe12dc04d0d9cd912284ad55ad8c3a0c0b5f12e45027c67fd789ed000c8",
+    "block5150_botao_presenca.png": "1768789db9a160bb5b895c3d2adc084c2675fcff23a103058a625925611547bc",
+    "block5150_botao_volume.png": "a84ea354589961e364c894700733be4f8a52203a960c85766a8f387b95be1694",
+    "block5150_frente.jpg": "3012789ce666b816cecadeb2e5a423ae64180370d54f63f05c53a3580e6e5cc8",
+    "block5150_frente_alfa.png": "ef8111c218d7d5f00ef1f71182f2fba4fb32ac0d4ea3f633edaaa0ca15c5b22b",
+    "block5150_manifesto.json": "54b5e36eca7155bcafcaf3f643e5d6e86678008587b460a6e1c83eaf8e4bd471",
     "block5150_mapa.json": "a746c4e29384330e0998d31c0cd0c3bd331245dfa746ca02b1bfcbec23e4e1d0"
    },
-   "tamanho": 806052,
+   "tamanho": 809124,
    "tipo": "cabecote",
    "inspiracao": "5150",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
