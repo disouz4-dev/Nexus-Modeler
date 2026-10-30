@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T06:56:35Z",
+ "gerado": "2026-10-30T06:58:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2864,8 +2864,8 @@
   },
   "hart_410": {
    "nome": "Hart 4x10",
-   "hash": "7f56e0dc78982cf9",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "3d19330cf81099ba",
+   "data": "2026-10-30T06:58:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart_410_frente.jpg",
@@ -2874,18 +2874,18 @@
     "hart_410_mapa.json"
    ],
    "sha256": {
-    "hart_410_frente.jpg": "5ce4a0e05a56082822a3ae7a28024641c97452fb659e318eece6a4337c0b8e16",
-    "hart_410_frente_alfa.png": "5f5f9c2b2063e071e0b676cb808d9d6bb495acdc800f3faa22826a059960ba8b",
-    "hart_410_manifesto.json": "1ca0e69c7708d1aa8492e35006f7e1f930372d6381f8f8257a2e049e289df788",
-    "hart_410_mapa.json": "fd21e92fe1395fc6d895e6440cb3632bd48e90caf019996d0a374e941e7f52e5"
+    "hart_410_frente.jpg": "d71b5bb5e3db5755142379bafcd688f63b691fd88354b84d2099eb4064cbc209",
+    "hart_410_frente_alfa.png": "a75022f3179357f1c2d37071ec3d6a7301004965369dbb09df629f698eb38608",
+    "hart_410_manifesto.json": "91468c3ba13f7d862c1fd4e97184c1217fca71b4cb3bbdc729ae6ac912a5a7fa",
+    "hart_410_mapa.json": "9d51a11232a150cf0ee37670158323f16255cfc1386d6a4e9fd8bfa120b51059"
    },
-   "tamanho": 1448900,
+   "tamanho": 1475076,
    "tipo": "caixa",
    "inspiracao": "Hartke 4x10",
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
