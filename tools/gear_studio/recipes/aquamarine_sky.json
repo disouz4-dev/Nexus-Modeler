@@ -2,11 +2,11 @@
   "tipo": "pedal",
   "nome": "Aquamarine Sky",
   "familia": "aquamarine_sky",
-  "inspiracao": "Caixa grande de alumínio anodizado azul-celeste (171 x 130 x 50 mm), letras brancas; visor verde no alto à esquerda, seletor TIPO grande embaixo dele, VALOR (fixo), DECAIMENTO, PRÉ-ATRASO e MISTURA na fileira de cima, TOM, PARAM 1, PARAM 2 (fixo) e MODULAÇÃO embaixo, três pisantes de metal A, B e C com um LED cada. Tema: água-marinha lapidada azul-clara. Original: Strymon BigSky.",
+  "inspiracao": "Caixa compacta de alumínio anodizado azul-celeste (120 x 115 x 50 mm) no jeito do BigSky em escala menor, letras brancas; visor verde no alto à esquerda, seletor TIPO grande embaixo dele, VALOR (fixo), DECAIMENTO, PRÉ-ATRASO e MISTURA na fileira de cima, TOM, PARAM 1, PARAM 2 (fixo) e MODULAÇÃO embaixo, nome em script no meio, um LED e um pisante de metal só, no meio (compacto com um pisante por decisão do Diego, 30/10). Tema: água-marinha lapidada azul-clara. Original: Strymon BigSky.",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.171,
-    "comprimento": 0.13,
+    "largura": 0.12,
+    "comprimento": 0.115,
     "altura": 0.05
   },
   "pintura": {
@@ -25,8 +25,8 @@
   ],
   "modelo": "AQUAMARINE SKY",
   "botao_estilo": {
-    "diametro_m": 0.015,
-    "altura_m": 0.013,
+    "diametro_m": 0.0105,
+    "altura_m": 0.011,
     "saia": false,
     "corpo": [
       0.0037,
@@ -44,8 +44,8 @@
       "id": "modo",
       "rotulo": "TIPO",
       "pos": [
-        -0.66,
-        0.25
+        -0.62,
+        0.3
       ],
       "escala": 1.15
     },
@@ -53,8 +53,8 @@
       "id": "fixo_valor",
       "rotulo": "VALOR",
       "pos": [
-        -0.17,
-        0.73
+        -0.112,
+        0.7
       ],
       "fixo": true
     },
@@ -62,48 +62,48 @@
       "id": "a",
       "rotulo": "DECAIMENTO",
       "pos": [
-        0.17,
-        0.73
+        0.18,
+        0.7
       ]
     },
     {
       "id": "b",
       "rotulo": "PRÉ-ATRASO",
       "pos": [
-        0.45,
-        0.73
+        0.421,
+        0.7
       ]
     },
     {
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        0.73,
-        0.73
+        0.662,
+        0.7
       ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.03,
-        0.24
+        0.06,
+        0.3
       ]
     },
     {
       "id": "nivel",
       "rotulo": "PARAM 1",
       "pos": [
-        0.31,
-        0.24
+        0.301,
+        0.3
       ]
     },
     {
       "id": "fixo_param2",
       "rotulo": "PARAM 2",
       "pos": [
-        0.59,
-        0.24
+        0.542,
+        0.3
       ],
       "fixo": true
     },
@@ -111,56 +111,46 @@
       "id": "d",
       "rotulo": "MODULAÇÃO",
       "pos": [
-        0.86,
-        0.24
+        0.774,
+        0.3
       ]
     }
   ],
-  "medidas_fonte": "171,5 x 129,5 x 68,6 mm com botões (Strymon: 6,75 x 5,1 x 2,7 pol.)",
+  "medidas_fonte": "caixa compacta do Nexus, 120 x 115 x 50 mm (o BigSky tem 171,5 x 129,5 mm; compacto com um pisante por decisão do Diego, 30/10)",
   "quadro": {
     "largura_rel": 1.3,
-    "proporcao": 0.91,
+    "proporcao": 1.0,
     "elevacao": 90.0
   },
   "visor": {
     "pos": [
-      -0.64,
-      0.71
+      -0.6,
+      0.72
     ],
     "largura_rel": 0.26,
-    "altura_rel": 0.065
+    "altura_rel": 0.055
   },
   "led": [
-    -0.78,
-    -0.33
+    0.0,
+    -0.36
   ],
   "pisante": {
     "estilo": "liso",
     "pos": [
-      -0.79,
-      -0.59
+      0.0,
+      -0.62
     ]
   },
   "logo_x": 0.0,
-  "logo_y": -0.14,
-  "logo_m": 0.015,
+  "logo_y": -0.12,
+  "logo_m": 0.0105,
   "tipo_texto": "",
   "pecas": [
     {
-      "tipo": "pisante",
-      "pos": [
-        0.0,
-        -0.59
-      ],
-      "estilo": "liso",
-      "rotulo": "B",
-      "rotulo_pos": "cima"
-    },
-    {
       "tipo": "led",
       "pos": [
-        -0.01,
-        -0.33
+        -0.544,
+        0.4665
       ],
       "cor": [
         0.0008,
@@ -168,21 +158,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0017
-    },
-    {
-      "tipo": "pisante",
-      "pos": [
-        0.79,
-        -0.59
-      ],
-      "estilo": "liso"
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        0.77,
-        -0.33
+        -0.4883,
+        0.3962
       ],
       "cor": [
         0.0008,
@@ -190,13 +172,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0017
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.584,
-        0.4165
+        -0.468,
+        0.3
       ],
       "cor": [
         0.0008,
@@ -204,13 +186,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.5283,
-        0.3462
+        -0.4883,
+        0.2038
       ],
       "cor": [
         0.0008,
@@ -218,13 +200,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.508,
-        0.25
+        -0.544,
+        0.1335
       ],
       "cor": [
         0.0008,
@@ -232,13 +214,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.5283,
-        0.1538
+        -0.696,
+        0.1335
       ],
       "cor": [
         0.0008,
@@ -246,13 +228,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.584,
-        0.0835
+        -0.7517,
+        0.2038
       ],
       "cor": [
         0.0008,
@@ -260,13 +242,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.736,
-        0.0835
+        -0.772,
+        0.3
       ],
       "cor": [
         0.0008,
@@ -274,13 +256,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.7917,
-        0.1538
+        -0.7517,
+        0.3962
       ],
       "cor": [
         0.0008,
@@ -288,13 +270,13 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     },
     {
       "tipo": "led",
       "pos": [
-        -0.812,
-        0.25
+        -0.696,
+        0.4665
       ],
       "cor": [
         0.0008,
@@ -302,39 +284,11 @@
         0.0029
       ],
       "estilo": "sem_aro",
-      "raio_m": 0.0013
-    },
-    {
-      "tipo": "led",
-      "pos": [
-        -0.7917,
-        0.3462
-      ],
-      "cor": [
-        0.0008,
-        0.0385,
-        0.0029
-      ],
-      "estilo": "sem_aro",
-      "raio_m": 0.0013
-    },
-    {
-      "tipo": "led",
-      "pos": [
-        -0.736,
-        0.4165
-      ],
-      "cor": [
-        0.0008,
-        0.0385,
-        0.0029
-      ],
-      "estilo": "sem_aro",
-      "raio_m": 0.0013
+      "raio_m": 0.001
     }
   ],
   "chanfro_m": 0.006,
-  "rotulo_m": 0.0038,
+  "rotulo_m": 0.0026,
   "rotulo_embaixo": true,
   "led_estilo": "sem_aro",
   "led_raio_m": 0.0017,
@@ -358,36 +312,5 @@
       0.04
     ]
   },
-  "paineis": [
-    {
-      "pos": [
-        -0.38,
-        -0.59
-      ],
-      "tam_m": [
-        0.04104,
-        0.0004
-      ],
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8913
-      ]
-    },
-    {
-      "pos": [
-        0.38,
-        -0.59
-      ],
-      "tam_m": [
-        0.04104,
-        0.0004
-      ],
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8913
-      ]
-    }
-  ]
+  "paineis": []
 }

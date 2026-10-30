@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:50:38Z",
+ "gerado": "2026-10-30T13:56:50Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -208,8 +208,8 @@
   },
   "aquamarine_sky": {
    "nome": "Aquamarine Sky",
-   "hash": "b22a8ce2bd5ab6fd",
-   "data": "2026-10-30T12:02:34Z",
+   "hash": "153260793884cdab",
+   "data": "2026-10-30T13:56:50Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "aquamarine_sky_botao_a.png",
@@ -225,25 +225,25 @@
     "aquamarine_sky_mapa.json"
    ],
    "sha256": {
-    "aquamarine_sky_botao_a.png": "ff3981599197c0395fbcde9bd1c18b3d61c6c99ea8df8ff4860f6ecc39d606ff",
-    "aquamarine_sky_botao_b.png": "2f4f342196f16f42b323c0b2c17defa25581cc16039348f9b4ec0a0129586f43",
-    "aquamarine_sky_botao_c.png": "be8e814015881be0e6d49d028b15fc10b85df37296259542b761ddcfb0dd2a6c",
-    "aquamarine_sky_botao_d.png": "02683feb83b078710bf975520af5166893d8a758b122a86efd5d14c8d886ebc8",
-    "aquamarine_sky_botao_modo.png": "3d38e9fd9f080f71066bbcbe2674b2d172baa16065517bd0ef4a4a13a6681e22",
-    "aquamarine_sky_botao_nivel.png": "58b4e2862655cc723c9378f80616f1c96e84bbf0997308aadd28378cb9fb88e1",
-    "aquamarine_sky_botao_tom.png": "17bff10f8c33e6838779c14b63753706e90e86ac562234aa807770fca0b70b90",
-    "aquamarine_sky_frente.jpg": "b760c8119ca73133b3d7f6e0867f5941dd67e3078643716ad3cb986a34f78e41",
-    "aquamarine_sky_frente_alfa.png": "e86fd3b14a7f0b5736906121d74c7b414985188ed84eefc298a1cbc4f243d405",
-    "aquamarine_sky_manifesto.json": "ef2c09c186318ce082a5e4d08eab95bc5ff48215cc71474c41e64f40a8d66a72",
-    "aquamarine_sky_mapa.json": "93d0ee3c72323764b917b654e6e92f53606fcb1d7f8b402c3d6aacaef2bb5182"
+    "aquamarine_sky_botao_a.png": "b6441a8fee281763a9e0e4e15ddffae6bc28fb0751ef7317ba7f811111c2eb96",
+    "aquamarine_sky_botao_b.png": "53944176df4ce71c777505e4f67e8cc73639a1afbfe44a4f941ee766301c539c",
+    "aquamarine_sky_botao_c.png": "23c284dfe31703f5d389112ca388d9d9f95d3076000e584d626d0c7f61fddfda",
+    "aquamarine_sky_botao_d.png": "4340e9eabcf83e7be46f690e9271143245b243d8ed159cf4e944f7417c4e3567",
+    "aquamarine_sky_botao_modo.png": "ff3e944a2a690912c470561990bf10f0963148685fece805dd027193e9ba142c",
+    "aquamarine_sky_botao_nivel.png": "568814b1ec1bf1f842e5036bef113766f1f4e525c2e7fc609cc90ee73949fa30",
+    "aquamarine_sky_botao_tom.png": "6f55be1020fc6bfdc5130474019a03a17aee3e109c443a484be59fd48c9ad5fd",
+    "aquamarine_sky_frente.jpg": "d58d5069de8c7e998a09e7840ee461aee006b7bc6425cc3ce2e6703295ae6560",
+    "aquamarine_sky_frente_alfa.png": "6cde2f1ae0f922264140e1541149c68c029b36ff33f722b40dfdbc48e8abc3cd",
+    "aquamarine_sky_manifesto.json": "8ebd4200a7d2e4477bacfb0226510d58b8780a99a0299dd027bae813723a0b03",
+    "aquamarine_sky_mapa.json": "0d22ae361c6c75fb75d69962cd8589836e3eec7a93d100f074425c0735ca7b97"
    },
-   "tamanho": 270483,
+   "tamanho": 301909,
    "tipo": "pedal",
    "inspiracao": "Strymon BigSky",
    "categoria": "Reverb",
    "fonte": "Efeito do Nexus",
    "motor": "reverb_modos",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },

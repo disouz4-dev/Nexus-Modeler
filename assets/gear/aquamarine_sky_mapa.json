@@ -2,14 +2,14 @@
   "nome": "Aquamarine Sky",
   "familia": "juniper_sky",
   "largura": 600,
-  "altura": 546,
+  "altura": 600,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 108,
+      "x": 114,
       "y": 196,
-      "tamanho": 61,
+      "tamanho": 63,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,54 +17,54 @@
     },
     {
       "id": "a",
-      "x": 315,
-      "y": 112,
-      "tamanho": 53,
+      "x": 317,
+      "y": 106,
+      "tamanho": 56,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 383,
-      "y": 112,
-      "tamanho": 53,
+      "x": 376,
+      "y": 106,
+      "tamanho": 56,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 450,
-      "y": 110,
-      "tamanho": 54,
+      "x": 436,
+      "y": 106,
+      "tamanho": 56,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 282,
-      "y": 203,
-      "tamanho": 50,
+      "x": 289,
+      "y": 202,
+      "tamanho": 52,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 350,
+      "x": 348,
       "y": 202,
-      "tamanho": 52,
+      "tamanho": 53,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 482,
+      "x": 464,
       "y": 200,
-      "tamanho": 56,
+      "tamanho": 57,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -72,115 +72,106 @@
   ],
   "canais": [],
   "medidas_mm": [
-    171,
-    130
+    120,
+    115
   ],
   "rotulos": [
     {
       "texto": "TIPO",
-      "x": 141.7,
-      "y": 267.1,
-      "altura": 10.66,
+      "x": 148.7,
+      "y": 276.8,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "VALOR",
-      "x": 259.2,
-      "y": 176.3,
-      "altura": 10.66,
+      "x": 272.6,
+      "y": 180.0,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "DECAIMENTO",
-      "x": 340.8,
-      "y": 176.3,
-      "altura": 10.66,
+      "x": 343.9,
+      "y": 180.0,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "PRÉ-ATRASO",
-      "x": 408.0,
-      "y": 176.3,
-      "altura": 10.66,
+      "x": 402.8,
+      "y": 180.0,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 475.1,
-      "y": 176.3,
-      "altura": 10.66,
+      "x": 461.6,
+      "y": 180.0,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "TOM",
-      "x": 307.2,
-      "y": 265.7,
-      "altura": 10.66,
+      "x": 314.6,
+      "y": 273.6,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "PARAM 1",
-      "x": 374.4,
-      "y": 265.7,
-      "altura": 10.66,
+      "x": 373.4,
+      "y": 273.6,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "PARAM 2",
-      "x": 441.6,
-      "y": 265.7,
-      "altura": 10.66,
+      "x": 432.3,
+      "y": 273.6,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "MODULAÇÃO",
-      "x": 506.4,
-      "y": 265.7,
-      "altura": 10.66,
+      "x": 488.9,
+      "y": 273.6,
+      "altura": 10.57,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
-    },
-    {
-      "texto": "B",
-      "x": 300.0,
-      "y": 380.6,
-      "altura": 8.53,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 105.5,
-    "y": 383.5,
-    "raio": 23.5
+    "x": 300.0,
+    "y": 450.5,
+    "raio": 34.5
   },
   "led": {
-    "x": 112.3,
-    "y": 333.4,
-    "raio": 5.5
+    "x": 300.0,
+    "y": 384.6,
+    "raio": 8.0
   },
   "visor": {
-    "x": 83.5,
-    "y": 131.2,
-    "w": 125.1,
-    "h": 23.8
+    "x": 89.3,
+    "y": 118.0,
+    "w": 127.4,
+    "h": 25.9
   }
 }
