@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T18:03:28Z",
+ "gerado": "2026-10-30T18:13:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6052,8 +6052,8 @@
   },
   "tri100": {
    "nome": "Tri 100",
-   "hash": "6de0f92b682d183c",
-   "data": "2026-10-29T22:34:17Z",
+   "hash": "f617c0137d6891d4",
+   "data": "2026-10-30T18:13:42Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tri100_botao_agudo.png",
@@ -6068,24 +6068,24 @@
     "tri100_mapa.json"
    ],
    "sha256": {
-    "tri100_botao_agudo.png": "951b8c7d58c01af62a0f932c01b7366b2f28e701e6d47af7859cc0a58f1ae625",
-    "tri100_botao_ganho.png": "bf67ab5fceb2120f801f297c67bb17d93805b21c1882276fb3fda33e7a8e7a80",
-    "tri100_botao_grave.png": "9913297bc5a9f76e232fbd6c2052eb6449a3ea22493182bc62a2b120e4941a80",
-    "tri100_botao_medio.png": "ea31b1c23934805a5bd9907f937c74442c6495e1dd82a8ea542134cd8686b900",
-    "tri100_botao_presenca.png": "dec0fe6fe94dcbbe0abbc11d3a224cf8dfa36188e894e5fa80369b3c83d5a8b7",
-    "tri100_botao_volume.png": "144001c45bcb022b7dfa2eb38540537ce8e7852df71fb2c75b0eefb10ad2e99a",
-    "tri100_frente.jpg": "8f45b6ee5a706847e69b0ac7c5587958f858b1f52ebaf9a7e434d38fb1c85c25",
-    "tri100_frente_alfa.png": "e89110660a0ef220d4d6ae31eb73de505d59c48bc0880a8d4ed32e91737a1322",
-    "tri100_manifesto.json": "9bd38bbd8e187337b1bbf77609a174fbff6bcca9df56ac8bfbec7568978df359",
-    "tri100_mapa.json": "d5857165de36f4034f75e749dc4c227084d887bba27c0f93f976a047d386fcb1"
+    "tri100_botao_agudo.png": "84efc59c9f4fbe94e3e240f4f4b20941ba7a2cc469846c90c8bcf8e795a589fa",
+    "tri100_botao_ganho.png": "776df48dec6bef9734ceb8cbe39e2aeff9b3a21dfc0c6eb955931413cb0d2ffe",
+    "tri100_botao_grave.png": "4a29dc662a2515c05a6ebf7e3f06436ec69ec9041f2f8176c4b9ef947ed33f47",
+    "tri100_botao_medio.png": "1c1019789ab1a1b45d0b63acec348b127465893c1a7005292df023cf124ce6e8",
+    "tri100_botao_presenca.png": "26537720ace6463f031bad065369a96f59d6e35cb8952d4200e724fe758ec8fb",
+    "tri100_botao_volume.png": "bb24cd549e899a44f141d88614cf74f751b9a5547ce6d443a21e63d125e8fdfe",
+    "tri100_frente.jpg": "b2aa5d9444d651cba4db224ce0eea59b1689d5fec8e9a6541e6682b3b69a6fd0",
+    "tri100_frente_alfa.png": "95e99b51b0ef5c908ad3be53315fb2da22a63c48ff8fe4806f1835e3c6dc1a81",
+    "tri100_manifesto.json": "27b707e794bf6f6d57e572120b51fd8be26f7ca20c7100737ddcdfef3d0afccb",
+    "tri100_mapa.json": "225b0d8464023c3b2385cc134249b4004546dc059e81d27793b339db0ad08188"
    },
-   "tamanho": 857754,
+   "tamanho": 878588,
    "tipo": "cabecote",
    "inspiracao": "Hughes & Kettner TriAmp",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
