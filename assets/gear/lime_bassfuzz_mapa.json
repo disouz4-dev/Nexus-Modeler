@@ -7,8 +7,8 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 136,
-      "y": 170,
+      "x": 140,
+      "y": 176,
       "tamanho": 88,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
@@ -17,7 +17,7 @@
     {
       "id": "tom",
       "x": 256,
-      "y": 170,
+      "y": 176,
       "tamanho": 88,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
@@ -25,8 +25,8 @@
     },
     {
       "id": "ganho",
-      "x": 376,
-      "y": 170,
+      "x": 372,
+      "y": 176,
       "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
@@ -42,8 +42,8 @@
   "rotulos": [
     {
       "texto": "VOLUME",
-      "x": 183.1,
-      "y": 275.1,
+      "x": 187.0,
+      "y": 279.8,
       "altura": 16.05,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -52,7 +52,7 @@
     {
       "texto": "TOM",
       "x": 300.0,
-      "y": 275.1,
+      "y": 279.8,
       "altura": 16.05,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -60,8 +60,8 @@
     },
     {
       "texto": "SUSTAIN",
-      "x": 416.9,
-      "y": 275.1,
+      "x": 413.0,
+      "y": 279.8,
       "altura": 16.05,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -69,8 +69,8 @@
     },
     {
       "texto": "GRAVE",
-      "x": 202.6,
-      "y": 338.1,
+      "x": 300.0,
+      "y": 328.9,
       "altura": 12.84,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -79,12 +79,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 522.0,
-    "raio": 47.0
+    "y": 475.0,
+    "raio": 32.0
   },
   "led": {
-    "x": 421.2,
-    "y": 463.1,
-    "raio": 11.9
+    "x": 339.1,
+    "y": 337.9,
+    "raio": 9.7
   }
 }

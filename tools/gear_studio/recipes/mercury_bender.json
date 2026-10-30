@@ -11,12 +11,12 @@
   },
   "pintura": {
     "cor": [
-      0.2674,
       0.2758,
+      0.2845,
       0.2845
     ],
-    "metalico": 0.4,
-    "aspereza": 0.28,
+    "metalico": 0.35,
+    "aspereza": 0.4,
     "textura": "martelado"
   },
   "texto_cor": [
@@ -26,7 +26,7 @@
   ],
   "modelo": "MERCURY BENDER",
   "botao_estilo": {
-    "diametro_m": 0.017,
+    "diametro_m": 0.022,
     "altura_m": 0.014,
     "saia": false,
     "corpo": [
@@ -38,23 +38,24 @@
       0.8913,
       0.8913,
       0.8434
-    ]
+    ],
+    "forma": "galinha"
   },
   "botoes": [
     {
       "id": "ganho",
       "rotulo": "ATAQUE",
       "pos": [
-        -0.38,
-        0.62
+        -0.42,
+        0.5
       ]
     },
     {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        0.38,
-        0.62
+        0.42,
+        0.5
       ]
     },
     {
@@ -62,7 +63,7 @@
       "rotulo": "TOM",
       "pos": [
         0.62,
-        -0.72
+        -0.76
       ],
       "escala": 0.5,
       "rotulo_m": 0.0026,
@@ -70,12 +71,12 @@
         0.0037,
         0.0037,
         0.0037
-      ]
+      ],
+      "estilo": {
+        "forma": "redondo"
+      }
     }
   ],
-  "estampa": {
-    "svg": "estampas/mercury_bender.svg"
-  },
   "medidas_fonte": "sem ficha do fabricante; medida estimada pelas fotos",
   "quadro": {
     "largura_rel": 2.0,
@@ -83,9 +84,6 @@
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": 0.38,
-  "logo_m": 0.0075,
-  "pisante_y": -0.62,
   "rotulo_embaixo": true,
   "rotulo_m": 0.004,
   "texto_cor2": [
@@ -97,25 +95,149 @@
     "estilo": "pequeno",
     "pos": [
       0.0,
-      -0.72
+      -0.36
     ]
   },
   "paineis": [
     {
       "pos": [
-        0.0,
-        0.58
+        0,
+        0.61
       ],
       "tam_m": [
-        0.07,
-        0.05
+        0.08,
+        0.051
       ],
       "cor": [
-        0.0029,
-        0.0029,
-        0.0029
+        0.0023,
+        0.0023,
+        0.0023
       ],
-      "raio_m": 0.002
+      "raio_m": 0.0015
+    },
+    {
+      "pos": [
+        0,
+        0.61
+      ],
+      "tam_m": [
+        0.077,
+        0.048
+      ],
+      "cor": [
+        0.8751,
+        0.8592,
+        0.8122
+      ],
+      "raio_m": 0.001
+    },
+    {
+      "pos": [
+        0,
+        0.61
+      ],
+      "tam_m": [
+        0.0756,
+        0.0466
+      ],
+      "cor": [
+        0.0023,
+        0.0023,
+        0.0023
+      ],
+      "raio_m": 0.001
+    },
+    {
+      "pos": [
+        0,
+        0.61
+      ],
+      "tam_m": [
+        0.0744,
+        0.0454
+      ],
+      "cor": [
+        0.8751,
+        0.8592,
+        0.8122
+      ],
+      "raio_m": 0.001
+    },
+    {
+      "pos": [
+        0,
+        0.61
+      ],
+      "tam_m": [
+        0.073,
+        0.044
+      ],
+      "cor": [
+        0.0023,
+        0.0023,
+        0.0023
+      ],
+      "raio_m": 0.001
+    },
+    {
+      "pos": [
+        -0.58,
+        0.79
+      ],
+      "tam_m": [
+        0.021,
+        0.0125
+      ],
+      "cor": [
+        0.8751,
+        0.8592,
+        0.8122
+      ],
+      "raio_m": 0.003
+    },
+    {
+      "pos": [
+        -0.58,
+        0.79
+      ],
+      "tam_m": [
+        0.0198,
+        0.0113
+      ],
+      "cor": [
+        0.0023,
+        0.0023,
+        0.0023
+      ],
+      "raio_m": 0.0025
+    }
+  ],
+  "logo": {
+    "svg": "estampas/fig_bender_tema.svg",
+    "tam_m": 0.0105,
+    "pos": [
+      -0.58,
+      0.79
+    ]
+  },
+  "jacks_topo": true,
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "MERCURY BENDER",
+      "pos": [
+        0.2,
+        0.79
+      ],
+      "tam_m": 0.0105,
+      "cor": [
+        0.8751,
+        0.8592,
+        0.8122
+      ],
+      "espaco": 1.0,
+      "grossura": 0.0,
+      "largura_max": 0.95
     }
   ]
 }

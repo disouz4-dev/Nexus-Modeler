@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 237,
-      "y": 138,
-      "tamanho": 78,
+      "x": 246,
+      "y": 127,
+      "tamanho": 107,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 333,
-      "y": 138,
-      "tamanho": 78,
+      "x": 367,
+      "y": 127,
+      "tamanho": 107,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 406,
-      "y": 235,
-      "tamanho": 76,
+      "x": 398,
+      "y": 245,
+      "tamanho": 105,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,8 +42,8 @@
   "rotulos": [
     {
       "texto": "MISTURA",
-      "x": 182.6,
-      "y": 234.3,
+      "x": 176.8,
+      "y": 251.8,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -51,8 +51,8 @@
     },
     {
       "texto": "NÍVEL",
-      "x": 276.5,
-      "y": 234.3,
+      "x": 300.0,
+      "y": 251.8,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -60,8 +60,8 @@
     },
     {
       "texto": "DRIVE",
-      "x": 370.4,
-      "y": 234.3,
+      "x": 417.4,
+      "y": 251.8,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -69,8 +69,8 @@
     },
     {
       "texto": "MOD",
-      "x": 159.2,
-      "y": 329.2,
+      "x": 161.1,
+      "y": 366.6,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -78,8 +78,8 @@
     },
     {
       "texto": "GRAVE",
-      "x": 253.1,
-      "y": 329.2,
+      "x": 256.9,
+      "y": 366.6,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -87,8 +87,8 @@
     },
     {
       "texto": "MÉDIO",
-      "x": 346.9,
-      "y": 329.2,
+      "x": 345.0,
+      "y": 366.6,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -96,8 +96,8 @@
     },
     {
       "texto": "AGUDO",
-      "x": 440.9,
-      "y": 329.2,
+      "x": 446.8,
+      "y": 366.6,
       "altura": 14.15,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -105,8 +105,17 @@
     },
     {
       "texto": "GROWL",
-      "x": 448.7,
-      "y": 195.6,
+      "x": 243.2,
+      "y": 189.8,
+      "altura": 10.82,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    },
+    {
+      "texto": "BITE",
+      "x": 360.6,
+      "y": 189.8,
       "altura": 10.82,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
@@ -115,12 +124,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 524.0,
-    "raio": 51.5
+    "y": 493.5,
+    "raio": 35.0
   },
   "led": {
     "x": 300.0,
-    "y": 362.4,
-    "raio": 12.9
+    "y": 349.9,
+    "raio": 7.5
   }
 }

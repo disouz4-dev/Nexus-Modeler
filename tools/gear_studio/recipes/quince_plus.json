@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Quince Plus",
   "familia": "quince_plus",
-  "inspiracao": "Caixa MXR amarela com pintura enrugada (62 x 111 x 32 mm), letras pretas; botões pretos SAÍDA e DISTORÇÃO no alto, LED vermelho acima do pisante. Tema: marmelo amarelo, raios tom sobre tom. Original: MXR Distortion+.",
+  "inspiracao": "Caixa MXR amarelo-gema com pintura enrugada fina (62 x 111 x 32 mm), letras pretas; botões MXR pretos grandes SAÍDA e DISTORÇÃO no alto; LED pequeno de aro preto entre o tema e o pisante; chave pequena de pisar; nome minúsculo embaixo. Tema: marmelo amarelo no lugar da logo MXR. Original: MXR Distortion+.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.062,
@@ -11,9 +11,9 @@
   },
   "pintura": {
     "cor": [
-      0.8913,
-      0.6388,
-      0.0189
+      0.9158,
+      0.4878,
+      0.0078
     ],
     "metalico": 0.0,
     "aspereza": 0.28,
@@ -24,7 +24,7 @@
     0.0037,
     0.0037
   ],
-  "modelo": "QUINCE PLUS",
+  "modelo": "quince plus",
   "botao_estilo": {
     "diametro_m": 0.0165,
     "altura_m": 0.0125,
@@ -46,21 +46,20 @@
       "rotulo": "SAÍDA",
       "pos": [
         -0.45,
-        0.66
-      ]
+        0.64
+      ],
+      "escala": 1.2
     },
     {
       "id": "ganho",
       "rotulo": "DISTORÇÃO",
       "pos": [
         0.45,
-        0.66
-      ]
+        0.64
+      ],
+      "escala": 1.2
     }
   ],
-  "estampa": {
-    "svg": "estampas/quince_plus.svg"
-  },
   "medidas_fonte": "caixa MXR padrão, aprox. 62 x 111 x 32 mm sem botões (Dunlop não publica; medida de lojas)",
   "quadro": {
     "largura_rel": 2.24,
@@ -68,7 +67,7 @@
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": -0.86,
+  "logo_y": -0.8,
   "logo_m": 0.0085,
   "pisante_y": -0.62,
   "rotulo_embaixo": true,
@@ -80,7 +79,25 @@
   ],
   "led": [
     0.0,
-    -0.36
+    -0.16
   ],
-  "transformacao": "Standard"
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.42
+    ]
+  },
+  "jacks_y": 0.1,
+  "logo": {
+    "svg": "estampas/quince_plus_tema.svg",
+    "tam_m": 0.017,
+    "pos": [
+      0.0,
+      0.14
+    ]
+  },
+  "transformacao": "Standard",
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0018
 }

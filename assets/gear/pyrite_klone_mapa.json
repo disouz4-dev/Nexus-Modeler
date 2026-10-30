@@ -6,19 +6,10 @@
   "posicoes": 101,
   "botoes": [
     {
-      "id": "nivel",
-      "x": 182,
-      "y": 63,
-      "tamanho": 102,
-      "arquivo": "botao_nivel.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "ganho",
-      "x": 316,
-      "y": 63,
-      "tamanho": 102,
+      "x": 171,
+      "y": 96,
+      "tamanho": 100,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,10 +17,19 @@
     },
     {
       "id": "tom",
-      "x": 251,
-      "y": 156,
-      "tamanho": 98,
+      "x": 328,
+      "y": 96,
+      "tamanho": 100,
       "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 252,
+      "y": 182,
+      "tamanho": 96,
+      "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -41,18 +41,9 @@
   ],
   "rotulos": [
     {
-      "texto": "VOLUME",
-      "x": 234.8,
-      "y": 199.1,
-      "altura": 21.45,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
       "texto": "GANHO",
-      "x": 365.2,
-      "y": 199.1,
+      "x": 223.9,
+      "y": 230.9,
       "altura": 21.45,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -60,8 +51,17 @@
     },
     {
       "texto": "AGUDO",
+      "x": 376.1,
+      "y": 230.9,
+      "altura": 21.45,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
       "x": 300.0,
-      "y": 288.1,
+      "y": 313.6,
       "altura": 21.45,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -70,12 +70,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 582.5,
-    "raio": 90.0
+    "y": 616.0,
+    "raio": 60.0
   },
   "led": {
     "x": 300.0,
-    "y": 310.9,
-    "raio": 22.4
+    "y": 445.8,
+    "raio": 20.8
   }
 }

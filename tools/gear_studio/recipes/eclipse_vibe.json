@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Eclipse Vibe",
   "familia": "eclipse_vibe",
-  "inspiracao": "vibe de caixa larga preta com botões cromados (estilo Uni-Vibe de pedal)",
+  "inspiracao": "Caixa larga cinza-chumbo martelada (94 x 120 x 42 mm), letras creme; três botões pretos altos serrilhados em triângulo (MISTURA no alto à esquerda, INTENSIDADE no alto à direita, VELOCIDADE no meio, mais baixo); LED vermelho pequeno logo abaixo do botão do meio; nome cursivo grande no meio com STEREO CHORUS embaixo; pisante pequeno niquelado. Tema: eclipse pequeno no lugar da logo de baixo. Original: Dunlop Uni-Vibe UV1SC.",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.094,
@@ -12,40 +12,41 @@
   "chanfro_m": 0.0035,
   "pintura": {
     "cor": [
-      0.0037,
-      0.0029,
-      0.0055
+      0.0759,
+      0.0869,
+      0.0987
     ],
-    "metalico": 0.3,
-    "aspereza": 0.26
+    "metalico": 0.35,
+    "aspereza": 0.45,
+    "textura": "martelado"
   },
   "texto_cor": [
-    0.6941,
-    0.548,
-    1.0
+    0.8671,
+    0.7969,
+    0.6121
   ],
   "texto_cor2": [
-    0.6941,
-    0.548,
-    1.0
+    0.8671,
+    0.7969,
+    0.6121
   ],
   "modelo": "ECLIPSE VIBE",
   "logo_y": -0.367,
   "tipo_texto": "",
-  "pisante_y": -0.667,
+  "pisante_y": -0.36,
   "rotulo_m": 0.0034,
   "botao_estilo": {
-    "diametro_m": 0.0135,
-    "altura_m": 0.012,
+    "diametro_m": 0.0185,
+    "altura_m": 0.017,
     "corpo": [
-      0.85,
-      0.85,
-      0.86
+      0.0008,
+      0.0008,
+      0.0008
     ],
     "traco": [
-      0.95,
-      0.95,
-      0.92
+      0.0008,
+      0.0008,
+      0.0008
     ]
   },
   "botoes": [
@@ -53,33 +54,33 @@
       "id": "a",
       "rotulo": "VELOCIDADE",
       "pos": [
-        -0.58,
-        0.55
+        0.0,
+        0.4
       ],
-      "escala": 1.1
+      "escala": 1.0
     },
     {
       "id": "b",
       "rotulo": "INTENSIDADE",
       "pos": [
-        0.0,
-        0.55
+        0.5,
+        0.76
       ],
-      "escala": 1.1
+      "escala": 1.0
     },
     {
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        0.58,
-        0.55
+        -0.5,
+        0.76
       ],
-      "escala": 1.1
+      "escala": 1.0
     }
   ],
   "led": [
     0.0,
-    0.84
+    0.16
   ],
   "quadro": {
     "largura_rel": 2.0,
@@ -88,7 +89,53 @@
   },
   "rotulo_embaixo": true,
   "medidas_fonte": "caixa larga: 94 x 120 x 42 mm",
-  "estampa": {
-    "svg": "estampas/eclipse_vibe.svg"
-  }
+  "modelo_oculto": true,
+  "logo": {
+    "svg": "estampas/eclipse_vibe_tema.svg",
+    "tam_m": 0.016,
+    "pos": [
+      0.0,
+      -0.7
+    ]
+  },
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0022,
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.36
+    ]
+  },
+  "textos": [
+    {
+      "texto": "Eclipse Vibe",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": 0.021,
+      "cor": [
+        0.8671,
+        0.7969,
+        0.6121
+      ],
+      "fonte": "script",
+      "largura_max": 1.5
+    },
+    {
+      "texto": "STEREO CHORUS",
+      "pos": [
+        0.0,
+        -0.14
+      ],
+      "tam_m": 0.0046,
+      "cor": [
+        0.8671,
+        0.7969,
+        0.6121
+      ],
+      "espaco": 1.6
+    }
+  ]
 }

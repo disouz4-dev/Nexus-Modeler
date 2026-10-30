@@ -5,18 +5,18 @@
   "inspiracao": "Caixa estreita vermelha (56 x 122 x 41 mm), letras pretas; botões pretos VOLUME e DRIVE no alto com a minichave de 3 posições entre eles, TOM (EQ), AR (fixo) e REFORÇO (fixo) menores na segunda fileira, dois pisantes (drive e reforço) com um LED vermelho cada. Tema: framboesa no lugar do @ do meio, framboesas tom sobre tom. Original: JHS Andy Timmons (AT).",
   "formato": "padrao",
   "medidas_m": {
-    "largura": 0.056,
+    "largura": 0.065,
     "comprimento": 0.122,
     "altura": 0.041
   },
   "pintura": {
     "cor": [
-      0.6524,
-      0.009,
-      0.0152
+      0.7818,
+      0.0135,
+      0.0104
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.22
   },
   "texto_cor": [
     0.0037,
@@ -25,8 +25,8 @@
   ],
   "modelo": "RASPBERRY DRIVE",
   "botao_estilo": {
-    "diametro_m": 0.015,
-    "altura_m": 0.012,
+    "diametro_m": 0.0165,
+    "altura_m": 0.013,
     "saia": false,
     "corpo": [
       0.0037,
@@ -44,56 +44,48 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.56,
-        0.76
-      ],
-      "escala": 0.9
+        -0.63,
+        0.75
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.56,
-        0.76
-      ],
-      "escala": 0.9
+        0.63,
+        0.75
+      ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        -0.62,
-        0.42
-      ],
-      "escala": 0.72
+        -0.63,
+        0.29
+      ]
     },
     {
       "id": "fixo_ar",
       "rotulo": "AR",
       "pos": [
         0.0,
-        0.42
+        0.29
       ],
-      "fixo": true,
-      "escala": 0.72
+      "fixo": true
     },
     {
       "id": "fixo_reforco",
       "rotulo": "REFORÇO",
       "pos": [
-        0.62,
-        0.42
+        0.63,
+        0.29
       ],
-      "fixo": true,
-      "escala": 0.72
+      "fixo": true
     }
   ],
-  "estampa": {
-    "svg": "estampas/raspberry_drive.svg"
-  },
-  "medidas_fonte": "56 x 122 x 41 mm (JHS, ficha oficial)",
+  "medidas_fonte": "122 x 41 mm (JHS); largura 65 mm medida na foto de cima (proporção 0,53)",
   "quadro": {
-    "largura_rel": 2.72,
+    "largura_rel": 2.35,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
@@ -109,14 +101,16 @@
     0.0037
   ],
   "led": [
-    -0.5,
-    -0.55
+    -0.6,
+    -0.38
   ],
   "pisante": {
+    "estilo": "liso",
     "pos": [
-      -0.5,
-      -0.76
-    ]
+      -0.6,
+      -0.7
+    ],
+    "arruela": "branca"
   },
   "modelo_oculto": true,
   "pecas": [
@@ -124,22 +118,38 @@
       "tipo": "minichave",
       "pos": [
         0.0,
-        0.8
+        0.77
       ]
     },
     {
       "tipo": "pisante",
       "pos": [
-        0.5,
-        -0.76
-      ]
+        0.6,
+        -0.7
+      ],
+      "estilo": "liso",
+      "arruela": "branca"
     },
     {
       "tipo": "led",
       "pos": [
-        0.5,
-        -0.55
-      ]
+        0.6,
+        -0.38
+      ],
+      "estilo": "aro_preto",
+      "raio_m": 0.0022
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/raspberry_drive_tema.svg",
+    "tam_m": 0.022,
+    "pos": [
+      0.0,
+      -0.21
+    ]
+  },
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0022,
+  "jacks_y": -0.14,
+  "transformacao": "Standard"
 }

@@ -16,17 +16,17 @@
       0.0037
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.4
   },
   "texto_cor": [
-    0.8122,
-    0.7012,
-    0.3993
+    0.7667,
+    0.6121,
+    0.2758
   ],
   "modelo": "JAMUN OD",
   "botao_estilo": {
-    "diametro_m": 0.015,
-    "altura_m": 0.013,
+    "diametro_m": 0.0155,
+    "altura_m": 0.015,
     "saia": false,
     "corpo": [
       0.0037,
@@ -44,63 +44,54 @@
       "id": "fixo_grave",
       "rotulo": "GRAVE",
       "pos": [
-        -0.6,
-        0.8
+        -0.63,
+        0.77
       ],
-      "fixo": true,
-      "escala": 0.85
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
         0.0,
-        0.8
-      ],
-      "escala": 0.85
+        0.77
+      ]
     },
     {
       "id": "fixo_presenca",
       "rotulo": "PRESENÇA",
       "pos": [
-        0.6,
-        0.8
+        0.63,
+        0.77
       ],
-      "fixo": true,
-      "escala": 0.85
+      "fixo": true
     },
     {
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.6,
-        0.44
-      ],
-      "escala": 0.85
+        -0.63,
+        0.34
+      ]
     },
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
         0.0,
-        0.44
-      ],
-      "escala": 0.85
+        0.34
+      ]
     },
     {
       "id": "fixo_tight",
       "rotulo": "TIGHT",
       "pos": [
-        0.6,
-        0.44
+        0.63,
+        0.34
       ],
-      "fixo": true,
-      "escala": 0.85
+      "fixo": true
     }
   ],
-  "estampa": {
-    "svg": "estampas/jamun_od.svg"
-  },
   "medidas_fonte": "aprox. 64 x 112 mm (o fabricante não publica)",
   "quadro": {
     "largura_rel": 2.19,
@@ -120,7 +111,7 @@
   ],
   "led": [
     0.0,
-    -0.38
+    -0.33
   ],
   "paineis": [
     {
@@ -129,16 +120,15 @@
         0.0
       ],
       "tam_m": [
-        0.057,
-        0.105
+        0.059,
+        0.108
       ],
       "cor": [
-        0.8122,
-        0.7012,
-        0.3993
+        0.7667,
+        0.6121,
+        0.2758
       ],
-      "raio_m": 0.002,
-      "fundo": true
+      "raio_m": 0.0015
     },
     {
       "pos": [
@@ -146,32 +136,68 @@
         0.0
       ],
       "tam_m": [
-        0.055,
-        0.103
+        0.056,
+        0.105
       ],
       "cor": [
         0.0037,
         0.0037,
         0.0037
       ],
-      "raio_m": 0.0012,
-      "fundo": true
+      "raio_m": 0.001
     },
     {
       "pos": [
         0.0,
-        0.02
+        -0.15
       ],
       "tam_m": [
-        0.05,
-        0.013
+        0.048,
+        0.015
       ],
       "cor": [
-        0.8122,
-        0.7012,
-        0.3993
+        0.7667,
+        0.6121,
+        0.2758
       ],
-      "raio_m": 0.001
+      "raio_m": 0.0004
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/nectarine_od_tema.svg",
+    "tam_m": 0.0115,
+    "pos": [
+      0.0,
+      -0.15
+    ]
+  },
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0014,
+  "pisante": {
+    "estilo": "pequeno",
+    "pos": [
+      0.0,
+      -0.68
+    ]
+  },
+  "jacks_y": -0.29,
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "JAMUN OD",
+      "pos": [
+        0.0,
+        -0.45
+      ],
+      "tam_m": 0.0074,
+      "cor": [
+        0.7667,
+        0.6121,
+        0.2758
+      ],
+      "fonte": "ui",
+      "espaco": 1.05
+    }
+  ],
+  "transformacao": "Standard"
 }

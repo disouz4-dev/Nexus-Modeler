@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "a",
-      "x": 148,
-      "y": 198,
-      "tamanho": 75,
+      "x": 254,
+      "y": 227,
+      "tamanho": 92,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 262,
-      "y": 198,
-      "tamanho": 75,
+      "x": 352,
+      "y": 134,
+      "tamanho": 96,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 378,
-      "y": 198,
-      "tamanho": 75,
+      "x": 152,
+      "y": 134,
+      "tamanho": 96,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -41,40 +41,40 @@
   "rotulos": [
     {
       "texto": "VELOCIDADE",
-      "x": 186.9,
-      "y": 291.8,
+      "x": 300.0,
+      "y": 336.6,
       "altura": 14.1,
       "achatamento": 1.0,
-      "cor": "#d9c3ff",
+      "cor": "#efe7cd",
       "espaco": 1.15
     },
     {
       "texto": "INTENSIDADE",
-      "x": 300.0,
-      "y": 291.8,
+      "x": 397.4,
+      "y": 247.1,
       "altura": 14.1,
       "achatamento": 1.0,
-      "cor": "#d9c3ff",
+      "cor": "#efe7cd",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 413.1,
-      "y": 291.8,
+      "x": 202.6,
+      "y": 247.1,
       "altura": 14.1,
       "achatamento": 1.0,
-      "cor": "#d9c3ff",
+      "cor": "#efe7cd",
       "espaco": 1.15
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 545.5,
-    "raio": 51.0
+    "y": 467.0,
+    "raio": 34.0
   },
   "led": {
     "x": 300.0,
-    "y": 165.2,
-    "raio": 12.9
+    "y": 335.0,
+    "raio": 10.6
   }
 }

@@ -24,7 +24,7 @@
     0.8751,
     0.8277
   ],
-  "modelo": "COMET WAH",
+  "modelo": "comet wah",
   "botao_estilo": {
     "diametro_m": 0.0135,
     "altura_m": 0.012,
@@ -74,7 +74,7 @@
   ],
   "medidas_fonte": "aprox. 102 x 254 x 64 mm (zZounds; a Dunlop não publica)",
   "estampa": {
-    "svg": "estampas/comet_wah.svg"
+    "svg": "estampas/comet_wah_tema.svg"
   },
   "quadro": {
     "largura_rel": 3.11,
@@ -85,7 +85,7 @@
   "talao_m": 0.022,
   "borracha_rel": 0.66,
   "inclinacao": 0.0,
-  "logo_m": 0.012,
+  "logo_m": 0.0135,
   "texto_cor2": [
     0.8913,
     0.8751,

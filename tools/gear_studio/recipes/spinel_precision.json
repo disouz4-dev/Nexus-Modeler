@@ -11,22 +11,22 @@
   },
   "pintura": {
     "cor": [
-      0.0135,
-      0.0161,
-      0.021
+      0.0055,
+      0.006,
+      0.0078
     ],
-    "metalico": 0.4,
-    "aspereza": 0.28,
+    "metalico": 0.35,
+    "aspereza": 0.35,
     "textura": "purpurina"
   },
   "texto_cor": [
-    0.0385,
-    0.2758,
-    0.8122
+    0.0189,
+    0.3993,
+    0.6941
   ],
   "modelo": "SPINEL PRECISION",
   "botao_estilo": {
-    "diametro_m": 0.015,
+    "diametro_m": 0.0145,
     "altura_m": 0.012,
     "saia": false,
     "corpo": [
@@ -45,41 +45,36 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.5,
-        0.74
+        -0.34,
+        0.76
       ]
     },
     {
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        0.5,
-        0.74
+        0.6,
+        0.47
       ]
     },
     {
       "id": "fixo_brilho",
       "rotulo": "AGUDO",
       "pos": [
-        -0.62,
-        0.42
+        0.34,
+        0.76
       ],
-      "fixo": true,
-      "escala": 0.62
+      "fixo": true
     },
     {
       "id": "tom",
       "rotulo": "ATAQUE",
       "pos": [
-        0.62,
-        0.42
-      ],
-      "escala": 0.62
+        -0.6,
+        0.47
+      ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/spinel_precision.svg"
-  },
   "medidas_fonte": "aprox. 60 x 112 mm, caixa 1590B (o fabricante não publica)",
   "quadro": {
     "largura_rel": 2.33,
@@ -99,7 +94,7 @@
   ],
   "led": [
     0.0,
-    -0.36
+    -0.13
   ],
   "led_cor": [
     0.0008,
@@ -111,21 +106,67 @@
       "tipo": "trimpot",
       "pos": [
         0.0,
-        0.5
+        0.29
       ],
-      "rotulo": "GATE"
-    },
+      "rotulo": "GATE",
+      "rotulo_cor": [
+        0.0189,
+        0.3993,
+        0.6941
+      ]
+    }
+  ],
+  "logo": {
+    "svg": "estampas/guava_precision_tema.svg",
+    "tam_m": 0.016,
+    "pos": [
+      0.0,
+      -0.77
+    ]
+  },
+  "led_estilo": "aro_preto",
+  "led_raio_m": 0.0016,
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.41
+    ]
+  },
+  "jacks_y": 0.0,
+  "modelo_oculto": true,
+  "textos": [
     {
-      "tipo": "led",
+      "texto": "SPINEL",
       "pos": [
         0.0,
-        0.3
+        0.13
       ],
+      "tam_m": 0.0078,
       "cor": [
-        0.0008,
-        0.009,
-        0.145
-      ]
+        0.0189,
+        0.3993,
+        0.6941
+      ],
+      "fonte": "label",
+      "espaco": 1.45,
+      "grossura": 0.0
+    },
+    {
+      "texto": "PRECISION",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "tam_m": 0.0078,
+      "cor": [
+        0.0189,
+        0.3993,
+        0.6941
+      ],
+      "fonte": "label",
+      "espaco": 1.45,
+      "grossura": 0.0
     }
   ]
 }

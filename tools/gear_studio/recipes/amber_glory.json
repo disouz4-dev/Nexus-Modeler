@@ -11,12 +11,13 @@
   },
   "pintura": {
     "cor": [
-      0.4647,
-      0.3297,
-      0.0869
+      0.4368,
+      0.3736,
+      0.1113
     ],
     "metalico": 0.55,
-    "aspereza": 0.4
+    "aspereza": 0.45,
+    "textura": "martelado"
   },
   "texto_cor": [
     0.0037,
@@ -25,13 +26,13 @@
   ],
   "modelo": "AMBER GLORY",
   "botao_estilo": {
-    "diametro_m": 0.016,
-    "altura_m": 0.013,
+    "diametro_m": 0.0195,
+    "altura_m": 0.014,
     "saia": false,
     "corpo": [
-      0.8913,
-      0.8751,
-      0.8277
+      0.95,
+      0.94,
+      0.9
     ],
     "traco": [
       0.0037,
@@ -44,8 +45,8 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.5,
-        0.74
+        -0.51,
+        0.73
       ]
     },
     {
@@ -53,7 +54,7 @@
       "rotulo": "DRIVE",
       "pos": [
         0.5,
-        0.74
+        0.73
       ]
     },
     {
@@ -61,13 +62,10 @@
       "rotulo": "TOM",
       "pos": [
         0.5,
-        0.4
+        0.28
       ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/amber_glory.svg"
-  },
   "medidas_fonte": "66 x 122 x 41 mm (JHS, ficha oficial)",
   "quadro": {
     "largura_rel": 2.31,
@@ -86,23 +84,51 @@
     0.0037
   ],
   "led": [
-    0.62,
-    -0.74
+    0.59,
+    -0.77
   ],
   "led_cor": [
-    0.0008,
     0.009,
-    0.145
+    0.0781,
+    0.8122
   ],
   "pecas": [
     {
       "tipo": "minichave",
       "pos": [
-        -0.5,
-        0.42
+        -0.51,
+        0.28
       ],
       "rotulo": "GANHO",
       "rotulo_pos": "baixo"
     }
-  ]
+  ],
+  "logo": {
+    "svg": "estampas/peach_glory_tema.svg",
+    "tam_m": 0.024,
+    "pos": [
+      0.0,
+      -0.2
+    ]
+  },
+  "led_estilo": "aro_fino",
+  "led_raio_m": 0.0028,
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.76
+    ],
+    "arruela": "branca"
+  },
+  "jacks": {
+    "esq": [
+      -0.31
+    ],
+    "dir": [
+      0.02,
+      -0.31
+    ]
+  },
+  "modelo_oculto": true
 }

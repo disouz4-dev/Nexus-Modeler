@@ -17,8 +17,8 @@
     {
       "id": "b",
       "x": 143,
-      "y": 504,
-      "tamanho": 59,
+      "y": 522,
+      "tamanho": 60,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -26,8 +26,8 @@
     {
       "id": "c",
       "x": 398,
-      "y": 504,
-      "tamanho": 59,
+      "y": 522,
+      "tamanho": 60,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -51,7 +51,7 @@
     {
       "texto": "PROFUNDIDADE",
       "x": 174.6,
-      "y": 585.1,
+      "y": 603.8,
       "altura": 14.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -60,7 +60,7 @@
     {
       "texto": "INTENSIDADE",
       "x": 425.4,
-      "y": 585.1,
+      "y": 603.8,
       "altura": 14.62,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -69,12 +69,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 569.5,
-    "raio": 70.0
+    "y": 524.0,
+    "raio": 47.0
   },
   "led": {
     "x": 300.0,
-    "y": 487.9,
-    "raio": 17.5
+    "y": 437.4,
+    "raio": 11.7
   }
 }

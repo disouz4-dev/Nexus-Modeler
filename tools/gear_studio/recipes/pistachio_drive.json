@@ -11,9 +11,9 @@
   },
   "pintura": {
     "cor": [
-      0.009,
+      0.0078,
       0.3297,
-      0.0446
+      0.0619
     ],
     "metalico": 0.0,
     "aspereza": 0.28
@@ -27,7 +27,7 @@
   "botao_estilo": {
     "diametro_m": 0.019,
     "altura_m": 0.014,
-    "saia": false,
+    "saia": true,
     "corpo": [
       0.0037,
       0.0037,
@@ -44,8 +44,8 @@
       "id": "ganho",
       "rotulo": "DRIVE",
       "pos": [
-        -0.48,
-        0.72
+        -0.47,
+        0.71
       ]
     },
     {
@@ -53,22 +53,19 @@
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.5
+        0.42
       ],
-      "escala": 0.6
+      "escala": 0.58
     },
     {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        0.48,
-        0.72
+        0.47,
+        0.71
       ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/pistachio_drive.svg"
-  },
   "medidas_fonte": "70 x 113 x 56 mm com botões (Maxon, ficha oficial)",
   "quadro": {
     "largura_rel": 2.02,
@@ -76,8 +73,8 @@
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": -0.8,
-  "logo_m": 0.013,
+  "logo_y": -0.82,
+  "logo_m": 0.018,
   "pisante_y": -0.62,
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
@@ -88,14 +85,25 @@
   ],
   "led": [
     0.0,
-    0.88
+    0.9
   ],
   "pisante": {
-    "estilo": "redondo",
+    "estilo": "liso",
     "pos": [
       0.0,
-      -0.36
+      -0.47
     ]
   },
-  "tipo_texto": ""
+  "tipo_texto": "",
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0019,
+  "logo": {
+    "svg": "estampas/pistachio_drive_tema.svg",
+    "tam_m": 0.017,
+    "pos": [
+      0.0,
+      -0.02
+    ]
+  },
+  "jacks_y": 0.1
 }

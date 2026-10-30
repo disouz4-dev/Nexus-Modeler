@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "a",
-      "x": 236,
-      "y": 118,
-      "tamanho": 128,
+      "x": 237,
+      "y": 107,
+      "tamanho": 126,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 143,
-      "y": 504,
-      "tamanho": 59,
+      "x": 155,
+      "y": 436,
+      "tamanho": 50,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 398,
-      "y": 504,
-      "tamanho": 59,
+      "x": 396,
+      "y": 436,
+      "tamanho": 50,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,7 +42,7 @@
     {
       "texto": "SENSIBILIDADE",
       "x": 300.0,
-      "y": 272.1,
+      "y": 258.2,
       "altura": 22.48,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -50,40 +50,31 @@
     },
     {
       "texto": "ATAQUE",
-      "x": 174.6,
-      "y": 585.1,
-      "altura": 14.62,
+      "x": 181.5,
+      "y": 509.6,
+      "altura": 13.49,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "RELEASE",
-      "x": 425.4,
-      "y": 585.1,
-      "altura": 14.62,
+      "x": 418.5,
+      "y": 509.6,
+      "altura": 13.49,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
-    },
-    {
-      "texto": "ALTO",
-      "x": 191.9,
-      "y": 145.4,
-      "altura": 17.99,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.1
     }
   ],
   "pisante": {
     "x": 300.0,
-    "y": 569.5,
-    "raio": 70.0
+    "y": 514.5,
+    "raio": 47.0
   },
   "led": {
     "x": 300.0,
-    "y": 487.9,
-    "raio": 17.5
+    "y": 427.4,
+    "raio": 12.3
   }
 }

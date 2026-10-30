@@ -2,32 +2,32 @@
   "nome": "Blueberry Chain",
   "familia": "blueberry_chain",
   "largura": 600,
-  "altura": 510,
+  "altura": 600,
   "posicoes": 101,
   "botoes": [
     {
       "id": "a",
-      "x": 141,
-      "y": 62,
-      "tamanho": 76,
+      "x": 104,
+      "y": 100,
+      "tamanho": 98,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 262,
-      "y": 62,
-      "tamanho": 76,
+      "x": 250,
+      "y": 100,
+      "tamanho": 98,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 382,
-      "y": 62,
-      "tamanho": 76,
+      "x": 398,
+      "y": 100,
+      "tamanho": 98,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -35,15 +35,15 @@
   ],
   "canais": [],
   "medidas_mm": [
-    125,
-    160
+    120,
+    115
   ],
   "rotulos": [
     {
       "texto": "TEMPO",
-      "x": 182.0,
-      "y": 152.1,
-      "altura": 9.44,
+      "x": 157.6,
+      "y": 216.7,
+      "altura": 12.28,
       "achatamento": 1.0,
       "cor": "#f9f5eb",
       "espaco": 1.15
@@ -51,17 +51,17 @@
     {
       "texto": "FEEDBACK",
       "x": 300.0,
-      "y": 152.1,
-      "altura": 9.44,
+      "y": 216.7,
+      "altura": 12.28,
       "achatamento": 1.0,
       "cor": "#f9f5eb",
       "espaco": 1.15
     },
     {
       "texto": "REPETIÇÃO",
-      "x": 418.0,
-      "y": 152.1,
-      "altura": 9.44,
+      "x": 442.4,
+      "y": 216.7,
+      "altura": 12.28,
       "achatamento": 1.0,
       "cor": "#f9f5eb",
       "espaco": 1.15
@@ -69,12 +69,12 @@
   ],
   "pisante": {
     "x": 300.0,
-    "y": 425.5,
-    "raio": 39.0
+    "y": 485.5,
+    "raio": 34.0
   },
   "led": {
     "x": 300.0,
-    "y": 285.4,
-    "raio": 9.8
+    "y": 323.7,
+    "raio": 9.0
   }
 }

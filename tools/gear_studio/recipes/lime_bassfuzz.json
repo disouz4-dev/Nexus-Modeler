@@ -11,12 +11,12 @@
   },
   "pintura": {
     "cor": [
-      0.2428,
-      0.6121,
+      0.2674,
+      0.6055,
       0.009
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.35
   },
   "texto_cor": [
     0.0037,
@@ -44,8 +44,8 @@
       "id": "nivel",
       "rotulo": "VOLUME",
       "pos": [
-        -0.6,
-        0.68
+        -0.58,
+        0.66
       ]
     },
     {
@@ -53,21 +53,18 @@
       "rotulo": "TOM",
       "pos": [
         0.0,
-        0.68
+        0.66
       ]
     },
     {
       "id": "ganho",
       "rotulo": "SUSTAIN",
       "pos": [
-        0.6,
-        0.68
+        0.58,
+        0.66
       ]
     }
   ],
-  "estampa": {
-    "svg": "estampas/lime_bassfuzz.svg"
-  },
   "medidas_fonte": "121 x 102 x 57 mm (EHX: 4,75 x 4 x 2,25 pol.)",
   "quadro": {
     "largura_rel": 2.0,
@@ -76,23 +73,22 @@
   },
   "pintura_lados": {
     "cor": [
-      0.586,
-      0.5989,
-      0.6121
+      0.4647,
+      0.4762,
+      0.4878
     ],
-    "cromo": true
+    "metalico": 0.6,
+    "aspereza": 0.65,
+    "textura": "martelado"
   },
-  "tampo_margem_m": 0.005,
+  "tampo_margem_m": 0.0065,
   "chanfro_m": 0.005,
   "rotulo_m": 0.0042,
   "rotulo_embaixo": true,
   "led": [
-    0.62,
-    -0.38
+    0.2,
+    0.16
   ],
-  "pisante_y": -0.62,
-  "logo_y": -0.12,
-  "logo_m": 0.013,
   "texto_cor2": [
     0.8913,
     0.8751,
@@ -103,11 +99,84 @@
     {
       "tipo": "minichave",
       "pos": [
-        -0.5,
-        0.3
+        0.0,
+        0.34
       ],
       "rotulo": "GRAVE",
       "rotulo_pos": "baixo"
     }
-  ]
+  ],
+  "led_estilo": "aro_fino",
+  "led_raio_m": 0.0022,
+  "pisante": {
+    "estilo": "liso",
+    "pos": [
+      0.0,
+      -0.42
+    ]
+  },
+  "jacks": {
+    "esq": [
+      0.18,
+      -0.2
+    ],
+    "dir": [
+      0.18
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "lime bass",
+      "pos": [
+        -0.36,
+        0.15
+      ],
+      "tam_m": 0.011,
+      "cor": [
+        0.9075,
+        0.9075,
+        0.8751
+      ],
+      "espaco": 1.0
+    },
+    {
+      "texto": "FUZZ",
+      "pos": [
+        0.02,
+        -0.1
+      ],
+      "tam_m": 0.034,
+      "cor": [
+        0.0023,
+        0.0023,
+        0.0023
+      ],
+      "espaco": 1.15,
+      "grossura": 0.0004
+    },
+    {
+      "texto": "FUZZ",
+      "pos": [
+        0.0,
+        -0.08
+      ],
+      "tam_m": 0.034,
+      "cor": [
+        0.9075,
+        0.9075,
+        0.8751
+      ],
+      "espaco": 1.15,
+      "grossura": 0.0004
+    }
+  ],
+  "logo": {
+    "svg": "estampas/lychee_bassfuzz_tema.svg",
+    "tam_m": 0.013,
+    "pos": [
+      0.0,
+      -0.74
+    ]
+  }
 }
