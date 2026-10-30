@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T09:29:01Z",
+ "gerado": "2026-10-30T09:31:10Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1613,8 +1613,8 @@
   },
   "citrus30": {
    "nome": "Citrus 30",
-   "hash": "062addc6116c602e",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d07ecc3bd4be5579",
+   "data": "2026-10-30T09:31:10Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus30_botao_agudo.png",
@@ -1629,24 +1629,24 @@
     "citrus30_mapa.json"
    ],
    "sha256": {
-    "citrus30_botao_agudo.png": "9d4071f3b17ffb8b6bb32860716164da05b3524190db8e7b95858b6d024c3692",
-    "citrus30_botao_ganho.png": "99f657547a24ffdda1c5352f290e81324150c9b29058d89ab85242e1a5bc6c17",
-    "citrus30_botao_grave.png": "2a4d96a41cbfce88ba4956b6ab5005bbd4aee7676a0bc0da898f553070255b3d",
-    "citrus30_botao_medio.png": "b4e0bcca06ee81c54844cc84417cc34cef1231015f3f6aa6a95a4d5749083432",
-    "citrus30_botao_presenca.png": "63752d53b057e8afce731e2df112e7cac523aa635f7ab194fd4cbe941cb50d91",
-    "citrus30_botao_volume.png": "b64cd23957ca7226bc202efd306bc6c7aef82b54880c17d9f0dfc84f08cfe369",
-    "citrus30_frente.jpg": "498ffccba0d652973997fa02b4bc0f92a7ac33f9e5591bb259f243f187e7f9d0",
-    "citrus30_frente_alfa.png": "c072b21fe0192e84ed0f563c92899deee7e7a7333b0cbe5a74c33e654ae58f42",
-    "citrus30_manifesto.json": "f26b4fc6df3854513601b70296452581d70cfc89a3a536fca80520fb5291d1b3",
-    "citrus30_mapa.json": "ee886c571106c07272fd067b404f7c59ea99008b02d42379bc46cfef0dfd9159"
+    "citrus30_botao_agudo.png": "5f3f81e5c37ea835261eb77da3bda5048ef6fbaf86a0ad20e48dfb242ecfca57",
+    "citrus30_botao_ganho.png": "e8c884bbfd962a024dc51cd678865c5524cb9e160bd51182111be3ba73a9753f",
+    "citrus30_botao_grave.png": "2f0c65b59f64e2227f984a902eb994692f0b469d00583f63f58e1a369716bd8c",
+    "citrus30_botao_medio.png": "7bd9d137230a50457fc53a870cbbb8004ed2007b2ba7c28491e897124d43900a",
+    "citrus30_botao_presenca.png": "5d68ec98ccb7764c864018a752335dd2deb2381064d57f940edd2a2496f315e3",
+    "citrus30_botao_volume.png": "6f3f44503d3f10f5281e1474aac713ae15131b00531a4c38e6f095829c41d6e0",
+    "citrus30_frente.jpg": "77267371eddf9c62afd5a503b2fd0c7d13c279d37021035a5df92e2d8379b26c",
+    "citrus30_frente_alfa.png": "52db161139bb13caa81ff9ad29536484f34253b9b970528ecc6109b9f9a4c7a9",
+    "citrus30_manifesto.json": "c404c4fbf52a27144814c206520f49431105e98e5fb6f5dcacfca1194ea88d14",
+    "citrus30_mapa.json": "5ca3157737af473c833b70a6f22f8b08139f6734c3c14ce91f1b324e5007b098"
    },
-   "tamanho": 1096155,
+   "tamanho": 1667320,
    "tipo": "cabecote",
    "inspiracao": "Orange AD30",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

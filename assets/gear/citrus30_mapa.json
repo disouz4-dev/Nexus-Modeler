@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 743,
-      "y": 860,
-      "tamanho": 105,
+      "x": 731,
+      "y": 849,
+      "tamanho": 128,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 999,
-      "y": 873,
-      "tamanho": 78,
+      "x": 975,
+      "y": 850,
+      "tamanho": 126,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1242,
-      "y": 873,
-      "tamanho": 78,
+      "x": 1218,
+      "y": 850,
+      "tamanho": 126,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1484,
-      "y": 873,
-      "tamanho": 79,
+      "x": 1460,
+      "y": 849,
+      "tamanho": 127,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1713,
-      "y": 860,
-      "tamanho": 106,
+      "x": 1701,
+      "y": 848,
+      "tamanho": 130,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1896,
-      "y": 863,
-      "tamanho": 62,
+      "x": 1861,
+      "y": 828,
+      "tamanho": 132,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -113,8 +113,8 @@
     {
       "texto": "PRESENÇA",
       "x": 1923.1,
-      "y": 857.3,
-      "altura": 15.69,
+      "y": 818.1,
+      "altura": 23.3,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
