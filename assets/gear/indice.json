@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:49:12Z",
+ "gerado": "2026-10-30T14:51:20Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2994,8 +2994,8 @@
   },
   "hi103": {
    "nome": "Hi 103",
-   "hash": "1e72aa45c3b5d9d1",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "48e354fd6f6dafa6",
+   "data": "2026-10-30T14:51:20Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hi103_botao_agudo.png",
@@ -3010,24 +3010,24 @@
     "hi103_mapa.json"
    ],
    "sha256": {
-    "hi103_botao_agudo.png": "c76cb34900ca9398e4c8565780f73a5353479d8d7c646813d6210c8cba32add3",
-    "hi103_botao_ganho.png": "503bf8f885574e23ea4898266cd5c472376beabcbfd72289ebb6ecb94c5bcb83",
-    "hi103_botao_grave.png": "a869814d7dba8755414077909cde48c7288b228867fab4377139867d550f8a91",
-    "hi103_botao_medio.png": "1765032ca37d69e90587ecf30b65425a77b6578d9bc1c43db958dfd7eb355865",
-    "hi103_botao_presenca.png": "8157bc4bde7153d43cd8ecd22860916b606cd54a503c8f4c9de8dba75a94d0b5",
-    "hi103_botao_volume.png": "0fc6ed709b51e9bef97cbc922af379bf2504145578d999c5ac39a481f778300c",
-    "hi103_frente.jpg": "fe007bab8ac67387595c1458e5ff90d86133e6759d2422723271291b15c4e1d6",
-    "hi103_frente_alfa.png": "8acd595a7955f9e62e2be33e1c49eb742f1f3fd76f512e118142ca6dc37196d9",
-    "hi103_manifesto.json": "ee3aad88d0781b7086488c961ca61b6202eb5d303ce5c0cb0910ccbc3de2a715",
-    "hi103_mapa.json": "51cce0cb530c3af22170eefaf34e39e254880672b8b909872ef12c411ded272f"
+    "hi103_botao_agudo.png": "57137102c2542bb7c6dedf9f09d00334fc994fa0632cce0ede89e94fb59c118c",
+    "hi103_botao_ganho.png": "7764ab86d20dae704c575e659da128a3b5ced9f0825c038c46e97e73fb9380b7",
+    "hi103_botao_grave.png": "9637acc37ddefeea6783bfca985e9ad086a67379059cf0b25a085ec865d1a3a4",
+    "hi103_botao_medio.png": "696bf5c9c98a63b2a9c34c1b1842031723f5cd321ea679935d724a8d9560a049",
+    "hi103_botao_presenca.png": "2049e580abd8cdbd598898ffd97fcb60b02302a5aeb65c1b02fe5604d4b7ccbb",
+    "hi103_botao_volume.png": "9c9db9527cd0b48d28d54a0733415ad844d439045b8ccdf2ceeeca6d22861e88",
+    "hi103_frente.jpg": "ce904abc3ebb343f69da064b960f91c2a40a4d0f2c6e78b65dcfad12838b145e",
+    "hi103_frente_alfa.png": "fa263d47ce4afd71a83eedaf515440397e9da0e47ec14d9eefd97da3df3894b6",
+    "hi103_manifesto.json": "b7e7e9fe4c1bf602433ee5eb496d5f2945556afb88773591407dc11482469c82",
+    "hi103_mapa.json": "4430238c970ed40087b0a96bd296c5830ea12fff3f2cce186c132daaea930daf"
    },
-   "tamanho": 771648,
+   "tamanho": 1068786,
    "tipo": "cabecote",
    "inspiracao": "Hiwatt DR103",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
