@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T01:58:47Z",
+ "gerado": "2026-10-30T01:58:51Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3579,8 +3579,8 @@
   },
   "lonestar100": {
    "nome": "Lone Star 100",
-   "hash": "26d4c6781a0e3302",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "be639bea1764690f",
+   "data": "2026-10-30T01:58:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lonestar100_botao_agudo.png",
@@ -3595,24 +3595,24 @@
     "lonestar100_mapa.json"
    ],
    "sha256": {
-    "lonestar100_botao_agudo.png": "7aa77fa8061b8ccf08a26e7c481ba117e2383c779130716af6beef1d5d2c35e3",
-    "lonestar100_botao_ganho.png": "f32187d4f02755f62724fd5b9418ceaeaf7d9c26ff6a36d4033bdb427c6f960b",
-    "lonestar100_botao_grave.png": "688aeeb4741a14026695f8c1f2577e8fe6f78c277e447a3667f9a6b022d1465f",
-    "lonestar100_botao_medio.png": "ffb63235d8c5650c4f89c15b81959ab4eec64adfffbbfe66ccfeaf900fae53de",
-    "lonestar100_botao_presenca.png": "a3b649c6dfb9a7195e8137b1608b38805092fe081a2f74129e1b85c21aa0a7eb",
-    "lonestar100_botao_volume.png": "005030d932bd9377e7e66024d4810780c091680cbdb89afc2ec872a88c502d74",
-    "lonestar100_frente.jpg": "7984d5bfe549e3e5cd329ed9276c1d435b55aca82b5df8df8ad3b93febb318dd",
-    "lonestar100_frente_alfa.png": "2b7a5af18e6fb8d5251e1d8b45e27f02183c63f5f82c19ad0e5bf1d69a32782a",
-    "lonestar100_manifesto.json": "5187789cdcdbdead5412611baedb02fd6deee971f6f971ed613e1a099ff3739f",
+    "lonestar100_botao_agudo.png": "e19c76af6c75caba9363d898664ab33f568f938c0b8946589d6f996a06f51a7d",
+    "lonestar100_botao_ganho.png": "ad3e8bba4fae9849b64b8d249b379aaec8b2729ed82e3995be1990ff7deb9425",
+    "lonestar100_botao_grave.png": "10ad7d5adeebab204e7e4af3ea4ee9a2fcf695a088ed9c459f3354146e6a4c9c",
+    "lonestar100_botao_medio.png": "2901659b3c2a40676971b6cf5e3d04bf9e0cfd3705a8c86598d0eed3a7e0c27a",
+    "lonestar100_botao_presenca.png": "79e7c7ca0a3480f21b932b2d53f30385cabaccd00bcfa85b9296bc7a3f85604b",
+    "lonestar100_botao_volume.png": "1ece29e76e7ab57f84dafa9d80f415aa48887e1e725decb8c6d937384f87b26d",
+    "lonestar100_frente.jpg": "7f04d2257cca8f9dac3dcbe3b655d5907b06ce68a6468bdb57cf0baeb6877d59",
+    "lonestar100_frente_alfa.png": "923352f59341fa56ddbfc7cac2082910cf472d797d3e8f1c9829dcd55f7c287d",
+    "lonestar100_manifesto.json": "45584f631650d61cd4bc032ee0212e20b7bc2854d91bba057e5a5cf0c34df57c",
     "lonestar100_mapa.json": "2ac5a21e39100bf31c31da720e81d4a7bdbba6237912ac90292e5d35ae95740d"
    },
-   "tamanho": 789791,
+   "tamanho": 790758,
    "tipo": "cabecote",
    "inspiracao": "Mesa Boogie Lonestar",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
