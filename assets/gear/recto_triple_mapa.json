@@ -155,60 +155,6 @@
       "espaco": 1.0
     },
     {
-      "texto": "MASTER",
-      "x": 1063.7,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 1224.4,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 1385.2,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MID",
-      "x": 1545.9,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1706.6,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "GAIN",
-      "x": 1867.4,
-      "y": 958.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
       "texto": "FT. SW.",
       "x": 2026.1,
       "y": 880.5,
