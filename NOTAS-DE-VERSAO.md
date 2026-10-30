@@ -1,5 +1,39 @@
 # Notas de versão
 
+## 0.2.0-beta.4
+
+### Caixas
+- As 29 caixas voltam para dentro do programa, cada uma com o IR da
+  TONE3000.
+- Ao escolher um cabeçote, a caixa original dele entra junto, venha a troca
+  da lista, do MIDI ou do programa de gravação. Uma caixa escolhida à mão
+  vale até a próxima troca de cabeçote.
+- A caixa da Mesa Rectifier passa a se chamar Recto 4x12.
+
+### Cabeçotes
+- Os canais do original: Recto Dual (Limpo e Moderno), Recto Triple
+  (Limpo, Vintage e Moderno), BE 100 (Limpo e BE), Rocker 50 (Limpo e Sujo),
+  Power 100 (Limpo, Crunch e Lead), Sonic 60 (Vintage e Burn) e Uber 100
+  (Limpo e Lead). A troca é pelas abas de canal acima do cabeçote.
+- Os nomes dos botões ficam legíveis: a letra não encolhe abaixo de 12 px e
+  quebra em duas linhas quando não cabe.
+
+### Pedais
+- O link para trocar o pacote do pedal abre em todos os pedais, com ou sem
+  o pedal ampliado.
+- Ao trocar um pedal por outro, o som do antigo para na hora.
+- A captura escolhida no painel carrega e fica no pedal.
+
+### Primeira abertura
+- O programa abre na lista de pedais e avisa onde ficaram os dados das
+  versões anteriores.
+- No Linux, as preferências e a conta antigas também vão para a reserva; num
+  Mac que nunca teve o Nexus, a pasta de reserva não aparece.
+
+### Equipamentos novos
+- O botão de equipamentos vê na hora o que acabou de ser publicado, sem
+  esperar alguns minutos.
+
 ## 0.2.0-beta.3
 
 ### Instalação nova
