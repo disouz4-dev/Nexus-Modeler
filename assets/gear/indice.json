@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T02:07:11Z",
+ "gerado": "2026-10-30T02:09:18Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -870,8 +870,8 @@
   },
   "block_412": {
    "nome": "Block 4x12",
-   "hash": "8c40126df5e33366",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "6c62e23b55c4a38e",
+   "data": "2026-10-30T02:09:18Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block_412_frente.jpg",
@@ -880,18 +880,18 @@
     "block_412_mapa.json"
    ],
    "sha256": {
-    "block_412_frente.jpg": "0b08bf817c5a6c26e169b6ed52a63d5909f7e2328771bfa4264b62a04a093010",
-    "block_412_frente_alfa.png": "88df55698ce2db73d2dd3eeb9c7571013702903aba54c548d08f6e3aee6f3cb8",
-    "block_412_manifesto.json": "64e169aecf6467232ebef5ccf923672165e3d73e80eb95ceea684dec2fb3ca05",
+    "block_412_frente.jpg": "fe2871c23a9c1b95443c70af2ff20824034d7551835b0cd3634204c5d0ae3b80",
+    "block_412_frente_alfa.png": "6a2c0fb407f5641d61646ca2b3feb47445bfc141130dfad7a3e4c73ac3afa490",
+    "block_412_manifesto.json": "bc9f1940aab141ef1d99d7155d7efd2d47e9e55afa6ca6579f2e2428977d8b16",
     "block_412_mapa.json": "a3ab010c1f7e6396f4025e36522e45feb425cb04efdb1f7ed3818eced1af9afb"
    },
-   "tamanho": 1173338,
+   "tamanho": 1093390,
    "tipo": "caixa",
    "inspiracao": "5150 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
