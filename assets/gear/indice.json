@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:46:19Z",
+ "gerado": "2026-10-30T13:46:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3402,8 +3402,8 @@
   },
   "jupiter_octave": {
    "nome": "Jupiter Octave",
-   "hash": "4c0730223b845c42",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "8cb3e32a3ab56c37",
+   "data": "2026-10-30T13:46:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jupiter_octave_botao_a.png",
@@ -3415,21 +3415,21 @@
     "jupiter_octave_mapa.json"
    ],
    "sha256": {
-    "jupiter_octave_botao_a.png": "977c1c04f8ff6fcaa08b090b71b5c747f71e16ab606a5b5692cd2c74e64a7e00",
-    "jupiter_octave_botao_b.png": "be1af0eb045f29ac5840ff791cbf068dce1ffa41cd7ed64038f231abc8d58f4a",
-    "jupiter_octave_botao_c.png": "b0fd88cf9d0603614ca92a8326bb46bd489e1a63cba0d21a6956327665be5d5f",
-    "jupiter_octave_frente.jpg": "3031b6e19729a4511af3b307f4491e14f2b4de106e4b79604cfe5ce8ed937080",
-    "jupiter_octave_frente_alfa.png": "d33c1663f56bd992b082637477465ed6dbe003df08179c791ee469a566a1e6e6",
-    "jupiter_octave_manifesto.json": "e48fff0c45bd18a6f2a357abf6e07ccf49278f52d1906394c970bfab0a34ed75",
-    "jupiter_octave_mapa.json": "4064080d539470c1b075f328f0b5e7b038399c6d19666a25d74d11f095ca90c0"
+    "jupiter_octave_botao_a.png": "0d9418f36684c2aa8e637059864cd55cc6186acaa9c3e1c661c28b10cb2175e9",
+    "jupiter_octave_botao_b.png": "73a7f8811a312e5220f81e74e84a34bae656a8348636406b4cf2226adc051395",
+    "jupiter_octave_botao_c.png": "b256469f6940cbbd4c3e14b30370c1aba654f180d9ff4d55345cb6a9f47c76f0",
+    "jupiter_octave_frente.jpg": "0e8745d82295bbdc1863511369b22aa530c404c4d6722fe4bf262bf19ffdcd2f",
+    "jupiter_octave_frente_alfa.png": "ff4b5a5fb9a0ebb9b820f3e2048b4301e33de3d95731a8a949b6edb75a17c9c6",
+    "jupiter_octave_manifesto.json": "d9c753d8ebac24c240dfabf3ff712e658a01b5bf4871c8ea6e85133be66db0a5",
+    "jupiter_octave_mapa.json": "76d1e03c1c7963f6e115a78fe16031bc486ffbfc55593afc08bec714a7541cef"
    },
-   "tamanho": 479722,
+   "tamanho": 477361,
    "tipo": "pedal",
    "inspiracao": "Boss OC-2",
    "categoria": "Afinação",
    "fonte": "Efeito do Nexus",
    "motor": "oitava",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
