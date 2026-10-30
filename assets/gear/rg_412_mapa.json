@@ -1,0 +1,19 @@
+{
+  "nome": "RG 4x12",
+  "familia": "rg_412",
+  "largura": 2400,
+  "altura": 2774,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    686,
+    696
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

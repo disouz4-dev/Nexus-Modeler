@@ -1,0 +1,19 @@
+{
+  "nome": "Power 4x12",
+  "familia": "power_412",
+  "largura": 2400,
+  "altura": 2772,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    740,
+    750
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

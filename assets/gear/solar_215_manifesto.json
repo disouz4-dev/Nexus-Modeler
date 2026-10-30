@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "solar_215",
+  "versao": "1.0.1",
+  "tipo": "caixa",
+  "nome": "Solar 2x15",
+  "inspiracao": "Sunn 2x15",
+  "categoria": "2x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 27,
+  "signature": null
+}
