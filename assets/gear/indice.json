@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:53:05Z",
+ "gerado": "2026-10-30T07:53:10Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -603,8 +603,8 @@
   },
   "bebop15": {
    "nome": "Bebop 15",
-   "hash": "707432ddf3dda205",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "9d26a95b32037e5d",
+   "data": "2026-10-30T07:53:10Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bebop15_botao_agudo.png",
@@ -619,24 +619,24 @@
     "bebop15_mapa.json"
    ],
    "sha256": {
-    "bebop15_botao_agudo.png": "3d9a86fe9b22d39b15e7ef6f5a820dbfa849e4931e6220dc4aa044404ab9aaf6",
-    "bebop15_botao_ganho.png": "c2138e5aa3721c4cc4610edc2aa2d338fb2e306eb07ae3c2eab5f219be0109c3",
-    "bebop15_botao_grave.png": "b358f3756f577af65f9cdd2892930118d28212558f548a174e3bf4f78135fd09",
-    "bebop15_botao_medio.png": "f1538813c3d2237b1a1a2d633b8c93167a86d4c3f705a5888e30406a24176690",
-    "bebop15_botao_presenca.png": "d9fe73feb41d31d869112d271fd4269839f8ca5b3797f4f291596c2e3136d7ee",
-    "bebop15_botao_volume.png": "399b059f0692d44d063d183bda8b06d5bddcb8021df725586ca1f02754864865",
-    "bebop15_frente.jpg": "d777c75f2ca3a6f52adf015552eb81e19dab6cd51008d6f067839738efd43913",
-    "bebop15_frente_alfa.png": "5ad57a9a4c7d01804d62ef6964ce10549b15048f445b6e67b79de60bf5969e98",
-    "bebop15_manifesto.json": "aca8f4837a9e32261c0c216ba986fa589d3e7fe69f83bb9dddef151ed230ddf9",
-    "bebop15_mapa.json": "2c8b96b78868bf676bd7b52431bad74fcc562aacebeb166d976309600da51bdf"
+    "bebop15_botao_agudo.png": "cbc5f516c00e4e5dcec2c28df0b342bda150706de2ed9ee130af7e310c973f47",
+    "bebop15_botao_ganho.png": "b122e7f057dcd212f6c247ba2401c8b35c38aebfc15dd26f7df6a66a5af68286",
+    "bebop15_botao_grave.png": "940e1c4d5b29369837cef599597d532ed0d5bdf045594f645557631cea24cc00",
+    "bebop15_botao_medio.png": "2c1168b52eaa6e848973c53bd338fab5e7735f97a4cc6a530e1fb8092f68d235",
+    "bebop15_botao_presenca.png": "21f427bd5da10fb9c403a29d83b68614cc2efa686a758b791672e1f738cf9254",
+    "bebop15_botao_volume.png": "7ceae089795a1973e840c50763ff08daf7b32b98edf77bb9614431b3e71127e4",
+    "bebop15_frente.jpg": "bcfa880410b213a81db3a1a0d76805d4b10097e477d0cacffd56db2b3f1bbd2b",
+    "bebop15_frente_alfa.png": "0e666ab49d6189a4962632ada4a7a4780f07b744f361769fc440886970652509",
+    "bebop15_manifesto.json": "5dc90e11a43b452785e9663b55a45831db7fbe8ac6ad750ef13728d209e097d5",
+    "bebop15_mapa.json": "c727cc652abb40ceda59836d5077427f1c2c2d49a9eaea32e65e57174c7e7047"
    },
-   "tamanho": 1463942,
+   "tamanho": 1710799,
    "tipo": "cabecote",
    "inspiracao": "Polytone Mini Brute",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
