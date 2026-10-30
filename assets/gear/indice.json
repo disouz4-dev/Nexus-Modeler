@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T18:26:03Z",
+ "gerado": "2026-10-30T18:36:18Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -681,8 +681,8 @@
   },
   "blackcountry100": {
    "nome": "Black Country 100",
-   "hash": "df964ea0b57050bd",
-   "data": "2026-10-30T07:59:19Z",
+   "hash": "be29522fe353900d",
+   "data": "2026-10-30T18:36:18Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcountry100_botao_agudo.png",
@@ -697,24 +697,24 @@
     "blackcountry100_mapa.json"
    ],
    "sha256": {
-    "blackcountry100_botao_agudo.png": "9ce55fd85ff782afc47acca8d7f54ff142f2d20838fc468d0c67ecbc344ebfdd",
-    "blackcountry100_botao_ganho.png": "f0466ca8c160cfa75dd2837f2ef98cad25f5c4955fe093356b95223dc99e2d49",
-    "blackcountry100_botao_grave.png": "9dff851e2fb86007ac7c6fe2288c2c16689ce54a8443a08f0fbe62c64162d234",
-    "blackcountry100_botao_medio.png": "c679d4340ba2b9373f61ead679680d06f4dde741bc3536abf1f9356a564ec0f9",
-    "blackcountry100_botao_presenca.png": "506525e1b334e99709936a40bbf3bb1144f24f3d94ca742ec8d0ad56a44790b3",
-    "blackcountry100_botao_volume.png": "183002700aa9d2eba8ca2735c84045b3dcd26c35dc5124e421cdfe45f0d8b55c",
-    "blackcountry100_frente.jpg": "e905274fc579dfca0e27e0ed1c5f22d68a08378a5eee8d92eb8fa006e2ebf0c2",
-    "blackcountry100_frente_alfa.png": "dd072b225eee4dd4bb9478f1104ea22fe4feef66512b7d8c5a31c5a2ff6a6764",
-    "blackcountry100_manifesto.json": "305855eb08f0ac41e04325477fd45bb00c2b1a48406947742edf159ba595cb47",
-    "blackcountry100_mapa.json": "bb5af15a663fcaca55cf37253a30d9f602162531975b5f45dfb321e59aa1a1d4"
+    "blackcountry100_botao_agudo.png": "f49f623dada0fe5fd183c1312b3e5561c8adf3ca4a88de9ac0b97ca845fa72d4",
+    "blackcountry100_botao_ganho.png": "8f71aaec323e338a89a2f789002aa12982842e9a7b882b133b5527a1579f4521",
+    "blackcountry100_botao_grave.png": "e5d1f7f38efd9d277b87b12d2da6f879d61a6c01c0afd9e579c6578d6dcc18ed",
+    "blackcountry100_botao_medio.png": "c89de9d6c32d3ec37e48e0b182d89beaf0dbe5f1be2345f257f3f518658fd1e4",
+    "blackcountry100_botao_presenca.png": "520ad08daff05ac61321b9e131d31c69678a8ed0e6df750f5cbe20cef7af47b1",
+    "blackcountry100_botao_volume.png": "f88a2d3c0310436bd5eb0927a3f2f6aa154a850e1cd5f7a9eb7020528fc932db",
+    "blackcountry100_frente.jpg": "fb801b1b9e6aca50186698a0df9314fc6726a77235770f43f59428050cf39773",
+    "blackcountry100_frente_alfa.png": "b9639d9b97b12769647a0ea059dbd931cd5161b23897d423cd4198119d3e6b47",
+    "blackcountry100_manifesto.json": "1e3c08e950d8d8412380221dab0d5029dbe9cd1ae36c467000e1c454d1fa79c3",
+    "blackcountry100_mapa.json": "191b8b6dfad7ddb6a9ebfecbea6cf2bae331199020e9a60435ca0fdc1c34a3ad"
    },
-   "tamanho": 1036381,
+   "tamanho": 1335996,
    "tipo": "cabecote",
    "inspiracao": "Laney Supergroup",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
