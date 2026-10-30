@@ -1,11 +1,11 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T06:30:50Z",
+ "gerado": "2026-10-30T14:44:45Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
-   "hash": "a373dfbe2be35e93",
-   "data": "2026-10-29T19:14:18Z",
+   "hash": "5608076cad2ba81f",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "acai_rat_botao_ganho.png",
@@ -17,21 +17,21 @@
     "acai_rat_mapa.json"
    ],
    "sha256": {
-    "acai_rat_botao_ganho.png": "6dfb5a5a0c21278ff49872f0fc3bb13faad824f1094d72fd59b4140e05201671",
-    "acai_rat_botao_nivel.png": "5e105d7a123fce91daa33831260e058d317c8e38f15d97e34a2a138551ee4962",
-    "acai_rat_botao_tom.png": "c7ace0782e7e7db5b8c5efd7d1adf0da672c2f45740f702a7a8674dafcbcff51",
-    "acai_rat_frente.jpg": "3b321f5bb3bf4fb6974537bae0a28f45255659f2a67950e76a74d98683ca4b8f",
-    "acai_rat_frente_alfa.png": "7f51600190b7ba5c8a486b3923d3b61434e81e0d21aa09f0de88945706eb1cd2",
-    "acai_rat_manifesto.json": "60464830006b36ba7b30b3d144523f690cb1a74613c71492c21c48f6f66c3066",
-    "acai_rat_mapa.json": "48146e76f3f508b2a55a2011dd753f28322b2a18c8a12375b1d0240cf2224633"
+    "acai_rat_botao_ganho.png": "0a03e2369b97770190ac64ac42becce9f9494dd8f8d6142c3fb3d2f6e43eb03b",
+    "acai_rat_botao_nivel.png": "63123131fc8515c27a80c111896f462fe9c71c4daf08d59ebdedf9e9e6830979",
+    "acai_rat_botao_tom.png": "3964bf657b41dc8c7be0d5179d34eea2e354c34378d23cfb5ffbd99091119cc1",
+    "acai_rat_frente.jpg": "d210b1c209454c23f826dd515fadfe0f29743471c1f6777d631f4b85a740baf3",
+    "acai_rat_frente_alfa.png": "641fea85b3880f6b4759ab1f3f8cbfef27a76176e778397bcf1c96d46ab4c7c5",
+    "acai_rat_manifesto.json": "b08b1a9d44628a48006a302f0f243248303ffe3cc383e98c3ae592f98ae1baa6",
+    "acai_rat_mapa.json": "f1dd1e11c03772764478d0d1040534c6db8026f7ba24f68433bb0f1d5353d7ce"
    },
-   "tamanho": 357834,
+   "tamanho": 166001,
    "tipo": "pedal",
    "inspiracao": "ProCo RAT",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -76,8 +76,8 @@
   },
   "agate_wylde": {
    "nome": "Agate Wylde",
-   "hash": "dd204822e6633a0f",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "9bbc3ea7e175c486",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "agate_wylde_botao_ganho.png",
@@ -89,28 +89,28 @@
     "agate_wylde_mapa.json"
    ],
    "sha256": {
-    "agate_wylde_botao_ganho.png": "348235ed53b085fccaad2c722e6115da089891d100c97d2e40c04a5ffa7beef3",
-    "agate_wylde_botao_nivel.png": "3e67ea08aa6cedaecb590469728af4c1f929c3d4e66c3b5be3edbe5452faaaaf",
-    "agate_wylde_botao_tom.png": "e014c5b6b544e32ba37e48d3ffcb699f5caed07b7b3b6ab0e2cd36a8ee5a2794",
-    "agate_wylde_frente.jpg": "f16c9c5b073f88d1459483de9f386c8e872e884efd0f909f173b75080b512136",
-    "agate_wylde_frente_alfa.png": "818dad757dd07c9e25b092b02af0b5af5fca35c24aa3f408ee3583d62742c3b4",
-    "agate_wylde_manifesto.json": "d580ac0137dffb4e2b10e957f538be6a0f14b9420ada84613eb7810a896b24c0",
-    "agate_wylde_mapa.json": "419512faef002fc965c06b76734d997744b6b1174cdc5919178322629bbf751b"
+    "agate_wylde_botao_ganho.png": "25afc638336760cec14a54c94e838f1befaf3a5b2d09668c6a7cb67521563780",
+    "agate_wylde_botao_nivel.png": "9ea3a85958161f73fe5e460a44150e76ab25209f0cd60e4a49b2ac4bed5b584b",
+    "agate_wylde_botao_tom.png": "de090b834a80d04fc0cf625968ac207263d27ee5aff9109d4a432f976c665021",
+    "agate_wylde_frente.jpg": "e59883b97ba23873bc423601883fe47ac9b8285cdaf154cbdd65ac22fcd936b5",
+    "agate_wylde_frente_alfa.png": "c6550bbde2a7a1fbb64e3770e4eede8a80ff073593e89ff289ea40c86e969a29",
+    "agate_wylde_manifesto.json": "945cdd6da3a4e50994ff581388c4a770c8395458b275bdf2620b714ae7c3a4a7",
+    "agate_wylde_mapa.json": "bde6996ba87c38e8ebed8819840f241ddfd86c7a91559ed8b76dd67c999d6b64"
    },
-   "tamanho": 487813,
+   "tamanho": 432082,
    "tipo": "pedal",
    "inspiracao": "MXR Wylde Overdrive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "amber_glory": {
    "nome": "Amber Glory",
-   "hash": "7a910990a6bf76e5",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "67e1933ac7627b38",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amber_glory_botao_ganho.png",
@@ -122,28 +122,28 @@
     "amber_glory_mapa.json"
    ],
    "sha256": {
-    "amber_glory_botao_ganho.png": "11e8c186bb5b9dc4c21720f38a535a0db10dd88fe05e5bd1c0cb3c36ee3e59ec",
-    "amber_glory_botao_nivel.png": "7a137c2496d6be81456a89a8b98320589f400785ab64142140c2db42236ac57d",
-    "amber_glory_botao_tom.png": "ca7e02934900da477a04ae79dcd7f0f062ca905df6c922a9870cc45b90704590",
-    "amber_glory_frente.jpg": "71afc189293883b0e5717fbb46a1da1128d4d7fe856f9c9adf760b16c49abddc",
-    "amber_glory_frente_alfa.png": "0e0f35a2b6b511d9f934a33a076154a28a0573b55de11aa8a45a1b4f6bd71eaa",
-    "amber_glory_manifesto.json": "945d1bbb9a47f1173aabbc7cf28f0ed3e35936224d2d32f76163ac5d6f0e5df5",
-    "amber_glory_mapa.json": "78ce701923d8b721f05bb98b2c92aa9fd3193c6778aeb5c936db4df59ac8c9bf"
+    "amber_glory_botao_ganho.png": "5f685b532a98f70d4ffe3cbc38116314c36467392b186b361c9ead99183eda68",
+    "amber_glory_botao_nivel.png": "fc9571dd2d1aaa0053ef770ca39b41ae8b923f6683baf0e1995652ebc27137c3",
+    "amber_glory_botao_tom.png": "bc19f5b8c0208e71df05d0b25dce26f702ae1e7b698049ee20bb92828bd1dcb0",
+    "amber_glory_frente.jpg": "fc9a61da18c18e2bb13aa1d9c58d5a994833f61a884a6ed81b1b9e4140f4e9ca",
+    "amber_glory_frente_alfa.png": "5076b889d0988e5b3879d3684c2ffd4bda241573bcbb9241ec95f70cc9467692",
+    "amber_glory_manifesto.json": "f3dbf23975a1dd4ea0acd10f2a8a213bb0be0ae731dec780701faf42d5cf9d9a",
+    "amber_glory_mapa.json": "a2feb1f055478cc204dfc0e4f951004b2f42796cac80e95e3e78abcf1ce98d6a"
    },
-   "tamanho": 372459,
+   "tamanho": 397137,
    "tipo": "pedal",
    "inspiracao": "JHS Morning Glory",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "amethyst_king": {
    "nome": "Amethyst King",
-   "hash": "236161eb147f2f3a",
-   "data": "2026-10-29T21:17:01Z",
+   "hash": "dc33d58d8ec357da",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "amethyst_king_botao_ganho.png",
@@ -155,28 +155,28 @@
     "amethyst_king_mapa.json"
    ],
    "sha256": {
-    "amethyst_king_botao_ganho.png": "4c9da336c52d35294f41741206e1389e945389445bb7244f2e6ad33f84a3fae3",
-    "amethyst_king_botao_nivel.png": "84c9b7a52974393a61a04c66b02f754a0ec08ba40bd3bd7a0b7b651068abea28",
-    "amethyst_king_botao_tom.png": "d7be98a5ae3fc768a1c4548ad501b5c830a42a9648cfa3fd29d76e516d819a49",
-    "amethyst_king_frente.jpg": "425efe7bd521697476863115f81430ac7bd0500f5d6d93d2cac12af6378c65f3",
-    "amethyst_king_frente_alfa.png": "a56b588c7f250f44095e36da93fcdf9a6dfae0c801ae2ce2e49ce0e671cb5219",
-    "amethyst_king_manifesto.json": "c320c7e20c41e9c71fcf8dea5ca86c022034771483916f63b96490c29f2f1547",
-    "amethyst_king_mapa.json": "942c472b6fc548fe2f08e76cfc2a8c1367e5d2f3715bb5d70a4d5f4cc464e7a0"
+    "amethyst_king_botao_ganho.png": "c92783d832025215e08fbb7ad3f7f2f247d6edf37d686e364bb0cebef080f26f",
+    "amethyst_king_botao_nivel.png": "590dbba97d21e66858e6ac3b6c3aed865f74ce3a6b3bf64c667eefb473797c4a",
+    "amethyst_king_botao_tom.png": "cafe38c827458e53769c061fae1b63cb389e357ef665a9c1b8e8d9f276dcb68f",
+    "amethyst_king_frente.jpg": "7046329eddcf264ee1d4c39e448977408bf84563f57049f84f12c07cbda65b93",
+    "amethyst_king_frente_alfa.png": "62a311f550d7bb75326df45a9e55f6c58fc3989bd07ebe459047dac036d74785",
+    "amethyst_king_manifesto.json": "569c89795ed222488150c5ff40d16091f1a5b9cf94fc8d3772205122ba7f9a1a",
+    "amethyst_king_mapa.json": "8e95a1c3ca7752a4973ce1e3f047f0436041c680c0ba4e2161841421f756990d"
    },
-   "tamanho": 243394,
+   "tamanho": 346888,
    "tipo": "pedal",
    "inspiracao": "Analogman King of Tone",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "apple_comp": {
    "nome": "Apple Comp",
-   "hash": "e6f8116d4b8dddcc",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "876852e463489459",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "apple_comp_botao_a.png",
@@ -188,21 +188,21 @@
     "apple_comp_mapa.json"
    ],
    "sha256": {
-    "apple_comp_botao_a.png": "8958d1d4c3b6c35b9af77f46a1ef64189b84579a32be1d0fc06d56e5dba1cb22",
-    "apple_comp_botao_b.png": "953f3df25ea19deb2794fd37bf1c7b85c452124e403bbd7fd8181eec70c6a1e0",
-    "apple_comp_botao_c.png": "2dedf389491d19494329daefb58784a670e6bb12958116ca44b38ee19ea2e127",
-    "apple_comp_frente.jpg": "0e269527ba79abc2a1cd654099a7e50638965c40396a6eebd105c99e3e426b1c",
-    "apple_comp_frente_alfa.png": "8c5fdad269a35f7a3fd9086b14ceac005193c3eaf36068d55f38237a76309262",
-    "apple_comp_manifesto.json": "8622d40009f7d39943837ab22e866eeaeef2b02955d60c3c12c68bbb44573da5",
-    "apple_comp_mapa.json": "5305dd9eddab6e71952a821064b23f70cca44e11ecfaa6d9d71e71978f9303c5"
+    "apple_comp_botao_a.png": "c47030fe046d05d95d2eb2745abaf2c3508c58c2ba941c921201e19c37c1c8e7",
+    "apple_comp_botao_b.png": "ca59e2526a5a9fbaf4b752be4f1b37d7de96ca1f12982becfeb52dcc0f2df72c",
+    "apple_comp_botao_c.png": "0c135dc5454f24933cf90c0416ab6435a233d1b08d3665c5fcda52dd7a4a5911",
+    "apple_comp_frente.jpg": "850a34674f07913a7a8507dc64551bf14ebd5193238c83e1ba92963ef2112aa4",
+    "apple_comp_frente_alfa.png": "d198ed319c031ff371fb03f65a202231c1ef142e9b37172e042a874852ae317e",
+    "apple_comp_manifesto.json": "2ee36ae99e176884760246e4ef088ccd9bf2736b55646d2701617d245c485b86",
+    "apple_comp_mapa.json": "5b582321d7f33d338b6ce9e4def27e63620f1351777575a9b3f79aaf61bc1f47"
    },
-   "tamanho": 518341,
+   "tamanho": 652084,
    "tipo": "pedal",
    "inspiracao": "MXR Dyna Comp",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "compressor",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -399,8 +399,8 @@
   },
   "basalt_amp": {
    "nome": "Basalt Amp",
-   "hash": "de3716037594a4df",
-   "data": "2026-10-29T19:39:40Z",
+   "hash": "13e56841bbb3db52",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "basalt_amp_botao_ganho.png",
@@ -412,21 +412,21 @@
     "basalt_amp_mapa.json"
    ],
    "sha256": {
-    "basalt_amp_botao_ganho.png": "bfc49d10b42cd2d5456311ce0980a1bf3340d8e05a940eba6e18511152ad7b6b",
-    "basalt_amp_botao_nivel.png": "7b472aa3a7dc663f2e4dcf79babe1fe7c40dcf47046c8db4365057980d5c9d71",
-    "basalt_amp_botao_tom.png": "f83fc34ef311196f5c4660e1bf3bbe5dbbe79fc1a7dd0a653532db504d50f6c4",
-    "basalt_amp_frente.jpg": "9cfbb6dd0b61c0921b59cde981c8a525720efc079665e74b3075d0e1249b1558",
-    "basalt_amp_frente_alfa.png": "cb338c5162fa1fffbc354355939f6c8a48446b58f4ddfb8c13829cb211ae0df4",
-    "basalt_amp_manifesto.json": "7713032355aef7462de839a6606fdc915ed335c6254a32e2f5a12cbc16c7c4f6",
-    "basalt_amp_mapa.json": "b0d627f65ed7ead80b1a80fe8b34bb1077fb5562f6ab411628c5b9d1f62056c1"
+    "basalt_amp_botao_ganho.png": "ed8a5008c55da7d88eedc2c35291fe7d48668c8b3e856dfc7b83f48947570c69",
+    "basalt_amp_botao_nivel.png": "501996bd47611ff8d884d5bb3bbc3e78f6f5c6566f25a041a2c6092f55302313",
+    "basalt_amp_botao_tom.png": "ab0f61188378bd2bf631eb27a984d3ff11ce5974838036e25cbcf08482bc488e",
+    "basalt_amp_frente.jpg": "c48c1976e38049897df383263c9be212a99f44b10ca597526c6263c8887dc87c",
+    "basalt_amp_frente_alfa.png": "96329993b0cb43703fe629e390184f497800b00d3f37afcb4a71a71a9ae1191e",
+    "basalt_amp_manifesto.json": "1bf331ad3ecafd53c89642484221cab46165ab598ac55dda87692370e765467c",
+    "basalt_amp_mapa.json": "4ed087437e45965c6d63e8bccb06c6e314c666759824c45dabe47accc5c95f4e"
    },
-   "tamanho": 261875,
+   "tamanho": 273912,
    "tipo": "pedal",
    "inspiracao": "Tech 21 SansAmp",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -720,8 +720,8 @@
   },
   "blackcurrant_bass": {
    "nome": "Blackcurrant Bass",
-   "hash": "bd0cc36339556705",
-   "data": "2026-10-29T21:08:29Z",
+   "hash": "660adaee270e719d",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcurrant_bass_botao_ganho.png",
@@ -733,21 +733,21 @@
     "blackcurrant_bass_mapa.json"
    ],
    "sha256": {
-    "blackcurrant_bass_botao_ganho.png": "838f2ee59025cdac58bdc1fa2af9acf663d4f4d40d8ad8a49748e8d2473dd5c6",
-    "blackcurrant_bass_botao_nivel.png": "fcb8832f5bf9a71b24770e387bfc1140b1727c033705361c750d5dbc495ff266",
-    "blackcurrant_bass_botao_tom.png": "ef5bf6ba1e9c1368d823981b63e97b6f345da9e4ff93ed529133ad49b744dcd6",
-    "blackcurrant_bass_frente.jpg": "253d62f46caa4cb3a470cc28365abb6f7c4c08283ee71b017a3060ab0c180838",
-    "blackcurrant_bass_frente_alfa.png": "e1824a552f67d3b23c4546e7bbe339752d01b12984f89d7c30d81ea0ca620567",
-    "blackcurrant_bass_manifesto.json": "be44021a8731811dbe15bb4387467e138a4455dd3771a884ffb55dbd4c8a0bb4",
-    "blackcurrant_bass_mapa.json": "f73a36d99463df17d2cc529dd1827b99f3b5b741f9a685c9cb7f36c9ef9d70a3"
+    "blackcurrant_bass_botao_ganho.png": "c5b190648e95e6c519e4d9498f08ace8a897d1d505789cc6b29207406bbcb947",
+    "blackcurrant_bass_botao_nivel.png": "955bb6b2299aa9b737f15838ab26bd80e56868cb51381c8e4d6e445469670422",
+    "blackcurrant_bass_botao_tom.png": "e896efcaef44515e5419c90f66540741a11924cbdff85f7601ff992a0551f1ae",
+    "blackcurrant_bass_frente.jpg": "38b055056cce8b6c334ecfb62f9a8c057cc0686e917d4df4d8a9d144de5376c0",
+    "blackcurrant_bass_frente_alfa.png": "7a313704e4ec3e4a1dca359c291ad35c9281fb41d1d56b4e0b9f1249db9b0f7a",
+    "blackcurrant_bass_manifesto.json": "39a70609df843b7176ce222cc082fe246f42657bd3ecae0498241f4bb0085c99",
+    "blackcurrant_bass_mapa.json": "64bdfef924623d9434849f8da05637753b052d798849cfc647f7a12a6d99acfe"
    },
-   "tamanho": 219048,
+   "tamanho": 253652,
    "tipo": "pedal",
    "inspiracao": "Darkglass B7K",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -957,8 +957,8 @@
   },
   "blueberry_chain": {
    "nome": "Blueberry Chain",
-   "hash": "f3d58a6866bb19c7",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "fdf9d375e1cca793",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_chain_botao_a.png",
@@ -970,21 +970,21 @@
     "blueberry_chain_mapa.json"
    ],
    "sha256": {
-    "blueberry_chain_botao_a.png": "6f267ca08adcde2ef1d21f80d5a59e8ea04d56214efabb70714d220399526a5f",
-    "blueberry_chain_botao_b.png": "48379c8c2d413b8dbce2f6ff9ddbd99c3a3e4c119770fd74194879c691f0d7cf",
-    "blueberry_chain_botao_c.png": "34f4651b9f0ee324bc56191ca068ab5013be423f00ca8192ad55df49ac96aca2",
-    "blueberry_chain_frente.jpg": "ed73fd38d3585e419306d7fb768e4c884273aff26376b119e0d90f6b6dc94b16",
-    "blueberry_chain_frente_alfa.png": "4f782d55dd599147f6de1b8738c9bf3156bf3d31ff1cba6c477fc252bff1ec78",
-    "blueberry_chain_manifesto.json": "e33a9ae8022fb204c4f29673c1c376acb198128fe1c1850e3351f698254aec62",
-    "blueberry_chain_mapa.json": "46ffb2e94fbd0070d4315832d4acfca66415e173e08fffbdeed6642a1f570ea9"
+    "blueberry_chain_botao_a.png": "55f83a6d8db3f2d8cc989bc1f8ac19cb68fbe682b78b0113d9d3f97ec76f9c32",
+    "blueberry_chain_botao_b.png": "80c347a2b68991e46565d325407d248f57402663b66791272bf43d1aebaa1afd",
+    "blueberry_chain_botao_c.png": "ec98086e0bcfb8a1d03f304583eb240814c59ec14ac391f655ae2d7b792b7a86",
+    "blueberry_chain_frente.jpg": "1b70e61bef69e5453d2ead528d5b8d93d9a91131ce8389e1034dd10ce795d7b7",
+    "blueberry_chain_frente_alfa.png": "1eebec51477c3cf6a3f4999ce192cb1ba410bdb23e6cba085c5d76745d664e33",
+    "blueberry_chain_manifesto.json": "e1c22699e9913124436039ff6c1ccadafc060e577fa24d5ec0d30797f7c9accf",
+    "blueberry_chain_mapa.json": "6fdf33c49ba70744111c67f976608f1dc6a798860961c8ffd896b312b5f65aaf"
    },
-   "tamanho": 242089,
+   "tamanho": 469371,
    "tipo": "pedal",
    "inspiracao": "Três DD-3 em série",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_triplo",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1485,8 +1485,8 @@
   },
   "charoite_g3": {
    "nome": "Charoite G3",
-   "hash": "b3b517b9692d7d72",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "0a579312a349fdcc",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "charoite_g3_botao_ganho.png",
@@ -1498,28 +1498,28 @@
     "charoite_g3_mapa.json"
    ],
    "sha256": {
-    "charoite_g3_botao_ganho.png": "08d22eca7c88d71c26a49465c2eef533ff98e5a00a2e153b7cba6546348c3c28",
-    "charoite_g3_botao_nivel.png": "e60151bb9aaeb77ba8163c1c91a0179add4948d40472d4d38a7c263dc9ea913e",
-    "charoite_g3_botao_tom.png": "69c516ba320ed4d843fdb980afa056a9ed4d273b71f554451ee9c5f1994639c5",
-    "charoite_g3_frente.jpg": "156724f01b0ad3544eb72f9259d8ae046ea477401d7200d49f3b3ddea184bef6",
-    "charoite_g3_frente_alfa.png": "facd8cf63e04b3423933aed361bfab166c2c4da1ade6b97f585c1cb377bbb2b0",
-    "charoite_g3_manifesto.json": "849cebae549afa8d495835e8d2eec5dbf611703d14ca2344ba500d05d0c9fb08",
-    "charoite_g3_mapa.json": "8d54c671b9f1b0fd0af04048b5e9669a317e5e205c2f572f5e37440050edfde6"
+    "charoite_g3_botao_ganho.png": "e085930acf742de5687f8f9e93a970573a1edcc002490d9c703516926076f3a6",
+    "charoite_g3_botao_nivel.png": "f07170f48bb077b2589ce9e038af0df9591b46def8fd82bbcfbdc6915cd4fb48",
+    "charoite_g3_botao_tom.png": "fccd7801f9ebd05578ad36ea5a76b83eecf6838b784bddd46a2bd98130f4aee5",
+    "charoite_g3_frente.jpg": "10f56af082800e195ce5c356dc569add314acd20b5e5f2c3111b755b753ca050",
+    "charoite_g3_frente_alfa.png": "52ceb6514cb0bdf988ee76d617da86c3bb49edec181744d55918171a4437a69a",
+    "charoite_g3_manifesto.json": "bb8c6070cac6aec484523f01ced8bccdb2bac0219db556a968cc740b32da3a33",
+    "charoite_g3_mapa.json": "f79fe942aa8d6c0bbff976c27bdb9becd66228b0104a0f2f7dd02f60ed4345a6"
    },
-   "tamanho": 215248,
+   "tamanho": 406723,
    "tipo": "pedal",
    "inspiracao": "Revv G3",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "cherry_drop": {
    "nome": "Cherry Drop",
-   "hash": "18063d4a7c957db8",
-   "data": "2026-10-29T19:14:07Z",
+   "hash": "3c49202210bf5c9e",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "cherry_drop_botao_a.png",
@@ -1530,27 +1530,27 @@
     "cherry_drop_mapa.json"
    ],
    "sha256": {
-    "cherry_drop_botao_a.png": "66afb00c8e87fb2114eb491657e31bb6c29d99f4a4d457b9908fd84c60bbbc97",
-    "cherry_drop_botao_b.png": "3506f320b16e3c7e66d60b9303e96b63b58dbb2315163ce0be7f0ba7cf7d70c1",
-    "cherry_drop_frente.jpg": "817174cc232020d9f3f7d91828b7d2f4ca05c32b48f9f2093aa7ea7d2ed24c8f",
-    "cherry_drop_frente_alfa.png": "50d91329c4dc8dff15311a7cbb1d99815fd00fe6c940082d9aac3bdb4b3e0534",
-    "cherry_drop_manifesto.json": "67f0c9109664caa6b6e128f99539d8d2d8defd3fabad8a0be56794e5fd5d4e6c",
-    "cherry_drop_mapa.json": "aafe49def16b43c6a28c923f834c93cc77d27583d05535e19f69ce4bd5a9b7fa"
+    "cherry_drop_botao_a.png": "7df3955d94c7156cb3a675f0587efe3fb71fc3eefbad5bb99d01e1ae3f951c39",
+    "cherry_drop_botao_b.png": "4a32062bddbb4be4c20fe0c4e542bd0dd49064bfaeb379e620ffcb5aa8c65599",
+    "cherry_drop_frente.jpg": "53a309f545fe193f1167964f0323120c9b707bd589c2052cc8226d7f91bdf83b",
+    "cherry_drop_frente_alfa.png": "1cbee503aeb889862da7bd06fe5166c10fc577aa1bb10c811207dd83d82d2e57",
+    "cherry_drop_manifesto.json": "1789479d6d64f7679b7ecec1fbec5c0668ea82dcb0bb9722a2dd30b67b51a6e7",
+    "cherry_drop_mapa.json": "4469c72aa710fc3835d1efe42640e99726d2bb6387a21aade0cf0afff57a04d7"
    },
-   "tamanho": 387183,
+   "tamanho": 570143,
    "tipo": "pedal",
    "inspiracao": "DigiTech Drop",
    "categoria": "Afinação",
    "fonte": "Efeito do Nexus",
    "motor": "drop",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "cherry_fuzz": {
    "nome": "Cherry Fuzz",
-   "hash": "112a9067ff82b7e5",
-   "data": "2026-10-29T19:18:32Z",
+   "hash": "2cadbd9255c0a1c4",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "cherry_fuzz_botao_ganho.png",
@@ -1561,20 +1561,20 @@
     "cherry_fuzz_mapa.json"
    ],
    "sha256": {
-    "cherry_fuzz_botao_ganho.png": "e6779d85f4d2c69917c3f27865296af87d93a7f12693c2f489637bb814bd1f59",
-    "cherry_fuzz_botao_nivel.png": "bd166e70025418cf8241c8fc0fe1df16007089b1c2dccfd1c5e556aac47ea277",
-    "cherry_fuzz_frente.jpg": "03aa22131cfdbb806848721dbbc6d2d842e1fc7bb1a1a9f49a77b91691a0a555",
-    "cherry_fuzz_frente_alfa.png": "21eb8f9c101a62b0bddd3b12bb0c749ae9886e5227c577af8dfb937ab725e3a3",
-    "cherry_fuzz_manifesto.json": "f8c52ccf228bc849be70551586f3190f843dd7e4b7f184e3932f928eb334e797",
-    "cherry_fuzz_mapa.json": "858ae22e615d8cd515febbeea223dbb3cde008da19fafa1fd68223582694db5d"
+    "cherry_fuzz_botao_ganho.png": "89967b689487a0ee4b9a77d8b83ba51984224a19145bdd6f521c54588f35afea",
+    "cherry_fuzz_botao_nivel.png": "35e7662ee447742589802e33e2fa16f82dee954cbb1b971415d33aa640f1414e",
+    "cherry_fuzz_frente.jpg": "59a86231cc0a9a1bfa3273e133884547ecb33c564ed212477d4c26159ead6e2a",
+    "cherry_fuzz_frente_alfa.png": "48a5c790dd337d1ef8f15533e0e5f5894678166b97604d377d0d8457943272c1",
+    "cherry_fuzz_manifesto.json": "56ff55ab0743fca38b056c4dfe794e57ae42d6f52272f141443c63fefa888655",
+    "cherry_fuzz_mapa.json": "d90d6ba3601776eb06e754d501addc20045763936c005979c1b0e999f4c8c3fd"
    },
-   "tamanho": 112742,
+   "tamanho": 132517,
    "tipo": "pedal",
    "inspiracao": "Dunlop Fuzz Face",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1823,8 +1823,8 @@
   },
   "comet_wah": {
    "nome": "Comet Wah",
-   "hash": "e6983b3a2d686ad3",
-   "data": "2026-10-29T19:22:40Z",
+   "hash": "131b4764bcd44958",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "comet_wah_botao_a.png",
@@ -1839,18 +1839,18 @@
     "comet_wah_botao_a.png": "a7e1f4b68a38e0291160b0316b504a9f3e176a53fb2e2b6ac75031a571c5a5e7",
     "comet_wah_botao_b.png": "32fb6bcb127f43567cffc746ae5dee806790ba00878e098b5cff0423dd6c316d",
     "comet_wah_botao_c.png": "6342ffcb7de821ed6a1c40cd0ff46431e11d014db6d53eb6a2bebe9f48618ff6",
-    "comet_wah_frente.jpg": "5fd94cd8026e5933d3520ee3665781375399c200c97bd73661b7e83b834b901f",
-    "comet_wah_frente_alfa.png": "c9a910e4d5ead734462ac1c79938b288f965db69a7362b107578b30713ed75e8",
-    "comet_wah_manifesto.json": "94ffb5718be406e5672a03839cfad423d6b5e86e4ab909ed97d2ce1f5e025f86",
+    "comet_wah_frente.jpg": "b1f1373514eabbe6e01619e808639693120234439d53ba49dcd34cabd3080e4a",
+    "comet_wah_frente_alfa.png": "b26a06927e7f585c1dd1db9375b2efaf4819ef490c05ed157514944d702ab77c",
+    "comet_wah_manifesto.json": "12876401c9922ebe367d29b7c48e3c7f83efb536d0cd371a7c0af7f6014fa078",
     "comet_wah_mapa.json": "512acd0b9bdfda2065cb49fdec69764ab6408ba16ceafa06abe847ffad27760e"
    },
-   "tamanho": 76997,
+   "tamanho": 76995,
    "tipo": "pedal",
    "inspiracao": "Dunlop Cry Baby",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "wah",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2117,8 +2117,8 @@
   },
   "eclipse_vibe": {
    "nome": "Eclipse Vibe",
-   "hash": "29f30525716f09ff",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "4d59148fbfbc07a0",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "eclipse_vibe_botao_a.png",
@@ -2130,21 +2130,21 @@
     "eclipse_vibe_mapa.json"
    ],
    "sha256": {
-    "eclipse_vibe_botao_a.png": "ad53472668917e293e09b52fb1e84e602154cc1958d8e07132719cc15ca8ae87",
-    "eclipse_vibe_botao_b.png": "9fe3941d2da76dfdd15937c8ddf60817b7f0a35df7e414a088f126599c694bb0",
-    "eclipse_vibe_botao_c.png": "27c244f00c24e1298fc02dc486a64ee09c3b76d067b47ba861d21e5fab541f0a",
-    "eclipse_vibe_frente.jpg": "e2717d9bfb8760ff1ef4e5850ac59604c328a865961c6a91df31043175f9ea13",
-    "eclipse_vibe_frente_alfa.png": "a24eb99904cbb93307cf1796f0a6e4ec820a88089f9e59c0b3f1586af2b712ed",
-    "eclipse_vibe_manifesto.json": "a09eda223b26ef9a3524ea047d996e47cd2b4aa55daeef608ca665807c8d3512",
-    "eclipse_vibe_mapa.json": "2a6eab8e74e52836093f00432179abd5ed73d9624f89d71ab3cb6569bf951051"
+    "eclipse_vibe_botao_a.png": "d6e27cd54e52e76d27524f8ff78770a733490f86a22f41ac2f7b427845bc8b28",
+    "eclipse_vibe_botao_b.png": "ce26d930ef8626341316b91d398865014ef5f3e574a961e447aad0cdf1450d9b",
+    "eclipse_vibe_botao_c.png": "9a1dc60b093fabc159a031b41e64e14a12acc781c0b7baecbc75a38e1b1d0d1f",
+    "eclipse_vibe_frente.jpg": "debd0535bfde773988486064299b7e03b7f617fc82d24b993703fbd553839935",
+    "eclipse_vibe_frente_alfa.png": "3139b6891b41a67fc6f92ef209258470e8d106981bece5232512090ea7f008a5",
+    "eclipse_vibe_manifesto.json": "439fd80dc01ab9689fa73282fa2f60abf4dbf465282aa2a496f3a6acc3d23c1e",
+    "eclipse_vibe_mapa.json": "4b9bda87d016a7d9abb4ba07443c853373ef0856ae275623104e78d5bb3e135c"
    },
-   "tamanho": 147968,
+   "tamanho": 409761,
    "tipo": "pedal",
    "inspiracao": "Uni-Vibe",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "vibe",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2450,8 +2450,8 @@
   },
   "galena_hammer": {
    "nome": "Galena Hammer",
-   "hash": "47e86ebf4c3e7e40",
-   "data": "2026-10-29T21:23:26Z",
+   "hash": "a3a56614fda4e26e",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galena_hammer_botao_ganho.png",
@@ -2463,21 +2463,21 @@
     "galena_hammer_mapa.json"
    ],
    "sha256": {
-    "galena_hammer_botao_ganho.png": "9e8c44dcc07a307d7b3969dd29f46a9c62bcf79c748c3e74400993a74bb89a11",
-    "galena_hammer_botao_nivel.png": "81ee92a2e32ce3c340b86b89d827de4dce6333a74c672385c745aa7358d1b725",
-    "galena_hammer_botao_tom.png": "dd4af281cbc47ef0fb4fd6f513f4e49ceb67053511faeb871fb1a1650b840e71",
-    "galena_hammer_frente.jpg": "582b39ae0575daaa12186294588e908f445f3c431faa110c689e6b7b2ae10a00",
-    "galena_hammer_frente_alfa.png": "e94f5a5d280fcde80d4cd53e72791a7291e892c213c4d0db86474b04ae374441",
-    "galena_hammer_manifesto.json": "875dd8cf79c93e6a628845c69192e7ee2cd68bcb92298c2a207d02cd677465f3",
-    "galena_hammer_mapa.json": "c8348526d58ad622b81708c0989d92e746fb007880cf3fee02f671afc77433b9"
+    "galena_hammer_botao_ganho.png": "1a66909a1fab8d6152925cea94d113f47a518fc406f88584a8a049b8ec5e4c11",
+    "galena_hammer_botao_nivel.png": "ab91cab403a1e9c583d430fb2353a957c529822bd6d68817c0a58b041b9693e8",
+    "galena_hammer_botao_tom.png": "e121b5b8244517918f5b58b63628c3d5cdc8967dc35f0d548ad34d327301b0fb",
+    "galena_hammer_frente.jpg": "ecb8f5a6a60cde67dd2a4bd89eee03d4af7c3bfe0c8ac98c13f5ca09747633ae",
+    "galena_hammer_frente_alfa.png": "974c29428571c20f8ef1b62d6af1e219f4c6339efec1bdcd40392a963d6fc571",
+    "galena_hammer_manifesto.json": "5b59bf2e0932a3618c24da413b7d44440f9e0e3873501f30102c5d85d0573904",
+    "galena_hammer_mapa.json": "d955bd92e6f4a1f301b3ba136cfe7f83f188e101a428307d70b1b01cab63a87e"
    },
-   "tamanho": 174010,
+   "tamanho": 173680,
    "tipo": "pedal",
    "inspiracao": "Aguilar Tone Hammer",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2693,8 +2693,8 @@
   },
   "gold_centaur": {
    "nome": "Gold Centaur",
-   "hash": "53742bec013e6202",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "c9f263e0cfe22ddb",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "gold_centaur_botao_ganho.png",
@@ -2706,21 +2706,21 @@
     "gold_centaur_mapa.json"
    ],
    "sha256": {
-    "gold_centaur_botao_ganho.png": "985cda58a8120c381664a5b8b69c902f9c825a6b5abdb811cedac5d73d10f2f4",
-    "gold_centaur_botao_nivel.png": "d1916c487849de6b63f2e6f7dbf5216d5caa45c47f89b577b108eb22cbe2a128",
-    "gold_centaur_botao_tom.png": "833931295eba700f37aba48541605abacf854e6d183a5c85b063d4fd23ec72fa",
-    "gold_centaur_frente.jpg": "e15a6634817e11737318847cd17ba58195271ada685914dc5c318c7e1903f7c5",
-    "gold_centaur_frente_alfa.png": "ba7f46a34fd1a79b9aca6efa67432bb384cd8c17d49103a6c33245920b650f9a",
-    "gold_centaur_manifesto.json": "f72234805747f55afbdb89de5c2158ac3985a7d3c595d8f975fe720e2b06888c",
-    "gold_centaur_mapa.json": "3624d9c74a2946716d119a140b344caf09baeca5ec66fc191f17786a18d6b942"
+    "gold_centaur_botao_ganho.png": "8e1aac0faebef8b541496e61055c83704c3820a8ed2fbcf6caa2ae0a5e05d861",
+    "gold_centaur_botao_nivel.png": "c71e061d0cb0b00db3983bf3ac3731989022a159bb7e59584fbb292c418fe624",
+    "gold_centaur_botao_tom.png": "a09792ff50ff7eee54f3670f7a5c294763f201d50e2e41d3654fc8f49991046e",
+    "gold_centaur_frente.jpg": "1e93d2b46450c0faaafe09aedeca1babdafea4d4001ba915da90f840a002ed90",
+    "gold_centaur_frente_alfa.png": "2ca676cde8337227f270ffe313d08cf38e73d0b0fe8de6378f443dbeb984cce7",
+    "gold_centaur_manifesto.json": "398d74aea2225e4ec9bfb9b98a6281ef8c3c5408b2991d9f4b5c81f1d73377b2",
+    "gold_centaur_mapa.json": "a1b7549ac27abb02048de58afd8ce93285973b52fbb502bb129ed7a954ccf529"
    },
-   "tamanho": 398931,
+   "tamanho": 375372,
    "tipo": "pedal",
    "inspiracao": "Klon Centaur",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2792,8 +2792,8 @@
   },
   "greengage_drive": {
    "nome": "Greengage Drive",
-   "hash": "9322d40a4ab10e87",
-   "data": "2026-10-29T18:55:21Z",
+   "hash": "48f9c4611646864c",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "greengage_drive_botao_ganho.png",
@@ -2805,21 +2805,21 @@
     "greengage_drive_mapa.json"
    ],
    "sha256": {
-    "greengage_drive_botao_ganho.png": "204d562b54a2f71a0690e477e36d664fd8620939262dc9ac053a3affec863289",
-    "greengage_drive_botao_nivel.png": "58e4f6948e3e7ab6b5e0c642c47bb6920cb2149b1dde6ea47026138cd4127a3b",
-    "greengage_drive_botao_tom.png": "cde1cc6cecc96da299bde706afea337780899d8a57f76351824355b3e4e86abd",
-    "greengage_drive_frente.jpg": "57d7e1faec815f9c039fbfdcfc27a2686b6eedc8e143f0f298d98682e1c9ac57",
-    "greengage_drive_frente_alfa.png": "09aa63f132df6f631ab380f438c7ed8fcffc64c35608c35f24fa832ae7a31e42",
-    "greengage_drive_manifesto.json": "d586a7870940fb7eb39c8b2275699fcf62ef38ede877eca99627ca1111cadb91",
-    "greengage_drive_mapa.json": "8e8b2e9db8a54610d0c032348bb4a88265d71ef6bc7654ade8ea8d7e2ad6402e"
+    "greengage_drive_botao_ganho.png": "c8be6355ca48d9b2e29c3a81dd9044ee32cfa3370aa6369aea57df322fe0e911",
+    "greengage_drive_botao_nivel.png": "41af5469bed51ce96f929301d1d4da91f25c64c45f0edd0d02e88583489d0d37",
+    "greengage_drive_botao_tom.png": "866bb1e256c69b1833398ddabf52601ef75ca58dbab3b50f2bb555e44a64684d",
+    "greengage_drive_frente.jpg": "433e0d62fa06a969185ae011baf8a513aabf47c4a0b4244d9e7e5587077dad3c",
+    "greengage_drive_frente_alfa.png": "540e5e5f326cecabc9d8bbf43d0870ddf162a0baa7a5001909210cbaac3cafee",
+    "greengage_drive_manifesto.json": "fc3fe980808962eb6c26adab2640442d7e217f6e08419da5f154da383c568474",
+    "greengage_drive_mapa.json": "2fdf7ff3e789b348221d39dfabc6966de9a5e7e8aaa74cac1107efdac111120d"
    },
-   "tamanho": 445194,
+   "tamanho": 420247,
    "tipo": "pedal",
    "inspiracao": "TS9",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2891,8 +2891,8 @@
   },
   "heliodor_mud": {
    "nome": "Heliodor Mud",
-   "hash": "f3b6dc2908deaafe",
-   "data": "2026-10-29T19:33:19Z",
+   "hash": "7b2452524f24f5f2",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "heliodor_mud_botao_ganho.png",
@@ -2904,28 +2904,28 @@
     "heliodor_mud_mapa.json"
    ],
    "sha256": {
-    "heliodor_mud_botao_ganho.png": "962bc9d3dcd140140831cb9de319b7bc5d0a07474e9ca0db11b5f39770b2c8b0",
-    "heliodor_mud_botao_nivel.png": "4b172de7295b0895342bff6f0d9330dea259929a6773fb1be13f6040fa1fa0dc",
-    "heliodor_mud_botao_tom.png": "41c71ccbac539f31a0986a0169f9da25b2798a6d90b8def71ac03ba4c8e13177",
-    "heliodor_mud_frente.jpg": "8bd5ffd7e656774fc64b76e8dbabf742cef98af0f90fccc93d646846901832c9",
-    "heliodor_mud_frente_alfa.png": "43923a254fc62522b1cb01409d3d2267b52620736dc4c392e0c491afcf6d8a76",
-    "heliodor_mud_manifesto.json": "134b10d51bdf27d1fee9f5cf1f8564919d76404ad6310416f0794341433a60a4",
-    "heliodor_mud_mapa.json": "9c01e8cbaf828933048fc4031dc51431d57f0b5abfb17595d04af8b2e155ea34"
+    "heliodor_mud_botao_ganho.png": "f534dadaffa7d24a0efce24a8ce8412fdc6c514abf355d92150f4333a7cfa20d",
+    "heliodor_mud_botao_nivel.png": "28eb849424506003ef350dbe51f83e9500e4764217cac89ae75030cfbff04152",
+    "heliodor_mud_botao_tom.png": "fa9c52d3c40bbdeae52fecbbf911cb3b8d431176ffd8ef9b7629ea2f107564c5",
+    "heliodor_mud_frente.jpg": "0d687c40cba994fa69a69cae913faaf9effa81a36b81b5b81619b727e261588b",
+    "heliodor_mud_frente_alfa.png": "c6c7316b391168bf66774a85c9216c541f7dff24684104601598ec8fed187af8",
+    "heliodor_mud_manifesto.json": "8c82768450bbc4d5fc49d9e4c685fa3c3419731c78a25ea689614e401e7004c0",
+    "heliodor_mud_mapa.json": "f3529d0240be51b86d9dae81d06dafe9e1c36370731da00df3b56edd31135a55"
    },
-   "tamanho": 376223,
+   "tamanho": 347375,
    "tipo": "pedal",
    "inspiracao": "Mudhoney",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "hematite_rock": {
    "nome": "Hematite Rock",
-   "hash": "496830b3f209c815",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "e3a994cd283bf3a9",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hematite_rock_botao_ganho.png",
@@ -2936,20 +2936,20 @@
     "hematite_rock_mapa.json"
    ],
    "sha256": {
-    "hematite_rock_botao_ganho.png": "82ba6591c141f75212df80fd77a81844776d769ce7f5be9224d7640fc280ac1d",
-    "hematite_rock_botao_nivel.png": "a4718db94fc9c9b2d91fe5d1a947113fd344f27da1cd287255fe0e8233b516ef",
-    "hematite_rock_frente.jpg": "f9175b1c306be8449b5fb7dfaa3cd89e7f3582fe9fd73f5f1a0f825d3f7e1a72",
-    "hematite_rock_frente_alfa.png": "920cabf23e01ebb2af6c0bf0ea6574765164b062a2951fd4e536455332ce3e6f",
-    "hematite_rock_manifesto.json": "f62bfae045b306cdcb45e4ec2d06d885eee9cfc9f9b3004b16956d9ec6d7ef83",
-    "hematite_rock_mapa.json": "cda0c813dd609168bfdea2c0919b46d06dde0630ee42be1eaf8c9f6cc2e1621b"
+    "hematite_rock_botao_ganho.png": "e1ec5390a6ee3a359ba961bd0bfa6b0e981b435bb24cf7eb1082adf837369d9f",
+    "hematite_rock_botao_nivel.png": "e52ba102e37a86393f543ddee718be174d821a2463e0f26363e3e9ae1e2dd77f",
+    "hematite_rock_frente.jpg": "3cac0504a1957746708d4cf1fad70119824b3c0cf079624fadb405716161196a",
+    "hematite_rock_frente_alfa.png": "94f2eb8b1296ce9dc83ca99d879cf5ce67a19d7a00638d7f027ef003bc8b7199",
+    "hematite_rock_manifesto.json": "f2fe0ef670838be0c2ac9ad5159d3724f26b3f47e6c274291aa805171c1ce1df",
+    "hematite_rock_mapa.json": "726e298515c3d52fd3a07278858d6b533cdd0a8a0144c42f5a54852e8d6c04b0"
    },
-   "tamanho": 158110,
+   "tamanho": 170895,
    "tipo": "pedal",
    "inspiracao": "Rockman X100",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3060,8 +3060,8 @@
   },
   "honeydew_drive": {
    "nome": "Honeydew Drive",
-   "hash": "8e41fead58997420",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "63549fda51477f89",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "honeydew_drive_botao_ganho.png",
@@ -3073,21 +3073,21 @@
     "honeydew_drive_mapa.json"
    ],
    "sha256": {
-    "honeydew_drive_botao_ganho.png": "4c631487010fcb8a53bcc9d8b0ba0a1a7adb8cb6414adb7aff5bd818a800e8f2",
-    "honeydew_drive_botao_nivel.png": "65fa610d0bb456abfd206b754e589f1de4fd6ba5c97f305eb0f76f0cf5814a38",
-    "honeydew_drive_botao_tom.png": "533a4921f975f831659053225a8ad4c68ce5a707841605e58a1d93d8bec20cdb",
-    "honeydew_drive_frente.jpg": "16344d11982201011394f1ac01c74dfcc3429c22f076bcf7318a6835e4b6d3be",
-    "honeydew_drive_frente_alfa.png": "1ede67286debdd9a61ea7be3166a676b712870265502b24d621565b900297d5a",
-    "honeydew_drive_manifesto.json": "1cd28e7736333e03e96fbd252c274309321751aa4b3c6c3b0a27dc18684358d9",
-    "honeydew_drive_mapa.json": "25e3dbf4f9bdcf2e6c86054ce37e8ce37c4506d2867ecaab9bd8ef8a16e18032"
+    "honeydew_drive_botao_ganho.png": "2a58b7d40ba7c5242cab443e6f430bcc207e0e6eac30e8f1688af1b9201554ad",
+    "honeydew_drive_botao_nivel.png": "3978af69c22a3bfafe30785bb7d46a86a861a614e0bb08932e899582bc172ec5",
+    "honeydew_drive_botao_tom.png": "0684c596ee174eb2b60ed3e89e183db2ba37dcd40b752e03a352e6bf5643b85c",
+    "honeydew_drive_frente.jpg": "532352f1b3300bb965826948615f44987f1e1b39f22671758fecacae6ec8181d",
+    "honeydew_drive_frente_alfa.png": "0c276aad99db9aa870c0272c3a6f9109d26dfd0d99f089b010bee775cd2bd156",
+    "honeydew_drive_manifesto.json": "80c2907b93db0c51a8ca7731419c82c288d7771508039bdf819c5d5918eb8399",
+    "honeydew_drive_mapa.json": "72151fe6d96e63a7ec791a74b5063013f4da050fb15ed91166a61ddeca6267f1"
    },
-   "tamanho": 321409,
+   "tamanho": 368969,
    "tipo": "pedal",
    "inspiracao": "Paul Cochrane Timmy",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3132,8 +3132,8 @@
   },
   "howlite_war": {
    "nome": "Howlite War",
-   "hash": "70795700e4c5804f",
-   "data": "2026-10-29T19:41:49Z",
+   "hash": "fca577bd11e05a8b",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "howlite_war_botao_ganho.png",
@@ -3145,21 +3145,21 @@
     "howlite_war_mapa.json"
    ],
    "sha256": {
-    "howlite_war_botao_ganho.png": "4b1a6c1106e606e1ed467f44506d46d63f50269a664816400fe381066ebb098a",
-    "howlite_war_botao_nivel.png": "67872f8d5d03a6734135cdaeaf892d71944fc45c510addaf1262a185f314349f",
-    "howlite_war_botao_tom.png": "b8ad264582f37ae83494ff91634861ba2f1f1e2181a8ad818eca3848cd1cc5d3",
-    "howlite_war_frente.jpg": "204e627afdf3a95477d4baeb65caedf99d36d4dfe0ef232cd12c1ba953e64583",
-    "howlite_war_frente_alfa.png": "c8b3f9d12c5d3050f6118768ac9940a217677a9c8c4fcd37d048c8dd9b357ca5",
-    "howlite_war_manifesto.json": "97a158456d181d8bbe5f1638b7deb096f25e0cabbaa174d9015b33e87cf5b9fe",
-    "howlite_war_mapa.json": "9317bfc8c7e215bb8a1a3405654debe91cdf631c26b72e4cf24e9125aa390e52"
+    "howlite_war_botao_ganho.png": "672443d6b7d991067bb2f785b885f6177cb7e2765939fb4df7612d1b7081ceb5",
+    "howlite_war_botao_nivel.png": "ce0309b6893896e135932d8ae389b8419ca79e77b2b2a49c59b7a24086956afa",
+    "howlite_war_botao_tom.png": "6ea90f74ca63ca6001425fd4baa259aa4f31d2f6a6cfba2ae264b7ba8ee1d903",
+    "howlite_war_frente.jpg": "d1adf898f18033e67476c5511214c4967710546267f21100b18bc93a25da0295",
+    "howlite_war_frente_alfa.png": "04e552937adeefa7e0e384f98aa738a22ed2d9ab6a7b9b15dad7c7cf5c6792d8",
+    "howlite_war_manifesto.json": "7bb96d28db01295c215680c132bf8b274403ff3c03fbd3be2d1fdc46a4710fd9",
+    "howlite_war_mapa.json": "bc28a8865e60da8170f17be903bc47944c7baaf2d873ee11b34f5a5f9e933d68"
    },
-   "tamanho": 256255,
+   "tamanho": 316997,
    "tipo": "pedal",
    "inspiracao": "Death By Audio Fuzz War",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3237,8 +3237,8 @@
   },
   "jackfruit_monkey": {
    "nome": "Jackfruit Monkey",
-   "hash": "ade5e8e95ec4a4ed",
-   "data": "2026-10-29T21:31:53Z",
+   "hash": "f4ffad22804cb117",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jackfruit_monkey_botao_ganho.png",
@@ -3250,28 +3250,28 @@
     "jackfruit_monkey_mapa.json"
    ],
    "sha256": {
-    "jackfruit_monkey_botao_ganho.png": "22489467c9a99b17a8e477311ea7dd150e3d49c1f96512ab05b3b5ed2dde17c9",
-    "jackfruit_monkey_botao_nivel.png": "0ebe0a4dd40e65e3ec0598d933d91dd4c1b70a52060802ba85d0e881d882aa63",
-    "jackfruit_monkey_botao_tom.png": "f2414db97d658cd5fdfdfd7438deddce02a720f70925b0976086ffa7ae369f1f",
-    "jackfruit_monkey_frente.jpg": "be1e674a61ea94ea7912e9ed348c526312b02ea321949a5b34f3794b60188152",
-    "jackfruit_monkey_frente_alfa.png": "aea291669433b8a2db19346c3b1fa622de34c78f277e2b2d76ff87dcdd7e8e60",
-    "jackfruit_monkey_manifesto.json": "18d23718e761b9714bbbb9f7eaacc0e7cd7e38fbbeb2a831144747e84c5226da",
-    "jackfruit_monkey_mapa.json": "19a0f2f3cac545cce5aa73b30c79f7ea12cb6ce5a0926dfa229cc5487572a90c"
+    "jackfruit_monkey_botao_ganho.png": "225d6e40c3e0553775840007155307a673a6e8ed7f7bdaaea20487a7beee4797",
+    "jackfruit_monkey_botao_nivel.png": "e459e123d9f7499c1a42d75de2bb9963160ff81e0ab34cb34ac62365749b0343",
+    "jackfruit_monkey_botao_tom.png": "1b8fe4c85cfdbbe5ef9da9d13278828176630e5fd0eac730ef7cd5af9f007567",
+    "jackfruit_monkey_frente.jpg": "2b0f71626433c22858ae41e2c25574eeb0e5077ab7a650baf547ac9860f294a1",
+    "jackfruit_monkey_frente_alfa.png": "59524c86ca7bcffc52445082fad052ddafa9f7609215b625e8bef20f4e0f0431",
+    "jackfruit_monkey_manifesto.json": "28737011e1a50fd6f28836d104dc10007ca9c78742bf39bc7bf6cb79978fa117",
+    "jackfruit_monkey_mapa.json": "178019dac8d1eb4ac97e1551140830a3dcd5b1e9f49fb774ef347c3fd71cfbe0"
    },
-   "tamanho": 212482,
+   "tamanho": 341503,
    "tipo": "pedal",
    "inspiracao": "DigiTech Bad Monkey",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "jamun_od": {
    "nome": "Jamun OD",
-   "hash": "021c4641409d161a",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "4c1e251211b9434c",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jamun_od_botao_ganho.png",
@@ -3283,21 +3283,21 @@
     "jamun_od_mapa.json"
    ],
    "sha256": {
-    "jamun_od_botao_ganho.png": "f0ac8afdd34fe50e32da85a7f3cd86fcf0872183553a161aec40f9e86ae31836",
-    "jamun_od_botao_nivel.png": "b8dacfc6667b27ad3b3f09b378816efc54e826401dd5ed6cad1573e45447ca37",
-    "jamun_od_botao_tom.png": "9aa26b46245e774477b817f4117a3c7a73be767cd40256767896a9831ee94738",
-    "jamun_od_frente.jpg": "8b9d22be061961f02874a5dd4322c2d8459b2e6c872735ca21cf2edad6b773a7",
-    "jamun_od_frente_alfa.png": "8828c3a3b8bbc6af598c152889e4b9da37ebe4b758f34845d3ad9b90f0843327",
-    "jamun_od_manifesto.json": "f42edf89d472a4ee79cafb4f5c4f2c566a0d8b43cdd7f964717d420c6f4831af",
-    "jamun_od_mapa.json": "ec14622017ba403790f88999c269ab4db3926fbde4cb35dd05021f42717c228f"
+    "jamun_od_botao_ganho.png": "56a20ec62f63763a640448abac6f3a2f4752058e5e50fda5f97119243cf17d72",
+    "jamun_od_botao_nivel.png": "a31d92efe88eba8532522db6b060b37af83b67cb75a6f629aa0f8b6e8318baa9",
+    "jamun_od_botao_tom.png": "bf8ddb710d01fbcdafa7eb385cab2a09e9379c7da88c3f481393a7e49056843a",
+    "jamun_od_frente.jpg": "7a5ca480425ab1522da5d123a6fcd358a20296a90045ddd612f29100cd4c6318",
+    "jamun_od_frente_alfa.png": "6b1b4f526803a5dd4baf64aa438ae31dd9de9b6d474a329593a59205b2775f06",
+    "jamun_od_manifesto.json": "c56016d55d95e62d56ddc84a15e442fb1b5efcaab0568943d6de2d134e267c00",
+    "jamun_od_mapa.json": "885d3c9b5f3b7fa98076b872240cc7606ae4be8dab565f22f215955a0e901ca3"
    },
-   "tamanho": 289080,
+   "tamanho": 423920,
    "tipo": "pedal",
    "inspiracao": "Friedman BE-OD",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3369,8 +3369,8 @@
   },
   "jet_5150": {
    "nome": "Jet 5150",
-   "hash": "f1d3405f9994751f",
-   "data": "2026-10-29T21:17:14Z",
+   "hash": "8fa58c9881fe728e",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jet_5150_botao_ganho.png",
@@ -3382,21 +3382,21 @@
     "jet_5150_mapa.json"
    ],
    "sha256": {
-    "jet_5150_botao_ganho.png": "ba5544e5cdfa147ab585dba9cb9ce00c2e9035ead66fd4b68bc1c6091df4a1cf",
-    "jet_5150_botao_nivel.png": "08a4cf823d61316fa97931ef7dbe5b8588a7fc561c5d4c67e079246ca8835793",
-    "jet_5150_botao_tom.png": "e7e880e53ed0e431a70a3bb5e2773976630ace944a4f59a29686b64a3ba8c44a",
-    "jet_5150_frente.jpg": "a20d9cf46ee4dba80f32109b7578a9bcfe14490ec6d90b84a8e63b1d21202eaa",
-    "jet_5150_frente_alfa.png": "2f6bc2b8096b17519872c634326f882b994e5f98903abd74b79d0056c6ae1e8c",
-    "jet_5150_manifesto.json": "b186da07037ae6d88d5d83b8197b4ea362492aea480ba3b609682f9782124f1f",
-    "jet_5150_mapa.json": "04b0de4f22a6ddb2874c55ab4ead4e398bc8d71303440901ddbc53152ff77ab6"
+    "jet_5150_botao_ganho.png": "9db20b88fca4d55a9737b7f73e3e70045350f224494378b8611f0091d46c118b",
+    "jet_5150_botao_nivel.png": "448a65ff11a55e418a245e8fc5838f34ab66952c5af131d8551dee291144906d",
+    "jet_5150_botao_tom.png": "62ea93e01b1f47e413221d843270057e7174b1b4503e14a393d0a7661339a4ae",
+    "jet_5150_frente.jpg": "976aee7eda3dd74061f1284396497daaee4aade57d1e284e09df05c2e26160f0",
+    "jet_5150_frente_alfa.png": "201493b984f7df23b40ae49b985bd51cc16bdd4b8d0628cd5e226eab5d59a534",
+    "jet_5150_manifesto.json": "1033b326e6378d5bd4f87c6a4719946801b17f16e91a004b173c7a77ceb83efa",
+    "jet_5150_mapa.json": "a5a3effb58793985e6c208fccebb85fc3b736da5d5cf52535fb5e3f1b984ed21"
    },
-   "tamanho": 178294,
+   "tamanho": 271135,
    "tipo": "pedal",
    "inspiracao": "EVH 5150 Overdrive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3474,8 +3474,8 @@
   },
   "labradorite_omega": {
    "nome": "Labradorite Omega",
-   "hash": "6d87328054898ab6",
-   "data": "2026-10-29T21:17:07Z",
+   "hash": "dfb6fcd6e0b70ad7",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "labradorite_omega_botao_ganho.png",
@@ -3487,28 +3487,28 @@
     "labradorite_omega_mapa.json"
    ],
    "sha256": {
-    "labradorite_omega_botao_ganho.png": "85b735e3417f50e1b07bed5b700516bf81204c984457ff7514327804398ba487",
-    "labradorite_omega_botao_nivel.png": "bbde8fdaa04cfe71f60978cd87fa062d4a1028ebf0abb310b0ab08e93b8dac30",
-    "labradorite_omega_botao_tom.png": "cd835d266d74164a01d3bf450e8267c27e940da38ad2412de34ee32ae8792a16",
-    "labradorite_omega_frente.jpg": "96e226d733bab97285a74403ca6e4d2c63c989cb4c2594dbece5849071703d71",
-    "labradorite_omega_frente_alfa.png": "33298fb43e5dde9f843d022fe61a28c71982bbba8d6f09894316eb69bd103540",
-    "labradorite_omega_manifesto.json": "5fbf65c086575a34d983e32532b60d23713e88ff2f2d09f509816a795fcd4951",
-    "labradorite_omega_mapa.json": "3e5204da1a22c7b32bab189370ef8257e83e05eb2a76bc216299c704d8c12157"
+    "labradorite_omega_botao_ganho.png": "6a85022819ce2022da828cb4df324fd7b3e03a1711079860681b9b99e8c916c8",
+    "labradorite_omega_botao_nivel.png": "311094e67a31f0183761a298c3b03a55cf468a26a0f4d912abec0a1174a63870",
+    "labradorite_omega_botao_tom.png": "15e39410322c0f14cdd721102915d45248d2743a58b88a018832f66e8f3bbd89",
+    "labradorite_omega_frente.jpg": "d5597d797e588a4f444ebeb28c9fc215bfc80b5b8b84d352cccb795bf121b0eb",
+    "labradorite_omega_frente_alfa.png": "b832e78ca983ff974cbebf335deaa53df006899eb8b4fe0efe5a23f1bf26c74f",
+    "labradorite_omega_manifesto.json": "2461616743f86c3cf57548dbabdb06fdcf9b89f6a88dcc8bd683e67cab3a5ce4",
+    "labradorite_omega_mapa.json": "4693311223a207b70ef3ffa03bc88616d1b44512fb2cac6e3e6e1178f1571bd8"
    },
-   "tamanho": 217725,
+   "tamanho": 413225,
    "tipo": "pedal",
    "inspiracao": "Darkglass Alpha Omega",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "lime_bassfuzz": {
    "nome": "Lime Bass Fuzz",
-   "hash": "01925edce4817131",
-   "data": "2026-10-29T21:32:00Z",
+   "hash": "2d372a6ca103c697",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lime_bassfuzz_botao_ganho.png",
@@ -3520,21 +3520,21 @@
     "lime_bassfuzz_mapa.json"
    ],
    "sha256": {
-    "lime_bassfuzz_botao_ganho.png": "b3c710eb37489251055e5b498ec5aac287315704a5bbc1a33cc6ebff3d4dd4f5",
-    "lime_bassfuzz_botao_nivel.png": "ec267cde425eb3e628d68f2c28ad1db9ff45fbcd555961fbe4fed56f2b649f77",
-    "lime_bassfuzz_botao_tom.png": "6c6f47101fb2b7a18dff8cbb67c88934c27828c4ba29e2298112c6924818dd4e",
-    "lime_bassfuzz_frente.jpg": "d028bd66d2ca79948c9944b0d88fa6dd24ffdf3a4ef2c6bc7167d9bff07a36d2",
-    "lime_bassfuzz_frente_alfa.png": "4c141f40a56e630fa45a96cd1bf4eede6eb74c47ff8b91d4d8477bccef426a72",
-    "lime_bassfuzz_manifesto.json": "489127cb98592562f38a2939aec9d6ecdb5cb93ca6acdd6fcf33f2fe55230078",
-    "lime_bassfuzz_mapa.json": "12e706194247b7426bbe25c61cd1cd28080d6b561f6f470b59fe27170d78fe7d"
+    "lime_bassfuzz_botao_ganho.png": "74cdcc5a4505d4d1b7b343be2d1e3309b5aac6eb0ea7819beac067b1cd9f7ef6",
+    "lime_bassfuzz_botao_nivel.png": "2ba0a37f8309de62c59341cf100b0b8ead7d50c94b9a4d50a514beccb99da0b2",
+    "lime_bassfuzz_botao_tom.png": "7009ae76017336689c71cb34e5d76f6698a8d81684789cf3808c3f4a0bc23dba",
+    "lime_bassfuzz_frente.jpg": "71855cd0a2cc27f80eb15d48b57f7f09f68b076f43e57cdf82fff2a8ab1d6ae8",
+    "lime_bassfuzz_frente_alfa.png": "55d58bb9a1e18e8aae86cfa424ecc0b2a8b149178fbfcec69bd9e2324f59a4db",
+    "lime_bassfuzz_manifesto.json": "7ba49794219534d32123df3da8287c426452a49cafa4b6a8eb354806d1aa9567",
+    "lime_bassfuzz_mapa.json": "6550e2e9134c5079e0c8985b4b409de6c3e0c15f750f9b4b1e0732bbf871178f"
    },
-   "tamanho": 360331,
+   "tamanho": 351803,
    "tipo": "pedal",
    "inspiracao": "Electro-Harmonix Bass Big Muff",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3657,8 +3657,8 @@
   },
   "magnetite_boost": {
    "nome": "Magnetite Boost",
-   "hash": "0b986d13690e8419",
-   "data": "2026-10-29T20:55:56Z",
+   "hash": "d0d3facc4de5908c",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magnetite_boost_botao_ganho.png",
@@ -3669,20 +3669,20 @@
     "magnetite_boost_mapa.json"
    ],
    "sha256": {
-    "magnetite_boost_botao_ganho.png": "d9c876962836a7d31777ab2a80ea7fdf33bec7546ab2610093c55ec97300b3e4",
-    "magnetite_boost_botao_nivel.png": "47573991b73401bf6742bcd3b526f28d8a8a95abbe1d6d8a4ae641438a2c5f90",
-    "magnetite_boost_frente.jpg": "a391fc163ed27e122f6a4a09caa22d899d497e00a5b11d8869cda3a8ec2427f6",
-    "magnetite_boost_frente_alfa.png": "dcacdbb3fde5d3f81edb64e8d8bc1f712529a5320f08d34de5e1e09037ec162e",
-    "magnetite_boost_manifesto.json": "860ba7de2a7949c0e872970eb6a9025c4c2d7d96169ccca83c9ebdb9101448fa",
-    "magnetite_boost_mapa.json": "68a52cc8aabda8b2f7f81e533aafe10e3d7cfd8312deaca9438027bc46b7c7cd"
+    "magnetite_boost_botao_ganho.png": "aadb57043057e110cf72a97c60af6cea29b133afa775eda480085089baea9de6",
+    "magnetite_boost_botao_nivel.png": "573d9c1ea943e84f9c96e02cf18986f5dd00cabb960d94cbc2742e09ec757ce5",
+    "magnetite_boost_frente.jpg": "ad20baf2821a2a7486861bb1d413dcf0fdac9908218dce2011190b222465e058",
+    "magnetite_boost_frente_alfa.png": "6801d157d02eae1f0ba00b875b09048d459102a4912d36e002edf1c62494cb0b",
+    "magnetite_boost_manifesto.json": "ccdef4e6a21e36a4667537dde8ae09bcd79b9e16832c0a88872d531f3aa0edb6",
+    "magnetite_boost_mapa.json": "69b8f5338da9a3d80dd614fdc5e5d1ba83eb5611da99e0dfcf992d62b5ce4e4a"
    },
-   "tamanho": 153293,
+   "tamanho": 117901,
    "tipo": "pedal",
    "inspiracao": "Xotic EP Booster",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3727,8 +3727,8 @@
   },
   "marcasite_gate": {
    "nome": "Marcasite Gate",
-   "hash": "dc79286933b25a05",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "c412c32e7b636914",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "marcasite_gate_botao_a.png",
@@ -3740,21 +3740,21 @@
     "marcasite_gate_mapa.json"
    ],
    "sha256": {
-    "marcasite_gate_botao_a.png": "3c7b8e7f27b14266b411ecdf41b922f426ad774c7567d0d52461c327afddc6a2",
-    "marcasite_gate_botao_b.png": "876daf943693aba965f619566d0b130f8d86e03d2af04606153437440d43f56d",
-    "marcasite_gate_botao_c.png": "ef609577bb2d86dd4fa99cc2fadf2db97cc10247ee3a65314c65df84f58bb1d6",
-    "marcasite_gate_frente.jpg": "8a2122ccbb0b6ed90806671c4fd0de2a2e6728e88a772f164ee0216b280cac29",
-    "marcasite_gate_frente_alfa.png": "3d99d94ca9c7e07688c72c795bbdd774d0e35f9d80b1aa21d8158b0fdb4db820",
-    "marcasite_gate_manifesto.json": "df7f3824179ae6117a24e527a7385cda8034e920a0a6188ddb5f1c925f1995e4",
-    "marcasite_gate_mapa.json": "8045a231461dd9971e503077309bd26dc19bce1c65437ca280e6244787b3538f"
+    "marcasite_gate_botao_a.png": "1d17f615372b10d0c73fc0feee1c53ae6bb25e231cd38d68e3ea747024a42a2d",
+    "marcasite_gate_botao_b.png": "8e23b0216196c1d976882e6585f1f6bd1e119d7d849eff2838c5908a3ccd45b6",
+    "marcasite_gate_botao_c.png": "8b61b99633ebb27fc4b8bae16c4dcf5fee27b0f68b34a45b5a71c6ad120bcc3f",
+    "marcasite_gate_frente.jpg": "872df52e5aa8e9fbb82a2017ead15538a7664e2b52b7506a7ac7c56358271f0d",
+    "marcasite_gate_frente_alfa.png": "ddfdd22a7f1150a074afa3d57c83ba0cec171465ee2ecd56e929fbc4bf22e56b",
+    "marcasite_gate_manifesto.json": "d607134307a1d517c499e1d4f0bf169e982000d1d2e1e178e9da955de934e84d",
+    "marcasite_gate_mapa.json": "c1e137d773203f59ac3c734f7e92b5f7219a71dd390f9dca6c27d44b7eb1abb8"
    },
-   "tamanho": 341101,
+   "tamanho": 327815,
    "tipo": "pedal",
    "inspiracao": "MXR Smart Gate",
    "categoria": "Utilidades",
    "fonte": "Efeito do Nexus",
    "motor": "gate",
-   "versao": "1.0.1",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4059,8 +4059,8 @@
   },
   "mars_phaser": {
    "nome": "Mars Phaser",
-   "hash": "fcf8797714ac25a8",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "1a571f76b98f7357",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mars_phaser_botao_a.png",
@@ -4072,21 +4072,21 @@
     "mars_phaser_mapa.json"
    ],
    "sha256": {
-    "mars_phaser_botao_a.png": "0c8e0930a18bfe68ec4c1c3afeb967bf615078cd8991f73e0c1c000b94188b98",
-    "mars_phaser_botao_b.png": "cbe8da6e5736e1678ff80f375efac476c35c05ae00e605417ef00c702dd67d09",
-    "mars_phaser_botao_c.png": "a1698f720b336e050a821523ba41db761ece50f2469566903c15a9fc07f30f2a",
-    "mars_phaser_frente.jpg": "0160da23edbd5f203b1f0342a8f57edd8c8748faca25bd8941733311fdefbe57",
-    "mars_phaser_frente_alfa.png": "486565905d500ec44a4c032be2abb7505c244302d4baf600d1313916a03ee974",
-    "mars_phaser_manifesto.json": "9aa5ef29c8cfa0839a7e02749607493855ef125b39ebdd8dbd98cdc6a1790c6d",
-    "mars_phaser_mapa.json": "b0a9ca155472f3ad92bb85d5c03b8457ad529bee0939f5fd1c2f191fbdd9dfec"
+    "mars_phaser_botao_a.png": "ac9dc9823ba6d819c0a0283896ae5d85bc71a0fc12cbe16b89dd037d283486a1",
+    "mars_phaser_botao_b.png": "f3e9352b8d3525d53b89b633136d97d4f779a4c3082030762b3740ecc1e67da4",
+    "mars_phaser_botao_c.png": "801a0154a69e4fa0054fa0daf29936fd6c5b2159d56ecca34f9b4c18c9eb5a39",
+    "mars_phaser_frente.jpg": "1a866fae8bc73ec39b2390c8257bcc1bf46e7d62ef5aace5708d7da197dc8bc4",
+    "mars_phaser_frente_alfa.png": "d13c9c78b8ca36c33def3d215193cc44fedf9dfc5179979127b5845b31f29649",
+    "mars_phaser_manifesto.json": "d09eb0a4558145065d5727b00bb72a455864c9e8701a5ad250d406ccdab5616e",
+    "mars_phaser_mapa.json": "99c8e777ab18ade91ca0c045f9ff4192d3ec2033fcc3319c3771c5338452add2"
    },
-   "tamanho": 397283,
+   "tamanho": 376984,
    "tipo": "pedal",
    "inspiracao": "MXR Phase 90",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "phaser",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4158,8 +4158,8 @@
   },
   "melanite_bassdi": {
    "nome": "Melanite Bass DI",
-   "hash": "e8d2691b00c5c92b",
-   "data": "2026-10-29T21:27:42Z",
+   "hash": "308c6d6040b94d74",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "melanite_bassdi_botao_ganho.png",
@@ -4171,28 +4171,28 @@
     "melanite_bassdi_mapa.json"
    ],
    "sha256": {
-    "melanite_bassdi_botao_ganho.png": "3ced3134f61188c1d3ccfec405ef96fb8437aa98243e9f1ede608eb922c12df3",
-    "melanite_bassdi_botao_nivel.png": "167ff21ad2438be68169eaeaa8f025a63780d36fd0efed3c0a11dab61a0d96af",
-    "melanite_bassdi_botao_tom.png": "24f9ae0e425eb89c4cd299e7b5d5fc4cf6e118a927da02bee546a8137554fcb9",
-    "melanite_bassdi_frente.jpg": "8b55e8fb619888ac8b14ee002e49739cc3bacd6d682e73ddba0e8cfe3ab008a1",
-    "melanite_bassdi_frente_alfa.png": "5c92aee73fe754662659a705130c7073a4bbbd76d84f42c8cd586e93b4b7e2ec",
-    "melanite_bassdi_manifesto.json": "bf483e6656ea6e5f2eec21f58f07c67f6a90c4c8afb32ff1297d9d23587ff5ce",
-    "melanite_bassdi_mapa.json": "0a3b73ecb6e380251a5fcf1166246f1867ea23484c3722515763a5de6182fc9a"
+    "melanite_bassdi_botao_ganho.png": "9e6b51ad6e072f7b8de3a5bc591c594686bd40f77b5ff1e3fa1cb79694545512",
+    "melanite_bassdi_botao_nivel.png": "9ec982fdc2bd040007d41b3ce55977a86b87980983a688abe843d81cb0c10d9a",
+    "melanite_bassdi_botao_tom.png": "460d834e3e341c8c8bcc34c2746b619315a0d4625578a48d71056bd1b343ae50",
+    "melanite_bassdi_frente.jpg": "dd1056487086906e5fdcf5a4da58aa32ad231d9ee982f632e0a022f041634ba2",
+    "melanite_bassdi_frente_alfa.png": "70f254f85a36feacec4e4b6b5693b695158cedfeaf555b9594b893b3f28980ec",
+    "melanite_bassdi_manifesto.json": "3abc6dbca280bcd0d16901cde3155053108836f11b03dc4240458d93284eca9f",
+    "melanite_bassdi_mapa.json": "1f5b336c2a12ad2fbaf8c5efbcbabeebd8f0a486a949c9d7059feaf1dd57ed9b"
    },
-   "tamanho": 165603,
+   "tamanho": 158312,
    "tipo": "pedal",
    "inspiracao": "MXR M80 Bass DI",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "mercury_bender": {
    "nome": "Mercury Bender",
-   "hash": "76d8687082204dc2",
-   "data": "2026-10-29T19:31:04Z",
+   "hash": "96fc32451d31dc40",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mercury_bender_botao_ganho.png",
@@ -4204,21 +4204,21 @@
     "mercury_bender_mapa.json"
    ],
    "sha256": {
-    "mercury_bender_botao_ganho.png": "ece37c971843e71ddcc4036a8d88177dadd4564cd3663ee425ea5b6320956022",
-    "mercury_bender_botao_nivel.png": "d19366b3f7a57214a5d9038df3d3a75a3af6b686f03a9876d65870e5867ccdc9",
-    "mercury_bender_botao_tom.png": "fb662eefd2fc5af70f8f0945c638315463c253f98972a8da137dd43c90d24dfc",
-    "mercury_bender_frente.jpg": "e4a98cc63dec1a42c604e75a0190830bd0d52107a10ad1e48f23a43e5eb9917b",
-    "mercury_bender_frente_alfa.png": "797ad2ecb16cb3ed94a47df500a2773e5e7285b68a352b690b473ac186c14456",
-    "mercury_bender_manifesto.json": "53af5c23bc1df05a30a28cacb9b029203a1eb5912a4b312bf0fc1a33c6eb8a90",
-    "mercury_bender_mapa.json": "793d0cd87115fafa55ce2343b6cb1706d3d8f22a8962bb88bc1df828324238b1"
+    "mercury_bender_botao_ganho.png": "da6553e69931fc8f2d1a6146c62e42ab13dc8673665e94eb5cfc58ce2c464609",
+    "mercury_bender_botao_nivel.png": "6cc2d820c93b65e1354351909843dbe15fe8fd95cbe18783c37cc14f4a28786c",
+    "mercury_bender_botao_tom.png": "2465515aff5252db7f97694221faad83cce7307cd19b770d2e855ee65c2d34f2",
+    "mercury_bender_frente.jpg": "e0af0a0a426b36ce4d69ccf33bcce677733094552990b936eaa1968f43b930d3",
+    "mercury_bender_frente_alfa.png": "f4b4a206ac785c457042d896754804fbf838e5e065e9a730760106cda8bb7574",
+    "mercury_bender_manifesto.json": "fe1758e972690e5ca509e2e3a79f4e9c2e22a506d385586c0ce625ffc5fb0480",
+    "mercury_bender_mapa.json": "305416566da5099a29f0eedfc974cd6e907850167586ae687b8d9f7d6b274b67"
    },
-   "tamanho": 193485,
+   "tamanho": 233673,
    "tipo": "pedal",
    "inspiracao": "Tone Bender",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4332,8 +4332,8 @@
   },
   "moonstone_fuzz": {
    "nome": "Moonstone Fuzz",
-   "hash": "32735a087cdd6203",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "a1611133677fffeb",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "moonstone_fuzz_botao_ganho.png",
@@ -4345,28 +4345,28 @@
     "moonstone_fuzz_mapa.json"
    ],
    "sha256": {
-    "moonstone_fuzz_botao_ganho.png": "4ec8198778e5cdf4c618b3754026a587dda9f8f865d262076e7942dc715db495",
-    "moonstone_fuzz_botao_nivel.png": "e88c75a5eb8a5313db5bf68b5bff3963feb84009d465c6db6113d963f8994cf8",
-    "moonstone_fuzz_botao_tom.png": "38c557fde89e4a45e6c5abac552f93a4280a73bfb4db608380e120e5d6f27a61",
-    "moonstone_fuzz_frente.jpg": "bc673e454d395779511f260ceb7498957a9e7c51ec3b0ba88f941338f9d52fe8",
-    "moonstone_fuzz_frente_alfa.png": "de40307e7b8a3c1a2f21a61b2a003252e0404dc01abd20221026407107df3974",
-    "moonstone_fuzz_manifesto.json": "4eb3db7c837d41cab010acc01fecaadd0aa814ae803d016b1601f5190ac2928b",
-    "moonstone_fuzz_mapa.json": "4b04fe9eccacccf9db3d8a8eeff0dcdaf21572c194ee264619f3de39a1f9c9f7"
+    "moonstone_fuzz_botao_ganho.png": "2af5a2d5ae255bf85790c185b76e1c9cce739ad77c6aa803de2a6bfa64efcffb",
+    "moonstone_fuzz_botao_nivel.png": "1862c34d7c54e4627fb6d4653994bcf18da1d24f976830618c72ba409f288ca7",
+    "moonstone_fuzz_botao_tom.png": "ee99fb74f60450411a10e5e987c0537533bd764333a70e727534918636ab199b",
+    "moonstone_fuzz_frente.jpg": "aa8b4b270793069d91e09ea887aae1d5011bc0b44e7cbc55b82e4083f69fe193",
+    "moonstone_fuzz_frente_alfa.png": "90e20b29a45551f7879c64dc30461182a33d2eb3512cc226952843494f5eec62",
+    "moonstone_fuzz_manifesto.json": "c5b1529d6b7595adaaccb542ba800adcbcd91b45b524350643d3d7cb2f34afc5",
+    "moonstone_fuzz_mapa.json": "1acd2f1a5de66bf117736ac49f923e3feb1d732a08a5e2a95b4397be708a97d6"
    },
-   "tamanho": 400052,
+   "tamanho": 419016,
    "tipo": "pedal",
    "inspiracao": "EarthQuaker Hizumitas",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
   "nebula_flanger": {
    "nome": "Nebula Flanger",
-   "hash": "cd0614b9faf4dee3",
-   "data": "2026-10-29T19:39:33Z",
+   "hash": "d275bfed31fc256c",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "nebula_flanger_botao_a.png",
@@ -4378,21 +4378,21 @@
     "nebula_flanger_mapa.json"
    ],
    "sha256": {
-    "nebula_flanger_botao_a.png": "62a1764d51cb2c46d1cf58a437442eee750e83863a4f157e2de6fb7416390876",
-    "nebula_flanger_botao_b.png": "088f8b8b89dc4e176fc2327fd9d0c756d5254df485dcb35e15fc83dd3a8f10c7",
-    "nebula_flanger_botao_c.png": "2069f6b38caa61c307f7469b1d7460456842be938142ffea56c53916e875f2c1",
-    "nebula_flanger_frente.jpg": "1085d79a86fc95142a5012ad5f7c48bad95646483ee15f41d6479c2527731111",
-    "nebula_flanger_frente_alfa.png": "124fa47a260e5787f89089c7a824299e5c463c0f73adb2d4c1836e018f722cbf",
-    "nebula_flanger_manifesto.json": "69490e459761120d45624280a5862b7d39ff450e4df5184b9570829848d4af34",
-    "nebula_flanger_mapa.json": "720bb1a712bc51a13ef73247a2ba34577492e5d8d94faa9f4ecaaa60a06e4a50"
+    "nebula_flanger_botao_a.png": "7f86a71546c1e0489f7eb5229af10a68a420184454653949136a9f80cbedcdc2",
+    "nebula_flanger_botao_b.png": "35ea81df2be5563fbb06392661bb4ae39e45060752475cd45468f64bd0a56d2f",
+    "nebula_flanger_botao_c.png": "85cc7f49474a81a08ee5f9c78d2a27af101e4aeafc493c8072e1c70efa85b375",
+    "nebula_flanger_frente.jpg": "d0268ccd1a4ba88471d52344f921152885a9587c5d56e3a9785a3ec6f761d72c",
+    "nebula_flanger_frente_alfa.png": "41775e62cb19f66e23c215bfc7ae8b84f913e001bcc563bd7995d00e6e64072e",
+    "nebula_flanger_manifesto.json": "c7fd11add64f0b020151d9d9d8891e810997154c406835225292afe560c0a323",
+    "nebula_flanger_mapa.json": "bc5304d74b8280c919db8353d11bca0cdd15df48c2bb06b73f9b2c18ab07f9ce"
    },
-   "tamanho": 392048,
+   "tamanho": 459784,
    "tipo": "pedal",
    "inspiracao": "Electric Mistress",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "flanger",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4509,8 +4509,8 @@
   },
   "olive_drive": {
    "nome": "Olive Drive",
-   "hash": "36a4caf6cf4f456b",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "442193b89e2f1e4c",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "olive_drive_botao_ganho.png",
@@ -4522,21 +4522,21 @@
     "olive_drive_mapa.json"
    ],
    "sha256": {
-    "olive_drive_botao_ganho.png": "974547bc173b1c137f78ef6940c38ad9f2dce23f99d26295805f6e6499c969ae",
-    "olive_drive_botao_nivel.png": "bb3b4e83e15dfaf9d4031180ab4c7b82737632f807dbbd731e87ec03a31fb74f",
-    "olive_drive_botao_tom.png": "3b2f14f5480fa3d19092a6baaff5b3ea098d10c03fddb78f115f3d055c2024d8",
-    "olive_drive_frente.jpg": "50dea0ff59547d8a06c70c4e070a9019c1b5697f03c09b7f7ba18e2ef020b936",
-    "olive_drive_frente_alfa.png": "33bda0ca4dfca84ba37e1363f21f277ab6809d0444358e34a0dd4fcf4ec45f55",
-    "olive_drive_manifesto.json": "a5a17fd67c3dcc34fccc8b07058cecd0e7c5ce6402956143326a9b1e655ebca6",
-    "olive_drive_mapa.json": "da9d262e8115c1b1f514e4b5710f46f1c8bdae9a699b63e453efb162c1257500"
+    "olive_drive_botao_ganho.png": "656707bdea844623889e6e9924715fe0fa81b81f45b55356c4df22f75b1dc02d",
+    "olive_drive_botao_nivel.png": "7899db41a551b42b7f8acd4e3d916917fb70953f2a526735ac4a46f50ce0e217",
+    "olive_drive_botao_tom.png": "c24358deb2cba3c0ab9b4acf20df7af87f7e391ad339be6b38b5b6982b4a66d5",
+    "olive_drive_frente.jpg": "d17f4fe5e9dd4367286a988f358848a32e3833b7f86ff695ea36fce41bb66abb",
+    "olive_drive_frente_alfa.png": "266fe8a2004f335701a6b69bc66c5f471f1ae276e36d2d05c977cae704f8c2a1",
+    "olive_drive_manifesto.json": "c7eb03006df4567d284856a711c165d6a22f5447eb541b97c8126c036f8f54b8",
+    "olive_drive_mapa.json": "18395a646b7053fa3997e241020a1a031697b73d6161138642dfbd7d8e9066af"
    },
-   "tamanho": 407752,
+   "tamanho": 438231,
    "tipo": "pedal",
    "inspiracao": "Ibanez TS808 Tube Screamer",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4575,8 +4575,8 @@
   },
   "opal_drive": {
    "nome": "Opal Drive",
-   "hash": "46131082cdc5150a",
-   "data": "2026-10-29T19:24:53Z",
+   "hash": "998ae2a061fc025d",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "opal_drive_botao_ganho.png",
@@ -4588,21 +4588,21 @@
     "opal_drive_mapa.json"
    ],
    "sha256": {
-    "opal_drive_botao_ganho.png": "15cddd609e31001c2001893d7d21156e096baa77791816a1624d14f88ae3e848",
-    "opal_drive_botao_nivel.png": "ed8a861c7297853d234efc37c07dd104d25154741943ed635f7df7babc9579b8",
-    "opal_drive_botao_tom.png": "5fed4b42ee41b9371789f75b3d16536ed7410b79bb2543f3bbe5d3500bc18286",
-    "opal_drive_frente.jpg": "35c822f169191e0160bacb39415b91db029a36b3c5a05bd01133907488280bac",
-    "opal_drive_frente_alfa.png": "ef2279938b7276840642724b344febab28ea47a444874416866ce5ed857b0208",
-    "opal_drive_manifesto.json": "f7acfae4cafa25f9bb2d2255168cd69eaab215226cdf70856b6f587545eec67b",
-    "opal_drive_mapa.json": "fc0d20ba40e04d3699ee3367dd7016122e184547ab1f5e13a74573c2c65416ef"
+    "opal_drive_botao_ganho.png": "6add54de05915408588ac59b237e5f9a4b8964a3a36871ae1d6a44a4795963a1",
+    "opal_drive_botao_nivel.png": "4407dc0c8bd51923cfc059073100bc85b00205734cd87d14d3fd73dbb45049e4",
+    "opal_drive_botao_tom.png": "e43351d5ef907ca009a6c658701a2713b80e8a15973117dce109d601b71342ed",
+    "opal_drive_frente.jpg": "8cca3a2463deb69ad5fc75d0ef7a23cd97f6505532e9950cecb788bcb373592c",
+    "opal_drive_frente_alfa.png": "969469f30468cd2168fcb3d8ef11ae336befa968cd7a3e07c4df272aac440d9e",
+    "opal_drive_manifesto.json": "8b6cbddd12809455a98aaf7ccaa5296d583baf03a47363e129bc2bca14e3ff65",
+    "opal_drive_mapa.json": "736b9ef40841da70d10d1619a3d41bac40fa312d73b4dbb025f99a1513879b2d"
    },
-   "tamanho": 343322,
+   "tamanho": 443265,
    "tipo": "pedal",
    "inspiracao": "Fulltone OCD",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4641,8 +4641,8 @@
   },
   "pearl_fuzz": {
    "nome": "Pearl Fuzz",
-   "hash": "3734d8450a277a4d",
-   "data": "2026-10-29T19:31:11Z",
+   "hash": "7dc693d8ca544ce0",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pearl_fuzz_botao_ganho.png",
@@ -4654,21 +4654,21 @@
     "pearl_fuzz_mapa.json"
    ],
    "sha256": {
-    "pearl_fuzz_botao_ganho.png": "401c6b19da5a2a799bde6d4fc95b56f635c226c485ba644bdf669627f9aa32e7",
-    "pearl_fuzz_botao_nivel.png": "e251b1df1c3f26f0e59e5443d9782c226c0cacc0fb4e2d077032feb53a89dfc0",
-    "pearl_fuzz_botao_tom.png": "b9633817259ba7f0fde6233137e7cf0e1cc90fecd9d1d792623fe7e1cbdf4ee2",
-    "pearl_fuzz_frente.jpg": "745a322dea4f29f0327374fd65d1e6655cfa3fd5ae0d324c639ef55126b8390e",
-    "pearl_fuzz_frente_alfa.png": "84dd3ef7833d8bb3fa1488194c9727a3d6cdbb769b9b40692dd1c14989c1851f",
-    "pearl_fuzz_manifesto.json": "c6a26c4fd9ec81b8e8d976fba77b9662b452eaa70a7b6b5ee05b5f1b7ab60f79",
-    "pearl_fuzz_mapa.json": "29fb9647cc57bd533caccc20e324fc463c83e221d92f2bd6d5c474daceb77ea4"
+    "pearl_fuzz_botao_ganho.png": "e6225b043b02150ad8579152f93f123b219f9609b67da802210d7088cfaa3715",
+    "pearl_fuzz_botao_nivel.png": "02d343db1bca8806faec585bb93a015cc62649a797d7286516aedc7d78bee159",
+    "pearl_fuzz_botao_tom.png": "4472e7e565342d32cd3c31ed6b5f722636a27cfe06bb1bde2a6541e864c32769",
+    "pearl_fuzz_frente.jpg": "4eac16bdc0458495b3ce782f973f25be5a1f52b634705644a359322092fd3234",
+    "pearl_fuzz_frente_alfa.png": "934a5c7142be56ffd024a331387a47286d393b948a65d995708f0013c436cce0",
+    "pearl_fuzz_manifesto.json": "eec708384e14fbfeb073ea4249e9d0d7ad63ca74a4118141d3d84e8d0d05d340",
+    "pearl_fuzz_mapa.json": "0366353a51a982b06854288cc83fa76d8b9592f9da09c73a5a94f078a4a050a7"
    },
-   "tamanho": 165492,
+   "tamanho": 189688,
    "tipo": "pedal",
    "inspiracao": "Big Muff",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4691,8 +4691,8 @@
   },
   "peridot_drive": {
    "nome": "Peridot Drive",
-   "hash": "3f31f378e59bac39",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "37ea5fcf30e9d128",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "peridot_drive_botao_ganho.png",
@@ -4704,28 +4704,28 @@
     "peridot_drive_mapa.json"
    ],
    "sha256": {
-    "peridot_drive_botao_ganho.png": "c5e24b7662352a04e03cb37069150f32f1bc941eb6b96fd1523cbf0d991dfbf4",
-    "peridot_drive_botao_nivel.png": "af9923ede7dd01c068741c37e6bd43f42d0dd16057e290b304e2d8852b9858b1",
-    "peridot_drive_botao_tom.png": "aec5773eb8c41d129b4a74da553817136aa5d75cfe3d736dd532b91bc2055564",
-    "peridot_drive_frente.jpg": "c3439cf4c6d57778720b3c53a30f3b6c9e54ae97ec56ea8e6aba67b9c2cfcde0",
-    "peridot_drive_frente_alfa.png": "1daa58cbfabbd94c7f1ea13f99cef795c3b35a9bedcf0bbc23dc721e0a686261",
-    "peridot_drive_manifesto.json": "5d5087f4c51ba0d7180403edb8054da77730bbed4630704b4cda244a2201bd80",
-    "peridot_drive_mapa.json": "8f1ccf11cd4f85a9c9cff4bf7c70acb45d577a529edd9fd7583e1345f82d5a62"
+    "peridot_drive_botao_ganho.png": "70543323abb5c566ed8f8ee6bba7fd5f06f793fe2d5ece7ec14ce4daa04939b2",
+    "peridot_drive_botao_nivel.png": "978f596207b86df7834ece8b2940ba90686bbea0951d8792ed337106e8a6f817",
+    "peridot_drive_botao_tom.png": "08d0f63df5b8c72be005bfd884fd39049c61d43d3b94a03f6ddcc2554cf03f1f",
+    "peridot_drive_frente.jpg": "29d4f724b9d10ff059d08cc07e7ef4483fc609594965f814c72ff215841b70c4",
+    "peridot_drive_frente_alfa.png": "7ee7ab519bc5beb43e42fc003755c525a8cf6419dfe23926a5a64622100f9501",
+    "peridot_drive_manifesto.json": "555733104bb8b2869706e73700e3b85a3fb45a4355d90dccb07cc97e93556399",
+    "peridot_drive_mapa.json": "a0ccf43c79f7a479e87a066b283ebca6d4a74f649c0a9f69b69475ec8608cd4c"
    },
-   "tamanho": 381332,
+   "tamanho": 417625,
    "tipo": "pedal",
    "inspiracao": "EarthQuaker Plumes",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "pistachio_drive": {
    "nome": "Pistachio Drive",
-   "hash": "dc5f8342d996d1cf",
-   "data": "2026-10-29T19:05:44Z",
+   "hash": "398974d5c4177d99",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pistachio_drive_botao_ganho.png",
@@ -4737,21 +4737,21 @@
     "pistachio_drive_mapa.json"
    ],
    "sha256": {
-    "pistachio_drive_botao_ganho.png": "5904f31a04149db45efd32e656d8fb428e282b43bac7d5df00fe9322a275339a",
-    "pistachio_drive_botao_nivel.png": "8c1b0a49728d4a396a2424d94ea087865732ac56bd6e8140d7c225dbab5d2ef8",
-    "pistachio_drive_botao_tom.png": "bef2503a92fc7d7c57e237c25993e86a90e8549f75f4c9a63057ba2e08752635",
-    "pistachio_drive_frente.jpg": "c4a3c64a785d5aba864fe2e28a086a1b421eb965df7437665eb2d46a7bacaffe",
-    "pistachio_drive_frente_alfa.png": "5c7af66e19771a24901eb484c4e009c8b94083766274c7f8eb99adc53cb5e49b",
-    "pistachio_drive_manifesto.json": "e1d0bdd2bda24b029059824a945a312002ececb2aedcbcf628f30f009a7e455a",
-    "pistachio_drive_mapa.json": "4693e195882f79ad4ae00636ed844f117f44fe33f35768ed77c6521e561a8319"
+    "pistachio_drive_botao_ganho.png": "7c4da81d7a6f4ee210a6ebdfa47c3ca86f28bc7f10a71a40c5b0c1bbc8185f26",
+    "pistachio_drive_botao_nivel.png": "dd03c554fee219cccd724c2bda835dbde01ac97a719b9c59ad62a1bd30044641",
+    "pistachio_drive_botao_tom.png": "2aa9ebc2933ce27bdd7a6305a6ce54cf0a8574dd6d2b87a12e81948d475acef5",
+    "pistachio_drive_frente.jpg": "9f4c923cfbdec7e68d3c11165d148f3cbdb9a632c906e4fcc68a9390965c4e65",
+    "pistachio_drive_frente_alfa.png": "8d641db5f15edb63f3a9b2f1dce4b38d8660191340ef184c14b534da87924a6f",
+    "pistachio_drive_manifesto.json": "7a50df3872e9e7be82438b6326b6d520ef1bdc358216d8475ea038618d97712b",
+    "pistachio_drive_mapa.json": "0222bc3689ebbdef20ac8858826c6b8fdd19745c75bb55295890928ba98ece60"
    },
-   "tamanho": 439437,
+   "tamanho": 490561,
    "tipo": "pedal",
    "inspiracao": "Maxon OD808",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -4823,8 +4823,8 @@
   },
   "pulsar_echo": {
    "nome": "Pulsar Echo",
-   "hash": "bc7a5af7ff429cc9",
-   "data": "2026-10-29T21:25:34Z",
+   "hash": "2673027a9ece21fb",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pulsar_echo_botao_a.png",
@@ -4836,28 +4836,28 @@
     "pulsar_echo_mapa.json"
    ],
    "sha256": {
-    "pulsar_echo_botao_a.png": "ec319edfbf5794c3332667cfd715ea7938dde1e86052dd91e04ea70837c478fa",
-    "pulsar_echo_botao_b.png": "c2eb8b9550f67709603b2098bdadaa950ea2ac5d0a62544bfda252ad5a11e0a6",
-    "pulsar_echo_botao_c.png": "577ab3c92fad87a71d3355c02f925fe7617af4d132fbc59e9a1737011d6dd472",
-    "pulsar_echo_frente.jpg": "586471543501f020eec89aa4f4205682bdec8f8c52958bbb592462f2eba5e3a8",
-    "pulsar_echo_frente_alfa.png": "67c1775319c8580d941bf8a6e30a26f7de2c42d4a079dbae4a461d49293b5108",
-    "pulsar_echo_manifesto.json": "c79696c8280f1ad12d6852dae873e1fcd955e56f6538ee885d5ecf16756a4ed3",
-    "pulsar_echo_mapa.json": "b37d26093b9429bfa677e3ddbdc1fca0d85970760cbaf87aa4bc70fc3dc7bcff"
+    "pulsar_echo_botao_a.png": "95d8294a83b9534d3e2f6ca2d9970fba5d15d4508e717d340f4f00df1aabb186",
+    "pulsar_echo_botao_b.png": "09dbbd48547050e55d98848de7d8e253a2a291dc4b72e7cf0f452cb526feb1a2",
+    "pulsar_echo_botao_c.png": "88dba695412c7252d6d57acf39d268daa33f9063a167c06f60fa4ea8ec3fbc8d",
+    "pulsar_echo_frente.jpg": "c625812bf951978d7bc0f245010b6c3448b538898b868a987fe7487f022ca2ad",
+    "pulsar_echo_frente_alfa.png": "c17673c21bb6c5435598d554673c09fb67d99c1977acdac2198d35360ae9fb09",
+    "pulsar_echo_manifesto.json": "0568d549da47817b82b5f0c011bd2b45313b997108ef6f601054f0b68a6c943e",
+    "pulsar_echo_mapa.json": "d834f280655b661feaa17a901a8daa62809b28cce5f299b06478a72bc345b927"
    },
-   "tamanho": 196726,
+   "tamanho": 196331,
    "tipo": "pedal",
    "inspiracao": "Electro-Harmonix Memory Man",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_analogico",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "pyrite_klone": {
    "nome": "Pyrite Klone",
-   "hash": "71177d4b806d4c72",
-   "data": "2026-10-29T21:00:14Z",
+   "hash": "596f125bbc75315a",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pyrite_klone_botao_ganho.png",
@@ -4869,28 +4869,28 @@
     "pyrite_klone_mapa.json"
    ],
    "sha256": {
-    "pyrite_klone_botao_ganho.png": "4988debbdc13229e9a31db6940ef54b433b335cdb4289b64ef8c4324d1a8c597",
-    "pyrite_klone_botao_nivel.png": "940778a814538509cb8cd83a9b1d93439b40b0a386c863bbffb152c388d9a9b9",
-    "pyrite_klone_botao_tom.png": "753e9230af9b70fd503151f997aa7ddb16151f16a6038f561ce16a22d5488744",
-    "pyrite_klone_frente.jpg": "9f76c952af0930d705cb70eeed68a182dc8d49738fc0e93965c4ad6db8e7759f",
-    "pyrite_klone_frente_alfa.png": "89b41808d3c05eb4df93d583f122835cd67d0935d761c0aae6538c4d49c57844",
-    "pyrite_klone_manifesto.json": "0937e62fdfdc7516796bc4025ade5109556bf6f985c85a36549d6354be9a2bdd",
-    "pyrite_klone_mapa.json": "e1dd452387e6f4f631dc125254876f501044d65a355a0de87815ad798fc90afe"
+    "pyrite_klone_botao_ganho.png": "8777c2de547556724a76cd72d9d6f4ef72045b0a496bc0a0f3e5ce43e64738a9",
+    "pyrite_klone_botao_nivel.png": "e093544751ea60674b45017780476941d89fe5974168bf03475573e027ca08a4",
+    "pyrite_klone_botao_tom.png": "337d21d427d125b06768d8b146c3666d933016ee551538abe67bc0f07e564e6b",
+    "pyrite_klone_frente.jpg": "1be67e53f5ff2b3ba5b77bc99bc54aa5c2e166089eb1fdc291481ec54d58abe8",
+    "pyrite_klone_frente_alfa.png": "01ee2fce0630d993f0adc3b3721a57109c246c773ffb2a3b0aea3e26787b1266",
+    "pyrite_klone_manifesto.json": "44106ccc0296efa4640ccdf7ee5a51fdc0996aaa021f415956bb48fbd567e2f0",
+    "pyrite_klone_mapa.json": "ed25c28cfc0e28a02aaea79b098206d84b9187840562e735d2c3187f854eb4b1"
    },
-   "tamanho": 439660,
+   "tamanho": 416980,
    "tipo": "pedal",
    "inspiracao": "Wampler Tumnus",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "quince_plus": {
    "nome": "Quince Plus",
-   "hash": "ac1e1e90bc16daaa",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "e7edda32bd35c777",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "quince_plus_botao_ganho.png",
@@ -4901,27 +4901,27 @@
     "quince_plus_mapa.json"
    ],
    "sha256": {
-    "quince_plus_botao_ganho.png": "58e3e71b44aed56ec7477a7d53ba20dcfe71b234a934d8c967ce72c3ee559864",
-    "quince_plus_botao_nivel.png": "495074c148d2caf28c0be5fce7a0516ada0864cc51c1e22a40c4defd358f7b43",
-    "quince_plus_frente.jpg": "6d810b15895fff1a669bc9c51b75e827f025645ca2ab5ecd9062a67d99f78e91",
-    "quince_plus_frente_alfa.png": "a8b085c5dbf8bebb4afeb4a9c3a9c62395dc500958be40a065496a268ce0bfaf",
-    "quince_plus_manifesto.json": "5f2dafa5b183728a4d464142f2491d9b5b9b231b171d7812098b231e31e2b4b6",
-    "quince_plus_mapa.json": "1012fa17eb683eb0d81005aedbbbf25d4ba6789f8dc1e9bffe38196fced31e45"
+    "quince_plus_botao_ganho.png": "1774b6db7eee60b93417e3b48afc5ea086309c3ac3f05e14e6b3868c7973fe48",
+    "quince_plus_botao_nivel.png": "9a514421da871268daa51e17fb4cf3895d0d3747971fee2ed0ba5f43537e4492",
+    "quince_plus_frente.jpg": "834c5af0bcdb5df14519e2b450a07a76633897209c5557245cff8f62800c682f",
+    "quince_plus_frente_alfa.png": "106825fbdac4e42e8b2cbe2ece1fc9253752e044123ddcec4c81c01ca3cf593f",
+    "quince_plus_manifesto.json": "159686792e624ff8d2092d0607736e75586e3135c2317f41496672d40c8a89b7",
+    "quince_plus_mapa.json": "b0247f6cae7b4dbbc285f1192fb515b3d97a368d06dc8d0631f73bc873336ca5"
    },
-   "tamanho": 331039,
+   "tamanho": 389957,
    "tipo": "pedal",
    "inspiracao": "MXR Distortion+",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
   "raspberry_drive": {
    "nome": "Raspberry Drive",
-   "hash": "292820955d857419",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d47ec79ddf10d802",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "raspberry_drive_botao_ganho.png",
@@ -4933,21 +4933,21 @@
     "raspberry_drive_mapa.json"
    ],
    "sha256": {
-    "raspberry_drive_botao_ganho.png": "8e0055c141a97fc3b22a35e979273ae04468cbc7c3309f572a12d24aa9db4cd6",
-    "raspberry_drive_botao_nivel.png": "5a384346a2da05027a104c01afe9bcac85cfdd42c360f8ea6af47429ae46395f",
-    "raspberry_drive_botao_tom.png": "c762e5b638b0ae89e4f14b46b50c4c6c9150294c98bc90cd48916982fea4f72b",
-    "raspberry_drive_frente.jpg": "2830a14c9836fa0a89f0e065f2623a602e9aeb6b9e8e264f3f741a206875a83e",
-    "raspberry_drive_frente_alfa.png": "a5016a7f3276b613d86d89ef0976cbb46b4389dd645d1e1f676b232fa38a55c0",
-    "raspberry_drive_manifesto.json": "4983e971e50f55bf2b1c1f8b6e930a2012f60494c65fbab89e8b290ed00c341c",
-    "raspberry_drive_mapa.json": "1cfbc402f5c433b3336836bd3ca6a1a26530957c74935c89321e3927bbb87e37"
+    "raspberry_drive_botao_ganho.png": "a5d344833c9503c033f3e63c3201caec07be296a1b7502da89a3689684fb1991",
+    "raspberry_drive_botao_nivel.png": "a5776392668d077d6ecc4a47eead9f3c24d195d223cf067d094a632b6291a331",
+    "raspberry_drive_botao_tom.png": "b2a5c1be7558a5d302b104fc5c03ece712575c8690181bb04f88f919c83d9459",
+    "raspberry_drive_frente.jpg": "30ec84a92946c5781ba703c3ba241b3687f99f7cf94f95e152daba70e52fc11a",
+    "raspberry_drive_frente_alfa.png": "53dc8b1e33656d0ff59419ca233817870cb5177568664229a7f5ef28ac297687",
+    "raspberry_drive_manifesto.json": "ebef7f7589733ff00b3e2f2ee9e87eccd97b43ead7d829f0797fb73af117effc",
+    "raspberry_drive_mapa.json": "065ad159a84c1806f5fe6fc0ba380651ca8416ae41376d98592784517fe9b1b2"
    },
-   "tamanho": 289522,
+   "tamanho": 478637,
    "tipo": "pedal",
    "inspiracao": "JHS Andy Timmons",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5136,8 +5136,8 @@
   },
   "sapote_33": {
    "nome": "Sapote 33",
-   "hash": "faaff25148fc3552",
-   "data": "2026-10-29T21:08:38Z",
+   "hash": "85287ed3aa818f58",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sapote_33_botao_ganho.png",
@@ -5148,20 +5148,20 @@
     "sapote_33_mapa.json"
    ],
    "sha256": {
-    "sapote_33_botao_ganho.png": "4cc03c24f6da90898c382380e72a2d9d6417d522b529f6f820a9b237da698801",
-    "sapote_33_botao_nivel.png": "8b3c73377f3a18d28f96bb5a7874102bcef887d0f02db03bba2d1d600f5b4229",
-    "sapote_33_frente.jpg": "395f69d61d5d0696469853f252f8caa8cf3856b1eeb86e03acfb54d0c56a7e39",
-    "sapote_33_frente_alfa.png": "8beb07da166766d693fce5955ed48dc63077fb334dc13cba1dc0c88fe245655c",
-    "sapote_33_manifesto.json": "36b73f023696d04fd19119c33e0c686f7bc59af61c15b86d5be57ac39611d363",
-    "sapote_33_mapa.json": "930aeb918946522186b46bcf8e3bfc4117e62df6041519d699d906ad24e2f892"
+    "sapote_33_botao_ganho.png": "1d8a446551bf456e7fe3d9252c1a58bb9ac8e259934f42e30ed753bcb5aa21d8",
+    "sapote_33_botao_nivel.png": "32664e9bf5a3fb089743657e1de375c2edadf97a152c0c5223a451ca941e87a6",
+    "sapote_33_frente.jpg": "0857e8f8aa185bf077000dc4e0be836c470ce05a13b1341d226e76bd9054fd79",
+    "sapote_33_frente_alfa.png": "ae5de2c0bfb191f5b79837c8b6ba929045dcb499a4c1f75a23b70eff071c97b5",
+    "sapote_33_manifesto.json": "d65653a760dfb1c1a14ceea62d9f4cad8d1eb553263073c485e503963672a25b",
+    "sapote_33_mapa.json": "c9b82cac45c64012bcc0f3662d1f01cb65a7dc978283e18ef630722d51c5d195"
    },
-   "tamanho": 207180,
+   "tamanho": 160298,
    "tipo": "pedal",
    "inspiracao": "Fortin 33",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5492,8 +5492,8 @@
   },
   "snowpear_treble": {
    "nome": "Snow Pear Treble",
-   "hash": "8c37c93fe65af4bd",
-   "data": "2026-10-29T19:16:25Z",
+   "hash": "db32698969c27e1e",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "snowpear_treble_botao_ganho.png",
@@ -5504,20 +5504,20 @@
     "snowpear_treble_mapa.json"
    ],
    "sha256": {
-    "snowpear_treble_botao_ganho.png": "2b8379a984d8b201acf528572dcc1c07e2cf0c1d3ef61ca46d84e953fcfe97a6",
-    "snowpear_treble_botao_nivel.png": "7ee6f8436baf700a4c2e8f01ef94085104af7735858cddb26209367246387b52",
-    "snowpear_treble_frente.jpg": "a698e2ad7f4e32c1b6ff9dcd3ed2df1c4971e396c2bdae65632619a40cea97cc",
-    "snowpear_treble_frente_alfa.png": "26cc47a1d3a065ed1e29bc22550d02ba349bf3fc653f4d845e8659fe80b57815",
-    "snowpear_treble_manifesto.json": "291b786d16eb3f8030b9e5abaf6ea14b82f9a8152aa4e420bc83b097c3267fdc",
-    "snowpear_treble_mapa.json": "56f311fd3868271bb690ce4c16b845b37a211f22abd3ee8b543a3e0688572819"
+    "snowpear_treble_botao_ganho.png": "799e4b70627245a7cdb540abba44ce751e213dedb4607a60fedb11f727faa4af",
+    "snowpear_treble_botao_nivel.png": "e698ecce979e93af9cf75054984a48e20d0167d52250b6d71e5c7a55b168ec46",
+    "snowpear_treble_frente.jpg": "66069f5945438991f6c812ec4e15f419ff732bfac93fe3369cfcb74fc1e6e30a",
+    "snowpear_treble_frente_alfa.png": "a2ba3660a315ef69db8a6ae735571b0ab16fed75a0d38f884e4515a119697699",
+    "snowpear_treble_manifesto.json": "0fdc3d01ab2d0bba99664eb75ccdad90930fcc879f42b77f7f8537ef8dc99993",
+    "snowpear_treble_mapa.json": "af829cd1d5941b989880c6b23f01284c49d12a37d0df6c77bffe87f6304bc262"
    },
-   "tamanho": 92499,
+   "tamanho": 66378,
    "tipo": "pedal",
    "inspiracao": "Rangemaster",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5694,8 +5694,8 @@
   },
   "spinel_precision": {
    "nome": "Spinel Precision",
-   "hash": "0d86b6df419c1c7e",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "bc61e1a3b140504d",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "spinel_precision_botao_ganho.png",
@@ -5707,21 +5707,21 @@
     "spinel_precision_mapa.json"
    ],
    "sha256": {
-    "spinel_precision_botao_ganho.png": "b2e8b890732c9feff6fbe77a4df90eddb869fd06c48792264c040fe8b73b07d4",
-    "spinel_precision_botao_nivel.png": "52f0b8f406ed53f2cdab4bc5fff150592b8e2716730023ac23e6d95e6541b058",
-    "spinel_precision_botao_tom.png": "dd641b57af692b15a7a07f410bb1e89ae96cf1aea07f5b1ac8ccbf6c2fab2054",
-    "spinel_precision_frente.jpg": "35adf934f45cd6a373aef9f9e374996718aa041d7bb85d00256488067ebf43f8",
-    "spinel_precision_frente_alfa.png": "37f5d2ba250f815609b7562503ff829d434447e1bce2c4d1375f03442d5f6ecd",
-    "spinel_precision_manifesto.json": "99d2b0a323bd9f7670549d1a4fab212f2292c89167732df10e214401bab7f928",
-    "spinel_precision_mapa.json": "c55662d244c2c6b0cef01b3bd1b8a9b3050210ba1b42809066423a8bb197e3d3"
+    "spinel_precision_botao_ganho.png": "10babc91f08d48fc252f04ac53b8b393b0118a42ace8440a440f0e403fdd97ce",
+    "spinel_precision_botao_nivel.png": "dbb7f3a51836c0071ea3673f41b5e234bae5c736c368e290c6d30153bce45ec5",
+    "spinel_precision_botao_tom.png": "da20431aae1d691424e0fee16f067e942161feb5159b24550063a6bc195b65e1",
+    "spinel_precision_frente.jpg": "cc30bd7c520d78bc9844dd41b4f2b384af556f96c2dc9adc25cce9c78dab439a",
+    "spinel_precision_frente_alfa.png": "86a858d89b74cd1270c0a64304aba70365338f07ed5def7835823cc577c7e744",
+    "spinel_precision_manifesto.json": "02f75266d63dd4c67f01297c329a847c59bf1322c2e7d6387fa88768150f13c6",
+    "spinel_precision_mapa.json": "c730e5921b35fc1076e203c6372bcc25352dcf284960c59912cbaf2f2a0bc093"
    },
-   "tamanho": 277168,
+   "tamanho": 327522,
    "tipo": "pedal",
    "inspiracao": "Horizon Devices Precision Drive",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5871,8 +5871,8 @@
   },
   "topaz_250": {
    "nome": "Topaz 250",
-   "hash": "6f41876aac18bdb2",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "0cc56f8a923d5409",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topaz_250_botao_ganho.png",
@@ -5883,20 +5883,20 @@
     "topaz_250_mapa.json"
    ],
    "sha256": {
-    "topaz_250_botao_ganho.png": "925e00ff6fe76ed51bffb5e408b9f3c3ca3513371e9c3a2b3b00789a4dd40081",
-    "topaz_250_botao_nivel.png": "535d52a233a96f9551b3ecdc402dddf2fe37cab131cf0c6b1c19ce3dfd9d30c7",
-    "topaz_250_frente.jpg": "7c21dfc3aa1270d8ed3a69cd3b4e5cc88668bcc1443834fe661d5cfabcb2d612",
-    "topaz_250_frente_alfa.png": "2314adcde2c7d19bc671c01680560a03c8c5caa9bfc6bd1cc90e4642338e8022",
-    "topaz_250_manifesto.json": "c6bb26baae894f387f632e6b23276f755654ec34114326a805719cf9f3cd6940",
-    "topaz_250_mapa.json": "8c554ddf96fadfce94078491798a7bddb931ea9abfa8fb60c1bd20c57f19915a"
+    "topaz_250_botao_ganho.png": "8deaf08eecd085b402c2b56bc5bae9eec25ada54a0c1a34064b38aaf891d9e0c",
+    "topaz_250_botao_nivel.png": "1f03da6afc6d775fe56825758e7597cd4dcb8f5d396ad45a15fc8873907b1311",
+    "topaz_250_frente.jpg": "e55c856d32c846f42f2433eee51c3a97c102c63ec096d33d453aa70ef9493cc3",
+    "topaz_250_frente_alfa.png": "0e825523c832ea8038b0106b3ed881ce942a4d1861a0adfd0b4dc96399f5c40d",
+    "topaz_250_manifesto.json": "3b1d800d4c039cf1a525d5aed9daa4c8968af0832907f442cdd678fbece4e8b7",
+    "topaz_250_mapa.json": "6855c2a88565bbd7d113f15269bc5c439efa7bbb5030aee4a3e8910d6de75df8"
    },
-   "tamanho": 349415,
+   "tamanho": 485537,
    "tipo": "pedal",
    "inspiracao": "DOD Overdrive Preamp 250",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5980,8 +5980,8 @@
   },
   "tourmaline_grind": {
    "nome": "Tourmaline Grind",
-   "hash": "e4bdd71944d0cbaa",
-   "data": "2026-10-29T21:12:51Z",
+   "hash": "05b70f402e46935a",
+   "data": "2026-10-30T14:44:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tourmaline_grind_botao_ganho.png",
@@ -5993,21 +5993,21 @@
     "tourmaline_grind_mapa.json"
    ],
    "sha256": {
-    "tourmaline_grind_botao_ganho.png": "3b1351b3d1bc962c530a19d99ceb94c899863ac683250631a75908c809605601",
-    "tourmaline_grind_botao_nivel.png": "cbdd39a35ffac12d10f55718575f0fe465a2f0e65ba1e454b908b80950d1ca56",
-    "tourmaline_grind_botao_tom.png": "5010b2ac8f9086387aa7c3d46982bb1d0152356a70149a2a078e99398cd45c38",
-    "tourmaline_grind_frente.jpg": "fc1873866fda7408ddefa3a24b69c924d3277d8cf375fc1d50e4d3c60b4e6fcd",
-    "tourmaline_grind_frente_alfa.png": "7ba75e87448efc75192d97d2fd4a99b0d28afb7e33c55a803f544492e1d0f45f",
-    "tourmaline_grind_manifesto.json": "22c876395e2d1c1158402200660681d7de2e5da6adfb666cae8257d4576a791d",
-    "tourmaline_grind_mapa.json": "9f1d2fb4b272ab28f2d9f3b514b296253eeb91c72711e25f06f832b8d53722ca"
+    "tourmaline_grind_botao_ganho.png": "dee126feedcdc1e24d9b09c27be75b2284d6c7fd27adb5b654c6e2c95f8c90e8",
+    "tourmaline_grind_botao_nivel.png": "50729f6da945ae751e16569843668e7abad3a963170b89e6dea67d43cdc0b8f1",
+    "tourmaline_grind_botao_tom.png": "570770bfcf2fa377d3d6ce05385f5e2ee650f60de4c1375f9357d902f3067271",
+    "tourmaline_grind_frente.jpg": "19c843c239dd2f4496fe9daf974b396ed7c15397068f7f2a889de51c5f16317a",
+    "tourmaline_grind_frente_alfa.png": "05fc4219e4a65487cf088bc86e670131458955249d4e84a97398f32c004d55b5",
+    "tourmaline_grind_manifesto.json": "1129ab8c5b94a0a72e755ec675bb8ab7866b3c94cccc0e9008b5d74ad3db7853",
+    "tourmaline_grind_mapa.json": "94bf88ae2a3adccb59f7718d2fe2b077baf2e19c8e05f4e24206581c6ad9b976"
    },
-   "tamanho": 245663,
+   "tamanho": 230235,
    "tipo": "pedal",
    "inspiracao": "Fortin Grind",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
