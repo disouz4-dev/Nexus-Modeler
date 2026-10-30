@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:56:04Z",
+ "gerado": "2026-10-30T11:58:13Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3507,8 +3507,8 @@
   },
   "lime_bassfuzz": {
    "nome": "Lime Bass Fuzz",
-   "hash": "01925edce4817131",
-   "data": "2026-10-29T21:32:00Z",
+   "hash": "2d372a6ca103c697",
+   "data": "2026-10-30T11:58:13Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "lime_bassfuzz_botao_ganho.png",
@@ -3520,21 +3520,21 @@
     "lime_bassfuzz_mapa.json"
    ],
    "sha256": {
-    "lime_bassfuzz_botao_ganho.png": "b3c710eb37489251055e5b498ec5aac287315704a5bbc1a33cc6ebff3d4dd4f5",
-    "lime_bassfuzz_botao_nivel.png": "ec267cde425eb3e628d68f2c28ad1db9ff45fbcd555961fbe4fed56f2b649f77",
-    "lime_bassfuzz_botao_tom.png": "6c6f47101fb2b7a18dff8cbb67c88934c27828c4ba29e2298112c6924818dd4e",
-    "lime_bassfuzz_frente.jpg": "d028bd66d2ca79948c9944b0d88fa6dd24ffdf3a4ef2c6bc7167d9bff07a36d2",
-    "lime_bassfuzz_frente_alfa.png": "4c141f40a56e630fa45a96cd1bf4eede6eb74c47ff8b91d4d8477bccef426a72",
-    "lime_bassfuzz_manifesto.json": "489127cb98592562f38a2939aec9d6ecdb5cb93ca6acdd6fcf33f2fe55230078",
-    "lime_bassfuzz_mapa.json": "12e706194247b7426bbe25c61cd1cd28080d6b561f6f470b59fe27170d78fe7d"
+    "lime_bassfuzz_botao_ganho.png": "74cdcc5a4505d4d1b7b343be2d1e3309b5aac6eb0ea7819beac067b1cd9f7ef6",
+    "lime_bassfuzz_botao_nivel.png": "2ba0a37f8309de62c59341cf100b0b8ead7d50c94b9a4d50a514beccb99da0b2",
+    "lime_bassfuzz_botao_tom.png": "7009ae76017336689c71cb34e5d76f6698a8d81684789cf3808c3f4a0bc23dba",
+    "lime_bassfuzz_frente.jpg": "71855cd0a2cc27f80eb15d48b57f7f09f68b076f43e57cdf82fff2a8ab1d6ae8",
+    "lime_bassfuzz_frente_alfa.png": "55d58bb9a1e18e8aae86cfa424ecc0b2a8b149178fbfcec69bd9e2324f59a4db",
+    "lime_bassfuzz_manifesto.json": "7ba49794219534d32123df3da8287c426452a49cafa4b6a8eb354806d1aa9567",
+    "lime_bassfuzz_mapa.json": "6550e2e9134c5079e0c8985b4b409de6c3e0c15f750f9b4b1e0732bbf871178f"
    },
-   "tamanho": 360331,
+   "tamanho": 351803,
    "tipo": "pedal",
    "inspiracao": "Electro-Harmonix Bass Big Muff",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
