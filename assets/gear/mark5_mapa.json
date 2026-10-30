@@ -7,53 +7,53 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 333,
-      "y": 322,
+      "x": 344,
+      "y": 291,
       "tamanho": 92,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 419,
-      "y": 322,
-      "tamanho": 91,
-      "arquivo": "botao_volume.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "presenca",
-      "x": 504,
-      "y": 323,
-      "tamanho": 90,
-      "arquivo": "botao_presenca.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "agudo",
-      "x": 333,
-      "y": 457,
+      "x": 344,
+      "y": 405,
       "tamanho": 92,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
+      "id": "volume",
+      "x": 454,
+      "y": 292,
+      "tamanho": 91,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
       "id": "medio",
-      "x": 419,
-      "y": 458,
+      "x": 454,
+      "y": 406,
       "tamanho": 91,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
+      "id": "presenca",
+      "x": 566,
+      "y": 292,
+      "tamanho": 90,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
       "id": "grave",
-      "x": 504,
-      "y": 458,
+      "x": 566,
+      "y": 406,
       "tamanho": 90,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
@@ -61,63 +61,63 @@
     },
     {
       "id": "eq80",
-      "x": 1487,
-      "y": 320,
-      "tamanho": 202,
+      "x": 1534,
+      "y": 309,
+      "tamanho": 164,
       "arquivo": "botao_eq80.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 58,
-      "altura": 202
+      "largura": 59,
+      "altura": 164
     },
     {
       "id": "eq240",
-      "x": 1551,
-      "y": 320,
-      "tamanho": 202,
+      "x": 1586,
+      "y": 309,
+      "tamanho": 164,
       "arquivo": "botao_eq240.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 59,
-      "altura": 202
+      "altura": 164
     },
     {
       "id": "eq750",
-      "x": 1616,
-      "y": 320,
-      "tamanho": 202,
+      "x": 1637,
+      "y": 309,
+      "tamanho": 164,
       "arquivo": "botao_eq750.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 59,
-      "altura": 202
+      "altura": 164
     },
     {
       "id": "eq2200",
-      "x": 1680,
-      "y": 320,
-      "tamanho": 202,
+      "x": 1689,
+      "y": 309,
+      "tamanho": 164,
       "arquivo": "botao_eq2200.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 60,
-      "altura": 202
+      "largura": 59,
+      "altura": 164
     },
     {
       "id": "eq6600",
-      "x": 1745,
-      "y": 320,
-      "tamanho": 202,
+      "x": 1740,
+      "y": 309,
+      "tamanho": 164,
       "arquivo": "botao_eq6600.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 60,
-      "altura": 202
+      "altura": 164
     }
   ],
   "canais": [
@@ -128,44 +128,35 @@
   "rotulos": [
     {
       "texto": "INPUT",
-      "x": 241.9,
-      "y": 487.6,
-      "altura": 19.42,
+      "x": 239.9,
+      "y": 463.3,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 383.1,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 467.8,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 552.5,
-      "y": 317.7,
-      "altura": 17.93,
+      "x": 394.3,
+      "y": 282.3,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 383.1,
-      "y": 555.7,
+      "x": 394.3,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 503.2,
+      "y": 287.2,
       "altura": 17.93,
       "achatamento": 1.0,
       "cor": "#ededed",
@@ -173,216 +164,243 @@
     },
     {
       "texto": "MID",
-      "x": 467.8,
-      "y": 555.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 552.5,
-      "y": 555.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "GAIN",
-      "x": 766.3,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 851.1,
-      "y": 317.7,
-      "altura": 17.93,
+      "x": 503.2,
+      "y": 508.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "PRESENCE",
-      "x": 935.8,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 766.3,
-      "y": 555.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MID",
-      "x": 851.1,
-      "y": 555.7,
-      "altura": 17.93,
+      "x": 614.0,
+      "y": 282.3,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 935.8,
-      "y": 555.7,
-      "altura": 17.93,
+      "x": 614.0,
+      "y": 508.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 1149.6,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 1234.3,
-      "y": 317.7,
-      "altura": 17.93,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 1319.0,
-      "y": 317.7,
-      "altura": 17.93,
+      "x": 786.2,
+      "y": 286.9,
+      "altura": 18.17,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 1149.6,
-      "y": 555.7,
-      "altura": 17.93,
+      "x": 786.2,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 895.1,
+      "y": 282.3,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "MID",
-      "x": 1234.3,
-      "y": 555.7,
-      "altura": 17.93,
+      "x": 895.1,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1006.0,
+      "y": 282.3,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1319.0,
-      "y": 555.7,
-      "altura": 17.93,
+      "x": 1006.0,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1184.2,
+      "y": 282.3,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1184.2,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1293.0,
+      "y": 282.3,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1293.0,
+      "y": 508.7,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1403.9,
+      "y": 282.3,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1403.9,
+      "y": 508.7,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "80",
-      "x": 1514.7,
-      "y": 534.2,
-      "altura": 16.81,
+      "x": 1562.3,
+      "y": 491.5,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "240",
-      "x": 1579.2,
-      "y": 534.2,
-      "altura": 16.81,
+      "x": 1613.8,
+      "y": 491.5,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "750",
-      "x": 1643.7,
-      "y": 534.2,
-      "altura": 16.81,
+      "x": 1665.2,
+      "y": 491.5,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "2200",
-      "x": 1708.3,
-      "y": 534.2,
-      "altura": 16.81,
+      "x": 1716.7,
+      "y": 491.5,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "6600",
-      "x": 1772.8,
-      "y": 534.2,
-      "altura": 16.81,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "REVERB",
-      "x": 1875.7,
-      "y": 280.2,
-      "altura": 16.81,
+      "x": 1768.2,
+      "y": 491.5,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "OUTPUT",
-      "x": 1956.4,
-      "y": 319.6,
-      "altura": 16.81,
+      "x": 1920.6,
+      "y": 289.8,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "SOLO",
-      "x": 1956.4,
-      "y": 537.4,
-      "altura": 16.81,
+      "x": 1920.6,
+      "y": 501.2,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MUTE",
+      "x": 2017.6,
+      "y": 273.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "EQ",
+      "x": 2073.0,
+      "y": 273.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#ededed",
+      "espaco": 1.0
+    },
+    {
+      "texto": "FX",
+      "x": 2124.5,
+      "y": 273.6,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "STANDBY",
-      "x": 2037.1,
-      "y": 463.6,
-      "altura": 16.81,
+      "x": 2017.6,
+      "y": 456.0,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
     },
     {
       "texto": "POWER",
-      "x": 2117.8,
-      "y": 463.6,
-      "altura": 16.81,
+      "x": 2104.7,
+      "y": 456.0,
+      "altura": 23.32,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -390,18 +408,18 @@
   ],
   "leds_canais": [
     {
-      "x": 466.2,
-      "y": 279.8,
+      "x": 475.8,
+      "y": 363.6,
       "raio": 11.2
     },
     {
-      "x": 850.3,
-      "y": 279.8,
+      "x": 751.6,
+      "y": 382.2,
       "raio": 11.2
     },
     {
-      "x": 1234.4,
-      "y": 279.8,
+      "x": 1144.4,
+      "y": 396.1,
       "raio": 11.2
     }
   ]
