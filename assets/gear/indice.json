@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T18:23:55Z",
+ "gerado": "2026-10-30T18:26:03Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6163,8 +6163,8 @@
   },
   "tweed59": {
    "nome": "Tweed 59",
-   "hash": "42bee698125665d5",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "a6de60af5c147495",
+   "data": "2026-10-30T18:26:03Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed59_botao_agudo.png",
@@ -6179,24 +6179,24 @@
     "tweed59_mapa.json"
    ],
    "sha256": {
-    "tweed59_botao_agudo.png": "0bfd1221ce621944a0fdad222aa76b50c3a165a9a437b6d89e094802fcf53dab",
-    "tweed59_botao_ganho.png": "2aa535731a8786eef455caa22adf38624be217fd040b0e88b532f167b85a8c9d",
-    "tweed59_botao_grave.png": "3df8424d3178616153087d4c82d5b5c190e73cc37049c364130a44c26bf3b550",
-    "tweed59_botao_medio.png": "abd966b28575153e49f93666bc0b6aeace49a06a47302a7a805535d299819413",
-    "tweed59_botao_presenca.png": "fcc840906ab96090a8d3d57b7645946fc1a4286c8396e19d431f9c79d38f1254",
-    "tweed59_botao_volume.png": "0709839735d0522a5eb0106f0a29f4fe0b5e5e3c57b79914a3a902fb0c8acd81",
-    "tweed59_frente.jpg": "f7cde60fb74fd0db22262856620696b1b4b14efd84e9c284d87fb0695a632cf8",
-    "tweed59_frente_alfa.png": "c259ecbb01ac10c1b2144c9681835fcc47cfaf9727dc383f3ed0d796edec7d02",
-    "tweed59_manifesto.json": "bfed31e9d538786142204468cb596b0f1dadf3d3bd9dfee2137a094eed977f9f",
-    "tweed59_mapa.json": "59f9ba17961fa6cd06736bc715d91416a86d25dbfc0fb7df8a55870a7097e88b"
+    "tweed59_botao_agudo.png": "fee88bbe32ad4d11695dfd072942c041c82911a0fd50a6e6ff581b8f2d6c3ec0",
+    "tweed59_botao_ganho.png": "d050a617b7a49ad2665f3dfad350c293718fed70bd6cdccc5b1cea4d2955b6a2",
+    "tweed59_botao_grave.png": "9ecb5afcd009519bbd41e5a8289be82965b9cfa0d2c0ed23e2a458e4cdcffaf9",
+    "tweed59_botao_medio.png": "47e4c39f2eec4044e5a976137102106fcb217e67a9f14af9cf08fd11d4570566",
+    "tweed59_botao_presenca.png": "8c76c8f4b3e6092fd0a37860258a97b723f303d81a5ada9e023aacbb8247936a",
+    "tweed59_botao_volume.png": "bb42548654ae01eddcc56b33e6be9f313893210137322b5489845167f931f172",
+    "tweed59_frente.jpg": "74bc1172e550b4e66a9d6a2590cf3515153ae8e93ff210319969850277991f6d",
+    "tweed59_frente_alfa.png": "f08ceb9a9614f12341f5090afd6b91f9155b0a01ca9a8fb1cabac419a221f2f1",
+    "tweed59_manifesto.json": "fb9c5841754301add337045e11e524398fdd21fd2c3688d3cad075344a5597fb",
+    "tweed59_mapa.json": "6fa691ee5881d845d651a910648fe6e76386c373fdb4c62a33fd3ed50cdcb466"
    },
-   "tamanho": 2363997,
+   "tamanho": 2460269,
    "tipo": "cabecote",
    "inspiracao": "Bassman 5F6-A",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
