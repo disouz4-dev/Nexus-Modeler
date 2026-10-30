@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:13:43Z",
+ "gerado": "2026-10-30T07:17:52Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6295,8 +6295,8 @@
   },
   "uber_412": {
    "nome": "Uber 4x12",
-   "hash": "ac63f6ab33a558ef",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "c5755cef3a815081",
+   "data": "2026-10-30T07:17:52Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber_412_frente.jpg",
@@ -6305,18 +6305,18 @@
     "uber_412_mapa.json"
    ],
    "sha256": {
-    "uber_412_frente.jpg": "7f03f1f52029be36f5b81c4352b981ed61e9a05497df7431cdef8f6857bf491b",
-    "uber_412_frente_alfa.png": "7555d1dea6a473561c6590614d69e74cb50b8f91a7663a8e600b5e5c82c1f3cf",
-    "uber_412_manifesto.json": "7dc66de3605667e316dd5b6cb7ce2293104ff182512466aff28644280b733594",
+    "uber_412_frente.jpg": "1231f343b8e0268e058749946be42015800de141b307d28d9c7c27c752c6fdc9",
+    "uber_412_frente_alfa.png": "13ab476ab7566ca642e57b62de4b2d12715abe1672378ea919fbe510025b3f31",
+    "uber_412_manifesto.json": "d2c9d93c3acc0792d88403ee416179029c0395aee1a56a5e2b6e6fceb25caf0f",
     "uber_412_mapa.json": "84050476f644cd81390b51ba2d3b80fc45d0f498ac3b38d6d6a29586960aaa50"
    },
-   "tamanho": 1122836,
+   "tamanho": 1091906,
    "tipo": "caixa",
    "inspiracao": "Bogner 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
