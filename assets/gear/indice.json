@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:25:37Z",
+ "gerado": "2026-10-30T20:39:03Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2297,9 +2297,9 @@
    "fabrica": true
   },
   "mark5_412": {
-   "nome": "Mark 4x12",
-   "hash": "1b93073d73be72fe",
-   "data": "2026-10-30T20:24:56Z",
+   "nome": "Recto 4x12",
+   "hash": "d3aa11f7c3ee8ec3",
+   "data": "2026-10-30T20:38:34Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark5_412_frente.jpg",
@@ -2310,16 +2310,16 @@
    "sha256": {
     "mark5_412_frente.jpg": "37d3d0f023d27de792e169275c2e7bbd605e361317f7fddee62f6752dd194f29",
     "mark5_412_frente_alfa.png": "e55432444119ae972b3f49cc402e033a3d7001306ad498102761bb8ce62ae81e",
-    "mark5_412_manifesto.json": "68d8fec9a37a14e60a35f1ac9c78035e827d33154249669c18cca27a12d714b9",
-    "mark5_412_mapa.json": "8d71469b90bfaf6e8e710c3466f0fe10d7c58d873d480883cd25958bfd287720"
+    "mark5_412_manifesto.json": "14e7a2ae22b8b005d66b05675bf13f0a33ba1f484b67d26a6868d469bb707d0f",
+    "mark5_412_mapa.json": "d23c9eb498d7e4f1b19152e06f9ad347a75ef5a92564e1c94f186b5f3c60bd36"
    },
-   "tamanho": 497787,
+   "tamanho": 497806,
    "tipo": "caixa",
-   "inspiracao": "Mesa 4x12",
+   "inspiracao": "Mesa Rectifier 4x12 (V30)",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3142,8 +3142,8 @@
   },
   "recto_dual": {
    "nome": "Recto Dual",
-   "hash": "bc64979a9014f7b7",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "db88aaae3b5b54c7",
+   "data": "2026-10-30T20:36:12Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -3166,16 +3166,16 @@
     "recto_dual_botao_volume.png": "af6afb3d191cb2564e823ffc3a92c81388955bd51134b3b736233f36f9c78c41",
     "recto_dual_frente.jpg": "a0fed58203baf120a6f3f67564a096f7362ac3edf00fc24c5f196e53148770b2",
     "recto_dual_frente_alfa.png": "fb2f6808af1bb80a5b40e2ff3091d41290ffb805a0d30539e9118662ba6ca5f0",
-    "recto_dual_manifesto.json": "9f692d044fe9bbca6f839d6ae365a515921f3806f305eeac672345df69644525",
-    "recto_dual_mapa.json": "e6fc5e0aa8889937811700324e210a30e443f8a34639ab14b37fe7a982f95d04"
+    "recto_dual_manifesto.json": "a556c4d8faec478745c3f23f3763b37288ba91c01465a5bb4f5d93a28b202563",
+    "recto_dual_mapa.json": "49f273309be8a59af37745b1349a566763e2dde4ca0d7618c1a66165ba676d38"
    },
-   "tamanho": 1105882,
+   "tamanho": 1107494,
    "tipo": "cabecote",
    "inspiracao": "Dual Rectifier",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.5",
+   "versao": "1.0.6",
    "acesso": "gratuito",
    "fabrica": true
   },
