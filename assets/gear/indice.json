@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:48:12Z",
+ "gerado": "2026-10-30T14:48:13Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1366,81 +1366,6 @@
    "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
-  },
-  "microfone_condensador_grande": {
-   "nome": "condensador_grande",
-   "hash": "c04e4b26cb466e49",
-   "data": "2026-10-29T11:24:16Z",
-   "nexus_minimo": "0.2.0",
-   "arquivos": [
-    "microfone_condensador_grande_frente.png",
-    "microfone_condensador_grande_mapa.json"
-   ],
-   "sha256": {
-    "microfone_condensador_grande_frente.png": "0806e12ac4ea52ae80fe7cdb03010f1f2f581aa319b933c36565874473cd97bf",
-    "microfone_condensador_grande_mapa.json": "0bb74c8955b1c89dc8b67e7d58420cc2af2b8af1a485ec7c4624c95b8d0b0c4d"
-   },
-   "tamanho": 490087
-  },
-  "microfone_condensador_lapis": {
-   "nome": "condensador_lapis",
-   "hash": "525855cf81aa4fab",
-   "data": "2026-10-29T11:24:16Z",
-   "nexus_minimo": "0.2.0",
-   "arquivos": [
-    "microfone_condensador_lapis_frente.png",
-    "microfone_condensador_lapis_mapa.json"
-   ],
-   "sha256": {
-    "microfone_condensador_lapis_frente.png": "2dde5e11371b05e731d29f9b14e49d1a2158f93ae1e8b810ea409dda7546938a",
-    "microfone_condensador_lapis_mapa.json": "fc439b2e5844b3e46d2ee3b8a93071be9cf2c9da653efc562bfc64e05060d12e"
-   },
-   "tamanho": 463032
-  },
-  "microfone_dinamico_bastao": {
-   "nome": "dinamico_bastao",
-   "hash": "95819d0041a53f48",
-   "data": "2026-10-29T11:24:16Z",
-   "nexus_minimo": "0.2.0",
-   "arquivos": [
-    "microfone_dinamico_bastao_frente.png",
-    "microfone_dinamico_bastao_mapa.json"
-   ],
-   "sha256": {
-    "microfone_dinamico_bastao_frente.png": "3eeb093c4a1fff60bcd57e4fb6e013b15b6d5194e3279b0ae3c52558bfacf44f",
-    "microfone_dinamico_bastao_mapa.json": "1997781bd6494c294dd8e52c4df2b3b6c50b745c8041f0f31bb939b27a2dbfaf"
-   },
-   "tamanho": 478471
-  },
-  "microfone_dinamico_lateral": {
-   "nome": "dinamico_lateral",
-   "hash": "196f91a9bdcee5af",
-   "data": "2026-10-29T11:24:16Z",
-   "nexus_minimo": "0.2.0",
-   "arquivos": [
-    "microfone_dinamico_lateral_frente.png",
-    "microfone_dinamico_lateral_mapa.json"
-   ],
-   "sha256": {
-    "microfone_dinamico_lateral_frente.png": "19cdfc91fdb6c62ebd9ca9c9f5ebe5e26486cbddead645d16ecbcae0a7135ad0",
-    "microfone_dinamico_lateral_mapa.json": "f23334057c871e9738792978035fe39d56b9b93d6313edf5209e62062a891013"
-   },
-   "tamanho": 493047
-  },
-  "microfone_fita": {
-   "nome": "fita",
-   "hash": "b9106171799c3bfd",
-   "data": "2026-10-29T11:24:16Z",
-   "nexus_minimo": "0.2.0",
-   "arquivos": [
-    "microfone_fita_frente.png",
-    "microfone_fita_mapa.json"
-   ],
-   "sha256": {
-    "microfone_fita_frente.png": "4b20a9bea7911b281b92f0da860bc4de6c8ea3fb5f826e9842ddce2a94c7e262",
-    "microfone_fita_mapa.json": "24a3ec1993706a270a3e30d8ace80b7cf3c047ac0a8f50f91f2ebeaf3d125f49"
-   },
-   "tamanho": 457476
   },
   "moonstone_fuzz": {
    "nome": "Moonstone Fuzz",

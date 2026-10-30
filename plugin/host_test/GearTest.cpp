@@ -118,6 +118,11 @@ static void testCatalog(const juce::File& gear)
         U("nenhum cabeçote e nenhuma caixa embutidos (só peça revisada)"));
   check(c.idOf(Kind::amp, 0) == "brit800" && c.entry(Kind::amp, 0)->name == "brit800",
         U("a vaga 0 de cabeçote guarda só o id do Brit 800 (nenhum nome antigo no programa)"));
+  // Microfones voltam com as caixas, revisados: nenhum embutido; a pedaleira fica.
+  bool noMic = true;
+  for (const auto* mic : {"microfone_dinamico_bastao", "microfone_dinamico_lateral", "microfone_condensador_grande", "microfone_condensador_lapis", "microfone_fita"})
+    noMic = noMic && !nexus::ui::GearArt::load(mic).valid();
+  check(noMic && nexus::ui::GearArt::load("pedaleira").valid(), U("sem microfone embutido; a pedaleira fica"));
   // Motores como eram nas tabelas antigas (as vagas guardam o motor também).
   check(NexusProcessor::pedalKind(8) == NexusProcessor::PedalKind::drop && NexusProcessor::pedalKind(7) == NexusProcessor::PedalKind::gate
           && NexusProcessor::pedalKind(22) == NexusProcessor::PedalKind::triple && NexusProcessor::pedalKind(57) == NexusProcessor::PedalKind::geq
