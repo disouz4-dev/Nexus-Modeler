@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:18:04Z",
+ "gerado": "2026-10-30T11:20:11Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3657,8 +3657,8 @@
   },
   "magnetite_boost": {
    "nome": "Magnetite Boost",
-   "hash": "0b986d13690e8419",
-   "data": "2026-10-29T20:55:56Z",
+   "hash": "d0d3facc4de5908c",
+   "data": "2026-10-30T11:20:11Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magnetite_boost_botao_ganho.png",
@@ -3669,20 +3669,20 @@
     "magnetite_boost_mapa.json"
    ],
    "sha256": {
-    "magnetite_boost_botao_ganho.png": "d9c876962836a7d31777ab2a80ea7fdf33bec7546ab2610093c55ec97300b3e4",
-    "magnetite_boost_botao_nivel.png": "47573991b73401bf6742bcd3b526f28d8a8a95abbe1d6d8a4ae641438a2c5f90",
-    "magnetite_boost_frente.jpg": "a391fc163ed27e122f6a4a09caa22d899d497e00a5b11d8869cda3a8ec2427f6",
-    "magnetite_boost_frente_alfa.png": "dcacdbb3fde5d3f81edb64e8d8bc1f712529a5320f08d34de5e1e09037ec162e",
-    "magnetite_boost_manifesto.json": "860ba7de2a7949c0e872970eb6a9025c4c2d7d96169ccca83c9ebdb9101448fa",
-    "magnetite_boost_mapa.json": "68a52cc8aabda8b2f7f81e533aafe10e3d7cfd8312deaca9438027bc46b7c7cd"
+    "magnetite_boost_botao_ganho.png": "aadb57043057e110cf72a97c60af6cea29b133afa775eda480085089baea9de6",
+    "magnetite_boost_botao_nivel.png": "573d9c1ea943e84f9c96e02cf18986f5dd00cabb960d94cbc2742e09ec757ce5",
+    "magnetite_boost_frente.jpg": "ad20baf2821a2a7486861bb1d413dcf0fdac9908218dce2011190b222465e058",
+    "magnetite_boost_frente_alfa.png": "6801d157d02eae1f0ba00b875b09048d459102a4912d36e002edf1c62494cb0b",
+    "magnetite_boost_manifesto.json": "ccdef4e6a21e36a4667537dde8ae09bcd79b9e16832c0a88872d531f3aa0edb6",
+    "magnetite_boost_mapa.json": "69b8f5338da9a3d80dd614fdc5e5d1ba83eb5611da99e0dfcf992d62b5ce4e4a"
    },
-   "tamanho": 153293,
+   "tamanho": 117901,
    "tipo": "pedal",
    "inspiracao": "Xotic EP Booster",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
