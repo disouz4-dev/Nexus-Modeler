@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:31:08Z",
+ "gerado": "2026-10-30T13:37:23Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1580,8 +1580,8 @@
   },
   "citrine_overdrive": {
    "nome": "Citrine Overdrive",
-   "hash": "52764cd9767d9115",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "00c9fe2509b82dc5",
+   "data": "2026-10-30T13:37:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrine_overdrive_botao_ganho.png",
@@ -1593,21 +1593,21 @@
     "citrine_overdrive_mapa.json"
    ],
    "sha256": {
-    "citrine_overdrive_botao_ganho.png": "07ae67c26973bc9cea5420d8760aeb5f55438692d8c039e4c80b627aedf768d4",
-    "citrine_overdrive_botao_nivel.png": "aced5f5ada05762291885d660fd09b9d5f1368345b6f9dda88346e0c4829d86a",
-    "citrine_overdrive_botao_tom.png": "4702a4f141a21ba3756b49135fb6d2e4685aa1c5c11a9b10be00b017e6b04316",
-    "citrine_overdrive_frente.jpg": "9c1c133edda219f07078627ffd5fa3e01931bb5a33303ee297daf0eff2676d2d",
-    "citrine_overdrive_frente_alfa.png": "3bc8400f5132cde560693875cf539fc5d127fc97182ed67b3abe1847642b6309",
-    "citrine_overdrive_manifesto.json": "b64b6dc25ed35108fb138fd1168a15994bff2adbb05eb33c8b3caefa6fe76be5",
-    "citrine_overdrive_mapa.json": "d93d0d930fe8380f5f744ede55d672812c70863ad60d9a7f48a3413d10b3269a"
+    "citrine_overdrive_botao_ganho.png": "46d9199e6f9858111aee8fb45bfe0ef4092473cda175d2d7c35dd5790c3a8e29",
+    "citrine_overdrive_botao_nivel.png": "11253ba4ce0b07a66a18bd3cdea757672b2e7caa4c0b2c3be4ebc521f649351e",
+    "citrine_overdrive_botao_tom.png": "3afa10788f6c850812623fffc6797c234818808402f9ade1cab481c3d82e9a61",
+    "citrine_overdrive_frente.jpg": "4f5f67b7cf9b1cc8b6d00758cb143c58ab53dbbfd1f9b6348af604ea1abddc16",
+    "citrine_overdrive_frente_alfa.png": "3e4691781a4acfdea3e675ff0162f97ac168c360a9646ed30b4abd0de0dc3065",
+    "citrine_overdrive_manifesto.json": "b0aea1cbbae7f9abefdbd263144d41f4fdc408eba8988fa7a3fabe7414870ea0",
+    "citrine_overdrive_mapa.json": "87c39ad737edddff98bb134ebbf9808480f7a01125c477dfad798726d6f09d96"
    },
-   "tamanho": 393992,
+   "tamanho": 396364,
    "tipo": "pedal",
    "inspiracao": "Boss OD-3",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
