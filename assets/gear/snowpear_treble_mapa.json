@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 384,
-      "y": 152,
-      "tamanho": 114,
+      "x": 252,
+      "y": 264,
+      "tamanho": 76,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,9 +17,9 @@
     },
     {
       "id": "nivel",
-      "x": 488,
-      "y": 318,
-      "tamanho": 58,
+      "x": 477,
+      "y": 328,
+      "tamanho": 50,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -33,35 +33,17 @@
   "rotulos": [
     {
       "texto": "REFORÇO",
-      "x": 436.7,
-      "y": 283.0,
+      "x": 290.1,
+      "y": 243.1,
       "altura": 18.07,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
-    },
-    {
-      "texto": "VOLUME",
-      "x": 513.7,
-      "y": 392.4,
-      "altura": 11.75,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "LIGA",
-      "x": 150.9,
-      "y": 172.6,
-      "altura": 14.46,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 150.0,
-    "y": 210.5,
+    "x": 140.0,
+    "y": 301.0,
     "raio": 32.0
   }
 }

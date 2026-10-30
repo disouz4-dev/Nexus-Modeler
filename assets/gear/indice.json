@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T10:44:15Z",
+ "gerado": "2026-10-30T10:46:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5492,8 +5492,8 @@
   },
   "snowpear_treble": {
    "nome": "Snow Pear Treble",
-   "hash": "8c37c93fe65af4bd",
-   "data": "2026-10-29T19:16:25Z",
+   "hash": "db32698969c27e1e",
+   "data": "2026-10-30T10:46:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "snowpear_treble_botao_ganho.png",
@@ -5504,20 +5504,20 @@
     "snowpear_treble_mapa.json"
    ],
    "sha256": {
-    "snowpear_treble_botao_ganho.png": "2b8379a984d8b201acf528572dcc1c07e2cf0c1d3ef61ca46d84e953fcfe97a6",
-    "snowpear_treble_botao_nivel.png": "7ee6f8436baf700a4c2e8f01ef94085104af7735858cddb26209367246387b52",
-    "snowpear_treble_frente.jpg": "a698e2ad7f4e32c1b6ff9dcd3ed2df1c4971e396c2bdae65632619a40cea97cc",
-    "snowpear_treble_frente_alfa.png": "26cc47a1d3a065ed1e29bc22550d02ba349bf3fc653f4d845e8659fe80b57815",
-    "snowpear_treble_manifesto.json": "291b786d16eb3f8030b9e5abaf6ea14b82f9a8152aa4e420bc83b097c3267fdc",
-    "snowpear_treble_mapa.json": "56f311fd3868271bb690ce4c16b845b37a211f22abd3ee8b543a3e0688572819"
+    "snowpear_treble_botao_ganho.png": "799e4b70627245a7cdb540abba44ce751e213dedb4607a60fedb11f727faa4af",
+    "snowpear_treble_botao_nivel.png": "e698ecce979e93af9cf75054984a48e20d0167d52250b6d71e5c7a55b168ec46",
+    "snowpear_treble_frente.jpg": "66069f5945438991f6c812ec4e15f419ff732bfac93fe3369cfcb74fc1e6e30a",
+    "snowpear_treble_frente_alfa.png": "a2ba3660a315ef69db8a6ae735571b0ab16fed75a0d38f884e4515a119697699",
+    "snowpear_treble_manifesto.json": "0fdc3d01ab2d0bba99664eb75ccdad90930fcc879f42b77f7f8537ef8dc99993",
+    "snowpear_treble_mapa.json": "af829cd1d5941b989880c6b23f01284c49d12a37d0df6c77bffe87f6304bc262"
    },
-   "tamanho": 92499,
+   "tamanho": 66378,
    "tipo": "pedal",
    "inspiracao": "Rangemaster",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
