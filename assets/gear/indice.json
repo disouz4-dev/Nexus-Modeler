@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:54:09Z",
+ "gerado": "2026-10-30T15:35:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -170,7 +170,7 @@
   "aquamarine_sky": {
    "nome": "Aquamarine Sky",
    "hash": "153260793884cdab",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "aquamarine_sky_botao_a.png",
@@ -211,7 +211,7 @@
   "banana_overdrive": {
    "nome": "Banana Overdrive",
    "hash": "e09f8f84eeb5db31",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "banana_overdrive_botao_ganho.png",
@@ -310,7 +310,7 @@
   "blueberry_blues": {
    "nome": "Blueberry Blues",
    "hash": "4464486c05642b8e",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_blues_botao_ganho.png",
@@ -471,7 +471,7 @@
   "citrine_overdrive": {
    "nome": "Citrine Overdrive",
    "hash": "00c9fe2509b82dc5",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrine_overdrive_botao_ganho.png",
@@ -504,7 +504,7 @@
   "clementine_turbo": {
    "nome": "Clementine Turbo",
    "hash": "9bfb8f213c0a258d",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "clementine_turbo_botao_ganho.png",
@@ -537,7 +537,7 @@
   "coconut_delay": {
    "nome": "Coconut Delay",
    "hash": "8c2c86e7c170a3f9",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "coconut_delay_botao_a.png",
@@ -636,7 +636,7 @@
   "emerald_echo": {
    "nome": "Emerald Echo",
    "hash": "ac46487c8f347f78",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emerald_echo_botao_a.png",
@@ -675,7 +675,7 @@
   "galaxy_mod": {
    "nome": "Galaxy Mod",
    "hash": "29e3526fb93dc8bb",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galaxy_mod_botao_a.png",
@@ -943,7 +943,7 @@
   "jabuticaba_buzzsaw": {
    "nome": "Jabuticaba Buzzsaw",
    "hash": "52796b25b06525b3",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jabuticaba_buzzsaw_botao_ganho.png",
@@ -1075,7 +1075,7 @@
   "jupiter_octave": {
    "nome": "Jupiter Octave",
    "hash": "8cb3e32a3ab56c37",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jupiter_octave_botao_a.png",
@@ -1337,7 +1337,7 @@
   "meteorite_reverb": {
    "nome": "Meteorite Reverb",
    "hash": "5472b967844fb492",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "meteorite_reverb_botao_a.png",
@@ -1436,7 +1436,7 @@
   "neptune_chorus": {
    "nome": "Neptune Chorus",
    "hash": "adbb71b60b2db68d",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "neptune_chorus_botao_a.png",
@@ -1502,7 +1502,7 @@
   "onyx_metal": {
    "nome": "Onyx Metal",
    "hash": "88617b29f0ddfb58",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "onyx_metal_botao_ganho.png",
@@ -1568,7 +1568,7 @@
   "orange_drive": {
    "nome": "Orange Drive",
    "hash": "36fb7e97a428ece4",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "orange_drive_botao_ganho.png",
@@ -1911,7 +1911,7 @@
   "selenite_eq": {
    "nome": "Selenite EQ",
    "hash": "d5b1bfbec872c7ae",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "selenite_eq_botao_a.png",
@@ -2082,7 +2082,7 @@
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",
    "hash": "d1ef0295517b4405",
-   "data": "2026-10-30T14:54:09Z",
+   "data": "2026-10-30T14:54:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "turquoise_tremolo_botao_a.png",
