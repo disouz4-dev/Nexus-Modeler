@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T10:27:03Z",
+ "gerado": "2026-10-30T10:29:13Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4691,8 +4691,8 @@
   },
   "peridot_drive": {
    "nome": "Peridot Drive",
-   "hash": "3f31f378e59bac39",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "37ea5fcf30e9d128",
+   "data": "2026-10-30T10:29:13Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "peridot_drive_botao_ganho.png",
@@ -4704,21 +4704,21 @@
     "peridot_drive_mapa.json"
    ],
    "sha256": {
-    "peridot_drive_botao_ganho.png": "c5e24b7662352a04e03cb37069150f32f1bc941eb6b96fd1523cbf0d991dfbf4",
-    "peridot_drive_botao_nivel.png": "af9923ede7dd01c068741c37e6bd43f42d0dd16057e290b304e2d8852b9858b1",
-    "peridot_drive_botao_tom.png": "aec5773eb8c41d129b4a74da553817136aa5d75cfe3d736dd532b91bc2055564",
-    "peridot_drive_frente.jpg": "c3439cf4c6d57778720b3c53a30f3b6c9e54ae97ec56ea8e6aba67b9c2cfcde0",
-    "peridot_drive_frente_alfa.png": "1daa58cbfabbd94c7f1ea13f99cef795c3b35a9bedcf0bbc23dc721e0a686261",
-    "peridot_drive_manifesto.json": "5d5087f4c51ba0d7180403edb8054da77730bbed4630704b4cda244a2201bd80",
-    "peridot_drive_mapa.json": "8f1ccf11cd4f85a9c9cff4bf7c70acb45d577a529edd9fd7583e1345f82d5a62"
+    "peridot_drive_botao_ganho.png": "70543323abb5c566ed8f8ee6bba7fd5f06f793fe2d5ece7ec14ce4daa04939b2",
+    "peridot_drive_botao_nivel.png": "978f596207b86df7834ece8b2940ba90686bbea0951d8792ed337106e8a6f817",
+    "peridot_drive_botao_tom.png": "08d0f63df5b8c72be005bfd884fd39049c61d43d3b94a03f6ddcc2554cf03f1f",
+    "peridot_drive_frente.jpg": "29d4f724b9d10ff059d08cc07e7ef4483fc609594965f814c72ff215841b70c4",
+    "peridot_drive_frente_alfa.png": "7ee7ab519bc5beb43e42fc003755c525a8cf6419dfe23926a5a64622100f9501",
+    "peridot_drive_manifesto.json": "555733104bb8b2869706e73700e3b85a3fb45a4355d90dccb07cc97e93556399",
+    "peridot_drive_mapa.json": "a0ccf43c79f7a479e87a066b283ebca6d4a74f649c0a9f69b69475ec8608cd4c"
    },
-   "tamanho": 381332,
+   "tamanho": 417625,
    "tipo": "pedal",
    "inspiracao": "EarthQuaker Plumes",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
