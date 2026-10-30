@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T02:19:36Z",
+ "gerado": "2026-10-30T06:45:40Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -576,8 +576,8 @@
   },
   "be_412": {
    "nome": "BE 4x12",
-   "hash": "c145e80ab0bb7898",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "ade953e751f9b182",
+   "data": "2026-10-30T06:45:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be_412_frente.jpg",
@@ -586,18 +586,18 @@
     "be_412_mapa.json"
    ],
    "sha256": {
-    "be_412_frente.jpg": "0556aad9d7b6cae3921005ebb8a65ef5e7803b8385829b7562330d18a1512798",
-    "be_412_frente_alfa.png": "b0111bd33bad6a6cd6943b0be785c75ae4eec612eef8c0ee8efa8827da4b57a0",
-    "be_412_manifesto.json": "30dbb5a26d21e4423c95dabb261032bf6f82bb0e650c46a4a12e5d28fabe8ce0",
+    "be_412_frente.jpg": "9a75e940436a3a398f8d0c04911b97b82640b064f778cb09d1a541f16ec8addd",
+    "be_412_frente_alfa.png": "8064388a41ab00c09946788766747ba9fa012981f8bfd44e2b96e5ee1ad0d618",
+    "be_412_manifesto.json": "a01eb8c6d10d48fecc5da84ee2dcd1ba54e5c24d662d70c85a66f0cf96f7881c",
     "be_412_mapa.json": "7f9994e428f003954d422db79fe84d93ec4f0090bb4fb113c8e6f2ab675d7342"
    },
-   "tamanho": 1118812,
+   "tamanho": 1486455,
    "tipo": "caixa",
    "inspiracao": "Friedman 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
