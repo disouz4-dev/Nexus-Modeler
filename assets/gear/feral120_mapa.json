@@ -7,54 +7,54 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 494,
-      "y": 658,
-      "tamanho": 83,
+      "x": 483,
+      "y": 647,
+      "tamanho": 105,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 655,
-      "y": 659,
-      "tamanho": 81,
+      "x": 644,
+      "y": 648,
+      "tamanho": 103,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 817,
-      "y": 660,
-      "tamanho": 79,
+      "x": 805,
+      "y": 649,
+      "tamanho": 102,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1139,
-      "y": 661,
-      "tamanho": 77,
+      "x": 1127,
+      "y": 650,
+      "tamanho": 100,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1459,
-      "y": 660,
-      "tamanho": 79,
+      "x": 1448,
+      "y": 649,
+      "tamanho": 101,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1619,
-      "y": 659,
-      "tamanho": 81,
+      "x": 1608,
+      "y": 648,
+      "tamanho": 103,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -69,8 +69,8 @@
     {
       "texto": "CLEAN GAIN",
       "x": 379.0,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -78,8 +78,8 @@
     {
       "texto": "CRUNCH GAIN",
       "x": 538.7,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -87,8 +87,8 @@
     {
       "texto": "BASS",
       "x": 698.4,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -96,8 +96,8 @@
     {
       "texto": "MID LEAN",
       "x": 858.1,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -105,8 +105,8 @@
     {
       "texto": "MID BOLD",
       "x": 1017.8,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -114,8 +114,8 @@
     {
       "texto": "TREBLE",
       "x": 1177.5,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -123,8 +123,8 @@
     {
       "texto": "CLEAN VOL.",
       "x": 1337.2,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -132,8 +132,8 @@
     {
       "texto": "CRUNCH VOL.",
       "x": 1496.9,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -141,8 +141,8 @@
     {
       "texto": "PRES. A",
       "x": 1656.6,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -150,8 +150,8 @@
     {
       "texto": "PRES. B",
       "x": 1816.3,
-      "y": 641.3,
-      "altura": 11.58,
+      "y": 620.2,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -159,8 +159,8 @@
     {
       "texto": "CRUNCH II",
       "x": 379.0,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -168,8 +168,8 @@
     {
       "texto": "LEAD GAIN",
       "x": 538.7,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -177,8 +177,8 @@
     {
       "texto": "BASS",
       "x": 698.4,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -186,8 +186,8 @@
     {
       "texto": "MIDDLE",
       "x": 858.1,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -195,8 +195,8 @@
     {
       "texto": "TREBLE",
       "x": 1017.8,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -204,8 +204,8 @@
     {
       "texto": "TONE BAL.",
       "x": 1177.5,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -213,8 +213,8 @@
     {
       "texto": "CRUNCH II VOL.",
       "x": 1337.2,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -222,8 +222,8 @@
     {
       "texto": "LEAD VOL.",
       "x": 1496.9,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -231,8 +231,8 @@
     {
       "texto": "MASTER A",
       "x": 1656.6,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -240,8 +240,8 @@
     {
       "texto": "MASTER B",
       "x": 1816.3,
-      "y": 895.9,
-      "altura": 11.58,
+      "y": 917.0,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -249,8 +249,8 @@
     {
       "texto": "INPUT",
       "x": 233.6,
-      "y": 877.5,
-      "altura": 10.97,
+      "y": 888.6,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -258,8 +258,8 @@
     {
       "texto": "CLEAN",
       "x": 1937.1,
-      "y": 681.6,
-      "altura": 10.97,
+      "y": 691.6,
+      "altura": 22.1,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -267,8 +267,8 @@
     {
       "texto": "CRUNCH",
       "x": 1988.3,
-      "y": 681.6,
-      "altura": 10.97,
+      "y": 688.3,
+      "altura": 18.42,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -276,8 +276,8 @@
     {
       "texto": "LEAD",
       "x": 2039.4,
-      "y": 681.6,
-      "altura": 10.97,
+      "y": 692.7,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -285,8 +285,8 @@
     {
       "texto": "STAND BY",
       "x": 1978.0,
-      "y": 854.6,
-      "altura": 10.97,
+      "y": 865.8,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
@@ -294,8 +294,8 @@
     {
       "texto": "POWER",
       "x": 2100.9,
-      "y": 854.6,
-      "altura": 10.97,
+      "y": 865.8,
+      "altura": 23.36,
       "achatamento": 1.0,
       "cor": "#ededed",
       "espaco": 1.0
