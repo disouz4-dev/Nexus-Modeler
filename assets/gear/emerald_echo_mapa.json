@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "modo",
-      "x": 87,
-      "y": 148,
-      "tamanho": 68,
+      "x": 135,
+      "y": 192,
+      "tamanho": 41,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,45 +17,45 @@
     },
     {
       "id": "a",
-      "x": 176,
-      "y": 159,
-      "tamanho": 46,
+      "x": 220,
+      "y": 193,
+      "tamanho": 39,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 234,
-      "y": 160,
-      "tamanho": 44,
+      "x": 276,
+      "y": 193,
+      "tamanho": 39,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 292,
-      "y": 160,
-      "tamanho": 44,
+      "x": 332,
+      "y": 193,
+      "tamanho": 39,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 350,
-      "y": 160,
-      "tamanho": 44,
+      "x": 386,
+      "y": 192,
+      "tamanho": 40,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 408,
-      "y": 158,
-      "tamanho": 46,
+      "x": 441,
+      "y": 192,
+      "tamanho": 41,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -69,8 +69,8 @@
   "rotulos": [
     {
       "texto": "MODO",
-      "x": 123.3,
-      "y": 220.2,
+      "x": 156.8,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -78,8 +78,8 @@
     },
     {
       "texto": "TEMPO",
-      "x": 199.7,
-      "y": 211.1,
+      "x": 240.3,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -87,8 +87,8 @@
     },
     {
       "texto": "REPETIÇÕES",
-      "x": 257.0,
-      "y": 211.1,
+      "x": 295.2,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -96,8 +96,8 @@
     },
     {
       "texto": "MODULAÇÃO",
-      "x": 314.4,
-      "y": 211.1,
+      "x": 350.1,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -105,8 +105,8 @@
     },
     {
       "texto": "TWEEZ",
-      "x": 371.6,
-      "y": 211.1,
+      "x": 405.1,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -114,8 +114,8 @@
     },
     {
       "texto": "MISTURA",
-      "x": 428.9,
-      "y": 211.1,
+      "x": 459.9,
+      "y": 239.2,
       "altura": 7.26,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
@@ -123,13 +123,13 @@
     }
   ],
   "pisante": {
-    "x": 125.5,
-    "y": 346.5,
-    "raio": 23.5
+    "x": 103.5,
+    "y": 303.5,
+    "raio": 15.5
   },
   "led": {
-    "x": 127.7,
-    "y": 307.4,
-    "raio": 6.0
+    "x": 106.2,
+    "y": 260.8,
+    "raio": 4.8
   }
 }
