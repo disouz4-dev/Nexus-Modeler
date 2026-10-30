@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:56:55Z",
+ "gerado": "2026-10-30T14:01:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2267,8 +2267,8 @@
   },
   "fire100": {
    "nome": "Fire 100",
-   "hash": "65387e8ca9c57749",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "e67dbf61911cb3a9",
+   "data": "2026-10-30T14:01:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fire100_botao_agudo.png",
@@ -2283,24 +2283,24 @@
     "fire100_mapa.json"
    ],
    "sha256": {
-    "fire100_botao_agudo.png": "f588c72c37cb3d7b0d263fb064f1a91dd0c84e16f2a4022aac99dffbd8917677",
-    "fire100_botao_ganho.png": "19cabb090f3bee14ffb8ebaaf2858255992df67340a1321cfebae2a77fe5633f",
-    "fire100_botao_grave.png": "1f5dd64469190725fc91fe6d4651e8fe19ecd720da774dc48fd986ef91a3afdd",
-    "fire100_botao_medio.png": "61e18140bf944984b6085f4f9b45dd488f129bddcdb5115a7302fe259342f1d7",
-    "fire100_botao_presenca.png": "ae32be87deec9870f9463e1cab8dbc980f5361b2f52d519c14afeeddcd998968",
-    "fire100_botao_volume.png": "b27f480c74aa844f4aa13386d2027ec1c3f6308d9f6cb773a3ba3a13d54d9513",
-    "fire100_frente.jpg": "f2c994ed3f51cd8cd4f4eb4b35da978a9df998b37387c420b49dfb96aac57015",
-    "fire100_frente_alfa.png": "eba93e03d4157d4d618865ce60b069328c06c5266bd81246eded7244eafafec3",
-    "fire100_manifesto.json": "d7829e2b048babd77984c02d734ff16df619c3705fafd668d10d172633b43317",
-    "fire100_mapa.json": "fbc136b7c38bf4c9bc34302b6995e9200c62af973d2c025a22ed5a5276cb19d9"
+    "fire100_botao_agudo.png": "e2141c8a544a37e3921f53f6cdf0525f4a22857d607aa5e13623bc734822334d",
+    "fire100_botao_ganho.png": "33f2291ebaa849cbc7e638ff0fcf2f49cd9da7f0f0d9b07cc13976d20395c090",
+    "fire100_botao_grave.png": "ab24cadb71c8c685fa50cbb6f7aaf3c13d3e1b9c9c812d43976b507a110e306d",
+    "fire100_botao_medio.png": "c3ba49cb664b3e264d687c96bbf2a0ae816f514a29ad79c9957303c50eb90921",
+    "fire100_botao_presenca.png": "e926c853d252cd537a69aec6606de3a21ddae77f3dbffeecd6439cde1bbd2d88",
+    "fire100_botao_volume.png": "3f84670cc599788bcbd88e0f8063e51a16ad6ccce35df5def7a27ec8e10da28b",
+    "fire100_frente.jpg": "d349800ec743d329970ff0d29b85df88c5c0bf83e668d6c9885870ce6677ad30",
+    "fire100_frente_alfa.png": "ee279614299f57e6a9eca1fa866f62d99d01f83223713d0584316bbe23885d08",
+    "fire100_manifesto.json": "11e15337c3b9c214d3a7b2b6a23ad88c1da1f27e9e55a214a878d785d3cbe9fe",
+    "fire100_mapa.json": "8701de9c8610fb052f15a9b01bb965f23a761e8cb25d15922998828771a32891"
    },
-   "tamanho": 596372,
+   "tamanho": 649678,
    "tipo": "cabecote",
    "inspiracao": "ENGL Fireball",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
