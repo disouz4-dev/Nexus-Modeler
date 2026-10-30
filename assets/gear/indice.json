@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:38:37Z",
+ "gerado": "2026-10-30T19:42:45Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1883,8 +1883,8 @@
   },
   "darkstar20": {
    "nome": "Dark Star 20",
-   "hash": "40a1f89e90ed1870",
-   "data": "2026-10-30T12:48:52Z",
+   "hash": "7c1d43dd20700a44",
+   "data": "2026-10-30T19:42:45Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "darkstar20_botao_agudo.png",
@@ -1899,24 +1899,24 @@
     "darkstar20_mapa.json"
    ],
    "sha256": {
-    "darkstar20_botao_agudo.png": "8d1475ac35e612bedc9ad31b1f714276e74a094842a42861e8d793c904531e6d",
-    "darkstar20_botao_ganho.png": "18ec45eee706ea4325e8a67f5f3b9fd1aab25921fccc27552f404a6713152529",
-    "darkstar20_botao_grave.png": "942cef0d33282c94a8eb6d681682642b2d73ce77d6de3cebc3d4166d27354561",
-    "darkstar20_botao_medio.png": "b76407d4a0a8596548a5100b0b4538cc4c3ac8ac42c9bf76647638bdad2950e9",
-    "darkstar20_botao_presenca.png": "5d78385c4cb7578dd1cb7a6148b6092c5063eacbd867ab844816e653feaabcb3",
-    "darkstar20_botao_volume.png": "8ea4a5a5668994a9748a28f8d9f0225787a5832ede242d5fd92c6612c7ab1658",
-    "darkstar20_frente.jpg": "e8059ea714e466dd0cdf97c68870f6793ce355c2b3ea6e1b5b2a12c09cb6f454",
-    "darkstar20_frente_alfa.png": "c5112b9133078ab83408619348c9429ba1c2ab3c3cb7b8078215362b64b53714",
-    "darkstar20_manifesto.json": "7ef9eb71874e3ce7d492c8d4083c431f5e846b565a4b5f09f9c58bf97a51a5b6",
-    "darkstar20_mapa.json": "9868bff3cc6775a9b46ba2e5e721884994cfbf3e64439b224431b000f14c20f6"
+    "darkstar20_botao_agudo.png": "a608ad298cfb696daa13c49a5dee7598882399cbd14b7f54650686c91086944d",
+    "darkstar20_botao_ganho.png": "b96d1005b88f711b9e11bf8fe93d2ebe9feba906452e001b472fbae394df1396",
+    "darkstar20_botao_grave.png": "e0a36f52bdea21f81bbe5774dea8f972e2a2aea1e1f3209e80fc4fb96aa130b3",
+    "darkstar20_botao_medio.png": "a6f6ccff5adbb4806313a65d1b48934dabfc74655f82690ddce4b7a2179d68ee",
+    "darkstar20_botao_presenca.png": "8ba5bab43b64281e606ee6cb5ade7433b6d4ec477d2ed3e657334c2d2d8b63f3",
+    "darkstar20_botao_volume.png": "8f4282e7fcc23cada46d3586453b367e60011edb0b0e0f7d81c992208e922ec7",
+    "darkstar20_frente.jpg": "bc734cb1c965c96146bd5505a5cd5f97b1b74ab9d1fa3de35bb7ef3ceb5d1315",
+    "darkstar20_frente_alfa.png": "6d5ae753fc06a2dbbe41519b2e59cd2b2f7486719e4242cd2a9138038bacdef2",
+    "darkstar20_manifesto.json": "af86b345df7b62e085931301dc5f0ac7a77abc356e71516a46827c44daa887ac",
+    "darkstar20_mapa.json": "412b05bc27cd26b7ae21530c43bc4fd40af540ecf770cce29534f1070cef2ad4"
    },
-   "tamanho": 1056844,
+   "tamanho": 904148,
    "tipo": "cabecote",
    "inspiracao": "Blackstar HT e Series One",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
