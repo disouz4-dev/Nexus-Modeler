@@ -69,8 +69,8 @@
     {
       "texto": "INSERT",
       "x": 244.3,
-      "y": 774.0,
-      "altura": 14.33,
+      "y": 782.2,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -78,8 +78,8 @@
     {
       "texto": "GAIN",
       "x": 336.7,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -87,8 +87,8 @@
     {
       "texto": "LOW",
       "x": 427.2,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -96,8 +96,8 @@
     {
       "texto": "MID",
       "x": 517.6,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -105,8 +105,8 @@
     {
       "texto": "HIGH",
       "x": 608.1,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -114,8 +114,8 @@
     {
       "texto": "VOLUME",
       "x": 698.5,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -123,8 +123,8 @@
     {
       "texto": "SELECT",
       "x": 809.5,
-      "y": 807.3,
-      "altura": 14.33,
+      "y": 815.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -141,8 +141,8 @@
     {
       "texto": "GAIN",
       "x": 891.7,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -150,8 +150,8 @@
     {
       "texto": "LOW",
       "x": 982.1,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -159,8 +159,8 @@
     {
       "texto": "MID",
       "x": 1072.6,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -168,8 +168,8 @@
     {
       "texto": "HIGH",
       "x": 1163.0,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -177,8 +177,8 @@
     {
       "texto": "VOLUME",
       "x": 1253.4,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -186,8 +186,8 @@
     {
       "texto": "SELECT",
       "x": 1364.4,
-      "y": 807.3,
-      "altura": 14.33,
+      "y": 815.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -204,8 +204,8 @@
     {
       "texto": "GAIN",
       "x": 1446.6,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -213,8 +213,8 @@
     {
       "texto": "LOW",
       "x": 1537.1,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -222,8 +222,8 @@
     {
       "texto": "MID",
       "x": 1627.5,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -231,8 +231,8 @@
     {
       "texto": "HIGH",
       "x": 1718.0,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -240,8 +240,8 @@
     {
       "texto": "VOLUME",
       "x": 1808.4,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 812.3,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -249,8 +249,8 @@
     {
       "texto": "SELECT",
       "x": 1919.4,
-      "y": 807.3,
-      "altura": 14.33,
+      "y": 815.4,
+      "altura": 23.37,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -267,8 +267,8 @@
     {
       "texto": "PRESENCE",
       "x": 1981.0,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 809.2,
+      "altura": 19.97,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -276,8 +276,8 @@
     {
       "texto": "PRESENCE",
       "x": 2055.0,
-      "y": 804.1,
-      "altura": 14.33,
+      "y": 809.2,
+      "altura": 19.97,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
