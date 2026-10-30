@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:09:17Z",
+ "gerado": "2026-10-30T07:09:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5465,8 +5465,8 @@
   },
   "sl_412": {
    "nome": "SL 4x12",
-   "hash": "4b73d0d868b58881",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "16466937550fe529",
+   "data": "2026-10-30T07:09:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl_412_frente.jpg",
@@ -5475,18 +5475,18 @@
     "sl_412_mapa.json"
    ],
    "sha256": {
-    "sl_412_frente.jpg": "2169aaba3ce65361d2d11b91b7e2db17127975f0759693eb645ed62c36326d00",
-    "sl_412_frente_alfa.png": "9212bb99371268c3f63b7627e8e9491bbdafb2123511d621878f85d691d73623",
-    "sl_412_manifesto.json": "266c1bca080ea886d065746da4386a9e74f97b041b146a515b5be8b75e2a675c",
+    "sl_412_frente.jpg": "6b932ced81996ee70674f0905f9368cbd96345186774b4a3aac9895ebe56a3a9",
+    "sl_412_frente_alfa.png": "16cb649dd454a23b33cc3052b9d518dbd5435c6034e3c0dc23afc9e87f561fed",
+    "sl_412_manifesto.json": "8f6327bc0154d511cbcf131526673a8c53e502a0eda8917007530176fa34ae7e",
     "sl_412_mapa.json": "d428f5a2df7c4b809436f948e94e7cfaba8980609ca0403983c61a9b392fd1ee"
    },
-   "tamanho": 1093252,
+   "tamanho": 1076416,
    "tipo": "caixa",
    "inspiracao": "Soldano 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
