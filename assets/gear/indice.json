@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:07:25Z",
+ "gerado": "2026-10-30T19:09:33Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2654,8 +2654,8 @@
   },
   "goddess80": {
    "nome": "Goddess 80",
-   "hash": "3ed2dbd619a155ed",
-   "data": "2026-10-30T14:26:10Z",
+   "hash": "edb22415b4bdd19a",
+   "data": "2026-10-30T19:09:33Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "goddess80_botao_agudo.png",
@@ -2670,24 +2670,24 @@
     "goddess80_mapa.json"
    ],
    "sha256": {
-    "goddess80_botao_agudo.png": "4c0df8b91f4a86f95aaa62a2690ce7af34358d51d5239cb774d4fb07ea218360",
-    "goddess80_botao_ganho.png": "c6210733ad4634c58b7a47b2b4d5241d8f0de2e8f3e0f5ac25f7e68b4a8becda",
-    "goddess80_botao_grave.png": "b2de1bd0f8e7bffbf3f40faa64584b1efa9c6e0e29c7f5369a500c7603f451b0",
-    "goddess80_botao_medio.png": "ad9bf9fc6a78f3b6dcc3185899eba0e318e822c59ea90634a014c825625a2449",
-    "goddess80_botao_presenca.png": "0f9f0ab0465691d34f334903b34d234f98aa5e332dcee1ee7a529851a3c2e220",
-    "goddess80_botao_volume.png": "ac44767151d1967287c8d5ad28d8d1220cd73e2f9dd3c0593ee6534c75c3854b",
-    "goddess80_frente.jpg": "490d31f0e379413d114b05567d63b993d9cb258afb3097c9af9d005f08479c58",
-    "goddess80_frente_alfa.png": "5382103e7bbee7caf06b6623df4d30530e8d6dd48f40855d5ed0a302bbc96818",
-    "goddess80_manifesto.json": "eec649cfc9e790eea96b067f9448ee421fc1a8deeab70d7325ee4ff2b03ac9ff",
-    "goddess80_mapa.json": "8c750813f2b106a3d45df0d9a9965f8e96c50386f2431b63f5deafdfe6d26be3"
+    "goddess80_botao_agudo.png": "3bea06a73cf2648e6bc196e3b186b40aaf80a06b3d4e2bf24b1150a786019f2e",
+    "goddess80_botao_ganho.png": "809c129a3c10be8cad8e4eae9f853f1c464b80434600144ef5ed7f6c3e902e95",
+    "goddess80_botao_grave.png": "5a6e27b08ff50d65afcf01dfbdeb7513ce9871297541c5db01525f7386233fbb",
+    "goddess80_botao_medio.png": "9c6584e6685b36cf31daee1b976f87d857331787535333464ffbf0a338fe7fc4",
+    "goddess80_botao_presenca.png": "cd70f0ef106ade901e1e0b20bc0e0efa2e6cf3c6c6dac55c19abc0ecbc30c548",
+    "goddess80_botao_volume.png": "060c09271ad3209ffbb1eccbf603fdeb1b8722aad1d28386135bcc5127d07142",
+    "goddess80_frente.jpg": "ac99c80c69ab2a9551ee50c6c41c47d823b8b3ab3b42f7af6cd74df22fe66688",
+    "goddess80_frente_alfa.png": "01de6f070c83be5c7023b0b54a4cc22df7394cdc757a5e024459393bdce11597",
+    "goddess80_manifesto.json": "9b81441642f4dc9cfa0d5d8a1354f3d3bfb29dd6d571b7004604c021669d8dc4",
+    "goddess80_mapa.json": "9fc8b3ee52cb20719bd353779dd4dbae36957fe6632e20a5bef80025538d877e"
    },
-   "tamanho": 1111692,
+   "tamanho": 1380474,
    "tipo": "cabecote",
    "inspiracao": "Bogner Shiva",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },

@@ -2,59 +2,59 @@
   "nome": "Goddess 80",
   "familia": "goddess80",
   "largura": 2400,
-  "altura": 1334,
+  "altura": 1159,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
-      "x": 325,
-      "y": 946,
-      "tamanho": 120,
+      "x": 474,
+      "y": 780,
+      "tamanho": 141,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 448,
-      "y": 947,
-      "tamanho": 118,
+      "x": 598,
+      "y": 780,
+      "tamanho": 140,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 837,
-      "y": 949,
-      "tamanho": 115,
+      "x": 1016,
+      "y": 781,
+      "tamanho": 138,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 959,
-      "y": 949,
-      "tamanho": 115,
+      "x": 1139,
+      "y": 781,
+      "tamanho": 138,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1081,
-      "y": 949,
-      "tamanho": 115,
+      "x": 1262,
+      "y": 781,
+      "tamanho": 138,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1204,
-      "y": 949,
-      "tamanho": 115,
+      "x": 1385,
+      "y": 781,
+      "tamanho": 138,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -67,144 +67,144 @@
   "rotulos": [
     {
       "texto": "ST.BY / PLAY",
-      "x": 266.9,
-      "y": 1064.1,
-      "altura": 21.9,
+      "x": 385.1,
+      "y": 907.7,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "PRESENCE",
-      "x": 388.6,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 548.1,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "M.VOL",
-      "x": 510.3,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 670.3,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "B.VOL",
-      "x": 632.0,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 833.3,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 774.0,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 963.7,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 895.7,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1085.9,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "MIDDLE",
-      "x": 1017.4,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1208.1,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1139.1,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1330.4,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "GAIN",
-      "x": 1260.9,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1452.6,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "SHIFT",
-      "x": 1352.1,
-      "y": 966.9,
-      "altura": 23.33,
+      "x": 1536.2,
+      "y": 839.4,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "BRIGHT",
-      "x": 1352.1,
-      "y": 1105.7,
-      "altura": 23.33,
+      "x": 1536.2,
+      "y": 945.5,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "TREBLE",
-      "x": 1504.3,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1619.7,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "BASS",
-      "x": 1626.0,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1741.9,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "VOLUME",
-      "x": 1747.7,
-      "y": 1091.4,
-      "altura": 23.33,
+      "x": 1864.2,
+      "y": 946.0,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "BRIGHT",
-      "x": 1839.0,
-      "y": 1055.5,
-      "altura": 23.33,
+      "x": 1937.5,
+      "y": 839.4,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
     },
     {
       "texto": "INPUT",
-      "x": 2123.0,
-      "y": 1055.0,
-      "altura": 23.33,
+      "x": 2055.7,
+      "y": 869.6,
+      "altura": 23.35,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -212,14 +212,14 @@
   ],
   "leds_canais": [
     {
-      "x": 1403.3,
-      "y": 863.1,
-      "raio": 10.4
+      "x": 1536.8,
+      "y": 743.2,
+      "raio": 9.8
     },
     {
-      "x": 1891.2,
-      "y": 863.1,
-      "raio": 10.4
+      "x": 1939.0,
+      "y": 743.2,
+      "raio": 9.8
     }
   ]
 }
