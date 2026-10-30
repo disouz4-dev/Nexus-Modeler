@@ -332,9 +332,27 @@
         "id": 1844,
         "titulo": "Orange Rockerverb MK3 v2 (Canov+Arnold)",
         "tipo": "amp",
-        "capturas": 7,
+        "capturas": 1,
+        "pacote": "Canal 1 Limpo",
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "canal limpo",
+        "mapa": {
+          "Rockerverb MK3 - Clean - ": 5
+        }
+      },
+      {
+        "id": 1844,
+        "titulo": "Orange Rockerverb MK3 v2 (Canov+Arnold)",
+        "tipo": "amp",
+        "capturas": 3,
+        "pacote": "Canal 2 Sujo",
+        "padrao": true,
+        "nota": "canal sujo: crunch, rock e alto ganho",
+        "mapa": {
+          "Rockerverb MK3 - Crunch G5 - ": 5,
+          "Rockerverb MK3 - Rock G6 - ": 6,
+          "Rockerverb MK3 - Higain G7 - ": 7
+        }
       }
     ]
   },
