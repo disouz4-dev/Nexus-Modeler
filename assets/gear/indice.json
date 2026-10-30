@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T06:45:45Z",
+ "gerado": "2026-10-30T06:45:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -510,8 +510,8 @@
   },
   "bassline_215": {
    "nome": "Bassline 2x15",
-   "hash": "3adb63d9bbffadc4",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "51e44abfeb85c3c9",
+   "data": "2026-10-30T06:45:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bassline_215_frente.jpg",
@@ -520,18 +520,18 @@
     "bassline_215_mapa.json"
    ],
    "sha256": {
-    "bassline_215_frente.jpg": "ca9b9d6622470ad47a1669c088cbde535a9109043989d66cd10353d5f48cd503",
-    "bassline_215_frente_alfa.png": "7a0d8bd918e1c13d9ae8620067658b8cdc907b46a560ddc30943f02d88ef53b2",
-    "bassline_215_manifesto.json": "1abe8003cef80ec1d9b324e42af0da633f2a92476dbe2afcdd1d85e9a86fc0d9",
-    "bassline_215_mapa.json": "63e77de04f973f956632f287d6906f02ea7b02eee084eb00b7d90c2e52aac176"
+    "bassline_215_frente.jpg": "7b03b34980c94c82ea7874da93d76e0b7d5df563878eff46e8eb6cbf469ee86b",
+    "bassline_215_frente_alfa.png": "0ab8d980207adf08511f8a11187239e71eb7e3d9da33a8f3b37bb40a92006295",
+    "bassline_215_manifesto.json": "17f7a9b3f829e2488a8d4e3c7d817246538343969f8d57f7d14ccbf64e830d2b",
+    "bassline_215_mapa.json": "c17e3ebb02fcdb1bfe5abc82c89f03739059a4316de127083a10366fb37c7a3c"
    },
-   "tamanho": 1774136,
+   "tamanho": 3381570,
    "tipo": "caixa",
    "inspiracao": "Fender Bassman 2x15",
    "categoria": "2x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
