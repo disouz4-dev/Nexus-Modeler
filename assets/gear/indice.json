@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:20:11Z",
+ "gerado": "2026-10-30T11:24:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4856,8 +4856,8 @@
   },
   "pyrite_klone": {
    "nome": "Pyrite Klone",
-   "hash": "71177d4b806d4c72",
-   "data": "2026-10-29T21:00:14Z",
+   "hash": "596f125bbc75315a",
+   "data": "2026-10-30T11:24:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pyrite_klone_botao_ganho.png",
@@ -4869,21 +4869,21 @@
     "pyrite_klone_mapa.json"
    ],
    "sha256": {
-    "pyrite_klone_botao_ganho.png": "4988debbdc13229e9a31db6940ef54b433b335cdb4289b64ef8c4324d1a8c597",
-    "pyrite_klone_botao_nivel.png": "940778a814538509cb8cd83a9b1d93439b40b0a386c863bbffb152c388d9a9b9",
-    "pyrite_klone_botao_tom.png": "753e9230af9b70fd503151f997aa7ddb16151f16a6038f561ce16a22d5488744",
-    "pyrite_klone_frente.jpg": "9f76c952af0930d705cb70eeed68a182dc8d49738fc0e93965c4ad6db8e7759f",
-    "pyrite_klone_frente_alfa.png": "89b41808d3c05eb4df93d583f122835cd67d0935d761c0aae6538c4d49c57844",
-    "pyrite_klone_manifesto.json": "0937e62fdfdc7516796bc4025ade5109556bf6f985c85a36549d6354be9a2bdd",
-    "pyrite_klone_mapa.json": "e1dd452387e6f4f631dc125254876f501044d65a355a0de87815ad798fc90afe"
+    "pyrite_klone_botao_ganho.png": "8777c2de547556724a76cd72d9d6f4ef72045b0a496bc0a0f3e5ce43e64738a9",
+    "pyrite_klone_botao_nivel.png": "e093544751ea60674b45017780476941d89fe5974168bf03475573e027ca08a4",
+    "pyrite_klone_botao_tom.png": "337d21d427d125b06768d8b146c3666d933016ee551538abe67bc0f07e564e6b",
+    "pyrite_klone_frente.jpg": "1be67e53f5ff2b3ba5b77bc99bc54aa5c2e166089eb1fdc291481ec54d58abe8",
+    "pyrite_klone_frente_alfa.png": "01ee2fce0630d993f0adc3b3721a57109c246c773ffb2a3b0aea3e26787b1266",
+    "pyrite_klone_manifesto.json": "44106ccc0296efa4640ccdf7ee5a51fdc0996aaa021f415956bb48fbd567e2f0",
+    "pyrite_klone_mapa.json": "ed25c28cfc0e28a02aaea79b098206d84b9187840562e735d2c3187f854eb4b1"
    },
-   "tamanho": 439660,
+   "tamanho": 416980,
    "tipo": "pedal",
    "inspiracao": "Wampler Tumnus",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
