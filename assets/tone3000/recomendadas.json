@@ -448,10 +448,30 @@
       {
         "id": 1628,
         "titulo": "Bogner Uberschall UberNAM Pack!",
+        "criador": "emilrohbe",
         "tipo": "amp",
-        "capturas": 17,
+        "capturas": 2,
+        "pacote": "Canal 1 Limpo",
         "padrao": true,
-        "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        "nota": "canal limpo",
+        "mapa": {
+          "Uberschall Capture 16 Clean - ": 3,
+          "Uberschall Capture 17 Clean 2 - ": 5
+        }
+      },
+      {
+        "id": 1628,
+        "titulo": "Bogner Uberschall UberNAM Pack!",
+        "criador": "emilrohbe",
+        "tipo": "amp",
+        "capturas": 2,
+        "pacote": "Canal 2 Lead",
+        "padrao": true,
+        "nota": "canal lead",
+        "mapa": {
+          "Uberschall Capture 1 G6 - ": 6,
+          "Uberschall Capture 2 G7 - ": 7
+        }
       }
     ]
   },
