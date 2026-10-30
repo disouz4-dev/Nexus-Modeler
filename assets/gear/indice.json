@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:07:43Z",
+ "gerado": "2026-10-30T20:09:51Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3093,8 +3093,8 @@
   },
   "hotrod40": {
    "nome": "Hot Rod 40",
-   "hash": "d822b30c82ba0ee6",
-   "data": "2026-10-30T14:49:12Z",
+   "hash": "c54d3c7aa1cedc88",
+   "data": "2026-10-30T20:09:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hotrod40_botao_agudo.png",
@@ -3109,24 +3109,24 @@
     "hotrod40_mapa.json"
    ],
    "sha256": {
-    "hotrod40_botao_agudo.png": "6a9f80841138c6ae3c02d0d8c7f78cdc143d57adabd80ebdc5f49756cdbf7df7",
-    "hotrod40_botao_ganho.png": "413068547c1219af857e6d7a635633b71a3f7d80e85cb739ee0e509524f25d47",
-    "hotrod40_botao_grave.png": "8219cc3fb0a2b3da6c29ad09e10cf15b56187ac3ac91308443a98402b231f025",
-    "hotrod40_botao_medio.png": "7ca409482c91d68990337fba2cac82060c1a482ebc066c7a4a04ed55af5e4122",
-    "hotrod40_botao_presenca.png": "2a6e531c236ebf7fbff4c406d2228f90ecaff61d19564033b3978b29b5c081c5",
-    "hotrod40_botao_volume.png": "44ad33c10f944696205510bd38eeb71c81b4bf8d07ef4c5f4c08195299160590",
-    "hotrod40_frente.jpg": "14a1b133d66aaa3a65c9273abfb28306cbafbedbb4d4541ffb4995120e4817a6",
-    "hotrod40_frente_alfa.png": "5129404d8e3dde2215bfdbfbfffc46934df933803404ddfcd31e38477f2c4d09",
-    "hotrod40_manifesto.json": "3aff8c33a27d1904c34a8ec5d5acbd604088b84482609ecd17d1b666c09e5885",
+    "hotrod40_botao_agudo.png": "69df7eb7d89ced1812b80f4dd96a777c5e2be749cf932823ab935a2c02188347",
+    "hotrod40_botao_ganho.png": "66648eb809fe9bbffd27f78d23a8b68f93fe068f6412999804ef3081020860be",
+    "hotrod40_botao_grave.png": "8e9a282f75d815b98519519465f3badeb76106511eaebebe877ec37dae4e7abc",
+    "hotrod40_botao_medio.png": "7411563d3d49645da237ce5ed3046576a8cfcdbfdc7d46b0d1ad8f4a8a2eae12",
+    "hotrod40_botao_presenca.png": "8f2e76fa13fef13749e7352e1d3559671cb57d222f2a0f6a48e9b27ff0016630",
+    "hotrod40_botao_volume.png": "8c6103891e84cc781c9926f0375a348a52b97c1ac3b1bd00b914bbd5dbbbb025",
+    "hotrod40_frente.jpg": "a601fa4e39ced1ceb0db9d97701e65d88a6988741e57a3dea6743811de65137e",
+    "hotrod40_frente_alfa.png": "911b1b84971f2f2eb9f74936d97d0aa6572dc52f346e414dc200b2de3406424a",
+    "hotrod40_manifesto.json": "07c582a18c5f737810a9ddb84736beda8d9419bf69aded29e45b5602745bd638",
     "hotrod40_mapa.json": "6e967e675be0796fba2526b23d6e35090605d433c7f67aa679dcc57c902c5fae"
    },
-   "tamanho": 2592059,
+   "tamanho": 2643443,
    "tipo": "cabecote",
    "inspiracao": "Fender Hot Rod Deluxe",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
