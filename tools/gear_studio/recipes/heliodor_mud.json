@@ -12,11 +12,11 @@
   "pintura": {
     "cor": [
       0.8913,
-      0.4647,
+      0.3686,
       0.009
     ],
     "metalico": 0.0,
-    "aspereza": 0.28
+    "aspereza": 0.2
   },
   "texto_cor": [
     0.0037,
@@ -25,59 +25,54 @@
   ],
   "modelo": "HELIODOR MUD",
   "botao_estilo": {
-    "diametro_m": 0.019,
-    "altura_m": 0.015,
+    "diametro_m": 0.024,
+    "altura_m": 0.016,
     "saia": false,
     "corpo": [
+      0.8671,
+      0.7969,
+      0.6121
+    ],
+    "traco": [
       0.0037,
       0.0037,
       0.0037
     ],
-    "traco": [
-      0.8913,
-      0.8913,
-      0.8434
-    ]
+    "forma": "galinha"
   },
   "botoes": [
     {
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        -0.58,
-        0.62
+        -0.55,
+        0.68
       ]
     },
     {
       "id": "tom",
       "rotulo": "TOM",
       "pos": [
-        0.0,
-        0.42
+        -0.03,
+        0.12
       ]
     },
     {
       "id": "nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        0.58,
-        0.62
+        0.62,
+        0.6
       ]
     }
   ],
   "medidas_fonte": "100 x 120 x 55 mm com botões (T-Rex, ficha oficial)",
-  "estampa": {
-    "svg": "estampas/heliodor_mud.svg"
-  },
   "quadro": {
     "largura_rel": 2.0,
     "proporcao": 1.25,
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": -0.84,
-  "logo_m": 0.009,
-  "pisante_y": -0.62,
   "rotulo_embaixo": true,
   "rotulo_m": 0.004,
   "texto_cor2": [
@@ -86,26 +81,55 @@
     0.0037
   ],
   "led": [
-    0.0,
-    0.9
+    0.04,
+    0.7
   ],
   "pisante": {
+    "estilo": "liso",
     "pos": [
-      0.5,
-      -0.56
+      -0.1,
+      -0.62
     ]
   },
   "transformacao": "Standard",
   "pecas": [
     {
-      "tipo": "apertar",
+      "tipo": "minichave",
       "pos": [
-        0.0,
-        0.7
+        0.02,
+        0.47
       ],
-      "diam_m": 0.006,
       "rotulo": "REFORÇO",
-      "rotulo_pos": "cima"
+      "rotulo_pos": "baixo"
     }
-  ]
+  ],
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0018,
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "HELIODOR MUD",
+      "pos": [
+        -0.9,
+        -0.84
+      ],
+      "tam_m": 0.0085,
+      "cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ],
+      "espaco": 1.05,
+      "alinhar": "LEFT"
+    }
+  ],
+  "logo": {
+    "svg": "estampas/pomegranate_mud_tema.svg",
+    "tam_m": 0.014,
+    "pos": [
+      0.55,
+      -0.8
+    ]
+  },
+  "jacks_topo": true
 }

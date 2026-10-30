@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:07:16Z",
+ "gerado": "2026-10-30T11:07:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2891,8 +2891,8 @@
   },
   "heliodor_mud": {
    "nome": "Heliodor Mud",
-   "hash": "f3b6dc2908deaafe",
-   "data": "2026-10-29T19:33:19Z",
+   "hash": "7b2452524f24f5f2",
+   "data": "2026-10-30T11:07:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "heliodor_mud_botao_ganho.png",
@@ -2904,21 +2904,21 @@
     "heliodor_mud_mapa.json"
    ],
    "sha256": {
-    "heliodor_mud_botao_ganho.png": "962bc9d3dcd140140831cb9de319b7bc5d0a07474e9ca0db11b5f39770b2c8b0",
-    "heliodor_mud_botao_nivel.png": "4b172de7295b0895342bff6f0d9330dea259929a6773fb1be13f6040fa1fa0dc",
-    "heliodor_mud_botao_tom.png": "41c71ccbac539f31a0986a0169f9da25b2798a6d90b8def71ac03ba4c8e13177",
-    "heliodor_mud_frente.jpg": "8bd5ffd7e656774fc64b76e8dbabf742cef98af0f90fccc93d646846901832c9",
-    "heliodor_mud_frente_alfa.png": "43923a254fc62522b1cb01409d3d2267b52620736dc4c392e0c491afcf6d8a76",
-    "heliodor_mud_manifesto.json": "134b10d51bdf27d1fee9f5cf1f8564919d76404ad6310416f0794341433a60a4",
-    "heliodor_mud_mapa.json": "9c01e8cbaf828933048fc4031dc51431d57f0b5abfb17595d04af8b2e155ea34"
+    "heliodor_mud_botao_ganho.png": "f534dadaffa7d24a0efce24a8ce8412fdc6c514abf355d92150f4333a7cfa20d",
+    "heliodor_mud_botao_nivel.png": "28eb849424506003ef350dbe51f83e9500e4764217cac89ae75030cfbff04152",
+    "heliodor_mud_botao_tom.png": "fa9c52d3c40bbdeae52fecbbf911cb3b8d431176ffd8ef9b7629ea2f107564c5",
+    "heliodor_mud_frente.jpg": "0d687c40cba994fa69a69cae913faaf9effa81a36b81b5b81619b727e261588b",
+    "heliodor_mud_frente_alfa.png": "c6c7316b391168bf66774a85c9216c541f7dff24684104601598ec8fed187af8",
+    "heliodor_mud_manifesto.json": "8c82768450bbc4d5fc49d9e4c685fa3c3419731c78a25ea689614e401e7004c0",
+    "heliodor_mud_mapa.json": "f3529d0240be51b86d9dae81d06dafe9e1c36370731da00df3b56edd31135a55"
    },
-   "tamanho": 376223,
+   "tamanho": 347375,
    "tipo": "pedal",
    "inspiracao": "Mudhoney",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
