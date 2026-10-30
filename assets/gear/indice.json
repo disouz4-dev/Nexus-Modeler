@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T08:13:54Z",
+ "gerado": "2026-10-30T08:18:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4889,8 +4889,8 @@
   },
   "quince_plus": {
    "nome": "Quince Plus",
-   "hash": "ac1e1e90bc16daaa",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "e7edda32bd35c777",
+   "data": "2026-10-30T08:18:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "quince_plus_botao_ganho.png",
@@ -4901,20 +4901,20 @@
     "quince_plus_mapa.json"
    ],
    "sha256": {
-    "quince_plus_botao_ganho.png": "58e3e71b44aed56ec7477a7d53ba20dcfe71b234a934d8c967ce72c3ee559864",
-    "quince_plus_botao_nivel.png": "495074c148d2caf28c0be5fce7a0516ada0864cc51c1e22a40c4defd358f7b43",
-    "quince_plus_frente.jpg": "6d810b15895fff1a669bc9c51b75e827f025645ca2ab5ecd9062a67d99f78e91",
-    "quince_plus_frente_alfa.png": "a8b085c5dbf8bebb4afeb4a9c3a9c62395dc500958be40a065496a268ce0bfaf",
-    "quince_plus_manifesto.json": "5f2dafa5b183728a4d464142f2491d9b5b9b231b171d7812098b231e31e2b4b6",
-    "quince_plus_mapa.json": "1012fa17eb683eb0d81005aedbbbf25d4ba6789f8dc1e9bffe38196fced31e45"
+    "quince_plus_botao_ganho.png": "1774b6db7eee60b93417e3b48afc5ea086309c3ac3f05e14e6b3868c7973fe48",
+    "quince_plus_botao_nivel.png": "9a514421da871268daa51e17fb4cf3895d0d3747971fee2ed0ba5f43537e4492",
+    "quince_plus_frente.jpg": "834c5af0bcdb5df14519e2b450a07a76633897209c5557245cff8f62800c682f",
+    "quince_plus_frente_alfa.png": "106825fbdac4e42e8b2cbe2ece1fc9253752e044123ddcec4c81c01ca3cf593f",
+    "quince_plus_manifesto.json": "159686792e624ff8d2092d0607736e75586e3135c2317f41496672d40c8a89b7",
+    "quince_plus_mapa.json": "b0247f6cae7b4dbbc285f1192fb515b3d97a368d06dc8d0631f73bc873336ca5"
    },
-   "tamanho": 331039,
+   "tamanho": 389957,
    "tipo": "pedal",
    "inspiracao": "MXR Distortion+",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
