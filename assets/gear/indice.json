@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:13:44Z",
+ "gerado": "2026-10-30T16:15:50Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1329,8 +1329,8 @@
   },
   "britplexi50": {
    "nome": "Brit Plexi 50",
-   "hash": "24e0c6668f1af91b",
-   "data": "2026-10-30T09:20:44Z",
+   "hash": "5bf29fe348c79f88",
+   "data": "2026-10-30T16:15:50Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi50_botao_agudo.png",
@@ -1345,24 +1345,24 @@
     "britplexi50_mapa.json"
    ],
    "sha256": {
-    "britplexi50_botao_agudo.png": "574d6c98fc6392ad871deccf351f7fb995561867c1ea0a53065fd2c32377a407",
-    "britplexi50_botao_ganho.png": "7beff0428ec5943cde444f8b51fd72b3a665a57e4ed4e4a293392ef9c0851aec",
-    "britplexi50_botao_grave.png": "c9f7b1207f262830a36b9c9ea0e8b6ae5d20303704b37b679be1574a2fc9be9e",
-    "britplexi50_botao_medio.png": "cefba4b3394535e831a58ecdd69754902b960bb40fab0d55dcc405a88fd15559",
-    "britplexi50_botao_presenca.png": "ab5f94ad443479187edf899e2950e35ea5c0e2547f5c8e8c7095d2ffb49bc922",
-    "britplexi50_botao_volume.png": "7e8b4d9ef242b2bb3a87fc778b036bf1c8f2cb6726b45f3dcffac972adb54610",
-    "britplexi50_frente.jpg": "457d78db1c4337ba1097282645a60f36638ffa786d718d28603b3c42b871f980",
-    "britplexi50_frente_alfa.png": "87688e0bfc85ba3514631eeb35f39272358032905a6492e6a47f6a4e6b897d20",
-    "britplexi50_manifesto.json": "04b1199071e549aa0c2111480fb0ab3c958bb3dbbf51de7b292bbd9ea3de1ca9",
-    "britplexi50_mapa.json": "1ee4350c295103545134538d7d9caa38caaa64d36d9535433cac5af5b750d674"
+    "britplexi50_botao_agudo.png": "a83b2d52c6fc5e3537c77ad4d31bde43072f62ed79cc24cbe53c9db461c068a1",
+    "britplexi50_botao_ganho.png": "4af7faee2a0f4bdc0b586701e02664647ac28f7d83556422d940d32e561cea8c",
+    "britplexi50_botao_grave.png": "a8cd908cc043391a372a4801f6761de12383f774ba50e823868570d3c4473bd8",
+    "britplexi50_botao_medio.png": "5a2280d7851649387fa4e6f0c5229ee4310eb98ecb0136ffb1c4522cb8bf2307",
+    "britplexi50_botao_presenca.png": "b1ed65d3ddde360068493dfefed9d012fa58f39aa37f22aa1ca5202a06decf14",
+    "britplexi50_botao_volume.png": "aa1263601e29ebaab8faf186656777c16ce2c199e301e16f01e35f23b19c4fd9",
+    "britplexi50_frente.jpg": "71bffead377e0f8e37ae711b5a71aa392b7460f58b2376b0bac477a121f339b8",
+    "britplexi50_frente_alfa.png": "7002e559a71eca78b4a56b4548b224622c217a6a8be406ec7bd8005665db83a3",
+    "britplexi50_manifesto.json": "f7659603b5740a0b942c9754cb8f3cac885ebb054f46808b5753fef615575c06",
+    "britplexi50_mapa.json": "fcaa564afb3a1a0688f2659afa7da7fae627c7e2806d4be65533015c1cc8c9fa"
    },
-   "tamanho": 1471139,
+   "tamanho": 1504441,
    "tipo": "cabecote",
    "inspiracao": "Marshall 1987 Lead 50 W",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
