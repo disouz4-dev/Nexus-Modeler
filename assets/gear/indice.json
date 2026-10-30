@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:00:55Z",
+ "gerado": "2026-10-30T11:05:06Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4191,8 +4191,8 @@
   },
   "mercury_bender": {
    "nome": "Mercury Bender",
-   "hash": "76d8687082204dc2",
-   "data": "2026-10-29T19:31:04Z",
+   "hash": "96fc32451d31dc40",
+   "data": "2026-10-30T11:05:06Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mercury_bender_botao_ganho.png",
@@ -4204,21 +4204,21 @@
     "mercury_bender_mapa.json"
    ],
    "sha256": {
-    "mercury_bender_botao_ganho.png": "ece37c971843e71ddcc4036a8d88177dadd4564cd3663ee425ea5b6320956022",
-    "mercury_bender_botao_nivel.png": "d19366b3f7a57214a5d9038df3d3a75a3af6b686f03a9876d65870e5867ccdc9",
-    "mercury_bender_botao_tom.png": "fb662eefd2fc5af70f8f0945c638315463c253f98972a8da137dd43c90d24dfc",
-    "mercury_bender_frente.jpg": "e4a98cc63dec1a42c604e75a0190830bd0d52107a10ad1e48f23a43e5eb9917b",
-    "mercury_bender_frente_alfa.png": "797ad2ecb16cb3ed94a47df500a2773e5e7285b68a352b690b473ac186c14456",
-    "mercury_bender_manifesto.json": "53af5c23bc1df05a30a28cacb9b029203a1eb5912a4b312bf0fc1a33c6eb8a90",
-    "mercury_bender_mapa.json": "793d0cd87115fafa55ce2343b6cb1706d3d8f22a8962bb88bc1df828324238b1"
+    "mercury_bender_botao_ganho.png": "da6553e69931fc8f2d1a6146c62e42ab13dc8673665e94eb5cfc58ce2c464609",
+    "mercury_bender_botao_nivel.png": "6cc2d820c93b65e1354351909843dbe15fe8fd95cbe18783c37cc14f4a28786c",
+    "mercury_bender_botao_tom.png": "2465515aff5252db7f97694221faad83cce7307cd19b770d2e855ee65c2d34f2",
+    "mercury_bender_frente.jpg": "e0af0a0a426b36ce4d69ccf33bcce677733094552990b936eaa1968f43b930d3",
+    "mercury_bender_frente_alfa.png": "f4b4a206ac785c457042d896754804fbf838e5e065e9a730760106cda8bb7574",
+    "mercury_bender_manifesto.json": "fe1758e972690e5ca509e2e3a79f4e9c2e22a506d385586c0ce625ffc5fb0480",
+    "mercury_bender_mapa.json": "305416566da5099a29f0eedfc974cd6e907850167586ae687b8d9f7d6b274b67"
    },
-   "tamanho": 193485,
+   "tamanho": 233673,
    "tipo": "pedal",
    "inspiracao": "Tone Bender",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
