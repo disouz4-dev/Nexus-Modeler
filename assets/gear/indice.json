@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:20:14Z",
+ "gerado": "2026-10-30T13:22:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1790,8 +1790,8 @@
   },
   "coconut_delay": {
    "nome": "Coconut Delay",
-   "hash": "fe694e398afa0f97",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "8c2c86e7c170a3f9",
+   "data": "2026-10-30T13:22:26Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "coconut_delay_botao_a.png",
@@ -1803,21 +1803,21 @@
     "coconut_delay_mapa.json"
    ],
    "sha256": {
-    "coconut_delay_botao_a.png": "90aa95f4022f35a7394f24e77524c483f6dcc0c40839081f88d1054da410b8e1",
-    "coconut_delay_botao_b.png": "496f8307c5303bade9db649d1a285ffb54d3182d6715239b8b26d114487abffc",
-    "coconut_delay_botao_c.png": "747efcad0a968e625346c61a5831c25c500f085688f18f0148593f2e82a9462c",
-    "coconut_delay_frente.jpg": "23fb4dac74a607ee517ff621110423ac8b375b772033dfc9c364d69f75cfe006",
-    "coconut_delay_frente_alfa.png": "c1d0bd79b45609cc6f298a4c16e0a218b8778ce401f5b48cd3b4c32f9b57c372",
-    "coconut_delay_manifesto.json": "a57ec94119868882d640a6a679125e76f9c242be7a5ebd87c2407a0118ff71d1",
-    "coconut_delay_mapa.json": "6a57ff39b03ce60b5d835452074cfafb142674f35b2d596d632cf0c674ca7853"
+    "coconut_delay_botao_a.png": "f1d065231980d7d12f6b8192ae874d660da5e135d45b6e5c4eac346ab9662058",
+    "coconut_delay_botao_b.png": "b7afb06c9c820c967fde228d6a822878065f65e4ba76c1216b06246c59a59496",
+    "coconut_delay_botao_c.png": "a55b4a586fa64e9c283adf261e1984f768c856fce248ebf951b003fbda792c51",
+    "coconut_delay_frente.jpg": "be0f15796ee4ab7e6adb108d976707a188d313e0f4e8f5cfd296f51efb06c6c9",
+    "coconut_delay_frente_alfa.png": "0dfbb8d60b1690929527cf8ad62038dfac636496ecf81f59107ddfd4946d5033",
+    "coconut_delay_manifesto.json": "f7ef61c62d0fba44836f30c075779d4fde90f8ac8b0e9ba20993848f838d4bf2",
+    "coconut_delay_mapa.json": "602d6ac28f949225f003b035f1c71588dce240adcf7c33a7a6f56df569b320cf"
    },
-   "tamanho": 395173,
+   "tamanho": 394451,
    "tipo": "pedal",
    "inspiracao": "DD-3",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
