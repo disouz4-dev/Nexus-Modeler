@@ -8,98 +8,98 @@
     {
       "id": "a",
       "x": 140,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 87,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "b",
       "x": 178,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 86,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "c",
       "x": 216,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 85,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "d",
       "x": 253,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 84,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "e",
       "x": 290,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_e.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 84,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "f",
       "x": 328,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_f.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 84,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "g",
       "x": 365,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_g.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 85,
-      "altura": 262
+      "altura": 300
     },
     {
       "id": "nivel",
       "x": 416,
-      "y": 119,
-      "tamanho": 131,
+      "y": 104,
+      "tamanho": 150,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
       "largura": 87,
-      "altura": 262
+      "altura": 300
     }
   ],
   "canais": [],
@@ -111,74 +111,92 @@
     {
       "texto": "100",
       "x": 163.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "200",
       "x": 200.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "400",
       "x": 237.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "800",
       "x": 274.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "1,6K",
       "x": 311.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "3,2K",
       "x": 348.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "6,4K",
       "x": 385.4,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
     },
     {
       "texto": "NÍVEL",
       "x": 436.6,
-      "y": 263.0,
+      "y": 266.4,
       "altura": 14.12,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#f2f2ed",
       "espaco": 1.05
+    },
+    {
+      "texto": "SAÍDA",
+      "x": 196.9,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
+    },
+    {
+      "texto": "ENTRADA",
+      "x": 403.1,
+      "y": 293.0,
+      "altura": 16.01,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
     }
   ],
   "pisante": {
@@ -187,8 +205,8 @@
     "raio": 152.0
   },
   "led": {
-    "x": 434.6,
-    "y": 91.3,
-    "raio": 14.7
+    "x": 411.4,
+    "y": 100.8,
+    "raio": 8.7
   }
 }

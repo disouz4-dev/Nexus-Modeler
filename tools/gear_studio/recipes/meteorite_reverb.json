@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Meteorite Reverb",
   "familia": "meteorite_reverb",
-  "inspiracao": "Boss compacto cinza-grafite metálico (73 x 129 x 59 mm), letras brancas; botões pretos com saia sobre o painel prateado escovado: MISTURA (E.LEVEL), TOM, TEMPO e o seletor MODO menor, à direita (fixo), LED CHECK no alto, no centro, e pedal basculante com borracha frisada, painel prateado escovado atrás dos botões. Tema: meteorito em queda com rastro de fogo, num céu de estrelas. Original: Boss RV-6 Reverb.",
+  "inspiracao": "Boss compacto cinza-grafite metálico (73 x 129 x 59 mm), letras brancas; botões pretos com saia sobre o painel prateado escovado: MISTURA (E.LEVEL), TOM, TEMPO e o seletor MODO menor, à direita (fixo), LED CHECK no alto, no centro, e pedal basculante com borracha frisada, painel prateado escovado atrás dos botões. Tema: meteorito em queda com rastro de fogo, desenhado na borracha, no lugar da logo. Original: Boss RV-6 Reverb.",
   "formato": "compacto",
   "medidas_m": {
     "largura": 0.073,
@@ -99,9 +99,7 @@
     }
   ],
   "medidas_fonte": "Boss RV-6 Reverb: 73 x 129 x 59 mm (Boss, ficha oficial)",
-  "estampa": {
-    "svg": "estampas/meteorite_reverb.svg"
-  },
+  "modelo_y": 0.33,
   "quadro": {
     "largura_rel": 2.21,
     "proporcao": 1.25,
@@ -110,10 +108,16 @@
   "base_rel": 0.68,
   "basculante_rel": 0.6,
   "basculante_ang": 0.0,
-  "borracha_rel": 0.36,
-  "modelo_m": 0.0084,
+  "borracha_rel": 0.5,
+  "borracha_larg": 0.86,
+  "modelo_m": 0.0125,
   "modelo_x": 0.0,
   "tipo_texto": "",
+  "logo": {
+    "svg": "estampas/grape_reverb_tema.svg",
+    "tam_m": 0.016,
+    "lugar": "borracha"
+  },
   "rotulo_embaixo": true,
   "rotulo_m": 0.0042,
   "disposicao": "boss",
@@ -175,5 +179,10 @@
       "rotulo": "ENTRADA",
       "rotulo_m": 0.0034
     }
+  ],
+  "modelo_cor": [
+    0.8913,
+    0.8751,
+    0.8277
   ]
 }
