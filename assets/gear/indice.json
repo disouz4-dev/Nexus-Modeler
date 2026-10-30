@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:49:45Z",
+ "gerado": "2026-10-30T11:51:53Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4158,8 +4158,8 @@
   },
   "melanite_bassdi": {
    "nome": "Melanite Bass DI",
-   "hash": "e8d2691b00c5c92b",
-   "data": "2026-10-29T21:27:42Z",
+   "hash": "308c6d6040b94d74",
+   "data": "2026-10-30T11:51:53Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "melanite_bassdi_botao_ganho.png",
@@ -4171,21 +4171,21 @@
     "melanite_bassdi_mapa.json"
    ],
    "sha256": {
-    "melanite_bassdi_botao_ganho.png": "3ced3134f61188c1d3ccfec405ef96fb8437aa98243e9f1ede608eb922c12df3",
-    "melanite_bassdi_botao_nivel.png": "167ff21ad2438be68169eaeaa8f025a63780d36fd0efed3c0a11dab61a0d96af",
-    "melanite_bassdi_botao_tom.png": "24f9ae0e425eb89c4cd299e7b5d5fc4cf6e118a927da02bee546a8137554fcb9",
-    "melanite_bassdi_frente.jpg": "8b55e8fb619888ac8b14ee002e49739cc3bacd6d682e73ddba0e8cfe3ab008a1",
-    "melanite_bassdi_frente_alfa.png": "5c92aee73fe754662659a705130c7073a4bbbd76d84f42c8cd586e93b4b7e2ec",
-    "melanite_bassdi_manifesto.json": "bf483e6656ea6e5f2eec21f58f07c67f6a90c4c8afb32ff1297d9d23587ff5ce",
-    "melanite_bassdi_mapa.json": "0a3b73ecb6e380251a5fcf1166246f1867ea23484c3722515763a5de6182fc9a"
+    "melanite_bassdi_botao_ganho.png": "9e6b51ad6e072f7b8de3a5bc591c594686bd40f77b5ff1e3fa1cb79694545512",
+    "melanite_bassdi_botao_nivel.png": "9ec982fdc2bd040007d41b3ce55977a86b87980983a688abe843d81cb0c10d9a",
+    "melanite_bassdi_botao_tom.png": "460d834e3e341c8c8bcc34c2746b619315a0d4625578a48d71056bd1b343ae50",
+    "melanite_bassdi_frente.jpg": "dd1056487086906e5fdcf5a4da58aa32ad231d9ee982f632e0a022f041634ba2",
+    "melanite_bassdi_frente_alfa.png": "70f254f85a36feacec4e4b6b5693b695158cedfeaf555b9594b893b3f28980ec",
+    "melanite_bassdi_manifesto.json": "3abc6dbca280bcd0d16901cde3155053108836f11b03dc4240458d93284eca9f",
+    "melanite_bassdi_mapa.json": "1f5b336c2a12ad2fbaf8c5efbcbabeebd8f0a486a949c9d7059feaf1dd57ed9b"
    },
-   "tamanho": 165603,
+   "tamanho": 158312,
    "tipo": "pedal",
    "inspiracao": "MXR M80 Bass DI",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
