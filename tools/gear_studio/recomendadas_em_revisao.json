@@ -3154,5 +3154,48 @@
         "nota": "a 2x12 da mesma linha"
       }
     ]
+  },
+  "block5150": {
+    "busca": "5150",
+    "tons": [
+      {
+        "id": 44664,
+        "titulo": "5150 BLOCK LETTER",
+        "tipo": "amp",
+        "capturas": 2,
+        "pacote": "Canal 1 Ritmo",
+        "padrao": true,
+        "nota": "5150 Block Letter, canal verde (crunch) em dois ganhos; só o pré, use a caixa",
+        "mapa": {
+          "G CRUNCH #1": 4,
+          "G CRUNCH #2": 7
+        }
+      },
+      {
+        "id": 44664,
+        "titulo": "5150 BLOCK LETTER",
+        "tipo": "amp",
+        "capturas": 3,
+        "pacote": "Canal 2 Solo",
+        "padrao": true,
+        "nota": "5150 Block Letter, canal vermelho (solo) em três ganhos; só o pré, use a caixa",
+        "mapa": {
+          "R GAIN #1": 3,
+          "R GAIN #2": 6,
+          "R GAIN #3": 9
+        }
+      },
+      {
+        "id": 29609,
+        "titulo": "Peavey 5150 Blockletter Lead Channel",
+        "tipo": "amp",
+        "capturas": 1,
+        "pacote": "Canal 2 Solo (uma captura)",
+        "nota": "Canal de solo do 5150 Block Letter, uma captura",
+        "mapa": {
+          "Lead Channel": 8
+        }
+      }
+    ]
   }
 }
