@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:30:22Z",
+ "gerado": "2026-10-30T16:32:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1251,8 +1251,8 @@
   },
   "britds20": {
    "nome": "Brit DS 20",
-   "hash": "9a01b3b48dbb811b",
-   "data": "2026-10-30T09:10:17Z",
+   "hash": "7a9664dcb8a5d7cc",
+   "data": "2026-10-30T16:32:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britds20_botao_agudo.png",
@@ -1267,24 +1267,24 @@
     "britds20_mapa.json"
    ],
    "sha256": {
-    "britds20_botao_agudo.png": "060482e20a6ffc4812996800f95d72605e38d09764af34c90437e0dbba234568",
-    "britds20_botao_ganho.png": "1ba25731882e29c68d7d091ee4251955c084b773dde0c6ff63b0b62bf9ea0407",
-    "britds20_botao_grave.png": "4cc8b5fd1c9535a9c4a8655fe20bf3c8feb199f6fe921eeb581609d3389f984c",
-    "britds20_botao_medio.png": "1c368060d924f1caf431e596ee504c4dbce483b2f2a177e7b1b5512c81c586ff",
-    "britds20_botao_presenca.png": "4ff190e7f6037affa3c78695acb2e691fe5bfbf685f49f8fd31ddaddadb91215",
-    "britds20_botao_volume.png": "f4a9ec76afd018663a76642f6bfe71838fa78a580d46689d69573087db830572",
-    "britds20_frente.jpg": "899af1135d590568decdad25b79d9af57652b1eebee42d8d2efd1b2f54fdbe37",
-    "britds20_frente_alfa.png": "1baff854d6515bd586ff2171365f788593c05e596c2a45efb7ec7e30985f27aa",
-    "britds20_manifesto.json": "85e5b57f8adb325086a6afca73088d417bc97830e79402ae042de93817f28cb4",
-    "britds20_mapa.json": "48129cfbc830c3a689541d6a22e6e3b4700bec22ab3a26b97fb7b359f9a2c911"
+    "britds20_botao_agudo.png": "b8e2d187d71107d8fa76a4cbf7b96f6d4f58dc25942a506478945a78cc96fcf8",
+    "britds20_botao_ganho.png": "46617bb50302d632a9e91eeba048300d706881abbfd27d3bfa0b97f1f292d96b",
+    "britds20_botao_grave.png": "43e8333ecfc3ba422cfd04b0e2bce28ac3195b9596daf88e3e87008cfcd27ddd",
+    "britds20_botao_medio.png": "c1c8dd696c35e0fb7cc8a78f042c2a4afa64ff6bc1b9fadff0bb9e5898a86b6c",
+    "britds20_botao_presenca.png": "4a5d49ea99edd313da24e692029716223267014fb9718f6db205a96cd9894302",
+    "britds20_botao_volume.png": "f148a7990c4d404868ec3be72d232afb4fd62da30686d0be3d221b23c42b4e30",
+    "britds20_frente.jpg": "51e22fea6e79265230909fd6570d295171a0f59bc977b49742073711b195ca1c",
+    "britds20_frente_alfa.png": "59d9299138d69c6f58c59b9fd1ef90be2d7956fa5a628f228991134f8e14d0b9",
+    "britds20_manifesto.json": "f7f381aa034b49bc3168e93a6a632f5775e5642f3801d33f1607634a4ab37e6e",
+    "britds20_mapa.json": "10a23e5b989063b9f676283db74a8524477d836c77f4716cdba59c1558914d17"
    },
-   "tamanho": 1880931,
+   "tamanho": 1866146,
    "tipo": "cabecote",
    "inspiracao": "Marshall DSL (série nova)",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
