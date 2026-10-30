@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T10:29:13Z",
+ "gerado": "2026-10-30T10:29:22Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4509,8 +4509,8 @@
   },
   "olive_drive": {
    "nome": "Olive Drive",
-   "hash": "36a4caf6cf4f456b",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "442193b89e2f1e4c",
+   "data": "2026-10-30T10:29:22Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "olive_drive_botao_ganho.png",
@@ -4522,21 +4522,21 @@
     "olive_drive_mapa.json"
    ],
    "sha256": {
-    "olive_drive_botao_ganho.png": "974547bc173b1c137f78ef6940c38ad9f2dce23f99d26295805f6e6499c969ae",
-    "olive_drive_botao_nivel.png": "bb3b4e83e15dfaf9d4031180ab4c7b82737632f807dbbd731e87ec03a31fb74f",
-    "olive_drive_botao_tom.png": "3b2f14f5480fa3d19092a6baaff5b3ea098d10c03fddb78f115f3d055c2024d8",
-    "olive_drive_frente.jpg": "50dea0ff59547d8a06c70c4e070a9019c1b5697f03c09b7f7ba18e2ef020b936",
-    "olive_drive_frente_alfa.png": "33bda0ca4dfca84ba37e1363f21f277ab6809d0444358e34a0dd4fcf4ec45f55",
-    "olive_drive_manifesto.json": "a5a17fd67c3dcc34fccc8b07058cecd0e7c5ce6402956143326a9b1e655ebca6",
-    "olive_drive_mapa.json": "da9d262e8115c1b1f514e4b5710f46f1c8bdae9a699b63e453efb162c1257500"
+    "olive_drive_botao_ganho.png": "656707bdea844623889e6e9924715fe0fa81b81f45b55356c4df22f75b1dc02d",
+    "olive_drive_botao_nivel.png": "7899db41a551b42b7f8acd4e3d916917fb70953f2a526735ac4a46f50ce0e217",
+    "olive_drive_botao_tom.png": "c24358deb2cba3c0ab9b4acf20df7af87f7e391ad339be6b38b5b6982b4a66d5",
+    "olive_drive_frente.jpg": "d17f4fe5e9dd4367286a988f358848a32e3833b7f86ff695ea36fce41bb66abb",
+    "olive_drive_frente_alfa.png": "266fe8a2004f335701a6b69bc66c5f471f1ae276e36d2d05c977cae704f8c2a1",
+    "olive_drive_manifesto.json": "c7eb03006df4567d284856a711c165d6a22f5447eb541b97c8126c036f8f54b8",
+    "olive_drive_mapa.json": "18395a646b7053fa3997e241020a1a031697b73d6161138642dfbd7d8e9066af"
    },
-   "tamanho": 407752,
+   "tamanho": 438231,
    "tipo": "pedal",
    "inspiracao": "Ibanez TS808 Tube Screamer",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
