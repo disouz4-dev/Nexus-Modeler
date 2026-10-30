@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:32:38Z",
+ "gerado": "2026-10-30T11:32:44Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5136,8 +5136,8 @@
   },
   "sapote_33": {
    "nome": "Sapote 33",
-   "hash": "faaff25148fc3552",
-   "data": "2026-10-29T21:08:38Z",
+   "hash": "85287ed3aa818f58",
+   "data": "2026-10-30T11:32:44Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sapote_33_botao_ganho.png",
@@ -5148,20 +5148,20 @@
     "sapote_33_mapa.json"
    ],
    "sha256": {
-    "sapote_33_botao_ganho.png": "4cc03c24f6da90898c382380e72a2d9d6417d522b529f6f820a9b237da698801",
-    "sapote_33_botao_nivel.png": "8b3c73377f3a18d28f96bb5a7874102bcef887d0f02db03bba2d1d600f5b4229",
-    "sapote_33_frente.jpg": "395f69d61d5d0696469853f252f8caa8cf3856b1eeb86e03acfb54d0c56a7e39",
-    "sapote_33_frente_alfa.png": "8beb07da166766d693fce5955ed48dc63077fb334dc13cba1dc0c88fe245655c",
-    "sapote_33_manifesto.json": "36b73f023696d04fd19119c33e0c686f7bc59af61c15b86d5be57ac39611d363",
-    "sapote_33_mapa.json": "930aeb918946522186b46bcf8e3bfc4117e62df6041519d699d906ad24e2f892"
+    "sapote_33_botao_ganho.png": "1d8a446551bf456e7fe3d9252c1a58bb9ac8e259934f42e30ed753bcb5aa21d8",
+    "sapote_33_botao_nivel.png": "32664e9bf5a3fb089743657e1de375c2edadf97a152c0c5223a451ca941e87a6",
+    "sapote_33_frente.jpg": "0857e8f8aa185bf077000dc4e0be836c470ce05a13b1341d226e76bd9054fd79",
+    "sapote_33_frente_alfa.png": "ae5de2c0bfb191f5b79837c8b6ba929045dcb499a4c1f75a23b70eff071c97b5",
+    "sapote_33_manifesto.json": "d65653a760dfb1c1a14ceea62d9f4cad8d1eb553263073c485e503963672a25b",
+    "sapote_33_mapa.json": "c9b82cac45c64012bcc0f3662d1f01cb65a7dc978283e18ef630722d51c5d195"
    },
-   "tamanho": 207180,
+   "tamanho": 160298,
    "tipo": "pedal",
    "inspiracao": "Fortin 33",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
