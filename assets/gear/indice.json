@@ -1,11 +1,11 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T10:40:04Z",
+ "gerado": "2026-10-30T10:44:15Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
-   "hash": "a373dfbe2be35e93",
-   "data": "2026-10-29T19:14:18Z",
+   "hash": "5608076cad2ba81f",
+   "data": "2026-10-30T10:44:15Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "acai_rat_botao_ganho.png",
@@ -17,21 +17,21 @@
     "acai_rat_mapa.json"
    ],
    "sha256": {
-    "acai_rat_botao_ganho.png": "6dfb5a5a0c21278ff49872f0fc3bb13faad824f1094d72fd59b4140e05201671",
-    "acai_rat_botao_nivel.png": "5e105d7a123fce91daa33831260e058d317c8e38f15d97e34a2a138551ee4962",
-    "acai_rat_botao_tom.png": "c7ace0782e7e7db5b8c5efd7d1adf0da672c2f45740f702a7a8674dafcbcff51",
-    "acai_rat_frente.jpg": "3b321f5bb3bf4fb6974537bae0a28f45255659f2a67950e76a74d98683ca4b8f",
-    "acai_rat_frente_alfa.png": "7f51600190b7ba5c8a486b3923d3b61434e81e0d21aa09f0de88945706eb1cd2",
-    "acai_rat_manifesto.json": "60464830006b36ba7b30b3d144523f690cb1a74613c71492c21c48f6f66c3066",
-    "acai_rat_mapa.json": "48146e76f3f508b2a55a2011dd753f28322b2a18c8a12375b1d0240cf2224633"
+    "acai_rat_botao_ganho.png": "0a03e2369b97770190ac64ac42becce9f9494dd8f8d6142c3fb3d2f6e43eb03b",
+    "acai_rat_botao_nivel.png": "63123131fc8515c27a80c111896f462fe9c71c4daf08d59ebdedf9e9e6830979",
+    "acai_rat_botao_tom.png": "3964bf657b41dc8c7be0d5179d34eea2e354c34378d23cfb5ffbd99091119cc1",
+    "acai_rat_frente.jpg": "d210b1c209454c23f826dd515fadfe0f29743471c1f6777d631f4b85a740baf3",
+    "acai_rat_frente_alfa.png": "641fea85b3880f6b4759ab1f3f8cbfef27a76176e778397bcf1c96d46ab4c7c5",
+    "acai_rat_manifesto.json": "b08b1a9d44628a48006a302f0f243248303ffe3cc383e98c3ae592f98ae1baa6",
+    "acai_rat_mapa.json": "f1dd1e11c03772764478d0d1040534c6db8026f7ba24f68433bb0f1d5353d7ce"
    },
-   "tamanho": 357834,
+   "tamanho": 166001,
    "tipo": "pedal",
    "inspiracao": "ProCo RAT",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

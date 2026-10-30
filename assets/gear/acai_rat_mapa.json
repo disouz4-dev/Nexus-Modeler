@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 125,
-      "y": 163,
-      "tamanho": 104,
+      "x": 138,
+      "y": 236,
+      "tamanho": 80,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 248,
-      "y": 163,
-      "tamanho": 104,
+      "x": 260,
+      "y": 236,
+      "tamanho": 80,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 371,
-      "y": 163,
-      "tamanho": 104,
+      "x": 382,
+      "y": 236,
+      "tamanho": 80,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,15 +36,15 @@
   ],
   "canais": [],
   "medidas_mm": [
-    79,
-    103
+    81,
+    98
   ],
   "rotulos": [
     {
       "texto": "DISTORÇÃO",
-      "x": 180.4,
-      "y": 148.4,
-      "altura": 17.16,
+      "x": 180.6,
+      "y": 218.5,
+      "altura": 14.74,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
@@ -52,30 +52,30 @@
     {
       "texto": "FILTRO",
       "x": 300.0,
-      "y": 148.4,
-      "altura": 17.16,
+      "y": 218.5,
+      "altura": 14.74,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     },
     {
       "texto": "VOLUME",
-      "x": 419.6,
-      "y": 148.4,
-      "altura": 17.16,
+      "x": 419.4,
+      "y": 218.5,
+      "altura": 14.74,
       "achatamento": 1.0,
       "cor": "#f2f0eb",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 300.0,
-    "y": 547.0,
-    "raio": 62.5
+    "x": 291.5,
+    "y": 517.0,
+    "raio": 42.0
   },
   "led": {
-    "x": 300.0,
-    "y": 469.0,
-    "raio": 15.7
+    "x": 403.9,
+    "y": 387.1,
+    "raio": 8.8
   }
 }
