@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T17:52:57Z",
+ "gerado": "2026-10-30T17:57:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5387,8 +5387,8 @@
   },
   "silvertwin": {
    "nome": "Silver Twin",
-   "hash": "4118b046f2247818",
-   "data": "2026-10-29T22:15:37Z",
+   "hash": "b59c1e757a98c607",
+   "data": "2026-10-30T17:57:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silvertwin_botao_agudo.png",
@@ -5403,24 +5403,24 @@
     "silvertwin_mapa.json"
    ],
    "sha256": {
-    "silvertwin_botao_agudo.png": "540cbc4806f47f6d22b15d198328de8ddfb3b6733d928bd4fb8a36261b9d235b",
-    "silvertwin_botao_ganho.png": "f740332dbc96f53b784cc294fd5ea85dea0ef0d26f3091bb9b37fd36d96ca1e1",
-    "silvertwin_botao_grave.png": "2e624a351e9ef4aa4dea5539b98a40a7be119bf62872c7228c34756b7e3963f4",
-    "silvertwin_botao_medio.png": "0d0737bae2f44a8858f58e0a73244411f3899b688e9c8992ab08a8607814febd",
-    "silvertwin_botao_presenca.png": "06bca60630b0b2551b00fed2231e8881f91e785e7cf9bfa13ec40ffbd14c7975",
-    "silvertwin_botao_volume.png": "ad05a9ad30dc4f686a1941608af627e1b7ef9a42352a6b588f5a1bde556789cd",
-    "silvertwin_frente.jpg": "96a716912f3f67f6199cc0647c5d0675fc035ae5498c3897a2e321f3e943586b",
-    "silvertwin_frente_alfa.png": "1dd2011e5e73fc73f65d7504ef1807beae07d689d622a7047c7d974113ae9d93",
-    "silvertwin_manifesto.json": "c2a08e9401438979bad54c71bd088ac588ca8ec8b32d2c747f80016a84dfb70d",
-    "silvertwin_mapa.json": "6fd110e99e03cfd9fecbf14d03a5345dda630283268beb4053cc2cf6b4cbedf5"
+    "silvertwin_botao_agudo.png": "6fd5427c2c473d50c68a99c42f6d3b00d7a74402d3bc28a7286a253f2af3aee4",
+    "silvertwin_botao_ganho.png": "85d1fc5c4476f8061110b5100a036883133a051d47cc5e6e2d8448dede2b0bf6",
+    "silvertwin_botao_grave.png": "aacc90a51993f3a7fcb555507560b9a7f049d3d27cb61fd012ab0b181d4d72c7",
+    "silvertwin_botao_medio.png": "9a16cc9801dc245567cb3e08e37836df309e4c1082dfaf95d2312714164b0c7d",
+    "silvertwin_botao_presenca.png": "4447b50f8f8e0442709c3a2e5524ae05d389d73e5e2ff2bfe06146451f6412ba",
+    "silvertwin_botao_volume.png": "77b0c238d54251c868fa92a396483e563e7ccde34d44dee82c50048f3b3f6af8",
+    "silvertwin_frente.jpg": "24d794de8bb3d78afb282147506fefea8908899efdf90ded08702547e01a80b7",
+    "silvertwin_frente_alfa.png": "cd1df49f7de9dc383f5e74bdb649b76ee4a7cb3c28d34d7186851c099af965c0",
+    "silvertwin_manifesto.json": "3a393414a9d4830c6868ab82cdbf0df01b139283ea4da22f58d715f6cd77d094",
+    "silvertwin_mapa.json": "f828b01e70eeb76f1e0c8a5a2bbb793eb23c2dfdc28e91949720733fe2da7d20"
    },
-   "tamanho": 1395003,
+   "tamanho": 2899103,
    "tipo": "cabecote",
    "inspiracao": "Twin Reverb",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
