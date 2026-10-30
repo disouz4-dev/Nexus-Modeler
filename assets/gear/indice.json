@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T07:03:01Z",
+ "gerado": "2026-10-30T07:07:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -5243,8 +5243,8 @@
   },
   "silver_112": {
    "nome": "Silver 1x12",
-   "hash": "bf6aa8a4f7f75ca6",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "a02228b45a10703c",
+   "data": "2026-10-30T07:07:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "silver_112_frente.jpg",
@@ -5253,18 +5253,18 @@
     "silver_112_mapa.json"
    ],
    "sha256": {
-    "silver_112_frente.jpg": "b6e3dfbae92a4ec0859b81cf77497ec708e3ab68046a0dc1189a366f83a7e761",
-    "silver_112_frente_alfa.png": "d23e9a772fea232cf3abe49bc87b3022913623b70d089137cc635b1993938e0e",
-    "silver_112_manifesto.json": "b61fdc66440b97c1751b5098adac86e36334b614f24529f86eac40341670c31c",
+    "silver_112_frente.jpg": "34be59e57772687437e34116865e4d1a1df9584d563f9ec655f7beb6d945f2f1",
+    "silver_112_frente_alfa.png": "493ec9d03c6dd19c9844b392d35e9b9abc70af6295aa600bb47fa846c7159406",
+    "silver_112_manifesto.json": "3a15130455481b41ab6cdd14f2285403b3a8b10ba0318a927b10dbf19d8bd639",
     "silver_112_mapa.json": "d11898338ca2178d8c19296254ce938e26e6ab599599c9da9be7534c281f7c4d"
    },
-   "tamanho": 854909,
+   "tamanho": 1360164,
    "tipo": "caixa",
    "inspiracao": "Fender Deluxe Reverb 1x12",
    "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
