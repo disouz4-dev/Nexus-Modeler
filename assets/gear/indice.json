@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:39:03Z",
+ "gerado": "2026-10-30T20:59:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -783,8 +783,8 @@
   },
   "britbass": {
    "nome": "Brit Bass",
-   "hash": "4fcba1a62ed0d2a6",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "6ee249a8ba0b0cc3",
+   "data": "2026-10-30T20:59:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britbass_botao_agudo.png",
@@ -807,16 +807,16 @@
     "britbass_botao_volume.png": "a2ea56fa18025db4ebd06d6e76632e97fd8a9ed82275330e042af685a5b24562",
     "britbass_frente.jpg": "669109d0547e177b7d51dcf73aa560b54e66968545364095cbd70adc008b41c9",
     "britbass_frente_alfa.png": "60fe25a9caf66f91c48c05d43a83aaec7f23ef59ff9c5c8c0733efff75a977c9",
-    "britbass_manifesto.json": "14456c1fce9c0a19fe0382714a291f5663bda5e91532d4be46c8f80402c9e43d",
+    "britbass_manifesto.json": "9c872e02e49d286e40b08a3d6aff5a0e57149cbfec9ea55c03bfa26a9e3eec8c",
     "britbass_mapa.json": "6562f9a879462981496d9e584be4034eb4f54119bc34d05e05b624ae4361116e"
    },
-   "tamanho": 1315928,
+   "tamanho": 1315924,
    "tipo": "cabecote",
    "inspiracao": "Marshall Super Bass",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
