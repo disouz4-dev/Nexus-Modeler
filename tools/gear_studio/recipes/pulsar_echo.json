@@ -11,12 +11,12 @@
   },
   "pintura": {
     "cor": [
-      0.0037,
-      0.0037,
-      0.0037
+      0.7227,
+      0.7372,
+      0.7519
     ],
-    "metalico": 0.2,
-    "aspereza": 0.28
+    "metalico": 0.0,
+    "aspereza": 0.45
   },
   "texto_cor": [
     0.0037,
@@ -25,8 +25,8 @@
   ],
   "modelo": "PULSAR ECHO",
   "botao_estilo": {
-    "diametro_m": 0.016,
-    "altura_m": 0.014,
+    "diametro_m": 0.0168,
+    "altura_m": 0.015,
     "saia": false,
     "corpo": [
       0.0037,
@@ -44,16 +44,16 @@
       "id": "c",
       "rotulo": "MISTURA",
       "pos": [
-        -0.75,
-        0.68
+        -0.83,
+        0.6
       ]
     },
     {
       "id": "fixo_nivel",
       "rotulo": "NÍVEL",
       "pos": [
-        -0.45,
-        0.68
+        -0.49,
+        0.6
       ],
       "fixo": true
     },
@@ -61,49 +61,64 @@
       "id": "b",
       "rotulo": "REPETIÇÕES",
       "pos": [
-        -0.15,
-        0.68
+        -0.17,
+        0.6
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     },
     {
       "id": "fixo_chorus",
       "rotulo": "CHORUS",
       "pos": [
-        0.15,
-        0.68
+        0.16,
+        0.6
       ],
-      "fixo": true
+      "fixo": true,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     },
     {
       "id": "fixo_prof",
       "rotulo": "PROFUNDIDADE",
       "pos": [
-        0.45,
-        0.68
+        0.48,
+        0.6
       ],
-      "fixo": true
+      "fixo": true,
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
+      ]
     },
     {
       "id": "a",
       "rotulo": "TEMPO",
       "pos": [
-        0.75,
-        0.68
+        0.81,
+        0.6
+      ],
+      "rotulo_cor": [
+        0.0037,
+        0.0037,
+        0.0037
       ]
     }
   ],
   "medidas_fonte": "146 x 121 x 64 mm (EHX: 5,75 x 4,75 x 2,5 pol.)",
-  "estampa": {
-    "svg": "estampas/pulsar_echo.svg"
-  },
   "quadro": {
     "largura_rel": 1.3,
     "proporcao": 0.99,
     "elevacao": 90.0
   },
   "chanfro_m": 0.004,
-  "logo_y": 0.0,
-  "logo_m": 0.012,
   "pisante_y": -0.62,
   "rotulo_embaixo": true,
   "rotulo_m": 0.0032,
@@ -113,58 +128,124 @@
     0.8277
   ],
   "led": [
-    0.3,
+    0.12,
     -0.36
   ],
   "pisante": {
+    "estilo": "liso",
     "pos": [
-      0.3,
-      -0.62
+      0.0,
+      -0.69
     ]
   },
-  "logo_x": 0.5,
   "paineis": [
     {
       "pontos": [
         [
-          -1,
-          1
+          -0.952,
+          0.86
         ],
         [
-          1,
-          1
+          0.952,
+          -0.22
         ],
         [
-          1,
-          0.42
+          0.952,
+          -0.942
         ],
         [
-          -1,
-          -0.62
+          -0.952,
+          -0.942
         ]
       ],
       "cor": [
-        0.5732,
-        0.586,
-        0.5989
+        0.0012,
+        0.0012,
+        0.0012
       ],
-      "metal": true
+      "aspereza": 0.75,
+      "verniz": 0.15
     }
   ],
   "pecas": [
     {
       "tipo": "led",
       "pos": [
-        -0.62,
-        0.36
+        -0.49,
+        0.24
       ],
       "rotulo": "SOBRECARGA",
       "rotulo_m": 0.0026,
       "rotulo_cor": [
-        0.0037,
-        0.0037,
-        0.0037
-      ]
+        0.8122,
+        0.8122,
+        0.8122
+      ],
+      "raio_m": 0.0018
     }
-  ]
+  ],
+  "led_estilo": "aro_fino",
+  "led_raio_m": 0.0022,
+  "jacks": {
+    "esq": [
+      0.02,
+      -0.34
+    ],
+    "dir": [
+      -0.34
+    ]
+  },
+  "modelo_oculto": true,
+  "textos": [
+    {
+      "texto": "PULSAR",
+      "pos": [
+        -0.3,
+        -0.14
+      ],
+      "tam_m": 0.027,
+      "cor": [
+        0.7818,
+        0.7818,
+        0.7667
+      ],
+      "espaco": 1.2
+    },
+    {
+      "texto": "ECHO",
+      "pos": [
+        -0.5,
+        -0.45
+      ],
+      "tam_m": 0.027,
+      "cor": [
+        0.7818,
+        0.7818,
+        0.7667
+      ],
+      "espaco": 1.2
+    },
+    {
+      "texto": "Eco/Chorus/Vibrato",
+      "pos": [
+        0.5,
+        0.09
+      ],
+      "tam_m": 0.0085,
+      "cor": [
+        0.6661,
+        0.0104,
+        0.0104
+      ],
+      "ang": -25
+    }
+  ],
+  "logo": {
+    "svg": "estampas/pulsar_echo_tema.svg",
+    "tam_m": 0.02,
+    "pos": [
+      0.6,
+      -0.74
+    ]
+  }
 }
