@@ -1,5 +1,17 @@
 # Notas de versão
 
+## 0.2.0-beta.2
+
+### Presets antigos
+- Presets e sessões salvos antes da troca de nome dos 34 pedais (por exemplo,
+  Lemon Drive, que virou Greengage Drive) abriam com o cartão "não está
+  instalado". Agora abrem com o pedal renomeado, e, ao salvar de novo, o
+  preset já grava o nome novo.
+
+### Equipamentos refeitos
+- As 169 peças refeitas iguais aos originais já vêm dentro do programa. Quem
+  está na 0.2.0-beta.1 já recebia essas peças pelo botão de equipamentos novos.
+
 ## 0.2.0-beta.1
 
 ### Equipamentos novos
