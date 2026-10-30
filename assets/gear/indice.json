@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:40:54Z",
+ "gerado": "2026-10-30T14:49:06Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2955,8 +2955,8 @@
   },
   "herb180": {
    "nome": "Herb 180",
-   "hash": "b24ea1d61994344b",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "ad5ace40cdcbb4bc",
+   "data": "2026-10-30T14:49:06Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "herb180_botao_agudo.png",
@@ -2971,24 +2971,24 @@
     "herb180_mapa.json"
    ],
    "sha256": {
-    "herb180_botao_agudo.png": "f872dd5ac78f64a28f0d36f5cf108bde8033ea1223d9b137d35ac764698bf87f",
-    "herb180_botao_ganho.png": "6d82a0e9e2a289672b1600a4c36f4c6ce4246a5f2bcea98e915cac268fb1849e",
-    "herb180_botao_grave.png": "813a8cb26556a432f9d88dde83e12de4adb83ac76801f33462d6f7ab205deab0",
-    "herb180_botao_medio.png": "f161a294836c22478b1d07dc5efea7198c1eadcf35f007ebda3e0b694d95317d",
-    "herb180_botao_presenca.png": "d716a3a26ca9da5ddc38ef154b2e513a9a8de4ee4739eded42af7f0bd771a7bc",
-    "herb180_botao_volume.png": "bc3dfd0bc6ea151cc06adde3065d9a5d4262f7ddb112443c1310c30199553411",
-    "herb180_frente.jpg": "0cc536e1fa7c2c4ecccd20071f0b8d6b42b58b68e5ba989009482566a7f4db4d",
-    "herb180_frente_alfa.png": "9eeaf350a2b6bdd9d7b771af24ead0f327c9efd926c7478a5c56668d86662778",
-    "herb180_manifesto.json": "db34afed58967b8fa41b17606ca9572196aac310dde053b8584d32b781ca3be2",
-    "herb180_mapa.json": "9d979dfd95065c6b908e1528658808967d207c0deb9e6bad1c9f570daf0ae5a7"
+    "herb180_botao_agudo.png": "cd814cd125fd25e63a14b115daeaba01203b3c08c6f641b73644745692bcb7b5",
+    "herb180_botao_ganho.png": "e2411d70d285d2be2a1b5a78c24556f238bb1e8d028437e97da8f9177ee07d41",
+    "herb180_botao_grave.png": "269362ad421d2917cd607fdddb66db56fb7c59c5fb75914d5844ced477ded966",
+    "herb180_botao_medio.png": "1d9080cc6c2173ed573b3a8293fe73c39ac6fff8ff350db45cb0310a60bafb7b",
+    "herb180_botao_presenca.png": "f34c5fd7f06b254ec04e64bfc9fabcc30236c14cb5fe473b90bfea31c89d70d5",
+    "herb180_botao_volume.png": "95d3a26f7b904bb287a1bd95ef6ff88fa0ee285d8ddcf5b54c6dad754933238d",
+    "herb180_frente.jpg": "f58bb2a5f468d33dc040a2f0484cc45f1cab3c35ad1258e610690370c13501ba",
+    "herb180_frente_alfa.png": "68dab684364a5bcd61c894e1354cddad5c157d7343aaaaba1a3572ca036b0baa",
+    "herb180_manifesto.json": "c3ed224ca5afa2f198fca8e983fec79c0af129778e7e06bd56dff53ed5dd8253",
+    "herb180_mapa.json": "ee249e4c890f2b3edeff12bb632490bc1595f0bacd35ddd160651f882391062d"
    },
-   "tamanho": 751781,
+   "tamanho": 737378,
    "tipo": "cabecote",
    "inspiracao": "Diezel Herbert",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
