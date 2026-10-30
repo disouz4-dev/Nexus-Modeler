@@ -2,7 +2,7 @@
   "tipo": "pedal",
   "nome": "Emerald Echo",
   "familia": "emerald_echo",
-  "inspiracao": "Caixa compacta verde-limão metálico vivo (120 x 115 x 55 mm) no jeito do DL4 em escala menor: a esmeralda no alto, no lugar da logo, o painel prateado escovado com seis botões pretos do mesmo tamanho, cada um num anel verde (MODO, TEMPO, REPETIÇÕES, MODULAÇÃO, TWEEZ e MISTURA), letras pretas no painel; um LED vermelho logo abaixo do painel em cima de cada pisante; quatro pisantes pequenos niquelados em fila com os letreiros brancos A, B, C e TAP embaixo. Original: Line 6 DL4 Delay Modeler (compacto por decisão do Diego, 30/10).",
+  "inspiracao": "Caixa compacta verde-limão metálico vivo (120 x 115 x 55 mm) no jeito do DL4 em escala menor: a esmeralda no alto, no lugar da logo, o painel prateado escovado com seis botões pretos do mesmo tamanho, cada um num anel verde (MODO, TEMPO, REPETIÇÕES, MODULAÇÃO, TWEEZ e MISTURA), letras pretas no painel; um LED vermelho logo abaixo do painel e um pisante só, no meio (compacto com um pisante por decisão do Diego, 30/10). Original: Line 6 DL4 Delay Modeler (compacto por decisão do Diego, 30/10).",
   "formato": "padrao",
   "medidas_m": {
     "largura": 0.12,
@@ -133,14 +133,14 @@
     "elevacao": 90.0
   },
   "led": [
-    -0.78,
+    0.0,
     -0.02
   ],
   "pisante": {
-    "estilo": "pequeno",
+    "estilo": "liso",
     "pos": [
-      -0.78,
-      -0.38
+      0.0,
+      -0.42
     ]
   },
   "logo_x": 0.78,
@@ -2249,59 +2249,7 @@
       ]
     }
   ],
-  "pecas": [
-    {
-      "tipo": "pisante",
-      "pos": [
-        -0.26,
-        -0.38
-      ],
-      "estilo": "pequeno"
-    },
-    {
-      "tipo": "pisante",
-      "pos": [
-        0.26,
-        -0.38
-      ],
-      "estilo": "pequeno"
-    },
-    {
-      "tipo": "pisante",
-      "pos": [
-        0.78,
-        -0.38
-      ],
-      "estilo": "pequeno"
-    },
-    {
-      "tipo": "led",
-      "pos": [
-        -0.26,
-        -0.02
-      ],
-      "estilo": "sem_aro",
-      "raio_m": 0.0016
-    },
-    {
-      "tipo": "led",
-      "pos": [
-        0.26,
-        -0.02
-      ],
-      "estilo": "sem_aro",
-      "raio_m": 0.0016
-    },
-    {
-      "tipo": "led",
-      "pos": [
-        0.78,
-        -0.02
-      ],
-      "estilo": "sem_aro",
-      "raio_m": 0.0016
-    }
-  ],
+  "pecas": [],
   "chanfro_m": 0.0045,
   "rotulo_m": 0.0026,
   "rotulo_embaixo": true,
@@ -2345,62 +2293,6 @@
       ],
       "espaco": 1.05,
       "largura_max": 0.75
-    },
-    {
-      "texto": "A",
-      "pos": [
-        -0.78,
-        -0.6
-      ],
-      "tam_m": 0.0042,
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8434
-      ],
-      "espaco": 1.1
-    },
-    {
-      "texto": "B",
-      "pos": [
-        -0.26,
-        -0.6
-      ],
-      "tam_m": 0.0042,
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8434
-      ],
-      "espaco": 1.1
-    },
-    {
-      "texto": "C",
-      "pos": [
-        0.26,
-        -0.6
-      ],
-      "tam_m": 0.0042,
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8434
-      ],
-      "espaco": 1.1
-    },
-    {
-      "texto": "TAP",
-      "pos": [
-        0.78,
-        -0.6
-      ],
-      "tam_m": 0.0042,
-      "cor": [
-        0.8913,
-        0.8913,
-        0.8434
-      ],
-      "espaco": 1.1
     }
   ]
 }
