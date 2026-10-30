@@ -102,6 +102,10 @@ public:
   // Cabeçotes com o equalizador gráfico de 5 faixas: Mark Five, Mark Two Plus,
   // Mark Three, Mark Four e Mark JP.
   static bool hasGraphicEq(int look) { return nexus::gear::GearCatalog::instance().graphicEqAt(look); }
+  // Teto do pico na saída do cabeçote (depois da caixa e dos equalizadores):
+  // com ganho, equalizador e volume no máximo nada estoura; abaixo dele o som
+  // passa intacto.
+  static constexpr double kAmpCeiling = 0.89; // -1 dBFS
   // Faixas do equalizador gráfico (cabeçotes que têm): parâmetros "eq80"...
   static constexpr const char* kGraphicIds[5] = {"eq80", "eq240", "eq750", "eq2200", "eq6600"};
   // Parâmetro de uma faixa do equalizador do fim: "eq3_freq"...
@@ -330,6 +334,7 @@ private:
     std::atomic<float>* look = nullptr;
     std::array<std::atomic<float>*, 5> graphic{};
     float masterGain = 1.0f;
+    double ceilingGain = 1.0; // teto da saída (1: não está agindo)
   };
 
   struct Cab

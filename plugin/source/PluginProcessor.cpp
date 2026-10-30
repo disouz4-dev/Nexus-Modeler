@@ -741,6 +741,17 @@ void NexusProcessor::runRig(int rig, double* buffer, int n)
     mGraphicEq[static_cast<size_t>(rig)].setBands(db);
     mGraphicEq[static_cast<size_t>(rig)].process(buffer, n);
   }
+  // Teto: o pico que passar de kAmpCeiling desce na hora; o ganho volta em
+  // ~80 ms. Abaixo do teto não muda nada.
+  auto& rs = mRigs[static_cast<size_t>(rig)];
+  const double release = 1.0 - std::exp(-1.0 / (0.08 * kEngineRate));
+  for (int i = 0; i < n; ++i)
+  {
+    const double peak = std::abs(buffer[i]);
+    const double target = peak > kAmpCeiling ? kAmpCeiling / peak : 1.0;
+    rs.ceilingGain = target < rs.ceilingGain ? target : rs.ceilingGain + (target - rs.ceilingGain) * release;
+    buffer[i] *= rs.ceilingGain;
+  }
 }
 
 void NexusProcessor::runRigs(double* buffer, int n)

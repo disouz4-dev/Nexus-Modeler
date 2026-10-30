@@ -12,6 +12,7 @@
 
 #include "../source/PluginEditor.h"
 #include "../source/PluginProcessor.h"
+#include "../source/gear/GearCatalog.h"
 #include "../source/ui/PackMapper.h"
 #include "../source/report/Report.h"
 #include "../source/update/Updater.h"
@@ -1315,6 +1316,84 @@ int main(int argc, char** argv)
     report(saved, "Playlist fica gravada", {});
     player.close();
     folder.deleteRecursively();
+  }
+
+  // 12. Teto da saída do cabeçote: em todas as posições de cabeçote (os
+  // revisados entram por lote, cada um na sua), com ganho, equalizador,
+  // presença, volume e o equalizador gráfico no máximo, nada passa do teto;
+  // tudo no meio, o teto não age.
+  {
+    std::printf("\nTeto da saída do cabeçote (todas as posições)\n");
+    auto& catalog = nexus::gear::GearCatalog::instance();
+    // Cada posição vaga ganha uma peça de teste (frente lisa), com o
+    // equalizador gráfico onde a peça tinha (Mark Five, Mark 2+, 3, 4 e JP).
+    const auto staging = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile("nexus_teto");
+    for (const auto& e : catalog.entries(nexus::gear::Kind::amp))
+    {
+      if (!e.vacant)
+        continue;
+      const auto dir = staging.getChildFile(e.id);
+      dir.deleteRecursively();
+      dir.createDirectory();
+      const bool graphic = e.look == 1 || (e.look >= 50 && e.look <= 53);
+      dir.getChildFile(e.id + "_manifesto.json").replaceWithText(
+        "{\"formato\": 1, \"id\": \"" + e.id + "\", \"versao\": \"0.0.1\", \"tipo\": \"cabecote\", \"nome\": \"Teste\", "
+        "\"versao_minima_do_programa\": \"0.2.0\", \"motor\": \"captura\", \"indice_de_fabrica\": " + juce::String(e.look)
+        + (graphic ? ", \"equalizador_grafico\": true" : "") + "}");
+      dir.getChildFile(e.id + "_mapa.json").replaceWithText("{\"nome\": \"Teste\", \"largura\": 8, \"altura\": 8, \"botoes\": []}");
+      juce::Image front(juce::Image::ARGB, 8, 8, true);
+      juce::FileOutputStream out(dir.getChildFile(e.id + "_frente.png"));
+      juce::PNGImageFormat().writeImageToStream(front, out);
+      out.flush();
+      catalog.installFolder(dir, e.id, juce::var(new juce::DynamicObject()));
+    }
+    staging.deleteRecursively();
+    int present = 0;
+    for (int look = 0; look < NexusProcessor::kAmpLooks; ++look)
+      present += catalog.presentAt(nexus::gear::Kind::amp, look) ? 1 : 0;
+    report(present == NexusProcessor::kAmpLooks, "As 94 posições de cabeçote tocam no teste", juce::String(present));
+
+    auto pBox = std::make_unique<NexusProcessor>();
+    auto& p = *pBox;
+    p.setPlayConfigDetails(2, 2, 48000.0, 128);
+    p.prepareToPlay(48000.0, 128);
+    p.loadAmpPack(0, 0, packs.getChildFile("ganho"));
+    if (!waitPack(p))
+      report(false, "Pacote de teste carrega", juce::String::fromUTF8("não carregou em 2 minutos"));
+    setParam(p, "caixa", 0.0f);
+    std::vector<double> hot(signal.begin(), signal.begin() + static_cast<std::ptrdiff_t>(std::min<size_t>(signal.size(), 48000)));
+    for (auto& x : hot)
+      x *= 2.0; // guitarra de captação forte
+    auto peakOf = [](const std::vector<float>& v) {
+      float m = 0.0f;
+      for (float x : v)
+        m = std::max(m, std::abs(x));
+      return m;
+    };
+    // Tudo no meio: o teto não age (o som é o de sempre).
+    p.chooseAmp(0, 0);
+    settle(p, 50);
+    const float normal = peakOf(play(p, hot));
+    report(normal < NexusProcessor::kAmpCeiling, "Tudo no meio: abaixo do teto (o teto não mexe no som)", juce::String(normal, 3));
+    // Tudo no máximo, cada posição.
+    for (const char* id : {"ganho", "grave", "medio", "agudo", "presenca", "master"})
+      setParam(p, id, 10.0f);
+    for (const char* id : NexusProcessor::kGraphicIds)
+      setParam(p, id, 12.0f);
+    float worst = 0.0f;
+    int worstLook = -1;
+    for (int look = 0; look < NexusProcessor::kAmpLooks; ++look)
+    {
+      p.chooseAmp(0, look);
+      settle(p, 20);
+      if (const float peak = peakOf(play(p, hot)); peak > worst)
+      {
+        worst = peak;
+        worstLook = look;
+      }
+    }
+    report(worst <= NexusProcessor::kAmpCeiling + 1e-4 && worst > 0.5f, "Tudo no máximo, em todas as posições: nada passa do teto (-1 dBFS)",
+           juce::String::fromUTF8("maior pico ") + juce::String(worst, 3) + juce::String::fromUTF8(" na posição ") + juce::String(worstLook));
   }
 
   std::printf("\n%s (%d falha%s)\n", gFailures ? "REPROVADO" : "APROVADO", gFailures, gFailures == 1 ? "" : "s");
