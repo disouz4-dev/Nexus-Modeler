@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:32:28Z",
+ "gerado": "2026-10-30T16:34:35Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6256,8 +6256,8 @@
   },
   "uber100": {
    "nome": "Uber 100",
-   "hash": "2c17aeea04b5e591",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "4271b10fcab7abc6",
+   "data": "2026-10-30T16:34:35Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber100_botao_agudo.png",
@@ -6272,24 +6272,24 @@
     "uber100_mapa.json"
    ],
    "sha256": {
-    "uber100_botao_agudo.png": "99c7cb5f6edd9496a054bff125c9552943d25bdcf1d61bddbc3275eda2c4159a",
-    "uber100_botao_ganho.png": "d691b1c2f64b24c8a014098352436d14097669d1b3eb5c45954b206bd41267bb",
-    "uber100_botao_grave.png": "e5194b10983b562e054a179903d8eb441f13ad8ba845cf75ae40c0d0bbe5fdc3",
-    "uber100_botao_medio.png": "314fe2023854fecd21a7ad380b231516832f8c2dbfe75fa68feaa12649adf457",
-    "uber100_botao_presenca.png": "cc58afae0d002bcba04c15b5632d2ad6cdb4dbf8edc1edb15937cac439c37c8a",
-    "uber100_botao_volume.png": "3283476870c0f75ee1c6a5f824016b13009c4ce49b44ac6096f26e37081b55a6",
-    "uber100_frente.jpg": "87b6463818108825c5a194a145b51306b4a1587b62bb274f0bb8f3a7bfea308f",
-    "uber100_frente_alfa.png": "82d6c4df1c7d652bca0787c4a6a61e6fec8051d450d63115429880a095295237",
-    "uber100_manifesto.json": "06b84cab29f91289be9fe2b1ae4c0f6e7cd37149a4d9350ff69ac19545327c99",
-    "uber100_mapa.json": "10d725f87e1590ff466a3bb8bc23b23e3e265b327a9823660bd0aff18f2c45c1"
+    "uber100_botao_agudo.png": "ed63084072e9f8ef70e6113d9e1a68e47387203c9633582e9cf34b6569b56eaf",
+    "uber100_botao_ganho.png": "d10e4f535e2004dd49896abdc333bd998cea5261057a35b92a2039b478f19326",
+    "uber100_botao_grave.png": "7d2ce3ffe182f6e9efe6c2719afa399a626d126a8a47f615819c241e60ccfd89",
+    "uber100_botao_medio.png": "7388b3fa1d1c21cb7104362a17f3312e5befbe9b608d2152f9f872bc17b5fbd4",
+    "uber100_botao_presenca.png": "4b99622da645c90e15d1f59d04a11467521b508b23c3f25e67d3b25b4404fc93",
+    "uber100_botao_volume.png": "79bd726ff44c8d07c640257791763134e9bc130712263dde02735f24e3374628",
+    "uber100_frente.jpg": "89322b01e230173e284bc0d85425bb768e60793bfd9d12c797f01d77f4671ad9",
+    "uber100_frente_alfa.png": "b092c465d37c83606a9af32f1e3dfcf040ae72ef719777cdab27cd393de56db2",
+    "uber100_manifesto.json": "0e15908f5f090c3e97d1a9086b21da19d817370d41628c5bbbd8d8f85fa2ed86",
+    "uber100_mapa.json": "ce28a88a3d5566bb821be408dd9133dca5a4ce944d7426932fad63b3b26c7f7c"
    },
-   "tamanho": 894886,
+   "tamanho": 791456,
    "tipo": "cabecote",
    "inspiracao": "Uberschall",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
