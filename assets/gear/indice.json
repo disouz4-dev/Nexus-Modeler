@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:37:32Z",
+ "gerado": "2026-10-30T13:39:41Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1757,8 +1757,8 @@
   },
   "clementine_turbo": {
    "nome": "Clementine Turbo",
-   "hash": "1b059ed20f9ab88c",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "9bfb8f213c0a258d",
+   "data": "2026-10-30T13:39:41Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "clementine_turbo_botao_ganho.png",
@@ -1770,21 +1770,21 @@
     "clementine_turbo_mapa.json"
    ],
    "sha256": {
-    "clementine_turbo_botao_ganho.png": "c7d5dbcf9e62a3c1e43f0e59511d2bf68b64c17e3d75cdf31a1f743a4496b399",
-    "clementine_turbo_botao_nivel.png": "bc3666ce9348b25b5b0d65caaab85f564fd8c8a3304e701aa6e1215a6a3b8fcd",
-    "clementine_turbo_botao_tom.png": "8c22d4e233352cb29b41d5840e112e0a39f36ac5e961c24bdb67b70884961444",
-    "clementine_turbo_frente.jpg": "5e8eb3de93e8bfc254ff67326e4204c0976a07c963c4693935c854e4b1ecd69d",
-    "clementine_turbo_frente_alfa.png": "b6a85f57fd73cf8e7bfacf0c0f9e4efc0cabd3e784e29f449e16da8b9abb320d",
-    "clementine_turbo_manifesto.json": "d4dd8daa5598228b818c5086ab9dae9e0f79aaa3362268dec6b2f2ac73253a6a",
-    "clementine_turbo_mapa.json": "5547a3b2a69753d969372200c3ab02113289e4ae101d5a3f901942799bea901b"
+    "clementine_turbo_botao_ganho.png": "2e92f5a94490d4c568a9be5d19cb03fc930aa9ed28f030bc9ecfa4df7c9b5bd5",
+    "clementine_turbo_botao_nivel.png": "d2b05a8df2c7386560fb07a4ec278ae3ad10b2f39422b3912d61f14342e0a1b7",
+    "clementine_turbo_botao_tom.png": "2e4090862edf71d27741889e25052e3bf474c919d71cbf594394b3b86abcab28",
+    "clementine_turbo_frente.jpg": "4a9798598ba5ae2217599e2f2fd80cc2e5f6f4ccb63fd7a91f0b19d537fed005",
+    "clementine_turbo_frente_alfa.png": "737d1e0678420c9b86d24f40bf1cec5d7bcf84f81309d51377d0f610da8cb180",
+    "clementine_turbo_manifesto.json": "9bfc98c395c353a584cc1a36eb25f64613dc22499d5c9550e791f56f28caabad",
+    "clementine_turbo_mapa.json": "866e40e514de6ec7941a713e2417f9a694034a75252a087ed63a12da7ff71c96"
    },
-   "tamanho": 301050,
+   "tamanho": 294899,
    "tipo": "pedal",
    "inspiracao": "Boss DS-2 Turbo Distortion",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
