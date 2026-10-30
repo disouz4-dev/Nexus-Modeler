@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T01:56:40Z",
+ "gerado": "2026-10-30T01:58:47Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1368,8 +1368,8 @@
   },
   "britplexi": {
    "nome": "Brit Plexi",
-   "hash": "9ac79299cc377f37",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d322242f8ba5ec12",
+   "data": "2026-10-30T01:58:47Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "britplexi_botao_agudo.png",
@@ -1384,24 +1384,24 @@
     "britplexi_mapa.json"
    ],
    "sha256": {
-    "britplexi_botao_agudo.png": "781a1d4baeb5c65bf1c4a4b34841a15cbb0f1f4c0af25522707a770f8bc24813",
-    "britplexi_botao_ganho.png": "f5f7f0192a4ec5ac5d30cc163fef90ac82d2cb528b9580b4f6ab4ad7644fe30c",
-    "britplexi_botao_grave.png": "4332096d6719bb98deae00a06829acd9dcfdd4c858ec256eb30e71e27670e1c0",
-    "britplexi_botao_medio.png": "9cf4e4aa7eb4ef21715bf8e78c32f0142183eca1ddd0e4ae80cac898cb4fcbf2",
-    "britplexi_botao_presenca.png": "e12756d6cebbef4e12384ac19924299a1fccad11f7b6ca9781eb90b79c014fcd",
-    "britplexi_botao_volume.png": "892b7303066efc7bc716928cc5f1ed01da2aa21ab5e196d58b0fe8b4d53bbc9b",
-    "britplexi_frente.jpg": "83dafce1873fdcc358fe97b7c8094b1cffe76af0c822299b868b9692f9c8fc2e",
-    "britplexi_frente_alfa.png": "4f6b1205805678bb6c9a61cf5f742154740f370f22c40f49377ca2efd8500dfc",
-    "britplexi_manifesto.json": "66e86c3cca8695521605a734d059c79aaa30fad22b93d11d2e56fd6fa6f245bf",
-    "britplexi_mapa.json": "4f70d9c3d8e8ba33da898f8878fe059382678ce9509057e8f943e3f2a8f12b39"
+    "britplexi_botao_agudo.png": "42c9f7db9641918b589d735df3b7217b4658b2d51d93215deff84a1033f833c8",
+    "britplexi_botao_ganho.png": "3cb6bf5f1d34431e15c7dff98434c2d9a9ce13e4d123b63abf9e567621502ba5",
+    "britplexi_botao_grave.png": "128b3e7fe10fec5617400f0c4b9c413ec6d6284306ec4bf20db72874220e5509",
+    "britplexi_botao_medio.png": "30d342df02929858738f7b7420cf1a37c21a08ea4b383a7bea42d9ba62920053",
+    "britplexi_botao_presenca.png": "6a6324915ef32ac208f40c25f24b575112169aabe0e35ac8db5c1bd08c48a20e",
+    "britplexi_botao_volume.png": "ada6d870ec58443d69557101bae49d62554d8168828fc0cad29407770d2e6849",
+    "britplexi_frente.jpg": "31708695063974192775fe2ea47192d34de3e1d07cd04f85886601d8d28d0037",
+    "britplexi_frente_alfa.png": "fb4c2e8de80c7746cb07d10607bcb5d5fa2ef208d9fe92a047981bfd82b68651",
+    "britplexi_manifesto.json": "c2ef04d59309b06b9c8fe8c5ea9db8af6461e067e9cd8238679e563ff32b5da6",
+    "britplexi_mapa.json": "477a104139bb43c07ee8f8066ce3a134497cd453515db062f6f54d4a04776de6"
    },
-   "tamanho": 1642799,
+   "tamanho": 1642732,
    "tipo": "cabecote",
    "inspiracao": "Super Lead 1959",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
