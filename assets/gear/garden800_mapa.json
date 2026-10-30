@@ -67,8 +67,8 @@
     {
       "texto": "LOW FREQ",
       "x": 1008.7,
-      "y": 297.9,
-      "altura": 15.38,
+      "y": 286.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -76,8 +76,8 @@
     {
       "texto": "MID FREQ",
       "x": 1161.7,
-      "y": 297.9,
-      "altura": 15.38,
+      "y": 286.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -85,8 +85,8 @@
     {
       "texto": "HIGH FREQ",
       "x": 1314.8,
-      "y": 297.9,
-      "altura": 15.38,
+      "y": 286.4,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -94,8 +94,8 @@
     {
       "texto": "INPUT",
       "x": 339.0,
-      "y": 591.8,
-      "altura": 15.38,
+      "y": 599.2,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -103,8 +103,8 @@
     {
       "texto": "PAD",
       "x": 434.7,
-      "y": 580.5,
-      "altura": 15.38,
+      "y": 587.9,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -112,8 +112,8 @@
     {
       "texto": "GAIN",
       "x": 549.5,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -121,8 +121,8 @@
     {
       "texto": "ENHANCE",
       "x": 664.3,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -130,8 +130,8 @@
     {
       "texto": "BASS",
       "x": 779.1,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -139,8 +139,8 @@
     {
       "texto": "LOW",
       "x": 932.1,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -148,8 +148,8 @@
     {
       "texto": "MID",
       "x": 1161.7,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -157,8 +157,8 @@
     {
       "texto": "HIGH",
       "x": 1391.3,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -166,8 +166,8 @@
     {
       "texto": "TREBLE",
       "x": 1506.1,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -175,8 +175,8 @@
     {
       "texto": "MASTER",
       "x": 1640.0,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -184,8 +184,8 @@
     {
       "texto": "BALANCE",
       "x": 1754.8,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -193,8 +193,8 @@
     {
       "texto": "XOVER",
       "x": 1869.6,
-      "y": 620.1,
-      "altura": 15.38,
+      "y": 627.5,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
@@ -202,8 +202,8 @@
     {
       "texto": "MAINS",
       "x": 2022.7,
-      "y": 545.3,
-      "altura": 15.38,
+      "y": 552.6,
+      "altura": 23.59,
       "achatamento": 1.0,
       "cor": "#1d1d1d",
       "espaco": 1.0
