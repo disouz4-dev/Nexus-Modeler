@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T10:48:29Z",
+ "gerado": "2026-10-30T10:50:34Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1823,8 +1823,8 @@
   },
   "comet_wah": {
    "nome": "Comet Wah",
-   "hash": "e6983b3a2d686ad3",
-   "data": "2026-10-29T19:22:40Z",
+   "hash": "131b4764bcd44958",
+   "data": "2026-10-30T10:50:34Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "comet_wah_botao_a.png",
@@ -1839,18 +1839,18 @@
     "comet_wah_botao_a.png": "a7e1f4b68a38e0291160b0316b504a9f3e176a53fb2e2b6ac75031a571c5a5e7",
     "comet_wah_botao_b.png": "32fb6bcb127f43567cffc746ae5dee806790ba00878e098b5cff0423dd6c316d",
     "comet_wah_botao_c.png": "6342ffcb7de821ed6a1c40cd0ff46431e11d014db6d53eb6a2bebe9f48618ff6",
-    "comet_wah_frente.jpg": "5fd94cd8026e5933d3520ee3665781375399c200c97bd73661b7e83b834b901f",
-    "comet_wah_frente_alfa.png": "c9a910e4d5ead734462ac1c79938b288f965db69a7362b107578b30713ed75e8",
-    "comet_wah_manifesto.json": "94ffb5718be406e5672a03839cfad423d6b5e86e4ab909ed97d2ce1f5e025f86",
+    "comet_wah_frente.jpg": "b1f1373514eabbe6e01619e808639693120234439d53ba49dcd34cabd3080e4a",
+    "comet_wah_frente_alfa.png": "b26a06927e7f585c1dd1db9375b2efaf4819ef490c05ed157514944d702ab77c",
+    "comet_wah_manifesto.json": "12876401c9922ebe367d29b7c48e3c7f83efb536d0cd371a7c0af7f6014fa078",
     "comet_wah_mapa.json": "512acd0b9bdfda2065cb49fdec69764ab6408ba16ceafa06abe847ffad27760e"
    },
-   "tamanho": 76997,
+   "tamanho": 76995,
    "tipo": "pedal",
    "inspiracao": "Dunlop Cry Baby",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "wah",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
