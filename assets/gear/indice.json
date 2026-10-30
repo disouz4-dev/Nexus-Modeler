@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T19:36:31Z",
+ "gerado": "2026-10-30T19:38:37Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1922,8 +1922,8 @@
   },
   "deliver120": {
    "nome": "Deliver 120",
-   "hash": "22c2e40b3baa4347",
-   "data": "2026-10-30T12:50:59Z",
+   "hash": "4427ee26fcb63020",
+   "data": "2026-10-30T19:38:37Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "deliver120_botao_agudo.png",
@@ -1938,24 +1938,24 @@
     "deliver120_mapa.json"
    ],
    "sha256": {
-    "deliver120_botao_agudo.png": "24066f7703620f29f69242b12d1315ff233f083a68e9cde864c1163304d0ca1a",
-    "deliver120_botao_ganho.png": "60fadc9a5938c9422bec8086067472b0d78352b2bfccc2d1b9e87d8f4ca0c7f0",
-    "deliver120_botao_grave.png": "f300e4ecd0c055dc325120daccf4412b55004873acebb0fa17b6e7834be7f88f",
-    "deliver120_botao_medio.png": "1fb52fedab4db8ca9c6181f610be87d27dbe495345e3816ee21ba5a941b4941d",
-    "deliver120_botao_presenca.png": "bc93e5f13d8b29d11275ff59e7b22894c44991ed8e1aee984c83f0e2e89b41f8",
-    "deliver120_botao_volume.png": "c09060cdfae998cd01915509d3518cd8dd14dd0062fec1bf76e4e9bd8b1ec3c7",
-    "deliver120_frente.jpg": "13d82d2d44926aa622817fb86693475ad7e132b108b4af147ec0cbfc18e9ff45",
-    "deliver120_frente_alfa.png": "333878049496c0a5fef51f2be6dc3af92390dc2eb47ad9f5607b036707868edc",
-    "deliver120_manifesto.json": "22295f3d2e80be18699c3f201fbf053d71725932d3d5ce5ad13c85b53e0a90f9",
-    "deliver120_mapa.json": "a6a298771aa2791e5ef869e17f80be5de800e8dfe9e5e52653f907eeecf51155"
+    "deliver120_botao_agudo.png": "09d9780c938f6c783adc4dc93d9d11107feecdd1b67513fe944dc56ad291100e",
+    "deliver120_botao_ganho.png": "103df6cd1fc426cf4148bfa11fd3a223bb3e3cde7e1409f3c10cd024a75982b4",
+    "deliver120_botao_grave.png": "87a975f4faa1e5a1fe63b002e493fe5c747d861316b163397a32c45f14fe7d5b",
+    "deliver120_botao_medio.png": "d66a6c0daecd65c8e945b4a378aeba607d8925b2639919b715eeca0b37a8b5c0",
+    "deliver120_botao_presenca.png": "946a3538dd457c47752beb0e64f7618dcdf07917b45fce4fff79176505e78a12",
+    "deliver120_botao_volume.png": "5a3ae309c0bd25d69ca3c475f02a8eaa4b60b84041940734cf150fc707c82312",
+    "deliver120_frente.jpg": "1182cb3496be76da45dbb6aebe9ed9ae3d56b3cf5d1781ebd24491bd3a5fcc2e",
+    "deliver120_frente_alfa.png": "07cbca91d7bef510f0894fcab4372875261e376a73a5b43b42298e22f1d7cffe",
+    "deliver120_manifesto.json": "3fa318dc0bce11f9ed5941618d2b8426f63ae413063c58e8adc0985059ebffe4",
+    "deliver120_mapa.json": "fc980dbe8b057f3fa591e8c6ae3599ac91ac00eb9f98cf268e6307467f818eaf"
    },
-   "tamanho": 997501,
+   "tamanho": 843455,
    "tipo": "cabecote",
    "inspiracao": "Fryette Deliverance",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
