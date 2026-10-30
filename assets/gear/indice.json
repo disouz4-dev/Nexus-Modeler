@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T06:56:31Z",
+ "gerado": "2026-10-30T06:56:35Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3033,8 +3033,8 @@
   },
   "hi_412": {
    "nome": "Hi 4x12",
-   "hash": "8889d288233057b3",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "b9cde9e4656e1345",
+   "data": "2026-10-30T06:56:35Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hi_412_frente.jpg",
@@ -3043,18 +3043,18 @@
     "hi_412_mapa.json"
    ],
    "sha256": {
-    "hi_412_frente.jpg": "b3d0425d69b9b2a3cc7b8c3027563390902670dd40607026e711551ae03b406b",
-    "hi_412_frente_alfa.png": "acb8b73baecfee6d3ead1319a5e9eff394e33d18594bc2b2e35503c7f268b9ff",
-    "hi_412_manifesto.json": "d708332f29ca5fe2232a435504284bc3266ce5eeed8b1b05dead376e89a3f536",
+    "hi_412_frente.jpg": "9c5867cfd3f92e8b48504f306dd40f9f6a1cf01b5477c7a0f8391a7652aa7877",
+    "hi_412_frente_alfa.png": "2b53604a166b27ddd70b45891ec4feee64c83359a03a4f75589439f9795eaf9b",
+    "hi_412_manifesto.json": "9cc90ffbd35ac8235d5e3fe06332b7c0a4054283e9ab4801c92dd55f77941fa3",
     "hi_412_mapa.json": "74f62cd102ab7c8d5e250519bd22fb863e74653d9a859fc34c63c60f3bcebc9a"
    },
-   "tamanho": 1165386,
+   "tamanho": 1681215,
    "tipo": "caixa",
    "inspiracao": "Hiwatt 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
