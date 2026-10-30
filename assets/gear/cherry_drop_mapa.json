@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "a",
-      "x": 139,
-      "y": 73,
-      "tamanho": 124,
+      "x": 134,
+      "y": 92,
+      "tamanho": 134,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 114,
-      "y": 618,
-      "tamanho": 67,
+      "x": 137,
+      "y": 259,
+      "tamanho": 128,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -31,41 +31,38 @@
   ],
   "rotulos": [
     {
-      "texto": "DROP",
-      "x": 203.7,
-      "y": 219.9,
+      "texto": "AFINAÇÃO",
+      "x": 204.7,
+      "y": 249.6,
       "altura": 21.11,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#ffffff",
       "espaco": 1.15
     },
     {
-      "texto": "MISTURA",
-      "x": 149.8,
-      "y": 701.3,
-      "altura": 13.72,
+      "texto": "TOM",
+      "x": 204.7,
+      "y": 409.7,
+      "altura": 21.11,
       "achatamento": 1.0,
-      "cor": "#f2f0eb",
+      "cor": "#ffffff",
       "espaco": 1.15
-    },
-    {
-      "texto": "MOMENTÂNEO",
-      "x": 405.9,
-      "y": 185.6,
-      "altura": 16.89,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.1
     }
   ],
   "pisante": {
-    "x": 324.0,
-    "y": 578.5,
-    "raio": 65.5
+    "x": 302.0,
+    "y": 593.0,
+    "raio": 45.0
   },
   "led": {
-    "x": 396.8,
-    "y": 572.2,
-    "raio": 16.4
+    "x": 387.0,
+    "y": 584.8,
+    "raio": 9.8
+  },
+  "visor": {
+    "x": 318.4,
+    "y": 128.8,
+    "w": 134.9,
+    "h": 78.2
   }
 }
