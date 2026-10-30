@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:05:06Z",
+ "gerado": "2026-10-30T11:07:16Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4641,8 +4641,8 @@
   },
   "pearl_fuzz": {
    "nome": "Pearl Fuzz",
-   "hash": "3734d8450a277a4d",
-   "data": "2026-10-29T19:31:11Z",
+   "hash": "7dc693d8ca544ce0",
+   "data": "2026-10-30T11:07:16Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "pearl_fuzz_botao_ganho.png",
@@ -4654,21 +4654,21 @@
     "pearl_fuzz_mapa.json"
    ],
    "sha256": {
-    "pearl_fuzz_botao_ganho.png": "401c6b19da5a2a799bde6d4fc95b56f635c226c485ba644bdf669627f9aa32e7",
-    "pearl_fuzz_botao_nivel.png": "e251b1df1c3f26f0e59e5443d9782c226c0cacc0fb4e2d077032feb53a89dfc0",
-    "pearl_fuzz_botao_tom.png": "b9633817259ba7f0fde6233137e7cf0e1cc90fecd9d1d792623fe7e1cbdf4ee2",
-    "pearl_fuzz_frente.jpg": "745a322dea4f29f0327374fd65d1e6655cfa3fd5ae0d324c639ef55126b8390e",
-    "pearl_fuzz_frente_alfa.png": "84dd3ef7833d8bb3fa1488194c9727a3d6cdbb769b9b40692dd1c14989c1851f",
-    "pearl_fuzz_manifesto.json": "c6a26c4fd9ec81b8e8d976fba77b9662b452eaa70a7b6b5ee05b5f1b7ab60f79",
-    "pearl_fuzz_mapa.json": "29fb9647cc57bd533caccc20e324fc463c83e221d92f2bd6d5c474daceb77ea4"
+    "pearl_fuzz_botao_ganho.png": "e6225b043b02150ad8579152f93f123b219f9609b67da802210d7088cfaa3715",
+    "pearl_fuzz_botao_nivel.png": "02d343db1bca8806faec585bb93a015cc62649a797d7286516aedc7d78bee159",
+    "pearl_fuzz_botao_tom.png": "4472e7e565342d32cd3c31ed6b5f722636a27cfe06bb1bde2a6541e864c32769",
+    "pearl_fuzz_frente.jpg": "4eac16bdc0458495b3ce782f973f25be5a1f52b634705644a359322092fd3234",
+    "pearl_fuzz_frente_alfa.png": "934a5c7142be56ffd024a331387a47286d393b948a65d995708f0013c436cce0",
+    "pearl_fuzz_manifesto.json": "eec708384e14fbfeb073ea4249e9d0d7ad63ca74a4118141d3d84e8d0d05d340",
+    "pearl_fuzz_mapa.json": "0366353a51a982b06854288cc83fa76d8b9592f9da09c73a5a94f078a4a050a7"
    },
-   "tamanho": 165492,
+   "tamanho": 189688,
    "tipo": "pedal",
    "inspiracao": "Big Muff",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
