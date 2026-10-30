@@ -11,12 +11,12 @@
   },
   "pintura": {
     "cor": [
-      0.5605,
-      0.3297,
-      0.0619
+      0.7372,
+      0.3392,
+      0.021
     ],
-    "metalico": 0.55,
-    "aspereza": 0.5
+    "metalico": 0.6,
+    "aspereza": 0.3
   },
   "texto_cor": [
     0.0037,
@@ -25,7 +25,7 @@
   ],
   "modelo": "GOLD CENTAUR",
   "botao_estilo": {
-    "diametro_m": 0.021,
+    "diametro_m": 0.0195,
     "altura_m": 0.016,
     "saia": false,
     "corpo": [
@@ -44,31 +44,28 @@
       "id": "ganho",
       "rotulo": "GANHO",
       "pos": [
-        -0.55,
-        0.5
+        -0.64,
+        0.56
       ]
     },
     {
       "id": "tom",
       "rotulo": "AGUDO",
       "pos": [
-        0.0,
-        0.5
+        0,
+        0.56
       ]
     },
     {
       "id": "nivel",
       "rotulo": "SAÍDA",
       "pos": [
-        0.55,
-        0.5
+        0.64,
+        0.56
       ]
     }
   ],
   "medidas_fonte": "aprox. 120 x 95 x 40 mm (medida de loja; a Klon não publica)",
-  "estampa": {
-    "svg": "estampas/gold_centaur.svg"
-  },
   "quadro": {
     "largura_rel": 1.3,
     "proporcao": 0.95,
@@ -86,45 +83,42 @@
     0.0037
   ],
   "led": [
-    -0.84,
-    0.5
+    -0.86,
+    0.26
   ],
   "pisante": {
     "estilo": "pequeno",
     "pos": [
-      0.5,
-      -0.36
+      0.27,
+      -0.6
     ]
   },
   "modelo_oculto": true,
   "textos": [
     {
-      "texto": "GOLD",
+      "texto": "GOLD CENTAUR",
       "pos": [
-        -0.6,
-        -0.78
+        0.68,
+        -0.6
       ],
-      "tam_m": 0.0062,
+      "tam_m": 0.0052,
       "cor": [
         0.0037,
         0.0037,
         0.0037
       ],
-      "espaco": 1.6
-    },
-    {
-      "texto": "CENTAUR",
-      "pos": [
-        0.6,
-        -0.78
-      ],
-      "tam_m": 0.0062,
-      "cor": [
-        0.0037,
-        0.0037,
-        0.0037
-      ],
-      "espaco": 1.4
+      "espaco": 1.3,
+      "fonte": "label"
     }
-  ]
+  ],
+  "led_estilo": "sem_aro",
+  "led_raio_m": 0.0019,
+  "logo": {
+    "svg": "estampas/gold_centaur_tema.svg",
+    "tam_m": 0.032,
+    "pos": [
+      -0.42,
+      -0.36
+    ]
+  }
 }
