@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T08:38:58Z",
+ "gerado": "2026-10-30T08:41:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2792,8 +2792,8 @@
   },
   "greengage_drive": {
    "nome": "Greengage Drive",
-   "hash": "9322d40a4ab10e87",
-   "data": "2026-10-29T18:55:21Z",
+   "hash": "48f9c4611646864c",
+   "data": "2026-10-30T08:41:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "greengage_drive_botao_ganho.png",
@@ -2805,21 +2805,21 @@
     "greengage_drive_mapa.json"
    ],
    "sha256": {
-    "greengage_drive_botao_ganho.png": "204d562b54a2f71a0690e477e36d664fd8620939262dc9ac053a3affec863289",
-    "greengage_drive_botao_nivel.png": "58e4f6948e3e7ab6b5e0c642c47bb6920cb2149b1dde6ea47026138cd4127a3b",
-    "greengage_drive_botao_tom.png": "cde1cc6cecc96da299bde706afea337780899d8a57f76351824355b3e4e86abd",
-    "greengage_drive_frente.jpg": "57d7e1faec815f9c039fbfdcfc27a2686b6eedc8e143f0f298d98682e1c9ac57",
-    "greengage_drive_frente_alfa.png": "09aa63f132df6f631ab380f438c7ed8fcffc64c35608c35f24fa832ae7a31e42",
-    "greengage_drive_manifesto.json": "d586a7870940fb7eb39c8b2275699fcf62ef38ede877eca99627ca1111cadb91",
-    "greengage_drive_mapa.json": "8e8b2e9db8a54610d0c032348bb4a88265d71ef6bc7654ade8ea8d7e2ad6402e"
+    "greengage_drive_botao_ganho.png": "c8be6355ca48d9b2e29c3a81dd9044ee32cfa3370aa6369aea57df322fe0e911",
+    "greengage_drive_botao_nivel.png": "41af5469bed51ce96f929301d1d4da91f25c64c45f0edd0d02e88583489d0d37",
+    "greengage_drive_botao_tom.png": "866bb1e256c69b1833398ddabf52601ef75ca58dbab3b50f2bb555e44a64684d",
+    "greengage_drive_frente.jpg": "433e0d62fa06a969185ae011baf8a513aabf47c4a0b4244d9e7e5587077dad3c",
+    "greengage_drive_frente_alfa.png": "540e5e5f326cecabc9d8bbf43d0870ddf162a0baa7a5001909210cbaac3cafee",
+    "greengage_drive_manifesto.json": "fc3fe980808962eb6c26adab2640442d7e217f6e08419da5f154da383c568474",
+    "greengage_drive_mapa.json": "2fdf7ff3e789b348221d39dfabc6966de9a5e7e8aaa74cac1107efdac111120d"
    },
-   "tamanho": 445194,
+   "tamanho": 420247,
    "tipo": "pedal",
    "inspiracao": "TS9",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
