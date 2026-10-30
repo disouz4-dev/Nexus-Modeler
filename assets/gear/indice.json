@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T12:29:54Z",
+ "gerado": "2026-10-30T12:38:11Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -4920,8 +4920,8 @@
   },
   "raspberry_drive": {
    "nome": "Raspberry Drive",
-   "hash": "292820955d857419",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "d47ec79ddf10d802",
+   "data": "2026-10-30T12:38:11Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "raspberry_drive_botao_ganho.png",
@@ -4933,21 +4933,21 @@
     "raspberry_drive_mapa.json"
    ],
    "sha256": {
-    "raspberry_drive_botao_ganho.png": "8e0055c141a97fc3b22a35e979273ae04468cbc7c3309f572a12d24aa9db4cd6",
-    "raspberry_drive_botao_nivel.png": "5a384346a2da05027a104c01afe9bcac85cfdd42c360f8ea6af47429ae46395f",
-    "raspberry_drive_botao_tom.png": "c762e5b638b0ae89e4f14b46b50c4c6c9150294c98bc90cd48916982fea4f72b",
-    "raspberry_drive_frente.jpg": "2830a14c9836fa0a89f0e065f2623a602e9aeb6b9e8e264f3f741a206875a83e",
-    "raspberry_drive_frente_alfa.png": "a5016a7f3276b613d86d89ef0976cbb46b4389dd645d1e1f676b232fa38a55c0",
-    "raspberry_drive_manifesto.json": "4983e971e50f55bf2b1c1f8b6e930a2012f60494c65fbab89e8b290ed00c341c",
-    "raspberry_drive_mapa.json": "1cfbc402f5c433b3336836bd3ca6a1a26530957c74935c89321e3927bbb87e37"
+    "raspberry_drive_botao_ganho.png": "a5d344833c9503c033f3e63c3201caec07be296a1b7502da89a3689684fb1991",
+    "raspberry_drive_botao_nivel.png": "a5776392668d077d6ecc4a47eead9f3c24d195d223cf067d094a632b6291a331",
+    "raspberry_drive_botao_tom.png": "b2a5c1be7558a5d302b104fc5c03ece712575c8690181bb04f88f919c83d9459",
+    "raspberry_drive_frente.jpg": "30ec84a92946c5781ba703c3ba241b3687f99f7cf94f95e152daba70e52fc11a",
+    "raspberry_drive_frente_alfa.png": "53dc8b1e33656d0ff59419ca233817870cb5177568664229a7f5ef28ac297687",
+    "raspberry_drive_manifesto.json": "ebef7f7589733ff00b3e2f2ee9e87eccd97b43ead7d829f0797fb73af117effc",
+    "raspberry_drive_mapa.json": "065ad159a84c1806f5fe6fc0ba380651ca8416ae41376d98592784517fe9b1b2"
    },
-   "tamanho": 289522,
+   "tamanho": 478637,
    "tipo": "pedal",
    "inspiracao": "JHS Andy Timmons",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
