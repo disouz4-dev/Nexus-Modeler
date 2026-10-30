@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T16:17:57Z",
+ "gerado": "2026-10-30T16:22:05Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1173,8 +1173,8 @@
   },
   "brit900": {
    "nome": "Brit 900",
-   "hash": "b47830988d1464a6",
-   "data": "2026-10-30T09:06:04Z",
+   "hash": "0c42f89d4876137e",
+   "data": "2026-10-30T16:22:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit900_botao_agudo.png",
@@ -1189,15 +1189,15 @@
     "brit900_mapa.json"
    ],
    "sha256": {
-    "brit900_botao_agudo.png": "2502e086f926c76d0e1d52add238971d43eae75ab4afc585367cc8692fbccef6",
-    "brit900_botao_ganho.png": "d09faa8215c787d89ae91ea8e8a1e2f457ae1d3b84faa94ec11397fb027459e3",
-    "brit900_botao_grave.png": "8ae140c99a51c907120ec66005a744f5e2671e52b7852a9315ff272e6008922a",
-    "brit900_botao_medio.png": "f48d206873fb5428da1af7654d3d7f3f811829b09023b705f69e58ac4493cff3",
-    "brit900_botao_presenca.png": "11c157a278d42eaa5e0496cd8e899f89e7e4274da874044a4ad2e552430e6fa8",
-    "brit900_botao_volume.png": "b517c5abc6c026ff6c2d7ab0b4c718cc6d11ad57d274f8ab489a0e2e534e75f2",
-    "brit900_frente.jpg": "170bb6c659546738dde84c9c23e469bf87565975b3b06abe6e744dcfddd8a38f",
-    "brit900_frente_alfa.png": "d8e913840526f84dfaf93024f53aaf755948a5561ea8a4f7cded4f1654d25afc",
-    "brit900_manifesto.json": "473699cd337dee57f077b6c9d0f41cd55e261e7ec33814f43d85891a538281c5",
+    "brit900_botao_agudo.png": "994d1081560c8a4adfd84920ac39a02b8dc4c00f8981802006b6938e4ca1a9b5",
+    "brit900_botao_ganho.png": "c7c28459c865a4dc9c10f9d1bc04594a41ba74e5407eca4fffaf8e71373e5df0",
+    "brit900_botao_grave.png": "e70b57b56fb9b86fb8425d3410305d4f5d102d5a45db3a897a8e0f4ed04d5d0c",
+    "brit900_botao_medio.png": "6994e6e6fc771ceab9a99bb653c5528fc1601868b82df021441c841146f36879",
+    "brit900_botao_presenca.png": "a60ecdf48d83655f8516672d289aa45b5c1ce20239df45ae14feab680dac2eb1",
+    "brit900_botao_volume.png": "677408a5a25e2b13b3ee5e212d7005ae5a3bdee0a27bb9d2e1aa93876c300ea7",
+    "brit900_frente.jpg": "a45275011a8dbbf5e517a31d114377a389f1ff822aea0b372589f62c5ecf41e3",
+    "brit900_frente_alfa.png": "eae69a03a06fea41834b2a4719b0e15fa35f67b315bb41d9ef4a40d8a20772d4",
+    "brit900_manifesto.json": "752740ea136a0b544b7cf9e1e4c8a75ba6d52f611d8960bf4a8415e4583da66e",
     "brit900_mapa.json": "77f117cd9a4f271199182787f703827e219cd0112627077a70c17a4a114f6d3c"
    },
    "tamanho": 1422031,
@@ -1206,7 +1206,7 @@
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
