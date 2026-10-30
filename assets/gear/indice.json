@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T14:13:24Z",
+ "gerado": "2026-10-30T14:13:32Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2306,8 +2306,8 @@
   },
   "fliptop15": {
    "nome": "Fliptop 15",
-   "hash": "0ccab435b8cc4535",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "98fe4fe0d8d866ef",
+   "data": "2026-10-30T14:13:32Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop15_botao_agudo.png",
@@ -2322,24 +2322,24 @@
     "fliptop15_mapa.json"
    ],
    "sha256": {
-    "fliptop15_botao_agudo.png": "3d826db54ff2fe31edc5e920ddfedabf791978469a9e9288c1d154b150924b65",
-    "fliptop15_botao_ganho.png": "19b09e965a2db8cf2c590883d550fde87e01d8cb4f3be317d6dff2768584fae3",
-    "fliptop15_botao_grave.png": "66d8f5ace28e4a2fdc005b5028703473c23ff5ea1411d4a0a06bf13d96cadb60",
-    "fliptop15_botao_medio.png": "bfd20ba996d131cbf8251d26c38072e4f7252cf10bf2ddf79096c61683593296",
-    "fliptop15_botao_presenca.png": "d735bd5825167bcb2ff120109284b40bc2c3372a6967f334314908da55588777",
-    "fliptop15_botao_volume.png": "0b6ae32118c9fde0fe49ad2ec4bb3e49dbed5c9098b0aaaf4e732f32102c838f",
-    "fliptop15_frente.jpg": "aa1e8b2b4748d6487cab42a4c89093c0ab45ffb720fb68ce2abfc2ce8de35fb5",
-    "fliptop15_frente_alfa.png": "54d7025a166959b6db7d2faa8ba45ecb74eaa5452e5e47cc9789f347cb6bf299",
-    "fliptop15_manifesto.json": "ee7f4deb0e166be955bac85ffb519935d31b85db9bd129ac12800cf68862a224",
-    "fliptop15_mapa.json": "28d79279da0c541fe1261cf13d13ad1e3a17384e7dcfb33db74ed9651dc253da"
+    "fliptop15_botao_agudo.png": "7330ad9dc23cb176202ec5597af544f07406567449b3cebdae32274b717e8c6f",
+    "fliptop15_botao_ganho.png": "daa9031a25fd8eeb5504dd3127acb9848c69cb1589af253a25855a7ef316b650",
+    "fliptop15_botao_grave.png": "250e5231f49721ac24d371c04d2a36c90c4f6342f56e611103a2c963c08f129f",
+    "fliptop15_botao_medio.png": "0187df43bd0c9f153e5747f629ac7e27759be0653ef59ffb65bd91650bd4d2d6",
+    "fliptop15_botao_presenca.png": "a0e73f12e25fc64b14d21e4bf8b00fe5a857ef2a5e618a1ce00469a2cfe9add7",
+    "fliptop15_botao_volume.png": "d37126a2b090e747c9cd2484d6e02de91cb12f8b8c3f222487a757460f6bdde8",
+    "fliptop15_frente.jpg": "3de4d345bb0182eb179ca1182c8636adb1947e34ba7a7ebd562a2a60749ab9e6",
+    "fliptop15_frente_alfa.png": "0007a53012a4ec9ed2b319987855b28084fc05f1db281b89f53a3fa71a823771",
+    "fliptop15_manifesto.json": "1b84e62cae20de414ea060d1ad662974c46258efb6f362fb6ea6762055c2bc89",
+    "fliptop15_mapa.json": "b1248bf8472dc610c007179dcb014e9963b48c53b9c7b85e031fd4f3e8795023"
    },
-   "tamanho": 2497378,
+   "tamanho": 2681126,
    "tipo": "cabecote",
    "inspiracao": "Ampeg B-15",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
