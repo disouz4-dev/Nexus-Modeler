@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:51:53Z",
+ "gerado": "2026-10-30T11:56:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3237,8 +3237,8 @@
   },
   "jackfruit_monkey": {
    "nome": "Jackfruit Monkey",
-   "hash": "ade5e8e95ec4a4ed",
-   "data": "2026-10-29T21:31:53Z",
+   "hash": "f4ffad22804cb117",
+   "data": "2026-10-30T11:56:04Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jackfruit_monkey_botao_ganho.png",
@@ -3250,21 +3250,21 @@
     "jackfruit_monkey_mapa.json"
    ],
    "sha256": {
-    "jackfruit_monkey_botao_ganho.png": "22489467c9a99b17a8e477311ea7dd150e3d49c1f96512ab05b3b5ed2dde17c9",
-    "jackfruit_monkey_botao_nivel.png": "0ebe0a4dd40e65e3ec0598d933d91dd4c1b70a52060802ba85d0e881d882aa63",
-    "jackfruit_monkey_botao_tom.png": "f2414db97d658cd5fdfdfd7438deddce02a720f70925b0976086ffa7ae369f1f",
-    "jackfruit_monkey_frente.jpg": "be1e674a61ea94ea7912e9ed348c526312b02ea321949a5b34f3794b60188152",
-    "jackfruit_monkey_frente_alfa.png": "aea291669433b8a2db19346c3b1fa622de34c78f277e2b2d76ff87dcdd7e8e60",
-    "jackfruit_monkey_manifesto.json": "18d23718e761b9714bbbb9f7eaacc0e7cd7e38fbbeb2a831144747e84c5226da",
-    "jackfruit_monkey_mapa.json": "19a0f2f3cac545cce5aa73b30c79f7ea12cb6ce5a0926dfa229cc5487572a90c"
+    "jackfruit_monkey_botao_ganho.png": "225d6e40c3e0553775840007155307a673a6e8ed7f7bdaaea20487a7beee4797",
+    "jackfruit_monkey_botao_nivel.png": "e459e123d9f7499c1a42d75de2bb9963160ff81e0ab34cb34ac62365749b0343",
+    "jackfruit_monkey_botao_tom.png": "1b8fe4c85cfdbbe5ef9da9d13278828176630e5fd0eac730ef7cd5af9f007567",
+    "jackfruit_monkey_frente.jpg": "2b0f71626433c22858ae41e2c25574eeb0e5077ab7a650baf547ac9860f294a1",
+    "jackfruit_monkey_frente_alfa.png": "59524c86ca7bcffc52445082fad052ddafa9f7609215b625e8bef20f4e0f0431",
+    "jackfruit_monkey_manifesto.json": "28737011e1a50fd6f28836d104dc10007ca9c78742bf39bc7bf6cb79978fa117",
+    "jackfruit_monkey_mapa.json": "178019dac8d1eb4ac97e1551140830a3dcd5b1e9f49fb774ef347c3fd71cfbe0"
    },
-   "tamanho": 212482,
+   "tamanho": 341503,
    "tipo": "pedal",
    "inspiracao": "DigiTech Bad Monkey",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
