@@ -2,14 +2,14 @@
   "nome": "Galaxy Mod",
   "familia": "galaxy_mod",
   "largura": 600,
-  "altura": 510,
+  "altura": 600,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 134,
-      "y": 196,
-      "tamanho": 44,
+      "x": 82,
+      "y": 188,
+      "tamanho": 60,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,45 +17,45 @@
     },
     {
       "id": "a",
-      "x": 230,
-      "y": 198,
-      "tamanho": 39,
+      "x": 158,
+      "y": 190,
+      "tamanho": 58,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 286,
-      "y": 199,
-      "tamanho": 38,
+      "x": 234,
+      "y": 190,
+      "tamanho": 56,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 341,
-      "y": 198,
-      "tamanho": 39,
+      "x": 310,
+      "y": 190,
+      "tamanho": 56,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 396,
-      "y": 198,
-      "tamanho": 40,
+      "x": 384,
+      "y": 190,
+      "tamanho": 58,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 450,
-      "y": 198,
-      "tamanho": 42,
+      "x": 458,
+      "y": 188,
+      "tamanho": 60,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -63,73 +63,73 @@
   ],
   "canais": [],
   "medidas_mm": [
-    250,
-    152
+    120,
+    115
   ],
   "rotulos": [
     {
       "texto": "MODO",
-      "x": 156.8,
-      "y": 246.2,
-      "altura": 7.26,
+      "x": 115.9,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "VELOCIDADE",
-      "x": 249.8,
-      "y": 244.9,
-      "altura": 7.26,
+      "x": 189.6,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "PROFUNDIDADE",
-      "x": 304.8,
-      "y": 244.9,
-      "altura": 7.26,
+      "x": 263.2,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "AJUSTE",
-      "x": 359.7,
-      "y": 244.9,
-      "altura": 7.26,
+      "x": 336.8,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "TWEEZ",
-      "x": 414.6,
-      "y": 244.9,
-      "altura": 7.26,
+      "x": 410.4,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     },
     {
       "texto": "MISTURA",
-      "x": 469.5,
-      "y": 244.9,
-      "altura": 7.26,
+      "x": 484.1,
+      "y": 265.4,
+      "altura": 10.64,
       "achatamento": 1.0,
       "cor": "#0c0c0c",
       "espaco": 1.15
     }
   ],
   "pisante": {
-    "x": 98.5,
-    "y": 317.0,
-    "raio": 15.5
+    "x": 300.0,
+    "y": 402.5,
+    "raio": 35.0
   },
   "led": {
-    "x": 101.3,
-    "y": 269.6,
-    "raio": 4.8
+    "x": 300.0,
+    "y": 304.7,
+    "raio": 7.5
   }
 }

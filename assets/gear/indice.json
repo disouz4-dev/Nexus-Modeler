@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T13:46:12Z",
+ "gerado": "2026-10-30T13:46:19Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2411,8 +2411,8 @@
   },
   "galaxy_mod": {
    "nome": "Galaxy Mod",
-   "hash": "7ec50bee076e6e02",
-   "data": "2026-10-30T08:07:39Z",
+   "hash": "29e3526fb93dc8bb",
+   "data": "2026-10-30T13:46:19Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "galaxy_mod_botao_a.png",
@@ -2427,24 +2427,24 @@
     "galaxy_mod_mapa.json"
    ],
    "sha256": {
-    "galaxy_mod_botao_a.png": "1ed275e34e696ef18b1729ee64a2272fdfab89382b4e7cfd043683b00a253b65",
-    "galaxy_mod_botao_b.png": "b2e56023869ff6bd6ed037585832fe233feacca6a007f4556ecf58edcfcb5747",
-    "galaxy_mod_botao_c.png": "180411a4ca61a86e0eac001a0ebadf09ca906b40f3ce3b7829b4d63e67c2db60",
-    "galaxy_mod_botao_d.png": "4bc92732d8bf6060683b367d1d9da54f219f2d1d149b7933ee5248650d308e2f",
-    "galaxy_mod_botao_modo.png": "aa28f3adab5160fa3a7db8a3af0c1fef0667952bc56ff6814b964135ef6ff492",
-    "galaxy_mod_botao_tom.png": "f1bc22d993db6cc8b47bfc6b92bdcb976f72ff1049552ceafde358d8a89f60d4",
-    "galaxy_mod_frente.jpg": "737a37800669a9dcc7f46784f8389782620fdb44c80dc1b057d30cdd400773d9",
-    "galaxy_mod_frente_alfa.png": "09be89a5353415ee1dc15190c7667b5e08ab5886016bfe9f0ab11e590b5de1f9",
-    "galaxy_mod_manifesto.json": "2b27662e409c909eb553692c5040b10c597b33d76770d7c09604b0ec915b79eb",
-    "galaxy_mod_mapa.json": "48d693a25266f134a53c295c20d6cb2fba0ba6b6c48def61bee9199108727450"
+    "galaxy_mod_botao_a.png": "872f91c34250bc760c2754fabf0eba02adbb49af0ca973ebddcbb329bd2c153f",
+    "galaxy_mod_botao_b.png": "562821b9a92c0b71dbcde1199a6b27bd84c64db35419a2a9dff2c0c047b44ae5",
+    "galaxy_mod_botao_c.png": "f5120762ae2dea720a6232e134211920fdb62e3f424b133801e99f2aeaaf7063",
+    "galaxy_mod_botao_d.png": "473d0cbc12a7cb6960acc99a7470c03f0e5e82d8819f106355a0c8100976006b",
+    "galaxy_mod_botao_modo.png": "29083fe22fe9ba8b1739e24c22d2bf8ea20acc4d49f7ae71b4334a964399289e",
+    "galaxy_mod_botao_tom.png": "08c042a417cdab204d6184923cdf918cae329c04909a9c38f6845803bec212bb",
+    "galaxy_mod_frente.jpg": "8d768297d56dc1782223537d40008c24c70aa4ec22a1ddd9f2e3ce2c6480b2c6",
+    "galaxy_mod_frente_alfa.png": "03756e087aae8b1567becaaf2a40e579539f0f8c542b34f5e1a971cbc194510d",
+    "galaxy_mod_manifesto.json": "3db1657901c52adae2c1619cb3bcdd02b3967e2a3e89a9e85307e3507e2f49bb",
+    "galaxy_mod_mapa.json": "9051ced8ebf6de5cc343c50750f0ba1130db96b61cc2e45c839738fd5df013de"
    },
-   "tamanho": 145686,
+   "tamanho": 266884,
    "tipo": "pedal",
    "inspiracao": "Line 6 MM4",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "modulacao_modos",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
