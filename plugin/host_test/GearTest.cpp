@@ -9,6 +9,7 @@
 //  3. (com o pacote) um equipamento novo instala, aparece e vai num preset.
 #include <cstdio>
 #include <cstdlib>
+#include <memory>
 
 #ifdef _WIN32
 // O Windows não tem setenv.
@@ -99,7 +100,8 @@ static void testCatalog(const juce::File& gear)
 static void testState()
 {
   // Preset com um pedal de cada motor, cabeçote e caixa fora do começo da lista.
-  NexusProcessor a;
+  auto aBox = std::make_unique<NexusProcessor>(); // no heap: a pilha do Windows tem 1 MB
+  auto& a = *aBox;
   const int looks[] = {0, 8, 22, 57, 62, 7};
   for (int i = 0; i < 6; ++i)
     setParam(a, NexusProcessor::pedalParam(i, "visual"), static_cast<float>(looks[i]));
@@ -116,7 +118,8 @@ static void testState()
             + xml->getStringAttribute("cabecote_id") + ")");
   }
   // Preset da versão antiga: só os índices.
-  NexusProcessor b;
+  auto bBox = std::make_unique<NexusProcessor>();
+  auto& b = *bBox;
   const auto old = withoutIds(saved);
   b.setStateInformation(old.getData(), static_cast<int>(old.getSize()));
   bool same = true;
@@ -132,7 +135,8 @@ static void testState()
   check(x1->isEquivalentTo(x2.get(), false), U("salvar de novo o preset antigo não muda nenhum parâmetro"));
 
   // Preset novo, com id: abre igual.
-  NexusProcessor c;
+  auto cBox = std::make_unique<NexusProcessor>();
+  auto& c = *cBox;
   c.setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));
   same = true;
   for (int i = 0; i < 6; ++i)
@@ -153,7 +157,8 @@ static void testState()
   xml->setAttribute("p1_visual_id", "fruta_que_nao_existe");
   juce::MemoryBlock foreign;
   juce::AudioProcessor::copyXmlToBinary(*xml, foreign);
-  NexusProcessor d;
+  auto dBox = std::make_unique<NexusProcessor>();
+  auto& d = *dBox;
   d.setStateInformation(foreign.getData(), static_cast<int>(foreign.getSize()));
   check(d.missingGear(Kind::pedal, 0) == "fruta_que_nao_existe", U("peça não instalada fica marcada para o cartão \"não está instalado\""));
   const auto resaved = stateOf(d);
@@ -165,7 +170,8 @@ static void testState()
   // Preset salvo antes da troca de código dos 34 pedais (Lemon Drive virou
   // Greengage Drive): abre com a peça, sem o cartão, e salva o código novo.
   const auto& catalog = GearCatalog::instance();
-  NexusProcessor before;
+  auto beforeBox = std::make_unique<NexusProcessor>();
+  auto& before = *beforeBox;
   setParam(before, NexusProcessor::pedalParam(0, "visual"), static_cast<float>(catalog.find(Kind::pedal, "greengage_drive")));
   setParam(before, NexusProcessor::pedalParam(1, "visual"), static_cast<float>(catalog.find(Kind::pedal, "aquamarine_sky")));
   const auto oldState = stateOf(before);
@@ -174,7 +180,8 @@ static void testState()
   oldXml->setAttribute("p2_visual_id", "juniper_sky");
   juce::MemoryBlock renamed;
   juce::AudioProcessor::copyXmlToBinary(*oldXml, renamed);
-  NexusProcessor e;
+  auto eBox = std::make_unique<NexusProcessor>();
+  auto& e = *eBox;
   e.setStateInformation(renamed.getData(), static_cast<int>(renamed.getSize()));
   check(e.missingGear(Kind::pedal, 0).isEmpty() && e.missingGear(Kind::pedal, 1).isEmpty()
             && e.pedalLook(0) == catalog.find(Kind::pedal, "greengage_drive") && e.pedalLook(1) == catalog.find(Kind::pedal, "aquamarine_sky"),
@@ -211,13 +218,15 @@ static void testPackage(const juce::File& package)
   check(GearCatalog::folder().getChildFile(id).getChildFile(id + "_manifesto.json").existsAsFile(), U("ficou em Equipamentos/") + id);
   const auto art = nexus::ui::GearArt::load(id);
   check(art.valid() && art.knobs.size() == 3 && art.name.isNotEmpty(), U("a arte carrega da pasta (") + art.name + ", " + juce::String(art.knobs.size()) + U(" botões)"));
-  NexusProcessor a;
+  auto aBox = std::make_unique<NexusProcessor>(); // no heap: a pilha do Windows tem 1 MB
+  auto& a = *aBox;
   a.choosePedal(0, look);
   check(a.pedalLook(0) == look && NexusProcessor::pedalKind(look) == NexusProcessor::PedalKind::capture
           && juce::roundToInt(a.params.getRawParameterValue("p1_visual")->load()) == 0,
         U("escolhida num pedal: toca com o motor captura e o parâmetro fica no Greengage Drive"));
   const auto saved = stateOf(a);
-  NexusProcessor b;
+  auto bBox = std::make_unique<NexusProcessor>();
+  auto& b = *bBox;
   b.setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));
   check(b.pedalLook(0) == look && b.gearId(Kind::pedal, 0) == id, U("preset com a peça nova abre com ela (") + b.gearId(Kind::pedal, 0) + ")");
 }
