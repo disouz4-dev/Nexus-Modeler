@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T20:11:58Z",
+ "gerado": "2026-10-30T20:18:09Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -6361,8 +6361,8 @@
   },
   "vault210": {
    "nome": "Vault 210",
-   "hash": "57e2cba95cd3875f",
-   "data": "2026-10-29T18:38:23Z",
+   "hash": "92f62817245e255b",
+   "data": "2026-10-30T20:18:09Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault210_botao_agudo.png",
@@ -6377,24 +6377,24 @@
     "vault210_mapa.json"
    ],
    "sha256": {
-    "vault210_botao_agudo.png": "7bcceff18a6948e46daa3cc431eb3c6847c131c99a69f5840f49aa65619cbc35",
-    "vault210_botao_ganho.png": "b6c7c27c0e1f3c50bc792ead3165251b1efdb87a8bef6f9f129ed45b1c865510",
-    "vault210_botao_grave.png": "fe03cc6409037576a39cfabd677d06eca434ed0f1e224417191a3b5c4e3f762d",
-    "vault210_botao_medio.png": "528d61f06b1fed656ab44cf871bb77281584994c18c62b56c1d8ae2b204291a0",
-    "vault210_botao_presenca.png": "b2c516b2350dceb137013bd197334f7f6416d32991fbe6b9aa911554daf000e8",
-    "vault210_botao_volume.png": "6fe7a7de1ac0313b79409c4e0d5117bbba18b13b45bc1fab7befff5cde359ba1",
-    "vault210_frente.jpg": "dd9b34f503e439c52d6c5ec87449ef4913b52edd20c3116c9311d26bfdad7146",
-    "vault210_frente_alfa.png": "7def13d91feb5700c7ba396b1dda917fc47c8663f9b9941cf89b27ae1753989c",
-    "vault210_manifesto.json": "98cb72ef542fd038c25f3b5b6f1e60d27879b77b0e02796136b0eacb467f466c",
-    "vault210_mapa.json": "1742f9323df7e96b0c868d2be901354fd4b1b3fea005ae71063134e1a12dfdd1"
+    "vault210_botao_agudo.png": "fa66dbd7c7feabdc1284c050ffc8994330beda3e54a9686cfbef1e6f092ae3d8",
+    "vault210_botao_ganho.png": "45083751b72f498210b5dccea61436886afc9a2157b51b6d51d3766165ac5945",
+    "vault210_botao_grave.png": "50976dcc0a849cef2308116b1836dd011fcf883e0136b4fe43eb57b49ec3edaa",
+    "vault210_botao_medio.png": "a2264d5dda562bcf2d831fef3ac6f6dac2d5ab3a5271177e2c46a59b23c1febf",
+    "vault210_botao_presenca.png": "525bdc7cfa0fc8aa8f514da84e405d800aab48fd57e687d7416f3a11f3f8aeba",
+    "vault210_botao_volume.png": "c84059b81ace93ebd5acf7ac41c39b640cf34bdf59468d5c5ee586d362138721",
+    "vault210_frente.jpg": "1c5947f01dd02e76e5bdffbb9765b64cc49dec49ffec444cb5405cebffa37178",
+    "vault210_frente_alfa.png": "c40002899bf4acf4fe3799feb37715cf920f0275b732800a5be3ba0effeaf5d1",
+    "vault210_manifesto.json": "6db641ca8115d0b89eb55f631b71f334d4f0fc3880b206e5f0f12df5bba51be0",
+    "vault210_mapa.json": "57a2ec0a1e9914f50e3df9f9eb14cf9edfce0fb691827c257e2ed1fa67b5811f"
    },
-   "tamanho": 1611942,
+   "tamanho": 1048754,
    "tipo": "cabecote",
    "inspiracao": "Ampeg BA-210",
    "categoria": "Baixo",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
