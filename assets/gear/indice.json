@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T11:58:13Z",
+ "gerado": "2026-10-30T12:02:27Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -957,8 +957,8 @@
   },
   "blueberry_chain": {
    "nome": "Blueberry Chain",
-   "hash": "f3d58a6866bb19c7",
-   "data": "2026-10-29T11:58:31Z",
+   "hash": "fdf9d375e1cca793",
+   "data": "2026-10-30T12:02:27Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blueberry_chain_botao_a.png",
@@ -970,21 +970,21 @@
     "blueberry_chain_mapa.json"
    ],
    "sha256": {
-    "blueberry_chain_botao_a.png": "6f267ca08adcde2ef1d21f80d5a59e8ea04d56214efabb70714d220399526a5f",
-    "blueberry_chain_botao_b.png": "48379c8c2d413b8dbce2f6ff9ddbd99c3a3e4c119770fd74194879c691f0d7cf",
-    "blueberry_chain_botao_c.png": "34f4651b9f0ee324bc56191ca068ab5013be423f00ca8192ad55df49ac96aca2",
-    "blueberry_chain_frente.jpg": "ed73fd38d3585e419306d7fb768e4c884273aff26376b119e0d90f6b6dc94b16",
-    "blueberry_chain_frente_alfa.png": "4f782d55dd599147f6de1b8738c9bf3156bf3d31ff1cba6c477fc252bff1ec78",
-    "blueberry_chain_manifesto.json": "e33a9ae8022fb204c4f29673c1c376acb198128fe1c1850e3351f698254aec62",
-    "blueberry_chain_mapa.json": "46ffb2e94fbd0070d4315832d4acfca66415e173e08fffbdeed6642a1f570ea9"
+    "blueberry_chain_botao_a.png": "55f83a6d8db3f2d8cc989bc1f8ac19cb68fbe682b78b0113d9d3f97ec76f9c32",
+    "blueberry_chain_botao_b.png": "80c347a2b68991e46565d325407d248f57402663b66791272bf43d1aebaa1afd",
+    "blueberry_chain_botao_c.png": "ec98086e0bcfb8a1d03f304583eb240814c59ec14ac391f655ae2d7b792b7a86",
+    "blueberry_chain_frente.jpg": "1b70e61bef69e5453d2ead528d5b8d93d9a91131ce8389e1034dd10ce795d7b7",
+    "blueberry_chain_frente_alfa.png": "1eebec51477c3cf6a3f4999ce192cb1ba410bdb23e6cba085c5d76745d664e33",
+    "blueberry_chain_manifesto.json": "e1c22699e9913124436039ff6c1ccadafc060e577fa24d5ec0d30797f7c9accf",
+    "blueberry_chain_mapa.json": "6fdf33c49ba70744111c67f976608f1dc6a798860961c8ffd896b312b5f65aaf"
    },
-   "tamanho": 242089,
+   "tamanho": 469371,
    "tipo": "pedal",
    "inspiracao": "Três DD-3 em série",
    "categoria": "Delay",
    "fonte": "Efeito do Nexus",
    "motor": "delay_triplo",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
   },
