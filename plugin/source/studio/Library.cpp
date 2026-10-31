@@ -1,6 +1,7 @@
 #include "Library.h"
 
 #include "../report/Report.h"
+#include "../update/NovaInstalacao.h"
 
 namespace nexus::studio
 {
@@ -96,9 +97,7 @@ const std::array<int, kStems>& displayOrder()
 
 juce::File Library::root()
 {
-  return juce::File::getSpecialLocation(juce::File::userDocumentsDirectory)
-    .getChildFile("Nexus Modeler")
-    .getChildFile(juce::String::fromUTF8("Estúdio"));
+  return nexus::update::documentsRoot().getChildFile(juce::String::fromUTF8("Estúdio"));
 }
 
 juce::String Library::importPattern()

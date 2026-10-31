@@ -164,7 +164,19 @@ void GearStore::run()
 void GearStore::check()
 {
   setState(State::checking);
-  const auto text = juce::URL(baseUrl() + "indice.json").readEntireTextStream(false);
+  // Sem cópia guardada: o GitHub e o Mac guardam o índice por 5 minutos, e
+  // peça publicada agora tem de aparecer no próximo clique. O número no fim
+  // do endereço passa pelo cache do GitHub; o cabeçalho, pelo do sistema.
+  juce::String text;
+  {
+    auto url = juce::URL(baseUrl() + "indice.json");
+    if (!url.isLocalFile())
+      url = url.withParameter("t", juce::String(juce::Time::currentTimeMillis()));
+    if (auto in = url.createInputStream(juce::URL::InputStreamOptions(juce::URL::ParameterHandling::inAddress)
+                                          .withExtraHeaders("Cache-Control: no-cache\r\nPragma: no-cache")
+                                          .withConnectionTimeoutMs(20000)))
+      text = in->readEntireStreamAsString();
+  }
   const auto remote = juce::JSON::parse(text);
   if (!remote["pecas"].isObject())
   {
@@ -231,7 +243,11 @@ juce::String GearStore::fetchOne(const juce::String& id, const juce::var& entry)
     if (!name.startsWith(id + "_") || name.containsAnyOf("/\\:") || name.contains(".."))
       return juce::String::fromUTF8("arquivo fora da peça no índice: ") + name;
     juce::MemoryBlock data;
-    if (!juce::URL(baseUrl() + name).readEntireBinaryStream(data, false) || data.getSize() == 0)
+    // O resumo no endereço: arquivo novo nunca vem de uma cópia velha guardada.
+    auto url = juce::URL(baseUrl() + name);
+    if (!url.isLocalFile())
+      url = url.withParameter("v", sums->getProperty(juce::Identifier(name)).toString().substring(0, 16));
+    if (!url.readEntireBinaryStream(data, false) || data.getSize() == 0)
       return juce::String::fromUTF8("Não foi possível baixar ") + name;
     if (sha256(data) != sums->getProperty(juce::Identifier(name)).toString())
       return juce::String::fromUTF8("O arquivo baixado não confere: ") + name;

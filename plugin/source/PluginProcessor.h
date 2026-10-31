@@ -196,6 +196,7 @@ public:
   void loadPedalPack(int pedal, const juce::File& folder) { loadSlot(pedalSlot(pedal), folder); }
   void loadAmpPack(int rig, int channel, const juce::File& folder) { loadSlot(ampSlot(rig, channel), folder); }
   void clearAmpPack(int rig, int channel) { clearSlot(ampSlot(rig, channel)); }
+  void clearPedalPack(int pedal) { clearSlot(pedalSlot(pedal)); }
   // Pasta do pacote aberto no espaço (vazia se não há pacote).
   juce::File slotFolder(int slot) const { return mSlots[static_cast<size_t>(slot)].folder; }
   int selectedChannel(int rig) const;
@@ -214,6 +215,9 @@ public:
   void choosePedal(int pedal, int look) { choose(nexus::gear::Kind::pedal, pedal, look); }
   void chooseAmp(int rig, int look) { choose(nexus::gear::Kind::amp, rig, look); }
   void chooseCab(int rig, int look) { choose(nexus::gear::Kind::cab, rig, look); }
+  // Quantas vezes um estado (sessão ou preset) foi aberto: a tela sabe que a
+  // troca de cabeçote veio do preset, que traz a caixa dele.
+  int stateLoads() const { return mStateLoads.load(); }
   // Id em texto da peça na posição (o que vai no preset). Se o preset pediu
   // uma peça que não está instalada, é o id dela.
   juce::String gearId(nexus::gear::Kind kind, int position) const;
@@ -414,6 +418,7 @@ private:
 
   // Cadeia: cópia da tela e cópia do áudio, trocadas por ponteiro.
   ChainLayout mLayoutUi;
+  std::atomic<int> mStateLoads{0};
   std::atomic<ChainLayout*> mLayoutPending{nullptr};
   std::atomic<ChainLayout*> mLayoutRetired{nullptr};
   ChainLayout* mLayoutActive = nullptr;

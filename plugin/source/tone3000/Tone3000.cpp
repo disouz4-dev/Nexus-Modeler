@@ -8,6 +8,7 @@
 
 #include "BinaryData.h"
 #include "nexus/Pack.h"
+#include "../update/NovaInstalacao.h"
 
 #ifndef NEXUS_T3K_KEY
   #define NEXUS_T3K_KEY ""
@@ -395,12 +396,7 @@ Connection::Connection()
   // Também pode vir do ambiente, para testar uma chave sem recompilar.
   if (const auto env = juce::SystemStats::getEnvironmentVariable("NEXUS_T3K_KEY", {}); env.isNotEmpty())
     mKey = env;
-  juce::PropertiesFile::Options o;
-  o.applicationName = "tone3000";
-  o.folderName = "Nexus Modeler";
-  o.filenameSuffix = "settings";
-  o.osxLibrarySubFolder = "Application Support";
-  mPrefs = std::make_unique<juce::PropertiesFile>(o);
+  mPrefs = std::make_unique<juce::PropertiesFile>(nexus::update::settingsFile("tone3000.settings"), juce::PropertiesFile::Options());
   if (mKey.isEmpty())
     mKey = mPrefs->getValue("chave_publica");
 }
@@ -416,7 +412,7 @@ Connection::~Connection()
 juce::File Connection::packsFolder(const juce::String& gearName)
 {
   // Documentos do usuário em cada sistema (Windows "Documentos", Mac e Linux ~/Documents).
-  auto root = juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile("Nexus Modeler");
+  auto root = nexus::update::documentsRoot();
   return gearName.isEmpty() ? root : root.getChildFile(safeName(gearName));
 }
 

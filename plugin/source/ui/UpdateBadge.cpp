@@ -25,8 +25,23 @@ UpdateBadge::UpdateBadge()
   refresh();
   // Primeira abertura desta versão: as novidades, uma vez (depois de a tela
   // estar montada, para a janela abrir em cima dela).
-  juce::MessageManager::callAsync([safe = juce::Component::SafePointer<UpdateBadge>(this)] {
-    if (safe != nullptr && safe->mUpdater->takeNewVersion())
+  whatsNewWhenShowing(20);
+}
+
+// Só com a tela na área de trabalho (o programa do som pode mostrá-la um
+// pouco depois; nos testes ela nunca aparece): até lá não conta como vista.
+void UpdateBadge::whatsNewWhenShowing(int tries)
+{
+  juce::Timer::callAfterDelay(500, [safe = juce::Component::SafePointer<UpdateBadge>(this), tries] {
+    if (safe == nullptr)
+      return;
+    if (!safe->isShowing())
+    {
+      if (tries > 1)
+        safe->whatsNewWhenShowing(tries - 1);
+      return;
+    }
+    if (safe->mUpdater->takeNewVersion())
       safe->showWhatsNew();
   });
 }

@@ -395,6 +395,16 @@ private:
   const nexus::ui::GearArt& cabArt(int rig) const;
   const nexus::ui::GearArt& ampArt(int rig) const { return mAmpArts[static_cast<size_t>(juce::jlimit(0, static_cast<int>(mAmpArts.size()) - 1, mProcessor.ampLook(rig)))]; }
   int mShownAmpLook = -1;
+  // Cabeçote de cada lado da última vez que a tela olhou, e os estados abertos
+  // até ali: cabeçote trocado por fora da lista (automação, MIDI) puxa a caixa dele.
+  std::array<int, 2> mFollowedAmp{-1, -1};
+  std::array<int, NexusProcessor::kPedals> mFollowedPedal{};
+  int mFollowedStates = -1;
+  // Põe a caixa da ficha do cabeçote (caixa_padrao) e o IR dela.
+  void cabFollowsAmp(int rig);
+  void noticeOldData();
+  void swapPedal(int pedal, int look);
+  void followAmps();
   std::deque<nexus::ui::GearArt> mPedalArts;
   Selection mSel;
   int mShownPedalLook = -1;

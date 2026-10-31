@@ -3,6 +3,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_gui_basics/juce_gui_basics.h>
 
+#include "../update/NovaInstalacao.h"
 #include "../update/Updater.h"
 
 namespace nexus::report
@@ -53,12 +54,7 @@ void onCrash(void*)
 
 juce::File folder()
 {
-  juce::PropertiesFile::Options o;
-  o.applicationName = "registro";
-  o.folderName = "Nexus Modeler";
-  o.filenameSuffix = ".txt";
-  o.osxLibrarySubFolder = "Application Support";
-  return o.getDefaultFile().getParentDirectory();
+  return nexus::update::dataRoot();
 }
 
 juce::File logFile()

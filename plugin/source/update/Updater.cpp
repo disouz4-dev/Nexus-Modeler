@@ -1,6 +1,7 @@
 #include "Updater.h"
 
 #include "../report/Report.h"
+#include "NovaInstalacao.h"
 
 #if JUCE_LINUX || JUCE_MAC
 #include <unistd.h>
@@ -310,12 +311,7 @@ Release parseRelease(const juce::String& json, const juce::String& system)
 
 Updater::Updater() : juce::Thread("Nexus atualizacao")
 {
-  juce::PropertiesFile::Options o;
-  o.applicationName = "atualizacao";
-  o.folderName = "Nexus Modeler";
-  o.filenameSuffix = "settings";
-  o.osxLibrarySubFolder = "Application Support";
-  mPrefs = std::make_unique<juce::PropertiesFile>(o);
+  mPrefs = std::make_unique<juce::PropertiesFile>(settingsFile("atualizacao.settings"), juce::PropertiesFile::Options());
 }
 
 Updater::~Updater()

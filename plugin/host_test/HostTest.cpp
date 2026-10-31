@@ -66,6 +66,8 @@ RunResult run(juce::AudioPluginInstance& plugin, double sampleRate, const juce::
       if (auto xml = juce::AudioProcessor::getXmlFromBinary(chunk.getData(), static_cast<int>(chunk.getSize())))
       {
         xml->setAttribute("pasta", packFolder);
+        // Sessão nova começa sem cabeçote: o projeto reaberto tem um, que toca o pacote.
+        xml->setAttribute("cabecote_id", "recto_dual");
         juce::MemoryBlock newChunk;
         juce::AudioProcessor::copyXmlToBinary(*xml, newChunk);
         component->deleteAllTextElements();
