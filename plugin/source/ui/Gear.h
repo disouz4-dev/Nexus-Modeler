@@ -56,9 +56,9 @@ struct GearArt
   // Canais do amplificador original, na ordem do painel (vazio = um canal).
   juce::StringArray channels;
   std::vector<GearLabel> labels;
-  // Cabeçotes e caixas: os rótulos são os do aparelho original e ficam
-  // escritos como nele, em todos os idiomas. Os dos pedais (desenho nosso,
-  // em português) são traduzidos.
+  // Cabeçotes, caixas e pedais de captura: os rótulos são os do aparelho
+  // original e ficam escritos como nele, em todos os idiomas. Os dos efeitos
+  // próprios do Nexus (sem original) são traduzidos.
   bool translateLabels = true;
   // Pedais: onde pisar e onde fica o LED, em pixels da frente (raio 0 = não tem).
   juce::Point<float> footswitch;

@@ -64,15 +64,17 @@ void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> 
   g.setOpacity(1.0f);
 }
 
-// Arte de uma peça do catálogo: cabeçote e caixa mostram os rótulos do original sem traduzir.
-GearArt loadArt(const juce::String& id, G::Kind kind)
+// Arte de uma peça do catálogo: cabeçote, caixa e pedal de captura mostram
+// os rótulos do original sem traduzir; os efeitos próprios do Nexus (sem
+// original) são traduzidos.
+GearArt loadArt(const G::GearEntry& e)
 {
-  auto art = GearArt::load(id);
-  art.translateLabels = kind == G::Kind::pedal;
+  auto art = GearArt::load(e.id);
+  art.translateLabels = e.kind == G::Kind::pedal && e.engine != "captura";
   return art;
 }
 
-// Rótulos do painel: texto por cima da imagem 3D (traduzido nos pedais), na posição e
+// Rótulos do painel: texto por cima da imagem 3D (traduzido nos efeitos próprios), na posição e
 // perspectiva anotadas pelo gerador. minEm: letra mínima na tela (o cabeçote
 // e o pedal grandes usam 12 px na janela padrão; a janela maior ou menor
 // escala junto). A letra nunca encolhe para caber: a palavra longa quebra em
@@ -1957,7 +1959,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       arts.resize(list.size());
       for (size_t i = 0; i < list.size(); ++i)
         if (!list[i].vacant)
-          jobs.push_back([&arts, i, id = list[i].id, kind] { arts[i] = loadArt(id, kind); });
+          jobs.push_back([&arts, i, e = list[i]] { arts[i] = loadArt(e); });
     };
     queue(mAmpArts, G::Kind::amp);
     queue(mCabArts, G::Kind::cab);
@@ -2356,9 +2358,9 @@ void NexusEditor::catalogChanged()
   auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
     for (const auto& e : GearCatalog::instance().entries(kind))
       if (e.look >= static_cast<int>(arts.size()))
-        arts.push_back(e.vacant ? GearArt() : loadArt(e.id, kind));
+        arts.push_back(e.vacant ? GearArt() : loadArt(e));
       else if (!e.vacant && !arts[static_cast<size_t>(e.look)].valid())
-        arts[static_cast<size_t>(e.look)] = loadArt(e.id, kind);
+        arts[static_cast<size_t>(e.look)] = loadArt(e);
   };
   grow(mPedalArts, G::Kind::pedal);
   grow(mAmpArts, G::Kind::amp);
