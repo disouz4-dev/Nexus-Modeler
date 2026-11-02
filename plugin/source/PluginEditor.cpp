@@ -64,7 +64,15 @@ void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> 
   g.setOpacity(1.0f);
 }
 
-// Rótulos do painel: texto por cima da imagem 3D, traduzido, na posição e
+// Arte de uma peça do catálogo: cabeçote e caixa mostram os rótulos do original sem traduzir.
+GearArt loadArt(const juce::String& id, G::Kind kind)
+{
+  auto art = GearArt::load(id);
+  art.translateLabels = kind == G::Kind::pedal;
+  return art;
+}
+
+// Rótulos do painel: texto por cima da imagem 3D (traduzido nos pedais), na posição e
 // perspectiva anotadas pelo gerador. minEm: letra mínima na tela (o cabeçote
 // e o pedal grandes usam 12 px na janela padrão; a janela maior ou menor
 // escala junto). A letra nunca encolhe para caber: a palavra longa quebra em
@@ -84,7 +92,7 @@ void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float
       continue;
     const float kerning = language::allowsLetterSpacing() ? std::max(0.0f, l.spacing - 1.0f) + 0.02f : 0.0f;
     const auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
-    const auto text = upper(TRANS(l.text));
+    const auto text = upper(art.translateLabels ? TRANS(l.text) : l.text);
     // Letra maior que a gravada cresce para baixo, a partir do topo do rótulo:
     // o nome fica embaixo do botão, sem subir por cima dele.
     const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale + 0.5f * (em - drawn));
@@ -1949,7 +1957,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       arts.resize(list.size());
       for (size_t i = 0; i < list.size(); ++i)
         if (!list[i].vacant)
-          jobs.push_back([&arts, i, id = list[i].id] { arts[i] = GearArt::load(id); });
+          jobs.push_back([&arts, i, id = list[i].id, kind] { arts[i] = loadArt(id, kind); });
     };
     queue(mAmpArts, G::Kind::amp);
     queue(mCabArts, G::Kind::cab);
@@ -2348,9 +2356,9 @@ void NexusEditor::catalogChanged()
   auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
     for (const auto& e : GearCatalog::instance().entries(kind))
       if (e.look >= static_cast<int>(arts.size()))
-        arts.push_back(e.vacant ? GearArt() : GearArt::load(e.id));
+        arts.push_back(e.vacant ? GearArt() : loadArt(e.id, kind));
       else if (!e.vacant && !arts[static_cast<size_t>(e.look)].valid())
-        arts[static_cast<size_t>(e.look)] = GearArt::load(e.id);
+        arts[static_cast<size_t>(e.look)] = loadArt(e.id, kind);
   };
   grow(mPedalArts, G::Kind::pedal);
   grow(mAmpArts, G::Kind::amp);
