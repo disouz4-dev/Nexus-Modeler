@@ -16,12 +16,21 @@
       "busca": "Twin Reverb",
       "tons": [
         {
-          "id": 33532,
-          "titulo": "Fender Twin Reverb",
+          "id": 32525,
+          "titulo": "1971 Twin Cabinet with Oxford 12T6-10 IR Files",
+          "criador": "MaestrodiMusica",
           "tipo": "cab",
-          "capturas": 3,
-          "padrao": true,
-          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+          "nota": "o próprio Twin Reverb 2x12 (1971, Oxford 12T6)",
+          "ir_padrao": "1971 Fender Twin Reverb 2x12 Oxford 12T6-10 - SM57 1 - Cap Edge",
+          "padrao": true
+        },
+        {
+          "id": 6046,
+          "titulo": "1971 Fender Twin Reverb Oxford 12T6-10",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "nota": "mesmo Twin 1971, outro microfone",
+          "ir_padrao": "1971 Fender Twin Reverb 2x12 Oxford 12T6-10 - R121 1 - Cap Edge"
         }
       ]
     }

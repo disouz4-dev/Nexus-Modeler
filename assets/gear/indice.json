@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T19:44:20Z",
+ "gerado": "2026-11-03T19:48:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3833,8 +3833,8 @@
   },
   "twin_212": {
    "nome": "Twin 2x12",
-   "hash": "30ff7aca5f2566c6",
-   "data": "2026-11-03T19:44:20Z",
+   "hash": "98ef44901697f017",
+   "data": "2026-11-03T19:48:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "twin_212_frente.jpg",
@@ -3845,10 +3845,10 @@
    "sha256": {
     "twin_212_frente.jpg": "f2933b160494a913c182dc62fb1d49ffc3c30573a94e38151790f0e997db65e4",
     "twin_212_frente_alfa.png": "9a142ffa00e6f8a35c03514a57d28c52be9fe372bf1740744f7330114ebd85cb",
-    "twin_212_manifesto.json": "c420c40d9dc6bdddbcfd6d11f89609ec3f789a2826393a2137b1e7f46bd0e75c",
+    "twin_212_manifesto.json": "fac923cda3d2068889e53abb85bfbab12fd723241c17131ab6e5714ea30849e9",
     "twin_212_mapa.json": "f05f9af377f767b8337951296d00adaee0f91477629cb03368394183e3433508"
    },
-   "tamanho": 1263386,
+   "tamanho": 1263818,
    "tipo": "caixa",
    "inspiracao": "Fender Twin 2x12",
    "categoria": "2x12",
