@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:26:03Z",
+ "gerado": "2026-11-03T15:37:05Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -783,8 +783,8 @@
   },
   "brit_bass_412": {
    "nome": "Brit Bass 4x12",
-   "hash": "9ccc939300b10ba3",
-   "data": "2026-11-03T15:26:03Z",
+   "hash": "28e9655ea7443423",
+   "data": "2026-11-03T15:37:05Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit_bass_412_frente.jpg",
@@ -795,10 +795,10 @@
    "sha256": {
     "brit_bass_412_frente.jpg": "7b8e18c22d1296b5d2aaf1254266c48d6fdeeb660a198e52031878a1f430f015",
     "brit_bass_412_frente_alfa.png": "f08ae2b1d139a649257bde0fac441e43d4d3093a217ca2c214fcfc2df2c2d099",
-    "brit_bass_412_manifesto.json": "b1cf1b8a89ea56927428fc27c54d847b9d562e679667fbb61a5b5df6fdd85147",
+    "brit_bass_412_manifesto.json": "26eb395d0272041dad8ab5d7095e150f434ac5125950dc8f53f80a217a7c246f",
     "brit_bass_412_mapa.json": "422b505ce50dfb15e795dabd3c2e2fb56c5e1e997726b032c17d4aef9a2ee530"
    },
-   "tamanho": 1886741,
+   "tamanho": 1887288,
    "tipo": "caixa",
    "inspiracao": "Marshall 1935B Bass 4x12",
    "categoria": "4x12",

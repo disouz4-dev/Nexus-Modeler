@@ -13,8 +13,25 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Marshall 1935B Bass 4x12"
+      "busca": "Marshall 1935B Bass 4x12",
+      "tons": [
+        {
+          "id": 103428,
+          "titulo": "Marshall 1960B 4x12 1977 Blackback",
+          "criador": "magister",
+          "tipo": "cab",
+          "nota": "Marshall 4x12 reta dos anos 70; o único IR da captura",
+          "padrao": true
+        },
+        {
+          "id": 6048,
+          "titulo": "Marshall 1960B - 4x12 Goodmans Audiom 12P",
+          "criador": "derickgtwk",
+          "tipo": "cab",
+          "nota": "Marshall 4x12 com falante Goodmans",
+          "ir_padrao": "Goodmans 12P Match Shure SM57"
+        }
+      ]
     }
   },
   "signature": null
