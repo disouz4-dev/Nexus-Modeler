@@ -13,8 +13,18 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Ashdown ABM 410H EVO IV"
+      "busca": "Ashdown ABM 410H EVO IV",
+      "tons": [
+        {
+          "id": 50024,
+          "titulo": "Ashdown ABM 810",
+          "criador": "erdosi",
+          "tipo": "cab",
+          "nota": "mesma linha ABM, mas a 8x10",
+          "ir_padrao": "ABM810 3",
+          "padrao": true
+        }
+      ]
     }
   },
   "signature": null
