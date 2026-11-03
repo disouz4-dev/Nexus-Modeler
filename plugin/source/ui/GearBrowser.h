@@ -51,6 +51,14 @@ public:
   // A aba Caixas só aparece com alguma caixa na lista (a beta.3 começa sem
   // nenhuma; ela volta quando a primeira caixa revisada chega pelo botão).
   bool hasCabs() const { return mHasCabs; }
+  // Nome com que a peça aparece na lista (vazio: não está na lista). Para os testes.
+  juce::String listedName(GearItem::Kind kind, int look) const
+  {
+    for (const auto& it : mItems)
+      if (it.kind == kind && it.look == look)
+        return it.name;
+    return {};
+  }
   // Peça que a tela mostra agora (fica marcada na lista).
   void setCurrent(GearItem::Kind kind, int look);
   void retranslate();
