@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:27:06Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3607,6 +3607,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "sonic_212": {
+   "nome": "Sonic 2x12",
+   "hash": "d1f5e2d2c2a3f5e8",
+   "data": "2026-11-03T16:27:06Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sonic_212_frente.jpg",
+    "sonic_212_frente_alfa.png",
+    "sonic_212_manifesto.json",
+    "sonic_212_mapa.json"
+   ],
+   "sha256": {
+    "sonic_212_frente.jpg": "b7f064c40789c64889673210fdf497c70835eec32e62560ded55a7ec80405d2b",
+    "sonic_212_frente_alfa.png": "5b0ef9b1ae5c6253ba321938170f35661d158013bdf73b07818ec47034e59b4d",
+    "sonic_212_manifesto.json": "d7a6ae5076f2ce51078ab189a9894e847626ac27c566c05d45ba61a76ae85e08",
+    "sonic_212_mapa.json": "3f7bd95246d1f2b1f352f90687e8bc7c541fe7f3d4c2a49fccf3d782f15f4dc3"
+   },
+   "tamanho": 957405,
+   "tipo": "caixa",
+   "inspiracao": "Fender Super-Sonic 212",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "spinel_precision": {
    "nome": "Spinel Precision",
