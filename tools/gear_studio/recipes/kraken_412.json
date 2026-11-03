@@ -1,0 +1,75 @@
+{
+  "tipo": "caixa",
+  "nome": "Kraken 4x12",
+  "familia": "kraken_412",
+  "inspiracao": "caixa 4x12 reta da Victory (V412-S): tolex preto, tela preta de trama de cesto, sem friso, emblema escuro no canto de cima à esquerda (no original num recorte de tolex chanfrado), cantoneiras pretas pequenas, pés pretos; 4 falantes de 12 (Celestion Vintage 30); 738 x 748 x 355 mm (victoryamps.com / Andertons / Swee Lee)",
+  "medidas_m": {
+    "largura": 0.738,
+    "altura": 0.748,
+    "profundidade": 0.355
+  },
+  "aba_m": 0.02,
+  "couro": {
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.003,
+      0.003,
+      0.003
+    ],
+    "cor_b": [
+      0.07,
+      0.07,
+      0.07
+    ],
+    "passo_mm": 6.0,
+    "fios": 3,
+    "cor_c": [
+      0.04,
+      0.04,
+      0.04
+    ]
+  },
+  "friso": null,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.15,
+    "posicao": "canto_se",
+    "empilhado": true,
+    "escuro": false,
+    "cor_letras": [
+      0.16,
+      0.16,
+      0.16
+    ],
+    "margem_rel": 0.06
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.15,
+    "elevacao": 0.0
+  },
+  "cantos": "preto",
+  "cantos_m": 0.03,
+  "pes": {
+    "altura_m": 0.015
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  }
+}

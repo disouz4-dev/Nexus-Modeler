@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:25:09Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2028,6 +2028,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "kraken_412": {
+   "nome": "Kraken 4x12",
+   "hash": "37da06addfcbdf32",
+   "data": "2026-11-03T16:25:09Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "kraken_412_frente.jpg",
+    "kraken_412_frente_alfa.png",
+    "kraken_412_manifesto.json",
+    "kraken_412_mapa.json"
+   ],
+   "sha256": {
+    "kraken_412_frente.jpg": "1cd79523fafef6ec5e41bceedabbce0eb52d270e6f351ff2d57300f7eea055a1",
+    "kraken_412_frente_alfa.png": "679f874ecde680da31825f45522b24967e92db30a00910101cae3edf74c3b24e",
+    "kraken_412_manifesto.json": "a0b3bf0a80e9517207508e7ccd8a355624a5a9e9a40769ab216ec3522b02b2af",
+    "kraken_412_mapa.json": "e3aaa5b4271df2e047babcff7c0ec443ae216ec0aa27fce85cacc34a2e1573b7"
+   },
+   "tamanho": 1332509,
+   "tipo": "caixa",
+   "inspiracao": "Victory V412",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "labradorite_omega": {
    "nome": "Labradorite Omega",

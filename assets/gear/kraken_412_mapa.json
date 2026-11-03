@@ -1,0 +1,19 @@
+{
+  "nome": "Kraken 4x12",
+  "familia": "kraken_412",
+  "largura": 2400,
+  "altura": 2760,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    738,
+    748
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}
