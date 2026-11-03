@@ -13,8 +13,17 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Polytone Mini Brute 1x15"
+      "busca": "Polytone Mini Brute 1x15",
+      "tons": [
+        {
+          "id": 30306,
+          "titulo": "Polytone Mini Brute II",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "nota": "mesma marca e mesmo som, mas o combo Mini Brute II; o único IR da captura",
+          "padrao": true
+        }
+      ]
     }
   },
   "signature": null

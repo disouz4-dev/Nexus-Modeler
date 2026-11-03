@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:25:07Z",
+ "gerado": "2026-11-03T15:37:35Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -408,8 +408,8 @@
   },
   "bebop_115": {
    "nome": "Bebop 1x15",
-   "hash": "c86fa9399299da7a",
-   "data": "2026-11-03T15:25:07Z",
+   "hash": "9a7d80574c26c338",
+   "data": "2026-11-03T15:37:35Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bebop_115_frente.jpg",
@@ -420,10 +420,10 @@
    "sha256": {
     "bebop_115_frente.jpg": "ff4e8ad1d5739240aa144fc3e253265bd5ddc71aa73840ef2cd0a4e6c6930d15",
     "bebop_115_frente_alfa.png": "f48de0497cde3f46d227c1a475f9992bd92e6eb21de47c9fff1920001ec5d5c3",
-    "bebop_115_manifesto.json": "f1dd71fed05f14dec70bb8da7c33fe3ba031f3c4264f7c61bcab1cc842669afb",
+    "bebop_115_manifesto.json": "b8670ef1eb7ba7a290273aa48f3558c64a0ee9e03847d237b9e734c493895e73",
     "bebop_115_mapa.json": "36dbae0be1b2eb63233a8e2101bcca5615d045a8c3f9f495186f8eaea251c50a"
    },
-   "tamanho": 1082823,
+   "tamanho": 1083100,
    "tipo": "caixa",
    "inspiracao": "Polytone Mini Brute 1x15",
    "categoria": "1x15",
