@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:31:25Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3770,6 +3770,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "tri_412": {
+   "nome": "Tri 4x12",
+   "hash": "bb028053243cc6af",
+   "data": "2026-11-03T15:31:25Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tri_412_frente.jpg",
+    "tri_412_frente_alfa.png",
+    "tri_412_manifesto.json",
+    "tri_412_mapa.json"
+   ],
+   "sha256": {
+    "tri_412_frente.jpg": "04d83946fa4ca2845c0bcc3e7d1685b3c8607f316040ef8e57d32170828c5f1e",
+    "tri_412_frente_alfa.png": "84ada299614756b1bafb247432221b9e16ceb50f146937990781b97126c2d020",
+    "tri_412_manifesto.json": "5d8302cca59ba977a31fc4716ae6be5f8d5b8ee263f717e786b5e210ad1aecfb",
+    "tri_412_mapa.json": "a40175ddb61ae6aa449111b022166ac87e76d875cc0d0fc965aea64c6ef374d1"
+   },
+   "tamanho": 1551219,
+   "tipo": "caixa",
+   "inspiracao": "Hughes & Kettner TC 412 A60",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",
