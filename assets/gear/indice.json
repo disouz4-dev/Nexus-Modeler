@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:35:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3544,8 +3544,8 @@
   },
   "solar_412": {
    "nome": "Solar 4x12",
-   "hash": "fdfc159ea3b16e0e",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "aa47b2070c57899d",
+   "data": "2026-11-03T16:35:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solar_412_frente.jpg",
@@ -3554,18 +3554,18 @@
     "solar_412_mapa.json"
    ],
    "sha256": {
-    "solar_412_frente.jpg": "6a09649aeb471fde4acb2f96c0a07492c6dea180989a4429ab1714b04cf629dd",
-    "solar_412_frente_alfa.png": "81154e2ae67597e5cc5d5d497af66b219b8e39cbef728a792aa444cde3456f83",
-    "solar_412_manifesto.json": "23318d1bc2434af109ff3af0155cc8cd9629c3b36da136088e16671f2a8d6a3b",
-    "solar_412_mapa.json": "f59acab01ace6c66756afbdcfebb21f7c4b025ff0f1b63580bbc7e4283dde2b5"
+    "solar_412_frente.jpg": "f13e3ee9d545f10d7f5d4c14847d00d798fb70a3644631a793f58250ee29642a",
+    "solar_412_frente_alfa.png": "6ac6d9dc83a3862ae4bcd5dc6ef48d9dc26e5f1de1a12dc2d2dcc65c4550bf34",
+    "solar_412_manifesto.json": "8a83481d3225daf147814f6b41339170385cba8488964771a9f3706b55ef2337",
+    "solar_412_mapa.json": "b1de6f0b936d6b51f40c29acca2ba8ca62b9d4f8f8f16d560440858c503a1754"
    },
-   "tamanho": 546013,
+   "tamanho": 1740426,
    "tipo": "caixa",
    "inspiracao": "Sunn 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
