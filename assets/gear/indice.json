@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:25:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -438,6 +438,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "block3_412": {
+   "nome": "Block III 4x12",
+   "hash": "b499f9be88829da2",
+   "data": "2026-11-03T15:25:26Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "block3_412_frente.jpg",
+    "block3_412_frente_alfa.png",
+    "block3_412_manifesto.json",
+    "block3_412_mapa.json"
+   ],
+   "sha256": {
+    "block3_412_frente.jpg": "f6974e2b070c63aadb002e42c064b729393ee8d4083b3d983d7c55264afa95b6",
+    "block3_412_frente_alfa.png": "71fc52d0f87d6e9cbf67e373dcbc285ecd4486eec18aa54aa79cda5ff161a7f4",
+    "block3_412_manifesto.json": "df9d3a2ce940768d333b2dfb40daa6e10a3e2ae09ee5ea89e49cd02ac7340fd5",
+    "block3_412_mapa.json": "6aa7f88e027032a6a83d74076fb9f41bd44d00832acc5535b22659391d74aaee"
+   },
+   "tamanho": 1212397,
+   "tipo": "caixa",
+   "inspiracao": "EVH 5150III 4x12",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "block5150iii": {
    "nome": "Block 5150 III",
