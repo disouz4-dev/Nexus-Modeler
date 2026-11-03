@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:52Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1836,6 +1836,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "iron_412": {
+   "nome": "Iron 4x12",
+   "hash": "c8b34e9d9dca0324",
+   "data": "2026-11-03T15:36:52Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "iron_412_frente.jpg",
+    "iron_412_frente_alfa.png",
+    "iron_412_manifesto.json",
+    "iron_412_mapa.json"
+   ],
+   "sha256": {
+    "iron_412_frente.jpg": "dc4e02f7ab2466e23d80dd12a057e6959f94fb612de04a89d9baba74916b72db",
+    "iron_412_frente_alfa.png": "6e46da53e1fa3d238901726ce243f55e2a1d2481a704875c98e33ad130de9648",
+    "iron_412_manifesto.json": "d303dc7cf5d4d42e8aa49909f395805ddc16416d4e6efa8935fc213feda2b563",
+    "iron_412_mapa.json": "ea74239acbbc4742c8e319b1d5540143e0230f4de778681fe06cbe8c7182e468"
+   },
+   "tamanho": 1291694,
+   "tipo": "caixa",
+   "inspiracao": "Laney Ironheart IRT412",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "jabuticaba_buzzsaw": {
    "nome": "Jabuticaba Buzzsaw",
