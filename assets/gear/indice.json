@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T19:45:40Z",
+ "gerado": "2026-11-03T19:49:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2167,8 +2167,8 @@
   },
   "maple_1510": {
    "nome": "Maple 1x15 2x10",
-   "hash": "1fe9ed78b7bb7782",
-   "data": "2026-11-03T19:45:40Z",
+   "hash": "32b050dc7793009c",
+   "data": "2026-11-03T19:49:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "maple_1510_frente.jpg",
@@ -2179,10 +2179,10 @@
    "sha256": {
     "maple_1510_frente.jpg": "162c22467b4c60fcdbf18fc0d6d2b616c92d8b87334fe051d49674ee930793a1",
     "maple_1510_frente_alfa.png": "59b27df49cc583ffed498e493f2dcbce1a9e9ef338c0c509279da864c02e5b49",
-    "maple_1510_manifesto.json": "96770fbe94e1a4704b4793ed42b2cf4d7a3cb2ffc8999cf4ab8d6fa3d097a65a",
+    "maple_1510_manifesto.json": "edb5a7116ee5c8465d10395c9b0d5682e2874b70261499a8c7b41a29d0c1ddf9",
     "maple_1510_mapa.json": "2ded98227f1f8040fe41ce90d533e77327de739eb20a7a8c6c0eb60b3a821947"
    },
-   "tamanho": 3496797,
+   "tamanho": 3497415,
    "tipo": "caixa",
    "inspiracao": "Traynor YBX1510",
    "categoria": "1x510",
