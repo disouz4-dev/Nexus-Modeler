@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:31:25Z",
+ "gerado": "2026-11-03T15:36:46Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3773,8 +3773,8 @@
   },
   "tri_412": {
    "nome": "Tri 4x12",
-   "hash": "bb028053243cc6af",
-   "data": "2026-11-03T15:31:25Z",
+   "hash": "f4f765323d87e89e",
+   "data": "2026-11-03T15:36:46Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tri_412_frente.jpg",
@@ -3785,10 +3785,10 @@
    "sha256": {
     "tri_412_frente.jpg": "04d83946fa4ca2845c0bcc3e7d1685b3c8607f316040ef8e57d32170828c5f1e",
     "tri_412_frente_alfa.png": "84ada299614756b1bafb247432221b9e16ceb50f146937990781b97126c2d020",
-    "tri_412_manifesto.json": "5d8302cca59ba977a31fc4716ae6be5f8d5b8ee263f717e786b5e210ad1aecfb",
+    "tri_412_manifesto.json": "3dba0a66f8b33ae77ff55dc246944651700303dd0d5ec496521dc53197b51a65",
     "tri_412_mapa.json": "a40175ddb61ae6aa449111b022166ac87e76d875cc0d0fc965aea64c6ef374d1"
    },
-   "tamanho": 1551219,
+   "tamanho": 1551853,
    "tipo": "caixa",
    "inspiracao": "Hughes & Kettner TC 412 A60",
    "categoria": "4x12",
