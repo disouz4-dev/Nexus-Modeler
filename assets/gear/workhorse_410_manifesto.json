@@ -13,8 +13,26 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "SWR Goliath III"
+      "busca": "SWR Goliath III",
+      "tons": [
+        {
+          "id": 102148,
+          "titulo": "SWR Goliath",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "a própria SWR Goliath 4x10 (caixa do SWR Bass 350)",
+          "ir_padrao": "SWR Goliath (SM57 + RE20)",
+          "padrao": true
+        },
+        {
+          "id": 45275,
+          "titulo": "David Eden DT410 IR collection - bass cab",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "4x10 de baixo com corneta, som parecido",
+          "ir_padrao": "Eden 4x10 D6 AH"
+        }
+      ]
     }
   },
   "signature": null
