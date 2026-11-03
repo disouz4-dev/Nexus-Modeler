@@ -1,0 +1,100 @@
+{
+  "tipo": "caixa",
+  "nome": "Workhorse 4x10",
+  "familia": "workhorse_410",
+  "inspiracao": "caixa 4x10 de baixo com corneta (estilo SWR Goliath III): carpete preto, grade de arame cromado em quadrados de uns 18 mm com moldura cromada, falantes cinza à mostra, plaqueta quadrada preta de borda cromada no canto de cima à esquerda (a plaqueta do modelo à direita some), cantoneiras pretas; corneta em losango no meio (o gerador não faz); 584 x 641 x 467 mm, 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.098,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.584,
+    "altura": 0.641,
+    "profundidade": 0.467
+  },
+  "aba_m": 0.03,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.13,
+    "posicao": "canto_se",
+    "empilhado": true,
+    "modeler": false,
+    "margem_rel": 0.02,
+    "placa": {
+      "cor": [
+        0.0023,
+        0.0023,
+        0.0023
+      ],
+      "borda": [
+        0.586,
+        0.586,
+        0.6121
+      ],
+      "altura_m": 0.075
+    }
+  },
+  "couro": {
+    "tipo": "carpete",
+    "cor": [
+      0.0046,
+      0.0046,
+      0.0046
+    ],
+    "cor_b": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "quadrada",
+    "passo_mm": 15.0,
+    "fio_mm": 2.4,
+    "cor": [
+      0.586,
+      0.586,
+      0.6121
+    ],
+    "metalico": 0.9,
+    "aspereza": 0.2,
+    "falantes": "visiveis"
+  },
+  "friso": [
+    0.586,
+    0.586,
+    0.6121
+  ],
+  "friso_metal": true,
+  "friso_m": 0.014,
+  "friso_onde": "tela",
+  "friso_raio_m": 0.002,
+  "cantos": "preto",
+  "cantos_m": 0.035,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.13,
+      "forma": "losango",
+      "cor": [
+        0.8,
+        0.8,
+        0.82
+      ],
+      "boca_rel": 0.3,
+      "profundidade_m": 0.07
+    }
+  },
+  "friso_aspereza": 0.55
+}

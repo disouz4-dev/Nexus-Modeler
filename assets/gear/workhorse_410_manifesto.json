@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "workhorse_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Workhorse 4x10",
+  "inspiracao": "SWR Goliath III",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "SWR Goliath III",
+      "tons": [
+        {
+          "id": 102148,
+          "titulo": "SWR Goliath",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "a própria SWR Goliath 4x10 (caixa do SWR Bass 350)",
+          "ir_padrao": "SWR Goliath (SM57 + RE20)",
+          "padrao": true
+        },
+        {
+          "id": 45275,
+          "titulo": "David Eden DT410 IR collection - bass cab",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "4x10 de baixo com corneta, som parecido",
+          "ir_padrao": "Eden 4x10 D6 AH"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T19:49:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3977,6 +3977,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "workhorse_410": {
+   "nome": "Workhorse 4x10",
+   "hash": "e0bb82030577d262",
+   "data": "2026-11-03T19:49:07Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "workhorse_410_frente.jpg",
+    "workhorse_410_frente_alfa.png",
+    "workhorse_410_manifesto.json",
+    "workhorse_410_mapa.json"
+   ],
+   "sha256": {
+    "workhorse_410_frente.jpg": "65736dc3ff8d5d4fa54d2a336aabe2a249d543c528fa9d5151a0c9abe5b80049",
+    "workhorse_410_frente_alfa.png": "c650d883f9816cc34e15c030243d99cdfcf63dc05e5aef95d345a873874339fa",
+    "workhorse_410_manifesto.json": "40d86a8854422d5965dd8bd46b17717aeeb190a62779db9479466bf02ff83fe7",
+    "workhorse_410_mapa.json": "3884667c6cc8869372044310a616633deeca35742b69b51f2a76d80796e925cb"
+   },
+   "tamanho": 875114,
+   "tipo": "caixa",
+   "inspiracao": "SWR Goliath III",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   }
  }
 }
