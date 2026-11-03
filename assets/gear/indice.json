@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:28:46Z",
+ "gerado": "2026-11-03T16:36:08Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3926,8 +3926,8 @@
   },
   "underground_410": {
    "nome": "Underground 4x10",
-   "hash": "54cf94910474479f",
-   "data": "2026-11-03T16:28:46Z",
+   "hash": "8bf0c26b4bbffdce",
+   "data": "2026-11-03T16:36:08Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "underground_410_frente.jpg",
@@ -3938,10 +3938,10 @@
    "sha256": {
     "underground_410_frente.jpg": "aa62a94587937ef6dab68c5d37d2860e9e334aa4770b7a6adefa3fbce5fd599b",
     "underground_410_frente_alfa.png": "fccfca8274d9a61e995141adfde7e0d280d5aecd067a0c82e8fb549618d4de21",
-    "underground_410_manifesto.json": "d1eb8f16500866936c3253d0f37b19bc37fca4e6c9d2a457cd35d1e1bab0ff46",
+    "underground_410_manifesto.json": "74cde0ab98d4e55876bc8e266ae1f84a10895d89a0c4127444c3587176dc9649",
     "underground_410_mapa.json": "2b5e8e50552e004cdae9c4eb6afb2c2892dd741a2934e7585d3e821cb3da6d38"
    },
-   "tamanho": 924174,
+   "tamanho": 924747,
    "tipo": "caixa",
    "inspiracao": "Mesa/Boogie Subway Ultra-Lite 4x10",
    "categoria": "4x10",
