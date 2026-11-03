@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "vault_210",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault 2x10",
+  "inspiracao": "Ampeg BA-210 v2",
+  "categoria": "2x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Ampeg BA-210 v2"
+    }
+  },
+  "signature": null
+}
