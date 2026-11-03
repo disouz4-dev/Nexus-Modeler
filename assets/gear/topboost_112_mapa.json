@@ -1,0 +1,19 @@
+{
+  "nome": "Top Boost 1x12",
+  "familia": "topboost_112",
+  "largura": 2400,
+  "altura": 1723,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    602,
+    432
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

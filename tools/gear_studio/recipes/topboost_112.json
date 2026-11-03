@@ -1,0 +1,115 @@
+{
+  "tipo": "caixa",
+  "nome": "Top Boost 1x12",
+  "familia": "topboost_112",
+  "inspiracao": "feita a partir da frente do combo Vox AC15 C1 (a Vox não vende mais uma 1x12 avulsa com este visual): vinil preto, faixa preta no alto com a marca dourada à esquerda, filete dourado acima da tela, tela marrom-avermelhada de losangos com linha dupla creme e vermelha, friso branco em volta da abertura, cantoneiras pretas em cima, pés pretos; 1 falante de 12 (Celestion G12M Greenback); 602 x 432 x 265 mm (456 mm do fabricante contando a alça)",
+  "aba_m": 0.024,
+  "aba_topo_m": 0.022,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.22,
+    "posicao": "painel",
+    "lado_rel": -0.31,
+    "cor_letras": [
+      0.85,
+      0.62,
+      0.25
+    ],
+    "desvio_m": -0.004,
+    "modeler": false
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.718,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.602,
+    "altura": 0.432,
+    "profundidade": 0.265
+  },
+  "couro": {
+    "cor": [
+      0.012,
+      0.014,
+      0.024
+    ],
+    "grao_mm": 1.2
+  },
+  "tela": {
+    "padrao": "losango",
+    "cor_a": [
+      0.087,
+      0.025,
+      0.019
+    ],
+    "cor_b": [
+      0.177,
+      0.058,
+      0.041
+    ],
+    "trama_mm": 1.0,
+    "cor_linha": [
+      0.73,
+      0.639,
+      0.359
+    ],
+    "cor_linha2": [
+      0.488,
+      0.048,
+      0.078
+    ],
+    "passo_mm": [
+      35,
+      54
+    ],
+    "largura_rel": 0.04
+  },
+  "friso": [
+    0.85,
+    0.84,
+    0.8
+  ],
+  "friso_onde": "abertura",
+  "friso_raio_m": 0.008,
+  "painel": {
+    "altura_m": 0.081
+  },
+  "faixas": [
+    {
+      "onde": "acima_tela",
+      "altura_m": 0.006,
+      "cor": [
+        0.78,
+        0.56,
+        0.2
+      ]
+    }
+  ],
+  "cantos": "preto",
+  "cantos_onde": "cima",
+  "cantos_m": 0.026,
+  "pes": {
+    "altura_m": 0.015
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "alca": {
+    "largura_m": 0.22,
+    "altura_m": 0.03,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  }
+}
