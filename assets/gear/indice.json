@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:27Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -207,6 +207,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "arch_412": {
+   "nome": "Arch 4x12",
+   "hash": "b7f7ffd3bd494d2c",
+   "data": "2026-11-03T15:36:27Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "arch_412_frente.jpg",
+    "arch_412_frente_alfa.png",
+    "arch_412_manifesto.json",
+    "arch_412_mapa.json"
+   ],
+   "sha256": {
+    "arch_412_frente.jpg": "a93e212a803423004d3dfe66021ccf8d2c23f8049049cdc5f3318d89723fdc8d",
+    "arch_412_frente_alfa.png": "33af45f3047e9e35b8d3201d922842727f84fe2f549c2d638d183e05f59bc431",
+    "arch_412_manifesto.json": "77d4e9b44bb45faf3da9f03f16da4279b9214bebe70d85efbcf977e35afe58ea",
+    "arch_412_mapa.json": "4d64dbd88c2fad87947af71c2ac4b5d343e36226b0d52c44dc87c65d18f425aa"
+   },
+   "tamanho": 1543835,
+   "tipo": "caixa",
+   "inspiracao": "PRS Archon 4x12",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "badland100": {
    "nome": "Badland 100",
