@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "champion_108",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Champion 1x8",
+  "inspiracao": "Fender 57 Custom Champ (parte do falante)",
+  "categoria": "1x08",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Fender 57 Custom Champ (parte do falante)"
+    }
+  },
+  "signature": null
+}

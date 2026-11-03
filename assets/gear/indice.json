@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T19:46:57Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -975,6 +975,33 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "champion_108": {
+   "nome": "Champion 1x8",
+   "hash": "3cf95cf92b6ff398",
+   "data": "2026-11-03T19:46:57Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "champion_108_frente.jpg",
+    "champion_108_frente_alfa.png",
+    "champion_108_manifesto.json",
+    "champion_108_mapa.json"
+   ],
+   "sha256": {
+    "champion_108_frente.jpg": "0ba74d5697d0148ea799d3ce27b411162b169a721e3f81afda8e9f463611098b",
+    "champion_108_frente_alfa.png": "c4ddc331e8b0358b5facd02e94f8bd97ce6e95030164d3afa7dcffbc287c943c",
+    "champion_108_manifesto.json": "42c6dee6d416575a5254cde2aa06e206660fee5b0873c5713c19289e63545161",
+    "champion_108_mapa.json": "5f9fc626b136e21b289eddbe89652b1c936665817a6810b37bd5c77facb5cef8"
+   },
+   "tamanho": 1503015,
+   "tipo": "caixa",
+   "inspiracao": "Fender 57 Custom Champ (parte do falante)",
+   "categoria": "1x08",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "charoite_g3": {
    "nome": "Charoite G3",

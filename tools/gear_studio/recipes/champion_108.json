@@ -1,0 +1,97 @@
+{
+  "tipo": "caixa",
+  "nome": "Champion 1x8",
+  "familia": "champion_108",
+  "inspiracao": "feita a partir da frente do combo Fender '57 Custom Champ (tweed; a Fender não vende caixa avulsa dele): tweed laqueado com sarja diagonal, faixa larga de tweed no alto com a plaqueta bordô de borda prateada no meio, tela marrom com listras douradas, quatro parafusos no tweed, sem friso e sem cantoneiras; 1 falante de 8; 343 x 318 x 193 mm",
+  "aba_m": 0.022,
+  "aba_topo_m": 0.06,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.278,
+    "posicao": "faixa_cima",
+    "desvio_m": -0.004,
+    "placa": {
+      "cor": [
+        0.066,
+        0.007,
+        0.008
+      ],
+      "borda": [
+        0.8,
+        0.8,
+        0.82
+      ],
+      "altura_m": 0.034
+    },
+    "modeler": false
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.927,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.343,
+    "altura": 0.318,
+    "profundidade": 0.193
+  },
+  "couro": {
+    "cor": [
+      0.85,
+      0.52,
+      0.06
+    ],
+    "grao_mm": 1.2,
+    "tipo": "tweed",
+    "cor_b": [
+      0.3,
+      0.15,
+      0.02
+    ],
+    "passo_mm": 5.0
+  },
+  "tela": {
+    "padrao": "listrada",
+    "cor_a": [
+      0.198,
+      0.066,
+      0.03
+    ],
+    "cor_b": [
+      0.259,
+      0.101,
+      0.048
+    ],
+    "trama_mm": 1.0,
+    "cor_linha": [
+      0.694,
+      0.488,
+      0.19
+    ],
+    "passo_mm": 6.0,
+    "largura_rel": 0.22
+  },
+  "friso": null,
+  "chanfro_m": 0.012,
+  "cantos": "nenhum",
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 8
+  },
+  "alca": {
+    "largura_m": 0.22,
+    "altura_m": 0.03,
+    "cor": [
+      0.12,
+      0.05,
+      0.02
+    ]
+  }
+}
