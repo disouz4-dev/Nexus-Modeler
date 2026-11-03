@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "citrus_bass_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Citrus Bass 4x10",
+  "inspiracao": "Orange OBC410",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Orange OBC410"
+    }
+  },
+  "signature": null
+}

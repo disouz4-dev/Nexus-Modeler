@@ -1,0 +1,83 @@
+{
+  "tipo": "caixa",
+  "nome": "Citrus Bass 4x10",
+  "familia": "citrus_bass_410",
+  "inspiracao": "caixa 4x10 de baixo laranja (estilo Orange OBC410): vinil laranja com moldura em volta da tela, tela preta de trama fina, sem friso, cantoneiras pretas pequenas, plaqueta branca de borda preta no meio da tela (o brasão some), pés de borracha; 620 x 640 x 460 mm, 4 falantes de 10\"",
+  "aba_m": 0.06,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.225,
+    "posicao": "centro",
+    "altura_rel": 0.0,
+    "placa": {
+      "cor": [
+        0.86,
+        0.86,
+        0.84
+      ],
+      "borda": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "altura_m": 0.052
+    }
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.156,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.62,
+    "altura": 0.64,
+    "profundidade": 0.46
+  },
+  "couro": {
+    "cor": [
+      0.85,
+      0.2,
+      0.004
+    ],
+    "grao_mm": 1.4
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.0003,
+      0.0003,
+      0.0003
+    ],
+    "cor_b": [
+      0.0189,
+      0.0189,
+      0.0189
+    ],
+    "cor_c": [
+      0.0066,
+      0.0066,
+      0.0066
+    ],
+    "passo_mm": 3.5,
+    "fios": 3
+  },
+  "friso": null,
+  "chanfro_m": 0.016,
+  "cantos": "preto",
+  "cantos_m": 0.035,
+  "pes": {
+    "altura_m": 0.016
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "inclinada": null
+}
