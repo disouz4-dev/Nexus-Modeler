@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:29:13Z",
+ "gerado": "2026-11-03T16:36:14Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3926,8 +3926,8 @@
   },
   "vault_210": {
    "nome": "Vault 2x10",
-   "hash": "43cb8fd4f4e5093b",
-   "data": "2026-11-03T16:29:13Z",
+   "hash": "00233d3bff29512f",
+   "data": "2026-11-03T16:36:14Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault_210_frente.jpg",
@@ -3938,10 +3938,10 @@
    "sha256": {
     "vault_210_frente.jpg": "06b67f6855f62f78e09d4192e8da133892692f552a65ae6e955dfa85c8d1bdba",
     "vault_210_frente_alfa.png": "0da17405121cdff54f64204875451197dec3892b4757738a4e7db9f94f2f979d",
-    "vault_210_manifesto.json": "45fa338f7ecf44b390f7cdc84aacdde5fd148cf31bf6fc098bfab69f2da79d8b",
+    "vault_210_manifesto.json": "54e799fc56aef7a3a4b60af110f281ec60e39d63f870a039096fed72a2c185c9",
     "vault_210_mapa.json": "2db7010b1156f0019446013d23131ea0b831103c8f79b466b28cd5129cf4719c"
    },
-   "tamanho": 1450696,
+   "tamanho": 1451028,
    "tipo": "caixa",
    "inspiracao": "Ampeg BA-210 v2",
    "categoria": "2x10",
