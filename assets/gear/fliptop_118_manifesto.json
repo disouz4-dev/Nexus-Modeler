@@ -13,8 +13,18 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Ampeg B-18-N Portaflex (caixa)"
+      "busca": "Ampeg B-18-N Portaflex (caixa)",
+      "tons": [
+        {
+          "id": 67574,
+          "titulo": "Ampeg B15N",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "sem IR do B-18: o Portaflex irmão",
+          "ir_padrao": "Ampeg B15N (SM57 + R121)",
+          "padrao": true
+        }
+      ]
     }
   },
   "signature": null
