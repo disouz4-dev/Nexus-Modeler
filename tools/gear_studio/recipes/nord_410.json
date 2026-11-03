@@ -1,0 +1,87 @@
+{
+  "tipo": "caixa",
+  "nome": "Nord 4x10",
+  "familia": "nord_410",
+  "inspiracao": "caixa 4x10 de baixo (estilo EBS ClassicLine 410, a linha do Classic 500): tolex preto, tela de pano cinza-escuro de trama miúda, friso prateado fino em volta da tela, plaqueta preta de borda cromada no alto no meio, cantoneiras cromadas pequenas; 640 x 680 x 410 mm (fabricante), 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.062,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.64,
+    "altura": 0.68,
+    "profundidade": 0.41
+  },
+  "aba_m": 0.02,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.19,
+    "posicao": "centro",
+    "altura_rel": 0.42,
+    "modeler": false,
+    "placa": {
+      "cor": [
+        0.0017,
+        0.0017,
+        0.0017
+      ],
+      "borda": [
+        0.6388,
+        0.6388,
+        0.6661
+      ],
+      "forma": "oval",
+      "altura_m": 0.075
+    }
+  },
+  "couro": {
+    "cor": [
+      0.0037,
+      0.0037,
+      0.0037
+    ],
+    "grao_mm": 1.6
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.021,
+      0.021,
+      0.0231
+    ],
+    "cor_b": [
+      0.1011,
+      0.1011,
+      0.1062
+    ],
+    "cor_c": [
+      0.0546,
+      0.0546,
+      0.0582
+    ],
+    "passo_mm": 2.5,
+    "fios": 3
+  },
+  "friso": [
+    0.6388,
+    0.6388,
+    0.6661
+  ],
+  "friso_metal": true,
+  "friso_m": 0.003,
+  "friso_onde": "tela",
+  "cantos": "cromo",
+  "cantos_m": 0.025,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}
