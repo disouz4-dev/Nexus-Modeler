@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "nova_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Nova 4x12",
+  "inspiracao": "Fortin 4x12 V30",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Fortin 4x12 V30"
+    }
+  },
+  "signature": null
+}
