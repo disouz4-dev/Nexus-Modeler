@@ -1,0 +1,93 @@
+{
+  "tipo": "caixa",
+  "nome": "Underground 4x10",
+  "familia": "underground_410",
+  "inspiracao": "caixa de baixo 4x10 de neodímio (estilo Mesa/Boogie Subway Ultra-Lite 4x10, a da linha do Subway D-800): vinil preto texturizado, grade de metal preta de furos redondos em toda a frente, emblema preto de borda prateada no alto do meio, plaquinha pequena no canto de baixo à direita, quinas pretas; 603 x 619 x 441 mm (Guitar Center/Equipboard)",
+  "medidas_m": {
+    "largura": 0.603,
+    "altura": 0.619,
+    "profundidade": 0.441
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.1497,
+    "elevacao": 0.0
+  },
+  "aba_m": 0.022,
+  "chanfro_m": 0.02,
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.0065
+    ],
+    "grao_mm": 3.2
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "perfurada",
+    "passo_mm": 11.0,
+    "furo_mm": 8.8,
+    "cor": [
+      0.018,
+      0.018,
+      0.02
+    ],
+    "metalico": 0.45,
+    "aspereza": 0.5,
+    "falantes": "escuros"
+  },
+  "friso": null,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.35,
+    "posicao": "centro",
+    "altura_rel": 0.17,
+    "modeler": true,
+    "placa": {
+      "cor": [
+        0.012,
+        0.012,
+        0.013
+      ],
+      "borda": [
+        0.82,
+        0.82,
+        0.84
+      ]
+    }
+  },
+  "selo": {
+    "texto": "410",
+    "altura_m": 0.01,
+    "margem_m": 0.05,
+    "acima_m": 0.03,
+    "placa": {
+      "largura_m": 0.07,
+      "altura_m": 0.02,
+      "cor": [
+        0.012,
+        0.012,
+        0.013
+      ]
+    },
+    "cor": [
+      0.8,
+      0.8,
+      0.82
+    ]
+  },
+  "cantos": "preto",
+  "cantos_m": 0.034,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}

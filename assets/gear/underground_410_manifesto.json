@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "underground_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Underground 4x10",
+  "inspiracao": "Mesa/Boogie Subway Ultra-Lite 4x10",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Mesa/Boogie Subway Ultra-Lite 4x10"
+    }
+  },
+  "signature": null
+}
