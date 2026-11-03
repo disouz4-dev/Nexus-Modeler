@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:27:56Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3770,6 +3770,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "tracer_410": {
+   "nome": "Tracer 4x10",
+   "hash": "2275ab5149ce1fc8",
+   "data": "2026-11-03T16:27:56Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tracer_410_frente.jpg",
+    "tracer_410_frente_alfa.png",
+    "tracer_410_manifesto.json",
+    "tracer_410_mapa.json"
+   ],
+   "sha256": {
+    "tracer_410_frente.jpg": "53e906cbf23a6ef38dae55dc4dd6e32d466f62641971470b10872accf0630316",
+    "tracer_410_frente_alfa.png": "e7860333eda7d7e9ad0b2df5b7ea57b4dbebbedfc6a3408e2d43c1720c90149c",
+    "tracer_410_manifesto.json": "17e0a72e43eb1943b43a617b6d6b24a3882d6601a3dd34e8ca2f8e4df4f88cc5",
+    "tracer_410_mapa.json": "2e3e59a404398572b05eed2839fd5666277f1c4c6339e94030af85b9148d0373"
+   },
+   "tamanho": 763657,
+   "tipo": "caixa",
+   "inspiracao": "Trace Elliot 1048H",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "turquoise_tremolo": {
    "nome": "Turquoise Tremolo",

@@ -1,0 +1,82 @@
+{
+  "tipo": "caixa",
+  "nome": "Tracer 4x10",
+  "familia": "tracer_410",
+  "inspiracao": "caixa 4x10 de baixo com corneta (estilo Trace Elliot 1048H): carpete preto, grade de metal expandido preta em losango largo com os cones à mostra, adesivo retangular verde com letras pretas no canto de cima à esquerda, cantoneiras pretas pequenas; corneta e duto no meio (o gerador não faz); medida estimada pela foto (sem dado do fabricante): 600 x 690 x 410 mm, 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.15,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.6,
+    "altura": 0.69,
+    "profundidade": 0.41
+  },
+  "aba_m": 0.022,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.22,
+    "posicao": "canto_se",
+    "empilhado": true,
+    "modeler": false,
+    "margem_rel": 0.06,
+    "cor_letras": [
+      0.0008,
+      0.0008,
+      0.0008
+    ],
+    "placa": {
+      "cor": [
+        0.1139,
+        0.6388,
+        0.0385
+      ]
+    }
+  },
+  "couro": {
+    "tipo": "carpete",
+    "cor": [
+      0.0046,
+      0.0046,
+      0.0046
+    ],
+    "cor_b": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "losango",
+    "passo_mm": [
+      38.0,
+      24.0
+    ],
+    "fio_mm": 4.5,
+    "cor": [
+      0.0029,
+      0.0029,
+      0.0029
+    ],
+    "metalico": 0.5,
+    "aspereza": 0.45,
+    "falantes": "visiveis"
+  },
+  "friso": null,
+  "cantos": "preto",
+  "cantos_m": 0.03,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}

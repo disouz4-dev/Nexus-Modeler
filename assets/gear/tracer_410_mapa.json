@@ -1,0 +1,19 @@
+{
+  "nome": "Tracer 4x10",
+  "familia": "tracer_410",
+  "largura": 2400,
+  "altura": 2760,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    600,
+    690
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}

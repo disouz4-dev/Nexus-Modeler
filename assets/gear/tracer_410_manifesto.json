@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "tracer_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Tracer 4x10",
+  "inspiracao": "Trace Elliot 1048H",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Trace Elliot 1048H"
+    }
+  },
+  "signature": null
+}
