@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:24:48Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -207,6 +207,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "ash_410": {
+   "nome": "Ash 4x10",
+   "hash": "08dfc6f9e835533a",
+   "data": "2026-11-03T15:24:48Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "ash_410_frente.jpg",
+    "ash_410_frente_alfa.png",
+    "ash_410_manifesto.json",
+    "ash_410_mapa.json"
+   ],
+   "sha256": {
+    "ash_410_frente.jpg": "2d00ca27da7170464b1993d89c6074d6d4b3505ed9cb83e0ea392281d568fa9b",
+    "ash_410_frente_alfa.png": "2e7250e6509d902657e4ef71dc21136a51d5c17224bba96396244548c90a8744",
+    "ash_410_manifesto.json": "916d618b3c75ddbde4a0568512327c17772e3164dc9155df9c81ec815a262f79",
+    "ash_410_mapa.json": "25ca6cb9245b517e8fbc29cc36dd7cde3cac4cc4b7e2f677f11aa7b4bafb2b03"
+   },
+   "tamanho": 955722,
+   "tipo": "caixa",
+   "inspiracao": "Ashdown ABM 410H EVO IV",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "badland100": {
    "nome": "Badland 100",

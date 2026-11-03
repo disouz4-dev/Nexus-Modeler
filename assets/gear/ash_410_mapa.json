@@ -1,0 +1,19 @@
+{
+  "nome": "Ash 4x10",
+  "familia": "ash_410",
+  "largura": 2400,
+  "altura": 2678,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    603,
+    673
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}
