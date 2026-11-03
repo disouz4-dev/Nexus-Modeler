@@ -16,12 +16,21 @@
       "busca": "Uberschall",
       "tons": [
         {
-          "id": 64801,
-          "titulo": "Bogner Uberschall UberNAM Pack! — IRs",
+          "id": 51086,
+          "titulo": "Marshall 1960BV V30 and G12T75",
+          "criador": "jpisoutoftune",
           "tipo": "cab",
-          "capturas": 2,
-          "padrao": true,
-          "nota": "IRs do mesmo pacote da captura do Uber 100 (a rig original)"
+          "nota": "sem IR da Uberkab: a mesma mistura de 2 V30 e 2 G12T-75",
+          "ir_padrao": "Marshall V30 3 SM57 3",
+          "padrao": true
+        },
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "4x12 com V30",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:28:20Z",
+ "gerado": "2026-11-03T16:35:59Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3899,8 +3899,8 @@
   },
   "uber_412": {
    "nome": "Uber 4x12",
-   "hash": "5308912a0da5a8f4",
-   "data": "2026-11-03T16:28:20Z",
+   "hash": "94f1cff955514124",
+   "data": "2026-11-03T16:35:59Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber_412_frente.jpg",
@@ -3911,10 +3911,10 @@
    "sha256": {
     "uber_412_frente.jpg": "07dda1d15dbbf6a14f125c5095f3a9776f53daac4041aae41a89cd407830e8ff",
     "uber_412_frente_alfa.png": "a529265d20c021bd2221e58cabb786ceff01f44c73712d2b83ef4292b65e02ad",
-    "uber_412_manifesto.json": "49289e48f6e3ff9edc9004a048d0edca595efe52ec6ae444f71e9e9e51365762",
+    "uber_412_manifesto.json": "aaa3a286df00cc4f316d6881c62960a54d78614fb9962f796c0836dd99211d85",
     "uber_412_mapa.json": "84050476f644cd81390b51ba2d3b80fc45d0f498ac3b38d6d6a29586960aaa50"
    },
-   "tamanho": 1164541,
+   "tamanho": 1164875,
    "tipo": "caixa",
    "inspiracao": "Bogner 4x12",
    "categoria": "4x12",
