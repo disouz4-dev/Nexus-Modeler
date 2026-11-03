@@ -83,13 +83,23 @@ static void testCatalog(const juce::File& gear)
   check(c.count(Kind::pedal) == NexusProcessor::kPedalLooks, U("posições de pedal: ") + juce::String(c.count(Kind::pedal)));
   check(c.count(Kind::amp) == NexusProcessor::kAmpLooks, U("posições de cabeçote: ") + juce::String(c.count(Kind::amp)));
   check(c.count(Kind::cab) == NexusProcessor::kCabLooks, U("posições de caixa: ") + juce::String(c.count(Kind::cab)));
-  int compared = 0, wrong = 0;
+  int compared = 0, wrong = 0, downloadOnly = 0, builtInDownload = 0;
   std::array<int, 3> embedded{};
   for (const auto& f : gear.findChildFiles(juce::File::findFiles, false, "*_manifesto.json"))
   {
     const auto m = juce::JSON::parse(f);
     const auto kind = nexus::gear::kindFromText(m["tipo"].toString());
     const int look = c.find(*kind, m["id"].toString());
+    // A sheet without a factory index only comes through the gear button: it must not be built in.
+    // Ficha sem índice de fábrica só vem pelo botão de equipamentos: não pode estar embutida.
+    if (!m.hasProperty("indice_de_fabrica"))
+    {
+      ++downloadOnly;
+      if (look >= 0)
+        std::printf("   embutida sem índice de fábrica: %s\n", m["id"].toString().toRawUTF8());
+      builtInDownload += look >= 0 ? 1 : 0;
+      continue;
+    }
     const auto e = c.entry(*kind, look);
     ++compared;
     ++embedded[static_cast<size_t>(*kind)];
@@ -105,6 +115,8 @@ static void testCatalog(const juce::File& gear)
     }
   }
   check(compared > 0 && wrong == 0, U("fichas iguais ao catálogo: ") + juce::String(compared) + " comparadas, " + juce::String(wrong) + " diferentes");
+  check(builtInDownload == 0, U("peças só do botão fora do programa: ") + juce::String(downloadOnly) + U(" em assets/gear, ")
+                                + juce::String(builtInDownload) + " embutidas");
   // As vagas: tudo o que não veio embutido.
   for (const auto kind : {Kind::pedal, Kind::amp, Kind::cab})
   {

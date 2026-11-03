@@ -12,10 +12,7 @@ namespace
 {
 juce::var embeddedIndex()
 {
-  int size = 0;
-  if (const char* data = BinaryData::getNamedResource("indice_json", size))
-    return juce::JSON::parse(juce::String::fromUTF8(data, size));
-  return {};
+  return GearCatalog::builtInIndex();
 }
 
 // Versões antigas baixavam só a arte, solta numa pasta "Arte" (um arquivo
@@ -309,6 +306,31 @@ bool allowedName(const juce::String& name, const juce::String& id)
          && extensions.contains(name.fromLastOccurrenceOf(".", true, false).toLowerCase());
 }
 } // namespace
+
+juce::var GearCatalog::builtInIndex()
+{
+  int size = 0;
+  const char* data = BinaryData::getNamedResource("indice_json", size);
+  if (data == nullptr)
+    return {};
+  auto index = juce::JSON::parse(juce::String::fromUTF8(data, size));
+  if (auto* pieces = index["pecas"].getDynamicObject())
+  {
+    juce::StringArray outside;
+    for (const auto& p : pieces->getProperties())
+    {
+      // A piece counts as built in when its first file is a BinaryData resource.
+      // A peça conta como embutida quando o primeiro arquivo é um recurso do BinaryData.
+      const auto* files = p.value["arquivos"].getArray();
+      const auto first = files != nullptr && !files->isEmpty() ? files->getFirst().toString() : juce::String();
+      if (first.isNotEmpty() && BinaryData::getNamedResource(first.replaceCharacter('.', '_').toRawUTF8(), size) == nullptr)
+        outside.add(p.name.toString());
+    }
+    for (const auto& id : outside)
+      pieces->removeProperty(juce::Identifier(id));
+  }
+  return index;
+}
 
 juce::var GearCatalog::localIndex()
 {
