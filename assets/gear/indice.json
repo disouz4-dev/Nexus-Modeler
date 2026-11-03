@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:33Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1334,6 +1334,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "deliver_412": {
+   "nome": "Deliver 4x12",
+   "hash": "a966dbb90ffbed97",
+   "data": "2026-11-03T15:36:33Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "deliver_412_frente.jpg",
+    "deliver_412_frente_alfa.png",
+    "deliver_412_manifesto.json",
+    "deliver_412_mapa.json"
+   ],
+   "sha256": {
+    "deliver_412_frente.jpg": "b1700cad85eeb70a73f0cf0d304f19be29ef577c7375e72f7e98c6fea28ea9f2",
+    "deliver_412_frente_alfa.png": "0320146047e0e6f462455e3f85e28afeb454f5a4a6daeea1a743adb5b2fda2a7",
+    "deliver_412_manifesto.json": "270c8f9b132626fe314e0ef57955adb32fee5e820ac37e9bd579a4b20eae12f8",
+    "deliver_412_mapa.json": "3eb8f24bb865f875d48f5efb203a50d2a1c61ac8be72de4d70c5bee99c23ea0e"
+   },
+   "tamanho": 1152284,
+   "tipo": "caixa",
+   "inspiracao": "Fryette Deliverance 412 Series II",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "eclipse_vibe": {
    "nome": "Eclipse Vibe",
