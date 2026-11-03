@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:26:21Z",
+ "gerado": "2026-11-03T15:36:10Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1184,8 +1184,8 @@
   },
   "citrus_212": {
    "nome": "Citrus 2x12",
-   "hash": "0d4a17c0c3ee88b3",
-   "data": "2026-11-03T15:26:21Z",
+   "hash": "98adc07f9d167289",
+   "data": "2026-11-03T15:36:10Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus_212_frente.jpg",
@@ -1196,10 +1196,10 @@
    "sha256": {
     "citrus_212_frente.jpg": "3af2c722ea5a01320d06b28e18fc80a6d991a698cffa086095b620455f5a44b8",
     "citrus_212_frente_alfa.png": "6ee27f5b84ef0cd521ac05a6eb2e2c8710e7df9f456741ca437a0bb082d4170a",
-    "citrus_212_manifesto.json": "dde2e7451e9a171add06c1a8858d90c0f4a4649452c8362af23e303d2e0cf085",
+    "citrus_212_manifesto.json": "31fb80fb7ad55fa06db3998098370ee94deecf914ee7916ce96f3c3044b41eef",
     "citrus_212_mapa.json": "44c9e18cc9c5fe0173a3df94b90cc6abb5c1a2d2d9b0e12607c022b7729ce95b"
    },
-   "tamanho": 1428606,
+   "tamanho": 1429120,
    "tipo": "caixa",
    "inspiracao": "Orange PPC212",
    "categoria": "2x12",
