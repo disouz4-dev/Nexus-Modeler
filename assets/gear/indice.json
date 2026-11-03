@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:27:31Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3737,6 +3737,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "topboost_112": {
+   "nome": "Top Boost 1x12",
+   "hash": "8942a3320b45ad74",
+   "data": "2026-11-03T16:27:31Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "topboost_112_frente.jpg",
+    "topboost_112_frente_alfa.png",
+    "topboost_112_manifesto.json",
+    "topboost_112_mapa.json"
+   ],
+   "sha256": {
+    "topboost_112_frente.jpg": "8dfa0b38974d3f28a7f7f5207f6717917673e7a9a54bfcf9dc6d8136d4d85d7f",
+    "topboost_112_frente_alfa.png": "5f549fbe9b8737bb34e82fe40fe0f1a0f109ef16df797be28d5c44b0d617c614",
+    "topboost_112_manifesto.json": "c23024dbb0e7be33e050d5e64663355951a828367545b4a2d9a7c40e92bbbfec",
+    "topboost_112_mapa.json": "1eb828e9c83e1751d1ec5e666f082fb2ef771c11c432552fbfd44a2ebe779069"
+   },
+   "tamanho": 1149547,
+   "tipo": "caixa",
+   "inspiracao": "Vox AC15 (parte do falante)",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "tourmaline_grind": {
    "nome": "Tourmaline Grind",
