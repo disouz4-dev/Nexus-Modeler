@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:20:09Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1505,6 +1505,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "garden_410": {
+   "nome": "Garden 4x10",
+   "hash": "61830f1e15634d4a",
+   "data": "2026-11-03T16:20:09Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "garden_410_frente.jpg",
+    "garden_410_frente_alfa.png",
+    "garden_410_manifesto.json",
+    "garden_410_mapa.json"
+   ],
+   "sha256": {
+    "garden_410_frente.jpg": "d2530c84ea608af7f9d0d2e83ef929f29529417fd9b3cbcff967d99259d09b8d",
+    "garden_410_frente_alfa.png": "b2e17aef6f03165b66ab49f2cffa39c2f783bc72ea9d866e2e2b74e561485123",
+    "garden_410_manifesto.json": "c41dd2f06f3a8019ff76e2da8ab6d2bd976ee59e2c82d4cefab5a36db90c8184",
+    "garden_410_mapa.json": "5c1db8c5b5c5444ebe324964547784e74c4c50c1e91b22e0f26abcf13d39e165"
+   },
+   "tamanho": 778364,
+   "tipo": "caixa",
+   "inspiracao": "Eden D410XLT",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "glass_410": {
    "nome": "Glass 4x10",

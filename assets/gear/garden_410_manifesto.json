@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "garden_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Garden 4x10",
+  "inspiracao": "Eden D410XLT",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Eden D410XLT"
+    }
+  },
+  "signature": null
+}
