@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:25:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2133,6 +2133,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "magick_112": {
+   "nome": "Magick 1x12",
+   "hash": "f589f9d54c0ebae7",
+   "data": "2026-11-03T16:25:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "magick_112_frente.jpg",
+    "magick_112_frente_alfa.png",
+    "magick_112_manifesto.json",
+    "magick_112_mapa.json"
+   ],
+   "sha256": {
+    "magick_112_frente.jpg": "ad0e90f515de6d7cfe63633c29f0c6444b4983b25bd75ac5b605665cc3fc7d63",
+    "magick_112_frente_alfa.png": "8be9b9900441a702d2ed18dc55deeb9b509339d5d4deb5d424cbcdbad3a2ffca",
+    "magick_112_manifesto.json": "6259ef90bbf28429794ae86f59dcffa3c41f8525d1effad516d7d63c495d4390",
+    "magick_112_mapa.json": "467cff1963624db3fe7eb49a32646323fc697ac4ccd0d331d1dd2a5bd361d8d4"
+   },
+   "tamanho": 1652882,
+   "tipo": "caixa",
+   "inspiracao": "Supro Black Magick 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "magnetite_boost": {
    "nome": "Magnetite Boost",
