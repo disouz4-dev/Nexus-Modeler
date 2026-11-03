@@ -1,0 +1,31 @@
+{
+  "formato": 1,
+  "id": "vault_210",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault 2x10",
+  "inspiracao": "Ampeg BA-210 v2",
+  "categoria": "2x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Ampeg BA-210 v2",
+      "tons": [
+        {
+          "id": 45241,
+          "titulo": "Ampeg SVT - DI - 4x10 - 8x10 - the definitive speaker capture collection",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "sem IR da BA-210: outra Ampeg",
+          "ir_padrao": "Ampeg 8x10 D6 AH",
+          "padrao": true
+        }
+      ]
+    }
+  },
+  "signature": null
+}

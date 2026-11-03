@@ -1,0 +1,89 @@
+{
+  "tipo": "caixa",
+  "nome": "Vault 2x10",
+  "familia": "vault_210",
+  "inspiracao": "caixa avulsa feita da parte dos falantes do combo de baixo 2x10 (estilo Ampeg BA-210 v2; a marca não vende caixa avulsa desse visual): tolex preto de quinas arredondadas, sem cantoneiras, tela preta tramada com borda estreita, emblema quadrado no canto de cima à esquerda; 610 mm de largura e 381 de fundo do combo, 475 mm de altura (o combo tem 575, menos o painel de cima)",
+  "medidas_m": {
+    "largura": 0.552,
+    "altura": 0.56,
+    "profundidade": 0.345
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.8721,
+    "elevacao": 0.0
+  },
+  "aba_m": 0.022,
+  "chanfro_m": 0.03,
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.0055
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "cor_b": [
+      0.09,
+      0.09,
+      0.094
+    ],
+    "cor_c": [
+      0.05,
+      0.05,
+      0.052
+    ],
+    "passo_mm": 3.2,
+    "fios": 3,
+    "aspereza": 0.8
+  },
+  "friso": null,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.14,
+    "posicao": "canto_se",
+    "empilhado": true,
+    "modeler": false,
+    "margem_rel": 0.05,
+    "placa": {
+      "cor": [
+        0.85,
+        0.85,
+        0.86
+      ],
+      "borda": [
+        0.03,
+        0.03,
+        0.035
+      ],
+      "altura_m": 0.075
+    },
+    "cor_letras": [
+      0.03,
+      0.03,
+      0.035
+    ]
+  },
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.012
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}
