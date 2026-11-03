@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:27:45Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1334,6 +1334,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "doublestone_212": {
+   "nome": "Double Stone 2x12",
+   "hash": "1f195d040557b592",
+   "data": "2026-11-03T15:27:45Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "doublestone_212_frente.jpg",
+    "doublestone_212_frente_alfa.png",
+    "doublestone_212_manifesto.json",
+    "doublestone_212_mapa.json"
+   ],
+   "sha256": {
+    "doublestone_212_frente.jpg": "13bcd8006925e964a4e934b89328c79fd13c9ea6e7c0b495b6ae69cd4722e6b7",
+    "doublestone_212_frente_alfa.png": "7d54cd1ec03fa446200e79c5eafb98680c02bb1afa67676289a19bcf6f1fedb1",
+    "doublestone_212_manifesto.json": "e76fb2eaae5d98f58422acb9123c050cffd7e53b5bb91095b7893850b1d2e0b8",
+    "doublestone_212_mapa.json": "f600d3e86b9c25aef2fe3e616221dc73a4bc00c33c5bdd8249b1ecdd01c1f50d"
+   },
+   "tamanho": 2012964,
+   "tipo": "caixa",
+   "inspiracao": "Two-Rock TR12-65B 2x12",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "eclipse_vibe": {
    "nome": "Eclipse Vibe",

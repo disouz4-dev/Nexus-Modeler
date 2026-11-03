@@ -1,0 +1,19 @@
+{
+  "nome": "Double Stone 2x12",
+  "familia": "doublestone_212",
+  "largura": 2400,
+  "altura": 3672,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    546,
+    737
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
+}
