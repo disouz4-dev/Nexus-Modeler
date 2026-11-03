@@ -1,0 +1,75 @@
+{
+  "tipo": "caixa",
+  "nome": "Brit Bass 4x12",
+  "familia": "brit_bass_412",
+  "inspiracao": "caixa 4x12 de baixo reta (estilo Marshall 1935B Bass, anos 70/80): tolex preto levant, tela marrom-dourada em trama de cesto, friso creme em volta da tela, cantoneiras pretas, rodízios, marca em script claro no meio da tela; mesma caixa da 1960B, 770 x 755 x 365 mm",
+  "medidas_m": {
+    "largura": 0.77,
+    "altura": 0.705,
+    "profundidade": 0.365
+  },
+  "aba_m": 0.032,
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 5.0
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.05,
+      0.038,
+      0.03
+    ],
+    "cor_b": [
+      0.42,
+      0.34,
+      0.26
+    ],
+    "cor_c": [
+      0.2,
+      0.15,
+      0.11
+    ],
+    "passo_mm": 4.5,
+    "fios": 3
+  },
+  "friso": [
+    0.8,
+    0.78,
+    0.72
+  ],
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.35,
+    "posicao": "centro",
+    "altura_rel": 0.0,
+    "cor_letras": [
+      0.88,
+      0.84,
+      0.74
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.119,
+    "elevacao": 0.0
+  },
+  "cantos": "preto",
+  "cantos_m": 0.04,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "inclinada": null
+}

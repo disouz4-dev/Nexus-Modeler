@@ -1,0 +1,19 @@
+{
+  "nome": "Brit Bass 4x12",
+  "familia": "brit_bass_412",
+  "largura": 2400,
+  "altura": 2685,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    770,
+    705
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}
