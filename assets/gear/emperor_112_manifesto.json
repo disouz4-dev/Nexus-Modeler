@@ -13,8 +13,26 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Tone King Imperial MkII 1x12"
+      "busca": "Tone King Imperial MkII 1x12",
+      "tons": [
+        {
+          "id": 104190,
+          "titulo": "Fender '62 Deluxe - Celestion T6774A Custom Design Speaker IR - 2026",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR do original: o mais próximo",
+          "ir_padrao": "T6774A 1x12 SM57 2.00in 0.0in",
+          "padrao": true
+        },
+        {
+          "id": 102085,
+          "titulo": "Fender Deluxe Reverb",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "nota": "outra 1x12 Fender",
+          "ir_padrao": "(JAZZ)   DELUXE RVRB"
+        }
+      ]
     }
   },
   "signature": null
