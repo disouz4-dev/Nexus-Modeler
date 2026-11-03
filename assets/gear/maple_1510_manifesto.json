@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "maple_1510",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Maple 1x15 2x10",
+  "inspiracao": "Traynor YBX1510",
+  "categoria": "1x510",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Traynor YBX1510"
+    }
+  },
+  "signature": null
+}
