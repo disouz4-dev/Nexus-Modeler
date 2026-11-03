@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "vier_412",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "caixa",
   "nome": "Vier 4x12",
   "inspiracao": "Diezel 4x12",
@@ -16,24 +16,21 @@
       "busca": "Diezel",
       "tons": [
         {
-          "id": 5835,
-          "titulo": "Diezel V30 SM57",
-          "criador": "anodized12",
-          "tipo": "cab",
-          "capturas": 1,
-          "downloads": 1341,
-          "nota": "Diezel 4x12 com V30, microfone SM57",
-          "ir_padrao": "Diezel V30 SM57 (6505 PowerAmp)",
-          "padrao": true
-        },
-        {
           "id": 85427,
           "titulo": "Diezel 4x12 Doc Rock",
           "criador": "docrock5150",
           "tipo": "cab",
-          "capturas": 1,
-          "downloads": 416,
-          "nota": "Diezel 4x12, mistura de três microfones"
+          "nota": "a própria",
+          "ir_padrao": "TSDiesel_4x12_U87_121_57_CabIR_2048_48k_-6dB",
+          "padrao": true
+        },
+        {
+          "id": 5835,
+          "titulo": "Diezel V30 SM57",
+          "criador": "anodized12",
+          "tipo": "cab",
+          "nota": "outra Diezel 4x12",
+          "ir_padrao": "Diezel V30 SM57 (6505 PowerAmp)"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:34:40Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3953,8 +3953,8 @@
   },
   "vier_412": {
    "nome": "Vier 4x12",
-   "hash": "7d53bf3c8e0bcb5b",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "1c83f9f450eb5a65",
+   "data": "2026-11-03T16:34:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vier_412_frente.jpg",
@@ -3963,18 +3963,18 @@
     "vier_412_mapa.json"
    ],
    "sha256": {
-    "vier_412_frente.jpg": "393faee8e89caa93843c18827f798f5e224acd421a5441f16e1a190ad601e726",
-    "vier_412_frente_alfa.png": "77fe7014113a279a5c2a261c1727f5eee9e2ef7d5b9478e4917c90364f62fef7",
-    "vier_412_manifesto.json": "b867eee27f6f017aff12c534da3ed2de6086d85e5e3ec47b33e81e5d3cec0e4b",
+    "vier_412_frente.jpg": "403e46f2cea4abbecf0222671cb44c77a1d60b85e0f1ec8f86ea1b73d9e04297",
+    "vier_412_frente_alfa.png": "e671ee49648f35b5cccb058c80c87ae929d8fc150c9979f87b05ce8e9274f362",
+    "vier_412_manifesto.json": "8cbebc0fa413dcd646d3da78886cc4066726878416ff958ae8b771f1a68d8ed8",
     "vier_412_mapa.json": "9ae7735c30128aed0dac78a12a868430d2361433c14382c356714d6c6f0a6290"
    },
-   "tamanho": 1088394,
+   "tamanho": 788358,
    "tipo": "caixa",
    "inspiracao": "Diezel 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   }
