@@ -1,0 +1,19 @@
+{
+  "nome": "Eagle 4x10",
+  "familia": "eagle_410",
+  "largura": 2400,
+  "altura": 2711,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    622,
+    628
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}
