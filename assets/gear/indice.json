@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:05:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -678,8 +678,8 @@
   },
   "brit412": {
    "nome": "Brit 4x12",
-   "hash": "0bce6b8ec5f47ab2",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "713649ee34f07b44",
+   "data": "2026-11-03T15:05:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit412_frente.jpg",
@@ -688,18 +688,18 @@
     "brit412_mapa.json"
    ],
    "sha256": {
-    "brit412_frente.jpg": "ce045f64af1108fd89eef90da5cbd795c1c7778b6e1c8a977b1b19c65129a650",
-    "brit412_frente_alfa.png": "28baff5f0d3a078406620f3c180812950ed4b93529928973a8594dbd0975e3f1",
-    "brit412_manifesto.json": "670fcb978ceddbe0f55c4d1fcb582e05ad12f452052b941d17f4ad48dae84ad6",
-    "brit412_mapa.json": "3e5f3446cbc28898405f73794a7d039d9c3aa72430f0b68a5229f2a16123757c"
+    "brit412_frente.jpg": "10730a527f9e666332bd32c6d48058af4cb466aabd9f97a68362df524e0f52fa",
+    "brit412_frente_alfa.png": "de6e318e2b4d5100a91107afa70a0faaf991498b7cf4306bd0aec06b375028de",
+    "brit412_manifesto.json": "69295032f3eb6859b09d2dc4ab311cdf6e2a088b855ad3dfdb7ac1dc2ae7bd8e",
+    "brit412_mapa.json": "b57511126199980fe493d98a2248b9ef2c1e4829c5191723c717a3251922d635"
    },
-   "tamanho": 551648,
+   "tamanho": 1840008,
    "tipo": "caixa",
    "inspiracao": "1960A 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
