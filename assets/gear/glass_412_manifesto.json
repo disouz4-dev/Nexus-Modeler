@@ -20,19 +20,17 @@
           "titulo": "Darkglass Elite 4x12 Cab",
           "criador": "mikhailkurochkin",
           "tipo": "cab",
-          "capturas": 16,
-          "downloads": 2737,
-          "nota": "Darkglass 4x12, 16 posições",
+          "nota": "a própria Darkglass 4x12",
+          "ir_padrao": "DG Elite 412 Con87 Pos1",
           "padrao": true
         },
         {
-          "id": 80355,
-          "titulo": "Darkglass DG212NE Cab IR",
-          "criador": "thefoxking",
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
           "tipo": "cab",
-          "capturas": 2,
-          "downloads": 1990,
-          "nota": "a 2x12 da mesma linha"
+          "nota": "4x12 com V30",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73"
         }
       ]
     }
