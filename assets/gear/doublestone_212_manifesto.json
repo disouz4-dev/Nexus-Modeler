@@ -1,0 +1,38 @@
+{
+  "formato": 1,
+  "id": "doublestone_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Double Stone 2x12",
+  "inspiracao": "Two-Rock TR12-65B 2x12",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Two-Rock TR12-65B 2x12",
+      "tons": [
+        {
+          "id": 99424,
+          "titulo": "Two Rock 2x12 Open Back WGS 65B - XR IR PACK",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "nota": "a própria Two-Rock 2x12 aberta",
+          "ir_padrao": "TF TWOROCK 2X12OB 65B - 421 U5 M160 50-50",
+          "padrao": true
+        },
+        {
+          "id": 6706,
+          "titulo": "Two Rocks 2x12 SM57",
+          "criador": "guayabo2225",
+          "tipo": "cab",
+          "nota": "Two-Rock 2x12 com SM57"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

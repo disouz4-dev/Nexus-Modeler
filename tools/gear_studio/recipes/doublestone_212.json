@@ -1,0 +1,69 @@
+{
+  "tipo": "caixa",
+  "nome": "Double Stone 2x12",
+  "familia": "doublestone_212",
+  "inspiracao": "caixa 2x12 vertical semiaberta da Two-Rock: tolex preto Bronco, tela preta Matrix de trama fina, vivo branco em volta da tela, cantoneiras cromadas, marca em script cromada no meio da tela; 2 falantes de 12 (Two-Rock TR12-65B); 546 x 737 x 305 mm (21,5 x 29 x 12 pol., Humbucker Music e The Music Zoo)",
+  "medidas_m": {
+    "largura": 0.546,
+    "altura": 0.737,
+    "profundidade": 0.305
+  },
+  "aba_m": 0.03,
+  "couro": {
+    "cor": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "grao_mm": 2.6
+  },
+  "tela": {
+    "padrao": "cesto",
+    "cor_a": [
+      0.015,
+      0.015,
+      0.016
+    ],
+    "cor_b": [
+      0.2,
+      0.2,
+      0.21
+    ],
+    "trama_mm": 1.0
+  },
+  "friso": [
+    0.85,
+    0.85,
+    0.83
+  ],
+  "friso_onde": "tela",
+  "friso_m": 0.002,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.33,
+    "posicao": "centro",
+    "altura_rel": -0.02,
+    "metal": true
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.53,
+    "elevacao": 0.0
+  },
+  "cantos": "cromo",
+  "cantos_m": 0.04,
+  "pes": {
+    "altura_m": 0.014
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 12
+  }
+}
