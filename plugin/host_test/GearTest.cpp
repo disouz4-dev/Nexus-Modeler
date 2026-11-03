@@ -83,13 +83,23 @@ static void testCatalog(const juce::File& gear)
   check(c.count(Kind::pedal) == NexusProcessor::kPedalLooks, U("posições de pedal: ") + juce::String(c.count(Kind::pedal)));
   check(c.count(Kind::amp) == NexusProcessor::kAmpLooks, U("posições de cabeçote: ") + juce::String(c.count(Kind::amp)));
   check(c.count(Kind::cab) == NexusProcessor::kCabLooks, U("posições de caixa: ") + juce::String(c.count(Kind::cab)));
-  int compared = 0, wrong = 0;
+  int compared = 0, wrong = 0, downloadOnly = 0, builtInDownload = 0;
   std::array<int, 3> embedded{};
   for (const auto& f : gear.findChildFiles(juce::File::findFiles, false, "*_manifesto.json"))
   {
     const auto m = juce::JSON::parse(f);
     const auto kind = nexus::gear::kindFromText(m["tipo"].toString());
     const int look = c.find(*kind, m["id"].toString());
+    // A sheet without a factory index only comes through the gear button: it must not be built in.
+    // Ficha sem índice de fábrica só vem pelo botão de equipamentos: não pode estar embutida.
+    if (!m.hasProperty("indice_de_fabrica"))
+    {
+      ++downloadOnly;
+      if (look >= 0)
+        std::printf("   embutida sem índice de fábrica: %s\n", m["id"].toString().toRawUTF8());
+      builtInDownload += look >= 0 ? 1 : 0;
+      continue;
+    }
     const auto e = c.entry(*kind, look);
     ++compared;
     ++embedded[static_cast<size_t>(*kind)];
@@ -105,6 +115,8 @@ static void testCatalog(const juce::File& gear)
     }
   }
   check(compared > 0 && wrong == 0, U("fichas iguais ao catálogo: ") + juce::String(compared) + " comparadas, " + juce::String(wrong) + " diferentes");
+  check(builtInDownload == 0, U("peças só do botão fora do programa: ") + juce::String(downloadOnly) + U(" em assets/gear, ")
+                                + juce::String(builtInDownload) + " embutidas");
   // As vagas: tudo o que não veio embutido.
   for (const auto kind : {Kind::pedal, Kind::amp, Kind::cab})
   {
@@ -501,6 +513,47 @@ static void testAmpWithoutCab()
   check(p.gearPlays(Kind::cab, 0) && p.gearId(Kind::cab, 0) == "tiny_110", U("a caixa que chegou depois entra no cabeçote que estava sem caixa"));
 }
 
+// Caixa original nova (como a Jubilee 4x12): chega só pelo botão de
+// equipamentos, sem lista no código nem versão nova do programa. Entra
+// depois das de fábrica, aparece na lista, o cabeçote que a tem como
+// caixa_padrao a puxa, toca e volta num preset pelo código dela.
+static void testNewCab()
+{
+  auto& catalog = GearCatalog::instance();
+  check(catalog.find(Kind::cab, "jubilee_412") < 0, U("antes do botão, o programa não conhece a Jubilee 4x12"));
+  const auto cab = stagePiece("jubilee_412", R"({"formato": 1, "id": "jubilee_412", "versao": "1.0.0", "tipo": "caixa",
+    "nome": "Jubilee 4x12", "categoria": "4x12", "versao_minima_do_programa": "0.2.0", "motor": "caixa",
+    "capturas": {"origem": "tone3000"}})");
+  check(catalog.installFolder(cab, "jubilee_412", juce::var(new juce::DynamicObject())).isEmpty(), U("a caixa nova instala pelo botão"));
+  const int look = catalog.find(Kind::cab, "jubilee_412");
+  check(look >= NexusProcessor::kCabLooks && catalog.presentAt(Kind::cab, look),
+        U("entra no catálogo depois das de fábrica (posição ") + juce::String(look) + ")");
+  const auto amp = stagePiece("jubilee_test", R"({"formato": 1, "id": "jubilee_test", "versao": "1.0.0", "tipo": "cabecote",
+    "nome": "Jubilee Teste", "versao_minima_do_programa": "0.2.0", "motor": "captura", "capturas": {"origem": "tone3000"},
+    "caixa_padrao": "jubilee_412"})");
+  check(catalog.installFolder(amp, "jubilee_test", juce::var(new juce::DynamicObject())).isEmpty(), U("um cabeçote novo com ela de caixa_padrao"));
+
+  auto pBox = std::make_unique<NexusProcessor>(); // no heap: a pilha do Windows tem 1 MB
+  auto& p = *pBox;
+  std::unique_ptr<juce::AudioProcessorEditor> editor(p.createEditor());
+  auto* e = dynamic_cast<NexusEditor*>(editor.get());
+  check(e != nullptr && e->browserCabName(look).isNotEmpty(), U("aparece na lista de caixas (") + (e ? e->browserCabName(look) : juce::String()) + ")");
+  p.chooseAmp(0, catalog.find(Kind::amp, "jubilee_test"));
+  pump(200);
+  check(p.cabLook(0) == look && p.gearPlays(Kind::cab, 0) && p.gearId(Kind::cab, 0) == "jubilee_412",
+        U("o cabeçote novo puxa a caixa nova (caixa_padrao)"));
+  check(std::isfinite(playRatio(p)), U("toca com a caixa nova"));
+  const auto saved = stateOf(p);
+  auto xml = juce::AudioProcessor::getXmlFromBinary(saved.getData(), static_cast<int>(saved.getSize()));
+  check(xml != nullptr && xml->getStringAttribute("gabinete_id") == "jubilee_412", U("o preset guarda o código dela"));
+  auto bBox = std::make_unique<NexusProcessor>();
+  bBox->setStateInformation(saved.getData(), static_cast<int>(saved.getSize()));
+  check(bBox->cabLook(0) == look && bBox->gearId(Kind::cab, 0) == "jubilee_412", U("o preset abre com a caixa nova"));
+  // Uma caixa de fábrica escolhida pelo número antigo continua a mesma.
+  setParam(*bBox, "gabinete", 16.0f);
+  check(bBox->cabLook(0) == 16 && bBox->gearId(Kind::cab, 0) == "mark_112", U("o número antigo do parâmetro continua escolhendo a de fábrica (16 = Mark 1x12)"));
+}
+
 static void testFreshStart(const juce::File& temp)
 {
   // Uma instalação antiga: dados, preferências do programa independente,
@@ -587,6 +640,7 @@ int main(int argc, char** argv)
   testReturn();
   testCabFollowsAmp();
   testAmpWithoutCab();
+  testNewCab();
   testFreshStart(temp);
   if (argc > 2)
     testPackage(juce::File(U(argv[2])));

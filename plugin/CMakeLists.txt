@@ -134,6 +134,23 @@ file(GLOB NEXUS_GEAR_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/
      "${PROJECT_SOURCE_DIR}/assets/idiomas/*.txt" "${PROJECT_SOURCE_DIR}/assets/tone3000/*.json"
      "${PROJECT_SOURCE_DIR}/assets/marca/*.svg"
      "${PROJECT_SOURCE_DIR}/assets/teste/*.flac")
+# Pieces without "indice_de_fabrica" in their sheet live in assets/gear only so
+# the gear button can download them (GearStore reads main/assets/gear): they
+# are not built in, otherwise they would take a parameter slot.
+# Peças sem "indice_de_fabrica" na ficha ficam em assets/gear só para o botão
+# de equipamentos baixar (o GearStore lê main/assets/gear): não vão embutidas,
+# senão ocupariam uma posição dos parâmetros.
+file(GLOB NEXUS_GEAR_SHEETS CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/assets/gear/*_manifesto.json")
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${NEXUS_GEAR_SHEETS})
+foreach(sheet IN LISTS NEXUS_GEAR_SHEETS)
+  file(READ "${sheet}" sheet_text)
+  string(JSON factory ERROR_VARIABLE no_factory GET "${sheet_text}" indice_de_fabrica)
+  if(no_factory)
+    get_filename_component(piece "${sheet}" NAME)
+    string(REGEX REPLACE "_manifesto\\.json$" "" piece "${piece}")
+    list(FILTER NEXUS_GEAR_FILES EXCLUDE REGEX "/${piece}_(frente|frente_alfa|mapa|manifesto|botao_[^/]+)\\.(png|jpg|json)$")
+  endif()
+endforeach()
 # As notas de versão vão junto: depois de atualizar, a tela mostra as novidades.
 list(APPEND NEXUS_GEAR_FILES "${PROJECT_SOURCE_DIR}/NOTAS-DE-VERSAO.md")
 juce_add_binary_data(NexusArt
