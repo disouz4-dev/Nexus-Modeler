@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:26:03Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -780,6 +780,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "brit_bass_412": {
+   "nome": "Brit Bass 4x12",
+   "hash": "9ccc939300b10ba3",
+   "data": "2026-11-03T15:26:03Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit_bass_412_frente.jpg",
+    "brit_bass_412_frente_alfa.png",
+    "brit_bass_412_manifesto.json",
+    "brit_bass_412_mapa.json"
+   ],
+   "sha256": {
+    "brit_bass_412_frente.jpg": "7b8e18c22d1296b5d2aaf1254266c48d6fdeeb660a198e52031878a1f430f015",
+    "brit_bass_412_frente_alfa.png": "f08ae2b1d139a649257bde0fac441e43d4d3093a217ca2c214fcfc2df2c2d099",
+    "brit_bass_412_manifesto.json": "b1cf1b8a89ea56927428fc27c54d847b9d562e679667fbb61a5b5df6fdd85147",
+    "brit_bass_412_mapa.json": "422b505ce50dfb15e795dabd3c2e2fb56c5e1e997726b032c17d4aef9a2ee530"
+   },
+   "tamanho": 1886741,
+   "tipo": "caixa",
+   "inspiracao": "Marshall 1935B Bass 4x12",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "britbass": {
    "nome": "Brit Bass",
