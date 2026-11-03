@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "citrus_412",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "caixa",
   "nome": "Citrus 4x12",
   "inspiracao": "Orange 4x12",
@@ -18,10 +18,19 @@
         {
           "id": 90730,
           "titulo": "Orange V30 4x12 - XR IR PACK",
+          "criador": "tonefactor",
           "tipo": "cab",
-          "capturas": 4,
-          "padrao": true,
-          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+          "nota": "a própria Orange 4x12 com V30",
+          "ir_padrao": "TF ORANGE 4X12 V30 57 3 - Enhanced",
+          "padrao": true
+        },
+        {
+          "id": 1667,
+          "titulo": "Orange 4x12 CelestionV30",
+          "criador": "wendycabs",
+          "tipo": "cab",
+          "nota": "Orange 4x12 com V30",
+          "ir_padrao": "Orange 4x12 V30 shure57 cn"
         }
       ]
     }
