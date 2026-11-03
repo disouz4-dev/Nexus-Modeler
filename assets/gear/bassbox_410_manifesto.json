@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "bassbox_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Bass Box 4x10",
+  "inspiracao": "Behringer BB410",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Behringer BB410"
+    }
+  },
+  "signature": null
+}

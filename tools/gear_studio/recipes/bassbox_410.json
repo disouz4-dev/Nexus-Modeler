@@ -1,0 +1,100 @@
+{
+  "tipo": "caixa",
+  "nome": "Bass Box 4x10",
+  "familia": "bassbox_410",
+  "inspiracao": "caixa 4x10 de baixo com corneta (estilo Behringer BB410): carpete preto, grade de aço preta de furo sextavado miúdo, duto largo embaixo, plaqueta branca de letras pretas no alto no meio, cantoneiras pretas; aros prateados dos falantes e corneta no meio (o gerador não faz); 655 x 716 x 406 mm, 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.093,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.655,
+    "altura": 0.716,
+    "profundidade": 0.406
+  },
+  "aba_m": 0.02,
+  "faixas": [
+    {
+      "onde": "abaixo_tela",
+      "altura_m": 0.07,
+      "cor": [
+        0.0003,
+        0.0003,
+        0.0003
+      ],
+      "metal": true,
+      "aspereza": 0.95
+    }
+  ],
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.22,
+    "posicao": "centro",
+    "altura_rel": 0.46,
+    "modeler": false,
+    "placa": {
+      "cor": [
+        0.8122,
+        0.8122,
+        0.8122
+      ],
+      "borda": [
+        0.0023,
+        0.0023,
+        0.0023
+      ]
+    }
+  },
+  "couro": {
+    "tipo": "carpete",
+    "cor": [
+      0.0046,
+      0.0046,
+      0.0046
+    ],
+    "cor_b": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "perfurada",
+    "passo_mm": 8.0,
+    "furo_mm": 6.6,
+    "cor": [
+      0.0037,
+      0.0037,
+      0.0037
+    ],
+    "metalico": 0.5,
+    "aspereza": 0.45,
+    "falantes": "visiveis"
+  },
+  "friso": null,
+  "cantos": "preto",
+  "cantos_m": 0.04,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.1,
+      "forma": "quadrada",
+      "cor": [
+        0.6,
+        0.6,
+        0.62
+      ]
+    }
+  }
+}
