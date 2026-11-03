@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "wind_215",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Wind 2x15",
+  "inspiracao": "Peavey 215 Black Widow",
+  "categoria": "2x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Peavey 215 Black Widow"
+    }
+  },
+  "signature": null
+}
