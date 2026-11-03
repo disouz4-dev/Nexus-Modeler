@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:35:16Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1406,6 +1406,33 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "emperor_112": {
+   "nome": "Emperor 1x12",
+   "hash": "d392ad4c5b1c1403",
+   "data": "2026-11-03T16:35:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "emperor_112_frente.jpg",
+    "emperor_112_frente_alfa.png",
+    "emperor_112_manifesto.json",
+    "emperor_112_mapa.json"
+   ],
+   "sha256": {
+    "emperor_112_frente.jpg": "2736c75133fc7271214893c49a1d1ef8182ffd3307335d49d66e11d6ef016be4",
+    "emperor_112_frente_alfa.png": "caefe5e0b8cc4be54e24975a132e37bd961054110570111c87250cd6a4ae284a",
+    "emperor_112_manifesto.json": "ffc9288f42c27d99f8b0c2f0f3eb3dd30eff7f03bf656873a27306ed6a08c915",
+    "emperor_112_mapa.json": "7bad7fb4aa77551f1508f1d1c1099b2cc65b51599406f8701bceded91546f55d"
+   },
+   "tamanho": 1232587,
+   "tipo": "caixa",
+   "inspiracao": "Tone King Imperial MkII 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "fliptop_115": {
    "nome": "Fliptop 1x15",
