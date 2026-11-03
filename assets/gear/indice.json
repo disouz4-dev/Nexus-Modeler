@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:35:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1508,8 +1508,8 @@
   },
   "glass_410": {
    "nome": "Glass 4x10",
-   "hash": "741f8f4fb551d7e9",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "77eb21d04d5eb7a8",
+   "data": "2026-11-03T16:35:26Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "glass_410_frente.jpg",
@@ -1518,18 +1518,18 @@
     "glass_410_mapa.json"
    ],
    "sha256": {
-    "glass_410_frente.jpg": "475d71c667f78e8779dc9cf96066bac4863b6f88c3e885e3718ab1b9f06ef906",
-    "glass_410_frente_alfa.png": "eefe666ae38ef093047809e68b5c180116f53b0c33c6da524f74083d42fb047c",
-    "glass_410_manifesto.json": "31a9c2239c435e12be77896489228401aa4bfe01a8b082395ae1001bb6033bcb",
-    "glass_410_mapa.json": "2f7609ab45d91a597457e261f8c74a9d8ae9cdaffc198a6f13cd9c6dfdae53bc"
+    "glass_410_frente.jpg": "c06c18fd1060640ef187d8878af2d5cb11b5e33726cb5c60a2cc27e48b215041",
+    "glass_410_frente_alfa.png": "5444b74c5ea2adae06506a972bd449949b1875aad77177790766fcf65b70ce51",
+    "glass_410_manifesto.json": "1e4558dfac7825f88d5d4bb3443e4b5f1be096b25e5cf98f26abc409ed5e9a25",
+    "glass_410_mapa.json": "d51572c1a47a0d647010c0196c0f113c992ae0bf5ea3e03111ca9df174c851f5"
    },
-   "tamanho": 1797281,
+   "tamanho": 2189534,
    "tipo": "caixa",
    "inspiracao": "Darkglass 4x10",
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
