@@ -1,0 +1,97 @@
+{
+  "tipo": "caixa",
+  "nome": "Hot Rod 1x12",
+  "familia": "hotrod_112",
+  "inspiracao": "caixa avulsa Fender Hot Rod Deluxe 112 Enclosure (a do próprio Hot Rod Deluxe): tolex preto, faixa larga de tolex no alto com a plaqueta preta de borda cromada no meio, tela prateada com quadriculado escuro, cinco parafusos no tolex, sem friso e sem cantoneiras, pés pequenos; 1 falante de 12 (Celestion G12P-80); 597 x 476 x 267 mm",
+  "aba_m": 0.021,
+  "aba_topo_m": 0.07,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.253,
+    "posicao": "faixa_cima",
+    "desvio_m": -0.012,
+    "placa": {
+      "cor": [
+        0.008,
+        0.008,
+        0.009
+      ],
+      "borda": [
+        0.85,
+        0.86,
+        0.88
+      ],
+      "altura_m": 0.032
+    },
+    "modeler": false
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.797,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.597,
+    "altura": 0.476,
+    "profundidade": 0.267
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.32,
+      0.311,
+      0.311
+    ],
+    "cor_b": [
+      0.523,
+      0.511,
+      0.5
+    ],
+    "cor_linha": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "passo_mm": [
+      3.6,
+      4.6
+    ],
+    "largura_rel": 0.3,
+    "trama_mm": 0.7,
+    "brilho": 0.3,
+    "aspereza": 0.42
+  },
+  "friso": null,
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.01
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "alca": {
+    "largura_m": 0.24,
+    "altura_m": 0.03,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  }
+}
