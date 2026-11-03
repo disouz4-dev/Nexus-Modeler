@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:19:45Z",
+ "gerado": "2026-11-03T16:34:53Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -315,8 +315,8 @@
   },
   "bassbox_410": {
    "nome": "Bass Box 4x10",
-   "hash": "96b4554786c2afd1",
-   "data": "2026-11-03T16:19:45Z",
+   "hash": "ebc05fa235048643",
+   "data": "2026-11-03T16:34:53Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bassbox_410_frente.jpg",
@@ -327,10 +327,10 @@
    "sha256": {
     "bassbox_410_frente.jpg": "8e0e395c009343819dedf42f4e083c0a38b718e5fe78d868b233651ea1c8286a",
     "bassbox_410_frente_alfa.png": "c0a2efb7a4d556a949472d69fb89b94cf6ab4180403e21482f796d9cd658e092",
-    "bassbox_410_manifesto.json": "1a46ad3aa00e6b09978ae9ca0be854287d652cc6d8c15b363af189d07efe12ff",
+    "bassbox_410_manifesto.json": "f01d99283f6ae6f707980fda158a0e3874e4b3196dff89becc6248ff5094fe24",
     "bassbox_410_mapa.json": "9f849b4ea0846871148e2e0b496271a75763eb9b1c4f7e07b3698c310ea5be8b"
    },
-   "tamanho": 901882,
+   "tamanho": 902452,
    "tipo": "caixa",
    "inspiracao": "Behringer BB410",
    "categoria": "4x10",
