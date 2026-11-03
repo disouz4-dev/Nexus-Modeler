@@ -1,0 +1,132 @@
+{
+  "tipo": "caixa",
+  "nome": "Magick 1x12",
+  "familia": "magick_112",
+  "inspiracao": "caixa avulsa Supro 1790 Black Magick 1x12 (a do próprio Black Magick): tolex Black Rhino mesclado cinza-escuro em borda fina, tela prata com listras escuras ocupando a frente, marca script com raio no alto à esquerda da tela, oito parafusos cromados na tela, sem friso e sem cantoneiras, pés pretos; 1 falante de 12 (Supro BD12); 521 x 476 x 222 mm",
+  "aba_m": 0.017,
+  "aba_topo_m": 0.018,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.24,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "margem_rel": 0.085,
+    "altura_rel": -0.08,
+    "escuro": true,
+    "cor_letras": [
+      0.06,
+      0.06,
+      0.065
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.914,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.521,
+    "altura": 0.476,
+    "profundidade": 0.222
+  },
+  "couro": {
+    "cor": [
+      0.096,
+      0.096,
+      0.111
+    ],
+    "tipo": "xadrez",
+    "cor_b": [
+      0.001,
+      0.001,
+      0.002
+    ],
+    "passo_mm": 1.2,
+    "grao_mm": 1.4
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.421,
+      0.41,
+      0.431
+    ],
+    "cor_b": [
+      0.723,
+      0.723,
+      0.737
+    ],
+    "cor_linha": [
+      0.015,
+      0.015,
+      0.017
+    ],
+    "passo_mm": [
+      3.0,
+      5.5
+    ],
+    "largura_rel": 0.28,
+    "trama_mm": 0.6,
+    "brilho": 0.35,
+    "aspereza": 0.4
+  },
+  "friso": null,
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.016
+  },
+  "parafusos_tela": {
+    "cor": [
+      0.85,
+      0.86,
+      0.88
+    ],
+    "raio_m": 0.0055,
+    "margem_m": 0.0,
+    "pontos": [
+      [
+        -0.188,
+        0.474
+      ],
+      [
+        0.226,
+        0.474
+      ],
+      [
+        -0.479,
+        0.262
+      ],
+      [
+        0.476,
+        0.262
+      ],
+      [
+        -0.479,
+        -0.256
+      ],
+      [
+        0.476,
+        -0.256
+      ],
+      [
+        -0.188,
+        -0.465
+      ],
+      [
+        0.226,
+        -0.465
+      ]
+    ]
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  }
+}
