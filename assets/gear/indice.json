@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:21:30Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1310,8 +1310,8 @@
   },
   "country_412": {
    "nome": "Country 4x12",
-   "hash": "c7f2f9e97921cd23",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "76780a04c8aaca96",
+   "data": "2026-11-03T16:21:30Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "country_412_frente.jpg",
@@ -1320,18 +1320,18 @@
     "country_412_mapa.json"
    ],
    "sha256": {
-    "country_412_frente.jpg": "07018634cce148edd446068ee4d94936f2aca4650d9d528be0b8e92cb06fbe7f",
-    "country_412_frente_alfa.png": "c991f0acb191926c0b62d5aa0ced0efb40f1e0ab9a620636c1fed5ac6bc4a81e",
-    "country_412_manifesto.json": "f325acea6ba086c3f1b6def3d01d421f2c30a866a3b7303464acb8fcba0de1ed",
-    "country_412_mapa.json": "e474ce05aa2c85ffb87d2e44a48be0f97935058dad9f961017e9b6ce03990d82"
+    "country_412_frente.jpg": "3069bb801e1941c3275319eab33851ae64a065e247759c4de9c68190e3d20480",
+    "country_412_frente_alfa.png": "1f47ac3ea336940c5f95fb15ad3d489b2a8c0dc0176102a5eb4cf8c6c720c8d7",
+    "country_412_manifesto.json": "a270d9f17eeb25f18c4e25f6d75b9eb89ae401204054776906f992b7bdadb146",
+    "country_412_mapa.json": "e337c59781549306e408301e27903d93925392a86fbd80b45492868e103b0247"
    },
-   "tamanho": 1605721,
+   "tamanho": 1282182,
    "tipo": "caixa",
    "inspiracao": "Laney 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
