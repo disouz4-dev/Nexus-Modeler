@@ -13,8 +13,25 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Revv 4x12"
+      "busca": "Revv 4x12",
+      "tons": [
+        {
+          "id": 95629,
+          "titulo": "REVV 412 RV30 / Karnivore",
+          "criador": "pieceof",
+          "tipo": "cab",
+          "nota": "a própria Revv 4x12",
+          "ir_padrao": "REVV 412 - RV30",
+          "padrao": true
+        },
+        {
+          "id": 95090,
+          "titulo": "Revv 4x12 Karnivore Speaker",
+          "criador": "dreamsofgray",
+          "tipo": "cab",
+          "nota": "Revv 4x12 com o falante Karnivore"
+        }
+      ]
     }
   },
   "signature": null
