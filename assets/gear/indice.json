@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T19:49:55Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1803,6 +1803,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "hotrod_112": {
+   "nome": "Hot Rod 1x12",
+   "hash": "7d1a6e3b76e1a6fb",
+   "data": "2026-11-03T19:49:55Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hotrod_112_frente.jpg",
+    "hotrod_112_frente_alfa.png",
+    "hotrod_112_manifesto.json",
+    "hotrod_112_mapa.json"
+   ],
+   "sha256": {
+    "hotrod_112_frente.jpg": "145f51126c8813d436c44288cb7b9b39b3c464be17749941f4527979f70bbb63",
+    "hotrod_112_frente_alfa.png": "ccaf41937ee0c1b12890ed783d6257b10c9a5910d7c3ab21ab0154963d97b6d3",
+    "hotrod_112_manifesto.json": "db30292089ebfef78446792de0311a364e5145292f012d7e9d6759215167e8b8",
+    "hotrod_112_mapa.json": "9011ee8ebdca2d7ddd3ff54d1bfee51946ed454ee66858d80634ded4875d2a5d"
+   },
+   "tamanho": 1416964,
+   "tipo": "caixa",
+   "inspiracao": "Fender Hot Rod Deluxe (parte do falante)",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "howlite_war": {
    "nome": "Howlite War",
