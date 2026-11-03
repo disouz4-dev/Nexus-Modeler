@@ -1,0 +1,43 @@
+{
+  "formato": 1,
+  "id": "jubilee_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Jubilee 4x12",
+  "inspiracao": "Marshall 2551 Silver Jubilee",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Jubilee",
+      "tons": [
+        {
+          "id": 99311,
+          "titulo": "Marshall 2551AV Celestion G12 Vintage Cab",
+          "criador": "rxguitar",
+          "tipo": "cab",
+          "capturas": 6,
+          "downloads": 4065,
+          "nota": "a própria 2551AV, reedição da Silver Jubilee 4x12 com Vintage 30; SM57 de frente e de lado",
+          "ir_padrao": "2551AV_SM57_Blend_Hi-Res",
+          "padrao": true
+        },
+        {
+          "id": 51086,
+          "titulo": "Marshall 1960BV V30 and G12T75",
+          "criador": "jpisoutoftune",
+          "tipo": "cab",
+          "capturas": 55,
+          "downloads": 33950,
+          "nota": "Marshall 4x12 reta com a mesma madeira e o mesmo falante, 55 posições",
+          "ir_padrao": "Marshall V30 3 SM57 3"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
