@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T19:47:29Z",
+ "gerado": "2026-11-03T19:50:29Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3806,8 +3806,8 @@
   },
   "tweed_112": {
    "nome": "Tweed 57 1x12",
-   "hash": "72ee727b2df266ed",
-   "data": "2026-11-03T19:47:29Z",
+   "hash": "b9bc1b5c2fab53a1",
+   "data": "2026-11-03T19:50:29Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed_112_frente.jpg",
@@ -3818,10 +3818,10 @@
    "sha256": {
     "tweed_112_frente.jpg": "53a57efebe556c6347a4cc9200bbee518b352f8a90909339ff63fbf32999eb3d",
     "tweed_112_frente_alfa.png": "a49bafd18ec6a4e993254e25865746df4dd786a2512fe192ca15f9207da746fb",
-    "tweed_112_manifesto.json": "6d472d5ddbf1adbd6f546dbd885a3127e26618b59ae2c9b5c3d4a10950786ad3",
+    "tweed_112_manifesto.json": "6f2292c8f19a5823ab5baec612f7368a334fc2345dd063c7513742765d618b48",
     "tweed_112_mapa.json": "09334f0dcf122713340b5826c86b4dda4807a308caf6665203295f2251e54b7c"
    },
-   "tamanho": 1387720,
+   "tamanho": 1388311,
    "tipo": "caixa",
    "inspiracao": "Fender 57 Deluxe (parte do falante)",
    "categoria": "1x12",
