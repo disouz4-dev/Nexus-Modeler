@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T19:48:07Z",
+ "gerado": "2026-11-03T19:50:46Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3806,8 +3806,8 @@
   },
   "tweed_410": {
    "nome": "Tweed 4x10",
-   "hash": "90574646c4e67f47",
-   "data": "2026-11-03T19:48:07Z",
+   "hash": "5b23eee6557fe3c7",
+   "data": "2026-11-03T19:50:46Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tweed_410_frente.jpg",
@@ -3818,10 +3818,10 @@
    "sha256": {
     "tweed_410_frente.jpg": "964f1b4ec440843905bb0535c94b0c6b99c8ed1810e5f03710faa02689a41725",
     "tweed_410_frente_alfa.png": "4ce68fb8ce5f8cc6145855866d053d880743ffa95b17450f260860180c2ec7dd",
-    "tweed_410_manifesto.json": "515796ebef51b4937bec4a25c4ae44caafbb7441691f56b245672abde2859161",
+    "tweed_410_manifesto.json": "bb10a45c198fe0c17c18ca480cf09b9df075ae6c453d32377a3d377571f2485b",
     "tweed_410_mapa.json": "9a09bddd71e627f3ca3b9a4370d58a42375b2bc8622d123411bc2a3b27359c06"
    },
-   "tamanho": 1692043,
+   "tamanho": 1692373,
    "tipo": "caixa",
    "inspiracao": "Fender 4x10",
    "categoria": "4x10",
