@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "jubilee_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Jubilee 4x12",
+  "inspiracao": "Marshall 2551 Silver Jubilee",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Jubilee 4x12"
+    }
+  },
+  "signature": null
+}
