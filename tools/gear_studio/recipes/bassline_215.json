@@ -1,28 +1,35 @@
 {
   "tipo": "caixa",
+  "nome": "Bassline 2x15",
+  "familia": "bassline_215",
+  "inspiracao": "caixa 2x15 de baixo (estilo Fender Bassman 2x15 silverface, 1968-71; dados de memória, sem conferir no fabricante): tolex preto, tela prateada puxando para o azul, moldura de alumínio em volta da tela, cantoneiras pretas, marca no canto de cima à esquerda; 749 x 1016 x 292 mm",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
       0.9
+    ],
+    "largura_rel": 0.22,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "cor_letras": [
+      0.06,
+      0.06,
+      0.065
     ]
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.55,
-    "elevacao": 8.0
+    "proporcao": 1.525,
+    "elevacao": 0.0
   },
-  "nome": "Bassline 2x15",
-  "familia": "bassline_215",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 1.07,
-    "profundidade": 0.4
+    "largura": 0.749,
+    "altura": 1.016,
+    "profundidade": 0.292
   },
   "falantes": {
     "linhas": 2,
@@ -38,21 +45,38 @@
     "grao_mm": 1.8
   },
   "tela": {
+    "padrao": "malha",
     "cor_a": [
-      0.06,
-      0.06,
-      0.07
+      0.6,
+      0.61,
+      0.63
     ],
     "cor_b": [
-      0.62,
-      0.63,
-      0.66
+      0.648,
+      0.6588,
+      0.6804
     ],
-    "trama_mm": 2.4
+    "cor_linha": [
+      0.05,
+      0.18,
+      0.22
+    ],
+    "passo_mm": [
+      4.2,
+      3.4
+    ],
+    "largura_rel": 0.24,
+    "trama_mm": 0.7,
+    "brilho": 0.35,
+    "aspereza": 0.42
   },
   "friso": [
-    0.85,
-    0.85,
-    0.86
-  ]
+    0.78,
+    0.79,
+    0.8
+  ],
+  "friso_metal": true,
+  "friso_m": 0.005,
+  "cantos": "cromo",
+  "cantos_m": 0.03
 }
