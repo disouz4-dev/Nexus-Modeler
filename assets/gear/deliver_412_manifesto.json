@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "deliver_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Deliver 4x12",
+  "inspiracao": "Fryette Deliverance 412 Series II",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Fryette Deliverance 412 Series II"
+    }
+  },
+  "signature": null
+}
