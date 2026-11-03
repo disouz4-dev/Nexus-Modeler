@@ -1,0 +1,88 @@
+{
+  "tipo": "caixa",
+  "nome": "Sonic 2x12",
+  "familia": "sonic_212",
+  "inspiracao": "caixa 2x12 fechada com rodízios (estilo Fender Super-Sonic 212): tolex preto, tela prateada com listras finas pretas ocupando a frente toda, sem friso, cantoneiras niqueladas, marca script no canto de cima à esquerda; 2 falantes de 12 (Celestion Vintage 30 no original); 813 x 533 x 305 mm",
+  "aba_m": 0.025,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.19,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "altura_rel": -0.04,
+    "escuro": true,
+    "cor_letras": [
+      0.06,
+      0.06,
+      0.065
+    ]
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.75,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.813,
+    "altura": 0.483,
+    "profundidade": 0.305
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.4
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.5,
+      0.51,
+      0.53
+    ],
+    "cor_b": [
+      0.62,
+      0.63,
+      0.65
+    ],
+    "cor_linha": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "passo_mm": [
+      5.0,
+      8.0
+    ],
+    "largura_rel": 0.2,
+    "trama_mm": 0.7,
+    "brilho": 0.3,
+    "aspereza": 0.42
+  },
+  "friso": null,
+  "cantos": "cromo",
+  "cantos_m": 0.045,
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "inclinada": null,
+  "alca": {
+    "largura_m": 0.24,
+    "altura_m": 0.03,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  }
+}

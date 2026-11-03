@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "sonic_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Sonic 2x12",
+  "inspiracao": "Fender Super-Sonic 212",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Fender Super-Sonic 212",
+      "tons": [
+        {
+          "id": 6014,
+          "titulo": "Celestion Vintage 30 - Eminence 2x12 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR do original: o mais próximo",
+          "ir_padrao": "V30 2x12 013 1.5in 1in OA30",
+          "padrao": true
+        },
+        {
+          "id": 80153,
+          "titulo": "Fender Supersonic 22 IR",
+          "criador": "jhony1997",
+          "tipo": "cab",
+          "nota": "o combo Super-Sonic",
+          "ir_padrao": "Fender supersonic 22 2_LL"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
