@@ -1,0 +1,28 @@
+{
+  "nome": "Little Tube 4x10",
+  "familia": "littletube_410",
+  "largura": 2400,
+  "altura": 3043,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    590,
+    748
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.1,
+      "forma": "losango",
+      "cor": [
+        0.75,
+        0.55,
+        0.1
+      ]
+    }
+  },
+  "rotulos": []
+}
