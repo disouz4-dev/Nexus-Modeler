@@ -20,20 +20,16 @@
           "titulo": "Sunn 4x12 with Celestion G12T-75 IR Collection",
           "criador": "dahmanmusic",
           "tipo": "cab",
-          "capturas": 84,
-          "downloads": 4213,
-          "nota": "Sunn 4x12 com G12T-75, 84 posições de microfone",
-          "ir_padrao": "Sunn 4x12 G12T-75 - SM57 1 - Cap Edge",
+          "nota": "sem IR da 412S: Sunn 4x12 de 1998",
+          "ir_padrao": "Sunn 4x12 G12T-75 - SM57 3 - Cone",
           "padrao": true
         },
         {
-          "id": 45930,
-          "titulo": "DRONE DOOM ESSENTIALS - IR Pack",
-          "criador": "serjthedruid",
+          "id": 103428,
+          "titulo": "Marshall 1960B 4x12 1977 Blackback",
+          "criador": "magister",
           "tipo": "cab",
-          "capturas": 1,
-          "downloads": 1679,
-          "nota": "Sunn 4x12 pesada, com muito grave"
+          "nota": "4x12 dos anos 70; o único IR"
         }
       ]
     }
