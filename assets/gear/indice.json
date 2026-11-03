@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:21:30Z",
+ "gerado": "2026-11-03T16:33:49Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1310,8 +1310,8 @@
   },
   "country_412": {
    "nome": "Country 4x12",
-   "hash": "76780a04c8aaca96",
-   "data": "2026-11-03T16:21:30Z",
+   "hash": "df253f2171fc5ac4",
+   "data": "2026-11-03T16:33:49Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "country_412_frente.jpg",
@@ -1322,10 +1322,10 @@
    "sha256": {
     "country_412_frente.jpg": "3069bb801e1941c3275319eab33851ae64a065e247759c4de9c68190e3d20480",
     "country_412_frente_alfa.png": "1f47ac3ea336940c5f95fb15ad3d489b2a8c0dc0176102a5eb4cf8c6c720c8d7",
-    "country_412_manifesto.json": "a270d9f17eeb25f18c4e25f6d75b9eb89ae401204054776906f992b7bdadb146",
+    "country_412_manifesto.json": "e3442f0b18a829e359ed588fe6d2cb38ce5cb6bf6c561dbf1f671d938837498e",
     "country_412_mapa.json": "e337c59781549306e408301e27903d93925392a86fbd80b45492868e103b0247"
    },
-   "tamanho": 1282182,
+   "tamanho": 1281369,
    "tipo": "caixa",
    "inspiracao": "Laney 4x12",
    "categoria": "4x12",
