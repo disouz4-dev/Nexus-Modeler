@@ -12,10 +12,7 @@ namespace
 {
 juce::var embeddedIndex()
 {
-  int size = 0;
-  if (const char* data = BinaryData::getNamedResource("indice_json", size))
-    return juce::JSON::parse(juce::String::fromUTF8(data, size));
-  return {};
+  return nexus::gear::GearCatalog::builtInIndex();
 }
 
 juce::var piece(const juce::var& index, const juce::String& id)

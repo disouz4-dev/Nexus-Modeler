@@ -79,6 +79,7 @@ public:
   // Para o teste: cartões de caixa na cadeia e se a lista tem a aba Caixas.
   int chainCabCards() const;
   bool browserHasCabTab() const;
+  juce::String browserCabName(int look) const;
 
 
 private:
