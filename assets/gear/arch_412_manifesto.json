@@ -13,8 +13,26 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "PRS Archon 4x12"
+      "busca": "PRS Archon 4x12",
+      "tons": [
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR da caixa: 4x12 reta com o mesmo falante (V30)",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73",
+          "padrao": true
+        },
+        {
+          "id": 2663,
+          "titulo": "Barefoot IR Pack V30 PRS Cab",
+          "criador": "resington",
+          "tipo": "cab",
+          "nota": "da PRS, mas 1x12",
+          "ir_padrao": "Res Barefoot 1"
+        }
+      ]
     }
   },
   "signature": null
