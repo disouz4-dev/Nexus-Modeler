@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "nord_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Nord 4x10",
+  "inspiracao": "EBS ClassicLine 410",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "EBS ClassicLine 410",
+      "tons": [
+        {
+          "id": 45275,
+          "titulo": "David Eden DT410 IR collection - bass cab",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "sem IR da caixa: outra 4x10 de baixo",
+          "ir_padrao": "Eden 4x10 D6 AH",
+          "padrao": true
+        },
+        {
+          "id": 67572,
+          "titulo": "Mesa Powerhouse 410 & 410+215",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "outra 4x10 de baixo",
+          "ir_padrao": "Mesa Powerhouse 410 (SM57 + MD421)"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

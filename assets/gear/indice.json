@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:37:17Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2695,6 +2695,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "nord_410": {
+   "nome": "Nord 4x10",
+   "hash": "d51e3f9535f31284",
+   "data": "2026-11-03T15:37:17Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nord_410_frente.jpg",
+    "nord_410_frente_alfa.png",
+    "nord_410_manifesto.json",
+    "nord_410_mapa.json"
+   ],
+   "sha256": {
+    "nord_410_frente.jpg": "1b88971ea96253f89dc033b7aeb1f117ee1485bd566db3f605b6e3d5d0416ae6",
+    "nord_410_frente_alfa.png": "9af44d01489acb0329b6149c2407b7a76af9c00191102596dab945e36bd43591",
+    "nord_410_manifesto.json": "7672a0759d4b8f67b157c582d5d9242531e82342744ef679570881c0bba49d39",
+    "nord_410_mapa.json": "5d5401836e4d0ee1e8ab66c7e5d246f5d6b7c1f5bb4ba5786dd1545a5d36c9c9"
+   },
+   "tamanho": 1754216,
+   "tipo": "caixa",
+   "inspiracao": "EBS ClassicLine 410",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "olive_drive": {
    "nome": "Olive Drive",
