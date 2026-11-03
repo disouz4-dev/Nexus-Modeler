@@ -1,0 +1,28 @@
+{
+  "nome": "Garden 4x10",
+  "familia": "garden_410",
+  "largura": 2400,
+  "altura": 2872,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    584,
+    699
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.1,
+      "forma": "losango",
+      "cor": [
+        0.42,
+        0.27,
+        0.15
+      ]
+    }
+  },
+  "rotulos": []
+}
