@@ -13,8 +13,25 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Acoustic 361 (1x18 W-bin)"
+      "busca": "Acoustic 361 (1x18 W-bin)",
+      "tons": [
+        {
+          "id": 67574,
+          "titulo": "Ampeg B15N",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "não existe IR de caixa 18 polegadas na TONE3000; o mais próximo",
+          "ir_padrao": "Ampeg B15N (SM57 + R121)",
+          "padrao": true
+        },
+        {
+          "id": 50027,
+          "titulo": "Peavey 2x15 Bass Cabinet",
+          "criador": "erdosi",
+          "tipo": "cab",
+          "nota": "caixa de baixo 2x15; o único IR da captura"
+        }
+      ]
     }
   },
   "signature": null
