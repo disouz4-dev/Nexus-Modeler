@@ -1,0 +1,82 @@
+{
+  "tipo": "caixa",
+  "nome": "Fliptop 1x18",
+  "familia": "fliptop_118",
+  "inspiracao": "caixa do flip-top de baixo 1x18 dos anos 60 (estilo Ampeg B-18-N Portaflex, sem o chassi em cima): tolex xadrez azul-marinho (Blue Check), tela cinza-prateada com listras escuras, marca script centrada no tolex acima da tela, cantoneiras cromadas pequenas; cerca de 600 x 680 x 400 mm (largura e fundo do cabeçote fiel; altura estimada pela foto)",
+  "medidas_m": {
+    "largura": 0.6,
+    "altura": 0.68,
+    "profundidade": 0.4
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.2693,
+    "elevacao": 0.0
+  },
+  "aba_m": 0.05,
+  "aba_topo_m": 0.07,
+  "couro": {
+    "tipo": "xadrez",
+    "cor": [
+      0.01,
+      0.011,
+      0.014
+    ],
+    "cor_b": [
+      0.035,
+      0.036,
+      0.04
+    ],
+    "passo_mm": 2.8,
+    "especular": 0.05
+  },
+  "tela": {
+    "padrao": "listrada",
+    "cor_a": [
+      0.32,
+      0.3,
+      0.26
+    ],
+    "cor_b": [
+      0.42,
+      0.4,
+      0.35
+    ],
+    "trama_mm": 1.2,
+    "cor_linha": [
+      0.02,
+      0.018,
+      0.016
+    ],
+    "passo_mm": 4.5,
+    "largura_rel": 0.38
+  },
+  "friso": null,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.26,
+    "posicao": "faixa_cima"
+  },
+  "cantos": "cromo",
+  "cantos_m": 0.028,
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 18
+  },
+  "alca": {
+    "largura_m": 0.22,
+    "altura_m": 0.035,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  }
+}

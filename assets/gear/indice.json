@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:23:21Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1433,6 +1433,33 @@
    "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "fliptop_118": {
+   "nome": "Fliptop 1x18",
+   "hash": "4e2068f1d8545e9e",
+   "data": "2026-11-03T16:23:21Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "fliptop_118_frente.jpg",
+    "fliptop_118_frente_alfa.png",
+    "fliptop_118_manifesto.json",
+    "fliptop_118_mapa.json"
+   ],
+   "sha256": {
+    "fliptop_118_frente.jpg": "78fbcece5567e47a0f33cdf50c56beaec291ce307bcaa05044833ff3cdc408c6",
+    "fliptop_118_frente_alfa.png": "c5d086b44896fc01eff763e5feb21a51469e72b50df7c2b164d58cc36d752560",
+    "fliptop_118_manifesto.json": "242b2a7c9c539ffdbbf0b0617a6d18abc175600c61eafa924fb7227d70f279b0",
+    "fliptop_118_mapa.json": "aee01bcc596ed146570bd794502b3c22be85d8577e124b6af89f44f2417a994d"
+   },
+   "tamanho": 1426840,
+   "tipo": "caixa",
+   "inspiracao": "Ampeg B-18-N Portaflex (caixa)",
+   "categoria": "1x18",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "galaxy_mod": {
    "nome": "Galaxy Mod",
