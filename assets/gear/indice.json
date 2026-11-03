@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:34:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3517,8 +3517,8 @@
   },
   "solar_215": {
    "nome": "Solar 2x15",
-   "hash": "72e93a5cc1394a0a",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "827fb84da836b56c",
+   "data": "2026-11-03T16:34:26Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solar_215_frente.jpg",
@@ -3527,18 +3527,18 @@
     "solar_215_mapa.json"
    ],
    "sha256": {
-    "solar_215_frente.jpg": "2db68ea8bab1a8461e138bf0a1ffb9a04085469346a685a5a87c2d9451cc54a4",
-    "solar_215_frente_alfa.png": "db04e46bb01db3fd9d841077e4df2e1c5501b9aa744e07c3b82c0bd3cd62a2b2",
-    "solar_215_manifesto.json": "398939451f05c9fcd79328a381187ea1bf12b839be58ac5f2e0c596af705c071",
-    "solar_215_mapa.json": "07cbdff06eb0e0d457a60a385d1ae099c1711a88528a91cfd4b56274140bc195"
+    "solar_215_frente.jpg": "baaa76e2473e3ebe5a349beb5024d0c7d5e1d294a1e53cdc66c69d5d9473e82b",
+    "solar_215_frente_alfa.png": "6aea8251cf900e9b2c48f79d210bbd4ea49b784fdb6b8dcf15b709e3dab805ea",
+    "solar_215_manifesto.json": "af641213f38b49f80eadc9d338757483f9c3bd6704608409a8036134bd2ee20f",
+    "solar_215_mapa.json": "bce1868e9c8d6a748eb0f5e58e2ec93b23c911e0dc28c9bcb74d321098098918"
    },
-   "tamanho": 1958808,
+   "tamanho": 2838294,
    "tipo": "caixa",
    "inspiracao": "Sunn 2x15",
    "categoria": "2x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },

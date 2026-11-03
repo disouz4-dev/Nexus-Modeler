@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "solar_215",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "caixa",
   "nome": "Solar 2x15",
   "inspiracao": "Sunn 2x15",
@@ -20,9 +20,8 @@
           "titulo": "1968 SUNN 2x15 Cabinet Original speakers",
           "criador": "basswizard",
           "tipo": "cab",
-          "capturas": 3,
-          "downloads": 1279,
-          "nota": "Sunn 2x15 de 1968",
+          "nota": "a própria",
+          "ir_padrao": "SUNN 2x15 Sm57_dc",
           "padrao": true
         },
         {
@@ -30,18 +29,8 @@
           "titulo": "Peavey 2x15 Bass Cabinet",
           "criador": "erdosi",
           "tipo": "cab",
-          "capturas": 1,
-          "downloads": 2846,
-          "nota": "outra 2x15 de baixo"
-        },
-        {
-          "id": 5939,
-          "titulo": "Custom Stewart 2x15 Bass cab",
-          "criador": "basswizard",
-          "tipo": "cab",
-          "capturas": 4,
-          "downloads": 916,
-          "nota": "2x15 feita à mão"
+          "nota": "outra 2x15",
+          "ir_padrao": "PV215"
         }
       ]
     }
