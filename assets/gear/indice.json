@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:35:10Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1334,6 +1334,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "eagle_410": {
+   "nome": "Eagle 4x10",
+   "hash": "f43c11cd2a60e680",
+   "data": "2026-11-03T16:35:10Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "eagle_410_frente.jpg",
+    "eagle_410_frente_alfa.png",
+    "eagle_410_manifesto.json",
+    "eagle_410_mapa.json"
+   ],
+   "sha256": {
+    "eagle_410_frente.jpg": "3cc3a35a421ccfd4c57bb2f3e120c63a36494db0a0679aa84b33f1a10c7d1b87",
+    "eagle_410_frente_alfa.png": "07cb5236eb062c35d934ef0deb798cdf88d68971716fbe950cdf5c24e18e7def",
+    "eagle_410_manifesto.json": "1b0831cd09d1c772744bed4cbae848f6bcd16a5654b066ca4fe8b3ec8bef4c5d",
+    "eagle_410_mapa.json": "9b6b3467916e5f35b830ccc485a5c6e5ff3c8716853c6637c346d456a57cc2d8"
+   },
+   "tamanho": 1805841,
+   "tipo": "caixa",
+   "inspiracao": "Aguilar DB 410",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "eclipse_vibe": {
    "nome": "Eclipse Vibe",

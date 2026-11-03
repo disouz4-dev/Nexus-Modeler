@@ -1,0 +1,88 @@
+{
+  "tipo": "caixa",
+  "nome": "Eagle 4x10",
+  "familia": "eagle_410",
+  "inspiracao": "caixa 4x10 de baixo (estilo Aguilar DB 410): tolex preto de grão fino, tela prateada com quadriculado preto fino, borda preta estreita, sem friso, cantoneiras cromadas pequenas, emblema inclinado no canto de cima à esquerda, pés de borracha (rodízios removíveis); 622 x 628 x 445 mm, 4 falantes de 10\"",
+  "aba_m": 0.026,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.23,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "margem_rel": 0.05,
+    "placa": {
+      "cor": [
+        0.01,
+        0.01,
+        0.012
+      ],
+      "borda": [
+        0.85,
+        0.85,
+        0.86
+      ]
+    }
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.13,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.622,
+    "altura": 0.628,
+    "profundidade": 0.445
+  },
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 1.8
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.72,
+      0.72,
+      0.74
+    ],
+    "cor_b": [
+      0.78,
+      0.78,
+      0.8
+    ],
+    "cor_linha": [
+      0.012,
+      0.012,
+      0.015
+    ],
+    "passo_mm": [
+      5.5,
+      4.2
+    ],
+    "largura_rel": 0.32,
+    "trama_mm": 0.7,
+    "brilho": 0.3,
+    "aspereza": 0.42
+  },
+  "friso": null,
+  "cantos": "cromo",
+  "cantos_m": 0.03,
+  "pes": {
+    "altura_m": 0.014
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "inclinada": null
+}
