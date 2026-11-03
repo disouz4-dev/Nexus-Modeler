@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:21Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1505,6 +1505,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "gen_412": {
+   "nome": "Gen 4x12",
+   "hash": "69282034c1b22537",
+   "data": "2026-11-03T15:36:21Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "gen_412_frente.jpg",
+    "gen_412_frente_alfa.png",
+    "gen_412_manifesto.json",
+    "gen_412_mapa.json"
+   ],
+   "sha256": {
+    "gen_412_frente.jpg": "170f05c6f24077dad1610b0b87817b63d128028c461fc028fe75b43841a79e8a",
+    "gen_412_frente_alfa.png": "8da6bab5de5cf86eaf633e4e18f2e7f07671639f93d5c06f4f8d76961c8c889e",
+    "gen_412_manifesto.json": "fe65988c48713d6104b52f8f3ecbbabc3fa2fc3740ac27f6ef408aaf86b4c331",
+    "gen_412_mapa.json": "e1bbc44b8ec537f1f52549372037089e4cfd3370152db42100678150af679944"
+   },
+   "tamanho": 1219065,
+   "tipo": "caixa",
+   "inspiracao": "Revv 4x12",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "glass_410": {
    "nome": "Glass 4x10",
