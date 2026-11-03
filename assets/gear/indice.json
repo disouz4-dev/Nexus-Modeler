@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:25:44Z",
+ "gerado": "2026-11-03T15:38:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -480,8 +480,8 @@
   },
   "block_412": {
    "nome": "Block 4x12",
-   "hash": "b2ffe0e88056415f",
-   "data": "2026-11-03T15:25:44Z",
+   "hash": "eb91222ed6568a50",
+   "data": "2026-11-03T15:38:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block_412_frente.jpg",
@@ -492,10 +492,10 @@
    "sha256": {
     "block_412_frente.jpg": "972a09e31863b2f928ce6e546ddeb9e88d434e3ad976686504d14acc05a55426",
     "block_412_frente_alfa.png": "7c9841adaf4c654273b91bc735a282a4594bfd56a5bf767f1300cc30114aec1e",
-    "block_412_manifesto.json": "eb5a29505297a2ee4b9ca8d526d850ccded2d6788c7a49b05577965f84169f65",
+    "block_412_manifesto.json": "edff0bfba172a9604f2d2fe7bbc10e1e891e802a4daca4f0d313bedc81789446",
     "block_412_mapa.json": "eb69cdb5550575980f03445626cf6892bbeb1bdd8e6a9521dfa92ac6eed9ac65"
    },
-   "tamanho": 1558521,
+   "tamanho": 1558854,
    "tipo": "caixa",
    "inspiracao": "5150 4x12",
    "categoria": "4x12",
