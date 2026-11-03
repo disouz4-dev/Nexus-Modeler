@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:26:07Z",
+ "gerado": "2026-11-03T16:34:26Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3517,8 +3517,8 @@
   },
   "solar_215": {
    "nome": "Solar 2x15",
-   "hash": "dfc8b69daa959bf3",
-   "data": "2026-11-03T16:26:07Z",
+   "hash": "827fb84da836b56c",
+   "data": "2026-11-03T16:34:26Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "solar_215_frente.jpg",
@@ -3529,10 +3529,10 @@
    "sha256": {
     "solar_215_frente.jpg": "baaa76e2473e3ebe5a349beb5024d0c7d5e1d294a1e53cdc66c69d5d9473e82b",
     "solar_215_frente_alfa.png": "6aea8251cf900e9b2c48f79d210bbd4ea49b784fdb6b8dcf15b709e3dab805ea",
-    "solar_215_manifesto.json": "83365b5543c710ad60112a0abf0d2250216d25eed2a9f6b17da19aadc7936592",
+    "solar_215_manifesto.json": "af641213f38b49f80eadc9d338757483f9c3bd6704608409a8036134bd2ee20f",
     "solar_215_mapa.json": "bce1868e9c8d6a748eb0f5e58e2ec93b23c911e0dc28c9bcb74d321098098918"
    },
-   "tamanho": 2838589,
+   "tamanho": 2838294,
    "tipo": "caixa",
    "inspiracao": "Sunn 2x15",
    "categoria": "2x15",
