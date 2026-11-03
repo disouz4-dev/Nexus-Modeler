@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:37:35Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -405,6 +405,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "bebop_115": {
+   "nome": "Bebop 1x15",
+   "hash": "9a7d80574c26c338",
+   "data": "2026-11-03T15:37:35Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bebop_115_frente.jpg",
+    "bebop_115_frente_alfa.png",
+    "bebop_115_manifesto.json",
+    "bebop_115_mapa.json"
+   ],
+   "sha256": {
+    "bebop_115_frente.jpg": "ff4e8ad1d5739240aa144fc3e253265bd5ddc71aa73840ef2cd0a4e6c6930d15",
+    "bebop_115_frente_alfa.png": "f48de0497cde3f46d227c1a475f9992bd92e6eb21de47c9fff1920001ec5d5c3",
+    "bebop_115_manifesto.json": "b8670ef1eb7ba7a290273aa48f3558c64a0ee9e03847d237b9e734c493895e73",
+    "bebop_115_mapa.json": "36dbae0be1b2eb63233a8e2101bcca5615d045a8c3f9f495186f8eaea251c50a"
+   },
+   "tamanho": 1083100,
+   "tipo": "caixa",
+   "inspiracao": "Polytone Mini Brute 1x15",
+   "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "blackcurrant_bass": {
    "nome": "Blackcurrant Bass",

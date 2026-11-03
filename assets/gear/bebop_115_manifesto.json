@@ -1,0 +1,30 @@
+{
+  "formato": 1,
+  "id": "bebop_115",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Bebop 1x15",
+  "inspiracao": "Polytone Mini Brute 1x15",
+  "categoria": "1x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Polytone Mini Brute 1x15",
+      "tons": [
+        {
+          "id": 30306,
+          "titulo": "Polytone Mini Brute II",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "nota": "mesma marca e mesmo som, mas o combo Mini Brute II; o único IR da captura",
+          "padrao": true
+        }
+      ]
+    }
+  },
+  "signature": null
+}
