@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T19:45:11Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2094,6 +2094,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "littletube_410": {
+   "nome": "Little Tube 4x10",
+   "hash": "354e90bf54d0a5d3",
+   "data": "2026-11-03T19:45:11Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "littletube_410_frente.jpg",
+    "littletube_410_frente_alfa.png",
+    "littletube_410_manifesto.json",
+    "littletube_410_mapa.json"
+   ],
+   "sha256": {
+    "littletube_410_frente.jpg": "93b02397a7127ddbbdcac60466a8e032b739c5b875c3a5dc564dac60af1c4cdb",
+    "littletube_410_frente_alfa.png": "4dbf2de0cd942ed0747345156c06942c009c5d9fa85f6d2c977d35b2d9fc474f",
+    "littletube_410_manifesto.json": "bed89828cda5e88e93317dc5b0f3f264033d6fd580f72f992601c2962017d7a6",
+    "littletube_410_mapa.json": "84693b4b931a19e83294ad46c0036042deea02d4ce1a46a4cf9f342da96d2bfe"
+   },
+   "tamanho": 837702,
+   "tipo": "caixa",
+   "inspiracao": "Markbass Standard 104HF",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "lonestar100": {
    "nome": "Lone Star 100",

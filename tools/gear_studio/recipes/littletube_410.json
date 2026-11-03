@@ -1,0 +1,107 @@
+{
+  "tipo": "caixa",
+  "nome": "Little Tube 4x10",
+  "familia": "littletube_410",
+  "inspiracao": "caixa 4x10 de baixo com corneta (estilo Markbass Standard 104HF): carpete preto, grade de aço preta perfurada de furo redondo, dutos largos em cima e embaixo, marca amarela de contorno preto embaixo no meio da grade, cantoneiras pretas pequenas; anéis amarelos dos falantes e corneta no meio (o gerador não faz); 590 x 748 x 480 mm (fabricante), 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.268,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.59,
+    "altura": 0.748,
+    "profundidade": 0.48
+  },
+  "aba_m": 0.028,
+  "faixas": [
+    {
+      "onde": "acima_tela",
+      "altura_m": 0.075,
+      "cor": [
+        0.0003,
+        0.0003,
+        0.0003
+      ],
+      "metal": true,
+      "aspereza": 0.95,
+      "dutos": 4
+    },
+    {
+      "onde": "abaixo_tela",
+      "altura_m": 0.075,
+      "cor": [
+        0.0003,
+        0.0003,
+        0.0003
+      ],
+      "metal": true,
+      "aspereza": 0.95,
+      "dutos": 4
+    }
+  ],
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.3,
+    "posicao": "centro",
+    "altura_rel": -0.4,
+    "modeler": false,
+    "empilhado": true,
+    "cor_letras": [
+      0.8913,
+      0.548,
+      0.0
+    ]
+  },
+  "couro": {
+    "tipo": "carpete",
+    "cor": [
+      0.0046,
+      0.0046,
+      0.0046
+    ],
+    "cor_b": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "perfurada",
+    "passo_mm": 13.0,
+    "furo_mm": 10.0,
+    "cor": [
+      0.0037,
+      0.0037,
+      0.0037
+    ],
+    "metalico": 0.5,
+    "aspereza": 0.45,
+    "falantes": "visiveis"
+  },
+  "friso": null,
+  "cantos": "preto",
+  "cantos_m": 0.035,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.1,
+      "forma": "losango",
+      "cor": [
+        0.75,
+        0.55,
+        0.1
+      ]
+    }
+  }
+}
