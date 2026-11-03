@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:30:21Z",
+ "gerado": "2026-11-03T15:38:51Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3220,8 +3220,8 @@
   },
   "rg_412": {
    "nome": "RG 4x12",
-   "hash": "614433c07d0eeb6e",
-   "data": "2026-11-03T15:30:21Z",
+   "hash": "50766b50a67115a2",
+   "data": "2026-11-03T15:38:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg_412_frente.jpg",
@@ -3232,10 +3232,10 @@
    "sha256": {
     "rg_412_frente.jpg": "ec7f1c314d55e65b8c4a4bfccfcc20d8f2801624f2995bf96782d2c6132c4478",
     "rg_412_frente_alfa.png": "f13d2286e0b52d58cfec3056b5df1f9855098f0decab7de30b27b84123845a8b",
-    "rg_412_manifesto.json": "924d91ba9002e83185670f41930260e11dbd34fa6c5414411af4ec834dbd563f",
+    "rg_412_manifesto.json": "ac790ad2a04ed7e13622ceee747dbb6a4a952ca55e36efcaa804760ccec21f89",
     "rg_412_mapa.json": "537bddad6a88903f751fb91b22d30f2eb4515f4106fae30f9ab029c47fffb180"
    },
-   "tamanho": 869662,
+   "tamanho": 868993,
    "tipo": "caixa",
    "inspiracao": "Randall 4x12",
    "categoria": "4x12",

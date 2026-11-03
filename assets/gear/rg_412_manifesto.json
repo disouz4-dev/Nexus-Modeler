@@ -20,40 +20,17 @@
           "titulo": "Randall RG412 HiRez 2048 V30/RS1280",
           "criador": "mikey",
           "tipo": "cab",
-          "capturas": 12,
-          "downloads": 1191,
-          "nota": "Randall RG412 com V30 e RS1280",
-          "ir_padrao": "3_V30_57_Cap",
+          "nota": "a própria Randall RG412",
+          "ir_padrao": "1_V30 57 EQd 48k",
           "padrao": true
-        },
-        {
-          "id": 5244,
-          "titulo": "Randall IR",
-          "criador": "sd67",
-          "tipo": "cab",
-          "capturas": 15,
-          "downloads": 2725,
-          "nota": "Randall 4x12, quinze microfones",
-          "ir_padrao": "Randall SM57"
         },
         {
           "id": 6262,
           "titulo": "RANDALL RX412 IR'S PACK",
           "criador": "eliottlozano",
           "tipo": "cab",
-          "capturas": 6,
-          "downloads": 1708,
-          "nota": "Randall RX412, seis posições",
+          "nota": "outra Randall 4x12",
           "ir_padrao": "RX412 01"
-        },
-        {
-          "id": 29142,
-          "titulo": "Vulgar Display Of Power",
-          "criador": "metaldude",
-          "tipo": "cab",
-          "capturas": 1,
-          "downloads": 5829,
-          "nota": "Randall do Vulgar Display of Power (Pantera)"
         }
       ]
     }
