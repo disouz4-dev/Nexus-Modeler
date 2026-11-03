@@ -1,0 +1,97 @@
+{
+  "tipo": "caixa",
+  "nome": "Ash 4x10",
+  "familia": "ash_410",
+  "inspiracao": "caixa 4x10 de baixo com corneta (estilo Ashdown ABM 410H EVO IV): tolex preto, grade de metal expandido preta em losango miúdo, friso creme em volta da grade, emblema de asas prateado com letras vermelhas no alto no meio, duto largo embaixo, sem cantoneiras à mostra; cones azuis (o gerador não faz); 603 x 673 x 444 mm (fabricante), 4 falantes de 10\"",
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.116,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.603,
+    "altura": 0.673,
+    "profundidade": 0.444
+  },
+  "aba_m": 0.03,
+  "faixas": [
+    {
+      "onde": "abaixo_tela",
+      "altura_m": 0.06,
+      "cor": [
+        0.0003,
+        0.0003,
+        0.0003
+      ],
+      "metal": true,
+      "aspereza": 0.95
+    }
+  ],
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.42,
+    "posicao": "centro",
+    "altura_rel": 0.47,
+    "modeler": false,
+    "cor_letras": [
+      0.259,
+      0.0066,
+      0.0119
+    ],
+    "placa": {
+      "cor": [
+        0.6941,
+        0.6941,
+        0.7227
+      ],
+      "metal": true,
+      "forma": "oval",
+      "altura_m": 0.05
+    }
+  },
+  "couro": {
+    "cor": [
+      0.0037,
+      0.0037,
+      0.0037
+    ],
+    "grao_mm": 1.6
+  },
+  "tela": {
+    "tipo": "grade",
+    "grade": "losango",
+    "passo_mm": [
+      26.0,
+      13.0
+    ],
+    "fio_mm": 4.0,
+    "cor": [
+      0.0026,
+      0.0026,
+      0.0026
+    ],
+    "metalico": 0.5,
+    "aspereza": 0.45,
+    "falantes": "visiveis"
+  },
+  "friso": [
+    0.6941,
+    0.586,
+    0.2845
+  ],
+  "friso_m": 0.004,
+  "friso_onde": "tela",
+  "friso_raio_m": 0.004,
+  "cantos": "nenhum",
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  }
+}
