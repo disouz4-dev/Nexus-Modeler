@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:34:47Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3977,6 +3977,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "wind_215": {
+   "nome": "Wind 2x15",
+   "hash": "c562fd9db186aa8f",
+   "data": "2026-11-03T16:34:47Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "wind_215_frente.jpg",
+    "wind_215_frente_alfa.png",
+    "wind_215_manifesto.json",
+    "wind_215_mapa.json"
+   ],
+   "sha256": {
+    "wind_215_frente.jpg": "c56acc58cf0d10931a179684a07fe04414a2259772fe522bad8f5932ff689587",
+    "wind_215_frente_alfa.png": "8123e35208127bfbf0749a2cbd672d70e23fc302b92cc49b300959a2516fb394",
+    "wind_215_manifesto.json": "cbfa74651f3edc30448e84c4e8c3eece92642a93c62a4496f84442bef510d081",
+    "wind_215_mapa.json": "f9269e48c0c98e8e6dcae70fe3a90a82cd15fa78d4a32aa263158a003d651e7e"
+   },
+   "tamanho": 1351935,
+   "tipo": "caixa",
+   "inspiracao": "Peavey 215 Black Widow",
+   "categoria": "2x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   }
  }
 }

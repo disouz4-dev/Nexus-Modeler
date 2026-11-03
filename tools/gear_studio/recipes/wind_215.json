@@ -1,0 +1,68 @@
+{
+  "tipo": "caixa",
+  "nome": "Wind 2x15",
+  "familia": "wind_215",
+  "inspiracao": "caixa de baixo 2x15 vertical do fim dos anos 70 (estilo Peavey 215 Enclosure com falantes Black Widow): tolex preto, tela de pano preto, tiras de alumínio dos lados da tela, marca prateada no alto da tela, cantoneiras cromadas e rodízios; cerca de 610 x 940 x 356 mm (estimado pela foto; fundo raso de 14 pol segundo donos)",
+  "medidas_m": {
+    "largura": 0.61,
+    "altura": 0.89,
+    "profundidade": 0.356
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.7259,
+    "elevacao": 0.0
+  },
+  "aba_m": 0.03,
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.0055
+    ],
+    "grao_mm": 2.6
+  },
+  "tela": {
+    "cor_a": [
+      0.025,
+      0.025,
+      0.026
+    ],
+    "cor_b": [
+      0.075,
+      0.075,
+      0.078
+    ],
+    "trama_mm": 1.6,
+    "aspereza": 0.85
+  },
+  "friso": [
+    0.72,
+    0.73,
+    0.74
+  ],
+  "friso_metal": true,
+  "friso_m": 0.014,
+  "friso_raio_m": 0.002,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.85,
+      0.85,
+      0.86
+    ],
+    "largura_rel": 0.27,
+    "posicao": "centro",
+    "altura_rel": 0.4,
+    "modeler": false
+  },
+  "cantos": "cromo",
+  "cantos_m": 0.03,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 15
+  },
+  "friso_aspereza": 0.55
+}

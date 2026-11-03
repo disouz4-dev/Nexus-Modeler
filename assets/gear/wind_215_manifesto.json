@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "wind_215",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Wind 2x15",
+  "inspiracao": "Peavey 215 Black Widow",
+  "categoria": "2x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Peavey 215 Black Widow",
+      "tons": [
+        {
+          "id": 102158,
+          "titulo": "Peavey 215 BW",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "a própria",
+          "ir_padrao": "Peavey 215 BW (Se4400a)",
+          "padrao": true
+        },
+        {
+          "id": 50027,
+          "titulo": "Peavey 2x15 Bass Cabinet",
+          "criador": "erdosi",
+          "tipo": "cab",
+          "nota": "outra Peavey 2x15",
+          "ir_padrao": "PV215"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
