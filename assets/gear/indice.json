@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:22:52Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1409,8 +1409,8 @@
   },
   "fliptop_115": {
    "nome": "Fliptop 1x15",
-   "hash": "87c70f2820b83ee2",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "d0032531f47511e3",
+   "data": "2026-11-03T16:22:52Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop_115_frente.jpg",
@@ -1419,18 +1419,18 @@
     "fliptop_115_mapa.json"
    ],
    "sha256": {
-    "fliptop_115_frente.jpg": "338f0a90476490ca0fe09e9828e72ba34ec1069ad2d3bebac9185449ffbde76a",
-    "fliptop_115_frente_alfa.png": "00df482043e91977b1a309e1a1b5a5a2c70b344a8a9e47b50e718bf8136f7579",
-    "fliptop_115_manifesto.json": "642d713af3c7ac85d088b7a3b53a4f7d7c223fdd621a7d7337da19e37e6780bb",
-    "fliptop_115_mapa.json": "5ea0a504886829ab210f72984e630e610df1c7a2c37b0068550e58804cf3d82f"
+    "fliptop_115_frente.jpg": "2e64264d8495a0b9fd9e6ae642448d084f88f5aba838ab0bf8ad83879692aa4e",
+    "fliptop_115_frente_alfa.png": "19ec272eae142edb824cb0115d3d83a7eecb01e9b314153f980e00761627ad7c",
+    "fliptop_115_manifesto.json": "717003f1cb7383f3d26c163ad2ce5ad2e3696e5904e7a1a03b3affca5fd7dd9c",
+    "fliptop_115_mapa.json": "26ff96c56db2f48147328a64f2cab2bbaccf354bf6027f9861a644a420c20557"
    },
-   "tamanho": 493573,
+   "tamanho": 1544781,
    "tipo": "caixa",
    "inspiracao": "Ampeg B-15 1x15",
    "categoria": "1x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
