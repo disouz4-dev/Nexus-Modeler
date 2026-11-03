@@ -20,9 +20,7 @@
           "titulo": "Hiwatt Cab 4x12 Fane 50 Purple Label",
           "criador": "wendycabs",
           "tipo": "cab",
-          "capturas": 1,
-          "downloads": 5427,
-          "nota": "Hiwatt 4x12 com Fane Purple Label, microfone SM57",
+          "nota": "a própria Hiwatt 4x12 com Fane",
           "ir_padrao": "Hiwatt 4x12 Fane PL 50 sm57",
           "padrao": true
         },
@@ -31,9 +29,7 @@
           "titulo": "HIWATT MAXWATT 4X12 2000s",
           "criador": "flavortownstudios",
           "tipo": "cab",
-          "capturas": 5,
-          "downloads": 763,
-          "nota": "Hiwatt Maxwatt 4x12, cinco posições de microfone",
+          "nota": "Hiwatt 4x12 dos anos 2000",
           "ir_padrao": "HIWATT_MAXWATT_4X12_E906_CENTRE_LL"
         }
       ]
