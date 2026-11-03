@@ -16,12 +16,21 @@
       "busca": "4x10",
       "tons": [
         {
-          "id": 45241,
-          "titulo": "Ampeg SVT - DI - 4x10 - 8x10 - the definitive speaker capture collection",
+          "id": 102146,
+          "titulo": "GK RBH 410",
+          "criador": "felipedasg",
           "tipo": "cab",
-          "capturas": 15,
-          "padrao": true,
-          "nota": "a mais curtida da busca (390 favoritos)"
+          "nota": "a própria",
+          "ir_padrao": "GK RBH 410 (SM57 + MD421)",
+          "padrao": true
+        },
+        {
+          "id": 102148,
+          "titulo": "SWR Goliath",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "outra 4x10 de baixo",
+          "ir_padrao": "SWR Goliath (SM57 + RE20)"
         }
       ]
     }

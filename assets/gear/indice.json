@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:24:45Z",
+ "gerado": "2026-11-03T16:34:12Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1595,8 +1595,8 @@
   },
   "granite_410": {
    "nome": "Granite 4x10",
-   "hash": "7046341c2a174884",
-   "data": "2026-11-03T16:24:45Z",
+   "hash": "32d6567ecd125799",
+   "data": "2026-11-03T16:34:12Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "granite_410_frente.jpg",
@@ -1607,10 +1607,10 @@
    "sha256": {
     "granite_410_frente.jpg": "45980dd646acbd758dfe26fccf6e0a079563c94ee0145c06fd27166d2c800fee",
     "granite_410_frente_alfa.png": "a1edf185cb57a3ae31ad2b1f79feb1655efaec6a86c7b3a46f384f41310a21dd",
-    "granite_410_manifesto.json": "1176b867d4370659f7fe89253b3f4254212e57062cff266709e821e2ead27021",
+    "granite_410_manifesto.json": "0ec9bc346d0960c65bfaff80bb55fee51bd7cca42ed8959aff6844601b16001e",
     "granite_410_mapa.json": "c358de95e98e80b3262cb33f2e7f45910b619a8a76417e631a58c095d4039529"
    },
-   "tamanho": 636411,
+   "tamanho": 636614,
    "tipo": "caixa",
    "inspiracao": "Gallien-Krueger 4x10",
    "categoria": "4x10",
