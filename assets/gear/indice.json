@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:27:05Z",
+ "gerado": "2026-11-03T15:37:23Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1211,8 +1211,8 @@
   },
   "citrus_bass_410": {
    "nome": "Citrus Bass 4x10",
-   "hash": "392fb036c3219c1b",
-   "data": "2026-11-03T15:27:05Z",
+   "hash": "4af75d1b6324d3f3",
+   "data": "2026-11-03T15:37:23Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus_bass_410_frente.jpg",
@@ -1223,10 +1223,10 @@
    "sha256": {
     "citrus_bass_410_frente.jpg": "80f7c80b4aca67a8cee74eb73f81f8bffa5273b38e14a35ff1c474b9095c9909",
     "citrus_bass_410_frente_alfa.png": "e87f0aa7d7839ef9216f2230f64054fda37f2e6763132f76ae0c999caffd1e67",
-    "citrus_bass_410_manifesto.json": "24d70116d4d83a87b53f069e11f528b31681a116dced4e40a9ca888e1aeb5366",
+    "citrus_bass_410_manifesto.json": "ac5d09c403b3b1cfa77d31460e2b1dbee526edcb28774e2b2bdf9546650d7afe",
     "citrus_bass_410_mapa.json": "823cd73dd6eef826925e7d043cfb259bfa33c32029354af3e3f25eae2fabb62d"
    },
-   "tamanho": 1694969,
+   "tamanho": 1695521,
    "tipo": "caixa",
    "inspiracao": "Orange OBC410",
    "categoria": "4x10",
