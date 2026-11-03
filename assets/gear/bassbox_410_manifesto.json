@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "bassbox_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Bass Box 4x10",
+  "inspiracao": "Behringer BB410",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Behringer BB410",
+      "tons": [
+        {
+          "id": 102146,
+          "titulo": "GK RBH 410",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "sem IR do original: o mais próximo",
+          "ir_padrao": "GK RBH 410 (SM57 + MD421)",
+          "padrao": true
+        },
+        {
+          "id": 45241,
+          "titulo": "Ampeg SVT - DI - 4x10 - 8x10 - the definitive speaker capture collection",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "outra caixa de baixo",
+          "ir_padrao": "Ampeg 8x10 D6 AH"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

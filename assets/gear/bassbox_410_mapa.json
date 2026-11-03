@@ -1,0 +1,28 @@
+{
+  "nome": "Bass Box 4x10",
+  "familia": "bassbox_410",
+  "largura": 2400,
+  "altura": 2623,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    655,
+    716
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.1,
+      "forma": "quadrada",
+      "cor": [
+        0.6,
+        0.6,
+        0.62
+      ]
+    }
+  },
+  "rotulos": []
+}
