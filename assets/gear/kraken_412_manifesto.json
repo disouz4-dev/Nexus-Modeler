@@ -13,8 +13,26 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Victory V412"
+      "busca": "Victory V412",
+      "tons": [
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR do original: o mais próximo",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73",
+          "padrao": true
+        },
+        {
+          "id": 28174,
+          "titulo": "Celestion Vintage 30 - Line 6 Spider Valve 4x12",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "outra 4x12 com V30",
+          "ir_padrao": "V30 4x12 SM57 2.00in 0.0in"
+        }
+      ]
     }
   },
   "signature": null
