@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T10:54:58Z",
+ "gerado": "2026-11-03T10:56:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1998,8 +1998,8 @@
   },
   "jubilee_412": {
    "nome": "Jubilee 4x12",
-   "hash": "870d75e79f974d2b",
-   "data": "2026-11-03T10:54:58Z",
+   "hash": "035d1e94f9623fbc",
+   "data": "2026-11-03T10:56:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jubilee_412_frente.jpg",
@@ -2010,10 +2010,10 @@
    "sha256": {
     "jubilee_412_frente.jpg": "c234d4046a14144b1e3dd73d020bb48ba73958ba2b6b958f3181065eab2d8257",
     "jubilee_412_frente_alfa.png": "5c84bfae9f687833ff791e50119cdfd7ac84c9edf0b56c061c83137c9619fc03",
-    "jubilee_412_manifesto.json": "8c93221d71e65633dc1224f2d82de11c107851615a21dd70d05810c9f26bb721",
+    "jubilee_412_manifesto.json": "ff3a85e0db9c70257ecfce554ce16fa89d5c13e33b08dabea328bac69b4fbc67",
     "jubilee_412_mapa.json": "b7963acde171be5c17a8eea46b8e8da19c2aba3206a5eb3ce0eb3aa5cbe5e1d2"
    },
-   "tamanho": 1444394,
+   "tamanho": 1445164,
    "tipo": "caixa",
    "inspiracao": "Marshall 2551 Silver Jubilee",
    "categoria": "4x12",
