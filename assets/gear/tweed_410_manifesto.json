@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "tweed_410",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "caixa",
   "nome": "Tweed 4x10",
   "inspiracao": "Fender 4x10",
@@ -18,10 +18,19 @@
         {
           "id": 61705,
           "titulo": "Fender '65 Super Reverb 4x10 Jensen P10R",
+          "criador": "outmodedelectronics",
           "tipo": "cab",
-          "capturas": 68,
-          "padrao": true,
-          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+          "nota": "não há Bassman tweed; mesma 4x10 Fender aberta com Jensen P10R",
+          "ir_padrao": "P10R UR 4x10 SM57 2.50in 0.0in",
+          "padrao": true
+        },
+        {
+          "id": 102155,
+          "titulo": "Fender Bassman 410",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "Bassman 4x10 moderna",
+          "ir_padrao": "Fender Bassman 410 (MD421 + R121)"
         }
       ]
     }
