@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "acoustica_118",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Acoustica 1x18",
+  "inspiracao": "Acoustic 361 (1x18 W-bin)",
+  "categoria": "1x18",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Acoustic 361 (1x18 W-bin)"
+    }
+  },
+  "signature": null
+}

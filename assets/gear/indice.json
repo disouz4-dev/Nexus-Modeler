@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:24:25Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -34,6 +34,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "acoustica_118": {
+   "nome": "Acoustica 1x18",
+   "hash": "9047b5f75e9693f3",
+   "data": "2026-11-03T15:24:25Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "acoustica_118_frente.jpg",
+    "acoustica_118_frente_alfa.png",
+    "acoustica_118_manifesto.json",
+    "acoustica_118_mapa.json"
+   ],
+   "sha256": {
+    "acoustica_118_frente.jpg": "7bbb1bf92c6f3d786b331a51da72e2b4de5a97a2d388f8162515aa670f12cb62",
+    "acoustica_118_frente_alfa.png": "e6dd632be552d2efe03d9d09c15e1c7639dcf92cf4994951ac39488ec5cee573",
+    "acoustica_118_manifesto.json": "86c62aa1de0b8c071a3bd719dc4c921400463a782e541eea860765c2e5d429d2",
+    "acoustica_118_mapa.json": "b79ae5a54108630c40ad770369255c2fa3af0e4217f14dafbe477ffee5043e82"
+   },
+   "tamanho": 2951190,
+   "tipo": "caixa",
+   "inspiracao": "Acoustic 361 (1x18 W-bin)",
+   "categoria": "1x18",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "agate_wylde": {
    "nome": "Agate Wylde",

@@ -1,0 +1,87 @@
+{
+  "tipo": "caixa",
+  "nome": "Acoustica 1x18",
+  "familia": "acoustica_118",
+  "inspiracao": "caixa de baixo de corneta dobrada 1x18 (estilo Acoustic 361 'W-bin', com o falante de 18 virado para trás); de frente: tolex preto, tela de pano preto liso em toda a frente com moldura de alumínio, plaqueta preta de borda prateada no canto de baixo à direita, cantoneiras de metal; 622 x 1219 x 457 mm (anúncio da reedição de 2011)",
+  "medidas_m": {
+    "largura": 0.622,
+    "altura": 1.219,
+    "profundidade": 0.457
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 2.195,
+    "elevacao": 0.0
+  },
+  "aba_m": 0.036,
+  "aba_topo_m": 0.05,
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.0055
+    ],
+    "grao_mm": 2.8
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.006,
+      0.006,
+      0.0065
+    ],
+    "cor_b": [
+      0.1,
+      0.1,
+      0.105
+    ],
+    "cor_c": [
+      0.06,
+      0.06,
+      0.063
+    ],
+    "passo_mm": 3.0,
+    "fios": 3,
+    "aspereza": 0.85
+  },
+  "friso": [
+    0.72,
+    0.73,
+    0.74
+  ],
+  "friso_metal": true,
+  "friso_m": 0.016,
+  "friso_raio_m": 0.002,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.25,
+    "posicao": "canto_id",
+    "modeler": false,
+    "margem_rel": 0.025,
+    "placa": {
+      "cor": [
+        0.01,
+        0.01,
+        0.011
+      ],
+      "borda": [
+        0.8,
+        0.8,
+        0.82
+      ]
+    }
+  },
+  "cantos": "cromo",
+  "cantos_m": 0.032,
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 18
+  }
+}
