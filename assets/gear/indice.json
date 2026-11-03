@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2695,6 +2695,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "nova_412": {
+   "nome": "Nova 4x12",
+   "hash": "4395850b14658aec",
+   "data": "2026-11-03T15:36:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nova_412_frente.jpg",
+    "nova_412_frente_alfa.png",
+    "nova_412_manifesto.json",
+    "nova_412_mapa.json"
+   ],
+   "sha256": {
+    "nova_412_frente.jpg": "6f510ddb18ec0ee78fd678257865971ce8a58e16e1c17a943351ee53851c92b5",
+    "nova_412_frente_alfa.png": "b973e472cf3e93cdab31e977ca2320f9793837236770540b8b6b5b4db42fd774",
+    "nova_412_manifesto.json": "66d2f4b440b5b29ae3dc6fdcd2c0eeb6089b9ba3422e3e03fa8f0f68934e0edd",
+    "nova_412_mapa.json": "99d0926e0b6acda910b2c15e580569eee18cc02e89c9ae0a2741e835efead58e"
+   },
+   "tamanho": 1147790,
+   "tipo": "caixa",
+   "inspiracao": "Fortin 4x12 V30",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "olive_drive": {
    "nome": "Olive Drive",

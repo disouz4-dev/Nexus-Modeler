@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "nova_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Nova 4x12",
+  "inspiracao": "Fortin 4x12 V30",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Fortin 4x12 V30",
+      "tons": [
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR da caixa: 4x12 reta com o mesmo falante (V30)",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73",
+          "padrao": true
+        },
+        {
+          "id": 28174,
+          "titulo": "Celestion Vintage 30 - Line 6 Spider Valve 4x12",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "outra 4x12 com V30",
+          "ir_padrao": "V30 4x12 SM57 2.00in 0.0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
