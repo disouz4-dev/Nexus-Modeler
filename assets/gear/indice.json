@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T15:36:59Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3607,6 +3607,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "special_212": {
+   "nome": "Special 2x12",
+   "hash": "91fbd6b6eb0b8a16",
+   "data": "2026-11-03T15:36:59Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "special_212_frente.jpg",
+    "special_212_frente_alfa.png",
+    "special_212_manifesto.json",
+    "special_212_mapa.json"
+   ],
+   "sha256": {
+    "special_212_frente.jpg": "cf4ae39e188ae6f6078589e21b28adb71f9b52df6af31fbf2d1d49d9ad94a04d",
+    "special_212_frente_alfa.png": "a4159d65ee6f9fe50e3f208220d2d1b3b80d25d6771caaf83268a5fd2a811f4d",
+    "special_212_manifesto.json": "1f55c49c4add1830821265d7fe260b10581c11fafe8860bcbfcda06538580ada",
+    "special_212_mapa.json": "1398440fa30edce71e2bd14d6dcb5986cc1850a84365f66a4927b8df7fcd4d8d"
+   },
+   "tamanho": 1153905,
+   "tipo": "caixa",
+   "inspiracao": "Dumble 2x12 (1983)",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "spinel_precision": {
    "nome": "Spinel Precision",
