@@ -20,20 +20,17 @@
           "titulo": "Ampeg B15N",
           "criador": "felipedasg",
           "tipo": "cab",
-          "capturas": 2,
-          "downloads": 8841,
-          "nota": "Ampeg B-15N, SM57 e R121 (e outra misturada com uma 4x10)",
+          "nota": "a própria",
           "ir_padrao": "Ampeg B15N (SM57 + R121)",
           "padrao": true
         },
         {
-          "id": 31188,
-          "titulo": "Mesa Boogie Subway 1x15",
-          "criador": "salamiexcerpt5j",
+          "id": 45241,
+          "titulo": "Ampeg SVT - DI - 4x10 - 8x10 - the definitive speaker capture collection",
+          "criador": "morenoteslesstalk",
           "tipo": "cab",
-          "capturas": 1,
-          "downloads": 1776,
-          "nota": "Mesa Subway 1x15 (outra caixa de baixo de 15 polegadas)"
+          "nota": "outra Ampeg",
+          "ir_padrao": "Ampeg 8x10 D6 AH"
         }
       ]
     }

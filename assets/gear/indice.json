@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:22:52Z",
+ "gerado": "2026-11-03T16:33:57Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1409,8 +1409,8 @@
   },
   "fliptop_115": {
    "nome": "Fliptop 1x15",
-   "hash": "d0032531f47511e3",
-   "data": "2026-11-03T16:22:52Z",
+   "hash": "bf354a1bf8c1fd89",
+   "data": "2026-11-03T16:33:57Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "fliptop_115_frente.jpg",
@@ -1421,10 +1421,10 @@
    "sha256": {
     "fliptop_115_frente.jpg": "2e64264d8495a0b9fd9e6ae642448d084f88f5aba838ab0bf8ad83879692aa4e",
     "fliptop_115_frente_alfa.png": "19ec272eae142edb824cb0115d3d83a7eecb01e9b314153f980e00761627ad7c",
-    "fliptop_115_manifesto.json": "717003f1cb7383f3d26c163ad2ce5ad2e3696e5904e7a1a03b3affca5fd7dd9c",
+    "fliptop_115_manifesto.json": "e82d3def8e77efe6e74d5f5bcaf85548615d609c04f698c2211f010506020f35",
     "fliptop_115_mapa.json": "26ff96c56db2f48147328a64f2cab2bbaccf354bf6027f9861a644a420c20557"
    },
-   "tamanho": 1544781,
+   "tamanho": 1544676,
    "tipo": "caixa",
    "inspiracao": "Ampeg B-15 1x15",
    "categoria": "1x15",
