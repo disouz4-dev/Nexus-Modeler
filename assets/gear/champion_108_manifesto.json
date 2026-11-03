@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "champion_108",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Champion 1x8",
+  "inspiracao": "Fender 57 Custom Champ (parte do falante)",
+  "categoria": "1x08",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Fender 57 Custom Champ (parte do falante)",
+      "tons": [
+        {
+          "id": 102111,
+          "titulo": "Fender Tweed Champ 58",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "o próprio Champ tweed 1958 (5F1), 1x8",
+          "ir_padrao": "Fender Tweed Champ 58",
+          "padrao": true
+        },
+        {
+          "id": 5102,
+          "titulo": "WGS G8C 1x8 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "1x8 de falante parecido",
+          "ir_padrao": "A800 PR-408 G8C M201 1.0in Off Center On Axis 0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
