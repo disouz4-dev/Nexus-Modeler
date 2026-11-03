@@ -1,0 +1,31 @@
+{
+  "formato": 1,
+  "id": "blackcat_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Black Cat 2x12",
+  "inspiracao": "Bad Cat Hot Cat 212X",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Bad Cat Hot Cat 212X",
+      "tons": [
+        {
+          "id": 1873,
+          "titulo": "Matchless 2x12 Celestion G12H30",
+          "criador": "wendycabs",
+          "tipo": "cab",
+          "nota": "sem IR do original: o mais próximo",
+          "ir_padrao": "Matchless 2x12 G12H30 sm57",
+          "padrao": true
+        }
+      ]
+    }
+  },
+  "signature": null
+}

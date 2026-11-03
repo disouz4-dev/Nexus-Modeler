@@ -1,0 +1,88 @@
+{
+  "tipo": "caixa",
+  "nome": "Black Cat 2x12",
+  "familia": "blackcat_212",
+  "inspiracao": "caixa 2x12 aberta da Bad Cat (Hot Cat 212X): tolex preto, faixa de tolex em cima da tela com a plaqueta preta de letras brancas no meio, vivo prata em volta da faixa e da tela, tela preta sal e pimenta, sem cantoneiras, pés pretos, alça de couro em cima; 2 falantes de 12 (Celestion Vintage 30); 660 x 483 x 260 mm (26 x 19 x 10,25 pol., Swee Lee)",
+  "medidas_m": {
+    "largura": 0.66,
+    "altura": 0.483,
+    "profundidade": 0.26
+  },
+  "aba_m": 0.014,
+  "couro": {
+    "cor": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "grao_mm": 3.0
+  },
+  "painel": {
+    "altura_m": 0.105,
+    "tipo": "tolex"
+  },
+  "tela": {
+    "padrao": "cesto",
+    "cor_a": [
+      0.025,
+      0.024,
+      0.025
+    ],
+    "cor_b": [
+      0.25,
+      0.245,
+      0.25
+    ],
+    "trama_mm": 1.2
+  },
+  "friso": [
+    0.75,
+    0.75,
+    0.76
+  ],
+  "friso_onde": "ambos",
+  "friso_m": 0.0015,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.2,
+    "posicao": "painel",
+    "no_painel": true,
+    "placa": {
+      "cor": [
+        0.004,
+        0.004,
+        0.004
+      ],
+      "altura_m": 0.04
+    }
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.84,
+    "elevacao": 0.0
+  },
+  "cantos": "nenhum",
+  "pes": {
+    "altura_m": 0.014
+  },
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "alca": {
+    "largura_m": 0.24,
+    "altura_m": 0.035,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  }
+}

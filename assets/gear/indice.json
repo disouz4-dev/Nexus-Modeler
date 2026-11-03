@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-10-30T21:11:05Z",
+ "gerado": "2026-11-03T16:35:04Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -405,6 +405,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "blackcat_212": {
+   "nome": "Black Cat 2x12",
+   "hash": "dbcae306ccd81a97",
+   "data": "2026-11-03T16:35:04Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "blackcat_212_frente.jpg",
+    "blackcat_212_frente_alfa.png",
+    "blackcat_212_manifesto.json",
+    "blackcat_212_mapa.json"
+   ],
+   "sha256": {
+    "blackcat_212_frente.jpg": "3a8f19ba1bb00bb0fe5e711c65117ad8338300a600faa6ed61bbb05410d76e88",
+    "blackcat_212_frente_alfa.png": "e330b43ef5d1f882556a0223b54940f8ad607c1a3e11f54caaac73568208b933",
+    "blackcat_212_manifesto.json": "0358a5f36117832b027a8850ab2e8aec71bafacf02f01f324fd84624f30d3925",
+    "blackcat_212_mapa.json": "064e4d7206c4f3df0ba4bb874dd5f40279c603773ee8b106415dab2588a397e6"
+   },
+   "tamanho": 1126978,
+   "tipo": "caixa",
+   "inspiracao": "Bad Cat Hot Cat 212X",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "blackcurrant_bass": {
    "nome": "Blackcurrant Bass",
