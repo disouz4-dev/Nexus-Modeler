@@ -1,0 +1,38 @@
+{
+  "formato": 1,
+  "id": "citrus_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Citrus 2x12",
+  "inspiracao": "Orange PPC212",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Orange PPC212",
+      "tons": [
+        {
+          "id": 29354,
+          "titulo": "Orange 2x12 V30",
+          "criador": "romanrecords",
+          "tipo": "cab",
+          "nota": "a própria Orange 2x12 com V30",
+          "ir_padrao": "Orange 2x12 V30 SM57 C",
+          "padrao": true
+        },
+        {
+          "id": 83390,
+          "titulo": "Orange ppc212 2x12 -vintage 30's early UK version (IR/NLS)",
+          "criador": "airsong",
+          "tipo": "cab",
+          "nota": "PPC212 inglesa dos primeiros anos"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
