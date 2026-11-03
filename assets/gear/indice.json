@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:31:03Z",
+ "gerado": "2026-11-03T15:38:57Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3643,8 +3643,8 @@
   },
   "star_412": {
    "nome": "Star 4x12",
-   "hash": "65bf0a8462b52c93",
-   "data": "2026-11-03T15:31:03Z",
+   "hash": "526827ea4e198f0a",
+   "data": "2026-11-03T15:38:57Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "star_412_frente.jpg",
@@ -3655,10 +3655,10 @@
    "sha256": {
     "star_412_frente.jpg": "02597757677e2184be1b5819bf14a41b130f9118ea3c7f3b4b2ae0be6d8eeb83",
     "star_412_frente_alfa.png": "d38f9c523dd260c9129602692d3f42ae7e6e0e197781eeb24c68b241fd0bba4c",
-    "star_412_manifesto.json": "a1be8497774675b12eb4125aa117cea55502bebc95386889bc25a7bd36e92d8d",
+    "star_412_manifesto.json": "d7975e8ea8fcea28eaee03208c2105f34be944d4dedb7ddbea2f031393572c11",
     "star_412_mapa.json": "c032c69f5851a4705b054581018c16e2c19d3762c3f9949090ae2a7d85420e8f"
    },
-   "tamanho": 1524002,
+   "tamanho": 1523655,
    "tipo": "caixa",
    "inspiracao": "Blackstar 4x12",
    "categoria": "4x12",
