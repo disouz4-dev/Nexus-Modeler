@@ -1,8 +1,19 @@
 {
   "nome": "Solar 4x12",
   "familia": "solar_412",
-  "largura": 1374,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 2794,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    760,
+    738
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
 }
