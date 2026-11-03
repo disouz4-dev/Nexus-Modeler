@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:28:27Z",
+ "gerado": "2026-11-03T15:38:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1655,8 +1655,8 @@
   },
   "hart_410": {
    "nome": "Hart 4x10",
-   "hash": "15016790a3634ddc",
-   "data": "2026-11-03T15:28:27Z",
+   "hash": "511ba5726de770f1",
+   "data": "2026-11-03T15:38:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart_410_frente.jpg",
@@ -1667,10 +1667,10 @@
    "sha256": {
     "hart_410_frente.jpg": "cb2bf81f5bb827308f468ecac96a286bfae40e0418fcd91ea5efc13d183e83a3",
     "hart_410_frente_alfa.png": "351801244c7ed36e7d46ac04e7861049e12a75fab79af95bd5d104ff50db42f2",
-    "hart_410_manifesto.json": "6c891a1d36615aa524445aa522e601475a608efd662ca5da60fe7ba9a825721f",
+    "hart_410_manifesto.json": "a78ed97e72f5da3906a0d0db39f79877f5864dc6aabffadbdbadfabdcfc33322",
     "hart_410_mapa.json": "9d51a11232a150cf0ee37670158323f16255cfc1386d6a4e9fd8bfa120b51059"
    },
-   "tamanho": 1425937,
+   "tamanho": 1425517,
    "tipo": "caixa",
    "inspiracao": "Hartke 4x10",
    "categoria": "4x10",
