@@ -13,8 +13,26 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Laney Ironheart IRT412"
+      "busca": "Laney Ironheart IRT412",
+      "tons": [
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 - 2002 Mesa Boogie 4x12 - SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "sem IR da caixa: 4x12 reta com o mesmo falante (V30)",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73",
+          "padrao": true
+        },
+        {
+          "id": 76706,
+          "titulo": "Laney LX412",
+          "criador": "esetipoysuguitarra",
+          "tipo": "cab",
+          "nota": "Laney, mas da linha mais barata",
+          "ir_padrao": "Laney LX412 Shure SM58 NG 2.0cm 0.0cm"
+        }
+      ]
     }
   },
   "signature": null
