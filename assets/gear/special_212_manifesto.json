@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "special_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Special 2x12",
+  "inspiracao": "Dumble 2x12 (1983)",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Dumble 2x12 (1983)"
+    }
+  },
+  "signature": null
+}
