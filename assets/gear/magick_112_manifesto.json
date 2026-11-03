@@ -13,8 +13,18 @@
   "capturas": {
     "origem": "tone3000",
     "recomendadas": {
-      "tons": [],
-      "busca": "Supro Black Magick 1x12"
+      "busca": "Supro Black Magick 1x12",
+      "tons": [
+        {
+          "id": 53369,
+          "titulo": "Supro Black Magick 1x12 - Jensen P12Q",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "a própria",
+          "ir_padrao": "P12Q 1x12 SM57 3.00in 0.0in OA30",
+          "padrao": true
+        }
+      ]
     }
   },
   "signature": null

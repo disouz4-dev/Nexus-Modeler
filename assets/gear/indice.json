@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:25:39Z",
+ "gerado": "2026-11-03T16:34:20Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -2136,8 +2136,8 @@
   },
   "magick_112": {
    "nome": "Magick 1x12",
-   "hash": "f589f9d54c0ebae7",
-   "data": "2026-11-03T16:25:39Z",
+   "hash": "5c178df7b853e098",
+   "data": "2026-11-03T16:34:20Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "magick_112_frente.jpg",
@@ -2148,10 +2148,10 @@
    "sha256": {
     "magick_112_frente.jpg": "ad0e90f515de6d7cfe63633c29f0c6444b4983b25bd75ac5b605665cc3fc7d63",
     "magick_112_frente_alfa.png": "8be9b9900441a702d2ed18dc55deeb9b509339d5d4deb5d424cbcdbad3a2ffca",
-    "magick_112_manifesto.json": "6259ef90bbf28429794ae86f59dcffa3c41f8525d1effad516d7d63c495d4390",
+    "magick_112_manifesto.json": "697abab181b6fd2a953263e4fc0241e0251c6aa6c83c20fdc9bc70fdda6746a8",
     "magick_112_mapa.json": "467cff1963624db3fe7eb49a32646323fc697ac4ccd0d331d1dd2a5bd361d8d4"
    },
-   "tamanho": 1652882,
+   "tamanho": 1653178,
    "tipo": "caixa",
    "inspiracao": "Supro Black Magick 1x12",
    "categoria": "1x12",
