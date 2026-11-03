@@ -1,0 +1,90 @@
+{
+  "tipo": "caixa",
+  "nome": "Gen 4x12",
+  "familia": "gen_412",
+  "inspiracao": "caixa 4x12 reta (estilo Revv 4x12): tolex preto craquelado com borda larga, tela preta de trama miúda, friso branco em volta da tela, cantoneiras pretas pequenas, plaqueta preta retangular de filete prateado no meio da tela, pés pretos; 4 falantes de 12 (Celestion Vintage 30 no original); 762 x 762 x 356 mm",
+  "medidas_m": {
+    "largura": 0.762,
+    "altura": 0.762,
+    "profundidade": 0.356
+  },
+  "aba_m": 0.045,
+  "couro": {
+    "cor": [
+      0.009,
+      0.009,
+      0.009
+    ],
+    "grao_mm": 3.2
+  },
+  "tela": {
+    "padrao": "trancada",
+    "cor_a": [
+      0.0005,
+      0.0005,
+      0.0005
+    ],
+    "cor_b": [
+      0.0254,
+      0.0254,
+      0.0254
+    ],
+    "cor_c": [
+      0.0066,
+      0.0066,
+      0.0066
+    ],
+    "passo_mm": 3.5,
+    "fios": 3
+  },
+  "friso": [
+    0.6941,
+    0.6941,
+    0.6941
+  ],
+  "friso_m": 0.004,
+  "friso_onde": "tela",
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.19,
+    "posicao": "centro",
+    "altura_rel": 0.0,
+    "modeler": false,
+    "placa": {
+      "cor": [
+        0.008,
+        0.008,
+        0.009
+      ],
+      "borda": [
+        0.55,
+        0.55,
+        0.57
+      ],
+      "forma": "retangulo",
+      "altura_m": 0.054
+    }
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "elevacao": 0.0,
+    "proporcao": 1.0
+  },
+  "cantos": "preto",
+  "cantos_m": 0.026,
+  "pes": {
+    "altura_m": 0.018
+  },
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "inclinada": null
+}
