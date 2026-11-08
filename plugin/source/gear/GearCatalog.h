@@ -130,6 +130,13 @@ public:
   // Índice das peças instaladas (Equipamentos/indice.json, mesmo formato do
   // assets/gear/indice.json).
   static juce::var localIndex();
+  // The built-in index (assets/gear/indice.json) with only the pieces whose
+  // files really are inside the program: a piece that only comes through the
+  // gear button stays in assets/gear for the download but is not built in.
+  // O índice embutido (assets/gear/indice.json) só com as peças cujos
+  // arquivos estão mesmo dentro do programa: peça que só vem pelo botão de
+  // equipamentos fica em assets/gear para o download, mas não vai embutida.
+  static juce::var builtInIndex();
 
   // Relê a pasta Equipamentos: peças novas entram no fim (as posições das que
   // já estavam não mudam) e avisam os ouvintes. Peça que já estava não muda

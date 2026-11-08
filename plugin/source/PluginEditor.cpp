@@ -2243,7 +2243,7 @@ void NexusEditor::refreshBrowser()
     cab.kind = GearItem::Kind::cab;
     cab.look = e.look;
     cab.art = &mCabArts[static_cast<size_t>(e.look)];
-    cab.name = cab.art->name;
+    cab.name = cab.art->name.isNotEmpty() ? cab.art->name : e.name;
     cab.inspiration = e.inspiration;
     // Grupo pelo tamanho ("4x12", "2x12", "8x10"...).
     cab.category = e.category;
@@ -2339,6 +2339,7 @@ int NexusEditor::ChainView::cabCards() const
 
 int NexusEditor::chainCabCards() const { return mChain->cabCards(); }
 bool NexusEditor::browserHasCabTab() const { return mBrowser->hasCabs(); }
+juce::String NexusEditor::browserCabName(int look) const { return mBrowser->listedName(GearItem::Kind::cab, look); }
 
 void NexusEditor::catalogChanged()
 {
