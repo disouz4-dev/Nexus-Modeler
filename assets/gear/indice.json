@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:05:57Z",
+ "gerado": "2026-11-03T15:38:28Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -480,8 +480,8 @@
   },
   "block_412": {
    "nome": "Block 4x12",
-   "hash": "ea54f645ca1a8c4d",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "eb91222ed6568a50",
+   "data": "2026-11-03T15:38:28Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block_412_frente.jpg",
@@ -490,18 +490,18 @@
     "block_412_mapa.json"
    ],
    "sha256": {
-    "block_412_frente.jpg": "0b08bf817c5a6c26e169b6ed52a63d5909f7e2328771bfa4264b62a04a093010",
-    "block_412_frente_alfa.png": "88df55698ce2db73d2dd3eeb9c7571013702903aba54c548d08f6e3aee6f3cb8",
-    "block_412_manifesto.json": "6ad5f4f53f5ef6cd59e834529298740f39aaf5f7dc6ace5b4bb3c1a9952a3e6f",
-    "block_412_mapa.json": "a3ab010c1f7e6396f4025e36522e45feb425cb04efdb1f7ed3818eced1af9afb"
+    "block_412_frente.jpg": "972a09e31863b2f928ce6e546ddeb9e88d434e3ad976686504d14acc05a55426",
+    "block_412_frente_alfa.png": "7c9841adaf4c654273b91bc735a282a4594bfd56a5bf767f1300cc30114aec1e",
+    "block_412_manifesto.json": "edff0bfba172a9604f2d2fe7bbc10e1e891e802a4daca4f0d313bedc81789446",
+    "block_412_mapa.json": "eb69cdb5550575980f03445626cf6892bbeb1bdd8e6a9521dfa92ac6eed9ac65"
    },
-   "tamanho": 1173660,
+   "tamanho": 1558854,
    "tipo": "caixa",
    "inspiracao": "5150 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2985,8 +2985,8 @@
   },
   "power_412": {
    "nome": "Power 4x12",
-   "hash": "a9a9d4f0f72d1c07",
-   "data": "2026-11-03T15:05:57Z",
+   "hash": "47243abffa0c78a3",
+   "data": "2026-10-30T20:24:56Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power_412_frente.jpg",
@@ -2995,18 +2995,18 @@
     "power_412_mapa.json"
    ],
    "sha256": {
-    "power_412_frente.jpg": "024046ab7bbbe72581c31900227b9f23727474117857753a2ffbd5fef415cd45",
-    "power_412_frente_alfa.png": "977a3ff6e098d7721fc15ebd48a14c9b8ca3a3b65c6f23cc6cdfca777f2ed8e9",
-    "power_412_manifesto.json": "c226164b72458941a2e009f001292b0a58282a5bf920a6a8ff5efb2bf7556d3b",
-    "power_412_mapa.json": "70f038fa08f952c1499e03b6e1b2e2f24ec929bc8987053142e3ad81dd05bc61"
+    "power_412_frente.jpg": "57d9f8a7745697a3c3e0ff4de3d35d10f39e9ba24b2c4c1855fde6d9a717f14e",
+    "power_412_frente_alfa.png": "fe6336646f17217793514275ad02352c74b8ec0c489400356286c7331b01f242",
+    "power_412_manifesto.json": "c8bf3a97ecad04a83fd4e6ad9c042412acb30804a6f0772e3e468355fb3e6b71",
+    "power_412_mapa.json": "2adc4b6f568a7d188c662578a65ab685bac9d110890a5ef267ee9b9c5c262091"
    },
-   "tamanho": 1259595,
+   "tamanho": 1190933,
    "tipo": "caixa",
    "inspiracao": "ENGL 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.3",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },

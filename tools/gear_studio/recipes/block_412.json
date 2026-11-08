@@ -1,55 +1,92 @@
 {
   "tipo": "caixa",
+  "nome": "Block 4x12",
+  "familia": "block_412",
+  "inspiracao": "caixa 4x12 reta (estilo Peavey 5150 4x12 reta, 1992 a 2004, 4 falantes Sheffield 1200 de 12): tolex preto de textura fina, friso preto fino em volta da tela, tela preta trançada ocupando quase a frente toda, marca cromada larga e itálica no centro sem placa, número pequeno branco no canto de baixo à direita, cantoneiras pretas pequenas e rodízios grandes; 756 x 743 x 356 mm de corpo, mais uns 80 mm de rodízios",
   "medidas_m": {
-    "largura": 0.76,
-    "altura": 0.76,
-    "profundidade": 0.36
+    "largura": 0.756,
+    "altura": 0.743,
+    "profundidade": 0.356
   },
-  "aba_m": 0.03,
+  "aba_m": 0.042,
   "couro": {
     "cor": [
-      0.005,
-      0.005,
-      0.005
+      0.0231,
+      0.0231,
+      0.0231
     ],
-    "grao_mm": 2.4
+    "grao_mm": 2.4,
+    "especular": 0.35
   },
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.045,
-    "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
-      0.9
+      0.92
+    ],
+    "largura_rel": 0.265,
+    "posicao": "centro",
+    "altura_rel": 0.0,
+    "modeler": false,
+    "cor_letras": [
+      0.9,
+      0.9,
+      0.92
     ]
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 1.0,
-    "elevacao": 8.0
+    "proporcao": 1.1,
+    "elevacao": 0.0
   },
-  "nome": "Block 4x12",
-  "familia": "block_412",
-  "inspiracao": "caixa 4x12 do 5150 (estilo Peavey 5150 4x12)",
   "tela": {
+    "padrao": "trancada",
     "cor_a": [
-      0.01,
-      0.01,
-      0.01
+      0.0029,
+      0.0029,
+      0.0029
     ],
     "cor_b": [
-      0.07,
-      0.07,
-      0.07
+      0.0619,
+      0.0619,
+      0.0619
     ],
-    "trama_mm": 2.2
+    "cor_c": [
+      0.021,
+      0.021,
+      0.021
+    ],
+    "passo_mm": 3.0,
+    "fios": 3
   },
-  "friso": null,
+  "friso": [
+    0.0005,
+    0.0005,
+    0.0005
+  ],
   "selo": {
-    "texto": "5150",
-    "altura_m": 0.055,
-    "margem_m": 0.05
-  }
+    "texto": "BLOCK 4X12",
+    "altura_m": 0.036,
+    "margem_m": 0.014,
+    "acima_m": 0.022,
+    "cor": [
+      0.95,
+      0.95,
+      0.95
+    ]
+  },
+  "cantos": "preto",
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "cantos_m": 0.032,
+  "inclinada": null,
+  "friso_m": 0.003,
+  "friso_onde": "tela",
+  "friso_aspereza": 0.6,
+  "friso_verniz": 0.0
 }

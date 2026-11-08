@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "block_412",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "caixa",
   "nome": "Block 4x12",
   "inspiracao": "5150 4x12",
@@ -16,12 +16,21 @@
       "busca": "5150",
       "tons": [
         {
-          "id": 40738,
-          "titulo": "Celestion G12-EVH - EVH 5150III 4x12",
+          "id": 46881,
+          "titulo": "Peavey 412MS Sheffield 1290",
+          "criador": "guitarscrub",
           "tipo": "cab",
-          "capturas": 80,
-          "padrao": true,
-          "nota": "Caixa 5150 III 4x12 com alto-falantes G12-EVH"
+          "nota": "sem IR da 5150 4x12: Peavey 4x12 reta com falantes Sheffield, a mesma família",
+          "ir_padrao": "412MS_SHF_mix_57+57",
+          "padrao": true
+        },
+        {
+          "id": 5758,
+          "titulo": "Peavey Triple XXX 412 (Relic 30) 57",
+          "criador": "scharrface",
+          "tipo": "cab",
+          "nota": "outra Peavey 4x12",
+          "ir_padrao": "XXX Relic 30 57 close 7_dc"
         }
       ]
     }
