@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T15:38:57Z",
+ "gerado": "2026-11-08T18:44:39Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -381,8 +381,8 @@
   },
   "be_412": {
    "nome": "BE 4x12",
-   "hash": "32f570a102a096b2",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "1912ee1e0280890a",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be_412_frente.jpg",
@@ -391,12 +391,12 @@
     "be_412_mapa.json"
    ],
    "sha256": {
-    "be_412_frente.jpg": "0556aad9d7b6cae3921005ebb8a65ef5e7803b8385829b7562330d18a1512798",
-    "be_412_frente_alfa.png": "b0111bd33bad6a6cd6943b0be785c75ae4eec612eef8c0ee8efa8827da4b57a0",
+    "be_412_frente.jpg": "44d65cae9557217521fd2afa1db9cb7a93b8a5b47715324083ff2aad7ea5509e",
+    "be_412_frente_alfa.png": "ebcb23e4173576e63beb7e3a00f28b9452390a613959b6af3079c4940b71491e",
     "be_412_manifesto.json": "a8f64e3c412047352f74af362b1abd3cf5a862df4811d2fb5074818341f0b83a",
     "be_412_mapa.json": "7f9994e428f003954d422db79fe84d93ec4f0090bb4fb113c8e6f2ab675d7342"
    },
-   "tamanho": 1119141,
+   "tamanho": 1743651,
    "tipo": "caixa",
    "inspiracao": "Friedman 4x12",
    "categoria": "4x12",
@@ -480,8 +480,8 @@
   },
   "block_412": {
    "nome": "Block 4x12",
-   "hash": "ea54f645ca1a8c4d",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "eb91222ed6568a50",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "block_412_frente.jpg",
@@ -490,25 +490,25 @@
     "block_412_mapa.json"
    ],
    "sha256": {
-    "block_412_frente.jpg": "0b08bf817c5a6c26e169b6ed52a63d5909f7e2328771bfa4264b62a04a093010",
-    "block_412_frente_alfa.png": "88df55698ce2db73d2dd3eeb9c7571013702903aba54c548d08f6e3aee6f3cb8",
-    "block_412_manifesto.json": "6ad5f4f53f5ef6cd59e834529298740f39aaf5f7dc6ace5b4bb3c1a9952a3e6f",
-    "block_412_mapa.json": "a3ab010c1f7e6396f4025e36522e45feb425cb04efdb1f7ed3818eced1af9afb"
+    "block_412_frente.jpg": "972a09e31863b2f928ce6e546ddeb9e88d434e3ad976686504d14acc05a55426",
+    "block_412_frente_alfa.png": "7c9841adaf4c654273b91bc735a282a4594bfd56a5bf767f1300cc30114aec1e",
+    "block_412_manifesto.json": "edff0bfba172a9604f2d2fe7bbc10e1e891e802a4daca4f0d313bedc81789446",
+    "block_412_mapa.json": "eb69cdb5550575980f03445626cf6892bbeb1bdd8e6a9521dfa92ac6eed9ac65"
    },
-   "tamanho": 1173660,
+   "tamanho": 1558854,
    "tipo": "caixa",
    "inspiracao": "5150 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
   "blue_212": {
    "nome": "Blue 2x12",
-   "hash": "a97d222825f9641f",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "04568a9fc9d029f4",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blue_212_frente.jpg",
@@ -517,12 +517,12 @@
     "blue_212_mapa.json"
    ],
    "sha256": {
-    "blue_212_frente.jpg": "b83f557fe826098be25bbfceb3284ce59cb436f9cae7366c5cd2638599d56026",
-    "blue_212_frente_alfa.png": "e563a0f04733b52f427cf2f798c501f8076fca65a0df3af7d73aa877c0b19647",
+    "blue_212_frente.jpg": "55a4722d8556d1ddab5cb47a53c79a5b5d7aaf1f27eb58362ca9b7ce6e090544",
+    "blue_212_frente_alfa.png": "96ac7f8461cd9a3b98935660e41f051579de4cca380b6bb21e839c54a8968aea",
     "blue_212_manifesto.json": "5fdf7ac13f0e40228b0effbf1cccbad0f294e22b782be7804e4b546cd8e9c2d0",
     "blue_212_mapa.json": "3e8cab22ec8f9748b0bfb18c3668abe637c86d3594fd77086b027e77e55bccf2"
    },
-   "tamanho": 1062247,
+   "tamanho": 1385644,
    "tipo": "caixa",
    "inspiracao": "Vox AC30 2x12",
    "categoria": "2x12",
@@ -678,8 +678,8 @@
   },
   "brit412": {
    "nome": "Brit 4x12",
-   "hash": "0bce6b8ec5f47ab2",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "713649ee34f07b44",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit412_frente.jpg",
@@ -688,18 +688,18 @@
     "brit412_mapa.json"
    ],
    "sha256": {
-    "brit412_frente.jpg": "ce045f64af1108fd89eef90da5cbd795c1c7778b6e1c8a977b1b19c65129a650",
-    "brit412_frente_alfa.png": "28baff5f0d3a078406620f3c180812950ed4b93529928973a8594dbd0975e3f1",
-    "brit412_manifesto.json": "670fcb978ceddbe0f55c4d1fcb582e05ad12f452052b941d17f4ad48dae84ad6",
-    "brit412_mapa.json": "3e5f3446cbc28898405f73794a7d039d9c3aa72430f0b68a5229f2a16123757c"
+    "brit412_frente.jpg": "10730a527f9e666332bd32c6d48058af4cb466aabd9f97a68362df524e0f52fa",
+    "brit412_frente_alfa.png": "de6e318e2b4d5100a91107afa70a0faaf991498b7cf4306bd0aec06b375028de",
+    "brit412_manifesto.json": "69295032f3eb6859b09d2dc4ab311cdf6e2a088b855ad3dfdb7ac1dc2ae7bd8e",
+    "brit412_mapa.json": "b57511126199980fe493d98a2248b9ef2c1e4829c5191723c717a3251922d635"
    },
-   "tamanho": 551648,
+   "tamanho": 1840008,
    "tipo": "caixa",
    "inspiracao": "1960A 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1184,8 +1184,8 @@
   },
   "citrus_412": {
    "nome": "Citrus 4x12",
-   "hash": "36ad39f6e8278fcd",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "0d2b053445d1459f",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "citrus_412_frente.jpg",
@@ -1194,18 +1194,18 @@
     "citrus_412_mapa.json"
    ],
    "sha256": {
-    "citrus_412_frente.jpg": "fb542d0826bd9d6dc258c24084b157ce3e21c47107ac339fe497d5f5cd2d3bf8",
-    "citrus_412_frente_alfa.png": "ef048ec67e2936a0813adacc5faf3326913f11a0108cdadd20c369f8068b0d70",
-    "citrus_412_manifesto.json": "5e8de34d2e638343b256b7284590682e6864abe810904d3534c4b5561b253fb4",
+    "citrus_412_frente.jpg": "38c5b3c4285d6ae5851f8b1000f9e6517250f4c6841e6c2b15312fc1f05dbb5b",
+    "citrus_412_frente_alfa.png": "6baf5d74ce25648c1e5b92ecdd2d421124ccf700fba75e556ff999f8d4a7ef8b",
+    "citrus_412_manifesto.json": "6366a16c62733a6ede4afe5c84a2acd2abd090283d426a10bddad2ab5e660b1f",
     "citrus_412_mapa.json": "19ce875afac4711b084c8078c43414a8c886ea9586511d9b0abcf4f5be764b45"
    },
-   "tamanho": 1269309,
+   "tamanho": 1873478,
    "tipo": "caixa",
    "inspiracao": "Orange 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1655,8 +1655,8 @@
   },
   "hart_410": {
    "nome": "Hart 4x10",
-   "hash": "0ed0fc268574b4f5",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "511ba5726de770f1",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hart_410_frente.jpg",
@@ -1665,18 +1665,18 @@
     "hart_410_mapa.json"
    ],
    "sha256": {
-    "hart_410_frente.jpg": "5ce4a0e05a56082822a3ae7a28024641c97452fb659e318eece6a4337c0b8e16",
-    "hart_410_frente_alfa.png": "5f5f9c2b2063e071e0b676cb808d9d6bb495acdc800f3faa22826a059960ba8b",
-    "hart_410_manifesto.json": "a064acbe0386d61f2eead4ef9da776ed1c852151f322a1f7db71d255a12ccee0",
-    "hart_410_mapa.json": "fd21e92fe1395fc6d895e6440cb3632bd48e90caf019996d0a374e941e7f52e5"
+    "hart_410_frente.jpg": "cb2bf81f5bb827308f468ecac96a286bfae40e0418fcd91ea5efc13d183e83a3",
+    "hart_410_frente_alfa.png": "351801244c7ed36e7d46ac04e7861049e12a75fab79af95bd5d104ff50db42f2",
+    "hart_410_manifesto.json": "a78ed97e72f5da3906a0d0db39f79877f5864dc6aabffadbdbadfabdcfc33322",
+    "hart_410_mapa.json": "9d51a11232a150cf0ee37670158323f16255cfc1386d6a4e9fd8bfa120b51059"
    },
-   "tamanho": 1449938,
+   "tamanho": 1425517,
    "tipo": "caixa",
    "inspiracao": "Hartke 4x10",
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1746,8 +1746,8 @@
   },
   "hi_412": {
    "nome": "Hi 4x12",
-   "hash": "8e2cd038fe2bf3fd",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "8c84af7cc63491fb",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "hi_412_frente.jpg",
@@ -1756,18 +1756,18 @@
     "hi_412_mapa.json"
    ],
    "sha256": {
-    "hi_412_frente.jpg": "b3d0425d69b9b2a3cc7b8c3027563390902670dd40607026e711551ae03b406b",
-    "hi_412_frente_alfa.png": "acb8b73baecfee6d3ead1319a5e9eff394e33d18594bc2b2e35503c7f268b9ff",
-    "hi_412_manifesto.json": "40fe34eae162460485e9a89adb87f60f982663aa51d00d1ebbdab53a55c99c3c",
+    "hi_412_frente.jpg": "ef109ea6e3c03aba8dab65c6f841849bd3faf5290e72c702ebba9768a95fd721",
+    "hi_412_frente_alfa.png": "db739141d75e294bc5172a06c454c46d03086cd79a92ed8a1fa11c36a69d6b75",
+    "hi_412_manifesto.json": "4ac70260fedd4138dddf26791c699b7d99b61ab9b2da9af88054b47529e2d794",
     "hi_412_mapa.json": "74f62cd102ab7c8d5e250519bd22fb863e74653d9a859fc34c63c60f3bcebc9a"
    },
-   "tamanho": 1166174,
+   "tamanho": 1690981,
    "tipo": "caixa",
    "inspiracao": "Hiwatt 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2298,8 +2298,8 @@
   },
   "mark5_412": {
    "nome": "Recto 4x12",
-   "hash": "d3aa11f7c3ee8ec3",
-   "data": "2026-10-30T20:38:34Z",
+   "hash": "2b3ae2f16e711df9",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mark5_412_frente.jpg",
@@ -2308,18 +2308,18 @@
     "mark5_412_mapa.json"
    ],
    "sha256": {
-    "mark5_412_frente.jpg": "37d3d0f023d27de792e169275c2e7bbd605e361317f7fddee62f6752dd194f29",
-    "mark5_412_frente_alfa.png": "e55432444119ae972b3f49cc402e033a3d7001306ad498102761bb8ce62ae81e",
-    "mark5_412_manifesto.json": "14e7a2ae22b8b005d66b05675bf13f0a33ba1f484b67d26a6868d469bb707d0f",
-    "mark5_412_mapa.json": "d23c9eb498d7e4f1b19152e06f9ad347a75ef5a92564e1c94f186b5f3c60bd36"
+    "mark5_412_frente.jpg": "7b0b022b416cf12751d1db3547c3b0861ce0a531a134f6a543d6a07808a7e8bd",
+    "mark5_412_frente_alfa.png": "b480da08892f21c639f3bab6366b753d574c921b232364097c74b1d2abfa18fb",
+    "mark5_412_manifesto.json": "f6097ccb53b57af5bde0cef688dcf71aa78772fc33a5bad3f784cde0ca76b41e",
+    "mark5_412_mapa.json": "f6901e0d1d5e101e46d0c9d66b49b72bf2380c0cb4c397a6c2b80e1b9be40cef"
    },
-   "tamanho": 497806,
+   "tamanho": 1820148,
    "tipo": "caixa",
    "inspiracao": "Mesa Rectifier 4x12 (V30)",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -2473,8 +2473,8 @@
   },
   "match_212": {
    "nome": "Match 2x12",
-   "hash": "7d44349e07431e0e",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "173fdc278da73112",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match_212_frente.jpg",
@@ -2483,12 +2483,12 @@
     "match_212_mapa.json"
    ],
    "sha256": {
-    "match_212_frente.jpg": "ffc5341ec4a8bd11ce61e2e1279b5f627a685744d372897298d36c7ab68fc4bd",
-    "match_212_frente_alfa.png": "930772561b24d3622183d5cd974c85277a7a5637ceb9f183b3084ffb77a8a6e2",
+    "match_212_frente.jpg": "b04f18d6b0c65c13adb5e540dda7e3af54998141b980ca14e46a42087991f2ee",
+    "match_212_frente_alfa.png": "894d02941e5df2a963c59cfdca15d62ddac2950f5d1fbba75f160add1ab63b8b",
     "match_212_manifesto.json": "543490604e03db05483100f4f2ffe79834c41d310a034d56625c7dabf5633d52",
     "match_212_mapa.json": "ebb13ee7b63797f9571a4c92a1194d846bfe04d0d0757cfca938dee29f477a76"
    },
-   "tamanho": 1169042,
+   "tamanho": 1522540,
    "tipo": "caixa",
    "inspiracao": "Matchless 2x12",
    "categoria": "2x12",
@@ -2985,8 +2985,8 @@
   },
   "power_412": {
    "nome": "Power 4x12",
-   "hash": "47243abffa0c78a3",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "a9a9d4f0f72d1c07",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "power_412_frente.jpg",
@@ -2995,18 +2995,18 @@
     "power_412_mapa.json"
    ],
    "sha256": {
-    "power_412_frente.jpg": "57d9f8a7745697a3c3e0ff4de3d35d10f39e9ba24b2c4c1855fde6d9a717f14e",
-    "power_412_frente_alfa.png": "fe6336646f17217793514275ad02352c74b8ec0c489400356286c7331b01f242",
-    "power_412_manifesto.json": "c8bf3a97ecad04a83fd4e6ad9c042412acb30804a6f0772e3e468355fb3e6b71",
-    "power_412_mapa.json": "2adc4b6f568a7d188c662578a65ab685bac9d110890a5ef267ee9b9c5c262091"
+    "power_412_frente.jpg": "024046ab7bbbe72581c31900227b9f23727474117857753a2ffbd5fef415cd45",
+    "power_412_frente_alfa.png": "977a3ff6e098d7721fc15ebd48a14c9b8ca3a3b65c6f23cc6cdfca777f2ed8e9",
+    "power_412_manifesto.json": "c226164b72458941a2e009f001292b0a58282a5bf920a6a8ff5efb2bf7556d3b",
+    "power_412_mapa.json": "70f038fa08f952c1499e03b6e1b2e2f24ec929bc8987053142e3ad81dd05bc61"
    },
-   "tamanho": 1190933,
+   "tamanho": 1259595,
    "tipo": "caixa",
    "inspiracao": "ENGL 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3142,8 +3142,8 @@
   },
   "recto_dual": {
    "nome": "Recto Dual",
-   "hash": "db88aaae3b5b54c7",
-   "data": "2026-10-30T20:36:12Z",
+   "hash": "24f5e656c1a8948f",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_dual_botao_agudo.png",
@@ -3158,18 +3158,18 @@
     "recto_dual_mapa.json"
    ],
    "sha256": {
-    "recto_dual_botao_agudo.png": "9418f70aa70b3223be31d6b48add40f1d0602123cdafa63b8ed7c49f096b6b0d",
-    "recto_dual_botao_ganho.png": "aa20ed83b15733d164a13bd16e6d9c02fd01a788c61d1c3f6bbfe45c3f119b7d",
-    "recto_dual_botao_grave.png": "1919fda19b76b2d5d68f85a82e68536f5b398fc98b2bd418465d5e30e7a39fb9",
-    "recto_dual_botao_medio.png": "20c8bbf1025bc95d9820abe3abbee0405618b80070b8feadb5a4d0cff9809e0e",
-    "recto_dual_botao_presenca.png": "42070b64343fec4f60c4e40ce80ebebeb909746a1a6978392e74016d73812fa4",
-    "recto_dual_botao_volume.png": "af6afb3d191cb2564e823ffc3a92c81388955bd51134b3b736233f36f9c78c41",
-    "recto_dual_frente.jpg": "a0fed58203baf120a6f3f67564a096f7362ac3edf00fc24c5f196e53148770b2",
-    "recto_dual_frente_alfa.png": "fb2f6808af1bb80a5b40e2ff3091d41290ffb805a0d30539e9118662ba6ca5f0",
+    "recto_dual_botao_agudo.png": "b2cd7f0f41d9153b3aab52b0ade4274b140cde660a9dd0b3d3d75ebbe15cc86a",
+    "recto_dual_botao_ganho.png": "46f86250889d18ce961d7d61b8a601d1ec1c505ce24c5e8938252ad71f9a0662",
+    "recto_dual_botao_grave.png": "7d263b5311debdf8b91e3ae04a92ea26a14f2c5f17fb70356f7a8779284cb4fd",
+    "recto_dual_botao_medio.png": "efd68667897b9c7dc9e2849bf4b8911cb8300b6c37aa3eb72ba3f637c2afbaad",
+    "recto_dual_botao_presenca.png": "26a9f16b075ca77160b20ab61656e6bf20474f983e7a371bf7f7ac97fa2ffdcb",
+    "recto_dual_botao_volume.png": "6bfaef648dc3e9a1c11cf1a298e34b7a404661ba283abfa00cc374ece53c0e8b",
+    "recto_dual_frente.jpg": "bd96ea831ee1bdea206c4fa67dc79c0c13337925b8e56bbfdb3a51d6a5084d62",
+    "recto_dual_frente_alfa.png": "4f883a833678661a7480d35fe653962daa2fd7dafacf2f80111b9bbbed96f9ef",
     "recto_dual_manifesto.json": "a556c4d8faec478745c3f23f3763b37288ba91c01465a5bb4f5d93a28b202563",
-    "recto_dual_mapa.json": "49f273309be8a59af37745b1349a566763e2dde4ca0d7618c1a66165ba676d38"
+    "recto_dual_mapa.json": "5eb67e8e3262649f997bd25449bd681359d7f11d4961ff2666649b5874302e31"
    },
-   "tamanho": 1107494,
+   "tamanho": 4954333,
    "tipo": "cabecote",
    "inspiracao": "Dual Rectifier",
    "categoria": "Americanos de alto ganho",
@@ -3181,8 +3181,8 @@
   },
   "recto_triple": {
    "nome": "Recto Triple",
-   "hash": "a66a7a63b8f52497",
-   "data": "2026-10-30T21:11:05Z",
+   "hash": "0237b2f990cb20dc",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "recto_triple_botao_agudo.png",
@@ -3197,18 +3197,18 @@
     "recto_triple_mapa.json"
    ],
    "sha256": {
-    "recto_triple_botao_agudo.png": "dcdb8dee63d1ee6c482c40af2ad816d1a5b0f01ea0c7f8bf6cd6cd4f585c1eaf",
-    "recto_triple_botao_ganho.png": "5f528df464d348face8280f25d0d13939dc77eeee8d13825e0dfc06f17885263",
-    "recto_triple_botao_grave.png": "dcdcddfc8f6c2d7220c31a8c7095999be3407b5db954e59d19b9eccaa9160c62",
-    "recto_triple_botao_medio.png": "41f030a7b0fc8a5f0bc93375f9cd21dbdb666e6553a8a88d173976e0357c5607",
-    "recto_triple_botao_presenca.png": "2e36e363e4913f5816878c5d8761b5e43daf0da42ae52abbcbf1e8efb196cbf8",
-    "recto_triple_botao_volume.png": "66c5fd97779a57e683da3ec0d0215cf9fb150e8e5df9ff30893fa063e4a3f21e",
-    "recto_triple_frente.jpg": "17c3500aca3f1b96889b53d026aa78e5285b159f4400618012925476e1e89143",
-    "recto_triple_frente_alfa.png": "c30ad1ee14f80c19e019dba8e919bbd029948b23f58e304db2c35154b1879857",
+    "recto_triple_botao_agudo.png": "1fd6374231ac612faf4e8108999adbb7bbf78e1c042797cecdb281f251be7a6d",
+    "recto_triple_botao_ganho.png": "9e616cff0aed6d26a5657ae66136735fae8fa692a6a41b92122b1cd62a42323a",
+    "recto_triple_botao_grave.png": "624c82dd109fe1699b8c8437fc951e4c94b385e145f2ba97136da1e2f1427f32",
+    "recto_triple_botao_medio.png": "c40f5afaee63d38e32360ac73b9bb810c86774ff1ac222289f403061fe37767a",
+    "recto_triple_botao_presenca.png": "b7c1f0ec46a68999ab2c8ab350dd04b7d77ebcc563888645f3c6648c4eb339e7",
+    "recto_triple_botao_volume.png": "408915bcf00cac3e211acb64468c67c78433ed33cf6611021b5f88c82ece36bb",
+    "recto_triple_frente.jpg": "987c168d966b071c5f1836c9c2b90038bc2c3fa4247405abe62e217901100373",
+    "recto_triple_frente_alfa.png": "765b2d3e4c1b3a7cfc720ea200abd94a4437f3073edae1cdc0d6e84236a8aaf9",
     "recto_triple_manifesto.json": "9d262be6b4f124f7a364d0bc6fcafe6569d64bc491a5acb0f8a502837133f55a",
-    "recto_triple_mapa.json": "8f4ac7b03f88990654ea370e02b0a649010a9c84789d696ed3449a20a38fc72e"
+    "recto_triple_mapa.json": "2f62f8d768a49827d9177cc5c4729badebb20e25e142817cddee5b3980c281d5"
    },
-   "tamanho": 1107526,
+   "tamanho": 4967841,
    "tipo": "cabecote",
    "inspiracao": "Triple Rectifier",
    "categoria": "Americanos de alto ganho",
@@ -3220,8 +3220,8 @@
   },
   "rg_412": {
    "nome": "RG 4x12",
-   "hash": "0f1c9c2d31461baf",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "50766b50a67115a2",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "rg_412_frente.jpg",
@@ -3230,18 +3230,18 @@
     "rg_412_mapa.json"
    ],
    "sha256": {
-    "rg_412_frente.jpg": "dd0c6e2460ad3f62c1bfb1fac0934d2f3165eb2c91216458734c3710a5ceaa7d",
-    "rg_412_frente_alfa.png": "1d5a1c82911e151d65afc5c28858393fa4e0fad2140846dbc82fb0e232bf41b6",
-    "rg_412_manifesto.json": "9ecad9af6acdba4631501d5479e93d5c3910ebc7a93d2608f6fb0fe0c9ff17db",
-    "rg_412_mapa.json": "73acb8d3884ca075bd2cc7ef639376ae26d980ec66c7b532f6c18d38f5c02b58"
+    "rg_412_frente.jpg": "ec7f1c314d55e65b8c4a4bfccfcc20d8f2801624f2995bf96782d2c6132c4478",
+    "rg_412_frente_alfa.png": "f13d2286e0b52d58cfec3056b5df1f9855098f0decab7de30b27b84123845a8b",
+    "rg_412_manifesto.json": "ac790ad2a04ed7e13622ceee747dbb6a4a952ca55e36efcaa804760ccec21f89",
+    "rg_412_mapa.json": "537bddad6a88903f751fb91b22d30f2eb4515f4106fae30f9ab029c47fffb180"
    },
-   "tamanho": 872825,
+   "tamanho": 868993,
    "tipo": "caixa",
    "inspiracao": "Randall 4x12",
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -3459,8 +3459,8 @@
   },
   "sl_412": {
    "nome": "SL 4x12",
-   "hash": "4ee204345f4adc54",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "777f8cb449ea8aad",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "sl_412_frente.jpg",
@@ -3469,12 +3469,12 @@
     "sl_412_mapa.json"
    ],
    "sha256": {
-    "sl_412_frente.jpg": "2169aaba3ce65361d2d11b91b7e2db17127975f0759693eb645ed62c36326d00",
-    "sl_412_frente_alfa.png": "9212bb99371268c3f63b7627e8e9491bbdafb2123511d621878f85d691d73623",
+    "sl_412_frente.jpg": "34e1e1ced6744c47ed4b3c8d764c9e83c64613917977f8dfe6f7ece7b8108cc0",
+    "sl_412_frente_alfa.png": "9318b0c5b2b4300745e313c31ef27322fa7aa12e7717e4219a1e3c3c676aa955",
     "sl_412_manifesto.json": "9bb24dda46583ec13e982a17b9c286cd4b2d7114e9141e128bbc1a85362436c6",
     "sl_412_mapa.json": "d428f5a2df7c4b809436f948e94e7cfaba8980609ca0403983c61a9b392fd1ee"
    },
-   "tamanho": 1093572,
+   "tamanho": 1635382,
    "tipo": "caixa",
    "inspiracao": "Soldano 4x12",
    "categoria": "4x12",
@@ -3926,8 +3926,8 @@
   },
   "vault_810": {
    "nome": "Vault 8x10",
-   "hash": "df329760984fcd3b",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "7161d6a53df084c0",
+   "data": "2026-11-08T18:44:39Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "vault_810_frente.jpg",
@@ -3936,12 +3936,12 @@
     "vault_810_mapa.json"
    ],
    "sha256": {
-    "vault_810_frente.jpg": "1d956165146c6f6c1bb6f5359058cbd5ce57c4857bf68979a9c718648b0db43f",
-    "vault_810_frente_alfa.png": "a524b1a138dbdd20674bf84f972bfa17d98a21dc009435b275408a5d91e1bd85",
+    "vault_810_frente.jpg": "ad43b7a4349537ef45fc147db2fdc13843862d5f8da533f7bf317729719f0a95",
+    "vault_810_frente_alfa.png": "0ef12788d81fd03c977af1dcacd3c6a53dffcbd2bc1228cc724c92c2712b1fc5",
     "vault_810_manifesto.json": "017bc40a9244903d10999f42d84859175e4eee70c8418ba6c0a5a16e95662a2a",
-    "vault_810_mapa.json": "798158065da7e1b4368c0fee2334b6776a191dc0f4cfc543be4a5f71c722cc04"
+    "vault_810_mapa.json": "605cc787b365ef8fbeae42ba2df133995d9090981b5272ebe45e5f2dd2c30741"
    },
-   "tamanho": 2034385,
+   "tamanho": 1520438,
    "tipo": "caixa",
    "inspiracao": "Ampeg 8x10",
    "categoria": "8x10",
