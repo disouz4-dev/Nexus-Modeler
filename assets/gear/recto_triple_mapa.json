@@ -7,172 +7,61 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 1024,
-      "y": 762,
-      "tamanho": 78,
+      "x": 1061,
+      "y": 731,
+      "tamanho": 67,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1186,
-      "y": 762,
-      "tamanho": 78,
+      "x": 1220,
+      "y": 731,
+      "tamanho": 67,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1347,
-      "y": 762,
-      "tamanho": 78,
+      "x": 1378,
+      "y": 731,
+      "tamanho": 67,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1508,
-      "y": 761,
-      "tamanho": 79,
+      "x": 1535,
+      "y": 730,
+      "tamanho": 69,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1669,
-      "y": 761,
-      "tamanho": 80,
+      "x": 1692,
+      "y": 729,
+      "tamanho": 70,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1829,
-      "y": 760,
-      "tamanho": 82,
+      "x": 1850,
+      "y": 729,
+      "tamanho": 71,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [
-    "Limpo",
-    "Vintage",
-    "Moderno"
+    "Normal"
   ],
-  "rotulos": [
-    {
-      "texto": "BOLD / SPONGY",
-      "x": 290.5,
-      "y": 895.1,
-      "altura": 15.88,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "STANDBY",
-      "x": 386.1,
-      "y": 901.8,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "SOLO HEAD",
-      "x": 705.6,
-      "y": 902.2,
-      "altura": 14.01,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "ACTIVE MASTER",
-      "x": 915.1,
-      "y": 934.2,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 1063.7,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 1224.4,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 1385.2,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MID",
-      "x": 1545.9,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1706.6,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "GAIN",
-      "x": 1867.4,
-      "y": 869.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "FT. SW.",
-      "x": 2026.1,
-      "y": 880.5,
-      "altura": 22.59,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "INPUT",
-      "x": 2123.7,
-      "y": 881.1,
-      "altura": 23.34,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    }
-  ]
+  "rotulos": []
 }
