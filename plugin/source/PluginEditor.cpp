@@ -64,7 +64,17 @@ void drawGear(juce::Graphics& g, const juce::Image& img, juce::Rectangle<float> 
   g.setOpacity(1.0f);
 }
 
-// Rótulos do painel: texto por cima da imagem 3D, traduzido, na posição e
+// Arte de uma peça do catálogo: cabeçote, caixa e pedal de captura mostram
+// os rótulos do original sem traduzir; os efeitos próprios do Nexus (sem
+// original) são traduzidos.
+GearArt loadArt(const G::GearEntry& e)
+{
+  auto art = GearArt::load(e.id);
+  art.translateLabels = e.kind == G::Kind::pedal && e.engine != "captura";
+  return art;
+}
+
+// Rótulos do painel: texto por cima da imagem 3D (traduzido nos efeitos próprios), na posição e
 // perspectiva anotadas pelo gerador. minEm: letra mínima na tela (o cabeçote
 // e o pedal grandes usam 12 px na janela padrão; a janela maior ou menor
 // escala junto). A letra nunca encolhe para caber: a palavra longa quebra em
@@ -84,7 +94,7 @@ void drawGearLabels(juce::Graphics& g, const GearArt& art, juce::Rectangle<float
       continue;
     const float kerning = language::allowsLetterSpacing() ? std::max(0.0f, l.spacing - 1.0f) + 0.02f : 0.0f;
     const auto font = Fonts::get().displayEm(em).withExtraKerningFactor(kerning);
-    const auto text = upper(TRANS(l.text));
+    const auto text = upper(art.translateLabels ? TRANS(l.text) : l.text);
     // Letra maior que a gravada cresce para baixo, a partir do topo do rótulo:
     // o nome fica embaixo do botão, sem subir por cima dele.
     const juce::Point<float> at(image.getX() + l.centre.x * scale, image.getY() + l.centre.y * scale + 0.5f * (em - drawn));
@@ -1949,7 +1959,7 @@ NexusEditor::NexusEditor(NexusProcessor& p)
       arts.resize(list.size());
       for (size_t i = 0; i < list.size(); ++i)
         if (!list[i].vacant)
-          jobs.push_back([&arts, i, id = list[i].id] { arts[i] = GearArt::load(id); });
+          jobs.push_back([&arts, i, e = list[i]] { arts[i] = loadArt(e); });
     };
     queue(mAmpArts, G::Kind::amp);
     queue(mCabArts, G::Kind::cab);
@@ -2348,9 +2358,9 @@ void NexusEditor::catalogChanged()
   auto grow = [](std::deque<GearArt>& arts, G::Kind kind) {
     for (const auto& e : GearCatalog::instance().entries(kind))
       if (e.look >= static_cast<int>(arts.size()))
-        arts.push_back(e.vacant ? GearArt() : GearArt::load(e.id));
+        arts.push_back(e.vacant ? GearArt() : loadArt(e));
       else if (!e.vacant && !arts[static_cast<size_t>(e.look)].valid())
-        arts[static_cast<size_t>(e.look)] = GearArt::load(e.id);
+        arts[static_cast<size_t>(e.look)] = loadArt(e);
   };
   grow(mPedalArts, G::Kind::pedal);
   grow(mAmpArts, G::Kind::amp);
