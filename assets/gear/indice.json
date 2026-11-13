@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-08T18:45:09Z",
+ "gerado": "2026-11-13T23:16:12Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3667,6 +3667,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "super_410": {
+   "nome": "Silver Super 4x10",
+   "hash": "92937ac5ddeecabb",
+   "data": "2026-11-13T23:16:11Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "super_410_frente.jpg",
+    "super_410_frente_alfa.png",
+    "super_410_manifesto.json",
+    "super_410_mapa.json"
+   ],
+   "sha256": {
+    "super_410_frente.jpg": "a6bca116f5b8ea9697696f6db37a6404a7041d622e23844acc95151036e0f543",
+    "super_410_frente_alfa.png": "d62076e2a4f09390d798a44743613ba9d960e7f7aade7255f8a403ed93d1eb41",
+    "super_410_manifesto.json": "1ace25b985cabaa4250782d897bf047fd0f129ea56153b0771f56df313849b1c",
+    "super_410_mapa.json": "5c704fb772b0f88c05626a98a8bf58deb800406bc488951ecd37d4ea6e371f82"
+   },
+   "tamanho": 2195348,
+   "tipo": "caixa",
+   "inspiracao": "Fender Super Reverb",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "topaz_250": {
    "nome": "Topaz 250",

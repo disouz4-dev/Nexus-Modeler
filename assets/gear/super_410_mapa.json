@@ -1,0 +1,19 @@
+{
+  "nome": "Silver Super 4x10",
+  "familia": "super_410",
+  "largura": 2400,
+  "altura": 2448,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    638,
+    660
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}

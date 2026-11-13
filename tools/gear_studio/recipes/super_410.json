@@ -1,0 +1,405 @@
+{
+  "tipo": "caixa",
+  "nome": "Silver Super 4x10",
+  "familia": "super_410",
+  "inspiracao": "feita a partir da parte dos falantes do combo Fender '65 Super Reverb (blackface; a Fender não vende caixa avulsa dele): tolex preto, tela prateada com quadriculado escuro, marca script inclinada no alto à esquerda da tela, sem friso, cantoneiras cromadas nos quatro cantos; largura e fundura do combo, altura sem a faixa do painel; 4 falantes de 10 (Jensen P10R); 638 x 584 x 267 mm",
+  "aba_m": 0.019,
+  "aba_topo_m": 0.022,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.2,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "margem_rel": 0.047,
+    "escuro": true,
+    "cor_letras": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "altura_rel": 0.0
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 1.02,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.638,
+    "altura": 0.66,
+    "profundidade": 0.267
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "cor_b": [
+      0.74,
+      0.74,
+      0.73
+    ],
+    "cor_linha": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "passo_mm": [
+      3.0,
+      2.2
+    ],
+    "largura_rel": 0.3,
+    "trama_mm": 0.7,
+    "brilho": 0.3,
+    "aspereza": 0.42
+  },
+  "friso": null,
+  "cantos": "cromo",
+  "cantos_m": 0.03,
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "painel": {
+    "altura_m": 0.09,
+    "tipo": "chapa",
+    "cor": [
+      0.012,
+      0.012,
+      0.013
+    ],
+    "botoes": [
+      10
+    ],
+    "botao_raio_m": 0.011,
+    "saia_numerada": true,
+    "cor_tampa": [
+      0.85,
+      0.86,
+      0.88
+    ],
+    "botoes_x": [
+      -0.36,
+      -0.29,
+      -0.22,
+      -0.057,
+      -0.005,
+      0.048,
+      0.102,
+      0.154,
+      0.207,
+      0.261
+    ],
+    "itens": [
+      {
+        "tipo": "moldura",
+        "x": 0.0,
+        "z": 0.0,
+        "largura": 0.985,
+        "altura": 0.86,
+        "cor": [
+          0.78,
+          0.79,
+          0.8
+        ]
+      },
+      {
+        "tipo": "jack",
+        "x": -0.475,
+        "z": 0.094
+      },
+      {
+        "tipo": "jack",
+        "x": -0.44,
+        "z": 0.094
+      },
+      {
+        "tipo": "chave",
+        "x": -0.408,
+        "z": 0.094
+      },
+      {
+        "tipo": "jack",
+        "x": -0.169,
+        "z": 0.094
+      },
+      {
+        "tipo": "jack",
+        "x": -0.132,
+        "z": 0.094
+      },
+      {
+        "tipo": "chave",
+        "x": -0.1,
+        "z": 0.094
+      },
+      {
+        "tipo": "texto",
+        "texto": "Silver Super",
+        "fonte": "script",
+        "x": 0.3505,
+        "z": 0.0,
+        "altura_m": 0.017,
+        "cor": [
+          0.92,
+          0.92,
+          0.92
+        ]
+      },
+      {
+        "tipo": "joia",
+        "x": 0.428,
+        "z": 0.0,
+        "raio_m": 0.007
+      },
+      {
+        "tipo": "texto",
+        "texto": "VOL",
+        "x": -0.057,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "TREB",
+        "x": -0.005,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "MID",
+        "x": 0.048,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BASS",
+        "x": 0.102,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "REV",
+        "x": 0.154,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "SPEED",
+        "x": 0.207,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "INTENS",
+        "x": 0.261,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "NORMAL",
+        "x": -0.4575,
+        "z": -0.194,
+        "altura_m": 0.011,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "VIBRATO",
+        "x": -0.1505,
+        "z": -0.194,
+        "altura_m": 0.011,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "1",
+        "x": -0.475,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "2",
+        "x": -0.44,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "1",
+        "x": -0.169,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "2",
+        "x": -0.132,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BRIGHT",
+        "x": -0.408,
+        "z": 0.328,
+        "altura_m": 0.009,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BRIGHT",
+        "x": -0.1,
+        "z": 0.328,
+        "altura_m": 0.009,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "VOL",
+        "x": -0.36,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "TREB",
+        "x": -0.29,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BASS",
+        "x": -0.22,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      }
+    ],
+    "botoes_altura_m": 0.0085
+  },
+  "cantos_onde": "todos",
+  "alca": {
+    "largura_m": 0.24,
+    "altura_m": 0.03,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  },
+  "inclinada": {
+    "recuo_m": 0.02,
+    "inicio_rel": 0.8
+  }
+}
