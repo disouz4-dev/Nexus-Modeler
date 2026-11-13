@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-08T18:45:09Z",
+ "gerado": "2026-11-13T23:15:43Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -3009,6 +3009,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "prince_110": {
+   "nome": "Silver Prince 1x10",
+   "hash": "682bc35f287eebe4",
+   "data": "2026-11-13T23:15:42Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "prince_110_frente.jpg",
+    "prince_110_frente_alfa.png",
+    "prince_110_manifesto.json",
+    "prince_110_mapa.json"
+   ],
+   "sha256": {
+    "prince_110_frente.jpg": "826515e7e4769ffe80ce850750a3b95930b73b7c0e95171cf512bc5515cadef1",
+    "prince_110_frente_alfa.png": "16d69a03eada4ed9e596405addde4d1b7b306cec19d8868baa946a1a7745cd07",
+    "prince_110_manifesto.json": "d45af6a5c9e8e05a493fb1697230245f1429c1fd11e55cb9ed7a7ea2e4581c3e",
+    "prince_110_mapa.json": "6d9c622de93c01ea1e2e5de7e329447718c82e20fb45f89abe934b902f350833"
+   },
+   "tamanho": 1469456,
+   "tipo": "caixa",
+   "inspiracao": "Fender 65 Princeton Reverb",
+   "categoria": "1x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "pulsar_echo": {
    "nome": "Pulsar Echo",

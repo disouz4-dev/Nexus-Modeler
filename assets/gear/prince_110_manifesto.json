@@ -1,0 +1,21 @@
+{
+  "formato": 1,
+  "id": "prince_110",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Silver Prince 1x10",
+  "inspiracao": "Fender 65 Princeton Reverb",
+  "categoria": "1x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "tons": [],
+      "busca": "Fender 65 Princeton Reverb"
+    }
+  },
+  "signature": null
+}

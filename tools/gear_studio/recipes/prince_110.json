@@ -1,0 +1,272 @@
+{
+  "tipo": "caixa",
+  "nome": "Silver Prince 1x10",
+  "familia": "prince_110",
+  "inspiracao": "feita a partir da parte dos falantes do combo Fender '65 Princeton Reverb (blackface; a Fender não vende caixa avulsa dele): tolex preto, tela prateada com quadriculado escuro, marca script inclinada no alto à esquerda da tela, sem friso, cantoneiras cromadas pequenas só em cima; largura e fundura do combo, altura sem a faixa do painel; 1 falante de 10 (Jensen C10R); 505 x 359 x 241 mm",
+  "aba_m": 0.019,
+  "aba_topo_m": 0.022,
+  "logo": {
+    "tipo": "marca",
+    "texto": "NEXUS",
+    "cor": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "largura_rel": 0.3,
+    "posicao": "canto_se",
+    "inclinacao": 0,
+    "margem_rel": 0.047,
+    "cor_letras": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "altura_rel": 0.0
+  },
+  "quadro": {
+    "largura_rel": 1.12,
+    "proporcao": 0.92,
+    "elevacao": 0.0
+  },
+  "medidas_m": {
+    "largura": 0.505,
+    "altura": 0.41,
+    "profundidade": 0.241
+  },
+  "couro": {
+    "cor": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "grao_mm": 2.2
+  },
+  "tela": {
+    "padrao": "malha",
+    "cor_a": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "cor_b": [
+      0.74,
+      0.74,
+      0.73
+    ],
+    "cor_linha": [
+      0.012,
+      0.012,
+      0.014
+    ],
+    "passo_mm": [
+      3.0,
+      2.2
+    ],
+    "largura_rel": 0.3,
+    "trama_mm": 0.7,
+    "brilho": 0.3,
+    "aspereza": 0.42
+  },
+  "friso": null,
+  "cantos": "cromo",
+  "cantos_onde": "cima",
+  "cantos_m": 0.024,
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 10
+  },
+  "painel": {
+    "altura_m": 0.09,
+    "tipo": "chapa",
+    "cor": [
+      0.012,
+      0.012,
+      0.013
+    ],
+    "botoes": [
+      6
+    ],
+    "botao_raio_m": 0.011,
+    "saia_numerada": true,
+    "cor_tampa": [
+      0.85,
+      0.86,
+      0.88
+    ],
+    "botoes_altura_m": 0.0085,
+    "botoes_x": [
+      -0.28,
+      -0.19,
+      -0.1,
+      -0.01,
+      0.08,
+      0.17
+    ],
+    "itens": [
+      {
+        "tipo": "moldura",
+        "x": 0.0,
+        "z": 0.0,
+        "largura": 0.985,
+        "altura": 0.86,
+        "cor": [
+          0.78,
+          0.79,
+          0.8
+        ]
+      },
+      {
+        "tipo": "jack",
+        "x": -0.44,
+        "z": 0.094
+      },
+      {
+        "tipo": "jack",
+        "x": -0.37,
+        "z": 0.094
+      },
+      {
+        "tipo": "texto",
+        "texto": "Silver Prince",
+        "fonte": "script",
+        "x": 0.2975,
+        "z": 0.0,
+        "altura_m": 0.018,
+        "cor": [
+          0.92,
+          0.92,
+          0.92
+        ]
+      },
+      {
+        "tipo": "joia",
+        "x": 0.4096,
+        "z": 0.0,
+        "raio_m": 0.007
+      },
+      {
+        "tipo": "texto",
+        "texto": "VOL",
+        "x": -0.28,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "TREB",
+        "x": -0.19,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BASS",
+        "x": -0.1,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "REV",
+        "x": -0.01,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "SPEED",
+        "x": 0.08,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "INTENS",
+        "x": 0.17,
+        "z": -0.194,
+        "altura_m": 0.012,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "1",
+        "x": -0.44,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "2",
+        "x": -0.37,
+        "z": 0.306,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "INSTRUMENTS",
+        "x": -0.405,
+        "z": -0.194,
+        "altura_m": 0.0105,
+        "cor": [
+          0.92,
+          0.92,
+          0.93
+        ]
+      }
+    ]
+  },
+  "alca": {
+    "largura_m": 0.2,
+    "altura_m": 0.03,
+    "cor": [
+      0.01,
+      0.01,
+      0.01
+    ]
+  },
+  "inclinada": {
+    "recuo_m": 0.02,
+    "inicio_rel": 0.7
+  }
+}
