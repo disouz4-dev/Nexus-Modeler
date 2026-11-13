@@ -1,28 +1,45 @@
 {
   "tipo": "caixa",
+  "nome": "Jazz 2x12",
+  "familia": "jazz_212",
+  "inspiracao": "combo 2x12 com rodízios (estilo Roland JC-120 Jazz Chorus): tolex preto, painel de controle no topo, faixas de alumínio acima e abaixo da tela, tela preta com quadriculado prateado fino, tachas douradas em volta da frente, cantoneiras pretas; 760 x 622 x 280 mm com rodízios",
   "aba_m": 0.03,
   "logo": {
     "tipo": "marca",
     "texto": "NEXUS",
-    "altura_m": 0.04,
-    "altura_rel": 0.36,
     "cor": [
       0.9,
       0.9,
       0.9
-    ]
+    ],
+    "largura_rel": 0.105,
+    "posicao": "canto_se",
+    "empilhado": true,
+    "modeler": false,
+    "margem_rel": 0.03,
+    "cor_letras": [
+      0.92,
+      0.92,
+      0.93
+    ],
+    "placa": {
+      "cor": [
+        0.008,
+        0.008,
+        0.009
+      ],
+      "parafusos": false
+    }
   },
   "quadro": {
     "largura_rel": 1.12,
-    "proporcao": 0.7778947368421053,
-    "elevacao": 8.0
+    "proporcao": 0.944,
+    "elevacao": 0.0
   },
-  "nome": "Jazz 2x12",
-  "familia": "jazz_212",
   "medidas_m": {
     "largura": 0.76,
-    "altura": 0.5,
-    "profundidade": 0.26
+    "altura": 0.62,
+    "profundidade": 0.28
   },
   "couro": {
     "cor": [
@@ -33,17 +50,500 @@
     "grao_mm": 2.4
   },
   "tela": {
+    "padrao": "malha",
     "cor_a": [
-      0.02,
-      0.02,
-      0.02
+      0.006,
+      0.006,
+      0.007
     ],
-    "cor_b": [
-      0.22,
-      0.22,
-      0.23
+    "cor_linha": [
+      0.7,
+      0.7,
+      0.72
     ],
-    "trama_mm": 1.6
+    "passo_mm": 6.5,
+    "largura_rel": 0.15,
+    "trama_mm": 0.6,
+    "brilho": 0.2
   },
-  "friso": null
+  "friso": null,
+  "painel": {
+    "altura_m": 0.13,
+    "tipo": "chapa",
+    "cor": [
+      0.015,
+      0.015,
+      0.016
+    ],
+    "botoes": [
+      13
+    ],
+    "botao_raio_m": 0.012,
+    "saia_numerada": true,
+    "cor_tampa": [
+      0.85,
+      0.86,
+      0.88
+    ],
+    "botoes_altura_m": -0.012,
+    "botoes_x": [
+      -0.4,
+      -0.345,
+      -0.29,
+      -0.235,
+      -0.105,
+      -0.05,
+      0.005,
+      0.06,
+      0.115,
+      0.17,
+      0.245,
+      0.3,
+      0.355
+    ],
+    "itens": [
+      {
+        "tipo": "moldura",
+        "x": -0.35,
+        "z": -0.04,
+        "largura": 0.29,
+        "altura": 0.66
+      },
+      {
+        "tipo": "moldura",
+        "x": 0.0,
+        "z": -0.04,
+        "largura": 0.4,
+        "altura": 0.66
+      },
+      {
+        "tipo": "bloco",
+        "x": 0.305,
+        "z": -0.04,
+        "largura": 0.18,
+        "altura": 0.66,
+        "cor": [
+          0.13,
+          0.1,
+          0.035
+        ],
+        "metal": false
+      },
+      {
+        "tipo": "jack",
+        "x": -0.478,
+        "z": 0.09
+      },
+      {
+        "tipo": "jack",
+        "x": -0.478,
+        "z": -0.12
+      },
+      {
+        "tipo": "chave",
+        "x": -0.447,
+        "z": -0.09
+      },
+      {
+        "tipo": "texto",
+        "texto": "HIGH",
+        "x": -0.478,
+        "z": 0.2,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "LOW",
+        "x": -0.478,
+        "z": -0.25,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BRI",
+        "x": -0.447,
+        "z": 0.2,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "ON",
+        "x": -0.447,
+        "z": 0.06,
+        "altura_m": 0.007,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "jack",
+        "x": -0.185,
+        "z": 0.09
+      },
+      {
+        "tipo": "jack",
+        "x": -0.185,
+        "z": -0.12
+      },
+      {
+        "tipo": "chave",
+        "x": -0.154,
+        "z": -0.09
+      },
+      {
+        "tipo": "texto",
+        "texto": "HIGH",
+        "x": -0.185,
+        "z": 0.2,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "LOW",
+        "x": -0.185,
+        "z": -0.25,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BRI",
+        "x": -0.154,
+        "z": 0.2,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "ON",
+        "x": -0.154,
+        "z": 0.06,
+        "altura_m": 0.007,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "VOL",
+        "x": -0.4,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "TREB",
+        "x": -0.345,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "MID",
+        "x": -0.29,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BASS",
+        "x": -0.235,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "VOL",
+        "x": -0.105,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "TREB",
+        "x": -0.05,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "MID",
+        "x": 0.005,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "BASS",
+        "x": 0.06,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "DIST",
+        "x": 0.115,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "REV",
+        "x": 0.17,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "SPEED",
+        "x": 0.245,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "DEPTH",
+        "x": 0.3,
+        "z": 0.2,
+        "altura_m": 0.0115,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "OFF",
+        "x": 0.355,
+        "z": 0.2,
+        "altura_m": 0.0095,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "VIB",
+        "x": 0.328,
+        "z": -0.27,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "CHORUS",
+        "x": 0.372,
+        "z": -0.27,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "CHANNEL-1",
+        "x": -0.35,
+        "z": 0.4,
+        "altura_m": 0.0105,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "CHANNEL-2",
+        "x": 0.0,
+        "z": 0.4,
+        "altura_m": 0.0105,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "JAZZ",
+        "x": 0.452,
+        "z": 0.2,
+        "altura_m": 0.018,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "texto",
+        "texto": "2X12",
+        "x": 0.452,
+        "z": 0.06,
+        "altura_m": 0.018,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "tipo": "joia",
+        "x": 0.425,
+        "z": -0.2,
+        "raio_m": 0.0035
+      },
+      {
+        "tipo": "chave",
+        "x": 0.475,
+        "z": -0.2
+      },
+      {
+        "tipo": "texto",
+        "texto": "POWER",
+        "x": 0.475,
+        "z": -0.31,
+        "altura_m": 0.0085,
+        "cor": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    ]
+  },
+  "faixas": [
+    {
+      "onde": "acima_tela",
+      "altura_m": 0.014,
+      "cor": [
+        0.75,
+        0.76,
+        0.78
+      ]
+    },
+    {
+      "onde": "abaixo_tela",
+      "altura_m": 0.014,
+      "cor": [
+        0.75,
+        0.76,
+        0.78
+      ]
+    }
+  ],
+  "tachas": {
+    "cor": [
+      0.16,
+      0.13,
+      0.09
+    ],
+    "passo_m": 0.05,
+    "raio_m": 0.004,
+    "margem_m": 0.012
+  },
+  "cantos": "preto",
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "cantos_m": 0.03,
+  "inclinada": null
 }
