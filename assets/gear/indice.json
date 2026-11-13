@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-03T16:35:16Z",
+ "gerado": "2026-11-13T23:13:07Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1409,8 +1409,8 @@
   },
   "emperor_112": {
    "nome": "Emperor 1x12",
-   "hash": "d392ad4c5b1c1403",
-   "data": "2026-11-03T16:35:16Z",
+   "hash": "dcb55eb4aa73457f",
+   "data": "2026-11-13T23:13:07Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emperor_112_frente.jpg",
@@ -1419,18 +1419,18 @@
     "emperor_112_mapa.json"
    ],
    "sha256": {
-    "emperor_112_frente.jpg": "2736c75133fc7271214893c49a1d1ef8182ffd3307335d49d66e11d6ef016be4",
-    "emperor_112_frente_alfa.png": "caefe5e0b8cc4be54e24975a132e37bd961054110570111c87250cd6a4ae284a",
-    "emperor_112_manifesto.json": "ffc9288f42c27d99f8b0c2f0f3eb3dd30eff7f03bf656873a27306ed6a08c915",
+    "emperor_112_frente.jpg": "a03cb44050a51ee68ce271e34306066dbc54b0f374289ea2f93e132b2b8738ea",
+    "emperor_112_frente_alfa.png": "30104e03a71859b5f6388ec3e75602c1cc27bff044431df8640c6b2c1726c4b8",
+    "emperor_112_manifesto.json": "25886df9e964431d35802ca6d7e68132028e1573ac68ebfbbd9de30c63845b2c",
     "emperor_112_mapa.json": "7bad7fb4aa77551f1508f1d1c1099b2cc65b51599406f8701bceded91546f55d"
    },
-   "tamanho": 1232587,
+   "tamanho": 1232048,
    "tipo": "caixa",
    "inspiracao": "Tone King Imperial MkII 1x12",
    "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": false
   },
