@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-08T18:45:09Z",
+ "gerado": "2026-11-13T23:16:42Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -1938,8 +1938,8 @@
   },
   "jazz_212": {
    "nome": "Jazz 2x12",
-   "hash": "c3e97e46b6690102",
-   "data": "2026-10-30T20:24:56Z",
+   "hash": "63ee16693223f120",
+   "data": "2026-11-13T23:16:40Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "jazz_212_frente.jpg",
@@ -1948,18 +1948,18 @@
     "jazz_212_mapa.json"
    ],
    "sha256": {
-    "jazz_212_frente.jpg": "54d74b98ae83a3b3d1dc0c97cdbfb8b07289c8058abfbafd63fd7642ac7623de",
-    "jazz_212_frente_alfa.png": "f0b10c913648043d2af471402c3cc8fceed717ee7a958d4e3ca00c5b148209ac",
-    "jazz_212_manifesto.json": "f7eb4a81f52eb206b6ce1d1e7a8e3003a9a2a3c9d9c41660c0ca68d1d5c0ae9b",
-    "jazz_212_mapa.json": "c1e6cf3dc2e4fd4aa7eee91519e26df320dd765d9e699f607fdee63bd98f68d3"
+    "jazz_212_frente.jpg": "36202f1fcffa7f55041e4f54ab9a6d674a43cb521d4df7408f2f598735b192d7",
+    "jazz_212_frente_alfa.png": "106b6a9ffc51ef138c9a77d2371dc9042b42095fe863305e071c1ced87acef20",
+    "jazz_212_manifesto.json": "2f59e3dcf27ab007ac622e22c89a8fadb13b2833f525ac1d537cf6d90e5bfc3d",
+    "jazz_212_mapa.json": "a7fbd882d54dfe6e2249f1fda910c9a84c9c045d4ec0de57d42c1b7052053ea8"
    },
-   "tamanho": 728050,
+   "tamanho": 1176798,
    "tipo": "caixa",
    "inspiracao": "Roland JC 2x12",
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
