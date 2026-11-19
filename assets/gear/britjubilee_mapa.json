@@ -1,0 +1,167 @@
+{
+  "nome": "Brit Jubilee",
+  "familia": "brit_jubilee",
+  "largura": 2400,
+  "altura": 1034,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 1048,
+      "y": 731,
+      "tamanho": 85,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1143,
+      "y": 731,
+      "tamanho": 85,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1242,
+      "y": 731,
+      "tamanho": 85,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1341,
+      "y": 731,
+      "tamanho": 85,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1440,
+      "y": 731,
+      "tamanho": 85,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1637,
+      "y": 730,
+      "tamanho": 87,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "POWER",
+      "x": 259.8,
+      "y": 840.0,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 374.8,
+      "y": 840.0,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OUTPUT",
+      "x": 491.8,
+      "y": 840.0,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1091.2,
+      "y": 842.8,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1185.6,
+      "y": 842.8,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1284.2,
+      "y": 842.8,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1382.7,
+      "y": 842.8,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OUTPUT MASTER",
+      "x": 1481.2,
+      "y": 836.3,
+      "altura": 16.08,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LEAD MASTER",
+      "x": 1577.7,
+      "y": 838.8,
+      "altura": 18.94,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT GAIN",
+      "x": 1678.3,
+      "y": 838.5,
+      "altura": 18.62,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 1764.5,
+      "y": 818.1,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ]
+}

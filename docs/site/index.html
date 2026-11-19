@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexus Modeler</title>
+<meta name="description" content="A qualidade da captura com a facilidade da modelagem. Plugin de guitarra gratuito para Windows, Mac e Linux que toca capturas NAM A2 da TONE3000.">
+<meta name="theme-color" content="#0c0c0e">
+<meta property="og:title" content="Nexus Modeler — a qualidade da captura com a facilidade da modelagem">
+<meta property="og:description" content="Plugin de guitarra gratuito para Windows, Mac e Linux (VST3, AU, LV2 e programa independente).">
+<meta property="og:image" content="https://disouz4-dev.github.io/Nexus-Modeler/img/tela-principal.webp">
+<meta property="og:url" content="https://disouz4-dev.github.io/Nexus-Modeler/">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/nexus-icone.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- Peças do logo: o triângulo é assets/marca/nexus_marca.svg (tools/marca/logo.py) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="nx-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f8fc"/><stop offset="1" stop-color="#93a8bf"/></linearGradient>
+    <linearGradient id="nx-xg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fd0ff"/><stop offset="1" stop-color="#0f5fd6"/></linearGradient>
+    <radialGradient id="kn-corpo" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#4a4f57"/><stop offset=".55" stop-color="#1d2025"/><stop offset="1" stop-color="#0b0c0e"/></radialGradient>
+    <linearGradient id="kn-aro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b727c"/><stop offset="1" stop-color="#1a1c20"/></linearGradient>
+  </defs>
+  <symbol id="penrose" viewBox="-2 -2 104 90.6">
+<defs>
+<linearGradient id="nxx" gradientUnits="userSpaceOnUse" x1="100.000" y1="70.986" x2="40.984" y2="0.000"><stop offset="0" stop-color="#6fd6ff"/><stop offset="1" stop-color="#1f86e8"/></linearGradient>
+<linearGradient id="nxy" gradientUnits="userSpaceOnUse" x1="100.000" y1="70.986" x2="9.016" y2="86.603"><stop offset="0" stop-color="#1f86e8"/><stop offset="1" stop-color="#0b4fb8"/></linearGradient>
+<linearGradient id="nxz" gradientUnits="userSpaceOnUse" x1="9.016" y1="86.603" x2="40.984" y2="0.000"><stop offset="0" stop-color="#8fb2d4"/><stop offset="1" stop-color="#2a4462"/></linearGradient>
+</defs>
+<path d="M36.066 70.986 L36.066 70.986 L100.000 70.986 L100.000 70.986 L100.000 70.986 L90.984 55.369 L90.984 55.369 L59.016 0.000 L59.016 0.000 L59.016 0.000 L40.984 0.000 L40.984 0.000 L40.984 0.000 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L45.082 55.369 L45.082 55.369 L45.082 55.369 L36.066 70.986Z" fill="url(#nxx)"/>
+<path d="M27.049 86.603 L27.049 86.603 L90.984 86.603 L90.984 86.603 L90.984 86.603 L100.000 70.986 L100.000 70.986 L100.000 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L50.000 46.851 L50.000 46.851 L50.000 46.851 L40.984 31.234 L40.984 31.234 L40.984 31.234 L9.016 86.603 L9.016 86.603 L9.016 86.603Z" fill="url(#nxy)"/>
+<path d="M9.016 86.603 L9.016 86.603 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L54.918 55.369 L54.918 55.369 L54.918 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L40.984 0.000 L40.984 0.000 L40.984 0.000 L31.967 15.617 L0.000 70.986 L0.000 70.986 L0.000 70.986 L9.016 86.603Z" fill="url(#nxz)"/>
+<path d="M27.180 79.504 L35.377 65.307 L32.852 60.934 L36.885 53.949" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M27.180 79.504 L35.377 65.307 L32.852 60.934 L36.885 53.949" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="27.180" cy="79.504" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="36.885" cy="53.949" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M12.230 72.292 L17.148 63.774 L17.148 51.905 L24.377 39.383" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M12.230 72.292 L17.148 63.774 L17.148 51.905 L24.377 39.383" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="12.230" cy="72.292" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="24.377" cy="39.383" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M38.049 19.280 L46.246 33.477 L51.295 33.477 L55.328 40.462" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M38.049 19.280 L46.246 33.477 L51.295 33.477 L55.328 40.462" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="38.049" cy="19.280" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="55.328" cy="40.462" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M51.770 9.938 L56.689 18.456 L66.967 24.391 L74.197 36.913" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M51.770 9.938 L56.689 18.456 L66.967 24.391 L74.197 36.913" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="51.770" cy="9.938" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="74.197" cy="36.913" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M84.770 58.805 L68.377 58.805 L65.852 63.177 L57.787 63.177" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M84.770 58.805 L68.377 58.805 L65.852 63.177 L57.787 63.177" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="84.770" cy="58.805" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="57.787" cy="63.177" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M86.000 75.358 L76.164 75.358 L65.885 81.293 L51.426 81.293" fill="none" stroke="#ffffff" stroke-opacity=".30" stroke-width=".7" stroke-linejoin="round" transform="translate(.3 .3)"/>
+<path d="M86.000 75.358 L76.164 75.358 L65.885 81.293 L51.426 81.293" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".65" stroke-linejoin="round"/>
+<circle cx="86.000" cy="75.358" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<circle cx="51.426" cy="81.293" r=".9" fill="none" stroke="#071a2c" stroke-opacity=".7" stroke-width=".5"/>
+<path d="M36.066 70.986 L36.066 70.986 L100.000 70.986 L100.000 70.986 L100.000 70.986 L90.984 55.369 L90.984 55.369 L59.016 0.000 L59.016 0.000 L59.016 0.000 L40.984 0.000 L40.984 0.000 L40.984 0.000 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L45.082 55.369 L45.082 55.369 L45.082 55.369 L36.066 70.986Z" fill="none" stroke="#eaf7ff" stroke-opacity=".8" stroke-width=".45" stroke-linejoin="round"/>
+<path d="M27.049 86.603 L27.049 86.603 L90.984 86.603 L90.984 86.603 L90.984 86.603 L100.000 70.986 L100.000 70.986 L100.000 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L36.066 70.986 L50.000 46.851 L50.000 46.851 L50.000 46.851 L40.984 31.234 L40.984 31.234 L40.984 31.234 L9.016 86.603 L9.016 86.603 L9.016 86.603Z" fill="none" stroke="#eaf7ff" stroke-opacity=".8" stroke-width=".45" stroke-linejoin="round"/>
+<path d="M9.016 86.603 L9.016 86.603 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L40.984 31.234 L54.918 55.369 L54.918 55.369 L54.918 55.369 L72.951 55.369 L72.951 55.369 L72.951 55.369 L40.984 0.000 L40.984 0.000 L40.984 0.000 L31.967 15.617 L0.000 70.986 L0.000 70.986 L0.000 70.986 L9.016 86.603Z" fill="none" stroke="#eaf7ff" stroke-opacity=".8" stroke-width=".45" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="nexus-palavra" viewBox="0 0 292 40">
+    <path d="M0 0h8v40h-8Z M40.8 0h8v40h-8Z M0 0 L10.8 0 L48.8 40 L38 40Z M60.8 0h48.8v8h-48.8Z M60.8 16h44.9v8h-44.9Z M60.8 32h48.8v8h-48.8Z M182.4 0 L182.4 26.4 Q182.4 40 196 40 L217.6 40 Q231.2 40 231.2 26.4 L231.2 0 L223.2 0 L223.2 26.4 Q223.2 32 217.6 32 L196 32 Q190.4 32 190.4 26.4 L190.4 0Z M292 0 L292 8 L254.08 8 Q251.2 8 251.2 10.88 L251.2 13.12 Q251.2 16 254.08 16 L281.12 16 Q292 16 292 26.88 L292 29.12 Q292 40 281.12 40 L243.2 40 L243.2 32 L281.12 32 Q284 32 284 29.12 L284 26.88 Q284 24 281.12 24 L254.08 24 Q243.2 24 243.2 13.12 L243.2 10.88 Q243.2 0 254.08 0 Z" fill="url(#nx-metal)"/>
+    <path d="M121.6 0 L131.2 0 L170.4 40 L160.8 40Z M170.4 0 L160.8 0 L121.6 40 L131.2 40Z" fill="url(#nx-xg)"/>
+  </symbol>
+  <symbol id="logo" viewBox="-2 -2 416 100">
+    <use href="#penrose" x="0" y="0" width="104" height="91"/>
+    <use href="#nexus-palavra" x="120" y="8" width="292" height="40"/>
+    <g fill="#29b6ff">
+      <rect x="120" y="73.4" width="58" height="1.4"/><rect x="354" y="73.4" width="58" height="1.4"/>
+      <text x="266" y="79.5" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="8.6">MODELER</text>
+    </g>
+  </symbol>
+</svg>
+
+<a class="pular" href="#conteudo"><span class="pt">Pular para o conteúdo</span><span class="en" lang="en">Skip to content</span></a>
+
+<header class="topo">
+  <div class="contem">
+    <a class="marca" href="#inicio" aria-label="Nexus Modeler">
+      <svg viewBox="-2 -2 416 100" role="img" aria-hidden="true"><use href="#logo"/></svg>
+    </a>
+    <nav class="menu" aria-label="Seções" data-aria-en="Sections">
+      <a href="#troca"><span class="pt">Como funciona</span><span class="en" lang="en">How it works</span></a>
+      <a href="#equipamentos"><span class="pt">Equipamentos</span><span class="en" lang="en">Gear</span></a>
+      <a href="#tone3000">TONE3000</a>
+      <a href="#estudio"><span class="pt">Estúdio</span><span class="en" lang="en">Studio</span></a>
+      <a href="#recursos"><span class="pt">Recursos</span><span class="en" lang="en">Features</span></a>
+      <a href="#baixar"><span class="pt">Baixar</span><span class="en" lang="en">Download</span></a>
+      <a href="#codigo-aberto"><span class="pt">Código aberto</span><span class="en" lang="en">Open source</span></a>
+    </nav>
+    <div class="topo-acoes">
+      <button class="idioma" type="button" id="trocar-idioma" aria-label="Read this page in English" data-aria-en="Ler a página em português">
+        <span class="pt"><b>PT</b> <span aria-hidden="true">/</span> EN</span><span class="en">PT <span aria-hidden="true">/</span> <b>EN</b></span>
+      </button>
+      <a class="botao botao-principal botao-pequeno" href="#baixar"><span class="pt">Baixar</span><span class="en" lang="en">Download</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ABERTURA -->
+<section class="abertura" id="inicio">
+  <div class="contem">
+    <svg class="logo-grande" viewBox="-2 -2 416 100" role="img" aria-label="Nexus Modeler"><use href="#logo"/></svg>
+    <h1>
+      <span class="pt">A qualidade da captura com a <em>facilidade da modelagem</em></span>
+      <span class="en" lang="en">Capture quality with the <em>ease of modeling</em></span>
+    </h1>
+    <p class="lead pt">Um plugin de guitarra gratuito que toca o som real de amplificadores e pedais gravados, e deixa você ajustar o timbre girando os botões, como num equipamento de verdade.</p>
+    <p class="lead en" lang="en">A free guitar plugin that plays the real sound of recorded amps and pedals, and lets you shape your tone by turning the knobs, just like real gear.</p>
+    <div class="chamadas">
+      <a class="botao botao-principal" href="#baixar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+        <span class="pt">Baixar grátis</span><span class="en" lang="en">Free download</span>
+      </a>
+      <a class="botao botao-linha" href="https://github.com/disouz4-dev/Nexus-Modeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+        <span class="pt">Ver o código</span><span class="en" lang="en">View the source</span>
+      </a>
+    </div>
+    <ul class="selos">
+      <li>Windows · Mac · Linux</li>
+      <li><span class="pt">VST3, AU, LV2 e programa independente</span><span class="en" lang="en">VST3, AU, LV2 and standalone app</span></li>
+      <li><span class="pt">Capturas NAM A2 da TONE3000</span><span class="en" lang="en">NAM A2 captures from TONE3000</span></li>
+      <li><span class="pt">Licença GPL versão 3</span><span class="en" lang="en">GPL version 3 license</span></li>
+    </ul>
+    <figure class="vitrine">
+      <img src="img/tela-principal.webp" width="1600" height="914" fetchpriority="high"
+        alt="Tela do Nexus Modeler: o cabeçote Brit 800 em 3D com os botões ganho, grave, médio, agudo, presença e volume; embaixo, o trilho das capturas e o caminho do sinal com pedal, cabeçote e caixa."
+        data-alt-en="Nexus Modeler screen: the Brit 800 amp head in 3D with gain, bass, middle, treble, presence and volume knobs; below, the capture rail and the signal path with pedal, amp and cabinet.">
+      <figcaption>
+        <span class="pt">O cabeçote Brit 800 tocando um pacote de 11 capturas, do ganho 0 ao 10.</span>
+        <span class="en" lang="en">The Brit 800 head playing a pack of 11 captures, from gain 0 to 10.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- DOIS MUNDOS -->
+<section class="secao secao-escura" id="premissa">
+  <div class="contem">
+    <div class="cabeca-secao">
+      <p class="chapeu"><span class="pt">A premissa</span><span class="en" lang="en">The premise</span></p>
+      <h2><span class="pt">Até hoje, era preciso escolher</span><span class="en" lang="en">Until now, you had to choose</span></h2>
+      <p class="lead pt">Existem dois jeitos de ter som de amplificador no computador. Cada um tem uma vantagem que falta no outro. O Nexus junta as duas.</p>
+      <p class="lead en" lang="en">There are two ways to get amp tone on a computer. Each has a strength the other lacks. Nexus brings them together.</p>
+    </div>
+    <div class="mundos">
+      <article class="mundo">
+        <span class="rotulo"><span class="pt">Mundo 1</span><span class="en" lang="en">World 1</span></span>
+        <h3><span class="pt">Modelagem</span><span class="en" lang="en">Modeling</span></h3>
+        <p class="pt">Um programa imita, por cálculo, o circuito do amplificador. Você gira os botões e timbra à vontade.</p>
+        <p class="en" lang="en">Software imitates the amp's circuit with math. You turn the knobs and dial in any tone.</p>
+        <ul class="lista-curta">
+          <li class="sim"><span class="pt">Fácil de ajustar</span><span class="en" lang="en">Easy to adjust</span></li>
+          <li class="nao"><span class="pt">O som é uma simulação</span><span class="en" lang="en">The sound is a simulation</span></li>
+        </ul>
+      </article>
+      <div class="sinal" aria-hidden="true">+</div>
+      <article class="mundo">
+        <span class="rotulo"><span class="pt">Mundo 2</span><span class="en" lang="en">World 2</span></span>
+        <h3><span class="pt">Captura</span><span class="en" lang="en">Capture</span></h3>
+        <p class="pt">Uma inteligência artificial aprende o som de um equipamento real, gravado num ajuste. É o som de verdade, mas congelado: para mudar, você troca de arquivo.</p>
+        <p class="en" lang="en">An AI learns the sound of real gear, recorded at one setting. It's the real thing, but frozen: to change it, you swap files.</p>
+        <ul class="lista-curta">
+          <li class="sim"><span class="pt">Som real do equipamento</span><span class="en" lang="en">The gear's real sound</span></li>
+          <li class="nao"><span class="pt">Preso a um único ajuste</span><span class="en" lang="en">Stuck at one setting</span></li>
+        </ul>
+      </article>
+      <div class="sinal" aria-hidden="true">=</div>
+      <article class="mundo mundo-nexus">
+        <span class="rotulo">Nexus Modeler</span>
+        <h3><span class="pt">Os dois juntos</span><span class="en" lang="en">Both at once</span></h3>
+        <p class="pt">O som real das capturas, com os botões funcionando como num amplificador. Você gira, o Nexus cuida do resto por dentro.</p>
+        <p class="en" lang="en">The real sound of captures, with knobs that work like a real amp. You turn, Nexus handles the rest behind the scenes.</p>
+        <ul class="lista-curta">
+          <li class="sim"><span class="pt">Som real</span><span class="en" lang="en">Real sound</span></li>
+          <li class="sim"><span class="pt">Fácil de ajustar</span><span class="en" lang="en">Easy to adjust</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TROCA DE CAPTURAS -->
+<section class="secao" id="troca">
+  <div class="contem troca">
+    <div>
+      <p class="chapeu"><span class="pt">Como funciona</span><span class="en" lang="en">How it works</span></p>
+      <h2><span class="pt">O botão troca a captura</span><span class="en" lang="en">The knob swaps the capture</span></h2>
+      <p class="lead pt">Quem grava um amplificador costuma publicar um pacote com várias capturas: uma com o ganho em 0, outra em 1, em 2, e assim por diante até 10. No Nexus, esse pacote vira um único amplificador.</p>
+      <p class="lead en" lang="en">People who capture an amp often publish a pack with several captures: one with gain at 0, another at 1, at 2, and so on up to 10. In Nexus, that pack becomes a single amp.</p>
+      <ol class="passos">
+        <li class="pt"><strong>Você gira o ganho</strong>Do cabeçote ou do drive do pedal, como faria no equipamento.</li>
+        <li class="en" lang="en"><strong>You turn the gain</strong>On the amp head or the pedal's drive, as you would on real gear.</li>
+        <li class="pt"><strong>A próxima captura “aquece”</strong>Ela escuta o som recente da guitarra por um instante, para entrar já no ponto certo.</li>
+        <li class="en" lang="en"><strong>The next capture “warms up”</strong>It listens to the guitar's recent sound for a moment, so it comes in already in step.</li>
+        <li class="pt"><strong>A troca leva 30 milésimos de segundo</strong>Uma passagem suave de uma para a outra, sem clique e sem estalo, mesmo tocando.</li>
+        <li class="en" lang="en"><strong>The swap takes 30 milliseconds</strong>A smooth handover from one to the other, with no click or pop, even while you play.</li>
+      </ol>
+      <p class="nota pt">Sem abrir pasta nenhuma: o Nexus descobre sozinho qual captura é de qual posição pelo nome do arquivo.</p>
+      <p class="nota en" lang="en">No folders to open: Nexus works out which capture belongs to which position from the file name.</p>
+    </div>
+
+    <div class="bancada" id="demo-ganho">
+      <svg class="botao-ganho" viewBox="0 0 240 240" role="img" aria-labelledby="demo-titulo">
+        <title id="demo-titulo">Botão de ganho com as posições de 0 a 10</title>
+        <g class="marcas" id="demo-marcas"></g>
+        <circle cx="120" cy="120" r="66" fill="url(#kn-aro)"/>
+        <circle cx="120" cy="120" r="60" fill="url(#kn-corpo)"/>
+        <g id="demo-ponteiro"><rect x="117" y="66" width="6" height="30" rx="3" fill="#eceef1"/></g>
+        <text x="120" y="232" text-anchor="middle" fill="#a9afb8" font-family="Oswald, sans-serif" font-size="14" letter-spacing="3"><tspan class="pt">GANHO</tspan><tspan class="en">GAIN</tspan></text>
+      </svg>
+      <div class="trilho" id="demo-trilho" aria-hidden="true"></div>
+      <div class="trilho-numeros" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+      <div class="controle">
+        <label for="demo-valor"><span class="pt">Gire o ganho (arraste a barra)</span><span class="en" lang="en">Turn the gain (drag the slider)</span></label>
+        <input type="range" id="demo-valor" min="0" max="10" step="1" value="3">
+        <div class="modos" role="group" aria-label="Modo do botão" data-aria-en="Knob mode">
+          <button type="button" data-modo="degraus" aria-pressed="true"><span class="pt">Em degraus</span><span class="en" lang="en">Stepped</span></button>
+          <button type="button" data-modo="continuo" aria-pressed="false"><span class="pt">Contínuo</span><span class="en" lang="en">Continuous</span></button>
+        </div>
+        <p class="leitura" id="demo-leitura" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUALIZADOR -->
+<section class="secao secao-escura" id="equalizador">
+  <div class="contem eq">
+    <figure>
+      <img src="img/tela-equalizador.webp" width="1400" height="800" loading="lazy"
+        alt="Tela do equalizador do Nexus: curva grande com seis faixas coloridas e os botões da faixa escolhida embaixo."
+        data-alt-en="Nexus equalizer screen: a large curve with six colored bands and the chosen band's knobs below.">
+    </figure>
+    <div>
+      <p class="chapeu"><span class="pt">Equalizador</span><span class="en" lang="en">Equalizer</span></p>
+      <h2><span class="pt">Um equalizador de estúdio no fim da cadeia</span><span class="en" lang="en">A studio equalizer at the end of the chain</span></h2>
+      <p class="pt">Depois do cabeçote e da caixa, todo o som passa por um equalizador de até 24 faixas, no estilo dos equalizadores de estúdio: dê dois cliques na curva para criar uma faixa, arraste para mudar, use a roda do mouse para a largura e o botão direito para trocar o tipo (sino, prateleiras, cortes de 12 a 48 dB por oitava e notch).</p>
+      <p class="en" lang="en">After the head and the cabinet, all sound goes through an equalizer of up to 24 bands, in the style of studio equalizers: double-click the curve to add a band, drag to change it, use the mouse wheel for width and right-click to change the type (bell, shelves, 12 to 48 dB per octave cuts and notch).</p>
+      <div class="eq-comparacao">
+        <div class="pt"><b>No painel do cabeçote:</b> grave, médio, agudo e presença iguais em todo amplificador, até ±12 dB; em 5, o som é o da captura.</div>
+        <div class="en" lang="en"><b>On the head panel:</b> bass, middle, treble and presence, the same on every amp, up to ±12 dB; at 5 you hear the capture as is.</div>
+        <div class="pt"><b>Salvo no projeto:</b> feche e abra o programa e o equalizador volta do mesmo jeito.</div>
+        <div class="en" lang="en"><b>Saved with your project:</b> close and reopen and the equalizer comes back the same.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPAMENTOS -->
+<section class="secao" id="equipamentos">
+  <div class="contem">
+    <div class="cabeca-secao">
+      <p class="chapeu"><span class="pt">Equipamentos</span><span class="en" lang="en">Gear</span></p>
+      <h2><span class="pt">Inspirados em clássicos, com nome próprio</span><span class="en" lang="en">Inspired by classics, with names of their own</span></h2>
+      <p class="lead pt">Cada peça é modelada e renderizada em 3D pelo próprio projeto. Cada botão tem 101 imagens: arraste para cima ou para baixo, segure Shift para o ajuste fino e dê dois cliques para voltar ao padrão.</p>
+      <p class="lead en" lang="en">Every piece is modeled and rendered in 3D by the project itself. Each knob has 101 frames: drag up or down, hold Shift for fine control and double-click to reset.</p>
+    </div>
+
+    <div class="cabecote">
+      <figure>
+        <img src="img/brit800.webp" width="1400" height="616" loading="lazy"
+          alt="Cabeçote Brit 800: caixa preta com tela clara, painel dourado e seis botões pretos."
+          data-alt-en="Brit 800 head: black box with light grille cloth, gold panel and six black knobs.">
+      </figure>
+      <div>
+        <h3>Brit 800</h3>
+        <p class="pt">Inspirado no cabeçote britânico de rock dos anos 80, de um canal e ganho alto. O ganho troca as capturas; grave, médio, agudo e presença seguem o circuito de tonalidade britânico.</p>
+        <p class="en" lang="en">Inspired by the classic 1980s British rock head, single channel and high gain. Gain swaps captures; bass, middle, treble and presence follow the British tone circuit.</p>
+        <ul class="ficha">
+          <li><span><span class="pt">Botões</span><span class="en" lang="en">Knobs</span></span><span><span class="pt">Ganho, grave, médio, agudo, presença, volume</span><span class="en" lang="en">Gain, bass, middle, treble, presence, volume</span></span></li>
+          <li><span><span class="pt">Canais</span><span class="en" lang="en">Channels</span></span><span><span class="pt">1, como o original</span><span class="en" lang="en">1, like the original</span></span></li>
+          <li><span><span class="pt">Capturas</span><span class="en" lang="en">Captures</span></span><span><span class="pt">Uma por posição do ganho</span><span class="en" lang="en">One per gain position</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cabecotes">
+      <article class="pedal">
+        <figure><img src="img/mark5.webp" width="1400" height="616" loading="lazy" alt="Cabeçote Mark Five, preto, com equalizador gráfico de cinco deslizantes e a marca Nexus." data-alt-en="Mark Five head, black, with a five-slider graphic EQ and the Nexus logo."></figure>
+        <h3>Mark Five</h3>
+        <p class="pt">Inspirado no Mark V: três canais (Limpo, Crunch e Lead), cada um com a sua captura, e equalizador gráfico de cinco faixas.</p>
+        <p class="en" lang="en">Inspired by the Mark V: three channels (Clean, Crunch and Lead), each with its own capture, and a five-band graphic EQ.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/block5150.webp" width="1400" height="616" loading="lazy" alt="Cabeçote Block 5150, com grade de metal preta perfurada, o número 5150 e painel prateado." data-alt-en="Block 5150 head, with a black perforated metal grille, the 5150 number and a silver panel."></figure>
+        <h3>Block 5150</h3>
+        <p class="pt">Inspirado no 5150: o alto ganho que definiu o metal dos anos 90. Canais Ritmo e Solo.</p>
+        <p class="en" lang="en">Inspired by the 5150: the high gain that defined 90s metal. Rhythm and Lead channels.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/recto-dual.webp" width="1400" height="616" loading="lazy" alt="Cabeçote Recto Dual, com frente de chapa de alumínio xadrez e botões cromados." data-alt-en="Recto Dual head, with an aluminum diamond-plate front and chrome knobs."></figure>
+        <h3>Recto Dual</h3>
+        <p class="pt">Inspirado no Dual Rectifier: o grave enorme do metal moderno, com ganho de 1 a 9.</p>
+        <p class="en" lang="en">Inspired by the Dual Rectifier: the huge low end of modern metal, gain from 1 to 9.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/sl100.webp" width="1400" height="616" loading="lazy" alt="Cabeçote SL 100, com grade de metal em losangos, cantoneiras cromadas e painel creme." data-alt-en="SL 100 head, with a diamond-mesh metal grille, chrome corners and a cream panel."></figure>
+        <h3>SL 100</h3>
+        <p class="pt">Inspirado no SLO-100: o solo cantado do rock de alto ganho. Canais Normal e Overdrive.</p>
+        <p class="en" lang="en">Inspired by the SLO-100: the singing lead of high-gain rock. Normal and Overdrive channels.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/be100.webp" width="1400" height="616" loading="lazy" alt="Cabeçote BE 100, com painel dourado, friso dourado e tela xadrez marrom." data-alt-en="BE 100 head, with a gold panel, gold piping and brown check grille."></figure>
+        <h3>BE 100</h3>
+        <p class="pt">Inspirado no BE-100: o britânico turbinado, com ganho de 1 a 9.</p>
+        <p class="en" lang="en">Inspired by the BE-100: the hot-rodded British voice, gain from 1 to 9.</p>
+      </article>
+    </div>
+
+    <div class="pedais">
+      <article class="pedal">
+        <figure><img src="img/lemon-drive.webp" width="600" height="750" loading="lazy" alt="Pedal Greengage Drive, verde, com três botões e um pisante largo." data-alt-en="Greengage Drive pedal, green, with three knobs and a wide footswitch."></figure>
+        <h3>Greengage Drive</h3>
+        <p class="pt">Overdrive verde de três botões, inspirado no clássico que empurra o amplificador.</p>
+        <p class="en" lang="en">Green three-knob overdrive, inspired by the classic amp pusher.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/orange-drive.webp" width="600" height="750" loading="lazy" alt="Pedal Orange Drive, laranja, compacto, com três botões e pedal basculante." data-alt-en="Orange Drive pedal, compact and orange, with three knobs and a rocker footswitch."></figure>
+        <h3>Orange Drive</h3>
+        <p class="pt">Distorção compacta laranja, inspirada na mais famosa de todas as distorções de pedal.</p>
+        <p class="en" lang="en">Compact orange distortion, inspired by the most famous stompbox distortion of all.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/banana-overdrive.webp" width="600" height="750" loading="lazy" alt="Pedal Banana Overdrive, amarelo, compacto, com três botões e pedal basculante." data-alt-en="Banana Overdrive pedal, compact and yellow, with three knobs and a rocker footswitch."></figure>
+        <h3>Banana Overdrive</h3>
+        <p class="pt">Overdrive compacto amarelo, inspirado no clássico de som médio e cheio.</p>
+        <p class="en" lang="en">Compact yellow overdrive, inspired by the classic with a full, mid-rich voice.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/gold-centaur.webp" width="600" height="630" loading="lazy" alt="Pedal Gold Centaur, dourado, com três botões e pisante de metal." data-alt-en="Gold Centaur pedal, gold, with three knobs and a metal footswitch."></figure>
+        <h3>Gold Centaur</h3>
+        <p class="pt">Overdrive dourado de luxo, inspirado no pedal mais cobiçado e transparente da história.</p>
+        <p class="en" lang="en">Luxury gold overdrive, inspired by the most sought-after transparent pedal in history.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/blueberry-chorus.webp" width="600" height="750" loading="lazy" alt="Pedal Blueberry Chorus, azul, com três botões e pedal basculante." data-alt-en="Blueberry Chorus pedal, blue, with three knobs and a rocker footswitch."></figure>
+        <h3>Blueberry Chorus</h3>
+        <p class="pt">Chorus azul, inspirado no clássico que deixa o som largo e brilhante. Efeito do próprio Nexus, sem captura.</p>
+        <p class="en" lang="en">Blue chorus, inspired by the classic that makes the sound wide and shimmering. Built into Nexus, no capture needed.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/coconut-delay.webp" width="600" height="750" loading="lazy" alt="Pedal Coconut Delay, branco, com três botões e pedal basculante." data-alt-en="Coconut Delay pedal, white, with three knobs and a rocker footswitch."></figure>
+        <h3>Coconut Delay</h3>
+        <p class="pt">Delay branco com repetições que escurecem como numa fita. Ao desligar, as repetições terminam naturalmente.</p>
+        <p class="en" lang="en">White delay whose repeats darken like tape. Switch it off and the repeats fade out naturally.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/grape-reverb.webp" width="600" height="750" loading="lazy" alt="Pedal Meteorite Reverb, roxo, com três botões e pedal basculante." data-alt-en="Meteorite Reverb pedal, purple, with three knobs and a rocker footswitch."></figure>
+        <h3>Meteorite Reverb</h3>
+        <p class="pt">Reverb roxo, de uma sala pequena a um salão enorme. Efeito do próprio Nexus, sem captura.</p>
+        <p class="en" lang="en">Purple reverb, from a small room to a huge hall. Built into Nexus, no capture needed.</p>
+      </article>
+      <article class="pedal">
+        <figure><img src="img/pear-gate.webp" width="600" height="750" loading="lazy" alt="Pedal Marcasite Gate, branco, com um botão grande e dois pequenos." data-alt-en="Marcasite Gate pedal, white, with one large knob and two small ones."></figure>
+        <h3>Marcasite Gate</h3>
+        <p class="pt">Redutor de ruído branco: um botão grande de sensibilidade e dois pequenos de ataque e release. Corta o chiado nas pausas sem mexer nas notas.</p>
+        <p class="en" lang="en">White noise gate: one large sensitivity knob and two small ones for attack and release. Cuts hiss between notes without touching them.</p>
+      </article>
+    </div>
+
+    <div class="caixa-linha">
+      <img src="img/catalogo/brit412.webp" width="220" height="220" loading="lazy" alt="Caixa Brit 4x12, preta, com tela escura e a marca Nexus." data-alt-en="Brit 4x12 cabinet, black, with dark grille and the Nexus logo.">
+      <div>
+        <h3><span class="pt">Vinte e seis caixas</span><span class="en" lang="en">Twenty-six cabinets</span></h3>
+        <p class="pt">Cada cabeçote abre com a sua caixa, e dá para trocar na lista.</p>
+        <p class="en" lang="en">Each head opens with its own cabinet, and you can swap it from the list.</p>
+        <p class="pt">De 2x12 a 8x10, cada uma no estilo da original. Toque com a resposta de caixa que quiser (um arquivo <span class="termo">.wav</span> que guarda o som de uma caixa, chamado de <span class="termo">IR</span>). Se a captura já inclui a caixa (o chamado <em>full rig</em>), o Nexus percebe e trava a caixa sozinho, para não colorir o som duas vezes.</p>
+        <p class="en" lang="en">From 2x12 to 8x10, each in the style of the original. Play it with any cabinet response you like (a <span class="termo">.wav</span> file that stores how a cabinet sounds, called an <span class="termo">IR</span>). If the capture already includes the cabinet (a <em>full rig</em> capture), Nexus notices and locks the cabinet on its own, so the sound isn't colored twice.</p>
+      </div>
+    </div>
+    <!-- catalogo:inicio -->
+    <div class="cabeca-secao catalogo-cabeca" id="galeria">
+      <h3><span class="pt">Galeria de equipamentos</span><span class="en" lang="en">Gear gallery</span></h3>
+      <p class="pt">Toque em uma peça para ver a foto grande; as setas passam para a próxima. Ao escolher uma peça, o Nexus baixa sozinho a captura mais curtida pela comunidade da TONE3000, e cada cabeçote entra com a caixa feita para ele.</p>
+      <p class="en" lang="en">Tap a piece to see the large photo; the arrows move to the next one. Pick a piece and Nexus downloads the community's most-liked TONE3000 capture on its own, and each head comes with the cabinet made for it.</p>
+    </div>
+    <div class="filtros" role="group" aria-label="Mostrar" data-aria-en="Show">
+      <button type="button" class="filtro" data-filtro="todos" aria-pressed="true"><span class="pt">Todos</span><span class="en" lang="en">All</span> <span class="catalogo-conta">186</span></button>
+      <button type="button" class="filtro" data-filtro="guitarra" aria-pressed="false"><span class="pt">Cabeçotes de guitarra</span><span class="en" lang="en">Guitar heads</span> <span class="catalogo-conta">66</span></button>
+      <button type="button" class="filtro" data-filtro="baixo" aria-pressed="false"><span class="pt">Cabeçotes de baixo</span><span class="en" lang="en">Bass heads</span> <span class="catalogo-conta">28</span></button>
+      <button type="button" class="filtro" data-filtro="caixas" aria-pressed="false"><span class="pt">Caixas</span><span class="en" lang="en">Cabinets</span> <span class="catalogo-conta">29</span></button>
+      <button type="button" class="filtro" data-filtro="pedais" aria-pressed="false"><span class="pt">Pedais</span><span class="en" lang="en">Pedals</span> <span class="catalogo-conta">63</span></button>
+    </div>
+    <div class="catalogo-grupo" data-grupo="guitarra">
+    <h3 class="catalogo-titulo"><span class="pt">Cabeçotes de guitarra</span><span class="en" lang="en">Guitar heads</span> <span class="catalogo-conta">66</span></h3>
+    <div class="catalogo">
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit800.webp" data-largura="1800" data-altura="792" data-inspiracao="JCM800 2203" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/brit800.webp" width="420" height="185" loading="lazy" alt="Brit 800" data-alt-en="Brit 800"><h4>Brit 800</h4><p><span class="pt">inspirado no JCM800 2203</span><span class="en" lang="en">inspired by the JCM800 2203</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark5.webp" data-largura="1800" data-altura="792" data-inspiracao="Mark V" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/mark5.webp" width="420" height="185" loading="lazy" alt="Mark Five" data-alt-en="Mark Five"><h4>Mark Five</h4><p><span class="pt">inspirado no Mark V</span><span class="en" lang="en">inspired by the Mark V</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/block5150.webp" data-largura="1800" data-altura="792" data-inspiracao="5150" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/block5150.webp" width="420" height="185" loading="lazy" alt="Block 5150" data-alt-en="Block 5150"><h4>Block 5150</h4><p><span class="pt">inspirado no 5150</span><span class="en" lang="en">inspired by the 5150</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/recto_dual.webp" data-largura="1800" data-altura="792" data-inspiracao="Dual Rectifier" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/recto_dual.webp" width="420" height="185" loading="lazy" alt="Recto Dual" data-alt-en="Recto Dual"><h4>Recto Dual</h4><p><span class="pt">inspirado no Dual Rectifier</span><span class="en" lang="en">inspired by the Dual Rectifier</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/sl100.webp" data-largura="1800" data-altura="792" data-inspiracao="SLO-100" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/sl100.webp" width="420" height="185" loading="lazy" alt="SL 100" data-alt-en="SL 100"><h4>SL 100</h4><p><span class="pt">inspirado no SLO-100</span><span class="en" lang="en">inspired by the SLO-100</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/be100.webp" data-largura="1800" data-altura="792" data-inspiracao="BE-100" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/be100.webp" width="420" height="185" loading="lazy" alt="BE 100" data-alt-en="BE 100"><h4>BE 100</h4><p><span class="pt">inspirado no BE-100</span><span class="en" lang="en">inspired by the BE-100</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/topboost30.webp" data-largura="1800" data-altura="792" data-inspiracao="AC30" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/topboost30.webp" width="420" height="185" loading="lazy" alt="Top Boost 30" data-alt-en="Top Boost 30"><h4>Top Boost 30</h4><p><span class="pt">inspirado no AC30</span><span class="en" lang="en">inspired by the AC30</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/match30.webp" data-largura="1800" data-altura="792" data-inspiracao="DC-30" data-categoria="Americanos boutique" data-categoria-en="American boutique"><img src="img/catalogo/match30.webp" width="420" height="185" loading="lazy" alt="Match 30" data-alt-en="Match 30"><h4>Match 30</h4><p><span class="pt">inspirado no DC-30</span><span class="en" lang="en">inspired by the DC-30</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tiny15.webp" data-largura="1800" data-altura="791" data-inspiracao="Tiny Terror" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/tiny15.webp" width="420" height="185" loading="lazy" alt="Tiny 15" data-alt-en="Tiny 15"><h4>Tiny 15</h4><p><span class="pt">inspirado no Tiny Terror</span><span class="en" lang="en">inspired by the Tiny Terror</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/rocker50.webp" data-largura="1800" data-altura="792" data-inspiracao="Rockerverb 50" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/rocker50.webp" width="420" height="185" loading="lazy" alt="Rocker 50" data-alt-en="Rocker 50"><h4>Rocker 50</h4><p><span class="pt">inspirado no Rockerverb 50</span><span class="en" lang="en">inspired by the Rockerverb 50</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/recto_triple.webp" data-largura="1800" data-altura="792" data-inspiracao="Triple Rectifier" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/recto_triple.webp" width="420" height="185" loading="lazy" alt="Recto Triple" data-alt-en="Recto Triple"><h4>Recto Triple</h4><p><span class="pt">inspirado no Triple Rectifier</span><span class="en" lang="en">inspired by the Triple Rectifier</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/power100.webp" data-largura="1800" data-altura="792" data-inspiracao="Powerball" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/power100.webp" width="420" height="185" loading="lazy" alt="Power 100" data-alt-en="Power 100"><h4>Power 100</h4><p><span class="pt">inspirado no Powerball</span><span class="en" lang="en">inspired by the Powerball</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/uber100.webp" data-largura="1800" data-altura="792" data-inspiracao="Uberschall" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/uber100.webp" width="420" height="185" loading="lazy" alt="Uber 100" data-alt-en="Uber 100"><h4>Uber 100</h4><p><span class="pt">inspirado no Uberschall</span><span class="en" lang="en">inspired by the Uberschall</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/sonic60.webp" data-largura="1800" data-altura="792" data-inspiracao="Super-Sonic" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/sonic60.webp" width="420" height="185" loading="lazy" alt="Sonic 60" data-alt-en="Sonic 60"><h4>Sonic 60</h4><p><span class="pt">inspirado no Super-Sonic</span><span class="en" lang="en">inspired by the Super-Sonic</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/silvertwin.webp" data-largura="1800" data-altura="792" data-inspiracao="Twin Reverb" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/silvertwin.webp" width="420" height="185" loading="lazy" alt="Silver Twin" data-alt-en="Silver Twin"><h4>Silver Twin</h4><p><span class="pt">inspirado no Twin Reverb</span><span class="en" lang="en">inspired by the Twin Reverb</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tweed59.webp" data-largura="1800" data-altura="792" data-inspiracao="Bassman 5F6-A" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/tweed59.webp" width="420" height="185" loading="lazy" alt="Tweed 59" data-alt-en="Tweed 59"><h4>Tweed 59</h4><p><span class="pt">inspirado no Bassman 5F6-A</span><span class="en" lang="en">inspired by the Bassman 5F6-A</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britplexi.webp" data-largura="1800" data-altura="792" data-inspiracao="Super Lead 1959" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/britplexi.webp" width="420" height="185" loading="lazy" alt="Brit Plexi" data-alt-en="Brit Plexi"><h4>Brit Plexi</h4><p><span class="pt">inspirado no Super Lead 1959</span><span class="en" lang="en">inspired by the Super Lead 1959</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britjubilee.webp" data-largura="1800" data-altura="792" data-inspiracao="Silver Jubilee 2555" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/britjubilee.webp" width="420" height="185" loading="lazy" alt="Brit Jubilee" data-alt-en="Brit Jubilee"><h4>Brit Jubilee</h4><p><span class="pt">inspirado no Silver Jubilee 2555</span><span class="en" lang="en">inspired by the Silver Jubilee 2555</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jazz120.webp" data-largura="1800" data-altura="792" data-inspiracao="JC-120" data-categoria="Limpos de transistor" data-categoria-en="Solid-state cleans"><img src="img/catalogo/jazz120.webp" width="420" height="185" loading="lazy" alt="Jazz 120" data-alt-en="Jazz 120"><h4>Jazz 120</h4><p><span class="pt">inspirado no JC-120</span><span class="en" lang="en">inspired by the JC-120</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britplexi50.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall 1987 Lead 50 W" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/britplexi50.webp" width="420" height="185" loading="lazy" alt="Brit Plexi 50" data-alt-en="Brit Plexi 50"><h4>Brit Plexi 50</h4><p><span class="pt">inspirado no Marshall 1987 Lead 50 W</span><span class="en" lang="en">inspired by the Marshall 1987 Lead 50 W</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit45.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall JTM45" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/brit45.webp" width="420" height="185" loading="lazy" alt="Brit 45" data-alt-en="Brit 45"><h4>Brit 45</h4><p><span class="pt">inspirado no Marshall JTM45</span><span class="en" lang="en">inspired by the Marshall JTM45</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit900.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall JCM900" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/brit900.webp" width="420" height="185" loading="lazy" alt="Brit 900" data-alt-en="Brit 900"><h4>Brit 900</h4><p><span class="pt">inspirado no Marshall JCM900</span><span class="en" lang="en">inspired by the Marshall JCM900</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit410.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall JVM410" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/brit410.webp" width="420" height="185" loading="lazy" alt="Brit 410" data-alt-en="Brit 410"><h4>Brit 410</h4><p><span class="pt">inspirado no Marshall JVM410</span><span class="en" lang="en">inspired by the Marshall JVM410</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit2000.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall JCM2000 (DSL e TSL)" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/brit2000.webp" width="420" height="185" loading="lazy" alt="Brit 2000" data-alt-en="Brit 2000"><h4>Brit 2000</h4><p><span class="pt">inspirado no Marshall JCM2000 (DSL e TSL)</span><span class="en" lang="en">inspired by the Marshall JCM2000 (DSL e TSL)</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britds20.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall DSL (série nova)" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/britds20.webp" width="420" height="185" loading="lazy" alt="Brit DS 20" data-alt-en="Brit DS 20"><h4>Brit DS 20</h4><p><span class="pt">inspirado no Marshall DSL (série nova)</span><span class="en" lang="en">inspired by the Marshall DSL (série nova)</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britrack1.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall JMP-1" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/britrack1.webp" width="420" height="185" loading="lazy" alt="Brit Rack 1" data-alt-en="Brit Rack 1"><h4>Brit Rack 1</h4><p><span class="pt">inspirado no Marshall JMP-1</span><span class="en" lang="en">inspired by the Marshall JMP-1</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/silverdeluxe.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Deluxe Reverb" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/silverdeluxe.webp" width="420" height="185" loading="lazy" alt="Silver Deluxe" data-alt-en="Silver Deluxe"><h4>Silver Deluxe</h4><p><span class="pt">inspirado no Fender Deluxe Reverb</span><span class="en" lang="en">inspired by the Fender Deluxe Reverb</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/silversuper.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Super Reverb" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/silversuper.webp" width="420" height="185" loading="lazy" alt="Silver Super" data-alt-en="Silver Super"><h4>Silver Super</h4><p><span class="pt">inspirado no Fender Super Reverb</span><span class="en" lang="en">inspired by the Fender Super Reverb</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/silverprince.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Princeton Reverb" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/silverprince.webp" width="420" height="185" loading="lazy" alt="Silver Prince" data-alt-en="Silver Prince"><h4>Silver Prince</h4><p><span class="pt">inspirado no Fender Princeton Reverb</span><span class="en" lang="en">inspired by the Fender Princeton Reverb</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tweed57.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Tweed Deluxe 5E3" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/tweed57.webp" width="420" height="185" loading="lazy" alt="Tweed 57" data-alt-en="Tweed 57"><h4>Tweed 57</h4><p><span class="pt">inspirado no Fender Tweed Deluxe 5E3</span><span class="en" lang="en">inspired by the Fender Tweed Deluxe 5E3</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hotrod40.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Hot Rod Deluxe" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/hotrod40.webp" width="420" height="185" loading="lazy" alt="Hot Rod 40" data-alt-en="Hot Rod 40"><h4>Hot Rod 40</h4><p><span class="pt">inspirado no Fender Hot Rod Deluxe</span><span class="en" lang="en">inspired by the Fender Hot Rod Deluxe</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/champion5.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Champ" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/champion5.webp" width="420" height="185" loading="lazy" alt="Champion 5" data-alt-en="Champion 5"><h4>Champion 5</h4><p><span class="pt">inspirado no Fender Champ</span><span class="en" lang="en">inspired by the Fender Champ</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark2plus.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie Mark IIC+" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/mark2plus.webp" width="420" height="185" loading="lazy" alt="Mark Two Plus" data-alt-en="Mark Two Plus"><h4>Mark Two Plus</h4><p><span class="pt">inspirado no Mesa Boogie Mark IIC+</span><span class="en" lang="en">inspired by the Mesa Boogie Mark IIC+</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark3.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie Mark III" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/mark3.webp" width="420" height="185" loading="lazy" alt="Mark Three" data-alt-en="Mark Three"><h4>Mark Three</h4><p><span class="pt">inspirado no Mesa Boogie Mark III</span><span class="en" lang="en">inspired by the Mesa Boogie Mark III</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark4.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie Mark IV" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/mark4.webp" width="420" height="185" loading="lazy" alt="Mark Four" data-alt-en="Mark Four"><h4>Mark Four</h4><p><span class="pt">inspirado no Mesa Boogie Mark IV</span><span class="en" lang="en">inspired by the Mesa Boogie Mark IV</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/markjp.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie JP-2C" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/markjp.webp" width="420" height="185" loading="lazy" alt="Mark JP" data-alt-en="Mark JP"><h4>Mark JP</h4><p><span class="pt">inspirado no Mesa Boogie JP-2C</span><span class="en" lang="en">inspired by the Mesa Boogie JP-2C</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/badland100.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie Badlander" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/badland100.webp" width="420" height="185" loading="lazy" alt="Badland 100" data-alt-en="Badland 100"><h4>Badland 100</h4><p><span class="pt">inspirado no Mesa Boogie Badlander</span><span class="en" lang="en">inspired by the Mesa Boogie Badlander</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/lonestar100.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Boogie Lonestar" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/lonestar100.webp" width="420" height="185" loading="lazy" alt="Lone Star 100" data-alt-en="Lone Star 100"><h4>Lone Star 100</h4><p><span class="pt">inspirado no Mesa Boogie Lonestar</span><span class="en" lang="en">inspired by the Mesa Boogie Lonestar</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/block5150iii.webp" data-largura="1800" data-altura="792" data-inspiracao="EVH 5150 III" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/block5150iii.webp" width="420" height="185" loading="lazy" alt="Block 5150 III" data-alt-en="Block 5150 III"><h4>Block 5150 III</h4><p><span class="pt">inspirado no EVH 5150 III</span><span class="en" lang="en">inspired by the EVH 5150 III</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/topboost15.webp" data-largura="1800" data-altura="792" data-inspiracao="Vox AC15" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/topboost15.webp" width="420" height="185" loading="lazy" alt="Top Boost 15" data-alt-en="Top Boost 15"><h4>Top Boost 15</h4><p><span class="pt">inspirado no Vox AC15</span><span class="en" lang="en">inspired by the Vox AC15</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/citrus50.webp" data-largura="1800" data-altura="792" data-inspiracao="Orange OR50" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/citrus50.webp" width="420" height="185" loading="lazy" alt="Citrus 50" data-alt-en="Citrus 50"><h4>Citrus 50</h4><p><span class="pt">inspirado no Orange OR50</span><span class="en" lang="en">inspired by the Orange OR50</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/citrus30.webp" data-largura="1800" data-altura="791" data-inspiracao="Orange AD30" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/citrus30.webp" width="420" height="185" loading="lazy" alt="Citrus 30" data-alt-en="Citrus 30"><h4>Citrus 30</h4><p><span class="pt">inspirado no Orange AD30</span><span class="en" lang="en">inspired by the Orange AD30</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blackcountry100.webp" data-largura="1800" data-altura="792" data-inspiracao="Laney Supergroup" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/blackcountry100.webp" width="420" height="185" loading="lazy" alt="Black Country 100" data-alt-en="Black Country 100"><h4>Black Country 100</h4><p><span class="pt">inspirado no Laney Supergroup</span><span class="en" lang="en">inspired by the Laney Supergroup</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/iron120.webp" data-largura="1800" data-altura="792" data-inspiracao="Laney Ironheart" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/iron120.webp" width="420" height="185" loading="lazy" alt="Iron 120" data-alt-en="Iron 120"><h4>Iron 120</h4><p><span class="pt">inspirado no Laney Ironheart</span><span class="en" lang="en">inspired by the Laney Ironheart</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/fire100.webp" data-largura="1800" data-altura="792" data-inspiracao="ENGL Fireball" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/fire100.webp" width="420" height="185" loading="lazy" alt="Fire 100" data-alt-en="Fire 100"><h4>Fire 100</h4><p><span class="pt">inspirado no ENGL Fireball</span><span class="en" lang="en">inspired by the ENGL Fireball</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/feral120.webp" data-largura="1800" data-altura="792" data-inspiracao="ENGL Savage" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/feral120.webp" width="420" height="185" loading="lazy" alt="Feral 120" data-alt-en="Feral 120"><h4>Feral 120</h4><p><span class="pt">inspirado no ENGL Savage</span><span class="en" lang="en">inspired by the ENGL Savage</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/steel20.webp" data-largura="1800" data-altura="792" data-inspiracao="ENGL Ironball" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/steel20.webp" width="420" height="185" loading="lazy" alt="Steel 20" data-alt-en="Steel 20"><h4>Steel 20</h4><p><span class="pt">inspirado no ENGL Ironball</span><span class="en" lang="en">inspired by the ENGL Ironball</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vier100.webp" data-largura="1800" data-altura="792" data-inspiracao="Diezel VH4" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/vier100.webp" width="420" height="185" loading="lazy" alt="Vier 100" data-alt-en="Vier 100"><h4>Vier 100</h4><p><span class="pt">inspirado no Diezel VH4</span><span class="en" lang="en">inspired by the Diezel VH4</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/herb180.webp" data-largura="1800" data-altura="792" data-inspiracao="Diezel Herbert" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/herb180.webp" width="420" height="185" loading="lazy" alt="Herb 180" data-alt-en="Herb 180"><h4>Herb 180</h4><p><span class="pt">inspirado no Diezel Herbert</span><span class="en" lang="en">inspired by the Diezel Herbert</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/bliss100.webp" data-largura="1800" data-altura="792" data-inspiracao="Bogner Ecstasy" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/bliss100.webp" width="420" height="185" loading="lazy" alt="Bliss 100" data-alt-en="Bliss 100"><h4>Bliss 100</h4><p><span class="pt">inspirado no Bogner Ecstasy</span><span class="en" lang="en">inspired by the Bogner Ecstasy</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/goddess80.webp" data-largura="1800" data-altura="792" data-inspiracao="Bogner Shiva" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/goddess80.webp" width="420" height="185" loading="lazy" alt="Goddess 80" data-alt-en="Goddess 80"><h4>Goddess 80</h4><p><span class="pt">inspirado no Bogner Shiva</span><span class="en" lang="en">inspired by the Bogner Shiva</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/dirty40.webp" data-largura="1800" data-altura="792" data-inspiracao="Friedman Dirty Shirley" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/dirty40.webp" width="420" height="185" loading="lazy" alt="Dirty 40" data-alt-en="Dirty 40"><h4>Dirty 40</h4><p><span class="pt">inspirado no Friedman Dirty Shirley</span><span class="en" lang="en">inspired by the Friedman Dirty Shirley</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/special100.webp" data-largura="1800" data-altura="792" data-inspiracao="Dumble Overdrive Special" data-categoria="Americanos boutique" data-categoria-en="American boutique"><img src="img/catalogo/special100.webp" width="420" height="185" loading="lazy" alt="Special 100" data-alt-en="Special 100"><h4>Special 100</h4><p><span class="pt">inspirado no Dumble Overdrive Special</span><span class="en" lang="en">inspired by the Dumble Overdrive Special</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/doublestone50.webp" data-largura="1800" data-altura="792" data-inspiracao="Two-Rock Classic Reverb" data-categoria="Americanos boutique" data-categoria-en="American boutique"><img src="img/catalogo/doublestone50.webp" width="420" height="185" loading="lazy" alt="Double Stone 50" data-alt-en="Double Stone 50"><h4>Double Stone 50</h4><p><span class="pt">inspirado no Two-Rock Classic Reverb</span><span class="en" lang="en">inspired by the Two-Rock Classic Reverb</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blackcat30.webp" data-largura="1800" data-altura="792" data-inspiracao="Bad Cat Hot Cat" data-categoria="Americanos boutique" data-categoria-en="American boutique"><img src="img/catalogo/blackcat30.webp" width="420" height="185" loading="lazy" alt="Black Cat 30" data-alt-en="Black Cat 30"><h4>Black Cat 30</h4><p><span class="pt">inspirado no Bad Cat Hot Cat</span><span class="en" lang="en">inspired by the Bad Cat Hot Cat</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hi103.webp" data-largura="1800" data-altura="792" data-inspiracao="Hiwatt DR103" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/hi103.webp" width="420" height="185" loading="lazy" alt="Hi 103" data-alt-en="Hi 103"><h4>Hi 103</h4><p><span class="pt">inspirado no Hiwatt DR103</span><span class="en" lang="en">inspired by the Hiwatt DR103</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/darkstar20.webp" data-largura="1800" data-altura="792" data-inspiracao="Blackstar HT e Series One" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/darkstar20.webp" width="420" height="185" loading="lazy" alt="Dark Star 20" data-alt-en="Dark Star 20"><h4>Dark Star 20</h4><p><span class="pt">inspirado no Blackstar HT e Series One</span><span class="en" lang="en">inspired by the Blackstar HT e Series One</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tri100.webp" data-largura="1800" data-altura="792" data-inspiracao="Hughes &amp; Kettner TriAmp" data-categoria="Alemães de alto ganho" data-categoria-en="German high gain"><img src="img/catalogo/tri100.webp" width="420" height="185" loading="lazy" alt="Tri 100" data-alt-en="Tri 100"><h4>Tri 100</h4><p><span class="pt">inspirado no Hughes &amp; Kettner TriAmp</span><span class="en" lang="en">inspired by the Hughes &amp; Kettner TriAmp</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/gen120.webp" data-largura="1800" data-altura="792" data-inspiracao="Revv Generator 120" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/gen120.webp" width="420" height="185" loading="lazy" alt="Gen 120" data-alt-en="Gen 120"><h4>Gen 120</h4><p><span class="pt">inspirado no Revv Generator 120</span><span class="en" lang="en">inspired by the Revv Generator 120</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/nova100.webp" data-largura="1800" data-altura="792" data-inspiracao="Fortin Natas" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/nova100.webp" width="420" height="185" loading="lazy" alt="Nova 100" data-alt-en="Nova 100"><h4>Nova 100</h4><p><span class="pt">inspirado no Fortin Natas</span><span class="en" lang="en">inspired by the Fortin Natas</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/emperor20.webp" data-largura="1800" data-altura="792" data-inspiracao="Tone King Imperial" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/emperor20.webp" width="420" height="185" loading="lazy" alt="Emperor 20" data-alt-en="Emperor 20"><h4>Emperor 20</h4><p><span class="pt">inspirado no Tone King Imperial</span><span class="en" lang="en">inspired by the Tone King Imperial</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/rg100.webp" data-largura="1800" data-altura="792" data-inspiracao="Randall RG100ES" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/rg100.webp" width="420" height="185" loading="lazy" alt="RG 100" data-alt-en="RG 100"><h4>RG 100</h4><p><span class="pt">inspirado no Randall RG100ES</span><span class="en" lang="en">inspired by the Randall RG100ES</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/arch100.webp" data-largura="1800" data-altura="792" data-inspiracao="PRS Archon" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/arch100.webp" width="420" height="185" loading="lazy" alt="Arch 100" data-alt-en="Arch 100"><h4>Arch 100</h4><p><span class="pt">inspirado no PRS Archon</span><span class="en" lang="en">inspired by the PRS Archon</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/kraken50.webp" data-largura="1800" data-altura="792" data-inspiracao="Victory Kraken" data-categoria="Britânicos" data-categoria-en="British"><img src="img/catalogo/kraken50.webp" width="420" height="185" loading="lazy" alt="Kraken 50" data-alt-en="Kraken 50"><h4>Kraken 50</h4><p><span class="pt">inspirado no Victory Kraken</span><span class="en" lang="en">inspired by the Victory Kraken</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/magick25.webp" data-largura="1800" data-altura="792" data-inspiracao="Supro Black Magick" data-categoria="Americanos clássicos" data-categoria-en="American classics"><img src="img/catalogo/magick25.webp" width="420" height="185" loading="lazy" alt="Magick 25" data-alt-en="Magick 25"><h4>Magick 25</h4><p><span class="pt">inspirado no Supro Black Magick</span><span class="en" lang="en">inspired by the Supro Black Magick</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/deliver120.webp" data-largura="1800" data-altura="792" data-inspiracao="Fryette Deliverance" data-categoria="Americanos de alto ganho" data-categoria-en="American high gain"><img src="img/catalogo/deliver120.webp" width="420" height="185" loading="lazy" alt="Deliver 120" data-alt-en="Deliver 120"><h4>Deliver 120</h4><p><span class="pt">inspirado no Fryette Deliverance</span><span class="en" lang="en">inspired by the Fryette Deliverance</span></p></button></article>
+    </div>
+    </div>
+    <div class="catalogo-grupo" data-grupo="baixo">
+    <h3 class="catalogo-titulo"><span class="pt">Cabeçotes de baixo</span><span class="en" lang="en">Bass heads</span> <span class="catalogo-conta">28</span></h3>
+    <div class="catalogo">
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vault300.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg SVT" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/vault300.webp" width="420" height="185" loading="lazy" alt="Vault 300" data-alt-en="Vault 300"><h4>Vault 300</h4><p><span class="pt">inspirado no Ampeg SVT</span><span class="en" lang="en">inspired by the Ampeg SVT</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/citrusbass200.webp" data-largura="1800" data-altura="792" data-inspiracao="Orange AD200" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/citrusbass200.webp" width="420" height="185" loading="lazy" alt="Citrus Bass 200" data-alt-en="Citrus Bass 200"><h4>Citrus Bass 200</h4><p><span class="pt">inspirado no Orange AD200</span><span class="en" lang="en">inspired by the Orange AD200</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/granite800.webp" data-largura="1800" data-altura="792" data-inspiracao="Gallien-Krueger 800RB" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/granite800.webp" width="420" height="185" loading="lazy" alt="Granite 800" data-alt-en="Granite 800"><h4>Granite 800</h4><p><span class="pt">inspirado no Gallien-Krueger 800RB</span><span class="en" lang="en">inspired by the Gallien-Krueger 800RB</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/fliptop15.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg B-15" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/fliptop15.webp" width="420" height="185" loading="lazy" alt="Fliptop 15" data-alt-en="Fliptop 15"><h4>Fliptop 15</h4><p><span class="pt">inspirado no Ampeg B-15</span><span class="en" lang="en">inspired by the Ampeg B-15</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vaultv4.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg V-4B" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/vaultv4.webp" width="420" height="185" loading="lazy" alt="Vault V4" data-alt-en="Vault V4"><h4>Vault V4</h4><p><span class="pt">inspirado no Ampeg V-4B</span><span class="en" lang="en">inspired by the Ampeg V-4B</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hart1000.webp" data-largura="1800" data-altura="792" data-inspiracao="Hartke LH1000" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/hart1000.webp" width="420" height="185" loading="lazy" alt="Hart 1000" data-alt-en="Hart 1000"><h4>Hart 1000</h4><p><span class="pt">inspirado no Hartke LH1000</span><span class="en" lang="en">inspired by the Hartke LH1000</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/garden800.webp" data-largura="1800" data-altura="792" data-inspiracao="Eden" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/garden800.webp" width="420" height="185" loading="lazy" alt="Garden 800" data-alt-en="Garden 800"><h4>Garden 800</h4><p><span class="pt">inspirado no Eden</span><span class="en" lang="en">inspired by the Eden</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/glass500.webp" data-largura="1800" data-altura="792" data-inspiracao="Darkglass Microtubes 500" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/glass500.webp" width="420" height="185" loading="lazy" alt="Glass 500" data-alt-en="Glass 500"><h4>Glass 500</h4><p><span class="pt">inspirado no Darkglass Microtubes 500</span><span class="en" lang="en">inspired by the Darkglass Microtubes 500</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/solart.webp" data-largura="1800" data-altura="792" data-inspiracao="Sunn Model T" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/solart.webp" width="420" height="185" loading="lazy" alt="Solar T" data-alt-en="Solar T"><h4>Solar T</h4><p><span class="pt">inspirado no Sunn Model T</span><span class="en" lang="en">inspired by the Sunn Model T</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/bassline100.webp" data-largura="1800" data-altura="792" data-inspiracao="Fender Bassman silverface (50 e 100T)" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/bassline100.webp" width="420" height="185" loading="lazy" alt="Bassline 100" data-alt-en="Bassline 100"><h4>Bassline 100</h4><p><span class="pt">inspirado no Fender Bassman silverface (50 e 100T)</span><span class="en" lang="en">inspired by the Fender Bassman silverface (50 e 100T)</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/eagle751.webp" data-largura="1800" data-altura="792" data-inspiracao="Aguilar DB751" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/eagle751.webp" width="420" height="185" loading="lazy" alt="Eagle 751" data-alt-en="Eagle 751"><h4>Eagle 751</h4><p><span class="pt">inspirado no Aguilar DB751</span><span class="en" lang="en">inspired by the Aguilar DB751</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/littletube.webp" data-largura="1800" data-altura="792" data-inspiracao="Markbass Little Mark Tube" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/littletube.webp" width="420" height="185" loading="lazy" alt="Little Tube" data-alt-en="Little Tube"><h4>Little Tube</h4><p><span class="pt">inspirado no Markbass Little Mark Tube</span><span class="en" lang="en">inspired by the Markbass Little Mark Tube</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/workhorse350.webp" data-largura="1800" data-altura="792" data-inspiracao="SWR Bass 350" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/workhorse350.webp" width="420" height="185" loading="lazy" alt="Workhorse 350" data-alt-en="Workhorse 350"><h4>Workhorse 350</h4><p><span class="pt">inspirado no SWR Bass 350</span><span class="en" lang="en">inspired by the SWR Bass 350</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/underground800.webp" data-largura="1800" data-altura="792" data-inspiracao="Mesa Bass 800D" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/underground800.webp" width="420" height="185" loading="lazy" alt="Underground 800" data-alt-en="Underground 800"><h4>Underground 800</h4><p><span class="pt">inspirado no Mesa Bass 800D</span><span class="en" lang="en">inspired by the Mesa Bass 800D</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/acoustica360.webp" data-largura="1800" data-altura="792" data-inspiracao="Acoustic 360" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/acoustica360.webp" width="420" height="185" loading="lazy" alt="Acoustica 360" data-alt-en="Acoustica 360"><h4>Acoustica 360</h4><p><span class="pt">inspirado no Acoustic 360</span><span class="en" lang="en">inspired by the Acoustic 360</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tinybass.webp" data-largura="1800" data-altura="791" data-inspiracao="Orange Terror Bass" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/tinybass.webp" width="420" height="185" loading="lazy" alt="Tiny Bass" data-alt-en="Tiny Bass"><h4>Tiny Bass</h4><p><span class="pt">inspirado no Orange Terror Bass</span><span class="en" lang="en">inspired by the Orange Terror Bass</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tracer7.webp" data-largura="1800" data-altura="792" data-inspiracao="Trace Elliot (GP7, GP12, Speed Twin)" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/tracer7.webp" width="420" height="185" loading="lazy" alt="Tracer 7" data-alt-en="Tracer 7"><h4>Tracer 7</h4><p><span class="pt">inspirado no Trace Elliot (GP7, GP12, Speed Twin)</span><span class="en" lang="en">inspired by the Trace Elliot (GP7, GP12, Speed Twin)</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/britbass.webp" data-largura="1800" data-altura="792" data-inspiracao="Marshall Super Bass" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/britbass.webp" width="420" height="185" loading="lazy" alt="Brit Bass" data-alt-en="Brit Bass"><h4>Brit Bass</h4><p><span class="pt">inspirado no Marshall Super Bass</span><span class="en" lang="en">inspired by the Marshall Super Bass</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/ash500.webp" data-largura="1800" data-altura="792" data-inspiracao="Ashdown ABM" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/ash500.webp" width="420" height="185" loading="lazy" alt="Ash 500" data-alt-en="Ash 500"><h4>Ash 500</h4><p><span class="pt">inspirado no Ashdown ABM</span><span class="en" lang="en">inspired by the Ashdown ABM</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vault4pro.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg SVT-4 Pro" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/vault4pro.webp" width="420" height="185" loading="lazy" alt="Vault 4 Pro" data-alt-en="Vault 4 Pro"><h4>Vault 4 Pro</h4><p><span class="pt">inspirado no Ampeg SVT-4 Pro</span><span class="en" lang="en">inspired by the Ampeg SVT-4 Pro</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/maple400.webp" data-largura="1800" data-altura="792" data-inspiracao="Traynor YBA-200" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/maple400.webp" width="420" height="185" loading="lazy" alt="Maple 400" data-alt-en="Maple 400"><h4>Maple 400</h4><p><span class="pt">inspirado no Traynor YBA-200</span><span class="en" lang="en">inspired by the Traynor YBA-200</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/nord650.webp" data-largura="1800" data-altura="792" data-inspiracao="EBS Classic 500" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/nord650.webp" width="420" height="185" loading="lazy" alt="Nord 650" data-alt-en="Nord 650"><h4>Nord 650</h4><p><span class="pt">inspirado no EBS Classic 500</span><span class="en" lang="en">inspired by the EBS Classic 500</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/wind300.webp" data-largura="1800" data-altura="792" data-inspiracao="Peavey Mark III" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/wind300.webp" width="420" height="185" loading="lazy" alt="Wind 300" data-alt-en="Wind 300"><h4>Wind 300</h4><p><span class="pt">inspirado no Peavey Mark III</span><span class="en" lang="en">inspired by the Peavey Mark III</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/bassboxv.webp" data-largura="1800" data-altura="792" data-inspiracao="Behringer Bass V-Amp Pro" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/bassboxv.webp" width="420" height="185" loading="lazy" alt="Bass Box V" data-alt-en="Bass Box V"><h4>Bass Box V</h4><p><span class="pt">inspirado no Behringer Bass V-Amp Pro</span><span class="en" lang="en">inspired by the Behringer Bass V-Amp Pro</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/eaglehammer500.webp" data-largura="1800" data-altura="792" data-inspiracao="Aguilar Tone Hammer 500" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/eaglehammer500.webp" width="420" height="185" loading="lazy" alt="Eagle Hammer 500" data-alt-en="Eagle Hammer 500"><h4>Eagle Hammer 500</h4><p><span class="pt">inspirado no Aguilar Tone Hammer 500</span><span class="en" lang="en">inspired by the Aguilar Tone Hammer 500</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/bebop15.webp" data-largura="1800" data-altura="792" data-inspiracao="Polytone Mini Brute" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/bebop15.webp" width="420" height="185" loading="lazy" alt="Bebop 15" data-alt-en="Bebop 15"><h4>Bebop 15</h4><p><span class="pt">inspirado no Polytone Mini Brute</span><span class="en" lang="en">inspired by the Polytone Mini Brute</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/fliptop18.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg B-18 Portaflex" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/fliptop18.webp" width="420" height="185" loading="lazy" alt="Fliptop 18" data-alt-en="Fliptop 18"><h4>Fliptop 18</h4><p><span class="pt">inspirado no Ampeg B-18 Portaflex</span><span class="en" lang="en">inspired by the Ampeg B-18 Portaflex</span></p></button></article>
+      <article class="cat-cabecote"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vault210.webp" data-largura="1800" data-altura="792" data-inspiracao="Ampeg BA-210" data-categoria="Baixo" data-categoria-en="Bass"><img src="img/catalogo/vault210.webp" width="420" height="185" loading="lazy" alt="Vault 210" data-alt-en="Vault 210"><h4>Vault 210</h4><p><span class="pt">inspirado no Ampeg BA-210</span><span class="en" lang="en">inspired by the Ampeg BA-210</span></p></button></article>
+    </div>
+    </div>
+    <div class="catalogo-grupo" data-grupo="caixas">
+    <h3 class="catalogo-titulo"><span class="pt">Caixas</span><span class="en" lang="en">Cabinets</span> <span class="catalogo-conta">29</span></h3>
+    <div class="catalogo">
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/brit412.webp" data-largura="1100" data-altura="1038" data-inspiracao="1960A 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/brit412.webp" width="220" height="208" loading="lazy" alt="Brit 4x12" data-alt-en="Brit 4x12"><h4>Brit 4x12</h4><p><span class="pt">inspirado no 1960A 4x12</span><span class="en" lang="en">inspired by the 1960A 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark5_412.webp" data-largura="1100" data-altura="1052" data-inspiracao="Mesa 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/mark5_412.webp" width="220" height="210" loading="lazy" alt="Mark 4x12" data-alt-en="Mark 4x12"><h4>Mark 4x12</h4><p><span class="pt">inspirado no Mesa 4x12</span><span class="en" lang="en">inspired by the Mesa 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/block_412.webp" data-largura="1100" data-altura="1038" data-inspiracao="5150 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/block_412.webp" width="220" height="208" loading="lazy" alt="Block 4x12" data-alt-en="Block 4x12"><h4>Block 4x12</h4><p><span class="pt">inspirado no 5150 4x12</span><span class="en" lang="en">inspired by the 5150 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/sl_412.webp" data-largura="1100" data-altura="1038" data-inspiracao="Soldano 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/sl_412.webp" width="220" height="208" loading="lazy" alt="SL 4x12" data-alt-en="SL 4x12"><h4>SL 4x12</h4><p><span class="pt">inspirado no Soldano 4x12</span><span class="en" lang="en">inspired by the Soldano 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/be_412.webp" data-largura="1100" data-altura="1038" data-inspiracao="Friedman 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/be_412.webp" width="220" height="208" loading="lazy" alt="BE 4x12" data-alt-en="BE 4x12"><h4>BE 4x12</h4><p><span class="pt">inspirado no Friedman 4x12</span><span class="en" lang="en">inspired by the Friedman 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/citrus_412.webp" data-largura="1100" data-altura="1040" data-inspiracao="Orange 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/citrus_412.webp" width="220" height="208" loading="lazy" alt="Citrus 4x12" data-alt-en="Citrus 4x12"><h4>Citrus 4x12</h4><p><span class="pt">inspirado no Orange 4x12</span><span class="en" lang="en">inspired by the Orange 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blue_212.webp" data-largura="1100" data-altura="1100" data-inspiracao="Vox AC30 2x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/blue_212.webp" width="220" height="220" loading="lazy" alt="Blue 2x12" data-alt-en="Blue 2x12"><h4>Blue 2x12</h4><p><span class="pt">inspirado no Vox AC30 2x12</span><span class="en" lang="en">inspired by the Vox AC30 2x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/twin_212.webp" data-largura="1100" data-altura="940" data-inspiracao="Fender Twin 2x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/twin_212.webp" width="220" height="188" loading="lazy" alt="Twin 2x12" data-alt-en="Twin 2x12"><h4>Twin 2x12</h4><p><span class="pt">inspirado no Fender Twin 2x12</span><span class="en" lang="en">inspired by the Fender Twin 2x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tweed_410.webp" data-largura="1100" data-altura="1059" data-inspiracao="Fender 4x10" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/tweed_410.webp" width="220" height="212" loading="lazy" alt="Tweed 4x10" data-alt-en="Tweed 4x10"><h4>Tweed 4x10</h4><p><span class="pt">inspirado no Fender 4x10</span><span class="en" lang="en">inspired by the Fender 4x10</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/match_212.webp" data-largura="1100" data-altura="1100" data-inspiracao="Matchless 2x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/match_212.webp" width="220" height="220" loading="lazy" alt="Match 2x12" data-alt-en="Match 2x12"><h4>Match 2x12</h4><p><span class="pt">inspirado no Matchless 2x12</span><span class="en" lang="en">inspired by the Matchless 2x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/power_412.webp" data-largura="1100" data-altura="1040" data-inspiracao="ENGL 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/power_412.webp" width="220" height="208" loading="lazy" alt="Power 4x12" data-alt-en="Power 4x12"><h4>Power 4x12</h4><p><span class="pt">inspirado no ENGL 4x12</span><span class="en" lang="en">inspired by the ENGL 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/uber_412.webp" data-largura="1100" data-altura="1040" data-inspiracao="Bogner 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/uber_412.webp" width="220" height="208" loading="lazy" alt="Uber 4x12" data-alt-en="Uber 4x12"><h4>Uber 4x12</h4><p><span class="pt">inspirado no Bogner 4x12</span><span class="en" lang="en">inspired by the Bogner 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jazz_212.webp" data-largura="1100" data-altura="1100" data-inspiracao="Roland JC 2x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/jazz_212.webp" width="220" height="220" loading="lazy" alt="Jazz 2x12" data-alt-en="Jazz 2x12"><h4>Jazz 2x12</h4><p><span class="pt">inspirado no Roland JC 2x12</span><span class="en" lang="en">inspired by the Roland JC 2x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vault_810.webp" data-largura="800" data-altura="1525" data-inspiracao="Ampeg 8x10" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/vault_810.webp" width="220" height="419" loading="lazy" alt="Vault 8x10" data-alt-en="Vault 8x10"><h4>Vault 8x10</h4><p><span class="pt">inspirado no Ampeg 8x10</span><span class="en" lang="en">inspired by the Ampeg 8x10</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/granite_410.webp" data-largura="1100" data-altura="1042" data-inspiracao="Gallien-Krueger 4x10" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/granite_410.webp" width="220" height="208" loading="lazy" alt="Granite 4x10" data-alt-en="Granite 4x10"><h4>Granite 4x10</h4><p><span class="pt">inspirado no Gallien-Krueger 4x10</span><span class="en" lang="en">inspired by the Gallien-Krueger 4x10</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/silver_112.webp" data-largura="1100" data-altura="1199" data-inspiracao="Fender Deluxe Reverb 1x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/silver_112.webp" width="220" height="240" loading="lazy" alt="Silver 1x12" data-alt-en="Silver 1x12"><h4>Silver 1x12</h4><p><span class="pt">inspirado no Fender Deluxe Reverb 1x12</span><span class="en" lang="en">inspired by the Fender Deluxe Reverb 1x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mark_112.webp" data-largura="1100" data-altura="1153" data-inspiracao="Mesa Boogie Mark 1x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/mark_112.webp" width="220" height="231" loading="lazy" alt="Mark 1x12" data-alt-en="Mark 1x12"><h4>Mark 1x12</h4><p><span class="pt">inspirado no Mesa Boogie Mark 1x12</span><span class="en" lang="en">inspired by the Mesa Boogie Mark 1x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/star_412.webp" data-largura="1100" data-altura="1223" data-inspiracao="Blackstar 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/star_412.webp" width="220" height="245" loading="lazy" alt="Star 4x12" data-alt-en="Star 4x12"><h4>Star 4x12</h4><p><span class="pt">inspirado no Blackstar 4x12</span><span class="en" lang="en">inspired by the Blackstar 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/country_412.webp" data-largura="1100" data-altura="1223" data-inspiracao="Laney 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/country_412.webp" width="220" height="245" loading="lazy" alt="Country 4x12" data-alt-en="Country 4x12"><h4>Country 4x12</h4><p><span class="pt">inspirado no Laney 4x12</span><span class="en" lang="en">inspired by the Laney 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/vier_412.webp" data-largura="1100" data-altura="1189" data-inspiracao="Diezel 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/vier_412.webp" width="220" height="238" loading="lazy" alt="Vier 4x12" data-alt-en="Vier 4x12"><h4>Vier 4x12</h4><p><span class="pt">inspirado no Diezel 4x12</span><span class="en" lang="en">inspired by the Diezel 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hi_412.webp" data-largura="1100" data-altura="1223" data-inspiracao="Hiwatt 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/hi_412.webp" width="220" height="245" loading="lazy" alt="Hi 4x12" data-alt-en="Hi 4x12"><h4>Hi 4x12</h4><p><span class="pt">inspirado no Hiwatt 4x12</span><span class="en" lang="en">inspired by the Hiwatt 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/rg_412.webp" data-largura="1100" data-altura="1223" data-inspiracao="Randall 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/rg_412.webp" width="220" height="245" loading="lazy" alt="RG 4x12" data-alt-en="RG 4x12"><h4>RG 4x12</h4><p><span class="pt">inspirado no Randall 4x12</span><span class="en" lang="en">inspired by the Randall 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hart_410.webp" data-largura="1100" data-altura="1292" data-inspiracao="Hartke 4x10" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/hart_410.webp" width="220" height="258" loading="lazy" alt="Hart 4x10" data-alt-en="Hart 4x10"><h4>Hart 4x10</h4><p><span class="pt">inspirado no Hartke 4x10</span><span class="en" lang="en">inspired by the Hartke 4x10</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/glass_410.webp" data-largura="1100" data-altura="1256" data-inspiracao="Darkglass 4x10" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/glass_410.webp" width="220" height="251" loading="lazy" alt="Glass 4x10" data-alt-en="Glass 4x10"><h4>Glass 4x10</h4><p><span class="pt">inspirado no Darkglass 4x10</span><span class="en" lang="en">inspired by the Darkglass 4x10</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/solar_412.webp" data-largura="1100" data-altura="1281" data-inspiracao="Sunn 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/solar_412.webp" width="220" height="256" loading="lazy" alt="Solar 4x12" data-alt-en="Solar 4x12"><h4>Solar 4x12</h4><p><span class="pt">inspirado no Sunn 4x12</span><span class="en" lang="en">inspired by the Sunn 4x12</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/fliptop_115.webp" data-largura="1100" data-altura="1397" data-inspiracao="Ampeg B-15 1x15" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/fliptop_115.webp" width="220" height="279" loading="lazy" alt="Fliptop 1x15" data-alt-en="Fliptop 1x15"><h4>Fliptop 1x15</h4><p><span class="pt">inspirado no Ampeg B-15 1x15</span><span class="en" lang="en">inspired by the Ampeg B-15 1x15</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/bassline_215.webp" data-largura="1100" data-altura="1705" data-inspiracao="Fender Bassman 2x15" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/bassline_215.webp" width="220" height="341" loading="lazy" alt="Bassline 2x15" data-alt-en="Bassline 2x15"><h4>Bassline 2x15</h4><p><span class="pt">inspirado no Fender Bassman 2x15</span><span class="en" lang="en">inspired by the Fender Bassman 2x15</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/solar_215.webp" data-largura="1100" data-altura="1487" data-inspiracao="Sunn 2x15" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/solar_215.webp" width="220" height="297" loading="lazy" alt="Solar 2x15" data-alt-en="Solar 2x15"><h4>Solar 2x15</h4><p><span class="pt">inspirado no Sunn 2x15</span><span class="en" lang="en">inspired by the Sunn 2x15</span></p></button></article>
+      <article class="cat-caixa"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/glass_412.webp" data-largura="1100" data-altura="1104" data-inspiracao="Darkglass 4x12" data-categoria="Caixas" data-categoria-en="Cabinets"><img src="img/catalogo/glass_412.webp" width="220" height="221" loading="lazy" alt="Glass 4x12" data-alt-en="Glass 4x12"><h4>Glass 4x12</h4><p><span class="pt">inspirado no Darkglass 4x12</span><span class="en" lang="en">inspired by the Darkglass 4x12</span></p></button></article>
+    </div>
+    </div>
+    <div class="catalogo-grupo" data-grupo="pedais">
+    <h3 class="catalogo-titulo"><span class="pt">Pedais</span><span class="en" lang="en">Pedals</span> <span class="catalogo-conta">63</span></h3>
+    <div class="catalogo">
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/greengage_drive.webp" data-largura="600" data-altura="708" data-inspiracao="TS9" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/greengage_drive.webp" width="150" height="177" loading="lazy" alt="Greengage Drive" data-alt-en="Greengage Drive"><h4>Greengage Drive</h4><p><span class="pt">inspirado no TS9</span><span class="en" lang="en">inspired by the TS9</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/orange_drive.webp" data-largura="600" data-altura="727" data-inspiracao="DS-1" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/orange_drive.webp" width="150" height="182" loading="lazy" alt="Orange Drive" data-alt-en="Orange Drive"><h4>Orange Drive</h4><p><span class="pt">inspirado no DS-1</span><span class="en" lang="en">inspired by the DS-1</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/banana_overdrive.webp" data-largura="600" data-altura="727" data-inspiracao="SD-1" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/banana_overdrive.webp" width="150" height="182" loading="lazy" alt="Banana Overdrive" data-alt-en="Banana Overdrive"><h4>Banana Overdrive</h4><p><span class="pt">inspirado no SD-1</span><span class="en" lang="en">inspired by the SD-1</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/gold_centaur.webp" data-largura="588" data-altura="579" data-inspiracao="Klon Centaur" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/gold_centaur.webp" width="150" height="148" loading="lazy" alt="Gold Centaur" data-alt-en="Gold Centaur"><h4>Gold Centaur</h4><p><span class="pt">inspirado no Klon Centaur</span><span class="en" lang="en">inspired by the Klon Centaur</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/neptune_chorus.webp" data-largura="577" data-altura="643" data-inspiracao="CE-2" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/neptune_chorus.webp" width="150" height="167" loading="lazy" alt="Neptune Chorus" data-alt-en="Neptune Chorus"><h4>Neptune Chorus</h4><p><span class="pt">inspirado no CE-2</span><span class="en" lang="en">inspired by the CE-2</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/coconut_delay.webp" data-largura="575" data-altura="727" data-inspiracao="DD-3" data-categoria="Delay" data-categoria-en="Delay"><img src="img/catalogo/coconut_delay.webp" width="150" height="190" loading="lazy" alt="Coconut Delay" data-alt-en="Coconut Delay"><h4>Coconut Delay</h4><p><span class="pt">inspirado no DD-3</span><span class="en" lang="en">inspired by the DD-3</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/meteorite_reverb.webp" data-largura="600" data-altura="727" data-inspiracao="RV-6" data-categoria="Reverb" data-categoria-en="Reverb"><img src="img/catalogo/meteorite_reverb.webp" width="150" height="182" loading="lazy" alt="Meteorite Reverb" data-alt-en="Meteorite Reverb"><h4>Meteorite Reverb</h4><p><span class="pt">inspirado no RV-6</span><span class="en" lang="en">inspired by the RV-6</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/marcasite_gate.webp" data-largura="566" data-altura="718" data-inspiracao="MXR Smart Gate" data-categoria="Utilidades" data-categoria-en="Utilities"><img src="img/catalogo/marcasite_gate.webp" width="150" height="190" loading="lazy" alt="Marcasite Gate" data-alt-en="Marcasite Gate"><h4>Marcasite Gate</h4><p><span class="pt">inspirado no MXR Smart Gate</span><span class="en" lang="en">inspired by the MXR Smart Gate</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/cherry_drop.webp" data-largura="595" data-altura="694" data-inspiracao="DigiTech Drop" data-categoria="Afinação" data-categoria-en="Pitch"><img src="img/catalogo/cherry_drop.webp" width="150" height="175" loading="lazy" alt="Cherry Drop" data-alt-en="Cherry Drop"><h4>Cherry Drop</h4><p><span class="pt">inspirado no DigiTech Drop</span><span class="en" lang="en">inspired by the DigiTech Drop</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mars_phaser.webp" data-largura="588" data-altura="718" data-inspiracao="MXR Phase 90" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/mars_phaser.webp" width="150" height="183" loading="lazy" alt="Mars Phaser" data-alt-en="Mars Phaser"><h4>Mars Phaser</h4><p><span class="pt">inspirado no MXR Phase 90</span><span class="en" lang="en">inspired by the MXR Phase 90</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/nebula_flanger.webp" data-largura="580" data-altura="653" data-inspiracao="Electric Mistress" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/nebula_flanger.webp" width="150" height="169" loading="lazy" alt="Nebula Flanger" data-alt-en="Nebula Flanger"><h4>Nebula Flanger</h4><p><span class="pt">inspirado no Electric Mistress</span><span class="en" lang="en">inspired by the Electric Mistress</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/turquoise_tremolo.webp" data-largura="580" data-altura="651" data-inspiracao="TR-2" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/turquoise_tremolo.webp" width="150" height="168" loading="lazy" alt="Turquoise Tremolo" data-alt-en="Turquoise Tremolo"><h4>Turquoise Tremolo</h4><p><span class="pt">inspirado no TR-2</span><span class="en" lang="en">inspired by the TR-2</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/eclipse_vibe.webp" data-largura="581" data-altura="655" data-inspiracao="Uni-Vibe" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/eclipse_vibe.webp" width="150" height="169" loading="lazy" alt="Eclipse Vibe" data-alt-en="Eclipse Vibe"><h4>Eclipse Vibe</h4><p><span class="pt">inspirado no Uni-Vibe</span><span class="en" lang="en">inspired by the Uni-Vibe</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/acai_rat.webp" data-largura="600" data-altura="728" data-inspiracao="ProCo RAT" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/acai_rat.webp" width="150" height="182" loading="lazy" alt="Açaí Rat" data-alt-en="Açaí Rat"><h4>Açaí Rat</h4><p><span class="pt">inspirado no ProCo RAT</span><span class="en" lang="en">inspired by the ProCo RAT</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jabuticaba_buzzsaw.webp" data-largura="600" data-altura="734" data-inspiracao="HM-2" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/jabuticaba_buzzsaw.webp" width="150" height="184" loading="lazy" alt="Jabuticaba Buzzsaw" data-alt-en="Jabuticaba Buzzsaw"><h4>Jabuticaba Buzzsaw</h4><p><span class="pt">inspirado no HM-2</span><span class="en" lang="en">inspired by the HM-2</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/pearl_fuzz.webp" data-largura="572" data-altura="625" data-inspiracao="Big Muff" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/pearl_fuzz.webp" width="150" height="164" loading="lazy" alt="Pearl Fuzz" data-alt-en="Pearl Fuzz"><h4>Pearl Fuzz</h4><p><span class="pt">inspirado no Big Muff</span><span class="en" lang="en">inspired by the Big Muff</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/onyx_metal.webp" data-largura="600" data-altura="730" data-inspiracao="MT-2" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/onyx_metal.webp" width="150" height="182" loading="lazy" alt="Onyx Metal" data-alt-en="Onyx Metal"><h4>Onyx Metal</h4><p><span class="pt">inspirado no MT-2</span><span class="en" lang="en">inspired by the MT-2</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/heliodor_mud.webp" data-largura="600" data-altura="712" data-inspiracao="Mudhoney" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/heliodor_mud.webp" width="150" height="178" loading="lazy" alt="Heliodor Mud" data-alt-en="Heliodor Mud"><h4>Heliodor Mud</h4><p><span class="pt">inspirado no Mudhoney</span><span class="en" lang="en">inspired by the Mudhoney</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/snowpear_treble.webp" data-largura="567" data-altura="717" data-inspiracao="Rangemaster" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/snowpear_treble.webp" width="150" height="190" loading="lazy" alt="Snow Pear Treble" data-alt-en="Snow Pear Treble"><h4>Snow Pear Treble</h4><p><span class="pt">inspirado no Rangemaster</span><span class="en" lang="en">inspired by the Rangemaster</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/aquamarine_sky.webp" data-largura="587" data-altura="416" data-inspiracao="Strymon BigSky" data-categoria="Reverb" data-categoria-en="Reverb"><img src="img/catalogo/aquamarine_sky.webp" width="150" height="106" loading="lazy" alt="Aquamarine Sky" data-alt-en="Aquamarine Sky"><h4>Aquamarine Sky</h4><p><span class="pt">inspirado no Strymon BigSky</span><span class="en" lang="en">inspired by the Strymon BigSky</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/emerald_echo.webp" data-largura="600" data-altura="463" data-inspiracao="Line 6 DL4" data-categoria="Delay" data-categoria-en="Delay"><img src="img/catalogo/emerald_echo.webp" width="150" height="116" loading="lazy" alt="Emerald Echo" data-alt-en="Emerald Echo"><h4>Emerald Echo</h4><p><span class="pt">inspirado no Line 6 DL4</span><span class="en" lang="en">inspired by the Line 6 DL4</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/galaxy_mod.webp" data-largura="596" data-altura="454" data-inspiracao="Line 6 MM4" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/galaxy_mod.webp" width="150" height="114" loading="lazy" alt="Galaxy Mod" data-alt-en="Galaxy Mod"><h4>Galaxy Mod</h4><p><span class="pt">inspirado no Line 6 MM4</span><span class="en" lang="en">inspired by the Line 6 MM4</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blueberry_chain.webp" data-largura="576" data-altura="510" data-inspiracao="Três DD-3 em série" data-categoria="Delay" data-categoria-en="Delay"><img src="img/catalogo/blueberry_chain.webp" width="150" height="133" loading="lazy" alt="Blueberry Chain" data-alt-en="Blueberry Chain"><h4>Blueberry Chain</h4><p><span class="pt">inspirado no Três DD-3 em série</span><span class="en" lang="en">inspired by the Três DD-3 em série</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/olive_drive.webp" data-largura="600" data-altura="706" data-inspiracao="Ibanez TS808 Tube Screamer" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/olive_drive.webp" width="150" height="176" loading="lazy" alt="Olive Drive" data-alt-en="Olive Drive"><h4>Olive Drive</h4><p><span class="pt">inspirado no Ibanez TS808 Tube Screamer</span><span class="en" lang="en">inspired by the Ibanez TS808 Tube Screamer</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/pistachio_drive.webp" data-largura="600" data-altura="711" data-inspiracao="Maxon OD808" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/pistachio_drive.webp" width="150" height="178" loading="lazy" alt="Pistachio Drive" data-alt-en="Pistachio Drive"><h4>Pistachio Drive</h4><p><span class="pt">inspirado no Maxon OD808</span><span class="en" lang="en">inspired by the Maxon OD808</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blueberry_blues.webp" data-largura="600" data-altura="727" data-inspiracao="Boss BD-2 Blues Driver" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/blueberry_blues.webp" width="150" height="182" loading="lazy" alt="Blueberry Blues" data-alt-en="Blueberry Blues"><h4>Blueberry Blues</h4><p><span class="pt">inspirado no Boss BD-2 Blues Driver</span><span class="en" lang="en">inspired by the Boss BD-2 Blues Driver</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/citrine_overdrive.webp" data-largura="600" data-altura="727" data-inspiracao="Boss OD-3" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/citrine_overdrive.webp" width="150" height="182" loading="lazy" alt="Citrine Overdrive" data-alt-en="Citrine Overdrive"><h4>Citrine Overdrive</h4><p><span class="pt">inspirado no Boss OD-3</span><span class="en" lang="en">inspired by the Boss OD-3</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/clementine_turbo.webp" data-largura="600" data-altura="727" data-inspiracao="Boss DS-2 Turbo Distortion" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/clementine_turbo.webp" width="150" height="182" loading="lazy" alt="Clementine Turbo" data-alt-en="Clementine Turbo"><h4>Clementine Turbo</h4><p><span class="pt">inspirado no Boss DS-2 Turbo Distortion</span><span class="en" lang="en">inspired by the Boss DS-2 Turbo Distortion</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/cherry_fuzz.webp" data-largura="573" data-altura="627" data-inspiracao="Dunlop Fuzz Face" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/cherry_fuzz.webp" width="150" height="164" loading="lazy" alt="Cherry Fuzz" data-alt-en="Cherry Fuzz"><h4>Cherry Fuzz</h4><p><span class="pt">inspirado no Dunlop Fuzz Face</span><span class="en" lang="en">inspired by the Dunlop Fuzz Face</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/mercury_bender.webp" data-largura="579" data-altura="649" data-inspiracao="Tone Bender" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/mercury_bender.webp" width="150" height="168" loading="lazy" alt="Mercury Bender" data-alt-en="Mercury Bender"><h4>Mercury Bender</h4><p><span class="pt">inspirado no Tone Bender</span><span class="en" lang="en">inspired by the Tone Bender</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/opal_drive.webp" data-largura="573" data-altura="629" data-inspiracao="Fulltone OCD" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/opal_drive.webp" width="150" height="165" loading="lazy" alt="Opal Drive" data-alt-en="Opal Drive"><h4>Opal Drive</h4><p><span class="pt">inspirado no Fulltone OCD</span><span class="en" lang="en">inspired by the Fulltone OCD</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/quince_plus.webp" data-largura="556" data-altura="624" data-inspiracao="MXR Distortion+" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/quince_plus.webp" width="150" height="168" loading="lazy" alt="Quince Plus" data-alt-en="Quince Plus"><h4>Quince Plus</h4><p><span class="pt">inspirado no MXR Distortion+</span><span class="en" lang="en">inspired by the MXR Distortion+</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/hematite_rock.webp" data-largura="560" data-altura="624" data-inspiracao="Rockman X100" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/hematite_rock.webp" width="150" height="167" loading="lazy" alt="Hematite Rock" data-alt-en="Hematite Rock"><h4>Hematite Rock</h4><p><span class="pt">inspirado no Rockman X100</span><span class="en" lang="en">inspired by the Rockman X100</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/basalt_amp.webp" data-largura="579" data-altura="648" data-inspiracao="Tech 21 SansAmp" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/basalt_amp.webp" width="150" height="168" loading="lazy" alt="Basalt Amp" data-alt-en="Basalt Amp"><h4>Basalt Amp</h4><p><span class="pt">inspirado no Tech 21 SansAmp</span><span class="en" lang="en">inspired by the Tech 21 SansAmp</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/blackcurrant_bass.webp" data-largura="580" data-altura="654" data-inspiracao="Darkglass B7K" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/blackcurrant_bass.webp" width="150" height="169" loading="lazy" alt="Blackcurrant Bass" data-alt-en="Blackcurrant Bass"><h4>Blackcurrant Bass</h4><p><span class="pt">inspirado no Darkglass B7K</span><span class="en" lang="en">inspired by the Darkglass B7K</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/labradorite_omega.webp" data-largura="580" data-altura="651" data-inspiracao="Darkglass Alpha Omega" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/labradorite_omega.webp" width="150" height="168" loading="lazy" alt="Labradorite Omega" data-alt-en="Labradorite Omega"><h4>Labradorite Omega</h4><p><span class="pt">inspirado no Darkglass Alpha Omega</span><span class="en" lang="en">inspired by the Darkglass Alpha Omega</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/spinel_precision.webp" data-largura="563" data-altura="624" data-inspiracao="Horizon Devices Precision Drive" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/spinel_precision.webp" width="150" height="166" loading="lazy" alt="Spinel Precision" data-alt-en="Spinel Precision"><h4>Spinel Precision</h4><p><span class="pt">inspirado no Horizon Devices Precision Drive</span><span class="en" lang="en">inspired by the Horizon Devices Precision Drive</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/amber_glory.webp" data-largura="557" data-altura="624" data-inspiracao="JHS Morning Glory" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/amber_glory.webp" width="150" height="168" loading="lazy" alt="Amber Glory" data-alt-en="Amber Glory"><h4>Amber Glory</h4><p><span class="pt">inspirado no JHS Morning Glory</span><span class="en" lang="en">inspired by the JHS Morning Glory</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/raspberry_drive.webp" data-largura="573" data-altura="627" data-inspiracao="JHS Andy Timmons" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/raspberry_drive.webp" width="150" height="164" loading="lazy" alt="Raspberry Drive" data-alt-en="Raspberry Drive"><h4>Raspberry Drive</h4><p><span class="pt">inspirado no JHS Andy Timmons</span><span class="en" lang="en">inspired by the JHS Andy Timmons</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/honeydew_drive.webp" data-largura="558" data-altura="624" data-inspiracao="Paul Cochrane Timmy" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/honeydew_drive.webp" width="150" height="168" loading="lazy" alt="Honeydew Drive" data-alt-en="Honeydew Drive"><h4>Honeydew Drive</h4><p><span class="pt">inspirado no Paul Cochrane Timmy</span><span class="en" lang="en">inspired by the Paul Cochrane Timmy</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/amethyst_king.webp" data-largura="560" data-altura="624" data-inspiracao="Analogman King of Tone" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/amethyst_king.webp" width="150" height="167" loading="lazy" alt="Amethyst King" data-alt-en="Amethyst King"><h4>Amethyst King</h4><p><span class="pt">inspirado no Analogman King of Tone</span><span class="en" lang="en">inspired by the Analogman King of Tone</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/magnetite_boost.webp" data-largura="559" data-altura="624" data-inspiracao="Xotic EP Booster" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/magnetite_boost.webp" width="150" height="167" loading="lazy" alt="Magnetite Boost" data-alt-en="Magnetite Boost"><h4>Magnetite Boost</h4><p><span class="pt">inspirado no Xotic EP Booster</span><span class="en" lang="en">inspired by the Xotic EP Booster</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/tourmaline_grind.webp" data-largura="564" data-altura="624" data-inspiracao="Fortin Grind" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/tourmaline_grind.webp" width="150" height="166" loading="lazy" alt="Tourmaline Grind" data-alt-en="Tourmaline Grind"><h4>Tourmaline Grind</h4><p><span class="pt">inspirado no Fortin Grind</span><span class="en" lang="en">inspired by the Fortin Grind</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/sapote_33.webp" data-largura="568" data-altura="625" data-inspiracao="Fortin 33" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/sapote_33.webp" width="150" height="165" loading="lazy" alt="Sapote 33" data-alt-en="Sapote 33"><h4>Sapote 33</h4><p><span class="pt">inspirado no Fortin 33</span><span class="en" lang="en">inspired by the Fortin 33</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jet_5150.webp" data-largura="572" data-altura="626" data-inspiracao="EVH 5150 Overdrive" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/jet_5150.webp" width="150" height="164" loading="lazy" alt="Jet 5150" data-alt-en="Jet 5150"><h4>Jet 5150</h4><p><span class="pt">inspirado no EVH 5150 Overdrive</span><span class="en" lang="en">inspired by the EVH 5150 Overdrive</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/charoite_g3.webp" data-largura="569" data-altura="625" data-inspiracao="Revv G3" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/charoite_g3.webp" width="150" height="165" loading="lazy" alt="Charoite G3" data-alt-en="Charoite G3"><h4>Charoite G3</h4><p><span class="pt">inspirado no Revv G3</span><span class="en" lang="en">inspired by the Revv G3</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jamun_od.webp" data-largura="568" data-altura="625" data-inspiracao="Friedman BE-OD" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/jamun_od.webp" width="150" height="165" loading="lazy" alt="Jamun OD" data-alt-en="Jamun OD"><h4>Jamun OD</h4><p><span class="pt">inspirado no Friedman BE-OD</span><span class="en" lang="en">inspired by the Friedman BE-OD</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/agate_wylde.webp" data-largura="577" data-altura="643" data-inspiracao="MXR Wylde Overdrive" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/agate_wylde.webp" width="150" height="167" loading="lazy" alt="Agate Wylde" data-alt-en="Agate Wylde"><h4>Agate Wylde</h4><p><span class="pt">inspirado no MXR Wylde Overdrive</span><span class="en" lang="en">inspired by the MXR Wylde Overdrive</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/pyrite_klone.webp" data-largura="564" data-altura="624" data-inspiracao="Wampler Tumnus" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/pyrite_klone.webp" width="150" height="166" loading="lazy" alt="Pyrite Klone" data-alt-en="Pyrite Klone"><h4>Pyrite Klone</h4><p><span class="pt">inspirado no Wampler Tumnus</span><span class="en" lang="en">inspired by the Wampler Tumnus</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/howlite_war.webp" data-largura="580" data-altura="651" data-inspiracao="Death By Audio Fuzz War" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/howlite_war.webp" width="150" height="168" loading="lazy" alt="Howlite War" data-alt-en="Howlite War"><h4>Howlite War</h4><p><span class="pt">inspirado no Death By Audio Fuzz War</span><span class="en" lang="en">inspired by the Death By Audio Fuzz War</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/moonstone_fuzz.webp" data-largura="579" data-altura="649" data-inspiracao="EarthQuaker Hizumitas" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/moonstone_fuzz.webp" width="150" height="168" loading="lazy" alt="Moonstone Fuzz" data-alt-en="Moonstone Fuzz"><h4>Moonstone Fuzz</h4><p><span class="pt">inspirado no EarthQuaker Hizumitas</span><span class="en" lang="en">inspired by the EarthQuaker Hizumitas</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/peridot_drive.webp" data-largura="563" data-altura="624" data-inspiracao="EarthQuaker Plumes" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/peridot_drive.webp" width="150" height="166" loading="lazy" alt="Peridot Drive" data-alt-en="Peridot Drive"><h4>Peridot Drive</h4><p><span class="pt">inspirado no EarthQuaker Plumes</span><span class="en" lang="en">inspired by the EarthQuaker Plumes</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jackfruit_monkey.webp" data-largura="568" data-altura="625" data-inspiracao="DigiTech Bad Monkey" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/jackfruit_monkey.webp" width="150" height="165" loading="lazy" alt="Jackfruit Monkey" data-alt-en="Jackfruit Monkey"><h4>Jackfruit Monkey</h4><p><span class="pt">inspirado no DigiTech Bad Monkey</span><span class="en" lang="en">inspired by the DigiTech Bad Monkey</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/topaz_250.webp" data-largura="572" data-altura="625" data-inspiracao="DOD Overdrive Preamp 250" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/topaz_250.webp" width="150" height="164" loading="lazy" alt="Topaz 250" data-alt-en="Topaz 250"><h4>Topaz 250</h4><p><span class="pt">inspirado no DOD Overdrive Preamp 250</span><span class="en" lang="en">inspired by the DOD Overdrive Preamp 250</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/lime_bassfuzz.webp" data-largura="570" data-altura="625" data-inspiracao="Electro-Harmonix Bass Big Muff" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/lime_bassfuzz.webp" width="150" height="164" loading="lazy" alt="Lime Bass Fuzz" data-alt-en="Lime Bass Fuzz"><h4>Lime Bass Fuzz</h4><p><span class="pt">inspirado no Electro-Harmonix Bass Big Muff</span><span class="en" lang="en">inspired by the Electro-Harmonix Bass Big Muff</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/galena_hammer.webp" data-largura="579" data-altura="648" data-inspiracao="Aguilar Tone Hammer" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/galena_hammer.webp" width="150" height="168" loading="lazy" alt="Galena Hammer" data-alt-en="Galena Hammer"><h4>Galena Hammer</h4><p><span class="pt">inspirado no Aguilar Tone Hammer</span><span class="en" lang="en">inspired by the Aguilar Tone Hammer</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/melanite_bassdi.webp" data-largura="577" data-altura="641" data-inspiracao="MXR M80 Bass DI" data-categoria="Drive e distorção" data-categoria-en="Drive and distortion"><img src="img/catalogo/melanite_bassdi.webp" width="150" height="167" loading="lazy" alt="Melanite Bass DI" data-alt-en="Melanite Bass DI"><h4>Melanite Bass DI</h4><p><span class="pt">inspirado no MXR M80 Bass DI</span><span class="en" lang="en">inspired by the MXR M80 Bass DI</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/selenite_eq.webp" data-largura="600" data-altura="727" data-inspiracao="Boss GE-7" data-categoria="Utilidades" data-categoria-en="Utilities"><img src="img/catalogo/selenite_eq.webp" width="150" height="182" loading="lazy" alt="Selenite EQ" data-alt-en="Selenite EQ"><h4>Selenite EQ</h4><p><span class="pt">inspirado no Boss GE-7</span><span class="en" lang="en">inspired by the Boss GE-7</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/comet_wah.webp" data-largura="580" data-altura="654" data-inspiracao="Dunlop Cry Baby" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/comet_wah.webp" width="150" height="169" loading="lazy" alt="Comet Wah" data-alt-en="Comet Wah"><h4>Comet Wah</h4><p><span class="pt">inspirado no Dunlop Cry Baby</span><span class="en" lang="en">inspired by the Dunlop Cry Baby</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/saturn_rotary.webp" data-largura="566" data-altura="625" data-inspiracao="Leslie (caixa rotativa)" data-categoria="Modulação" data-categoria-en="Modulation"><img src="img/catalogo/saturn_rotary.webp" width="150" height="166" loading="lazy" alt="Saturn Rotary" data-alt-en="Saturn Rotary"><h4>Saturn Rotary</h4><p><span class="pt">inspirado no Leslie (caixa rotativa)</span><span class="en" lang="en">inspired by the Leslie (caixa rotativa)</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/pulsar_echo.webp" data-largura="580" data-altura="652" data-inspiracao="Electro-Harmonix Memory Man" data-categoria="Delay" data-categoria-en="Delay"><img src="img/catalogo/pulsar_echo.webp" width="150" height="169" loading="lazy" alt="Pulsar Echo" data-alt-en="Pulsar Echo"><h4>Pulsar Echo</h4><p><span class="pt">inspirado no Electro-Harmonix Memory Man</span><span class="en" lang="en">inspired by the Electro-Harmonix Memory Man</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/jupiter_octave.webp" data-largura="574" data-altura="634" data-inspiracao="Boss OC-2" data-categoria="Afinação" data-categoria-en="Pitch"><img src="img/catalogo/jupiter_octave.webp" width="150" height="166" loading="lazy" alt="Jupiter Octave" data-alt-en="Jupiter Octave"><h4>Jupiter Octave</h4><p><span class="pt">inspirado no Boss OC-2</span><span class="en" lang="en">inspired by the Boss OC-2</span></p></button></article>
+      <article class="cat-pedal"><button type="button" class="cat-abrir" data-grande="img/catalogo/grande/apple_comp.webp" data-largura="583" data-altura="718" data-inspiracao="MXR Dyna Comp" data-categoria="Utilidades" data-categoria-en="Utilities"><img src="img/catalogo/apple_comp.webp" width="150" height="185" loading="lazy" alt="Apple Comp" data-alt-en="Apple Comp"><h4>Apple Comp</h4><p><span class="pt">inspirado no MXR Dyna Comp</span><span class="en" lang="en">inspired by the MXR Dyna Comp</span></p></button></article>
+    </div>
+    </div>
+    <!-- catalogo:fim -->
+    <p class="nota pt" style="margin-top:20px">Os equipamentos do Nexus são criações próprias, inspiradas em clássicos. Não usam nomes nem marcas de fabricantes.</p>
+    <p class="nota en" lang="en" style="margin-top:20px">Nexus gear is original work inspired by classics. It doesn't use manufacturer names or trademarks.</p>
+  </div>
+</section>
+
+<!-- CADEIA DE SINAL -->
+<section class="secao secao-escura" id="cadeia">
+  <div class="contem cadeia">
+    <figure>
+      <img src="img/tela-dois-cabecotes.webp" width="1400" height="800" loading="lazy"
+        alt="Tela do Nexus com o pedal Greengage Drive em destaque e, no rodapé, o caminho do sinal dividido em dois cabeçotes, cada um com pedal e caixa."
+        data-alt-en="Nexus screen with the Greengage Drive pedal in focus and, at the bottom, the signal path split into two amp heads, each with its own pedal and cabinet.">
+    </figure>
+    <div>
+      <p class="chapeu"><span class="pt">Cadeia de sinal</span><span class="en" lang="en">Signal chain</span></p>
+      <h2><span class="pt">Monte a pedaleira com o mouse</span><span class="en" lang="en">Build your rig with the mouse</span></h2>
+      <p class="pt">O caminho do sinal fica no rodapé da tela. Clique em “+” para pôr um pedal e arraste para mudar a ordem.</p>
+      <p class="en" lang="en">The signal path sits at the bottom of the screen. Click “+” to add a pedal and drag to reorder.</p>
+      <div class="fluxo" aria-hidden="true">
+        <span><span class="pt">Guitarra</span><span class="en">Guitar</span></span><i>→</i>
+        <span><span class="pt">Pedais</span><span class="en">Pedals</span></span><i>→</i>
+        <span class="destaque">A / B</span><i>→</i>
+        <span><span class="pt">Cabeçote</span><span class="en">Amp</span></span><i>→</i>
+        <span><span class="pt">Caixa</span><span class="en">Cab</span></span><i>→</i>
+        <span><span class="pt">Saída</span><span class="en">Out</span></span>
+      </div>
+      <ul class="marcadores">
+        <li class="pt"><strong>Até 12 pedais</strong>, antes do cabeçote, entre o cabeçote e a caixa (para modulação, por exemplo) ou depois da caixa.</li>
+        <li class="en" lang="en"><strong>Up to 12 pedals</strong>, before the amp, between the amp and the cabinet (for modulation, say) or after the cabinet.</li>
+        <li class="pt"><strong>Dois cabeçotes com pedal A/B:</strong> cada lado tem cabeçote, pedais e caixa próprios. A troca de lado é suave, sem estalo.</li>
+        <li class="en" lang="en"><strong>Two amps with an A/B switch:</strong> each side has its own amp, pedals and cabinet. Switching sides is smooth, with no pop.</li>
+        <li class="pt"><strong>Até 3 canais por cabeçote</strong>, como no amplificador original, cada um com o próprio pacote de capturas.</li>
+        <li class="en" lang="en"><strong>Up to 3 channels per amp</strong>, like the original, each with its own capture pack.</li>
+        <li class="pt"><strong>Tudo salvo no projeto</strong> do seu programa de gravação.</li>
+        <li class="en" lang="en"><strong>Everything is saved</strong> with your recording project.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TONE3000 -->
+<section class="secao" id="tone3000">
+  <div class="contem t3k">
+    <div>
+      <p class="chapeu"><span class="pt">Fonte das capturas</span><span class="en" lang="en">Where captures come from</span></p>
+      <h2><span class="pt">Capturas da TONE3000, dentro do programa</span><span class="en" lang="en">TONE3000 captures, right inside the app</span></h2>
+      <p class="pt">A <a href="https://www.tone3000.com">TONE3000</a> é a maior biblioteca aberta de capturas, feitas por guitarristas e técnicos do mundo todo. Clique em “abrir pacote” embaixo do nome do equipamento e o Nexus mostra:</p>
+      <p class="en" lang="en"><a href="https://www.tone3000.com">TONE3000</a> is the largest open library of captures, made by guitarists and engineers around the world. Click “open pack” under the gear's name and Nexus shows:</p>
+      <ul class="marcadores">
+        <li class="pt"><strong>Recomendadas</strong> para aquele equipamento, escolhidas para ter uma captura por posição do botão;</li>
+        <li class="en" lang="en"><strong>Recommended</strong> packs for that gear, picked to have one capture per knob position;</li>
+        <li class="pt"><strong>Seus favoritos e downloads</strong> da sua conta, filtrados pelo equipamento;</li>
+        <li class="en" lang="en"><strong>Your favorites and downloads</strong> from your account, filtered by the gear;</li>
+        <li class="pt"><strong>Em alta</strong> e o <strong>catálogo completo</strong>;</li>
+        <li class="en" lang="en"><strong>Trending</strong> and the <strong>full catalog</strong>;</li>
+        <li class="pt"><strong>Inserir manualmente</strong>, para abrir uma pasta do seu computador.</li>
+        <li class="en" lang="en"><strong>Add manually</strong>, to open a folder on your computer.</li>
+      </ul>
+      <p class="pt">O Nexus baixa só as capturas certas, uma por posição do botão, e monta o pacote sozinho.</p>
+      <p class="en" lang="en">Nexus downloads only the right captures, one per knob position, and builds the pack for you.</p>
+      <div class="credito pt"><strong>Crédito sempre à vista.</strong> A TONE3000 aparece como fonte em toda a janela, e cada captura mostra o nome de quem a criou. As capturas pertencem aos seus criadores.</div>
+      <div class="credito en" lang="en"><strong>Credit always in view.</strong> TONE3000 is shown as the source across the whole window, and every capture shows its creator's name. Captures belong to their creators.</div>
+    </div>
+    <figure>
+      <img src="img/tela-capturas.webp" width="1400" height="800" loading="lazy"
+        alt="Janela “Capturas para Brit 800” com a fonte TONE3000 no canto, abas Recomendadas, Seus favoritos, Seus downloads e Em alta, e uma lista de pacotes com o nome de cada criador e o botão Carregar."
+        data-alt-en="“Captures for Brit 800” window with TONE3000 credited as the source, tabs for Recommended, Your favorites, Your downloads and Trending, and a list of packs with each creator's name and a Load button.">
+    </figure>
+  </div>
+</section>
+
+<!-- ESTÚDIO -->
+<section class="secao secao-escura" id="estudio">
+  <div class="contem t3k">
+    <div>
+      <p class="chapeu"><span class="pt">Estúdio</span><span class="en" lang="en">Studio</span></p>
+      <h2><span class="pt">Tire a guitarra da música e toque no lugar</span><span class="en" lang="en">Take the guitar out of the song and play its part</span></h2>
+      <p class="pt">Importe uma música (MP3, WAV, FLAC ou M4A) e o Nexus separa no seu próprio computador seis faixas: <strong>voz, guitarra, baixo, bateria, piano e o resto</strong>. A sua guitarra passa pela cadeia e se mistura com a música.</p>
+      <p class="en" lang="en">Import a song (MP3, WAV, FLAC or M4A) and Nexus splits it, on your own computer, into six tracks: <strong>vocals, guitar, bass, drums, piano and the rest</strong>. Your guitar runs through the chain and blends with the song.</p>
+      <ul class="marcadores">
+        <li class="pt"><strong>Volume, mudo e solo</strong> em cada faixa, com medidor;</li>
+        <li class="en" lang="en"><strong>Volume, mute and solo</strong> on every track, with a meter;</li>
+        <li class="pt"><strong>Velocidade de 50 a 100%</strong> sem mudar o tom, e <strong>tom de −6 a +6</strong> sem mudar a velocidade;</li>
+        <li class="en" lang="en"><strong>Speed from 50 to 100%</strong> without changing pitch, and <strong>pitch from −6 to +6</strong> without changing speed;</li>
+        <li class="pt"><strong>Repetir A–B:</strong> arraste na forma da música para ensaiar só o trecho difícil;</li>
+        <li class="en" lang="en"><strong>A–B loop:</strong> drag across the waveform to rehearse just the hard part;</li>
+        <li class="pt"><strong>Playlists</strong> que tocam uma música atrás da outra, para o ensaio inteiro.</li>
+        <li class="en" lang="en"><strong>Playlists</strong> that play one song after another, for the whole rehearsal.</li>
+      </ul>
+      <div class="credito pt"><strong>Separação no seu computador.</strong> Usa o Demucs de 6 faixas (Meta, licença MIT); o modelo de 55 MB é baixado só na primeira vez, e a mesma música nunca é separada duas vezes.</div>
+      <div class="credito en" lang="en"><strong>Separation on your computer.</strong> It uses 6-track Demucs (Meta, MIT license); the 55 MB model is downloaded only the first time, and the same song is never separated twice.</div>
+    </div>
+    <figure>
+      <img src="img/tela-estudio.webp" width="1400" height="800" loading="lazy"
+        alt="Estúdio do Nexus: a música separada em voz, guitarra, baixo, bateria, piano e resto, com a guitarra no mudo, um trecho A–B marcado na forma da música e a velocidade em 75%."
+        data-alt-en="Nexus studio: the song split into vocals, guitar, bass, drums, piano and other, with the guitar muted, an A–B section marked on the waveform and speed at 75%.">
+    </figure>
+  </div>
+</section>
+
+<!-- RECURSOS -->
+<section class="secao secao-escura" id="recursos">
+  <div class="contem">
+    <div class="cabeca-secao">
+      <p class="chapeu"><span class="pt">Recursos</span><span class="en" lang="en">Features</span></p>
+      <h2><span class="pt">Feito para tocar, gravar e ensaiar</span><span class="en" lang="en">Made to play, record and rehearse</span></h2>
+    </div>
+    <div class="recursos">
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="1.5"/><path d="M6 12h1M9 12h1M12 10v4M15 12h1M18 12h1"/></svg>
+        <h3><span class="pt">Afinador de rack</span><span class="en" lang="en">Rack tuner</span></h3>
+        <p class="pt">Fixo no começo da cadeia: nota, cents e fileira de luzes, lá de 430 a 450 Hz e mudo ao afinar.</p>
+        <p class="en" lang="en">Fixed at the start of the chain: note, cents and an LED strip, A from 430 to 450 Hz and mute while tuning.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 13V8M9 2h6M12 2v3"/></svg>
+        <h3><span class="pt">Tap tempo</span><span class="en" lang="en">Tap tempo</span></h3>
+        <p class="pt">Modulações e delay no andamento da música: 1/4, 1/8, 1/8 pontuada, tercinas. Toque na tela ou numa pedaleira MIDI.</p>
+        <p class="en" lang="en">Modulation and delay locked to the song's tempo: 1/4, 1/8, dotted 1/8, triplets. Tap on screen or on a MIDI footswitch.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>
+        <h3><span class="pt">A captura mais curtida</span><span class="en" lang="en">The most-liked capture</span></h3>
+        <p class="pt">Escolheu a peça, a captura preferida da comunidade da TONE3000 entra sozinha, e cada cabeçote vem com a sua caixa.</p>
+        <p class="en" lang="en">Pick a piece and the TONE3000 community's favorite capture loads on its own; each head comes with its own cabinet.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 12 8 7"/></svg>
+        <h3><span class="pt">Troca sem clique</span><span class="en" lang="en">Click-free swaps</span></h3>
+        <p class="pt">Gire o ganho de 0 a 10 em degraus, ou de forma contínua misturando as capturas vizinhas.</p>
+        <p class="en" lang="en">Turn gain from 0 to 10 in steps, or continuously by blending neighboring captures.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 4v16M12 4v16M19 4v16"/><circle cx="5" cy="14" r="2" fill="currentColor"/><circle cx="12" cy="8" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></svg>
+        <h3><span class="pt">Equalizador de 24 faixas</span><span class="en" lang="en">24-band equalizer</span></h3>
+        <p class="pt">Fixo no fim da cadeia, com cortes, prateleiras e sinos; a curva aparece na própria cadeia.</p>
+        <p class="en" lang="en">Fixed at the end of the chain, with cuts, shelves and bells; the curve shows right in the chain.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="5" height="8" rx="1"/><rect x="10" y="8" width="5" height="8" rx="1"/><rect x="17" y="8" width="4" height="8" rx="1"/></svg>
+        <h3><span class="pt">Até 12 pedais</span><span class="en" lang="en">Up to 12 pedals</span></h3>
+        <p class="pt">Cada pedal toca capturas de pedal, com drive em degraus, tom e nível. O pisante liga e desliga sem estalo.</p>
+        <p class="en" lang="en">Each pedal plays pedal captures, with stepped drive, tone and level. The footswitch toggles with no pop.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h5l3-5h10M11 12l3 5h7M8 12h3"/></svg>
+        <h3><span class="pt">Dois cabeçotes A/B</span><span class="en" lang="en">Dual amps A/B</span></h3>
+        <p class="pt">Dois equipamentos completos lado a lado, trocados por um pedal A/B.</p>
+        <p class="en" lang="en">Two complete rigs side by side, switched with an A/B pedal.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="9" r="2.5"/><circle cx="15" cy="9" r="2.5"/><circle cx="9" cy="15" r="2.5"/><circle cx="15" cy="15" r="2.5"/></svg>
+        <h3><span class="pt">Caixa com IR da TONE3000</span><span class="en" lang="en">Cabinet IRs from TONE3000</span></h3>
+        <p class="pt">IRs recomendados da TONE3000 ou do seu computador; troque de microfone na própria caixa. Capturas com caixa inclusa travam a caixa sozinhas.</p>
+        <p class="en" lang="en">Recommended IRs from TONE3000 or from your computer; switch microphones on the cabinet itself. Captures that already include a cab lock it automatically.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18V6M20 18V6M8 15V9M12 17V7M16 14v-4"/></svg>
+        <h3>A2 Full e A2 Lite</h3>
+        <p class="pt">O mesmo arquivo serve nos dois modos: o mais fiel ou o mais leve para o processador.</p>
+        <p class="en" lang="en">The same file works in both modes: the most faithful, or the lightest on your processor.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg>
+        <h3><span class="pt">Baixa latência</span><span class="en" lang="en">Low latency</span></h3>
+        <p class="pt">O programa independente fala direto com a interface de áudio (ASIO no Windows, Core Audio no Mac, JACK no Linux) para o atraso entre tocar e ouvir ser mínimo.</p>
+        <p class="en" lang="en">The standalone app talks straight to your audio interface (ASIO on Windows, Core Audio on Mac, JACK on Linux) so the delay between playing and hearing stays minimal.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1" fill="currentColor"/><circle cx="12" cy="8" r="1" fill="currentColor"/><circle cx="16" cy="10" r="1" fill="currentColor"/><circle cx="9.5" cy="14" r="1" fill="currentColor"/><circle cx="14.5" cy="14" r="1" fill="currentColor"/></svg>
+        <h3><span class="pt">MIDI por USB e Bluetooth</span><span class="en" lang="en">MIDI over USB and Bluetooth</span></h3>
+        <p class="pt">Use sua pedaleira controladora: troque de canal pelo patch e ligue qualquer botão a um controle com “Aprender MIDI”.</p>
+        <p class="en" lang="en">Use your foot controller: switch channels with program changes and map any knob with “MIDI Learn”.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg>
+        <h3><span class="pt">Testar o som</span><span class="en" lang="en">Test the sound</span></h3>
+        <p class="pt">Uma guitarra gravada limpa toca pela cadeia inteira, em Limpo, Blues, Rock ou Pesado, sem você precisar tocar. Ou grave 15 s da sua guitarra.</p>
+        <p class="en" lang="en">A clean recorded guitar plays through the whole chain, in Clean, Blues, Rock or Heavy styles, with no playing needed. Or record 15 s of your own guitar.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V6a2 2 0 0 1 4 0v5M11 10V4a2 2 0 0 1 4 0v7M15 9a2 2 0 0 1 4 0v5a7 7 0 0 1-12 5l-3-4a2 2 0 0 1 3-2l1 1"/></svg>
+        <h3><span class="pt">Capturas prontas na mão</span><span class="en" lang="en">Captures ready in hand</span></h3>
+        <p class="pt">Ao pegar o drive ou o ganho, as capturas vizinhas já aquecem antes do giro: a troca de distorção entra sem espera e sem engasgo.</p>
+        <p class="en" lang="en">When you grab drive or gain, the neighboring captures warm up before you turn it: gain changes land with no wait and no hiccup.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+        <h3><span class="pt">Captura padrão</span><span class="en" lang="en">Default captures</span></h3>
+        <p class="pt">Escolheu um pedal ou um cabeçote? Com a conta da TONE3000 conectada, o Nexus baixa e carrega a captura recomendada sozinho. Quer outra? Troque pelo pacote.</p>
+        <p class="en" lang="en">Picked a pedal or a head? With your TONE3000 account connected, Nexus downloads and loads the recommended capture on its own. Want another? Swap the pack.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v10M8 9l4 4 4-4M5 21h14"/></svg>
+        <h3><span class="pt">Relatório de problemas</span><span class="en" lang="en">Problem reports</span></h3>
+        <p class="pt">Algo deu errado? O Nexus abre uma issue no GitHub já preenchida com a versão, o sistema e os últimos erros, sem dados pessoais.</p>
+        <p class="en" lang="en">Something went wrong? Nexus opens a GitHub issue already filled in with the version, system and latest errors, with no personal data.</p>
+      </article>
+      <article class="recurso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><circle cx="12" cy="12" r="5"/></svg>
+        <h3><span class="pt">Qualquer taxa de amostragem</span><span class="en" lang="en">Any sample rate</span></h3>
+        <p class="pt">Seu projeto em 44,1, 48 ou 96 kHz (a “resolução” do áudio no tempo)? O Nexus converte sozinho.</p>
+        <p class="en" lang="en">Project at 44.1, 48 or 96 kHz (the audio's time resolution)? Nexus converts on its own.</p>
+      </article>
+    </div>
+
+    <div class="numeros">
+      <div><b>30 ms</b><span class="pt">para trocar de captura, sem clique</span><span class="en" lang="en">to swap captures, with no click</span></div>
+      <div><b>6,5 ms</b><span class="pt">de ida e volta numa interface USB comum, medidos num Mac</span><span class="en" lang="en">round trip on an ordinary USB interface, measured on a Mac</span></div>
+      <div><b>1,4 %</b><span class="pt">de um núcleo do processador por captura A2 Lite</span><span class="en" lang="en">of one processor core per A2 Lite capture</span></div>
+      <div><b>15</b><span class="pt">idiomas na tela</span><span class="en" lang="en">interface languages</span></div>
+    </div>
+
+    <div class="idiomas">
+      <figure>
+        <img src="img/tela-japones.webp" width="1200" height="686" loading="lazy"
+          alt="A mesma tela do Brit 800 com os nomes dos botões e menus em japonês."
+          data-alt-en="The same Brit 800 screen with knob and menu names in Japanese.">
+      </figure>
+      <div>
+        <h3><span class="pt">Fala a sua língua</span><span class="en" lang="en">Speaks your language</span></h3>
+        <p class="pt" style="margin-top:12px">O globo na barra de cima troca o idioma; na primeira vez, vale o do sistema. Os nomes dos botões são traduzidos por cima da imagem 3D.</p>
+        <p class="en" lang="en" style="margin-top:12px">The globe in the top bar switches language; the first time, it follows your system. Knob names are translated on top of the 3D image.</p>
+        <ul class="lista-idiomas">
+          <li lang="pt-BR">Português</li><li lang="en">English</li><li lang="es">Español</li><li lang="fr">Français</li><li lang="it">Italiano</li><li lang="de">Deutsch</li><li lang="ja">日本語</li><li lang="zh">中文</li><li lang="ko">한국어</li><li lang="hi">हिन्दी</li><li lang="ar">العربية</li><li lang="bn">বাংলা</li><li lang="ru">Русский</li><li lang="id">Bahasa Indonesia</li><li lang="tr">Türkçe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SISTEMAS -->
+<section class="secao" id="baixar">
+  <div class="contem">
+    <div class="cabeca-secao centro">
+      <p class="chapeu"><span class="pt">Baixar</span><span class="en" lang="en">Download</span></p>
+      <h2><span class="pt">Grátis. Para sempre.</span><span class="en" lang="en">Free. Forever.</span></h2>
+      <p class="lead pt">O instalador traz sempre a versão mais recente. Depois disso, o Nexus avisa e se atualiza sozinho.</p>
+      <p class="lead en" lang="en">The installer always brings the latest version. After that, Nexus tells you and updates itself.</p>
+    </div>
+    <div class="aviso-beta">
+      <p class="pt"><b>Versão de teste.</b> O Nexus está em testes abertos: baixe, toque e, se algo der errado, use “Relatar problema” no próprio programa. No Mac, o instalador ainda não é assinado pela Apple: na primeira vez, clique com o botão direito no Nexus e escolha “Abrir”. No Windows, se aparecer o aviso azul, clique em “Mais informações” e “Executar assim mesmo”.</p>
+      <p class="en" lang="en"><b>Test version.</b> Nexus is in open testing: download, play and, if something goes wrong, use “Report a problem” in the app. On Mac the installer isn't signed by Apple yet: the first time, right-click Nexus and choose “Open”. On Windows, if the blue warning shows up, click “More info” and “Run anyway”.</p>
+    </div>
+    <div class="sistemas">
+      <article class="sistema">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>macOS</h3>
+        <p class="sistema-sub"><span class="pt">macOS 11 ou mais novo, Intel e Apple Silicon</span><span class="en" lang="en">macOS 11 or newer, Intel and Apple Silicon</span></p>
+        <div class="baixar">
+          <a class="botao botao-principal baixar-botao" data-instalador="mac" href="https://github.com/disouz4-dev/Nexus-Modeler/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            <span class="pt">Baixar .dmg</span><span class="en" lang="en">Download .dmg</span>
+          </a>
+          <p class="terminal-titulo"><span class="pt">ou pelo Terminal</span><span class="en" lang="en">or from Terminal</span></p>
+          <div class="terminal">
+            <code>curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash</code>
+            <button type="button" class="copiar" data-copiar="curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash" aria-label="Copiar o comando" data-aria-en="Copy the command"><span class="pt">Copiar</span><span class="en" lang="en">Copy</span></button>
+          </div>
+        </div>
+        <p class="sistema-detalhes"><span class="pt">VST3, AU e programa independente · Core Audio · MIDI por USB e Bluetooth</span><span class="en" lang="en">VST3, AU and standalone · Core Audio · MIDI over USB and Bluetooth</span></p>
+      </article>
+      <article class="sistema">
+        <h3><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10 4.5v7H3zM11 4.4 21 3v8.5H11zM3 12.5h7v7l-7-1zM11 12.5h10V21l-10-1.4z"/></svg>Windows</h3>
+        <p class="sistema-sub"><span class="pt">Windows 10 e 11, 64 bits</span><span class="en" lang="en">Windows 10 and 11, 64-bit</span></p>
+        <div class="baixar">
+          <a class="botao botao-principal baixar-botao" data-instalador="windows" href="https://github.com/disouz4-dev/Nexus-Modeler/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            <span class="pt">Baixar .exe</span><span class="en" lang="en">Download .exe</span>
+          </a>
+          <p class="terminal-titulo"><span class="pt">ou pelo PowerShell</span><span class="en" lang="en">or from PowerShell</span></p>
+          <div class="terminal">
+            <code>irm https://disouz4-dev.github.io/Nexus-Modeler/instalar.ps1 | iex</code>
+            <button type="button" class="copiar" data-copiar="irm https://disouz4-dev.github.io/Nexus-Modeler/instalar.ps1 | iex" aria-label="Copiar o comando" data-aria-en="Copy the command"><span class="pt">Copiar</span><span class="en" lang="en">Copy</span></button>
+          </div>
+        </div>
+        <p class="sistema-detalhes"><span class="pt">VST3 e programa independente · ASIO, WASAPI, DirectSound · MIDI por USB e Bluetooth</span><span class="en" lang="en">VST3 and standalone · ASIO, WASAPI, DirectSound · MIDI over USB and Bluetooth</span></p>
+      </article>
+      <article class="sistema">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"/></svg>Linux</h3>
+        <p class="sistema-sub"><span class="pt">Debian, Ubuntu, Mint e derivados</span><span class="en" lang="en">Debian, Ubuntu, Mint and derivatives</span></p>
+        <div class="baixar">
+          <a class="botao botao-principal baixar-botao" data-instalador="linux-deb" href="https://github.com/disouz4-dev/Nexus-Modeler/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            <span class="pt">Baixar .deb</span><span class="en" lang="en">Download .deb</span>
+          </a>
+          <a class="baixar-outro" data-instalador="linux" href="https://github.com/disouz4-dev/Nexus-Modeler/releases/latest"><span class="pt">Outras distribuições: .tar.gz</span><span class="en" lang="en">Other distributions: .tar.gz</span></a>
+          <p class="terminal-titulo"><span class="pt">ou pelo terminal (qualquer distribuição)</span><span class="en" lang="en">or from the terminal (any distribution)</span></p>
+          <div class="terminal">
+            <code>curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash</code>
+            <button type="button" class="copiar" data-copiar="curl -fsSL https://disouz4-dev.github.io/Nexus-Modeler/instalar.sh | bash" aria-label="Copiar o comando" data-aria-en="Copy the command"><span class="pt">Copiar</span><span class="en" lang="en">Copy</span></button>
+          </div>
+        </div>
+        <p class="sistema-detalhes"><span class="pt">VST3, LV2 e programa independente · JACK, ALSA · MIDI por USB e Bluetooth</span><span class="en" lang="en">VST3, LV2 and standalone · JACK, ALSA · MIDI over USB and Bluetooth</span></p>
+      </article>
+    </div>
+
+    <div class="glossario">
+      <p class="pt"><b>VST3, AU e LV2</b> são os “encaixes” que os programas de gravação usam para abrir plugins. O AU é do Mac; o LV2, do Linux; o VST3 roda nos três.</p>
+      <p class="en" lang="en"><b>VST3, AU and LV2</b> are the “sockets” recording software uses to load plugins. AU is Mac-only; LV2 is for Linux; VST3 runs on all three.</p>
+      <p class="pt"><b>ASIO, Core Audio e JACK</b> são caminhos diretos até a interface de áudio, para o som sair quase no mesmo instante em que você toca.</p>
+      <p class="en" lang="en"><b>ASIO, Core Audio and JACK</b> are direct routes to your audio interface, so the sound comes out almost the instant you play.</p>
+      <p class="pt"><b>NAM A2</b> é o formato de captura do Neural Amp Modeler, um projeto aberto em que uma rede neural aprende o som de um equipamento.</p>
+      <p class="en" lang="en"><b>NAM A2</b> is the capture format of Neural Amp Modeler, an open project where a neural network learns the sound of a piece of gear.</p>
+      <p class="pt"><b>MIDI</b> é a linguagem que pedaleiras e teclados controladores usam para comandar o programa: trocar de canal, ligar um pedal, girar um botão.</p>
+      <p class="en" lang="en"><b>MIDI</b> is the language foot controllers and keyboards use to command software: switch channels, turn a pedal on, move a knob.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓDIGO ABERTO -->
+<section class="secao secao-escura" id="codigo-aberto">
+  <div class="contem aberto">
+    <div>
+      <p class="chapeu"><span class="pt">Código aberto</span><span class="en" lang="en">Open source</span></p>
+      <h2><span class="pt">Gratuito hoje e sempre</span><span class="en" lang="en">Free today and always</span></h2>
+      <p class="lead pt">O Nexus Modeler é software livre, sob a licença GPL versão 3. Todo o código está no GitHub, aberto para quem quiser ler, estudar, corrigir e melhorar.</p>
+      <p class="lead en" lang="en">Nexus Modeler is free software under the GPL version 3 license. All the code is on GitHub, open for anyone to read, study, fix and improve.</p>
+      <div class="chamadas" style="justify-content:flex-start;margin-top:28px">
+        <a class="botao botao-linha" href="https://github.com/disouz4-dev/Nexus-Modeler"><span class="pt">Repositório no GitHub</span><span class="en" lang="en">GitHub repository</span></a>
+        <a class="botao botao-linha" href="https://github.com/disouz4-dev/Nexus-Modeler/blob/main/LICENSE"><span class="pt">Ler a licença</span><span class="en" lang="en">Read the license</span></a>
+      </div>
+    </div>
+    <div class="liberdades">
+      <div class="pt"><b>Usar</b> para o que quiser, em casa, no palco ou no estúdio, sem pagar nada.</div>
+      <div class="en" lang="en"><b>Use it</b> for anything, at home, on stage or in the studio, at no cost.</div>
+      <div class="pt"><b>Estudar e modificar</b> o código, para entender ou adaptar o programa.</div>
+      <div class="en" lang="en"><b>Study and modify</b> the code, to understand or adapt the program.</div>
+      <div class="pt"><b>Compartilhar</b> cópias e melhorias, desde que continuem livres sob a mesma licença.</div>
+      <div class="en" lang="en"><b>Share</b> copies and improvements, as long as they stay free under the same license.</div>
+      <div class="pt"><b>Créditos de terceiros</b> listados no arquivo <a href="https://github.com/disouz4-dev/Nexus-Modeler/blob/main/TERCEIROS.md">TERCEIROS.md</a>, entre eles o motor do Neural Amp Modeler e o JUCE.</div>
+      <div class="en" lang="en"><b>Third-party credits</b> are listed in <a href="https://github.com/disouz4-dev/Nexus-Modeler/blob/main/TERCEIROS.md">TERCEIROS.md</a>, including the Neural Amp Modeler engine and JUCE.</div>
+    </div>
+  </div>
+</section>
+
+<section class="chamada-final" aria-labelledby="final-titulo">
+  <div class="contem">
+    <h2 id="final-titulo"><span class="pt">Gire o botão. Ouça o real.</span><span class="en" lang="en">Turn the knob. Hear the real thing.</span></h2>
+    <p class="lead pt">Baixe o Nexus Modeler para Windows, Mac ou Linux.</p>
+    <p class="lead en" lang="en">Download Nexus Modeler for Windows, Mac or Linux.</p>
+    <div class="chamadas">
+      <a class="botao botao-principal" href="#baixar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+        <span class="pt">Baixar a versão mais recente</span><span class="en" lang="en">Download the latest version</span>
+      </a>
+    </div>
+    <p class="nota pt">Enquanto a primeira versão não sai, as compilações automáticas de cada sistema ficam na aba <a href="https://github.com/disouz4-dev/Nexus-Modeler/actions">Actions</a> do GitHub.</p>
+    <p class="nota en" lang="en">Until the first release is out, automatic builds for each system are on the GitHub <a href="https://github.com/disouz4-dev/Nexus-Modeler/actions">Actions</a> tab.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="contem">
+    <div class="rodape-grade">
+      <div>
+        <svg class="logo" viewBox="-2 -2 416 100" role="img" aria-label="Nexus Modeler"><use href="#logo"/></svg>
+        <p class="pt">A qualidade da captura com a facilidade da modelagem.</p>
+        <p class="en" lang="en">Capture quality with the ease of modeling.</p>
+        <p class="autor"><span class="pt">Criado por</span><span class="en" lang="en">Created by</span> <a href="https://github.com/disouz4-dev">Diego de Souza</a><span class="pt">, desenvolvedor</span><span class="en" lang="en">, developer</span></p>
+      </div>
+      <div>
+        <h3><span class="pt">Projeto</span><span class="en" lang="en">Project</span></h3>
+        <ul>
+          <li><a href="https://github.com/disouz4-dev/Nexus-Modeler"><span class="pt">Código no GitHub</span><span class="en" lang="en">Source on GitHub</span></a></li>
+          <li><a href="#baixar"><span class="pt">Baixar</span><span class="en" lang="en">Download</span></a></li>
+          <li><a href="https://github.com/disouz4-dev/Nexus-Modeler/blob/main/NOTAS-DE-VERSAO.md"><span class="pt">Notas de versão</span><span class="en" lang="en">Release notes</span></a></li>
+          <li><a href="https://github.com/disouz4-dev/Nexus-Modeler/issues"><span class="pt">Relatar um problema</span><span class="en" lang="en">Report an issue</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="pt">Créditos</span><span class="en" lang="en">Credits</span></h3>
+        <ul>
+          <li><a href="https://github.com/disouz4-dev">Diego de Souza</a> <span class="pt">(desenvolvedor)</span><span class="en" lang="en">(developer)</span></li>
+          <li><a href="https://www.tone3000.com">TONE3000</a></li>
+          <li><a href="https://github.com/sdatkinson/NeuralAmpModelerCore">Neural Amp Modeler</a></li>
+          <li><a href="https://juce.com">JUCE</a></li>
+          <li><a href="https://github.com/disouz4-dev/Nexus-Modeler/blob/main/LICENSE"><span class="pt">Licença GPL v3</span><span class="en" lang="en">GPL v3 license</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="aviso pt">As capturas tocadas pelo Nexus vêm da TONE3000 e pertencem aos seus criadores. TONE3000 e os nomes de marcas citados pertencem aos seus donos e aparecem só como referência; o Nexus Modeler não tem ligação com eles. Os equipamentos do Nexus são criações próprias, inspiradas em clássicos.</p>
+    <p class="aviso en" lang="en">Captures played by Nexus come from TONE3000 and belong to their creators. TONE3000 and any brand names mentioned belong to their owners and appear for reference only; Nexus Modeler is not affiliated with them. Nexus gear is original work inspired by classics.</p>
+  </div>
+</footer>
+
+<!-- Galeria maximizada: abre ao clicar numa peça da galeria de equipamentos -->
+<dialog class="visor" id="visor" aria-label="Galeria de equipamentos" data-aria-en="Gear gallery">
+  <button type="button" class="visor-fechar" data-visor="fechar" aria-label="Fechar" data-aria-en="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button type="button" class="visor-seta visor-anterior" data-visor="anterior" aria-label="Peça anterior" data-aria-en="Previous piece">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <figure class="visor-foto">
+    <img id="visor-img" alt="" src="data:,">
+    <figcaption>
+      <span class="visor-categoria" id="visor-categoria"></span>
+      <strong id="visor-nome"></strong>
+      <span id="visor-inspiracao"></span>
+      <span class="visor-posicao" id="visor-posicao" aria-live="polite"></span>
+    </figcaption>
+  </figure>
+  <button type="button" class="visor-seta visor-proxima" data-visor="proxima" aria-label="Próxima peça" data-aria-en="Next piece">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+</dialog>
+
+<script src="site.js" defer></script>
+</body>
+</html>

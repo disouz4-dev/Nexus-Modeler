@@ -1,0 +1,116 @@
+{
+  "nome": "Pulsar Echo",
+  "familia": "pulsar_echo",
+  "largura": 600,
+  "altura": 594,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "c",
+      "x": 60,
+      "y": 138,
+      "tamanho": 72,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 223,
+      "y": 140,
+      "tamanho": 69,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "a",
+      "x": 464,
+      "y": 138,
+      "tamanho": 72,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    146,
+    121
+  ],
+  "rotulos": [
+    {
+      "texto": "MISTURA",
+      "x": 99.5,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 181.6,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REPETIÇÕES",
+      "x": 258.9,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "CHORUS",
+      "x": 338.6,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 415.9,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TEMPO",
+      "x": 495.7,
+      "y": 222.8,
+      "altura": 10.59,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SOBRECARGA",
+      "x": 181.6,
+      "y": 227.4,
+      "altura": 8.61,
+      "achatamento": 1.0,
+      "cor": "#e9e9e9",
+      "espaco": 1.1
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 439.5,
+    "raio": 28.0
+  },
+  "led": {
+    "x": 329.1,
+    "y": 369.5,
+    "raio": 8.4
+  }
+}

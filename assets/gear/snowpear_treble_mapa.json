@@ -1,0 +1,49 @@
+{
+  "nome": "Snow Pear Treble",
+  "familia": "snowpear_treble",
+  "largura": 600,
+  "altura": 510,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 252,
+      "y": 264,
+      "tamanho": 76,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 477,
+      "y": 328,
+      "tamanho": 50,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    110,
+    65
+  ],
+  "rotulos": [
+    {
+      "texto": "REFORÇO",
+      "x": 290.1,
+      "y": 243.1,
+      "altura": 18.07,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 140.0,
+    "y": 301.0,
+    "raio": 32.0
+  }
+}

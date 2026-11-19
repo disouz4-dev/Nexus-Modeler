@@ -1,0 +1,31 @@
+{
+  "formato": 1,
+  "id": "sl_412",
+  "versao": "1.0.2",
+  "tipo": "caixa",
+  "nome": "SL 4x12",
+  "inspiracao": "Soldano 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Soldano",
+      "tons": [
+        {
+          "id": 64794,
+          "titulo": "Emil Rohbe - Soldano SLO30 — IRs",
+          "tipo": "cab",
+          "capturas": 2,
+          "padrao": true,
+          "nota": "Caixa Soldano (poucos IRs dela na TONE3000)"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 3,
+  "signature": null
+}

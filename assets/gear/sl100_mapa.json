@@ -1,0 +1,234 @@
+{
+  "nome": "SL 100",
+  "familia": "sl_100",
+  "largura": 2400,
+  "altura": 1190,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 732,
+      "y": 843,
+      "tamanho": 107,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 859,
+      "y": 844,
+      "tamanho": 106,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 983,
+      "y": 844,
+      "tamanho": 106,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1108,
+      "y": 844,
+      "tamanho": 106,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1360,
+      "y": 844,
+      "tamanho": 106,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1488,
+      "y": 844,
+      "tamanho": 106,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal",
+    "Overdrive"
+  ],
+  "rotulos": [
+    {
+      "texto": "INPUT",
+      "x": 326.4,
+      "y": 845.2,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OD / NORMAL",
+      "x": 488.9,
+      "y": 844.7,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BRIGHT",
+      "x": 580.3,
+      "y": 799.0,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CRUNCH",
+      "x": 580.3,
+      "y": 890.5,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 667.7,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OVERDRIVE",
+      "x": 787.6,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 913.5,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1037.5,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1161.4,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "NORMAL",
+      "x": 1285.3,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OVERDRIVE",
+      "x": 1411.3,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1539.3,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "DEPTH",
+      "x": 1659.2,
+      "y": 803.4,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 1842.0,
+      "y": 844.7,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 1941.6,
+      "y": 844.7,
+      "altura": 23.34,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PREAMP",
+      "x": 726.6,
+      "y": 977.1,
+      "altura": 12.25,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1348.3,
+      "y": 977.1,
+      "altura": 12.25,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 436.6,
+      "y": 828.9,
+      "raio": 6.1
+    },
+    {
+      "x": 436.6,
+      "y": 962.6,
+      "raio": 6.1
+    }
+  ]
+}

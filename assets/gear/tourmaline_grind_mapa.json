@@ -1,0 +1,81 @@
+{
+  "nome": "Tourmaline Grind",
+  "familia": "papaya_grind",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 239,
+      "y": 198,
+      "tamanho": 122,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 154,
+      "y": 508,
+      "tamanho": 50,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 397,
+      "y": 508,
+      "tamanho": 50,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    112
+  ],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 300.0,
+      "y": 345.7,
+      "altura": 19.98,
+      "achatamento": 1.0,
+      "cor": "#28282a",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 180.2,
+      "y": 579.6,
+      "altura": 14.43,
+      "achatamento": 1.0,
+      "cor": "#28282a",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 419.9,
+      "y": 579.6,
+      "altura": 14.43,
+      "achatamento": 1.0,
+      "cor": "#28282a",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 549.5,
+    "raio": 46.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 375.0,
+    "raio": 15.4
+  }
+}

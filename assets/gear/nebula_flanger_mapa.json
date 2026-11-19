@@ -1,0 +1,80 @@
+{
+  "nome": "Nebula Flanger",
+  "familia": "nebula_flanger",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "c",
+      "x": 378,
+      "y": 147,
+      "tamanho": 95,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 252,
+      "y": 147,
+      "tamanho": 95,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "a",
+      "x": 124,
+      "y": 147,
+      "tamanho": 95,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    110,
+    140
+  ],
+  "rotulos": [
+    {
+      "texto": "COR",
+      "x": 423.6,
+      "y": 256.6,
+      "altura": 17.12,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "FAIXA",
+      "x": 300.0,
+      "y": 256.6,
+      "altura": 17.12,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VELOCIDADE",
+      "x": 174.4,
+      "y": 256.6,
+      "altura": 17.12,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 521.0,
+    "raio": 30.0
+  },
+  "led": {
+    "x": 378.6,
+    "y": 517.6,
+    "raio": 6.6
+  }
+}

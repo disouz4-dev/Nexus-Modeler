@@ -1,0 +1,135 @@
+{
+  "nome": "Galaxy Mod",
+  "familia": "galaxy_mod",
+  "largura": 600,
+  "altura": 600,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "modo",
+      "x": 82,
+      "y": 188,
+      "tamanho": 60,
+      "arquivo": "botao_modo.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "a",
+      "x": 158,
+      "y": 190,
+      "tamanho": 58,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 234,
+      "y": 190,
+      "tamanho": 56,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "d",
+      "x": 310,
+      "y": 190,
+      "tamanho": 56,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 384,
+      "y": 190,
+      "tamanho": 58,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 458,
+      "y": 188,
+      "tamanho": 60,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    120,
+    115
+  ],
+  "rotulos": [
+    {
+      "texto": "MODO",
+      "x": 115.9,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VELOCIDADE",
+      "x": 189.6,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 263.2,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AJUSTE",
+      "x": 336.8,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TWEEZ",
+      "x": 410.4,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 484.1,
+      "y": 265.4,
+      "altura": 10.64,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 402.5,
+    "raio": 35.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 304.7,
+    "raio": 7.5
+  }
+}

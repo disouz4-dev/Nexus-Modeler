@@ -1,0 +1,90 @@
+{
+  "nome": "Jackfruit Monkey",
+  "familia": "jackfruit_monkey",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 126,
+      "y": 126,
+      "tamanho": 82,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 304,
+      "y": 126,
+      "tamanho": 82,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 393,
+      "y": 126,
+      "tamanho": 82,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    79,
+    125
+  ],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 168.7,
+      "y": 229.2,
+      "altura": 17.34,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 256.2,
+      "y": 229.2,
+      "altura": 17.34,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 343.8,
+      "y": 229.2,
+      "altura": 17.34,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 431.3,
+      "y": 229.2,
+      "altura": 17.34,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 501.0,
+    "raio": 167.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 265.9,
+    "raio": 12.2
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "nome": "Peridot Drive",
+  "familia": "grapefruit_drive",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 139,
+      "y": 126,
+      "tamanho": 111,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 248,
+      "y": 244,
+      "tamanho": 105,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 348,
+      "y": 126,
+      "tamanho": 111,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    64,
+    121
+  ],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 197.9,
+      "y": 260.1,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#2a490f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 300.0,
+      "y": 372.1,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#2a490f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 400.4,
+      "y": 260.1,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#2a490f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MODO",
+      "x": 300.0,
+      "y": 152.0,
+      "altura": 16.6,
+      "achatamento": 1.0,
+      "cor": "#2a490f",
+      "espaco": 1.1
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 551.0,
+    "raio": 44.0
+  },
+  "led": {
+    "x": 201.3,
+    "y": 545.7,
+    "raio": 13.2
+  }
+}

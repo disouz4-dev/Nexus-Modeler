@@ -1,0 +1,40 @@
+{
+  "formato": 1,
+  "id": "citrus_412",
+  "versao": "1.0.3",
+  "tipo": "caixa",
+  "nome": "Citrus 4x12",
+  "inspiracao": "Orange 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Orange 4x12",
+      "tons": [
+        {
+          "id": 90730,
+          "titulo": "Orange V30 4x12 - XR IR PACK",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "nota": "a própria Orange 4x12 com V30",
+          "ir_padrao": "TF ORANGE 4X12 V30 57 3 - Enhanced",
+          "padrao": true
+        },
+        {
+          "id": 1667,
+          "titulo": "Orange 4x12 CelestionV30",
+          "criador": "wendycabs",
+          "tipo": "cab",
+          "nota": "Orange 4x12 com V30",
+          "ir_padrao": "Orange 4x12 V30 shure57 cn"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 5,
+  "signature": null
+}

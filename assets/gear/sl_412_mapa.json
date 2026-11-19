@@ -1,0 +1,19 @@
+{
+  "nome": "SL 4x12",
+  "familia": "sl_412",
+  "largura": 2400,
+  "altura": 2805,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    711,
+    730
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

@@ -1,0 +1,63 @@
+{
+  "nome": "Topaz 250",
+  "familia": "pitanga_250",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 137,
+      "y": 90,
+      "tamanho": 155,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 308,
+      "y": 90,
+      "tamanho": 155,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    67,
+    119
+  ],
+  "rotulos": [
+    {
+      "texto": "GANHO",
+      "x": 218.6,
+      "y": 80.5,
+      "altura": 21.14,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 381.4,
+      "y": 80.5,
+      "altura": 21.14,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 555.0,
+    "raio": 45.0
+  },
+  "led": {
+    "x": 216.2,
+    "y": 533.3,
+    "raio": 12.2
+  }
+}

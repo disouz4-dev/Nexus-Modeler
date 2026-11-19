@@ -1,0 +1,285 @@
+{
+  "nome": "Block 5150 III",
+  "familia": "block5150iii",
+  "largura": 2400,
+  "altura": 1000,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 246,
+      "y": 688,
+      "tamanho": 92,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 344,
+      "y": 688,
+      "tamanho": 92,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 443,
+      "y": 688,
+      "tamanho": 91,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 542,
+      "y": 689,
+      "tamanho": 90,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 640,
+      "y": 689,
+      "tamanho": 89,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1866,
+      "y": 688,
+      "tamanho": 91,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Crunch",
+    "Solo"
+  ],
+  "rotulos": [
+    {
+      "texto": "INSERT",
+      "x": 234.0,
+      "y": 688.4,
+      "altura": 22.19,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 295.6,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LOW",
+      "x": 393.4,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 491.2,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "HIGH",
+      "x": 588.9,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 686.7,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "ONE",
+      "x": 491.2,
+      "y": 813.0,
+      "altura": 14.33,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 833.4,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LOW",
+      "x": 931.1,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1028.9,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "HIGH",
+      "x": 1126.7,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1224.4,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TWO",
+      "x": 1028.9,
+      "y": 813.0,
+      "altura": 14.33,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1371.1,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "LOW",
+      "x": 1468.9,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1566.6,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "HIGH",
+      "x": 1664.4,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1762.2,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "THREE",
+      "x": 1566.6,
+      "y": 813.0,
+      "altura": 14.33,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1908.8,
+      "y": 678.8,
+      "altura": 19.79,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 2006.6,
+      "y": 675.6,
+      "altura": 23.37,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 2104.4,
+      "y": 680.6,
+      "altura": 17.75,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 759.3,
+      "y": 761.3,
+      "raio": 8.6
+    },
+    {
+      "x": 1297.9,
+      "y": 761.3,
+      "raio": 8.6
+    },
+    {
+      "x": 1836.6,
+      "y": 761.3,
+      "raio": 8.6
+    }
+  ]
+}

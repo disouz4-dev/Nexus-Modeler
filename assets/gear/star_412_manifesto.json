@@ -1,0 +1,40 @@
+{
+  "formato": 1,
+  "id": "star_412",
+  "versao": "1.0.3",
+  "tipo": "caixa",
+  "nome": "Star 4x12",
+  "inspiracao": "Blackstar 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Blackstar",
+      "tons": [
+        {
+          "id": 1765,
+          "titulo": "Blackstar Blackfire 412 GUS G DUAL MIC MIXES",
+          "criador": "reynaldgrind",
+          "tipo": "cab",
+          "nota": "sem IR da HTV-412: Blackstar 4x12 com Vintage 30",
+          "ir_padrao": "BlS_GG_V30_SM21 1",
+          "padrao": true
+        },
+        {
+          "id": 97711,
+          "titulo": "Blackstar HT Stage 60 Celestion Seventy-80",
+          "criador": "samuelbednar",
+          "tipo": "cab",
+          "nota": "Blackstar com outro falante",
+          "ir_padrao": "HT60_cab_SM58_center-48k"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 17,
+  "signature": null
+}

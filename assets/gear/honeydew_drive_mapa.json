@@ -1,0 +1,90 @@
+{
+  "nome": "Honeydew Drive",
+  "familia": "honeydew_drive",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 159,
+      "y": 198,
+      "tamanho": 109,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 329,
+      "y": 81,
+      "tamanho": 114,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 332,
+      "y": 198,
+      "tamanho": 109,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    112
+  ],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 216.2,
+      "y": 332.9,
+      "altura": 22.33,
+      "achatamento": 1.0,
+      "cor": "#f4f4ef",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 383.8,
+      "y": 220.4,
+      "altura": 22.33,
+      "achatamento": 1.0,
+      "cor": "#f4f4ef",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 216.2,
+      "y": 220.4,
+      "altura": 22.33,
+      "achatamento": 1.0,
+      "cor": "#f4f4ef",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 383.8,
+      "y": 332.9,
+      "altura": 22.33,
+      "achatamento": 1.0,
+      "cor": "#f4f4ef",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 602.5,
+    "raio": 46.5
+  },
+  "led": {
+    "x": 300.0,
+    "y": 242.8,
+    "raio": 12.3
+  }
+}

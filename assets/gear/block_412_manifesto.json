@@ -1,0 +1,40 @@
+{
+  "formato": 1,
+  "id": "block_412",
+  "versao": "1.0.3",
+  "tipo": "caixa",
+  "nome": "Block 4x12",
+  "inspiracao": "5150 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "5150",
+      "tons": [
+        {
+          "id": 46881,
+          "titulo": "Peavey 412MS Sheffield 1290",
+          "criador": "guitarscrub",
+          "tipo": "cab",
+          "nota": "sem IR da 5150 4x12: Peavey 4x12 reta com falantes Sheffield, a mesma família",
+          "ir_padrao": "412MS_SHF_mix_57+57",
+          "padrao": true
+        },
+        {
+          "id": 5758,
+          "titulo": "Peavey Triple XXX 412 (Relic 30) 57",
+          "criador": "scharrface",
+          "tipo": "cab",
+          "nota": "outra Peavey 4x12",
+          "ir_padrao": "XXX Relic 30 57 close 7_dc"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 2,
+  "signature": null
+}

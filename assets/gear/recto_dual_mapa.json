@@ -1,0 +1,67 @@
+{
+  "nome": "Recto Dual",
+  "familia": "recto_dual",
+  "largura": 2400,
+  "altura": 1144,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 1061,
+      "y": 731,
+      "tamanho": 67,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1220,
+      "y": 731,
+      "tamanho": 67,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1378,
+      "y": 731,
+      "tamanho": 67,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1535,
+      "y": 730,
+      "tamanho": 69,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1692,
+      "y": 729,
+      "tamanho": 70,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1850,
+      "y": 729,
+      "tamanho": 71,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Moderno"
+  ],
+  "rotulos": []
+}

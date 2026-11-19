@@ -1,0 +1,222 @@
+{
+  "nome": "Brit DS 20",
+  "familia": "britds20",
+  "largura": 2400,
+  "altura": 1315,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 849,
+      "y": 837,
+      "tamanho": 119,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 980,
+      "y": 837,
+      "tamanho": 119,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1120,
+      "y": 837,
+      "tamanho": 119,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1251,
+      "y": 837,
+      "tamanho": 119,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1451,
+      "y": 836,
+      "tamanho": 120,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1581,
+      "y": 835,
+      "tamanho": 122,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Crunch",
+    "Ultra"
+  ],
+  "rotulos": [
+    {
+      "texto": "POWER",
+      "x": 293.8,
+      "y": 983.8,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OUTPUT",
+      "x": 413.3,
+      "y": 983.8,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "REVERB",
+      "x": 662.3,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "RESONANCE",
+      "x": 781.8,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 911.2,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1040.7,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1180.1,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1309.5,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TONE SHIFT",
+      "x": 1409.1,
+      "y": 945.6,
+      "altura": 21.5,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1508.7,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1638.2,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CHANNEL",
+      "x": 1737.7,
+      "y": 947.2,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "VOLUME",
+      "x": 1847.3,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1976.7,
+      "y": 986.4,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 2106.2,
+      "y": 951.5,
+      "altura": 23.28,
+      "achatamento": 1.0,
+      "cor": "#211d19",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 1703.2,
+      "y": 776.5,
+      "raio": 13.0
+    },
+    {
+      "x": 1775.1,
+      "y": 776.5,
+      "raio": 13.0
+    },
+    {
+      "x": 1739.1,
+      "y": 1012.5,
+      "raio": 13.0
+    }
+  ]
+}

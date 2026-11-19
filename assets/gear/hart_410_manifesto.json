@@ -1,0 +1,40 @@
+{
+  "formato": 1,
+  "id": "hart_410",
+  "versao": "1.0.3",
+  "tipo": "caixa",
+  "nome": "Hart 4x10",
+  "inspiracao": "Hartke 4x10",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Hartke",
+      "tons": [
+        {
+          "id": 90726,
+          "titulo": "Hartke 410TP",
+          "criador": "lavigiestudio",
+          "tipo": "cab",
+          "nota": "sem IR da 410XL: a Hartke Transporter 4x10, também com cones de alumínio",
+          "ir_padrao": "Hartke 410TP - Audix OM5 + AKG P2",
+          "padrao": true
+        },
+        {
+          "id": 6574,
+          "titulo": "Hartke LH100+4x10 IRs",
+          "criador": "mikey",
+          "tipo": "cab",
+          "nota": "outra Hartke 4x10",
+          "ir_padrao": "4_SM57_On"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 22,
+  "signature": null
+}

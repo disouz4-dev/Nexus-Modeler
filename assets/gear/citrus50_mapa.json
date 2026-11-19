@@ -1,0 +1,149 @@
+{
+  "nome": "Citrus 50",
+  "familia": "citrus50",
+  "largura": 2400,
+  "altura": 1416,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 797,
+      "y": 922,
+      "tamanho": 147,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1016,
+      "y": 922,
+      "tamanho": 146,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1220,
+      "y": 947,
+      "tamanho": 95,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1323,
+      "y": 947,
+      "tamanho": 95,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1427,
+      "y": 947,
+      "tamanho": 95,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1596,
+      "y": 921,
+      "tamanho": 149,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [
+    {
+      "texto": "ON",
+      "x": 484.9,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PLAY",
+      "x": 579.1,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 873.2,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "HF DRIVE",
+      "x": 1090.4,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1267.3,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1369.2,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1473.0,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1667.2,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 1892.1,
+      "y": 786.9,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ]
+}

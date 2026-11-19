@@ -1,0 +1,63 @@
+{
+  "nome": "Quince Plus",
+  "familia": "quince_plus",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 152,
+      "y": 102,
+      "tamanho": 134,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 314,
+      "y": 102,
+      "tamanho": 134,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [
+    {
+      "texto": "SAÍDA",
+      "x": 221.6,
+      "y": 261.9,
+      "altura": 22.48,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DISTORÇÃO",
+      "x": 378.4,
+      "y": 261.9,
+      "altura": 22.48,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 511.5,
+    "raio": 47.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 424.9,
+    "raio": 11.7
+  }
+}

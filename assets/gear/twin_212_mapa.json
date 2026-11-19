@@ -1,0 +1,19 @@
+{
+  "nome": "Twin 2x12",
+  "familia": "twin_212",
+  "largura": 2400,
+  "altura": 2088,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    673,
+    505
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

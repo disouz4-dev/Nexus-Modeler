@@ -1,0 +1,162 @@
+{
+  "nome": "Citrus 30",
+  "familia": "citrus30",
+  "largura": 2400,
+  "altura": 1416,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 990,
+      "y": 830,
+      "tamanho": 132,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1169,
+      "y": 847,
+      "tamanho": 96,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1332,
+      "y": 847,
+      "tamanho": 96,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1503,
+      "y": 846,
+      "tamanho": 98,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1653,
+      "y": 828,
+      "tamanho": 136,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1898,
+      "y": 854,
+      "tamanho": 132,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Crunch",
+    "Drive"
+  ],
+  "rotulos": [
+    {
+      "texto": "POWER",
+      "x": 536.8,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "CHANNEL",
+      "x": 834.7,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1065.4,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 1219.2,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MIDDLE",
+      "x": 1378.8,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1549.9,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 1717.1,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "INPUT",
+      "x": 1853.6,
+      "y": 798.0,
+      "altura": 22.76,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 1959.4,
+      "y": 843.8,
+      "altura": 23.3,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 901.3,
+      "y": 902.7,
+      "raio": 11.8
+    },
+    {
+      "x": 901.3,
+      "y": 1010.0,
+      "raio": 11.8
+    }
+  ]
+}

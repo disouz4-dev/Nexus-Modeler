@@ -1,0 +1,135 @@
+{
+  "nome": "Labradorite Omega",
+  "familia": "mulberry_omega",
+  "largura": 600,
+  "altura": 750,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 246,
+      "y": 127,
+      "tamanho": 107,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 367,
+      "y": 127,
+      "tamanho": 107,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 398,
+      "y": 245,
+      "tamanho": 105,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    94,
+    120
+  ],
+  "rotulos": [
+    {
+      "texto": "MISTURA",
+      "x": 176.8,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 300.0,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 417.4,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MOD",
+      "x": 161.1,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 256.9,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 345.0,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 446.8,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GROWL",
+      "x": 243.2,
+      "y": 189.8,
+      "altura": 10.82,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    },
+    {
+      "texto": "BITE",
+      "x": 360.6,
+      "y": 189.8,
+      "altura": 10.82,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    }
+  ],
+  "pisante": {
+    "x": 300.0,
+    "y": 493.5,
+    "raio": 35.0
+  },
+  "led": {
+    "x": 300.0,
+    "y": 349.9,
+    "raio": 7.5
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "formato": 1,
+  "id": "rg_412",
+  "versao": "1.0.3",
+  "tipo": "caixa",
+  "nome": "RG 4x12",
+  "inspiracao": "Randall 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Randall",
+      "tons": [
+        {
+          "id": 6571,
+          "titulo": "Randall RG412 HiRez 2048 V30/RS1280",
+          "criador": "mikey",
+          "tipo": "cab",
+          "nota": "a própria Randall RG412",
+          "ir_padrao": "1_V30 57 EQd 48k",
+          "padrao": true
+        },
+        {
+          "id": 6262,
+          "titulo": "RANDALL RX412 IR'S PACK",
+          "criador": "eliottlozano",
+          "tipo": "cab",
+          "nota": "outra Randall 4x12",
+          "ir_padrao": "RX412 01"
+        }
+      ]
+    }
+  },
+  "indice_de_fabrica": 21,
+  "signature": null
+}

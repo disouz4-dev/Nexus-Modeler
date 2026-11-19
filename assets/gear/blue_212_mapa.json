@@ -1,0 +1,19 @@
+{
+  "nome": "Blue 2x12",
+  "familia": "blue_212",
+  "largura": 2400,
+  "altura": 2244,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    705,
+    571
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

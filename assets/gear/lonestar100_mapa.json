@@ -1,0 +1,252 @@
+{
+  "nome": "Lone Star 100",
+  "familia": "lonestar100",
+  "largura": 2400,
+  "altura": 1471,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 730,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 858,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 986,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1114,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1242,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1370,
+      "y": 286,
+      "tamanho": 88,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Drive"
+  ],
+  "rotulos": [
+    {
+      "texto": "INPUT",
+      "x": 451.7,
+      "y": 384.2,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "FT SW",
+      "x": 451.7,
+      "y": 503.2,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 775.7,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 903.1,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1030.5,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1158.0,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1285.4,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1412.8,
+      "y": 256.6,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "DRIVE",
+      "x": 549.3,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "GAIN",
+      "x": 712.0,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "TREBLE",
+      "x": 864.9,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MID",
+      "x": 1017.8,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "BASS",
+      "x": 1170.7,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "PRESENCE",
+      "x": 1323.6,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "MASTER",
+      "x": 1476.6,
+      "y": 526.0,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "OUTPUT",
+      "x": 1639.2,
+      "y": 250.1,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "SOLO",
+      "x": 1753.1,
+      "y": 250.1,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "POWER",
+      "x": 1940.2,
+      "y": 395.3,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    },
+    {
+      "texto": "STANDBY",
+      "x": 1940.2,
+      "y": 514.3,
+      "altura": 23.32,
+      "achatamento": 1.0,
+      "cor": "#1d1d1d",
+      "espaco": 1.0
+    }
+  ],
+  "leds_canais": [
+    {
+      "x": 572.3,
+      "y": 325.7,
+      "raio": 11.1
+    },
+    {
+      "x": 572.3,
+      "y": 393.1,
+      "raio": 11.1
+    }
+  ]
+}
