@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-20T02:10:46Z",
+ "gerado": "2026-11-20T02:11:37Z",
  "pecas": {
   "acai_rat": {
    "nome": "Açaí Rat",
@@ -346,8 +346,8 @@
   },
   "be100": {
    "nome": "BE 100",
-   "hash": "488581d3cf7f6e27",
-   "data": "2026-11-20T01:46:40Z",
+   "hash": "7400447c15ae21d3",
+   "data": "2026-11-20T02:11:31Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -362,24 +362,24 @@
     "be100_mapa.json"
    ],
    "sha256": {
-    "be100_botao_agudo.png": "6d667121c4a7c9a064b288cffe519ad4d5c3f90f50cab9b1c8a3285d0822f8f0",
-    "be100_botao_ganho.png": "5b4be441ab4c4a2a1a9c6f3241a39fe10264ce289bec674a0683c0019511c7df",
-    "be100_botao_grave.png": "b6f32d7067d6a92d37c35be71176f53c7c747f3c59bf549855dd039698ee07bf",
-    "be100_botao_medio.png": "7009e867e65e4c795f6106a41de3f2a241241a47e2f43a954a0ee05d4b0de39c",
-    "be100_botao_presenca.png": "0b6fb040f36d1c775a279def933e4d8f8a568c3bb51ff133b6c1c812c444f383",
-    "be100_botao_volume.png": "dfafe0adad18a65bb9a0becba7df4cd69c9b61a0b4b6308009e192d9a18ecb00",
-    "be100_frente.jpg": "7d62ce5175c45cc178368d9245e208050f8302ea96f322174d8091b16525930c",
-    "be100_frente_alfa.png": "fad12c893d527a02b77906c8c887761e224b16fc9cdc828df5440adf794116ea",
-    "be100_manifesto.json": "3a84ee94529238f1b13c90da9d8d288124767299829aaaee4aafd1e9f49d1317",
-    "be100_mapa.json": "df55b7077496753aae19431a92c3d1920ca6250274ad1a1cbd2ab25bd360aef6"
+    "be100_botao_agudo.png": "63a17548d03c3a246c8d2396fc7569e290d51aea1731685a8955f3577074f564",
+    "be100_botao_ganho.png": "41d584f85136dd80a564cebcfc583746c3e763531956527e01704d5ff5a24703",
+    "be100_botao_grave.png": "17a0b371f94a4aa56a66ef342671c0644e5e87e6c192c07a3db10f18706b83e9",
+    "be100_botao_medio.png": "c0b5102daf6d39066993866fb5221258934a96de3a7dc6fd18a9482b4222f0cb",
+    "be100_botao_presenca.png": "b3ec45ab4dbc723b6aacabec9c633fb2e40797330e105fe776ea1a395072493e",
+    "be100_botao_volume.png": "c6597ee5f4d18d25d5602d20e152b28f5d8a9901912e6d7cdb3f75e89964c175",
+    "be100_frente.jpg": "b959da976dde07da3db5158171b992182c4fffdcf0a8e781c22f708879362d81",
+    "be100_frente_alfa.png": "4f4d4824633bb9f9f5850b13b2e8d2fb0a6adeb7043c0266fb2cf08b8da8ba15",
+    "be100_manifesto.json": "01b6325ff820d99162b380488db41b2289771bafa33494258428eb39fd207e27",
+    "be100_mapa.json": "11b1a8eda789eb9d6fde4e43411c58e58ab5efd6d58487e5c79737bbacebbace"
    },
-   "tamanho": 1536975,
+   "tamanho": 1416513,
    "tipo": "cabecote",
    "inspiracao": "BE-100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.5",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -709,8 +709,8 @@
   },
   "brit45": {
    "nome": "Brit 45",
-   "hash": "8033bd62925d53c2",
-   "data": "2026-11-20T01:46:40Z",
+   "hash": "65f331abab4501f9",
+   "data": "2026-11-20T02:11:31Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "brit45_botao_agudo.png",
@@ -725,24 +725,24 @@
     "brit45_mapa.json"
    ],
    "sha256": {
-    "brit45_botao_agudo.png": "1d7c49668f3c058546f066b3a0df84f691609848b905a8fedf9737c463cdd5ed",
-    "brit45_botao_ganho.png": "e9492f8cb1dcddb6f7a57089f196b8470a285e5bbb13baccea6cd8d292488ec9",
-    "brit45_botao_grave.png": "c11ae8a82acd5d21edb9642551fe4565ef83d1bbf5a8474ff274705786873e1e",
-    "brit45_botao_medio.png": "e9cd491a83367af68f59c23c82673b6ff2c94fbbf20a9c8aa0f816e58b0bc502",
-    "brit45_botao_presenca.png": "bd5f4359b3d8e7d67b6902e0815244a9ad6b4a8adb85b0787bcf18fd2c461ebd",
-    "brit45_botao_volume.png": "9339a9ccf9d3c055922a34b304784d8769844518d4fb895b73f1ac6808735084",
-    "brit45_frente.jpg": "394948fe5bb8c96aa6598fe84d3db3075957cfaa7d584cae45ce6e15cbe94082",
-    "brit45_frente_alfa.png": "47ccfc563350353fceee66c30ca17b9e51eee398984434594295e0ab73f2b12f",
-    "brit45_manifesto.json": "ec28e99559c5adfce65f25c221ef4c938dcc979a671f76e1ccc9396429b3c0ac",
-    "brit45_mapa.json": "336227e7af37692f621f2e652c809cf3d36d30bbc6a8c566ab643b9a630efb56"
+    "brit45_botao_agudo.png": "88acafa31d098ba3f44a49e6604a6532e4c49f8a580c1915d7d97f59e3412cdb",
+    "brit45_botao_ganho.png": "e35880f690bdfdb0d15e046c934a74bcd6ca7b337c190ae82cbc548dd26e3537",
+    "brit45_botao_grave.png": "151c7664b11bd0f89f4f65c5ea94d53fc5b65c5bc5a2d0d112ee9b5ccaa60667",
+    "brit45_botao_medio.png": "bdf2f2bdd7027b8c85ddc4cb379154278db7bc6878fc70691803a6591f496cd6",
+    "brit45_botao_presenca.png": "42179cde83bf79b3a561e9df575c9dcc797ff5adff95e772cffe238c7f175184",
+    "brit45_botao_volume.png": "a2d89e311252532e86f0fd001f213fe80b777138697d48c5048556ee45c1d16d",
+    "brit45_frente.jpg": "aa09c287f0503565dc8e0f7c8dea5193cb3b6c8b006392791dada2a64c95496c",
+    "brit45_frente_alfa.png": "699d1785e890f89cc67eb7df9bd7c3c717eb7fbf08ed4e08495a8b985b68814e",
+    "brit45_manifesto.json": "ae153be8ae7aad06a096678c6c9960d8749416d3a8775ba8b453b92d8c4af983",
+    "brit45_mapa.json": "d0b1c3a4ad1ffdb6736840cbbfbb4b6ab3f6f75f44198835cd3ebcb23e6f920f"
    },
-   "tamanho": 1884053,
+   "tamanho": 1495559,
    "tipo": "cabecote",
    "inspiracao": "Marshall JTM45",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.4",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
