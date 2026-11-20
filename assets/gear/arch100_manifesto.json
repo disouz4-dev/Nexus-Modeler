@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "arch100",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Arch 100",
+  "inspiracao": "PRS Archon 100",
+  "categoria": "Americanos de alto ganho",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}
