@@ -1,0 +1,104 @@
+{
+  "nome": "Iron 120",
+  "familia": "iron120",
+  "largura": 2400,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_3",
+      "x": 726,
+      "y": 487,
+      "tamanho": 102,
+      "arquivo": "botao_ganho_3.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 899,
+      "y": 488,
+      "tamanho": 100,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1072,
+      "y": 489,
+      "tamanho": 99,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1244,
+      "y": 489,
+      "tamanho": 99,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1416,
+      "y": 488,
+      "tamanho": 100,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_1",
+      "x": 554,
+      "y": 680,
+      "tamanho": 103,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 726,
+      "y": 680,
+      "tamanho": 102,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1763,
+      "y": 487,
+      "tamanho": 103,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Ritmo",
+    "Solo"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 468.8,
+      "y": 537.7,
+      "raio": 7.3
+    },
+    {
+      "x": 468.8,
+      "y": 730.3,
+      "raio": 7.3
+    },
+    {
+      "x": 1552.0,
+      "y": 537.7,
+      "raio": 7.3
+    }
+  ]
+}
