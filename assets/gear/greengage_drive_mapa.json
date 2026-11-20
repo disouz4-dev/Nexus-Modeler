@@ -1,15 +1,15 @@
 {
-  "nome": "Green Pea Drive",
-  "familia": "greengage_drive",
-  "largura": 1200,
-  "altura": 1500,
+  "nome": "Greengage Drive",
+  "familia": "lemon_drive",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 280,
-      "y": 194,
-      "tamanho": 246,
+      "x": 138,
+      "y": 96,
+      "tamanho": 126,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 512,
-      "y": 374,
-      "tamanho": 176,
+      "x": 255,
+      "y": 186,
+      "tamanho": 90,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 674,
-      "y": 194,
-      "tamanho": 246,
+      "x": 336,
+      "y": 96,
+      "tamanho": 126,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,43 @@
     74,
     124
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "DRIVE",
+      "x": 204.8,
+      "y": 243.7,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#e3e7dd",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 300.0,
+      "y": 299.6,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#e3e7dd",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 395.2,
+      "y": 243.7,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#e3e7dd",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1102.5,
-    "raio": 259.5
+    "x": 300.0,
+    "y": 551.5,
+    "raio": 129.5
   },
   "led": {
-    "x": 600.0,
-    "y": 185.6,
-    "raio": 22.6
+    "x": 300.0,
+    "y": 92.8,
+    "raio": 11.3
   }
 }
