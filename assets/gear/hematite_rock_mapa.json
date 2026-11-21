@@ -1,33 +1,33 @@
 {
   "nome": "Hematite Rock",
-  "familia": "starfruit_rock",
-  "largura": 600,
-  "altura": 750,
+  "familia": "hematite_rock",
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 240,
-      "y": 110,
-      "tamanho": 150,
+      "x": 481,
+      "y": 234,
+      "tamanho": 308,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 100,
-      "altura": 301
+      "largura": 187,
+      "altura": 617
     },
     {
       "id": "ganho",
-      "x": 310,
-      "y": 110,
-      "tamanho": 150,
+      "x": 622,
+      "y": 234,
+      "tamanho": 308,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "tipo": "deslizante",
-      "largura": 100,
-      "altura": 301,
+      "largura": 187,
+      "altura": 617,
       "posicoes": 11
     }
   ],
@@ -36,52 +36,15 @@
     62,
     111
   ],
-  "rotulos": [
-    {
-      "texto": "VOLUME",
-      "x": 265.1,
-      "y": 276.1,
-      "altura": 16.86,
-      "achatamento": 1.0,
-      "cor": "#f0f0e9",
-      "espaco": 1.05
-    },
-    {
-      "texto": "GANHO",
-      "x": 334.9,
-      "y": 276.1,
-      "altura": 16.86,
-      "achatamento": 1.0,
-      "cor": "#f0f0e9",
-      "espaco": 1.05
-    },
-    {
-      "texto": "MODO",
-      "x": 189.3,
-      "y": 296.6,
-      "altura": 17.99,
-      "achatamento": 1.0,
-      "cor": "#f0f0e9",
-      "espaco": 1.1
-    },
-    {
-      "texto": "CHORUS",
-      "x": 408.1,
-      "y": 296.6,
-      "altura": 17.99,
-      "achatamento": 1.0,
-      "cor": "#f0f0e9",
-      "espaco": 1.1
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 300.0,
-    "y": 501.5,
-    "raio": 47.0
+    "x": 600.0,
+    "y": 1035.5,
+    "raio": 92.0
   },
   "led": {
-    "x": 300.0,
-    "y": 414.9,
-    "raio": 12.3
+    "x": 600.0,
+    "y": 868.4,
+    "raio": 24.1
   }
 }

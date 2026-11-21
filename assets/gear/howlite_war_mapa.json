@@ -1,15 +1,15 @@
 {
-  "nome": "Howlite War",
-  "familia": "elderberry_war",
-  "largura": 600,
-  "altura": 750,
+  "nome": "Mice War",
+  "familia": "howlite_war",
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 133,
-      "y": 214,
-      "tamanho": 123,
+      "x": 268,
+      "y": 432,
+      "tamanho": 242,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "nivel",
-      "x": 271,
-      "y": 156,
-      "tamanho": 58,
+      "x": 544,
+      "y": 314,
+      "tamanho": 112,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 332,
-      "y": 214,
-      "tamanho": 123,
+      "x": 666,
+      "y": 432,
+      "tamanho": 242,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,34 +39,15 @@
     120,
     149
   ],
-  "rotulos": [
-    {
-      "texto": "FUZZ",
-      "x": 197.3,
-      "y": 349.9,
-      "altura": 12.91,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "TOM",
-      "x": 391.1,
-      "y": 349.9,
-      "altura": 12.91,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 303.5,
-    "y": 513.0,
-    "raio": 27.0
+    "x": 606.5,
+    "y": 1026.0,
+    "raio": 69.5
   },
   "led": {
-    "x": 379.2,
-    "y": 503.6,
-    "raio": 9.3
+    "x": 758.5,
+    "y": 1007.5,
+    "raio": 25.4
   }
 }
