@@ -1,33 +1,33 @@
 {
   "nome": "Jabuticaba Buzzsaw",
   "familia": "jabuticaba_buzzsaw",
-  "largura": 600,
-  "altura": 750,
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 132,
-      "y": 124,
-      "tamanho": 94,
+      "x": 282,
+      "y": 268,
+      "tamanho": 162,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 212,
-      "y": 124,
-      "tamanho": 94,
+      "x": 599,
+      "y": 268,
+      "tamanho": 162,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 381,
-      "y": 130,
-      "tamanho": 80,
+      "x": 757,
+      "y": 268,
+      "tamanho": 162,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -39,70 +39,15 @@
     73,
     129
   ],
-  "rotulos": [
-    {
-      "texto": "NÍVEL",
-      "x": 181.4,
-      "y": 237.9,
-      "altura": 19.77,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.15
-    },
-    {
-      "texto": "ALTO",
-      "x": 260.4,
-      "y": 237.9,
-      "altura": 19.77,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.15
-    },
-    {
-      "texto": "BAIXO",
-      "x": 339.6,
-      "y": 237.9,
-      "altura": 19.77,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.15
-    },
-    {
-      "texto": "DISTORÇÃO",
-      "x": 418.6,
-      "y": 232.2,
-      "altura": 19.77,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.15
-    },
-    {
-      "texto": "SAÍDA",
-      "x": 196.9,
-      "y": 293.0,
-      "altura": 16.01,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.1
-    },
-    {
-      "texto": "ENTRADA",
-      "x": 403.1,
-      "y": 293.0,
-      "altura": 16.01,
-      "achatamento": 1.0,
-      "cor": "#f07b23",
-      "espaco": 1.1
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 300.0,
-    "y": 503.0,
-    "raio": 152.0
+    "x": 600.0,
+    "y": 996.5,
+    "raio": 293.0
   },
   "led": {
-    "x": 300.0,
-    "y": 100.8,
-    "raio": 8.7
+    "x": 600.0,
+    "y": 208.4,
+    "raio": 17.2
   }
 }

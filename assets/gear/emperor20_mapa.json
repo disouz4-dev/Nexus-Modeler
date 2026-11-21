@@ -2,79 +2,103 @@
   "nome": "Emperor 20",
   "familia": "emperor20",
   "largura": 2400,
-  "altura": 888,
+  "altura": 1219,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho_1",
-      "x": 343,
-      "y": 245,
-      "tamanho": 120,
+      "x": 299,
+      "y": 242,
+      "tamanho": 110,
       "arquivo": "botao_ganho_1.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 503,
-      "y": 246,
-      "tamanho": 119,
+      "x": 444,
+      "y": 243,
+      "tamanho": 109,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 663,
-      "y": 247,
-      "tamanho": 117,
+      "x": 587,
+      "y": 244,
+      "tamanho": 107,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "volume",
-      "x": 1029,
+      "id": "canal",
+      "x": 746,
       "y": 248,
-      "tamanho": 114,
+      "tamanho": 98,
+      "arquivo": "botao_canal.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "chave"
+    },
+    {
+      "id": "volume",
+      "x": 891,
+      "y": 245,
+      "tamanho": 105,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1189,
-      "y": 248,
-      "tamanho": 114,
+      "x": 1034,
+      "y": 245,
+      "tamanho": 105,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1348,
-      "y": 248,
-      "tamanho": 115,
+      "x": 1177,
+      "y": 245,
+      "tamanho": 105,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [
-    "Ritmo",
-    "Solo"
+    "Solo",
+    "Ritmo"
   ],
   "rotulos": [],
   "leds_canais": [
     {
-      "x": 871.2,
-      "y": 305.9,
-      "raio": 4.5
+      "x": 795.8,
+      "y": 318.7,
+      "raio": 0.4
     },
     {
-      "x": 939.2,
-      "y": 305.9,
-      "raio": 4.5
+      "x": 795.8,
+      "y": 312.4,
+      "raio": 0.4
     }
-  ]
+  ],
+  "canais_som": [
+    "crunch",
+    "limpo"
+  ],
+  "troca_canal": {
+    "tipo": "chave",
+    "pontos": [
+      {
+        "x": 796.0,
+        "y": 298.4,
+        "raio": 33.1
+      }
+    ]
+  }
 }

@@ -1,89 +1,113 @@
 {
-  "nome": "Black Cat 30",
+  "nome": "Billy the Cat",
   "familia": "blackcat30",
   "largura": 2400,
-  "altura": 890,
+  "altura": 1200,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho_1",
-      "x": 295,
-      "y": 195,
-      "tamanho": 149,
+      "x": 474,
+      "y": 235,
+      "tamanho": 103,
       "arquivo": "botao_ganho_1.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho_2",
-      "x": 496,
-      "y": 196,
-      "tamanho": 147,
+      "x": 637,
+      "y": 236,
+      "tamanho": 101,
       "arquivo": "botao_ganho_2.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 697,
-      "y": 197,
-      "tamanho": 144,
+      "x": 800,
+      "y": 236,
+      "tamanho": 100,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 897,
-      "y": 198,
-      "tamanho": 142,
+      "x": 962,
+      "y": 236,
+      "tamanho": 100,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1098,
-      "y": 199,
-      "tamanho": 141,
+      "x": 1124,
+      "y": 236,
+      "tamanho": 100,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1695,
-      "y": 196,
-      "tamanho": 146,
+      "x": 1611,
+      "y": 236,
+      "tamanho": 101,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1893,
-      "y": 195,
-      "tamanho": 148,
+      "x": 1772,
+      "y": 235,
+      "tamanho": 102,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
+    },
+    {
+      "id": "canal",
+      "x": 1383,
+      "y": 368,
+      "tamanho": 70,
+      "arquivo": "botao_canal.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "chave"
     }
   ],
   "canais": [
-    "Limpo",
-    "Drive"
+    "Channel 1",
+    "Channel 2"
   ],
   "rotulos": [],
   "leds_canais": [
     {
-      "x": 1426.5,
-      "y": 270.5,
-      "raio": 4.6
+      "x": 1417.0,
+      "y": 345.5,
+      "raio": 9.0
     },
     {
-      "x": 1630.3,
-      "y": 270.5,
-      "raio": 4.6
+      "x": 1578.8,
+      "y": 345.5,
+      "raio": 9.0
     }
-  ]
+  ],
+  "canais_som": [
+    "limpo",
+    "distorcido"
+  ],
+  "troca_canal": {
+    "tipo": "chave",
+    "pontos": [
+      {
+        "x": 1417.0,
+        "y": 404.1,
+        "raio": 23.8
+      }
+    ]
+  }
 }
