@@ -1,39 +1,76 @@
 {
   "nome": "Mercury Bender",
-  "familia": "mercury_bender",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "fig_bender",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
+      "id": "ganho",
+      "x": 158,
+      "y": 158,
+      "tamanho": 114,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
       "id": "nivel",
-      "x": 358,
-      "y": 284,
-      "tamanho": 182,
+      "x": 328,
+      "y": 158,
+      "tamanho": 114,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "ganho",
-      "x": 643,
-      "y": 433,
-      "tamanho": 184,
-      "arquivo": "botao_ganho.png",
+      "id": "tom",
+      "x": 394,
+      "y": 586,
+      "tamanho": 60,
+      "arquivo": "botao_tom.png",
       "angulo_min": -150,
-      "angulo_max": 150,
-      "posicoes": 11
+      "angulo_max": 150
     }
   ],
   "canais": [],
   "medidas_mm": [
-    100,
-    195
+    95,
+    150
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "ATAQUE",
+      "x": 216.8,
+      "y": 289.7,
+      "altura": 16.68,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 383.2,
+      "y": 289.7,
+      "altura": 16.68,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 422.9,
+      "y": 658.6,
+      "altura": 10.85,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 997.0,
-    "raio": 50.5
+    "x": 300.0,
+    "y": 491.0,
+    "raio": 34.5
   }
 }

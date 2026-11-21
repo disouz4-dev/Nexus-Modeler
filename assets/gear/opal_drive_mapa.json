@@ -1,24 +1,24 @@
 {
   "nome": "Opal Drive",
-  "familia": "opal_drive",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "kiwi_drive",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 304,
-      "y": 242,
-      "tamanho": 205,
+      "x": 135,
+      "y": 109,
+      "tamanho": 118,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 690,
-      "y": 242,
-      "tamanho": 205,
+      "x": 344,
+      "y": 109,
+      "tamanho": 118,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 498,
-      "y": 482,
-      "tamanho": 203,
+      "x": 244,
+      "y": 220,
+      "tamanho": 114,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,43 @@
     64,
     112
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 197.7,
+      "y": 94.8,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 400.6,
+      "y": 94.8,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 300.0,
+      "y": 359.9,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1123.0,
-    "raio": 91.0
+    "x": 300.0,
+    "y": 532.0,
+    "raio": 48.0
   },
   "led": {
-    "x": 600.0,
-    "y": 397.3,
-    "raio": 30.2
+    "x": 300.0,
+    "y": 171.3,
+    "raio": 16.4
   }
 }
