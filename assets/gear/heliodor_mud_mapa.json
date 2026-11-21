@@ -1,15 +1,15 @@
 {
   "nome": "Heliodor Mud",
-  "familia": "heliodor_mud",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "pomegranate_mud",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 221,
-      "y": 294,
-      "tamanho": 266,
+      "x": 132,
+      "y": 155,
+      "tamanho": 116,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 469,
-      "y": 563,
-      "tamanho": 262,
+      "x": 238,
+      "y": 290,
+      "tamanho": 112,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 729,
-      "y": 294,
-      "tamanho": 266,
+      "x": 366,
+      "y": 174,
+      "tamanho": 115,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,52 @@
     100,
     120
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "GANHO",
+      "x": 193.2,
+      "y": 286.9,
+      "altura": 15.53,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 294.2,
+      "y": 417.3,
+      "altura": 15.53,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 420.4,
+      "y": 305.5,
+      "altura": 15.53,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REFORÇO",
+      "x": 303.9,
+      "y": 298.5,
+      "altura": 12.43,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.1
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1018.0,
-    "raio": 63.0
+    "x": 280.0,
+    "y": 523.5,
+    "raio": 32.5
   },
   "led": {
-    "x": 600.0,
-    "y": 393.1,
-    "raio": 17.6
+    "x": 307.8,
+    "y": 211.4,
+    "raio": 8.1
   }
 }

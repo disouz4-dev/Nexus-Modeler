@@ -1,33 +1,33 @@
 {
   "nome": "Jamun OD",
-  "familia": "jamun_od",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "nectarine_od",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "tom",
-      "x": 495,
-      "y": 138,
-      "tamanho": 210,
+      "x": 244,
+      "y": 70,
+      "tamanho": 112,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 275,
-      "y": 438,
-      "tamanho": 204,
+      "x": 131,
+      "y": 212,
+      "tamanho": 104,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 498,
-      "y": 438,
-      "tamanho": 204,
+      "x": 248,
+      "y": 212,
+      "tamanho": 104,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -39,15 +39,70 @@
     64,
     112
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "GRAVE",
+      "x": 186.9,
+      "y": 207.4,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 300.0,
+      "y": 207.4,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PRESENÇA",
+      "x": 413.1,
+      "y": 207.4,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 186.9,
+      "y": 342.5,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 300.0,
+      "y": 342.5,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TIGHT",
+      "x": 413.1,
+      "y": 342.5,
+      "altura": 22.44,
+      "achatamento": 1.0,
+      "cor": "#e3cd8f",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1148.0,
-    "raio": 91.0
+    "x": 300.0,
+    "y": 597.0,
+    "raio": 46.5
   },
   "led": {
-    "x": 600.0,
-    "y": 955.1,
-    "raio": 19.7
+    "x": 300.0,
+    "y": 479.3,
+    "raio": 10.2
   }
 }
