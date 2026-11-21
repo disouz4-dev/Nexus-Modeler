@@ -1,33 +1,33 @@
 {
-  "nome": "Duni Vibe",
+  "nome": "Eclipse Vibe",
   "familia": "eclipse_vibe",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "a",
-      "x": 525,
-      "y": 498,
-      "tamanho": 150,
+      "x": 254,
+      "y": 227,
+      "tamanho": 92,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 704,
-      "y": 316,
-      "tamanho": 152,
+      "x": 352,
+      "y": 134,
+      "tamanho": 96,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 342,
-      "y": 306,
-      "tamanho": 153,
+      "x": 152,
+      "y": 134,
+      "tamanho": 96,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -38,15 +38,43 @@
     94,
     120
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VELOCIDADE",
+      "x": 300.0,
+      "y": 336.6,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#efe7cd",
+      "espaco": 1.15
+    },
+    {
+      "texto": "INTENSIDADE",
+      "x": 397.4,
+      "y": 247.1,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#efe7cd",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MISTURA",
+      "x": 202.6,
+      "y": 247.1,
+      "altura": 14.1,
+      "achatamento": 1.0,
+      "cor": "#efe7cd",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1040.5,
-    "raio": 67.5
+    "x": 300.0,
+    "y": 467.0,
+    "raio": 34.0
   },
   "led": {
-    "x": 600.0,
-    "y": 735.4,
-    "raio": 20.6
+    "x": 300.0,
+    "y": 335.0,
+    "raio": 10.6
   }
 }
