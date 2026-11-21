@@ -1,24 +1,24 @@
 {
   "nome": "Moonstone Fuzz",
-  "familia": "moonstone_fuzz",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "mangosteen_fuzz",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 317,
-      "y": 452,
-      "tamanho": 186,
+      "x": 150,
+      "y": 218,
+      "tamanho": 101,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 506,
-      "y": 272,
-      "tamanho": 190,
+      "x": 248,
+      "y": 124,
+      "tamanho": 105,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 700,
-      "y": 452,
-      "tamanho": 186,
+      "x": 350,
+      "y": 218,
+      "tamanho": 101,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,43 @@
     64,
     121
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 203.7,
+      "y": 342.8,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#6a49b9",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SUSTAIN",
+      "x": 300.0,
+      "y": 251.8,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#6a49b9",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 397.9,
+      "y": 342.8,
+      "altura": 20.75,
+      "achatamento": 1.0,
+      "cor": "#6a49b9",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1089.0,
-    "raio": 84.0
+    "x": 300.0,
+    "y": 552.5,
+    "raio": 43.0
   },
   "led": {
-    "x": 387.1,
-    "y": 1079.5,
-    "raio": 18.6
+    "x": 201.3,
+    "y": 544.1,
+    "raio": 13.2
   }
 }

@@ -1,16 +1,34 @@
 {
   "nome": "Mars Phaser",
   "familia": "mars_phaser",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "a",
-      "x": 465,
-      "y": 182,
-      "tamanho": 270,
+      "x": 236,
+      "y": 118,
+      "tamanho": 128,
       "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 143,
+      "y": 522,
+      "tamanho": 60,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 398,
+      "y": 522,
+      "tamanho": 60,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -20,15 +38,43 @@
     62,
     111
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VELOCIDADE",
+      "x": 300.0,
+      "y": 272.1,
+      "altura": 22.48,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "PROFUNDIDADE",
+      "x": 174.6,
+      "y": 603.8,
+      "altura": 14.62,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "INTENSIDADE",
+      "x": 425.4,
+      "y": 603.8,
+      "altura": 14.62,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1072.5,
-    "raio": 91.5
+    "x": 300.0,
+    "y": 524.0,
+    "raio": 47.0
   },
   "led": {
-    "x": 600.0,
-    "y": 906.0,
-    "raio": 22.8
+    "x": 300.0,
+    "y": 437.4,
+    "raio": 11.7
   }
 }
