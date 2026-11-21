@@ -1,15 +1,15 @@
 {
   "nome": "Pyrite Klone",
-  "familia": "pyrite_klone",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "kumquat_klone",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 341,
-      "y": 188,
-      "tamanho": 208,
+      "x": 171,
+      "y": 96,
+      "tamanho": 100,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 648,
-      "y": 188,
-      "tamanho": 208,
+      "x": 328,
+      "y": 96,
+      "tamanho": 100,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 499,
-      "y": 452,
-      "tamanho": 202,
+      "x": 252,
+      "y": 182,
+      "tamanho": 96,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -37,17 +37,45 @@
   "canais": [],
   "medidas_mm": [
     38,
-    94
+    89
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "GANHO",
+      "x": 223.9,
+      "y": 230.9,
+      "altura": 21.45,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 376.1,
+      "y": 230.9,
+      "altura": 21.45,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 300.0,
+      "y": 313.6,
+      "altura": 21.45,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1228.5,
-    "raio": 144.0
+    "x": 300.0,
+    "y": 616.0,
+    "raio": 60.0
   },
   "led": {
-    "x": 600.0,
-    "y": 898.6,
-    "raio": 30.2
+    "x": 300.0,
+    "y": 445.8,
+    "raio": 20.8
   }
 }
