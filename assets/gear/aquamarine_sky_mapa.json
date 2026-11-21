@@ -1,15 +1,15 @@
 {
   "nome": "Aquamarine Sky",
-  "familia": "juniper_sky",
-  "largura": 600,
-  "altura": 600,
+  "familia": "aquamarine_sky",
+  "largura": 1200,
+  "altura": 936,
   "posicoes": 101,
   "botoes": [
     {
       "id": "modo",
-      "x": 114,
-      "y": 196,
-      "tamanho": 63,
+      "x": 242,
+      "y": 334,
+      "tamanho": 97,
       "arquivo": "botao_modo.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,54 +17,54 @@
     },
     {
       "id": "a",
-      "x": 317,
-      "y": 106,
-      "tamanho": 56,
+      "x": 634,
+      "y": 169,
+      "tamanho": 96,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 376,
-      "y": 106,
-      "tamanho": 56,
+      "x": 764,
+      "y": 169,
+      "tamanho": 96,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "c",
-      "x": 436,
-      "y": 106,
-      "tamanho": 56,
+      "x": 894,
+      "y": 168,
+      "tamanho": 98,
       "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 289,
-      "y": 202,
-      "tamanho": 52,
+      "x": 568,
+      "y": 339,
+      "tamanho": 94,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 348,
-      "y": 202,
-      "tamanho": 53,
+      "x": 700,
+      "y": 338,
+      "tamanho": 94,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "d",
-      "x": 464,
-      "y": 200,
-      "tamanho": 57,
+      "x": 956,
+      "y": 336,
+      "tamanho": 98,
       "arquivo": "botao_d.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -72,106 +72,24 @@
   ],
   "canais": [],
   "medidas_mm": [
-    120,
-    115
+    172,
+    123
   ],
-  "rotulos": [
-    {
-      "texto": "TIPO",
-      "x": 148.7,
-      "y": 276.8,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "VALOR",
-      "x": 272.6,
-      "y": 180.0,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "DECAIMENTO",
-      "x": 343.9,
-      "y": 180.0,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "PRÉ-ATRASO",
-      "x": 402.8,
-      "y": 180.0,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "MISTURA",
-      "x": 461.6,
-      "y": 180.0,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "TOM",
-      "x": 314.6,
-      "y": 273.6,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "PARAM 1",
-      "x": 373.4,
-      "y": 273.6,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "PARAM 2",
-      "x": 432.3,
-      "y": 273.6,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "MODULAÇÃO",
-      "x": 488.9,
-      "y": 273.6,
-      "altura": 10.57,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 300.0,
-    "y": 450.5,
-    "raio": 34.5
+    "x": 218.5,
+    "y": 670.5,
+    "raio": 47.0
   },
   "led": {
-    "x": 300.0,
-    "y": 384.6,
-    "raio": 8.0
+    "x": 222.0,
+    "y": 580.0,
+    "raio": 10.2
   },
   "visor": {
-    "x": 89.3,
-    "y": 118.0,
-    "w": 127.4,
-    "h": 25.9
+    "x": 148.3,
+    "y": 182.2,
+    "w": 286.7,
+    "h": 68.2
   }
 }
