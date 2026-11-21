@@ -1,15 +1,15 @@
 {
-  "nome": "Açaí Rat",
+  "nome": "Black Eye Rat",
   "familia": "acai_rat",
-  "largura": 600,
-  "altura": 750,
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 138,
-      "y": 236,
-      "tamanho": 80,
+      "x": 277,
+      "y": 474,
+      "tamanho": 157,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 260,
-      "y": 236,
-      "tamanho": 80,
+      "x": 522,
+      "y": 475,
+      "tamanho": 155,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 382,
-      "y": 236,
-      "tamanho": 80,
+      "x": 766,
+      "y": 474,
+      "tamanho": 157,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,43 +39,15 @@
     81,
     98
   ],
-  "rotulos": [
-    {
-      "texto": "DISTORÇÃO",
-      "x": 180.6,
-      "y": 218.5,
-      "altura": 14.74,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "FILTRO",
-      "x": 300.0,
-      "y": 218.5,
-      "altura": 14.74,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    },
-    {
-      "texto": "VOLUME",
-      "x": 419.4,
-      "y": 218.5,
-      "altura": 14.74,
-      "achatamento": 1.0,
-      "cor": "#f2f0eb",
-      "espaco": 1.15
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 291.5,
-    "y": 517.0,
-    "raio": 42.0
+    "x": 600.0,
+    "y": 1124.5,
+    "raio": 83.5
   },
   "led": {
-    "x": 403.9,
-    "y": 387.1,
-    "raio": 8.8
+    "x": 807.6,
+    "y": 774.1,
+    "raio": 17.8
   }
 }
