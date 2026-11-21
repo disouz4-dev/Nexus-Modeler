@@ -1,19 +1,28 @@
 {
   "nome": "Magnetite Boost",
-  "familia": "magnetite_boost",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "cashew_boost",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 476,
-      "y": 364,
-      "tamanho": 248,
+      "x": 234,
+      "y": 164,
+      "tamanho": 132,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
       "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 362,
+      "y": 296,
+      "tamanho": 54,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
     }
   ],
   "canais": [],
@@ -21,15 +30,25 @@
     38,
     89
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "REFORÇO",
+      "x": 300.0,
+      "y": 329.0,
+      "altura": 24.32,
+      "achatamento": 1.0,
+      "cor": "#f2f2f2",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1190.0,
-    "raio": 113.0
+    "x": 300.0,
+    "y": 622.5,
+    "raio": 60.0
   },
   "led": {
-    "x": 600.0,
-    "y": 676.1,
-    "raio": 24.9
+    "x": 300.0,
+    "y": 327.0,
+    "raio": 13.2
   }
 }

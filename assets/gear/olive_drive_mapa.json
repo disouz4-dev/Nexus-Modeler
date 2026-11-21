@@ -1,15 +1,15 @@
 {
   "nome": "Olive Drive",
   "familia": "olive_drive",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 304,
-      "y": 162,
-      "tamanho": 184,
+      "x": 142,
+      "y": 99,
+      "tamanho": 120,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 510,
-      "y": 300,
-      "tamanho": 181,
+      "x": 258,
+      "y": 189,
+      "tamanho": 86,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 712,
-      "y": 162,
-      "tamanho": 184,
+      "x": 338,
+      "y": 99,
+      "tamanho": 120,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,43 @@
     74,
     124
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "DRIVE",
+      "x": 204.8,
+      "y": 241.5,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 300.0,
+      "y": 298.1,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 395.2,
+      "y": 241.5,
+      "altura": 26.78,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1061.5,
-    "raio": 150.5
+    "x": 300.0,
+    "y": 516.5,
+    "raio": 62.0
   },
   "led": {
-    "x": 600.0,
-    "y": 184.1,
-    "raio": 18.2
+    "x": 338.4,
+    "y": 98.2,
+    "raio": 14.9
   }
 }

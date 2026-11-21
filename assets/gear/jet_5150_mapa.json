@@ -1,33 +1,33 @@
 {
   "nome": "Jet 5150",
-  "familia": "jet_5150",
-  "largura": 1200,
-  "altura": 1080,
+  "familia": "strawberry_5150",
+  "largura": 600,
+  "altura": 540,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 178,
-      "y": 211,
-      "tamanho": 155,
+      "x": 70,
+      "y": 95,
+      "tamanho": 85,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 694,
-      "y": 212,
-      "tamanho": 154,
+      "x": 314,
+      "y": 96,
+      "tamanho": 82,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 862,
-      "y": 211,
-      "tamanho": 155,
+      "x": 394,
+      "y": 96,
+      "tamanho": 82,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -39,15 +39,79 @@
     122,
     91
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "SAÍDA",
+      "x": 116.8,
+      "y": 195.8,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 196.3,
+      "y": 195.8,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 273.4,
+      "y": 195.8,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 353.1,
+      "y": 195.8,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GANHO",
+      "x": 432.6,
+      "y": 195.8,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GATE",
+      "x": 75.8,
+      "y": 241.1,
+      "altura": 12.65,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "REFORÇO",
+      "x": 497.8,
+      "y": 134.7,
+      "altura": 10.28,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 698.0,
-    "raio": 64.0
+    "x": 300.0,
+    "y": 341.0,
+    "raio": 33.5
   },
   "led": {
-    "x": 747.0,
-    "y": 696.0,
-    "raio": 13.9
+    "x": 350.9,
+    "y": 310.9,
+    "raio": 7.8
   }
 }
