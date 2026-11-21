@@ -1,33 +1,33 @@
 {
   "nome": "Agate Wylde",
-  "familia": "cranberry_wylde",
-  "largura": 600,
-  "altura": 750,
+  "familia": "agate_wylde",
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 140,
-      "y": 159,
-      "tamanho": 112,
+      "x": 300,
+      "y": 386,
+      "tamanho": 183,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 242,
-      "y": 82,
-      "tamanho": 114,
+      "x": 492,
+      "y": 145,
+      "tamanho": 218,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 348,
-      "y": 159,
-      "tamanho": 112,
+      "x": 716,
+      "y": 386,
+      "tamanho": 183,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -39,43 +39,15 @@
     62,
     111
   ],
-  "rotulos": [
-    {
-      "texto": "SAÍDA",
-      "x": 198.9,
-      "y": 296.3,
-      "altura": 22.48,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "TOM",
-      "x": 300.0,
-      "y": 221.4,
-      "altura": 22.48,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "GANHO",
-      "x": 401.1,
-      "y": 296.3,
-      "altura": 22.48,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 300.0,
-    "y": 492.0,
-    "raio": 47.0
+    "x": 600.0,
+    "y": 1060.0,
+    "raio": 91.5
   },
   "led": {
-    "x": 300.0,
-    "y": 410.4,
-    "raio": 12.3
+    "x": 600.0,
+    "y": 831.4,
+    "raio": 26.6
   }
 }
