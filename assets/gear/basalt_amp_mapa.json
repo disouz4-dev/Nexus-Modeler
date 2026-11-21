@@ -1,33 +1,33 @@
 {
   "nome": "Basalt Amp",
-  "familia": "basalt_amp",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "tamarind_amp",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 235,
-      "y": 390,
-      "tamanho": 151,
+      "x": 108,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "tom",
-      "x": 424,
-      "y": 390,
-      "tamanho": 151,
+      "x": 208,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 818,
-      "y": 390,
-      "tamanho": 151,
+      "x": 408,
+      "y": 183,
+      "tamanho": 88,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -39,15 +39,79 @@
     95,
     121
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "NÍVEL",
+      "x": 154.6,
+      "y": 170.9,
+      "altura": 16.55,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.15
+    },
+    {
+      "texto": "ALTO",
+      "x": 252.8,
+      "y": 170.9,
+      "altura": 16.55,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.15
+    },
+    {
+      "texto": "BAIXO",
+      "x": 351.1,
+      "y": 170.9,
+      "altura": 16.55,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 449.3,
+      "y": 170.9,
+      "altura": 16.55,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MIC",
+      "x": 156.6,
+      "y": 284.0,
+      "altura": 13.23,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.1
+    },
+    {
+      "texto": "MOD",
+      "x": 239.1,
+      "y": 284.0,
+      "altura": 13.23,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.1
+    },
+    {
+      "texto": "AMP",
+      "x": 323.6,
+      "y": 284.0,
+      "altura": 13.23,
+      "achatamento": 1.0,
+      "cor": "#ffe718",
+      "espaco": 1.1
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 932.5,
-    "raio": 67.0
+    "x": 300.0,
+    "y": 475.5,
+    "raio": 35.0
   },
   "led": {
-    "x": 833.8,
-    "y": 632.9,
-    "raio": 24.1
+    "x": 424.4,
+    "y": 322.1,
+    "raio": 14.3
   }
 }

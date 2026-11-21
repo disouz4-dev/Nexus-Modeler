@@ -1,10 +1,38 @@
 {
   "nome": "Comet Wah",
   "familia": "comet_wah",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
-  "botoes": [],
+  "botoes": [
+    {
+      "id": "a",
+      "x": 228,
+      "y": 89,
+      "tamanho": 24,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 288,
+      "y": 89,
+      "tamanho": 24,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 348,
+      "y": 89,
+      "tamanho": 24,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
   "canais": [],
   "medidas_mm": [
     102,
@@ -12,8 +40,8 @@
   ],
   "rotulos": [],
   "pisante": {
-    "x": 600.0,
-    "y": 1108.5,
-    "raio": 175.5
+    "x": 300.0,
+    "y": 565.0,
+    "raio": 88.0
   }
 }
