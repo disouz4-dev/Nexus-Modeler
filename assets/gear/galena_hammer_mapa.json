@@ -1,15 +1,15 @@
 {
   "nome": "Galena Hammer",
-  "familia": "cupuacu_hammer",
-  "largura": 600,
-  "altura": 522,
+  "familia": "galena_hammer",
+  "largura": 1200,
+  "altura": 1500,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 86,
-      "y": 114,
-      "tamanho": 76,
+      "x": 208,
+      "y": 509,
+      "tamanho": 154,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 204,
-      "y": 116,
-      "tamanho": 73,
+      "x": 398,
+      "y": 386,
+      "tamanho": 154,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 438,
-      "y": 114,
-      "tamanho": 76,
+      "x": 844,
+      "y": 509,
+      "tamanho": 154,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -36,91 +36,18 @@
   ],
   "canais": [],
   "medidas_mm": [
-    140,
-    102
+    95,
+    120
   ],
-  "rotulos": [
-    {
-      "texto": "GANHO",
-      "x": 127.7,
-      "y": 203.3,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "AGUDO",
-      "x": 242.6,
-      "y": 203.3,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "GRAVE",
-      "x": 357.4,
-      "y": 203.3,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "VOLUME",
-      "x": 472.3,
-      "y": 203.3,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "FREQUÊNCIA",
-      "x": 242.6,
-      "y": 307.9,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "MÉDIO",
-      "x": 357.4,
-      "y": 307.9,
-      "altura": 11.62,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "DRIVE",
-      "x": 187.6,
-      "y": 84.3,
-      "altura": 8.89,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    },
-    {
-      "texto": "MISTURA",
-      "x": 410.1,
-      "y": 84.3,
-      "altura": 8.89,
-      "achatamento": 1.0,
-      "cor": "#0c0c0c",
-      "espaco": 1.15
-    }
-  ],
+  "rotulos": [],
   "pisante": {
-    "x": 169.0,
-    "y": 392.5,
-    "raio": 29.0
+    "x": 342.0,
+    "y": 1001.5,
+    "raio": 84.0
   },
   "led": {
-    "x": 184.6,
-    "y": 203.2,
-    "raio": 6.2
+    "x": 312.5,
+    "y": 265.8,
+    "raio": 22.1
   }
 }

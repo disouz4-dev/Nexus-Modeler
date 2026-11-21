@@ -1,24 +1,24 @@
 {
   "nome": "Labradorite Omega",
-  "familia": "labradorite_omega",
-  "largura": 1200,
-  "altura": 1500,
+  "familia": "mulberry_omega",
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 521,
-      "y": 278,
-      "tamanho": 158,
+      "x": 246,
+      "y": 127,
+      "tamanho": 107,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 752,
-      "y": 278,
-      "tamanho": 158,
+      "x": 367,
+      "y": 127,
+      "tamanho": 107,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 792,
-      "y": 514,
-      "tamanho": 156,
+      "x": 398,
+      "y": 245,
+      "tamanho": 105,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,97 @@
     94,
     120
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "MISTURA",
+      "x": 176.8,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "NÍVEL",
+      "x": 300.0,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 417.4,
+      "y": 251.8,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MOD",
+      "x": 161.1,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GRAVE",
+      "x": 256.9,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "MÉDIO",
+      "x": 345.0,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "AGUDO",
+      "x": 446.8,
+      "y": 366.6,
+      "altura": 14.15,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "GROWL",
+      "x": 243.2,
+      "y": 189.8,
+      "altura": 10.82,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    },
+    {
+      "texto": "BITE",
+      "x": 360.6,
+      "y": 189.8,
+      "altura": 10.82,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.1
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 918.5,
-    "raio": 67.5
+    "x": 300.0,
+    "y": 493.5,
+    "raio": 35.0
   },
   "led": {
-    "x": 600.0,
-    "y": 689.0,
-    "raio": 14.9
+    "x": 300.0,
+    "y": 349.9,
+    "raio": 7.5
   }
 }
