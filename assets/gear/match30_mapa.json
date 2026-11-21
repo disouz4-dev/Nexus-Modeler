@@ -2,59 +2,59 @@
   "nome": "Match 30",
   "familia": "match_30",
   "largura": 2400,
-  "altura": 2013,
+  "altura": 849,
   "posicoes": 101,
   "botoes": [
     {
       "id": "ganho",
-      "x": 618,
-      "y": 285,
-      "tamanho": 127,
+      "x": 218,
+      "y": 168,
+      "tamanho": 152,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 724,
-      "y": 285,
-      "tamanho": 127,
+      "x": 433,
+      "y": 168,
+      "tamanho": 152,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 830,
-      "y": 285,
-      "tamanho": 127,
+      "x": 648,
+      "y": 168,
+      "tamanho": 151,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1143,
-      "y": 285,
-      "tamanho": 127,
+      "x": 1078,
+      "y": 169,
+      "tamanho": 150,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1250,
-      "y": 285,
-      "tamanho": 127,
+      "x": 1294,
+      "y": 169,
+      "tamanho": 150,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1356,
-      "y": 285,
-      "tamanho": 127,
+      "x": 1508,
+      "y": 168,
+      "tamanho": 151,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -63,123 +63,5 @@
   "canais": [
     "Normal"
   ],
-  "rotulos": [
-    {
-      "texto": "1",
-      "x": 577.7,
-      "y": 358.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "2",
-      "x": 577.7,
-      "y": 439.3,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 683.6,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 789.6,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 895.5,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "1",
-      "x": 994.8,
-      "y": 358.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "2",
-      "x": 994.8,
-      "y": 439.3,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 1100.7,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TONE",
-      "x": 1206.6,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "CUT",
-      "x": 1312.5,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 1418.5,
-      "y": 441.0,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "STANDBY",
-      "x": 1703.1,
-      "y": 408.6,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    },
-    {
-      "texto": "ON",
-      "x": 1782.6,
-      "y": 408.6,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#ededed",
-      "espaco": 1.0
-    }
-  ]
+  "rotulos": []
 }
