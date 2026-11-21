@@ -1,24 +1,24 @@
 {
-  "nome": "Cartwheel King",
-  "familia": "amethyst_king",
-  "largura": 1200,
-  "altura": 1128,
+  "nome": "Amethyst King",
+  "familia": "pineapple_king",
+  "largura": 600,
+  "altura": 564,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 128,
-      "y": 198,
-      "tamanho": 203,
+      "x": 62,
+      "y": 98,
+      "tamanho": 104,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 371,
-      "y": 200,
-      "tamanho": 198,
+      "x": 184,
+      "y": 99,
+      "tamanho": 101,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -26,9 +26,9 @@
     },
     {
       "id": "tom",
-      "x": 268,
-      "y": 432,
-      "tamanho": 169,
+      "x": 133,
+      "y": 215,
+      "tamanho": 86,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -39,15 +39,70 @@
     121,
     95
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 119.5,
+      "y": 217.2,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 237.4,
+      "y": 217.2,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "VOLUME",
+      "x": 360.1,
+      "y": 217.2,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "DRIVE",
+      "x": 482.9,
+      "y": 217.2,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 179.7,
+      "y": 316.7,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 422.8,
+      "y": 316.7,
+      "altura": 14.32,
+      "achatamento": 1.0,
+      "cor": "#d9b149",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 245.0,
-    "y": 831.0,
-    "raio": 81.0
+    "x": 122.5,
+    "y": 415.5,
+    "raio": 40.5
   },
   "led": {
-    "x": 459.6,
-    "y": 700.9,
-    "raio": 16.6
+    "x": 229.8,
+    "y": 350.4,
+    "raio": 8.3
   }
 }

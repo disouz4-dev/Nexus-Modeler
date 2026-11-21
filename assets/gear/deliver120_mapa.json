@@ -1,0 +1,67 @@
+{
+  "nome": "Deliver 120",
+  "familia": "deliver120",
+  "largura": 2400,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 449,
+      "y": 610,
+      "tamanho": 140,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 644,
+      "y": 611,
+      "tamanho": 139,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1033,
+      "y": 612,
+      "tamanho": 137,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1227,
+      "y": 612,
+      "tamanho": 137,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1422,
+      "y": 612,
+      "tamanho": 137,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1614,
+      "y": 611,
+      "tamanho": 139,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
