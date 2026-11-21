@@ -1,0 +1,89 @@
+{
+  "nome": "Black Cat 30",
+  "familia": "blackcat30",
+  "largura": 2400,
+  "altura": 890,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 295,
+      "y": 195,
+      "tamanho": 149,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 496,
+      "y": 196,
+      "tamanho": 147,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 697,
+      "y": 197,
+      "tamanho": 144,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 897,
+      "y": 198,
+      "tamanho": 142,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1098,
+      "y": 199,
+      "tamanho": 141,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1695,
+      "y": 196,
+      "tamanho": 146,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1893,
+      "y": 195,
+      "tamanho": 148,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Drive"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 1426.5,
+      "y": 270.5,
+      "raio": 4.6
+    },
+    {
+      "x": 1630.3,
+      "y": 270.5,
+      "raio": 4.6
+    }
+  ]
+}
