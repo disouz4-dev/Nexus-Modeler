@@ -1,24 +1,24 @@
 {
   "nome": "Cherry Drop",
   "familia": "cherry_drop",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "a",
-      "x": 478,
-      "y": 194,
-      "tamanho": 243,
+      "x": 134,
+      "y": 92,
+      "tamanho": 134,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 290,
-      "y": 1034,
-      "tamanho": 152,
+      "x": 137,
+      "y": 259,
+      "tamanho": 128,
       "arquivo": "botao_b.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -29,21 +29,40 @@
     73,
     120
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "AFINAÇÃO",
+      "x": 204.7,
+      "y": 249.6,
+      "altura": 21.11,
+      "achatamento": 1.0,
+      "cor": "#ffffff",
+      "espaco": 1.15
+    },
+    {
+      "texto": "TOM",
+      "x": 204.7,
+      "y": 409.7,
+      "altura": 21.11,
+      "achatamento": 1.0,
+      "cor": "#ffffff",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1180.5,
-    "raio": 85.5
+    "x": 302.0,
+    "y": 593.0,
+    "raio": 45.0
   },
   "led": {
-    "x": 600.0,
-    "y": 1014.9,
-    "raio": 29.5
+    "x": 387.0,
+    "y": 584.8,
+    "raio": 9.8
   },
   "visor": {
-    "x": 326.7,
-    "y": 500.8,
-    "w": 359.4,
-    "h": 117.0
+    "x": 318.4,
+    "y": 128.8,
+    "w": 134.9,
+    "h": 78.2
   }
 }
