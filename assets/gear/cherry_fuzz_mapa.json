@@ -1,24 +1,24 @@
 {
   "nome": "Cherry Fuzz",
   "familia": "cherry_fuzz",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "nivel",
-      "x": 342,
-      "y": 477,
-      "tamanho": 98,
+      "x": 156,
+      "y": 229,
+      "tamanho": 76,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 760,
-      "y": 474,
-      "tamanho": 98,
+      "x": 378,
+      "y": 229,
+      "tamanho": 76,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -30,10 +30,29 @@
     150,
     150
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "VOLUME",
+      "x": 195.5,
+      "y": 315.0,
+      "altura": 10.32,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    },
+    {
+      "texto": "FUZZ",
+      "x": 414.2,
+      "y": 315.0,
+      "altura": 10.32,
+      "achatamento": 1.0,
+      "cor": "#f2f0eb",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 903.0,
-    "raio": 38.5
+    "x": 300.0,
+    "y": 460.0,
+    "raio": 20.0
   }
 }

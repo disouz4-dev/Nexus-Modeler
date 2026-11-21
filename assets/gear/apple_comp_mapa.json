@@ -1,25 +1,34 @@
 {
   "nome": "Apple Comp",
   "familia": "apple_comp",
-  "largura": 1200,
-  "altura": 1500,
+  "largura": 600,
+  "altura": 750,
   "posicoes": 101,
   "botoes": [
     {
       "id": "a",
-      "x": 307,
-      "y": 229,
-      "tamanho": 240,
+      "x": 152,
+      "y": 102,
+      "tamanho": 134,
       "arquivo": "botao_a.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "b",
-      "x": 652,
-      "y": 229,
-      "tamanho": 240,
+      "x": 314,
+      "y": 102,
+      "tamanho": 134,
       "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 398,
+      "y": 522,
+      "tamanho": 60,
+      "arquivo": "botao_c.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
@@ -29,15 +38,43 @@
     62,
     111
   ],
-  "rotulos": [],
+  "rotulos": [
+    {
+      "texto": "SAÍDA",
+      "x": 221.6,
+      "y": 261.9,
+      "altura": 22.48,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "SENSIBILIDADE",
+      "x": 378.4,
+      "y": 261.9,
+      "altura": 22.48,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    },
+    {
+      "texto": "ATAQUE",
+      "x": 425.4,
+      "y": 603.8,
+      "altura": 14.62,
+      "achatamento": 1.0,
+      "cor": "#0c0c0c",
+      "espaco": 1.15
+    }
+  ],
   "pisante": {
-    "x": 600.0,
-    "y": 1023.0,
-    "raio": 92.0
+    "x": 300.0,
+    "y": 511.5,
+    "raio": 47.0
   },
   "led": {
-    "x": 600.0,
-    "y": 851.8,
-    "raio": 29.2
+    "x": 300.0,
+    "y": 424.9,
+    "raio": 11.7
   }
 }
