@@ -1,0 +1,67 @@
+{
+  "nome": "Jazz 120",
+  "familia": "jazz_120",
+  "largura": 2400,
+  "altura": 1869,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 421,
+      "y": 298,
+      "tamanho": 80,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 890,
+      "y": 299,
+      "tamanho": 79,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 993,
+      "y": 299,
+      "tamanho": 79,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1096,
+      "y": 299,
+      "tamanho": 79,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1200,
+      "y": 299,
+      "tamanho": 79,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1301,
+      "y": 299,
+      "tamanho": 79,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

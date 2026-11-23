@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T12:12:22Z",
+ "gerado": "2026-11-23T12:27:57Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3014,6 +3014,45 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "jazz120": {
+   "nome": "Jazz 120",
+   "hash": "939a081021957b10",
+   "data": "2026-11-23T12:27:49Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jazz120_botao_agudo.png",
+    "jazz120_botao_ganho.png",
+    "jazz120_botao_grave.png",
+    "jazz120_botao_medio.png",
+    "jazz120_botao_presenca.png",
+    "jazz120_botao_volume.png",
+    "jazz120_frente.jpg",
+    "jazz120_frente_alfa.png",
+    "jazz120_manifesto.json",
+    "jazz120_mapa.json"
+   ],
+   "sha256": {
+    "jazz120_botao_agudo.png": "9e7fccc95648edccf3fb79cc6d9a95c3d22e0836ad25ee7901e36710a0007e4a",
+    "jazz120_botao_ganho.png": "fdd7835c7b7652a222b9d76fa844be107ba7da7541acf13cf6d54bd5d73bea44",
+    "jazz120_botao_grave.png": "67b04854008511fc71fc688dd43b1a66b4a90a25a79a0eb7067344381dc4eb7a",
+    "jazz120_botao_medio.png": "de462b7b6d2a3f265e50e65fb0900392b4411cc71d10a75ea3d0e6ebbf04fd34",
+    "jazz120_botao_presenca.png": "4c00cc1da1ed79e0ef37f81d9c88b7cc7d0d0892645f5d3306369a5d743b7606",
+    "jazz120_botao_volume.png": "90cfd9a6cf9af34ed2449ae818f0b3725f69c2f2ccbe87ced94a0827ce3275e5",
+    "jazz120_frente.jpg": "ac9f6c8805c47abd2a99a38aa952bc422149281b5d4244acf622d998e6d9d491",
+    "jazz120_frente_alfa.png": "31d541a29be9d3652a9b03823147e5eef4c5103d3485d7a69e57ca6b1fcbecc9",
+    "jazz120_manifesto.json": "34ed999f4f9dd33cd3c09d6fa278047b8fec2dc108989bbe203705617e86657a",
+    "jazz120_mapa.json": "1a7ef63da8d37ecb3ee0adb8ffc2878c3792d636f03e37b30111ca8197df3f55"
+   },
+   "tamanho": 1293261,
+   "tipo": "cabecote",
+   "inspiracao": "JC-120",
+   "categoria": "Limpos de transistor",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "jazz_212": {
    "nome": "Jazz 2x12",
    "hash": "c3e97e46b6690102",
@@ -4696,6 +4735,119 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "silverprince": {
+   "nome": "Silver Prince",
+   "hash": "5abfb5de743fd1c5",
+   "data": "2026-11-23T12:27:49Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silverprince_botao_agudo.png",
+    "silverprince_botao_ganho.png",
+    "silverprince_botao_grave.png",
+    "silverprince_botao_presenca.png",
+    "silverprince_frente.jpg",
+    "silverprince_frente_alfa.png",
+    "silverprince_manifesto.json",
+    "silverprince_mapa.json"
+   ],
+   "sha256": {
+    "silverprince_botao_agudo.png": "01271766872e41a8336b7ff32b45cf98a3a46ce3abf38069e8b4c9c836190749",
+    "silverprince_botao_ganho.png": "00b7de0586255fca9981d2a10477791845167599393d400265762b424a90472a",
+    "silverprince_botao_grave.png": "9f1dc8bf7cb426329d131e1efc0d2414bf0c0aa2fb71466efece7f66601deb92",
+    "silverprince_botao_presenca.png": "d7b177c7da3ba77906ce76c0c06ebd54aafe4c03f7d8c1d4ba0b4aaf3d72d27c",
+    "silverprince_frente.jpg": "225bfa6e34393c6b0f21a9eeb3f6dc255010ebcf1e0ddf32f2bceeec56ef9cc4",
+    "silverprince_frente_alfa.png": "9d452a35c05c23c2ee5665cfc99d00fa82a0606882351ed1f8969469fd95ca72",
+    "silverprince_manifesto.json": "00ea420f060e8a50718024087f54a5ecd6b31edb02595e334cc4c73e7edc3073",
+    "silverprince_mapa.json": "3803b4c80d330420ed1d10301bf946615f291d0e0786180db455b2b8f5af1058"
+   },
+   "tamanho": 2508585,
+   "tipo": "cabecote",
+   "inspiracao": "Princeton Reverb",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "silversuper": {
+   "nome": "Silver Super",
+   "hash": "758a94cca6a6760e",
+   "data": "2026-11-23T12:27:49Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silversuper_botao_agudo.png",
+    "silversuper_botao_ganho.png",
+    "silversuper_botao_grave.png",
+    "silversuper_botao_medio.png",
+    "silversuper_botao_presenca.png",
+    "silversuper_botao_volume.png",
+    "silversuper_frente.jpg",
+    "silversuper_frente_alfa.png",
+    "silversuper_manifesto.json",
+    "silversuper_mapa.json"
+   ],
+   "sha256": {
+    "silversuper_botao_agudo.png": "c11fcb1de396fe9a17845048f9772213c3cbe1514f91c826643f6fc9f6d287fd",
+    "silversuper_botao_ganho.png": "6e35f2ac1e17f5063baf0f1f48e0d67404bb8c39c49ece20481190bfbbdedc87",
+    "silversuper_botao_grave.png": "6c897a9baadc3d08680b096e9e76a317492cec3d3b5dba04ed46112f6e2fd30e",
+    "silversuper_botao_medio.png": "40f88b1628ca697bcbe2ee42a5c54051619c934de25f63b6bb5939c83687eedc",
+    "silversuper_botao_presenca.png": "bcee2cb9e07fee593d3db65deffcc4f5bb0748c9029692779f7f607ec603612c",
+    "silversuper_botao_volume.png": "14b02f4bcd0ec90df132899dfb6fa816f06551ab4fa4f1c1f4662c440814072f",
+    "silversuper_frente.jpg": "bf7e70f910f28c19cb9c7f29e3ebeb2798e1f36d2de03dd4fd32a0409583d016",
+    "silversuper_frente_alfa.png": "3b63a6e201b3b7d826c7e5e27642e7a48118722491685ac64c9c6651c642ae09",
+    "silversuper_manifesto.json": "6a9024fcba3a10f049a5fcdd80dec0b44e028772a75a13374c4c4c93e287dea3",
+    "silversuper_mapa.json": "2757c2903dedf47c6f434136ee0d338688bfd5cacb73faec35440caf66252d25"
+   },
+   "tamanho": 2868757,
+   "tipo": "cabecote",
+   "inspiracao": "Super Reverb",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "silvertwin": {
+   "nome": "Silver Twin",
+   "hash": "f70f0e77cab7df06",
+   "data": "2026-11-23T12:27:49Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silvertwin_botao_agudo.png",
+    "silvertwin_botao_ganho.png",
+    "silvertwin_botao_grave.png",
+    "silvertwin_botao_medio.png",
+    "silvertwin_botao_presenca.png",
+    "silvertwin_botao_volume.png",
+    "silvertwin_frente.jpg",
+    "silvertwin_frente_alfa.png",
+    "silvertwin_manifesto.json",
+    "silvertwin_mapa.json"
+   ],
+   "sha256": {
+    "silvertwin_botao_agudo.png": "6c0e8f7f4ff5fdbbdc34afad2a4d5b2fd14acac95d7e82f3fdd3289b88a3feeb",
+    "silvertwin_botao_ganho.png": "7c44e4b61c1086b28e84af05422e504350915816a8a51582c86c9f84600087c8",
+    "silvertwin_botao_grave.png": "d51e492ebde3a21c956dd0f538f8d676ee26d3fe29618b461787e21a7c338f42",
+    "silvertwin_botao_medio.png": "13de02b13c9c29868b961515733fcdd6c700046211005f75f4c2562b8f9f0b53",
+    "silvertwin_botao_presenca.png": "bc63333a8227421e739dc625dce34b94a1ec7008b87e5d3538a49f4f8d7ed995",
+    "silvertwin_botao_volume.png": "20922e407aba1b7abf5adc65db87d098c78a675879cd74806081279219882048",
+    "silvertwin_frente.jpg": "1a15449c40996942b968fe6af267a3b6f4d6be810cb19bdb56ce335aa868d563",
+    "silvertwin_frente_alfa.png": "da58b6862c5a47d9773fbaf176830e530558a9dad75d1287e41454faff91dc30",
+    "silvertwin_manifesto.json": "f2c3cb64c0561424a075047466cb814c837833a320465a587c52af6f86865f44",
+    "silvertwin_mapa.json": "c4ac4c8e79f2e3c0540a4130ea682c172d5d9be1d35395f9e82e11edb975a5e7"
+   },
+   "tamanho": 2258038,
+   "tipo": "cabecote",
+   "inspiracao": "Twin Reverb",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "sl100": {
    "nome": "SL 100",

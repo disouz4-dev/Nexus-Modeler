@@ -1,0 +1,67 @@
+{
+  "nome": "Silver Twin",
+  "familia": "silver_twin",
+  "largura": 2400,
+  "altura": 1958,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 481,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 579,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 677,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 774,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1160,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1759,
+      "y": 306,
+      "tamanho": 78,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

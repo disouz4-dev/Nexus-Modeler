@@ -1,0 +1,67 @@
+{
+  "nome": "Silver Super",
+  "familia": "silversuper",
+  "largura": 2400,
+  "altura": 2520,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 440,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1032,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1145,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1257,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1370,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1706,
+      "y": 345,
+      "tamanho": 90,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

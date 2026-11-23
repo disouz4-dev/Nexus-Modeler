@@ -1,0 +1,49 @@
+{
+  "nome": "Silver Prince",
+  "familia": "silverprince",
+  "largura": 2400,
+  "altura": 2160,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 521,
+      "y": 429,
+      "tamanho": 155,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 734,
+      "y": 430,
+      "tamanho": 154,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 946,
+      "y": 430,
+      "tamanho": 154,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1584,
+      "y": 430,
+      "tamanho": 154,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
