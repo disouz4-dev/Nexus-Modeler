@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T21:11:45Z",
+ "gerado": "2026-11-23T23:04:18Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -1982,6 +1982,51 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "crown100": {
+   "nome": "Crown 100",
+   "hash": "e7e26cc1f570aff4",
+   "data": "2026-11-23T23:04:08Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "crown100_botao_agudo.png",
+    "crown100_botao_canal.png",
+    "crown100_botao_ganho_1.png",
+    "crown100_botao_ganho_2.png",
+    "crown100_botao_ganho_3.png",
+    "crown100_botao_grave.png",
+    "crown100_botao_medio.png",
+    "crown100_botao_presenca.png",
+    "crown100_botao_volume.png",
+    "crown100_frente.jpg",
+    "crown100_frente_alfa.png",
+    "crown100_manifesto.json",
+    "crown100_mapa.json"
+   ],
+   "sha256": {
+    "crown100_botao_agudo.png": "56ddbb3aed013305611c9128be615388a104e2e2e4bff2ce45a8c24912c4d158",
+    "crown100_botao_canal.png": "ffbc1308082fb54446139e4156c46b95115a7e03c0076eaf59543092bc2f4f3a",
+    "crown100_botao_ganho_1.png": "c3bf47e9567242e54f360366d77885732026eaa93737453db5beacba7eb13dc5",
+    "crown100_botao_ganho_2.png": "00f730c625f5e6a692781744fd15ca2a5810a980d574440af846d122823d0ab5",
+    "crown100_botao_ganho_3.png": "59c0b7740a0f68d532ccd2f7777a9dc114ff99414a5dbf9b5c9b48cd73cd77c6",
+    "crown100_botao_grave.png": "30dcd028229204e2a7293bfb958d46ae21e2fd2f4245b711272ce7ac408433d1",
+    "crown100_botao_medio.png": "6cb0b251c6a200da9b34b6a86c00eafea4338a358ac7c57f7c8d5a774493c0f0",
+    "crown100_botao_presenca.png": "ea53f645678e5184c8f72d3ec23f31943327828186e00458ca747115c6631d4c",
+    "crown100_botao_volume.png": "c5290e90d7f02b8a4164bc58b1b5fd8496253f360839156f37ae03c5517f70a6",
+    "crown100_frente.jpg": "2daa556aa3de54ff60d7fb3f43aaac1a7acecff74f3446fca66f9e36dce72114",
+    "crown100_frente_alfa.png": "3ed37032d595f117c6872666ffb19d3458cc14f65e67333adf9400d6c66be7c8",
+    "crown100_manifesto.json": "e7854234c784fe6d94935d5cd401b4a079e7317e75cdc1f6c3dfe0f0caa85525",
+    "crown100_mapa.json": "0bef0c330dd0e1dd8638b7d98d6ac1d2ebec0bf59542ccfa0b05a18405f7e9f9"
+   },
+   "tamanho": 1977299,
+   "tipo": "cabecote",
+   "inspiracao": "Mesa/Boogie Triple Crown TC-100",
+   "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "dark_matter_metal": {
    "nome": "Dark Matter Metal",

@@ -1,0 +1,129 @@
+{
+  "nome": "Crown 100",
+  "familia": "crown100",
+  "largura": 2400,
+  "altura": 1012,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 708,
+      "y": 617,
+      "tamanho": 126,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 822,
+      "y": 617,
+      "tamanho": 125,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_1",
+      "x": 926,
+      "y": 618,
+      "tamanho": 124,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 1371,
+      "y": 618,
+      "tamanho": 124,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_3",
+      "x": 1813,
+      "y": 615,
+      "tamanho": 129,
+      "arquivo": "botao_ganho_3.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 708,
+      "y": 795,
+      "tamanho": 126,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 822,
+      "y": 795,
+      "tamanho": 125,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 925,
+      "y": 795,
+      "tamanho": 125,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "canal",
+      "x": 1942,
+      "y": 634,
+      "tamanho": 91,
+      "arquivo": "botao_canal.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "chave"
+    }
+  ],
+  "canais": [
+    "HI",
+    "LO",
+    "CLEAN"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 1031.7,
+      "y": 787.9,
+      "raio": 12.1
+    },
+    {
+      "x": 1474.9,
+      "y": 787.9,
+      "raio": 12.1
+    },
+    {
+      "x": 1918.1,
+      "y": 787.9,
+      "raio": 12.1
+    }
+  ],
+  "canais_som": [
+    "distorcido",
+    "crunch",
+    "limpo"
+  ],
+  "troca_canal": {
+    "tipo": "chave",
+    "pontos": [
+      {
+        "x": 1984.8,
+        "y": 679.2,
+        "raio": 27.8
+      }
+    ]
+  }
+}
