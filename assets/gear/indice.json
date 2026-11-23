@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T14:24:49Z",
+ "gerado": "2026-11-23T14:39:02Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5240,6 +5240,43 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "taco20": {
+   "nome": "Taco 20",
+   "hash": "7b2642782d39f5be",
+   "data": "2026-11-23T14:38:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "taco20_botao_agudo.png",
+    "taco20_botao_ganho.png",
+    "taco20_botao_grave.png",
+    "taco20_botao_medio.png",
+    "taco20_botao_volume.png",
+    "taco20_frente.jpg",
+    "taco20_frente_alfa.png",
+    "taco20_manifesto.json",
+    "taco20_mapa.json"
+   ],
+   "sha256": {
+    "taco20_botao_agudo.png": "fc7255ec729fdbb0a63a0666162f34c2518e5697c6c704eabc454fb585b53bec",
+    "taco20_botao_ganho.png": "63a3705fab9560164228b3cf941c1589a7727c7da42edbd7c3872f5a94e3b906",
+    "taco20_botao_grave.png": "b5a2aedebb385ff9508a7187c342db5d1cc3ca30194dc22e6fa7cd48e79e7fab",
+    "taco20_botao_medio.png": "bbac1b871792528a99053735c8ec5aab57fe11764395226483709793835f96bf",
+    "taco20_botao_volume.png": "305ef9513646095aa189bc6217f0f11feccea69551d5747fb86d0ed2e5e2d04a",
+    "taco20_frente.jpg": "953a9ddcdb38f28872879ecdd1cd3bf6447eed66d60e8cb81ae1da6ed9e2e1ca",
+    "taco20_frente_alfa.png": "8131c617bb1276fb2c776e14d5e3407852dbd20423d0db6d5a72ef7625fc84b8",
+    "taco20_manifesto.json": "53e5a51b86a11d53ced16e2645db46f64efaa0ca1b0a0bd8adcee8b0fed19fcd",
+    "taco20_mapa.json": "c8c6094cd7c4ad19f469966603c374af8723d5cff5edf877cb2a56bd6bf51898"
+   },
+   "tamanho": 1424393,
+   "tipo": "cabecote",
+   "inspiracao": "Friedman PT-20 Pink Taco",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "tadpole_bender": {
    "nome": "Tadpole Bender",
