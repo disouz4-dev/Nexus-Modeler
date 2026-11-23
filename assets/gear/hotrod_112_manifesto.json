@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "hotrod_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Hot Rod 1x12",
+  "inspiracao": "Fender Hot Rod Deluxe (parte do falante)",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Fender Hot Rod Deluxe (parte do falante)",
+      "tons": [
+        {
+          "id": 6003,
+          "titulo": "Hot Rod Deluxe Cabinet Celestion G12P-80",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "nota": "o próprio Hot Rod Deluxe 1x12, G12P-80",
+          "ir_padrao": "Hot Rod Deluxe 1x12 Celestion G12P-80 - SM57 - Cone Edge",
+          "padrao": true
+        },
+        {
+          "id": 79919,
+          "titulo": "Fender Hot Rod Deluxe Cabinet with Celestion G12P-80 Speaker IR Pack",
+          "criador": "MaestrodiMusica",
+          "tipo": "cab",
+          "nota": "mesmo combo, outro microfone",
+          "ir_padrao": "Hot Rod Deluxe 1x12 Celestion G12P-80 - R121 - Cone Edge"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

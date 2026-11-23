@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "tweed_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Tweed 57 1x12",
+  "inspiracao": "Fender 57 Deluxe (parte do falante)",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Fender 57 Deluxe (parte do falante)",
+      "tons": [
+        {
+          "id": 1615,
+          "titulo": "1958 Deluxe IR",
+          "criador": "simonbaughen",
+          "tipo": "cab",
+          "nota": "o próprio Deluxe tweed (1958, Oxford)",
+          "ir_padrao": "1958 Oxford Speaker Normalised",
+          "padrao": true
+        },
+        {
+          "id": 63881,
+          "titulo": "Impulses for DIY Tweed Deluxe 5E3 Head",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "caixa 1x12 de Deluxe 5E3",
+          "ir_padrao": "A800 TM60 1x12 A12Q SM48 0.0in Off Center On Axis 0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

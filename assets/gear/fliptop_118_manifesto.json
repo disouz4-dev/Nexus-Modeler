@@ -1,0 +1,31 @@
+{
+  "formato": 1,
+  "id": "fliptop_118",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Fliptop 1x18",
+  "inspiracao": "Ampeg B-18-N Portaflex (caixa)",
+  "categoria": "1x18",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Ampeg B-18-N Portaflex (caixa)",
+      "tons": [
+        {
+          "id": 67574,
+          "titulo": "Ampeg B15N",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "sem IR do B-18: o Portaflex irmão",
+          "ir_padrao": "Ampeg B15N (SM57 + R121)",
+          "padrao": true
+        }
+      ]
+    }
+  },
+  "signature": null
+}

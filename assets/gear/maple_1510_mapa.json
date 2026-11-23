@@ -1,0 +1,19 @@
+{
+  "nome": "Maple 1x15 2x10",
+  "familia": "maple_1510",
+  "largura": 2400,
+  "altura": 4224,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    565,
+    819
+  ],
+  "falantes": {
+    "linhas": 3,
+    "colunas": 1,
+    "polegadas": 10
+  },
+  "rotulos": []
+}

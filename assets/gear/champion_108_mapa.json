@@ -1,0 +1,19 @@
+{
+  "nome": "Champion 1x8",
+  "familia": "champion_108",
+  "largura": 2400,
+  "altura": 2224,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    343,
+    318
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 8
+  },
+  "rotulos": []
+}

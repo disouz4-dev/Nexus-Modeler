@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "littletube_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Little Tube 4x10",
+  "inspiracao": "Markbass Standard 104HF",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Markbass Standard 104HF",
+      "tons": [
+        {
+          "id": 45275,
+          "titulo": "David Eden DT410 IR collection - bass cab",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "não há Markbass na TONE3000; 4x10 de baixo moderna com corneta",
+          "ir_padrao": "Eden 4x10 D6 AH",
+          "padrao": true
+        },
+        {
+          "id": 102148,
+          "titulo": "SWR Goliath",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "outra 4x10 de baixo com corneta",
+          "ir_padrao": "SWR Goliath (SM57 + RE20)"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

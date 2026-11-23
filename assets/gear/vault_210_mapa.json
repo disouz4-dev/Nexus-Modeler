@@ -1,0 +1,19 @@
+{
+  "nome": "Vault 2x10",
+  "familia": "vault_210",
+  "largura": 2400,
+  "altura": 2093,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    552,
+    560
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}

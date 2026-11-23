@@ -1,0 +1,19 @@
+{
+  "nome": "Black Cat 2x12",
+  "familia": "blackcat_212",
+  "largura": 2400,
+  "altura": 2016,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    660,
+    483
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

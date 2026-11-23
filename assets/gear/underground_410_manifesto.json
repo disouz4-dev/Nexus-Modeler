@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "underground_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Underground 4x10",
+  "inspiracao": "Mesa/Boogie Subway Ultra-Lite 4x10",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Mesa/Boogie Subway Ultra-Lite 4x10",
+      "tons": [
+        {
+          "id": 67572,
+          "titulo": "Mesa Powerhouse 410 & 410+215",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "sem IR da Subway 4x10: outra Mesa 4x10",
+          "ir_padrao": "Mesa Powerhouse 410 (SM57 + MD421)",
+          "padrao": true
+        },
+        {
+          "id": 31188,
+          "titulo": "Mesa Boogie Subway 1x15",
+          "criador": "salamiexcerpt5j",
+          "tipo": "cab",
+          "nota": "Mesa da linha Subway",
+          "ir_padrao": "Mesa Boogie Subway 115_SM57_Close_OnAxis"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

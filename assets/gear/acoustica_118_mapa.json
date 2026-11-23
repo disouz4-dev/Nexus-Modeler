@@ -1,0 +1,19 @@
+{
+  "nome": "Acoustica 1x18",
+  "familia": "acoustica_118",
+  "largura": 2400,
+  "altura": 5268,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    622,
+    1219
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 18
+  },
+  "rotulos": []
+}

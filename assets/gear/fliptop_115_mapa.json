@@ -1,8 +1,19 @@
 {
   "nome": "Fliptop 1x15",
   "familia": "fliptop_115",
-  "largura": 1246,
-  "altura": 1600,
+  "largura": 2400,
+  "altura": 3082,
   "posicoes": 101,
-  "botoes": []
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    580,
+    660
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 15
+  },
+  "rotulos": []
 }

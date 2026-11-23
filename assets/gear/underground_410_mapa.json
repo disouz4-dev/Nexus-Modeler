@@ -1,0 +1,19 @@
+{
+  "nome": "Underground 4x10",
+  "familia": "underground_410",
+  "largura": 2400,
+  "altura": 2759,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    603,
+    619
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10
+  },
+  "rotulos": []
+}

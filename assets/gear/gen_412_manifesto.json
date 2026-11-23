@@ -1,0 +1,38 @@
+{
+  "formato": 1,
+  "id": "gen_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Gen 4x12",
+  "inspiracao": "Revv 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Revv 4x12",
+      "tons": [
+        {
+          "id": 95629,
+          "titulo": "REVV 412 RV30 / Karnivore",
+          "criador": "pieceof",
+          "tipo": "cab",
+          "nota": "a própria Revv 4x12",
+          "ir_padrao": "REVV 412 - RV30",
+          "padrao": true
+        },
+        {
+          "id": 95090,
+          "titulo": "Revv 4x12 Karnivore Speaker",
+          "criador": "dreamsofgray",
+          "tipo": "cab",
+          "nota": "Revv 4x12 com o falante Karnivore"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

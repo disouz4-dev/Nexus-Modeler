@@ -1,0 +1,19 @@
+{
+  "nome": "Special 2x12",
+  "familia": "special_212",
+  "largura": 2400,
+  "altura": 2160,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    711,
+    559
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

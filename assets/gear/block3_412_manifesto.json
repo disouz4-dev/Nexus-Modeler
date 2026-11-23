@@ -1,0 +1,38 @@
+{
+  "formato": 1,
+  "id": "block3_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Block III 4x12",
+  "inspiracao": "EVH 5150III 4x12",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "EVH 5150III 4x12",
+      "tons": [
+        {
+          "id": 40738,
+          "titulo": "Celestion G12-EVH - EVH 5150III 4x12",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "a própria 5150III 4x12",
+          "ir_padrao": "G12-EVH UR 5150III 4x12 SM57 1.50in 0.0in VP28",
+          "padrao": true
+        },
+        {
+          "id": 45021,
+          "titulo": "EVH 5150III 4x12 Pt 2: G12-EVH",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "a mesma caixa, segunda parte"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

@@ -1,0 +1,19 @@
+{
+  "nome": "Emperor 1x12",
+  "familia": "emperor_112",
+  "largura": 2400,
+  "altura": 1867,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    572,
+    445
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

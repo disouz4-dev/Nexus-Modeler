@@ -1,0 +1,19 @@
+{
+  "nome": "Wind 2x15",
+  "familia": "wind_215",
+  "largura": 2400,
+  "altura": 4142,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    610,
+    890
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 15
+  },
+  "rotulos": []
+}

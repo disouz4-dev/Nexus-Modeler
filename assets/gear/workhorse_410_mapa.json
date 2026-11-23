@@ -1,0 +1,30 @@
+{
+  "nome": "Workhorse 4x10",
+  "familia": "workhorse_410",
+  "largura": 2400,
+  "altura": 2635,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    584,
+    641
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 2,
+    "polegadas": 10,
+    "corneta": {
+      "lado_m": 0.13,
+      "forma": "losango",
+      "cor": [
+        0.8,
+        0.8,
+        0.82
+      ],
+      "boca_rel": 0.3,
+      "profundidade_m": 0.07
+    }
+  },
+  "rotulos": []
+}

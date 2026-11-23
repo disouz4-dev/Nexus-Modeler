@@ -1,0 +1,31 @@
+{
+  "formato": 1,
+  "id": "special_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Special 2x12",
+  "inspiracao": "Dumble 2x12 (1983)",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Dumble 2x12 (1983)",
+      "tons": [
+        {
+          "id": 5646,
+          "titulo": "Bogner 212C 2x12 with Electro-Voice EVM12L IR Collection",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "nota": "sem IR da caixa: 2x12 com o falante da Dumble (EVM12L)",
+          "ir_padrao": "Bogner 2x12 EVM12L - MD421 1 - Cone Edge",
+          "padrao": true
+        }
+      ]
+    }
+  },
+  "signature": null
+}

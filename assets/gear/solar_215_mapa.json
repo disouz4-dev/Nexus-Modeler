@@ -6,5 +6,14 @@
   "posicoes": 101,
   "botoes": [],
   "canais": [],
+  "medidas_mm": [
+    610,
+    1016
+  ],
+  "falantes": {
+    "linhas": 2,
+    "colunas": 1,
+    "polegadas": 15
+  },
   "rotulos": []
 }

@@ -1,0 +1,19 @@
+{
+  "nome": "Magick 1x12",
+  "familia": "magick_112",
+  "largura": 2400,
+  "altura": 2193,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    521,
+    476
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

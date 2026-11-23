@@ -1,0 +1,19 @@
+{
+  "nome": "Hot Rod 1x12",
+  "familia": "hotrod_112",
+  "largura": 2400,
+  "altura": 1912,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    597,
+    476
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 1,
+    "polegadas": 12
+  },
+  "rotulos": []
+}

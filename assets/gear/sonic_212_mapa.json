@@ -1,0 +1,19 @@
+{
+  "nome": "Sonic 2x12",
+  "familia": "sonic_212",
+  "largura": 2400,
+  "altura": 1800,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    813,
+    483
+  ],
+  "falantes": {
+    "linhas": 1,
+    "colunas": 2,
+    "polegadas": 12
+  },
+  "rotulos": []
+}
