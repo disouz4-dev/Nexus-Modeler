@@ -1,0 +1,70 @@
+{
+  "nome": "Jet 20",
+  "familia": "jet20",
+  "largura": 2400,
+  "altura": 1200,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 507,
+      "y": 835,
+      "tamanho": 186,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 694,
+      "y": 837,
+      "tamanho": 183,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 880,
+      "y": 837,
+      "tamanho": 182,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1065,
+      "y": 837,
+      "tamanho": 182,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1251,
+      "y": 837,
+      "tamanho": 182,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1436,
+      "y": 837,
+      "tamanho": 182,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [],
+  "canais_som": [
+    "crunch"
+  ]
+}

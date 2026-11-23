@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T23:12:25Z",
+ "gerado": "2026-11-23T23:36:47Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3196,6 +3196,45 @@
    "tamanho": 1063493,
    "tipo": "cabecote",
    "inspiracao": "Jet City JCA100H",
+   "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "jet20": {
+   "nome": "Jet 20",
+   "hash": "df48b55cdb83bbec",
+   "data": "2026-11-23T23:36:33Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jet20_botao_agudo.png",
+    "jet20_botao_ganho.png",
+    "jet20_botao_grave.png",
+    "jet20_botao_medio.png",
+    "jet20_botao_presenca.png",
+    "jet20_botao_volume.png",
+    "jet20_frente.jpg",
+    "jet20_frente_alfa.png",
+    "jet20_manifesto.json",
+    "jet20_mapa.json"
+   ],
+   "sha256": {
+    "jet20_botao_agudo.png": "184106253b0ef75aa445190e2cafb15aa3ae80eed014c5d2bfa70b63c7dd5287",
+    "jet20_botao_ganho.png": "1c533215d3f095e87bcdbd64531bdc5592733290505d27ede2f4d0a405c7a4c2",
+    "jet20_botao_grave.png": "d9a82f824bb31e1c45f3f370dbfdd3f695e5da17c79df7516b26520be6486ea7",
+    "jet20_botao_medio.png": "53c26364b1312524b8e2235238a7e09106395926ebbd2ff8cdbe0137680dd328",
+    "jet20_botao_presenca.png": "a30cdc6e807cdc7c4d9ecf71800879e9caed4acab3d0af612344ddb6fdf31492",
+    "jet20_botao_volume.png": "025bae533a276e5c58f73ac863b36274c226d85aebad15e62db2680d341fc0cb",
+    "jet20_frente.jpg": "d6a867b5f473b7c949d722ef3607d2fa28589b2648215f6f4491071f364e87cb",
+    "jet20_frente_alfa.png": "e3fbc98f32865aa28bf2e5a0a5585c8e9237d3f337a18a54a5280e38bce0cd1c",
+    "jet20_manifesto.json": "c2d079410beac7ff9b45067059e374efa3f311ac282a5bc886b34b72d539ff89",
+    "jet20_mapa.json": "f349d460e59226683a9f85a5a95996d923a59020be0837dba0ac713f884e5a11"
+   },
+   "tamanho": 3156130,
+   "tipo": "cabecote",
+   "inspiracao": "Jet City JCA20H",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
