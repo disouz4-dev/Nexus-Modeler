@@ -1,0 +1,44 @@
+{
+  "nome": "Sunflower Drive",
+  "familia": "sunflower_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 316,
+      "y": 166,
+      "tamanho": 208,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 676,
+      "y": 166,
+      "tamanho": 208,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    70,
+    125
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 961.5,
+    "raio": 292.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 206.5,
+    "raio": 17.9
+  }
+}

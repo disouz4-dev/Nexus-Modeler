@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T14:50:37Z",
+ "gerado": "2026-11-23T14:54:17Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5240,6 +5240,37 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "sunflower_drive": {
+   "nome": "Sunflower Drive",
+   "hash": "9e3cb3e259f77eec",
+   "data": "2026-11-23T14:54:09Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sunflower_drive_botao_ganho.png",
+    "sunflower_drive_botao_nivel.png",
+    "sunflower_drive_frente.jpg",
+    "sunflower_drive_frente_alfa.png",
+    "sunflower_drive_manifesto.json",
+    "sunflower_drive_mapa.json"
+   ],
+   "sha256": {
+    "sunflower_drive_botao_ganho.png": "bff0a8a2f504edfd64607a6b5447d11ae03cee885eec8a906166da77536c177b",
+    "sunflower_drive_botao_nivel.png": "921966ea7325d77be02eb18149f6430bda01b9efeb3086625a51f7fa66ceede0",
+    "sunflower_drive_frente.jpg": "a7004d71fad23baed6d075b3056d0b7eaf66200544c4d3ac2da39b0e498c31bb",
+    "sunflower_drive_frente_alfa.png": "b3a594ded0f88b0dc86ed9664bdd401a14d1e51faf73eaecdc1f988a7ef759ee",
+    "sunflower_drive_manifesto.json": "37914caad2fd0ad9baaae66a53ebc0186358588d22e74437631d92dc757c4877",
+    "sunflower_drive_mapa.json": "e9f97c1b82d5d0ffa1e136ee7b6cb72189b66c92ef6ee7d33f62635d548701d3"
+   },
+   "tamanho": 1298965,
+   "tipo": "pedal",
+   "inspiracao": "Boss OD-1 Over Drive",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "taco20": {
    "nome": "Taco 20",
