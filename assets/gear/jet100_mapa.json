@@ -1,0 +1,93 @@
+{
+  "nome": "Jet 100",
+  "familia": "jet100",
+  "largura": 2400,
+  "altura": 1008,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 462,
+      "y": 730,
+      "tamanho": 98,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 623,
+      "y": 730,
+      "tamanho": 97,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 784,
+      "y": 731,
+      "tamanho": 95,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 944,
+      "y": 732,
+      "tamanho": 94,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1104,
+      "y": 732,
+      "tamanho": 94,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1264,
+      "y": 732,
+      "tamanho": 94,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1583,
+      "y": 731,
+      "tamanho": 96,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Crunch",
+    "Overdrive"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 513.1,
+      "y": 677.0,
+      "raio": 0.7
+    },
+    {
+      "x": 672.7,
+      "y": 677.0,
+      "raio": 0.7
+    }
+  ],
+  "canais_som": [
+    "crunch",
+    "distorcido"
+  ]
+}

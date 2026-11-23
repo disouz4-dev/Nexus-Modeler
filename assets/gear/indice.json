@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T16:12:54Z",
+ "gerado": "2026-11-23T20:23:07Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3116,6 +3116,47 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "jet100": {
+   "nome": "Jet 100",
+   "hash": "e443f5187b526028",
+   "data": "2026-11-23T20:23:00Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "jet100_botao_agudo.png",
+    "jet100_botao_ganho_1.png",
+    "jet100_botao_ganho_2.png",
+    "jet100_botao_grave.png",
+    "jet100_botao_medio.png",
+    "jet100_botao_presenca.png",
+    "jet100_botao_volume.png",
+    "jet100_frente.jpg",
+    "jet100_frente_alfa.png",
+    "jet100_manifesto.json",
+    "jet100_mapa.json"
+   ],
+   "sha256": {
+    "jet100_botao_agudo.png": "6ff583d201c4b13d293ca10cbb00a867c54df44f6ab0b787cce03fc701ffeb01",
+    "jet100_botao_ganho_1.png": "adcd91f58aba563c7b90ee1fd31631e79de1b81a8e3c50f5650c293683277a5a",
+    "jet100_botao_ganho_2.png": "9519a1a87b24084d7d0f6d1a071bc1156e3a742f511d1b5ca978e97c3cc37d7c",
+    "jet100_botao_grave.png": "5da2e96672ac9b8a827c4c2c382e869e05283874bce7180043230710ece28271",
+    "jet100_botao_medio.png": "70dda71038f692d3a771537f8d52cc87967c99d8e58aa3b35fe4104944018bf3",
+    "jet100_botao_presenca.png": "49fbda98ca6dd547967eb246938848a3720c715082a11d66ec19cb53cc2c523b",
+    "jet100_botao_volume.png": "6dfe74a30307c623f49a45cd0a8408754a82d544cf1bff13b6a988bc7d80deba",
+    "jet100_frente.jpg": "6430ec68302da232005f14135708ef8d459a0a19ce1aae78b2f9aba1c8aad53e",
+    "jet100_frente_alfa.png": "6c0ec82d5f03eeb7eaf9ee6605e829ff0bc18e46310f8103f4b13ddf7e15f3c0",
+    "jet100_manifesto.json": "13d3e5b6db37ea52e9ffb063da7d7d5cdf041929dcd4153dfc7310fba20afae5",
+    "jet100_mapa.json": "c89d780f524e2311cea6ff924d5b88950b5b32f2d09b94bd85e12df66c61b17c"
+   },
+   "tamanho": 1063493,
+   "tipo": "cabecote",
+   "inspiracao": "Jet City JCA100H",
+   "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "jubilee_412": {
    "nome": "Jubilee 4x12",
