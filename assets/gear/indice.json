@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T23:36:47Z",
+ "gerado": "2026-11-23T23:53:56Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -2288,6 +2288,33 @@
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "ebony_rack_wah": {
+   "nome": "Ebony Rack Wah",
+   "hash": "af7f7891bd78f050",
+   "data": "2026-11-23T23:53:47Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "ebony_rack_wah_frente.jpg",
+    "ebony_rack_wah_frente_alfa.png",
+    "ebony_rack_wah_manifesto.json",
+    "ebony_rack_wah_mapa.json"
+   ],
+   "sha256": {
+    "ebony_rack_wah_frente.jpg": "62e5438fe16befe17e8aa1ee3c767739fc6152219e1b7fefb9f5b23e6f9ff41f",
+    "ebony_rack_wah_frente_alfa.png": "fec4faab2d55e65f7490b674104f22be31b34a5bf8cc584b2ba850e9e4e82525",
+    "ebony_rack_wah_manifesto.json": "8358d8f1edf530554a8736ec3197444c22cd52937d244b6d0369108fe6372df3",
+    "ebony_rack_wah_mapa.json": "5b66b7bf65b9bac30aef8af5bec372d6ad66da3272f92132f2051ff8debb6987"
+   },
+   "tamanho": 157302,
+   "tipo": "pedal",
+   "inspiracao": "Dunlop Cry Baby Rack DCR-1SR + DCR-1FC",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
