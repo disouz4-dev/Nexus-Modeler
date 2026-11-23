@@ -1,0 +1,35 @@
+{
+  "nome": "Pinwheel Boost",
+  "familia": "pinwheel_boost",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 488,
+      "y": 250,
+      "tamanho": 224,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1010.5,
+    "raio": 91.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 837.1,
+    "raio": 31.6
+  }
+}

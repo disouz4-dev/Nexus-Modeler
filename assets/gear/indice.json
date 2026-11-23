@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T20:23:07Z",
+ "gerado": "2026-11-23T21:11:45Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -4320,6 +4320,35 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "pinwheel_boost": {
+   "nome": "Pinwheel Boost",
+   "hash": "4b4586e9d199de0c",
+   "data": "2026-11-23T21:11:35Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pinwheel_boost_botao_ganho.png",
+    "pinwheel_boost_frente.jpg",
+    "pinwheel_boost_frente_alfa.png",
+    "pinwheel_boost_manifesto.json",
+    "pinwheel_boost_mapa.json"
+   ],
+   "sha256": {
+    "pinwheel_boost_botao_ganho.png": "78a2ee12319104a3817e468d35a427e12a5f742dc7b8a5b9982c27a8aab13e87",
+    "pinwheel_boost_frente.jpg": "3bf4ac454f5d94c3fbc7b4f97a87388e28d88513630c370ae850ff0ad9c6148b",
+    "pinwheel_boost_frente_alfa.png": "627a31eb116aad3ff7dad49fa5a51f4d9367a50d7f4ea4174036c9423ed4512a",
+    "pinwheel_boost_manifesto.json": "b6bfe50ec745369ce8024cc6519e563e8b9bd8a130ab49120b3eeeed7d3fb11c",
+    "pinwheel_boost_mapa.json": "e214a4aadfa8be1e4d4f4007e42ef7cf270c625e7ba9592e06c6da7ff155aeb4"
+   },
+   "tamanho": 427125,
+   "tipo": "pedal",
+   "inspiracao": "MXR MC401 CAE Boost/Line Driver",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "pod_overdrive_preamp_250": {
    "nome": "POD Overdrive Preamp 250",
