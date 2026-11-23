@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T14:39:02Z",
+ "gerado": "2026-11-23T14:50:37Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5815,6 +5815,41 @@
    "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "whirlpool_feedback": {
+   "nome": "Whirlpool Feedback",
+   "hash": "5183c3f0ace96ce5",
+   "data": "2026-11-23T14:50:29Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "whirlpool_feedback_botao_ganho.png",
+    "whirlpool_feedback_botao_nivel.png",
+    "whirlpool_feedback_botao_sobretom.png",
+    "whirlpool_feedback_botao_tom.png",
+    "whirlpool_feedback_frente.jpg",
+    "whirlpool_feedback_frente_alfa.png",
+    "whirlpool_feedback_manifesto.json",
+    "whirlpool_feedback_mapa.json"
+   ],
+   "sha256": {
+    "whirlpool_feedback_botao_ganho.png": "8607103ba9f41f48242e723a7509407f59f85dd9bbe8d433fa3decebbedb4f2c",
+    "whirlpool_feedback_botao_nivel.png": "c66234716affd71b959d5574408b87c6831db41093a6492222e8c19c0454fc78",
+    "whirlpool_feedback_botao_sobretom.png": "cf23b87710d9219023f13cfcd8754362712016598dc656a1136e8ce99ed3fcf9",
+    "whirlpool_feedback_botao_tom.png": "52efa23bc7b5d3a469957b0824bfac5541766c6282c5102497093a401b56a314",
+    "whirlpool_feedback_frente.jpg": "9add34804b57034c9792c5de0c6dd6da2639ff5afa7fb9cedd95b4071eab2d8b",
+    "whirlpool_feedback_frente_alfa.png": "c789bdce1754975dbe1e5f3681e797608cab906ae8009605ba45d47eb75f13cf",
+    "whirlpool_feedback_manifesto.json": "810e3d3582d2ec8466f4f53b66aefb00f4e0ca504dbcf6ac82233efa8016bb0e",
+    "whirlpool_feedback_mapa.json": "b029bf059b5c3a3366d43a3e94987d337a0b445cee5de17a6f5885e32ce45120"
+   },
+   "tamanho": 926269,
+   "tipo": "pedal",
+   "inspiracao": "Boss DF-2 Super Feedbacker & Distortion",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "willow_echo": {
    "nome": "Willow Echo",

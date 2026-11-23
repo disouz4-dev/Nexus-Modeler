@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "whirlpool_feedback",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Whirlpool Feedback",
+  "inspiracao": "Boss DF-2 Super Feedbacker & Distortion",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

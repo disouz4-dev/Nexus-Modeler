@@ -1,0 +1,62 @@
+{
+  "nome": "Whirlpool Feedback",
+  "familia": "whirlpool_feedback",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 282,
+      "y": 290,
+      "tamanho": 132,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 450,
+      "y": 290,
+      "tamanho": 132,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 619,
+      "y": 290,
+      "tamanho": 132,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "sobretom",
+      "x": 786,
+      "y": 290,
+      "tamanho": 132,
+      "arquivo": "botao_sobretom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    70,
+    125
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 967.5,
+    "raio": 292.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 228.4,
+    "raio": 17.9
+  }
+}
