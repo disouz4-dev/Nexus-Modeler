@@ -1,0 +1,70 @@
+{
+  "nome": "Lakeside 18",
+  "familia": "lakeside18",
+  "largura": 2400,
+  "altura": 2160,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 572,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 694,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 815,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 935,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1178,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1299,
+      "y": 251,
+      "tamanho": 98,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [],
+  "canais_som": [
+    "crunch"
+  ]
+}

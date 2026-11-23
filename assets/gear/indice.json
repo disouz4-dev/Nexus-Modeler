@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T12:27:57Z",
+ "gerado": "2026-11-23T14:21:38Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3202,6 +3202,45 @@
    "categoria": "4x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "lakeside18": {
+   "nome": "Lakeside 18",
+   "hash": "8c347c72623697d8",
+   "data": "2026-11-23T14:21:30Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "lakeside18_botao_agudo.png",
+    "lakeside18_botao_ganho.png",
+    "lakeside18_botao_grave.png",
+    "lakeside18_botao_medio.png",
+    "lakeside18_botao_presenca.png",
+    "lakeside18_botao_volume.png",
+    "lakeside18_frente.jpg",
+    "lakeside18_frente_alfa.png",
+    "lakeside18_manifesto.json",
+    "lakeside18_mapa.json"
+   ],
+   "sha256": {
+    "lakeside18_botao_agudo.png": "81176d2dc8c47571bd61678dbb65825499339962b936ac38794c4659e4223e93",
+    "lakeside18_botao_ganho.png": "d99969e08efd5ac44143b1ebb4705a15ba805162427d10a44a7d87a494823ca3",
+    "lakeside18_botao_grave.png": "54057b8d2b6777fda4cc439b87b1c942a8e05b7e57ec306ac146fa16d1167da1",
+    "lakeside18_botao_medio.png": "6a236728a09c1c49a53a9a0ca788e157216bbd6be7935155bf7a55c614016420",
+    "lakeside18_botao_presenca.png": "776dc1228bf60f376d04af810fb04e359658770ad1cb6c4f94d0834ccba35933",
+    "lakeside18_botao_volume.png": "d3d80474631fed3ae3b092f324990ff443be84d2950e5dbd6d51ae4b06162bd9",
+    "lakeside18_frente.jpg": "8cc5d3fa09846de3997e482d49be4b22d6c12301b1559ae95b8de7b8b89bb313",
+    "lakeside18_frente_alfa.png": "3cca3503b165758f5950febef680a9c063126213976b2b1ad92cf068e7aa63d6",
+    "lakeside18_manifesto.json": "b396bf82258df4dadb3023700a3b79fcdc72ced0d9638add6df03c2cac45e464",
+    "lakeside18_mapa.json": "83a19f6f430ab6e904cd5de4da93e08c7ef90b26c55f85136e211c16a20353e6"
+   },
+   "tamanho": 1707079,
+   "tipo": "cabecote",
+   "inspiracao": "Dr. Z Maz 18 Jr.",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
