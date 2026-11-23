@@ -1,0 +1,58 @@
+{
+  "nome": "Band 57",
+  "familia": "band57",
+  "largura": 2400,
+  "altura": 3093,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 704,
+      "y": 208,
+      "tamanho": 174,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 914,
+      "y": 209,
+      "tamanho": 172,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1124,
+      "y": 210,
+      "tamanho": 171,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1333,
+      "y": 209,
+      "tamanho": 172,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1541,
+      "y": 208,
+      "tamanho": 174,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

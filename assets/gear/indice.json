@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T14:21:38Z",
+ "gerado": "2026-11-23T14:24:49Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -475,6 +475,43 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "band57": {
+   "nome": "Band 57",
+   "hash": "2da1d8672b21c98a",
+   "data": "2026-11-23T14:24:41Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "band57_botao_agudo.png",
+    "band57_botao_ganho.png",
+    "band57_botao_grave.png",
+    "band57_botao_presenca.png",
+    "band57_botao_volume.png",
+    "band57_frente.jpg",
+    "band57_frente_alfa.png",
+    "band57_manifesto.json",
+    "band57_mapa.json"
+   ],
+   "sha256": {
+    "band57_botao_agudo.png": "fbfe1d95e1b552df2324bcd3507ca782929c6d6c4b5ec92646760ce25c16e816",
+    "band57_botao_ganho.png": "088118daa0c07f41b9a766eb10a8f8119aaf990d54bc2b10bee808048fbcdeea",
+    "band57_botao_grave.png": "dfff31ad43eb364607688dd5d689ac87317bbd137c5c83cd4350a54c8477e386",
+    "band57_botao_presenca.png": "3c1b7ff678c4c5ede90e1edf2a4f6f6c19aac27457e5cd17d6080344c7c7550d",
+    "band57_botao_volume.png": "4f5b7a017251ba1692b2859271b5292547210c50bc54fa841bb6b27928e673d9",
+    "band57_frente.jpg": "e792d8b288f6d34c1294394a9c784c5c2327418e2ffb5d16a3aeb35a5d910787",
+    "band57_frente_alfa.png": "24a165d2e6fbe5d8b064bcfbedb09c0a1418810bd03f6c97a2e6c96bccc9f892",
+    "band57_manifesto.json": "9e5f4ae86e748bcd003afbee3310aa582227ddeaa233b39dc85d655bf4d53991",
+    "band57_mapa.json": "5b9e1a8b709931f2cadacdc4e60d13c577dbf90ef461a5191978bbb6f121e864"
+   },
+   "tamanho": 2607816,
+   "tipo": "cabecote",
+   "inspiracao": "Bandmaster 5E7",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "bassbox_410": {
    "nome": "Bass Box 4x10",
