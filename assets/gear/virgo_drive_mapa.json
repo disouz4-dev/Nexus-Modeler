@@ -1,0 +1,53 @@
+{
+  "nome": "Virgo Drive",
+  "familia": "virgo_drive",
+  "largura": 1200,
+  "altura": 1140,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 196,
+      "y": 262,
+      "tamanho": 164,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 519,
+      "y": 264,
+      "tamanho": 162,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 841,
+      "y": 262,
+      "tamanho": 164,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    120,
+    95
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 757.5,
+    "y": 766.5,
+    "raio": 65.0
+  },
+  "led": {
+    "x": 185.4,
+    "y": 458.1,
+    "raio": 17.1
+  }
+}

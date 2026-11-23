@@ -1,0 +1,67 @@
+{
+  "nome": "Nord 650",
+  "familia": "nord650",
+  "largura": 2400,
+  "altura": 1176,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 411,
+      "y": 832,
+      "tamanho": 116,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 564,
+      "y": 833,
+      "tamanho": 114,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 716,
+      "y": 834,
+      "tamanho": 113,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1021,
+      "y": 835,
+      "tamanho": 111,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1325,
+      "y": 835,
+      "tamanho": 111,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1628,
+      "y": 834,
+      "tamanho": 113,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

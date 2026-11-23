@@ -1,0 +1,53 @@
+{
+  "nome": "Milky Way Drive",
+  "familia": "milky_way_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 691,
+      "y": 170,
+      "tamanho": 214,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 297,
+      "y": 460,
+      "tamanho": 210,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 693,
+      "y": 460,
+      "tamanho": 210,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    112
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1216.0,
+    "raio": 91.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 578.5,
+    "raio": 20.1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "nome": "Silver Coin Rock",
+  "familia": "silver_coin_rock",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 481,
+      "y": 234,
+      "tamanho": 308,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 187,
+      "altura": 617
+    },
+    {
+      "id": "ganho",
+      "x": 622,
+      "y": 234,
+      "tamanho": 308,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 187,
+      "altura": 617,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1035.5,
+    "raio": 92.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 868.4,
+    "raio": 24.1
+  }
+}

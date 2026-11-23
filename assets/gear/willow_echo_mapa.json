@@ -1,0 +1,52 @@
+{
+  "nome": "Willow Echo",
+  "familia": "willow_echo",
+  "largura": 1200,
+  "altura": 1188,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "c",
+      "x": 158,
+      "y": 256,
+      "tamanho": 124,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 462,
+      "y": 258,
+      "tamanho": 122,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "a",
+      "x": 918,
+      "y": 256,
+      "tamanho": 124,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    146,
+    121
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 839.0,
+    "raio": 53.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 703.5,
+    "raio": 17.9
+  }
+}

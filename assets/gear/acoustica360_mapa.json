@@ -1,0 +1,67 @@
+{
+  "nome": "Acoustica 360",
+  "familia": "acoustica360",
+  "largura": 2400,
+  "altura": 792,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 431,
+      "y": 244,
+      "tamanho": 141,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 591,
+      "y": 245,
+      "tamanho": 139,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 751,
+      "y": 246,
+      "tamanho": 137,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 910,
+      "y": 247,
+      "tamanho": 136,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1070,
+      "y": 248,
+      "tamanho": 134,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1387,
+      "y": 247,
+      "tamanho": 136,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

@@ -1,0 +1,53 @@
+{
+  "nome": "Cigar Turbo",
+  "familia": "cigar_turbo",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 289,
+      "y": 275,
+      "tamanho": 152,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 440,
+      "y": 275,
+      "tamanho": 152,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 593,
+      "y": 275,
+      "tamanho": 152,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 959.5,
+    "raio": 293.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 247.6,
+    "raio": 17.2
+  }
+}

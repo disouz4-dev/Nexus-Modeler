@@ -1,0 +1,39 @@
+{
+  "nome": "Fireworks Fuzz",
+  "familia": "fireworks_fuzz",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 342,
+      "y": 477,
+      "tamanho": 98,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 760,
+      "y": 474,
+      "tamanho": 98,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    150,
+    150
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 903.0,
+    "raio": 38.5
+  }
+}

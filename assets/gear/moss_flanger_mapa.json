@@ -1,0 +1,52 @@
+{
+  "nome": "Moss Flanger",
+  "familia": "moss_flanger",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 292,
+      "y": 328,
+      "tamanho": 140,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 530,
+      "y": 328,
+      "tamanho": 140,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 768,
+      "y": 328,
+      "tamanho": 140,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    110,
+    140
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 981.0,
+    "raio": 57.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 871.9,
+    "raio": 17.6
+  }
+}

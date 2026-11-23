@@ -1,0 +1,80 @@
+{
+  "nome": "RG 100",
+  "familia": "rg100",
+  "largura": 2400,
+  "altura": 993,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 878,
+      "y": 702,
+      "tamanho": 92,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 982,
+      "y": 702,
+      "tamanho": 92,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1086,
+      "y": 702,
+      "tamanho": 92,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1189,
+      "y": 702,
+      "tamanho": 92,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1321,
+      "y": 705,
+      "tamanho": 85,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1426,
+      "y": 705,
+      "tamanho": 85,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Solo"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 1415.3,
+      "y": 682.2,
+      "raio": 7.2
+    },
+    {
+      "x": 1615.5,
+      "y": 682.2,
+      "raio": 7.2
+    }
+  ]
+}

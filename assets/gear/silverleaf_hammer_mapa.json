@@ -1,0 +1,53 @@
+{
+  "nome": "Silverleaf Hammer",
+  "familia": "silverleaf_hammer",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 208,
+      "y": 509,
+      "tamanho": 154,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 398,
+      "y": 386,
+      "tamanho": 154,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 844,
+      "y": 509,
+      "tamanho": 154,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    95,
+    120
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 342.0,
+    "y": 1001.5,
+    "raio": 84.0
+  },
+  "led": {
+    "x": 312.5,
+    "y": 265.8,
+    "raio": 22.1
+  }
+}

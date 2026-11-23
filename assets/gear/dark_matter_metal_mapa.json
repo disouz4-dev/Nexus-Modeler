@@ -1,0 +1,53 @@
+{
+  "nome": "Dark Matter Metal",
+  "familia": "dark_matter_metal",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 293,
+      "y": 267,
+      "tamanho": 139,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 450,
+      "y": 265,
+      "tamanho": 141,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 768,
+      "y": 267,
+      "tamanho": 139,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 956.5,
+    "raio": 293.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 212.7,
+    "raio": 17.2
+  }
+}

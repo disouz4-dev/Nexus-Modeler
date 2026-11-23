@@ -1,0 +1,53 @@
+{
+  "nome": "Andromeda Glory",
+  "familia": "andromeda_glory",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 344,
+      "y": 160,
+      "tamanho": 192,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 665,
+      "y": 160,
+      "tamanho": 192,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 668,
+      "y": 484,
+      "tamanho": 186,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    66,
+    122
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1210.5,
+    "raio": 100.0
+  },
+  "led": {
+    "x": 806.0,
+    "y": 1204.4,
+    "raio": 28.9
+  }
+}

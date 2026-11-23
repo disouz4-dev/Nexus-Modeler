@@ -1,0 +1,53 @@
+{
+  "nome": "Galaxy Pea 808",
+  "familia": "galaxy_pea_808",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 240,
+      "y": 192,
+      "tamanho": 296,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 532,
+      "y": 496,
+      "tamanho": 136,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 664,
+      "y": 192,
+      "tamanho": 296,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    70,
+    113
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1011.0,
+    "raio": 90.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 241.7,
+    "raio": 23.7
+  }
+}

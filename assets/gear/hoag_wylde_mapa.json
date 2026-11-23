@@ -1,0 +1,53 @@
+{
+  "nome": "Hoag Wylde",
+  "familia": "hoag_wylde",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 300,
+      "y": 386,
+      "tamanho": 183,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 492,
+      "y": 145,
+      "tamanho": 218,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 716,
+      "y": 386,
+      "tamanho": 183,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1060.0,
+    "raio": 91.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 831.4,
+    "raio": 26.6
+  }
+}

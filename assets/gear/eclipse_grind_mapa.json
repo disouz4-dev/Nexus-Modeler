@@ -1,0 +1,34 @@
+{
+  "nome": "Eclipse Grind",
+  "familia": "eclipse_grind",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 480,
+      "y": 364,
+      "tamanho": 238,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    112
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1115.5,
+    "raio": 90.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 750.0,
+    "raio": 32.6
+  }
+}

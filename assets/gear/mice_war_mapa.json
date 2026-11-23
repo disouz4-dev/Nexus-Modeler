@@ -1,0 +1,53 @@
+{
+  "nome": "Mice War",
+  "familia": "mice_war",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 281,
+      "y": 444,
+      "tamanho": 231,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 548,
+      "y": 328,
+      "tamanho": 104,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 666,
+      "y": 444,
+      "tamanho": 230,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    120,
+    149
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 606.5,
+    "y": 1017.5,
+    "raio": 67.0
+  },
+  "led": {
+    "x": 755.0,
+    "y": 1001.9,
+    "raio": 24.9
+  }
+}

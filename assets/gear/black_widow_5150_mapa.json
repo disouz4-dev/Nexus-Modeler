@@ -1,0 +1,53 @@
+{
+  "nome": "Black Widow 5150",
+  "familia": "black_widow_5150",
+  "largura": 1200,
+  "altura": 1080,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 178,
+      "y": 211,
+      "tamanho": 155,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 694,
+      "y": 212,
+      "tamanho": 154,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 862,
+      "y": 211,
+      "tamanho": 155,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    122,
+    91
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 698.0,
+    "raio": 64.0
+  },
+  "led": {
+    "x": 747.0,
+    "y": 696.0,
+    "raio": 13.9
+  }
+}

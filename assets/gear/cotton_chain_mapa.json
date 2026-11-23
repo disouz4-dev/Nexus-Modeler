@@ -1,0 +1,52 @@
+{
+  "nome": "Cotton Chain",
+  "familia": "cotton_chain",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "c",
+      "x": 292,
+      "y": 302,
+      "tamanho": 141,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 450,
+      "y": 302,
+      "tamanho": 141,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "a",
+      "x": 609,
+      "y": 302,
+      "tamanho": 141,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 956.5,
+    "raio": 293.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 212.7,
+    "raio": 17.2
+  }
+}

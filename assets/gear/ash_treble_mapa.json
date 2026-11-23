@@ -1,0 +1,30 @@
+{
+  "nome": "Ash Treble",
+  "familia": "ash_treble",
+  "largura": 1200,
+  "altura": 1020,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 502,
+      "y": 548,
+      "tamanho": 129,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    110,
+    65
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 294.5,
+    "y": 597.5,
+    "raio": 60.5
+  }
+}

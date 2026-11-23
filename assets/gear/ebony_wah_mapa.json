@@ -1,0 +1,19 @@
+{
+  "nome": "Ebony Wah",
+  "familia": "ebony_wah",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    102,
+    254
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1108.5,
+    "raio": 175.5
+  }
+}

@@ -2,68 +2,68 @@
   "nome": "Badland 100",
   "familia": "badland100",
   "largura": 2400,
-  "altura": 897,
+  "altura": 1152,
   "posicoes": 101,
   "botoes": [
     {
       "id": "volume",
-      "x": 904,
-      "y": 484,
-      "tamanho": 93,
+      "x": 981,
+      "y": 697,
+      "tamanho": 104,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1111,
-      "y": 485,
-      "tamanho": 92,
+      "x": 1129,
+      "y": 697,
+      "tamanho": 104,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1317,
-      "y": 485,
-      "tamanho": 92,
+      "x": 1278,
+      "y": 697,
+      "tamanho": 104,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1522,
-      "y": 484,
-      "tamanho": 94,
+      "x": 1425,
+      "y": 696,
+      "tamanho": 106,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1727,
-      "y": 483,
-      "tamanho": 96,
+      "x": 1574,
+      "y": 696,
+      "tamanho": 107,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho_12",
-      "x": 1932,
-      "y": 482,
-      "tamanho": 98,
+      "x": 1721,
+      "y": 695,
+      "tamanho": 109,
       "arquivo": "botao_ganho_12.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho_3",
-      "x": 1932,
-      "y": 685,
-      "tamanho": 98,
+      "x": 1721,
+      "y": 842,
+      "tamanho": 109,
       "arquivo": "botao_ganho_3.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -77,19 +77,19 @@
   "rotulos": [],
   "leds_canais": [
     {
-      "x": 2148.2,
-      "y": 515.9,
-      "raio": 8.2
+      "x": 1843.2,
+      "y": 748.0,
+      "raio": 6.4
     },
     {
-      "x": 2148.2,
-      "y": 733.4,
-      "raio": 8.2
+      "x": 1843.2,
+      "y": 821.3,
+      "raio": 6.4
     },
     {
-      "x": 2148.2,
-      "y": 544.4,
-      "raio": 8.2
+      "x": 1843.2,
+      "y": 894.6,
+      "raio": 6.4
     }
   ]
 }

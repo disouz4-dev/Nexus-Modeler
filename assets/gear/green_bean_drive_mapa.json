@@ -1,0 +1,53 @@
+{
+  "nome": "Green Bean Drive",
+  "familia": "green_bean_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 304,
+      "y": 162,
+      "tamanho": 184,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 510,
+      "y": 300,
+      "tamanho": 181,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 712,
+      "y": 162,
+      "tamanho": 184,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    74,
+    124
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1061.5,
+    "raio": 150.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 184.1,
+    "raio": 18.2
+  }
+}

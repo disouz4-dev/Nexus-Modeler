@@ -1,0 +1,34 @@
+{
+  "nome": "Cactus Gate",
+  "familia": "cactus_gate",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 494,
+      "y": 245,
+      "tamanho": 232,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1013.5,
+    "raio": 91.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 846.8,
+    "raio": 24.1
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "nome": "POD Overdrive Preamp 250",
+  "familia": "pod_overdrive_preamp_250",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 308,
+      "y": 249,
+      "tamanho": 282,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "nivel",
+      "x": 610,
+      "y": 249,
+      "tamanho": 282,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    67,
+    119
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 589.5,
+    "y": 1148.0,
+    "raio": 85.5
+  },
+  "led": {
+    "x": 427.2,
+    "y": 1142.8,
+    "raio": 23.7
+  }
+}

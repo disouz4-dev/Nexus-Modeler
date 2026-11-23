@@ -1,0 +1,53 @@
+{
+  "nome": "Bode Mud",
+  "familia": "bode_mud",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 221,
+      "y": 294,
+      "tamanho": 266,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 469,
+      "y": 563,
+      "tamanho": 262,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 729,
+      "y": 294,
+      "tamanho": 266,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    100,
+    120
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1018.0,
+    "raio": 63.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 393.1,
+    "raio": 17.6
+  }
+}

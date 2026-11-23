@@ -2,59 +2,59 @@
   "nome": "Brit 45",
   "familia": "brit45",
   "largura": 2400,
-  "altura": 1015,
+  "altura": 948,
   "posicoes": 101,
   "botoes": [
     {
       "id": "presenca",
-      "x": 893,
-      "y": 651,
-      "tamanho": 113,
+      "x": 835,
+      "y": 636,
+      "tamanho": 100,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1008,
-      "y": 651,
-      "tamanho": 113,
+      "x": 970,
+      "y": 637,
+      "tamanho": 99,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 1123,
-      "y": 651,
-      "tamanho": 113,
+      "x": 1105,
+      "y": 637,
+      "tamanho": 99,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1238,
-      "y": 651,
-      "tamanho": 113,
+      "x": 1240,
+      "y": 637,
+      "tamanho": 99,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 1353,
-      "y": 651,
-      "tamanho": 113,
+      "x": 1375,
+      "y": 637,
+      "tamanho": 99,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1467,
-      "y": 650,
-      "tamanho": 114,
+      "x": 1509,
+      "y": 636,
+      "tamanho": 101,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -63,114 +63,5 @@
   "canais": [
     "Normal"
   ],
-  "rotulos": [
-    {
-      "texto": "MK II",
-      "x": 595.7,
-      "y": 740.1,
-      "altura": 18.02,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MAINS",
-      "x": 689.7,
-      "y": 764.5,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "STANDBY",
-      "x": 763.5,
-      "y": 763.8,
-      "altura": 22.78,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "INDICATOR",
-      "x": 837.4,
-      "y": 751.9,
-      "altura": 22.27,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 951.6,
-      "y": 800.2,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 1065.7,
-      "y": 800.2,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MIDDLE",
-      "x": 1179.9,
-      "y": 800.2,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1294.0,
-      "y": 800.2,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "HIGH TREBLE",
-      "x": 1408.2,
-      "y": 799.2,
-      "altura": 22.41,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "NORMAL",
-      "x": 1522.3,
-      "y": 800.2,
-      "altura": 23.52,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "I",
-      "x": 1656.6,
-      "y": 591.0,
-      "altura": 19.65,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "II",
-      "x": 1777.5,
-      "y": 591.0,
-      "altura": 19.65,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    }
-  ]
+  "rotulos": []
 }

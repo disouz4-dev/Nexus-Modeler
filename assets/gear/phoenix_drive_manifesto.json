@@ -1,0 +1,18 @@
+{
+  "formato": 1,
+  "id": "phoenix_drive",
+  "versao": "1.0.4",
+  "tipo": "pedal",
+  "nome": "Phoenix Drive",
+  "inspiracao": "Fulltone OCD",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "indice_de_fabrica": 30,
+  "signature": null
+}

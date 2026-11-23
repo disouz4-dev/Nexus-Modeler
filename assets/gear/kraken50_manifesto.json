@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "kraken50",
+  "versao": "1.0.1",
+  "tipo": "cabecote",
+  "nome": "Kraken 50",
+  "inspiracao": "Victory VX Kraken",
+  "categoria": "Britânicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

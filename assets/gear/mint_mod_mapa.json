@@ -1,0 +1,80 @@
+{
+  "nome": "Mint Mod",
+  "familia": "mint_mod",
+  "largura": 1200,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "modo",
+      "x": 222,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_modo.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "a",
+      "x": 434,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 559,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "d",
+      "x": 682,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 806,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 930,
+      "y": 300,
+      "tamanho": 111,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    279,
+    190
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 169.0,
+    "y": 576.0,
+    "raio": 32.0
+  },
+  "led": {
+    "x": 174.3,
+    "y": 492.6,
+    "raio": 8.0
+  }
+}

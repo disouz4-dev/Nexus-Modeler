@@ -1,0 +1,44 @@
+{
+  "nome": "Baby Boom Plus",
+  "familia": "baby_boom_plus",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 316,
+      "y": 228,
+      "tamanho": 227,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 656,
+      "y": 228,
+      "tamanho": 227,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1060.0,
+    "raio": 91.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 884.5,
+    "raio": 22.8
+  }
+}

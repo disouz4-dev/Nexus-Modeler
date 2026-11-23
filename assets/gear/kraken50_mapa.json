@@ -1,0 +1,80 @@
+{
+  "nome": "Kraken 50",
+  "familia": "kraken50",
+  "largura": 2400,
+  "altura": 1224,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 239,
+      "y": 919,
+      "tamanho": 159,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 654,
+      "y": 923,
+      "tamanho": 152,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 861,
+      "y": 924,
+      "tamanho": 150,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1067,
+      "y": 924,
+      "tamanho": 150,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1274,
+      "y": 924,
+      "tamanho": 150,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1684,
+      "y": 922,
+      "tamanho": 154,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Crunch",
+    "Pesado"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 460.6,
+      "y": 970.7,
+      "raio": 14.1
+    },
+    {
+      "x": 460.6,
+      "y": 1021.8,
+      "raio": 14.1
+    }
+  ]
+}

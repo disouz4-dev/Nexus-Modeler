@@ -1,0 +1,35 @@
+{
+  "nome": "Balsa Boost",
+  "familia": "balsa_boost",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 476,
+      "y": 364,
+      "tamanho": 248,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    38,
+    89
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1190.0,
+    "raio": 113.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 676.1,
+    "raio": 24.9
+  }
+}

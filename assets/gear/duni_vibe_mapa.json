@@ -1,0 +1,52 @@
+{
+  "nome": "Duni Vibe",
+  "familia": "duni_vibe",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 525,
+      "y": 498,
+      "tamanho": 150,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 704,
+      "y": 316,
+      "tamanho": 152,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 342,
+      "y": 306,
+      "tamanho": 153,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    94,
+    120
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1040.5,
+    "raio": 67.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 735.4,
+    "raio": 20.6
+  }
+}

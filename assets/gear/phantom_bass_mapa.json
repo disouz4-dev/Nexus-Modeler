@@ -1,0 +1,53 @@
+{
+  "nome": "Phantom Bass",
+  "familia": "phantom_bass",
+  "largura": 1200,
+  "altura": 1104,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 628,
+      "y": 224,
+      "tamanho": 142,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 840,
+      "y": 224,
+      "tamanho": 142,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 840,
+      "y": 426,
+      "tamanho": 142,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    125,
+    96
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 910.0,
+    "y": 804.5,
+    "raio": 62.5
+  },
+  "led": {
+    "x": 284.4,
+    "y": 671.4,
+    "raio": 13.8
+  }
+}

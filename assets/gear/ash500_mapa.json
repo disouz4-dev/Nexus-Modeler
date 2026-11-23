@@ -1,0 +1,67 @@
+{
+  "nome": "Ash 500",
+  "familia": "ash500",
+  "largura": 2400,
+  "altura": 969,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 120,
+      "y": 311,
+      "tamanho": 186,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 749,
+      "y": 317,
+      "tamanho": 175,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1146,
+      "y": 319,
+      "tamanho": 171,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1538,
+      "y": 316,
+      "tamanho": 177,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 2072,
+      "y": 312,
+      "tamanho": 185,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1146,
+      "y": 573,
+      "tamanho": 172,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

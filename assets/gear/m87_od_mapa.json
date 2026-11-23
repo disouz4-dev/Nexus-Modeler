@@ -1,0 +1,53 @@
+{
+  "nome": "M87 OD",
+  "familia": "m87_od",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "tom",
+      "x": 495,
+      "y": 138,
+      "tamanho": 210,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 275,
+      "y": 438,
+      "tamanho": 204,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 498,
+      "y": 438,
+      "tamanho": 204,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    64,
+    112
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1148.0,
+    "raio": 91.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 955.1,
+    "raio": 19.7
+  }
+}

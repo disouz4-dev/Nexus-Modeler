@@ -1,0 +1,53 @@
+{
+  "nome": "Pegasus Drive",
+  "familia": "pegasus_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 302,
+      "y": 156,
+      "tamanho": 212,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 685,
+      "y": 156,
+      "tamanho": 212,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 306,
+      "y": 461,
+      "tamanho": 206,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    65,
+    122
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 434.5,
+    "y": 1184.5,
+    "raio": 100.0
+  },
+  "led": {
+    "x": 436.8,
+    "y": 989.0,
+    "raio": 25.4
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "nome": "Gudjuin Fuzz",
+  "familia": "gudjuin_fuzz",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 317,
+      "y": 452,
+      "tamanho": 186,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 506,
+      "y": 272,
+      "tamanho": 190,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 700,
+      "y": 452,
+      "tamanho": 186,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    64,
+    121
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1089.0,
+    "raio": 84.0
+  },
+  "led": {
+    "x": 387.1,
+    "y": 1079.5,
+    "raio": 18.6
+  }
+}

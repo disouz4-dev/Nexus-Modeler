@@ -1,0 +1,121 @@
+{
+  "nome": "Aspen EQ",
+  "familia": "aspen_eq",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 325,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 162,
+      "altura": 581
+    },
+    {
+      "id": "b",
+      "x": 388,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 161,
+      "altura": 581
+    },
+    {
+      "id": "c",
+      "x": 451,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 161,
+      "altura": 581
+    },
+    {
+      "id": "d",
+      "x": 514,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_d.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 159,
+      "altura": 581
+    },
+    {
+      "id": "e",
+      "x": 578,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_e.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 160,
+      "altura": 581
+    },
+    {
+      "id": "f",
+      "x": 640,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_f.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 160,
+      "altura": 581
+    },
+    {
+      "id": "g",
+      "x": 704,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_g.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 160,
+      "altura": 581
+    },
+    {
+      "id": "nivel",
+      "x": 794,
+      "y": 217,
+      "tamanho": 290,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 162,
+      "altura": 581
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    73,
+    129
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 956.5,
+    "raio": 293.0
+  },
+  "led": {
+    "x": 788.6,
+    "y": 224.7,
+    "raio": 17.2
+  }
+}

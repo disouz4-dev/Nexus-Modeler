@@ -1,0 +1,43 @@
+{
+  "nome": "Red Maple Comp",
+  "familia": "red_maple_comp",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 307,
+      "y": 229,
+      "tamanho": 240,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 652,
+      "y": 229,
+      "tamanho": 240,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1023.0,
+    "raio": 92.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 851.8,
+    "raio": 29.2
+  }
+}

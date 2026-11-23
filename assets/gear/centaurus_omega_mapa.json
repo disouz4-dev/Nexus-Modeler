@@ -1,0 +1,53 @@
+{
+  "nome": "Centaurus Omega",
+  "familia": "centaurus_omega",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 521,
+      "y": 278,
+      "tamanho": 158,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 752,
+      "y": 278,
+      "tamanho": 158,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 792,
+      "y": 514,
+      "tamanho": 156,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    94,
+    120
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 918.5,
+    "raio": 67.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 689.0,
+    "raio": 14.9
+  }
+}

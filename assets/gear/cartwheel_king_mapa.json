@@ -1,0 +1,53 @@
+{
+  "nome": "Cartwheel King",
+  "familia": "cartwheel_king",
+  "largura": 1200,
+  "altura": 1128,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 151,
+      "y": 218,
+      "tamanho": 186,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 384,
+      "y": 218,
+      "tamanho": 184,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 284,
+      "y": 440,
+      "tamanho": 156,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    121,
+    95
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 261.0,
+    "y": 819.0,
+    "raio": 77.5
+  },
+  "led": {
+    "x": 463.4,
+    "y": 697.1,
+    "raio": 16.1
+  }
+}

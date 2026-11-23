@@ -1,0 +1,93 @@
+{
+  "nome": "Block 5150",
+  "familia": "block_5150",
+  "largura": 2400,
+  "altura": 924,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 553,
+      "y": 633,
+      "tamanho": 100,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 871,
+      "y": 634,
+      "tamanho": 98,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 994,
+      "y": 634,
+      "tamanho": 98,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1133,
+      "y": 634,
+      "tamanho": 98,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1270,
+      "y": 634,
+      "tamanho": 98,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1547,
+      "y": 633,
+      "tamanho": 99,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1822,
+      "y": 632,
+      "tamanho": 101,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Rhythm",
+    "Lead"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 504.1,
+      "y": 647.6,
+      "raio": 11.4
+    },
+    {
+      "x": 848.7,
+      "y": 647.6,
+      "raio": 11.4
+    }
+  ],
+  "canais_som": [
+    "limpo",
+    "distorcido"
+  ]
+}

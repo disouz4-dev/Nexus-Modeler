@@ -1,0 +1,53 @@
+{
+  "nome": "Green Pea Drive",
+  "familia": "green_pea_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 302,
+      "y": 226,
+      "tamanho": 224,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 520,
+      "y": 396,
+      "tamanho": 160,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 675,
+      "y": 226,
+      "tamanho": 224,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    74,
+    124
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1084.5,
+    "raio": 246.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 206.4,
+    "raio": 21.8
+  }
+}

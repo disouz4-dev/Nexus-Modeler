@@ -1,0 +1,113 @@
+{
+  "nome": "Arch 100",
+  "familia": "arch100",
+  "largura": 2400,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 453,
+      "y": 667,
+      "tamanho": 111,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 751,
+      "y": 668,
+      "tamanho": 109,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_1",
+      "x": 1348,
+      "y": 668,
+      "tamanho": 108,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1497,
+      "y": 668,
+      "tamanho": 108,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1645,
+      "y": 668,
+      "tamanho": 109,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1794,
+      "y": 667,
+      "tamanho": 110,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 1942,
+      "y": 667,
+      "tamanho": 111,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "canal",
+      "x": 2080,
+      "y": 683,
+      "tamanho": 79,
+      "arquivo": "botao_canal.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "chave"
+    }
+  ],
+  "canais": [
+    "Clean",
+    "Lead"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 2175.1,
+      "y": 712.5,
+      "raio": 4.8
+    },
+    {
+      "x": 2175.1,
+      "y": 730.8,
+      "raio": 4.8
+    }
+  ],
+  "canais_som": [
+    "limpo",
+    "distorcido"
+  ],
+  "troca_canal": {
+    "tipo": "chave",
+    "pontos": [
+      {
+        "x": 2118.2,
+        "y": 721.6,
+        "raio": 23.1
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "nome": "Black Eye Rat",
+  "familia": "black_eye_rat",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 295,
+      "y": 490,
+      "tamanho": 144,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "tom",
+      "x": 528,
+      "y": 490,
+      "tamanho": 144,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 760,
+      "y": 490,
+      "tamanho": 144,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    81,
+    98
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1104.0,
+    "raio": 79.0
+  },
+  "led": {
+    "x": 800.2,
+    "y": 773.3,
+    "raio": 17.1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "nome": "Walnut Rotary",
+  "familia": "walnut_rotary",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "a",
+      "x": 328,
+      "y": 244,
+      "tamanho": 199,
+      "arquivo": "botao_a.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "b",
+      "x": 502,
+      "y": 430,
+      "tamanho": 196,
+      "arquivo": "botao_b.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "c",
+      "x": 673,
+      "y": 244,
+      "tamanho": 199,
+      "arquivo": "botao_c.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    62,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1122.5,
+    "raio": 92.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 211.0,
+    "raio": 26.6
+  }
+}
