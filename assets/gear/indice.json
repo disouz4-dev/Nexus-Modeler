@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T14:54:17Z",
+ "gerado": "2026-11-23T16:12:54Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5965,6 +5965,41 @@
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "wreck30": {
+   "nome": "Wreck 30",
+   "hash": "b4ad370083a9aad2",
+   "data": "2026-11-23T16:12:46Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "wreck30_botao_agudo.png",
+    "wreck30_botao_ganho.png",
+    "wreck30_botao_grave.png",
+    "wreck30_botao_presenca.png",
+    "wreck30_frente.jpg",
+    "wreck30_frente_alfa.png",
+    "wreck30_manifesto.json",
+    "wreck30_mapa.json"
+   ],
+   "sha256": {
+    "wreck30_botao_agudo.png": "996c76d7e49cdbee82689103533944d06af4111e29f558bbc8868f7aafabf5c9",
+    "wreck30_botao_ganho.png": "d4d9a4d2242cea91453010c51f612b1aa7b5161e4383b350eaa5b8eaa928f710",
+    "wreck30_botao_grave.png": "d7c277dc761b03c3edcb0f15d0a55debe7bfeadc0cffd5d82d9bf9495618f7fe",
+    "wreck30_botao_presenca.png": "c7ccbf10e2880955587163ab379495e2af6575be533d0374d84b770012be6d9f",
+    "wreck30_frente.jpg": "61c98d05e40b50bbc3ad269b45987865a6b0d019542867e5db4ea05a8561c665",
+    "wreck30_frente_alfa.png": "1f41493e743f75dc41d71ba818b59a1e11594cf3be60d4f62be839f3996dd922",
+    "wreck30_manifesto.json": "af2a270432dd1447fc594774fb90e132ced7e2a563872f2bbdde884954415f26",
+    "wreck30_mapa.json": "beb7f7418076bddbc5d325a63885365cd5946a7db46a0063f5cb6f4d70600523"
+   },
+   "tamanho": 949671,
+   "tipo": "cabecote",
+   "inspiracao": "Dr. Z Z Wreck",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

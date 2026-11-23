@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "wreck30",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Wreck 30",
+  "inspiracao": "Dr. Z Z Wreck",
+  "categoria": "Americanos boutique",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

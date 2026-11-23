@@ -1,0 +1,52 @@
+{
+  "nome": "Wreck 30",
+  "familia": "wreck30",
+  "largura": 2400,
+  "altura": 1152,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 1188,
+      "y": 813,
+      "tamanho": 112,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1538,
+      "y": 812,
+      "tamanho": 113,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1711,
+      "y": 811,
+      "tamanho": 116,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1886,
+      "y": 810,
+      "tamanho": 118,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [],
+  "canais_som": [
+    "crunch"
+  ]
+}
