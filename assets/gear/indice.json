@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T23:04:18Z",
+ "gerado": "2026-11-23T23:12:25Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5607,6 +5607,49 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "tritone50": {
+   "nome": "Tritone 50",
+   "hash": "93db414b4fe9f78f",
+   "data": "2026-11-23T23:12:16Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tritone50_botao_agudo.png",
+    "tritone50_botao_ganho_1.png",
+    "tritone50_botao_ganho_2.png",
+    "tritone50_botao_ganho_3.png",
+    "tritone50_botao_grave.png",
+    "tritone50_botao_medio.png",
+    "tritone50_botao_presenca.png",
+    "tritone50_botao_volume.png",
+    "tritone50_frente.jpg",
+    "tritone50_frente_alfa.png",
+    "tritone50_manifesto.json",
+    "tritone50_mapa.json"
+   ],
+   "sha256": {
+    "tritone50_botao_agudo.png": "0b3ac1a3de4d3c8ec65aed2e9c28675c98bd98e6c2c055daabf172f6d4a2544d",
+    "tritone50_botao_ganho_1.png": "af9a0c3a98dbe1647b29b5671a0e084c66a3afdcf6aed3a474117acddf1f524f",
+    "tritone50_botao_ganho_2.png": "39fde115eeec495e01a00c296c2f31343356e198aac2994e6eea010ed9bfd881",
+    "tritone50_botao_ganho_3.png": "5e30d236b45b8eb3f5629346750a06c0314bb30dadeed710aa38ebddb7fe8927",
+    "tritone50_botao_grave.png": "4b27ef4fd30bfc42efb4644cb8736d88a439bb197c47ea22fc7006be3a41e2c9",
+    "tritone50_botao_medio.png": "ecd00423b3afd9bfb7ff614e3517c32c899e4ad7440c07563ffb5a8c90627b03",
+    "tritone50_botao_presenca.png": "4148f63c9df9591d146028c6e37b5263e95e4390ec600e7173feb38e02f2a9bd",
+    "tritone50_botao_volume.png": "0fa65d7e66d505b20dfb0dc6f159dcf45e217a6bfa93222b5e6b19c3bbaf6428",
+    "tritone50_frente.jpg": "8345238e93bca4f9e016308e210643e1e0eab6010c6f0a3bcd1b22763c2f6cf2",
+    "tritone50_frente_alfa.png": "f67a9a0df3e4ce75598e338e424c423e01fcf3b5a5c9e187a71e1d45c8f01af9",
+    "tritone50_manifesto.json": "ff08abfc00e723da921ffd8fed2966d4939e0be1dd154df7a9d76426e59a5077",
+    "tritone50_mapa.json": "bc218ec9ed57d24210e7303635b5a56635be2f987385c886cdce43d8635cc309"
+   },
+   "tamanho": 1163932,
+   "tipo": "cabecote",
+   "inspiracao": "Carvin V3M",
+   "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "tweed_112": {
    "nome": "Tweed 57 1x12",

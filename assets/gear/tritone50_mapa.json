@@ -1,0 +1,129 @@
+{
+  "nome": "Tritone 50",
+  "familia": "tritone50",
+  "largura": 2400,
+  "altura": 1200,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 253,
+      "y": 692,
+      "tamanho": 103,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 434,
+      "y": 693,
+      "tamanho": 101,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_1",
+      "x": 797,
+      "y": 695,
+      "tamanho": 97,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 434,
+      "y": 913,
+      "tamanho": 101,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 616,
+      "y": 914,
+      "tamanho": 99,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 797,
+      "y": 915,
+      "tamanho": 97,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 1344,
+      "y": 695,
+      "tamanho": 96,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_3",
+      "x": 1885,
+      "y": 693,
+      "tamanho": 101,
+      "arquivo": "botao_ganho_3.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "CH 3",
+    "CH 2",
+    "CH 1"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 914.2,
+      "y": 651.4,
+      "raio": 6.5
+    },
+    {
+      "x": 1458.8,
+      "y": 651.4,
+      "raio": 6.5
+    },
+    {
+      "x": 2001.0,
+      "y": 651.4,
+      "raio": 6.5
+    }
+  ],
+  "canais_som": [
+    "distorcido",
+    "crunch",
+    "limpo"
+  ],
+  "troca_canal": {
+    "tipo": "botoes",
+    "pontos": [
+      {
+        "x": 914.1,
+        "y": 651.4,
+        "raio": 9.1
+      },
+      {
+        "x": 1458.9,
+        "y": 651.4,
+        "raio": 9.1
+      },
+      {
+        "x": 2001.3,
+        "y": 651.4,
+        "raio": 9.1
+      }
+    ]
+  }
+}
