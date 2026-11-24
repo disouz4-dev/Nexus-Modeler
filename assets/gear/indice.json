@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:07:43Z",
+ "gerado": "2026-11-24T05:14:10Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -4667,6 +4667,45 @@
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "nova100": {
+   "nome": "Nova 100",
+   "hash": "bc8591a936ad9432",
+   "data": "2026-11-24T05:14:01Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nova100_botao_agudo.png",
+    "nova100_botao_ganho.png",
+    "nova100_botao_grave.png",
+    "nova100_botao_medio.png",
+    "nova100_botao_presenca.png",
+    "nova100_botao_volume.png",
+    "nova100_frente.jpg",
+    "nova100_frente_alfa.png",
+    "nova100_manifesto.json",
+    "nova100_mapa.json"
+   ],
+   "sha256": {
+    "nova100_botao_agudo.png": "f71c66d8272e4c9d6341697a4dd5324d97ee5c9ea0216f1984d36b306e2fc6d2",
+    "nova100_botao_ganho.png": "39520ac609ec0449dda55e09464b7d87daa1edab1cf7bef47f56301adaecffc0",
+    "nova100_botao_grave.png": "e4163ab7d59cf520ee9ca73666e5d3c262e3bdbde71edf59320b53fa4074da1e",
+    "nova100_botao_medio.png": "d5b5f6c591266b2b2b98e3604030e978e9d08f6d1c1f449a43c70cc35af4ede3",
+    "nova100_botao_presenca.png": "f18462b20e03c6643456e6b2b9ff5381114b55d361ef672875596eebfcc78b2d",
+    "nova100_botao_volume.png": "01385e07b682f791188f2debbe96e1bc071d914edefdf17349ee7ca3cef3f832",
+    "nova100_frente.jpg": "f30c1754736114051f4930561d55201ee66c4d44af5c66f5beddc3da4d3d37bc",
+    "nova100_frente_alfa.png": "ff25d3ba34c9c8f97cc217785e1afe804ddb19883b3130f0d69a63b4d6344311",
+    "nova100_manifesto.json": "634a265a0cc8e5fc3bb54effd7642e2435fa967500d7aa493d59712186331eea",
+    "nova100_mapa.json": "b25b71460fbd458138e87703dd23ac27f6f150e3318bb59d103510a1e99a5d33"
+   },
+   "tamanho": 1436279,
+   "tipo": "cabecote",
+   "inspiracao": "Fortin Natas",
+   "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

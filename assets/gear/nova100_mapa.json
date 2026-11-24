@@ -1,0 +1,67 @@
+{
+  "nome": "Nova 100",
+  "familia": "nova100",
+  "largura": 2400,
+  "altura": 1113,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 489,
+      "y": 754,
+      "tamanho": 119,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 710,
+      "y": 755,
+      "tamanho": 117,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 811,
+      "y": 756,
+      "tamanho": 116,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 911,
+      "y": 756,
+      "tamanho": 116,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1652,
+      "y": 755,
+      "tamanho": 118,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1752,
+      "y": 754,
+      "tamanho": 119,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
