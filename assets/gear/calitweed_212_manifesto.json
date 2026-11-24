@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "calitweed_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Cali Tweed 2x12",
+  "inspiracao": "Mesa/Boogie 2x12 California Tweed",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

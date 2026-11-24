@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:05:43Z",
+ "gerado": "2026-11-24T00:10:37Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -1753,6 +1753,60 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "calitweed_112": {
+   "nome": "Cali Tweed 1x12",
+   "hash": "2f18cddef7e03d25",
+   "data": "2026-11-24T00:10:27Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "calitweed_112_frente.jpg",
+    "calitweed_112_frente_alfa.png",
+    "calitweed_112_manifesto.json",
+    "calitweed_112_mapa.json"
+   ],
+   "sha256": {
+    "calitweed_112_frente.jpg": "735553ee19b93e69fe17faedf75793bc4defe128ad6da97cd7bba9bb48047f69",
+    "calitweed_112_frente_alfa.png": "98933be76f09adf11b5860e908ab35ccc11d83f692e8f359f90de9182da68ea4",
+    "calitweed_112_manifesto.json": "8810744e571fe8283d38a771470a37c6aea338d96ee45a43824307dc641db53b",
+    "calitweed_112_mapa.json": "6b75981b4c997e4a077db30beeda9109674f9bc2da611a22207289edddb29943"
+   },
+   "tamanho": 1947553,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 1x12 California Tweed 23",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "calitweed_212": {
+   "nome": "Cali Tweed 2x12",
+   "hash": "25f55c09faa20427",
+   "data": "2026-11-24T00:10:27Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "calitweed_212_frente.jpg",
+    "calitweed_212_frente_alfa.png",
+    "calitweed_212_manifesto.json",
+    "calitweed_212_mapa.json"
+   ],
+   "sha256": {
+    "calitweed_212_frente.jpg": "44492dedaff9ebe79d83553bb73c59d16e63aba1c8ccf0e5611127b725cf55d0",
+    "calitweed_212_frente_alfa.png": "7d52dc6841a22929d8dfb7e0a5b6caa3632cff16a7f71b1150f8083dd1bad2ff",
+    "calitweed_212_manifesto.json": "c6136267b1ded6c29d659b21187d1234369a23b10673336427f5587165bb2ccc",
+    "calitweed_212_mapa.json": "73ff424199b2e4f4ec63a3e43fdeffae2ca8dc200fae848d9f6ea0a55e6af426"
+   },
+   "tamanho": 2080196,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 2x12 California Tweed",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "cartwheel_king": {
    "nome": "Cartwheel King",
@@ -4673,6 +4727,33 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "pro_115": {
+   "nome": "Pro 1x15",
+   "hash": "d7c9fa3b9f7a1f93",
+   "data": "2026-11-24T00:10:27Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pro_115_frente.jpg",
+    "pro_115_frente_alfa.png",
+    "pro_115_manifesto.json",
+    "pro_115_mapa.json"
+   ],
+   "sha256": {
+    "pro_115_frente.jpg": "c9275fb795a0057510654361ddec0ac7bce11bbe060cdca2e9dd8b2898febf7e",
+    "pro_115_frente_alfa.png": "a15c8e1779215c4e304ce5da2135447aeaa0096d2ab30a7e03708c116c70345c",
+    "pro_115_manifesto.json": "287bd23aa8fdac87ddd93f436cf04f888b242dadd91c39322bf3b481b0414aec",
+    "pro_115_mapa.json": "021b5e94fcd80184b49c3dc6adc57a0bf9305bef62639d45265fca985e4d3e61"
+   },
+   "tamanho": 1442753,
+   "tipo": "caixa",
+   "inspiracao": "Fender '57 Custom Pro-Amp 1x15",
+   "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "recto_dual": {
    "nome": "Recto Dual",
