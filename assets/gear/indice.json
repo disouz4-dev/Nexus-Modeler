@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:32:04Z",
+ "gerado": "2026-11-24T06:38:48Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5487,6 +5487,33 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "showman_215": {
+   "nome": "Showman 2x15",
+   "hash": "6edb193d2c60edf8",
+   "data": "2026-11-24T06:38:40Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "showman_215_frente.jpg",
+    "showman_215_frente_alfa.png",
+    "showman_215_manifesto.json",
+    "showman_215_mapa.json"
+   ],
+   "sha256": {
+    "showman_215_frente.jpg": "0dee485d21bcb633e44d397dd5a4f185aa601c974ded251f60ee36c09d0d9176",
+    "showman_215_frente_alfa.png": "9f74847879db5de5f918ec5043a0a7ea88694df8d976b57bc96a0466a0698ae7",
+    "showman_215_manifesto.json": "c24ee831a2e38629ed67348105799ae6f20166d06434c32495dd36f735aaa9ed",
+    "showman_215_mapa.json": "8c75c1b2605d3a88ef3b7674ce1c2d98224e1c52fbad2f5380afd8c3edec8652"
+   },
+   "tamanho": 1042334,
+   "tipo": "caixa",
+   "inspiracao": "Fender Dual Showman 2x15 (JBL D130F, anos 60)",
+   "categoria": "2x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "silver_112": {
    "nome": "Silver 1x12",

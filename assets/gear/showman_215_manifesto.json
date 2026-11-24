@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "showman_215",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Showman 2x15",
+  "inspiracao": "Fender Dual Showman 2x15 (JBL D130F, anos 60)",
+  "categoria": "2x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "showman",
+      "tons": [
+        {
+          "id": 13131,
+          "titulo": "Fender Dual Showman 2x15",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "nota": "a própria Dual Showman 2x15",
+          "ir_padrao": "STONES - Showman",
+          "padrao": true
+        },
+        {
+          "id": 60274,
+          "titulo": "1970 Fender Bassman 2x15 Cabinet Original CTS Speakers",
+          "criador": "maestrodimusica",
+          "tipo": "cab",
+          "nota": "Fender 2x15 da Bassman, reserva",
+          "ir_padrao": "1970 Bassman Cabinet CTS - SM57 Upper - Cone"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
