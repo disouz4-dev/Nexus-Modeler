@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:21:22Z",
+ "gerado": "2026-11-24T00:26:52Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6089,6 +6089,41 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "twelve1484": {
+   "nome": "Twelve 64",
+   "hash": "6b1ac41e0d8d0da2",
+   "data": "2026-11-24T00:26:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "twelve1484_botao_agudo.png",
+    "twelve1484_botao_ganho_1.png",
+    "twelve1484_botao_ganho_2.png",
+    "twelve1484_botao_grave.png",
+    "twelve1484_frente.jpg",
+    "twelve1484_frente_alfa.png",
+    "twelve1484_manifesto.json",
+    "twelve1484_mapa.json"
+   ],
+   "sha256": {
+    "twelve1484_botao_agudo.png": "bb1753332715d3e167bdc85567ad369a66df8dd62c7247b1e8a88d1d7b078f99",
+    "twelve1484_botao_ganho_1.png": "e642c978f9fff8a3b6103c47f674d75a469f1ffd3974d59361f743a71cbc9c8d",
+    "twelve1484_botao_ganho_2.png": "8579b8cf5687da40e57e39ab42f7841101196e06ed49af3b458b6290612246b0",
+    "twelve1484_botao_grave.png": "b717d317c5f9acbab9660f8340384e5175144355296eb68c3f178ea375235482",
+    "twelve1484_frente.jpg": "c4c7d190b71a1bfb59c3b8840687bb6f252dcd9bd2b4323aedc3bb546c284d96",
+    "twelve1484_frente_alfa.png": "a7f443c1ffb6adfb1c11acd03c8bca3f72c9b951119d0c3393d83dfd57c14315",
+    "twelve1484_manifesto.json": "f27f347139c02d73f71d170e749577eb796dc9c2afdb854276799cca0ff393b7",
+    "twelve1484_mapa.json": "e095aa0aeba2c622ec1d234d087cc1784aac727b48c150ed05ed2742a683e668"
+   },
+   "tamanho": 1319043,
+   "tipo": "cabecote",
+   "inspiracao": "Sears Silvertone 1484 Twin Twelve",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "twin57_212": {
    "nome": "Twin 57 2x12",

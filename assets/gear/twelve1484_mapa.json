@@ -1,0 +1,91 @@
+{
+  "nome": "Twelve 64",
+  "familia": "twelve1484",
+  "largura": 2400,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 198,
+      "y": 422,
+      "tamanho": 156,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 919,
+      "y": 427,
+      "tamanho": 147,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1131,
+      "y": 428,
+      "tamanho": 145,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1340,
+      "y": 427,
+      "tamanho": 147,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Channel One",
+    "Channel Two"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 398.8,
+      "y": 785.8,
+      "raio": 0.8
+    },
+    {
+      "x": 1105.8,
+      "y": 785.8,
+      "raio": 0.8
+    }
+  ],
+  "canais_som": [
+    "limpo",
+    "limpo"
+  ],
+  "troca_canal": {
+    "tipo": "botoes",
+    "pontos": [
+      {
+        "x": 398.5,
+        "y": 747.5,
+        "raio": 32.6
+      },
+      {
+        "x": 603.7,
+        "y": 747.5,
+        "raio": 32.6
+      },
+      {
+        "x": 1105.7,
+        "y": 747.5,
+        "raio": 32.6
+      },
+      {
+        "x": 1312.3,
+        "y": 747.5,
+        "raio": 32.6
+      }
+    ]
+  }
+}
