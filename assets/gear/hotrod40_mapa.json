@@ -1,0 +1,94 @@
+{
+  "nome": "Hot Rod 40",
+  "familia": "hotrod40",
+  "largura": 2400,
+  "altura": 1149,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 427,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 591,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 757,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 899,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1043,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1207,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1496,
+      "y": 179,
+      "tamanho": 97,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Drive"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 723.6,
+      "y": 256.1,
+      "raio": 11.3
+    }
+  ],
+  "troca_canal": {
+    "tipo": "botoes",
+    "pontos": [
+      {
+        "x": 1173.3,
+        "y": 256.1,
+        "raio": 16.0
+      }
+    ]
+  }
+}

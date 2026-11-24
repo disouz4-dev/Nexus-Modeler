@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T04:57:03Z",
+ "gerado": "2026-11-24T05:00:27Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3302,6 +3302,47 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "hotrod40": {
+   "nome": "Hot Rod 40",
+   "hash": "77a70f173fbd0e59",
+   "data": "2026-11-24T05:00:18Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "hotrod40_botao_agudo.png",
+    "hotrod40_botao_ganho_1.png",
+    "hotrod40_botao_ganho_2.png",
+    "hotrod40_botao_grave.png",
+    "hotrod40_botao_medio.png",
+    "hotrod40_botao_presenca.png",
+    "hotrod40_botao_volume.png",
+    "hotrod40_frente.jpg",
+    "hotrod40_frente_alfa.png",
+    "hotrod40_manifesto.json",
+    "hotrod40_mapa.json"
+   ],
+   "sha256": {
+    "hotrod40_botao_agudo.png": "f8b0c9e6bc2e918b1fba62c06ade815afc50f3d3860764fb1351c5775c89bae3",
+    "hotrod40_botao_ganho_1.png": "8158638bcb5d91d1132b9c2044c7e5d26728dff10780b4ee7b3e09344202d911",
+    "hotrod40_botao_ganho_2.png": "491c285da146691fe862ca62ea01a6e629576f71d14dd3afbb36729faf156e0e",
+    "hotrod40_botao_grave.png": "fa0dec498f93d8f9e221131a5bd7c62b2d448825ab05d3eff2f8b9d4808a36dc",
+    "hotrod40_botao_medio.png": "8da5cf50f8b5f452367bd94ba76ec60c1ecd564f27b40fe4a36d626a6187f47b",
+    "hotrod40_botao_presenca.png": "bedaaed1f92241f13cc03a1e884cf56da5c35b6af35b4e81adcb39cd131332f9",
+    "hotrod40_botao_volume.png": "f680148d4df31771d33e5dcd8e06da0c4e59c506ae00a27a97e281d486b3ead4",
+    "hotrod40_frente.jpg": "c5f695e27df0c8d42e23b70b837063b8ffbf00ca1e977c8f2afb7adfa89b753a",
+    "hotrod40_frente_alfa.png": "11dc62d55e40029ed0001d4c88e2e791f530222d89ff7fe90cc2f44bbb6f9b09",
+    "hotrod40_manifesto.json": "2470d1752b9bd70a948db2d14cca9713e7fd3efd379044fa1db8a326e165258d",
+    "hotrod40_mapa.json": "21ffac9de4335007dd2c6e21e435d4bbbe7b85ecf6d8bfbf4e1d6245815fe9f6"
+   },
+   "tamanho": 1366346,
+   "tipo": "cabecote",
+   "inspiracao": "Hot Rod Deluxe",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "hotrod_112": {
    "nome": "Hot Rod 1x12",
