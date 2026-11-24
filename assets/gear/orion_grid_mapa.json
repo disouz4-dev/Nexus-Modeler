@@ -1,0 +1,71 @@
+{
+  "nome": "Orion Grid",
+  "familia": "orion_grid",
+  "largura": 1200,
+  "altura": 1176,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 180,
+      "y": 300,
+      "tamanho": 153,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 347,
+      "y": 409,
+      "tamanho": 154,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 524,
+      "y": 360,
+      "tamanho": 154,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 700,
+      "y": 409,
+      "tamanho": 154,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 854,
+      "y": 300,
+      "tamanho": 153,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    140,
+    130
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 800.5,
+    "raio": 55.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 277.8,
+    "raio": 16.1
+  }
+}

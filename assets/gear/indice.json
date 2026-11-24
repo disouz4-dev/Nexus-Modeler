@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:38:48Z",
+ "gerado": "2026-11-24T06:43:09Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3261,6 +3261,33 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "green_pepper_wah": {
+   "nome": "Green Pepper Wah",
+   "hash": "bc529ad1a70a29f7",
+   "data": "2026-11-24T06:43:01Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "green_pepper_wah_frente.jpg",
+    "green_pepper_wah_frente_alfa.png",
+    "green_pepper_wah_manifesto.json",
+    "green_pepper_wah_mapa.json"
+   ],
+   "sha256": {
+    "green_pepper_wah_frente.jpg": "4086f0d0aaa6a05adfee8444aaa885860eb1a3bb070c44bd61218c91a4d90777",
+    "green_pepper_wah_frente_alfa.png": "b7081a9c673a9feb93d4253103ed01ee5e5113db7a9e1568c8775cc1fc2cf8e2",
+    "green_pepper_wah_manifesto.json": "8e5593fa5eb4a64519094e704b1041ada3716f290502a015b1a8ad44aba09777",
+    "green_pepper_wah_mapa.json": "58974cc72974dadeb93d94a1ef98a00eee2e04d7493a34198ef66b9c61815db0"
+   },
+   "tamanho": 158633,
+   "tipo": "pedal",
+   "inspiracao": "Ibanez WH10",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "gudjuin_fuzz": {
    "nome": "Gudjuin Fuzz",
    "hash": "9eb6ecc65a560898",
@@ -4907,6 +4934,43 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "orion_grid": {
+   "nome": "Orion Grid",
+   "hash": "325a1c33e85c90e0",
+   "data": "2026-11-24T06:43:01Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "orion_grid_botao_agudo.png",
+    "orion_grid_botao_ganho.png",
+    "orion_grid_botao_grave.png",
+    "orion_grid_botao_medio.png",
+    "orion_grid_botao_nivel.png",
+    "orion_grid_frente.jpg",
+    "orion_grid_frente_alfa.png",
+    "orion_grid_manifesto.json",
+    "orion_grid_mapa.json"
+   ],
+   "sha256": {
+    "orion_grid_botao_agudo.png": "b4b2f2f6ffdebca2e88bb062730cc1a2d8653d50cb4b8cf0767a734134fb85d7",
+    "orion_grid_botao_ganho.png": "dae02d8cecbd6fecb2a7d3999dae2650bc27fc0bc684a339b4e23fa939640e8c",
+    "orion_grid_botao_grave.png": "db921af64bcd7159568797e758d5e0668761654a58a422be513e5edd3a6b1df6",
+    "orion_grid_botao_medio.png": "029fc2a5b579e20671d8d3ff4ecdd98c4f4e6c10afe8999033cb0ad41429076c",
+    "orion_grid_botao_nivel.png": "d82c3fdeb92c728671abb3a04a0c5dee1e8d9c45f4531da755902f0f71b6bcdb",
+    "orion_grid_frente.jpg": "f7c6a788e514a43665aef6dc9695c75a0d2a97691b766e7ebde08c9a147ffb4e",
+    "orion_grid_frente_alfa.png": "c38d925733e42d5b4fae2c810b6e09f8a00930163a018e690cef11a992b830a4",
+    "orion_grid_manifesto.json": "d9fdecb7ece5281bb9931fb4e57a45d99a8f4371c1e6f154630b0ef12932c7c2",
+    "orion_grid_mapa.json": "9818acc1a6f234443d4cbced481757527124477a1fd6028da91c850406787272"
+   },
+   "tamanho": 1344648,
+   "tipo": "pedal",
+   "inspiracao": "Seymour Duncan SFX-08 Power Grid",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "pedaleira": {
    "nome": "Pedaleira",
