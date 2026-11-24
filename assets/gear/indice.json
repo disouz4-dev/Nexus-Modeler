@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:04:02Z",
+ "gerado": "2026-11-24T05:07:43Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -1022,6 +1022,49 @@
    "fonte": "Captura da TONE3000",
    "motor": "captura",
    "versao": "1.0.1",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "bliss100": {
+   "nome": "Bliss 100",
+   "hash": "52e7f7335f89aa45",
+   "data": "2026-11-24T05:07:35Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bliss100_botao_agudo.png",
+    "bliss100_botao_ganho_1.png",
+    "bliss100_botao_ganho_2.png",
+    "bliss100_botao_ganho_3.png",
+    "bliss100_botao_grave.png",
+    "bliss100_botao_medio.png",
+    "bliss100_botao_presenca.png",
+    "bliss100_botao_volume.png",
+    "bliss100_frente.jpg",
+    "bliss100_frente_alfa.png",
+    "bliss100_manifesto.json",
+    "bliss100_mapa.json"
+   ],
+   "sha256": {
+    "bliss100_botao_agudo.png": "c3a87ed30599bc383cd5d8e61350d12c6c848a2b655db827576a029198f17c2e",
+    "bliss100_botao_ganho_1.png": "cf26bbe86f246742aad30dd0b5c6ef202ba2dba3f2ae5f135e4973ac000f19c6",
+    "bliss100_botao_ganho_2.png": "8ffedde046423de7aae0a38047afc0b036f7a352d60924acbc119a8f26bffcc1",
+    "bliss100_botao_ganho_3.png": "e9770ed601d65dc58e9ff818adc596f421c698be16f8fa35b8320eec03632f68",
+    "bliss100_botao_grave.png": "881bbefe97de12b58a2de14d3847c041d1f330cb0b3f9dba6023fc4eeaaec901",
+    "bliss100_botao_medio.png": "74623575b3e00996ad33bf46d88c9e0b98a37b35e68bf190958911af74d47147",
+    "bliss100_botao_presenca.png": "9f42ad5f27ef8487a053997eb3d30319ca302663d64d94c09f6dbc1294d3e122",
+    "bliss100_botao_volume.png": "a5f2d3afbfe225a677ad18e0e099555eca3fe846b718713bea05c59eaf005f49",
+    "bliss100_frente.jpg": "b13722fdcc7e9745fa24598ae46ddb8215152da120278cfdd278d5ae8c4a8d29",
+    "bliss100_frente_alfa.png": "258d4dde7f42c35b68807937f3868b4e3ea65bc9b1c8ca3cfa0ffa8ee05a078b",
+    "bliss100_manifesto.json": "d9cf12f71f73adb0b7c153c26410206cb057fc1d6210f6ea9e8a14b99b87255c",
+    "bliss100_mapa.json": "86d197a6d9b328b0cece72190d5edee96eb80244555fb8fdc046f2d569c9237f"
+   },
+   "tamanho": 1794599,
+   "tipo": "cabecote",
+   "inspiracao": "Bogner Ecstasy 101B",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
   },
