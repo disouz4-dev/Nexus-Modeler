@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:40:18Z",
+ "gerado": "2026-11-24T13:53:11Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -197,6 +197,37 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "apollo_fuzz": {
+   "nome": "Apollo Fuzz",
+   "hash": "3b1a5e953dd98ff0",
+   "data": "2026-11-24T13:53:00Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "apollo_fuzz_botao_ganho.png",
+    "apollo_fuzz_botao_nivel.png",
+    "apollo_fuzz_frente.jpg",
+    "apollo_fuzz_frente_alfa.png",
+    "apollo_fuzz_manifesto.json",
+    "apollo_fuzz_mapa.json"
+   ],
+   "sha256": {
+    "apollo_fuzz_botao_ganho.png": "2144f3b7c9d408e303b5a3289ce531f34f57b0c91b51698e409f6a5f9e8f832f",
+    "apollo_fuzz_botao_nivel.png": "cec5dd97bb1469e50f4e8e7685f31e976b94945c215a716767d6f7e8dea83e66",
+    "apollo_fuzz_frente.jpg": "af2004d10e8e4455f54a7cd49a36b40a1bbe35dcfb2185db4874c5ef51a54fa1",
+    "apollo_fuzz_frente_alfa.png": "d11c1dbdcaaf56c903697f6f8e05e31dac3978a06b3db37369279b85d018d81a",
+    "apollo_fuzz_manifesto.json": "741fa86742c9bb7f35f59b8797f7ec78ac2b0e3346f658bb9bca962685984413",
+    "apollo_fuzz_mapa.json": "b67ca1b8e407d8fdbe5a9a37e6130d3824f6bea366c116b26f580762a5b7ccd0"
+   },
+   "tamanho": 305635,
+   "tipo": "pedal",
+   "inspiracao": "Roger Mayer Classic Fuzz",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "arch100": {
    "nome": "Arch 100",

@@ -1,0 +1,39 @@
+{
+  "nome": "Apollo Fuzz",
+  "familia": "apollo_fuzz",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 652,
+      "y": 348,
+      "tamanho": 102,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 447,
+      "y": 348,
+      "tamanho": 102,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    115,
+    160
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 867.5,
+    "raio": 47.0
+  }
+}
