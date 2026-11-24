@@ -1,0 +1,71 @@
+{
+  "nome": "The Governor",
+  "familia": "the_governor",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 278,
+      "y": 326,
+      "tamanho": 120,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "grave",
+      "x": 408,
+      "y": 326,
+      "tamanho": 120,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 540,
+      "y": 326,
+      "tamanho": 120,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 671,
+      "y": 326,
+      "tamanho": 120,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 802,
+      "y": 326,
+      "tamanho": 120,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    112,
+    132
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 921.5,
+    "raio": 56.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 754.6,
+    "raio": 17.1
+  }
+}

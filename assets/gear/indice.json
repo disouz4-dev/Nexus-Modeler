@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T04:26:22Z",
+ "gerado": "2026-11-24T04:31:57Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5909,6 +5909,43 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "the_governor": {
+   "nome": "The Governor",
+   "hash": "4d1a56c40378e7d5",
+   "data": "2026-11-24T04:31:50Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "the_governor_botao_agudo.png",
+    "the_governor_botao_ganho.png",
+    "the_governor_botao_grave.png",
+    "the_governor_botao_medio.png",
+    "the_governor_botao_nivel.png",
+    "the_governor_frente.jpg",
+    "the_governor_frente_alfa.png",
+    "the_governor_manifesto.json",
+    "the_governor_mapa.json"
+   ],
+   "sha256": {
+    "the_governor_botao_agudo.png": "58990024e0df0f88549a32306c33dedf77cfbc22eb7f9880f08b344b170f13c9",
+    "the_governor_botao_ganho.png": "ca3274017605977cb99327e2f3044fedd77a94c26f1bc19e1764022f88c954bf",
+    "the_governor_botao_grave.png": "77e3ebf24a1f02551614ac7b5549a089ac8ef9dbbba6004d96cbee61d52838ad",
+    "the_governor_botao_medio.png": "5c8863ce0708000ad3ee38a523b255b9a26892e4c5e726e95ddcbcd1687a2dc1",
+    "the_governor_botao_nivel.png": "0c8e2171c536ce8b531a239cc11219154a45cb214ccb117055a31d98b471c01c",
+    "the_governor_frente.jpg": "88fe4238b719d0a62ff1360f4507ef4fbfa23fb27a0fa7eb697f7720627733b1",
+    "the_governor_frente_alfa.png": "f141aac45bfb1f54a7ccca770afdd72b2c605cd427ad65a93b453c88732863f9",
+    "the_governor_manifesto.json": "244065ea6eefb5d202d1a0d14c6998c86dadfda0341b224ba86ec784793946f8",
+    "the_governor_mapa.json": "41b9a8a3f8e95c22bef20043de61aaeb67868e7dd746d37633a95c4689fbb20f"
+   },
+   "tamanho": 541445,
+   "tipo": "pedal",
+   "inspiracao": "Marshall The Guv'nor",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "topboost30": {
    "nome": "Top Boost 30",
