@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:29:51Z",
+ "gerado": "2026-11-24T13:34:30Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5921,6 +5921,37 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "polaris_fuzz": {
+   "nome": "Polaris Fuzz",
+   "hash": "5115eec9522b3ace",
+   "data": "2026-11-24T13:34:21Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "polaris_fuzz_botao_depth.png",
+    "polaris_fuzz_botao_volume.png",
+    "polaris_fuzz_frente.jpg",
+    "polaris_fuzz_frente_alfa.png",
+    "polaris_fuzz_manifesto.json",
+    "polaris_fuzz_mapa.json"
+   ],
+   "sha256": {
+    "polaris_fuzz_botao_depth.png": "a335538ea839d5b5c043b7f9ae19cddf98e71cb5a06ff3bd689e4189163038c1",
+    "polaris_fuzz_botao_volume.png": "4bd85aaec85bc4948ebb3661680c046236c36e02d94a806a284228ccb773945c",
+    "polaris_fuzz_frente.jpg": "0314c1b8d162b77f750e75f19155c09695d2054346356d6e0e0c64a6fd1ee3df",
+    "polaris_fuzz_frente_alfa.png": "438c497d81248ae057106fa3e6c32b7bce185132b5e136f3a0092c8ec58124da",
+    "polaris_fuzz_manifesto.json": "f01bf90be94b8c77e25908e2db0da6cbceaaf22ccfb4bb20290888b5c1ba9aae",
+    "polaris_fuzz_mapa.json": "5a413f7105533e2df8482360a77ba6549dbefc8e04f1830f9d8c4995b241ca28"
+   },
+   "tamanho": 688061,
+   "tipo": "pedal",
+   "inspiracao": "Mosrite Fuzzrite",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "power100": {
    "nome": "Power 100",

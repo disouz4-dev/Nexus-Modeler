@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "polaris_fuzz",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Polaris Fuzz",
+  "inspiracao": "Mosrite Fuzzrite",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

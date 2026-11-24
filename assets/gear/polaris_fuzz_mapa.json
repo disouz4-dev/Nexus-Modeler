@@ -1,0 +1,38 @@
+{
+  "nome": "Polaris Fuzz",
+  "familia": "polaris_fuzz",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 352,
+      "y": 302,
+      "tamanho": 128,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "depth",
+      "x": 710,
+      "y": 302,
+      "tamanho": 128,
+      "arquivo": "botao_depth.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    72,
+    115
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 921.0,
+    "raio": 74.5
+  }
+}
