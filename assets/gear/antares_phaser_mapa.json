@@ -1,0 +1,38 @@
+{
+  "nome": "Antares Phaser",
+  "familia": "antares_phaser",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "velocidade",
+      "x": 392,
+      "y": 472,
+      "tamanho": 78,
+      "arquivo": "botao_velocidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "profundidade",
+      "x": 392,
+      "y": 590,
+      "tamanho": 76,
+      "arquivo": "botao_profundidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    105,
+    260
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 631.0,
+    "y": 1113.5,
+    "raio": 171.5
+  }
+}

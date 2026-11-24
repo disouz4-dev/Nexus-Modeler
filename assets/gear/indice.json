@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:34:30Z",
+ "gerado": "2026-11-24T13:40:18Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -133,6 +133,37 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "antares_phaser": {
+   "nome": "Antares Phaser",
+   "hash": "89c4994f2d74eea1",
+   "data": "2026-11-24T13:40:09Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "antares_phaser_botao_profundidade.png",
+    "antares_phaser_botao_velocidade.png",
+    "antares_phaser_frente.jpg",
+    "antares_phaser_frente_alfa.png",
+    "antares_phaser_manifesto.json",
+    "antares_phaser_mapa.json"
+   ],
+   "sha256": {
+    "antares_phaser_botao_profundidade.png": "0d99040e7d27d856c2aacb9bf29eaf942586049da49ff94ba3f4ff195c94699a",
+    "antares_phaser_botao_velocidade.png": "933db86fadcd424d3f1ac2e829c8542a90a6cfe654b932c14c0f2b4cff93331a",
+    "antares_phaser_frente.jpg": "29625ffaa6295323f0f5913b451943501bf0a766728c6284878bce1242953e12",
+    "antares_phaser_frente_alfa.png": "9a0f325b27836d8f221a4cc1d68dd7698c1416d48d51eb1342969e62284a817a",
+    "antares_phaser_manifesto.json": "0406e113236c68cd5e270ecf3005bd3d09d2b827179baa8faa17f765d1b6fa7a",
+    "antares_phaser_mapa.json": "5ca774b404a20485d25c6391b7999082f377c3f8197abc38182fdc914f0439a6"
+   },
+   "tamanho": 329854,
+   "tipo": "pedal",
+   "inspiracao": "fOXX Foot Phaser",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "antennae_drive": {
    "nome": "Antennae Drive",
