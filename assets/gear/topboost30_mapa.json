@@ -2,229 +2,57 @@
   "nome": "Top Boost 30",
   "familia": "top_boost_30",
   "largura": 2400,
-  "altura": 1559,
+  "altura": 986,
   "posicoes": 101,
   "botoes": [
     {
-      "id": "medio",
-      "x": 507,
-      "y": 147,
-      "tamanho": 112,
-      "arquivo": "botao_medio.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
       "id": "ganho",
-      "x": 640,
-      "y": 147,
-      "tamanho": 111,
+      "x": 713,
+      "y": 681,
+      "tamanho": 107,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 771,
-      "y": 148,
-      "tamanho": 110,
+      "x": 820,
+      "y": 681,
+      "tamanho": 107,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 897,
-      "y": 148,
-      "tamanho": 109,
+      "x": 926,
+      "y": 681,
+      "tamanho": 107,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1549,
-      "y": 148,
-      "tamanho": 110,
+      "x": 1492,
+      "y": 681,
+      "tamanho": 107,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "volume",
-      "x": 1673,
-      "y": 147,
-      "tamanho": 111,
+      "x": 1605,
+      "y": 681,
+      "tamanho": 107,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [
-    "Normal"
+    "Top Boost"
   ],
-  "rotulos": [
-    {
-      "texto": "VOLUME",
-      "x": 565.7,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 697.7,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 828.0,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 952.6,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TONE",
-      "x": 1086.5,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "LEVEL",
-      "x": 1213.0,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "SPEED",
-      "x": 1341.4,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "DEPTH",
-      "x": 1469.7,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TONE CUT",
-      "x": 1601.8,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 1726.4,
-      "y": 119.9,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "STANDBY",
-      "x": 1852.9,
-      "y": 108.7,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "POWER",
-      "x": 1972.0,
-      "y": 108.7,
-      "altura": 23.61,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "INPUTS",
-      "x": 407.5,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "NORMAL",
-      "x": 571.2,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TOP BOOST",
-      "x": 828.0,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "REVERB",
-      "x": 1149.8,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREMOLO",
-      "x": 1399.0,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MASTER",
-      "x": 1665.1,
-      "y": 109.8,
-      "altura": 14.88,
-      "achatamento": 1.0,
-      "cor": "#e7e7ea",
-      "espaco": 1.0
-    }
-  ]
+  "rotulos": []
 }

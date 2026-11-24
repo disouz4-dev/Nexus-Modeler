@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:07:39Z",
+ "gerado": "2026-11-24T06:32:04Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6237,14 +6237,13 @@
   },
   "topboost30": {
    "nome": "Top Boost 30",
-   "hash": "2861560c44de6b42",
-   "data": "2026-10-30T18:49:27Z",
+   "hash": "0df903b0465928c9",
+   "data": "2026-11-24T06:31:51Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "topboost30_botao_agudo.png",
     "topboost30_botao_ganho.png",
     "topboost30_botao_grave.png",
-    "topboost30_botao_medio.png",
     "topboost30_botao_presenca.png",
     "topboost30_botao_volume.png",
     "topboost30_frente.jpg",
@@ -6253,24 +6252,23 @@
     "topboost30_mapa.json"
    ],
    "sha256": {
-    "topboost30_botao_agudo.png": "e0c3029d769ad8f4f2b0d9b5708406da16425d309aa382142a95fde3ea5815c6",
-    "topboost30_botao_ganho.png": "a553c70d7b3b3c494eb509ce9dec1d369e7f070208374fbd5188330a23209eb3",
-    "topboost30_botao_grave.png": "5b50b9d6aed46203550141c86c102f6f73ae08bf2bbc3b4e3f03c6b4579ea5ec",
-    "topboost30_botao_medio.png": "bf93aba558088c43632aeb8b866db0883d7afd2692cd00c7393f49c73af00b7b",
-    "topboost30_botao_presenca.png": "43d9a0b8996600d5d9fd9c73f6409bb84ae901fb7dbaa013a4b5e2e3caef510d",
-    "topboost30_botao_volume.png": "e4a74b3d3d56756ca69a71d961506166b4b373991b00c54bc128124fab09c8e5",
-    "topboost30_frente.jpg": "faa71ef5399f5c25dbdccfc6583577d5126d2828fbe9c93214c2d175051df09c",
-    "topboost30_frente_alfa.png": "d5839a9ff65a08dff0f6428c5d749147dce9684e0b658652506a490f748e68bc",
-    "topboost30_manifesto.json": "cef6d098ecf10db6c38fe7b2c73728b4660541cffd1a7d8b0441802655e3a0a1",
-    "topboost30_mapa.json": "286ae44f35eac8ca694d9f85d7ea7bca123b383f278972964bed1d654d7dfe2f"
+    "topboost30_botao_agudo.png": "593e0e3f54b227ec6e25810153db566b16854db74b7545c6409977683d90b55d",
+    "topboost30_botao_ganho.png": "7461bd9e45b8ac3875437db0b1b4b8b8c362d906403f39e080325dad7d5656ed",
+    "topboost30_botao_grave.png": "3dd15cf09789e9d52911ed87692175b21aa834426dcd9a11609213b78526dd82",
+    "topboost30_botao_presenca.png": "52e586685d8a3dd6142aac5fa5ad1f6185361afd1f1ed0001be811721351d232",
+    "topboost30_botao_volume.png": "4210d813b1712e87db034591cad0981cde91d433057cea9f248b1dd1a8850cec",
+    "topboost30_frente.jpg": "db1a8cc20afc03697ca3ad92373df566f28b0015431400198017c96ddece225e",
+    "topboost30_frente_alfa.png": "74377aa3741ab826a6b0d7ebcb9ccc9fd20f848cde6a055ebedf8372c6972835",
+    "topboost30_manifesto.json": "0c93cb5605eb41cdb089d6142119e666ed2b150e4fb9c5ec28aebdb44488a680",
+    "topboost30_mapa.json": "6db64a1f01e7a3b38b79436be49c235e37c7fa07087e1af887d1af20fa0b1a99"
    },
-   "tamanho": 1532374,
+   "tamanho": 1228699,
    "tipo": "cabecote",
    "inspiracao": "AC30",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.2",
+   "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
   },
