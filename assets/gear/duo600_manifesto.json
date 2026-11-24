@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "duo600",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Duo 600",
+  "inspiracao": "Champion 600 (2007)",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

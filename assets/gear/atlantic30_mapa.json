@@ -1,0 +1,95 @@
+{
+  "nome": "Atlantic 30",
+  "familia": "atlantic30",
+  "largura": 2400,
+  "altura": 991,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 261,
+      "y": 668,
+      "tamanho": 194,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 428,
+      "y": 669,
+      "tamanho": 192,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 605,
+      "y": 670,
+      "tamanho": 190,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 954,
+      "y": 672,
+      "tamanho": 186,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 1273,
+      "y": 672,
+      "tamanho": 186,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "canal",
+      "x": 1168,
+      "y": 711,
+      "tamanho": 72,
+      "arquivo": "botao_canal.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "chave"
+    }
+  ],
+  "canais": [
+    "Canal 1",
+    "Canal 2"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 1136.4,
+      "y": 746.5,
+      "raio": 15.7
+    },
+    {
+      "x": 1272.4,
+      "y": 746.5,
+      "raio": 15.7
+    }
+  ],
+  "canais_som": [
+    "limpo",
+    "distorcido"
+  ],
+  "troca_canal": {
+    "tipo": "chave",
+    "pontos": [
+      {
+        "x": 1204.4,
+        "y": 746.4,
+        "raio": 24.1
+      }
+    ]
+  }
+}

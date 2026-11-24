@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:14:53Z",
+ "gerado": "2026-11-24T00:21:22Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -374,6 +374,45 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "atlantic30": {
+   "nome": "Atlantic 30",
+   "hash": "1ce78091512f8979",
+   "data": "2026-11-24T00:21:07Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "atlantic30_botao_agudo.png",
+    "atlantic30_botao_canal.png",
+    "atlantic30_botao_ganho_1.png",
+    "atlantic30_botao_ganho_2.png",
+    "atlantic30_botao_grave.png",
+    "atlantic30_botao_volume.png",
+    "atlantic30_frente.jpg",
+    "atlantic30_frente_alfa.png",
+    "atlantic30_manifesto.json",
+    "atlantic30_mapa.json"
+   ],
+   "sha256": {
+    "atlantic30_botao_agudo.png": "500e26b2b52b602fe8014f1226410f88001a3ef26c3bed077b6cbc97461dc6e3",
+    "atlantic30_botao_canal.png": "6bf8f7a4ca27a24efddcd139e983a46ecb4be28250403eb54a1088f297590aec",
+    "atlantic30_botao_ganho_1.png": "de19657a6bf18f00ddf22cf70b11834175520b290981121d137e4623a368e7cf",
+    "atlantic30_botao_ganho_2.png": "8e0fca70c7269fd49003deafa096dafbe35114c29304f9f90dc303ec59d2795b",
+    "atlantic30_botao_grave.png": "5f93b9ecec862ae8b469340a7956da3cbd6f9f490e914f3d8766dd438e2b91dd",
+    "atlantic30_botao_volume.png": "3615ba4b727c8f39726243d461d5d5a7bd29cff87f5b16b73eee4b0bb19854b7",
+    "atlantic30_frente.jpg": "36ec1121550bdce384d2b92b6aa374da173d866f74ca6190c3651c4bf2161362",
+    "atlantic30_frente_alfa.png": "e858895e8bdf5be1b99c900faa05642c6050bc21968f31adf1498377df91686c",
+    "atlantic30_manifesto.json": "67179e7292a82744213782b14358ed64e37d8e3342bac4030ec53a4ba5a038af",
+    "atlantic30_mapa.json": "8ce2362a243e4821bf05ede4b0394680ec1b1a90d7a2ae1b0ee5899b90978e9e"
+   },
+   "tamanho": 2751757,
+   "tipo": "cabecote",
+   "inspiracao": "Mesa/Boogie TransAtlantic TA-30",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "aurora_flanger": {
    "nome": "Aurora Flanger",
@@ -2435,6 +2474,35 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "duo600": {
+   "nome": "Duo 600",
+   "hash": "86387a36eae18f23",
+   "data": "2026-11-24T00:21:07Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "duo600_botao_ganho.png",
+    "duo600_frente.jpg",
+    "duo600_frente_alfa.png",
+    "duo600_manifesto.json",
+    "duo600_mapa.json"
+   ],
+   "sha256": {
+    "duo600_botao_ganho.png": "f3aae6400f773a5f24544d5861a3c9f77eb0dd83455e2487e0578c44678750c5",
+    "duo600_frente.jpg": "b658865a3da01614c2ed161c9f489772c24a2d6ff64b76cba0fd83608ec7cfa8",
+    "duo600_frente_alfa.png": "7c53c71d8e029b926cbd833b77b33f692f36ebb6d0709f44055456ec7f361fed",
+    "duo600_manifesto.json": "8509dc6627cbbd833cefb5f51566d00a41ed9acfe91802da7c7af794a4d1e07f",
+    "duo600_mapa.json": "a4690fe6ce763a2575b176323bfacc802c6b4eba4800782545575e75396a5da4"
+   },
+   "tamanho": 1014160,
+   "tipo": "cabecote",
+   "inspiracao": "Champion 600 (2007)",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "eagle_410": {
    "nome": "Eagle 4x10",
    "hash": "f43c11cd2a60e680",
@@ -4155,6 +4223,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "metal_412": {
+   "nome": "Metal 4x12",
+   "hash": "d1c5d9ba18e1e979",
+   "data": "2026-11-24T00:21:07Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "metal_412_frente.jpg",
+    "metal_412_frente_alfa.png",
+    "metal_412_manifesto.json",
+    "metal_412_mapa.json"
+   ],
+   "sha256": {
+    "metal_412_frente.jpg": "e4c63300fccec4c94f0be495af8517c7e9b7ae4d22584f40e0165f0dd0937f0e",
+    "metal_412_frente_alfa.png": "a8612371d559c8327dbff9d7c598cca7ba08fa5c84ac7e0b30154a737a02fa49",
+    "metal_412_manifesto.json": "fbcbce3de5fd9e822f0a4b6dc9612a8e7f8a9057b105960b2ab2e7240c935275",
+    "metal_412_mapa.json": "783e2e6295dd8917972282bbba7fe983518cb243499123dd53093b56d7948619"
+   },
+   "tamanho": 1097558,
+   "tipo": "caixa",
+   "inspiracao": "Fender Metalhead MH-412ST",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "mice_war": {
    "nome": "Mice War",

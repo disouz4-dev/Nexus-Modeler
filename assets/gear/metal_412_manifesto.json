@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "metal_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Metal 4x12",
+  "inspiracao": "Fender Metalhead MH-412ST",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "fender 4x12",
+      "tons": [
+        {
+          "id": 104387,
+          "titulo": "Marshall JCM800 Lead 1960 4x12 G12T-75",
+          "criador": "tenfiftyfour",
+          "tipo": "cab",
+          "nota": "4x12 fechada de metal (MH-412 não tem captura)",
+          "ir_padrao": "V2_SM57 center BR",
+          "padrao": true
+        },
+        {
+          "id": 45023,
+          "titulo": "Celestion Vintage 30 2002 Mesa Boogie 4x12 SM57",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "4x12 fechada V30",
+          "ir_padrao": "V30 UR 4FB 4x12 SM57 1.50in 0.0in SA73"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

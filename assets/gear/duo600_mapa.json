@@ -1,0 +1,22 @@
+{
+  "nome": "Duo 600",
+  "familia": "duo600",
+  "largura": 2400,
+  "altura": 1607,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 943,
+      "y": 1230,
+      "tamanho": 192,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
