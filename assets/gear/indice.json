@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:57:39Z",
+ "gerado": "2026-11-24T14:15:51Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6495,6 +6495,33 @@
    "tamanho": 748388,
    "tipo": "caixa",
    "inspiracao": "Leslie 122 (vintage)",
+   "categoria": "Rotativa",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "rotary_122a": {
+   "nome": "Rotary 122A",
+   "hash": "a9b586221186f892",
+   "data": "2026-11-24T14:15:25Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rotary_122a_frente.jpg",
+    "rotary_122a_frente_alfa.png",
+    "rotary_122a_manifesto.json",
+    "rotary_122a_mapa.json"
+   ],
+   "sha256": {
+    "rotary_122a_frente.jpg": "aebc6b530ea8b15155b32b84345375244a5d0307b49eb994425445079b4d5b6c",
+    "rotary_122a_frente_alfa.png": "455df604e26bb13b5273844aa00d6f86ca39a2546f2cc2f4cdae54c8add3eee2",
+    "rotary_122a_manifesto.json": "e321cfb956ce4bb8a8d043703ad9781c681aa1674c1278822b0c20733f7b3b26",
+    "rotary_122a_mapa.json": "c718b8cb2e2191eccaa2626ead83c8c803dae494ccf2753f4b4d13081b66b3bc"
+   },
+   "tamanho": 812352,
+   "tipo": "caixa",
+   "inspiracao": "Leslie 122A (Hammond Suzuki)",
    "categoria": "Rotativa",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
