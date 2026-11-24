@@ -1,0 +1,70 @@
+{
+  "nome": "Turmeric Chorus",
+  "familia": "turmeric_chorus",
+  "largura": 1200,
+  "altura": 1140,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "baixo",
+      "x": 352,
+      "y": 392,
+      "tamanho": 99,
+      "arquivo": "botao_baixo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 452,
+      "y": 392,
+      "tamanho": 98,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "profundidade",
+      "x": 551,
+      "y": 392,
+      "tamanho": 98,
+      "arquivo": "botao_profundidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "largura",
+      "x": 652,
+      "y": 392,
+      "tamanho": 98,
+      "arquivo": "botao_largura.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "velocidade",
+      "x": 751,
+      "y": 392,
+      "tamanho": 99,
+      "arquivo": "botao_velocidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    127,
+    95
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 712.0,
+    "raio": 39.5
+  },
+  "led": {
+    "x": 448.7,
+    "y": 687.7,
+    "raio": 12.1
+  }
+}

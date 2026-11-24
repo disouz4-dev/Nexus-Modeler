@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T14:15:51Z",
+ "gerado": "2026-11-24T14:23:42Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -7913,6 +7913,43 @@
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "turmeric_chorus": {
+   "nome": "Turmeric Chorus",
+   "hash": "8d29d995d555246b",
+   "data": "2026-11-24T14:23:31Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "turmeric_chorus_botao_agudo.png",
+    "turmeric_chorus_botao_baixo.png",
+    "turmeric_chorus_botao_largura.png",
+    "turmeric_chorus_botao_profundidade.png",
+    "turmeric_chorus_botao_velocidade.png",
+    "turmeric_chorus_frente.jpg",
+    "turmeric_chorus_frente_alfa.png",
+    "turmeric_chorus_manifesto.json",
+    "turmeric_chorus_mapa.json"
+   ],
+   "sha256": {
+    "turmeric_chorus_botao_agudo.png": "253cdab9be57fc4b600add796b369c276a577d7c879a1a346d1861cdf083a0d0",
+    "turmeric_chorus_botao_baixo.png": "f2fe625a9a1a7345b34450d6b8da69f12cbc546e6db1c2c5263c837ee24e6651",
+    "turmeric_chorus_botao_largura.png": "b1d70059b6fb13b8ba8a30f842941e3a4d7b91572aab43ff0575e925e13202d3",
+    "turmeric_chorus_botao_profundidade.png": "75dc0741a12446af43fd11de62a2ef66241595c96eeb180b0e14b2b37574445b",
+    "turmeric_chorus_botao_velocidade.png": "d8e8519428f82e81c174a1c7dc7b5f3913138678fffeb518d382dc0d83c9de6b",
+    "turmeric_chorus_frente.jpg": "a726b6f0706e7c9f6e7f1d096189407b122f1a7c3d01f6fe7d6f2353c0c11791",
+    "turmeric_chorus_frente_alfa.png": "aad45fac683eb7855b676ac5e4620c261a9b1768ff88ed554e66525281451b4f",
+    "turmeric_chorus_manifesto.json": "cf6048d47875c8e465bfe44fcf6d67ccd477679b1965fe52555c9e7c97e6cbd9",
+    "turmeric_chorus_mapa.json": "b4f1d7633c89f2de0a99cbe354a35fe5759e092bd303af85b11ad586c7e1b6bf"
+   },
+   "tamanho": 851289,
+   "tipo": "pedal",
+   "inspiracao": "MXR M134 Stereo Chorus",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
