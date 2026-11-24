@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "silversuper",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Silver Super",
   "inspiracao": "Super Reverb",
@@ -11,7 +11,60 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Super Reverb",
+      "tons": [
+        {
+          "id": 68651,
+          "titulo": "Fender '65 Super Reverb Reissue - Normal Channel",
+          "criador": "outmodedelectronics",
+          "tipo": "amp",
+          "capturas": 6,
+          "downloads": 5591,
+          "serie": [
+            "BFSR Nrm"
+          ],
+          "nota": "canal Normal: volume 5 a 10, agudos no 5",
+          "mapa": {
+            "V-5 T-5 B-4 SRL": 5,
+            "V-6 T-5 B-4 SRL": 6,
+            "V-7 T-5 B-2 SRL": 7,
+            "V-8 T-5 B-2 SRL": 8,
+            "V-9 T-5 B-2 SRL": 9,
+            "V-10 T-5 B-2 SRL": 10
+          },
+          "padrao": true
+        },
+        {
+          "id": 57914,
+          "titulo": "1964 Fender Super Reverb",
+          "criador": "maestrodimusica",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 3110,
+          "nota": "Super Reverb 1964, canal Normal: volume 3, 4, 5 e 6",
+          "mapa": {
+            "Norm, V3 T6": 3,
+            "Norm, V4 T6": 4,
+            "Norm, V5 T6": 5,
+            "Norm, V6 T6": 6
+          }
+        },
+        {
+          "id": 19,
+          "titulo": "Fender Super Reverb 1977",
+          "criador": "tone3000",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 186878,
+          "nota": "a mais curtida (2929 favoritos): volume 3, já com a caixa",
+          "mapa": {
+            "sm57 and AKG 414": 3
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

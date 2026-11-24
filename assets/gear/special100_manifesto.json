@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "special100",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Special 100",
   "inspiracao": "Dumble Overdrive Special",
@@ -11,7 +11,70 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Dumble",
+      "tons": [
+        {
+          "id": 30435,
+          "titulo": "Dumble ODS #102 Ford Hyper Accuracy+",
+          "criador": "slamminmofo",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 43013,
+          "pacote": "Canal 1 Limpo",
+          "nota": "canal limpo: do mais limpo ao mais sujo, pelos nomes do autor",
+          "mapa": {
+            "_CLN_KLEAN_S": 2,
+            "_CLN_MAIN_S": 4,
+            "_CLN_GRITTY_S": 6,
+            "_CLN_PAB_CRUNCHY_S": 8
+          }
+        },
+        {
+          "id": 94,
+          "titulo": "Dumble Overdrive Special",
+          "criador": "spitfine",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 10950,
+          "pacote": "Canal 1 Limpo (Spitfine)",
+          "nota": "canal limpo (a segunda mais curtida)",
+          "mapa": {
+            "Dumble_Clean": 4
+          }
+        },
+        {
+          "id": 30435,
+          "titulo": "Dumble ODS #102 Ford Hyper Accuracy+",
+          "criador": "slamminmofo",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 43013,
+          "pacote": "Canal 2 Overdrive",
+          "nota": "canal Overdrive: pouco ganho, o principal, mais ganho e muito ganho",
+          "mapa": {
+            "_OD_THICK_LOGAIN_S": 3,
+            "_OD_MAIN_S": 5,
+            "_OD_PAB_MAIN_GAINY_S": 7,
+            "_OD_PAB_HIGAIN_S": 9
+          }
+        },
+        {
+          "id": 94,
+          "titulo": "Dumble Overdrive Special",
+          "criador": "spitfine",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 10950,
+          "pacote": "Canal 2 Overdrive (Spitfine)",
+          "nota": "canal Overdrive",
+          "mapa": {
+            "Dumble_Overdrive": 7
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

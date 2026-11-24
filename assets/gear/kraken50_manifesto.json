@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "kraken50",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Kraken 50",
   "inspiracao": "Victory VX Kraken",
@@ -11,7 +11,55 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Kraken",
+      "tons": [
+        {
+          "id": 47732,
+          "titulo": "VICTORY KRAKEN CHANEL 1",
+          "criador": "szabobence1998bs",
+          "tipo": "amp",
+          "capturas": 6,
+          "downloads": 507,
+          "pacote": "Canal 1 Crunch",
+          "serie": [
+            "EUNA --"
+          ],
+          "posicao": "G(\\d+) EUNA",
+          "nota": "canal 1: ganho 3 a 8"
+        },
+        {
+          "id": 35323,
+          "titulo": "Victory Kraken - High-Gain",
+          "criador": "nicolasc2000",
+          "tipo": "amp",
+          "capturas": 6,
+          "downloads": 2331,
+          "pacote": "Canal 2 Pesado",
+          "nota": "canal de muito ganho: seis degraus, do menos ao mais ganho (a mais baixada)",
+          "mapa": {
+            "Kraken-1": 1,
+            "Kraken-2": 2.8,
+            "Kraken-3": 4.6,
+            "Kraken-4": 6.4,
+            "Kraken-5": 8.2,
+            "Kraken-6": 10
+          }
+        },
+        {
+          "id": 47749,
+          "titulo": "VICTORY KRAKEN CHANEL 2",
+          "criador": "szabobence1998bs",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 472,
+          "pacote": "Canal 2 Pesado (ganho 3 a 6)",
+          "posicao": "KRAKEN G(\\d+)",
+          "nota": "canal 2: ganho 3 a 6"
+        }
+      ]
+    }
   },
   "signature": null
 }

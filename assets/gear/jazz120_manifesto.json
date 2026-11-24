@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "jazz120",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Jazz 120",
   "inspiracao": "JC-120",
@@ -11,7 +11,20 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "JC-120",
+      "tons": [
+        {
+          "id": 10912,
+          "titulo": "Roland JC 120B Jazz Chorus",
+          "tipo": "amp",
+          "capturas": 6,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "signature": null
 }

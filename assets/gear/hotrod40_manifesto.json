@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "hotrod40",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Hot Rod 40",
   "inspiracao": "Hot Rod Deluxe",
@@ -11,7 +11,52 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Hot Rod Deluxe",
+      "tons": [
+        {
+          "id": 5852,
+          "titulo": "Fender Hot Rod Deluxe III - Normal Ch V2",
+          "criador": "kosmicaudio",
+          "tipo": "amp",
+          "capturas": 8,
+          "downloads": 831,
+          "pacote": "Canal 1 Limpo",
+          "nota": "canal Normal, entrada 1: volume 2 a 12 do original (o botão dele vai até 12)",
+          "mapa": {
+            "Input1_V3": 2.5,
+            "Input1_V4": 3.3,
+            "Input1_V5": 4.2,
+            "Input1_V6": 5.0,
+            "Input1_V8": 6.7,
+            "Input1_V10": 8.3,
+            "Input1_V12": 10.0,
+            "Input1_V2_Bright_Off": 1.7
+          }
+        },
+        {
+          "id": 5514,
+          "titulo": "Fender Hot Rod Deluxe III - Drive Ch",
+          "criador": "kosmicaudio",
+          "tipo": "amp",
+          "capturas": 8,
+          "downloads": 901,
+          "pacote": "Canal 2 Drive",
+          "nota": "canal Drive: drive 3 a 12 do original (o botão dele vai até 12)",
+          "mapa": {
+            "Drive_Ch_D3": 2.5,
+            "Drive_Ch_D4": 3.3,
+            "Drive_Ch_D5": 4.2,
+            "Drive_Ch_D6": 5.0,
+            "Drive_Ch_D7": 5.8,
+            "Drive_Ch_D8": 6.7,
+            "Drive_Ch_D10": 8.3,
+            "Drive_Ch_D12": 10.0
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

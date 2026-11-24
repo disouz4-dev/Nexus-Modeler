@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "hi103",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Hi 103",
   "inspiracao": "Hiwatt DR103",
@@ -11,7 +11,27 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Hiwatt",
+      "tons": [
+        {
+          "id": 6233,
+          "titulo": "Hiwatt Custom 100 DR 103 1974",
+          "criador": "daweed",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 13552,
+          "nota": "DR103 1974: volume 3 (entrada brilhante), 5, 8 e no máximo",
+          "mapa": {
+            "DR 103 VOL3 Bright": 3,
+            "DR 103 VOL5": 5,
+            "DR 103 VOL8": 8,
+            "DR 103 Crancked": 10
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

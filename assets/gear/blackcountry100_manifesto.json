@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "blackcountry100",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Black Country 100",
   "inspiracao": "Laney Supergroup",
@@ -11,7 +11,21 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Supergroup",
+      "tons": [
+        {
+          "id": 54840,
+          "titulo": "Laney LA100BL pre Supergroup 1969",
+          "criador": "amalgamaudio",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 9094,
+          "nota": "a única captura do Supergroup na TONE3000 (um LA100BL de 1969), já com a caixa; toca no botão todo"
+        }
+      ]
+    }
   },
   "signature": null
 }

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "bliss100",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Bliss 100",
   "inspiracao": "Bogner Ecstasy 101B",
@@ -11,7 +11,82 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Ecstasy",
+      "tons": [
+        {
+          "id": 68715,
+          "titulo": "Bogner Ecstasy 101B — Archive",
+          "criador": "kenjisuzuki",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 8068,
+          "pacote": "Canal 1 Limpo",
+          "nota": "canal verde (limpo), já com a caixa",
+          "mapa": {
+            "SC-XTC-101B-Green-Normal": 3
+          }
+        },
+        {
+          "id": 15223,
+          "titulo": "2003 Bogner Ecstasy 101B",
+          "criador": "maestrodimusica",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 3826,
+          "pacote": "Canal 1 Limpo (2003)",
+          "nota": "canal limpo básico",
+          "mapa": {
+            "Bogner Ecstasy - Basic Clean": 3
+          }
+        },
+        {
+          "id": 6510,
+          "titulo": "Bogner Ecstasy 101B",
+          "criador": "jccobb2",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 3662,
+          "pacote": "Canal 2 Azul",
+          "nota": "canal azul",
+          "mapa": {
+            "Blue Channel": 5,
+            "Blue Channel Boosted": -1
+          }
+        },
+        {
+          "id": 45482,
+          "titulo": "BOGNER ECSTASY 101B RED CHANNEL",
+          "criador": "deathblossomaudio",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 3666,
+          "pacote": "Canal 3 Vermelho",
+          "nota": "canal vermelho: três crunches e uma base, na ordem do autor",
+          "mapa": {
+            "101B CRUNCH #1": 3,
+            "101B CRUNCH #2": 5,
+            "101B CRUNCH #3": 7,
+            "101B RHYTHM #1": 9
+          }
+        },
+        {
+          "id": 6510,
+          "titulo": "Bogner Ecstasy 101B",
+          "criador": "jccobb2",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 3662,
+          "pacote": "Canal 3 Vermelho (101B)",
+          "nota": "canal vermelho",
+          "mapa": {
+            "Red Channel": 6,
+            "Red Channel Boosted": -1
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "darkstar20",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "cabecote",
   "nome": "Dark Star 20",
   "inspiracao": "Blackstar HT-20RH MkII",
@@ -11,7 +11,85 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Blackstar",
+      "tons": [
+        {
+          "id": 46997,
+          "titulo": "AP Blackstar HT STAGE 100 MKIII",
+          "criador": "antoniopizzulo",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 847,
+          "pacote": "Canal 1 Limpo",
+          "nota": "HT Stage 100, canal limpo",
+          "mapa": {
+            "Clean - voice off": 3
+          }
+        },
+        {
+          "id": 46997,
+          "titulo": "AP Blackstar HT STAGE 100 MKIII",
+          "criador": "antoniopizzulo",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 847,
+          "pacote": "Canal 2 Overdrive 1",
+          "nota": "HT Stage 100, canal 1 de saturação: ganho às 9 horas, ao meio-dia, às 3 horas e no máximo",
+          "mapa": {
+            "OD1 - ISF 5 voice off A": 2,
+            "OD1 - ISF 5 voice off B": 5,
+            "OD1 - ISF 5 voice off C": 8,
+            "OD1 - ISF 5 voice off D": 10
+          }
+        },
+        {
+          "id": 47267,
+          "titulo": "Blackstar HT5",
+          "criador": "thesilentking",
+          "tipo": "amp",
+          "capturas": 3,
+          "downloads": 573,
+          "pacote": "Canal 2 Overdrive 1 (HT5)",
+          "serie": [
+            "HT5 ISF 5 Gain"
+          ],
+          "posicao": "Gain (\\d+)_",
+          "nota": "HT5: ganho 2, 5 e 8"
+        },
+        {
+          "id": 46997,
+          "titulo": "AP Blackstar HT STAGE 100 MKIII",
+          "criador": "antoniopizzulo",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 847,
+          "pacote": "Canal 3 Overdrive 2",
+          "nota": "HT Stage 100, canal 2 de saturação: ganho às 9 horas, ao meio-dia, às 3 horas e no máximo",
+          "mapa": {
+            "OD2 - ISF 5 voice off A": 2,
+            "OD2 - ISF 5 voice off B": 5,
+            "OD2 - ISF 5 voice off C": 8,
+            "OD2 - ISF 5 voice off D": 10
+          },
+          "padrao": true
+        },
+        {
+          "id": 53871,
+          "titulo": "Blackstar Series One 100 MK II Head",
+          "criador": "blackstaramps",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 6897,
+          "pacote": "Canal 3 Overdrive 2 (Series One)",
+          "nota": "Series One 100 (a mais curtida), canal 2 de saturação no ganho 7",
+          "mapa": {
+            "OD2 G7 V7": 7
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

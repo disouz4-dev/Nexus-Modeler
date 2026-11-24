@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "goddess80",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Goddess 80",
   "inspiracao": "Bogner Shiva",
@@ -11,7 +11,47 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Shiva",
+      "tons": [
+        {
+          "id": 2313,
+          "titulo": "Bogner Shiva",
+          "criador": "akka5",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 1191,
+          "pacote": "Canal 1 Limpo",
+          "nota": "canal 1, já com a caixa"
+        },
+        {
+          "id": 26875,
+          "titulo": "Bogner Shiva EL34",
+          "criador": "akka5",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 1569,
+          "pacote": "Canal 2 Solo",
+          "nota": "canal 2, sem e com o reforço interno",
+          "mapa": {
+            "shiva ch2-b": 5,
+            "shiva ch2 +b": 8
+          },
+          "padrao": true
+        },
+        {
+          "id": 2315,
+          "titulo": "Bogner Shiva",
+          "criador": "akka5",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 2357,
+          "pacote": "Canal 2 Solo (com caixa)",
+          "nota": "canal 2 com o reforço interno, já com a caixa"
+        }
+      ]
+    }
   },
   "signature": null
 }

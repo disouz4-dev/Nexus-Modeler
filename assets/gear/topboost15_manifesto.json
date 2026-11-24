@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "topboost15",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Top Boost 15",
   "inspiracao": "AC15C1",
@@ -11,7 +11,73 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "AC15",
+      "tons": [
+        {
+          "id": 1080,
+          "titulo": "Vox AC15",
+          "criador": "mattgoings",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 24890,
+          "pacote": "Canal 1 Normal",
+          "nota": "canal Normal: limpo cristalino, no limite de sujar, crunch e saturado",
+          "mapa": {
+            "Crystal Clean Normal": 2,
+            "Edge of Breakup Normal": 4,
+            "Crunch Normal": 6,
+            "Overdriven Normal": 8
+          }
+        },
+        {
+          "id": 31553,
+          "titulo": "Vox AC15C1 Normal Channel - 11.5dBu - TTSV10 Input",
+          "criador": "outmodedelectronics",
+          "tipo": "amp",
+          "capturas": 8,
+          "downloads": 1202,
+          "pacote": "Canal 1 Normal (varredura)",
+          "serie": [
+            "Nrm V-",
+            " C-5 TTSV10 SRL"
+          ],
+          "posicao": "Nrm V-(\\d+) ",
+          "nota": "canal Normal: volume 2 a 10, corte no 5"
+        },
+        {
+          "id": 1080,
+          "titulo": "Vox AC15",
+          "criador": "mattgoings",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 24890,
+          "pacote": "Canal 2 Top Boost",
+          "nota": "canal Top Boost: limpo cristalino, no limite de sujar, crunch e saturado",
+          "mapa": {
+            "Crystal Clean TB": 2,
+            "Edge of Breakup TB": 4,
+            "Crunch TB": 6,
+            "Overdriven TB": 8
+          }
+        },
+        {
+          "id": 37813,
+          "titulo": "Vox AC15C1 Top Boost Channel",
+          "criador": "outmodedelectronics",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 1178,
+          "pacote": "Canal 2 Top Boost (varredura)",
+          "serie": [
+            "T-5 B-5 C-5 TTSV10 SRL"
+          ],
+          "posicao": "TB V-(\\d+) ",
+          "nota": "canal Top Boost: volume 2, 3, 5 e 8, graves e agudos no 5"
+        }
+      ]
+    }
   },
   "signature": null
 }

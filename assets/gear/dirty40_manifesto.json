@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "dirty40",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Dirty 40",
   "inspiracao": "Friedman Dirty Shirley",
@@ -11,7 +11,40 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Dirty Shirley",
+      "tons": [
+        {
+          "id": 692,
+          "titulo": "Dirty Shirley Mini 20W Tube Head",
+          "criador": "saschas",
+          "tipo": "amp",
+          "capturas": 3,
+          "downloads": 3477,
+          "nota": "Dirty Shirley Mini: ganho 4, 6 e 8",
+          "mapa": {
+            "crunch_G4": 4,
+            "crunch_G6": 6,
+            "crunch_G8": 8,
+            "crunch_G4_BuxBoostTight": -1,
+            "crunch_G6_PreQ": -1
+          }
+        },
+        {
+          "id": 42204,
+          "titulo": "Friedman Dirty Shirley 40",
+          "criador": "soeke6000",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 636,
+          "nota": "Dirty Shirley 40, um ajuste, já com a caixa",
+          "mapa": {
+            "DS 40 Palmer 212 V30 M160": 5
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

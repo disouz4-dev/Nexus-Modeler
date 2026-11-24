@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "blackcat30",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "cabecote",
   "nome": "Billy the Cat",
   "inspiracao": "Bad Cat Hot Cat",
@@ -11,7 +11,52 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Bad Cat",
+      "tons": [
+        {
+          "id": 33480,
+          "titulo": "Bad Cat Lynx V2",
+          "criador": "steve2010",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 649,
+          "pacote": "Canal 1 Limpo",
+          "nota": "Bad Cat Lynx (o Hot Cat não está na TONE3000), canal 1 baixo e alto",
+          "mapa": {
+            "Ch1 Low": 3,
+            "Ch1 High": 6
+          }
+        },
+        {
+          "id": 42437,
+          "titulo": "Bad Cat Lynx X Drive Channel",
+          "criador": "davewmacfarlane",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 506,
+          "pacote": "Canal 2 Drive",
+          "posicao": "Channel G(\\d+) ",
+          "nota": "Bad Cat Lynx X, canal Drive: ganho 2, 4, 5 e 7",
+          "padrao": true
+        },
+        {
+          "id": 33480,
+          "titulo": "Bad Cat Lynx V2",
+          "criador": "steve2010",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 649,
+          "pacote": "Canal 2 Drive (Lynx)",
+          "nota": "Bad Cat Lynx, canal 2 baixo e alto",
+          "mapa": {
+            "CH2low": 5,
+            "Ch2 High": 8
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

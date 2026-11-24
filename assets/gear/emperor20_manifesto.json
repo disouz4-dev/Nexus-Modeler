@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "emperor20",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "cabecote",
   "nome": "Emperor 20",
   "inspiracao": "Tone King Imperial MkII",
@@ -11,7 +11,81 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Tone King",
+      "tons": [
+        {
+          "id": 5713,
+          "titulo": "Tone King Imperial MKII A1 Conversion",
+          "criador": "danielnguyen",
+          "tipo": "amp",
+          "capturas": 5,
+          "downloads": 980,
+          "pacote": "Canal 1 Ritmo",
+          "serie": [
+            "Rhythm V",
+            " T6 B4"
+          ],
+          "posicao": "Rhythm V(\\d+(?:\\.\\d+)?) ",
+          "nota": "canal Rhythm: volume 2, 3, 4,5, 6 e 8",
+          "padrao": true
+        },
+        {
+          "id": 50670,
+          "titulo": "Tone King Imperial Preamp",
+          "criador": "alexanderperfilyev",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 566,
+          "pacote": "Canal 1 Ritmo (pré-amplificador)",
+          "serie": [
+            "Imperial Clean G"
+          ],
+          "posicao": "Clean G(\\d+)",
+          "nota": "só o pré-amplificador, canal limpo: ganho 3, 5, 7 e 9"
+        },
+        {
+          "id": 1849,
+          "titulo": "Tone King Imperial RH Crunch BAL DI",
+          "criador": "amalgamaudio",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 4259,
+          "pacote": "Canal 1 Ritmo (crunch)",
+          "nota": "a mais curtida (236 favoritos): canal Rhythm com crunch"
+        },
+        {
+          "id": 5713,
+          "titulo": "Tone King Imperial MKII A1 Conversion",
+          "criador": "danielnguyen",
+          "tipo": "amp",
+          "capturas": 3,
+          "downloads": 980,
+          "pacote": "Canal 2 Solo",
+          "serie": [
+            "Lead V",
+            " T4 M4"
+          ],
+          "posicao": "Lead V(\\d+) ",
+          "nota": "canal Lead: volume 2, 4 e 8"
+        },
+        {
+          "id": 50670,
+          "titulo": "Tone King Imperial Preamp",
+          "criador": "alexanderperfilyev",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 566,
+          "pacote": "Canal 2 Solo (pré-amplificador)",
+          "serie": [
+            "Imperial Lead G"
+          ],
+          "posicao": "Lead G(\\d+)",
+          "nota": "só o pré-amplificador, canal Lead: ganho 3, 5, 7 e 9"
+        }
+      ]
+    }
   },
   "signature": null
 }

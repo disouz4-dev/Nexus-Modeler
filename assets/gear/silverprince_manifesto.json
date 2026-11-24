@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "silverprince",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Silver Prince",
   "inspiracao": "Princeton Reverb",
@@ -11,7 +11,55 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Princeton",
+      "tons": [
+        {
+          "id": 46872,
+          "titulo": "1964 Fender Princeton",
+          "criador": "maestrodimusica",
+          "tipo": "amp",
+          "capturas": 3,
+          "downloads": 1853,
+          "serie": [
+            ", Tone 4"
+          ],
+          "posicao": "Vol (\\d+),",
+          "nota": "Princeton 1964: volume 4, 7 e 10",
+          "padrao": true
+        },
+        {
+          "id": 42319,
+          "titulo": "65 Fender Princeton with Various Mics",
+          "criador": "tone3000",
+          "tipo": "amp-cab",
+          "capturas": 3,
+          "downloads": 10885,
+          "nota": "Princeton 1965: volume 3, 5 e 7, já com a caixa",
+          "mapa": {
+            "Clean 3 SM57": 3,
+            "EOB Vol 5 SM57": 5,
+            "Crunch Vol 7 SM57": 7
+          }
+        },
+        {
+          "id": 32514,
+          "titulo": "1964 Fender Princeton \"Tuxedo\"",
+          "criador": "maestrodimusica",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 1728,
+          "nota": "Princeton 1964: volume 4, 5,5, 7 e 10",
+          "mapa": {
+            "Clean - Vol 4, Tone 4": 4,
+            "All on 5.5": 5.5,
+            "Sweet Spot - Vol 7, Tone 4": 7,
+            "Cranked - Vol 10, Tone 4": 10
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

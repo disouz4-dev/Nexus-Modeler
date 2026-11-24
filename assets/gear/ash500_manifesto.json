@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "ash500",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Ash 500",
   "inspiracao": "Ashdown ABM EVO III",
@@ -11,7 +11,33 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Ashdown",
+      "tons": [
+        {
+          "id": 1597,
+          "titulo": "Ashdown Abm 500 No Speaker",
+          "criador": "colorzh",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 600,
+          "nota": "ABM 500 sem caixa, uma captura que toca no botão todo"
+        },
+        {
+          "id": 65116,
+          "titulo": "Ashdown Abm 500 evo2",
+          "criador": "laciborbly24",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 405,
+          "nota": "ABM 500 Evo II, só o cabeçote, limpo",
+          "mapa": {
+            "Clean only the amp head": 5
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "iron120",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Iron 120",
   "inspiracao": "Laney Ironheart",
@@ -11,7 +11,82 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Ironheart",
+      "tons": [
+        {
+          "id": 41748,
+          "titulo": "Beji's Laney IronHeart IRT120 Pack",
+          "criador": "bejivgm",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 1691,
+          "pacote": "Canal 1 Limpo",
+          "nota": "canal limpo com tudo ao meio-dia",
+          "mapa": {
+            "Clean Channel": 5,
+            "Clean Channel - Boosted": -1
+          }
+        },
+        {
+          "id": 41513,
+          "titulo": "LANEY Ironheart BCC-IRT120H",
+          "criador": "ripper",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 592,
+          "pacote": "Canal 1 Limpo (BCC)",
+          "nota": "canal limpo",
+          "mapa": {
+            "CH Clean": 5
+          }
+        },
+        {
+          "id": 41748,
+          "titulo": "Beji's Laney IronHeart IRT120 Pack",
+          "criador": "bejivgm",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 1691,
+          "pacote": "Canal 2 Ritmo",
+          "nota": "canal Rhythm com tudo ao meio-dia",
+          "mapa": {
+            "Rhythm Channel": 5,
+            "Rhythm Channel - Boosted": -1
+          },
+          "padrao": true
+        },
+        {
+          "id": 57311,
+          "titulo": "Laney Ironheart IRT60",
+          "criador": "frankyfire",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 1197,
+          "pacote": "Canal 2 Ritmo (IRT60)",
+          "serie": [
+            "Rhythm PWR | B1.1p M2 T0.8"
+          ],
+          "posicao": "\\| G(\\d+(?:\\.\\d+)?) ",
+          "nota": "IRT60, canal Rhythm: ganho 5 e 7,2"
+        },
+        {
+          "id": 41748,
+          "titulo": "Beji's Laney IronHeart IRT120 Pack",
+          "criador": "bejivgm",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 1691,
+          "pacote": "Canal 3 Solo",
+          "nota": "canal Lead com tudo ao meio-dia",
+          "mapa": {
+            "Lead Channel": 5,
+            "Lead Channel - Boosted": -1
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

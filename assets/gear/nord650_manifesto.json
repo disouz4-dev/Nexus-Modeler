@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "nord650",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "Nord 650",
   "inspiracao": "EBS Classic 500",
@@ -11,7 +11,40 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "EBS",
+      "tons": [
+        {
+          "id": 46888,
+          "titulo": "EBS (Marcus Miller, Tal Wilkenfeld, Henrik Linder...)",
+          "criador": "difesa98",
+          "tipo": "amp-cab",
+          "capturas": 12,
+          "downloads": 2716,
+          "nota": "timbres de baixistas que usam EBS, doze capturas",
+          "padrao": true
+        },
+        {
+          "id": 30825,
+          "titulo": "EBS Classic 500",
+          "criador": "mkrumme",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 320,
+          "nota": "Classic 500"
+        },
+        {
+          "id": 61637,
+          "titulo": "Reidmar + Sansamp Tech21 Bass Driver DI",
+          "criador": "pipppriss",
+          "tipo": "amp",
+          "capturas": 5,
+          "downloads": 897,
+          "nota": "Reidmar 750 com um SansAmp na frente"
+        }
+      ]
+    }
   },
   "signature": null
 }

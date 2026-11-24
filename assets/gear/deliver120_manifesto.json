@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "deliver120",
-  "versao": "1.0.2",
+  "versao": "1.0.3",
   "tipo": "cabecote",
   "nome": "Deliver 120",
   "inspiracao": "Fryette Deliverance",
@@ -11,7 +11,40 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Deliverance",
+      "tons": [
+        {
+          "id": 6231,
+          "titulo": "VHT Deliverance 60 - 2005",
+          "criador": "paulbradshawguitar",
+          "tipo": "amp",
+          "capturas": 4,
+          "downloads": 1051,
+          "nota": "Deliverance 60: os dois ganhos subindo juntos (4 e 6, 4 e 10, 6 e 10, 10 e 10)",
+          "mapa": {
+            "2005 - G1-4-G2-6": 3,
+            "2005 - G1-4-G2-10": 5,
+            "2005 - G1-6-G2-10": 7,
+            "2005 - G1-10-G2-10": 10,
+            "G1-4-G2-6 +Lichtlaerm": -1,
+            "G1-4-G2-10 +Lichtlaerm": -1,
+            "G1-6-G2-10 +Lichtlaerm": -1,
+            "G1-10-G2-10 +Lichtlaerm": -1
+          }
+        },
+        {
+          "id": 6179,
+          "titulo": "VHT Deliverance 60",
+          "criador": "paulbradshawguitar",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 357,
+          "nota": "Deliverance 60 no modo de muito ganho"
+        }
+      ]
+    }
   },
   "signature": null
 }

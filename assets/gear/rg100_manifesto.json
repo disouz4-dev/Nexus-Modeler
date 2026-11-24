@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "rg100",
-  "versao": "1.0.1",
+  "versao": "1.0.2",
   "tipo": "cabecote",
   "nome": "RG 100",
   "inspiracao": "Randall RG100ES",
@@ -11,7 +11,69 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "RG100",
+      "tons": [
+        {
+          "id": 41209,
+          "titulo": "Randall RG100ES 100W (1987)",
+          "criador": "ripper",
+          "tipo": "amp",
+          "capturas": 1,
+          "downloads": 3552,
+          "pacote": "Canal 1 Limpo",
+          "nota": "RG100ES 1987, canal limpo",
+          "mapa": {
+            "(1987) CH Clean": 4
+          }
+        },
+        {
+          "id": 41209,
+          "titulo": "Randall RG100ES 100W (1987)",
+          "criador": "ripper",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 3552,
+          "pacote": "Canal 2 Solo",
+          "nota": "RG100ES 1987, canal de solo: ganho normal e 8,5",
+          "mapa": {
+            "(1987) CH Crunch": 5,
+            "(1987) CH Crunch Gain 8.5": 8.5,
+            "(1987) CH Crunch Sustain Engaged": -1
+          }
+        },
+        {
+          "id": 41209,
+          "titulo": "Randall RG100ES 100W (1987)",
+          "criador": "ripper",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 3552,
+          "pacote": "Canal 2 Solo (Sustain)",
+          "nota": "RG100ES 1987, canal de solo com a chave Sustain: ganho normal e 8,5",
+          "mapa": {
+            "CH Crunch Sustain Engaged": 5,
+            "CH Crunch Sustain Engaged Gain 8.5": 8.5
+          }
+        },
+        {
+          "id": 40842,
+          "titulo": "Randall RG100ES 100W (1985)",
+          "criador": "ripper",
+          "tipo": "amp",
+          "capturas": 2,
+          "downloads": 1430,
+          "pacote": "Canal 2 Solo (1985)",
+          "nota": "RG100ES 1985, canal de solo: ganho normal e 8,5",
+          "mapa": {
+            "(1985) CH Crunch": 5,
+            "(1985) CH Crunch Gain 8.5": 8.5,
+            "(1985) CH Crunch Sustain Engaged": -1
+          }
+        }
+      ]
+    }
   },
   "signature": null
 }

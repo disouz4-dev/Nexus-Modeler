@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "nova100",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Nova 100",
   "inspiracao": "Fortin Natas",
@@ -11,7 +11,21 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Natas",
+      "tons": [
+        {
+          "id": 40891,
+          "titulo": "Fortin NATAS Preamp Pedal",
+          "criador": "modernroyaljams",
+          "tipo": "pedal",
+          "capturas": 1,
+          "downloads": 454,
+          "nota": "o cabeçote Natas não está na TONE3000; esta é a versão em pedal do pré-amplificador dele, uma captura que toca no botão todo"
+        }
+      ]
+    }
   },
   "signature": null
 }

@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "silvertwin",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Silver Twin",
   "inspiracao": "Twin Reverb",
@@ -11,7 +11,20 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Twin Reverb",
+      "tons": [
+        {
+          "id": 1733,
+          "titulo": "Fender Twin Reverb - Breakup",
+          "tipo": "amp",
+          "capturas": 7,
+          "padrao": true,
+          "nota": "reserva quando a mais curtida da busca não serve sozinha"
+        }
+      ]
+    }
   },
   "signature": null
 }

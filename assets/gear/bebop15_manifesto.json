@@ -1,7 +1,7 @@
 {
   "formato": 1,
   "id": "bebop15",
-  "versao": "1.0.0",
+  "versao": "1.0.1",
   "tipo": "cabecote",
   "nome": "Bebop 15",
   "inspiracao": "Polytone Mini Brute",
@@ -11,7 +11,22 @@
   "motor": "captura",
   "regulagem": {},
   "capturas": {
-    "origem": "tone3000"
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "Polytone",
+      "tons": [
+        {
+          "id": 56824,
+          "titulo": "Polytone Mini Brute III 15\" (Jazz Only)",
+          "criador": "matz",
+          "tipo": "amp-cab",
+          "capturas": 1,
+          "downloads": 2188,
+          "nota": "Mini Brute III com o alto-falante de 15, para jazz",
+          "padrao": true
+        }
+      ]
+    }
   },
   "signature": null
 }
