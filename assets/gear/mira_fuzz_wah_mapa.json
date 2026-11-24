@@ -1,0 +1,19 @@
+{
+  "nome": "Mira Fuzz Wah",
+  "familia": "mira_fuzz_wah",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    108,
+    294
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1190.0,
+    "raio": 175.5
+  }
+}

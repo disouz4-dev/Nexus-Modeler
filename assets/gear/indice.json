@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:00:11Z",
+ "gerado": "2026-11-24T06:07:39Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -4616,6 +4616,33 @@
    "versao": "1.0.5",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "mira_fuzz_wah": {
+   "nome": "Mira Fuzz Wah",
+   "hash": "d557e8994ae28b75",
+   "data": "2026-11-24T06:07:31Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mira_fuzz_wah_frente.jpg",
+    "mira_fuzz_wah_frente_alfa.png",
+    "mira_fuzz_wah_manifesto.json",
+    "mira_fuzz_wah_mapa.json"
+   ],
+   "sha256": {
+    "mira_fuzz_wah_frente.jpg": "4dd1c40a9e70ea40352b2f3d8e5cbdc0995a4b61112856a7cc4f95557b9e4fba",
+    "mira_fuzz_wah_frente_alfa.png": "9b93eb748e519511f25061102961c723f62aa7321f4dd5396e2b9a41000afc80",
+    "mira_fuzz_wah_manifesto.json": "fb4f3687247bd9835037e8e7563deaccd6b41908822426692b9db17cd600016b",
+    "mira_fuzz_wah_mapa.json": "95430d6ba7f59f624c8a43ee73674b09369526304e58f75f7173ce10552f4631"
+   },
+   "tamanho": 166970,
+   "tipo": "pedal",
+   "inspiracao": "Fender Fuzz-Wah (anos 70)",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "moss_flanger": {
    "nome": "Moss Flanger",
