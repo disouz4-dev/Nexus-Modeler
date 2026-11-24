@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "bass53_115",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Bass 53 1x15",
+  "inspiracao": "Fender Bassman 5B6 1x15 (1953)",
+  "categoria": "1x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "1x15",
+      "tons": [
+        {
+          "id": 79853,
+          "titulo": "Fender Tweed Pro 1956 - 57 (FREE complete XR IR Pack)",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "nota": "Pro tweed 1x15 com Jensen, mesma época e falante parecido",
+          "ir_padrao": "TF '56 TWEED PRO 1X15 C15N 57 3 - Enhanced",
+          "padrao": true
+        },
+        {
+          "id": 31187,
+          "titulo": "Fender Bassman Neo 115",
+          "criador": "salamiexcerpt5j",
+          "tipo": "cab",
+          "nota": "Bassman 1x15 moderna",
+          "ir_padrao": "Fender Bassman Neo 115_SM57_Close_OnAxis"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

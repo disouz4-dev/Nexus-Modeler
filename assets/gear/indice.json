@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T07:26:56Z",
+ "gerado": "2026-11-24T07:32:37Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -662,6 +662,33 @@
    "tipo": "caixa",
    "inspiracao": "Fender '57 Custom Bandmaster 3x10",
    "categoria": "3x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "bass53_115": {
+   "nome": "Bass 53 1x15",
+   "hash": "5f134303a6e7bfdd",
+   "data": "2026-11-24T07:32:24Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bass53_115_frente.jpg",
+    "bass53_115_frente_alfa.png",
+    "bass53_115_manifesto.json",
+    "bass53_115_mapa.json"
+   ],
+   "sha256": {
+    "bass53_115_frente.jpg": "fb3b49d1b4a598a17bbf96dbcf05367881cae3849fd80883bfa289a285e07eca",
+    "bass53_115_frente_alfa.png": "2519e9905498aa374e39580fb45f3ffe670dc333a633fdcd6805f2f1a2fda571",
+    "bass53_115_manifesto.json": "e5c3d874a0b253679f8807642437ecd5570acc2eb420d38033fe877f6815ac17",
+    "bass53_115_mapa.json": "cb6824688f882a296605db6ff17a235679177fd722de673ccf9c7db9d6e0001e"
+   },
+   "tamanho": 2208993,
+   "tipo": "caixa",
+   "inspiracao": "Fender Bassman 5B6 1x15 (1953)",
+   "categoria": "1x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
    "versao": "1.0.0",
@@ -5386,6 +5413,33 @@
    "tipo": "caixa",
    "inspiracao": "Fender '57 Custom Pro-Amp 1x15",
    "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "recto_212": {
+   "nome": "Recto 2x12",
+   "hash": "cab1134bc33e6412",
+   "data": "2026-11-24T07:32:24Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "recto_212_frente.jpg",
+    "recto_212_frente_alfa.png",
+    "recto_212_manifesto.json",
+    "recto_212_mapa.json"
+   ],
+   "sha256": {
+    "recto_212_frente.jpg": "35ea2d68bedde7340a2f54341863f5de3fc04ef7143ea0cb7a503c0fd8e15cf9",
+    "recto_212_frente_alfa.png": "ba3a99001de8968965ec5aa5df11f3e81e61240f3a0a8a2d6d6cbb700ee8a57e",
+    "recto_212_manifesto.json": "34b733210bbcdda64ff9fe05bfc9c6287eae080bebdbcf4c0b05da1ffabe7070",
+    "recto_212_mapa.json": "01e9a9a72f5c2c8bb1b51da6fd09d717f3c2873e558c44cb6ea65e62bc2b5948"
+   },
+   "tamanho": 860867,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 2x12 Rectifier Horizontal",
+   "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
    "versao": "1.0.0",
