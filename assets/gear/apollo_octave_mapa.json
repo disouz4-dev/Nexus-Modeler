@@ -1,0 +1,39 @@
+{
+  "nome": "Apollo Octave",
+  "familia": "apollo_octave",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 658,
+      "y": 356,
+      "tamanho": 88,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 454,
+      "y": 356,
+      "tamanho": 88,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    115,
+    160
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 788.0,
+    "raio": 47.0
+  }
+}

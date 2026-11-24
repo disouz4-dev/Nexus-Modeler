@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:53:11Z",
+ "gerado": "2026-11-24T13:57:39Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -223,6 +223,37 @@
    "tipo": "pedal",
    "inspiracao": "Roger Mayer Classic Fuzz",
    "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "apollo_octave": {
+   "nome": "Apollo Octave",
+   "hash": "05211d18e25f84ee",
+   "data": "2026-11-24T13:57:29Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "apollo_octave_botao_ganho.png",
+    "apollo_octave_botao_nivel.png",
+    "apollo_octave_frente.jpg",
+    "apollo_octave_frente_alfa.png",
+    "apollo_octave_manifesto.json",
+    "apollo_octave_mapa.json"
+   ],
+   "sha256": {
+    "apollo_octave_botao_ganho.png": "b9c4db7a3a0f5cf8332265c004786728454e59d74b116af1f27f7c00ff560d0f",
+    "apollo_octave_botao_nivel.png": "a5ad53fbd57bc0d9c42d37995c96427dcc84ee38a10286112fcb5c64b9aaa913",
+    "apollo_octave_frente.jpg": "55d1e94ee9cc3314f61e333025e7610081c133c4e3c86e3732f60ee2ee534263",
+    "apollo_octave_frente_alfa.png": "b0acff8a615702bfbe678d72a4ad9c73de0ba0bc18be7cf0c9fb4e5e4a973653",
+    "apollo_octave_manifesto.json": "cadcee777828143cdd56bb35ceb932184c39a1d7216b18d28ad4ed2e42c0dfa5",
+    "apollo_octave_mapa.json": "e49d2e1246d578b77ce07416fff529f0c52114a1a28cc0ac4154bcc36f0be79d"
+   },
+   "tamanho": 264175,
+   "tipo": "pedal",
+   "inspiracao": "Roger Mayer Octavia",
+   "categoria": "Modulação",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
    "versao": "1.0.0",
