@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "junior10",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Junior 10",
+  "inspiracao": "Pro Junior IV",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

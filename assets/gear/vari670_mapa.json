@@ -1,0 +1,31 @@
+{
+  "nome": "Vari 670",
+  "familia": "vari670",
+  "largura": 2400,
+  "altura": 1200,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 1172,
+      "y": 341,
+      "tamanho": 238,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1489,
+      "y": 339,
+      "tamanho": 241,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

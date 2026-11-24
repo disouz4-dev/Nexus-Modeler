@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "silence2b",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Silence IIB",
+  "inspiracao": "Rocktron Hush IIB",
+  "categoria": "Utilidades",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

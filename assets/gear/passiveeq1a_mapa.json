@@ -1,0 +1,58 @@
+{
+  "nome": "Passive EQ 1A",
+  "familia": "passiveeq1a",
+  "largura": 2400,
+  "altura": 936,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "boost_grave",
+      "x": 636,
+      "y": 267,
+      "tamanho": 194,
+      "arquivo": "botao_boost_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "atten_grave",
+      "x": 917,
+      "y": 269,
+      "tamanho": 189,
+      "arquivo": "botao_atten_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "boost_agudo",
+      "x": 1294,
+      "y": 269,
+      "tamanho": 189,
+      "arquivo": "botao_boost_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "atten_agudo",
+      "x": 1571,
+      "y": 267,
+      "tamanho": 194,
+      "arquivo": "botao_atten_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "banda",
+      "x": 1107,
+      "y": 518,
+      "tamanho": 188,
+      "arquivo": "botao_banda.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

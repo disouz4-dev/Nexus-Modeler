@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "vault_port_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault Port 2x12",
+  "inspiracao": "Ampeg PortaBass PB-212H",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "ampeg",
+      "tons": [
+        {
+          "id": 76939,
+          "titulo": "Ampeg PF-112HLF SM57",
+          "criador": "justinsurratt",
+          "tipo": "cab",
+          "nota": "Ampeg moderna com corneta (1x12)",
+          "ir_padrao": "PF112HLF_SM57_cap_1inch_axis",
+          "padrao": true
+        },
+        {
+          "id": 90735,
+          "titulo": "Hartke PRO 2200 (2x12 bass cabinet)",
+          "criador": "everipper",
+          "tipo": "cab",
+          "nota": "2x12 de baixo, reserva",
+          "ir_padrao": "Hartke Pro 2200 (Impulse 1)"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

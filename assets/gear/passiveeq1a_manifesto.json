@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "passiveeq1a",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Passive EQ 1A",
+  "inspiracao": "Pultec EQP-1A Program Equalizer",
+  "categoria": "Utilidades",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T13:21:11Z",
+ "gerado": "2026-11-24T13:29:51Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -779,6 +779,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "bassline_pro_215": {
+   "nome": "Bassline Pro 2x15",
+   "hash": "655510309f6fe1bd",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bassline_pro_215_frente.jpg",
+    "bassline_pro_215_frente_alfa.png",
+    "bassline_pro_215_manifesto.json",
+    "bassline_pro_215_mapa.json"
+   ],
+   "sha256": {
+    "bassline_pro_215_frente.jpg": "e414ce8ad23d5eebf8d5a737e007e16b7e61ae4e68b9834873bc68e5d66d7c39",
+    "bassline_pro_215_frente_alfa.png": "716236aec3fba5ea394d71667be2c45b51ab7a16b28d3efeaebdb2e2d9765a77",
+    "bassline_pro_215_manifesto.json": "e9d280992e62e46338caf87debeebde351a4cab6d1ac75842e0bbf6c711f846f",
+    "bassline_pro_215_mapa.json": "145afb16ca711e2afa8bcc83cf0ea91ab821ac226e02acf7a2cb7fafc28b3082"
+   },
+   "tamanho": 2162106,
+   "tipo": "caixa",
+   "inspiracao": "Fender Bassman Pro 215",
+   "categoria": "2x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "bassmanpro_410": {
    "nome": "Bass Pro 4x10",
@@ -4170,6 +4197,37 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "junior10": {
+   "nome": "Junior 10",
+   "hash": "4d3673ccdfb545e1",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "junior10_botao_agudo.png",
+    "junior10_botao_ganho.png",
+    "junior10_frente.jpg",
+    "junior10_frente_alfa.png",
+    "junior10_manifesto.json",
+    "junior10_mapa.json"
+   ],
+   "sha256": {
+    "junior10_botao_agudo.png": "61d3c4f27d944e8f99a636da7583aa04968aebd30f3c4d683533074aaeb9ba9a",
+    "junior10_botao_ganho.png": "8c0d55c7dcd3dc4de3ef28b4696687d73bba6d2c8958d0e455311999a87e64ea",
+    "junior10_frente.jpg": "c67240fca4e42cbd02d3c1b0c13a7239d3637c263f064a1771d61bbc0cbd18bd",
+    "junior10_frente_alfa.png": "966df1995f625a6a046233111e337717476de697d083193f6d0d00587d0dbcc1",
+    "junior10_manifesto.json": "8908274a81411584191f5e3028c6ad2e936e79ad3d86b0393c1b93bb3f0cd071",
+    "junior10_mapa.json": "9e3bc8d337f706bd68aa7aee6d16486aaf42c02f89d3d6aa99acdd5576ce5098"
+   },
+   "tamanho": 1879130,
+   "tipo": "cabecote",
+   "inspiracao": "Pro Junior IV",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "junior_110": {
    "nome": "Junior 1x10",
    "hash": "32e4719802e2f69d",
@@ -4446,6 +4504,37 @@
    "tamanho": 722775,
    "tipo": "cabecote",
    "inspiracao": "Teletronix LA-2A Leveling Amplifier",
+   "categoria": "Rack",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "limit1176": {
+   "nome": "Limit 1176",
+   "hash": "07d3b0db96e516aa",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "limit1176_botao_ganho.png",
+    "limit1176_botao_volume.png",
+    "limit1176_frente.jpg",
+    "limit1176_frente_alfa.png",
+    "limit1176_manifesto.json",
+    "limit1176_mapa.json"
+   ],
+   "sha256": {
+    "limit1176_botao_ganho.png": "4a71714a77f867a57aa8f7c05d6aeb9932a59102eabf89f8fa754ac31cfbf5d7",
+    "limit1176_botao_volume.png": "ad5b8353e449d5da2b15d2ff470e40d377de31a6a490bc9988bf8de464e83471",
+    "limit1176_frente.jpg": "da851818b38fe17096988542f6bec59f9cfcd6b2fec3860fa6c4ebb110eee4ae",
+    "limit1176_frente_alfa.png": "67971e5701526ffd147efc890a8a049fb1b0a5c14309112ef977f878732a6f0a",
+    "limit1176_manifesto.json": "53199f00a3058e251cf829e37eb2c82b9b637043ebea848073c982339937f375",
+    "limit1176_mapa.json": "43f6bebcbacd815b353fbd11b81749b382088ea980c2e489c59f632fed050ca3"
+   },
+   "tamanho": 1423729,
+   "tipo": "cabecote",
+   "inspiracao": "UREI 1176LN Limiting Amplifier (blackface)",
    "categoria": "Rack",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
@@ -5222,6 +5311,41 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "mizar_blend": {
+   "nome": "Mizar Blend",
+   "hash": "fa601a4b6b7292a5",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mizar_blend_botao_mistura.png",
+    "mizar_blend_botao_nivel.png",
+    "mizar_blend_botao_sustain.png",
+    "mizar_blend_botao_tom.png",
+    "mizar_blend_frente.jpg",
+    "mizar_blend_frente_alfa.png",
+    "mizar_blend_manifesto.json",
+    "mizar_blend_mapa.json"
+   ],
+   "sha256": {
+    "mizar_blend_botao_mistura.png": "5139c6dce71dad82d9f80da43b555fe8f1cede0ed230c43121780b81c5f86523",
+    "mizar_blend_botao_nivel.png": "1ab2bc8afe4149e78d067654eb9f287a6f5596e8ee75dd74877e422662b0b2a1",
+    "mizar_blend_botao_sustain.png": "9907fd9f5c66c978a15d2736cf2ddf1e1e3f150a2a42def296a4ca9e105c7ab6",
+    "mizar_blend_botao_tom.png": "92d205798bf893d7eec40b874e8d79e5b867be11a931e22583fa29b994e0fad3",
+    "mizar_blend_frente.jpg": "89dd8250430fda3961cf2edaed177eb217c534861c33184938e7fef3988f122e",
+    "mizar_blend_frente_alfa.png": "96858708f0cba35f224a258ec9369f27c72cd6ab4ff8b06adee730d02fcdb586",
+    "mizar_blend_manifesto.json": "1386d80dc60ced02b1db7fa8b63b856544ac4951916534cac94e820f0b037bd8",
+    "mizar_blend_mapa.json": "35b2e7cf81ee26cbc91b30447f3ce74c38e97e1f2f96d7533f650c7dbee1529f"
+   },
+   "tamanho": 645739,
+   "tipo": "pedal",
+   "inspiracao": "Fender Blender",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "moss_flanger": {
    "nome": "Moss Flanger",
    "hash": "f9e1a5099c8cf26c",
@@ -5453,6 +5577,33 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "nutmeg_doubler": {
+   "nome": "Nutmeg Doubler",
+   "hash": "1fa02113b747faa5",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "nutmeg_doubler_frente.jpg",
+    "nutmeg_doubler_frente_alfa.png",
+    "nutmeg_doubler_manifesto.json",
+    "nutmeg_doubler_mapa.json"
+   ],
+   "sha256": {
+    "nutmeg_doubler_frente.jpg": "b36105c7b1739894600f55010ae99b6bc342932f975939f15114ac5ea7cb3553",
+    "nutmeg_doubler_frente_alfa.png": "bbb5baba1fcae89f1151049ddd71e1806c9846d1f31653a70ad914e90d1db1a0",
+    "nutmeg_doubler_manifesto.json": "7cc3b6a4477b943ae999096dea8739917779c8f0abc6f573e76a3ebc696becac",
+    "nutmeg_doubler_mapa.json": "6358eac7d6cab03130dabc53486c978d06621d203da09e1fd9ef96626b5c7d1c"
+   },
+   "tamanho": 195459,
+   "tipo": "cabecote",
+   "inspiracao": "MXR Flanger/Doubler model 126 (rack, 1976-79)",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "oak_bass_di": {
    "nome": "Oak Bass DI",
    "hash": "43d2c7214b2e4fe7",
@@ -5551,6 +5702,43 @@
    "tamanho": 797628,
    "tipo": "cabecote",
    "inspiracao": "Furman PQ-3 Parametric Equalizer/Preamp",
+   "categoria": "Utilidades",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "passiveeq1a": {
+   "nome": "Passive EQ 1A",
+   "hash": "aa71e7962c9e380f",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "passiveeq1a_botao_atten_agudo.png",
+    "passiveeq1a_botao_atten_grave.png",
+    "passiveeq1a_botao_banda.png",
+    "passiveeq1a_botao_boost_agudo.png",
+    "passiveeq1a_botao_boost_grave.png",
+    "passiveeq1a_frente.jpg",
+    "passiveeq1a_frente_alfa.png",
+    "passiveeq1a_manifesto.json",
+    "passiveeq1a_mapa.json"
+   ],
+   "sha256": {
+    "passiveeq1a_botao_atten_agudo.png": "a76ff66c005b6adbb477b831ba66a5ba239643f87710ddbab3dc17ffa0fa3ad2",
+    "passiveeq1a_botao_atten_grave.png": "8c9a97e5d98150ea8968661a6a2aee0534910929b941117655abb43e0cad8bdd",
+    "passiveeq1a_botao_banda.png": "bef0b3e91bc0360674e7d28245d5ec5a3dd4db846287964545200835540fb5cb",
+    "passiveeq1a_botao_boost_agudo.png": "da57e67b49b15ebca1a0e884f6d99d9b2ce50252f163fe57e45793c3a48078ed",
+    "passiveeq1a_botao_boost_grave.png": "d849cb25bddea5b42e503454092a0392c1928b67e874a47ac77cec914fcaf479",
+    "passiveeq1a_frente.jpg": "b6da3b11c5fda6e53bd8cfeab7fc9ac36a447eda234e3544f7a925b9ba8230f2",
+    "passiveeq1a_frente_alfa.png": "717f75be279edff2afbf868b6b794d46b6b93171a338965bd885524458eb1a29",
+    "passiveeq1a_manifesto.json": "f4bcedebbff9753a21231879d7eaf59d447c17fd652b8a7f2c9b4c0193de43b4",
+    "passiveeq1a_mapa.json": "6ab37ab1fb2f85acd4f0f59bbb8b8b048295c47870b12e4cc818ade25922bdc5"
+   },
+   "tamanho": 2624327,
+   "tipo": "cabecote",
+   "inspiracao": "Pultec EQP-1A Program Equalizer",
    "categoria": "Utilidades",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
@@ -6368,6 +6556,33 @@
    "categoria": "2x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "silence2b": {
+   "nome": "Silence IIB",
+   "hash": "47e9597dab00ccaf",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "silence2b_frente.jpg",
+    "silence2b_frente_alfa.png",
+    "silence2b_manifesto.json",
+    "silence2b_mapa.json"
+   ],
+   "sha256": {
+    "silence2b_frente.jpg": "7a1d79120655fa0de55dc742a066581e90a7e2b5561ffbe59531354739dde476",
+    "silence2b_frente_alfa.png": "e4862ce5b3d1f7ee70094c74f4d4ae0d3346fd194146332c7079c8f9908777ed",
+    "silence2b_manifesto.json": "817f0e278840fe909072e88c38c83e12555793035346323c739b2f2dec9829bf",
+    "silence2b_mapa.json": "e8ad91bca049dffdf54a4eb8a5a82df9b4e2a8bfaeadf25adedc608210516970"
+   },
+   "tamanho": 73596,
+   "tipo": "cabecote",
+   "inspiracao": "Rocktron Hush IIB",
+   "categoria": "Utilidades",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -7987,6 +8202,37 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "vari670": {
+   "nome": "Vari 670",
+   "hash": "b270541db9e11972",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vari670_botao_ganho.png",
+    "vari670_botao_volume.png",
+    "vari670_frente.jpg",
+    "vari670_frente_alfa.png",
+    "vari670_manifesto.json",
+    "vari670_mapa.json"
+   ],
+   "sha256": {
+    "vari670_botao_ganho.png": "6fbf377d8af1857288ba9095cc483896805372d00e23ae4512f8db6e35612a53",
+    "vari670_botao_volume.png": "70b334f945c4c5ed8dc7677926462ea2723d7c1239aea868b323efe5bdc6a20b",
+    "vari670_frente.jpg": "033f30f09c44c512d9f829aa72bb4aa9f1c2fe229f9658ef32a9c076038613a7",
+    "vari670_frente_alfa.png": "790844240e97724e24ff807721d3d6a2521db57149d1bc340bd695164396c6c0",
+    "vari670_manifesto.json": "9925817e1b2795d9745edfa28cc7ec805e897235ce5bf9baa18998545bf80624",
+    "vari670_mapa.json": "a686521a01603fc1a626486a19bd778abe6a9dc04ce68874d5e8d7d3f2e4022f"
+   },
+   "tamanho": 1493670,
+   "tipo": "cabecote",
+   "inspiracao": "Fairchild 670 Stereo Limiter",
+   "categoria": "Rack",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "vault_210": {
    "nome": "Vault 2x10",
    "hash": "00233d3bff29512f",
@@ -8094,6 +8340,60 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "vault_port_212": {
+   "nome": "Vault Port 2x12",
+   "hash": "cb661fcf794e2337",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault_port_212_frente.jpg",
+    "vault_port_212_frente_alfa.png",
+    "vault_port_212_manifesto.json",
+    "vault_port_212_mapa.json"
+   ],
+   "sha256": {
+    "vault_port_212_frente.jpg": "4563930e8d940f42189fcf8f704a3e24d5dd85f8377a64da05e1a74ad4a511cc",
+    "vault_port_212_frente_alfa.png": "e6a594d37e147aa75997f9cc7104f2113cfa1afdc597d4a6e71ddc0de304425a",
+    "vault_port_212_manifesto.json": "f63af3cb01020948cb1d534255a59e9e414f46010d54e8eb89fbdba30df59ab8",
+    "vault_port_212_mapa.json": "1ac87410d9db0020c3e3e124523a6c4d51feb64cde97985dbb5b5937f9259e42"
+   },
+   "tamanho": 1934729,
+   "tipo": "caixa",
+   "inspiracao": "Ampeg PortaBass PB-212H",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "vault_pro_410": {
+   "nome": "Vault Pro 4x10",
+   "hash": "79258cd06ca5e055",
+   "data": "2026-11-24T13:29:39Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault_pro_410_frente.jpg",
+    "vault_pro_410_frente_alfa.png",
+    "vault_pro_410_manifesto.json",
+    "vault_pro_410_mapa.json"
+   ],
+   "sha256": {
+    "vault_pro_410_frente.jpg": "0de2e5259164d5028a0c7b51e9716f53bd156d299952ded9bcd2e20639d5909a",
+    "vault_pro_410_frente_alfa.png": "986e60adf3a5842aa9979c004cb1b31b9368fdc27384fb3461fc49b7b8cd6bf8",
+    "vault_pro_410_manifesto.json": "45e288b667a00bdb1f11593c15dd28d1d02442e5e3a7a791cc00d301c11cb816",
+    "vault_pro_410_mapa.json": "b86ae3819384df3251c8d14c5c0387c5fc961af6b527034b964967955a933c2f"
+   },
+   "tamanho": 1072076,
+   "tipo": "caixa",
+   "inspiracao": "Ampeg BXT-410H",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "verb64": {
    "nome": "Verb 64",

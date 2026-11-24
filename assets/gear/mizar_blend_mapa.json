@@ -1,0 +1,56 @@
+{
+  "nome": "Mizar Blend",
+  "familia": "mizar_blend",
+  "largura": 1200,
+  "altura": 888,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 273,
+      "y": 200,
+      "tamanho": 87,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "sustain",
+      "x": 464,
+      "y": 200,
+      "tamanho": 86,
+      "arquivo": "botao_sustain.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "tom",
+      "x": 645,
+      "y": 200,
+      "tamanho": 86,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "mistura",
+      "x": 833,
+      "y": 200,
+      "tamanho": 87,
+      "arquivo": "botao_mistura.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    182,
+    110
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 317.0,
+    "y": 562.5,
+    "raio": 44.0
+  }
+}

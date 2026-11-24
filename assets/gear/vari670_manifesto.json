@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "vari670",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Vari 670",
+  "inspiracao": "Fairchild 670 Stereo Limiter",
+  "categoria": "Rack",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

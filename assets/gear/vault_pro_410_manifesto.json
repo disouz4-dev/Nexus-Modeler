@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "vault_pro_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault Pro 4x10",
+  "inspiracao": "Ampeg BXT-410H",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "ampeg",
+      "tons": [
+        {
+          "id": 102142,
+          "titulo": "Ampeg SVT410HLF",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "Ampeg 4x10 com corneta",
+          "ir_padrao": "Ampeg SVT410HLF (MD421 + F47)",
+          "padrao": true
+        },
+        {
+          "id": 45275,
+          "titulo": "David Eden DT410 IR collection - bass cab",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "4x10 com corneta, reserva",
+          "ir_padrao": "Eden 4x10 D6 AH"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

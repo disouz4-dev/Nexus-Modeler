@@ -1,0 +1,12 @@
+{
+  "nome": "Nutmeg Doubler",
+  "familia": "nutmeg_doubler",
+  "largura": 2400,
+  "altura": 936,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

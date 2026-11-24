@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "nutmeg_doubler",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Nutmeg Doubler",
+  "inspiracao": "MXR Flanger/Doubler model 126 (rack, 1976-79)",
+  "categoria": "Modulação",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}
