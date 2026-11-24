@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T03:41:32Z",
+ "gerado": "2026-11-24T04:26:22Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5746,6 +5746,37 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "starburst_overdrive_1": {
+   "nome": "Starburst Overdrive I",
+   "hash": "9bcfccc30bc91bc3",
+   "data": "2026-11-24T04:26:14Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "starburst_overdrive_1_botao_ganho.png",
+    "starburst_overdrive_1_botao_nivel.png",
+    "starburst_overdrive_1_frente.jpg",
+    "starburst_overdrive_1_frente_alfa.png",
+    "starburst_overdrive_1_manifesto.json",
+    "starburst_overdrive_1_mapa.json"
+   ],
+   "sha256": {
+    "starburst_overdrive_1_botao_ganho.png": "24e8d2d894cba2c9f6dc70ecae94ab2104bd0bd4bfc0b6a68efa8528aaa7643f",
+    "starburst_overdrive_1_botao_nivel.png": "0f2af74a71862d1a1d7a64a3fb9853625e61670202974e28050e1a2fa3d8d56d",
+    "starburst_overdrive_1_frente.jpg": "2fe8dbf5c72d68b4ba3dbbfe02a77f0fde2350568653e1e569a31ea7c060b637",
+    "starburst_overdrive_1_frente_alfa.png": "a129c94dd79260988b2db38b3dbbd95203ee757ffffce1335de3b090091866f9",
+    "starburst_overdrive_1_manifesto.json": "ba8bd90ddec52d4d2068f9c52e37ee0edce71050f5302b539130a255289a2090",
+    "starburst_overdrive_1_mapa.json": "3f863c13d9f401399de9273ca8959542e1954ef43041b3c7aeb5c67994be5d50"
+   },
+   "tamanho": 1299578,
+   "tipo": "pedal",
+   "inspiracao": "Boss OD-1 Over Drive",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "starburst_overdrive": {
    "nome": "Starburst Overdrive",
