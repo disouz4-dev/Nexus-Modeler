@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:43:09Z",
+ "gerado": "2026-11-24T06:47:28Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -414,6 +414,33 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "atlantic_212": {
+   "nome": "Atlantic 2x12",
+   "hash": "7dee51a4d079318f",
+   "data": "2026-11-24T06:47:19Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "atlantic_212_frente.jpg",
+    "atlantic_212_frente_alfa.png",
+    "atlantic_212_manifesto.json",
+    "atlantic_212_mapa.json"
+   ],
+   "sha256": {
+    "atlantic_212_frente.jpg": "1cd4fd04d0174e1c832fa03645b8ef4dbdd43197c1621c2a4eada43d8d84a06b",
+    "atlantic_212_frente_alfa.png": "6c15553072b30bb4f1dc7d619d195976d684c35a2e72b7e649f5ded0a416a947",
+    "atlantic_212_manifesto.json": "36cd99389cf9330812bafa4c18d95eebccaa9b44e34caa2db9c1db83a36e2244",
+    "atlantic_212_mapa.json": "c70b21507934c3fb94d15613283f5f0d9661b3a5703d076e101a1f8dacb25464"
+   },
+   "tamanho": 1261093,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 2x12 TransAtlantic",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "aurora_flanger": {
    "nome": "Aurora Flanger",
    "hash": "2ed8bc0f0a30cbb3",
@@ -694,6 +721,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "bassmanpro_410": {
+   "nome": "Bass Pro 4x10",
+   "hash": "22a309ef586af740",
+   "data": "2026-11-24T06:47:19Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bassmanpro_410_frente.jpg",
+    "bassmanpro_410_frente_alfa.png",
+    "bassmanpro_410_manifesto.json",
+    "bassmanpro_410_mapa.json"
+   ],
+   "sha256": {
+    "bassmanpro_410_frente.jpg": "ea3f3ef2a22b701d5111d8660938c45c9f586b2c515f31cd2f505aa9e13d266c",
+    "bassmanpro_410_frente_alfa.png": "ba988db6a3a0781fd8edd8be021a99ef84a85c76ce9d9c124c18a6787c66c6f8",
+    "bassmanpro_410_manifesto.json": "e9198f395dcf8bcad09ec1f8a629e2ca065238442de8420ed3826b4b32a83178",
+    "bassmanpro_410_mapa.json": "aa588095182df5dd5da1c6a2a105b38b995602f56434ed54d6433ff303b732bf"
+   },
+   "tamanho": 969060,
+   "tipo": "caixa",
+   "inspiracao": "Fender Bassman 410 Pro (410 PRO, linha Pro 2002-2012)",
+   "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "be100": {
    "nome": "BE 100",
@@ -6905,6 +6959,33 @@
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "verb_115": {
+   "nome": "Verb 1x15",
+   "hash": "0fa10d6f6df8d66c",
+   "data": "2026-11-24T06:47:19Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "verb_115_frente.jpg",
+    "verb_115_frente_alfa.png",
+    "verb_115_manifesto.json",
+    "verb_115_mapa.json"
+   ],
+   "sha256": {
+    "verb_115_frente.jpg": "0203cb1b9b97f4e789f1f98750203cf9514dd32caca57002c4a8507ab482e1af",
+    "verb_115_frente_alfa.png": "8948ea5864ef1336e208b72d877c2a18add36ee488ff473bce1738d4e7261711",
+    "verb_115_manifesto.json": "09b32071837c73769fa8e7b2eef40e3c982ce189b67b669bd3c2f8834887b6c5",
+    "verb_115_mapa.json": "1b894f712070f2a8306f273764996d7727391c5449cee80ed8244167a7b9b3f4"
+   },
+   "tamanho": 1411530,
+   "tipo": "caixa",
+   "inspiracao": "Fender '64 Vibroverb Custom 1x15",
+   "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

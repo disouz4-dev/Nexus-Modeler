@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "bassmanpro_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Bass Pro 4x10",
+  "inspiracao": "Fender Bassman 410 Pro (410 PRO, linha Pro 2002-2012)",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "fender bass",
+      "tons": [
+        {
+          "id": 102155,
+          "titulo": "Fender Bassman 410",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "Bassman 410 moderna (linha Pro)",
+          "ir_padrao": "Fender Bassman 410 (MD421 + R121)",
+          "padrao": true
+        },
+        {
+          "id": 102086,
+          "titulo": "Fender Bassman Neo 410",
+          "criador": "salamiexcerpt5j",
+          "tipo": "cab",
+          "nota": "Bassman Neo 410",
+          "ir_padrao": "Fender Bassman Neo 410_SM57_Close_OnAxis"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

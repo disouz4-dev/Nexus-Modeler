@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "verb_115",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Verb 1x15",
+  "inspiracao": "Fender '64 Vibroverb Custom 1x15",
+  "categoria": "1x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "vibroverb",
+      "tons": [
+        {
+          "id": 35106,
+          "titulo": "Fender Vibroverb - JBL E130 - Mix Ready",
+          "criador": "vulturized",
+          "tipo": "cab",
+          "nota": "o próprio Vibroverb 1x15 (com JBL; a reedição usa Eminence)",
+          "ir_padrao": "FENDER VIBROVERB BRIGHT",
+          "padrao": true
+        },
+        {
+          "id": 79853,
+          "titulo": "Fender Tweed Pro 1956 - 57 (FREE complete XR IR Pack)",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "nota": "Fender 1x15 tweed, reserva",
+          "ir_padrao": "TF '56 TWEED PRO 1X15 C15N 57 3 - Enhanced"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
