@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "twelve_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Twelve 2x12",
+  "inspiracao": "Silvertone 1484 Twin Twelve 2x12",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:26:52Z",
+ "gerado": "2026-11-24T03:29:10Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6121,6 +6121,33 @@
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "twelve_212": {
+   "nome": "Twelve 2x12",
+   "hash": "1280c8b47effe640",
+   "data": "2026-11-24T03:29:03Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "twelve_212_frente.jpg",
+    "twelve_212_frente_alfa.png",
+    "twelve_212_manifesto.json",
+    "twelve_212_mapa.json"
+   ],
+   "sha256": {
+    "twelve_212_frente.jpg": "b1331a50d138b473ae81c0946dec9d679ad9ddbd0b84c5d31dd51c84debbceac",
+    "twelve_212_frente_alfa.png": "f416cc3e68814c48ff8f17da721a49270a2c64c1f509da346be11f8c42098603",
+    "twelve_212_manifesto.json": "e176d2698f61ee37516fab8f43df17f0491748d3ea047ddc1e9343ddd58d113a",
+    "twelve_212_mapa.json": "9743a770c966de902d8017521045b50168840f9d85fde04d1909f63a2498130b"
+   },
+   "tamanho": 1497970,
+   "tipo": "caixa",
+   "inspiracao": "Silvertone 1484 Twin Twelve 2x12",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
