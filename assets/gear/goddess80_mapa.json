@@ -1,0 +1,88 @@
+{
+  "nome": "Goddess 80",
+  "familia": "goddess80",
+  "largura": 2400,
+  "altura": 2160,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho_1",
+      "x": 448,
+      "y": 768,
+      "tamanho": 121,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 882,
+      "y": 770,
+      "tamanho": 116,
+      "arquivo": "botao_ganho_2.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1019,
+      "y": 771,
+      "tamanho": 115,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1148,
+      "y": 771,
+      "tamanho": 115,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1281,
+      "y": 771,
+      "tamanho": 115,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1580,
+      "y": 769,
+      "tamanho": 118,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1713,
+      "y": 769,
+      "tamanho": 119,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Limpo",
+    "Solo"
+  ],
+  "rotulos": [],
+  "leds_canais": [
+    {
+      "x": 1405.9,
+      "y": 874.8,
+      "raio": 6.1
+    }
+  ],
+  "canais_som": [
+    "limpo",
+    "distorcido"
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:33:37Z",
+ "gerado": "2026-11-24T05:46:05Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3126,6 +3126,47 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "goddess80": {
+   "nome": "Goddess 80",
+   "hash": "7e0423fdfd31bfbe",
+   "data": "2026-11-24T05:45:57Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "goddess80_botao_agudo.png",
+    "goddess80_botao_ganho_1.png",
+    "goddess80_botao_ganho_2.png",
+    "goddess80_botao_grave.png",
+    "goddess80_botao_medio.png",
+    "goddess80_botao_presenca.png",
+    "goddess80_botao_volume.png",
+    "goddess80_frente.jpg",
+    "goddess80_frente_alfa.png",
+    "goddess80_manifesto.json",
+    "goddess80_mapa.json"
+   ],
+   "sha256": {
+    "goddess80_botao_agudo.png": "107462f02298add87c440c48eb1ae4aca7ab2ff6617e4a9b6877db3c4a7df03a",
+    "goddess80_botao_ganho_1.png": "1ea1d8ffdfc2a60bae090043e2e94cf16e0c7c004322b941164b4de3fed03699",
+    "goddess80_botao_ganho_2.png": "1f26c93093455669225b884a785f1a2353c53ec1b91c8333a82cde546a89258a",
+    "goddess80_botao_grave.png": "6c881cb41d6d7a78914073e9bccec1830418390f9fe00dfee4b3373bace13960",
+    "goddess80_botao_medio.png": "ef3d94e5c72fa884e7f39712882011df0f608088e157e635e507f63f44fa17fe",
+    "goddess80_botao_presenca.png": "b43570ffe851340ae8de0851e804cbfb89dc1ee138e6b4b64bcb8552a24ba37f",
+    "goddess80_botao_volume.png": "4d0d716ac602f67ff6cbacb628aa0931b91617ee6acfbaffc4a1bf3b63b2d0d1",
+    "goddess80_frente.jpg": "b6762f52b5ae57848e522e568ab6a60c46d0176ed9e21d99c6a2c079feb40e90",
+    "goddess80_frente_alfa.png": "90e2b4b70620c99702972088b2746110637ef0891d9fc55d3e252dafa98fe3f4",
+    "goddess80_manifesto.json": "0fcd014cfedc15830e28045bb27aaa7bec11164f4cdffe6c8ced1281217eb4bf",
+    "goddess80_mapa.json": "a2c5d7d3bf14fd9bdc5747000ed9096cf8fdbd1b7327fc362ff03c2d80675327"
+   },
+   "tamanho": 1947147,
+   "tipo": "cabecote",
+   "inspiracao": "Bogner Shiva",
+   "categoria": "Americanos boutique",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "granite_410": {
    "nome": "Granite 4x10",
