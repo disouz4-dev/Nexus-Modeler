@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:46:05Z",
+ "gerado": "2026-11-24T06:00:11Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -4086,6 +4086,43 @@
    "tipo": "pedal",
    "inspiracao": "Dunlop SW95 Slash Cry Baby Wah",
    "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "malin_drive": {
+   "nome": "Malin Drive",
+   "hash": "16bab8eed7bc2cf1",
+   "data": "2026-11-24T06:00:02Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "malin_drive_botao_ganho.png",
+    "malin_drive_botao_mix.png",
+    "malin_drive_botao_nivel.png",
+    "malin_drive_botao_reforco.png",
+    "malin_drive_botao_tom.png",
+    "malin_drive_frente.jpg",
+    "malin_drive_frente_alfa.png",
+    "malin_drive_manifesto.json",
+    "malin_drive_mapa.json"
+   ],
+   "sha256": {
+    "malin_drive_botao_ganho.png": "927fbcabb853cdd5b96e8d2a87daafa46f03f9b58f937560d4660f19c0eab058",
+    "malin_drive_botao_mix.png": "745847ca427a1e0549d01be0997a10d53b0cb980bc9affcc1b167a07eef0754c",
+    "malin_drive_botao_nivel.png": "81713cb4a4abd9fc0f9e46bbb69788b106779d4a0552bae1f3c3af40144acd3d",
+    "malin_drive_botao_reforco.png": "cf7fecedb3ad647a14d1b83b5363be0e31a64f25562819118847dc0929aea3c2",
+    "malin_drive_botao_tom.png": "6296e917a1248f59981a59226066de021340f88124676f0ae1651e3a652f4ab7",
+    "malin_drive_frente.jpg": "c12582d27e7313007e7155531efd60a81336824b2cffd975b01ef6c8afcca471",
+    "malin_drive_frente_alfa.png": "3bfde8df6ef647823c927561e27efe55ec1ba9b48babc8f2d59ad4aaf2a94889",
+    "malin_drive_manifesto.json": "74e40e184045030b0b5770f0a6964cfe325db28ab283f7637faf5f0b949b1cb1",
+    "malin_drive_mapa.json": "ee2989de042738540ff1af435f44de2fc318a5124777411490ccab0f90b9d1e1"
+   },
+   "tamanho": 2128843,
+   "tipo": "pedal",
+   "inspiracao": "T-Rex Møller",
+   "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
    "versao": "1.0.0",

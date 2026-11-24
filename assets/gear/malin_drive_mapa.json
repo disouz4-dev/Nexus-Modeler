@@ -1,0 +1,71 @@
+{
+  "nome": "Malin Drive",
+  "familia": "malin_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "tom",
+      "x": 262,
+      "y": 319,
+      "tamanho": 166,
+      "arquivo": "botao_tom.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "nivel",
+      "x": 772,
+      "y": 319,
+      "tamanho": 166,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 262,
+      "y": 596,
+      "tamanho": 166,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    },
+    {
+      "id": "mix",
+      "x": 518,
+      "y": 596,
+      "tamanho": 164,
+      "arquivo": "botao_mix.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "reforco",
+      "x": 772,
+      "y": 596,
+      "tamanho": 166,
+      "arquivo": "botao_reforco.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    96,
+    120
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 346.0,
+    "y": 1111.0,
+    "raio": 64.0
+  },
+  "led": {
+    "x": 348.6,
+    "y": 931.0,
+    "raio": 17.4
+  }
+}
