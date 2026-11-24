@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "valve_driver",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Valve Driver",
+  "inspiracao": "Chandler Tube Driver",
+  "categoria": "Drive e distorção",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

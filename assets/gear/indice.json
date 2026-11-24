@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T04:48:23Z",
+ "gerado": "2026-11-24T04:57:03Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6402,6 +6402,41 @@
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "valve_driver": {
+   "nome": "Valve Driver",
+   "hash": "e992661cfbb793cc",
+   "data": "2026-11-24T04:56:55Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "valve_driver_botao_agudo.png",
+    "valve_driver_botao_ganho.png",
+    "valve_driver_botao_grave.png",
+    "valve_driver_botao_nivel.png",
+    "valve_driver_frente.jpg",
+    "valve_driver_frente_alfa.png",
+    "valve_driver_manifesto.json",
+    "valve_driver_mapa.json"
+   ],
+   "sha256": {
+    "valve_driver_botao_agudo.png": "38bb8c7ba123f585258188b20bc364cc21388bd032e11d693fb86f02dec30fa7",
+    "valve_driver_botao_ganho.png": "8c7fbf09396ca9b9e25dcaef737929e1da1b2a7f8afb3bb023eff037f9bf0c12",
+    "valve_driver_botao_grave.png": "0b2ffc43918f9fd4a8b817bd7ab8aa3dfc15dac700cb4724a9a2dfd1d3e6b984",
+    "valve_driver_botao_nivel.png": "862fe325d45f4fa15c44def97df966047294a87e0ffe83937b4a932462a999fc",
+    "valve_driver_frente.jpg": "adfc32e498d1254c5935cee06f28c12909288059785bf530bbb326b29c7cbd2a",
+    "valve_driver_frente_alfa.png": "002ba8f3123f22c9c46c4c80f5ad0a2c9a1babe48c9a691d413bf40630916a57",
+    "valve_driver_manifesto.json": "e672418180604132ac70a39eee0d4f0af70df35ad754da9fafac52c774427c47",
+    "valve_driver_mapa.json": "3b3be90b6258cf860b3f0d17975176b9475ac2053612b7324c86777702c75d35"
+   },
+   "tamanho": 1119994,
+   "tipo": "pedal",
+   "inspiracao": "Chandler Tube Driver",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

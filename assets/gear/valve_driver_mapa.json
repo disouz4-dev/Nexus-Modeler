@@ -1,0 +1,62 @@
+{
+  "nome": "Valve Driver",
+  "familia": "valve_driver",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 294,
+      "y": 300,
+      "tamanho": 134,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 452,
+      "y": 300,
+      "tamanho": 134,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 614,
+      "y": 300,
+      "tamanho": 134,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 771,
+      "y": 300,
+      "tamanho": 134,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "posicoes": 11
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    100,
+    170
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1022.0,
+    "raio": 61.0
+  },
+  "led": {
+    "x": 441.6,
+    "y": 282.3,
+    "raio": 19.3
+  }
+}
