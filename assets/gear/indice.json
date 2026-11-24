@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:00:27Z",
+ "gerado": "2026-11-24T05:04:02Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3944,6 +3944,33 @@
    "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "mahogany_wah": {
+   "nome": "Mahogany Wah",
+   "hash": "91e41a7f6726ecb9",
+   "data": "2026-11-24T05:03:55Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mahogany_wah_frente.jpg",
+    "mahogany_wah_frente_alfa.png",
+    "mahogany_wah_manifesto.json",
+    "mahogany_wah_mapa.json"
+   ],
+   "sha256": {
+    "mahogany_wah_frente.jpg": "497c6a07a0f7f35f50daf8b7bed181e776c395ded0a77c804eee210d8542b022",
+    "mahogany_wah_frente_alfa.png": "1e1945372f5e37ae820d54bba246ac8bc3f7fad54bc5d718a804688cc5923da1",
+    "mahogany_wah_manifesto.json": "306d87a3f6fb58f08cd9f2419733dbbdcc9eb9aaee3ae19cbcb3c74f64df1c98",
+    "mahogany_wah_mapa.json": "61efb8a5ccc1d4d1f75a8218dce22bd4b27a979acfcf21e35942b6c18270e82d"
+   },
+   "tamanho": 192273,
+   "tipo": "pedal",
+   "inspiracao": "Dunlop SW95 Slash Cry Baby Wah",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

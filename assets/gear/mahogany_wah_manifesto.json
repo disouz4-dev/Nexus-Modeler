@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "mahogany_wah",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Mahogany Wah",
+  "inspiracao": "Dunlop SW95 Slash Cry Baby Wah",
+  "categoria": "Modulação",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}
