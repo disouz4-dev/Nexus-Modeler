@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T04:31:57Z",
+ "gerado": "2026-11-24T04:48:23Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6459,6 +6459,43 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "verb64": {
+   "nome": "Verb 64",
+   "hash": "4ca174cadb186806",
+   "data": "2026-11-24T04:48:15Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "verb64_botao_agudo.png",
+    "verb64_botao_ganho.png",
+    "verb64_botao_grave.png",
+    "verb64_botao_presenca.png",
+    "verb64_botao_volume.png",
+    "verb64_frente.jpg",
+    "verb64_frente_alfa.png",
+    "verb64_manifesto.json",
+    "verb64_mapa.json"
+   ],
+   "sha256": {
+    "verb64_botao_agudo.png": "7a592988d157c810ad25b2654d3ea2700110ffb9dfcb94c95e6b3740717e75de",
+    "verb64_botao_ganho.png": "7e6797bbc3758426d92f58cd199dbc1b13589f60f21ff7906b62d08dcdeafbee",
+    "verb64_botao_grave.png": "539b1f3df3774b91401e1e4b25fced9f7ddb79a1c50ed2588a914499b5473ceb",
+    "verb64_botao_presenca.png": "3a6473905ab11fc82ed9b770d900e47639b7729dd5b61111c80ddb5324527c5a",
+    "verb64_botao_volume.png": "b081c273b428919970d384f66bfa2e2210e1378cc3ed967b97b1ae4f88b29e6a",
+    "verb64_frente.jpg": "2703fa7a02b21983abc103423496290e787249b3983cbf36c67fc7861d3ad2c6",
+    "verb64_frente_alfa.png": "384ae38e0b3cd06ec508d3de7d608c29782182f1db1af724c8c46df24888325c",
+    "verb64_manifesto.json": "7f998ae30d1327fd0b2231b19737406cb042647eeadf3f3cbdc95ba3bbfe2b87",
+    "verb64_mapa.json": "28583f580ab01dd69e9dbcdb129e950f81d58cd7c5b137b723778d164acd0ff2"
+   },
+   "tamanho": 2520479,
+   "tipo": "cabecote",
+   "inspiracao": "Vibroverb 1964",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "vier_412": {
    "nome": "Vier 4x12",

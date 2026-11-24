@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "verb64",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Verb 64",
+  "inspiracao": "Vibroverb 1964",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}
