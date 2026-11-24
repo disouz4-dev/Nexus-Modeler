@@ -1,0 +1,58 @@
+{
+  "nome": "Top Boost 15",
+  "familia": "topboost15",
+  "largura": 2400,
+  "altura": 1140,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 708,
+      "y": 219,
+      "tamanho": 102,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 843,
+      "y": 219,
+      "tamanho": 102,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1363,
+      "y": 219,
+      "tamanho": 102,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1489,
+      "y": 219,
+      "tamanho": 102,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1615,
+      "y": 219,
+      "tamanho": 102,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Top Boost"
+  ],
+  "rotulos": []
+}

@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:51:13Z",
+ "gerado": "2026-11-24T07:02:45Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -6401,6 +6401,43 @@
    "tipo": "pedal",
    "inspiracao": "Marshall The Guv'nor",
    "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "topboost15": {
+   "nome": "Top Boost 15",
+   "hash": "2fed62d2e32fe388",
+   "data": "2026-11-24T07:02:37Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "topboost15_botao_agudo.png",
+    "topboost15_botao_ganho.png",
+    "topboost15_botao_grave.png",
+    "topboost15_botao_presenca.png",
+    "topboost15_botao_volume.png",
+    "topboost15_frente.jpg",
+    "topboost15_frente_alfa.png",
+    "topboost15_manifesto.json",
+    "topboost15_mapa.json"
+   ],
+   "sha256": {
+    "topboost15_botao_agudo.png": "a72c2b9690887ad30622537f3510f4234ac7c4e372450b980ef830d162debfed",
+    "topboost15_botao_ganho.png": "f34942843653f7001f16dee422f6d2f2fc63a811d40da38999faef365ab8d5dd",
+    "topboost15_botao_grave.png": "eb72c38e37069f85c571559b6c032c29b280d30bb3d0eb16667be36859d5c182",
+    "topboost15_botao_presenca.png": "ac203079443b2b20e6322de6a7aff8957bf4f37501324513c77ba572b3e9fb1d",
+    "topboost15_botao_volume.png": "d70ccc7f97236d5dd9277739157b8c3de5eecaa031326d4473c3d32347ff1005",
+    "topboost15_frente.jpg": "1b6a5a8c38dd002c248156a47fe3430bb8eba3ecf241eeb6c708a67986551280",
+    "topboost15_frente_alfa.png": "34d4a47ea1b8748d5d3e4bf98fd418447bc69f88148e7a302bef3e8071d246b6",
+    "topboost15_manifesto.json": "0015154981e3b7f728c3b32b2a2fcc11cb3cab45111b5db42da0757a8f118823",
+    "topboost15_mapa.json": "d6a5cab32d0b7e101c4e6a7d608eca35c525f2f8e3e759a827761130e3ef35ad"
+   },
+   "tamanho": 1180112,
+   "tipo": "cabecote",
+   "inspiracao": "AC15C1",
+   "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
    "versao": "1.0.0",
