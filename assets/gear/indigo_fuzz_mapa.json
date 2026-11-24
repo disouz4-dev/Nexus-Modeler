@@ -1,0 +1,43 @@
+{
+  "nome": "Indigo Fuzz",
+  "familia": "indigo_fuzz",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "nivel",
+      "x": 298,
+      "y": 210,
+      "tamanho": 268,
+      "arquivo": "botao_nivel.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "mix",
+      "x": 636,
+      "y": 210,
+      "tamanho": 268,
+      "arquivo": "botao_mix.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    112
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1028.5,
+    "raio": 95.0
+  },
+  "led": {
+    "x": 600.0,
+    "y": 852.4,
+    "raio": 28.9
+  }
+}

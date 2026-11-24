@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T07:02:45Z",
+ "gerado": "2026-11-24T07:19:05Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -3565,6 +3565,37 @@
    "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "indigo_fuzz": {
+   "nome": "Indigo Fuzz",
+   "hash": "0ffc3aabc56778b2",
+   "data": "2026-11-24T07:18:55Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "indigo_fuzz_botao_mix.png",
+    "indigo_fuzz_botao_nivel.png",
+    "indigo_fuzz_frente.jpg",
+    "indigo_fuzz_frente_alfa.png",
+    "indigo_fuzz_manifesto.json",
+    "indigo_fuzz_mapa.json"
+   ],
+   "sha256": {
+    "indigo_fuzz_botao_mix.png": "b303775f429afd9f27f51b8c95dd8197dfab0f733ab7b9ed504029aeac0ed875",
+    "indigo_fuzz_botao_nivel.png": "300a628d8d70b7176b73fd13d24c246d5bb52d5bf9e5e97cc06f8ea0d49337ee",
+    "indigo_fuzz_frente.jpg": "848e66ef51b5723502c51fe88207e56d51eee8489666b6f3cd689fe908b1fa86",
+    "indigo_fuzz_frente_alfa.png": "eb7c4cdb615258795c996e40fd5d9a6f6bd9cccc13f0571ef785caa576f5cdba",
+    "indigo_fuzz_manifesto.json": "f94907f5e9059838c2a9fc7f6c52d678acaca86b61cc6815d4cb68ef7323e206",
+    "indigo_fuzz_mapa.json": "719efd6b48986bd6a829ce2e1b458f2df8c26766250d31ff386f0e0334cb32a1"
+   },
+   "tamanho": 2545417,
+   "tipo": "pedal",
+   "inspiracao": "MXR M103 Blue Box",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
