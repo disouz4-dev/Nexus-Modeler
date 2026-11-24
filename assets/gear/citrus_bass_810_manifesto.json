@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "citrus_bass_810",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Citrus Bass 8x10",
+  "inspiracao": "Orange OBC810",
+  "categoria": "8x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

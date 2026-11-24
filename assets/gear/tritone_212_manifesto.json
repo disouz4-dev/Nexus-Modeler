@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "tritone_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Tritone 2x12",
+  "inspiracao": "Carvin 212V",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "carvin",
+      "tons": [
+        {
+          "id": 107192,
+          "titulo": "Carvin Legacy 2x12",
+          "criador": "tonerd",
+          "tipo": "cab",
+          "nota": "Carvin 2x12 com V30, mesma marca",
+          "ir_padrao": "Carvin Legacy 2x12 SM57 sweet spot",
+          "padrao": true
+        },
+        {
+          "id": 110310,
+          "titulo": "Celestion Vintage 30 - SM57 - 2003 Mesa Boogie 2x12",
+          "criador": "OutmodedElectronics",
+          "tipo": "cab",
+          "nota": "2x12 fechada V30",
+          "ir_padrao": "V30 L 2FB 2x12 SM57 1.75in 0.0in SA73"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

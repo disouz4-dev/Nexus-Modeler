@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "wreck_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Wreck 2x12",
+  "inspiracao": "Dr. Z 2x12 (Z Wreck)",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "dr z",
+      "tons": [
+        {
+          "id": 83343,
+          "titulo": "DrZ Maz 38 Sr 2x12 - G12H anniversary + V30 UK",
+          "criador": "airsong",
+          "tipo": "cab",
+          "nota": "Dr. Z 2x12 aberta, falantes misturados",
+          "ir_padrao": "DR Z Maz 38 Sr 2x12 - G12H anniversary + V30 UK -Airsong",
+          "padrao": true
+        },
+        {
+          "id": 110318,
+          "titulo": "Celestion Alnico Blue - Eminence 1x12 IR",
+          "criador": "OutmodedElectronics",
+          "tipo": "cab",
+          "nota": "Alnico Blue (metade da Z-Wreck)",
+          "ir_padrao": "Blue 1x12 SM57 2.0in 0.0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

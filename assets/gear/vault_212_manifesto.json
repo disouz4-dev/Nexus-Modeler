@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "vault_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault 2x12",
+  "inspiracao": "Ampeg SVT-212AV",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "ampeg",
+      "tons": [
+        {
+          "id": 107985,
+          "titulo": "810+212 Ampeg",
+          "criador": "bfcabral",
+          "tipo": "cab",
+          "nota": "mistura Ampeg 8x10 + 2x12",
+          "ir_padrao": "810+212 Ampeg",
+          "padrao": true
+        },
+        {
+          "id": 1708,
+          "titulo": "Bass Ampeg SVT 8x10",
+          "criador": "matty",
+          "tipo": "cab",
+          "nota": "Ampeg 8x10, reserva",
+          "ir_padrao": "Ampeg 8x10 57 AH"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

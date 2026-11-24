@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "trifid_chorus",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Trifid Chorus",
+  "inspiracao": "Fulltone Custom Shop That 80's Rack Chorus (TERC, TSC-618)",
+  "categoria": "Modulação",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

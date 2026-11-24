@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "solar_612",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Solar 6x12",
+  "inspiracao": "Sunn 612S (caixa 6x12 do 1200S)",
+  "categoria": "6x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

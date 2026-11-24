@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "junior_110",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Junior 1x10",
+  "inspiracao": "Fender Pro Junior IV 1x10 (tweed laqueado)",
+  "categoria": "1x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "pro junior",
+      "tons": [
+        {
+          "id": 45262,
+          "titulo": "Fender Pro Junior",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "o próprio Pro Junior 1x10",
+          "ir_padrao": "Pro Jr up_08",
+          "padrao": true
+        },
+        {
+          "id": 5103,
+          "titulo": "Weber 10A125 1x10 IR",
+          "criador": "OutmodedElectronics",
+          "tipo": "cab",
+          "nota": "1x10 Weber, reserva",
+          "ir_padrao": "A800 Cube 60 10A125 BU87IC 1.5in Off Center On Axis 2in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

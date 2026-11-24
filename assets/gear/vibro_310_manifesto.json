@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "vibro_310",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vibro 3x10",
+  "inspiracao": "Fender Vibro-King Custom 3x10 (caixa do combo)",
+  "categoria": "3x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "vibro king",
+      "tons": [
+        {
+          "id": 61705,
+          "titulo": "Fender '65 Super Reverb 4x10 Jensen P10R",
+          "criador": "OutmodedElectronics",
+          "tipo": "cab",
+          "nota": "Fender aberta com Jensen P10R, mesmo falante",
+          "ir_padrao": "P10R UR 4x10 SM57 2.50in 0.0in",
+          "padrao": true
+        },
+        {
+          "id": 64904,
+          "titulo": "Eminence Blue Frame Alnico - Fender Blues DeVille 4x10",
+          "criador": "OutmodedElectronics",
+          "tipo": "cab",
+          "nota": "Fender 4x10 aberta, alnico",
+          "ir_padrao": "BLFR LR 4x10 SM57 2.50in 0.0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

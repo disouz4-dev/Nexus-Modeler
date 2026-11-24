@@ -1,0 +1,49 @@
+{
+  "nome": "Para EQ 3",
+  "familia": "paraeq3",
+  "largura": 2400,
+  "altura": 628,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 386,
+      "y": 274,
+      "tamanho": 109,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 955,
+      "y": 277,
+      "tamanho": 102,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1501,
+      "y": 276,
+      "tamanho": 104,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 2016,
+      "y": 273,
+      "tamanho": 110,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

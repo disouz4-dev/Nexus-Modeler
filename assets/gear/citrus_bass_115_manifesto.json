@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "citrus_bass_115",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Citrus Bass 1x15",
+  "inspiracao": "Orange OBC115",
+  "categoria": "1x15",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

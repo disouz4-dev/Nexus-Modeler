@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "shelf_16",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Shelf 1x6",
+  "inspiracao": "Deacy Amp (caixa de estante 1x6½\")",
+  "categoria": "1x06",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "1x6",
+      "tons": [
+        {
+          "id": 5102,
+          "titulo": "WGS G8C 1x8 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "o menor falante da TONE3000 (8\")",
+          "ir_padrao": "A800 PR-408 G8C M201 1.0in Off Center On Axis 0in",
+          "padrao": true
+        },
+        {
+          "id": 102111,
+          "titulo": "Fender Tweed Champ 58",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "Champ 1x8, reserva",
+          "ir_padrao": "Fender Tweed Champ 58"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "solar1200",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Solar 1200",
+  "inspiracao": "Sunn 1200S",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

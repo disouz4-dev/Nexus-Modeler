@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T07:32:37Z",
+ "gerado": "2026-11-24T13:21:11Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -169,8 +169,8 @@
   },
   "arch100": {
    "nome": "Arch 100",
-   "hash": "8b80f503a4f79ca9",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "fa22016d8eee28c9",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "arch100_botao_agudo.png",
@@ -187,26 +187,26 @@
     "arch100_mapa.json"
    ],
    "sha256": {
-    "arch100_botao_agudo.png": "d258a672b377d68111b29e2c6122ffff4ef13481999c444e332cd3914b15d4c9",
-    "arch100_botao_canal.png": "b3d74cfd5630d23bb9497f6a597eefbeac6e58dd3e8b6571ac74e0240a2050dc",
-    "arch100_botao_ganho_1.png": "05299d6983b2ecee1258783691c74ed7cc6cabd230486ca9f781548e52dce3cb",
-    "arch100_botao_ganho_2.png": "912e0793823dfcf895e07d9a00d12118c08590b2ddd077e8d45c9b55fa9401f7",
-    "arch100_botao_grave.png": "8476bef9eda454aa87b194afc161a68c6b5f8eb04d286e560812bba79a365c10",
-    "arch100_botao_medio.png": "dcc192bba202f99cae64c264e57f6f9bfc1a786c252abca83c7236a97c642a97",
-    "arch100_botao_presenca.png": "fabaea92f3aa8fc42f26aeab4926a72ce458dc88fbbfb082ec19d96db8bf99f5",
-    "arch100_botao_volume.png": "dc08ee5e20c8574d2718bb49087fe0ed730fc7a44ebc05f60359e0a2b27e288e",
-    "arch100_frente.jpg": "559bc0a0b5121196d4e2f0373b4bfcdb05cc7c66b73e3813601d79271c3ff980",
-    "arch100_frente_alfa.png": "95c8ee492da3753640e3a204e76bfd90cf4e9134c855e93ed00f5c930b10e73f",
-    "arch100_manifesto.json": "d335a027a3403d838ea01be3f4b36cd3868554f96bbf9f19ae3439608c28d988",
-    "arch100_mapa.json": "57f18d7d771212108248537a95d613e62ad0989263cf81af7b5d0fa8b9809048"
+    "arch100_botao_agudo.png": "82e178aec718914da9e27ebe2db5a87449193de4dda8c198d4c687ceb1d1abd7",
+    "arch100_botao_canal.png": "634b0914a76f9b4923bbfe5e2efdad511050504c23643b120ba3a3f837348655",
+    "arch100_botao_ganho_1.png": "ca4bfdcd7164e82c8407e568b30be0162678b65f1e525d15116cdc1e8dd3fdc1",
+    "arch100_botao_ganho_2.png": "e29db31d58fd0cd5b11392419eae36e2ed58bb0bc3888ca687c91ec64981c618",
+    "arch100_botao_grave.png": "9346744b3345ca6557f3eb345eb62a1aae52438aa5940c4e5787382dc68dd550",
+    "arch100_botao_medio.png": "c968bf9d8e74c969c9f2ced739c508365987f4887707f2677cc94d658aebf6e3",
+    "arch100_botao_presenca.png": "54fd967ac36987106bbaa8ca39cf5d2a26069e5cab71d415d66917783ce7a50a",
+    "arch100_botao_volume.png": "6cf63a44c9d03a45feb76020c42ac98b8ec40e2f6cca5213423d8eec17538caa",
+    "arch100_frente.jpg": "94e39330cc39c679543b10950aa557774249ad9fe18742da32f1da62c204ccb0",
+    "arch100_frente_alfa.png": "da7bac892d90f42b703532187599d828efb104639e34cab292ce1644e568457f",
+    "arch100_manifesto.json": "fb5aaf98bf89a413af29391a76decf4646e2ccb726f82f54d1736089f251a1d1",
+    "arch100_mapa.json": "15b0a72c0e26a104ee7d1ddf5d9034ea464840dae01b69260fe9e26fcbafb06e"
    },
-   "tamanho": 1008764,
+   "tamanho": 1242898,
    "tipo": "cabecote",
    "inspiracao": "PRS Archon 100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": false
   },
@@ -606,8 +606,8 @@
   },
   "band57": {
    "nome": "Band 57",
-   "hash": "2da1d8672b21c98a",
-   "data": "2026-11-23T14:24:41Z",
+   "hash": "ccc62faf03a4a75a",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "band57_botao_agudo.png",
@@ -621,23 +621,23 @@
     "band57_mapa.json"
    ],
    "sha256": {
-    "band57_botao_agudo.png": "fbfe1d95e1b552df2324bcd3507ca782929c6d6c4b5ec92646760ce25c16e816",
-    "band57_botao_ganho.png": "088118daa0c07f41b9a766eb10a8f8119aaf990d54bc2b10bee808048fbcdeea",
-    "band57_botao_grave.png": "dfff31ad43eb364607688dd5d689ac87317bbd137c5c83cd4350a54c8477e386",
-    "band57_botao_presenca.png": "3c1b7ff678c4c5ede90e1edf2a4f6f6c19aac27457e5cd17d6080344c7c7550d",
-    "band57_botao_volume.png": "4f5b7a017251ba1692b2859271b5292547210c50bc54fa841bb6b27928e673d9",
-    "band57_frente.jpg": "e792d8b288f6d34c1294394a9c784c5c2327418e2ffb5d16a3aeb35a5d910787",
-    "band57_frente_alfa.png": "24a165d2e6fbe5d8b064bcfbedb09c0a1418810bd03f6c97a2e6c96bccc9f892",
-    "band57_manifesto.json": "9e5f4ae86e748bcd003afbee3310aa582227ddeaa233b39dc85d655bf4d53991",
-    "band57_mapa.json": "5b9e1a8b709931f2cadacdc4e60d13c577dbf90ef461a5191978bbb6f121e864"
+    "band57_botao_agudo.png": "27d13ccccc1c2d54d8c4d31f9d56d3e8a67209083d914c332f4b236f1a8aeac8",
+    "band57_botao_ganho.png": "538abff175c99a9d41af19926f1f1da725cef760405f59f103938969aea32d06",
+    "band57_botao_grave.png": "eebb93d90cdf81a9cf3dbdc12c3249ec4ec13dcf92f4123c89d29d77ea7491d9",
+    "band57_botao_presenca.png": "3484dcbaf73c9aabd674086bba44861cf477bd9425bbca7181c9978d709fb945",
+    "band57_botao_volume.png": "9f2c207c6b5d70f30da39f7a2dce4754870a5ced1f787d39aa3b95ec0887a068",
+    "band57_frente.jpg": "b08c6d59296d7a6858c6d04427ebafd5bd52cabbb481e9f5648fd4669f21e26d",
+    "band57_frente_alfa.png": "8e65384691890823a3af2e55e34fc08e78605db0dbcb09e579276a1d6fa5b5b5",
+    "band57_manifesto.json": "d6dc3db727149e905af717e2d5445dffcae0bb343cc22320549eaa8ebabac2c1",
+    "band57_mapa.json": "a257cdad8dd748d055b25fd3f617b10f59e53950d671b63e98901903db7356fa"
    },
-   "tamanho": 2607816,
+   "tamanho": 2277099,
    "tipo": "cabecote",
    "inspiracao": "Bandmaster 5E7",
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.0",
+   "versao": "1.0.1",
    "acesso": "gratuito",
    "fabrica": false
   },
@@ -691,6 +691,37 @@
    "categoria": "1x15",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "bass53": {
+   "nome": "Bass 53",
+   "hash": "7d69f541ae2b1fb1",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bass53_botao_agudo.png",
+    "bass53_botao_ganho.png",
+    "bass53_frente.jpg",
+    "bass53_frente_alfa.png",
+    "bass53_manifesto.json",
+    "bass53_mapa.json"
+   ],
+   "sha256": {
+    "bass53_botao_agudo.png": "5cd0d5c92ab6b6ddd1fcdcb231bdd2b112086c70c78a9a1ab8de6a1f43f45e6c",
+    "bass53_botao_ganho.png": "ba45c66b7735137d83c0ed75c40a7839cf4cefe056bf56dd6bf3bf790704d4bf",
+    "bass53_frente.jpg": "53b8edbb9d4986c581d32209b2797f4db14306983ea745636cfc2f33a9d4982f",
+    "bass53_frente_alfa.png": "c420d837058d63ed97cac7acefe9c7542358a3467c133a2c5114e40276963410",
+    "bass53_manifesto.json": "4682b5f97e30ae9847a99cf3282d5069710c8275365bc29aa7a442897f53a2e0",
+    "bass53_mapa.json": "9c0970c5bb3ac128b397b2c1fa083475576859f27885907c6a632261472539ad"
+   },
+   "tamanho": 1495682,
+   "tipo": "cabecote",
+   "inspiracao": "Bassman 5B6 (1953)",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -778,8 +809,8 @@
   },
   "be100": {
    "nome": "BE 100",
-   "hash": "65ae7d6769bbc188",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "8fc91f5f52c50f1b",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "be100_botao_agudo.png",
@@ -794,24 +825,24 @@
     "be100_mapa.json"
    ],
    "sha256": {
-    "be100_botao_agudo.png": "55bcc4e6258e0fd40a6b87501bc3fb85cfb2c3644fcd72d4dac8eadc6368f08b",
-    "be100_botao_ganho.png": "b4b4b9c9429577ed9942d587b15c99817ef612eee74769c7708b33c33bd4064e",
-    "be100_botao_grave.png": "31c0a801a921240c130260942c25f1400bc529d05276099284eec5bc9da04c43",
-    "be100_botao_medio.png": "310f5f6868142087ea213b4335c954f415a3ac2d7fc3cf8eb406e93944d23fa0",
-    "be100_botao_presenca.png": "95db0f03aae4476a998884cebc8b3d4f2ef129e56cc1f26e03a6683f56a7fe7f",
-    "be100_botao_volume.png": "5822ce02d761b94f9fd19cb47032d76eeff7f89dd469504e2b4a9e6dc583684d",
-    "be100_frente.jpg": "8a7f6597185fba407294c80ce0ee7a90af7d76c5d8cf7750e1b634f52826c251",
-    "be100_frente_alfa.png": "fe19264ca74b90b4c3f236a99b9f1d59b9e972332d7d016a59c9352666849d06",
-    "be100_manifesto.json": "8cd77a4336a95ccb927d1f49d6296a7f635cb5cc3cc500cb82befb33b8e2f926",
+    "be100_botao_agudo.png": "8d91e1450e4f6dbca47f921566dfe915c292a90d9fb73a6ed37a17a2b2a07428",
+    "be100_botao_ganho.png": "86ec9a3646c330aab34ef637101f6a8abe19780f72698a6858301eb2d2ad8974",
+    "be100_botao_grave.png": "163e44172ab8f26300be02aafc996e30741664c2b4539e5766dc4eb440d4dea2",
+    "be100_botao_medio.png": "eae50ce56751cc80ec5442089421dc4d8c50a5ff6f850a224492291851c6be78",
+    "be100_botao_presenca.png": "ae7485c0a64e2d3f3b4d33e16a6b889f9f3de246c5d7444ba26b8af77bb8c2a8",
+    "be100_botao_volume.png": "f81464424aa8545424e7edbe8067a86493ea37731713ceecd1ea5588d1592856",
+    "be100_frente.jpg": "6d043ee1c817591006c8ff198f05e91dd7ff7de1f15b876768fa8f23652672c9",
+    "be100_frente_alfa.png": "c833aa4a8735f2f463d18e7df29fab7b321fb37247baece363e7becddadb33cf",
+    "be100_manifesto.json": "1199c7cb14e40a5b66bfbf4d5c23c9c76865ac2cb1966fbe25fcf9b70aa760c3",
     "be100_mapa.json": "5af6630798230ce4d23ad3637aaa7cd9e62a87eaa6d04ad1fb51bb3ad15a2d0a"
    },
-   "tamanho": 852706,
+   "tamanho": 852698,
    "tipo": "cabecote",
    "inspiracao": "BE-100",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.6",
+   "versao": "1.0.7",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1032,8 +1063,8 @@
   },
   "blackcat30": {
    "nome": "Billy the Cat",
-   "hash": "f1a3da63ec3222dd",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "2024eb5c94f01df1",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "blackcat30_botao_agudo.png",
@@ -1050,26 +1081,26 @@
     "blackcat30_mapa.json"
    ],
    "sha256": {
-    "blackcat30_botao_agudo.png": "de3d526b3655fc2d0f9f889bf072e6dcae6b40d5f68023be07916637ae479320",
-    "blackcat30_botao_canal.png": "7fcca1f28212f8183884e09ef1d311b189ff78144113cbd02c892bc52377e622",
-    "blackcat30_botao_ganho_1.png": "f1b0acd07e871c3d45aef5bb1ec0679f6723d2a530a01b7aea7d5c63f6b152d0",
-    "blackcat30_botao_ganho_2.png": "18f0c80bafe8ac0873cf20d2e0b39d060a372c013ff526906047f63bd02b1470",
-    "blackcat30_botao_grave.png": "e8584577266693f06bcd35153266dbe742ab473c8e04ddfca0622e84912dac28",
-    "blackcat30_botao_medio.png": "baaafd52402a8ca970f347320b84e2fa473f1e32bbb8c7918b576cab9d572b45",
-    "blackcat30_botao_presenca.png": "7485a6aa46d6e4ed1739da70c13a64b50e6c1ce530650cacd7c9c4ec739996ad",
-    "blackcat30_botao_volume.png": "9c847f08170b312ad312e417ac88f2dcdd1e2cf596e47e4499ac0b0f2c924c31",
-    "blackcat30_frente.jpg": "86336bbd7ed9a4c13edc7cf718ce6e161e50d11930a107cd5b7757f6f059537f",
-    "blackcat30_frente_alfa.png": "c8d2e635d70f57f3a3128d7013ad465dade27c20ef505ad23589a23bfd5e50f1",
-    "blackcat30_manifesto.json": "dec9ecc4697de6b831e019acda838edbbb1ef14af103b4fe5e2b8ae11801139d",
+    "blackcat30_botao_agudo.png": "6dc6ae1ff905b2e43bf4440ce20d0f0a3ab83cf865c988df3cd5a106ca0253b2",
+    "blackcat30_botao_canal.png": "afb7661af785940539d8e97eaeaef76810b1a31dec0aaae0b9cd1ddd7d6b7894",
+    "blackcat30_botao_ganho_1.png": "a5310d88db54b0e764bf2b08360a3c898f92176d9a2ce5181ea81fff1435773a",
+    "blackcat30_botao_ganho_2.png": "f6429b900e8ca5815618e8ecde3ebaea4c19da9b8b219a00f108ff27809adf16",
+    "blackcat30_botao_grave.png": "debc5d172f9dc077c915fe95cff23f8964d9e82c294f56c5d4fe7223ec2a2b38",
+    "blackcat30_botao_medio.png": "04f502f5ba5f8212168f88f9b85dfcfb9b80fdb147010661370d4bb354e92cb6",
+    "blackcat30_botao_presenca.png": "77d3e30a73efbc7816abd91709d7e01e9e86c0648655307abc322b30208c8e11",
+    "blackcat30_botao_volume.png": "ba7e34ace4da63db22578c60b4c4f82d7a87f74e8bdac928bbd914d4bc074217",
+    "blackcat30_frente.jpg": "3cbb2655f9f6d36da253177a3bd796ec16b9393f69b1537f0f06f01c4abb8e68",
+    "blackcat30_frente_alfa.png": "42c7aab9dc5cdfda86ee119e46731b1ccae0799611a1bb0ab717740a4f829839",
+    "blackcat30_manifesto.json": "5c0a867fa7b79a719d00556faf9903cead237b891773330215b0233c8b6186fd",
     "blackcat30_mapa.json": "79408a5c3b97569ec759d57525c1c80e62f04995c7a4f5e58dc2904ea8564a7d"
    },
-   "tamanho": 781064,
+   "tamanho": 781027,
    "tipo": "cabecote",
    "inspiracao": "Bad Cat Hot Cat",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": false
   },
@@ -1386,8 +1417,8 @@
   },
   "bode_mud": {
    "nome": "Bode Mud",
-   "hash": "ed38ea425a332b05",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "15b42f56a06433ea",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "bode_mud_botao_ganho.png",
@@ -1399,21 +1430,21 @@
     "bode_mud_mapa.json"
    ],
    "sha256": {
-    "bode_mud_botao_ganho.png": "25d45acc8cacf3da6b7763d872fa4678d52c28e1704deb5b1a020bffb7b520e8",
-    "bode_mud_botao_nivel.png": "594f0c3956387ec1842ac5d25e86fa361834bcb206eec966a59f769bda25191c",
-    "bode_mud_botao_tom.png": "b6a03a501ba5773caf9dae3b8b1cc1d7de5c1de6c7fdd85723804993059a59d8",
-    "bode_mud_frente.jpg": "eb2b238c92cb82178dc207a1ba96dfa5cbb6842b94c7f8267bb2e652bd782a2b",
-    "bode_mud_frente_alfa.png": "464beb1ea3a6bda4ef9cccc25c6b5cbe00ec397d9a60df3c0aa5f3a0104fd941",
-    "bode_mud_manifesto.json": "3af29ba074e638b3e59dbac8c1918c52b788cc1936f5fa716716f5b560a8765a",
-    "bode_mud_mapa.json": "5f4c0878595fa713ae66e1d518ba1b178c2a9b80a4ed34cc1d586b9971c16806"
+    "bode_mud_botao_ganho.png": "d563aba88b1aa3413c5554b3e4f0dcafa94615128ecd026a833df253b697a3d3",
+    "bode_mud_botao_nivel.png": "5c4587266056458bdb50beebe69acdcab6711f338f10d7deaed981cfff75526e",
+    "bode_mud_botao_tom.png": "9b5c62fca0bd6b36af9bcd537de4adc493a82e2b92a968ad8d9c69661f44848f",
+    "bode_mud_frente.jpg": "32318a932f38ff9f13aec52ac26dedeeedf6f45d11f540bf7ddbc951197d925b",
+    "bode_mud_frente_alfa.png": "5bd3905fb3104d2b81dd5d558038b8fbf8a63758cb4b712c1318cd87ce530ba4",
+    "bode_mud_manifesto.json": "a173fa2c5af1350f58ef5790ed8b53a90e3c787901cb14482275932a830677c0",
+    "bode_mud_mapa.json": "b8198a4d4135d30210de05ced9857ec9afa4839598f3787edb1a8316e9e39917"
    },
-   "tamanho": 1930823,
+   "tamanho": 2377307,
    "tipo": "pedal",
    "inspiracao": "Mudhoney",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -1960,6 +1991,33 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "bull_112": {
+   "nome": "Bull 1x12",
+   "hash": "686c4af67bd9e69f",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bull_112_frente.jpg",
+    "bull_112_frente_alfa.png",
+    "bull_112_manifesto.json",
+    "bull_112_mapa.json"
+   ],
+   "sha256": {
+    "bull_112_frente.jpg": "320fef662f40ef94b1c7816a256b9ea108c7a04a0ee1574a0f7e45dca1bfc36c",
+    "bull_112_frente_alfa.png": "c8f0e2b70c05cd2d308c9b0ee0e968f34d56556b43afb59aad714d86dfb4f885",
+    "bull_112_manifesto.json": "f23dd66c62ff5cd46c8a9b743556c5bf698a755ad569e4a41355b1876b89938e",
+    "bull_112_mapa.json": "44d70e909d7a4c8cc357ba91c708c3fcd91a9ab0e12d8792279c17537b0d414c"
+   },
+   "tamanho": 1256076,
+   "tipo": "caixa",
+   "inspiracao": "VHT Pittbull Fifty/Twelve 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "cactus_gate": {
    "nome": "Cactus Gate",
    "hash": "ed9529798f6b7373",
@@ -2148,6 +2206,62 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "champion5": {
+   "nome": "Champion 5",
+   "hash": "9265de0f940d8040",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "champion5_botao_ganho.png",
+    "champion5_frente.jpg",
+    "champion5_frente_alfa.png",
+    "champion5_manifesto.json",
+    "champion5_mapa.json"
+   ],
+   "sha256": {
+    "champion5_botao_ganho.png": "aa5a97ed942f9815ba883d4efac1e384df27c4a2508dbc5f54268065d166d2db",
+    "champion5_frente.jpg": "2a05f5f33e6c6448ef16ff14b7c1bddd66753de3601100ec8df62948d357f826",
+    "champion5_frente_alfa.png": "839759af581fc9ed76828666ec0c137a5eb5028bbdf5d88582534c402e6ca67d",
+    "champion5_manifesto.json": "75e5d022e14dbb40da532d873b8ab208717553dcfaa5cd02bef31eec1fe24ea2",
+    "champion5_mapa.json": "a9e0dc714360026720a025e9f343cfb3a4e3e4728a577b0b43e72be22c351b87"
+   },
+   "tamanho": 1718741,
+   "tipo": "cabecote",
+   "inspiracao": "Champ 5F1",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "champion_106": {
+   "nome": "Champion 1x6",
+   "hash": "53983150a5fe3d56",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "champion_106_frente.jpg",
+    "champion_106_frente_alfa.png",
+    "champion_106_manifesto.json",
+    "champion_106_mapa.json"
+   ],
+   "sha256": {
+    "champion_106_frente.jpg": "a884c3f9e03777ae7bc0202a7a9005a8cad47f7524f2899bc797c2f631836939",
+    "champion_106_frente_alfa.png": "53dcb141252db10aa21b17e120bf4be99738c29aaf1bc9e83d775a8cc8f159ea",
+    "champion_106_manifesto.json": "0d629ca0be7422cffea7a5bb98c51a8bb1b6da827329268012406b8d79a92f6c",
+    "champion_106_mapa.json": "93f55509d77052b83db6ed97e1f4a57afc3570aa8aae03b6d91c3b23b95ee640"
+   },
+   "tamanho": 1066213,
+   "tipo": "caixa",
+   "inspiracao": "Fender Champion 600 1x6 (reedição 2007)",
+   "categoria": "1x6",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "champion_108": {
    "nome": "Champion 1x8",
    "hash": "e4b955c06c8bb430",
@@ -2286,6 +2400,33 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "citrus_112": {
+   "nome": "Citrus 1x12",
+   "hash": "fe1275144d256405",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus_112_frente.jpg",
+    "citrus_112_frente_alfa.png",
+    "citrus_112_manifesto.json",
+    "citrus_112_mapa.json"
+   ],
+   "sha256": {
+    "citrus_112_frente.jpg": "bd23a3d727eec7c57999dace02165b36b0faee665fe4d1653e0f76861c815040",
+    "citrus_112_frente_alfa.png": "eef30422901d40ffb4d351b7af9eee9017d7f48107c4e01a18daa55fd595b6f5",
+    "citrus_112_manifesto.json": "83aa0cb05527fd0197c598312ccf5c07b4c378c0330012fc114aef509a67263c",
+    "citrus_112_mapa.json": "cd68a67c16420e046b75df0e149045909b3708b93a09483085253a1e526f4d22"
+   },
+   "tamanho": 2003381,
+   "tipo": "caixa",
+   "inspiracao": "Orange PPC112",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "citrus_212": {
    "nome": "Citrus 2x12",
    "hash": "d2432f48191630d7",
@@ -2340,6 +2481,33 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "citrus_bass_115": {
+   "nome": "Citrus Bass 1x15",
+   "hash": "a7054d3d5eff3de5",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus_bass_115_frente.jpg",
+    "citrus_bass_115_frente_alfa.png",
+    "citrus_bass_115_manifesto.json",
+    "citrus_bass_115_mapa.json"
+   ],
+   "sha256": {
+    "citrus_bass_115_frente.jpg": "2456d709d56555a1c0bb12055f94a13f5826ea2feadd915a8e38441130de3b35",
+    "citrus_bass_115_frente_alfa.png": "ca25b2c40c87ae18e35961eeb42f806696ef44b7a7a29257c57ccd97913ddd72",
+    "citrus_bass_115_manifesto.json": "7b2e14af40554c1aec735fa08f006231bd8aa34156407bf198d1601e061acea8",
+    "citrus_bass_115_mapa.json": "c11261fe839f5bb233da111fc1afedbe79b06c99f371984ce2a1bf79f98e2616"
+   },
+   "tamanho": 1259685,
+   "tipo": "caixa",
+   "inspiracao": "Orange OBC115",
+   "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "citrus_bass_410": {
    "nome": "Citrus Bass 4x10",
    "hash": "4af75d1b6324d3f3",
@@ -2363,6 +2531,72 @@
    "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "citrus_bass_810": {
+   "nome": "Citrus Bass 8x10",
+   "hash": "3c480a4df4c667ea",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "citrus_bass_810_frente.jpg",
+    "citrus_bass_810_frente_alfa.png",
+    "citrus_bass_810_manifesto.json",
+    "citrus_bass_810_mapa.json"
+   ],
+   "sha256": {
+    "citrus_bass_810_frente.jpg": "4ae5238df1392110e2377cf672845695a74bd4706e556764e4d2bd7a835adda7",
+    "citrus_bass_810_frente_alfa.png": "52a9a5e6187f1ca17989c07b538df8f3cd70b1eee798bbcb7ee1c3984100a8ec",
+    "citrus_bass_810_manifesto.json": "e0940325a5c3cfe7f0674384a4ee3719aaada8d768ab9a5268654698a9c281c2",
+    "citrus_bass_810_mapa.json": "77cfc9f8857ca1b0a9b3338ed48ce499ca696b916745952facdbfa17aebf5104"
+   },
+   "tamanho": 2802312,
+   "tipo": "caixa",
+   "inspiracao": "Orange OBC810",
+   "categoria": "8x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "clove_eq": {
+   "nome": "Clove EQ",
+   "hash": "4b68236c6bbe6cdd",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "clove_eq_botao_banda1.png",
+    "clove_eq_botao_banda2.png",
+    "clove_eq_botao_banda3.png",
+    "clove_eq_botao_banda4.png",
+    "clove_eq_botao_banda5.png",
+    "clove_eq_botao_banda6.png",
+    "clove_eq_frente.jpg",
+    "clove_eq_frente_alfa.png",
+    "clove_eq_manifesto.json",
+    "clove_eq_mapa.json"
+   ],
+   "sha256": {
+    "clove_eq_botao_banda1.png": "7f06ad5ad4ffd94406e710301a35206832105e9132109cb22d05601db2a4a481",
+    "clove_eq_botao_banda2.png": "2d48b71fac21215f8ed401687c530f92f1f1b07343854ac4b8936060f4ccd7a4",
+    "clove_eq_botao_banda3.png": "5fc9b0b4c127e89c3acb58c99869b01e31856913be0be5b79882e05ca62bcb6c",
+    "clove_eq_botao_banda4.png": "3eb92ba91be6cc77ea6ce840f8653dc6cc4ae3aa99ebed4f3b77516696fb2f79",
+    "clove_eq_botao_banda5.png": "2bcf382aa0a56417a62536f363e177144267242b7b32379878641e024782b6a5",
+    "clove_eq_botao_banda6.png": "81b6d431696bc8254e41f22995617cc47064324c2687267a9ba50579b9174d7f",
+    "clove_eq_frente.jpg": "de1c61b907235649324cd5f8e0181f998ebab224c17e959fa6fa846dbf066352",
+    "clove_eq_frente_alfa.png": "2e2190f7fffd52ad33b5a19fe50d3ad7531f8cbc19468f560bb52a38051f4a4e",
+    "clove_eq_manifesto.json": "176c240d17ddeb0fc5428bcd3c20e4b9981cde1aae6ab6a146087650d7222ad4",
+    "clove_eq_mapa.json": "401524c6ac6e6180990a42d69cf1b4d3463464c630f8fd364ade65d5389a3aff"
+   },
+   "tamanho": 2136567,
+   "tipo": "pedal",
+   "inspiracao": "MXR M109 Six Band EQ",
+   "categoria": "Utilidades",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -2507,8 +2741,8 @@
   },
   "darkstar20": {
    "nome": "Dark Star 20",
-   "hash": "3cdf4358535bdd8f",
-   "data": "2026-11-21T19:05:11Z",
+   "hash": "e44ad91826dd25e2",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "darkstar20_botao_agudo.png",
@@ -2523,31 +2757,31 @@
     "darkstar20_mapa.json"
    ],
    "sha256": {
-    "darkstar20_botao_agudo.png": "321b87877a62c8ba25ea3b7fe810960e78f2e3dcaf2c9f8c9ce1a9d09340055a",
-    "darkstar20_botao_ganho.png": "10cb7916c0633f294fd7934d028aad08b2330c2022fbab25e55e3d9421cfbcf4",
-    "darkstar20_botao_grave.png": "709dfe58812d87d8372d53a75b6e4ad63687dea9132c1c79d03f03d3677ae78d",
-    "darkstar20_botao_medio.png": "0bc64d3a8d2857dc3e2f3a954583560025d5d6102006f02321221faa8eae706b",
-    "darkstar20_botao_presenca.png": "e514c53f2abc69668b4b263ba2ed48d932561145fecc4e22b4c05c1d7acaaec7",
-    "darkstar20_botao_volume.png": "ac6adde72f560f58ae74fbbd4bd7c2bac1416d1ae1204df1350cc3d3eed67a07",
-    "darkstar20_frente.jpg": "6c5a81bf1a143848954393ddeebf2c221277582bc6619366c45b8db8d1a3b6d2",
-    "darkstar20_frente_alfa.png": "2a0cc24023855b00ea22878ce4958e56b0d2ffb805311a77b036d9a8e3f8fdcf",
-    "darkstar20_manifesto.json": "7175bd8901d33a6de1d28765f5df0d45e8ccc3d4dd23d7169d8b393c1c3ce2c2",
-    "darkstar20_mapa.json": "f1fb521c0707d05f0286732eb4db994d0b536a78e2228b435745203793027842"
+    "darkstar20_botao_agudo.png": "e1d191e64b20d9d62ba4fbcab7a869b9ca68c2316ba48748566b008a2001cca4",
+    "darkstar20_botao_ganho.png": "19533b74427bda8906c3f7d7d8d8a2e6697857c3b0d83f6a6729b7fa390cd797",
+    "darkstar20_botao_grave.png": "3a4acb9fd6e16d03a1d8e984c16066f2c0b09f0f2acadd1a93f2d6a05a0dd66c",
+    "darkstar20_botao_medio.png": "b0cf86c8d14f77fb9e218c640ce5cb9767130df5531acfb6e8f90e0369f23ed8",
+    "darkstar20_botao_presenca.png": "2f81153587a6a3b3560d2a25920b2c60723a66c4e62bd83d14a3d7f15d319f88",
+    "darkstar20_botao_volume.png": "03f3ff65c89c920e446e65436fc2f0dfb9273c15bcc82d11649ff40a0fac0a0d",
+    "darkstar20_frente.jpg": "d062c589fc03e5cf5191c8c2845e6a6d6d27c43459ff45df2d04d394dcd27a0b",
+    "darkstar20_frente_alfa.png": "b3dc24b748e0b90240dd1410b55c2a59be3610688389abcd17ce3ebdb208d229",
+    "darkstar20_manifesto.json": "0772f299889f260988c5705d29d1bae928ca750b44925e237d4321a3e928352f",
+    "darkstar20_mapa.json": "1cbcfb3537424a6cb569ce49cbdec970ec706d13ef475c5974ecdf55a88cff7b"
    },
-   "tamanho": 1641962,
+   "tamanho": 1960654,
    "tipo": "cabecote",
    "inspiracao": "Blackstar HT-20RH MkII",
    "categoria": "Britânicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": false
   },
   "deliver120": {
    "nome": "Deliver 120",
-   "hash": "231650d4f28e68f4",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "af33061a2d178700",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "deliver120_botao_agudo.png",
@@ -2562,24 +2796,24 @@
     "deliver120_mapa.json"
    ],
    "sha256": {
-    "deliver120_botao_agudo.png": "23805683aceee48f5dafe80f9bf2f010b608a5cbf43406b33002f3de7e1f01c4",
-    "deliver120_botao_ganho.png": "f5c37f85c01e48a7385a9d2999f51d5ad4cdc330e73ed67b9af25c6e51810317",
-    "deliver120_botao_grave.png": "a00b4ae9a3bb234ddbf5d71e1f53536fe58a1b386d28e6f9a1b8b95308b0205e",
-    "deliver120_botao_medio.png": "20aad48e83577a074e5b6262e80a4bf8c12ce7d7d26cc691e5881e812e5b49eb",
-    "deliver120_botao_presenca.png": "a659bbf238eac022b5ebd1193cab0a0526c1c1165b130966b4a26e78bb7afbb3",
-    "deliver120_botao_volume.png": "99a3d7f8dd12456585d7a46fedee20ab652fe63a31232c6a4005f40853c95200",
-    "deliver120_frente.jpg": "9289307c781de5649b58af0d8eaba4324a44e6e9ccb63fcf0ca2ce8474002b6d",
-    "deliver120_frente_alfa.png": "004fadde7c182921aaa6c6033fba888cef037569c7409346c9d155e0a9e71ecb",
-    "deliver120_manifesto.json": "aa62d5bb10c200b8a7abf8856658d7f038f0fcf7bd007e042ffed87df16682f5",
-    "deliver120_mapa.json": "5ced60bb405e7a96a986d374df0db7414faf262accc03b329fe0c01298e70ad9"
+    "deliver120_botao_agudo.png": "d52e60acbd34d6ffc0d19bfe89af226ba157229479532a7afdb98767d1ef9c90",
+    "deliver120_botao_ganho.png": "cdbcae9c71a2572229f58b4aa2580f92532d2d15da146ecc96fc92edeab330f1",
+    "deliver120_botao_grave.png": "c1765bd28244c1ebd0612fc9406b387673906a0318d50c2acebe4ca33fa6046c",
+    "deliver120_botao_medio.png": "a17880f5ff22ea773738b6e449d6ff6bf7c75376e2b27836d8c12ca8e87925f7",
+    "deliver120_botao_presenca.png": "525e952bca1c8f647f289931caae6cfa466d99b4c41f0b4ef3c03c54d47cc498",
+    "deliver120_botao_volume.png": "612a8b6fae576a5c519741d68812c4366a98783490f8fa1e64ebd5c2d864e4df",
+    "deliver120_frente.jpg": "8cdd011bb3ca21ad0034b7bcf7d94d6d7f105a1a4ee9ec39224bffbc254c12a5",
+    "deliver120_frente_alfa.png": "250904c386d2764a7fce69abeace05a26d86be841cf345d0fb9cfd668ec8dfe9",
+    "deliver120_manifesto.json": "7141984baa8bdc1173995cf599e855ac4ebc7d54e746f939a73e305c51f7bf34",
+    "deliver120_mapa.json": "b5a66bd29c2041432d91ddad67c652d1a8bb431fbf65e6053263146d3f3cbc71"
    },
-   "tamanho": 985528,
+   "tamanho": 1239696,
    "tipo": "cabecote",
    "inspiracao": "Fryette Deliverance",
    "categoria": "Americanos de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": false
   },
@@ -2850,8 +3084,8 @@
   },
   "emperor20": {
    "nome": "Emperor 20",
-   "hash": "60403c447d3db51e",
-   "data": "2026-11-21T19:05:11Z",
+   "hash": "4a084f53f3db5544",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "emperor20_botao_agudo.png",
@@ -2867,25 +3101,25 @@
     "emperor20_mapa.json"
    ],
    "sha256": {
-    "emperor20_botao_agudo.png": "153f89183b095c62767314880777a8df7b43a9e4757768e1947a7030c1258009",
-    "emperor20_botao_canal.png": "8f6c5ab690a122a62b6fc863dfb9e02298a6ab4a894b52ccf724b6ec76824ddd",
-    "emperor20_botao_ganho_1.png": "e045ceeceb0cac92ec9bf8a885fad5c543a58151a05ef24893038b6744fd5f91",
-    "emperor20_botao_grave.png": "20a5d011e405f7d4954a2d2adad1b13c6dac7457d626324a2b545d6dc26c6e4e",
-    "emperor20_botao_medio.png": "676c9d8bff5fbbb99503e31cd38efca231c571187dd821ebe59b3c5b0646bab4",
-    "emperor20_botao_presenca.png": "3a51214cbd56f3433df6839ad6463453d3b55412d64bd0540c802ca43f7fdd33",
-    "emperor20_botao_volume.png": "422b795ec9d058bb36bb76bc7129b1c1b483b56dd0c06a1a6ecd4344b5bddba6",
-    "emperor20_frente.jpg": "ec1c348e54c3d81fe61847a2cd240d853d4173d1771a388e39877091c0249eeb",
-    "emperor20_frente_alfa.png": "634498a0b4c384f8a271826b1449c18def30bc80a7b862664032e9e4df674598",
-    "emperor20_manifesto.json": "569e0917b8ec5151fe399c774c26d7c59d3c685c84c59794c5919bcbc6062a21",
-    "emperor20_mapa.json": "d726c3930f7d63bce28bb3c41c10c4eb9f73e60ee1728bb4773541ae4f2395ff"
+    "emperor20_botao_agudo.png": "bc602c383fcef659dbc60a6decdc1f4b9d1406b0f5faab575a651996a6a71653",
+    "emperor20_botao_canal.png": "03d17a56f254368765df1d030f33e28db124e0f3afc28d4dc104d4e538384d83",
+    "emperor20_botao_ganho_1.png": "5869dc60399c2938fe424a70d0c5e033a833970ba5226003d81701e42f9c8a3a",
+    "emperor20_botao_grave.png": "03fac19018339ef8ec286e0f2e574a64084c6784c8a06befe42c314690dfc0ac",
+    "emperor20_botao_medio.png": "a00b23c8d87c3f69fbcef1f7ff2645fe1470d31062beaa3875dec1644949bcdd",
+    "emperor20_botao_presenca.png": "a31dc0a8dd960934f2621e299d0ef479df8e28ceeaf41208eafefaa9f22045c6",
+    "emperor20_botao_volume.png": "0915e955f43c1dda74fd0c27822e1296c3ccbecaca5de16bbb231a37a1e931ec",
+    "emperor20_frente.jpg": "668365b9ac58d76673190cb893070788dbd2e3c29494fea2fa1829ef53cd39c1",
+    "emperor20_frente_alfa.png": "0aa6c6e6d71472a7a7b824f203cb2f8c78ea9b02027d5d0863c9c57e3efbb996",
+    "emperor20_manifesto.json": "c71fe9928722c14b6aee73539e2a4e886ee50a3320351f7d58885b6f3c9cb150",
+    "emperor20_mapa.json": "f1821152e844c3c7e05657c8d93e81974be92e9f9df739ffe6a3155d8decfc47"
    },
-   "tamanho": 1235017,
+   "tamanho": 1552328,
    "tipo": "cabecote",
    "inspiracao": "Tone King Imperial MkII",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.1",
+   "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": false
   },
@@ -3284,6 +3518,33 @@
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "granite_112": {
+   "nome": "Granite 1x12",
+   "hash": "36d14404858d9229",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "granite_112_frente.jpg",
+    "granite_112_frente_alfa.png",
+    "granite_112_manifesto.json",
+    "granite_112_mapa.json"
+   ],
+   "sha256": {
+    "granite_112_frente.jpg": "c51078f48ff12af325a372c9d7885a35dc61a14de3bc2caeabeb2e45d0c346ea",
+    "granite_112_frente_alfa.png": "00b28b685fea6115cce06301ab01bf75c413145094d094e1a89ec3aecba2ace8",
+    "granite_112_manifesto.json": "452a20f100b4456306b2208b6a96227d8f63e0fc53fdcbb410dba1a94416c1ca",
+    "granite_112_mapa.json": "2a95849b5fdf1183854a1c9ad3e08454d1bdb00d709da313d8ad981a57a26b6a"
+   },
+   "tamanho": 607229,
+   "tipo": "caixa",
+   "inspiracao": "Gallien-Krueger MB150S 1x12 (caixa do combo)",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -3909,6 +4170,33 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "junior_110": {
+   "nome": "Junior 1x10",
+   "hash": "32e4719802e2f69d",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "junior_110_frente.jpg",
+    "junior_110_frente_alfa.png",
+    "junior_110_manifesto.json",
+    "junior_110_mapa.json"
+   ],
+   "sha256": {
+    "junior_110_frente.jpg": "6a6cf34912d801fc2f1441b40969b400f8be687d6cd3486b013863e17665c9fa",
+    "junior_110_frente_alfa.png": "4f9b5030ec9004ec5dacc90d0dd98d6fe6aba22e235468f452c5d45466719c37",
+    "junior_110_manifesto.json": "09f552dbbf84384cf20070aec522ade407f6d6bb2f9763d4527aab36ab6c0856",
+    "junior_110_mapa.json": "8607dbb95c56baa4afd6e04e68bf30c20379d31670fbe797348fd8f076622a3f"
+   },
+   "tamanho": 1671342,
+   "tipo": "caixa",
+   "inspiracao": "Fender Pro Junior IV 1x10 (tweed laqueado)",
+   "categoria": "1x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "juniper_reverb": {
    "nome": "Juniper Reverb",
    "hash": "067823215366467d",
@@ -3941,6 +4229,60 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "king_212": {
+   "nome": "King 2x12",
+   "hash": "8c5d34a77a146b27",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "king_212_frente.jpg",
+    "king_212_frente_alfa.png",
+    "king_212_manifesto.json",
+    "king_212_mapa.json"
+   ],
+   "sha256": {
+    "king_212_frente.jpg": "5d6e5b71ee11bcb4edbc92b815c048d54d480739cf41cdc6f34b555144ea1ca5",
+    "king_212_frente_alfa.png": "7848e788c945584d6ad63984848a323712708815bb553eef34150b55d4da538e",
+    "king_212_manifesto.json": "796b92ea0c3a0e6dfb47a8650850198f841008ed46f4639415f6d2e717354a21",
+    "king_212_mapa.json": "41e662314d33862cad17f7c2e5ecd2625dc7f1d32056d06245f0a84fdb487654"
+   },
+   "tamanho": 888450,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 2x12 Road King Horizontal",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "king_412": {
+   "nome": "King 4x12",
+   "hash": "495307762c56dcae",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "king_412_frente.jpg",
+    "king_412_frente_alfa.png",
+    "king_412_manifesto.json",
+    "king_412_mapa.json"
+   ],
+   "sha256": {
+    "king_412_frente.jpg": "750a1d81e5bec238119990c8a642e638b099a032b4cfc1fce11b899c6a62ce7b",
+    "king_412_frente_alfa.png": "0d024b6e9fa1e4d6150d37cb412bfd8a981d8e2972f390a4312c0c033f8ab78f",
+    "king_412_manifesto.json": "538fd97908aed2260df3e98a56f03d15b6a4f49964a9b783272271bcd978a9be",
+    "king_412_mapa.json": "133ba99348e0b0cbe1155174c2d18386038f54c3d4136e9b9620aad5a2601ece"
+   },
+   "tamanho": 1580808,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie 4x12 Road King Slant (feita reta)",
+   "categoria": "4x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "kraken50": {
    "nome": "Kraken 50",
@@ -4079,6 +4421,37 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "level2a": {
+   "nome": "Level 2A",
+   "hash": "b2af76938d7be9b6",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "level2a_botao_ganho.png",
+    "level2a_botao_volume.png",
+    "level2a_frente.jpg",
+    "level2a_frente_alfa.png",
+    "level2a_manifesto.json",
+    "level2a_mapa.json"
+   ],
+   "sha256": {
+    "level2a_botao_ganho.png": "dfeaaefa6f1d9afaeb3b6f6c539d599bde8d8ddc3f0b7a62df3e80a2732465cc",
+    "level2a_botao_volume.png": "384ece3df9e1542f59333c4826784e872a97dd9ae5fbb3a8eb5721e91ded15e1",
+    "level2a_frente.jpg": "edbe806d84f6a34427fb3e5e788455bed456852ba2ef11d7a4528469c13104ed",
+    "level2a_frente_alfa.png": "90d20b3883f28eead659246f129d893b377c5b72ec5ba020fd11a57d650d0a6a",
+    "level2a_manifesto.json": "a2dfd36ee55d4d0fbe878114384e783cf2f38416ce364a1f53bc896a7da4625d",
+    "level2a_mapa.json": "02c7161d8a4c60ce886f5049988bc4d06c7bb47df29b01f65b27fc18073e4630"
+   },
+   "tamanho": 722775,
+   "tipo": "cabecote",
+   "inspiracao": "Teletronix LA-2A Leveling Amplifier",
+   "categoria": "Rack",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "littletube_410": {
    "nome": "Little Tube 4x10",
@@ -4564,8 +4937,8 @@
   },
   "mars_phaser": {
    "nome": "Mars Phaser",
-   "hash": "5cb84b0c8bc08938",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "b454694af09de0b0",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "mars_phaser_botao_a.png",
@@ -4575,26 +4948,26 @@
     "mars_phaser_mapa.json"
    ],
    "sha256": {
-    "mars_phaser_botao_a.png": "1c6f71b58c8752807dc9eae02b1058ad826e320445b3cc9981d46430d9c05dec",
-    "mars_phaser_frente.jpg": "0e9e8e9bb1710c5663734954ea5f44f22b61ef7fdc803202dfe5ccaf590ca977",
-    "mars_phaser_frente_alfa.png": "072bb2af1f2d7b2365431ec77c5a8f8519afd5965dd66754f615a08ab1038ecb",
-    "mars_phaser_manifesto.json": "80825c61a863847fbca1753150a7002aadb9482ce59cc7802862d1d6ff5d4333",
+    "mars_phaser_botao_a.png": "2cf13ac3203a442442ca08dcef8bfab3b662db1d99fc531630a0c66b55b4ba1b",
+    "mars_phaser_frente.jpg": "75daa0fffd8a8401c93b7c2d0109f754f2b62d26a2e999e7cd6932d4b401d12c",
+    "mars_phaser_frente_alfa.png": "2f413b8680de84cc57978a23403d291ab66e241cfa5e999bf9739811183d9968",
+    "mars_phaser_manifesto.json": "ae18127cdfe0ac20cea3af2ae1bbe23ed40b69564b7a7b60141a643aa1a2925e",
     "mars_phaser_mapa.json": "db05d5f42fd460b1032642a24e94f79c9252d7c63689853a251122a3ff2b2bdb"
    },
-   "tamanho": 1490161,
+   "tamanho": 1490150,
    "tipo": "pedal",
    "inspiracao": "MXR Phase 90",
    "categoria": "Modulação",
    "fonte": "Efeito do Nexus",
    "motor": "phaser",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
   "match30": {
    "nome": "Match 30",
-   "hash": "062f82248b0db4a8",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "a11b68241d82690b",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "match30_botao_agudo.png",
@@ -4609,24 +4982,24 @@
     "match30_mapa.json"
    ],
    "sha256": {
-    "match30_botao_agudo.png": "462db852f0d3ff71374d083e4482a6b0848b9acfcfbb2a1d7b03fd5e8fdc1584",
-    "match30_botao_ganho.png": "b2dde7ae52d0af87a8aeb8fa42e2e0920ca15f9ba893bba2f11ec94a60bbd4bf",
-    "match30_botao_grave.png": "f4fa3709a3157770f3ecb542acadd9b975fec3c684b8f72ca11485770b77ba5f",
-    "match30_botao_medio.png": "c3e6f0656c10b40b8abf37d0bd20e652c4c0b7f38f3dc8879364b5b2a53693f7",
-    "match30_botao_presenca.png": "9696bb161e187a65a2218a71e4c28a06d78416769e8ea9e2fc01ad65da683d73",
-    "match30_botao_volume.png": "238e7a2a95c71fba1e3d50f9b67c51b1f60a2cc455fa80a0d15a2da2237a73a1",
-    "match30_frente.jpg": "a8284551afe4d52a4fd1ad0da3c0db6f3b485d1fc337c5328be849262b12cbb2",
-    "match30_frente_alfa.png": "eb696f005d293e41fe840201e37e8c4391b421ae7799b046a55afdf2a1fef346",
-    "match30_manifesto.json": "2ab3fefe69522a28bd71599fba2cdfe4110db78e03e88ea1d0762a930cb785c6",
-    "match30_mapa.json": "c07d4be4dbffbcde8fe190baf6d21687edf1281f75c66988ce2ff2fe58b9b810"
+    "match30_botao_agudo.png": "264ef423e7a4f88a4c73ab5ba00f68e64372a21e3a0ee5ed4534504a07e3f15a",
+    "match30_botao_ganho.png": "02d21ab31ff2a844493d7d51cc3e37b5850b90043b4a45d0a4090be9628c7639",
+    "match30_botao_grave.png": "1e0a8822ad85c4a64790b38e6310e5290b4f9b00d5b1eebe39fa1428f773cf63",
+    "match30_botao_medio.png": "6e9fbd8b4b7bc70b79f47c1844cb3542aace81d8c3305b87e70e8dfb3f5473d6",
+    "match30_botao_presenca.png": "873e7b1e891f37b4fd3962e07cdc882792b77c51e73abdbe1555f1ccdbe29107",
+    "match30_botao_volume.png": "98a85a0a09d42250b9429fa85ecf6231aec8bc8c73d62aa89c00bc7db2cb4ebe",
+    "match30_frente.jpg": "c8ec189c376db018ea14124b2ab16e10fc506cc25d587099ec3a025ec36e2d2b",
+    "match30_frente_alfa.png": "cf4ca5a57f5b916238e95d7b966571f75b54d9df06517fdd23fca55dcd48cc50",
+    "match30_manifesto.json": "18b647acb0bd7c467a3aa358c9fb5c36d40d469f4a2f43afca0b1594ec9d8dfe",
+    "match30_mapa.json": "4c656ceabdb01af687cac6ff0a4ac91feef4c9c51709498dbf79d286041941e0"
    },
-   "tamanho": 1598862,
+   "tamanho": 1825032,
    "tipo": "cabecote",
    "inspiracao": "DC-30",
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.5",
+   "versao": "1.0.6",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -5150,6 +5523,41 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "paraeq3": {
+   "nome": "Para EQ 3",
+   "hash": "b21212c56e84b249",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "paraeq3_botao_agudo.png",
+    "paraeq3_botao_ganho.png",
+    "paraeq3_botao_grave.png",
+    "paraeq3_botao_medio.png",
+    "paraeq3_frente.jpg",
+    "paraeq3_frente_alfa.png",
+    "paraeq3_manifesto.json",
+    "paraeq3_mapa.json"
+   ],
+   "sha256": {
+    "paraeq3_botao_agudo.png": "c1b275d48301b159552e6f2ff140e000d7239f2c691faf3204086eb487989062",
+    "paraeq3_botao_ganho.png": "86a04dfaedf714411ca6c31680520cea0f59a8dedf3e394ee2717ef03e01ce54",
+    "paraeq3_botao_grave.png": "001442b7166a5eae4bacd989742cca24f1e6f687166d3f4c2ca066fbe7d6f249",
+    "paraeq3_botao_medio.png": "197c7603ecbde8417f85b1a45a7a7d21d895c1c56443f649ea09b2f7914dfb9c",
+    "paraeq3_frente.jpg": "179e4334abffec6f71068752a935dcf1d0867c26ddd4e7da23863586759837af",
+    "paraeq3_frente_alfa.png": "99aa5c0350f0cebaf2a27570f2ae9c9746e099953e38d4eff9b003574cf8adca",
+    "paraeq3_manifesto.json": "9184b9a5c350f7207eeace2b2b5c35f4cb4573843fb91882d978a5410d9be33c",
+    "paraeq3_mapa.json": "c4faef61166f2db9254410431aa83fdfe46994224b570a3d52a73e6d000de506"
+   },
+   "tamanho": 797628,
+   "tipo": "cabecote",
+   "inspiracao": "Furman PQ-3 Parametric Equalizer/Preamp",
+   "categoria": "Utilidades",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "pedaleira": {
    "nome": "Pedaleira",
    "hash": "78ec2b8fc8775adf",
@@ -5391,6 +5799,43 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "pro57": {
+   "nome": "Pro 57",
+   "hash": "b807d0fa69fe6d8b",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "pro57_botao_agudo.png",
+    "pro57_botao_ganho.png",
+    "pro57_botao_grave.png",
+    "pro57_botao_presenca.png",
+    "pro57_botao_volume.png",
+    "pro57_frente.jpg",
+    "pro57_frente_alfa.png",
+    "pro57_manifesto.json",
+    "pro57_mapa.json"
+   ],
+   "sha256": {
+    "pro57_botao_agudo.png": "eb65a2da5f3fccc9a94f17a8ac5aad3f3a98b49909f5af25521e41a744dfc408",
+    "pro57_botao_ganho.png": "56f7eb08b404dd9465d6d2d1d17fa37d7240ab4d5e5f25f0e25e6a172d695840",
+    "pro57_botao_grave.png": "d336db81902cc75e30643546d699e38b79c3e7e64fd1a7527d9f91780256480f",
+    "pro57_botao_presenca.png": "51d84a4f7e8f75ad74e3dbc5f703b4ed2f559ab5adae861e0573b9c3b2518a96",
+    "pro57_botao_volume.png": "9b53224decd9315851d0d06478a35b267ce5e2351dc212e2aec6c7e3777e48c4",
+    "pro57_frente.jpg": "6a2ac2e0513d4e1aa151253cac9f104102ce322e4036e163d28b45be1da7ae69",
+    "pro57_frente_alfa.png": "8dd8ad07ea7292fd5e94eb8f50eb3ec29ca6a41f27c849b8606ac00395c00078",
+    "pro57_manifesto.json": "b45c91ba95bbcc13bb8b92026ae29e09f8e397359a9249e16fb9a3cba919dad5",
+    "pro57_mapa.json": "1e24cbd97e8f2ba125e4441063391c062d17721a6732a27f39970e33fe6be7be"
+   },
+   "tamanho": 2280566,
+   "tipo": "cabecote",
+   "inspiracao": "Pro 5E5-A",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "pro_115": {
    "nome": "Pro 1x15",
@@ -5691,6 +6136,122 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "rotary_110": {
+   "nome": "Rotary 1x10",
+   "hash": "fb270e7f70b20d9f",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rotary_110_frente.jpg",
+    "rotary_110_frente_alfa.png",
+    "rotary_110_manifesto.json",
+    "rotary_110_mapa.json"
+   ],
+   "sha256": {
+    "rotary_110_frente.jpg": "ca3d31c6e7d5e1d1ba3d7e39e8555ee755d467cfe1c93c9ec200a011c61ef196",
+    "rotary_110_frente_alfa.png": "f0c472fead21f65ad39550c5f08f7ee2064b6176358b999712f2919a3b5ef468",
+    "rotary_110_manifesto.json": "756285bc19ecc420ab4af64fe76cab98aac875f44246eb163396bab1999019e2",
+    "rotary_110_mapa.json": "9b5cf7415e0bbd7bfbaaf329c0a9fab4fd3d9eff8de80b52a575cfccb5af9917"
+   },
+   "tamanho": 2841450,
+   "tipo": "caixa",
+   "inspiracao": "Fender Vibratone (caixa rotativa, 1967-68)",
+   "categoria": "Rotativa",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "rotary_122": {
+   "nome": "Rotary 122",
+   "hash": "aecf7b6fa05b4f1d",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rotary_122_frente.jpg",
+    "rotary_122_frente_alfa.png",
+    "rotary_122_manifesto.json",
+    "rotary_122_mapa.json"
+   ],
+   "sha256": {
+    "rotary_122_frente.jpg": "dd6ac25c0f34e088cf3135f60073bc75faadfb1200cc37dbaa9e44399f3f752e",
+    "rotary_122_frente_alfa.png": "150d17a434c1d9fdfb728b19700843de452a4a0b927e63e8622ceac069af6cf1",
+    "rotary_122_manifesto.json": "70c774c6c94258e0080e2fdee847b5789853953014c36a54c176301806b6ee39",
+    "rotary_122_mapa.json": "2d3bde719a397560eebde547cdceffd7317ec7412679d794a3c5801f7b58efcc"
+   },
+   "tamanho": 748388,
+   "tipo": "caixa",
+   "inspiracao": "Leslie 122 (vintage)",
+   "categoria": "Rotativa",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "rotary_147": {
+   "nome": "Rotary 147",
+   "hash": "2755b62f973c166b",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "rotary_147_frente.jpg",
+    "rotary_147_frente_alfa.png",
+    "rotary_147_manifesto.json",
+    "rotary_147_mapa.json"
+   ],
+   "sha256": {
+    "rotary_147_frente.jpg": "daf19171fc42312058e7cbab16e6694ebb659b28ccea70ac92181fd5c2576627",
+    "rotary_147_frente_alfa.png": "c19518c208cc0d3b7ecfe6bd9816c99295f0232666c8530e45c629079d7bb70b",
+    "rotary_147_manifesto.json": "528ecc91850fa8288b65ef841841dd6a8ee9ca15f6b1392e0a2e5b3a58e35a00",
+    "rotary_147_mapa.json": "f87018e8316ac650b9c03719901ccf4a463aaa964493ae6d5420f8fb08931401"
+   },
+   "tamanho": 740520,
+   "tipo": "caixa",
+   "inspiracao": "Leslie 147 (vintage)",
+   "categoria": "Rotativa",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "royal310": {
+   "nome": "Royal 310",
+   "hash": "1d3c1161c6f2f0ef",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "royal310_botao_agudo.png",
+    "royal310_botao_ganho.png",
+    "royal310_botao_grave.png",
+    "royal310_botao_medio.png",
+    "royal310_frente.jpg",
+    "royal310_frente_alfa.png",
+    "royal310_manifesto.json",
+    "royal310_mapa.json"
+   ],
+   "sha256": {
+    "royal310_botao_agudo.png": "afb013a551165d562db085d0d2b239bb8e0b9b61ca8221ed52e78b1bd963fb60",
+    "royal310_botao_ganho.png": "e15746b908693340d95515df461d6cd9ff5366a5f4933c5956376d288b79d1e7",
+    "royal310_botao_grave.png": "ad0606329520b297d1ec50a3ebda386a86e5506a67e772d6c4dd4f0604b4936b",
+    "royal310_botao_medio.png": "7ab236488c8b3bd8aa631514d28e77faee8d8aa149de3b6d82564992c6c986da",
+    "royal310_frente.jpg": "94f7281aab2ef1c5cb5fde7bd12cc3184e85328b8486d3bcfc77c2d1e99e7686",
+    "royal310_frente_alfa.png": "356fb258a5cbd64f019bce50f0c0147bbdc3d42e81777b479dfc17226bebeb8d",
+    "royal310_manifesto.json": "5057b3b4584ab442db255b369eee94c5b7ecdd00fa827613f125de78ca7abf6d",
+    "royal310_mapa.json": "67a2bb7c091cf59e984041d94e6b98b79381bbb51bbd2053a73521424e60425e"
+   },
+   "tamanho": 1754769,
+   "tipo": "cabecote",
+   "inspiracao": "Vibro-King",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "sage_amp": {
    "nome": "Sage Amp",
    "hash": "60746695d91df671",
@@ -5756,6 +6317,33 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "shelf_16": {
+   "nome": "Shelf 1x6",
+   "hash": "ec1d981d9b72c417",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "shelf_16_frente.jpg",
+    "shelf_16_frente_alfa.png",
+    "shelf_16_manifesto.json",
+    "shelf_16_mapa.json"
+   ],
+   "sha256": {
+    "shelf_16_frente.jpg": "70aefcc7c63d66d80e0204352495488e63493cb0681fd680ee9a834b527a98f3",
+    "shelf_16_frente_alfa.png": "38406680b3920696f199a74c35bd097fcd72e764c7f686eea6b1e1d00f12411b",
+    "shelf_16_manifesto.json": "8dd94209bd45804d19be1b2be560a441a5684f1cc2ec8cfa03935fd2585954ca",
+    "shelf_16_mapa.json": "64abe0f1fb2c2e2b0794a5dcf0d28c0d6768cd5fd7e41206cb51bf6ffa4c2ad8"
+   },
+   "tamanho": 872424,
+   "tipo": "caixa",
+   "inspiracao": "Deacy Amp (caixa de estante 1x6½\")",
+   "categoria": "1x06",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "showman_215": {
    "nome": "Showman 2x15",
@@ -6091,6 +6679,41 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "solar1200": {
+   "nome": "Solar 1200",
+   "hash": "81336820e11d26dc",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "solar1200_botao_agudo.png",
+    "solar1200_botao_ganho.png",
+    "solar1200_botao_grave.png",
+    "solar1200_botao_medio.png",
+    "solar1200_frente.jpg",
+    "solar1200_frente_alfa.png",
+    "solar1200_manifesto.json",
+    "solar1200_mapa.json"
+   ],
+   "sha256": {
+    "solar1200_botao_agudo.png": "ddc5db6ae85dc0196b810de8c575a8b6e80809efd35d4590ef969cedc12b5ca1",
+    "solar1200_botao_ganho.png": "9f4d2edae595cb8054b53b8edf65133198d454c57a5207c52ac2b1a561c0a62f",
+    "solar1200_botao_grave.png": "332de424081335f54830684526f683920be690c902d2bfb59fcf06ea96aeb1fa",
+    "solar1200_botao_medio.png": "2eb5b347c3b80a6b569eaf510f9ed75277f5b0c58a1de440f00869f19933a744",
+    "solar1200_frente.jpg": "2f7692ce6bea8b772b6bff0b634036b76770e11d215348337ee222e6b345f240",
+    "solar1200_frente_alfa.png": "6fcfc8a21a82c207b7ec879913c549ff67a385e26875f6eb269bb54a1aacd4db",
+    "solar1200_manifesto.json": "17ea90bcb2dc61980c71cce17dabaa6c9b982252db49548f06472d39badbeb86",
+    "solar1200_mapa.json": "275b7924286003bfecc375ba9d511044f2db4e8786daa7e6b895ef9979736165"
+   },
+   "tamanho": 1031236,
+   "tipo": "cabecote",
+   "inspiracao": "Sunn 1200S",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "solar_215": {
    "nome": "Solar 2x15",
    "hash": "827fb84da836b56c",
@@ -6144,6 +6767,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "solar_612": {
+   "nome": "Solar 6x12",
+   "hash": "146fba34b4afe667",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "solar_612_frente.jpg",
+    "solar_612_frente_alfa.png",
+    "solar_612_manifesto.json",
+    "solar_612_mapa.json"
+   ],
+   "sha256": {
+    "solar_612_frente.jpg": "a24d25af61e83ba85103682b7186dee3f704e957ed17d46aa68c6ae11a5c1d62",
+    "solar_612_frente_alfa.png": "1cfc05f089592b9644d6a45c1203f9fccecf79f6ef3a86466d278aa6a429e6eb",
+    "solar_612_manifesto.json": "6ec85038745836901cc0fcd0f49ca7614dcf537db6ec892de4afc17b1ba0e864",
+    "solar_612_mapa.json": "8b6fafade16cdb4aa0ae9f225c58fda166efd70a166dc7d71244e1417aae7ea3"
+   },
+   "tamanho": 2873314,
+   "tipo": "caixa",
+   "inspiracao": "Sunn 612S (caixa 6x12 do 1200S)",
+   "categoria": "6x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "sonic60": {
    "nome": "Sonic 60",
@@ -6300,6 +6950,64 @@
    "categoria": "2x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "spindle_drive": {
+   "nome": "Spindle Drive",
+   "hash": "5082cd3728dfe96d",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "spindle_drive_botao_mistura.png",
+    "spindle_drive_botao_textura.png",
+    "spindle_drive_frente.jpg",
+    "spindle_drive_frente_alfa.png",
+    "spindle_drive_manifesto.json",
+    "spindle_drive_mapa.json"
+   ],
+   "sha256": {
+    "spindle_drive_botao_mistura.png": "5b76a50d7ad7ae42ef179ce5234f0e49d7a601c5f141a0ebd456fd74e34767e9",
+    "spindle_drive_botao_textura.png": "53b86fc6d0cad545b4f2ddff4c36dda9caf233f27826f97c919770c06042530d",
+    "spindle_drive_frente.jpg": "8939e835c7ea5313f6bd5d49875d1c2d974e578fd9324a7c565fc68421de0dbc",
+    "spindle_drive_frente_alfa.png": "8c3501cb4bfe455055c0d412a1a13738371a4c7fb5325000e5d90c5050addcac",
+    "spindle_drive_manifesto.json": "27c5f95938a5efb64c753dc9a5195cef3d0864e62d30742c348293efe4fdd10c",
+    "spindle_drive_mapa.json": "61340d7201722bdb542a3d868e11c53a239c6bb699c4ce0c493db2b4680011eb"
+   },
+   "tamanho": 617139,
+   "tipo": "pedal",
+   "inspiracao": "Ampeg SCP-OD Scrambler",
+   "categoria": "Drive e distorção",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "spring63": {
+   "nome": "Spring 63",
+   "hash": "dfd877bd64fddb9c",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "spring63_frente.jpg",
+    "spring63_frente_alfa.png",
+    "spring63_manifesto.json",
+    "spring63_mapa.json"
+   ],
+   "sha256": {
+    "spring63_frente.jpg": "6c22f3ceb4afa5f213e5d4b3db63199b5dbfd6d962bc6f5f50b55a534ed85662",
+    "spring63_frente_alfa.png": "fb29171b99ed28b29a0a5f2f8414a78b865a392c9b69fbd831f57c8e2b9b0360",
+    "spring63_manifesto.json": "1e15f491ca1b505e8a162c7529eebf414b35dde2d579512e1d2786ab7d5378a9",
+    "spring63_mapa.json": "0d1325e6baf198222abbd72524ef77ec5433ab0806ecebede8f7fbe3063ca14e"
+   },
+   "tamanho": 761120,
+   "tipo": "cabecote",
+   "inspiracao": "Fender '63 Reverb (6G15)",
+   "categoria": "Reverb",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -6465,8 +7173,8 @@
   },
   "tadpole_bender": {
    "nome": "Tadpole Bender",
-   "hash": "94b39d75b9e9f4fe",
-   "data": "2026-11-23T07:46:12Z",
+   "hash": "be81774356c38ac4",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "tadpole_bender_botao_ganho.png",
@@ -6477,20 +7185,20 @@
     "tadpole_bender_mapa.json"
    ],
    "sha256": {
-    "tadpole_bender_botao_ganho.png": "198a4ecbb221c38434dccbaf790974266a977c4b07503036c176849f550229aa",
-    "tadpole_bender_botao_nivel.png": "37f3d815a815afa45099ff412a9d9950755c8739aa29d6d05b71353987f1e4b0",
-    "tadpole_bender_frente.jpg": "bd48cc4a539dd75a550b4293b1a2bde802d321cef87c23db15ea6360734b5fe6",
-    "tadpole_bender_frente_alfa.png": "16701a75543cded9aeff15be08a43c5cdfd60553d14754a1e1a12ed4038f2463",
-    "tadpole_bender_manifesto.json": "ca7606c743a5306c4fa5eec058161460d483a774f3b384e490bdd27d036c123c",
-    "tadpole_bender_mapa.json": "4e8fb243bbe7dccc031f108ba1b8abfb848d5d821b1d9ce2d87d15b7915468b2"
+    "tadpole_bender_botao_ganho.png": "493a599a21f19791fe6d22632e46e570fddbdf0a0b2024509a3b70d194660b1d",
+    "tadpole_bender_botao_nivel.png": "3f71249423cd67e4fe1ecdab3c7256f610947fbeb16ea1f97416938d266c2f75",
+    "tadpole_bender_frente.jpg": "a4df3effb46d1ea273d3d36720148849a082b9e6eb26e7c9043152aab98ff4f1",
+    "tadpole_bender_frente_alfa.png": "68fb47fc8eab0b7a9af4ee0680c5ea9d641852a87bb1e5ac266683a7658ef3cf",
+    "tadpole_bender_manifesto.json": "d1ea16db769fc4cbcd7bd467c4f9f0ab370a1a0c1772ee5fbce0844db5875d3a",
+    "tadpole_bender_mapa.json": "ef8ea990574ccc819b36a7f128f702dfd51d45a07de1eec348e9a463e58404a5"
    },
-   "tamanho": 795243,
+   "tamanho": 1212200,
    "tipo": "pedal",
    "inspiracao": "Tone Bender",
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.4",
+   "versao": "1.0.5",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -6527,6 +7235,33 @@
    "categoria": "Drive e distorção",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "tiny_112": {
+   "nome": "Tiny 1x12",
+   "hash": "a6dc07e3413ba47c",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tiny_112_frente.jpg",
+    "tiny_112_frente_alfa.png",
+    "tiny_112_manifesto.json",
+    "tiny_112_mapa.json"
+   ],
+   "sha256": {
+    "tiny_112_frente.jpg": "8d3a2cb7da47f98dcd6539a1856eb52d809ca4e06a39df5e62e6627ae1737d62",
+    "tiny_112_frente_alfa.png": "86d33962c2e2bd33e466719ac63fb71d2cbcc1a77e96e39a49fbb360f7b4398f",
+    "tiny_112_manifesto.json": "71120b5906921e2f51489d6add8690c692336744c43544276d66d5d17eab9e46",
+    "tiny_112_mapa.json": "1daab448fd7c6331d90f50139a5ebd0903f589f3cbf9677a492ea7341b7b3291"
+   },
+   "tamanho": 2224277,
+   "tipo": "caixa",
+   "inspiracao": "Orange Tiny Terror Combo 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -6719,6 +7454,33 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "trifid_chorus": {
+   "nome": "Trifid Chorus",
+   "hash": "d4816ea348b3cd8e",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "trifid_chorus_frente.jpg",
+    "trifid_chorus_frente_alfa.png",
+    "trifid_chorus_manifesto.json",
+    "trifid_chorus_mapa.json"
+   ],
+   "sha256": {
+    "trifid_chorus_frente.jpg": "ea98f7464e1705b20bd2b82cd48a2c4d5076332e51232ab8dafc03732344c7e3",
+    "trifid_chorus_frente_alfa.png": "2655b496daf113e89a79f1645268f0033ec21d184a20d0fd66d9ed5430f06a86",
+    "trifid_chorus_manifesto.json": "a943e02227a4e0fcf466cde0c33c27c84d32e310f45fa97efd2967bfbea9bd99",
+    "trifid_chorus_mapa.json": "43c409cccb1216fb3eaa9cac3db946c94b0eb64efd771805da01308cb4d6fb03"
+   },
+   "tamanho": 128782,
+   "tipo": "cabecote",
+   "inspiracao": "Fulltone Custom Shop That 80's Rack Chorus (TERC, TSC-618)",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "tritone50": {
    "nome": "Tritone 50",
    "hash": "93db414b4fe9f78f",
@@ -6756,6 +7518,105 @@
    "tipo": "cabecote",
    "inspiracao": "Carvin V3M",
    "categoria": "Americanos de alto ganho",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "tritone_212": {
+   "nome": "Tritone 2x12",
+   "hash": "00fa60d225f6991e",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tritone_212_frente.jpg",
+    "tritone_212_frente_alfa.png",
+    "tritone_212_manifesto.json",
+    "tritone_212_mapa.json"
+   ],
+   "sha256": {
+    "tritone_212_frente.jpg": "22c0beafd8f1db45173f4957a54ccc96e13897f94b9bc50abc00c1e3ff1fd870",
+    "tritone_212_frente_alfa.png": "2537aab33f990e13b50c74e966db43005cf55cb6a50b62b69837c68760d960cd",
+    "tritone_212_manifesto.json": "60c7bee2285a35f598607d9f6ee0803a805d1586ff407995bb8c604b1d824ec3",
+    "tritone_212_mapa.json": "d8c5f74cb6d363642b3e4b4cd6a57e58fea3670fcf3f17b1d55b690820a045b1"
+   },
+   "tamanho": 778528,
+   "tipo": "caixa",
+   "inspiracao": "Carvin 212V",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "tweed57": {
+   "nome": "Tweed 57",
+   "hash": "681711f0b7a4b2f6",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tweed57_botao_agudo.png",
+    "tweed57_botao_ganho.png",
+    "tweed57_botao_volume.png",
+    "tweed57_frente.jpg",
+    "tweed57_frente_alfa.png",
+    "tweed57_manifesto.json",
+    "tweed57_mapa.json"
+   ],
+   "sha256": {
+    "tweed57_botao_agudo.png": "d3bce7595f60506e4597030e31e3b059838ee2e4385beecb67fd241e5d127ab3",
+    "tweed57_botao_ganho.png": "263292e2057157be89be717d84bf32249ec44468a2fd3497844e3342249db456",
+    "tweed57_botao_volume.png": "78e96417e6e044b61d4ff5e11f22eb4c88f0fcfee2d1717a9f78a83711daee75",
+    "tweed57_frente.jpg": "8ff29b5e8576abb0aafdbade4ea31abfc5b45c02cdb0ea001d5301d0e69c8e2b",
+    "tweed57_frente_alfa.png": "2bef668bff8afb1eced86bb96ee239c0097e8067dc93e2993facf6535a71a1e1",
+    "tweed57_manifesto.json": "92a599c15a8b799451f5befe748da5bda6213c972784edeee8e52154fa651ad3",
+    "tweed57_mapa.json": "cf675e851e1458e47a0f8e3645360ddfb23343e91146326697d36f89f82d173f"
+   },
+   "tamanho": 1903293,
+   "tipo": "cabecote",
+   "inspiracao": "Deluxe 5E3",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "tweed59": {
+   "nome": "Tweed 59",
+   "hash": "119a5f9a1a1a8c54",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "tweed59_botao_agudo.png",
+    "tweed59_botao_ganho.png",
+    "tweed59_botao_grave.png",
+    "tweed59_botao_medio.png",
+    "tweed59_botao_presenca.png",
+    "tweed59_botao_volume.png",
+    "tweed59_frente.jpg",
+    "tweed59_frente_alfa.png",
+    "tweed59_manifesto.json",
+    "tweed59_mapa.json"
+   ],
+   "sha256": {
+    "tweed59_botao_agudo.png": "a39e09c6545081f4fcd8db2b1187e0d2267326bd2b6973f526fa26243293c432",
+    "tweed59_botao_ganho.png": "5e935b8cc4763d2f87752412201d42bcd03a5cc4ddb0b8ba696fd68f8dfcbdcd",
+    "tweed59_botao_grave.png": "a0039be39e658a3652370f6d3349e08a082b99ab49c2456e2a1002be84bce9f4",
+    "tweed59_botao_medio.png": "693850f266b0ed934350ab73f02ffa20a0ed24b42c9edc0320fcb8a0f7eb345a",
+    "tweed59_botao_presenca.png": "7303873921cf052c24073348b6424747a4f657b604d4b5f8844e0f7e4ca7ec1b",
+    "tweed59_botao_volume.png": "07129e4c09ad9779ccd4ae707cbe6fa41797ff32cbbb8b0f50c1b2f49779a022",
+    "tweed59_frente.jpg": "8da334d75daac083140d8034257ec5fa9df8753cda4bf1bbc0c3399239c61685",
+    "tweed59_frente_alfa.png": "52627220cca1e43ddd4b66f5594f0ff1ebdf8e048885e0e2079d9c29c1642106",
+    "tweed59_manifesto.json": "a380a58c42ac98c154ad459c9125eddd845daa2d1c4c866861a51d44c889cea8",
+    "tweed59_mapa.json": "d9e7c13d76b8da268f875da094e9e79e6c931ec23953f874fa1fdf99cea6c8d3"
+   },
+   "tamanho": 2153860,
+   "tipo": "cabecote",
+   "inspiracao": "Bassman 5F6-A",
+   "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
    "versao": "1.0.0",
@@ -6905,6 +7766,43 @@
    "acesso": "gratuito",
    "fabrica": false
   },
+  "twin57": {
+   "nome": "Twin 57",
+   "hash": "38c5d0cb7052d4ae",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "twin57_botao_agudo.png",
+    "twin57_botao_ganho.png",
+    "twin57_botao_grave.png",
+    "twin57_botao_presenca.png",
+    "twin57_botao_volume.png",
+    "twin57_frente.jpg",
+    "twin57_frente_alfa.png",
+    "twin57_manifesto.json",
+    "twin57_mapa.json"
+   ],
+   "sha256": {
+    "twin57_botao_agudo.png": "3c6718bdca5dc2b7860029d29a79ee3f41b0c9b17a025115d2055c308c4502d3",
+    "twin57_botao_ganho.png": "4d5f1bc78c06df1bf2b08868a451765782a7803d204bdd842122511057eb8031",
+    "twin57_botao_grave.png": "11c9316046526d684eb8561409f2f2289968dedd0ef27b1fa10a0cd5d5d2e781",
+    "twin57_botao_presenca.png": "09854721181844835648ccef2614bb6539bbbfb31163d25fbb49743102c4d0eb",
+    "twin57_botao_volume.png": "49c610502429464113f34c0d06fb0ec5516234557124b37d2f82202606f914cc",
+    "twin57_frente.jpg": "ba222d17ee5312f7337cb0d80d82af95ab08c351e6fa82e73779934c4933937d",
+    "twin57_frente_alfa.png": "702a6efec4c65c8d117795105d143254e03927aa4bd0f054354c3b35b7e166bb",
+    "twin57_manifesto.json": "8864f61b228da0dac2625e058d8cccef74457727a0f441a3f40878d387cb19ca",
+    "twin57_mapa.json": "aaefde10068eb432d57f8d782ccbfdf1f493fcc9469672ebf2a9a76df9a09057"
+   },
+   "tamanho": 1940245,
+   "tipo": "cabecote",
+   "inspiracao": "Twin-Amp 5E8-A",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "twin_212": {
    "nome": "Twin 2x12",
    "hash": "89d8a865738d0827",
@@ -6934,12 +7832,13 @@
   },
   "uber100": {
    "nome": "Uber 100",
-   "hash": "874618dbeb7c63af",
-   "data": "2026-10-30T21:11:05Z",
+   "hash": "1febb74a4a6936c9",
+   "data": "2026-11-24T13:20:54Z",
    "nexus_minimo": "0.2.0",
    "arquivos": [
     "uber100_botao_agudo.png",
-    "uber100_botao_ganho.png",
+    "uber100_botao_ganho_1.png",
+    "uber100_botao_ganho_2.png",
     "uber100_botao_grave.png",
     "uber100_botao_medio.png",
     "uber100_botao_presenca.png",
@@ -6950,24 +7849,25 @@
     "uber100_mapa.json"
    ],
    "sha256": {
-    "uber100_botao_agudo.png": "ed63084072e9f8ef70e6113d9e1a68e47387203c9633582e9cf34b6569b56eaf",
-    "uber100_botao_ganho.png": "d10e4f535e2004dd49896abdc333bd998cea5261057a35b92a2039b478f19326",
-    "uber100_botao_grave.png": "7d2ce3ffe182f6e9efe6c2719afa399a626d126a8a47f615819c241e60ccfd89",
-    "uber100_botao_medio.png": "7388b3fa1d1c21cb7104362a17f3312e5befbe9b608d2152f9f872bc17b5fbd4",
-    "uber100_botao_presenca.png": "4b99622da645c90e15d1f59d04a11467521b508b23c3f25e67d3b25b4404fc93",
-    "uber100_botao_volume.png": "79bd726ff44c8d07c640257791763134e9bc130712263dde02735f24e3374628",
-    "uber100_frente.jpg": "89322b01e230173e284bc0d85425bb768e60793bfd9d12c797f01d77f4671ad9",
-    "uber100_frente_alfa.png": "b092c465d37c83606a9af32f1e3dfcf040ae72ef719777cdab27cd393de56db2",
-    "uber100_manifesto.json": "9fd49d11fee9ed6e41ada0a4f776ac0aeeccc4e3e7a031e92873f2ce90f8da74",
-    "uber100_mapa.json": "175b56b3b9e4edcc310ea6c650d28c797ae4568b715604a56fdd0ce4b33f5237"
+    "uber100_botao_agudo.png": "cbfa9db3bcb983747d0003392f95024340c7b6b30db1ce360d496c9716642c98",
+    "uber100_botao_ganho_1.png": "433c2dc05624a738ac48e61b38171d0902ae3256721f14c6123b8a5140f477b5",
+    "uber100_botao_ganho_2.png": "214572cd687d6566c811b9c22fd586449ad95a112b8b9dbceec6734879487661",
+    "uber100_botao_grave.png": "b241b107d852de09bfe6c09699db0dac524da17fd1b4f2c9f1be776f2d032a77",
+    "uber100_botao_medio.png": "d785bc6386f5fc07b7cf8f8e03ce854520b34388ba33b3a4fc178d249f4d5b68",
+    "uber100_botao_presenca.png": "6769c9f5be0b76f81166e321ab6a2cc3d1380db5cb8c754c2206a510512d5541",
+    "uber100_botao_volume.png": "1e016b89e9aa503b54ca8740495f56bff59fa7a8b04edc4cb46da4c857233c69",
+    "uber100_frente.jpg": "2f5fc38bc3d19c04e03737143984cbd6aeb2f97e376c150a5fdd811bf7f7b659",
+    "uber100_frente_alfa.png": "f9d90f1e4579a8d0ca3c0915695026d22174d874b88d70d1d0a5a29a69814f6d",
+    "uber100_manifesto.json": "48574d62ba64a3bc64aacd1d94000e0b9dadf490fc8a879a6ee077a4f6ce6a86",
+    "uber100_mapa.json": "1563acf3c68fac006fe19c6f2c5e41baa6f120a9715716d9dc67c38601a1b243"
    },
-   "tamanho": 792355,
+   "tamanho": 1466583,
    "tipo": "cabecote",
    "inspiracao": "Uberschall",
    "categoria": "Alemães de alto ganho",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
-   "versao": "1.0.3",
+   "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
   },
@@ -7019,6 +7919,33 @@
    "tipo": "caixa",
    "inspiracao": "Mesa/Boogie Subway Ultra-Lite 4x10",
    "categoria": "4x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "valve_112": {
+   "nome": "Valve 1x12",
+   "hash": "6b106abc845ca3a5",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "valve_112_frente.jpg",
+    "valve_112_frente_alfa.png",
+    "valve_112_manifesto.json",
+    "valve_112_mapa.json"
+   ],
+   "sha256": {
+    "valve_112_frente.jpg": "86564a62e0faad3691bc4e01be9c04a3279206eee3f46b99cacbbeb3b523fb23",
+    "valve_112_frente_alfa.png": "f383aa07025d47bd8765dd8e2aab7d28f8bb4f0a5302dc4eff3908e355351919",
+    "valve_112_manifesto.json": "3a6adc95509e13b72b51199c40dc119c520e784259969f3febc4f003356543c8",
+    "valve_112_mapa.json": "b8d703da6314a11d33cc00180432b1f1c996145a92c8b720b67bbc4140cc28ce"
+   },
+   "tamanho": 1117779,
+   "tipo": "caixa",
+   "inspiracao": "Marshall Valvestate 8080 1x12 (caixa do combo)",
+   "categoria": "1x12",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
    "versao": "1.0.0",
@@ -7081,6 +8008,60 @@
    "tipo": "caixa",
    "inspiracao": "Ampeg BA-210 v2",
    "categoria": "2x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "vault_212": {
+   "nome": "Vault 2x12",
+   "hash": "fe8f1ed8839fe9d2",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault_212_frente.jpg",
+    "vault_212_frente_alfa.png",
+    "vault_212_manifesto.json",
+    "vault_212_mapa.json"
+   ],
+   "sha256": {
+    "vault_212_frente.jpg": "d241974f9aafa6ae2b998e68839b92ed215e66ccb0a87a9bddd3a074b1917f1e",
+    "vault_212_frente_alfa.png": "adebf0cb2140d9814aa63d3fc39f4920d5b66a179ca1f766d07f983857b3bb3d",
+    "vault_212_manifesto.json": "b22e684b610fc203a3a19a8cdc04642af42c2f0d5922e8a6a54d615ca2cdb264",
+    "vault_212_mapa.json": "449f34922a120098fab1fd6bb927915ae91088a53bc8b6398b010074790ee938"
+   },
+   "tamanho": 1928948,
+   "tipo": "caixa",
+   "inspiracao": "Ampeg SVT-212AV",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "vault_410": {
+   "nome": "Vault 4x10",
+   "hash": "d4c84c0ba0e61693",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vault_410_frente.jpg",
+    "vault_410_frente_alfa.png",
+    "vault_410_manifesto.json",
+    "vault_410_mapa.json"
+   ],
+   "sha256": {
+    "vault_410_frente.jpg": "2d66c566ec529d5d96d7a642369b7e19d0127838c80f789a8d337ba0c760e00a",
+    "vault_410_frente_alfa.png": "401e19ad7a651e03d14f9b9ae223fb114de700057f0c0fa8f1c5b02405858d14",
+    "vault_410_manifesto.json": "1be83aec8c734a084175a04cdc8f1f5d22dae5949970599bfba8c8179da5bdd7",
+    "vault_410_mapa.json": "8cac04685e79e52a62eb6555ac04dce1e5f32010514d79073688efba72e7a6fa"
+   },
+   "tamanho": 1289376,
+   "tipo": "caixa",
+   "inspiracao": "Ampeg SVT-410HE",
+   "categoria": "4x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
    "versao": "1.0.0",
@@ -7172,6 +8153,33 @@
    "tipo": "caixa",
    "inspiracao": "Fender '64 Vibroverb Custom 1x15",
    "categoria": "1x15",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "vibro_310": {
+   "nome": "Vibro 3x10",
+   "hash": "4d34a41da899fd77",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "vibro_310_frente.jpg",
+    "vibro_310_frente_alfa.png",
+    "vibro_310_manifesto.json",
+    "vibro_310_mapa.json"
+   ],
+   "sha256": {
+    "vibro_310_frente.jpg": "0dc50444c1c2a39232d53e18c3ddf8151b92282bf9a93540f4009898c46102da",
+    "vibro_310_frente_alfa.png": "86298df65f3fb59572ed3e030da32e197535e10ef47f5244caf961e31fade11e",
+    "vibro_310_manifesto.json": "bf627ea953f5afeb2c6f3af906e3b68da2e475e09b2804a597c5ad8472775807",
+    "vibro_310_mapa.json": "d0ba4f19d1709f641e738e10a196a635d31d56dad7f63a2b498af803057c886b"
+   },
+   "tamanho": 1881793,
+   "tipo": "caixa",
+   "inspiracao": "Fender Vibro-King Custom 3x10 (caixa do combo)",
+   "categoria": "3x10",
    "fonte": "IR ou captura full rig",
    "motor": "caixa",
    "versao": "1.0.0",
@@ -7457,6 +8465,60 @@
    "categoria": "Americanos boutique",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "wreck_212": {
+   "nome": "Wreck 2x12",
+   "hash": "c83fff5d4b0e364c",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "wreck_212_frente.jpg",
+    "wreck_212_frente_alfa.png",
+    "wreck_212_manifesto.json",
+    "wreck_212_mapa.json"
+   ],
+   "sha256": {
+    "wreck_212_frente.jpg": "15d29f4e0c85d761fda201f560d5db45040e57d22ade7f9d26c3d282f42e78e2",
+    "wreck_212_frente_alfa.png": "223ed6725fa44107992fe8dde8cc65d6976f62446e7173c4665680e638479b71",
+    "wreck_212_manifesto.json": "82cd449c6ca54249c37537681a6c671848c667b7e78c47d12d39d7f13e1c87e3",
+    "wreck_212_mapa.json": "64c3e95d92fca555e65d4c350ddc9b466d1b25279be854072ee66bdf3be5fa68"
+   },
+   "tamanho": 830469,
+   "tipo": "caixa",
+   "inspiracao": "Dr. Z 2x12 (Z Wreck)",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "zed18_112": {
+   "nome": "Zed 18 1x12",
+   "hash": "c6a71a4b19438b63",
+   "data": "2026-11-24T13:20:54Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "zed18_112_frente.jpg",
+    "zed18_112_frente_alfa.png",
+    "zed18_112_manifesto.json",
+    "zed18_112_mapa.json"
+   ],
+   "sha256": {
+    "zed18_112_frente.jpg": "21dc3c77e82076f53a6be8eed131e5979774c90e83b86d7317c706f311d522cb",
+    "zed18_112_frente_alfa.png": "08d3ee91b614bcce042c81806f7875e23679d9b4979c1e74338e4f3bb048fd2a",
+    "zed18_112_manifesto.json": "c92e0ede77c3ca47957b67201d74f74d81eba509a681b9d0cf997a8d81118121",
+    "zed18_112_mapa.json": "f09784be499fa7b474ebf7b64a63e35bf0e01c2dd18bd0687e53a62d1a35c2f0"
+   },
+   "tamanho": 825648,
+   "tipo": "caixa",
+   "inspiracao": "Dr. Z Maz 18 Jr 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false

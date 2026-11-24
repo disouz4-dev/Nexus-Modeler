@@ -7,27 +7,27 @@
   "botoes": [
     {
       "id": "ganho_1",
-      "x": 299,
-      "y": 242,
-      "tamanho": 110,
+      "x": 292,
+      "y": 236,
+      "tamanho": 123,
       "arquivo": "botao_ganho_1.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 444,
-      "y": 243,
-      "tamanho": 109,
+      "x": 437,
+      "y": 236,
+      "tamanho": 122,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "medio",
-      "x": 587,
-      "y": 244,
-      "tamanho": 107,
+      "x": 580,
+      "y": 237,
+      "tamanho": 121,
       "arquivo": "botao_medio.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -44,27 +44,27 @@
     },
     {
       "id": "volume",
-      "x": 891,
-      "y": 245,
-      "tamanho": 105,
+      "x": 885,
+      "y": 238,
+      "tamanho": 118,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "presenca",
-      "x": 1034,
-      "y": 245,
-      "tamanho": 105,
+      "x": 1027,
+      "y": 238,
+      "tamanho": 118,
       "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "grave",
-      "x": 1177,
-      "y": 245,
-      "tamanho": 105,
+      "x": 1170,
+      "y": 238,
+      "tamanho": 118,
       "arquivo": "botao_grave.png",
       "angulo_min": -150,
       "angulo_max": 150

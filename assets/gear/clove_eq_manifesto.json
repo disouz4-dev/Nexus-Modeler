@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "clove_eq",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Clove EQ",
+  "inspiracao": "MXR M109 Six Band EQ",
+  "categoria": "Utilidades",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

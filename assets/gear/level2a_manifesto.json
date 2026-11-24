@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "level2a",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Level 2A",
+  "inspiracao": "Teletronix LA-2A Leveling Amplifier",
+  "categoria": "Rack",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

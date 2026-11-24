@@ -1,0 +1,12 @@
+{
+  "nome": "Trifid Chorus",
+  "familia": "trifid_chorus",
+  "largura": 2400,
+  "altura": 628,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

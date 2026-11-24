@@ -1,0 +1,12 @@
+{
+  "nome": "Spring 63",
+  "familia": "spring63",
+  "largura": 2400,
+  "altura": 1060,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

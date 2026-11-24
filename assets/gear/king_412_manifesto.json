@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "king_412",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "King 4x12",
+  "inspiracao": "Mesa/Boogie 4x12 Road King Slant (feita reta)",
+  "categoria": "4x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

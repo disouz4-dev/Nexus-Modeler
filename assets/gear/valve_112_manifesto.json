@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "valve_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Valve 1x12",
+  "inspiracao": "Marshall Valvestate 8080 1x12 (caixa do combo)",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "valvestate",
+      "tons": [
+        {
+          "id": 27417,
+          "titulo": "Marshall Goldback SPK100",
+          "criador": "filiperman",
+          "tipo": "cab",
+          "nota": "falante Marshall Goldback da época Valvestate",
+          "ir_padrao": "Marshall Goldback IR",
+          "padrao": true
+        },
+        {
+          "id": 91886,
+          "titulo": "Marshall JCM2000 TSL602 2x12 Celestion G12H80",
+          "criador": "jwo",
+          "tipo": "cab",
+          "nota": "Marshall 2x12 de combo, reserva",
+          "ir_padrao": "G12H80 TSL602 SM75 M7 mono 24 48000"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

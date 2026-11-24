@@ -1,0 +1,92 @@
+{
+  "nome": "Clove EQ",
+  "familia": "clove_eq",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "banda1",
+      "x": 277,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda1.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 197,
+      "altura": 656
+    },
+    {
+      "id": "banda2",
+      "x": 387,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda2.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 195,
+      "altura": 656
+    },
+    {
+      "id": "banda3",
+      "x": 497,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda3.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 193,
+      "altura": 656
+    },
+    {
+      "id": "banda4",
+      "x": 606,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda4.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 193,
+      "altura": 656
+    },
+    {
+      "id": "banda5",
+      "x": 716,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda5.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 195,
+      "altura": 656
+    },
+    {
+      "id": "banda6",
+      "x": 824,
+      "y": 541,
+      "tamanho": 328,
+      "arquivo": "botao_banda6.png",
+      "angulo_min": -150,
+      "angulo_max": 150,
+      "tipo": "deslizante",
+      "largura": 197,
+      "altura": 656
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    60,
+    111
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1042.0,
+    "raio": 95.0
+  }
+}

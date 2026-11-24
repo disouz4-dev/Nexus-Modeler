@@ -7,18 +7,18 @@
   "botoes": [
     {
       "id": "nivel",
-      "x": 358,
-      "y": 284,
-      "tamanho": 182,
+      "x": 318,
+      "y": 244,
+      "tamanho": 262,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "ganho",
-      "x": 643,
-      "y": 433,
-      "tamanho": 184,
+      "x": 604,
+      "y": 394,
+      "tamanho": 263,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -33,7 +33,7 @@
   "rotulos": [],
   "pisante": {
     "x": 600.0,
-    "y": 997.0,
-    "raio": 50.5
+    "y": 1119.5,
+    "raio": 52.0
   }
 }

@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "granite_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Granite 1x12",
+  "inspiracao": "Gallien-Krueger MB150S 1x12 (caixa do combo)",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "gallien",
+      "tons": [
+        {
+          "id": 83811,
+          "titulo": "Gallien Krueger 250ml 2x5 - First Version 1983",
+          "criador": "airsong",
+          "tipo": "cab",
+          "nota": "combo pequeno da GK da mesma época (não há 1x12 de baixo)",
+          "ir_padrao": "Gallien Kruger 250ml 2x5 - first version 1983 - Airsong",
+          "padrao": true
+        },
+        {
+          "id": 102146,
+          "titulo": "GK RBH 410",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "GK de baixo",
+          "ir_padrao": "GK RBH 410 (SM57 + MD421)"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

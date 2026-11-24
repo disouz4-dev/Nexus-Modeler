@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "champion_106",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Champion 1x6",
+  "inspiracao": "Fender Champion 600 1x6 (reedição 2007)",
+  "categoria": "1x6",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "champion",
+      "tons": [
+        {
+          "id": 5102,
+          "titulo": "WGS G8C 1x8 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "não há 1x6; o menor Fender-like da TONE3000",
+          "ir_padrao": "A800 PR-408 G8C M201 1.0in Off Center On Axis 0in",
+          "padrao": true
+        },
+        {
+          "id": 102111,
+          "titulo": "Fender Tweed Champ 58",
+          "criador": "morenoteslesstalk",
+          "tipo": "cab",
+          "nota": "Champ tweed 1x8",
+          "ir_padrao": "Fender Tweed Champ 58"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

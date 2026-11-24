@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "vault_410",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Vault 4x10",
+  "inspiracao": "Ampeg SVT-410HE",
+  "categoria": "4x10",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "ampeg",
+      "tons": [
+        {
+          "id": 102142,
+          "titulo": "Ampeg SVT410HLF",
+          "criador": "felipedasg",
+          "tipo": "cab",
+          "nota": "Ampeg SVT-410, mesma linha",
+          "ir_padrao": "Ampeg SVT410HLF (MD421 + F47)",
+          "padrao": true
+        },
+        {
+          "id": 1708,
+          "titulo": "Bass Ampeg SVT 8x10",
+          "criador": "matty",
+          "tipo": "cab",
+          "nota": "Ampeg 8x10, reserva",
+          "ir_padrao": "Ampeg 8x10 57 AH"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

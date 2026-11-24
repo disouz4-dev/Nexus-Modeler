@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "bass53",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Bass 53",
+  "inspiracao": "Bassman 5B6 (1953)",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

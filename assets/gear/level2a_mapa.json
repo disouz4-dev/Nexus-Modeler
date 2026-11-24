@@ -1,0 +1,31 @@
+{
+  "nome": "Level 2A",
+  "familia": "level2a",
+  "largura": 2400,
+  "altura": 792,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "volume",
+      "x": 637,
+      "y": 374,
+      "tamanho": 160,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1597,
+      "y": 374,
+      "tamanho": 160,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

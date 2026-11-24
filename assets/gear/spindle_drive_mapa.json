@@ -1,0 +1,38 @@
+{
+  "nome": "Spindle Drive",
+  "familia": "spindle_drive",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "textura",
+      "x": 322,
+      "y": 496,
+      "tamanho": 132,
+      "arquivo": "botao_textura.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "mistura",
+      "x": 746,
+      "y": 496,
+      "tamanho": 132,
+      "arquivo": "botao_mistura.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    140,
+    178
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1011.0,
+    "raio": 57.0
+  }
+}

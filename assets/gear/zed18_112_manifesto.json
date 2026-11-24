@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "zed18_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Zed 18 1x12",
+  "inspiracao": "Dr. Z Maz 18 Jr 1x12",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "g12h30",
+      "tons": [
+        {
+          "id": 102092,
+          "titulo": "Matchless G12H30",
+          "criador": "luisgustavofirmino007",
+          "tipo": "cab",
+          "nota": "G12H30, o falante do Maz 18 Jr",
+          "ir_padrao": "WT Match G12H30 57",
+          "padrao": true
+        },
+        {
+          "id": 5104,
+          "titulo": "Mojotone BV-30H 1x12 IR",
+          "criador": "outmodedelectronics",
+          "tipo": "cab",
+          "nota": "1x12 aberta com G12H",
+          "ir_padrao": "A800 TM60 BV30H OR57 2.5in Off Center On Axis 0in"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

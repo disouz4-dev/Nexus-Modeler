@@ -7,180 +7,75 @@
   "botoes": [
     {
       "id": "volume",
-      "x": 467,
-      "y": 686,
-      "tamanho": 112,
+      "x": 545,
+      "y": 749,
+      "tamanho": 138,
       "arquivo": "botao_volume.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "ganho",
-      "x": 693,
-      "y": 687,
-      "tamanho": 110,
-      "arquivo": "botao_ganho.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "grave",
-      "x": 807,
-      "y": 687,
-      "tamanho": 109,
-      "arquivo": "botao_grave.png",
-      "angulo_min": -150,
-      "angulo_max": 150
-    },
-    {
-      "id": "medio",
-      "x": 920,
-      "y": 688,
-      "tamanho": 108,
-      "arquivo": "botao_medio.png",
+      "id": "presenca",
+      "x": 652,
+      "y": 750,
+      "tamanho": 137,
+      "arquivo": "botao_presenca.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "agudo",
-      "x": 1033,
-      "y": 688,
-      "tamanho": 108,
+      "x": 760,
+      "y": 750,
+      "tamanho": 136,
       "arquivo": "botao_agudo.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
-      "id": "presenca",
-      "x": 1146,
-      "y": 688,
-      "tamanho": 108,
-      "arquivo": "botao_presenca.png",
+      "id": "medio",
+      "x": 867,
+      "y": 751,
+      "tamanho": 135,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 974,
+      "y": 751,
+      "tamanho": 135,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_1",
+      "x": 1081,
+      "y": 751,
+      "tamanho": 135,
+      "arquivo": "botao_ganho_1.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho_2",
+      "x": 1779,
+      "y": 749,
+      "tamanho": 138,
+      "arquivo": "botao_ganho_2.png",
       "angulo_min": -150,
       "angulo_max": 150
     }
   ],
   "canais": [
-    "Limpo",
-    "Lead"
+    "Canal 1",
+    "Canal 2"
   ],
-  "rotulos": [
-    {
-      "texto": "M. VOLUME",
-      "x": 525.5,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 637.9,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "GAIN",
-      "x": 750.3,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 862.7,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MIDDLE",
-      "x": 975.2,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1087.6,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 1200.0,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "GAIN",
-      "x": 1353.3,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "BASS",
-      "x": 1465.7,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "MIDDLE",
-      "x": 1578.1,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "TREBLE",
-      "x": 1690.5,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "VOLUME",
-      "x": 1803.0,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    },
-    {
-      "texto": "PRESENCE",
-      "x": 1915.4,
-      "y": 657.9,
-      "altura": 23.36,
-      "achatamento": 1.0,
-      "cor": "#211d19",
-      "espaco": 1.0
-    }
+  "rotulos": [],
+  "canais_som": [
+    "distorcido",
+    "distorcido"
   ]
 }

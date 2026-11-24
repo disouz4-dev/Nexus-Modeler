@@ -1,0 +1,49 @@
+{
+  "nome": "Royal 310",
+  "familia": "royal310",
+  "largura": 2400,
+  "altura": 2131,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 911,
+      "y": 127,
+      "tamanho": 88,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1020,
+      "y": 127,
+      "tamanho": 88,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1129,
+      "y": 127,
+      "tamanho": 88,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 1239,
+      "y": 127,
+      "tamanho": 88,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

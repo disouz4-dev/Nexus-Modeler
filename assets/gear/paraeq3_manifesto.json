@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "paraeq3",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Para EQ 3",
+  "inspiracao": "Furman PQ-3 Parametric Equalizer/Preamp",
+  "categoria": "Utilidades",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

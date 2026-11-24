@@ -1,0 +1,22 @@
+{
+  "nome": "Champion 5",
+  "familia": "champion5",
+  "largura": 2400,
+  "altura": 1460,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 1127,
+      "y": 995,
+      "tamanho": 168,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

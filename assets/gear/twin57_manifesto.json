@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "twin57",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Twin 57",
+  "inspiracao": "Twin-Amp 5E8-A",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

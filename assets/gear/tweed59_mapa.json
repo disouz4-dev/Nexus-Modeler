@@ -1,0 +1,67 @@
+{
+  "nome": "Tweed 59",
+  "familia": "tweed_59",
+  "largura": 2400,
+  "altura": 1168,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 716,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 893,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1069,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1245,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1422,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1598,
+      "y": 870,
+      "tamanho": 125,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

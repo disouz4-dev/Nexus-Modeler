@@ -1,0 +1,40 @@
+{
+  "nome": "Tweed 57",
+  "familia": "tweed57",
+  "largura": 2400,
+  "altura": 1231,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "agudo",
+      "x": 1066,
+      "y": 897,
+      "tamanho": 136,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1237,
+      "y": 897,
+      "tamanho": 136,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1408,
+      "y": 897,
+      "tamanho": 136,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}

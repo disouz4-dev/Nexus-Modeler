@@ -7,9 +7,9 @@
   "botoes": [
     {
       "id": "ganho",
-      "x": 221,
-      "y": 294,
-      "tamanho": 266,
+      "x": 206,
+      "y": 279,
+      "tamanho": 296,
       "arquivo": "botao_ganho.png",
       "angulo_min": -150,
       "angulo_max": 150,
@@ -17,18 +17,18 @@
     },
     {
       "id": "tom",
-      "x": 469,
-      "y": 563,
-      "tamanho": 262,
+      "x": 454,
+      "y": 539,
+      "tamanho": 292,
       "arquivo": "botao_tom.png",
       "angulo_min": -150,
       "angulo_max": 150
     },
     {
       "id": "nivel",
-      "x": 729,
-      "y": 294,
-      "tamanho": 266,
+      "x": 714,
+      "y": 279,
+      "tamanho": 296,
       "arquivo": "botao_nivel.png",
       "angulo_min": -150,
       "angulo_max": 150
@@ -42,7 +42,7 @@
   "rotulos": [],
   "pisante": {
     "x": 600.0,
-    "y": 1018.0,
+    "y": 1082.5,
     "raio": 63.0
   },
   "led": {

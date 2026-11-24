@@ -1,0 +1,58 @@
+{
+  "nome": "Twin 57",
+  "familia": "twin57",
+  "largura": 2400,
+  "altura": 1146,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "presenca",
+      "x": 948,
+      "y": 858,
+      "tamanho": 121,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 1098,
+      "y": 858,
+      "tamanho": 121,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1248,
+      "y": 858,
+      "tamanho": 121,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1398,
+      "y": 858,
+      "tamanho": 121,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1548,
+      "y": 858,
+      "tamanho": 121,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
