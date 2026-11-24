@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T07:19:05Z",
+ "gerado": "2026-11-24T07:26:56Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -1461,6 +1461,45 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "brit200": {
+   "nome": "Brit 200",
+   "hash": "42b6399d627f968b",
+   "data": "2026-11-24T07:26:43Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit200_botao_agudo.png",
+    "brit200_botao_ganho.png",
+    "brit200_botao_grave.png",
+    "brit200_botao_medio.png",
+    "brit200_botao_presenca.png",
+    "brit200_botao_volume.png",
+    "brit200_frente.jpg",
+    "brit200_frente_alfa.png",
+    "brit200_manifesto.json",
+    "brit200_mapa.json"
+   ],
+   "sha256": {
+    "brit200_botao_agudo.png": "427aa0183de0b4e22caa7a40f34a4612ebcf9495676e52a3d1f9d99dc61b4a9c",
+    "brit200_botao_ganho.png": "9ebbe4a7945775df761ea913452f2fcfacbeb2cf9eb625d20b19d5a6c6cc6af3",
+    "brit200_botao_grave.png": "a20cae2059b190441ac61b85ec53adfd7ff6f0d7ee783468bc72dbdf4b32aacd",
+    "brit200_botao_medio.png": "a6edd36ae019565411852fa9466d6bfa74a2ac8817bba08fb33d01ed6ac77ec2",
+    "brit200_botao_presenca.png": "b41d0ab48b6d4df0d360aff1768e862957387a1ab90af2244035ad35a5f2a564",
+    "brit200_botao_volume.png": "b380545bf3ddf319a821985d1e00c25f79a24927bc1c027d018a371f8b210e0a",
+    "brit200_frente.jpg": "ea281263b68f702adf38940f10d44e0fffdcbd5b54285fcf04a52961165ce723",
+    "brit200_frente_alfa.png": "1e6fe97565f7b53444f79074f8e90ba5c00d39ac47adb8c40541aba57ef09a5d",
+    "brit200_manifesto.json": "e69d6c87e4be9b317c71b5d31030e8034a87b5b13430a4b4b0b23e63958c6aad",
+    "brit200_mapa.json": "baf80a0426d2cfaa75a7f664a979bd12a55347322f653a0a78625f703343a7b9"
+   },
+   "tamanho": 1326788,
+   "tipo": "cabecote",
+   "inspiracao": "Marshall Major 1967",
+   "categoria": "Britânicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "brit410": {
    "nome": "Brit 410",

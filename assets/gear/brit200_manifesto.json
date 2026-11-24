@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "brit200",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Brit 200",
+  "inspiracao": "Marshall Major 1967",
+  "categoria": "Britânicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}
