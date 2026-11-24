@@ -277,7 +277,8 @@ input[type="range"] { width: 100%; accent-color: var(--ciano); height: 32px; cur
 .glossario p { margin: 0; }
 .glossario b { color: var(--texto); }
 
-/* Código aberto */
+/* Free section (former open source) */
+/* Seção Gratuito (antiga Código aberto) */
 .aberto { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
 .liberdades { display: grid; gap: 12px; }
 .liberdades div { background: var(--painel); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 18px; color: var(--texto-2); font-size: 15px; }
