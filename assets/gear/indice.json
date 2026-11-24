@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:00:24Z",
+ "gerado": "2026-11-24T00:05:43Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -375,6 +375,41 @@
    "acesso": "gratuito",
    "fabrica": true
   },
+  "aurora_flanger": {
+   "nome": "Aurora Flanger",
+   "hash": "2ed8bc0f0a30cbb3",
+   "data": "2026-11-24T00:05:33Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "aurora_flanger_botao_manual.png",
+    "aurora_flanger_botao_profundidade.png",
+    "aurora_flanger_botao_ressonancia.png",
+    "aurora_flanger_botao_velocidade.png",
+    "aurora_flanger_frente.jpg",
+    "aurora_flanger_frente_alfa.png",
+    "aurora_flanger_manifesto.json",
+    "aurora_flanger_mapa.json"
+   ],
+   "sha256": {
+    "aurora_flanger_botao_manual.png": "c48603620cdaff297005accebf51c193c9c508e1dff3f70ee3bf7e9b5a7d23ee",
+    "aurora_flanger_botao_profundidade.png": "7ccf1e6fdf9a116a25191c49a843237b09db7745bdfcfeb3b80919edd9371318",
+    "aurora_flanger_botao_ressonancia.png": "309f665eb20723bf9e80981549e9f8b118e7c7cdabc67631b34e2402b1c6e53f",
+    "aurora_flanger_botao_velocidade.png": "c6ad7b6fd9345016efc4c12a5d38d7cb39d460d073c6c7fcfa5a6dbb3046af78",
+    "aurora_flanger_frente.jpg": "0de8c32d24886c1aa4719dc9ef8da4926413c15a9be68d854c543874a2416370",
+    "aurora_flanger_frente_alfa.png": "e2b9e2bcc25956267121a6c6d4efd1172c0cd6ed0c1aaafe18c36bfd2a4ca0e7",
+    "aurora_flanger_manifesto.json": "adb5f6975c8b4e62b8838b9220f300b09a02efa596dc614028496c3c573ebccf",
+    "aurora_flanger_mapa.json": "37e565a38bf59417d741f664cb37709466dc31ece08a6fa550fbf9bbecb4d990"
+   },
+   "tamanho": 1053496,
+   "tipo": "pedal",
+   "inspiracao": "Boss BF-2 Flanger",
+   "categoria": "Modulação",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
   "baby_boom_plus": {
    "nome": "Baby Boom Plus",
    "hash": "dcd15b5a5e1ad47e",
@@ -536,6 +571,33 @@
    "categoria": "Americanos clássicos",
    "fonte": "Captura da TONE3000",
    "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
+  },
+  "band_310": {
+   "nome": "Band 3x10",
+   "hash": "9d8bb3e1c223bd04",
+   "data": "2026-11-24T00:05:33Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "band_310_frente.jpg",
+    "band_310_frente_alfa.png",
+    "band_310_manifesto.json",
+    "band_310_mapa.json"
+   ],
+   "sha256": {
+    "band_310_frente.jpg": "c0c6e12aeefe66db5f87938a9452e2c20de48a0586b5542ce9ec2fab043c1ef2",
+    "band_310_frente_alfa.png": "a0748201acf5b77496124c0ea96d79aee1f51b93d42dce84ccaa6b7a00300d6b",
+    "band_310_manifesto.json": "590cb1c562a7cbcf5613002278bd5a8a3ed5d6061e9cf950d1b6f11280402ac9",
+    "band_310_mapa.json": "baa4b4b7616d75bbacec96fdd01e6aabba07da243a846801d6fe5942157911c8"
+   },
+   "tamanho": 1435934,
+   "tipo": "caixa",
+   "inspiracao": "Fender '57 Custom Bandmaster 3x10",
+   "categoria": "3x10",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
    "versao": "1.0.0",
    "acesso": "gratuito",
    "fabrica": false
@@ -5320,6 +5382,33 @@
    "versao": "1.0.5",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "sonic_112": {
+   "nome": "Sonic 1x12",
+   "hash": "e1ed3b958aa1c972",
+   "data": "2026-11-24T00:05:33Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "sonic_112_frente.jpg",
+    "sonic_112_frente_alfa.png",
+    "sonic_112_manifesto.json",
+    "sonic_112_mapa.json"
+   ],
+   "sha256": {
+    "sonic_112_frente.jpg": "69fed66562399bac2a8d690adcdbf2ec43a04bf8f215d76eb78c0124378648e9",
+    "sonic_112_frente_alfa.png": "1c3046cc2ebb818c83009c2fb03db59c2d70dbd15f9bab7509e18ca3048f6a38",
+    "sonic_112_manifesto.json": "e8a8a352d2e7220192b45b2541d6dc62b74511d49d4c2569136803a7bc75a667",
+    "sonic_112_mapa.json": "23ad68c26fd5e9bc74b1f7b7edf736343d41252b01d4083a49a598a62e964375"
+   },
+   "tamanho": 1212298,
+   "tipo": "caixa",
+   "inspiracao": "Fender Super-Sonic 112 (caixa do combo)",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "sonic_212": {
    "nome": "Sonic 2x12",

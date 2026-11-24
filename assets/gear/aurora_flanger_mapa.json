@@ -1,0 +1,61 @@
+{
+  "nome": "Aurora Flanger",
+  "familia": "aurora_flanger",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "manual",
+      "x": 284,
+      "y": 281,
+      "tamanho": 164,
+      "arquivo": "botao_manual.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "profundidade",
+      "x": 436,
+      "y": 281,
+      "tamanho": 164,
+      "arquivo": "botao_profundidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "velocidade",
+      "x": 600,
+      "y": 281,
+      "tamanho": 164,
+      "arquivo": "botao_velocidade.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ressonancia",
+      "x": 752,
+      "y": 281,
+      "tamanho": 164,
+      "arquivo": "botao_ressonancia.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [],
+  "medidas_mm": [
+    70,
+    125
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 967.5,
+    "raio": 292.5
+  },
+  "led": {
+    "x": 600.0,
+    "y": 223.4,
+    "raio": 17.9
+  }
+}

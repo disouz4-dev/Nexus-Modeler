@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "aurora_flanger",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Aurora Flanger",
+  "inspiracao": "Boss BF-2 Flanger",
+  "categoria": "Modulação",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "sonic_112",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Sonic 1x12",
+  "inspiracao": "Fender Super-Sonic 112 (caixa do combo)",
+  "categoria": "1x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "supersonic",
+      "tons": [
+        {
+          "id": 80153,
+          "titulo": "Fender Supersonic 22 IR",
+          "criador": "jhony1997",
+          "tipo": "cab",
+          "nota": "Super-Sonic 22 (o pacote é o Super-Sonic 112 de 60 W com V30; não há captura dele)",
+          "ir_padrao": "Fender supersonic 22 2_LL",
+          "padrao": true
+        },
+        {
+          "id": 6003,
+          "titulo": "Hot Rod Deluxe Cabinet Celestion G12P-80",
+          "criador": "dahmanmusic",
+          "tipo": "cab",
+          "nota": "Fender 1x12 de combo, reserva",
+          "ir_padrao": "Hot Rod Deluxe 1x12 Celestion G12P-80 - SM57 - Cone Edge"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
