@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T06:47:28Z",
+ "gerado": "2026-11-24T06:51:13Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -4285,6 +4285,33 @@
    "versao": "1.0.2",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "mark3_112": {
+   "nome": "Mark Three 1x12",
+   "hash": "d72372b56afb4177",
+   "data": "2026-11-24T06:51:04Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "mark3_112_frente.jpg",
+    "mark3_112_frente_alfa.png",
+    "mark3_112_manifesto.json",
+    "mark3_112_mapa.json"
+   ],
+   "sha256": {
+    "mark3_112_frente.jpg": "71c18940658a6b14aae260ff7c5bbb9dc6564b780b6372ed4a9cc01a3baebe02",
+    "mark3_112_frente_alfa.png": "84c0885ae9b43d4b4091b9d07da06f4cbda95a1f49ca43fa35557aab3b31fc49",
+    "mark3_112_manifesto.json": "9234292dbcceb9e093a798cff1dae2d161e14617bf9c308fef8ae2b668641b47",
+    "mark3_112_mapa.json": "0e9b7d87c7657f14e8ae0fbfa1c3190275305d84f579d89042293b39f3f1fb8b"
+   },
+   "tamanho": 1085107,
+   "tipo": "caixa",
+   "inspiracao": "Mesa/Boogie Mark III 1x12",
+   "categoria": "1x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "mark3": {
    "nome": "Mark Three",
