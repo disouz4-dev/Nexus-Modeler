@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "calitweed40",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Cali Tweed 40",
+  "inspiracao": "Mesa/Boogie California Tweed 6V6 4:40",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

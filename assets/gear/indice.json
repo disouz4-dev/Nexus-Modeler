@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T03:29:10Z",
+ "gerado": "2026-11-24T03:41:32Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -1792,6 +1792,45 @@
    "versao": "1.0.4",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "calitweed40": {
+   "nome": "Cali Tweed 40",
+   "hash": "809b69debdcd64c0",
+   "data": "2026-11-24T03:41:24Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "calitweed40_botao_agudo.png",
+    "calitweed40_botao_ganho.png",
+    "calitweed40_botao_grave.png",
+    "calitweed40_botao_medio.png",
+    "calitweed40_botao_presenca.png",
+    "calitweed40_botao_volume.png",
+    "calitweed40_frente.jpg",
+    "calitweed40_frente_alfa.png",
+    "calitweed40_manifesto.json",
+    "calitweed40_mapa.json"
+   ],
+   "sha256": {
+    "calitweed40_botao_agudo.png": "8241e666a616f922992bfe4c1762022bb9199f3eb651c44c8e0c6645a2f15b1d",
+    "calitweed40_botao_ganho.png": "1600dbe55fe70d2a07d9a6222f1607c9446a473a0b2cc16c92e9a11c820c648b",
+    "calitweed40_botao_grave.png": "40b953f7261374f07f38253d115b45e4a4ce41381e8833c87cf436803ed26161",
+    "calitweed40_botao_medio.png": "9e63f4b2c4b0ec745567d6b2d98ae85a195214a9a642e71cc90676114c3467a9",
+    "calitweed40_botao_presenca.png": "b7b82d086c6e473dc6ee96a0c41c938c9acec2188e3b57a81a6f28fb3dc9b25b",
+    "calitweed40_botao_volume.png": "335030eab54fbb0d84a380c70251c838e6b64d5fe8f17bfa78fbd30558f50ea4",
+    "calitweed40_frente.jpg": "8b0be41a2542b638705fda24ec429bf804f317248ce7ee656ebb99f505408946",
+    "calitweed40_frente_alfa.png": "fbf8020f676ea2fbd7ea605893674bb4a43a6285372b43186767377481e785f7",
+    "calitweed40_manifesto.json": "22faf64e2befef799be49733a43bd37205d7d57f586b44801d122dd245b56eee",
+    "calitweed40_mapa.json": "3ad6257e2728cc79702fe1170a1b840c429433e98555e4360ab7080d70b47f23"
+   },
+   "tamanho": 2307763,
+   "tipo": "cabecote",
+   "inspiracao": "Mesa/Boogie California Tweed 6V6 4:40",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "calitweed_112": {
    "nome": "Cali Tweed 1x12",

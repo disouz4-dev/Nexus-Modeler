@@ -1,0 +1,70 @@
+{
+  "nome": "Cali Tweed 40",
+  "familia": "calitweed40",
+  "largura": 2400,
+  "altura": 2088,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "ganho",
+      "x": 520,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 653,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "medio",
+      "x": 786,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_medio.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "grave",
+      "x": 919,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "presenca",
+      "x": 1051,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_presenca.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "volume",
+      "x": 1185,
+      "y": 379,
+      "tamanho": 114,
+      "arquivo": "botao_volume.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": [],
+  "canais_som": [
+    "crunch"
+  ]
+}
