@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "bebop15",
+  "versao": "1.0.0",
+  "tipo": "cabecote",
+  "nome": "Bebop 15",
+  "inspiracao": "Polytone Mini Brute",
+  "categoria": "Americanos clássicos",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

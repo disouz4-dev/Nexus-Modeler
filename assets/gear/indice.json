@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T05:14:10Z",
+ "gerado": "2026-11-24T05:33:37Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -760,6 +760,39 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "bebop15": {
+   "nome": "Bebop 15",
+   "hash": "dde334903817d530",
+   "data": "2026-11-24T05:33:29Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bebop15_botao_agudo.png",
+    "bebop15_botao_ganho.png",
+    "bebop15_botao_grave.png",
+    "bebop15_frente.jpg",
+    "bebop15_frente_alfa.png",
+    "bebop15_manifesto.json",
+    "bebop15_mapa.json"
+   ],
+   "sha256": {
+    "bebop15_botao_agudo.png": "c9de3b6b949dc86fc2f47bed2ef8a468a96248f59635f577efe0ed5e02a0ea56",
+    "bebop15_botao_ganho.png": "cc6717cec5a5f6698efbcfb39a14e27bdaa5d3431b1fa7c241238a9dac05adbd",
+    "bebop15_botao_grave.png": "ef20624a65f6c292fe16e863249ac1aaab12804b6bb7c7acb6caf812a2adec31",
+    "bebop15_frente.jpg": "0a8234000616a6a74c3c0d39f7dd1d42b8e9757f48e2f364d7412737ddb41d8c",
+    "bebop15_frente_alfa.png": "8717c82e978be66a4ec02be95e15c4e829297f7dcaa767d081a2b4dc92f43657",
+    "bebop15_manifesto.json": "bc5a997f9f2df0576de380d25cd7c5d6cd4e4fb0650657445bc61277380c64df",
+    "bebop15_mapa.json": "40deff1da7723c40b1a93031137feab75a49ef39809258bd37e1d53f23133fe9"
+   },
+   "tamanho": 1434637,
+   "tipo": "cabecote",
+   "inspiracao": "Polytone Mini Brute",
+   "categoria": "Americanos clássicos",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "bebop_115": {
    "nome": "Bebop 1x15",

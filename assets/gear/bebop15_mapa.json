@@ -1,0 +1,40 @@
+{
+  "nome": "Bebop 15",
+  "familia": "bebop15",
+  "largura": 2400,
+  "altura": 1579,
+  "posicoes": 101,
+  "botoes": [
+    {
+      "id": "grave",
+      "x": 903,
+      "y": 1210,
+      "tamanho": 100,
+      "arquivo": "botao_grave.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "agudo",
+      "x": 1107,
+      "y": 1210,
+      "tamanho": 100,
+      "arquivo": "botao_agudo.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    },
+    {
+      "id": "ganho",
+      "x": 1311,
+      "y": 1210,
+      "tamanho": 100,
+      "arquivo": "botao_ganho.png",
+      "angulo_min": -150,
+      "angulo_max": 150
+    }
+  ],
+  "canais": [
+    "Normal"
+  ],
+  "rotulos": []
+}
