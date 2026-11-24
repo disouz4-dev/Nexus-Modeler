@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "brit_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Brit 2x12",
+  "inspiracao": "Marshall 1922 2x12",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "greenback 2x12",
+      "tons": [
+        {
+          "id": 94931,
+          "titulo": "G12M Greenback 2x12 SM57",
+          "criador": "edinhoguita",
+          "tipo": "cab",
+          "nota": "2x12 com Greenback G12M",
+          "ir_padrao": "G12M Greenback 2x12 SM57",
+          "padrao": true
+        },
+        {
+          "id": 98754,
+          "titulo": "Marshall G12M Greenback 8-Ohm 4x12 - XR IR PACK",
+          "criador": "tonefactor",
+          "tipo": "cab",
+          "nota": "Marshall 4x12 Greenback, reserva",
+          "ir_padrao": "TF MARSH 4x12 G12M 8ohm 545 3 - Enhanced"
+        }
+      ]
+    }
+  },
+  "signature": null
+}

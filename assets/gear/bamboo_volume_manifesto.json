@@ -1,0 +1,17 @@
+{
+  "formato": 1,
+  "id": "bamboo_volume",
+  "versao": "1.0.0",
+  "tipo": "pedal",
+  "nome": "Bamboo Volume",
+  "inspiracao": "pedal de volume tradicional (forma do Ernie Ball VP Jr. 6180)",
+  "categoria": "Utilidades",
+  "fonte": "Captura da TONE3000",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "captura",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000"
+  },
+  "signature": null
+}

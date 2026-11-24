@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-23T23:53:56Z",
+ "gerado": "2026-11-24T00:00:24Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -475,6 +475,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "bamboo_volume": {
+   "nome": "Bamboo Volume",
+   "hash": "e4f96c65e6b75567",
+   "data": "2026-11-24T00:00:14Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "bamboo_volume_frente.jpg",
+    "bamboo_volume_frente_alfa.png",
+    "bamboo_volume_manifesto.json",
+    "bamboo_volume_mapa.json"
+   ],
+   "sha256": {
+    "bamboo_volume_frente.jpg": "7b108f2b407fb0e82875130ed60daf8c473c5a56cbfed364051bd4b5a51b820b",
+    "bamboo_volume_frente_alfa.png": "6d00dd04b772b6d61dff4558111e61dfe9d6dadc73dd9119a6d87b0ba3dbcae8",
+    "bamboo_volume_manifesto.json": "2a8b991d4f5aca32e687c3452510aba157050815d52ee33f64fabd4f174856be",
+    "bamboo_volume_mapa.json": "84bd5019ff6213b95ff4f31ab758e439ecc1a62b6bc235c7ae2b83cd176bf2f2"
+   },
+   "tamanho": 278729,
+   "tipo": "pedal",
+   "inspiracao": "pedal de volume tradicional (forma do Ernie Ball VP Jr. 6180)",
+   "categoria": "Utilidades",
+   "fonte": "Captura da TONE3000",
+   "motor": "captura",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "band57": {
    "nome": "Band 57",
@@ -1386,6 +1413,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "brit_212": {
+   "nome": "Brit 2x12",
+   "hash": "5198c307817dd93c",
+   "data": "2026-11-24T00:00:14Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "brit_212_frente.jpg",
+    "brit_212_frente_alfa.png",
+    "brit_212_manifesto.json",
+    "brit_212_mapa.json"
+   ],
+   "sha256": {
+    "brit_212_frente.jpg": "aad0511ced5430718b4a22e9889e2e11bfa4f02dd763f111803319c0f406549f",
+    "brit_212_frente_alfa.png": "2c30c912eec6df6502caebab9e06bbd0524472cfb1f4b0009ac0088d06de2910",
+    "brit_212_manifesto.json": "cbfb094efd9c28cc5fdbc2fbc1251b9acf367f2a87c843e112c241cb9341c93b",
+    "brit_212_mapa.json": "5bc00b3805885487d446fd4424e2155912ab0e3a92edd6af733b1c330662298d"
+   },
+   "tamanho": 1042668,
+   "tipo": "caixa",
+   "inspiracao": "Marshall 1922 2x12",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "brit_bass_412": {
    "nome": "Brit Bass 4x12",

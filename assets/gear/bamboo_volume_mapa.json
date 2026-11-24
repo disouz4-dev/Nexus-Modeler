@@ -1,0 +1,19 @@
+{
+  "nome": "Bamboo Volume",
+  "familia": "bamboo_volume",
+  "largura": 1200,
+  "altura": 1500,
+  "posicoes": 101,
+  "botoes": [],
+  "canais": [],
+  "medidas_mm": [
+    89,
+    254
+  ],
+  "rotulos": [],
+  "pisante": {
+    "x": 600.0,
+    "y": 1126.5,
+    "raio": 161.0
+  }
+}
