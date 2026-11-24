@@ -1,6 +1,6 @@
 {
  "formato": 2,
- "gerado": "2026-11-24T00:10:37Z",
+ "gerado": "2026-11-24T00:14:53Z",
  "pecas": {
   "acoustica360": {
    "nome": "Acoustica 360",
@@ -5994,6 +5994,33 @@
    "versao": "1.0.3",
    "acesso": "gratuito",
    "fabrica": true
+  },
+  "twin57_212": {
+   "nome": "Twin 57 2x12",
+   "hash": "608e3477345d3eab",
+   "data": "2026-11-24T00:14:42Z",
+   "nexus_minimo": "0.2.0",
+   "arquivos": [
+    "twin57_212_frente.jpg",
+    "twin57_212_frente_alfa.png",
+    "twin57_212_manifesto.json",
+    "twin57_212_mapa.json"
+   ],
+   "sha256": {
+    "twin57_212_frente.jpg": "fb0feed3a9e2a5b7d80c77c61e10dcf649b5493a931fbd5355ad87c2d0ce9889",
+    "twin57_212_frente_alfa.png": "4bba90f7a5571b753ac5a3ef028ce447cb022fea602ca3f5744a964ee7459f63",
+    "twin57_212_manifesto.json": "e24d595644be6fcf7d2ef1cf5eda058f746af096096b48eda53d4ae8195f77f1",
+    "twin57_212_mapa.json": "e7d84eabab4bf62c1a78f2e76d139bf96c060cdef3050bc317bdfe8c2905730c"
+   },
+   "tamanho": 1329739,
+   "tipo": "caixa",
+   "inspiracao": "Fender '57 Custom Twin-Amp 2x12",
+   "categoria": "2x12",
+   "fonte": "IR ou captura full rig",
+   "motor": "caixa",
+   "versao": "1.0.0",
+   "acesso": "gratuito",
+   "fabrica": false
   },
   "twin_212": {
    "nome": "Twin 2x12",

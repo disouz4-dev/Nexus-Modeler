@@ -1,0 +1,39 @@
+{
+  "formato": 1,
+  "id": "twin57_212",
+  "versao": "1.0.0",
+  "tipo": "caixa",
+  "nome": "Twin 57 2x12",
+  "inspiracao": "Fender '57 Custom Twin-Amp 2x12",
+  "categoria": "2x12",
+  "fonte": "IR ou captura full rig",
+  "versao_minima_do_programa": "0.2.0",
+  "motor": "caixa",
+  "regulagem": {},
+  "capturas": {
+    "origem": "tone3000",
+    "recomendadas": {
+      "busca": "fender bass",
+      "tons": [
+        {
+          "id": 108468,
+          "titulo": "Jensen P12N Alnico 1962 / Fender Blonde 2x12 1964",
+          "criador": "rabbitholeaudio",
+          "tipo": "cab",
+          "nota": "Fender 2x12 aberta com Jensen alnico (não há Twin tweed)",
+          "ir_padrao": "Fender 1964 2x12, Jensen P12N 1962, Sennheiser MD421",
+          "padrao": true
+        },
+        {
+          "id": 32525,
+          "titulo": "1971 Twin Cabinet with Oxford 12T6-10 IR Files",
+          "criador": "MaestrodiMusica",
+          "tipo": "cab",
+          "nota": "Twin 2x12, reserva",
+          "ir_padrao": "1971 Fender Twin Reverb 2x12 Oxford 12T6-10 - SM57 1 - Cap Edge"
+        }
+      ]
+    }
+  },
+  "signature": null
+}
